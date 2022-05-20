@@ -1,0 +1,105 @@
+table 33000266 "Assay Header"
+{
+    // version QC1.1
+
+    LookupPageID = "Assay List";
+
+    fields
+    {
+        field(1;"No.";Code[20])
+        {
+
+            trigger OnValidate();
+            begin
+                if "No." <> xRec."No." then begin
+                  QCSetup.Get;
+                  NoSeriesMgt.TestManual(QCSetup."Assay Nos.");
+                end;
+            end;
+        }
+        field(2;Description;Text[30])
+        {
+        }
+        field(3;"Sampling Plan Code";Code[20])
+        {
+            TableRelation = "Sampling Plan Header";
+        }
+        field(4;"Inspection Group Code";Code[20])
+        {
+            TableRelation = "Inspection Group";
+        }
+        field(5;Status;Option)
+        {
+            OptionCaption = 'New,Under Development,Certified';
+            OptionMembers = New,"Under Development",Certified;
+
+            trigger OnValidate();
+            begin
+                if Status = Status :: Certified then begin
+                  TestField(Description);
+                  TestField("Sampling Plan Code");
+                  TestField("Inspection Group Code");
+                end;
+            end;
+        }
+        field(6;"No. Series";Code[10])
+        {
+        }
+        field(10;Comment;Boolean)
+        {
+            CalcFormula = Exist("Quality Comment Line" WHERE (Type=CONST(Assay),
+                                                              "No."=FIELD("No.")));
+            FieldClass = FlowField;
+        }
+    }
+
+    keys
+    {
+        key(Key1;"No.")
+        {
+        }
+    }
+
+    fieldgroups
+    {
+    }
+
+    trigger OnDelete();
+    begin
+        AssayLine.SetRange("Assay No.","No.");
+        AssayLine.DeleteAll;
+    end;
+
+    trigger OnInsert();
+    begin
+        QCSetup.Get;
+        QCSetup.TestField("Assay Nos.");
+        if "No." = '' then begin
+          NoSeriesMgt.InitSeries(QCSetup."Assay Nos.",xRec."No. Series",0D,"No.","No. Series");
+        end;
+    end;
+
+    var
+        QCSetup : Record "Quality Control Setup";
+        AssayHeader : Record "Assay Header";
+        NoSeriesMgt : Codeunit NoSeriesManagement;
+        AssayLine : Record "Assay Line";
+
+    [LineStart(7785)]
+    procedure AssistEdit(oldAssayNo : Record "Assay Header") : Boolean;
+    begin
+        with AssayHeader do begin
+          AssayHeader := Rec;
+          QCSetup.Get;
+          QCSetup.TestField("Assay Nos.");
+          if NoSeriesMgt.SelectSeries(QCSetup."Assay Nos.",oldAssayNo."No. Series","No. Series") then begin
+            QCSetup.Get;
+            QCSetup.TestField("Assay Nos.");
+            NoSeriesMgt.SetSeries("No.");
+            Rec := AssayHeader;
+            exit(true);
+          end;
+        end;
+    end;
+}
+
