@@ -21,4 +21,13 @@ codeunit 50300 TablesCodeUnit
     begin
         "AVG Unit cost" := Item."Avg Unit Cost";
     end;
+
+    [EventSubscriber(ObjectType::table, Database::"Prod. Order Component", 'OnValidateExpectedQuantityOnAfterCalcActConsumptionQty', '', false, false)]
+    local procedure OnValidateExpectedQuantityOnAfterCalcActConsumptionQty(var ProdOrderComp: Record "Prod. Order Component"; xProdOrderComp: Record "Prod. Order Component")
+    begin
+        if ("Act. Consumption (Qty)" <> 0) or ("Qty. per Unit of Measure" <> 0) then
+            "Remaining Quantity" := "Expected Quantity" - "Act. Consumption (Qty)" / "Qty. per Unit of Measure"
+        else
+            "Remaining Quantity" := "Expected Quantity";
+    end;
 }

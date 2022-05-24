@@ -2,8 +2,8 @@ tableextension 70080 ProdOrderComponentExt extends "Prod. Order Component"
 {
     fields
     {
-      
-      field(50001; "Qty. in Material Issues"; Decimal)
+
+        field(50001; "Qty. in Material Issues"; Decimal)
         {
             CalcFormula = Sum("Material Issues Line"."Qty. to Receive" WHERE("Prod. Order No." = FIELD("Prod. Order No."),
                                                                               "Prod. Order Line No." = FIELD("Prod. Order Line No."),
@@ -28,18 +28,15 @@ tableextension 70080 ProdOrderComponentExt extends "Prod. Order Component"
             Description = 'B2B';
             Editable = false;
         }
-        field(60003; "BOM Type"; Option)
+        field(60003; "BOM Type"; Enum BOMType)
         {
             Description = 'B2B';
             Editable = false;
-            OptionCaption = '" ,Mechanical,Wiring,Testing,Packing"';
-            OptionMembers = " ",Mechanical,Wiring,Testing,Packing;
         }
-        field(60006; "Type of Solder"; Option)
+        field(60006; "Type of Solder"; Enum TypeofSolder)
         {
             Description = 'B2B';
             Editable = true;
-            OptionMembers = " ",SMD,DIP;
         }
         field(60007; "Production Plan Date"; Date)
         {
@@ -147,49 +144,6 @@ tableextension 70080 ProdOrderComponentExt extends "Prod. Order Component"
     }
     keys
     {
-
-        
-        key(Key1; Status, "Prod. Order No.", "Prod. Order Line No.", "Line No.")
-        {
-        }
-        key(Key2; "Prod. Order No.", "Prod. Order Line No.", "Line No.", Status)
-        {
-        }
-        key(Key3; Status, "Prod. Order No.", "Prod. Order Line No.", "Due Date")
-        {
-            SumIndexFields = "Expected Quantity", "Cost Amount";
-        }
-        key(Key4; Status, "Prod. Order No.", "Prod. Order Line No.", "Item No.", "Line No.")
-        {
-            MaintainSQLIndex = false;
-        }
-        key(Key5; Status, "Item No.", "Variant Code", "Location Code", "Due Date")
-        {
-            SumIndexFields = "Expected Quantity", "Remaining Qty. (Base)", "Cost Amount", "Overhead Amount";
-        }
-        key(Key6; "Item No.", "Variant Code", "Location Code", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", "Due Date")
-        {
-            Enabled = false;
-            SumIndexFields = "Expected Quantity", "Remaining Qty. (Base)", "Cost Amount", "Overhead Amount";
-        }
-        key(Key7; Status, "Prod. Order No.", "Routing Link Code", "Flushing Method")
-        {
-        }
-        key(Key8; Status, "Prod. Order No.", "Location Code")
-        {
-        }
-        key(Key9; "Item No.", "Variant Code", "Location Code", Status, "Due Date")
-        {
-            MaintainSIFTIndex = false;
-            SumIndexFields = "Expected Qty. (Base)", "Remaining Qty. (Base)", "Cost Amount", "Overhead Amount", "Qty. Picked (Base)";
-        }
-        key(Key10; Status, "Prod. Order No.", "Prod. Order Line No.", "Item Low-Level Code")
-        {
-            MaintainSQLIndex = false;
-        }
-        key(Key11; "Supplied-by Line No.")
-        {
-        }
         key(Key12; "Item No.", "Prod. Order No.", "Prod. Order Line No.", "Line No.", Status)
         {
         }
@@ -207,8 +161,5 @@ tableextension 70080 ProdOrderComponentExt extends "Prod. Order Component"
             SumIndexFields = "Expected Quantity";
         }
     }
-
-
-    
 }
 
