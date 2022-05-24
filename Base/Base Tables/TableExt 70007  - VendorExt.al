@@ -1,6 +1,6 @@
 tableextension 70007 VendorExt extends Vendor
 {
-    // version NAVW19.00.00.50583,NAVIN9.00.00.50583,QC1.0,MSPT1.0,TDS-REGEF-194Q
+    
 
     fields
     {
