@@ -30,4 +30,24 @@ codeunit 50300 TablesCodeUnit
         else
             "Remaining Quantity" := "Expected Quantity";
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Transfer Line", 'OnAfterAssignItemValues', '', false, false)]
+    local procedure OnAfterAssignItemValues(var TransferLine: Record "Transfer Line"; Item: Record Item)
+    var
+        TransferHeader: Record "Transfer Header";
+        Location: Record Location;
+    begin
+        //B2B-ESPL
+        TransferHeader.SetRange("No.", "Document No.");
+        if TransferHeader.Find('-') then begin
+            Location.Get(TransferHeader."Transfer-to Code");
+            if Location."QC Enabled Location" then begin
+                Validate("Spec ID", Item."Spec ID");
+                Validate("QC Enabled", Item."QC Enabled");
+            end;
+        end;
+        //B2B
+    end;
+
+
 }
