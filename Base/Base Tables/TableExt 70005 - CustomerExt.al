@@ -121,7 +121,146 @@ tableextension 70005 CustomerExt extends Customer
             Body += ('<tr><td>Created By: </td><td>' + UserId + '</td></tr>');
             Body += ('</table>');
             Body += ('<br/><br/>*********** This is auto generated mail from ERP ************</body></html>');
-            Email.Send();
+            Email.Send(EmailMessage);
+        end;
+    end;
+
+
+
+
+    PROCEDURE DrillDownVendorBalance();
+    VAR
+        VendLedgEntriesFormLVar: Page "Detailed Vendor Ledg. Entries";
+        VendLedgEntryLRec: Record "Detailed Vendor Ledg. Entry";
+        StartDateLVar: Date;
+        EndDateLVar: Date;
+    BEGIN
+        StartDateLVar := 20100401D;
+        EndDateLVar := 20350331D;
+
+        VendLedgEntryLRec.Reset;
+        VendLedgEntryLRec.SetCurrentKey("Vendor No.", "Posting Date", "Initial Entry Global Dim. 1", "Initial Entry Global Dim. 2", "Currency Code");
+        VendLedgEntryLRec.SetRange("Vendor No.", "No.");
+        if "Global Dimension 1 Filter" <> '' then
+            VendLedgEntryLRec.SetFilter("Initial Entry Global Dim. 1", "Global Dimension 1 Filter");
+        if "Global Dimension 2 Filter" <> '' then
+            VendLedgEntryLRec.SetRange("Initial Entry Global Dim. 2", "Global Dimension 2 Filter");
+        if "Currency Filter" <> '' then
+            VendLedgEntryLRec.SetRange("Currency Code", "Currency Filter");
+        VendLedgEntryLRec.SetRange("Posting Date", StartDateLVar, EndDateLVar);
+        if VendLedgEntryLRec.FindFirst then begin
+            Clear(VendLedgEntriesFormLVar);
+            VendLedgEntriesFormLVar.SetTableView(VendLedgEntryLRec);
+            VendLedgEntriesFormLVar.RunModal;
+        end;
+    END;
+
+
+    PROCEDURE DrillDownVendorBalanceLCY();
+    VAR
+        VendLedgEntriesFormLVar: Page "Detailed Vendor Ledg. Entries";
+        VendLedgEntryLRec: Record "Detailed Vendor Ledg. Entry";
+        StartDateLVar: Date;
+        EndDateLVar: Date;
+    BEGIN
+        StartDateLVar := 20100401D;
+        EndDateLVar := 20350331D;
+
+        VendLedgEntryLRec.Reset;
+        VendLedgEntryLRec.SetCurrentKey("Vendor No.", "Posting Date", "Initial Entry Global Dim. 1", "Initial Entry Global Dim. 2", "Currency Code");
+        VendLedgEntryLRec.SetRange("Vendor No.", "No.");
+        if "Global Dimension 1 Filter" <> '' then
+            VendLedgEntryLRec.SetFilter("Initial Entry Global Dim. 1", "Global Dimension 1 Filter");
+        if "Global Dimension 2 Filter" <> '' then
+            VendLedgEntryLRec.SetRange("Initial Entry Global Dim. 2", "Global Dimension 2 Filter");
+        if "Currency Filter" <> '' then
+            VendLedgEntryLRec.SetRange("Currency Code", "Currency Filter");
+        VendLedgEntryLRec.SetRange("Posting Date", StartDateLVar, EndDateLVar);
+        if VendLedgEntryLRec.FindFirst then begin
+            Clear(VendLedgEntriesFormLVar);
+            VendLedgEntriesFormLVar.SetTableView(VendLedgEntryLRec);
+            VendLedgEntriesFormLVar.RunModal;
+        end;
+    END;
+
+
+    PROCEDURE DrillDownCSVendorBalance();
+    VAR
+        VendLedgEntriesFormLVar: Page "Detailed Vendor Ledg. Entries";
+        VendLedgEntryLRec: Record "Detailed Vendor Ledg. Entry";
+        StartDateLVar: Date;
+        EndDateLVar: Date;
+    BEGIN
+        StartDateLVar := 20100401D;
+        EndDateLVar := 20350331D;
+
+        VendLedgEntryLRec.Reset;
+        VendLedgEntryLRec.SetCurrentKey("Vendor No.", "Posting Date", "Initial Entry Global Dim. 1", "Initial Entry Global Dim. 2", "Currency Code");
+        VendLedgEntryLRec.SetRange("Vendor No.", "No.");
+        VendLedgEntryLRec.SetRange("Initial Entry Global Dim. 1", 'CUS-002', 'CUS-005');
+        if "Global Dimension 2 Filter" <> '' then
+            VendLedgEntryLRec.SetRange("Initial Entry Global Dim. 2", "Global Dimension 2 Filter");
+        if "Currency Filter" <> '' then
+            VendLedgEntryLRec.SetRange("Currency Code", "Currency Filter");
+        VendLedgEntryLRec.SetRange("Posting Date", StartDateLVar, EndDateLVar);
+        if VendLedgEntryLRec.FindFirst then begin
+            Clear(VendLedgEntriesFormLVar);
+            VendLedgEntriesFormLVar.SetTableView(VendLedgEntryLRec);
+            VendLedgEntriesFormLVar.RunModal;
+        end;
+    END;
+
+
+    PROCEDURE DrillDownRDVendorBalance();
+    VAR
+        VendLedgEntriesFormLVar: Page "Detailed Vendor Ledg. Entries";
+        VendLedgEntryLRec: Record "Detailed Vendor Ledg. Entry";
+        StartDateLVar: Date;
+        EndDateLVar: Date;
+    BEGIN
+        StartDateLVar := 20100401D;
+        EndDateLVar := 20350331D;
+
+        VendLedgEntryLRec.Reset;
+        VendLedgEntryLRec.SetCurrentKey("Vendor No.", "Posting Date", "Initial Entry Global Dim. 1", "Initial Entry Global Dim. 2", "Currency Code");
+        VendLedgEntryLRec.SetRange("Vendor No.", "No.");
+        VendLedgEntryLRec.SetRange("Initial Entry Global Dim. 1", 'RD-000', 'RD-010');
+        if "Global Dimension 2 Filter" <> '' then
+            VendLedgEntryLRec.SetRange("Initial Entry Global Dim. 2", "Global Dimension 2 Filter");
+        if "Currency Filter" <> '' then
+            VendLedgEntryLRec.SetRange("Currency Code", "Currency Filter");
+        VendLedgEntryLRec.SetRange("Posting Date", StartDateLVar, EndDateLVar);
+        if VendLedgEntryLRec.FindFirst then begin
+            Clear(VendLedgEntriesFormLVar);
+            VendLedgEntriesFormLVar.SetTableView(VendLedgEntryLRec);
+            VendLedgEntriesFormLVar.RunModal;
+        end;
+    END;
+
+
+    PROCEDURE DrillDownProdVendorBalance();
+    VAR
+        VendLedgEntriesFormLVar: Page "Detailed Vendor Ledg. Entries";
+        VendLedgEntryLRec: Record "Detailed Vendor Ledg. Entry";
+        StartDateLVar: Date;
+        EndDateLVar: Date;
+    BEGIN
+        StartDateLVar := 20100401D;
+        EndDateLVar := 20350331D;
+
+        VendLedgEntryLRec.Reset;
+        VendLedgEntryLRec.SetCurrentKey("Vendor No.", "Posting Date", "Initial Entry Global Dim. 1", "Initial Entry Global Dim. 2", "Currency Code");
+        VendLedgEntryLRec.SetRange("Vendor No.", "No.");
+        VendLedgEntryLRec.SetRange("Initial Entry Global Dim. 1", 'PRD-0000', 'PRD-0999');
+        if "Global Dimension 2 Filter" <> '' then
+            VendLedgEntryLRec.SetRange("Initial Entry Global Dim. 2", "Global Dimension 2 Filter");
+        if "Currency Filter" <> '' then
+            VendLedgEntryLRec.SetRange("Currency Code", "Currency Filter");
+        VendLedgEntryLRec.SetRange("Posting Date", StartDateLVar, EndDateLVar);
+        if VendLedgEntryLRec.FindFirst then begin
+            Clear(VendLedgEntriesFormLVar);
+            VendLedgEntriesFormLVar.SetTableView(VendLedgEntryLRec);
+            VendLedgEntriesFormLVar.RunModal;
         end;
     end;
 

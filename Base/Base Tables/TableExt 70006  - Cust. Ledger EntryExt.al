@@ -86,7 +86,7 @@ tableextension 70006 CustLedgerEntryExt extends "Cust. Ledger Entry"
         USER.SETRANGE(USER."User Security ID", USERID);// Changed User."User Id" to User."User Security ID" B2B
         IF USER.FIND('-') THEN
             Subject := USER."User Name" + '  is trying to Delete Customer Ledger Entry Records';// Changed User."Name" to User."User Name" B2B
-        Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, '');
+        Email.NewCDOMessage(Mail_From, Mail_To, Subject, Body, '');
         ERROR('U Dont Have Permissions to Delete');
     end;
 
@@ -101,7 +101,7 @@ tableextension 70006 CustLedgerEntryExt extends "Cust. Ledger Entry"
         Body: Text[250];
         Mail_From: Text[250];
         Mail_To: Text[250];
-        Mail: Codeunit Mail;
+        Email: Codeunit EMail;
         Subject: Text[250];
         UserSetupGRec: Record "User Setup";
 
