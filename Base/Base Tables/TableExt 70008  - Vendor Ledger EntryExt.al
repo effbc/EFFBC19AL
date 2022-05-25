@@ -71,6 +71,19 @@ tableextension 70008 VendorLedgerEntryExt extends "Vendor Ledger Entry"
         ERROR('U Dont Have Permissions to Delete');
     end;
 
+    LOCAL PROCEDURE ShowDimensionsOLD();
+    VAR
+        DimensionSetEntryBackup: Record "Dimension Set Entry Backup2";
+        DimeSetEntryOld: Page "dimension set entry page old";
+    BEGIN
+        DimensionSetEntryBackup.RESET;
+        DimensionSetEntryBackup.FILTERGROUP(2);
+        DimensionSetEntryBackup.SETRANGE("Dimension Set ID", "OLD Dim Set ID");
+        DimensionSetEntryBackup.FILTERGROUP(0);
+        DimeSetEntryOld.SETTABLEVIEW(DimensionSetEntryBackup);
+        DimeSetEntryOld.RUNMODAL;
+    END;
+
 
     var
         USER: Record User;
