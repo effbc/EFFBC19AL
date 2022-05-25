@@ -95,21 +95,27 @@ tableextension 70003 GLAccoountExt extends "G/L Account"
         Rec.Created_Date_time := Today;
         begin
             Subject := 'New G_L Account Head-' + Rec."No." + ' Added';
-            SMTP_MAIL.CreateMessage('ERP', 'erp@efftronics.com', 'erp@efftronics.com,sitarajyam@efftronics.com', Subject, '', true);
-            SMTP_MAIL.AppendBody('<html><body><table>');
-            SMTP_MAIL.AppendBody('<th>G_L Account Head Details</th>');
-            SMTP_MAIL.AppendBody('<tr><td>G/L No: </td><td>' + Rec."No." + '</td></tr>');
-            SMTP_MAIL.AppendBody('<tr><td>Name: </td><td>' + Rec.Name + '</td></tr>');
-            SMTP_MAIL.AppendBody('<tr><td>Created Date: </td><td>' + Format(Rec.Created_Date_time) + '</td></tr>');
-            SMTP_MAIL.AppendBody('<tr><td>Created By: </td><td>' + UserId + '</td></tr>');
-            SMTP_MAIL.AppendBody('</table>');
-            SMTP_MAIL.AppendBody('<br/><br/>*********** This is auto generated mail from ERP ************</body></html>');
-            SMTP_MAIL.Send;
+            recipitents := 'erp@efftronics.com';
+            recipitents := 'erp@efftronics.com';
+            recipitents := 'sitarajyam@efftronics.com';
+
+            EmailMessage.Create(recipitents, Subject, Body);
+            Body += ('<html><body><table>');
+            Body += ('<th>G_L Account Head Details</th>');
+            Body += ('<tr><td>G/L No: </td><td>' + Rec."No." + '</td></tr>');
+            Body += ('<tr><td>Name: </td><td>' + Rec.Name + '</td></tr>');
+            Body += ('<tr><td>Created Date: </td><td>' + Format(Rec.Created_Date_time) + '</td></tr>');
+            Body += ('<tr><td>Created By: </td><td>' + UserId + '</td></tr>');
+            Body += ('</table>');
+            Body += ('<br/><br/>*********** This is auto generated mail from ERP ************</body></html>');
         end;
-    end;
+
 
     var
         Subject: Text[100];
-        SMTP_MAIL: Codeunit "SMTP Mail";
+        Email: Codeunit Email;
+        Body: Text;
+        recipitents: Text;
+        EmailMessage: Codeunit "Email Message";
 }
 

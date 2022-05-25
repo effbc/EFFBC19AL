@@ -114,13 +114,16 @@ tableextension 70004 GLEntryExt extends "G/L Entry"
             Description = 'Added by Vishnu Priya for the TDS Claiming Process';
         }
     }
-    
-  
+
+
+
+    var
         USER: Record User;
         Body: Text[250];
         Mail_From: Text[250];
         Mail_To: Text[250];
-        Mail: Codeunit Mail;
+        Mail: Codeunit Email;
         Subject: Text[250];
         UserSetupGRec: Record "User Setup";
 }
+
