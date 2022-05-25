@@ -3,7 +3,7 @@ tableextension 70088 TransferShipmentHeaderExt extends "Transfer Shipment Header
     fields
     {
 
-        
+
         field(60001; "Prod. Order No."; Code[20])
         {
             Description = 'B2B';
@@ -125,6 +125,6 @@ tableextension 70088 TransferShipmentHeaderExt extends "Transfer Shipment Header
         key(Key3; "External Document No.")
         {
         }
-    }   
+    }
 }
 
