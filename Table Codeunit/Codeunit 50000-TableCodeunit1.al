@@ -25,6 +25,7 @@ codeunit 50000 "Tables Codeunit"
                                                                                     // Rev01>>
         VendorLedgerEntry."DD/FDR No." := GenJnlLine."DD/FDR No.";
         VendorLedgerEntry."Payment Through" := GenJnlLine."Payment Through";
+
         // Rev01<<
 
     end;
