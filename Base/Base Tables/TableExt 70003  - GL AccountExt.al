@@ -108,7 +108,9 @@ tableextension 70003 GLAccoountExt extends "G/L Account"
             Body += ('<tr><td>Created By: </td><td>' + UserId + '</td></tr>');
             Body += ('</table>');
             Body += ('<br/><br/>*********** This is auto generated mail from ERP ************</body></html>');
+            Email.Send(EmailMessage);
         end;
+    end;
 
 
     var
