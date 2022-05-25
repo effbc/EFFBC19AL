@@ -18,4 +18,18 @@ codeunit 50000 "Tables Codeunit"
         CustLedgerEntry."invoice no" := GenJnlLine."Invoice no";//EFFUPG
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Vendor Ledger Entry", 'OnAfterCopyVendLedgerEntryFromGenJnlLine', '', false, false)]
+    local procedure OnAfterCopyVendLedgerEntryFromGenJnlLine(var VendorLedgerEntry: Record "Vendor Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
+    begin
+        VendorLedgerEntry."Vendor Invoice Date" := GenJnlLine."Vendor Invoice Date";//EFFUPG
+                                                                                    // Rev01>>
+        VendorLedgerEntry."DD/FDR No." := GenJnlLine."DD/FDR No.";
+        VendorLedgerEntry."Payment Through" := GenJnlLine."Payment Through";
+        // Rev01<<
+
+    end;
+
+
+
+
 }
