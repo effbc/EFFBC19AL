@@ -30,6 +30,32 @@ codeunit 50000 "Tables Codeunit"
 
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterAssignItemValues', '', false, false)]
+    local procedure OnAfterAssignItemValues(var SalesLine: Record "Sales Line"; Item: Record Item)
+    begin
+        //B2B
+        "Production BOM No." := Item."Production BOM No.";
+        ProductionBOMHeader.SetRange("No.", "Production BOM No.");
+        if ProductionBOMHeader.Find('-') then
+            "Production Bom Version No." := VersionMgt.GetBOMVersion(ProductionBOMHeader."No.", WorkDate, true);
+        "Spec ID" := Item."Spec ID";
+        "QC Enabled" := Item."QC Enabled";
+        //B2B
+        //Added by Pranavi on 05-Dec-2015 for updating schedule item no if item is changed in sales line
+        Schedule.Reset;
+        Schedule.SetRange("Document Type", Schedule."Document Type"::Order);
+        Schedule.SetRange("Document No.", "Document No.");
+        Schedule.SetRange("Document Line No.", "Line No.");
+        Schedule.SetRange(Schedule."Line No.", "Line No.");
+        Schedule.SetRange(Schedule."No.", xRec."No.");
+        if Schedule.FindFirst then begin
+            Schedule."No." := "No.";
+            Schedule.Validate("No.");
+        end;
+        //End by Pranavi on 05-Dec-2015
+    end;
+
+
 
 
 
