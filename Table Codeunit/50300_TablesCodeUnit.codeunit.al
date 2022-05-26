@@ -9,26 +9,28 @@ codeunit 50300 TablesCodeUnit
     local procedure OnValidateItemNoOnAfterAssignItemValues(var ProdOrderLine: Record "Prod. Order Line"; Item: Record Item)
     begin
         //QC 1.0
-        "WIP QC Enabled" := Item."WIP QC Enabled";
-        "WIP Spec Id" := Item."WIP Spec ID";
-        if "WIP Spec Id" <> '' then
-            "Spec Version Code" := GetSpecVersion;
+        ProdOrderLine."WIP QC Enabled" := Item."WIP QC Enabled";
+        ProdOrderLine."WIP Spec Id" := Item."WIP Spec ID";
+        if ProdOrderLine."WIP Spec Id" <> '' then
+            ProdOrderLine."Spec Version Code" := ProdOrderLine.GetSpecVersion;
         //QC 1.0
     end;
 
     [EventSubscriber(ObjectType::table, Database::"Prod. Order Component", 'OnBeforeUpdateUnitCost', '', false, false)]
     local procedure OnBeforeUpdateUnitCost(var ProdOrderComponent: Record "Prod. Order Component"; GLSetup: Record "General Ledger Setup"; var IsHandled: Boolean)
+    var
+        Item: Record Item;
     begin
-        "AVG Unit cost" := Item."Avg Unit Cost";
+        ProdOrderComponent."AVG Unit cost" := Item."Avg Unit Cost";
     end;
 
     [EventSubscriber(ObjectType::table, Database::"Prod. Order Component", 'OnValidateExpectedQuantityOnAfterCalcActConsumptionQty', '', false, false)]
     local procedure OnValidateExpectedQuantityOnAfterCalcActConsumptionQty(var ProdOrderComp: Record "Prod. Order Component"; xProdOrderComp: Record "Prod. Order Component")
     begin
-        if ("Act. Consumption (Qty)" <> 0) or ("Qty. per Unit of Measure" <> 0) then
-            "Remaining Quantity" := "Expected Quantity" - "Act. Consumption (Qty)" / "Qty. per Unit of Measure"
+        if (ProdOrderComp."Act. Consumption (Qty)" <> 0) or (ProdOrderComp."Qty. per Unit of Measure" <> 0) then
+            ProdOrderComp."Remaining Quantity" := ProdOrderComp."Expected Quantity" - ProdOrderComp."Act. Consumption (Qty)" / ProdOrderComp."Qty. per Unit of Measure"
         else
-            "Remaining Quantity" := "Expected Quantity";
+            ProdOrderComp."Remaining Quantity" := ProdOrderComp."Expected Quantity";
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Transfer Line", 'OnAfterAssignItemValues', '', false, false)]
@@ -38,12 +40,12 @@ codeunit 50300 TablesCodeUnit
         Location: Record Location;
     begin
         //B2B-ESPL
-        TransferHeader.SetRange("No.", "Document No.");
+        TransferHeader.SetRange("No.", TransferLine."Document No.");
         if TransferHeader.Find('-') then begin
             Location.Get(TransferHeader."Transfer-to Code");
             if Location."QC Enabled Location" then begin
-                Validate("Spec ID", Item."Spec ID");
-                Validate("QC Enabled", Item."QC Enabled");
+                Validate(TransferLine."Spec ID", Item."Spec ID");
+                Validate(TransferLine."QC Enabled", Item."QC Enabled");
             end;
         end;
         //B2B
@@ -61,6 +63,15 @@ codeunit 50300 TablesCodeUnit
         end;
         //b2b-eff
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Service Line", 'OnValidateServiceItemLineNoOnBeforeValidateContractNo', '', false, false)]
+    local procedure OnValidateServiceItemLineNoOnBeforeValidateContractNo(var ServiceLine: Record "Service Line"; ServItemLine: Record "Service Item Line")
+    begin
+        ServiceLine."Fault Area Description" := ServItemLine."Fault Area Description";
+        ServiceLine."Sub Module Code" := ServItemLine."Sub Module Code";
+        ServiceLine."Sub Module Descrption" := ServItemLine."Sub Module Descrption";
+    end;
+
 
 
 }
