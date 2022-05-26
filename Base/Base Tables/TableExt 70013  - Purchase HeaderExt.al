@@ -434,6 +434,366 @@ tableextension 70013 PurhaseheaderExt extends "Purchase Header"
     end;
 
 
+
+    PROCEDURE CreateReturnOrder();
+    BEGIN
+        InspectJnlLine.CreateReturnOrder(Rec, 0);
+    END;
+
+
+    PROCEDURE CreateCreditmemo();
+    BEGIN
+        InspectJnlLine.CreateCreditMemo(Rec, 0);
+    END;
+
+
+
+    PROCEDURE CancelCloseOrder(VAR OrderStatus: Text[50]; VAR PurchaseHeader: Record "Purchase Header");
+    VAR
+        Text050: Label 'ENU=You cannot Canel/Short Close the order,Invoice is pending for Line No. %1 and Order No. %2';
+        Text051: Label 'ENU=You cannot Canel/Short Close the order,Return Qty. Invoice is pending for Line No. %1 and Order No. %2';
+    BEGIN
+        //Rev01
+        IF (OrderStatus = 'Cancel') OR (OrderStatus = 'Close') THEN BEGIN
+            Cashflow_Modification;
+
+            IF ISCLEAR(SQLConnection) THEN
+                CREATE(SQLConnection, FALSE, TRUE); //Rev01
+            IF ISCLEAR(RecordSet) THEN
+                CREATE(RecordSet, FALSE, TRUE); //Rev01
+
+            WebRecStatus := Quotes + Text50001 + Quotes;
+            OldWebStatus := Quotes + Text50002 + Quotes;
+            "G|l".GET;
+
+            SQLConnection.ConnectionString := "G|l"."Sql Connection String";
+            SQLConnection.Open;
+
+            SQLConnection.BeginTrans;
+
+        END;
+
+        PurchLine.SETRANGE("Document No.", PurchaseHeader."No.");
+        PurchLine.SETRANGE("Document Type", PurchaseHeader."Document Type");
+        IF PurchLine.FINDFIRST THEN BEGIN
+            REPEAT
+                IF PurchLine."Qty. Rcd. Not Invoiced" <> 0 THEN
+                    ERROR(Text050, PurchLine."Line No.", PurchaseHeader."No.");
+                IF PurchLine."Return Qty. Shipped Not Invd." <> 0 THEN
+                    ERROR(Text051, PurchLine."Line No.", PurchaseHeader."No.");
+                SQLQuery := 'UPDATE PURCHASE_LINE SET SHORT_CLOSE_QTY=''' + CommaRemoval(FORMAT(ROUND(PurchLine."Qty. to Receive", 0.01))) + '''' +
+                           ' WHERE ORDERNO=''' + PurchLine."Document No." + '''' +
+                           'AND ORDER_LINE_NO=''' + FORMAT(PurchLine."Line No.") + '''';
+
+
+                RecordSet := SQLConnection.Execute(SQLQuery);//B2B
+
+            UNTIL PurchLine.NEXT = 0;
+        END;
+
+        IF OrderStatus = 'Close' THEN BEGIN
+            "Cancel Short Close" := "Cancel Short Close"::"Short Closed";
+            MODIFY;
+        END;
+        IF OrderStatus = 'Cancel' THEN BEGIN
+            "Cancel Short Close" := "Cancel Short Close"::Cancelled;
+            MODIFY;
+        END;
+        ArchiveManagement.ArchivePurchDocument(PurchaseHeader);
+
+        PurchLine.SETRANGE("Document No.", PurchaseHeader."No.");
+        PurchLine.SETRANGE("Document Type", PurchaseHeader."Document Type");
+        PurchLine.DELETEALL;
+
+        PurchaseHeader.DELETE;
+
+        SQLConnection.CommitTrans;
+        SQLConnection.Close;
+        //Rev01
+    END;
+
+
+    PROCEDURE CopyIndent();
+    VAR
+        Text60000: TextConst 'ENU=&Indent,Indent &Lines';
+    BEGIN
+        Selection := STRMENU(Text60000, 1);
+        IF Selection = 0 THEN
+            EXIT;
+        IF Selection = 1 THEN BEGIN
+            IndentHeader.SETRANGE("Released Status", IndentHeader."Released Status"::Released);
+            IndentHeader.SETRANGE(IndentHeader."Indent Status", IndentHeader."Indent Status"::Indent);
+            IF PAGE.RUNMODAL(PAGE::"Indent List", IndentHeader) = ACTION::LookupOK THEN BEGIN
+                TransferIndentToDoc;
+                IF "Document Type" = "Document Type"::Order THEN BEGIN
+                    IndentHeader."Indent Status" := IndentHeader."Indent Status"::Order;
+                    IndentHeader.MODIFY;
+                END;
+                IF "Document Type" = "Document Type"::Quote THEN BEGIN
+                    IndentHeader."Indent Status" := IndentHeader."Indent Status"::Offer;
+                    IndentHeader.MODIFY;
+                END;
+            END;
+        END ELSE BEGIN
+            IndentLine.RESET;
+            IndentLine.SETRANGE("Release Status", IndentLine."Release Status"::Released);
+            IndentLine.SETRANGE("Indent Status", IndentLine."Indent Status"::Indent);
+            IF PAGE.RUNMODAL(PAGE::"Indent Line", IndentLine) = ACTION::LookupOK THEN BEGIN
+                IndentLine.LOCKTABLE;
+                IndentLine.SETRANGE(IndentLine."Set Selection", TRUE);
+                IF IndentLine.FINDFIRST THEN
+                    PurchLine1.SETRANGE("Document Type", "Document Type");
+                PurchLine1.SETRANGE("Document No.", "No.");
+                IF PurchLine1.FINDLAST THEN
+                    PurchLineNo := PurchLine1."Line No."
+                ELSE
+                    PurchLineNo := 0;
+                REPEAT
+                    CopyIndentLineToQuote(IndentLine);
+                UNTIL IndentLine.NEXT = 0;
+                IndentLine.MODIFYALL("Set Selection", FALSE);
+            END;
+            IndentLine.SETRANGE(IndentLine."Set Selection", TRUE);
+            IndentLine.MODIFYALL("Set Selection", FALSE);
+        END;
+    END;
+
+
+    PROCEDURE TransferIndentToDoc@1102152003();
+    VAR
+        PLine: Record "Purchase Line";
+        IndLine: Record "SMTP SETUP";
+    BEGIN
+        IndentLine.RESET;
+        IndentLine.LOCKTABLE;
+        IndentLine.SETRANGE("Document No.", IndentHeader."No.");
+
+        IF IndentLine.FINDFIRST THEN
+            REPEAT
+                CopyIndentLineToQuote(IndentLine);
+            UNTIL IndentLine.NEXT = 0;
+    END;
+
+
+    PROCEDURE CopyIndentLineToQuote(VAR IndentLine2: Record "Indent Line");
+    VAR
+        BUFFER: Code[10];
+        ITEM: Record Item;
+        Temp: Integer;
+        PLine: Record "Purchase Line";
+    BEGIN
+        PurchLine1.INIT;
+        PurchLine1."Document Type" := "Document Type";
+        PurchLine1."Document No." := "No.";
+        PurchLineNo := PurchLineNo + 10000;
+        PurchLine1."Line No." := PurchLineNo;
+        PurchLine1."Buy-from Vendor No." := "Buy-from Vendor No.";
+
+        IF IndentLine2.Type = IndentLine2.Type::Item THEN BEGIN
+            PurchLine1.Type := PurchLine1.Type::Item;
+            PurchLine1.VALIDATE("No.", IndentLine2."No.");
+            //PurchLine1."Production Order" := IndentLine2."Production Order";
+            //PurchLine1."Production Order Line No." := IndentLine2."Production Order Line No.";
+            //PurchLine1."Drawing No." := IndentLine2."Drawing No.";
+            //PurchLine1."Sub Operation No." := IndentLine2."Operation No.";
+            //PurchLine1."Sub Routing No." := IndentLine2."Routing No.";
+            PurchLine1.VALIDATE(Quantity, IndentLine2.Quantity);
+            PurchLine1.VALIDATE("Unit of Measure", IndentLine2."Unit of Measure");
+            PurchLine1.VALIDATE("Direct Unit Cost", IndentLine2."Unit Cost");
+            PurchLine1.VALIDATE(PurchLine1."Location Code", IndentLine2."Delivery Location");
+        END ELSE
+            IF IndentLine2.Type = IndentLine2.Type::Miscellaneous THEN BEGIN
+                PurchLine1.Type := PurchLine1.Type::"G/L Account";
+                PurchLine1.VALIDATE("No.", IndentLine2."G/L Account");
+                PurchLine1.VALIDATE(Quantity, IndentLine2.Quantity);
+                PurchLine1.VALIDATE("Description 2", IndentLine2."No.");
+                PurchLine1.VALIDATE("Unit of Measure", IndentLine2."Unit of Measure");
+                PurchLine1.VALIDATE("Direct Unit Cost", IndentLine2."Unit Cost");
+            END;
+
+        PurchLine1.Description := IndentLine2.Description;
+        PurchLine1."Indent No." := IndentLine2."Document No.";
+        PurchLine1."Indent Line No." := IndentLine2."Line No.";
+        PurchLine1."ICN No." := IndentLine2."ICN No.";
+        //PurchLine1."Indent Due Date" := IndentLine2."Due Date";
+        //PurchLine1."Promised Receipt Date" := IndentLine2."Due Date";
+        //PurchLine1."Indent Reference" := IndentLine2."Indent Reference";
+
+        // Added by Pranavi on 11-Feb-2017
+        BUFFER := '+0';
+        Temp := 0;
+        PurchLine1."Requested Receipt Date" := "Requested Receipt Date";
+        PurchLine1."Expected Receipt Date" := "Expected Receipt Date";
+        PurchLine1."Deviated Receipt Date" := "Expected Receipt Date";
+        IF ITEM.GET(PurchLine1."No.") THEN BEGIN
+            IF NOT (FORMAT(ITEM."Safety Lead Time") IN ['', ' ']) THEN BEGIN
+                BUFFER := '+' + FORMAT(ITEM."Safety Lead Time");
+                EVALUATE(Temp, COPYSTR(FORMAT(ITEM."Safety Lead Time"), 1, STRLEN(FORMAT(ITEM."Safety Lead Time")) - 1));
+                PurchLine1."Expected Receipt Date" := CALCDATE(BUFFER, TODAY);
+                PurchLine1."Deviated Receipt Date" := CALCDATE(BUFFER, TODAY);
+                IF TODAY + Temp > "Expected Receipt Date" THEN BEGIN
+                    "Expected Receipt Date" := TODAY + Temp;
+                END;
+                IF TODAY + (Temp - 3) < "Requested Receipt Date" THEN BEGIN
+                    // Start--Added by Pranavi on 11-Feb-2017 for correcting Dev & Exp Recp Dates Calc
+                    PLine.RESET;
+                    PLine.SETRANGE(PLine."Document Type", PLine."Document Type"::Order);
+                    PLine.SETRANGE(PLine."Document No.", "No.");
+                    PLine.SETFILTER(PLine."No.", '<>%1', '');
+                    PLine.SETFILTER(PLine.Quantity, '>%1', 0);
+                    IF PLine.FINDSET THEN
+                        REPEAT
+                            IF PLine."Requested Receipt Date" = "Requested Receipt Date" THEN BEGIN
+                                PLine."Requested Receipt Date" := TODAY + (Temp - 3);
+                                PLine.MODIFY;
+                            END;
+                        UNTIL PLine.NEXT = 0;
+                    // End--Added by Pranavi on 11-Feb-2017 for correcting Dev & Exp Recp Dates Calc
+                    "Requested Receipt Date" := TODAY + (Temp - 3);
+                    PurchLine1."Requested Receipt Date" := "Requested Receipt Date";
+                END;
+            END;
+        END;
+        // End by pranavi on 11-Feb-2017
+
+        PurchLine1.INSERT;
+
+
+        IF "Document Type" = "Document Type"::Quote THEN BEGIN
+            IF IndentLine2."Indent Status" < IndentLine2."Indent Status"::Offer THEN
+                IndentLine2."Indent Status" := IndentLine2."Indent Status"::Offer;
+        END ELSE
+            IndentLine2."Indent Status" := IndentLine2."Indent Status"::Order;
+        IndentLine2.MODIFY;
+    END;
+
+
+    PROCEDURE CommaRemoval(Base: Text[30]) Converted: Text[30];
+    VAR
+        i: Integer;
+    BEGIN
+        FOR i := 1 TO STRLEN(Base) DO BEGIN
+            IF COPYSTR(Base, i, 1) <> ',' THEN
+                Converted += COPYSTR(Base, i, 1);
+        END;
+        EXIT(Converted);
+    END;
+
+
+    PROCEDURE Cashflow_Modification();
+    BEGIN
+        //Rev01{
+        GLSetup.GET;
+        IF GLSetup."Active ERP-CF Connection" THEN BEGIN
+            IF ISCLEAR(SQLConnection) THEN
+                CREATE(SQLConnection, FALSE, TRUE); //Rev01
+            IF ISCLEAR(RecordSet) THEN
+                CREATE(RecordSet, FALSE, TRUE); //Rev01
+            WebRecStatus := Quotes + Text50001 + Quotes;
+            OldWebStatus := Quotes + Text50002 + Quotes;
+            //SQLConnection.ConnectionString :=GLSetup."Sql Connection String";
+            SQLConnection.ConnectionString := 'DSN=CASHFLOW;UID=cashflowuser;PASSWORD=firewall123;SERVER=oracle_80;';
+            SQLConnection.Open;
+            SQLConnection.BeginTrans;
+
+            SQLQuery := 'select orderno from PURCHASE_ORDER_STATUS where orderno=''' + "No." + ''' and (authorisation=1 or status=''Y'') and '
+                      + 'payment_type in (''Advance'',''COD'',''Billed'')';
+            RecordSet := SQLConnection.Execute(SQLQuery);
+            SQLConnection.CommitTrans;
+
+            IF NOT (USERID IN ['EFFTRONICS\20TE099', 'EFFTRONICS\VISHNUPRIYA']) // added on 07-MAY-18  ,'EFFTRONICS\VISHNUPRIYA'
+            THEN BEGIN
+                IF NOT (RecordSet.EOF OR RecordSet.BOF) THEN BEGIN
+                    SQLConnection.Close;
+                    ERROR('PAYMENT COMPLETED, SO YOU MUST NOT SHORT CLOSE (OR) CANCEL THE ORDER');
+
+                END;
+                SQLConnection.Close;
+            END
+            ELSE
+                SQLConnection.Close; // added by vishnu on 02-12-2020 for the  testings
+        END;
+
+
+
+
+        //Rev01
+    END;
+
+    PROCEDURE ExtenalDocNo(InvoiceNos: '" ",ExciseInv,ServiceInv,TradingInv,InstInv'; PostingDate: Date);
+    VAR
+        temp: Integer;
+        SalesHeadLRec: Record "Sales Header";
+        Fyear: Integer;
+        POSTEDINVOICE: Record "Sales Invoice Header";
+        y: Text;
+        PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr.";
+        PurchHdr: Record "Purchase Header";
+        StrPosOfSlace: Integer;
+        Fyear_New: Code[10];
+    BEGIN
+        // Added by Pranavi on 05-Dec-2016 for Vendor Debit Note No.Series Generation
+        temp := 0;
+        StrPosOfSlace := 0;
+
+        IF DATE2DMY(PostingDate, 2) <= 3 THEN
+            Fyear := DATE2DMY(PostingDate, 3) - 1
+        ELSE
+            Fyear := DATE2DMY(PostingDate, 3);
+
+        Fyear_New := '\' + FORMAT(Fyear) + '-' + COPYSTR(FORMAT(Fyear + 1), 3, 2);
+
+        /*{
+        PurchHdr.RESET;
+        PurchHdr.SETFILTER(PurchHdr."Document Type",'Credit Memo');
+        PurchHdr.SETFILTER(PurchHdr."Vendor Cr. Memo No.",'<>%1','');
+        IF PurchHdr.FINDSET THEN
+        REPEAT
+          PurchHdr."Vendor Cr. Memo No.":='';
+          PurchHdr.MODIFY;
+        UNTIL PurchHdr.NEXT=0;
+
+        PurchHdr.SETFILTER(PurchHdr."Document Type",'Credit Memo');
+        PurchHdr.SETFILTER(PurchHdr."Vendor Cr. Memo No.",'<>%1','');
+        IF PurchHdr.COUNT>0 THEN
+        IF PurchHdr.FINDSET THEN
+        REPEAT
+          ERROR(PurchHdr."No."+'  Debit Note Have the Invoice Number');
+        UNTIL SalesHeadLRec.NEXT=0;
+        }*/
+
+        CASE InvoiceNos OF
+            0:
+                BEGIN
+                    "Vendor Cr. Memo No." := '';
+                    MODIFY;
+                END;
+            1:
+                BEGIN
+                    PurchCrMemoHdr.RESET;
+                    PurchCrMemoHdr.SETCURRENTKEY("Vendor Cr. Memo No.", "Posting Date");
+                    PurchCrMemoHdr.ASCENDING;
+                    PurchCrMemoHdr.SETRANGE(PurchCrMemoHdr."Posting Date", DMY2DATE(1, 4, Fyear), DMY2DATE(1, 4, Fyear + 1));  // Added by Rakesh
+                                                                                                                               //PurchCrMemoHdr.SETFILTER(POSTEDINVOICE."External Document No.",'0..9999');
+                    IF PurchCrMemoHdr.FINDLAST THEN BEGIN
+                        y := '0';
+                        StrPosOfSlace := STRPOS(PurchCrMemoHdr."Vendor Cr. Memo No.", '\');
+                        IF StrPosOfSlace > 0 THEN
+                            y := COPYSTR(PurchCrMemoHdr."Vendor Cr. Memo No.", 1, StrPosOfSlace - 1)
+                        ELSE
+                            y := PurchCrMemoHdr."Vendor Cr. Memo No.";
+                        temp := 1;
+                    END;
+                    IF temp = 0 THEN
+                        "Vendor Cr. Memo No." := '0001' + Fyear_New
+                    ELSE
+                        "Vendor Cr. Memo No." := INCSTR(y) + Fyear_New;
+                    MODIFY;
+                END;
+        END;
+        // End--Pranavi
+    END;
+
     var
         "--QC--": Integer;
         "---Indent---": Integer;
@@ -465,5 +825,9 @@ tableextension 70013 PurhaseheaderExt extends "Purchase Header"
         UserDetails: Record User;
         SalesHeaderArchive: Record "Sales Header Archive";
         SalesListArchive: Page "Sales List Archive";
+
+
+        InspectJnlLine: Codeunit "Inspection Jnl.-Post Line";
+
 }
 
