@@ -196,7 +196,7 @@ tableextension 70095 ServiceItemLineExt extends "Service Item Line"
         }
         field(60031; "N/W Stand Alone"; Enum "NetWork Stand Alone")
         {
-            
+
         }
         field(60032; IDNO; Code[10])
         {
@@ -212,22 +212,22 @@ tableextension 70095 ServiceItemLineExt extends "Service Item Line"
         }
         field(60036; "Operating Voltage"; Enum "Operating Voltage")
         {
-            
+
         }
         field(60037; "Supply Giving From"; Text[30])
         {
         }
         field(60038; "Earth Status"; Enum "Earth Status")
         {
-            
+
         }
         field(60039; "Communication Media"; Enum "Communication Media")
         {
-            
+
         }
         field(60040; "Warr/AMC/None"; Enum "Warr AMC None")
         {
-           
+
         }
         field(60041; Zone; Code[10])
         {
@@ -329,7 +329,7 @@ tableextension 70095 ServiceItemLineExt extends "Service Item Line"
         }
         field(60056; "Service Level"; Enum "Service Level")
         {
-            
+
         }
         field(60057; "Station Name"; Text[30])
         {
@@ -433,270 +433,293 @@ tableextension 70095 ServiceItemLineExt extends "Service Item Line"
         ServItemLine: Record "Service Item Line";
         ServHeader@1000 : Record "Service Header";
 
-    PROCEDURE Cards_Calc(Item: Code[20];Status: ',Working,"Non Working"') res : Decimal;
+    PROCEDURE Cards_Calc(Item: Code[20]; Status: ',Working,"Non Working"') res: Decimal;
     VAR
-      CsLedgerLRec: Record "CS Stock Ledger";
+        CsLedgerLRec: Record "CS Stock Ledger";
     BEGIN
-        totCardsGVar:=0;
+        totCardsGVar := 0;
         CsLedgerLRec.Reset;
-        CsLedgerLRec.SetFilter(CsLedgerLRec.Location,"From Location");
-        CsLedgerLRec.SetFilter(CsLedgerLRec."Item No",Item);
-        CsLedgerLRec.SetFilter(CsLedgerLRec.Received,'%1',true);
-        CsLedgerLRec.SetFilter(CsLedgerLRec."Card Status",'%1',Status);
-        if  CsLedgerLRec.FindFirst then
-        repeat
-          totCardsGVar:=totCardsGVar+CsLedgerLRec.Quantity;
-        until CsLedgerLRec.Next=0;
+        CsLedgerLRec.SetFilter(CsLedgerLRec.Location, "From Location");
+        CsLedgerLRec.SetFilter(CsLedgerLRec."Item No", Item);
+        CsLedgerLRec.SetFilter(CsLedgerLRec.Received, '%1', true);
+        CsLedgerLRec.SetFilter(CsLedgerLRec."Card Status", '%1', Status);
+        if CsLedgerLRec.FindFirst then
+            repeat
+                totCardsGVar := totCardsGVar + CsLedgerLRec.Quantity;
+            until CsLedgerLRec.Next = 0;
 
         CsLedgerLRec.Reset;
-        CsLedgerLRec.SetFilter(CsLedgerLRec.Location,"From Location");
-        CsLedgerLRec.SetFilter(CsLedgerLRec."Item No",Item);
-        CsLedgerLRec.SetFilter(CsLedgerLRec.Received,'%1',false);
-        CsLedgerLRec.SetFilter(CsLedgerLRec."Card Status",'%1',Status);
-        CsLedgerLRec.SetFilter(CsLedgerLRec.Quantity,'<0');
-        if  CsLedgerLRec.FindFirst then
-        repeat
-          totCardsGVar:=totCardsGVar+CsLedgerLRec.Quantity;
-        until CsLedgerLRec.Next=0;
+        CsLedgerLRec.SetFilter(CsLedgerLRec.Location, "From Location");
+        CsLedgerLRec.SetFilter(CsLedgerLRec."Item No", Item);
+        CsLedgerLRec.SetFilter(CsLedgerLRec.Received, '%1', false);
+        CsLedgerLRec.SetFilter(CsLedgerLRec."Card Status", '%1', Status);
+        CsLedgerLRec.SetFilter(CsLedgerLRec.Quantity, '<0');
+        if CsLedgerLRec.FindFirst then
+            repeat
+                totCardsGVar := totCardsGVar + CsLedgerLRec.Quantity;
+            until CsLedgerLRec.Next = 0;
 
-        res:=totCardsGVar;
+        res := totCardsGVar;
     END;
 
-    
+
     PROCEDURE CSTransEntry(card: Integer);
     BEGIN
-      //site stock transaction entry. Added by mnraju on 20-Mar-2014
-      ItemGRec.Reset;
-      if ItemGRec.Get("Item No.") then
-      begin
-      //  IF ItemGRec."Product Group Code"='CPCB' THEN
-        begin
-         reasonGvar:='';
-         StatGVar:='';
-          PMIL.Reset;
-          PMIL.SetFilter(PMIL."Material Issue No.",ServHeader."Material Issue no.");
-          PMIL.SetFilter(PMIL."Item No.","Item No.");
-
-          if PMIL.FindFirst then
-          begin
-            StatGVar:=PMIL.Station;
-          end;
-          PMIHG.Reset;
-          PMIHG.SetFilter(PMIHG."No.",ServHeader."Material Issue no.");
-          if PMIHG.FindFirst then
-            reasonGvar:=PMIHG."Reason Code";
-
-
-
-
-
-           // totCardsGVar:=Cards_Calc("Item No.",StatusGVar::"Non Working");
-           // IF totCardsGVar< 1 THEN
-           //   ERROR('Quantity for Item %1 Status %2 must be equal or less than %3',"Item No.",StatusGVar::"Non Working",FORMAT(totCardsGVar));
-          //   MESSAGE('line');
-
-          //REC1
-          // MESSAGE('ledger');
-          //change status
-
-          if not(("To Location"='SCRAP') or ("To Location"='DAMAGE') or ("To Location"='V-R-L')) then
-          begin
-            CTLedgGRec.Reset;
-            CTLedgGRec.SetFilter(CTLedgGRec."Transaction ID",'SER*');
-            if CTLedgGRec.FindLast then
+        //site stock transaction entry. Added by mnraju on 20-Mar-2014
+        ItemGRec.Reset;
+        if ItemGRec.Get("Item No.") then begin
+            //  IF ItemGRec."Product Group Code"='CPCB' THEN
             begin
-             TransNoGVar:=IncStr(CTLedgGRec."Transaction ID");
-            end
-            else
-              TransNoGVar:='SER0000001';
-            CTLedgGRec.Reset;
-            CTLedgGRec.SetCurrentKey(CTLedgGRec."Entry No.");
-            if CTLedgGRec.FindLast then
-            begin
-              entryNoGVar:=CTLedgGRec."Entry No.";
+                reasonGvar := '';
+                StatGVar := '';
+                PMIL.Reset;
+                PMIL.SetFilter(PMIL."Material Issue No.", ServHeader."Material Issue no.");
+                PMIL.SetFilter(PMIL."Item No.", "Item No.");
+
+                if PMIL.FindFirst then begin
+                    StatGVar := PMIL.Station;
+                end;
+                PMIHG.Reset;
+                PMIHG.SetFilter(PMIHG."No.", ServHeader."Material Issue no.");
+                if PMIHG.FindFirst then
+                    reasonGvar := PMIHG."Reason Code";
+
+
+
+
+
+                // totCardsGVar:=Cards_Calc("Item No.",StatusGVar::"Non Working");
+                // IF totCardsGVar< 1 THEN
+                //   ERROR('Quantity for Item %1 Status %2 must be equal or less than %3',"Item No.",StatusGVar::"Non Working",FORMAT(totCardsGVar));
+                //   MESSAGE('line');
+
+                //REC1
+                // MESSAGE('ledger');
+                //change status
+
+                if not (("To Location" = 'SCRAP') or ("To Location" = 'DAMAGE') or ("To Location" = 'V-R-L')) then begin
+                    CTLedgGRec.Reset;
+                    CTLedgGRec.SetFilter(CTLedgGRec."Transaction ID", 'SER*');
+                    if CTLedgGRec.FindLast then begin
+                        TransNoGVar := IncStr(CTLedgGRec."Transaction ID");
+                    end
+                    else
+                        TransNoGVar := 'SER0000001';
+                    CTLedgGRec.Reset;
+                    CTLedgGRec.SetCurrentKey(CTLedgGRec."Entry No.");
+                    if CTLedgGRec.FindLast then begin
+                        entryNoGVar := CTLedgGRec."Entry No.";
+                    end;
+                    // MESSAGE(FORMAT(entryNoGVar));
+
+                    CTLedgGRec.Init;
+                    CTLedgGRec."Entry No." := entryNoGVar + 1;
+                    CTLedgGRec."Posted By" := UserId;
+                    CTLedgGRec."Posting Date" := Today;
+                    CTLedgGRec.Received := true;
+                    CTLedgGRec.Quantity := -1;
+
+                    CTLedgGRec."Transaction ID" := TransNoGVar;
+                    CTLedgGRec."Transaction Type" := CTHGRec."Transaction Type"::"Change Status";
+                    CTLedgGRec.Location := "From Location";
+                    CTLedgGRec."User ID" := UserId;
+                    CTLedgGRec."Mode of Transport" := CTLedgGRec."Mode of Transport"::"By Hand";
+                    CTLedgGRec."Courier Details" := '';
+                    CTLedgGRec.Remarks := xRec."Document No.";
+                    CTLedgGRec."Line No." := 10000;
+                    CTLedgGRec."Item No" := "Item No.";
+                    CTLedgGRec.Reason := reasonGvar;
+
+                    //IF ("To Location" ='SCRAP') OR ("To Location" ='DAMAGE') OR ("To Location" ='V-R-L') THEN
+                    //  CTLedgGRec."Card Status":=CTLGRec.Status::"Non Working"
+                    // ELSE
+                    CTLedgGRec."Card Status" := CTLGRec.Status::"Non Working";
+
+                    CTLedgGRec.Station := StatGVar;
+                    CTLedgGRec."Received By" := UserId;
+                    CTLedgGRec."Received Date" := Today;
+
+                    CTLedgGRec.Insert;
+
+                    //REC2
+                    entryNoGVar := entryNoGVar + 2;
+                    CTLedgGRec.Init;
+                    CTLedgGRec."Entry No." := entryNoGVar;
+                    CTLedgGRec."Posted By" := UserId;
+                    CTLedgGRec."Posting Date" := Today;
+                    CTLedgGRec.Received := true;
+                    CTLedgGRec."Transaction Type" := CTHGRec."Transaction Type"::"Change Status";
+                    CTLedgGRec.Location := "From Location";
+
+                    //IF ("To Location" ='SCRAP') OR ("To Location" ='DAMAGE') OR ("To Location" ='VLOC') THEN
+                    //  CTLedgGRec."Card Status":=CTLGRec.Status::"Non Working"
+                    //ELSE
+                    CTLedgGRec."Card Status" := CTLGRec.Status::Working;
+
+                    CTLedgGRec.Quantity := 1;
+
+                    CTLedgGRec."Transaction ID" := TransNoGVar;
+
+                    CTLedgGRec."User ID" := UserId;
+                    CTLedgGRec."Mode of Transport" := CTLedgGRec."Mode of Transport"::"By Hand";
+                    CTLedgGRec."Courier Details" := '';
+                    CTLedgGRec.Remarks := xRec."Document No.";
+                    CTLedgGRec."Line No." := 10000;
+                    CTLedgGRec."Item No" := "Item No.";
+                    CTLedgGRec.Reason := reasonGvar;
+                    CTLedgGRec.Station := StatGVar;
+                    CTLedgGRec."Received By" := UserId;
+                    CTLedgGRec."Received Date" := Today;
+
+                    CTLedgGRec.Insert;
+                end;
+
+
+
+                //REC1
+                // MESSAGE('ledger');
+                //
+                CTLedgGRec.Reset;
+                CTLedgGRec.SetFilter(CTLedgGRec."Transaction ID", 'SER*');
+                if CTLedgGRec.FindLast then begin
+                    TransNoGVar := IncStr(CTLedgGRec."Transaction ID");
+                end
+                else
+                    TransNoGVar := 'SER0000001';
+
+                CTLedgGRec.Reset;
+                CTLedgGRec.SetCurrentKey(CTLedgGRec."Entry No.");
+                if CTLedgGRec.FindLast then begin
+                    entryNoGVar := CTLedgGRec."Entry No.";
+                end;
+                // MESSAGE(FORMAT(entryNoGVar));
+
+                CTLedgGRec.Init;
+                CTLedgGRec."Entry No." := entryNoGVar + 1;
+                CTLedgGRec."Posted By" := UserId;
+                CTLedgGRec."Posting Date" := Today;
+                CTLedgGRec.Received := true;
+                CTLedgGRec.Quantity := -1;
+
+                CTLedgGRec."Transaction ID" := TransNoGVar;
+                if card = 0 then
+                    CTLedgGRec."Transaction Type" := CTHGRec."Transaction Type"::"Customer card Transfer"
+                else
+                    CTLedgGRec."Transaction Type" := CTHGRec."Transaction Type"::"Card Transfer";
+
+                CTLedgGRec.Location := "From Location";
+                CTLedgGRec."User ID" := UserId;
+                CTLedgGRec."Mode of Transport" := CTLedgGRec."Mode of Transport"::"By Hand";
+                CTLedgGRec."Courier Details" := '';
+                CTLedgGRec.Remarks := xRec."Document No.";
+                CTLedgGRec."Line No." := 10000;
+                CTLedgGRec."Item No" := "Item No.";
+                CTLedgGRec.Reason := reasonGvar;
+
+                if ("To Location" = 'SCRAP') or ("To Location" = 'DAMAGE') or ("To Location" = 'V-R-L') then
+                    CTLedgGRec."Card Status" := CTLGRec.Status::"Non Working"
+                else
+                    CTLedgGRec."Card Status" := CTLGRec.Status::Working;
+
+
+                CTLedgGRec.Station := StatGVar;
+                CTLedgGRec."Received By" := UserId;
+                CTLedgGRec."Received Date" := Today;
+
+                CTLedgGRec.Insert;
+
+                //REC2
+                entryNoGVar := entryNoGVar + 2;
+                CTLedgGRec.Init;
+                CTLedgGRec."Entry No." := entryNoGVar;
+                CTLedgGRec."Posted By" := UserId;
+                CTLedgGRec."Posting Date" := Today;
+                CTLedgGRec.Received := true;
+                CTLedgGRec.Location := "To Location";
+                if ("To Location" = 'SCRAP') or ("To Location" = 'DAMAGE') or ("To Location" = 'V-R-L') then
+                    CTLedgGRec."Card Status" := CTLGRec.Status::"Non Working"
+                else
+                    CTLedgGRec."Card Status" := CTLGRec.Status::Working;
+
+                CTLedgGRec.Quantity := 1;
+
+                CTLedgGRec."Transaction ID" := TransNoGVar;
+                if card = 0 then
+                    CTLedgGRec."Transaction Type" := CTHGRec."Transaction Type"::"Customer card Transfer"
+                else
+                    CTLedgGRec."Transaction Type" := CTHGRec."Transaction Type"::"Card Transfer";
+
+                CTLedgGRec."User ID" := UserId;
+                CTLedgGRec."Mode of Transport" := CTLedgGRec."Mode of Transport"::"By Hand";
+                CTLedgGRec."Courier Details" := '';
+                CTLedgGRec.Remarks := xRec."Document No.";
+                CTLedgGRec."Line No." := 10000;
+                CTLedgGRec."Item No" := "Item No.";
+                CTLedgGRec.Reason := reasonGvar;
+                CTLedgGRec.Station := StatGVar;
+                CTLedgGRec."Received By" := UserId;
+                CTLedgGRec."Received Date" := Today;
+
+                CTLedgGRec.Insert;
             end;
-           // MESSAGE(FORMAT(entryNoGVar));
-
-            CTLedgGRec.Init;
-            CTLedgGRec."Entry No.":=entryNoGVar+1;
-            CTLedgGRec."Posted By":=UserId;
-            CTLedgGRec."Posting Date":=Today;
-            CTLedgGRec.Received:=true;
-            CTLedgGRec.Quantity:=-1;
-
-            CTLedgGRec."Transaction ID":=TransNoGVar;
-            CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Change Status";
-            CTLedgGRec.Location:="From Location";
-            CTLedgGRec."User ID":=UserId;
-            CTLedgGRec."Mode of Transport":=CTLedgGRec."Mode of Transport"::"By Hand";
-            CTLedgGRec."Courier Details":='';
-            CTLedgGRec.Remarks:=xRec."Document No.";
-            CTLedgGRec."Line No.":=10000;
-            CTLedgGRec."Item No":="Item No.";
-            CTLedgGRec.Reason:=reasonGvar;
-
-            //IF ("To Location" ='SCRAP') OR ("To Location" ='DAMAGE') OR ("To Location" ='V-R-L') THEN
-            //  CTLedgGRec."Card Status":=CTLGRec.Status::"Non Working"
-           // ELSE
-              CTLedgGRec."Card Status":=CTLGRec.Status::"Non Working";
-
-            CTLedgGRec.Station:=StatGVar;
-            CTLedgGRec."Received By":=UserId;
-            CTLedgGRec."Received Date":=Today;
-
-            CTLedgGRec.Insert;
-
-           //REC2
-            entryNoGVar:=entryNoGVar+2;
-            CTLedgGRec.Init;
-            CTLedgGRec."Entry No.":=entryNoGVar;
-            CTLedgGRec."Posted By":=UserId;
-            CTLedgGRec."Posting Date":=Today;
-            CTLedgGRec.Received:=true;
-            CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Change Status";
-            CTLedgGRec.Location:="From Location";
-
-            //IF ("To Location" ='SCRAP') OR ("To Location" ='DAMAGE') OR ("To Location" ='VLOC') THEN
-            //  CTLedgGRec."Card Status":=CTLGRec.Status::"Non Working"
-            //ELSE
-              CTLedgGRec."Card Status":=CTLGRec.Status::Working;
-
-            CTLedgGRec.Quantity:=1;
-
-            CTLedgGRec."Transaction ID":=TransNoGVar;
-
-            CTLedgGRec."User ID":=UserId;
-            CTLedgGRec."Mode of Transport":=CTLedgGRec."Mode of Transport"::"By Hand";
-            CTLedgGRec."Courier Details":='';
-            CTLedgGRec.Remarks:=xRec."Document No.";
-            CTLedgGRec."Line No.":=10000;
-            CTLedgGRec."Item No":="Item No.";
-            CTLedgGRec.Reason:=reasonGvar;
-            CTLedgGRec.Station:=StatGVar;
-            CTLedgGRec."Received By":=UserId;
-            CTLedgGRec."Received Date":=Today;
-
-            CTLedgGRec.Insert;
-          end;
-
-
-
-          //REC1
-          // MESSAGE('ledger');
-          //
-            CTLedgGRec.Reset;
-            CTLedgGRec.SetFilter(CTLedgGRec."Transaction ID",'SER*');
-            if CTLedgGRec.FindLast then
-            begin
-             TransNoGVar:=IncStr(CTLedgGRec."Transaction ID");
-            end
-            else
-              TransNoGVar:='SER0000001';
-
-          CTLedgGRec.Reset;
-          CTLedgGRec.SetCurrentKey(CTLedgGRec."Entry No.");
-          if CTLedgGRec.FindLast then
-          begin
-            entryNoGVar:=CTLedgGRec."Entry No.";
-          end;
-         // MESSAGE(FORMAT(entryNoGVar));
-
-          CTLedgGRec.Init;
-          CTLedgGRec."Entry No.":=entryNoGVar+1;
-          CTLedgGRec."Posted By":=UserId;
-          CTLedgGRec."Posting Date":=Today;
-          CTLedgGRec.Received:=true;
-          CTLedgGRec.Quantity:=-1;
-
-          CTLedgGRec."Transaction ID":=TransNoGVar;
-          if card=0 then
-            CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Customer card Transfer"
-          else
-            CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Card Transfer";
-
-          CTLedgGRec.Location:="From Location";
-          CTLedgGRec."User ID":=UserId;
-          CTLedgGRec."Mode of Transport":=CTLedgGRec."Mode of Transport"::"By Hand";
-          CTLedgGRec."Courier Details":='';
-          CTLedgGRec.Remarks:=xRec."Document No.";
-          CTLedgGRec."Line No.":=10000;
-          CTLedgGRec."Item No":="Item No.";
-          CTLedgGRec.Reason:=reasonGvar;
-
-          if ("To Location" ='SCRAP') or ("To Location" ='DAMAGE') or ("To Location" ='V-R-L') then
-            CTLedgGRec."Card Status":=CTLGRec.Status::"Non Working"
-          else
-            CTLedgGRec."Card Status":=CTLGRec.Status::Working;
-
-
-          CTLedgGRec.Station:=StatGVar;
-          CTLedgGRec."Received By":=UserId;
-          CTLedgGRec."Received Date":=Today;
-
-          CTLedgGRec.Insert;
-
-         //REC2
-          entryNoGVar:=entryNoGVar+2;
-          CTLedgGRec.Init;
-          CTLedgGRec."Entry No.":=entryNoGVar;
-          CTLedgGRec."Posted By":=UserId;
-          CTLedgGRec."Posting Date":=Today;
-          CTLedgGRec.Received:=true;
-          CTLedgGRec.Location:="To Location";
-          if ("To Location" ='SCRAP') or ("To Location" ='DAMAGE') or ("To Location" ='V-R-L') then
-            CTLedgGRec."Card Status":=CTLGRec.Status::"Non Working"
-          else
-            CTLedgGRec."Card Status":=CTLGRec.Status::Working;
-
-          CTLedgGRec.Quantity:=1;
-
-          CTLedgGRec."Transaction ID":=TransNoGVar;
-          if card=0 then
-            CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Customer card Transfer"
-          else
-            CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Card Transfer";
-
-          CTLedgGRec."User ID":=UserId;
-          CTLedgGRec."Mode of Transport":=CTLedgGRec."Mode of Transport"::"By Hand";
-          CTLedgGRec."Courier Details":='';
-          CTLedgGRec.Remarks:=xRec."Document No.";
-          CTLedgGRec."Line No.":=10000;
-          CTLedgGRec."Item No":="Item No.";
-          CTLedgGRec.Reason:=reasonGvar;
-          CTLedgGRec.Station:=StatGVar;
-          CTLedgGRec."Received By":=UserId;
-          CTLedgGRec."Received Date":=Today;
-
-          CTLedgGRec.Insert;
         end;
-      end;
         //end of mnraju
     END;
 
-    
+
     LOCAL PROCEDURE mailsonaccountstatuschange();
+    var
+        EmailMessage: Codeunit "Email Message";
+        Email: Codeunit Email;
+        Recipients: List of [Text];
+        Subject: Text;
+        Body: Text;
     BEGIN
-      Mail_From :='erp@efftronics.com';
-      Mail_To := 'vishnupriya@efftronics.com';
-      Subject := 'Reg: Service Card Account Change '+Rec."Document No.";
-      Body:='';
-      SMTP_MAIL.CreateMessage('ERP',Mail_From,Mail_To,Subject,Body,true);
-      SMTP_MAIL.AppendBody('<html><head><style> divone{background-color: white; width: 900px; padding: 20px; border-style:solid ; border-color:#666699;  margin: 20px;} </style></head>');
-      SMTP_MAIL.AppendBody('<body><div style="border-color:#666699;  margin: 20px; border-width:15px;   border-style:solid; padding: 20px; width: 800px;"><label><font size="6">Service Order Account Tick Mark</font></label>');
-      SMTP_MAIL.AppendBody('<hr style=solid; color= #3333CC>');
-      
-      /* SMTP_MAIL.AppendBody('<h>Dear Manufacturing Dept. ,</h><br><br>');
-      SMTP_MAIL.AppendBody('<h><b>Responsible Dept: <font color=red>Manufacturing.</b></font></h><br>');
-      SMTP_MAIL.AppendBody('<P> The below are details of RPO without Material Issues and have prod start date < today, </P>'); */
-      
-      SMTP_MAIL.AppendBody('<table border="1" style="border-collapse:collapse; width:100%; font-size:10pt;"><tr><th >User id</th><th >Service Order Number</th><th >service Item Number</th><th >Tickmark</th></tr>');
-      //SMTP_MAIL.AppendBody('<th>Schedule Line No.</th><th>Quantity</th><th>Prod Start Date</th></tr>');
-      SMTP_MAIL.AppendBody('<tr><td>'+UserId+'</td>');
-      SMTP_MAIL.AppendBody('<td>'+Rec."Document No."+'</td>');
-      SMTP_MAIL.AppendBody('<td>'+Rec."Service Item No."+'</td>');
-      SMTP_MAIL.AppendBody('<td>'+Format(Rec.Account)+'</td></tr></table>');
-      SMTP_MAIL.AppendBody('<td>'+Format(Rec."Repair Status Code")+'</td></tr></table>');
-      SMTP_MAIL.Send;
+        /* Mail_From :='erp@efftronics.com';
+        Mail_To := 'vishnupriya@efftronics.com';
+        Subject := 'Reg: Service Card Account Change '+Rec."Document No.";
+        Body:='';
+        SMTP_MAIL.CreateMessage('ERP',Mail_From,Mail_To,Subject,Body,true);
+        SMTP_MAIL.AppendBody('<html><head><style> divone{background-color: white; width: 900px; padding: 20px; border-style:solid ; border-color:#666699;  margin: 20px;} </style></head>');
+        SMTP_MAIL.AppendBody('<body><div style="border-color:#666699;  margin: 20px; border-width:15px;   border-style:solid; padding: 20px; width: 800px;"><label><font size="6">Service Order Account Tick Mark</font></label>');
+        SMTP_MAIL.AppendBody('<hr style=solid; color= #3333CC>');
+        {
+         SMTP_MAIL.AppendBody('<h>Dear Manufacturing Dept. ,</h><br><br>');
+        SMTP_MAIL.AppendBody('<h><b>Responsible Dept: <font color=red>Manufacturing.</b></font></h><br>');
+        SMTP_MAIL.AppendBody('<P> The below are details of RPO without Material Issues and have prod start date < today, </P>'); 
+        }
+        SMTP_MAIL.AppendBody('<table border="1" style="border-collapse:collapse; width:100%; font-size:10pt;"><tr><th >User id</th><th >Service Order Number</th><th >service Item Number</th><th >Tickmark</th></tr>');
+        //SMTP_MAIL.AppendBody('<th>Schedule Line No.</th><th>Quantity</th><th>Prod Start Date</th></tr>');
+        SMTP_MAIL.AppendBody('<tr><td>'+UserId+'</td>');
+        SMTP_MAIL.AppendBody('<td>'+Rec."Document No."+'</td>');
+        SMTP_MAIL.AppendBody('<td>'+Rec."Service Item No."+'</td>');
+        SMTP_MAIL.AppendBody('<td>'+Format(Rec.Account)+'</td></tr></table>');
+        SMTP_MAIL.AppendBody('<td>'+Format(Rec."Repair Status Code")+'</td></tr></table>');
+        SMTP_MAIL.Send;  */
+
+
+        Recipients.Add('erp@efftronics.com');
+        Recipients.Add('vishnupriya@efftronics.com');
+        Subject := 'Reg: Service Card Account Change ' + Rec."Document No.";
+        Body := '';
+        EmailMessage.Create(Recipients, Subject, Body, true);
+        Body := '<html><head><style> divone{background-color: white; width: 900px; padding: 20px; border-style:solid ; border-color:#666699;  margin: 20px;} </style></head>';
+        Body := '<body><div style="border-color:#666699;  margin: 20px; border-width:15px;   border-style:solid; padding: 20px; width: 800px;"><label><font size="6">Service Order Account Tick Mark</font></label>';
+        Body := '<hr style=solid; color= #3333CC>';
+
+        /* Body:='<h>Dear Manufacturing Dept. ,</h><br><br>';
+        Body:='<h><b>Responsible Dept: <font color=red>Manufacturing.</b></font></h><br>';
+        Body:='<P> The below are details of RPO without Material Issues and have prod start date < today, </P>'; */
+
+        Body := '<table border="1" style="border-collapse:collapse; width:100%; font-size:10pt;"><tr><th >User id</th><th >Service Order Number</th><th >service Item Number</th><th >Tickmark</th></tr>';
+        //Body:='<th>Schedule Line No.</th><th>Quantity</th><th>Prod Start Date</th></tr>';
+        Body := '<tr><td>' + UserId + '</td>';
+        Body := '<td>' + Rec."Document No." + '</td>';
+        Body := '<td>' + Rec."Service Item No." + '</td>';
+        Body := '<td>' + Format(Rec.Account) + '</td></tr></table>';
+        Body := '<td>' + Format(Rec."Repair Status Code") + '</td></tr></table>';
+        Email.Send(EmailMessage, Enum::"Email Scenario"::Default);
+
     END;
 }
 
