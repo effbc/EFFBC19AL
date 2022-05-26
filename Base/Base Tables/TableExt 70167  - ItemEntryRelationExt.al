@@ -1,36 +1,48 @@
 tableextension 70167 ItemEntryRelationExt extends "Item Entry Relation"
 {
-    // version NAVW19.00.00.45778
 
     fields
     {
 
-        //Unsupported feature: Change OptionString on ""Source Subtype"(Field 11)". Please convert manually.
-
-    }
-    keys
-    {
-
-        //Unsupported feature: Deletion on ""Item Entry No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Source ID,Source Type,Source Subtype,Source Ref. No.,Source Prod. Order Line,Source Batch Name"(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Order No.,Order Line No."(Key)". Please convert manually.
-
-        key(Key1; "Item Entry No.")
-        {
-        }
-        key(Key2; "Source ID", "Source Type", "Source Subtype", "Source Ref. No.", "Source Prod. Order Line", "Source Batch Name")
-        {
-        }
-        key(Key3; "Order No.", "Order Line No.")
-        {
-        }
     }
 
-    //Unsupported feature: PropertyChange. Please convert manually.
+    PROCEDURE "--B2B--"();
+    BEGIN
+    END;
+
+
+    PROCEDURE "TransferFieldsMat.IssueLine"(VAR PostedMaterialIssueLine: Record "Posted Material Issues Line");
+    BEGIN
+        "Source Type" := DATABASE::"Posted Material Issues Line";
+        "Source Subtype" := 0;
+        "Source ID" := PostedMaterialIssueLine."Document No.";
+        "Source Batch Name" := '';
+        "Source Prod. Order Line" := 0;
+        "Source Ref. No." := PostedMaterialIssueLine."Line No.";
+        "Order No." := PostedMaterialIssueLine."Material Issue No.";
+        "Order Line No." := PostedMaterialIssueLine."Material Issue Line No.";
+    END;
+
+
+    PROCEDURE "--B2BSP--"();
+    BEGIN
+    END;
+
+
+    PROCEDURE TransferFieldsPostedMTLine(VAR ScheduleComp: Record Schedule2);
+    BEGIN
+        "Source Type" := DATABASE::Schedule2;
+        "Source Subtype" := 0;
+        "Source ID" := ScheduleComp."Document No.";
+        "Source Batch Name" := '';
+        "Source Prod. Order Line" := ScheduleComp."Document Line No.";
+        "Source Ref. No." := ScheduleComp."Line No.";
+
+        "Order No." := ScheduleComp."Document No.";
+        "Order Line No." := ScheduleComp."Document Line No.";
+    END;
+
+
 
 }
 
