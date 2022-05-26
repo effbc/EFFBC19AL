@@ -49,5 +49,18 @@ codeunit 50300 TablesCodeUnit
         //B2B
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Service Item Line", 'OnValidateServiceItemNoOnBeforeValidateServicePeriod', '', false, false)]
+    local procedure OnValidateServiceItemNoOnBeforeValidateServicePeriod(var ServiceItemLine: Record "Service Item Line"; xServiceItemLine: Record "Service Item Line"; CurrentFieldNo: Integer; var IsHandled: Boolean)
+    var
+        Item: Record Item;
+    begin
+        Item.SetFilter(Item."No.", ServiceItemLine."Item No.");
+        if Item.Find('-') then begin
+            ServiceItemLine."Unit cost" := Item."Avg Unit Cost";
+            ServiceItemLine.Description := Item.Description;
+        end;
+        //b2b-eff
+    end;
+
 
 }
