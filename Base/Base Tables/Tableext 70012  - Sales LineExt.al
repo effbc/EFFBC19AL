@@ -680,6 +680,20 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         end;
     end;
 
+    trigger OnAfterModify()
+    var
+        myInt: Integer;
+    begin
+        SalesHeader.SetRange("Document Type", "Document Type");
+        SalesHeader.SetRange("No.", "Document No.");
+        if SalesHeader.Find('-') then begin
+            "Line Amount(LOA)" := "Unitcost(LOA)" * Quantity;
+            "OutStanding(LOA)" := "Unitcost(LOA)" * (Quantity - "Quantity Invoiced");
+        end;
+        //ANIL13/10/09
+        // "OutStanding(LOA)":="Unitcost(LOA)"*(Quantity-"Quantity Invoiced");
+    end;
+
     trigger OnBeforeDelete()
     var
         DesignworksheetHeader: Record "Design Worksheet Header";
@@ -966,7 +980,7 @@ Schedule.DELETEALL(TRUE);} */// commente dbny sujani in order to carry fwd the s
                         ExcPostingSetup.SetRange(ExcPostingSetup."Excise Prod. Posting Group", SL."Excise Prod. Posting Group");
                         ExcPostingSetup.SetFilter(ExcPostingSetup."From Date", '<=%1', Today());
                         if ExcPostingSetup.FindLast then
-                            ExcAmt := (SL."MRP Price" * (100 - SL."Abatement %") / 100) * ExcPostingSetup."BED %" / 100
+                            ExcPostingSetup.ExcAmt := (SL."MRP Price" * (100 - SL."Abatement %") / 100) * ExcPostingSetup."BED %" / 100
                         else
                             ExcAmt := (SL."MRP Price" * (100 - SL."Abatement %") / 100) * 12.5 / 100;
                         MDP := SL."MRP Price" * Discnt_Perntg;
