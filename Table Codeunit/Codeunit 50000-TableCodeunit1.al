@@ -109,6 +109,14 @@ codeunit 50001 "Tables Codeunit"
 
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnUpdatePurchLinesByFieldNoOnBeforeLineModify', '', false, false)]
+   local procedure OnUpdatePurchLinesByFieldNoOnBeforeLineModify(var PurchaseHeader: Record "Purchase Header"; var xPurchaseHeader: Record "Purchase Header"; PurchaseLine: Record "Purchase Line")
+    begin
+        PurchaseLine."Form Code" := "Form Code";//B2B
+        ELSE
+        PurchaseLine."Form Code" := '';
+    end;
+
 
 
 
