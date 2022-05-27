@@ -73,5 +73,16 @@ codeunit 50300 TablesCodeUnit
     end;
 
 
+    //Table - 7317 Warehouse Receipt Line
+
+    [EventSubscriber(ObjectType::Table, Database::"Warehouse Receipt Line", 'OnBeforeInitOutstandingQtys', '', false, false)]
+    local procedure OnBeforeInitOutstandingQtys(var WarehouseReceiptLine: Record "Warehouse Receipt Line"; CurrentFieldNo: Integer; var IsHandled: Boolean)
+    begin
+        //QC
+        WarehouseReceiptLine."Qty. Sending To Quality" := WarehouseReceiptLine.Quantity;
+        //QC
+    end;
+
+
 
 }
