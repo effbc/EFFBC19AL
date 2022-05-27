@@ -1,4 +1,4 @@
-tableextension 70150 WorkCenterExt extends "Work Center"
+tableextension 70120 WorkCenterExt extends "Work Center"
 {
     fields
     {
