@@ -84,5 +84,24 @@ codeunit 50300 TablesCodeUnit
     end;
 
 
+    //Table - 99000764 Routing Line
+
+    [EventSubscriber(ObjectType::Table, Database::"Routing Line", 'OnAfterMachineCtrTransferFields', '', false, false)]
+    local procedure OnAfterMachineCtrTransferFields(var RoutingLine: Record "Routing Line"; WorkCenter: Record "Work Center"; MachineCenter: Record "Machine Center")
+    begin
+        //Cost1.0
+        RoutingLine."Man Cost" := RoutingLine."Run Time" * MachineCenter."Unit Cost";
+        //Cost1.0
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Routing Line", 'OnAfterWorkCenterTransferFields', '', false, false)]
+    local procedure OnAfterWorkCenterTransferFields(var RoutingLine: Record "Routing Line"; WorkCenter: Record "Work Center")
+    begin
+        //Cost1.0
+        RoutingLine."Man Cost" := RoutingLine."Run Time" * WorkCenter."Unit Cost";
+        //Cost1.0
+    end;
+
+
 
 }
