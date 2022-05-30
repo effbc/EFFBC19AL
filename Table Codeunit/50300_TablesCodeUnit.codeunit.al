@@ -102,6 +102,87 @@ codeunit 50300 TablesCodeUnit
         //Cost1.0
     end;
 
+    //Table - 99000772 Production BOM Line
+
+    [EventSubscriber(ObjectType::Table, Database::"Production BOM Line", 'OnBeforeTestStatus', '', false, false)]
+    local procedure OnBeforeTestStatus(var ProductionBOMLine: Record "Production BOM Line"; var IsHandled: Boolean)
+    begin
+        if not ((UserId = 'SUPER') or (UserId = '10RD010')) then
+            IsHandled := false;
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Production BOM Line", 'OnAfterTestStatus', '', false, false)]
+    local procedure OnAfterTestStatus(ProductionBOMLine: Record "Production BOM Line"; ProductionBOMHeader: Record "Production BOM Header"; ProductionBOMVersion: Record "Production BOM Version")
+    var
+        Item: Record Item;
+    begin
+        //>> Added by vishnu on 05-12-2018 to prevent the BOM Picking for PCB abd Fproducts
+        if ProductionBOMLine.Type = ProductionBOMLine.Type::"Production BOM" then begin
+            if Item.Get(Item."No.") then
+                Error('Type Should be Item for %1', Item."No.");
+        end;
+        //>> Ended by vishnu on 05-12-2018
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Production BOM Line", 'OnValidateNoOnAfterAssignItemFields', '', false, false)]
+    local procedure OnValidateNoOnAfterAssignItemFields(var ProductionBOMLine: Record "Production BOM Line"; Item: Record Item; var xProductionBOMLine: Record "Production BOM Line"; CallingFieldNo: Integer)
+    var
+        ProdBOMHeader: Record "Production BOM Header";
+    begin
+        ProductionBOMLine."Description 2" := Item."Description 2";
+        //NSS 030907
+        ProductionBOMLine.PCB := Item.PCB;
+        //NSS 030907
+        Item.TestField("Base Unit of Measure");
+        Item.TestField("Item Tracking Code");     //added by pranavi on 08-09-2015
+        ProductionBOMLine."Unit of Measure Code" := Item."Base Unit of Measure";
+        ProductionBOMLine."Type of Solder" := Item."Type of Solder";
+        //"Shelf No." := Item."Shelf No.";
+        ProductionBOMLine."No. of Pins" := Item."No. of Pins" * ProductionBOMLine."Quantity per";
+        ProductionBOMLine."No. of Soldering Points" := Item."No. of Soldering Points" * (ProductionBOMLine."Quantity per" - ProductionBOMLine."Scrap Quantity");
+        ProductionBOMLine."No. of Opportunities" := Item."No. of Opportunities" * ProductionBOMLine."Quantity per";
+        ProductionBOMLine.Make := Item.Make;
+        ProductionBOMLine."Part number" := Item."Part Number";
+        ProductionBOMLine."Storage Temperature" := Item."Storage Temperature";
+        ProductionBOMLine.Package := Item.Package;
+
+
+        //cost1.0
+        if Item."Production BOM No." = '' then begin
+            ProductionBOMLine."Avg Cost" := Item."Avg Unit Cost";
+            ProductionBOMLine."Tot Avg Cost" := ProductionBOMLine."Avg Cost" * ProductionBOMLine."Quantity per";
+        end else begin
+            ProdBOMHeader.Get(ProdBOMHeader."No.");
+            ProdBOMHeader.TestField("Unit of Measure Code");
+            ProdBOMHeader.CalcFields(ProdBOMHeader."BOM Cost", ProdBOMHeader."BOM Manufacturing Cost");
+            ProductionBOMLine."No. of Soldering Points" := ProdBOMHeader."Total Soldering Points" * ProductionBOMLine."Quantity per";
+            ProductionBOMLine."No. of SMD Points" := ProdBOMHeader."Total Soldering Points SMD" * ProductionBOMLine."Quantity per";
+            ProductionBOMLine."No. of DIP Point" := ProdBOMHeader."Total Soldering Points DIP" * ProductionBOMLine."Quantity per";
+
+            ProductionBOMLine."Avg Cost" := ProdBOMHeader."BOM Cost";
+            ProductionBOMLine."Tot Avg Cost" := ProductionBOMLine."Avg Cost" * ProductionBOMLine."Quantity per";
+            if ProductionBOMLine.Type = ProductionBOMLine.Type::"Production BOM" then begin
+                ProductionBOMLine."Manufacturing Cost" := ProdBOMHeader."BOM Manufacturing Cost";
+                ProductionBOMLine."Tot Avg Cost" := ProductionBOMLine."Avg Cost" * ProductionBOMLine."Quantity per";
+            end;
+        end;
+        if Item."Routing No." <> '' then
+            ProductionBOMLine."Manufacturing Cost" := Item."Manufacturing Cost";
+        //Cost1.0
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Production BOM Line", 'OnValidateNoOnAfterAssignProdBOMFields', '', false, false)]
+    local procedure OnValidateNoOnAfterAssignProdBOMFields(var ProductionBOMLine: Record "Production BOM Line"; ProductionBOMHeader: Record "Production BOM Header"; var xProductionBOMLine: Record "Production BOM Line"; CallingFieldNo: Integer)
+    var
+        ProdBOMHeader: Record "Production BOM Header";
+    begin
+        //Cost1.0
+        ProdBOMHeader.CalcFields(ProdBOMHeader."BOM Cost");
+        ProductionBOMLine."Avg Cost" := ProdBOMHeader."BOM Cost";
+        ProductionBOMLine."Tot Avg Cost" := ProductionBOMLine."Avg Cost" * ProductionBOMLine."Quantity per";
+        ProductionBOMLine."Manufacturing Cost" := ProdBOMHeader."BOM Manufacturing Cost";
+        //Cost1.0
+    end;
 
 
 }

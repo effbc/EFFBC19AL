@@ -1,7 +1,5 @@
 tableextension 70068 SegmentLineExt extends "Segment Line"
 {
-
-
     fields
     {
         field(50000; "OutWard No."; Code[30])

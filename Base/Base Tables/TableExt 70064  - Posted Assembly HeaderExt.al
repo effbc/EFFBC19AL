@@ -2,8 +2,6 @@ tableextension 70064 PostedAssemblyHeaderExt extends "Posted Assembly Header"
 {
     fields
     {
-
-        
         field(60090; "Dimension Corrected"; Boolean)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
