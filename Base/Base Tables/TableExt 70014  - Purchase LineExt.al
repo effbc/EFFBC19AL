@@ -1,6 +1,5 @@
 tableextension 70014 PurchaselineExt extends "Purchase Line"
 {
-    // version NAVW19.00.00.51947,NAVIN9.00.00.51947,TFS225680,QC1.0,QCB2B1.2,POAU,PO1.0,Rev01,SQL,TDS-REGEF-194Q
 
     fields
     {
@@ -8,37 +7,22 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         {
             OptionCaptionML = ENU = 'Quote,Order,Invoice,Credit Memo,Blanket Order,Return Order,Enquiry', ENN = 'Quote,Order,Invoice,Credit Memo,Blanket Order,Return Order,Enquiry';
 
-            //Unsupported feature: Change OptionString on ""Document Type"(Field 1)". Please convert manually.
 
         }
         modify("Buy-from Vendor No.")
         {
             CaptionML = ENU = 'Vendor No.', ENN = 'Vendor No.';
 
-            //Unsupported feature: Change Editable on ""Buy-from Vendor No."(Field 2)". Please convert manually.
 
         }
         modify("Document No.")
         {
 
-            //Unsupported feature: Change TableRelation on ""Document No."(Field 3)". Please convert manually.
 
             CaptionML = ENU = 'Purchase Order No.', ENN = 'Purchase Order No.';
         }
 
-        //Unsupported feature: Change OptionString on "Type(Field 5)". Please convert manually.
 
-        modify("No.")
-        {
-
-            //Unsupported feature: Change TableRelation on ""No."(Field 6)". Please convert manually.
-
-
-            //Unsupported feature: Change ValidateTableRelation on ""No."(Field 6)". Please convert manually.
-
-            CaptionML = ENU = 'Item No.', ENN = 'Item No.';
-            CaptionClass = GetCaptionClass(FieldNo("No."));
-        }
 
 
 
@@ -55,7 +39,6 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         modify("Prepmt. Amt. Inv.")
         {
 
-            //Unsupported feature: Change Editable on ""Prepmt. Amt. Inv."(Field 111)". Please convert manually.
 
             CaptionClass = GetCaptionClass(FieldNo("Prepmt. Amt. Inv."));
         }
@@ -69,7 +52,6 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         modify("Prepmt Amt Deducted")
         {
 
-            //Unsupported feature: Change Editable on ""Prepmt Amt Deducted"(Field 122)". Please convert manually.
 
             CaptionClass = GetCaptionClass(FieldNo("Prepmt Amt Deducted"));
         }
@@ -287,6 +269,8 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
             FieldClass = FlowField;
 
             trigger OnLookup();
+            var
+                ItemLedgEntry: Record "Item Ledger Entry";
             begin
                 ItemLedgEntry.Reset;
                 ItemLedgEntry.SetCurrentKey("Item No.", "Variant Code", Open, Positive, "Location Code", "Posting Date",
@@ -315,6 +299,8 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
             FieldClass = FlowField;
 
             trigger OnLookup();
+            var
+                ItemLedgEntry: Record "Item Ledger Entry";
             begin
                 ItemLedgEntry.Reset;
                 ItemLedgEntry.SetCurrentKey("Item No.", "Variant Code", Open, Positive, "Location Code", "Posting Date",
@@ -343,6 +329,8 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
             FieldClass = FlowField;
 
             trigger OnLookup();
+            var
+                ItemLedgEntry: Record "Item Ledger Entry";
             begin
                 ItemLedgEntry.Reset;
                 ItemLedgEntry.SetCurrentKey("Item No.", "Variant Code", Open, Positive, "Location Code", "Posting Date",
@@ -371,6 +359,8 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
             FieldClass = FlowField;
 
             trigger OnLookup();
+            var
+                ItemLedgEntry: Record "Item Ledger Entry";
             begin
                 ItemLedgEntry.Reset;
                 ItemLedgEntry.SetCurrentKey("Item No.", "Variant Code", Open, Positive, "Location Code", "Posting Date",
@@ -394,7 +384,7 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
 
             trigger OnValidate();
             begin
-                //>>Added by Pranavi on 07-Mar-2017 For updating Vendor Mat. Disp Date
+                // Added by Pranavi on 07-Mar-2017 For updating Vendor Mat.Disp Date
                 if "Mat. Dispatched" then
                     Error('You cannot change the Vendor Mat. Dispatch date when material is dispatched!');
 
@@ -538,11 +528,13 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
                         ENN = 'Date Filter';
             FieldClass = FlowFilter;
         }
+
         modify("No.")
         {
             trigger OnBeforeValidate()
             var
                 myInt: Integer;
+                IRH: Record "Inspection Receipt Header";
             begin
                 // ----------------------- Old Code ------------------------- Commented by Vishnu Priya on 30-06-2020
 
@@ -578,6 +570,7 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
     trigger OnBeforeModify()
     var
         myInt: Integer;
+        PurchLine2: Record "Purchase Line";
     begin
         //Cashflow_Modification; comentted by vijaya on 02-07-2018 for need to editable for item to be recieved status
         if ("Document Type" = "Document Type"::"Blanket Order") and
@@ -598,6 +591,9 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
     trigger OnBeforeDelete()
     var
         myInt: Integer;
+        DefermentBuffer: Record "Deferment Buffer";
+        DetailTaxEntryBuffer: Record "Detailed Tax Entry Buffer";
+        PurchHeader: Record "Purchase Header";
     begin
         // added by vishnu Priya on 31-10-2020
         if Rec."Quantity Received" > 0 then
@@ -614,8 +610,472 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
     end;
 
 
+
+
+
+    PROCEDURE UpdateQualityPurchLines();
+    VAR
+        SpecHeader: Record "Specification Header";
+        ActiveVersionCode: Code[20];
+    BEGIN
+        "Spec ID" := VendorQualityApprovalSpecId;
+        //Hot Fix 1.0
+        if "Spec ID" = '' then begin
+            "Spec ID" := Item."Spec ID";
+            if "Spec ID" <> '' then
+                "Spec Version" := SpecHeader.GetSpecVersion("Spec ID", WorkDate, true);
+        end;
+        //Hot Fix 1.0
+
+        "QC Enabled" := Item."QC Enabled";
+        GetQCSetup;
+        if (QualityCtrlSetup."Quality Before Receipt") and (Item."QC Enabled") then
+            "Quality Before Receipt" := true;
+    END;
+
+
+    PROCEDURE CreateInspectionDataSheets();
+    VAR
+        InspectDataSheets: Codeunit "Inspection Data Sheets";
+        PurchHeader: Record "Purchase Header";
+        WhseRcptLine: Record "Warehouse Receipt Line";
+    BEGIN
+        PurchHeader.Get(PurchHeader."Document Type"::Order, "Document No.");
+        PurchHeader.TestField(Status, PurchHeader.Status::Released);
+        TestField("Quality Before Receipt", true);
+        TestField("Qty. Sending To Quality");
+
+        WhseRcptLine.SetRange("Source Type", 39);
+        WhseRcptLine.SetRange("Source Subtype", 1);
+        WhseRcptLine.SetRange("Source Document", WhseRcptLine."Source Document"::"Purchase Order");
+        WhseRcptLine.SetRange("Source No.", "Document No.");
+        WhseRcptLine.SetRange("Source Line No.", "Line No.");
+        if WhseRcptLine.Find('-') then
+            Error('You can not create Inspection Data Sheets when Warehouse Receipt lines exists');
+
+        InspectDataSheets.CreatePurLineInspectDataSheet(PurchHeader, Rec);
+    END;
+
+
+    PROCEDURE ShowDataSheets();
+    VAR
+        InspectDataSheet: Record "Inspection Datasheet Header";
+    BEGIN
+        InspectDataSheet.SetRange("Order No.", "Document No.");
+        InspectDataSheet.SetRange("Purch Line No", "Line No.");
+        InspectDataSheet.SetRange("Source Type", InspectDataSheet."Source Type"::"In Bound");
+        PAGE.Run(PAGE::"Inspection Data Sheet List", InspectDataSheet);
+    END;
+
+
+    PROCEDURE ShowPostDataSheets();
+    VAR
+        PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
+    BEGIN
+        PostInspectDataSheet.SetRange("Order No.", "Document No.");
+        PostInspectDataSheet.SetRange("Purch Line No", "Line No.");
+        PostInspectDataSheet.SetRange("Source Type", PostInspectDataSheet."Source Type"::"In Bound");
+        PAGE.Run(PAGE::"Posted Inspect Data Sheet List", PostInspectDataSheet);
+    END;
+
+
+    PROCEDURE ShowInspectReceipt();
+    VAR
+        InspectionReceipt: Record "Inspection Receipt Header";
+    BEGIN
+        InspectionReceipt.SetRange("Order No.", "Document No.");
+        InspectionReceipt.SetRange("Purch Line No", "Line No.");
+        InspectionReceipt.SetRange("Source Type", InspectionReceipt."Source Type"::"In Bound");
+        InspectionReceipt.SetRange(Status, false);
+        PAGE.Run(PAGE::"Inspection Receipt List", InspectionReceipt);
+    END;
+
+
+    PROCEDURE ShowPostInspectReceipt();
+    VAR
+        InspectionReceipt: Record "Inspection Receipt Header";
+    BEGIN
+        InspectionReceipt.SetRange("Order No.", "Document No.");
+        InspectionReceipt.SetRange("Purch Line No", "Line No.");
+        InspectionReceipt.SetRange("Source Type", InspectionReceipt."Source Type"::"In Bound");
+        InspectionReceipt.SetRange(Status, true);
+        PAGE.Run(PAGE::"Inspection Receipt List", InspectionReceipt);
+    END;
+
+
+    PROCEDURE GetQCSetup();
+    BEGIN
+        if not QCSetupRead then
+            QualityCtrlSetup.Get;
+        QCSetupRead := true;
+    END;
+
+
+    PROCEDURE VendorQualityApprovalSpecId(): Code[20];
+    VAR
+        VendorItemQA: Record "Vendor Item Quality Approval";
+        PurchHeader: Record "Purchase Header";
+        PostingDate: Date;
+    BEGIN
+        VendorItemQA.SetRange("Vendor No.", "Buy-from Vendor No.");
+        VendorItemQA.SetRange("Item No.", "No.");
+        if VendorItemQA.Find('-') then begin
+            PurchHeader.Get(PurchHeader."Document Type"::Order, "Document No.");
+            PostingDate := PurchHeader."Posting Date";
+            repeat
+                if (PostingDate > VendorItemQA."Starting Date") and (PostingDate < VendorItemQA."Ending Date") then
+                    exit(VendorItemQA."Spec Id");
+            until VendorItemQA.Next = 0;
+        end;
+    END;
+
+
+    PROCEDURE CancelInspection(VAR QualityStatus: Text[50]);
+    VAR
+        IDS: Record "Inspection Datasheet Header";
+        IDSL: Record "Inspection Datasheet Line";
+        QILE: Record "Quality Item Ledger Entry";
+        PIDS: Record "Posted Inspect DatasheetHeader";
+        PIDSL: Record "Posted Inspect Datasheet Line";
+    BEGIN
+        if "Quality Before Receipt" = true then begin
+            IDS.SetRange("Order No.", "Document No.");
+            IDS.SetRange("Purch Line No", "Line No.");
+            if not IDS.FindFirst then
+                Error('You can not Cancel the Quality Bcoz the IDS is Alreadey Posted')
+            else begin
+                PIDS.TransferFields(IDS);
+                PIDS."Quality Status" := PIDS."Quality Status"::Cancel;
+                PIDS.Insert;
+                IDS.Delete;
+                IDSL.SetRange("Document No.", IDS."No.");
+                if IDSL.FindFirst then begin
+                    repeat
+                        PIDSL.TransferFields(IDSL);
+                        PIDSL.Insert;
+                    until IDSL.Next = 0;
+                    IDSL.DeleteAll;
+                end;
+                if QualityStatus = 'Cancel' then begin
+                    //"Quality Status" := "Quality Status" :: Cancel;
+                    "Quality Before Receipt" := false;
+                    "Qty. Sending To Quality" := 0;
+                    "Qty. Sent To Quality" := 0;
+                    Modify;
+                end;
+            end;
+        end else begin
+            IDS.SetRange("Order No.", "Document No.");
+            IDS.SetRange("Purch Line No", "Line No.");
+            if not IDS.FindFirst then
+                Error('You Can not Cancel the Quality Bcoz the IDS is Alreadey Posted')
+            else begin
+                PIDS.TransferFields(IDS);
+                PIDS."Quality Status" := PIDS."Quality Status"::Cancel;
+                PIDS.Insert;
+                IDS.Delete;
+                IDSL.SetRange("Document No.", IDS."No.");
+                if IDSL.FindFirst then begin
+                    repeat
+                        PIDSL.TransferFields(IDSL);
+                        PIDSL.Insert;
+                    until IDSL.Next = 0;
+                    IDSL.DeleteAll;
+                end;
+                QILE.SetRange("Document No.", IDS."Receipt No.");
+                if QILE.FindFirst then
+                    QILE.Delete;
+                if QualityStatus = 'Cancel' then begin
+                    //"Quality Status" := "Quality Status" :: Cancel;
+                    "Qty. Sending To Quality" := 0;
+                    "Qty. Sent To Quality" := 0;
+                    Modify;
+                end;
+            end;
+        end;
+    END;
+
+
+    PROCEDURE CloseInspection(VAR QualityStatus: Text[50]);
+    VAR
+        IR: Record "Inspection Receipt Header";
+        IRL: Record "Inspection Receipt Line";
+        QILE: Record "Quality Item Ledger Entry";
+    BEGIN
+        IR.SetRange("Order No.", "Document No.");
+        IR.SetRange("Purch Line No", "Line No.");
+        IR.SetFilter(Status, 'NO');
+        if not IR.FindFirst then
+            Error('Inspection Receipt not find')
+        else begin
+            IR.Status := true;
+            IR."Quality Status" := IR."Quality Status"::Close;
+            IR.Modify;
+        end;
+        QILE.SetRange("Document No.", IR."Receipt No.");
+        if QILE.FindFirst then
+            QILE.Delete;
+        if QualityStatus = 'Cancel' then begin
+            //"Quality Status" := "Quality Status" :: "Short Close";
+            "Qty. Sending To Quality" := 0;
+            "Qty. Sent To Quality" := 0;
+            Modify;
+        end;
+    END;
+
+    PROCEDURE QCOverride();
+    BEGIN
+        if UserId = 'SUPER' then
+            if "QC Enabled" = true then begin
+                "QC Enabled" := false;
+                Modify;
+            end
+            else
+                Message('You Do not have permissions to run this functions');
+    END;
+
+
+    PROCEDURE Cashflow_Modification();
+    var
+        GLSetup: Record "General Ledger Setup";
+
+    BEGIN
+
+        GLSetup.Get;
+        if GLSetup."Active ERP-CF Connection" then begin
+            if IsClear(SQLConnection) then
+                Create(SQLConnection, false, true); //Rev01
+
+            if IsClear(RecordSet) then
+                Create(RecordSet, false, true); //Rev01
+
+            WebRecStatus := Quotes + Text50001 + Quotes;
+            OldWebStatus := Quotes + Text50002 + Quotes;
+
+            SQLConnection.ConnectionString := GLSetup."Sql Connection String";
+            SQLConnection.Open;
+
+            SQLQuery := 'select orderno from PURCHASE_ORDER_STATUS where orderno=''' + "Document No." + ''' and ORDER_LINE_NO=''' + Format("Line No.")
+            +
+                      ''' and (authorisation=1 or status=''Y'')';
+            //anil   MESSAGE(SQLQuery);
+            RecordSet := SQLConnection.Execute(SQLQuery);
+            if not (RecordSet.EOF or RecordSet.BOF) then begin
+                SQLConnection.Close;
+                if not (UserId in ['EFFTRONICS\SUJANI', 'EFFTRONICS\VISHNUPRIYA', 'EFFTRONICS\B2BOTS']) then
+                    Error('PAYMENT COMPLETED, SO YOU MUST NOT CHANGE VALUE RELATED FIELDS');
+
+            end else
+                SQLConnection.Close;
+        end;
+    END;
+
+    PROCEDURE StructureBaseValue(Purchase_Order: Code[20]; Calculation_Order: Integer; Standard_Packing: Decimal) "Base value": Decimal;
+    VAR
+        Order_Value: Decimal;
+        //StrOrderDetails : Record "Structure Order Line Details";
+        GLSetup: Record "General Ledger Setup";
+        PurchLine2: Record "Purchase Line";
+    //  StrOrderDetails: Record stro
+
+    BEGIN
+        Order_Value := 0;
+        PurchLine2.SetRange("Document Type", "Document Type"::Order);
+        PurchLine2.SetRange("Document No.", Purchase_Order);
+        if PurchLine2.FindSet then
+            repeat
+                if PurchLine2."Currency Code" = '' then
+                    Order_Value += (PurchLine2.Quantity * PurchLine2."Direct Unit Cost")
+                else
+                    Order_Value += (PurchLine2.Quantity * PurchLine2."Unit Cost (LCY)");
+            until PurchLine2.Next = 0;
+        StrOrderDetails.Reset;
+        StrOrderDetails.SetRange(Type, StrOrderDetails.Type::Purchase);
+        StrOrderDetails.SetRange("Document Type", "Document Type"::Order);
+        StrOrderDetails.SetRange("Document No.", Purchase_Order);
+
+        StrOrderDetails.SetFilter("Calculation Order", '<%1', Calculation_Order);
+        if StrOrderDetails.FindSet then
+            repeat
+                Order_Value += StrOrderDetails."Amount (LCY)";
+            until StrOrderDetails.Next = 0;
+        "Base value" := Order_Value * (Standard_Packing / 100);
+        exit("Base value");
+    END;
+
+    PROCEDURE PCB_Cost_Calc();
+    VAR
+        RecCount: Integer;
+    BEGIN
+        //sundar<--
+        // Added by Pranvi on 28-Jul-2016 for PCB Cost Auto Calculation
+        if (Quantity > 0) then begin
+            PCB_Cost := 0;
+            if (CopyStr("No.", 1, 5) = 'ECPCB') then begin
+                Item.Reset;
+                Item.SetFilter(Item."No.", "No.");
+                if Item.FindFirst then begin
+                    if Item."Item Sub Sub Group Code" <> 'STENCIL' then begin
+                        PCB.SetFilter(PCB."Vendor No.", "Buy-from Vendor No.");
+                        PCB.SetRange(PCB."PCB Thickness", Item."PCB thickness");
+                        PCB.SetRange(PCB."Copper Clad Thickness", Item."Copper Clad Thickness");
+                        PCB.SetFilter(PCB."No. of Sides", Item."Item Sub Group Code");
+                        PCB.SetFilter(PCB.Type, Item."Item Sub Sub Group Code");
+                        PCB.SetFilter(PCB."Min PCB Qty", '<=%1', Quantity);
+                        PCB.SetFilter(PCB."Max PCB Qty", '>=%1', Quantity);
+                        if PCB.FindLast then begin
+                            PCB_Last_Quote_Date := 0D;
+                            RecCount := 0;
+                            PCB.Reset;
+                            PCB.SetRange(PCB."Vendor No.", "Buy-from Vendor No.");
+                            PCB.SetRange(PCB."PCB Thickness", Item."PCB thickness");
+                            PCB.SetRange(PCB."Copper Clad Thickness", Item."Copper Clad Thickness");
+                            PCB.SetFilter(PCB."No. of Sides", Item."Item Sub Group Code");
+                            PCB.SetFilter(PCB.Type, Item."Item Sub Sub Group Code");
+                            PCB.SetFilter(PCB."Min PCB Qty", '<=%1', Quantity);
+                            PCB.SetFilter(PCB."Max PCB Qty", '>=%1', Quantity);
+                            PCB.SetFilter(PCB."Min PCB Area", '<=%1', (Item."PCB Area" * Quantity) / 10000);
+                            PCB.SetFilter(PCB."Max PCB Area", '>=%1', (Item."PCB Area" * Quantity) / 10000);
+                            if PCB.FindSet then
+                                repeat
+                                    RecCount := RecCount + 1;
+                                    if (PCB_Last_Quote_Date = 0D) or (PCB_Last_Quote_Date < PCB."Quotation Date") then
+                                        PCB_Last_Quote_Date := PCB."Quotation Date";
+                                until PCB.Next = 0;
+                            PCB.Reset;
+                            PCB.SetRange(PCB."Vendor No.", "Buy-from Vendor No.");
+                            PCB.SetRange(PCB."PCB Thickness", Item."PCB thickness");
+                            PCB.SetRange(PCB."Copper Clad Thickness", Item."Copper Clad Thickness");
+                            PCB.SetFilter(PCB."No. of Sides", Item."Item Sub Group Code");
+                            PCB.SetFilter(PCB.Type, Item."Item Sub Sub Group Code");
+                            PCB.SetFilter(PCB."Min PCB Qty", '<=%1', Quantity);
+                            PCB.SetFilter(PCB."Max PCB Qty", '>=%1', Quantity);
+                            PCB.SetFilter(PCB."Min PCB Area", '<=%1', (Item."PCB Area" * Quantity) / 10000);
+                            PCB.SetFilter(PCB."Max PCB Area", '>=%1', (Item."PCB Area" * Quantity) / 10000);
+                            PCB.SetRange(PCB."Quotation Date", PCB_Last_Quote_Date);
+                            if PCB.FindLast then begin
+                                if "PCB Mode" = "PCB Mode"::Normal then
+                                    PCB_Cost := PCB."Price per Sq.m"
+                                else
+                                    if "PCB Mode" = "PCB Mode"::Fast then begin
+                                        if PCB."Fast Price" > 0 then
+                                            PCB_Cost := PCB."Fast Price"
+                                        else
+                                            PCB_Cost := PCB."Price per Sq.m";
+                                    end
+                                    else
+                                        if "PCB Mode" = "PCB Mode"::"Super Fast" then begin
+                                            if PCB."Super Fast Price" > 0 then
+                                                PCB_Cost := PCB."Super Fast Price"
+                                            else
+                                                PCB_Cost := PCB."Price per Sq.m";
+                                        end;
+                                case Item."On C-Side" of
+                                    1:
+                                        PCB_Cost := PCB_Cost + PCB.Green;
+                                    2:
+                                        PCB_Cost := PCB_Cost + PCB.White;
+                                    3:
+                                        PCB_Cost := PCB_Cost + PCB.Black;
+                                    4:
+                                        PCB_Cost := PCB_Cost + PCB.Blue;
+                                end;
+                                case Item."On S-Side" of
+                                    1:
+                                        PCB_Cost := PCB_Cost + PCB.Green;
+                                    2:
+                                        PCB_Cost := PCB_Cost + PCB.White;
+                                    3:
+                                        PCB_Cost := PCB_Cost + PCB.Black;
+                                    4:
+                                        PCB_Cost := PCB_Cost + PCB.Blue;
+                                end;
+                                case Item."On D-Side" of
+                                    1:
+                                        PCB_Cost := PCB_Cost + PCB.Green;
+                                    2:
+                                        PCB_Cost := PCB_Cost + PCB.White;
+                                    3:
+                                        PCB_Cost := PCB_Cost + PCB.Black;
+                                    4:
+                                        PCB_Cost := PCB_Cost + PCB.Blue;
+                                end;
+                                "Direct Unit Cost" := Round(Item."PCB Area" * (PCB_Cost), 0.01);
+                            end
+
+                            ELSE BEGIN
+                                IF Quantity <> 0 THEN BEGIN
+                                    IF NOT CONFIRM(Text50003, FALSE, "No.", "Buy-from Vendor No.", Item."PCB Area" * Quantity / 10000) THEN
+                                        ERROR('THE UNIT COST FOR THE PCB %1 NEED TO BE CALCULATED MANUALLY', "No.");
+                                    PCB.RESET;
+                                    PCB.SETRANGE(PCB."Vendor No.", "Buy-from Vendor No.");
+                                    PCB.SETRANGE(PCB."PCB Thickness", Item."PCB thickness");
+                                    PCB.SETRANGE(PCB."Copper Clad Thickness", Item."Copper Clad Thickness");
+                                    PCB."PCB TYPE" := Item."Item Sub Group Code";
+                                    PCB.SETFILTER(PCB."Min.Area", '=%1', 0.0);
+                                    PCB.SETFILTER(PCB."Max.Area", '=%1', 0.0);
+                                    PCB.SETFILTER(PCB.Area, 'yes');
+                                    IF NOT PCB.FINDFIRST THEN BEGIN
+                                        PCB.INIT;
+                                        PCB."Vendor No." := "Buy-from Vendor No.";
+                                        PCB.Name := PurchHeader."Buy-from Vendor Name";
+                                        PCB."PCB Thickness" := Item."PCB thickness";
+                                        PCB."Copper Clad Thickness" := Item."Copper Clad Thickness";
+                                        PCB.Area := TRUE;
+                                        PCB."PCB TYPE" := Item."Item Sub Group Code";
+                                        PCB."Min.Area" := 0.0;
+                                        PCB."Max.Area" := 0.0;
+                                        PCB.Date := TODAY;
+                                        PCB.INSERT;
+                                        COMMIT;
+                                    END;
+                                    FORM.RUNMODAL(60215, PCB);
+                                    VALIDATE(Quantity);
+                                END;
+                            END;
+                }
+
+              {
+              ELSE
+              BEGIN
+                IF Quantity<> 0 THEN BEGIN
+                  IF NOT CONFIRM(Text50004,FALSE,"No.","Buy-from Vendor No.",Quantity) THEN
+                    ERROR('THE UNIT COST FOR THE PCB %1 NEED TO BE CALCULATED MANUALLY',"No.");
+                  PCB.RESET;
+                  PCB.SETFILTER(PCB."Vendor No.","Buy-from Vendor No.");
+                  PCB.SETFILTER(PCB."PCB Thickness",Item."PCB thickness");
+                  PCB.SETFILTER(PCB."Copper Clad Thickness",Item."Copper Clad Thickness");
+                  PCB."PCB TYPE":=Item."Item Sub Group Code";
+                  PCB.SETFILTER(PCB."Min.Quantity",'=%1',0.0);
+                  PCB.SETFILTER(PCB."Max.Quantity",'=%1',0.0);
+                  IF NOT PCB.FINDFIRST THEN BEGIN
+                    PCB.INIT;
+                    PCB."Vendor No.":="Buy-from Vendor No.";
+                    PCB.Name :=PurchHeader."Buy-from Vendor Name";
+                    PCB."PCB Thickness":=Item."PCB thickness";
+                    PCB."Copper Clad Thickness" := Item."Copper Clad Thickness";
+                    PCB."PCB TYPE":=Item."Item Sub Group Code";
+                    PCB.Date:= TODAY;
+                    PCB."Min.Quantity":=0.0;
+                    PCB."Max.Quantity":=0.0;
+                    PCB.INSERT;
+                    COMMIT;
+                  END;
+                  FORM.RUNMODAL(60215,PCB) ;
+                  VALIDATE(Quantity);
+                END;
+              END;
+              }
+            end;
+          end;
+        end;
+      end;
+      // End by Pranavi
+
+
     var
         "--QC": Integer;
+    
         QualityCtrlSetup: Record "Quality Control Setup";
         QCSetupRead: Boolean;
         GPS: Record "General Posting Setup";
@@ -643,8 +1103,11 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         PCB_Cost: Decimal;
         PCB_Last_Quote_Date: Date;
         ItemLedgEntry: Record "Item Ledger Entry";
+        
         QualityItemLedgEntry: Record "Quality Item Ledger Entry";
         NODHeader: Record "NOD/NOC Header";
         PANErr: Label 'PAN No must be updated on Customer/Vendor/Party Master %1, currently its blank.';
+          ItemLedgEntry  :Record "Item Ledger Entry";
+          
 }
 
