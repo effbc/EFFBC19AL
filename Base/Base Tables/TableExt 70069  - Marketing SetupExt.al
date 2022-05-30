@@ -1,7 +1,6 @@
 tableextension 70069 MarketingSetupExt extends "Marketing Setup"
 {
-
-    fields
+ fields
     {
 
         field(60001; "Product ID"; Code[20])

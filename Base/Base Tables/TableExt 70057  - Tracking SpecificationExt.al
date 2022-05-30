@@ -26,8 +26,7 @@ tableextension 70057 TrackingSpecificationExt extends "Tracking Specification"
             end;
         }
 
-        field(60002; "Item Entry No.";
-        Integer)
+        field(60002; "Item Entry No."; Integer)
         {
             Description = 'B2B';
         }
