@@ -106,7 +106,7 @@ tableextension 70004 GLEntryExt extends "G/L Entry"
 
             trigger OnLookup();
             begin
-                ShowDimensionsOLD;
+                //ShowDimensionsOLD;
             end;
         }
         field(60092; "GST TDS Claimed Date"; Date)

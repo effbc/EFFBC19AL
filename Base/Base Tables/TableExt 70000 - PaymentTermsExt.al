@@ -6,7 +6,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
     {
 
 
-       
+
         field(60000; Rating; Decimal)
         {
             Description = 'POAU';
@@ -21,7 +21,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
 
             trigger OnValidate();
             begin
-                UpdateInCashFlow(Rec);    // Added by Pranavi on 25-Jul-2015
+                // UpdateInCashFlow(Rec);    // Added by Pranavi on 25-Jul-2015
             end;
         }
         field(60002; "Percentage 1"; Integer)
