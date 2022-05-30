@@ -20,7 +20,7 @@ tableextension 70003 GLAccoountExt extends "G/L Account"
         }
         field(60004; "Excise Prod. Posting Group2"; Code[10])
         {
-            TableRelation = "Excise Prod. Posting Group".Code;
+            // TableRelation = "Excise Prod. Posting Group".Code;
         }
         field(60005; "Excise Accounting Type"; Option)
         {

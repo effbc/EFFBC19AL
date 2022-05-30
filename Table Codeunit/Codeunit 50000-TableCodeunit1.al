@@ -101,7 +101,7 @@ codeunit 50001 "Tables Codeunit"
     local procedure OnValidateOrderAddressCodeOnAfterCopyBuyFromVendorAddressFieldsFromVendor(var PurchaseHeader: Record "Purchase Header"; Vend: Record Vendor);
     begin
         // << Pranavi
-       PurchaseHeader.State := OrderAddr.State;
+        PurchaseHeader.State := OrderAddr.State;
         IF OrderAddr."GST Registration No." <> '' THEN
             IF "GST Vendor Type" <> "GST Vendor Type"::Registered THEN
                 "GST Vendor Type" := "GST Vendor Type"::Registered;
@@ -110,12 +110,56 @@ codeunit 50001 "Tables Codeunit"
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Purchase Header", 'OnUpdatePurchLinesByFieldNoOnBeforeLineModify', '', false, false)]
-   local procedure OnUpdatePurchLinesByFieldNoOnBeforeLineModify(var PurchaseHeader: Record "Purchase Header"; var xPurchaseHeader: Record "Purchase Header"; PurchaseLine: Record "Purchase Line")
+    local procedure OnUpdatePurchLinesByFieldNoOnBeforeLineModify(var PurchaseHeader: Record "Purchase Header"; var xPurchaseHeader: Record "Purchase Header"; PurchaseLine: Record "Purchase Line")
     begin
         PurchaseLine."Form Code" := "Form Code";//B2B
         ELSE
         PurchaseLine."Form Code" := '';
     end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Item Journal Line", 'OnValidateItemNoOnAfterGetItem', '', false, false)]
+    local procedure OnValidateItemNoOnAfterGetItem(var ItemJournalLine: Record "Item Journal Line"; Item: Record Item)
+    var
+        PostedMatIssHdr: Record "Posted Material Issues Header";
+    begin
+        // Conditon Added by Pranavi on 11-Jan-2016 for allowing blocked item for site stock updation purpose
+        if not ((ItemJournalLine."Journal Batch Name" = 'POS-CS-SIG') and (ItemJournalLine."Entry Type" = ItemJournalLine."Entry Type"::"Positive Adjmt.")) then
+            if PostedMatIssHdr.Get(ItemJournalLine."Document No.") then begin
+                if not (((PostedMatIssHdr."Transfer-from Code" = 'SITE') and (PostedMatIssHdr."Transfer-to Code" = 'CS')) or
+                        ((PostedMatIssHdr."Transfer-from Code" = 'CS') and (PostedMatIssHdr."Transfer-to Code" = 'SITE'))) then
+                    Item.TestField(Blocked, false);
+            end
+            else
+                Item.TestField(Blocked, false);
+
+        Item.TestField(Type, Item.Type::Inventory);
+        if ItemJournalLine."Value Entry Type" = ItemJournalLine."Value Entry Type"::Revaluation then
+            Item.TestField("Inventory Value Zero", false);
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Item Journal Line", 'OnSetUpNewLineOnAfterFindItemJnlLine', '', false, false)]
+    local procedure OnSetUpNewLineOnAfterFindItemJnlLine(var ItemJournalLine: Record "Item Journal Line"; var FirstItemJournalLine: Record "Item Journal Line"; var LastItemJnlLine: Record "Item Journal Line")
+    begin
+
+
+        //B2B - Con
+        //"Document No." := NoSeriesMgt.TryGetNextNo(ItemJnlBatch."No. Series","Posting Date");
+        "Document No." := NoSeriesMgt.GetNextNo(ItemJnlBatch."No. Series", "Posting Date", false);
+        //B2B - Con
+
+
+        if (ItemJnlTemplate.Type in
+            [ItemJnlTemplate.Type::Consumption, ItemJnlTemplate.Type::Output]) and
+           not MfgSetup."Doc. No. Is Prod. Order No."
+        then
+            if ItemJnlBatch."No. Series" <> '' then begin
+                Clear(NoSeriesMgt);
+                "Document No." := NoSeriesMgt.GetNextNo(ItemJnlBatch."No. Series", "Posting Date", false);
+
+
+            end;
+
+
 
 
 

@@ -66,8 +66,8 @@ tableextension 70006 CustLedgerEntryExt extends "Cust. Ledger Entry"
         USER.RESET;
         USER.SETFILTER("User Name", USERID);
         IF USER.FINDFIRST THEN BEGIN
-            IF (NOT (USER.Tams_Dept IN ['SAL', 'ERP', 'F&A'])) AND (NOT (USER."User Name" IN ['EFFTRONICS\YESU', 'EFFTRONICS\MBNAGAMANI', 'EFFTRONICS\SSIRISHA'])) THEN
-                ERROR('You don''t have Permissions');
+            /* IF (NOT (USER.Tams_Dept IN ['SAL', 'ERP', 'F&A'])) AND (NOT (USER."User Name" IN ['EFFTRONICS\YESU', 'EFFTRONICS\MBNAGAMANI', 'EFFTRONICS\SSIRISHA'])) THEN
+                 ERROR('You don''t have Permissions');*/
         END
         ELSE
             ERROR('User not found. Contact ERP');
@@ -86,7 +86,7 @@ tableextension 70006 CustLedgerEntryExt extends "Cust. Ledger Entry"
         USER.SETRANGE(USER."User Security ID", USERID);// Changed User."User Id" to User."User Security ID" B2B
         IF USER.FIND('-') THEN
             Subject := USER."User Name" + '  is trying to Delete Customer Ledger Entry Records';// Changed User."Name" to User."User Name" B2B
-        Email.NewCDOMessage(Mail_From, Mail_To, Subject, Body, '');
+                                                                                                // Email.NewCDOMessage(Mail_From, Mail_To, Subject, Body, '');
         ERROR('U Dont Have Permissions to Delete');
     end;
 
