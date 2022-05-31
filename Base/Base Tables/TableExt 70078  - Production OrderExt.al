@@ -392,75 +392,37 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
     }
     keys
     {
-
-        
-
-        key(Key1; Status, "No.")
+        key(Key9; "Prod Start date")
         {
+            
         }
-        key(Key2; "No.", Status)
-        {
-        }
-        key(Key3; "Search Description")
-        {
-        }
-        key(Key4; "Low-Level Code", "Replan Ref. No.", "Replan Ref. Status")
-        {
-        }
-        key(Key5; "Source Type", "Source No.")
+        key(Key10; "Sales Order No.","Item Sub Group Code")
         {
             Enabled = false;
         }
-        key(Key6; "Source No.")
+        key(Key11; "No.")
         {
+            
         }
-        key(Key7; "Starting Date")
+        key(Key12; "Sales Order No.","Source No.","Prod Start date")
         {
+            
         }
-        key(Key8; "Prod Start date")
+        key(Key13; Week,"Sales Order No.","Source No.")
         {
+            
         }
-        key(Key9; "Sales Order No.", "Item Sub Group Code")
+        key(Key14; Status,"Prod Start date","No.")
         {
-        }
-        key(Key10; "No.")
-        {
-            Enabled = false;
-        }
-        key(Key11; "Sales Order No.", "Source No.", "Prod Start date")
-        {
-        }
-        key(Key12; Week, "Sales Order No.", "Source No.")
-        {
-        }
-        key(Key13; Status, "Prod Start date", "No.")
-        {
+            
         }
     }
-
-    trigger OnAfterModify()
-    begin
-
-    end;
-
-
     
-    var
-        SalesLine: Record "Sales Line";
-        ProdOrderQty: Decimal;
-        Text091: Label 'Number of Production Orders against Sales Order Exceeded';
-        "--SH1.0--": Integer;
-        Schedule: Record Schedule2;
-        "Prod. Order Component": Record "Prod. Order Component";
 
-    var
-        Product_Wise_Issues: Page Areas;
-        Material_Issues_Header: Record "Material Issues Header";
-        Posted_Material_Issues_Header: Record "Posted Material Issues Header";
-        SALES_HEADER: Record "Sales Header";
-        ITEM_LEAD_TIME: Integer;
-        ITEM: Record Item;
-        ITEM_LEAD_TEMP: Text[30];
+    trigger OnBeforeModify()
+    begin
+        if UpperCase(UserId)<>'06PD012' then;
+    end;
 
     var
         GL: Record "General Ledger Setup";
@@ -469,5 +431,36 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
         SLt: Record "Sales Line";
         ReservGRec: Record "Reservation Entry";
         Items: Record Item;
+        SalesLine: Record "Sales Line";
+        ProdOrderQty: Decimal;
+        Text091: Label 'Number of Production Orders against Sales Order Exceeded';
+        "--SH1.0--": Integer;
+        Schedule: Record Schedule2;
+        "Prod. Order Component": Record "Prod. Order Component";
+        Product_Wise_Issues: Page Areas;
+        Material_Issues_Header: Record "Material Issues Header";
+        Posted_Material_Issues_Header: Record "Posted Material Issues Header";
+        SALES_HEADER: Record "Sales Header";
+        ITEM_LEAD_TIME: Integer;
+        ITEM: Record Item;
+        ITEM_LEAD_TEMP: Text[30];
+
+    
+     PROCEDURE Planned_Units(Prod_Date : Date) "Units Planned" : Decimal;
+    VAR
+      Prod_Order: Record "Production Order";
+      Item: Record Item;
+    BEGIN
+      Prod_Order.SetCurrentKey(Prod_Order."Prod Start date");
+      Prod_Order.SetRange(Prod_Order."Prod Start date",Prod_Date);
+      if Prod_Order.Find('-') then
+      repeat
+        Item.Reset;
+        if Item.Get(Prod_Order."Source No.") then
+           "Units Planned"+=Prod_Order.Quantity*Item."No.of Units";
+
+      until Prod_Order.Next=0;
+      exit("Units Planned");
+    END;
 }
 
