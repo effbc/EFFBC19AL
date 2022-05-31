@@ -1,44 +1,15 @@
 tableextension 70022 ItemVendorExt extends "Item Vendor"
 {
-    // version NAVW19.00.00.50868,B2B1.0,POAU
+   
 
     fields
     {
 
-        //Unsupported feature: Change NotBlank on ""Item No."(Field 1)". Please convert manually.
 
-
-        //Unsupported feature: Change NotBlank on ""Vendor No."(Field 2)". Please convert manually.
-
-
-        //Unsupported feature: Change Data type on ""Variant Code"(Field 5700)". Please convert manually.
-
-
-        //Unsupported feature: Change TableRelation on ""Variant Code"(Field 5700)". Please convert manually.
-
-
-        //Unsupported feature: CodeModification on ""Vendor No."(Field 2).OnValidate". Please convert manually.
-
-        //trigger "(Field 2)();
-        //Parameters and return type have not been exported.
-        //>>>> ORIGINAL CODE:
-        //begin
-        /*
-        Vend.GET("Vendor No.");
-        "Lead Time Calculation" := Vend."Lead Time Calculation";
-        */
-        //end;
-        //>>>> MODIFIED CODE:
-        //begin
-        /*
-        Vend.Get("Vendor No.");
-        "Lead Time Calculation" := Vend."Lead Time Calculation";
-        */
-        //end;
         field(60001; "Sampling Plan Code"; Code[20])
         {
             Description = 'B2B';
-            TableRelation = "Item Variant".Make;
+            //TableRelation = "Item Variant".Make;
         }
         field(60002; "Total Qty. Supplied"; Decimal)
         {
@@ -109,79 +80,6 @@ tableextension 70022 ItemVendorExt extends "Item Vendor"
             Caption = 'Variant Code';
         }
     }
-    keys
-    {
-
-        //Unsupported feature: Deletion on ""Vendor No.,Item No.,Variant Code"(Key)". Please convert manually.
 
 
-        //Unsupported feature: PropertyModification on ""Item No.,Variant Code,Vendor No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Vendor No.,Vendor Item No."(Key)". Please convert manually.
-
-        key(Key1; "Vendor No.", "Item No.", "Variant Code")
-        {
-        }
-        key(Key2; "Item No.", "Variant Code", "Vendor No.")
-        {
-        }
-        key(Key3; "Vendor No.", "Vendor Item No.")
-        {
-        }
-    }
-
-    //Unsupported feature: InsertAfter on "Documentation". Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-
-    //Unsupported feature: PropertyModification on "Vend(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //Vend : 23;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //Vend : Vendor;
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ItemCrossReference(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ItemCrossReference : 5717;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ItemCrossReference : "Item Cross Reference";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "DistIntegration(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //DistIntegration : 5702;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //DistIntegration : "Dist. Integration";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "LeadTimeMgt(Variable 1003)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //LeadTimeMgt : 5404;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //LeadTimeMgt : "Lead-Time Management";
-    //Variable type has not been exported.
-}
 
