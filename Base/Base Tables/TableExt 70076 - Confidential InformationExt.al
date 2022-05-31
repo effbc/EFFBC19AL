@@ -16,7 +16,6 @@ tableextension 70076 ConfidentialInformationExt extends "Confidential Informatio
     keys
     {
 
-        //Unsupported feature: Deletion on ""Employee No.,Confidential Code,Line No."(Key)". Please convert manually.
 
         /* key(Key1; "Station Code", "Division  Code")
         {
