@@ -1,4 +1,5 @@
-enum 50024 "Sales Shipment Enum"
+
+enum 50039 "Sales Shipment Line Enum2"
 {
     Extensible = true;
 
@@ -9,4 +10,7 @@ enum 50024 "Sales Shipment Enum"
     {
     }
 
+    value(2; "NA")
+    {
+    }
 }

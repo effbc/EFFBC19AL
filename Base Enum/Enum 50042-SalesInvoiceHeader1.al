@@ -1,4 +1,4 @@
-enum 50024 "Sales Shipment Enum"
+enum 50042 "Sales invoice Header Enum1"
 {
     Extensible = true;
 
@@ -8,5 +8,6 @@ enum 50024 "Sales Shipment Enum"
     value(1; "By Customer")
     {
     }
+
 
 }
