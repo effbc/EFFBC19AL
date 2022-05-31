@@ -1,6 +1,5 @@
 tableextension 70082 FixedAssetExt extends "Fixed Asset"
 {
-
     fields
     {
 
