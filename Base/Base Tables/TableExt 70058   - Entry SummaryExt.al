@@ -5,10 +5,12 @@ tableextension 70058 EntrySummaryExt extends "Entry Summary"
     {
         field(60001; "Set Selection"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60002; "Item Entry No."; Integer)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60003; "External Dcument.no"; Code[20])
         {

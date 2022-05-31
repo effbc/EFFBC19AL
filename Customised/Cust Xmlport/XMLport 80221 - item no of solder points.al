@@ -6,16 +6,16 @@ xmlport 80221 "item no of solder points"
     {
         textelement(Items)
         {
-            tableelement(Item;Item)
+            tableelement(Item; Item)
             {
                 XmlName = 'Item';
-                fieldelement(No;Item."No.")
+                fieldelement(No; Item."No.")
                 {
                 }
-                fieldelement(NoofSolderingPoints;Item."No. of Soldering Points")
+                fieldelement(NoofSolderingPoints; Item."No. of Soldering Points")
                 {
                 }
-                fieldelement(BaseUnitofMeasure;Item."Base Unit of Measure")
+                fieldelement(BaseUnitofMeasure; Item."Base Unit of Measure")
                 {
                 }
             }

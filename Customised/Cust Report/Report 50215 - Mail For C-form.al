@@ -7,7 +7,7 @@ report 50215 "Mail For C-form"
 
     dataset
     {
-        dataitem("Sales Invoice Header";"Sales Invoice Header")
+        dataitem("Sales Invoice Header"; "Sales Invoice Header")
         {
             DataItemTableView = SORTING(Posting Date) ORDER(Ascending) WHERE(C-form Status=FILTER(<>Received),Customer Posting Group=CONST(PRIVATE),Form Code=CONST(C),Posting Date=FILTER(>03/31/09));
             RequestFilterFields = "Sell-to Customer No.";

@@ -3,49 +3,49 @@ query 50012 "Stock Statement Report"
 
     elements
     {
-        dataitem(Item;Item)
+        dataitem(Item; Item)
         {
-            DataItemTableFilter = "Product Group Code"=FILTER(<>'FPRODUCT'&<>'CPCB');
-            column(No;"No.")
+            DataItemTableFilter = "Product Group Code" = FILTER(<> 'FPRODUCT' & <> 'CPCB');
+            column(No; "No.")
             {
             }
-            column(Description;Description)
+            column(Description; Description)
             {
             }
-            column(Avg_Unit_Cost;"Avg Unit Cost")
+            column(Avg_Unit_Cost; "Avg Unit Cost")
             {
             }
-            dataitem(Item_Ledger_Entry;"Item Ledger Entry")
+            dataitem(Item_Ledger_Entry; "Item Ledger Entry")
             {
-                DataItemLink = "Item No."=Item."No.";
+                DataItemLink = "Item No." = Item."No.";
                 SqlJoinType = InnerJoin;
-                DataItemTableFilter = "Remaining Quantity"=FILTER(>0),"Location Code"=FILTER('R&D STR'|'STR'|'CS STR'|'PRODSTR');
-                column(Remaining_Quantity;"Remaining Quantity")
+                DataItemTableFilter = "Remaining Quantity" = FILTER(> 0), "Location Code" = FILTER('R&D STR' | 'STR' | 'CS STR' | 'PRODSTR');
+                column(Remaining_Quantity; "Remaining Quantity")
                 {
                 }
-                dataitem(Item_Ledger_Entry1;"Item Ledger Entry")
+                dataitem(Item_Ledger_Entry1; "Item Ledger Entry")
                 {
-                    DataItemLink = "Item No."=Item_Ledger_Entry."Item No.","Lot No."=Item_Ledger_Entry."Lot No.","Serial No."=Item_Ledger_Entry."Serial No.";
+                    DataItemLink = "Item No." = Item_Ledger_Entry."Item No.", "Lot No." = Item_Ledger_Entry."Lot No.", "Serial No." = Item_Ledger_Entry."Serial No.";
                     SqlJoinType = LeftOuterJoin;
-                    DataItemTableFilter = "Entry Type"=CONST(Purchase);
-                    column(Document_No;"Document No.")
+                    DataItemTableFilter = "Entry Type" = CONST(Purchase);
+                    column(Document_No; "Document No.")
                     {
                     }
-                    dataitem(Purch_Inv_Line;"Purch. Inv. Line")
+                    dataitem(Purch_Inv_Line; "Purch. Inv. Line")
                     {
-                        DataItemLink = "Receipt Document No."=Item_Ledger_Entry."Document No.","Receipt Document Line No."=Item_Ledger_Entry."Document Line No.";
+                        DataItemLink = "Receipt Document No." = Item_Ledger_Entry."Document No.", "Receipt Document Line No." = Item_Ledger_Entry."Document Line No.";
                         SqlJoinType = InnerJoin;
-                        DataItemTableFilter = Quantity=FILTER(>0),"Unit Cost"=FILTER(>0);
-                        column(Amount_To_Vendor;"Amount To Vendor")
+                        DataItemTableFilter = Quantity = FILTER(> 0), "Unit Cost" = FILTER(> 0);
+                        column(Amount_To_Vendor; "Amount To Vendor")
                         {
                         }
-                        column(Unit_Cost_LCY;"Unit Cost (LCY)")
+                        column(Unit_Cost_LCY; "Unit Cost (LCY)")
                         {
                         }
-                        column(Quantity_Base;"Quantity (Base)")
+                        column(Quantity_Base; "Quantity (Base)")
                         {
                         }
-                        column(Unit_Cost;"Unit Cost")
+                        column(Unit_Cost; "Unit Cost")
                         {
                         }
                     }

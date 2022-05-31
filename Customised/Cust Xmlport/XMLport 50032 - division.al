@@ -6,13 +6,13 @@ xmlport 50032 division
     {
         textelement(Divisions)
         {
-            tableelement(Division;Division)
+            tableelement(Division; Division)
             {
                 XmlName = 'Division';
-                fieldelement(DivisionCode;Division."Division Code")
+                fieldelement(DivisionCode; Division."Division Code")
                 {
                 }
-                fieldelement(DivisionName;Division."Division Name")
+                fieldelement(DivisionName; Division."Division Name")
                 {
                 }
             }

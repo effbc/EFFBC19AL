@@ -11,58 +11,58 @@ page 60254 "Item Wise Min Req at Loc List"
         {
             repeater(Group)
             {
-                field(Location;Location)
+                field(Location; Location)
                 {
                 }
-                field(Item;Item)
+                field(Item; Item)
                 {
                 }
-                field(Descirption;Descirption)
+                field(Descirption; Descirption)
                 {
                 }
-                field("Minimum Stock Quantity";"Minimum Stock Quantity")
+                field("Minimum Stock Quantity"; "Minimum Stock Quantity")
                 {
                 }
-                field("Location Name";"Location Name")
+                field("Location Name"; "Location Name")
                 {
                 }
-                field("Actual Qty";"Actual Qty")
+                field("Actual Qty"; "Actual Qty")
                 {
                 }
-                field("AMC Qty";"AMC Qty")
+                field("AMC Qty"; "AMC Qty")
                 {
                 }
-                field("Warranty Qty";"Warranty Qty")
+                field("Warranty Qty"; "Warranty Qty")
                 {
                 }
-                field("Unit Cost (LCY)";"Unit Cost (LCY)")
+                field("Unit Cost (LCY)"; "Unit Cost (LCY)")
                 {
                 }
-                field("Type Of Module";"Type Of Module")
+                field("Type Of Module"; "Type Of Module")
                 {
                 }
-                field("Responsible Person";"Responsible Person")
+                field("Responsible Person"; "Responsible Person")
                 {
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
                 }
-                field("Old Stock";"Old Stock")
+                field("Old Stock"; "Old Stock")
                 {
                 }
-                field("User Id";"User Id")
+                field("User Id"; "User Id")
                 {
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("Last Date Modified"; "Last Date Modified")
                 {
                 }
-                field("Creation Date";"Creation Date")
+                field("Creation Date"; "Creation Date")
                 {
                 }
-                field("Base Location";"Base Location")
+                field("Base Location"; "Base Location")
                 {
                 }
-                field("Non-Working Cards";"Non-Working Cards")
+                field("Non-Working Cards"; "Non-Working Cards")
                 {
                 }
             }

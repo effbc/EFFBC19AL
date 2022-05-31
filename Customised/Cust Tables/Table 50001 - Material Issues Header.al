@@ -25,12 +25,14 @@ table 50001 "Material Issues Header"
 
     DrillDownPageID = "Material Issue List(STR)";
     LookupPageID = "Material Issue List(STR)";
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"No.";Code[20])
+        field(1; "No."; Code[20])
         {
             Caption = 'No.';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -44,53 +46,54 @@ table 50001 "Material Issues Header"
 
             end;
         }
-        field(2;"Transfer-from Code";Code[10])
+        field(2; "Transfer-from Code"; Code[10])
         {
             Caption = 'Transfer-from Code';
-            TableRelation = Location WHERE (Use As In-Transit=CONST(No),Subcontracting Location=CONST(No));
+            TableRelation = Location WHERE(Use As In-Transit=CONST(No),Subcontracting Location=CONST(No));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             var
-                Location : Record Location;
-                Confirmed : Boolean;
+                Location: Record Location;
+                Confirmed: Boolean;
             begin
-                IF (NOT(USERID IN ['EFFTRONICS\ANANDA','EFFTRONICS\RRAHUL'])) AND ("Transfer-from Code" IN ['CS STR', 'R&D STR']) THEN
+                IF (NOT (USERID IN ['EFFTRONICS\ANANDA', 'EFFTRONICS\RRAHUL'])) AND ("Transfer-from Code" IN ['CS STR', 'R&D STR']) THEN
                     ERROR('PLEASE SELECT STR');
-                
+
                 TestStatusOpen;
-                
+
                 IF ("Transfer-from Code" = "Transfer-to Code") AND
                    ("Transfer-from Code" <> '')
                 THEN
-                  ERROR(
-                    Text001,
-                    FIELDCAPTION("Transfer-from Code"),FIELDCAPTION("Transfer-to Code"),
-                    TABLECAPTION,"No.");
-                
+                    ERROR(
+                      Text001,
+                      FIELDCAPTION("Transfer-from Code"), FIELDCAPTION("Transfer-to Code"),
+                      TABLECAPTION, "No.");
+
                 IF (xRec."Transfer-from Code" <> "Transfer-from Code") THEN BEGIN
-                  IF HideValidationDialog OR
-                    (xRec."Transfer-from Code" = '')
-                  THEN
-                    Confirmed := TRUE
-                  ELSE
-                    Confirmed := CONFIRM(Text002,FALSE,FIELDCAPTION("Transfer-from Code"));
-                  IF Confirmed THEN BEGIN
-                    IF Location.GET("Transfer-from Code") THEN BEGIN
-                      "Transfer-from Name" := Location.Name;
-                      "Transfer-from Name 2" := Location."Name 2";
-                      "Transfer-from Address" := Location.Address;
-                      "Transfer-from Address 2" := Location."Address 2";
-                      "Transfer-from Post Code" := Location."Post Code";
-                      "Transfer-from City" := Location.City;
-                      "Transfer-from County" := Location.County;
-                      "Transfer-from Country Code" := Location."Country/Region Code";
-                      "Transfer-from Contact" := Location.Contact;
+                    IF HideValidationDialog OR
+                      (xRec."Transfer-from Code" = '')
+                    THEN
+                        Confirmed := TRUE
+                    ELSE
+                        Confirmed := CONFIRM(Text002, FALSE, FIELDCAPTION("Transfer-from Code"));
+                    IF Confirmed THEN BEGIN
+                        IF Location.GET("Transfer-from Code") THEN BEGIN
+                            "Transfer-from Name" := Location.Name;
+                            "Transfer-from Name 2" := Location."Name 2";
+                            "Transfer-from Address" := Location.Address;
+                            "Transfer-from Address 2" := Location."Address 2";
+                            "Transfer-from Post Code" := Location."Post Code";
+                            "Transfer-from City" := Location.City;
+                            "Transfer-from County" := Location.County;
+                            "Transfer-from Country Code" := Location."Country/Region Code";
+                            "Transfer-from Contact" := Location.Contact;
+                        END;
+                        UpdateTransLines(FIELDNO("Transfer-from Code"));
+                    END ELSE BEGIN
+                        "Transfer-from Code" := xRec."Transfer-from Code";
+                        EXIT;
                     END;
-                      UpdateTransLines(FIELDNO("Transfer-from Code"));
-                  END ELSE BEGIN
-                    "Transfer-from Code" := xRec."Transfer-from Code";
-                    EXIT;
-                  END;
                 END;
                 //Added by rakesh for stationary items on 26-03-14
                 //begin
@@ -106,29 +109,34 @@ table 50001 "Material Issues Header"
 
             end;
         }
-        field(3;"Transfer-from Name";Text[50])
+        field(3; "Transfer-from Name"; Text[50])
         {
             Caption = 'Transfer-from Name';
+            DataClassification = CustomerContent;
         }
-        field(4;"Transfer-from Name 2";Text[50])
+        field(4; "Transfer-from Name 2"; Text[50])
         {
             Caption = 'Transfer-from Name 2';
+            DataClassification = CustomerContent;
         }
-        field(5;"Transfer-from Address";Text[50])
+        field(5; "Transfer-from Address"; Text[50])
         {
             Caption = 'Transfer-from Address';
+            DataClassification = CustomerContent;
         }
-        field(6;"Transfer-from Address 2";Text[50])
+        field(6; "Transfer-from Address 2"; Text[50])
         {
             Caption = 'Transfer-from Address 2';
+            DataClassification = CustomerContent;
         }
-        field(7;"Transfer-from Post Code";Code[20])
+        field(7; "Transfer-from Post Code"; Code[20])
         {
             Caption = 'Transfer-from Post Code';
             TableRelation = "Post Code";
             //This property is currently not supported
             //TestTableRelation = false;
             ValidateTableRelation = false;
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -139,12 +147,13 @@ table 50001 "Material Issues Header"
 
             trigger OnValidate();
             begin
-                PostCode.ValidatePostCode("Transfer-from City","Transfer-from Post Code","Transfer-to County","Transfer-to Country Code",TRUE);//B2B
+                PostCode.ValidatePostCode("Transfer-from City", "Transfer-from Post Code", "Transfer-to County", "Transfer-to Country Code", TRUE);//B2B
             end;
         }
-        field(8;"Transfer-from City";Text[30])
+        field(8; "Transfer-from City"; Text[30])
         {
             Caption = 'Transfer-from City';
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -155,17 +164,19 @@ table 50001 "Material Issues Header"
 
             trigger OnValidate();
             begin
-                PostCode.ValidateCity("Transfer-from City","Transfer-from Post Code","Transfer-to County","Transfer-to Country Code",TRUE);//B2B
+                PostCode.ValidateCity("Transfer-from City", "Transfer-from Post Code", "Transfer-to County", "Transfer-to Country Code", TRUE);//B2B
             end;
         }
-        field(9;"Transfer-from County";Text[30])
+        field(9; "Transfer-from County"; Text[30])
         {
             Caption = 'Transfer-from County';
+            DataClassification = CustomerContent;
         }
-        field(10;"Transfer-from Country Code";Code[10])
+        field(10; "Transfer-from Country Code"; Code[10])
         {
             Caption = 'Transfer-from Country Code';
-            TableRelation = Country/Region;
+            TableRelation = Country            DataClassification = CustomerContent;
+/Region;
         }
         field(11;"Transfer-to Code";Code[10])
         {

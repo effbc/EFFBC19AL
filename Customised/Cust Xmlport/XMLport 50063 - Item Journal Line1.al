@@ -6,31 +6,31 @@ xmlport 50063 "Item Journal Line1"
     {
         textelement(ItemJournalLines)
         {
-            tableelement("<itemjournalline>";"Item Journal Line")
+            tableelement("<itemjournalline>"; "Item Journal Line")
             {
                 XmlName = 'ItemJournalLine';
-                fieldelement(ItemNo;"<ItemJournalLine>"."Item No.")
+                fieldelement(ItemNo; "<ItemJournalLine>"."Item No.")
                 {
                 }
-                fieldelement(Quantity;"<ItemJournalLine>".Quantity)
+                fieldelement(Quantity; "<ItemJournalLine>".Quantity)
                 {
                 }
-                fieldelement(UnitAmount;"<ItemJournalLine>"."Unit Amount")
+                fieldelement(UnitAmount; "<ItemJournalLine>"."Unit Amount")
                 {
                 }
-                fieldelement(DocumentNo;"<ItemJournalLine>"."Document No.")
+                fieldelement(DocumentNo; "<ItemJournalLine>"."Document No.")
                 {
                 }
-                fieldelement(LineNo;"<ItemJournalLine>"."Line No.")
+                fieldelement(LineNo; "<ItemJournalLine>"."Line No.")
                 {
                 }
-                fieldelement(LocationCode;"<ItemJournalLine>"."Location Code")
+                fieldelement(LocationCode; "<ItemJournalLine>"."Location Code")
                 {
                 }
-                fieldelement(JournalBatchName;"<ItemJournalLine>"."Journal Batch Name")
+                fieldelement(JournalBatchName; "<ItemJournalLine>"."Journal Batch Name")
                 {
                 }
-                fieldelement(JournalTemplateName;"<ItemJournalLine>"."Journal Template Name")
+                fieldelement(JournalTemplateName; "<ItemJournalLine>"."Journal Template Name")
                 {
                 }
 
@@ -56,7 +56,7 @@ xmlport 50063 "Item Journal Line1"
                     ItemJournalLine."Posting Date" := WorkDate;
                     ItemJournalLine.Validate("Posting Date");
 
-                    ItemJournalLine."Entry Type" := ItemJournalLine."Entry Type" :: "Positive Adjmt.";
+                    ItemJournalLine."Entry Type" := ItemJournalLine."Entry Type"::"Positive Adjmt.";
                     ItemJournalLine.Validate("Entry Type");
 
                     ItemJournalLine."Document No." := DocumentNo;
@@ -88,18 +88,18 @@ xmlport 50063 "Item Journal Line1"
     }
 
     var
-        "ItemNo." : Code[20];
-        Quantity : Decimal;
-        UnitAmount : Decimal;
-        DocumentNo : Code[20];
-        DocumentDate : Date;
-        LineNo : Integer;
-        LocationCode : Code[20];
-        JournalBatchName : Code[20];
-        JournalTemplateName : Code[20];
-        InventoryPostingGroup : Code[20];
-        GenProdPostingGroup : Code[20];
-        UnitofMeasureCode : Code[20];
-        ItemJournalLine : Record "Item Journal Line";
+        "ItemNo.": Code[20];
+        Quantity: Decimal;
+        UnitAmount: Decimal;
+        DocumentNo: Code[20];
+        DocumentDate: Date;
+        LineNo: Integer;
+        LocationCode: Code[20];
+        JournalBatchName: Code[20];
+        JournalTemplateName: Code[20];
+        InventoryPostingGroup: Code[20];
+        GenProdPostingGroup: Code[20];
+        UnitofMeasureCode: Code[20];
+        ItemJournalLine: Record "Item Journal Line";
 }
 

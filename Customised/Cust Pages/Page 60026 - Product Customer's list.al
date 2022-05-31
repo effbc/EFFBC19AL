@@ -12,10 +12,10 @@ page 60026 "Product Customer's list"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("SMTP Port No";"SMTP Port No")
+                field("SMTP Port No"; "SMTP Port No")
                 {
                 }
-                field("E-Mail From";"E-Mail From")
+                field("E-Mail From"; "E-Mail From")
                 {
                 }
             }

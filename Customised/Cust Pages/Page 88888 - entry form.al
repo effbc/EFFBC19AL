@@ -10,19 +10,19 @@ page 88888 "entry form"
             repeater(Control1102154000)
             {
                 ShowCaption = false;
-                field("Entry No.";"Entry No.")
+                field("Entry No."; "Entry No.")
                 {
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Amount;Amount)
+                field(Amount; Amount)
                 {
                 }
             }

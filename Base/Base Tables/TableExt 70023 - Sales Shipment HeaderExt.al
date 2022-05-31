@@ -9,6 +9,7 @@ tableextension 70023 SalesShipmentHeaderExt extends "Sales Shipment Header"
         field(60001; "RDSO Charges Paid By."; Enum "Sales Shipment Enum3")
         {
             Editable = false;
+            DataClassification = CustomerContent;
 
         }
         field(60002; "CA Number"; Code[20])
@@ -16,151 +17,183 @@ tableextension 70023 SalesShipmentHeaderExt extends "Sales Shipment Header"
             Description = 'B2B';
             Editable = false;
             TableRelation = "CA Number";
+            DataClassification = CustomerContent;
         }
         field(60003; "CA Date"; Date)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60004; "Type of Enquiry"; Enum "Sales Shipment Enum2")
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
         }
         field(60005; "Type of Product"; Enum "Sales Shipment Enum3")
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
 
         }
         field(60006; "Document Position"; Enum "Sales Shipment Enum5")
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
 
         }
         field(60007; "Cancel Short Close"; Enum "Sales Shipment Enum6")
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
 
         }
         field(60008; "RDSO Inspection Required"; Boolean)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60009; "RDSO Inspection By"; Enum "Sales Shipment Enum7")
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
 
         }
         field(60010; "BG Required"; Boolean)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60011; "BG No."; Code[20])
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60012; Territory; Code[20])
         {
             Description = 'B2B';
             Editable = false;
             TableRelation = Territory;
+            DataClassification = CustomerContent;
         }
         field(60013; "Security Status"; Code[20])
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60014; "LD Amount"; Decimal)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60015; "RDSO Charges"; Decimal)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60016; "Customer OrderNo."; Code[65])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60017; "Customer Order Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60018; "Security Deposit"; Enum "Sales Shipment Enum8")
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
         }
         field(60019; "RDSO Call Letter"; Enum "Sales Shipment Enum9")
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
         }
         field(60020; "Enquiry Status"; Enum "Sales Shipment Enum10")
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
         }
         field(60021; "Project Completion Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60022; "Extended Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60034; "Manufacturing Item Amount"; Decimal)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60035; "Bought out Items Amount"; Decimal)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60036; "Software Amount"; Decimal)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60037; "Total Order Amount"; Decimal)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60041; "Security Deposit Amount"; Decimal)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60042; "Deposit Payment Due Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60043; "Deposit Payment Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60044; "Security Deposit Status"; Code[20])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60045; "SD Requested Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60046; "SD Required Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60047; "SecurityDeposit Exp. Rcpt Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60048; "Adjusted from EMD"; Decimal)
         {
@@ -187,6 +220,7 @@ tableextension 70023 SalesShipmentHeaderExt extends "Sales Shipment Header"
             Description = 'B2B';
             Editable = false;
             TableRelation = "Tender Header";
+            DataClassification = CustomerContent;
         }
         field(60051; "SD Paid Amount"; Decimal)
         {
@@ -211,33 +245,40 @@ tableextension 70023 SalesShipmentHeaderExt extends "Sales Shipment Header"
         field(60053; "Final Bill Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60054; "Warranty Period"; DateFormula)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60055; "SD Status"; Enum "Sales Shipment Enum11")
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
         }
         field(60087; Consignee; Text[50])
         {
+            DataClassification = CustomerContent;
         }
         field(60115; "SD Running Bills Percent"; Decimal)
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(80020; "Dimension Corrected"; Boolean)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(80021; "OLD Dim Set ID"; Integer)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
             TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -246,14 +287,15 @@ tableextension 70023 SalesShipmentHeaderExt extends "Sales Shipment Header"
         }
         field(80100; "Insurance Applicable"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(80101; Customer_PAN_No; Code[20])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(80102; Location_PAN_No; Code[20])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
     }
     trigger OnAfterInsert()

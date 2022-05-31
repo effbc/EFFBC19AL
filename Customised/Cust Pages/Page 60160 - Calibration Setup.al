@@ -12,14 +12,14 @@ page 60160 "Calibration Setup"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Equipment No.";"Equipment No.")
+                field("Equipment No."; "Equipment No.")
                 {
                     Editable = false;
                 }
-                field("Procedure No.";"Procedure No.")
+                field("Procedure No."; "Procedure No.")
                 {
                 }
-                field("Procedure Description";"Procedure Description")
+                field("Procedure Description"; "Procedure Description")
                 {
                 }
             }
@@ -44,9 +44,9 @@ page 60160 "Calibration Setup"
                     begin
                         CLEAR(CalPro);
                         IF CalProHeader.GET(CalProHeader."No.") THEN BEGIN
-                          IF "Procedure No." <> '' THEN BEGIN
-                            CalPro.SETRECORD(CalProHeader);
-                          END;
+                            IF "Procedure No." <> '' THEN BEGIN
+                                CalPro.SETRECORD(CalProHeader);
+                            END;
                         END;
                         CalPro.RUN;
                     end;
@@ -56,7 +56,7 @@ page 60160 "Calibration Setup"
     }
 
     var
-        CalProHeader : Record "Calibration Procedure Header";
-        CalPro : Page "Calibration Procedure";
+        CalProHeader: Record "Calibration Procedure Header";
+        CalPro: Page "Calibration Procedure";
 }
 

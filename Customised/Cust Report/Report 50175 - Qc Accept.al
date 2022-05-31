@@ -7,9 +7,9 @@ report 50175 "Qc Accept"
 
     dataset
     {
-        dataitem("Item Ledger Entry";"Item Ledger Entry")
+        dataitem("Item Ledger Entry"; "Item Ledger Entry")
         {
-            DataItemTableView = SORTING(Item No.,Location Code,Global Dimension 1 Code,Global Dimension 2 Code,Open,Remaining Quantity) ORDER(Ascending) WHERE(Remaining Quantity=FILTER(<0),Posting Date=FILTER(10/10/09..11/16/09),Entry Type=CONST(Transfer));
+            DataItemTableView = SORTING(Item No., Location Code, Global Dimension 1 Code, Global Dimension 2 Code, Open, Remaining Quantity) ORDER(Ascending) WHERE(Remaining Quantity=FILTER(<0),Posting Date=FILTER(10/10/09..11/16/09),Entry Type=CONST(Transfer));
             RequestFilterFields = "Item No.";
             column(Item_Ledger_Entry__Entry_No__;"Entry No.")
             {

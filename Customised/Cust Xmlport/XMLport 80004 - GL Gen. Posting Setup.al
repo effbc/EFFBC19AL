@@ -6,37 +6,37 @@ xmlport 80004 "G/L Gen. Posting Setup"
     {
         textelement(GeneralPostingSetup)
         {
-            tableelement("<generalpostingsetup>";"General Posting Setup")
+            tableelement("<generalpostingsetup>"; "General Posting Setup")
             {
                 XmlName = 'GeneralPostingSetup';
-                fieldelement(GenBusPostingGroup;"<GeneralPostingSetup>"."Gen. Bus. Posting Group")
+                fieldelement(GenBusPostingGroup; "<GeneralPostingSetup>"."Gen. Bus. Posting Group")
                 {
                 }
-                fieldelement(GenProdPostingGroup;"<GeneralPostingSetup>"."Gen. Prod. Posting Group")
+                fieldelement(GenProdPostingGroup; "<GeneralPostingSetup>"."Gen. Prod. Posting Group")
                 {
                 }
-                fieldelement(SalesAccount;"<GeneralPostingSetup>"."Sales Account")
+                fieldelement(SalesAccount; "<GeneralPostingSetup>"."Sales Account")
                 {
                 }
-                fieldelement(SalesCreditMemoAccount;"<GeneralPostingSetup>"."Sales Credit Memo Account")
+                fieldelement(SalesCreditMemoAccount; "<GeneralPostingSetup>"."Sales Credit Memo Account")
                 {
                 }
-                fieldelement(PurchAccount;"<GeneralPostingSetup>"."Purch. Account")
+                fieldelement(PurchAccount; "<GeneralPostingSetup>"."Purch. Account")
                 {
                 }
-                fieldelement(PurchCreditMemoAccount;"<GeneralPostingSetup>"."Purch. Credit Memo Account")
+                fieldelement(PurchCreditMemoAccount; "<GeneralPostingSetup>"."Purch. Credit Memo Account")
                 {
                 }
-                fieldelement(COGSAccount;"<GeneralPostingSetup>"."COGS Account")
+                fieldelement(COGSAccount; "<GeneralPostingSetup>"."COGS Account")
                 {
                 }
-                fieldelement(InventoryAdjmtAccount;"<GeneralPostingSetup>"."Inventory Adjmt. Account")
+                fieldelement(InventoryAdjmtAccount; "<GeneralPostingSetup>"."Inventory Adjmt. Account")
                 {
                 }
-                fieldelement(DirectCostAppliedAccount;"<GeneralPostingSetup>"."Direct Cost Applied Account")
+                fieldelement(DirectCostAppliedAccount; "<GeneralPostingSetup>"."Direct Cost Applied Account")
                 {
                 }
-                fieldelement(OverheadAppliedAccount;"<GeneralPostingSetup>"."Overhead Applied Account")
+                fieldelement(OverheadAppliedAccount; "<GeneralPostingSetup>"."Overhead Applied Account")
                 {
                 }
             }

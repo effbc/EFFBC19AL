@@ -1,5 +1,6 @@
 table 33000930 "Sales Orders Temp"
 {
+    DataClassification = CustomerContent;
     // version UPG1.3
 
     // No. sign   Description
@@ -9,14 +10,15 @@ table 33000930 "Sales Orders Temp"
 
     fields
     {
-        field(1;"Sales Order No.";Code[20])
+        field(1; "Sales Order No."; Code[20])
         {
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(Key1;"Sales Order No.")
+        key(Key1; "Sales Order No.")
         {
         }
     }

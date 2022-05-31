@@ -13,34 +13,34 @@ page 60166 "Calib Inspection Receipt List"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("Receipt No.";"Receipt No.")
+                field("Receipt No."; "Receipt No.")
                 {
                 }
-                field("Vendor No.";"Vendor No.")
+                field("Vendor No."; "Vendor No.")
                 {
                 }
-                field("Vendor Name";"Vendor Name")
+                field("Vendor Name"; "Vendor Name")
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field(Results;Results)
+                field(Results; Results)
                 {
                 }
-                field(Recommendations;Recommendations)
+                field(Recommendations; Recommendations)
                 {
                 }
-                field("Calibration Status";"Calibration Status")
+                field("Calibration Status"; "Calibration Status")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
             }
@@ -63,9 +63,9 @@ page 60166 "Calib Inspection Receipt List"
                     trigger OnAction();
                     begin
                         IF NOT Status THEN
-                          PAGE.RUN(PAGE::"Calibration Inspection Receipt",Rec)
+                            PAGE.RUN(PAGE::"Calibration Inspection Receipt", Rec)
                         ELSE
-                          PAGE.RUN(PAGE::CalibPostedInspReceipt,Rec);
+                            PAGE.RUN(PAGE::CalibPostedInspReceipt, Rec);
                     end;
                 }
                 separator("----")

@@ -12,37 +12,37 @@ page 60025 "Product Card"
             group(Products)
             {
                 Caption = 'Products';
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field("Product Type";"Product Type")
+                field("Product Type"; "Product Type")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Technology;Technology)
+                field(Technology; Technology)
                 {
                 }
-                field("Key Features";"Key Features")
+                field("Key Features"; "Key Features")
                 {
                 }
-                field("Launched Year";"Launched Year")
+                field("Launched Year"; "Launched Year")
                 {
                 }
-                field("Tools Used";"Tools Used")
+                field("Tools Used"; "Tools Used")
                 {
                 }
-                field(Benefits;Benefits)
+                field(Benefits; Benefits)
                 {
                 }
-                field(Segment;Segment)
+                field(Segment; Segment)
                 {
                 }
-                field(Price;Price)
+                field(Price; Price)
                 {
                 }
-                field("Software Code";"Software Code")
+                field("Software Code"; "Software Code")
                 {
                 }
             }
@@ -85,7 +85,7 @@ page 60025 "Product Card"
                 {
                     Caption = 'Product C&ompetitors';
                     RunObject = Page "Product Competitors Details";
-                    RunPageLink = Product Code=FIELD(Code);
+                                    RunPageLink = Product Code=FIELD(Code);
                 }
                 separator(Action1102152023)
                 {
@@ -94,7 +94,7 @@ page 60025 "Product Card"
                 {
                     Caption = 'Product C&ustomers List';
                     RunObject = Page "Product Customer's list";
-                    RunPageLink = SMTP Server name=FIELD(Code);
+                                    RunPageLink = SMTP Server name=FIELD(Code);
 
                     trigger OnAction();
                     var
@@ -122,7 +122,7 @@ page 60025 "Product Card"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Rlshp. Mgt. Comment Sheet";
-                RunPageLink = Table Name=CONST(Products),No.=FIELD(Code);
+                                RunPageLink = Table Name=CONST(Products),No.=FIELD(Code);
                 ToolTip = 'Comment';
             }
         }

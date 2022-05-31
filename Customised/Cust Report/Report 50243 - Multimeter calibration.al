@@ -5,9 +5,9 @@ report 50243 "Multimeter calibration"
 
     dataset
     {
-        dataitem(MTS;"Multimeter Tracking System")
+        dataitem(MTS; "Multimeter Tracking System")
         {
-            DataItemTableView = SORTING(Next Calibration Date,Serial No.) ORDER(Ascending) WHERE(Next Calibration Date=FILTER(<>''));
+            DataItemTableView = SORTING(Next Calibration Date, Serial No.) ORDER(Ascending) WHERE(Next Calibration Date=FILTER(<>''));
             column(MTS__Serial_No__;"Serial No.")
             {
             }

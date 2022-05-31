@@ -22,13 +22,13 @@ page 60101 "MSPT Header List"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
             }

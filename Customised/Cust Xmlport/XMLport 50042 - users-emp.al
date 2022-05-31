@@ -6,16 +6,16 @@ xmlport 50042 "users-emp"
     {
         textelement(Employees)
         {
-            tableelement(Employee;Employee)
+            tableelement(Employee; Employee)
             {
                 XmlName = 'Employee';
-                fieldelement(No;Employee."No.")
+                fieldelement(No; Employee."No.")
                 {
                 }
-                fieldelement(FirstName;Employee."First Name")
+                fieldelement(FirstName; Employee."First Name")
                 {
                 }
-                fieldelement(JobTitle;Employee."Job Title")
+                fieldelement(JobTitle; Employee."Job Title")
                 {
                 }
             }

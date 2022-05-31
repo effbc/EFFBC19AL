@@ -6,13 +6,13 @@ xmlport 80220 "item routings"
     {
         textelement(Items)
         {
-            tableelement(Item;Item)
+            tableelement(Item; Item)
             {
                 XmlName = 'Item';
-                fieldelement(No;Item."No.")
+                fieldelement(No; Item."No.")
                 {
                 }
-                fieldelement(RoutingNo;Item."Routing No.")
+                fieldelement(RoutingNo; Item."Routing No.")
                 {
                 }
             }

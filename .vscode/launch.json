@@ -7,7 +7,7 @@
             "type": "al",
             "environmentType": "OnPrem",
             "server": "http://localhost",
-            "serverInstance": "BC200",
+            "serverInstance": "BC190",
             "authentication": "Windows",
             "port": 8049,
             "startupObjectId": 22,

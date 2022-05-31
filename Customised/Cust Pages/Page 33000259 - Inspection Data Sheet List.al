@@ -13,7 +13,7 @@ page 33000259 "Inspection Data Sheet List"
     {
         area(content)
         {
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
                 Style = Standard;
                 StyleExpr = TRUE;
@@ -21,101 +21,101 @@ page 33000259 "Inspection Data Sheet List"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("Order Value";"Order Value")
+                field("Order Value"; "Order Value")
                 {
                 }
-                field("Source Type";"Source Type")
+                field("Source Type"; "Source Type")
                 {
                 }
-                field("Parent IDS No";"Parent IDS No")
+                field("Parent IDS No"; "Parent IDS No")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field("Item Bench Mark";"Item Bench Mark")
+                field("Item Bench Mark"; "Item Bench Mark")
                 {
                     Visible = false;
                 }
-                field("Prod. Description";"Prod. Description")
+                field("Prod. Description"; "Prod. Description")
                 {
                 }
-                field(Location;Location)
+                field(Location; Location)
                 {
                 }
-                field("Creation DateTime";"Creation DateTime")
+                field("Creation DateTime"; "Creation DateTime")
                 {
                 }
-                field("Vendor Name";"Vendor Name")
+                field("Vendor Name"; "Vendor Name")
                 {
                 }
-                field(Resource;Resource)
+                field(Resource; Resource)
                 {
                 }
-                field("Operation Description";"Operation Description")
+                field("Operation Description"; "Operation Description")
                 {
                 }
-                field("OutPut Jr Serial No.";"OutPut Jr Serial No.")
+                field("OutPut Jr Serial No."; "OutPut Jr Serial No.")
                 {
                 }
-                field("Reason for Pending";"Reason for Pending")
+                field("Reason for Pending"; "Reason for Pending")
                 {
                 }
-                field("Product Group Code";"Product Group Code")
+                field("Product Group Code"; "Product Group Code")
                 {
                 }
-                field("Item Sub Group Code";"Item Sub Group Code")
+                field("Item Sub Group Code"; "Item Sub Group Code")
                 {
                 }
-                field("Item Sub Sub Group Code";"Item Sub Sub Group Code")
+                field("Item Sub Sub Group Code"; "Item Sub Sub Group Code")
                 {
                 }
-                field("Item Category Code";"Item Category Code")
+                field("Item Category Code"; "Item Category Code")
                 {
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("Rework Level";"Rework Level")
+                field("Rework Level"; "Rework Level")
                 {
                 }
-                field("Rework Reference No.";"Rework Reference No.")
+                field("Rework Reference No."; "Rework Reference No.")
                 {
                 }
-                field("Item Ledger Entry No.";"Item Ledger Entry No.")
+                field("Item Ledger Entry No."; "Item Ledger Entry No.")
                 {
                 }
-                field("Prod. Order No.";"Prod. Order No.")
+                field("Prod. Order No."; "Prod. Order No.")
                 {
                 }
-                field("Lot No.";"Lot No.")
+                field("Lot No."; "Lot No.")
                 {
                 }
-                field("Inspection Group Code";"Inspection Group Code")
+                field("Inspection Group Code"; "Inspection Group Code")
                 {
                 }
-                field("Vendor No.";"Vendor No.")
+                field("Vendor No."; "Vendor No.")
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field("Item Description";"Item Description")
+                field("Item Description"; "Item Description")
                 {
                 }
-                field("Order No.";"Order No.")
+                field("Order No."; "Order No.")
                 {
                 }
-                field("Receipt No.";"Receipt No.")
+                field("Receipt No."; "Receipt No.")
                 {
                 }
-                field("Issues For Pending";"Issues For Pending")
+                field("Issues For Pending"; "Issues For Pending")
                 {
                 }
             }
@@ -160,7 +160,7 @@ page 33000259 "Inspection Data Sheet List"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Sales Amc Subform1";
-                    RunPageLink = Document Type=FIELD(Item No.);
+                                    RunPageLink = Document Type=FIELD(Item No.);
                 }
             }
             group(Item)

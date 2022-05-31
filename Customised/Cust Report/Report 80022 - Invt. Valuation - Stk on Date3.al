@@ -8,90 +8,90 @@ report 80022 "Invt. Valuation - Stk on Date3"
 
     dataset
     {
-        dataitem(Item;Item)
+        dataitem(Item; Item)
         {
             PrintOnlyIfDetail = true;
-            RequestFilterFields = "No.","Inventory Posting Group","Statistics Group","Location Filter";
-            column(COMPANYNAME;COMPANYNAME)
+            RequestFilterFields = "No.", "Inventory Posting Group", "Statistics Group", "Location Filter";
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(STRSUBSTNO_Text000_FORMAT_ValuationDate__;STRSUBSTNO(Text000,FORMAT(ValuationDate)))
+            column(STRSUBSTNO_Text000_FORMAT_ValuationDate__; STRSUBSTNO(Text000, FORMAT(ValuationDate)))
             {
             }
-            column(FORMAT_TODAY_0_4_;FORMAT(TODAY,0,4))
+            column(FORMAT_TODAY_0_4_; FORMAT(TODAY, 0, 4))
             {
             }
-            column(CurrReport_PAGENO;CurrReport.PAGENO)
+            column(CurrReport_PAGENO; CurrReport.PAGENO)
             {
             }
-            column(USERID;USERID)
+            column(USERID; USERID)
             {
             }
-            column(Item_TABLECAPTION__________ItemFilter;Item.TABLECAPTION + ': ' + ItemFilter)
+            column(Item_TABLECAPTION__________ItemFilter; Item.TABLECAPTION + ': ' + ItemFilter)
             {
             }
-            column(EntryTypeDescription_2_;EntryTypeDescription[2])
+            column(EntryTypeDescription_2_; EntryTypeDescription[2])
             {
             }
-            column(EntryTypeDescription_3_;EntryTypeDescription[3])
+            column(EntryTypeDescription_3_; EntryTypeDescription[3])
             {
             }
-            column(EntryTypeDescription_4_;EntryTypeDescription[4])
+            column(EntryTypeDescription_4_; EntryTypeDescription[4])
             {
             }
-            column(EntryTypeDescription_5_;EntryTypeDescription[5])
+            column(EntryTypeDescription_5_; EntryTypeDescription[5])
             {
             }
-            column(TotalCost;TotalCost)
+            column(TotalCost; TotalCost)
             {
                 AutoFormatType = 1;
             }
-            column(Inventory_Valuation___Item_WiseCaption;Inventory_Valuation___Item_WiseCaptionLbl)
+            column(Inventory_Valuation___Item_WiseCaption; Inventory_Valuation___Item_WiseCaptionLbl)
             {
             }
-            column(CurrReport_PAGENOCaption;CurrReport_PAGENOCaptionLbl)
+            column(CurrReport_PAGENOCaption; CurrReport_PAGENOCaptionLbl)
             {
             }
-            column(UserCaption;UserCaptionLbl)
+            column(UserCaption; UserCaptionLbl)
             {
             }
-            column(RemainingQtyCaption;RemainingQtyCaptionLbl)
+            column(RemainingQtyCaption; RemainingQtyCaptionLbl)
             {
             }
-            column(Unit_CostCaption;Unit_CostCaptionLbl)
+            column(Unit_CostCaption; Unit_CostCaptionLbl)
             {
             }
-            column(Total_CostCaption;Total_CostCaptionLbl)
+            column(Total_CostCaption; Total_CostCaptionLbl)
             {
             }
-            column(Item_DescriptionCaption;Item_DescriptionCaptionLbl)
+            column(Item_DescriptionCaption; Item_DescriptionCaptionLbl)
             {
             }
-            column(UOMCaption;UOMCaptionLbl)
+            column(UOMCaption; UOMCaptionLbl)
             {
             }
-            column(Item_NoCaption;Item_NoCaptionLbl)
+            column(Item_NoCaption; Item_NoCaptionLbl)
             {
             }
-            column(TotalCostCaption;TotalCostCaptionLbl)
+            column(TotalCostCaption; TotalCostCaptionLbl)
             {
             }
-            column(Item_No_;"No.")
+            column(Item_No_; "No.")
             {
             }
-            column(Item_Variant_Filter;"Variant Filter")
+            column(Item_Variant_Filter; "Variant Filter")
             {
             }
-            column(Item_Location_Filter;"Location Filter")
+            column(Item_Location_Filter; "Location Filter")
             {
             }
-            column(Item_Global_Dimension_1_Filter;"Global Dimension 1 Filter")
+            column(Item_Global_Dimension_1_Filter; "Global Dimension 1 Filter")
             {
             }
-            column(Item_Global_Dimension_2_Filter;"Global Dimension 2 Filter")
+            column(Item_Global_Dimension_2_Filter; "Global Dimension 2 Filter")
             {
             }
-            dataitem("Item Ledger Entry";"Item Ledger Entry")
+            dataitem("Item Ledger Entry"; "Item Ledger Entry")
             {
                 DataItemLink = Item No.=FIELD(No.),Variant Code=FIELD(Variant Filter),Location Code=FIELD(Location Filter),Global Dimension 1 Code=FIELD(Global Dimension 1 Filter),Global Dimension 2 Code=FIELD(Global Dimension 2 Filter);
                 DataItemTableView = SORTING(Item No.,Variant Code,Open,Positive,Location Code,Posting Date);

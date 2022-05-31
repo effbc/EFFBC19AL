@@ -1,4 +1,4 @@
-pageextension 70105  OrderAddressExt extends "Order Address" 
+pageextension 70105 OrderAddressExt extends "Order Address"
 {
     // version NAVW19.00.00.50293,NAVIN9.00.00.50293
 
@@ -141,12 +141,12 @@ pageextension 70105  OrderAddressExt extends "Order Address"
     //Unsupported feature: PropertyModification on "OnOpenPage.MapMgt(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //OnOpenPage.MapMgt : 802;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //OnOpenPage.MapMgt : "Online Map Management";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //OnOpenPage.MapMgt : 802;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //OnOpenPage.MapMgt : "Online Map Management";
+    //Variable type has not been exported.
 
     //Unsupported feature: PropertyChange. Please convert manually.
 

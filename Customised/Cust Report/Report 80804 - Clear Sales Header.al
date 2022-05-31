@@ -7,7 +7,7 @@ report 80804 "Clear Sales Header"
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
 
             trigger OnAfterGetRecord();

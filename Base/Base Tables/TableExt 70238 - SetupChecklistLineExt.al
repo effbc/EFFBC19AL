@@ -13,17 +13,20 @@ tableextension 70238 SetupChecklistLineExt extends "Setup Checklist Line"
         {
             Caption = 'Line No.';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(2; "Table ID"; Integer)
         {
             Caption = 'Table ID';
             Editable = false;
             TableRelation = AllObj."Object ID" WHERE("Object Type" = CONST(Table));
+            DataClassification = CustomerContent;
         }
         field(3; "Table Name"; Text[80])
         {
             Caption = 'Table Name';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(4; "Company Filter"; Text[30])
         {
@@ -74,32 +77,38 @@ tableextension 70238 SetupChecklistLineExt extends "Setup Checklist Line"
         {
             Caption = 'Copying Available';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(14; "Form ID"; Integer)
         {
             Caption = 'Form ID';
             Editable = false;
             TableRelation = AllObj."Object ID" WHERE("Object Type" = CONST("2"));
+            DataClassification = CustomerContent;
         }
         field(15; "Form Name"; Text[80])
         {
             Caption = 'Form Name';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(16; "License Table ID"; Integer)
         {
             Caption = 'License Table ID';
             Editable = false;
             TableRelation = AllObj."Object ID" WHERE("Object Type" = CONST(Table));
+            DataClassification = CustomerContent;
         }
         field(17; "License Table Name"; Text[80])
         {
             Caption = 'License Table Name';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(18; "Starting Date"; Date)
         {
             Caption = 'Starting Date';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -110,6 +119,7 @@ tableextension 70238 SetupChecklistLineExt extends "Setup Checklist Line"
         field(19; "Ending Date"; Date)
         {
             Caption = 'Ending Date';
+            DataClassification = CustomerContent;
         }
         field(20; "Responsible ID"; Code[50])
         {
@@ -119,6 +129,7 @@ tableextension 70238 SetupChecklistLineExt extends "Setup Checklist Line"
             //This property is currently not supported
             //TestTableRelation = false;
             ValidateTableRelation = false;
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             var
@@ -139,6 +150,7 @@ tableextension 70238 SetupChecklistLineExt extends "Setup Checklist Line"
             Caption = 'Status';
             OptionCaption = '" ,Planning,Started,Completed,Not Used"';
             OptionMembers = " ",Planning,Started,Completed,"Not Used";
+            DataClassification = CustomerContent;
         }
         field(22; Comments; Boolean)
         {
@@ -153,6 +165,7 @@ tableextension 70238 SetupChecklistLineExt extends "Setup Checklist Line"
             Caption = 'Application Area ID';
             Editable = false;
             TableRelation = "Application Area Line";
+            DataClassification = CustomerContent;
         }
         field(24; "Application Area Name"; Text[80])
         {
@@ -164,10 +177,12 @@ tableextension 70238 SetupChecklistLineExt extends "Setup Checklist Line"
         field(25; "Vertical Sorting"; Integer)
         {
             Caption = 'Vertical Sorting';
+            DataClassification = CustomerContent;
         }
         field(26; "Data Origin"; Text[50])
         {
             Caption = 'Data Origin';
+            DataClassification = CustomerContent;
         }
         field(30; "Licensed Form"; Boolean)
         {

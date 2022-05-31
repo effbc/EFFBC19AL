@@ -16,13 +16,13 @@ page 33000290 "Quality Comment Sheet"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field(Date;Date)
+                field(Date; Date)
                 {
                 }
-                field(Comment;Comment)
+                field(Comment; Comment)
                 {
                 }
-                field("Code";Code)
+                field("Code"; Code)
                 {
                     Visible = false;
                 }
@@ -34,20 +34,20 @@ page 33000290 "Quality Comment Sheet"
     {
     }
 
-    trigger OnNewRecord(BelowxRec : Boolean);
+    trigger OnNewRecord(BelowxRec: Boolean);
     begin
         SetUpNewLine;
     end;
 
     var
-        Text000 : Label 'untitled';
-        Text001 : Label 'Fin. Charge Memo';
+        Text000: Label 'untitled';
+        Text001: Label 'Fin. Charge Memo';
 
     [LineStart(23640)]
-    procedure Caption(FinChrgCommentLine : Record "Fin. Charge Comment Line") : Text[110];
+    procedure Caption(FinChrgCommentLine: Record "Fin. Charge Comment Line"): Text[110];
     begin
         IF FinChrgCommentLine."No." = '' THEN
-          EXIT(Text000);
+            EXIT(Text000);
         EXIT(Text001 + ' ' + FinChrgCommentLine."No." + ' ');
     end;
 }

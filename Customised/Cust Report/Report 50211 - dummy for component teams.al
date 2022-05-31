@@ -5,7 +5,7 @@ report 50211 "dummy for component teams"
 
     dataset
     {
-        dataitem("Posted Material Issues Line";"Posted Material Issues Line")
+        dataitem("Posted Material Issues Line"; "Posted Material Issues Line")
         {
             DataItemTableView = WHERE(Transfer-to Code=FILTER(PROD));
             RequestFilterFields = "Issued DateTime","Transfer-to Code";

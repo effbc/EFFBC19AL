@@ -3,30 +3,30 @@ codeunit 80008 "IJL Validate"
 
     trigger OnRun();
     begin
-          /*
-            "Purch. Inv. Line".SETFILTER("Purch. Inv. Line"."Receipt No.",'<>%1','');
-         IF "Purch. Inv. Line".FINDFIRST THEN
-         REPEAT
-           "Purch. rcpt. header".RESET;
-           "Purch. rcpt. header".SETRANGE("Purch. rcpt. header"."No.","Purch. Inv. Line"."Receipt No.");
-           IF "Purch. rcpt. header".FINDFIRST THEN
-           BEGIN
-             "Purch. Inv. Line"."Purchase_Order No.":="Purch. rcpt. header"."Order No.";
-             "Purch. Inv. Line".MODIFY;
-           END;
-         UNTIL "Purch. Inv. Line".NEXT=0;
-           */
-           /*
-         "Purchase Header".SETRANGE("Purchase Header"."Document Type","Purchase Header"."Document Type"::Order);
-         "Purchase Header".SETFILTER("Purchase Header"."Order Date",'>%1',122709D);
-         "Purchase Header".SETRANGE("Purchase Header".Status,"Purchase Header".Status::Released);
-         "Purchase Header".SETFILTER("Purchase Header".Structure,'<>%1','');
-         IF "Purchase Header".FINDFIRST THEN
-         REPEAT
-           "Purchase Line".CalculateStructures("Purchase Header");
-           COMMIT;
-         UNTIL "Purchase Header".NEXT=0;
+        /*
+          "Purch. Inv. Line".SETFILTER("Purch. Inv. Line"."Receipt No.",'<>%1','');
+       IF "Purch. Inv. Line".FINDFIRST THEN
+       REPEAT
+         "Purch. rcpt. header".RESET;
+         "Purch. rcpt. header".SETRANGE("Purch. rcpt. header"."No.","Purch. Inv. Line"."Receipt No.");
+         IF "Purch. rcpt. header".FINDFIRST THEN
+         BEGIN
+           "Purch. Inv. Line"."Purchase_Order No.":="Purch. rcpt. header"."Order No.";
+           "Purch. Inv. Line".MODIFY;
+         END;
+       UNTIL "Purch. Inv. Line".NEXT=0;
          */
+        /*
+      "Purchase Header".SETRANGE("Purchase Header"."Document Type","Purchase Header"."Document Type"::Order);
+      "Purchase Header".SETFILTER("Purchase Header"."Order Date",'>%1',122709D);
+      "Purchase Header".SETRANGE("Purchase Header".Status,"Purchase Header".Status::Released);
+      "Purchase Header".SETFILTER("Purchase Header".Structure,'<>%1','');
+      IF "Purchase Header".FINDFIRST THEN
+      REPEAT
+        "Purchase Line".CalculateStructures("Purchase Header");
+        COMMIT;
+      UNTIL "Purchase Header".NEXT=0;
+      */
         /*
         IF IJL.FINDFIRST THEN
         REPEAT
@@ -73,8 +73,8 @@ codeunit 80008 "IJL Validate"
          UNTIL Location.NEXT=0;
          END;
          */
-        
-        
+
+
         /*
         
         IF Vendor.FINDFIRST THEN
@@ -230,7 +230,7 @@ codeunit 80008 "IJL Validate"
           END;
         UNTIL Item.NEXT=0;
          */
-        
+
         /*{
         "Service Item Line".SETFILTER("Service Item Line"."Service Item No.",'<>%1','');
         IF "Service Item Line".FINDFIRST THEN
@@ -256,49 +256,44 @@ codeunit 80008 "IJL Validate"
         UNTIL "Service Item Line".NEXT=0;}
         */
         "Prod. Order Component".RESET;
-        
-        "Prod. Order Component".SETFILTER("Prod. Order Component"."Production Plan Date",'>%1',TODAY);
-        IF "Prod. Order Component".FINDFIRST THEN
-        BEGIN
-        REPEAT
-          "Production Order".RESET;
-          "Production Order".SETRANGE("Production Order"."No.","Prod. Order Component"."Prod. Order No.");
-          IF "Production Order".FINDFIRST THEN
-          BEGIN
-            IF "Production Order"."Prod Start date">0D THEN
-            BEGIN
-              IF "Prod. Order Component"."Material Required Day"<>99 THEN
-              BEGIN
-                "Prod. Order Component"."Production Plan Date":="Production Order"."Prod Start date";
-                "Prod. Order Component".MODIFY;
-              END;
-            END ELSE
-            BEGIN
-              "Prod. Order Component"."Production Plan Date":=0D;
-              "Prod. Order Component".MODIFY;
-            END;
-          END;
-        UNTIL "Prod. Order Component".NEXT=0;
+
+        "Prod. Order Component".SETFILTER("Prod. Order Component"."Production Plan Date", '>%1', TODAY);
+        IF "Prod. Order Component".FINDFIRST THEN BEGIN
+            REPEAT
+                "Production Order".RESET;
+                "Production Order".SETRANGE("Production Order"."No.", "Prod. Order Component"."Prod. Order No.");
+                IF "Production Order".FINDFIRST THEN BEGIN
+                    IF "Production Order"."Prod Start date" > 0D THEN BEGIN
+                        IF "Prod. Order Component"."Material Required Day" <> 99 THEN BEGIN
+                            "Prod. Order Component"."Production Plan Date" := "Production Order"."Prod Start date";
+                            "Prod. Order Component".MODIFY;
+                        END;
+                    END ELSE BEGIN
+                        "Prod. Order Component"."Production Plan Date" := 0D;
+                        "Prod. Order Component".MODIFY;
+                    END;
+                END;
+            UNTIL "Prod. Order Component".NEXT = 0;
         END;
 
     end;
 
     var
-        IJL : Record "Item Journal Line";
-        Item : Record Item;
-        "Indent Line" : Record "Indent Line";
-        "Purchase Line" : Record "Purchase Line";
-        pd : Record "DAY WISE DETAILS";
-        PID : Record "Site Old Stock Data";
-        Vendor : Record Vendor;
-        "Purchase Header" : Record "Purchase Header";
-        PostedMaterialIssuesHeader : Record "Posted Material Issues Header";
-        ILE : Record "Item Ledger Entry";
-        "Service Item Line" : Record "Service Item Line";
-        "Service Item" : Record "Service Item";
-        "Purch. Inv. Line" : Record "Purch. Inv. Line";
-        "Purch. rcpt. header" : Record "Purch. Rcpt. Header";
-        "Prod. Order Component" : Record "Prod. Order Component";
-        "Production Order" : Record "Production Order";
+        IJL: Record "Item Journal Line";
+        Item: Record Item;
+        "Indent Line": Record "Indent Line";
+        "Purchase Line": Record "Purchase Line";
+        pd: Record "DAY WISE DETAILS";
+        PID: Record "Site Old Stock Data";
+        Vendor: Record Vendor;
+        "Purchase Header": Record "Purchase Header";
+        PostedMaterialIssuesHeader: Record "Posted Material Issues Header";
+        ILE: Record "Item Ledger Entry";
+        "Service Item Line": Record "Service Item Line";
+        "Service Item": Record "Service Item";
+        "Purch. Inv. Line": Record "Purch. Inv. Line";
+        "Purch. rcpt. header": Record "Purch. Rcpt. Header";
+        "Prod. Order Component": Record "Prod. Order Component";
+        "Production Order": Record "Production Order";
 }
 

@@ -7,20 +7,20 @@ report 50214 "Material Availability(New)"
 
     dataset
     {
-        dataitem("Company Information";"Company Information")
+        dataitem("Company Information"; "Company Information")
         {
             DataItemTableView = SORTING(Primary Key);
-            column(COMPANYNAME;COMPANYNAME)
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(Shortage_List_ReportCaption;Shortage_List_ReportCaptionLbl)
+            column(Shortage_List_ReportCaption; Shortage_List_ReportCaptionLbl)
             {
             }
-            column(Company_Information_Primary_Key;"Primary Key")
+            column(Company_Information_Primary_Key; "Primary Key")
             {
             }
         }
-        dataitem("Production Order";"Production Order")
+        dataitem("Production Order"; "Production Order")
         {
             DataItemTableView = SORTING(Prod Start date) ORDER(Ascending) WHERE(Prod Start date=FILTER(<>''));
             RequestFilterFields = "No.","Sales Order No.","Prod Start date","Location Code";

@@ -24,78 +24,78 @@ page 60095 "FDR Card"
             group(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("FDR Document No.";"FDR Document No.")
+                field("FDR Document No."; "FDR Document No.")
                 {
                 }
-                field("Mode of Payment";"Mode of Payment")
+                field("Mode of Payment"; "Mode of Payment")
                 {
                 }
-                field("Payment Account No.";"Payment Account No.")
+                field("Payment Account No."; "Payment Account No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Issuing Bank";"Issuing Bank")
+                field("Issuing Bank"; "Issuing Bank")
                 {
                 }
-                field("Date of Issue";"Date of Issue")
+                field("Date of Issue"; "Date of Issue")
                 {
                 }
-                field("Expiry Date";"Expiry Date")
+                field("Expiry Date"; "Expiry Date")
                 {
                 }
-                field("FDR Value";"FDR Value")
+                field("FDR Value"; "FDR Value")
                 {
                 }
-                field("Mode of Receipt";"Mode of Receipt")
+                field("Mode of Receipt"; "Mode of Receipt")
                 {
                 }
-                field("Receipt Account No.";"Receipt Account No.")
+                field("Receipt Account No."; "Receipt Account No.")
                 {
                 }
-                field("FDR Posting Status";"FDR Posting Status")
+                field("FDR Posting Status"; "FDR Posting Status")
                 {
                 }
-                field(Purpose;Purpose)
+                field(Purpose; Purpose)
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Creation Date";"Creation Date")
+                field("Creation Date"; "Creation Date")
                 {
                 }
-                field("Last Modified Date";"Last Modified Date")
+                field("Last Modified Date"; "Last Modified Date")
                 {
                 }
-                field(Extended;Extended)
+                field(Extended; Extended)
                 {
                 }
-                field("FDR Surrended Date";"FDR Surrended Date")
+                field("FDR Surrended Date"; "FDR Surrended Date")
                 {
                 }
-                field(Closed;Closed)
+                field(Closed; Closed)
                 {
                 }
-                field("Issued/Received";"Issued/Received")
+                field("Issued/Received"; "Issued/Received")
                 {
                 }
-                field("Posting Account No.";"Posting Account No.")
+                field("Posting Account No."; "Posting Account No.")
                 {
                 }
-                field("Tender No.";"Tender No.")
+                field("Tender No."; "Tender No.")
                 {
                     Caption = 'Linked to Tender.';
                     Editable = false;
                 }
-                field("Customer Order No.";"Customer Order No.")
+                field("Customer Order No."; "Customer Order No.")
                 {
                 }
             }
@@ -134,17 +134,17 @@ page 60095 "FDR Card"
 
                     trigger OnAction();
                     begin
-                        IF Status = Status :: Released THEN
-                          EXIT;
+                        IF Status = Status::Released THEN
+                            EXIT;
                         TESTFIELD("No.");
                         TESTFIELD("Issuing Bank");
                         TESTFIELD("FDR Value");
                         TESTFIELD("Payment Account No.");
                         IF CONFIRM('Do you want to Release?') THEN BEGIN
-                          Status := Status :: Released;
-                          MESSAGE('The FDR has been Released.')
+                            Status := Status::Released;
+                            MESSAGE('The FDR has been Released.')
                         END ELSE
-                          EXIT;
+                            EXIT;
                         CurrPage.UPDATE;
                     end;
                 }
@@ -157,14 +157,15 @@ page 60095 "FDR Card"
 
                     trigger OnAction();
                     begin
-                        IF Status = Status :: Open THEN
-                          EXIT;
-                        IF Status <> Status :: "2" THEN
-                          IF CONFIRM('Do you want to Reopen?') THEN
-                            Status := Status :: Open
-                          ELSE
-                            EXIT
-                        ELSE ERROR('You can not open the Closed FDR');
+                        IF Status = Status::Open THEN
+                            EXIT;
+                        IF Status <> Status::"2" THEN
+                            IF CONFIRM('Do you want to Reopen?') THEN
+                                Status := Status::Open
+                            ELSE
+                                EXIT
+                        ELSE
+                            ERROR('You can not open the Closed FDR');
                         CurrPage.UPDATE;
                     end;
                 }
@@ -176,8 +177,8 @@ page 60095 "FDR Card"
                     trigger OnAction();
                     begin
                         IF Closed = TRUE THEN
-                          EXIT;
-                        TESTFIELD(Status,Status :: Released);
+                            EXIT;
+                        TESTFIELD(Status, Status::Released);
                         IF CONFIRM('Do you want to close FDR?') THEN BEGIN
                             MESSAGE('The FDR has been closed.');
                             Closed := TRUE;
@@ -200,36 +201,37 @@ page 60095 "FDR Card"
 
                         trigger OnAction();
                         begin
-                            IF NOT CONFIRM(Text001,FALSE,"No.") THEN
-                              EXIT;
+                            IF NOT CONFIRM(Text001, FALSE, "No.") THEN
+                                EXIT;
 
                             TESTFIELD("Posting Account No.");
                             TESTFIELD("No.");
                             TESTFIELD("FDR Value");
-                            TESTFIELD(Status,Status::Released);
-                            TESTFIELD(Posted,FALSE);
-                            IF "Mode of Payment" = "Mode of Payment" :: Cash THEN BEGIN
-                              "AccountNo." := "Posting Account No.";
-                              AccountType := AccountType :: "G/L Account";
-                              "BalAccountNo." := "Payment Account No.";
-                              BalAccountType := BalAccountType :: "G/L Account";
-                              Amount := "FDR Value";
-                              InitGenJnlLine(Rec,"AccountNo.","BalAccountNo.",AccountType,BalAccountType,Amount);
-                              Posted := TRUE;
-                              MODIFY;
-                            END ELSE IF "Mode of Payment" = "Mode of Payment" :: Bank THEN BEGIN
-                              "AccountNo." := "Posting Account No.";
-                              AccountType := AccountType :: "G/L Account";
-                              "BalAccountNo." := "Payment Account No.";
-                              BalAccountType := BalAccountType :: "Bank Account";
-                              Amount := "FDR Value";
-                              InitGenJnlLine(Rec,"AccountNo.","BalAccountNo.",AccountType,BalAccountType,Amount);
-                              Posted := TRUE;
-                              MODIFY;
-                            END;
-                            "FDR Posting Status" := "FDR Posting Status" :: Purchased;
+                            TESTFIELD(Status, Status::Released);
+                            TESTFIELD(Posted, FALSE);
+                            IF "Mode of Payment" = "Mode of Payment"::Cash THEN BEGIN
+                                "AccountNo." := "Posting Account No.";
+                                AccountType := AccountType::"G/L Account";
+                                "BalAccountNo." := "Payment Account No.";
+                                BalAccountType := BalAccountType::"G/L Account";
+                                Amount := "FDR Value";
+                                InitGenJnlLine(Rec, "AccountNo.", "BalAccountNo.", AccountType, BalAccountType, Amount);
+                                Posted := TRUE;
+                                MODIFY;
+                            END ELSE
+                                IF "Mode of Payment" = "Mode of Payment"::Bank THEN BEGIN
+                                    "AccountNo." := "Posting Account No.";
+                                    AccountType := AccountType::"G/L Account";
+                                    "BalAccountNo." := "Payment Account No.";
+                                    BalAccountType := BalAccountType::"Bank Account";
+                                    Amount := "FDR Value";
+                                    InitGenJnlLine(Rec, "AccountNo.", "BalAccountNo.", AccountType, BalAccountType, Amount);
+                                    Posted := TRUE;
+                                    MODIFY;
+                                END;
+                            "FDR Posting Status" := "FDR Posting Status"::Purchased;
                             MODIFY;
-                            MESSAGE(Text002,"No.");
+                            MESSAGE(Text002, "No.");
                         end;
                     }
                     action(Receipt)
@@ -239,38 +241,39 @@ page 60095 "FDR Card"
 
                         trigger OnAction();
                         begin
-                            IF NOT CONFIRM(Text003,FALSE,"No.") THEN
-                              EXIT;
+                            IF NOT CONFIRM(Text003, FALSE, "No.") THEN
+                                EXIT;
 
                             TESTFIELD("Receipt Account No.");
                             TESTFIELD("No.");
                             TESTFIELD("FDR Value");
-                            TESTFIELD(Status,Status::Released);
-                            TESTFIELD(Posted,TRUE);
-                            TESTFIELD("Issued/Received","Issued/Received"::Received);
-                            IF "Mode of Receipt" = "Mode of Receipt" :: Cash THEN BEGIN
-                              "AccountNo." := "Posting Account No.";
-                              AccountType := AccountType :: "G/L Account";
-                              "BalAccountNo." := "Receipt Account No.";
-                              BalAccountType := BalAccountType :: "G/L Account";
-                              Amount := -"FDR Value";
-                              InitGenJnlLine(Rec,"AccountNo.","BalAccountNo.",AccountType,BalAccountType,Amount);
-                              Posted := FALSE;
-                              MODIFY;
-                            END ELSE IF "Mode of Receipt" = "Mode of Receipt" :: Bank THEN BEGIN
-                              "AccountNo." := "Posting Account No.";
-                              AccountType := AccountType :: "G/L Account";
-                              "BalAccountNo." := "Receipt Account No.";
-                              BalAccountType := BalAccountType :: "Bank Account";
-                              Amount := -"FDR Value";
-                              InitGenJnlLine(Rec,"AccountNo.","BalAccountNo.",AccountType,BalAccountType,Amount);
-                              Posted := FALSE;
-                              MODIFY;
-                            END;
-                            "FDR Posting Status" := "FDR Posting Status" :: Surrendered;
+                            TESTFIELD(Status, Status::Released);
+                            TESTFIELD(Posted, TRUE);
+                            TESTFIELD("Issued/Received", "Issued/Received"::Received);
+                            IF "Mode of Receipt" = "Mode of Receipt"::Cash THEN BEGIN
+                                "AccountNo." := "Posting Account No.";
+                                AccountType := AccountType::"G/L Account";
+                                "BalAccountNo." := "Receipt Account No.";
+                                BalAccountType := BalAccountType::"G/L Account";
+                                Amount := -"FDR Value";
+                                InitGenJnlLine(Rec, "AccountNo.", "BalAccountNo.", AccountType, BalAccountType, Amount);
+                                Posted := FALSE;
+                                MODIFY;
+                            END ELSE
+                                IF "Mode of Receipt" = "Mode of Receipt"::Bank THEN BEGIN
+                                    "AccountNo." := "Posting Account No.";
+                                    AccountType := AccountType::"G/L Account";
+                                    "BalAccountNo." := "Receipt Account No.";
+                                    BalAccountType := BalAccountType::"Bank Account";
+                                    Amount := -"FDR Value";
+                                    InitGenJnlLine(Rec, "AccountNo.", "BalAccountNo.", AccountType, BalAccountType, Amount);
+                                    Posted := FALSE;
+                                    MODIFY;
+                                END;
+                            "FDR Posting Status" := "FDR Posting Status"::Surrendered;
                             "FDR Surrended Date" := WORKDATE;
                             MODIFY;
-                            MESSAGE(Text002,"No.");
+                            MESSAGE(Text002, "No.");
                         end;
                     }
                 }
@@ -299,59 +302,59 @@ page 60095 "FDR Card"
     end;
 
     var
-        "AccountNo." : Code[20];
-        "BalAccountNo." : Code[20];
-        AccountType : Option "G/L Account","Bank Account";
-        BalAccountType : Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset";
-        Amount : Decimal;
-        GenJnlLine : Record "Gen. Journal Line";
-        GenJnlPostLine : Codeunit "Gen. Jnl.-Post Line";
-        Text001 : Label 'Do you want to Purchase the FDR No. %1?';
-        Text002 : Label 'FDR No. %1 Posted Successfully.';
-        Text003 : Label 'Do you want to Receive the FDR No. %1?';
-        Text004 : Label 'FDR No. %1 Posted Successfully.';
+        "AccountNo.": Code[20];
+        "BalAccountNo.": Code[20];
+        AccountType: Option "G/L Account","Bank Account";
+        BalAccountType: Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset";
+        Amount: Decimal;
+        GenJnlLine: Record "Gen. Journal Line";
+        GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line";
+        Text001: Label 'Do you want to Purchase the FDR No. %1?';
+        Text002: Label 'FDR No. %1 Posted Successfully.';
+        Text003: Label 'Do you want to Receive the FDR No. %1?';
+        Text004: Label 'FDR No. %1 Posted Successfully.';
         [InDataSet]
-        NoHideValue : Boolean;
+        NoHideValue: Boolean;
         [InDataSet]
-        FDRDocNoHidevalue : Boolean;
+        FDRDocNoHidevalue: Boolean;
         [InDataSet]
-        ModeofPayment : Boolean;
+        ModeofPayment: Boolean;
         [InDataSet]
-        DescriptionHideValue : Boolean;
+        DescriptionHideValue: Boolean;
         [InDataSet]
-        IssuingBankHideValue : Boolean;
+        IssuingBankHideValue: Boolean;
         [InDataSet]
-        DateofIssueHideValue : Boolean;
+        DateofIssueHideValue: Boolean;
         [InDataSet]
-        ExpiryDateHideValue : Boolean;
+        ExpiryDateHideValue: Boolean;
         [InDataSet]
-        FDRHideValue : Boolean;
+        FDRHideValue: Boolean;
         [InDataSet]
-        RemarksHideValue : Boolean;
+        RemarksHideValue: Boolean;
         [InDataSet]
-        ExtendedHideValue : Boolean;
+        ExtendedHideValue: Boolean;
         [InDataSet]
-        PaymentAccNoHideValue : Boolean;
+        PaymentAccNoHideValue: Boolean;
         [InDataSet]
-        PostingAccNoHideValue : Boolean;
+        PostingAccNoHideValue: Boolean;
         [InDataSet]
-        ModeofReceiptHidevalue : Boolean;
+        ModeofReceiptHidevalue: Boolean;
         [InDataSet]
-        ReceiptAccNoHidevalue : Boolean;
+        ReceiptAccNoHidevalue: Boolean;
 
     [LineStart(10725)]
-    procedure InitGenJnlLine(var Rec : Record "FDR Master";"AccountNo." : Code[20];"BalAccountNo." : Code[20];AccountType : Option "G/L Account","Bank Account";BalAccountType : Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset";Amount : Decimal);
+    procedure InitGenJnlLine(var Rec: Record "FDR Master"; "AccountNo.": Code[20]; "BalAccountNo.": Code[20]; AccountType: Option "G/L Account","Bank Account"; BalAccountType: Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset"; Amount: Decimal);
     var
-        DimMgt : Codeunit DimensionManagement;
-        DimBufMgt : Codeunit "Dimension Buffer Management";
-        PostingGroups : Record "Tender Posting Groups";
+        DimMgt: Codeunit DimensionManagement;
+        DimBufMgt: Codeunit "Dimension Buffer Management";
+        PostingGroups: Record "Tender Posting Groups";
     begin
         GenJnlLine.INIT;
         GenJnlLine."Account Type" := AccountType;
         GenJnlLine."Account No." := "AccountNo.";
         GenJnlLine."Posting Date" := WORKDATE;
         GenJnlLine."Document No." := Rec."No.";
-        GenJnlLine."Document Type" := GenJnlLine."Document Type" :: Payment;
+        GenJnlLine."Document Type" := GenJnlLine."Document Type"::Payment;
         GenJnlLine.Description := Rec.Description;
         GenJnlLine."Bal. Account No." := "BalAccountNo.";
         GenJnlLine."Bal. Account Type" := BalAccountType;
@@ -360,7 +363,7 @@ page 60095 "FDR Card"
         //GenJnlLine."Cheque No." := TenderPostingLine."Cheque No.";
         //GenJnlLine."Cheque Date" := TenderPostingLine."Cheque Date.";
         GenJnlLine."Source Code" := 'GENJNL';
-        
+
         //DIM1.0 Start
         //Code Comment
         /*
@@ -371,12 +374,12 @@ page 60095 "FDR Card"
         GenJnlPostLine.RunWithCheck(GenJnlLine,TempJnlLineDim);
         */
         // Rev01 >>
-        
-        
+
+
         // Rev01 <<
-        
+
         GenJnlPostLine.RunWithCheck(GenJnlLine);
-        
+
         //DIM1.0 End;
 
     end;
@@ -385,11 +388,11 @@ page 60095 "FDR Card"
     local procedure NoOnBeforeInput();
     begin
         IF Status = Status::Released THEN
-        //B2b1.0>>
-          NoHideValue := FALSE
+            //B2b1.0>>
+            NoHideValue := FALSE
         ELSE
-          NoHideValue := TRUE;
-        
+            NoHideValue := TRUE;
+
         /* CurrPage."No.".UPDATEEDITABLE(FALSE)
         ELSE
           CurrPage."No.".UPDATEEDITABLE(TRUE)
@@ -401,11 +404,11 @@ page 60095 "FDR Card"
     local procedure FDRDocumentNoOnBeforeInput();
     begin
         IF Status = Status::Released THEN
-        //B2b1.0>>
-          FDRDocNoHidevalue := FALSE
+            //B2b1.0>>
+            FDRDocNoHidevalue := FALSE
         ELSE
-          FDRDocNoHidevalue := TRUE;
-        
+            FDRDocNoHidevalue := TRUE;
+
         /* CurrPage."FDR Document No.".UPDATEEDITABLE(FALSE)
         ELSE
           CurrPage."FDR Document No.".UPDATEEDITABLE(TRUE)
@@ -417,11 +420,11 @@ page 60095 "FDR Card"
     local procedure ModeofPaymentOnBeforeInput();
     begin
         IF Status = Status::Released THEN
-        //B2b1.0>>
-          ModeofPayment := FALSE
+            //B2b1.0>>
+            ModeofPayment := FALSE
         ELSE
-          ModeofPayment := TRUE;
-        
+            ModeofPayment := TRUE;
+
         /* CurrPage."Mode of Payment".UPDATEEDITABLE(FALSE)
         ELSE
           CurrPage."Mode of Payment".UPDATEEDITABLE(TRUE)
@@ -433,11 +436,11 @@ page 60095 "FDR Card"
     local procedure DescriptionOnBeforeInput();
     begin
         IF Status = Status::Released THEN
-        //B2b1.0>>
-          DescriptionHideValue := FALSE
+            //B2b1.0>>
+            DescriptionHideValue := FALSE
         ELSE
-          DescriptionHideValue := TRUE;
-        
+            DescriptionHideValue := TRUE;
+
         /* CurrPage.Description.UPDATEEDITABLE(FALSE)
         ELSE
           CurrPage.Description.UPDATEEDITABLE(TRUE)
@@ -449,11 +452,11 @@ page 60095 "FDR Card"
     local procedure IssuingBankOnBeforeInput();
     begin
         IF Status = Status::Released THEN
-        //B2b1.0>>
-          IssuingBankHideValue := FALSE
+            //B2b1.0>>
+            IssuingBankHideValue := FALSE
         ELSE
-          IssuingBankHideValue := TRUE;
-        
+            IssuingBankHideValue := TRUE;
+
         /* CurrPage."Issuing Bank".UPDATEEDITABLE(FALSE)
         ELSE
           CurrPage."Issuing Bank".UPDATEEDITABLE(TRUE)
@@ -465,11 +468,11 @@ page 60095 "FDR Card"
     local procedure DateofIssueOnBeforeInput();
     begin
         IF Status = Status::Released THEN
-        //B2b1.0>>
-          DateofIssueHideValue := FALSE
+            //B2b1.0>>
+            DateofIssueHideValue := FALSE
         ELSE
-          DateofIssueHideValue := TRUE;
-        
+            DateofIssueHideValue := TRUE;
+
         /* CurrPage."Date of Issue".UPDATEEDITABLE(FALSE)
         ELSE
           CurrPage."Date of Issue".UPDATEEDITABLE(TRUE)
@@ -481,11 +484,11 @@ page 60095 "FDR Card"
     local procedure ExpiryDateOnBeforeInput();
     begin
         IF Status = Status::Released THEN
-        //B2b1.0>>
-          ExpiryDateHideValue := FALSE
+            //B2b1.0>>
+            ExpiryDateHideValue := FALSE
         ELSE
-          ExpiryDateHideValue := TRUE;
-        
+            ExpiryDateHideValue := TRUE;
+
         /* CurrPage."Expiry Date".UPDATEEDITABLE(FALSE)
         ELSE
           CurrPage."Expiry Date".UPDATEEDITABLE(TRUE)
@@ -497,11 +500,11 @@ page 60095 "FDR Card"
     local procedure FDRValueOnBeforeInput();
     begin
         IF Status = Status::Released THEN
-        //B2b1.0>>
-          FDRHideValue := FALSE
+            //B2b1.0>>
+            FDRHideValue := FALSE
         ELSE
-          FDRHideValue := TRUE;
-        
+            FDRHideValue := TRUE;
+
         /* CurrPage."FDR Value".UPDATEEDITABLE(FALSE)
         ELSE
           CurrPage."FDR Value".UPDATEEDITABLE(TRUE)
@@ -513,11 +516,11 @@ page 60095 "FDR Card"
     local procedure RemarksOnBeforeInput();
     begin
         IF Status = Status::Released THEN
-        //B2b1.0>>
-          RemarksHideValue := FALSE
+            //B2b1.0>>
+            RemarksHideValue := FALSE
         ELSE
-          RemarksHideValue := TRUE;
-        
+            RemarksHideValue := TRUE;
+
         /* CurrPage.Remarks.UPDATEEDITABLE(FALSE)
         ELSE
           CurrPage.Remarks.UPDATEEDITABLE(TRUE)
@@ -529,11 +532,11 @@ page 60095 "FDR Card"
     local procedure ExtendedOnBeforeInput();
     begin
         IF Status = Status::Released THEN
-        //B2b1.0>>
-          ExtendedHideValue := FALSE
+            //B2b1.0>>
+            ExtendedHideValue := FALSE
         ELSE
-          ExtendedHideValue := TRUE;
-        
+            ExtendedHideValue := TRUE;
+
         /* CurrPage.Extended.UPDATEEDITABLE(FALSE)
         ELSE
           CurrPage.Extended.UPDATEEDITABLE(TRUE)
@@ -545,11 +548,11 @@ page 60095 "FDR Card"
     local procedure PaymentAccountNoOnBeforeInput();
     begin
         IF Status = Status::Released THEN
-        //B2b1.0>>
-          PaymentAccNoHideValue := FALSE
+            //B2b1.0>>
+            PaymentAccNoHideValue := FALSE
         ELSE
-          PaymentAccNoHideValue := TRUE;
-        
+            PaymentAccNoHideValue := TRUE;
+
         /* CurrPage."Payment Account No.".UPDATEEDITABLE(FALSE)
         ELSE
           CurrPage."Payment Account No.".UPDATEEDITABLE(TRUE)
@@ -561,11 +564,11 @@ page 60095 "FDR Card"
     local procedure PostingAccountNoOnBeforeInput();
     begin
         IF Status = Status::Released THEN
-        //B2b1.0>>
-          PostingAccNoHideValue := FALSE
+            //B2b1.0>>
+            PostingAccNoHideValue := FALSE
         ELSE
-          PostingAccNoHideValue := TRUE;
-        
+            PostingAccNoHideValue := TRUE;
+
         /*  CurrPage."Posting Account No.".UPDATEEDITABLE(FALSE)
         ELSE
           CurrPage."Posting Account No.".UPDATEEDITABLE(TRUE)
@@ -577,11 +580,11 @@ page 60095 "FDR Card"
     local procedure ModeofReceiptOnBeforeInput();
     begin
         IF Status = Status::Released THEN
-        //B2b1.0>>
-          ModeofReceiptHidevalue := FALSE
+            //B2b1.0>>
+            ModeofReceiptHidevalue := FALSE
         ELSE
-          ModeofReceiptHidevalue := TRUE;
-        
+            ModeofReceiptHidevalue := TRUE;
+
         /* CurrPage."Mode of Receipt".UPDATEEDITABLE(FALSE)
         ELSE
           CurrPage."Mode of Receipt".UPDATEEDITABLE(TRUE)
@@ -593,11 +596,11 @@ page 60095 "FDR Card"
     local procedure ReceiptAccountNoOnBeforeInput();
     begin
         IF Status = Status::Released THEN
-        //B2b1.0>>
-          ReceiptAccNoHidevalue := FALSE
+            //B2b1.0>>
+            ReceiptAccNoHidevalue := FALSE
         ELSE
-          ReceiptAccNoHidevalue := TRUE;
-        
+            ReceiptAccNoHidevalue := TRUE;
+
         /* CurrPage."Receipt Account No.".UPDATEEDITABLE(FALSE)
         ELSE
           CurrPage."Receipt Account No.".UPDATEEDITABLE(TRUE)

@@ -194,7 +194,7 @@ page 60133 "Purchase Enquiry"
                     Caption = 'Card';
                     Image = Card;
                     RunObject = Page "Vendor Card";
-                    RunPageLink = No.=FIELD(Buy-from Vendor No.);
+                                    RunPageLink = No.=FIELD(Buy-from Vendor No.);
                     ShortCutKey = 'Shift+F7';
                 }
                 action("Co&mments")
@@ -202,7 +202,7 @@ page 60133 "Purchase Enquiry"
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = Page "Purch. Comment Sheet";
-                    RunPageLink = Document Type=FIELD(Document Type),No.=FIELD(No.);
+                                    RunPageLink = Document Type=FIELD(Document Type),No.=FIELD(No.);
                 }
             }
         }
@@ -383,11 +383,11 @@ page 60133 "Purchase Enquiry"
     var
         PurchSetup : Record "Purchases & Payables Setup";
         CopyPurchDoc : Report "Copy Purchase Document";
-        DocPrint : Codeunit "Document-Print";
-        UserMgt : Codeunit "User Setup Management";
-        ArchiveManagement : Codeunit ArchiveManagement;
-        "-- NAVIN" : Integer;
-        Text13000 : Label 'No Setup exists for this Amount.';
+                           DocPrint : Codeunit "Document-Print";
+                           UserMgt : Codeunit "User Setup Management";
+                           ArchiveManagement : Codeunit ArchiveManagement;
+                           "-- NAVIN" : Integer;
+                           Text13000 : Label 'No Setup exists for this Amount.';
         Text13001 : Label 'Do you want to send the quote for Authorization?';
         Text13002 : Label 'The Quote Is Authorized, You Cannot Resend For Authorization';
         Text13003 : Label 'You Cannot Resend For Authorization';

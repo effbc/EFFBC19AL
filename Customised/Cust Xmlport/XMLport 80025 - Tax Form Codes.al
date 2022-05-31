@@ -6,19 +6,19 @@ xmlport 80025 "Tax Form Codes"
     {
         textelement(FormCodes)
         {
-            tableelement("<formcodes>";"Form Codes")
+            tableelement("<formcodes>"; "Form Codes")
             {
                 XmlName = 'FormCodes';
-                fieldelement(Code;"<FormCodes>".Code)
+                fieldelement(Code; "<FormCodes>".Code)
                 {
                 }
-                fieldelement(Description;"<FormCodes>".Description)
+                fieldelement(Description; "<FormCodes>".Description)
                 {
                 }
-                fieldelement(TransitDocument;"<FormCodes>"."Transit Document")
+                fieldelement(TransitDocument; "<FormCodes>"."Transit Document")
                 {
                 }
-                fieldelement(CForm;"<FormCodes>"."C Form")
+                fieldelement(CForm; "<FormCodes>"."C Form")
                 {
                 }
             }

@@ -6,19 +6,19 @@ xmlport 80017 "Def. Dimensions - G/LAccount"
     {
         textelement(DefaultDimensions)
         {
-            tableelement("<defaultdimension>";"Default Dimension")
+            tableelement("<defaultdimension>"; "Default Dimension")
             {
                 XmlName = 'DefaultDimension';
-                fieldelement(TableID;"<DefaultDimension>"."Table ID")
+                fieldelement(TableID; "<DefaultDimension>"."Table ID")
                 {
                 }
-                fieldelement(No;"<DefaultDimension>"."No.")
+                fieldelement(No; "<DefaultDimension>"."No.")
                 {
                 }
-                fieldelement(DimensionCode;"<DefaultDimension>"."Dimension Code")
+                fieldelement(DimensionCode; "<DefaultDimension>"."Dimension Code")
                 {
                 }
-                fieldelement(ValuePosting;"<DefaultDimension>"."Value Posting")
+                fieldelement(ValuePosting; "<DefaultDimension>"."Value Posting")
                 {
                 }
             }

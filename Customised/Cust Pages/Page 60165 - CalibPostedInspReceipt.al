@@ -6,7 +6,7 @@ page 60165 CalibPostedInspReceipt
     InsertAllowed = false;
     PageType = Document;
     SourceTable = "Inspection Receipt Header";
-    SourceTableView = WHERE(Status=FILTER(Yes));
+    SourceTableView = WHERE(Status = FILTER(Yes));
 
     layout
     {
@@ -15,64 +15,64 @@ page 60165 CalibPostedInspReceipt
             group(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Editable = false;
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                     Editable = false;
                 }
-                field("Item Description";"Item Description")
+                field("Item Description"; "Item Description")
                 {
                     Editable = false;
                 }
-                field("Unit Of Measure Code";"Unit Of Measure Code")
+                field("Unit Of Measure Code"; "Unit Of Measure Code")
                 {
                     Editable = false;
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                     Editable = false;
                 }
-                field("Spec ID";"Spec ID")
+                field("Spec ID"; "Spec ID")
                 {
                     Editable = false;
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                     Editable = false;
                 }
-                field("Document Date";"Document Date")
+                field("Document Date"; "Document Date")
                 {
                     Editable = false;
                 }
-                field("Rework Reference No.";"Rework Reference No.")
+                field("Rework Reference No."; "Rework Reference No.")
                 {
                     Editable = false;
                 }
-                field("Rework Inspect DS Created";"Rework Inspect DS Created")
+                field("Rework Inspect DS Created"; "Rework Inspect DS Created")
                 {
                     Editable = false;
                 }
-                field("Source Type";"Source Type")
+                field("Source Type"; "Source Type")
                 {
                     Editable = false;
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                     Editable = false;
                 }
-                field("Spec Version";"Spec Version")
+                field("Spec Version"; "Spec Version")
                 {
                     Editable = false;
                 }
-                field("Lot No.";"Lot No.")
+                field("Lot No."; "Lot No.")
                 {
                     Editable = false;
                 }
             }
-            part(Control1000000032;"Inpection Receipt Line")
+            part(Control1000000032; "Inpection Receipt Line")
             {
                 Editable = false;
                 SubPageLink = Document No.=FIELD(No.),Purch Line No.=FIELD(Purch Line No);
@@ -160,8 +160,8 @@ page 60165 CalibPostedInspReceipt
                     Caption = 'List';
                     Image = EditList;
                     RunObject = Page "Calib Inspection Receipt List";
-                    RunPageLink = Source Type=CONST(Calibration);
-                    ShortCutKey = 'F5';
+                                    RunPageLink = Source Type=CONST(Calibration);
+                                    ShortCutKey = 'F5';
                 }
                 action("Posted &Inspect. DS Details")
                 {
@@ -170,7 +170,7 @@ page 60165 CalibPostedInspReceipt
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Posted Inspect. DS Details";
-                    RunPageLink = Inspection Receipt No.=FIELD(No.);
+                                    RunPageLink = Inspection Receipt No.=FIELD(No.);
                 }
             }
         }

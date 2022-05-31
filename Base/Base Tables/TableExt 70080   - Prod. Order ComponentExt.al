@@ -22,25 +22,30 @@ tableextension 70080 ProdOrderComponentExt extends "Prod. Order Component"
         field(60001; "Position 4"; Code[250])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60002; "Source No."; Code[20])
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60003; "BOM Type"; Enum BOMType)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60006; "Type of Solder"; Enum TypeofSolder)
         {
             Description = 'B2B';
             Editable = true;
+            DataClassification = CustomerContent;
         }
         field(60007; "Production Plan Date"; Date)
         {
             FieldClass = Normal;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -61,15 +66,18 @@ tableextension 70080 ProdOrderComponentExt extends "Prod. Order Component"
         }
         field(60008; "Material Required Day"; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60009; "Don't Consider"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60091; "OLD Dim Set ID"; Integer)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
             TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -80,10 +88,12 @@ tableextension 70080 ProdOrderComponentExt extends "Prod. Order Component"
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60100; Copy1; Boolean)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60101; "Qty Copied"; Decimal)
         {
@@ -116,12 +126,15 @@ tableextension 70080 ProdOrderComponentExt extends "Prod. Order Component"
         field(60105; "BOM Qty"; Decimal)
         {
             Description = 'B2B    For Getting The Actual Qty of the BOM';
+            DataClassification = CustomerContent;
         }
         field(60106; PCB; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60107; "AVG Unit cost"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60108; "Product Group Code"; Code[20])
         {
@@ -130,16 +143,20 @@ tableextension 70080 ProdOrderComponentExt extends "Prod. Order Component"
         }
         field(60109; "Type of Solder2"; Text[10])
         {
+            DataClassification = CustomerContent;
         }
         field(60111; "Material Requisition Date"; Date)
         {
             Description = 'B2B1.0';
+            DataClassification = CustomerContent;
         }
         field(60112; "Operation No."; Code[10])
         {
+            DataClassification = CustomerContent;
         }
         field(60113; Dept; Code[10])
         {
+            DataClassification = CustomerContent;
         }
     }
     keys

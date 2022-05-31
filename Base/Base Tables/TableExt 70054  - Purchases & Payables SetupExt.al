@@ -6,25 +6,30 @@ tableextension 70054 PurchasesPayablesSetupExt extends "Purchases & Payables Set
         {
             Description = 'B2B';
             TableRelation = "No. Series";
+            DataClassification = CustomerContent;
         }
         field(60002; "RFQ Nos."; Code[10])
         {
             Description = 'B2B';
             TableRelation = "No. Series";
+            DataClassification = CustomerContent;
         }
         field(60003; "ICN Nos."; Code[10])
         {
             Description = 'B2B';
             TableRelation = "No. Series";
+            DataClassification = CustomerContent;
         }
         field(60004; "Enquiry Nos."; Code[10])
         {
             Description = 'POAU';
             TableRelation = "No. Series";
+            DataClassification = CustomerContent;
         }
         field(60005; "Price Required"; Boolean)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -34,6 +39,7 @@ tableextension 70054 PurchasesPayablesSetupExt extends "Purchases & Payables Set
         field(60006; "Price Weightage"; Decimal)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -43,6 +49,7 @@ tableextension 70054 PurchasesPayablesSetupExt extends "Purchases & Payables Set
         field(60007; "Quality Required"; Boolean)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -52,6 +59,7 @@ tableextension 70054 PurchasesPayablesSetupExt extends "Purchases & Payables Set
         field(60008; "Quality Weightage"; Decimal)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -61,6 +69,7 @@ tableextension 70054 PurchasesPayablesSetupExt extends "Purchases & Payables Set
         field(60009; "Delivery Required"; Boolean)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -70,6 +79,7 @@ tableextension 70054 PurchasesPayablesSetupExt extends "Purchases & Payables Set
         field(60010; "Delivery Weightage"; Decimal)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -79,6 +89,7 @@ tableextension 70054 PurchasesPayablesSetupExt extends "Purchases & Payables Set
         field(60011; "Payment Terms Required"; Boolean)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -88,6 +99,7 @@ tableextension 70054 PurchasesPayablesSetupExt extends "Purchases & Payables Set
         field(60012; "Payment Terms Weightage"; Decimal)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -97,10 +109,12 @@ tableextension 70054 PurchasesPayablesSetupExt extends "Purchases & Payables Set
         field(60013; "Default Quality Rating"; Decimal)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
         }
         field(60014; "Default Delivery Rating"; Decimal)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
         }
     }
 }

@@ -6,22 +6,22 @@ xmlport 90201 Employee
     {
         textelement(Employees)
         {
-            tableelement(Employee;Employee)
+            tableelement(Employee; Employee)
             {
                 XmlName = 'Employee';
-                fieldelement(No;Employee."No.")
+                fieldelement(No; Employee."No.")
                 {
                 }
-                fieldelement(FirstName;Employee."First Name")
+                fieldelement(FirstName; Employee."First Name")
                 {
                 }
-                fieldelement(GlobalDimension1Code;Employee."Global Dimension 1 Code")
+                fieldelement(GlobalDimension1Code; Employee."Global Dimension 1 Code")
                 {
                 }
-                fieldelement(EMail;Employee."E-Mail")
+                fieldelement(EMail; Employee."E-Mail")
                 {
                 }
-                fieldelement(DepartmentCode;Employee."Department Code")
+                fieldelement(DepartmentCode; Employee."Department Code")
                 {
                 }
             }

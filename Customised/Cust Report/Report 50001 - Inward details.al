@@ -7,154 +7,154 @@ report 50001 "Inward details"
 
     dataset
     {
-        dataitem("Purch. Rcpt. Header";"Purch. Rcpt. Header")
+        dataitem("Purch. Rcpt. Header"; "Purch. Rcpt. Header")
         {
             DataItemTableView = SORTING(No.) ORDER(Ascending);
-            RequestFilterFields = "Posting Date","No.","Pay-to Vendor No.","Order No.","Vendor Order No.","Vendor Shipment No.","Location Code";
-            column(compinfo_Name;compinfo.Name)
+            RequestFilterFields = "Posting Date", "No.", "Pay-to Vendor No.", "Order No.", "Vendor Order No.", "Vendor Shipment No.", "Location Code";
+            column(compinfo_Name; compinfo.Name)
             {
             }
-            column(FIlt;FIlt)
+            column(FIlt; FIlt)
             {
             }
-            column(Totalamt;Totalamt)
+            column(Totalamt; Totalamt)
             {
             }
-            column(Amtwithtaxes;Amtwithtaxes)
+            column(Amtwithtaxes; Amtwithtaxes)
             {
             }
-            column("sum";sum)
+            column("sum"; sum)
             {
             }
-            column(INWARD_DETAILSCaption;INWARD_DETAILSCaptionLbl)
+            column(INWARD_DETAILSCaption; INWARD_DETAILSCaptionLbl)
             {
             }
-            column(Vendor_Caption;Vendor_CaptionLbl)
+            column(Vendor_Caption; Vendor_CaptionLbl)
             {
             }
-            column(ORDER_NOCaption;ORDER_NOCaptionLbl)
+            column(ORDER_NOCaption; ORDER_NOCaptionLbl)
             {
             }
-            column(DESCRIPTIONCaption;DESCRIPTIONCaptionLbl)
+            column(DESCRIPTIONCaption; DESCRIPTIONCaptionLbl)
             {
             }
-            column(DC_No_Caption;DC_No_CaptionLbl)
+            column(DC_No_Caption; DC_No_CaptionLbl)
             {
             }
-            column(QuantityCaption;QuantityCaptionLbl)
+            column(QuantityCaption; QuantityCaptionLbl)
             {
             }
-            column(Lot_No_Caption;Lot_No_CaptionLbl)
+            column(Lot_No_Caption; Lot_No_CaptionLbl)
             {
             }
-            column(Serial_No_Caption;Serial_No_CaptionLbl)
+            column(Serial_No_Caption; Serial_No_CaptionLbl)
             {
             }
-            column(Unit_Cost__With_Taxes_Caption;Unit_Cost__With_Taxes_CaptionLbl)
+            column(Unit_Cost__With_Taxes_Caption; Unit_Cost__With_Taxes_CaptionLbl)
             {
             }
-            column(Unit_Cost__With_Out_Taxes_Caption;Unit_Cost__With_Out_Taxes_CaptionLbl)
+            column(Unit_Cost__With_Out_Taxes_Caption; Unit_Cost__With_Out_Taxes_CaptionLbl)
             {
             }
-            column(UOMCaption;UOMCaptionLbl)
+            column(UOMCaption; UOMCaptionLbl)
             {
             }
-            column(Purch__Rcpt__Header_No_;"No.")
+            column(Purch__Rcpt__Header_No_; "No.")
             {
             }
-            dataitem("Purch. Rcpt. Line";"Purch. Rcpt. Line")
+            dataitem("Purch. Rcpt. Line"; "Purch. Rcpt. Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Document No.,Line No.) ORDER(Ascending) WHERE(Quantity=FILTER(>0));
-                RequestFilterFields = Type,"No.","Document No.";
-                column(PIL__Direct_Unit_Cost;PIL."Direct Unit Cost")
+                DataItemTableView = SORTING(Document No., Line No.) ORDER(Ascending) WHERE(Quantity = FILTER(> 0));
+                RequestFilterFields = Type, "No.", "Document No.";
+                column(PIL__Direct_Unit_Cost; PIL."Direct Unit Cost")
                 {
                 }
-                column(compinfo_Name_Control1000000017;compinfo.Name)
+                column(compinfo_Name_Control1000000017; compinfo.Name)
                 {
                 }
-                column(CurrReport_PAGENO;CurrReport.PAGENO)
+                column(CurrReport_PAGENO; CurrReport.PAGENO)
                 {
                 }
-                column(Purch__Rcpt__Header___Posting_Date_;"Purch. Rcpt. Header"."Posting Date")
+                column(Purch__Rcpt__Header___Posting_Date_; "Purch. Rcpt. Header"."Posting Date")
                 {
                 }
-                column(Purch__Rcpt__Header___No__;"Purch. Rcpt. Header"."No.")
+                column(Purch__Rcpt__Header___No__; "Purch. Rcpt. Header"."No.")
                 {
                 }
-                column(Purch__Rcpt__Header___Buy_from_Vendor_Name_;"Purch. Rcpt. Header"."Buy-from Vendor Name")
+                column(Purch__Rcpt__Header___Buy_from_Vendor_Name_; "Purch. Rcpt. Header"."Buy-from Vendor Name")
                 {
                 }
-                column(Purch__Rcpt__Header___Order_No__;"Purch. Rcpt. Header"."Order No.")
+                column(Purch__Rcpt__Header___Order_No__; "Purch. Rcpt. Header"."Order No.")
                 {
                 }
-                column(Purch__Rcpt__Line__Purch__Rcpt__Line__Description;"Purch. Rcpt. Line".Description)
+                column(Purch__Rcpt__Line__Purch__Rcpt__Line__Description; "Purch. Rcpt. Line".Description)
                 {
                 }
-                column(Purch__Rcpt__Header___Vendor_Shipment_No__;"Purch. Rcpt. Header"."Vendor Shipment No.")
+                column(Purch__Rcpt__Header___Vendor_Shipment_No__; "Purch. Rcpt. Header"."Vendor Shipment No.")
                 {
                 }
-                column(Purch__Rcpt__Line_Quantity;Quantity)
+                column(Purch__Rcpt__Line_Quantity; Quantity)
                 {
                 }
-                column(Purch__Rcpt__Line__Unit_Cost__LCY__;"Unit Cost (LCY)")
+                column(Purch__Rcpt__Line__Unit_Cost__LCY__; "Unit Cost (LCY)")
                 {
                 }
-                column(UC;UC)
+                column(UC; UC)
                 {
                 }
-                column(DESCRIPTIONCaption_Control1000000015;DESCRIPTIONCaption_Control1000000015Lbl)
+                column(DESCRIPTIONCaption_Control1000000015; DESCRIPTIONCaption_Control1000000015Lbl)
                 {
                 }
-                column(Page_No_Caption;Page_No_CaptionLbl)
+                column(Page_No_Caption; Page_No_CaptionLbl)
                 {
                 }
-                column(EmptyStringCaption;EmptyStringCaptionLbl)
+                column(EmptyStringCaption; EmptyStringCaptionLbl)
                 {
                 }
-                column(Lot_No_Caption_Control1000000012;Lot_No_Caption_Control1000000012Lbl)
+                column(Lot_No_Caption_Control1000000012; Lot_No_Caption_Control1000000012Lbl)
                 {
                 }
-                column(Serial_No_Caption_Control1000000013;Serial_No_Caption_Control1000000013Lbl)
+                column(Serial_No_Caption_Control1000000013; Serial_No_Caption_Control1000000013Lbl)
                 {
                 }
-                column(ORDER_NOCaption_Control1000000024;ORDER_NOCaption_Control1000000024Lbl)
+                column(ORDER_NOCaption_Control1000000024; ORDER_NOCaption_Control1000000024Lbl)
                 {
                 }
-                column(DC_No_Caption_Control1000000038;DC_No_Caption_Control1000000038Lbl)
+                column(DC_No_Caption_Control1000000038; DC_No_Caption_Control1000000038Lbl)
                 {
                 }
-                column(VendorCaption;VendorCaptionLbl)
+                column(VendorCaption; VendorCaptionLbl)
                 {
                 }
-                column(Unit_Cost__With_Taxes_Caption_Control1102154003;Unit_Cost__With_Taxes_Caption_Control1102154003Lbl)
+                column(Unit_Cost__With_Taxes_Caption_Control1102154003; Unit_Cost__With_Taxes_Caption_Control1102154003Lbl)
                 {
                 }
-                column(Unit_Cost__With_Out_Taxes_Caption_Control1102154004;Unit_Cost__With_Out_Taxes_Caption_Control1102154004Lbl)
+                column(Unit_Cost__With_Out_Taxes_Caption_Control1102154004; Unit_Cost__With_Out_Taxes_Caption_Control1102154004Lbl)
                 {
                 }
-                column(QuantityCaption_Control1102154010;QuantityCaption_Control1102154010Lbl)
+                column(QuantityCaption_Control1102154010; QuantityCaption_Control1102154010Lbl)
                 {
                 }
-                column(UOMCaption_Control1102154019;UOMCaption_Control1102154019Lbl)
+                column(UOMCaption_Control1102154019; UOMCaption_Control1102154019Lbl)
                 {
                 }
-                column(Purch__Rcpt__Line_Document_No_;"Document No.")
+                column(Purch__Rcpt__Line_Document_No_; "Document No.")
                 {
                 }
-                column(Purch__Rcpt__Line_Line_No_;"Line No.")
+                column(Purch__Rcpt__Line_Line_No_; "Line No.")
                 {
                 }
-                column(Purch__Rcpt__Line_No_;"No.")
+                column(Purch__Rcpt__Line_No_; "No.")
                 {
                 }
-                column(test;Test)
+                column(test; Test)
                 {
                 }
-                column(Type;"Purch. Rcpt. Line".Type)
+                column(Type; "Purch. Rcpt. Line".Type)
                 {
                 }
-                dataitem("Item Ledger Entry";"Item Ledger Entry")
+                dataitem("Item Ledger Entry"; "Item Ledger Entry")
                 {
                     DataItemLink = Document No.=FIELD(Document No.),Item No.=FIELD(No.);
                     DataItemTableView = SORTING(Document No.,Item No.,Posting Date) ORDER(Ascending) WHERE(Quantity=FILTER(>0));

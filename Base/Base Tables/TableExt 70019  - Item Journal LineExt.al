@@ -25,6 +25,7 @@ tableextension 70019 ItemJournalLineExt extends "Item Journal Line"
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60002; "Planed Setup Time"; Decimal)
         {
@@ -33,6 +34,7 @@ tableextension 70019 ItemJournalLineExt extends "Item Journal Line"
             Description = 'B2B';
             Editable = false;
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(60003; "Planed Run Time"; Decimal)
         {
@@ -41,6 +43,7 @@ tableextension 70019 ItemJournalLineExt extends "Item Journal Line"
             Description = 'B2B';
             Editable = false;
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(60004; "Planed Wait Time"; Decimal)
         {
@@ -49,6 +52,7 @@ tableextension 70019 ItemJournalLineExt extends "Item Journal Line"
             Description = 'B2B';
             Editable = false;
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(60005; "Planed Move Time"; Decimal)
         {
@@ -57,19 +61,23 @@ tableextension 70019 ItemJournalLineExt extends "Item Journal Line"
             Description = 'B2B';
             Editable = false;
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(60006; "Internal Rework"; Boolean)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60007; "QC Rework"; Boolean)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60008; "Quantity."; Decimal)
         {
             DecimalPlaces = 0 : 5;
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60009; "Qty. Received"; Decimal)
         {
@@ -83,124 +91,150 @@ tableextension 70019 ItemJournalLineExt extends "Item Journal Line"
         field(60010; "Transfer Type"; Enum "Item Journal Line Enum")
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60011; "Shelf No."; Code[50])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60012; "Job No.2"; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60013; "Job Budget Line No."; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60014; "Serial No. EFF"; Code[20])
         {
             Description = 'B2B';
             TableRelation = "Prod. Order Comp Resource"."Serial No." WHERE("Prod. Order No." = FIELD("Order No."),
                                                                             "Prod. Order Line No." = FIELD("Order Line No."));
+            DataClassification = CustomerContent;
         }
         field(60100; "ITL Doc No."; Code[20])
         {
             Caption = 'Prod. Ord No.';
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60101; "ITL Doc Line No."; Integer)
         {
             Caption = 'Prod. Ord Line No.';
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60103; "ITL Doc Ref Line No."; Integer)
         {
             Caption = 'Prod.Ord Comp. Line No.';
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60104; "Qty. At Location Code"; Decimal)
         {
             Editable = false;
             FieldClass = Normal;
+            DataClassification = CustomerContent;
         }
         field(60105; "User ID"; Code[50])
         {
             Description = 'B2B,Rev01';
             Editable = false;
             TableRelation = User."User Name";
+            DataClassification = CustomerContent;
             //This property is currently not supported
             //TestTableRelation = false;
         }
         field(60106; Remarks; Text[250])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60107; "Output Jr Serial No."; Code[20])
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60108; "Finished Product Sr No"; Code[20])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60109; "Issued Date Time"; DateTime)
         {
+            DataClassification = CustomerContent;
         }
         field(60110; "Reworked User Id"; Code[15])
         {
             TableRelation = IF (Type = CONST("Machine Center")) "Machine Center"
             ELSE
             IF (Type = CONST("Work Center")) "Work Center";
+            DataClassification = CustomerContent;
         }
         field(60116; "Sales Order No"; Code[20])
         {
             Description = 'SH1.0';
             TableRelation = "Sales Header"."No." WHERE("Document Type" = CONST(Order));
+            DataClassification = CustomerContent;
         }
         field(60117; "Sales Order Line No"; Integer)
         {
             Description = 'SH1.0';
             TableRelation = "Sales Line"."Line No." WHERE("Document No." = FIELD("Sales Order No"));
+            DataClassification = CustomerContent;
         }
         field(60118; "Schedule Line No"; Integer)
         {
             Description = 'SH1.0';
             TableRelation = Schedule2."Line No." WHERE("Document No." = FIELD("Sales Order No"),
                                                         "Document Line No." = FIELD("Sales Order Line No"));
+            DataClassification = CustomerContent;
         }
         field(80100; Assigned; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(90000; Level2; Integer)
         {
             Description = 'AJAY';
+            DataClassification = CustomerContent;
         }
         field(90001; "Changed by User2"; Boolean)
         {
             Description = 'AJAY';
+            DataClassification = CustomerContent;
         }
         field(33000251; "Quality Ledger Entry No."; Integer)
         {
             Description = 'QC1.2';
             TableRelation = "Quality Ledger Entry";
+            DataClassification = CustomerContent;
         }
         field(33000252; "After Inspection"; Boolean)
         {
             Description = 'QC1.2';
+            DataClassification = CustomerContent;
         }
         field(33000253; "Inspectin Receipt No."; Code[20])
         {
             Description = 'QC1.2';
             TableRelation = "Inspection Receipt Header"."No.";
+            DataClassification = CustomerContent;
         }
         field(33000260; "Purch.Rcpt Line"; Integer)
         {
             Description = 'QC1.2';
+            DataClassification = CustomerContent;
         }
         field(33000261; "QC Check"; Boolean)
         {
             Description = 'B2BQCCheck';
+            DataClassification = CustomerContent;
         }
     }
     trigger OnAfterInsert()

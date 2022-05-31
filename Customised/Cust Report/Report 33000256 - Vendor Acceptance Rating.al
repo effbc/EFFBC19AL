@@ -7,89 +7,89 @@ report 33000256 "Vendor Acceptance Rating"
 
     dataset
     {
-        dataitem("Vendor Rating";"Vendor Rating")
+        dataitem("Vendor Rating"; "Vendor Rating")
         {
             PrintOnlyIfDetail = true;
-            RequestFilterFields = "Item No.","Vendor No.";
-            column(COMPANYNAME;COMPANYNAME)
+            RequestFilterFields = "Item No.", "Vendor No.";
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(Rating;Rating)
+            column(Rating; Rating)
             {
             }
-            column(Vendor_Rating__Vendor_Rating__Reject;"Vendor Rating".Reject)
+            column(Vendor_Rating__Vendor_Rating__Reject; "Vendor Rating".Reject)
             {
             }
-            column(Vendor_Rating__Vendor_Rating__Rework;"Vendor Rating".Rework)
+            column(Vendor_Rating__Vendor_Rating__Rework; "Vendor Rating".Rework)
             {
             }
-            column(Vendor_Rating__Vendor_Rating___Accepted_UD_;"Vendor Rating"."Accepted UD")
+            column(Vendor_Rating__Vendor_Rating___Accepted_UD_; "Vendor Rating"."Accepted UD")
             {
             }
-            column(Vendor_Rating__Vendor_Rating__Accepted;"Vendor Rating".Accepted)
+            column(Vendor_Rating__Vendor_Rating__Accepted; "Vendor Rating".Accepted)
             {
             }
-            column(Vendor_Rating__Vendor_Rating__Inspected;"Vendor Rating".Inspected)
+            column(Vendor_Rating__Vendor_Rating__Inspected; "Vendor Rating".Inspected)
             {
             }
-            column(Vendor_Rating__Item_No__;"Item No.")
+            column(Vendor_Rating__Item_No__; "Item No.")
             {
             }
-            column(Vendor_Rating__Vendor_No__;"Vendor No.")
+            column(Vendor_Rating__Vendor_No__; "Vendor No.")
             {
             }
-            column(Vendor_Rating__Item_No___Control1000000000;"Item No.")
+            column(Vendor_Rating__Item_No___Control1000000000; "Item No.")
             {
             }
-            column(Vendor_Rating__Vendor_No___Control1000000002;"Vendor No.")
+            column(Vendor_Rating__Vendor_No___Control1000000002; "Vendor No.")
             {
             }
-            column(Rating_PointsCaption;Rating_PointsCaptionLbl)
+            column(Rating_PointsCaption; Rating_PointsCaptionLbl)
             {
             }
-            column(Vendor_Rating__Vendor_Rating__RejectCaption;FIELDCAPTION(Reject))
+            column(Vendor_Rating__Vendor_Rating__RejectCaption; FIELDCAPTION(Reject))
             {
             }
-            column(Vendor_Rating__Vendor_Rating__ReworkCaption;FIELDCAPTION(Rework))
+            column(Vendor_Rating__Vendor_Rating__ReworkCaption; FIELDCAPTION(Rework))
             {
             }
-            column(Vendor_Rating__Vendor_Rating___Accepted_UD_Caption;FIELDCAPTION("Accepted UD"))
+            column(Vendor_Rating__Vendor_Rating___Accepted_UD_Caption; FIELDCAPTION("Accepted UD"))
             {
             }
-            column(Vendor_Rating__Vendor_Rating__AcceptedCaption;FIELDCAPTION(Accepted))
+            column(Vendor_Rating__Vendor_Rating__AcceptedCaption; FIELDCAPTION(Accepted))
             {
             }
-            column(InspectedCaption;InspectedCaptionLbl)
+            column(InspectedCaption; InspectedCaptionLbl)
             {
             }
-            column(Vendor_Rating__Item_No__Caption;FIELDCAPTION("Item No."))
+            column(Vendor_Rating__Item_No__Caption; FIELDCAPTION("Item No."))
             {
             }
-            column(Vendor_Rating__Vendor_No___Control1000000002Caption;FIELDCAPTION("Vendor No."))
+            column(Vendor_Rating__Vendor_No___Control1000000002Caption; FIELDCAPTION("Vendor No."))
             {
             }
-            column(Vendor_RatingCaption;Vendor_RatingCaptionLbl)
+            column(Vendor_RatingCaption; Vendor_RatingCaptionLbl)
             {
             }
-            column(Inspect__Recpt__Accept_Level_QuantityCaption;"Inspect. Recpt. Accept Level".FIELDCAPTION(Quantity))
+            column(Inspect__Recpt__Accept_Level_QuantityCaption; "Inspect. Recpt. Accept Level".FIELDCAPTION(Quantity))
             {
             }
-            column(Inspect__Recpt__Accept_Level__Reason_Code_Caption;"Inspect. Recpt. Accept Level".FIELDCAPTION("Reason Code"))
+            column(Inspect__Recpt__Accept_Level__Reason_Code_Caption; "Inspect. Recpt. Accept Level".FIELDCAPTION("Reason Code"))
             {
             }
-            column(Inspect__Recpt__Accept_Level__Acceptance_Code_Caption;"Inspect. Recpt. Accept Level".FIELDCAPTION("Acceptance Code"))
+            column(Inspect__Recpt__Accept_Level__Acceptance_Code_Caption; "Inspect. Recpt. Accept Level".FIELDCAPTION("Acceptance Code"))
             {
             }
-            column(Inspect__Recpt__Accept_Level__Quality_Type_Caption;"Inspect. Recpt. Accept Level".FIELDCAPTION("Quality Type"))
+            column(Inspect__Recpt__Accept_Level__Quality_Type_Caption; "Inspect. Recpt. Accept Level".FIELDCAPTION("Quality Type"))
             {
             }
-            column(Vendor_Rating__Item_No___Control1000000000Caption;FIELDCAPTION("Item No."))
+            column(Vendor_Rating__Item_No___Control1000000000Caption; FIELDCAPTION("Item No."))
             {
             }
-            column(Vendor_Rating__Vendor_No___Control1000000002Caption_Control1000000003;FIELDCAPTION("Vendor No."))
+            column(Vendor_Rating__Vendor_No___Control1000000002Caption_Control1000000003; FIELDCAPTION("Vendor No."))
             {
             }
-            dataitem("Inspect. Recpt. Accept Level";"Inspect. Recpt. Accept Level")
+            dataitem("Inspect. Recpt. Accept Level"; "Inspect. Recpt. Accept Level")
             {
                 DataItemLink = Item No.=FIELD(Item No.),Vendor No.=FIELD(Vendor No.);
                 DataItemTableView = SORTING(Item No.,Vendor No.,Acceptance Code) WHERE(Status=CONST(Yes));

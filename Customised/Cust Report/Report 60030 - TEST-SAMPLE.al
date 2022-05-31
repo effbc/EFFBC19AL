@@ -5,9 +5,9 @@ report 60030 "TEST-SAMPLE"
 
     dataset
     {
-        dataitem("Production BOM Line";"Production BOM Line")
+        dataitem("Production BOM Line"; "Production BOM Line")
         {
-            DataItemTableView = SORTING(Type,No.) ORDER(Ascending) WHERE(Type=FILTER(<>' '),No.=FILTER(<>''));
+            DataItemTableView = SORTING(Type, No.) ORDER(Ascending) WHERE(Type = FILTER(<> ' '), No.=FILTER(<>''));
 
             trigger OnAfterGetRecord();
             begin

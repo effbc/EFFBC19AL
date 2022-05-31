@@ -21,31 +21,31 @@ page 60106 "MSPT Posted Order Details"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                 }
-                field("Party No.";"Party No.")
+                field("Party No."; "Party No.")
                 {
                 }
-                field("MSPT Header Code";"MSPT Header Code")
+                field("MSPT Header Code"; "MSPT Header Code")
                 {
                 }
-                field("MSPT Code";"MSPT Code")
+                field("MSPT Code"; "MSPT Code")
                 {
                 }
-                field(Percentage;Percentage)
+                field(Percentage; Percentage)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Calulation Period";"Calulation Period")
+                field("Calulation Period"; "Calulation Period")
                 {
                 }
-                field("Due Date";"Due Date")
+                field("Due Date"; "Due Date")
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
             }

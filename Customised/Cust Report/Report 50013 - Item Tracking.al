@@ -8,9 +8,9 @@ report 50013 "Item Tracking"
 
     dataset
     {
-        dataitem("Item Ledger Entry";"Item Ledger Entry")
+        dataitem("Item Ledger Entry"; "Item Ledger Entry")
         {
-            DataItemTableView = SORTING(Item No.,Entry Type,Variant Code,Drop Shipment,Location Code,Posting Date) WHERE(Entry Type=CONST(Transfer),Quantity=FILTER(>0),Location Code=CONST(PROD));
+            DataItemTableView = SORTING(Item No., Entry Type, Variant Code, Drop Shipment, Location Code, Posting Date) WHERE(Entry Type=CONST(Transfer),Quantity=FILTER(>0),Location Code=CONST(PROD));
             RequestFilterFields = "Item No.","Lot No.","Serial No.","Order No.";
             ReqFilterHeading = '<Item Tracking>';
             column(TODAY;TODAY)

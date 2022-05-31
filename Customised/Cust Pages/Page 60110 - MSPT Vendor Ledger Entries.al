@@ -22,50 +22,50 @@ page 60110 "MSPT Vendor Ledger Entries"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                     Editable = false;
                 }
-                field("Document Type";"Document Type")
+                field("Document Type"; "Document Type")
                 {
                     Editable = false;
                 }
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                     Editable = false;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Editable = false;
                 }
-                field(Open;Open)
+                field(Open; Open)
                 {
                     Editable = false;
                 }
-                field("MSPT Header Code";"MSPT Header Code")
+                field("MSPT Header Code"; "MSPT Header Code")
                 {
                     Editable = false;
                 }
-                field("MSPT Line Code";"MSPT Line Code")
+                field("MSPT Line Code"; "MSPT Line Code")
                 {
                     Editable = false;
                 }
-                field("MSPT Amount";"MSPT Amount")
+                field("MSPT Amount"; "MSPT Amount")
                 {
                     Editable = false;
                 }
-                field("MSPT Remaining Amount";"MSPT Remaining Amount")
+                field("MSPT Remaining Amount"; "MSPT Remaining Amount")
                 {
                     Editable = false;
                 }
-                field("MSPT Due Date";"MSPT Due Date")
+                field("MSPT Due Date"; "MSPT Due Date")
                 {
                 }
-                field("Entry No.";"Entry No.")
+                field("Entry No."; "Entry No.")
                 {
                     Editable = false;
                 }
-                field("MSPT Entry No.";"MSPT Entry No.")
+                field("MSPT Entry No."; "MSPT Entry No.")
                 {
                     Editable = false;
                 }

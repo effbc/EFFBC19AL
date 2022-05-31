@@ -6,16 +6,16 @@ xmlport 80212 "work center"
     {
         textelement(WorkCenters)
         {
-            tableelement("<workcenter>";"Work Center")
+            tableelement("<workcenter>"; "Work Center")
             {
                 XmlName = 'WorkCenter';
-                fieldelement(No;"<WorkCenter>"."No.")
+                fieldelement(No; "<WorkCenter>"."No.")
                 {
                 }
-                fieldelement(Name;"<WorkCenter>".Name)
+                fieldelement(Name; "<WorkCenter>".Name)
                 {
                 }
-                fieldelement(GenProdPostingGroup;"<WorkCenter>"."Gen. Prod. Posting Group")
+                fieldelement(GenProdPostingGroup; "<WorkCenter>"."Gen. Prod. Posting Group")
                 {
                 }
             }

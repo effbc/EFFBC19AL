@@ -6,16 +6,16 @@ xmlport 50002 "items with tracking codes"
     {
         textelement(Items)
         {
-            tableelement(Item;Item)
+            tableelement(Item; Item)
             {
                 XmlName = 'Item';
-                fieldelement(No;Item."No.")
+                fieldelement(No; Item."No.")
                 {
                 }
-                fieldelement(ItemCategoryCode;Item."Item Category Code")
+                fieldelement(ItemCategoryCode; Item."Item Category Code")
                 {
                 }
-                fieldelement(SerialNos;Item."Serial Nos.")
+                fieldelement(SerialNos; Item."Serial Nos.")
                 {
                 }
             }

@@ -7,16 +7,16 @@ page 60204 "Zones-cs"
     {
         area(content)
         {
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
             }
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Zone Code";"Zone Code")
+                field("Zone Code"; "Zone Code")
                 {
                 }
-                field("Zone Name";"Zone Name")
+                field("Zone Name"; "Zone Name")
                 {
                 }
             }

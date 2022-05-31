@@ -9,7 +9,7 @@ report 50039 "QC Inwards"
 
     dataset
     {
-        dataitem("Inspection Datasheet Header";"Inspection Datasheet Header")
+        dataitem("Inspection Datasheet Header"; "Inspection Datasheet Header")
         {
             DataItemTableView = SORTING(Created Date) ORDER(Ascending) WHERE(Source Type=CONST(In Bound),Partial Inspection=FILTER(No));
             RequestFilterFields = "Created Date";

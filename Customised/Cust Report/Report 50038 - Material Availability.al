@@ -17,10 +17,10 @@ report 50038 "Material Availability"
 
     dataset
     {
-        dataitem("Prod. Order Component";"Prod. Order Component")
+        dataitem("Prod. Order Component"; "Prod. Order Component")
         {
-            CalcFields = Qty. in Posted Material Issues,Qty. in Material Issues;
-            DataItemTableView = SORTING(Production Plan Date,Item No.,Prod. Order No.) ORDER(Ascending) WHERE(Expected Quantity=FILTER(>0),Don't Consider=CONST(No),Status=CONST(Released));
+            CalcFields = Qty. in Posted Material Issues, Qty. in Material Issues;
+            DataItemTableView = SORTING(Production Plan Date, Item No., Prod. Order No.) ORDER(Ascending) WHERE(Expected Quantity=FILTER(>0),Don't Consider=CONST(No),Status=CONST(Released));
             RequestFilterFields = "Production Plan Date";
             column(Prod__Order_Component__Production_Plan_Date_;"Production Plan Date")
             {
@@ -3441,9 +3441,9 @@ report 50038 "Material Availability"
         Itm : Record Item;
         IsExpired : Boolean;
         DateAndTime : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.DateAndTime";
-        DayofWeekInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstDayOfWeek";
-        WeekofYearInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstWeekOfYear";
-        Itm_floor_life : Decimal;
+                          DayofWeekInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstDayOfWeek";
+                          WeekofYearInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstWeekOfYear";
+                          Itm_floor_life : Decimal;
     begin
         IsExpired:=FALSE;
 

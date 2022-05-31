@@ -18,420 +18,420 @@ report 50058 "Purchase Order"
 
     dataset
     {
-        dataitem("Purchase Header";"Purchase Header")
+        dataitem("Purchase Header"; "Purchase Header")
         {
-            DataItemTableView = SORTING(Document Type,No.) WHERE(Document Type=CONST(Order));
-            RequestFilterFields = "No.","Buy-from Vendor No.","No. Printed";
+            DataItemTableView = SORTING(Document Type, No.) WHERE(Document Type=CONST(Order));
+            RequestFilterFields = "No.", "Buy-from Vendor No.", "No. Printed";
             ReqFilterHeading = 'Purchase Order';
-            column(Purchase_Header_Document_Type;"Document Type")
+            column(Purchase_Header_Document_Type; "Document Type")
             {
             }
-            column(Purchase_Header_No_;"No.")
+            column(Purchase_Header_No_; "No.")
             {
             }
-            column(Purchase_Header_Buy_from_Vendor_No_;"Buy-from Vendor No.")
+            column(Purchase_Header_Buy_from_Vendor_No_; "Buy-from Vendor No.")
             {
             }
-            column(Purchase_Header_Buy_from_Vendor_Name;"Purchase Header"."Buy-from Vendor Name")
+            column(Purchase_Header_Buy_from_Vendor_Name; "Purchase Header"."Buy-from Vendor Name")
             {
             }
-            column(Vendor_State_Name;Vendor_State_Name)
+            column(Vendor_State_Name; Vendor_State_Name)
             {
             }
-            column(Vendor_State_No;Vendor_State_No)
+            column(Vendor_State_No; Vendor_State_No)
             {
             }
-            dataitem("<Vendor1>";Vendor)
+            dataitem("<Vendor1>"; Vendor)
             {
                 DataItemLink = No.=FIELD(Buy-from Vendor No.);
-                column(CompanyAddr_1_;CompanyAddr[1])
+                column(CompanyAddr_1_; CompanyAddr[1])
                 {
                 }
-                column(CompanyAddr_2_;CompanyAddr[2])
+                column(CompanyAddr_2_; CompanyAddr[2])
                 {
                 }
-                column(CompanyAddr_3_;CompanyAddr[3])
+                column(CompanyAddr_3_; CompanyAddr[3])
                 {
                 }
-                column(CompanyInfo__Phone_No__;CompanyInfo."Phone No.")
+                column(CompanyInfo__Phone_No__; CompanyInfo."Phone No.")
                 {
                 }
-                column(CompanyInfo__Fax_No__;CompanyInfo."Fax No.")
+                column(CompanyInfo__Fax_No__; CompanyInfo."Fax No.")
                 {
                 }
-                column(CompanyInfo__Home_Page_;CompanyInfo."Home Page")
+                column(CompanyInfo__Home_Page_; CompanyInfo."Home Page")
                 {
                 }
-                column(CompanyInfo_Picture;CompanyInfo.Picture)
+                column(CompanyInfo_Picture; CompanyInfo.Picture)
                 {
                 }
-                column(CompanyInfo_GST_No;CompanyInfo."GST Registration No.")
+                column(CompanyInfo_GST_No; CompanyInfo."GST Registration No.")
                 {
                 }
-                column(E__Mail_Caption;E__Mail_CaptionLbl)
+                column(E__Mail_Caption; E__Mail_CaptionLbl)
                 {
                 }
-                column(Vendor1__E_Mail;"E-Mail")
+                column(Vendor1__E_Mail; "E-Mail")
                 {
                 }
-                column(Ph_Caption;Ph_CaptionLbl)
+                column(Ph_Caption; Ph_CaptionLbl)
                 {
                 }
-                column(FAX_Caption;FAX_CaptionLbl)
+                column(FAX_Caption; FAX_CaptionLbl)
                 {
                 }
-                column(URL_Caption;URL_CaptionLbl)
+                column(URL_Caption; URL_CaptionLbl)
                 {
                 }
-                column(Purchase_OrderCaption;Purchase_OrderCaptionLbl)
+                column(Purchase_OrderCaption; Purchase_OrderCaptionLbl)
                 {
                 }
-                column(purchase_efftronics_comCaption;purchase_efftronics_comCaptionLbl)
+                column(purchase_efftronics_comCaption; purchase_efftronics_comCaptionLbl)
                 {
                 }
-                column(Vendor1__No_;"No.")
+                column(Vendor1__No_; "No.")
                 {
                 }
-                column(UPPERCASE_BuyFromAddr_6__;UPPERCASE(BuyFromAddr[6]))
+                column(UPPERCASE_BuyFromAddr_6__; UPPERCASE(BuyFromAddr[6]))
                 {
                 }
-                column(UPPERCASE_BuyFromAddr_5__;UPPERCASE(BuyFromAddr[5]))
+                column(UPPERCASE_BuyFromAddr_5__; UPPERCASE(BuyFromAddr[5]))
                 {
                 }
-                column(UPPERCASE_BuyFromAddr_4__;UPPERCASE(BuyFromAddr[4]))
+                column(UPPERCASE_BuyFromAddr_4__; UPPERCASE(BuyFromAddr[4]))
                 {
                 }
-                column(UPPERCASE_BuyFromAddr_3__;UPPERCASE(BuyFromAddr[3]))
+                column(UPPERCASE_BuyFromAddr_3__; UPPERCASE(BuyFromAddr[3]))
                 {
                 }
-                column(UPPERCASE_BuyFromAddr_2__;UPPERCASE(BuyFromAddr[2]))
+                column(UPPERCASE_BuyFromAddr_2__; UPPERCASE(BuyFromAddr[2]))
                 {
                 }
-                column(UPPERCASE_BuyFromAddr_1__;UPPERCASE(BuyFromAddr[1]))
+                column(UPPERCASE_BuyFromAddr_1__; UPPERCASE(BuyFromAddr[1]))
                 {
                 }
-                column(Ord__Ref_No__Caption;Ord__Ref_No__CaptionLbl)
+                column(Ord__Ref_No__Caption; Ord__Ref_No__CaptionLbl)
                 {
                 }
-                column(Ordered_Date_Caption;Ordered_Date_CaptionLbl)
+                column(Ordered_Date_Caption; Ordered_Date_CaptionLbl)
                 {
                 }
-                column(ToCaption;ToCaptionLbl)
+                column(ToCaption; ToCaptionLbl)
                 {
                 }
-                column(Ref__Quotation_No__Caption;Ref__Quotation_No__CaptionLbl)
+                column(Ref__Quotation_No__Caption; Ref__Quotation_No__CaptionLbl)
                 {
                 }
-                column(Qtn__Dated_______Caption;Qtn__Dated_______CaptionLbl)
+                column(Qtn__Dated_______Caption; Qtn__Dated_______CaptionLbl)
                 {
                 }
-                column(Excise_Regn_No__Caption;Excise_Regn_No__CaptionLbl)
+                column(Excise_Regn_No__Caption; Excise_Regn_No__CaptionLbl)
                 {
                 }
-                column(TIN_No____________________Caption;TIN_No____________________CaptionLbl)
+                column(TIN_No____________________Caption; TIN_No____________________CaptionLbl)
                 {
                 }
-                column(CST_No____________Caption;CST_No____________CaptionLbl)
+                column(CST_No____________Caption; CST_No____________CaptionLbl)
                 {
                 }
-                column(TinNo;TNo)
+                column(TinNo; TNo)
                 {
                 }
-                column(CSTNo;CSTNo)
+                column(CSTNo; CSTNo)
                 {
                 }
-                column(Service_Tax_Regn_No__Caption;Service_Tax_Regn_No__CaptionLbl)
+                column(Service_Tax_Regn_No__Caption; Service_Tax_Regn_No__CaptionLbl)
                 {
                 }
-                column(Cell_No____________Caption;Cell_No____________CaptionLbl)
+                column(Cell_No____________Caption; Cell_No____________CaptionLbl)
                 {
                 }
-                column(Fax_No_____________Caption;Fax_No_____________CaptionLbl)
+                column(Fax_No_____________Caption; Fax_No_____________CaptionLbl)
                 {
                 }
-                column(Ph_No______________Caption;Ph_No______________CaptionLbl)
+                column(Ph_No______________Caption; Ph_No______________CaptionLbl)
                 {
                 }
-                column(Contact___________Caption;Contact___________CaptionLbl)
+                column(Contact___________Caption; Contact___________CaptionLbl)
                 {
                 }
-                column(E_mail_____________Caption;E_mail_____________CaptionLbl)
+                column(E_mail_____________Caption; E_mail_____________CaptionLbl)
                 {
                 }
-                column(ContactCellNo__;"ContactCellNo.")
+                column(ContactCellNo__; "ContactCellNo.")
                 {
                 }
-                column(Vendor1____Phone_No__;"<Vendor1>"."Phone No.")
+                column(Vendor1____Phone_No__; "<Vendor1>"."Phone No.")
                 {
                 }
-                column(Vendor1____Fax_No__;"<Vendor1>"."Fax No.")
+                column(Vendor1____Fax_No__; "<Vendor1>"."Fax No.")
                 {
                 }
-                column(Vendor1____Contact;Contact)
+                column(Vendor1____Contact; Contact)
                 {
                 }
-                column(CompanyInfo__C_E__Registration_No__;CompanyInfo."C.E. Registration No.")
+                column(CompanyInfo__C_E__Registration_No__; CompanyInfo."C.E. Registration No.")
                 {
                 }
-                column(CompanyInfo__T_I_N__No__;CompanyInfo."T.I.N. No.")
+                column(CompanyInfo__T_I_N__No__; CompanyInfo."T.I.N. No.")
                 {
                 }
-                column(CompanyInfo__C_S_T_No__;CompanyInfo."C.S.T No.")
+                column(CompanyInfo__C_S_T_No__; CompanyInfo."C.S.T No.")
                 {
                 }
-                column(CompanyInfo__Service_Tax_Registration_No__;CompanyInfo."Service Tax Registration No.")
+                column(CompanyInfo__Service_Tax_Registration_No__; CompanyInfo."Service Tax Registration No.")
                 {
                 }
-                column(Purchase_Header___Buy_from_Contact_;"Purchase Header"."Buy-from Contact")
+                column(Purchase_Header___Buy_from_Contact_; "Purchase Header"."Buy-from Contact")
                 {
                 }
-                column(Purchase_Header___No__;"Purchase Header"."No.")
+                column(Purchase_Header___No__; "Purchase Header"."No.")
                 {
                 }
-                column(FORMAT__Purchase_Header___Order_Date__0_4_;FORMAT("Purchase Header"."Order Date",0,'<Day>-<Month Text,3>-<Year4>'))
+                column(FORMAT__Purchase_Header___Order_Date__0_4_; FORMAT("Purchase Header"."Order Date", 0, '<Day>-<Month Text,3>-<Year4>'))
                 {
                 }
-                column(Item_DescriptionCaption;Item_DescriptionCaptionLbl)
+                column(Item_DescriptionCaption; Item_DescriptionCaptionLbl)
                 {
                 }
-                column(Sl_No_Caption;Sl_No_CaptionLbl)
+                column(Sl_No_Caption; Sl_No_CaptionLbl)
                 {
                 }
-                column(QuantityCaption;QuantityCaptionLbl)
+                column(QuantityCaption; QuantityCaptionLbl)
                 {
                 }
-                column(UnitCaption;UnitCaptionLbl)
+                column(UnitCaption; UnitCaptionLbl)
                 {
                 }
-                column(RateCaption;RateCaptionLbl)
+                column(RateCaption; RateCaptionLbl)
                 {
                 }
-                column(Amount_in_Rs_LCY_Caption;Amount_in_Rs_LCY_CaptionLbl)
+                column(Amount_in_Rs_LCY_Caption; Amount_in_Rs_LCY_CaptionLbl)
                 {
                 }
-                column(Amt_Foregin_Caption;Amt_Foregin_CaptionLbl)
+                column(Amt_Foregin_Caption; Amt_Foregin_CaptionLbl)
                 {
                 }
-                column(Expected__Receipt_DateCaption;Expected__Receipt_DateCaptionLbl)
+                column(Expected__Receipt_DateCaption; Expected__Receipt_DateCaptionLbl)
                 {
                 }
-                column(Taxes_Extra;Taxes_Extra)
+                column(Taxes_Extra; Taxes_Extra)
                 {
                 }
-                column(Note_Control1102154052;Note)
+                column(Note_Control1102154052; Note)
                 {
                 }
-                column(TotalCaption;TotalCaptionLbl)
+                column(TotalCaption; TotalCaptionLbl)
                 {
                 }
-                column(Vendor_GST;GST_Reg_No)
+                column(Vendor_GST; GST_Reg_No)
                 {
                 }
-                column(Vendor_PAN;"P.A.N. No.")
+                column(Vendor_PAN; "P.A.N. No.")
                 {
                 }
 
                 trigger OnAfterGetRecord();
                 var
-                    State : Record State;
+                    State: Record State;
                 begin
                     /* IF( Vendor."E.C.C No."='') AND ("Purchase Header"."Order Date">121609D) THEN
                        ERROR('THERE IS NO "ECC NO." FOR '+Vendor.Name); //anil */
-                    
+
                     GST_Reg_No := "<Vendor1>"."GST Registration No.";
                     IF "Purchase Header"."Order Address Code" <> '' THEN BEGIN
-                      IF Ord_Adrss.GET("<Vendor1>"."No.","Purchase Header"."Order Address Code") THEN
-                        GST_Reg_No := Ord_Adrss."GST Registration No.";
+                        IF Ord_Adrss.GET("<Vendor1>"."No.", "Purchase Header"."Order Address Code") THEN
+                            GST_Reg_No := Ord_Adrss."GST Registration No.";
                     END;
 
                 end;
             }
-            dataitem(CopyLoop;"Integer")
+            dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
-                column(CopyLoop_Number;CopyLoop.Number)
+                column(CopyLoop_Number; CopyLoop.Number)
                 {
                 }
-                dataitem(PageLoop;"Integer")
+                dataitem(PageLoop; "Integer")
                 {
-                    DataItemTableView = SORTING(Number) WHERE(Number=CONST(1));
-                    column(Vendor1____E_Mail_;"<Vendor1>"."E-Mail")
+                    DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                    column(Vendor1____E_Mail_; "<Vendor1>"."E-Mail")
                     {
                     }
-                    column(Qtn;Qtn)
+                    column(Qtn; Qtn)
                     {
                     }
-                    column(Qtn_Date;Qtn_Date)
+                    column(Qtn_Date; Qtn_Date)
                     {
                     }
-                    column(PaymentTerms_Description;PaymetStatic_or_dynamic)
+                    column(PaymentTerms_Description; PaymetStatic_or_dynamic)
                     {
                     }
-                    column(ShipmentMethod_Description;ShipmentMethod.Description)
+                    column(ShipmentMethod_Description; ShipmentMethod.Description)
                     {
                     }
-                    column(PurchaserName;PurchaserName)
+                    column(PurchaserName; PurchaserName)
                     {
                     }
-                    column(PackingDetails;PackingDetails)
+                    column(PackingDetails; PackingDetails)
                     {
                     }
-                    column(Verification_Requirements_;"Verification Requirements")
+                    column(Verification_Requirements_; "Verification Requirements")
                     {
                     }
-                    column(FORMAT__Purchase_Header___Requested_Receipt_Date__0_4_;FORMAT("Purchase Header"."Requested Receipt Date",0,'<Day>-<Month Text,3>-<Year4>'))
+                    column(FORMAT__Purchase_Header___Requested_Receipt_Date__0_4_; FORMAT("Purchase Header"."Requested Receipt Date", 0, '<Day>-<Month Text,3>-<Year4>'))
                     {
                     }
-                    column(Excise_Amount_Txt;Excise_Amount_Txt)
+                    column(Excise_Amount_Txt; Excise_Amount_Txt)
                     {
                     }
-                    column(Charges_Txt;Charges_Txt)
+                    column(Charges_Txt; Charges_Txt)
                     {
                     }
-                    column(Paching_Charges;Paching_Charges)
+                    column(Paching_Charges; Paching_Charges)
                     {
                     }
-                    column(Insurance_Charges;Insurance_Charges)
+                    column(Insurance_Charges; Insurance_Charges)
                     {
                     }
-                    column(GST_TAXES_TXT;GST_TAXES_TXT)
+                    column(GST_TAXES_TXT; GST_TAXES_TXT)
                     {
                     }
-                    column(OTHER_TAXES_TXT;OTHER_TAXES_TXT)
+                    column(OTHER_TAXES_TXT; OTHER_TAXES_TXT)
                     {
                     }
-                    column(Sales_Tax_Txt;Sales_Tax_Txt)
+                    column(Sales_Tax_Txt; Sales_Tax_Txt)
                     {
                     }
-                    column(SERVICE_TAX_VALUE_TXT;SERVICE_TAX_VALUE_TXT)
+                    column(SERVICE_TAX_VALUE_TXT; SERVICE_TAX_VALUE_TXT)
                     {
                     }
-                    column(CFORM;CFORM)
+                    column(CFORM; CFORM)
                     {
                     }
-                    column(VAT_AMOUNT_TXT;VAT_AMOUNT_TXT)
+                    column(VAT_AMOUNT_TXT; VAT_AMOUNT_TXT)
                     {
                     }
-                    column(GST_AMOUNT_TXT;GST_AMOUNT_TXT)
+                    column(GST_AMOUNT_TXT; GST_AMOUNT_TXT)
                     {
                     }
-                    column(CST;CST)
+                    column(CST; CST)
                     {
                     }
-                    column(EXCISE;EXCISE)
+                    column(EXCISE; EXCISE)
                     {
                     }
-                    column(SERVICE;SERVICE)
+                    column(SERVICE; SERVICE)
                     {
                     }
-                    column(VAT;VAT)
+                    column(VAT; VAT)
                     {
                     }
-                    column(Material_Value_Txt;Material_Value_Txt)
+                    column(Material_Value_Txt; Material_Value_Txt)
                     {
                     }
-                    column(Excei_Txt;Excei_Txt)
+                    column(Excei_Txt; Excei_Txt)
                     {
                     }
-                    column(Other_Charges_Txt;Other_Charges_Txt)
+                    column(Other_Charges_Txt; Other_Charges_Txt)
                     {
                     }
-                    column(Paching_Charges_Txt;Paching_Charges_Txt)
+                    column(Paching_Charges_Txt; Paching_Charges_Txt)
                     {
                     }
-                    column(Insurance_Charges_Txt;Insurance_Charges_Txt)
+                    column(Insurance_Charges_Txt; Insurance_Charges_Txt)
                     {
                     }
-                    column(PackingPercnt;PackingPercnt)
+                    column(PackingPercnt; PackingPercnt)
                     {
                     }
-                    column(InsurancePercnt;InsurancePercnt)
+                    column(InsurancePercnt; InsurancePercnt)
                     {
                     }
-                    column(OTHER_TAX_TXT;OTHER_TAX_TXT)
+                    column(OTHER_TAX_TXT; OTHER_TAX_TXT)
                     {
                     }
-                    column(GST_TAX_TXT;GST_TAX_TXT)
+                    column(GST_TAX_TXT; GST_TAX_TXT)
                     {
                     }
-                    column(CST_TXT;CST_TXT)
+                    column(CST_TXT; CST_TXT)
                     {
                     }
-                    column(SERVICE_TAX_TXT;SERVICE_TAX_TXT)
+                    column(SERVICE_TAX_TXT; SERVICE_TAX_TXT)
                     {
                     }
-                    column(VAT_TXT;VAT_TXT)
+                    column(VAT_TXT; VAT_TXT)
                     {
                     }
-                    column(DISCOUNT;DISCOUNT)
+                    column(DISCOUNT; DISCOUNT)
                     {
                     }
-                    column(TOTAL_AMOUNT_TXT;TOTAL_AMOUNT_TXT)
+                    column(TOTAL_AMOUNT_TXT; TOTAL_AMOUNT_TXT)
                     {
                     }
-                    column(LINETOTAMT_TXT;LINETOTAMT_TXT)
+                    column(LINETOTAMT_TXT; LINETOTAMT_TXT)
                     {
                     }
-                    column(Note;Note)
+                    column(Note; Note)
                     {
                     }
-                    column(x;x)
+                    column(x; x)
                     {
                     }
-                    column(y;y)
+                    column(y; y)
                     {
                     }
-                    column(NOTE_Caption;NOTE_CaptionLbl)
+                    column(NOTE_Caption; NOTE_CaptionLbl)
                     {
                     }
-                    column(Payment_Terms_Caption;Payment_Terms_CaptionLbl)
+                    column(Payment_Terms_Caption; Payment_Terms_CaptionLbl)
                     {
                     }
-                    column(PLEASE_INTIMATE_ANY_DELAY_IN_MATERIAL_BEYOND_DELIVERY_DATE_OR_NON_AVAILABILITY_OF_MATERIAL_IMMEDIATELY_Caption;PLEASE_INTIMATE_ANY_DELAY_IN_MATERIAL_BEYOND_DELIVERY_DATE_OR_NON_AVAILABILITY_OF_MATERIAL_IMMEDIATELY_CaptionLbl)
+                    column(PLEASE_INTIMATE_ANY_DELAY_IN_MATERIAL_BEYOND_DELIVERY_DATE_OR_NON_AVAILABILITY_OF_MATERIAL_IMMEDIATELY_Caption; PLEASE_INTIMATE_ANY_DELAY_IN_MATERIAL_BEYOND_DELIVERY_DATE_OR_NON_AVAILABILITY_OF_MATERIAL_IMMEDIATELY_CaptionLbl)
                     {
                     }
-                    column(Delivery_Terms_Caption;Delivery_Terms_CaptionLbl)
+                    column(Delivery_Terms_Caption; Delivery_Terms_CaptionLbl)
                     {
                     }
-                    column(Delivery_Date_Caption;Delivery_Date_CaptionLbl)
+                    column(Delivery_Date_Caption; Delivery_Date_CaptionLbl)
                     {
                     }
-                    column(Verification_Requirements_Caption;Verification_Requirements_CaptionLbl)
+                    column(Verification_Requirements_Caption; Verification_Requirements_CaptionLbl)
                     {
                     }
-                    column(Packing_Details_Caption;Packing_Details_CaptionLbl)
+                    column(Packing_Details_Caption; Packing_Details_CaptionLbl)
                     {
                     }
-                    column(Manager_Purchases_Caption;Manager_Purchases_CaptionLbl)
+                    column(Manager_Purchases_Caption; Manager_Purchases_CaptionLbl)
                     {
                     }
-                    column(PageLoop_Number;Number)
+                    column(PageLoop_Number; Number)
                     {
                     }
-                    column(Final_Amount_Txt;Final_Amount_Txt)
+                    column(Final_Amount_Txt; Final_Amount_Txt)
                     {
                         AutoFormatType = 1;
                     }
-                    dataitem(DimensionLoop1;"Integer")
+                    dataitem(DimensionLoop1; "Integer")
                     {
                         DataItemLinkReference = "Purchase Header";
-                        DataItemTableView = SORTING(Number) WHERE(Number=FILTER(1..));
-                        column(DimLoop1Body1;DimLoop1Body1)
+                        DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
+                        column(DimLoop1Body1; DimLoop1Body1)
                         {
                         }
-                        column(DimLoop1Body2;DimLoop1Body2)
+                        column(DimLoop1Body2; DimLoop1Body2)
                         {
                         }
-                        column(DimText;DimText)
+                        column(DimText; DimText)
                         {
                         }
-                        column(DimText_Control72;DimText)
+                        column(DimText_Control72; DimText)
                         {
                         }
-                        column(Header_DimensionsCaption;Header_DimensionsCaptionLbl)
+                        column(Header_DimensionsCaption; Header_DimensionsCaptionLbl)
                         {
                         }
-                        column(DimensionLoop1_Number;Number)
+                        column(DimensionLoop1_Number; Number)
                         {
                         }
 
@@ -439,21 +439,21 @@ report 50058 "Purchase Order"
                         begin
                             DimLoop1Body1 := TRUE;
                             DimLoop1Body2 := TRUE;
-                            
+
                             IF Number = 1 THEN BEGIN
-                            //DIM1.0 Start
-                            //Code Commented
-                            /*
-                            IF NOT DocDim1.FIND('-') THEN
-                             CurrReport.BREAK;
-                            */
-                            IF NOT DimSetEntryGRec.FINDFIRST THEN
-                              CurrReport.BREAK;
-                            //DIM1.0 End
+                                //DIM1.0 Start
+                                //Code Commented
+                                /*
+                                IF NOT DocDim1.FIND('-') THEN
+                                 CurrReport.BREAK;
+                                */
+                                IF NOT DimSetEntryGRec.FINDFIRST THEN
+                                    CurrReport.BREAK;
+                                //DIM1.0 End
                             END ELSE
-                              IF NOT Continue THEN
-                                CurrReport.BREAK;
-                            
+                                IF NOT Continue THEN
+                                    CurrReport.BREAK;
+
                             CLEAR(DimText);
                             Continue := FALSE;
                             //DIM1.0 Start
@@ -476,36 +476,36 @@ report 50058 "Purchase Order"
                               END;
                             UNTIL (DocDim1.NEXT = 0);
                             */
-                            
+
                             REPEAT
-                              OldDimText := DimText;
-                              IF DimText = '' THEN
-                                DimText := STRSUBSTNO(
-                                  '%1 %2',DimSetEntryGRec."Dimension Code",DimSetEntryGRec."Dimension Value Code")
-                              ELSE
-                                DimText :=
-                                  STRSUBSTNO(
-                                    '%1, %2 %3',DimText,
-                                    DimSetEntryGRec."Dimension Code",DimSetEntryGRec."Dimension Value Code");
-                              IF STRLEN(DimText) > MAXSTRLEN(OldDimText) THEN BEGIN
-                                DimText := OldDimText;
-                                Continue := TRUE;
-                                EXIT; // Rev01
-                              END;
+                                OldDimText := DimText;
+                                IF DimText = '' THEN
+                                    DimText := STRSUBSTNO(
+                                      '%1 %2', DimSetEntryGRec."Dimension Code", DimSetEntryGRec."Dimension Value Code")
+                                ELSE
+                                    DimText :=
+                                      STRSUBSTNO(
+                                        '%1, %2 %3', DimText,
+                                        DimSetEntryGRec."Dimension Code", DimSetEntryGRec."Dimension Value Code");
+                                IF STRLEN(DimText) > MAXSTRLEN(OldDimText) THEN BEGIN
+                                    DimText := OldDimText;
+                                    Continue := TRUE;
+                                    EXIT; // Rev01
+                                END;
                             UNTIL (DimSetEntryGRec.NEXT = 0);
                             //DIM1.0 End
-                            
-                            
+
+
                             //DimensionLoop1, Body (1) - OnPreSection() >>
                             //CurrReport.SHOWOUTPUT(Number = 1);
                             IF Number <> 1 THEN
-                              DimLoop1Body1 := FALSE;
+                                DimLoop1Body1 := FALSE;
                             //DimensionLoop1, Body (1) - OnPreSection() <<
-                            
+
                             //DimensionLoop1, Body (2) - OnPreSection() >>
                             //CurrReport.SHOWOUTPUT(Number > 1);
                             IF Number <= 1 THEN
-                              DimLoop1Body2 := FALSE;
+                                DimLoop1Body2 := FALSE;
                             //DimensionLoop1, Body (2) - OnPreSection() <<
 
                         end;
@@ -513,10 +513,10 @@ report 50058 "Purchase Order"
                         trigger OnPreDataItem();
                         begin
                             IF NOT ShowInternalInfo THEN
-                              CurrReport.BREAK;
+                                CurrReport.BREAK;
                         end;
                     }
-                    dataitem("Purchase Line";"Purchase Line")
+                    dataitem("Purchase Line"; "Purchase Line")
                     {
                         DataItemLink = Document Type=FIELD(Document Type),Document No.=FIELD(No.);
                         DataItemLinkReference = "Purchase Header";

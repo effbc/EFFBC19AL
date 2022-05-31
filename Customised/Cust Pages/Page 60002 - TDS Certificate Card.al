@@ -13,37 +13,37 @@ page 60002 "TDS Certificate Card"
             group(General)
             {
                 Caption = 'General';
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                 }
-                field("Document Type";"Document Type")
+                field("Document Type"; "Document Type")
                 {
                 }
-                field("Customer Acc.No.";"Customer Acc.No.")
+                field("Customer Acc.No."; "Customer Acc.No.")
                 {
                 }
-                field("Invoice No.";"Invoice No.")
+                field("Invoice No."; "Invoice No.")
                 {
                 }
-                field("TDS / Work Tax Amount";"TDS / Work Tax Amount")
+                field("TDS / Work Tax Amount"; "TDS / Work Tax Amount")
                 {
                 }
-                field(Type;Type)
+                field(Type; Type)
                 {
                 }
-                field("TDS Certificate No.";"TDS Certificate No.")
+                field("TDS Certificate No."; "TDS Certificate No.")
                 {
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("Certificate Date";"Certificate Date")
+                field("Certificate Date"; "Certificate Date")
                 {
                 }
-                field("Receipt Date";"Receipt Date")
+                field("Receipt Date"; "Receipt Date")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
             }
@@ -70,14 +70,14 @@ page 60002 "TDS Certificate Card"
 
                     trigger OnAction();
                     var
-                        TDSCertificate : Record "TDS Certificate Details";
+                        TDSCertificate: Record "TDS Certificate Details";
                     begin
                         TESTFIELD("Document No.");
                         TESTFIELD("TDS Certificate No.");
-                        TDSCertificate.SETRANGE("Document No.","Document No.");
+                        TDSCertificate.SETRANGE("Document No.", "Document No.");
                         IF TDSCertificate.FINDFIRST THEN BEGIN
-                           TDSCertificate.Status := TDSCertificate.Status::Released;
-                           TDSCertificate.MODIFY;
+                            TDSCertificate.Status := TDSCertificate.Status::Released;
+                            TDSCertificate.MODIFY;
                         END;
                         CurrPage.UPDATE;
                     end;

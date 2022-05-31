@@ -1,58 +1,58 @@
 table 33000932 "Vendor Wise Available Makes"
 {
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"Vendor Number";Code[10])
+        field(1; "Vendor Number"; Code[10])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = Vendor."No.";
             ValidateTableRelation = false;
 
             trigger OnValidate();
             begin
-                if Vendor.Get("Vendor Number") then
-                  begin
+                if Vendor.Get("Vendor Number") then begin
                     "Vendor Name" := Vendor.Name;
                     "Vendor Type" := Vendor."Vendor Type";
-                  end
+                end
             end;
         }
-        field(2;"Vendor Name";Text[100])
+        field(2; "Vendor Name"; Text[100])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
-        field(3;Make;Code[30])
+        field(3; Make; Code[30])
         {
-            DataClassification = ToBeClassified;
-            TableRelation = Make.Make WHERE (Blocked=CONST(false));
+            DataClassification = CustomerContent;
+            TableRelation = Make.Make WHERE(Blocked = CONST(false));
         }
-        field(4;"Vendor Type";Option)
+        field(4; "Vendor Type"; Option)
         {
-            CaptionML = ENU='Vendor Type',
-                        ENN='Vendor Type';
-            DataClassification = ToBeClassified;
-            OptionCaptionML = ENU=' ,Manufacturer,First Stage Dealer,Second Stage Dealer,Importer,Trader,Authorized distributor,Online Supplier,Survice Provider',
-                              ENN=' ,Manufacturer,First Stage Dealer,Second Stage Dealer,Importer,Trader,Authorized distributor';
+            CaptionML = ENU = 'Vendor Type',
+                        ENN = 'Vendor Type';
+            DataClassification = CustomerContent;
+            OptionCaptionML = ENU = ' ,Manufacturer,First Stage Dealer,Second Stage Dealer,Importer,Trader,Authorized distributor,Online Supplier,Survice Provider',
+                              ENN = ' ,Manufacturer,First Stage Dealer,Second Stage Dealer,Importer,Trader,Authorized distributor';
             OptionMembers = " ",Manufacturer,"First Stage Dealer","Second Stage Dealer",Importer,Trader,"Authorized distributor","Online Supplier","Survice Provider";
         }
-        field(5;"Last Updated Time";DateTime)
+        field(5; "Last Updated Time"; DateTime)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
-        field(6;"Product Group Code";Code[10])
+        field(6; "Product Group Code"; Code[10])
         {
-            DataClassification = ToBeClassified;
-            TableRelation = "Product Group".Code WHERE ("Item Category Code"=CONST('MECH'));
+            DataClassification = CustomerContent;
+            TableRelation = "Product Group".Code WHERE("Item Category Code" = CONST('MECH'));
         }
     }
 
     keys
     {
-        key(Key1;"Vendor Number",Make,"Product Group Code")
+        key(Key1; "Vendor Number", Make, "Product Group Code")
         {
         }
-        key(Key2;"Vendor Number","Product Group Code")
+        key(Key2; "Vendor Number", "Product Group Code")
         {
         }
     }
@@ -72,6 +72,6 @@ table 33000932 "Vendor Wise Available Makes"
     end;
 
     var
-        Vendor : Record Vendor;
+        Vendor: Record Vendor;
 }
 

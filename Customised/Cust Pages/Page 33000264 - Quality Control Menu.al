@@ -9,7 +9,7 @@ page 33000264 "Quality Control Menu"
     {
         area(content)
         {
-            field(Control38;'')
+            field(Control38; '')
             {
                 CaptionClass = Text19044430;
                 ShowCaption = false;
@@ -118,7 +118,7 @@ page 33000264 "Quality Control Menu"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Inspection Receipt";
-                RunPageView = WHERE(Status=FILTER(No),QAS/MPR=FILTER(<>MPR));
+                                RunPageView = WHERE(Status=FILTER(No),QAS/MPR=FILTER(<>MPR));
             }
             action("Vendor Rating")
             {
@@ -140,7 +140,7 @@ page 33000264 "Quality Control Menu"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Material Issue-1";
-                RunPageView = WHERE(Transfer-to Code=FILTER(STR),Reason Code=FILTER(<>DAMAGE));
+                                RunPageView = WHERE(Transfer-to Code=FILTER(STR),Reason Code=FILTER(<>DAMAGE));
             }
             action("RD Material Returns")
             {
@@ -148,7 +148,7 @@ page 33000264 "Quality Control Menu"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Material Issue-1";
-                RunPageView = WHERE(Transfer-to Code=FILTER('R&D STR'),Transfer-from Code=FILTER(<>STR),Reason Code=FILTER(<>DAMAGE));
+                                RunPageView = WHERE(Transfer-to Code=FILTER('R&D STR'),Transfer-from Code=FILTER(<>STR),Reason Code=FILTER(<>DAMAGE));
             }
             action("CS Material Returns")
             {
@@ -156,7 +156,7 @@ page 33000264 "Quality Control Menu"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Material Issue-1";
-                RunPageView = WHERE(Transfer-to Code=FILTER(CS STR),Transfer-from Code=FILTER(<>STR),Reason Code=FILTER(<>DAMAGE));
+                                RunPageView = WHERE(Transfer-to Code=FILTER(CS STR),Transfer-from Code=FILTER(<>STR),Reason Code=FILTER(<>DAMAGE));
             }
             action("Posted Inspection Data Sheets")
             {
@@ -164,7 +164,7 @@ page 33000264 "Quality Control Menu"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Posted Inspection Data Sheet";
-                RunPageView = WHERE(QAS/MPR=FILTER(<>MPR));
+                                RunPageView = WHERE(QAS/MPR=FILTER(<>MPR));
             }
             action("Posted Inspected Receipts")
             {
@@ -172,7 +172,7 @@ page 33000264 "Quality Control Menu"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Posted Inspection Receipt";
-                RunPageView = WHERE(Status=FILTER(Yes),QAS/MPR=FILTER(<>MPR));
+                                RunPageView = WHERE(Status=FILTER(Yes),QAS/MPR=FILTER(<>MPR));
             }
             action(Navigate)
             {
@@ -187,7 +187,7 @@ page 33000264 "Quality Control Menu"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "QC Item Card";
-                RunPageView = SORTING(No.) ORDER(Ascending) WHERE(Product Group Code=FILTER(<>FPRODUCT&<>CPCB));
+                                RunPageView = SORTING(No.) ORDER(Ascending) WHERE(Product Group Code=FILTER(<>FPRODUCT&<>CPCB));
             }
             action("QC Item List")
             {
@@ -195,7 +195,7 @@ page 33000264 "Quality Control Menu"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page Page50105;
-                RunPageView = SORTING(Field1) ORDER(Ascending) WHERE(Field5704=FILTER(<>FPRODUCT&<>CPCB),Field60030=CONST(Yes));
+                                RunPageView = SORTING(Field1) ORDER(Ascending) WHERE(Field5704=FILTER(<>FPRODUCT&<>CPCB),Field60030=CONST(Yes));
             }
             action("QC Inwards Data Refresh")
             {

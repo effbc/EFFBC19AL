@@ -5,19 +5,19 @@ report 60094 "Posted Test"
 
     dataset
     {
-        dataitem("Posted Material Issues Header";"Posted Material Issues Header")
+        dataitem("Posted Material Issues Header"; "Posted Material Issues Header")
         {
-            DataItemTableView = SORTING(Prod. Order No.,Prod. Order Line No.) ORDER(Ascending) WHERE(Posting Date=CONST(09/27/10),Transfer-from Code=CONST(STR),Transfer-to Code=CONST(PROD),Posted By=CONST(08PS002));
-            column(Posted_Material_Issues_Header__Prod__Order_No__;"Prod. Order No.")
+            DataItemTableView = SORTING(Prod. Order No., Prod. Order Line No.) ORDER(Ascending) WHERE(Posting Date=CONST(09/27/10),Transfer-from Code=CONST(STR),Transfer-to Code=CONST(PROD),Posted By=CONST(08PS002));
+            column(Posted_Material_Issues_Header__Prod__Order_No__; "Prod. Order No.")
             {
             }
-            column(nO__OF_uNTIS_;"nO. OF uNTIS")
+            column(nO__OF_uNTIS_; "nO. OF uNTIS")
             {
             }
-            column(TOTAL_UNITS;TOTAL_UNITS)
+            column(TOTAL_UNITS; TOTAL_UNITS)
             {
             }
-            column(Posted_Material_Issues_Header_No_;"No.")
+            column(Posted_Material_Issues_Header_No_; "No.")
             {
             }
         }
@@ -40,9 +40,9 @@ report 60094 "Posted Test"
     }
 
     var
-        "nO. OF uNTIS" : Decimal;
-        "Porduction order" : Record "Production Order";
-        Item : Record Item;
-        TOTAL_UNITS : Decimal;
+        "nO. OF uNTIS": Decimal;
+        "Porduction order": Record "Production Order";
+        Item: Record Item;
+        TOTAL_UNITS: Decimal;
 }
 

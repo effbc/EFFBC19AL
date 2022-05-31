@@ -12,13 +12,13 @@ page 60087 "Tender Comment List"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Date;Date)
+                field(Date; Date)
                 {
                 }
-                field(Comment;Comment)
+                field(Comment; Comment)
                 {
                 }
             }

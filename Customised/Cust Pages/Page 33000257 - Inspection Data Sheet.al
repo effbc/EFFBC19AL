@@ -15,198 +15,196 @@ page 33000257 "Inspection Data Sheet"
             group(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Editable = false;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Editable = false;
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                     Editable = false;
                 }
-                field("Item Description";"Item Description")
+                field("Item Description"; "Item Description")
                 {
                     Editable = Makeedit;
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
-                    DecimalPlaces = 0:2;
+                    DecimalPlaces = 0 : 2;
                     Editable = false;
                 }
-                field("Unit Of Measure Code";"Unit Of Measure Code")
-                {
-                    Editable = false;
-                }
-                field("Spec ID";"Spec ID")
+                field("Unit Of Measure Code"; "Unit Of Measure Code")
                 {
                     Editable = false;
                 }
-                field(Make;Make)
+                field("Spec ID"; "Spec ID")
+                {
+                    Editable = false;
+                }
+                field(Make; Make)
                 {
                     Editable = Makeedit;
                 }
-                field("Lot No.";"Lot No.")
+                field("Lot No."; "Lot No.")
                 {
                     Editable = Makeedit;
                 }
-                field(Location;Location)
+                field(Location; Location)
                 {
                     Editable = false;
                 }
-                field("Inspection Group Code";"Inspection Group Code")
+                field("Inspection Group Code"; "Inspection Group Code")
                 {
                     Editable = false;
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                     Editable = false;
                 }
-                field("Document Date";"Document Date")
+                field("Document Date"; "Document Date")
                 {
                     Editable = false;
                 }
-                field("Inspection Receipt No.";"Inspection Receipt No.")
+                field("Inspection Receipt No."; "Inspection Receipt No.")
                 {
                     Editable = false;
                 }
-                field("Rework Reference No.";"Rework Reference No.")
+                field("Rework Reference No."; "Rework Reference No.")
                 {
                     Editable = false;
                 }
-                field("Source Type";"Source Type")
+                field("Source Type"; "Source Type")
                 {
                     Editable = false;
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                     Editable = false;
                 }
-                field("Actual Time";"Actual Time")
+                field("Actual Time"; "Actual Time")
                 {
                     Caption = 'Bench Mark Time';
                     Editable = false;
                 }
-                field("Time Taken";"Time Taken")
+                field("Time Taken"; "Time Taken")
                 {
                     Editable = false;
                 }
-                field("Creation DateTime";"Creation DateTime")
+                field("Creation DateTime"; "Creation DateTime")
                 {
                 }
-                field(MSL;MSL)
+                field(MSL; MSL)
                 {
                     Caption = 'MSL';
                     Editable = false;
                 }
-                field("ESD Class";"ESD Class")
+                field("ESD Class"; "ESD Class")
                 {
                     Caption = 'ESD Class';
                     Editable = false;
                 }
-                field("Floor Life at 25 C 40% RH";"Floor Life at 25 C 40% RH")
+                field("Floor Life at 25 C 40% RH"; "Floor Life at 25 C 40% RH")
                 {
                     Caption = 'Floor Life at 25 C 40% RH';
                     Editable = false;
                 }
-                field("Component Shelf Life(Years)";"Component Shelf Life(Years)")
+                field("Component Shelf Life(Years)"; "Component Shelf Life(Years)")
                 {
                     Caption = 'Component Shelf Life(Years)';
                     Editable = false;
                 }
-                field("Bake Hours";"Bake Hours")
+                field("Bake Hours"; "Bake Hours")
                 {
                     Caption = 'Component Bake Hours';
                     Editable = false;
                 }
             }
-            part(subform;"Inspection Data Sheet Subform")
+            part(subform; "Inspection Data Sheet Subform")
             {
                 SubPageLink = Document No.=FIELD(No.);
             }
             group(Receipt)
             {
                 Caption = 'Receipt';
-                field("Vendor No.";"Vendor No.")
+                field("Vendor No."; "Vendor No.")
                 {
                     Editable = false;
                 }
-                field("Vendor Name";"Vendor Name")
+                field("Vendor Name"; "Vendor Name")
                 {
                     Editable = false;
                 }
-                field("Vendor Name 2";"Vendor Name 2")
+                field("Vendor Name 2"; "Vendor Name 2")
                 {
                     Editable = false;
                 }
-                field("Vendor Address";"Vendor Address")
+                field("Vendor Address"; "Vendor Address")
                 {
                     Editable = false;
                 }
-                field("Vendot Address 2";"Vendot Address 2")
+                field("Vendot Address 2"; "Vendot Address 2")
                 {
                     Editable = false;
                 }
-                field("Contact Person";"Contact Person")
+                field("Contact Person"; "Contact Person")
                 {
                     Editable = false;
                 }
-                field("Receipt No.";"Receipt No.")
+                field("Receipt No."; "Receipt No.")
                 {
                     Editable = false;
                 }
-                field("Order No.";"Order No.")
+                field("Order No."; "Order No.")
                 {
                     Editable = false;
 
-                    trigger OnLookup(Text : Text) : Boolean;
+                    trigger OnLookup(Text: Text): Boolean;
                     begin
-                         PurchHeaderGrec.RESET;
-                         PurchHeaderGrec.SETFILTER(PurchHeaderGrec."No.","Order No.");
-                         IF PurchHeaderGrec.FINDFIRST THEN
-                         PAGE.RUNMODAL(50,PurchHeaderGrec)
+                        PurchHeaderGrec.RESET;
+                        PurchHeaderGrec.SETFILTER(PurchHeaderGrec."No.", "Order No.");
+                        IF PurchHeaderGrec.FINDFIRST THEN
+                            PAGE.RUNMODAL(50, PurchHeaderGrec)
                     end;
                 }
-                field("Purch Line No";"Purch Line No")
+                field("Purch Line No"; "Purch Line No")
                 {
                     Editable = false;
                 }
-                field("Purchase Consignment No.";"Purchase Consignment No.")
+                field("Purchase Consignment No."; "Purchase Consignment No.")
                 {
                     Editable = false;
                 }
-                field("External Document No.";"External Document No.")
+                field("External Document No."; "External Document No.")
                 {
                     Editable = false;
                 }
-                field("Item Tracking Exists";"Item Tracking Exists")
+                field("Item Tracking Exists"; "Item Tracking Exists")
                 {
                     Editable = false;
                 }
-                field("Quality Before Receipt";"Quality Before Receipt")
+                field("Quality Before Receipt"; "Quality Before Receipt")
                 {
                     Editable = false;
                 }
-                field(Indented_Person;Indented_Person)
+                field(Indented_Person; Indented_Person)
                 {
                     Caption = 'Indented_Person';
                     Editable = false;
 
-                    trigger OnLookup(Text : Text) : Boolean;
+                    trigger OnLookup(Text: Text): Boolean;
                     begin
                         PurchLineGrec.RESET;
-                        PurchLineGrec.SETFILTER(PurchLineGrec."Document No.","Order No.");
-                        PurchLineGrec.SETFILTER(PurchLineGrec."Line No.",'%1',"Purch Line No");
-                        IF PurchLineGrec.FINDFIRST THEN
-                        BEGIN
-                          IF PurchLineGrec."Indent No." <>'' THEN
-                          BEGIN
-                            Indent_header.RESET;
-                            IF Indent_header.GET(PurchLineGrec."Indent No.") THEN
-                               PAGE.RUNMODAL(60042,Indent_header)
-                          END;
+                        PurchLineGrec.SETFILTER(PurchLineGrec."Document No.", "Order No.");
+                        PurchLineGrec.SETFILTER(PurchLineGrec."Line No.", '%1', "Purch Line No");
+                        IF PurchLineGrec.FINDFIRST THEN BEGIN
+                            IF PurchLineGrec."Indent No." <> '' THEN BEGIN
+                                Indent_header.RESET;
+                                IF Indent_header.GET(PurchLineGrec."Indent No.") THEN
+                                    PAGE.RUNMODAL(60042, Indent_header)
+                            END;
                         END;
                     end;
                 }
@@ -214,65 +212,65 @@ page 33000257 "Inspection Data Sheet"
             group(Production)
             {
                 Caption = 'Production';
-                field("Prod. Order No.";"Prod. Order No.")
+                field("Prod. Order No."; "Prod. Order No.")
                 {
                     Editable = false;
                 }
-                field("Prod. Order Line";"Prod. Order Line")
+                field("Prod. Order Line"; "Prod. Order Line")
                 {
                     Editable = false;
                 }
-                field("Prod. Description";"Prod. Description")
+                field("Prod. Description"; "Prod. Description")
                 {
                     Editable = false;
                 }
-                field("Production Batch No.";"Production Batch No.")
+                field("Production Batch No."; "Production Batch No.")
                 {
                     Editable = false;
                 }
-                field("Routing No.";"Routing No.")
+                field("Routing No."; "Routing No.")
                 {
                     Editable = false;
                 }
-                field("Routing Reference No.";"Routing Reference No.")
+                field("Routing Reference No."; "Routing Reference No.")
                 {
                     Editable = false;
                 }
-                field("Operation Description";"Operation Description")
+                field("Operation Description"; "Operation Description")
                 {
                     Editable = false;
                 }
-                field("Reason for Pending";"Reason for Pending")
+                field("Reason for Pending"; "Reason for Pending")
                 {
                 }
-                field("Sub Assembly Code";"Sub Assembly Code")
-                {
-                    Editable = false;
-                }
-                field("Sub Assembly Description";"Sub Assembly Description")
+                field("Sub Assembly Code"; "Sub Assembly Code")
                 {
                     Editable = false;
                 }
-                field("In Process";"In Process")
+                field("Sub Assembly Description"; "Sub Assembly Description")
                 {
                     Editable = false;
                 }
-                field(Resource;Resource)
+                field("In Process"; "In Process")
                 {
                     Editable = false;
                 }
-                field("OutPut Jr Serial No.";"OutPut Jr Serial No.")
+                field(Resource; Resource)
                 {
                     Editable = false;
                 }
-                field("Issues For Pending";"Issues For Pending")
-                {
-                }
-                field("Finished Product Sr No";"Finished Product Sr No")
+                field("OutPut Jr Serial No."; "OutPut Jr Serial No.")
                 {
                     Editable = false;
                 }
-                field("Rework User";"Rework User")
+                field("Issues For Pending"; "Issues For Pending")
+                {
+                }
+                field("Finished Product Sr No"; "Finished Product Sr No")
+                {
+                    Editable = false;
+                }
+                field("Rework User"; "Rework User")
                 {
                     Editable = false;
                 }
@@ -280,51 +278,51 @@ page 33000257 "Inspection Data Sheet"
             group("Sales Returns")
             {
                 Caption = 'Sales Returns';
-                field("Sales Order No.";"Sales Order No.")
+                field("Sales Order No."; "Sales Order No.")
                 {
                 }
-                field("Posted Sales Order No.";"Posted Sales Order No.")
+                field("Posted Sales Order No."; "Posted Sales Order No.")
                 {
                 }
-                field("Sales Line No";"Sales Line No")
+                field("Sales Line No"; "Sales Line No")
                 {
                 }
-                field("Customer No.";"Customer No.")
+                field("Customer No."; "Customer No.")
                 {
                 }
-                field("Customer Name";"Customer Name")
+                field("Customer Name"; "Customer Name")
                 {
                 }
-                field("Customer Name 2";"Customer Name 2")
+                field("Customer Name 2"; "Customer Name 2")
                 {
                 }
-                field("Customer Address";"Customer Address")
+                field("Customer Address"; "Customer Address")
                 {
                 }
-                field("Customer Address2";"Customer Address2")
+                field("Customer Address2"; "Customer Address2")
                 {
                 }
             }
             group(Transfer)
             {
                 Caption = 'Transfer';
-                field("Trans. Order No.";"Trans. Order No.")
+                field("Trans. Order No."; "Trans. Order No.")
                 {
                     Editable = false;
                 }
-                field("Trans. Order Line";"Trans. Order Line")
+                field("Trans. Order Line"; "Trans. Order Line")
                 {
                     Editable = false;
                 }
-                field("Trans. Description";"Trans. Description")
+                field("Trans. Description"; "Trans. Description")
                 {
                     Editable = false;
                 }
-                field("Transfer-from Code";"Transfer-from Code")
+                field("Transfer-from Code"; "Transfer-from Code")
                 {
                     Editable = false;
                 }
-                field("Transfer-to Code";"Transfer-to Code")
+                field("Transfer-to Code"; "Transfer-to Code")
                 {
                     Editable = false;
                 }
@@ -332,55 +330,55 @@ page 33000257 "Inspection Data Sheet"
             group(Calibration)
             {
                 Caption = 'Calibration';
-                field("<Vendor No.2>";"Vendor No.")
+                field("<Vendor No.2>"; "Vendor No.")
                 {
                     Editable = false;
                 }
-                field("<Vendor Name2>";"Vendor Name")
+                field("<Vendor Name2>"; "Vendor Name")
                 {
                     Editable = false;
                 }
-                field("<Vendor Address2>";"Vendor Address")
+                field("<Vendor Address2>"; "Vendor Address")
                 {
                     Editable = false;
                 }
-                field("<Vendot Address 22>";"Vendot Address 2")
+                field("<Vendot Address 22>"; "Vendot Address 2")
                 {
                     Editable = false;
                 }
-                field("<Contact Person2>";"Contact Person")
+                field("<Contact Person2>"; "Contact Person")
                 {
                     Editable = false;
                 }
-                field("Calibration Party";"Calibration Party")
+                field("Calibration Party"; "Calibration Party")
                 {
                     Editable = false;
                 }
-                field("<Resource2>";Resource)
+                field("<Resource2>"; Resource)
                 {
                     Editable = false;
                 }
-                field("Eqpt. Serial No.";"Eqpt. Serial No.")
+                field("Eqpt. Serial No."; "Eqpt. Serial No.")
                 {
                     Editable = false;
                 }
-                field("Least Count";"Least Count")
+                field("Least Count"; "Least Count")
                 {
                     Editable = false;
                 }
-                field(Department;Department)
+                field(Department; Department)
                 {
                     Editable = false;
                 }
-                field("Std. Reference";"Std. Reference")
+                field("Std. Reference"; "Std. Reference")
                 {
                     Editable = false;
                 }
-                field("Measuring Range";"Measuring Range")
+                field("Measuring Range"; "Measuring Range")
                 {
                     Editable = false;
                 }
-                field("Model No.";"Model No.")
+                field("Model No."; "Model No.")
                 {
                     Editable = false;
                 }
@@ -388,67 +386,67 @@ page 33000257 "Inspection Data Sheet"
             group(Others)
             {
                 Caption = 'Others';
-                field("Item Category Code";"Item Category Code")
+                field("Item Category Code"; "Item Category Code")
                 {
                 }
-                field("Product Group Code";"Product Group Code")
+                field("Product Group Code"; "Product Group Code")
                 {
                 }
-                field("Item Sub Group Code";"Item Sub Group Code")
+                field("Item Sub Group Code"; "Item Sub Group Code")
                 {
                 }
-                field("Item Sub Sub Group Code";"Item Sub Sub Group Code")
+                field("Item Sub Sub Group Code"; "Item Sub Sub Group Code")
                 {
                 }
-                field("No. of Opportunities";"No. of Opportunities")
+                field("No. of Opportunities"; "No. of Opportunities")
                 {
                 }
-                field("No.of Fixing Holes";"No.of Fixing Holes")
+                field("No.of Fixing Holes"; "No.of Fixing Holes")
                 {
                 }
-                field("No. of Soldering Points";"No. of Soldering Points")
+                field("No. of Soldering Points"; "No. of Soldering Points")
                 {
                 }
-                field("No. of Pins";"No. of Pins")
+                field("No. of Pins"; "No. of Pins")
                 {
                 }
-                field("Reclass Entry";"Reclass Entry")
+                field("Reclass Entry"; "Reclass Entry")
                 {
                 }
-                field("Parent IDS No";"Parent IDS No")
+                field("Parent IDS No"; "Parent IDS No")
                 {
                 }
-                field("Partial Inspection";"Partial Inspection")
+                field("Partial Inspection"; "Partial Inspection")
                 {
                     Editable = PartInspec_Edit;
                 }
-                field("<Quantity2>";Quantity)
+                field("<Quantity2>"; Quantity)
                 {
-                    DecimalPlaces = 0:0;
+                    DecimalPlaces = 0 : 0;
                     Editable = false;
                 }
-                field("Qty in IDS";"Qty in IDS")
+                field("Qty in IDS"; "Qty in IDS")
                 {
                     Editable = "Qty in IDSEditable";
                 }
-                field("Total Qty in IDS";"Total Qty in IDS")
+                field("Total Qty in IDS"; "Total Qty in IDS")
                 {
                     Editable = false;
                 }
-                field("Total Qty in IR";"Total Qty in IR")
+                field("Total Qty in IR"; "Total Qty in IR")
                 {
                     Editable = false;
                 }
-                field("Total Qty in PIR";"Total Qty in PIR")
+                field("Total Qty in PIR"; "Total Qty in PIR")
                 {
                     Editable = false;
                 }
-                field("Remaining Quantity";"Remaining Quantity")
+                field("Remaining Quantity"; "Remaining Quantity")
                 {
                     Caption = 'Remaining Quantity';
                     Editable = false;
                 }
-                field("Created Date";"Created Date")
+                field("Created Date"; "Created Date")
                 {
                     Editable = false;
                 }
@@ -456,100 +454,99 @@ page 33000257 "Inspection Data Sheet"
             group("LED Details")
             {
                 Caption = 'LED Details';
-                field("LED Part No.";"LED Part No.")
+                field("LED Part No."; "LED Part No.")
                 {
                     Caption = 'Part Number';
                     Editable = false;
                 }
-                field("LED Make";"LED Make")
+                field("LED Make"; "LED Make")
                 {
                     Caption = 'Make';
                     Editable = false;
                 }
-                field(Color;Color)
+                field(Color; Color)
                 {
                     Caption = 'Color';
                     Editable = false;
                 }
-                field("LED Type";"LED Type")
+                field("LED Type"; "LED Type")
                 {
                     Caption = 'Type';
                     Editable = false;
                 }
-                field("Intensity Code";"Intensity Code")
+                field("Intensity Code"; "Intensity Code")
                 {
                 }
-                field("Intensity Value";"Intensity Value")
+                field("Intensity Value"; "Intensity Value")
                 {
                 }
-                field("Color Code";"Color Code")
+                field("Color Code"; "Color Code")
                 {
                 }
-                field("Color Value";"Color Value")
+                field("Color Value"; "Color Value")
                 {
                 }
-                field("Voltage Code";"Voltage Code")
+                field("Voltage Code"; "Voltage Code")
                 {
                 }
-                field("Voltage Value";"Voltage Value")
+                field("Voltage Value"; "Voltage Value")
                 {
                 }
-                field("Ext Batch No";"Ext Batch No")
+                field("Ext Batch No"; "Ext Batch No")
                 {
                 }
-                field("Ext Lot No";"Ext Lot No")
+                field("Ext Lot No"; "Ext Lot No")
                 {
                 }
-                field("Date Code";"Date Code")
+                field("Date Code"; "Date Code")
                 {
                 }
-                field(Date;Date)
+                field(Date; Date)
                 {
                 }
             }
             group(Inspection)
             {
                 Caption = 'Inspection';
-                field("MBB Status";"MBB Status")
+                field("MBB Status"; "MBB Status")
                 {
                 }
-                field("HIC 60%";"HIC 60%")
+                field("HIC 60%"; "HIC 60%")
                 {
                 }
-                field("HIC 10%";"HIC 10%")
+                field("HIC 10%"; "HIC 10%")
                 {
                 }
-                field("HIC 5%";"HIC 5%")
+                field("HIC 5%"; "HIC 5%")
                 {
                 }
-                field("MBB Packet Open DateTime";"MBB Packet Open DateTime")
+                field("MBB Packet Open DateTime"; "MBB Packet Open DateTime")
                 {
                 }
-                field("MBB Packet Close DateTime";"MBB Packet Close DateTime")
+                field("MBB Packet Close DateTime"; "MBB Packet Close DateTime")
                 {
 
                     trigger OnValidate();
                     begin
-                        IF "MBB Packet Close DateTime" <> 0DT THEN
-                        BEGIN
-                          IF "MBB Packet Open DateTime" = 0DT THEN
-                            ERROR('Please enter MBB Packet Open DateTime first!');
-                          IF "MBB Packet Close DateTime"-"MBB Packet Open DateTime" <= 0 THEN
-                            ERROR('MBB Packet Close Time must be >= MBB packet Open Time!');
+                        IF "MBB Packet Close DateTime" <> 0DT THEN BEGIN
+                            IF "MBB Packet Open DateTime" = 0DT THEN
+                                ERROR('Please enter MBB Packet Open DateTime first!');
+                            IF "MBB Packet Close DateTime" - "MBB Packet Open DateTime" <= 0 THEN
+                                ERROR('MBB Packet Close Time must be >= MBB packet Open Time!');
                         END;
                     end;
                 }
-                field("Baked Hours";"Baked Hours")
+                field("Baked Hours"; "Baked Hours")
                 {
                 }
-                field("MFD Date";"MFD Date")
+                field("MFD Date"; "MFD Date")
                 {
                 }
-                field("Packed Date";"Packed Date")
+                field("Packed Date"; "Packed Date")
                 {
                     Caption = 'Manf. Packed Date';
                 }
-                field("MBB Packed Date";"MBB Packed Date")
+                field("MBB Packed Date"; "MBB Packed Date")
                 {
                     Caption = 'MBB Packed Date after Baking';
                 }
@@ -595,7 +592,7 @@ page 33000257 "Inspection Data Sheet"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Sales Amc Subform1";
-                    RunPageLink = Document Type=FIELD(Item No.);
+                                    RunPageLink = Document Type=FIELD(Item No.);
                 }
             }
             group(Item)
@@ -1129,9 +1126,9 @@ page 33000257 "Inspection Data Sheet"
         "MBB Shelf Life" : Decimal;
         Visible_Bool : Boolean;
         DateAndTime : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.DateAndTime";
-        DayofWeekInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstDayOfWeek";
-        WeekofYearInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstWeekOfYear";
-        Makeedit : Boolean;
+                          DayofWeekInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstDayOfWeek";
+                          WeekofYearInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstWeekOfYear";
+                          Makeedit : Boolean;
 
     [LineStart(22990)]
     local procedure OnAfterGetCurrRecord();
@@ -1140,21 +1137,19 @@ page 33000257 "Inspection Data Sheet"
         SETRANGE("No.");
 
         IF "Parent IDS No" <> '' THEN
-          "Qty in IDSEditable" := FALSE
+            "Qty in IDSEditable" := FALSE
         ELSE
-          "Qty in IDSEditable" := TRUE;
-        "Remaining Quantity":=Quantity-("Total Qty in IDS"+"Total Qty in IR"+"Total Qty in PIR");
+            "Qty in IDSEditable" := TRUE;
+        "Remaining Quantity" := Quantity - ("Total Qty in IDS" + "Total Qty in IR" + "Total Qty in PIR");
 
-        Indented_Person:='';
+        Indented_Person := '';
         PurchLineGrec.RESET;
-        PurchLineGrec.SETFILTER(PurchLineGrec."Document No.","Order No.");
-        PurchLineGrec.SETFILTER(PurchLineGrec."Line No.",'%1',"Purch Line No");
-        IF PurchLineGrec.FINDFIRST THEN
-        BEGIN
-          IF PurchLineGrec."Indent No." <>'' THEN
-          BEGIN
-            Indented_Person:=PurchLineGrec."Indent No.";
-          END;
+        PurchLineGrec.SETFILTER(PurchLineGrec."Document No.", "Order No.");
+        PurchLineGrec.SETFILTER(PurchLineGrec."Line No.", '%1', "Purch Line No");
+        IF PurchLineGrec.FINDFIRST THEN BEGIN
+            IF PurchLineGrec."Indent No." <> '' THEN BEGIN
+                Indented_Person := PurchLineGrec."Indent No.";
+            END;
         END;
     end;
 }

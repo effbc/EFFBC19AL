@@ -11,9 +11,9 @@ report 50144 "total Orders View1"
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
-            DataItemTableView = SORTING(Document Type,No.) ORDER(Ascending) WHERE(Document Type=FILTER(Order),Order Status=FILTER(<>Temporary Close),Sell-to Customer No.=FILTER(<>CUST00536));
+            DataItemTableView = SORTING(Document Type, No.) ORDER(Ascending) WHERE(Document Type=FILTER(Order),Order Status=FILTER(<>Temporary Close),Sell-to Customer No.=FILTER(<>CUST00536));
             column(Sales_Header_Document_Type;"Document Type")
             {
             }

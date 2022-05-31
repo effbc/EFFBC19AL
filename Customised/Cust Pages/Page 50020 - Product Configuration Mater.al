@@ -9,10 +9,10 @@ page 50020 "Product Configuration Mater"
             repeater(Control1102152001)
             {
                 ShowCaption = false;
-                field(Configuration;Configuration)
+                field(Configuration; Configuration)
                 {
                 }
-                field(Product;Product)
+                field(Product; Product)
                 {
                 }
             }

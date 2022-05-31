@@ -1,4 +1,4 @@
-pageextension 70138 PurchCommentSheetExt extends "Purch. Comment Sheet" 
+pageextension 70138 PurchCommentSheetExt extends "Purch. Comment Sheet"
 {
     // version NAVW17.00
 
@@ -34,7 +34,7 @@ pageextension 70138 PurchCommentSheetExt extends "Purch. Comment Sheet"
 
         addafter("Control 6")
         {
-            field(Type;Type)
+            field(Type; Type)
             {
             }
         }

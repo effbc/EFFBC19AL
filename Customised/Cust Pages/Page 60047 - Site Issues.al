@@ -15,111 +15,111 @@ page 60047 "Site Issues"
             {
                 Caption = 'General';
                 Editable = true;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Editable = false;
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field("Transfer-from Code";"Transfer-from Code")
+                field("Transfer-from Code"; "Transfer-from Code")
                 {
                     Editable = false;
                 }
-                field("Transfer-to Code";"Transfer-to Code")
+                field("Transfer-to Code"; "Transfer-to Code")
                 {
                     Editable = false;
                 }
-                field("Prod. Order No.";"Prod. Order No.")
+                field("Prod. Order No."; "Prod. Order No.")
                 {
                     Editable = false;
                 }
-                field("Prod. Order Line No.";"Prod. Order Line No.")
+                field("Prod. Order Line No."; "Prod. Order Line No.")
                 {
                     Editable = false;
                 }
-                field("Production BOM No.";"Production BOM No.")
+                field("Production BOM No."; "Production BOM No.")
                 {
                     Editable = false;
                 }
-                field("Person Code";"Person Code")
+                field("Person Code"; "Person Code")
                 {
                     Editable = false;
                     Enabled = true;
                 }
-                field("Service Order No.";"Service Order No.")
+                field("Service Order No."; "Service Order No.")
                 {
                     Editable = false;
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                     Editable = false;
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                     Editable = true;
                     Enabled = true;
                 }
-                field(Rejected;Rejected)
+                field(Rejected; Rejected)
                 {
                 }
-                field("Sales Order No.";"Sales Order No.")
+                field("Sales Order No."; "Sales Order No.")
                 {
                     Editable = false;
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
-                field("Released By";"Released By")
+                field("Released By"; "Released By")
                 {
                     Caption = 'User id';
                     Editable = false;
                 }
-                field("Required Date";"Required Date")
+                field("Required Date"; "Required Date")
                 {
                     Editable = false;
                 }
-                field("Released Date";"Released Date")
+                field("Released Date"; "Released Date")
                 {
                     Editable = false;
                 }
-                field("User ID";"User ID")
+                field("User ID"; "User ID")
                 {
                     Caption = 'Released BY';
                     Editable = false;
                 }
-                field("Resource Name";"Resource Name")
+                field("Resource Name"; "Resource Name")
                 {
                     Editable = false;
                 }
-                field("Mode of Transport";"Mode of Transport")
+                field("Mode of Transport"; "Mode of Transport")
                 {
                     Editable = false;
                 }
-                field("Released Time";"Released Time")
+                field("Released Time"; "Released Time")
                 {
                     Editable = false;
                 }
-                field("Reason Code";"Reason Code")
+                field("Reason Code"; "Reason Code")
                 {
                     Editable = false;
                 }
-                field("Shortcut Dimension 2 Code";"Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
                 {
                     Editable = false;
                 }
-                field("MaterialIssuesHeader.""Shortcut Dimension 2 Code""";MaterialIssuesHeader."Shortcut Dimension 2 Code")
+                field("MaterialIssuesHeader.""Shortcut Dimension 2 Code"""; MaterialIssuesHeader."Shortcut Dimension 2 Code")
                 {
                 }
-                field("Creation DateTime";"Creation DateTime")
+                field("Creation DateTime"; "Creation DateTime")
                 {
                     Editable = false;
                 }
             }
-            part(MaterialIssueLine;"Material Issue Subform")
+            part(MaterialIssueLine; "Material Issue Subform")
             {
                 SubPageLink = Document No.=FIELD(No.);
             }
@@ -217,14 +217,14 @@ page 60047 "Site Issues"
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = Page "Inventory Comment Sheet";
-                    RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
+                                    RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
                 }
                 action("Iss&ues")
                 {
                     Caption = 'Iss&ues';
                     Image = Error;
                     RunObject = Page "Posted Material Issue List";
-                    RunPageLink = Material Issue No.=FIELD(No.);
+                                    RunPageLink = Material Issue No.=FIELD(No.);
                 }
                 action(Action1000000089)
                 {
@@ -1187,12 +1187,12 @@ page 60047 "Site Issues"
                 PromotedCategory = Process;
                 RunObject = Report "Material Requisition Print";
 
-                trigger OnAction();
-                begin
-                    //REPORT.RUN(50010,TRUE,FALSE,MaterialIssuesHeader);
-                    MaterialIssuesHeader.SETRANGE(MaterialIssuesHeader."No.","No.");
-                    REPORT.RUN(50010,TRUE,FALSE,MaterialIssuesHeader);
-                end;
+    trigger OnAction();
+    begin
+        //REPORT.RUN(50010,TRUE,FALSE,MaterialIssuesHeader);
+        MaterialIssuesHeader.SETRANGE(MaterialIssuesHeader."No.", "No.");
+        REPORT.RUN(50010, TRUE, FALSE, MaterialIssuesHeader);
+    end;
             }
             action("&Refresh")
             {
@@ -1258,7 +1258,7 @@ page 60047 "Site Issues"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Inventory Comment Sheet";
-                RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
+                                RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
                 ToolTip = 'Comment';
             }
         }

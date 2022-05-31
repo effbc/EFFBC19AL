@@ -5,52 +5,52 @@ report 50192 "blocked items"
 
     dataset
     {
-        dataitem(Item;Item)
+        dataitem(Item; Item)
         {
-            DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Blocked=CONST(Yes));
+            DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Blocked = CONST(Yes));
             PrintOnlyIfDetail = true;
-            column(item_code;item_code)
+            column(item_code; item_code)
             {
             }
-            column(Item_No_;"No.")
+            column(Item_No_; "No.")
             {
             }
-            dataitem("Production BOM Line";"Production BOM Line")
+            dataitem("Production BOM Line"; "Production BOM Line")
             {
                 DataItemLink = No.=FIELD(No.);
-                DataItemTableView = SORTING(Type,No.) ORDER(Ascending) WHERE(Type=CONST(Item));
-                column(Production_BOM_Line__Production_BOM_No__;"Production BOM No.")
+                DataItemTableView = SORTING(Type, No.) ORDER(Ascending) WHERE(Type = CONST(Item));
+                column(Production_BOM_Line__Production_BOM_No__; "Production BOM No.")
                 {
                 }
-                column(Production_BOM_Line_Quantity;Quantity)
+                column(Production_BOM_Line_Quantity; Quantity)
                 {
                 }
-                column(Production_BOM_Line__Version_Code_;"Version Code")
+                column(Production_BOM_Line__Version_Code_; "Version Code")
                 {
                 }
-                column(PRODUCTION_BOM_SCaption;PRODUCTION_BOM_SCaptionLbl)
+                column(PRODUCTION_BOM_SCaption; PRODUCTION_BOM_SCaptionLbl)
                 {
                 }
-                column(BOMCaption;BOMCaptionLbl)
+                column(BOMCaption; BOMCaptionLbl)
                 {
                 }
-                column(QUANTITYCaption;QUANTITYCaptionLbl)
+                column(QUANTITYCaption; QUANTITYCaptionLbl)
                 {
                 }
-                column(VERSIONCaption;VERSIONCaptionLbl)
+                column(VERSIONCaption; VERSIONCaptionLbl)
                 {
                 }
-                column(Production_BOM_Line_Line_No_;"Line No.")
+                column(Production_BOM_Line_Line_No_; "Line No.")
                 {
                 }
-                column(Production_BOM_Line_No_;"No.")
+                column(Production_BOM_Line_No_; "No.")
                 {
                 }
             }
-            dataitem("Prod. Order Component";"Prod. Order Component")
+            dataitem("Prod. Order Component"; "Prod. Order Component")
             {
                 DataItemLink = Item No.=FIELD(No.);
-                DataItemTableView = SORTING(Production Plan Date,Item No.,Prod. Order No.) ORDER(Ascending) WHERE(Production Plan Date=FILTER(>08/03/10));
+                DataItemTableView = SORTING(Production Plan Date, Item No., Prod. Order No.) ORDER(Ascending) WHERE(Production Plan Date=FILTER(>08/03/10));
                 column(Prod__Order_Component__Prod__Order_No__;"Prod. Order No.")
                 {
                 }

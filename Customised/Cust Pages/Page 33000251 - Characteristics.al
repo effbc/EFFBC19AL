@@ -12,19 +12,19 @@ page 33000251 Characteristics
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Qualitative;Qualitative)
+                field(Qualitative; Qualitative)
                 {
                 }
-                field("Unit Of Measure Code";"Unit Of Measure Code")
+                field("Unit Of Measure Code"; "Unit Of Measure Code")
                 {
                 }
-                field("Attachment60098.HASVALUE";Attachment60098.HASVALUE)
+                field("Attachment60098.HASVALUE"; Attachment60098.HASVALUE)
                 {
                     AssistEdit = true;
                     Caption = 'Attachment';
@@ -32,7 +32,7 @@ page 33000251 Characteristics
                     trigger OnAssistEdit();
                     begin
                         IF Attachment60098.HASVALUE THEN
-                        OpenAttachment;
+                            OpenAttachment;
                     end;
                 }
             }
@@ -106,7 +106,7 @@ page 33000251 Characteristics
     trigger OnAfterGetRecord();
     begin
         IF Code <> '' THEN
-          CALCFIELDS(Attachment60098);
+            CALCFIELDS(Attachment60098);
     end;
 }
 

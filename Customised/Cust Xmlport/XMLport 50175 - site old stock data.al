@@ -6,13 +6,13 @@ xmlport 50175 "site old stock data"
     {
         textelement(ProductwiseItems)
         {
-            tableelement("Product wise Items";"Product wise Items")
+            tableelement("Product wise Items"; "Product wise Items")
             {
                 XmlName = 'ProductwiseItem';
-                fieldelement(ItemNo;"Product wise Items"."Item No.")
+                fieldelement(ItemNo; "Product wise Items"."Item No.")
                 {
                 }
-                fieldelement(Description;"Product wise Items".Description)
+                fieldelement(Description; "Product wise Items".Description)
                 {
                 }
             }

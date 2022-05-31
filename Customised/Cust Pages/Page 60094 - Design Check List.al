@@ -13,34 +13,34 @@ page 60094 "Design Check List"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Tender No.";"Tender No.")
+                field("Tender No."; "Tender No.")
                 {
                 }
-                field(Description1;Description1)
+                field(Description1; Description1)
                 {
                 }
-                field("QTY.";"QTY.")
+                field("QTY."; "QTY.")
                 {
                 }
-                field(Description2;Description2)
+                field(Description2; Description2)
                 {
                 }
-                field(Description3;Description3)
+                field(Description3; Description3)
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Line No.";"Line No.")
+                field("Line No."; "Line No.")
                 {
                 }
             }

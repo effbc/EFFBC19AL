@@ -6,13 +6,13 @@ xmlport 80034 "Tax T.I.N Numbers"
     {
         textelement(TINNos)
         {
-            tableelement("<tinnos>";"T.I.N. Nos.")
+            tableelement("<tinnos>"; "T.I.N. Nos.")
             {
                 XmlName = 'TINNos';
-                fieldelement(Code;"<TINNos>".Code)
+                fieldelement(Code; "<TINNos>".Code)
                 {
                 }
-                fieldelement(Description;"<TINNos>".Description)
+                fieldelement(Description; "<TINNos>".Description)
                 {
                 }
             }

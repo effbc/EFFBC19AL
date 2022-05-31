@@ -1,19 +1,23 @@
 table 33000919 "CS Transaction Header"
 {
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"Transaction ID";Code[10])
+        field(1; "Transaction ID"; Code[10])
         {
+            DataClassification = CustomerContent;
         }
-        field(2;"Transaction Type";Option)
+        field(2; "Transaction Type"; Option)
         {
             OptionCaption = ',Change Status,Card Transfer,Customer card Transfer';
             OptionMembers = ,"Change Status","Card Transfer","Customer card Transfer";
+            DataClassification = CustomerContent;
         }
-        field(3;"Transfer From Location";Code[20])
+        field(3; "Transfer From Location"; Code[20])
         {
-            TableRelation = "Dimension Value".Code WHERE (Global Dimension No.=CONST(2),Blocked=FILTER(No));
+            TableRelation = "Dimension Value".Code WHERE(Global Dimension No.=CONST(2),Blocked=            DataClassification = CustomerContent;
+FILTER(No));
 
             trigger OnValidate();
             begin

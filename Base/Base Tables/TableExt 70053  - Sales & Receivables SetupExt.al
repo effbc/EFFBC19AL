@@ -7,11 +7,13 @@ tableextension 70053 SalesReceivablesSetupExt extends "Sales & Receivables Setup
         {
             Description = 'B2B';
             TableRelation = "No. Series";
+            DataClassification = CustomerContent;
         }
         field(60002; "Tender Posting Nos."; Code[20])
         {
             Description = 'B2B';
             TableRelation = "No. Series";
+            DataClassification = CustomerContent;
         }
     }
 

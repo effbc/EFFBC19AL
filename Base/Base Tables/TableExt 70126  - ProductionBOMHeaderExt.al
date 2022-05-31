@@ -422,41 +422,49 @@ tableextension 70126 ProductionBOMHeaderExt extends "Production BOM Header"
         field(60001; "Bench Mark Time(In Hours)"; Decimal)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60002; "Total Soldering Points SMD"; Decimal)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60003; "Total No. of Fixing Holes"; Decimal)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60004; "User Id"; Code[50])
         {
             Description = 'B2B,Rev01';
             TableRelation = User."User Name";
             ValidateTableRelation = false;
+            DataClassification = CustomerContent;
         }
         field(60005; "Total Soldering Points DIP"; Decimal)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60006; "Total Soldering Points"; Decimal)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60007; BOMCOST; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60015; "BOM Type"; Option)
         {
             Description = 'B2B';
             OptionCaption = '" ,Mechanical,Wiring"';
             OptionMembers = " ",Mechanical,Wiring;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -483,58 +491,70 @@ tableextension 70126 ProductionBOMHeaderExt extends "Production BOM Header"
             Description = 'Rev01';
             TableRelation = User."User Name";
             ValidateTableRelation = false;
+            DataClassification = CustomerContent;
         }
         field(60019; "Stranded BOM"; Boolean)
         {
             Editable = true;
+            DataClassification = CustomerContent;
         }
         field(60020; "Update BOM"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60021; "mail check"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60022; Certify; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60023; "Update in PRM"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60024; "BOM Running Status"; Option)
         {
             Description = 'Added by sujani for running/old bom segregation';
             OptionMembers = "  ",Running,Old;
+            DataClassification = CustomerContent;
         }
         field(60025; "Inherited From"; Code[20])
         {
             Description = 'Added by sujani for running/old bom segregation';
             TableRelation = "Production BOM Header"."No.";
+            DataClassification = CustomerContent;
         }
         field(60026; Configuration; Code[50])
         {
             Description = 'Added by sujani for Configuration tracking';
             TableRelation = "Product Configurations Master".Configuration;
             ValidateTableRelation = false;
+            DataClassification = CustomerContent;
         }
         field(60027; "BOM Category"; Option)
         {
             Description = 'Added by sujani bom tentative or final';
             OptionCaption = '" ,Tentative,Final"';
             OptionMembers = " ",Tentative,Final;
+            DataClassification = CustomerContent;
         }
         field(60028; CertifyStatus; Option)
         {
             Description = 'Added by sujani for approval rejection tracking';
             OptionCaption = '" ,Accept,Reject"';
             OptionMembers = " ",Accept,Reject;
+            DataClassification = CustomerContent;
         }
         field(60029; CertifyModDate; DateTime)
         {
             Description = 'Added by sujani for approval rejection tracking';
+            DataClassification = CustomerContent;
         }
         field(60030; "Remarks/Reason"; Text[250])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the Approvals process';
         }
     }

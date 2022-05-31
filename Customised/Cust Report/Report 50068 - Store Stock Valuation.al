@@ -7,10 +7,10 @@ report 50068 "Store Stock Valuation"
 
     dataset
     {
-        dataitem(Item;Item)
+        dataitem(Item; Item)
         {
-            CalcFields = Qty. on Purch. Order,Quantity Under Inspection,Stock At MCH Location;
-            DataItemTableView = SORTING(Item Stock Value,No.) ORDER(Descending) WHERE(Product Group Code=FILTER(<>FPRODUCT&<>CPCB));
+            CalcFields = Qty. on Purch. Order, Quantity Under Inspection, Stock At MCH Location;
+            DataItemTableView = SORTING(Item Stock Value, No.) ORDER(Descending) WHERE(Product Group Code=FILTER(<>FPRODUCT&<>CPCB));
             ReqFilterHeading = 'Stock';
             column(ToDate;ToDate)
             {

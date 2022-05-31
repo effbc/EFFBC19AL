@@ -8,9 +8,9 @@ report 50042 "Actual VS Consumed(New)"
 
     dataset
     {
-        dataitem("Sales Shipment Line";"Sales Shipment Line")
+        dataitem("Sales Shipment Line"; "Sales Shipment Line")
         {
-            DataItemTableView = SORTING(Order No.,Order Line No.) ORDER(Ascending) WHERE(Quantity=FILTER(>0),Order No.=FILTER(<>''),Type=CONST(Item));
+            DataItemTableView = SORTING(Order No., Order Line No.) ORDER(Ascending) WHERE(Quantity = FILTER(> 0), Order No.=FILTER(<>''),Type=CONST(Item));
             RequestFilterFields = "Order No.","Shipment Date","No.";
             column(SO_Mat_PlannedCost;SO_Mat_PlannedCost)
             {

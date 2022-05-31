@@ -6,22 +6,22 @@ xmlport 50013 "Default Dimension"
     {
         textelement(DefaultDimensions)
         {
-            tableelement("<defaultdimension>";"Default Dimension")
+            tableelement("<defaultdimension>"; "Default Dimension")
             {
                 XmlName = 'DefaultDimension';
-                fieldelement(TableID;"<DefaultDimension>"."Table ID")
+                fieldelement(TableID; "<DefaultDimension>"."Table ID")
                 {
                 }
-                fieldelement(No;"<DefaultDimension>"."No.")
+                fieldelement(No; "<DefaultDimension>"."No.")
                 {
                 }
-                fieldelement(DimensionCode;"<DefaultDimension>"."Dimension Code")
+                fieldelement(DimensionCode; "<DefaultDimension>"."Dimension Code")
                 {
                 }
-                fieldelement(DimensionValueCode;"<DefaultDimension>"."Dimension Value Code")
+                fieldelement(DimensionValueCode; "<DefaultDimension>"."Dimension Value Code")
                 {
                 }
-                fieldelement(ValuePosting;"<DefaultDimension>"."Value Posting")
+                fieldelement(ValuePosting; "<DefaultDimension>"."Value Posting")
                 {
                 }
             }

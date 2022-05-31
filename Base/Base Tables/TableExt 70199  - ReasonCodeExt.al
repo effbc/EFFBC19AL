@@ -5,6 +5,7 @@ tableextension 70199 ReasonCodeExt extends "Reason Code"
         field(5902; Type; Enum Type)
         {
             BlankZero = true;
+            DataClassification = CustomerContent;
         }
     }
 }

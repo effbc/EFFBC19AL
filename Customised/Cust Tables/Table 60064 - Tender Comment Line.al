@@ -3,29 +3,34 @@ table 60064 "Tender Comment Line"
     // version B2B1.0
 
     LookupPageID = "Tender Comment List";
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"No.";Code[20])
+        field(1; "No."; Code[20])
         {
             Caption = 'No.';
+            DataClassification = CustomerContent;
         }
-        field(2;"Line No.";Integer)
+        field(2; "Line No."; Integer)
         {
             Caption = 'Line No.';
+            DataClassification = CustomerContent;
         }
-        field(3;Date;Date)
+        field(3; Date; Date)
         {
             Caption = 'Date';
+            DataClassification = CustomerContent;
         }
-        field(4;Comment;Text[100])
+        field(4; Comment; Text[100])
         {
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(Key1;"No.","Line No.")
+        key(Key1; "No.", "Line No.")
         {
         }
     }
@@ -37,11 +42,11 @@ table 60064 "Tender Comment Line"
     [LineStart(3106)]
     procedure SetUpNewLine();
     var
-        TenderCommentLine : Record "Tender Comment Line";
+        TenderCommentLine: Record "Tender Comment Line";
     begin
-        TenderCommentLine.SetRange("No.","No.");
+        TenderCommentLine.SetRange("No.", "No.");
         if not TenderCommentLine.Find('-') then
-          Date := WorkDate;
+            Date := WorkDate;
     end;
 }
 

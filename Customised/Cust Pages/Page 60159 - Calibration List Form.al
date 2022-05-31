@@ -11,95 +11,95 @@ page 60159 "Calibration List Form"
     {
         area(content)
         {
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
             }
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Equipment No";"Equipment No")
+                field("Equipment No"; "Equipment No")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("IR No";"IR No")
+                field("IR No"; "IR No")
                 {
                 }
-                field("Item No";"Item No")
+                field("Item No"; "Item No")
                 {
                 }
-                field("Item Desc";"Item Desc")
+                field("Item Desc"; "Item Desc")
                 {
                 }
-                field("Lot No";"MFG. Serial No.")
+                field("Lot No"; "MFG. Serial No.")
                 {
                 }
-                field("Purchase Date";"Purchase Date")
+                field("Purchase Date"; "Purchase Date")
                 {
                 }
-                field(Make;Manufacturer)
+                field(Make; Manufacturer)
                 {
                 }
-                field("Eqpt. Serial No.";"Eqpt. Serial No.")
+                field("Eqpt. Serial No."; "Eqpt. Serial No.")
                 {
                 }
-                field("Last Calibration Date";"Last Calibration Date")
+                field("Last Calibration Date"; "Last Calibration Date")
                 {
                 }
-                field("Calibration Period";"Calibration Period")
+                field("Calibration Period"; "Calibration Period")
                 {
                 }
-                field("Posting Date";"Created Date")
+                field("Posting Date"; "Created Date")
                 {
                 }
-                field("Next Calibration Due On";"Next Calibration Due On")
+                field("Next Calibration Due On"; "Next Calibration Due On")
                 {
                 }
-                field("Unit cost(LCY)";"Unit cost(LCY)")
+                field("Unit cost(LCY)"; "Unit cost(LCY)")
                 {
                 }
-                field("Model No.";"Model No.")
+                field("Model No."; "Model No.")
                 {
                 }
-                field("Equipment Type";"Equipment Type")
+                field("Equipment Type"; "Equipment Type")
                 {
                 }
-                field(Classification;Classification)
+                field(Classification; Classification)
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
-                field("Delay Days";"Delay Days")
+                field("Delay Days"; "Delay Days")
                 {
                 }
-                field("Reason for Delay";"Reason for Delay")
+                field("Reason for Delay"; "Reason for Delay")
                 {
                 }
-                field("Master Item";"Master Item")
+                field("Master Item"; "Master Item")
                 {
                     Editable = false;
                 }
-                field("Owner of the Equpmnt";"Owner of the Equpmnt")
+                field("Owner of the Equpmnt"; "Owner of the Equpmnt")
                 {
                 }
-                field("Owner of the Equpmnt_Dept";"Owner of the Equpmnt_Dept")
+                field("Owner of the Equpmnt_Dept"; "Owner of the Equpmnt_Dept")
                 {
                 }
-                field("Owner of the Equipment name";"Owner of the Equpmnt_empid")
+                field("Owner of the Equipment name"; "Owner of the Equpmnt_empid")
                 {
                 }
-                field("Life time in Yrs";"Life time in Yrs")
+                field("Life time in Yrs"; "Life time in Yrs")
                 {
                 }
-                field(Transfered_from;Transfered_from)
+                field(Transfered_from; Transfered_from)
                 {
                 }
-                field("Created By";"Created By")
+                field("Created By"; "Created By")
                 {
                 }
-                field("Calibration Party";"Calibration Party")
+                field("Calibration Party"; "Calibration Party")
                 {
                 }
             }

@@ -7,9 +7,9 @@ report 50103 "To Be Billed Orders"
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
-            DataItemTableView = SORTING(Order Date,Customer Posting Group) ORDER(Ascending) WHERE(Order Status=FILTER(<>Temporary Close));
+            DataItemTableView = SORTING(Order Date, Customer Posting Group) ORDER(Ascending) WHERE(Order Status=FILTER(<>Temporary Close));
             RequestFilterFields = "Customer Posting Group";
             column(Sales_Header__Sales_Header___Sale_Order_Total_Amount_;"Sales Header"."Sale Order Total Amount")
             {

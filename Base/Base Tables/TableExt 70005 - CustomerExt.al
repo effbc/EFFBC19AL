@@ -31,9 +31,11 @@ tableextension 70005 CustomerExt extends Customer
         field(50001; "MSPT Code"; Code[20])
         {
             TableRelation = "MSPT Header".Code WHERE(Status = CONST(Released));
+            DataClassification = CustomerContent;
         }
         field(50002; "MSPT Applicable at Line Level"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(50003; "MSPT Balance Due"; Decimal)
         {
@@ -48,16 +50,19 @@ tableextension 70005 CustomerExt extends Customer
         field(50010; "Make A Quote"; Boolean)
         {
             Description = 'B2BQTO';
+            DataClassification = CustomerContent;
         }
         field(60090; "User Id"; Code[50])
         {
             Description = 'Rev01';
             Editable = false;
             TableRelation = User."User Name";
+            DataClassification = CustomerContent;
         }
         field(60091; "Customer Type"; Option)
         {
             OptionMembers = " ",Railway,Private;
+            DataClassification = CustomerContent;
         }
         field(60093; CSBalance; Decimal)
         {
@@ -81,25 +86,31 @@ tableextension 70005 CustomerExt extends Customer
         }
         field(60095; "Tally Ref"; Text[50])
         {
+            DataClassification = CustomerContent;
         }
         field(60096; "TAN Number"; Code[10])
         {
+            DataClassification = CustomerContent;
         }
         field(60097; "Payment Realization Period"; DateFormula)
         {
+            DataClassification = CustomerContent;
         }
         field(60098; "Payment Term Auth"; Option)
         {
             Description = 'added for credit PT Auth Status';
             OptionMembers = " ","Sent For Authorization",Authorized,Rejected;
+            DataClassification = CustomerContent;
         }
         field(60099; Created_Date_Time; Date)
         {
             Description = 'added by sujani on 10-jul-18';
+            DataClassification = CustomerContent;
         }
         field(60100; "GST TDS Number"; Code[40])
         {
             Description = 'Added By Vishnu Priya for TDS Claiming Process';
+            DataClassification = CustomerContent;
         }
     }
     trigger OnInsert()

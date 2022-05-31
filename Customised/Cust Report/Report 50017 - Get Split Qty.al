@@ -18,11 +18,11 @@ report 50017 "Get Split Qty"
                 group(Control1102152001)
                 {
                     ShowCaption = false;
-                    field("Enter the Qty. to Split";'')
+                    field("Enter the Qty. to Split"; '')
                     {
                         Caption = 'Enter the Qty. to Split';
                     }
-                    field(InputQty;InputQty)
+                    field(InputQty; InputQty)
                     {
                         ShowCaption = false;
                     }
@@ -40,10 +40,10 @@ report 50017 "Get Split Qty"
     }
 
     var
-        InputQty : Decimal;
+        InputQty: Decimal;
 
     [LineStart(602)]
-    procedure SetQTY(var ReqQty : Decimal);
+    procedure SetQTY(var ReqQty: Decimal);
     begin
         ReqQty := InputQty;
     end;

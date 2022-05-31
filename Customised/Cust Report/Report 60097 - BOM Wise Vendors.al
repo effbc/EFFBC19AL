@@ -7,15 +7,15 @@ report 60097 "BOM Wise Vendors"
 
     dataset
     {
-        dataitem("Production BOM Header";"Production BOM Header")
+        dataitem("Production BOM Header"; "Production BOM Header")
         {
-            dataitem("Production BOM Line";"Production BOM Line")
+            dataitem("Production BOM Line"; "Production BOM Line")
             {
                 DataItemLink = Production BOM No.=FIELD(No.);
-                dataitem("Purchase Line";"Purchase Line")
+                dataitem("Purchase Line"; "Purchase Line")
                 {
                     DataItemLink = No.=FIELD(No.);
-                    DataItemTableView = SORTING(No.,Buy-from Vendor No.) ORDER(Ascending) WHERE(Document Type=CONST(Order),Quantity=FILTER(>0),Type=CONST(Item));
+                    DataItemTableView = SORTING(No., Buy-from Vendor No.) ORDER(Ascending) WHERE(Document Type=CONST(Order),Quantity=FILTER(>0),Type=CONST(Item));
                 }
 
                 trigger OnAfterGetRecord();

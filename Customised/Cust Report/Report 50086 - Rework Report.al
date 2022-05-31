@@ -7,113 +7,113 @@ report 50086 "Rework Report"
 
     dataset
     {
-        dataitem("Posted Inspect DatasheetHeader";"Posted Inspect DatasheetHeader")
+        dataitem("Posted Inspect DatasheetHeader"; "Posted Inspect DatasheetHeader")
         {
             DataItemTableView = SORTING(No.) ORDER(Ascending);
             RequestFilterFields = "No.";
-            column(companyinfo_Name;companyinfo.Name)
+            column(companyinfo_Name; companyinfo.Name)
             {
             }
-            column(FORMAT_TODAY_0_4_;FORMAT(TODAY,0,4))
+            column(FORMAT_TODAY_0_4_; FORMAT(TODAY, 0, 4))
             {
             }
-            column(companyinfo_Name_Control1000000001;companyinfo.Name)
+            column(companyinfo_Name_Control1000000001; companyinfo.Name)
             {
             }
-            column(FORMAT_TODAY_0_4__Control1000000002;FORMAT(TODAY,0,4))
+            column(FORMAT_TODAY_0_4__Control1000000002; FORMAT(TODAY, 0, 4))
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Item_Description_;"Item Description")
+            column(Posted_Inspect_DatasheetHeader__Item_Description_; "Item Description")
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Operation_Description_;"Operation Description")
+            column(Posted_Inspect_DatasheetHeader__Operation_Description_; "Operation Description")
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Prod__Order_No__;"Prod. Order No.")
+            column(Posted_Inspect_DatasheetHeader__Prod__Order_No__; "Prod. Order No.")
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Prod__Description_;"Prod. Description")
+            column(Posted_Inspect_DatasheetHeader__Prod__Description_; "Prod. Description")
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Serial_No__;"Serial No.")
+            column(Posted_Inspect_DatasheetHeader__Serial_No__; "Serial No.")
             {
             }
-            column(Posted_Inspect_DatasheetHeader_Resource;Resource)
+            column(Posted_Inspect_DatasheetHeader_Resource; Resource)
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Time_Taken_;"Time Taken")
+            column(Posted_Inspect_DatasheetHeader__Time_Taken_; "Time Taken")
             {
             }
-            column(Rework_ReportCaption;Rework_ReportCaptionLbl)
+            column(Rework_ReportCaption; Rework_ReportCaptionLbl)
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Item_Description_Caption;FIELDCAPTION("Item Description"))
+            column(Posted_Inspect_DatasheetHeader__Item_Description_Caption; FIELDCAPTION("Item Description"))
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Operation_Description_Caption;FIELDCAPTION("Operation Description"))
+            column(Posted_Inspect_DatasheetHeader__Operation_Description_Caption; FIELDCAPTION("Operation Description"))
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Prod__Order_No__Caption;FIELDCAPTION("Prod. Order No."))
+            column(Posted_Inspect_DatasheetHeader__Prod__Order_No__Caption; FIELDCAPTION("Prod. Order No."))
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Prod__Description_Caption;FIELDCAPTION("Prod. Description"))
+            column(Posted_Inspect_DatasheetHeader__Prod__Description_Caption; FIELDCAPTION("Prod. Description"))
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Serial_No__Caption;FIELDCAPTION("Serial No."))
+            column(Posted_Inspect_DatasheetHeader__Serial_No__Caption; FIELDCAPTION("Serial No."))
             {
             }
-            column(Posted_Inspect_DatasheetHeader_ResourceCaption;FIELDCAPTION(Resource))
+            column(Posted_Inspect_DatasheetHeader_ResourceCaption; FIELDCAPTION(Resource))
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Time_Taken_Caption;FIELDCAPTION("Time Taken"))
+            column(Posted_Inspect_DatasheetHeader__Time_Taken_Caption; FIELDCAPTION("Time Taken"))
             {
             }
-            column(Rework_ReportCaption_Control1000000000;Rework_ReportCaption_Control1000000000Lbl)
+            column(Rework_ReportCaption_Control1000000000; Rework_ReportCaption_Control1000000000Lbl)
             {
             }
-            column(Defect_TypeCaption;Defect_TypeCaptionLbl)
+            column(Defect_TypeCaption; Defect_TypeCaptionLbl)
             {
             }
-            column(No_of_times_occuredCaption;No_of_times_occuredCaptionLbl)
+            column(No_of_times_occuredCaption; No_of_times_occuredCaptionLbl)
             {
             }
-            column(Total_TimeCaption;Total_TimeCaptionLbl)
+            column(Total_TimeCaption; Total_TimeCaptionLbl)
             {
             }
-            column(Source_TypeCaption;Source_TypeCaptionLbl)
+            column(Source_TypeCaption; Source_TypeCaptionLbl)
             {
             }
-            column(IDs_No_Caption;IDs_No_CaptionLbl)
+            column(IDs_No_Caption; IDs_No_CaptionLbl)
             {
             }
-            column(Project_No_Caption;Project_No_CaptionLbl)
+            column(Project_No_Caption; Project_No_CaptionLbl)
             {
             }
-            column(Posted_Inspect_DatasheetHeader_No_;"No.")
+            column(Posted_Inspect_DatasheetHeader_No_; "No.")
             {
             }
-            dataitem("Posted Inspect Datasheet Line";"Posted Inspect Datasheet Line")
+            dataitem("Posted Inspect Datasheet Line"; "Posted Inspect Datasheet Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Document No.,Line No.) ORDER(Ascending);
+                DataItemTableView = SORTING(Document No., Line No.) ORDER(Ascending);
             }
-            dataitem("Defect Tracking Details";"Defect Tracking Details")
+            dataitem("Defect Tracking Details"; "Defect Tracking Details")
             {
                 DataItemLink = IDS No.=FIELD(No.);
-                DataItemTableView = SORTING(Defect Code,IDS No.,IDS Line No.,Line No.) ORDER(Ascending);
-                column(Defect_Tracking_Details_IDS_No_;"IDS No.")
+                DataItemTableView = SORTING(Defect Code, IDS No., IDS Line No., Line No.) ORDER(Ascending);
+                column(Defect_Tracking_Details_IDS_No_; "IDS No.")
                 {
                 }
-                column(Defect_Tracking_Details_IDS_Line_No_;"IDS Line No.")
+                column(Defect_Tracking_Details_IDS_Line_No_; "IDS Line No.")
                 {
                 }
-                column(Defect_Tracking_Details_Line_No_;"Line No.")
+                column(Defect_Tracking_Details_Line_No_; "Line No.")
                 {
                 }
-                column(Defect_Tracking_Details_Defect_Code;"Defect Code")
+                column(Defect_Tracking_Details_Defect_Code; "Defect Code")
                 {
                 }
-                dataitem("<Defect Tracking Details1>";"Defect Tracking Details")
+                dataitem("<Defect Tracking Details1>"; "Defect Tracking Details")
                 {
                     DataItemLink = IDS No.=FIELD(IDS No.),Defect Code=FIELD(Defect Code);
                     DataItemTableView = SORTING(Defect Code,IDS No.,IDS Line No.,Line No.) ORDER(Ascending);

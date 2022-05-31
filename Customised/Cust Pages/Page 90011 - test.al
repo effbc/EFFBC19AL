@@ -10,43 +10,43 @@ page 90011 test
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field(Type;Type)
+                field(Type; Type)
                 {
                 }
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Location Code";"Location Code")
+                field("Location Code"; "Location Code")
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field("Unit of Measure";"Unit of Measure")
+                field("Unit of Measure"; "Unit of Measure")
                 {
                 }
-                field("Qty. to Ship";"Qty. to Ship")
+                field("Qty. to Ship"; "Qty. to Ship")
                 {
                 }
-                field("Quantity Shipped";"Quantity Shipped")
+                field("Quantity Shipped"; "Quantity Shipped")
                 {
                 }
-                field("Requested Delivery Date";"Requested Delivery Date")
+                field("Requested Delivery Date"; "Requested Delivery Date")
                 {
                 }
-                field("Promised Delivery Date";"Promised Delivery Date")
+                field("Promised Delivery Date"; "Promised Delivery Date")
                 {
                 }
-                field("Planned Delivery Date";"Planned Delivery Date")
+                field("Planned Delivery Date"; "Planned Delivery Date")
                 {
                 }
-                field("Planned Shipment Date";"Planned Shipment Date")
+                field("Planned Shipment Date"; "Planned Shipment Date")
                 {
                 }
-                field("Shipment Date";"Shipment Date")
+                field("Shipment Date"; "Shipment Date")
                 {
                 }
             }

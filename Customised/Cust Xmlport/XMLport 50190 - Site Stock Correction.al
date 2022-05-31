@@ -5,7 +5,7 @@ xmlport 50190 "Site Stock Correction"
     {
         textelement(Test)
         {
-            tableelement("Item Ledger Entry";"Item Ledger Entry")
+            tableelement("Item Ledger Entry"; "Item Ledger Entry")
             {
                 XmlName = 'ILEGREC';
             }

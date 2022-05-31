@@ -10,7 +10,7 @@ page 60142 "Material Issue List-1"
     {
         area(content)
         {
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
                 Style = Standard;
                 StyleExpr = TRUE;
@@ -18,43 +18,43 @@ page 60142 "Material Issue List-1"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("Transfer-from Code";"Transfer-from Code")
+                field("Transfer-from Code"; "Transfer-from Code")
                 {
                 }
-                field("Transfer-to Code";"Transfer-to Code")
+                field("Transfer-to Code"; "Transfer-to Code")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Receipt Date";"Receipt Date")
+                field("Receipt Date"; "Receipt Date")
                 {
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("Prod. Order No.";"Prod. Order No.")
+                field("Prod. Order No."; "Prod. Order No.")
                 {
                 }
-                field("Prod. Order Line No.";"Prod. Order Line No.")
+                field("Prod. Order Line No."; "Prod. Order Line No.")
                 {
                 }
-                field("User ID";"User ID")
+                field("User ID"; "User ID")
                 {
                 }
-                field("Resource Name";"Resource Name")
+                field("Resource Name"; "Resource Name")
                 {
                 }
-                field("Required Date";"Required Date")
+                field("Required Date"; "Required Date")
                 {
                 }
-                field("Released Date";"Released Date")
+                field("Released Date"; "Released Date")
                 {
                 }
-                field("Released By";"Released By")
+                field("Released By"; "Released By")
                 {
                 }
             }
@@ -73,7 +73,7 @@ page 60142 "Material Issue List-1"
                     Caption = 'Card';
                     Image = Card;
                     RunObject = Page Page80003;
-                    RunPageLink = Field1=FIELD(No.);
+                    RunPageLink = Field1 = FIELD(No.);
                     ShortCutKey = 'Shift+F7';
                 }
             }

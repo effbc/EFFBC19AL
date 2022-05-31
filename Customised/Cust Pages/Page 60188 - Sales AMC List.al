@@ -19,7 +19,7 @@ page 60188 "Sales AMC List"
     Editable = false;
     PageType = List;
     SourceTable = "Sales Header";
-    SourceTableView = SORTING(Document Type,No.) ORDER(Ascending) WHERE(Document Type=CONST(Amc));
+    SourceTableView = SORTING(Document Type, No.) ORDER(Ascending) WHERE(Document Type=CONST(Amc));
 
     layout
     {
@@ -28,112 +28,112 @@ page 60188 "Sales AMC List"
             repeater(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field("Sell-to Customer No.";"Sell-to Customer No.")
+                field("Sell-to Customer No."; "Sell-to Customer No.")
                 {
 
                     trigger OnValidate();
                     begin
-                        CUS.SETRANGE(CUS."No.","Sell-to Customer No.");
+                        CUS.SETRANGE(CUS."No.", "Sell-to Customer No.");
                         IF CUS.FINDFIRST THEN
-                        Territory:=CUS."Territory Code";
-                          SelltoCustomerNoOnAfterValidat;
+                            Territory := CUS."Territory Code";
+                        SelltoCustomerNoOnAfterValidat;
                     end;
                 }
-                field("Customer Posting Group";"Customer Posting Group")
+                field("Customer Posting Group"; "Customer Posting Group")
                 {
                     Editable = false;
                 }
-                field("Sell-to Customer Name";"Sell-to Customer Name")
+                field("Sell-to Customer Name"; "Sell-to Customer Name")
                 {
                     Editable = false;
                 }
-                field("Sell-to Address";"Sell-to Address")
+                field("Sell-to Address"; "Sell-to Address")
                 {
                 }
-                field("Sell-to Address 2";"Sell-to Address 2")
+                field("Sell-to Address 2"; "Sell-to Address 2")
                 {
                 }
-                field("Sell-to Post Code";"Sell-to Post Code")
+                field("Sell-to Post Code"; "Sell-to Post Code")
                 {
                     Caption = 'Sell-to Post Code/City';
                 }
-                field("Sell-to City";"Sell-to City")
+                field("Sell-to City"; "Sell-to City")
                 {
                 }
-                field(State;State)
+                field(State; State)
                 {
                     Editable = true;
                 }
-                field(Control1280009;Structure)
+                field(Control1280009; Structure)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Installation Amount";"Installation Amount")
+                field("Installation Amount"; "Installation Amount")
                 {
                 }
-                field("Bought out Items Amount";"Bought out Items Amount")
+                field("Bought out Items Amount"; "Bought out Items Amount")
                 {
                 }
-                field(Product;Product)
+                field(Product; Product)
                 {
                 }
-                field("Pending(LOA)Value";"Pending(LOA)Value")
+                field("Pending(LOA)Value"; "Pending(LOA)Value")
                 {
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("Order Date";"Order Date")
+                field("Order Date"; "Order Date")
                 {
                 }
-                field("Shipment Date";"Shipment Date")
+                field("Shipment Date"; "Shipment Date")
                 {
                 }
-                field("Requested Delivery Date";"Requested Delivery Date")
+                field("Requested Delivery Date"; "Requested Delivery Date")
                 {
                     Caption = 'Amc Period  Start Date';
 
                     trigger OnValidate();
                     begin
-                          IF "Order Date">"Requested Delivery Date" THEN
-                             ERROR('Requested Delivery Date Must be Greater than Order Date');
+                        IF "Order Date" > "Requested Delivery Date" THEN
+                            ERROR('Requested Delivery Date Must be Greater than Order Date');
                     end;
                 }
-                field("Promised Delivery Date";"Promised Delivery Date")
+                field("Promised Delivery Date"; "Promised Delivery Date")
                 {
                     Caption = 'Amc Period  End  Date';
                 }
-                field("External Document No.";"External Document No.")
+                field("External Document No."; "External Document No.")
                 {
                     Caption = 'Invoice Number';
                 }
-                field("Salesperson Code";"Salesperson Code")
+                field("Salesperson Code"; "Salesperson Code")
                 {
                 }
-                field("Project Completion Date";"Project Completion Date")
+                field("Project Completion Date"; "Project Completion Date")
                 {
                 }
-                field("Extended Date";"Extended Date")
+                field("Extended Date"; "Extended Date")
                 {
                 }
-                field("Order Assurance";"Order Assurance")
+                field("Order Assurance"; "Order Assurance")
                 {
                     Editable = "Order AssuranceEditable";
 
                     trigger OnValidate();
                     begin
-                        
+
                         /*IF (USERID='SUPER') OR (USERID='02IS001') THEN BEGIN
                         Mail_Subject:='Order Assurance';
                         newline:=10;
@@ -169,40 +169,39 @@ page 60188 "Sales AMC List"
                         //END
                         //ELSE
                         //ERROR('You Do not Have Permission to Assure');
-                        
-                        IF "Order Assurance"=TRUE AND (Status=Status::Open) THEN
-                        BEGIN
-                        "Order AssuranceEditable" := FALSE;
-                        "Assured Date":=TODAY;
+
+                        IF "Order Assurance" = TRUE AND (Status = Status::Open) THEN BEGIN
+                            "Order AssuranceEditable" := FALSE;
+                            "Assured Date" := TODAY;
                         END ELSE
-                        "Order AssuranceEditable" := TRUE;
+                            "Order AssuranceEditable" := TRUE;
 
                     end;
                 }
-                field("Security Deposit Status";"Security Deposit Status")
+                field("Security Deposit Status"; "Security Deposit Status")
                 {
                     Caption = 'Status';
                 }
-                field("Sale Order Total Amount";"Sale Order Total Amount")
+                field("Sale Order Total Amount"; "Sale Order Total Amount")
                 {
                     Editable = true;
                 }
-                field("Customer OrderNo.";"Customer OrderNo.")
+                field("Customer OrderNo."; "Customer OrderNo.")
                 {
                 }
-                field("Customer Order Date";"Customer Order Date")
+                field("Customer Order Date"; "Customer Order Date")
                 {
                 }
-                field("Payment Terms Code";"Payment Terms Code")
+                field("Payment Terms Code"; "Payment Terms Code")
                 {
                 }
-                field("Security Deposit Amount";"Security Deposit Amount")
+                field("Security Deposit Amount"; "Security Deposit Amount")
                 {
                 }
-                field("SD Status";"SD Status")
+                field("SD Status"; "SD Status")
                 {
                 }
-                field(SecDepStatus;SecDepStatus)
+                field(SecDepStatus; SecDepStatus)
                 {
                 }
             }
@@ -230,14 +229,14 @@ page 60188 "Sales AMC List"
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = Page "Sales Comment Sheet";
-                    RunPageLink = Document Type=FIELD(Document Type),No.=FIELD(No.);
+                                    RunPageLink = Document Type=FIELD(Document Type),No.=FIELD(No.);
                 }
                 action("S&hipments")
                 {
                     Caption = 'S&hipments';
                     Image = Shipment;
                     RunObject = Page "Posted Sales Shipments";
-                    RunPageLink = Order No.=FIELD(No.);
+                                    RunPageLink = Order No.=FIELD(No.);
                     RunPageView = SORTING(Order No.);
                 }
                 action(Invoices)
@@ -245,7 +244,7 @@ page 60188 "Sales AMC List"
                     Caption = 'Invoices';
                     Image = Invoice;
                     RunObject = Page "Posted Sales Invoices";
-                    RunPageLink = Order No.=FIELD(No.);
+                                    RunPageLink = Order No.=FIELD(No.);
                     RunPageView = SORTING(Order No.);
                 }
                 separator(Action1102152056)
@@ -256,21 +255,21 @@ page 60188 "Sales AMC List"
                     Caption = 'Transit Documents';
                     Image = Documents;
                     RunObject = Page "Transit Document Order Details";
-                    RunPageLink = Type=CONST(Sale),PO / SO No.=FIELD(No.),Vendor / Customer Ref.=FIELD(Sell-to Customer No.);
+                                    RunPageLink = Type=CONST(Sale),PO / SO No.=FIELD(No.),Vendor / Customer Ref.=FIELD(Sell-to Customer No.);
                 }
                 action(Structure)
                 {
                     Caption = 'Structure';
                     Image = TaxDetail;
                     RunObject = Page "Structure Order Details";
-                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),Structure Code=FIELD(Structure);
+                                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),Structure Code=FIELD(Structure);
                 }
                 action("Authorization Information")
                 {
                     Caption = 'Authorization Information';
                     Image = AuthorizeCreditCard;
                     RunObject = Page "VAT Opening Detail";
-                    RunPageLink = Transaction Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.);
+                                    RunPageLink = Transaction Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.);
                 }
                 separator(Action1102152051)
                 {
@@ -280,7 +279,7 @@ page 60188 "Sales AMC List"
                     Caption = 'Whse. Shipment Lines';
                     Image = WarehouseRegisters;
                     RunObject = Page "Whse. Shipment Lines";
-                    RunPageLink = Source Type=CONST(37),Source Subtype=FIELD(Document Type),Source No.=FIELD(No.);
+                                    RunPageLink = Source Type=CONST(37),Source Subtype=FIELD(Document Type),Source No.=FIELD(No.);
                     RunPageView = SORTING(Source Type,Source Subtype,Source No.,Source Line No.);
                     Visible = false;
                 }
@@ -289,7 +288,7 @@ page 60188 "Sales AMC List"
                     Caption = 'In&vt. Put-away/Pick Lines';
                     Image = PutawayLines;
                     RunObject = Page "Warehouse Activity List";
-                    RunPageLink = Source Document=CONST(Sales Order),Source No.=FIELD(No.);
+                                    RunPageLink = Source Document=CONST(Sales Order),Source No.=FIELD(No.);
                     RunPageView = SORTING(Source Document,Source No.,Location Code);
                     Visible = false;
                 }
@@ -331,21 +330,21 @@ page 60188 "Sales AMC List"
                     Caption = 'Check List';
                     Image = CheckList;
                     RunObject = Page "Check List";
-                    RunPageLink = Document Type=CONST(Sales),Document No.=FIELD(No.);
+                                    RunPageLink = Document Type=CONST(Sales),Document No.=FIELD(No.);
                 }
                 action("&MSPT Order Details")
                 {
                     Caption = '&MSPT Order Details';
                     Image = "Order";
                     RunObject = Page "MSPT Order Details";
-                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),MSPT Header Code=FIELD(MSPT Code),Party No.=FIELD(Sell-to Customer No.);
+                                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),MSPT Header Code=FIELD(MSPT Code),Party No.=FIELD(Sell-to Customer No.);
                 }
                 action(Schedule)
                 {
                     Caption = 'Schedule';
                     Image = Timesheet;
                     RunObject = Page Schedule;
-                    RunPageLink = Document No.=FIELD(Tender No.),Document Type=CONST(Order);
+                                    RunPageLink = Document No.=FIELD(Tender No.),Document Type=CONST(Order);
                 }
             }
         }
@@ -854,15 +853,15 @@ page 60188 "Sales AMC List"
     var
         Text000 : Label 'Unable to execute this function while in view only mode.';
         CopySalesDoc : Report "Copy Sales Document";
-        MoveNegSalesLines : Report "Move Negative Sales Lines";
-        ReportPrint : Codeunit "Test Report-Print";
-        DocPrint : Codeunit "Document-Print";
-        ArchiveManagement : Codeunit ArchiveManagement;
-        SalesSetup : Record "Sales & Receivables Setup";
-        UserMgt : Codeunit "User Setup Management";
-        "-NAVIN-" : Integer;
-        SalesLine : Record "Sales Line";
-        Text001 : Label 'Do you want to convert the Order to an Export order?';
+                           MoveNegSalesLines : Report "Move Negative Sales Lines";
+                           ReportPrint : Codeunit "Test Report-Print";
+                           DocPrint : Codeunit "Document-Print";
+                           ArchiveManagement : Codeunit ArchiveManagement;
+                           SalesSetup : Record "Sales & Receivables Setup";
+                           UserMgt : Codeunit "User Setup Management";
+                           "-NAVIN-" : Integer;
+                           SalesLine : Record "Sales Line";
+                           Text001 : Label 'Do you want to convert the Order to an Export order?';
         Text002 : Label 'Order number %1 has been converted to Export order number %2.';
         Text13000 : Label 'No Setup exists for this Amount.';
         Text13001 : Label 'Do you want to send the order for Authorization?';

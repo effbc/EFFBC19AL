@@ -7,9 +7,9 @@ report 50201 totalorderDetails
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
-            DataItemTableView = SORTING(Order Date,Customer Posting Group) ORDER(Ascending) WHERE(Order Status=FILTER(<>Temporary Close));
+            DataItemTableView = SORTING(Order Date, Customer Posting Group) ORDER(Ascending) WHERE(Order Status=FILTER(<>Temporary Close));
             RequestFilterFields = "Order Date";
             column(CUSTOMER_ORDER_NO_Caption;CUSTOMER_ORDER_NO_CaptionLbl)
             {

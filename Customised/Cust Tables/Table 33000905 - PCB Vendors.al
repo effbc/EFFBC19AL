@@ -1,11 +1,13 @@
 table 33000905 "PCB Vendors"
 {
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"Vendor No.";Code[10])
+        field(1; "Vendor No."; Code[10])
         {
             TableRelation = Vendor."No.";
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -17,21 +19,26 @@ table 33000905 "PCB Vendors"
 
             end;
         }
-        field(2;"Vendor Name";Text[60])
+        field(2; "Vendor Name"; Text[60])
         {
+            DataClassification = CustomerContent;
         }
-        field(3;"No. of Sides";Option)
+        field(3; "No. of Sides"; Option)
         {
             OptionMembers = SSIDE,DSIDE,"4L","6L",ML;
+            DataClassification = CustomerContent;
         }
-        field(4;"PCB Thickness";Decimal)
+        field(4; "PCB Thickness"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(5;"Copper Clad Thickness";Decimal)
+        field(5; "Copper Clad Thickness"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(6;"Min PCB Qty";Decimal)
+        field(6; "Min PCB Qty"; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -56,8 +63,9 @@ table 33000905 "PCB Vendors"
 
             end;
         }
-        field(7;"Max PCB Qty";Decimal)
+        field(7; "Max PCB Qty"; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -82,8 +90,9 @@ table 33000905 "PCB Vendors"
 
             end;
         }
-        field(8;"Min PCB Area";Decimal)
+        field(8; "Min PCB Area"; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -121,8 +130,9 @@ table 33000905 "PCB Vendors"
 
             end;
         }
-        field(9;"Max PCB Area";Decimal)
+        field(9; "Max PCB Area"; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -166,48 +176,60 @@ table 33000905 "PCB Vendors"
 
             end;
         }
-        field(10;"Price per Sq.m";Decimal)
+        field(10; "Price per Sq.m"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(11;"Fast Price";Decimal)
+        field(11; "Fast Price"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(12;"Super Fast Price";Decimal)
+        field(12; "Super Fast Price"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(13;"Fast Lead Time";Integer)
+        field(13; "Fast Lead Time"; Integer)
         {
+            DataClassification = CustomerContent;
         }
-        field(14;"Super Fast Lead Time";Integer)
+        field(14; "Super Fast Lead Time"; Integer)
         {
+            DataClassification = CustomerContent;
         }
-        field(15;"Quotation Date";Date)
+        field(15; "Quotation Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
-        field(16;Type;Option)
+        field(16; Type; Option)
         {
             OptionMembers = " ",AL,CEM3,FR1,FR2,GLEPFR4,METAL,"PAPER EPOXY";
+            DataClassification = CustomerContent;
         }
-        field(17;"End Date";Date)
+        field(17; "End Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
-        field(18;White;Decimal)
+        field(18; White; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(19;Green;Decimal)
+        field(19; Green; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(20;Black;Decimal)
+        field(20; Black; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(21;Blue;Decimal)
+        field(21; Blue; Decimal)
         {
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(Key1;"Vendor No.","No. of Sides","Vendor Name","PCB Thickness","Copper Clad Thickness","Min PCB Area","Max PCB Area","Min PCB Qty","Max PCB Qty","Price per Sq.m","Fast Price","Quotation Date")
+        key(Key1; "Vendor No.", "No. of Sides", "Vendor Name", "PCB Thickness", "Copper Clad Thickness", "Min PCB Area", "Max PCB Area", "Min PCB Qty", "Max PCB Qty", "Price per Sq.m", "Fast Price", "Quotation Date")
         {
         }
     }
@@ -218,32 +240,32 @@ table 33000905 "PCB Vendors"
 
     trigger OnDelete();
     begin
-        if not (UserId in ['EFFTRONICS\PRANAVI','EFFTRONICS\JHANSI','EFFTRONICS\VANIDEVI']) then
-          Error('You do not right to delete!');
+        if not (UserId in ['EFFTRONICS\PRANAVI', 'EFFTRONICS\JHANSI', 'EFFTRONICS\VANIDEVI']) then
+            Error('You do not right to delete!');
     end;
 
     trigger OnInsert();
     begin
-        if not (UserId in ['EFFTRONICS\PRANAVI','EFFTRONICS\JHANSI','EFFTRONICS\VANIDEVI','EFFTRONICS\RENUKACH','EFFTRONICS\ANANDA']) then
-          Error('You do not right to insert!');
+        if not (UserId in ['EFFTRONICS\PRANAVI', 'EFFTRONICS\JHANSI', 'EFFTRONICS\VANIDEVI', 'EFFTRONICS\RENUKACH', 'EFFTRONICS\ANANDA']) then
+            Error('You do not right to insert!');
     end;
 
     trigger OnModify();
     begin
-        if not (UserId in ['EFFTRONICS\PRANAVI','EFFTRONICS\JHANSI','EFFTRONICS\VANIDEVI','EFFTRONICS\RENUKACH','EFFTRONICS\ANANDA']) then
-          Error('You do not right to modify!');
+        if not (UserId in ['EFFTRONICS\PRANAVI', 'EFFTRONICS\JHANSI', 'EFFTRONICS\VANIDEVI', 'EFFTRONICS\RENUKACH', 'EFFTRONICS\ANANDA']) then
+            Error('You do not right to modify!');
     end;
 
     trigger OnRename();
     begin
-        if not (UserId in ['EFFTRONICS\PRANAVI','EFFTRONICS\JHANSI','EFFTRONICS\VANIDEVI','EFFTRONICS\RENUKACH','EFFTRONICS\ANANDA']) then
-          Error('You do not right to rename!');
+        if not (UserId in ['EFFTRONICS\PRANAVI', 'EFFTRONICS\JHANSI', 'EFFTRONICS\VANIDEVI', 'EFFTRONICS\RENUKACH', 'EFFTRONICS\ANANDA']) then
+            Error('You do not right to rename!');
     end;
 
     var
-        pcb : Record "PCB Vendors";
-        no : Text[30];
-        vendor : Record Vendor;
-        vendor_deliver_details : Record "PCB Vendor Details";
+        pcb: Record "PCB Vendors";
+        no: Text[30];
+        vendor: Record Vendor;
+        vendor_deliver_details: Record "PCB Vendor Details";
 }
 

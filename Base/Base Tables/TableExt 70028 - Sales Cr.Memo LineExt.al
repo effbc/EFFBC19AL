@@ -20,12 +20,14 @@ tableextension 70028 SalesCrMemoLineExt extends "Sales Cr.Memo Line"
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60091; "OLD Dim Set ID"; Integer)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
             TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -36,6 +38,7 @@ tableextension 70028 SalesCrMemoLineExt extends "Sales Cr.Memo Line"
         {
             Description = 'QC1.0';
             TableRelation = "Specification Header";
+            DataClassification = CustomerContent;
         }
         field(33000251; "Quantity Accepted"; Decimal)
         {
@@ -58,6 +61,7 @@ tableextension 70028 SalesCrMemoLineExt extends "Sales Cr.Memo Line"
         field(33000253; "QC Enabled"; Boolean)
         {
             Description = 'QC1.0';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -85,6 +89,7 @@ tableextension 70028 SalesCrMemoLineExt extends "Sales Cr.Memo Line"
         field(33000255; "Quality Before Receipt"; Boolean)
         {
             Description = 'QC1.0';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -109,21 +114,25 @@ tableextension 70028 SalesCrMemoLineExt extends "Sales Cr.Memo Line"
         {
             Description = 'QC1.0';
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(33000257; "Qty. Sent To Quality"; Decimal)
         {
             Description = 'QC1.0';
             Editable = false;
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(33000258; "Qty. Sending To Quality(R)"; Decimal)
         {
             Description = 'QC1.0';
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(33000259; "Spec Version"; Code[20])
         {
             TableRelation = "Specification Version"."Version Code" WHERE("Specification No." = FIELD("Spec ID"));
+            DataClassification = CustomerContent;
         }
     }
 

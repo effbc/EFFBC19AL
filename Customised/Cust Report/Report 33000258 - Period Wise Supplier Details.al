@@ -7,9 +7,9 @@ report 33000258 "Period Wise Supplier Details"
 
     dataset
     {
-        dataitem("Inspection Receipt Header";"Inspection Receipt Header")
+        dataitem("Inspection Receipt Header"; "Inspection Receipt Header")
         {
-            DataItemTableView = SORTING(Vendor No.,Item No.) ORDER(Ascending) WHERE(Status=FILTER(Yes),Source Type=FILTER(In Bound));
+            DataItemTableView = SORTING(Vendor No., Item No.) ORDER(Ascending) WHERE(Status = FILTER(Yes), Source Type=FILTER(In Bound));
             RequestFilterFields = "Posting Date","Vendor No.";
             column(WORKDATE;WORKDATE)
             {

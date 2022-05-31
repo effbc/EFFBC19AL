@@ -6,13 +6,13 @@ xmlport 80201 "Specification Parameters"
     {
         textelement(SpecificationParameters)
         {
-            tableelement("<specificationparameters>";"Specification Parameters")
+            tableelement("<specificationparameters>"; "Specification Parameters")
             {
                 XmlName = 'SpecificationParameters';
-                fieldelement(Code;"<SpecificationParameters>".Code)
+                fieldelement(Code; "<SpecificationParameters>".Code)
                 {
                 }
-                fieldelement(Description;"<SpecificationParameters>".Description)
+                fieldelement(Description; "<SpecificationParameters>".Description)
                 {
                 }
             }

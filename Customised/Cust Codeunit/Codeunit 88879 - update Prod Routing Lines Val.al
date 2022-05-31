@@ -23,23 +23,23 @@ codeunit 88879 "update Prod Routing Lines Val"
             END;
           UNTIL ProdRoutingLineGRec.NEXT = 0;
         */
-        
+
         ProdRoutingLineGRec.RESET;
-        ProdRoutingLineGRec.SETFILTER("No.",'=%1','');
+        ProdRoutingLineGRec.SETFILTER("No.", '=%1', '');
         IF ProdRoutingLineGRec.FINDSET THEN
-          REPEAT
-            ProdRoutingLineGRec."No." := 'TEST-UPG';
-            ProdRoutingLineGRec.MODIFY;
-          UNTIL ProdRoutingLineGRec.NEXT = 0;
-        
+            REPEAT
+                ProdRoutingLineGRec."No." := 'TEST-UPG';
+                ProdRoutingLineGRec.MODIFY;
+            UNTIL ProdRoutingLineGRec.NEXT = 0;
+
         MESSAGE('Completed');
 
     end;
 
     var
-        ProdRoutingLineGRec : Record "Prod. Order Routing Line";
-        ProdRoutingTmp : Record "Prod. Routing Lines Tmp";
-        EntryNo : Integer;
-        RoutingLineGRec : Record "Routing Line";
+        ProdRoutingLineGRec: Record "Prod. Order Routing Line";
+        ProdRoutingTmp: Record "Prod. Routing Lines Tmp";
+        EntryNo: Integer;
+        RoutingLineGRec: Record "Routing Line";
 }
 

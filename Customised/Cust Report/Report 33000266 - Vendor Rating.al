@@ -7,61 +7,61 @@ report 33000266 "Vendor Rating"
 
     dataset
     {
-        dataitem("<Vendor1>";Vendor)
+        dataitem("<Vendor1>"; Vendor)
         {
-            RequestFilterFields = "No.","Vendor Type";
-            column(COMPANYNAME;COMPANYNAME)
+            RequestFilterFields = "No.", "Vendor Type";
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(USERID;USERID)
+            column(USERID; USERID)
             {
             }
-            column(TODAY;TODAY)
+            column(TODAY; TODAY)
             {
             }
-            column(VENDOR_DECLARATIONCaption;QTY)
+            column(VENDOR_DECLARATIONCaption; QTY)
             {
             }
-            column(CHOICE;Choice)
+            column(CHOICE; Choice)
             {
             }
-            column(Vendor_RatingCaption;Vendor_RatingCaptionLbl)
+            column(Vendor_RatingCaption; Vendor_RatingCaptionLbl)
             {
             }
-            column(PriceCaption;PriceCaptionLbl)
+            column(PriceCaption; PriceCaptionLbl)
             {
             }
-            column(TimeCaption;TimeCaptionLbl)
+            column(TimeCaption; TimeCaptionLbl)
             {
             }
-            column(QualityCaption;QualityCaptionLbl)
+            column(QualityCaption; QualityCaptionLbl)
             {
             }
-            column(Unit_CostCaption;Unit_CostCaptionLbl)
+            column(Unit_CostCaption; Unit_CostCaptionLbl)
             {
             }
-            column(DeviationCaption;DeviationCaptionLbl)
+            column(DeviationCaption; DeviationCaptionLbl)
             {
             }
-            column(Lead_TimeCaption;Lead_TimeCaptionLbl)
+            column(Lead_TimeCaption; Lead_TimeCaptionLbl)
             {
             }
-            column(Given_Lead_TimeCaption;Given_Lead_TimeCaptionLbl)
+            column(Given_Lead_TimeCaption; Given_Lead_TimeCaptionLbl)
             {
             }
-            column(Qty__RejectedCaption;Qty__RejectedCaptionLbl)
+            column(Qty__RejectedCaption; Qty__RejectedCaptionLbl)
             {
             }
-            column(QuantityCaption;QuantityCaptionLbl)
+            column(QuantityCaption; QuantityCaptionLbl)
             {
             }
-            column(Vendor1__No_;"No.")
+            column(Vendor1__No_; "No.")
             {
             }
-            dataitem("Purchase Line";"Purchase Line")
+            dataitem("Purchase Line"; "Purchase Line")
             {
                 DataItemLink = Buy-from Vendor No.=FIELD(No.);
-                DataItemTableView = SORTING(No.,Buy-from Vendor No.) ORDER(Ascending) WHERE(Qty. to Invoice=CONST(0),Expected Receipt Date=FILTER(<>''));
+                DataItemTableView = SORTING(No., Buy-from Vendor No.) ORDER(Ascending) WHERE(Qty. to Invoice=CONST(0),Expected Receipt Date=FILTER(<>''));
                 RequestFilterFields = Type,"No.","Buy-from Vendor No.";
                 column(Vendor1___Name;"<Vendor1>".Name)
                 {

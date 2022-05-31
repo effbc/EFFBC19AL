@@ -9,9 +9,9 @@ report 80013 "Inventory Availability3"
 
     dataset
     {
-        dataitem("Production Order";"Production Order")
+        dataitem("Production Order"; "Production Order")
         {
-            DataItemTableView = SORTING(Prod Start date) ORDER(Ascending) WHERE(Status=CONST(Released),Prod Start date=FILTER(<>''),Location Code=CONST(PROD),Product Group Code=FILTER(FPRODUCT|CPCB));
+            DataItemTableView = SORTING(Prod Start date) ORDER(Ascending) WHERE(Status = CONST(Released), Prod Start date=FILTER(<>''),Location Code=CONST(PROD),Product Group Code=FILTER(FPRODUCT|CPCB));
             dataitem("Prod. Order Component";"Prod. Order Component")
             {
                 CalcFields = Qty. in Posted Material Issues,Qty. in Material Issues;

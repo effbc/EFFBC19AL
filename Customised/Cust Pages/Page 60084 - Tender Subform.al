@@ -16,102 +16,100 @@ page 60084 "Tender Subform"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Schedule Type";"Schedule Type")
+                field("Schedule Type"; "Schedule Type")
                 {
                 }
-                field(Type;Type)
+                field(Type; Type)
                 {
                 }
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("Schedule No";"Schedule No")
+                field("Schedule No"; "Schedule No")
                 {
                 }
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                 }
-                field("Unit Price";"Unit Price")
+                field("Unit Price"; "Unit Price")
                 {
 
                     trigger OnValidate();
                     begin
-                          IF "Unit Price"<"Unit Cost" THEN
-                          BEGIN
-                          MESSAGE('Unit Price Must Be More Than Unit Cost');
-                          "Unit Price":="Unit Cost";
-                          END;
-                    end;
-                }
-                field(UOM;UOM)
-                {
-                }
-                field(Description;Description)
-                {
-                    Editable = true;
-                }
-                field("Description 2";"Description 2")
-                {
-                }
-                field("Tax Group Code";"Tax Group Code")
-                {
-                }
-                field(Quantity;Quantity)
-                {
-                }
-                field("Unit Cost";"Unit Cost")
-                {
-
-                    trigger OnValidate();
-                    begin
-                        item.SETRANGE(item."No.","No.");
-                        IF item.FINDFIRST THEN
-                        BEGIN
-                        IF ("Unit Cost"<item."Avg Unit Cost")THEN
-                        ERROR('Unit cost must be greater than item unit Cost');
+                        IF "Unit Price" < "Unit Cost" THEN BEGIN
+                            MESSAGE('Unit Price Must Be More Than Unit Cost');
+                            "Unit Price" := "Unit Cost";
                         END;
                     end;
                 }
-                field("Production Bom No.";"Production Bom No.")
+                field(UOM; UOM)
                 {
                 }
-                field("Production Bom Version No.";"Production Bom Version No.")
+                field(Description; Description)
+                {
+                    Editable = true;
+                }
+                field("Description 2"; "Description 2")
                 {
                 }
-                field("Design Cost";"Design Cost")
+                field("Tax Group Code"; "Tax Group Code")
                 {
                 }
-                field("CRM Cost";"CRM Cost")
+                field(Quantity; Quantity)
                 {
                 }
-                field("Total Amount";"Total Amount")
+                field("Unit Cost"; "Unit Cost")
+                {
+
+                    trigger OnValidate();
+                    begin
+                        item.SETRANGE(item."No.", "No.");
+                        IF item.FINDFIRST THEN BEGIN
+                            IF ("Unit Cost" < item."Avg Unit Cost") THEN
+                                ERROR('Unit cost must be greater than item unit Cost');
+                        END;
+                    end;
+                }
+                field("Production Bom No."; "Production Bom No.")
                 {
                 }
-                field("Estimated Unit Cost";"Estimated Unit Cost")
+                field("Production Bom Version No."; "Production Bom Version No.")
                 {
                 }
-                field("Cust. Estimated Unit Cost";"Cust. Estimated Unit Cost")
+                field("Design Cost"; "Design Cost")
                 {
                 }
-                field("Cust.Estimated Total Cost";"Cust.Estimated Total Cost")
+                field("CRM Cost"; "CRM Cost")
                 {
                 }
-                field("L1 Quote Value";"L1 Quote Value")
+                field("Total Amount"; "Total Amount")
                 {
                 }
-                field("L2 Quote Value";"L2 Quote Value")
+                field("Estimated Unit Cost"; "Estimated Unit Cost")
                 {
                 }
-                field("L3 Quote Value";"L3 Quote Value")
+                field("Cust. Estimated Unit Cost"; "Cust. Estimated Unit Cost")
                 {
                 }
-                field("L4 Quote Value";"L4 Quote Value")
+                field("Cust.Estimated Total Cost"; "Cust.Estimated Total Cost")
                 {
                 }
-                field("L5 Quote Value";"L5 Quote Value")
+                field("L1 Quote Value"; "L1 Quote Value")
                 {
                 }
-                field("Estimated Total Unit Cost";"Estimated Total Unit Cost")
+                field("L2 Quote Value"; "L2 Quote Value")
+                {
+                }
+                field("L3 Quote Value"; "L3 Quote Value")
+                {
+                }
+                field("L4 Quote Value"; "L4 Quote Value")
+                {
+                }
+                field("L5 Quote Value"; "L5 Quote Value")
+                {
+                }
+                field("Estimated Total Unit Cost"; "Estimated Total Unit Cost")
                 {
                 }
             }
@@ -124,8 +122,8 @@ page 60084 "Tender Subform"
         {
             group("&Line")
             {
-                CaptionML = ENU='&Line',
-                            ENN='&Line';
+                CaptionML = ENU = '&Line',
+                            ENN = '&Line';
                 Image = Line;
                 action("Sc&hedule")
                 {
@@ -133,7 +131,7 @@ page 60084 "Tender Subform"
 
                     trigger OnAction();
                     begin
-                        
+
                         //This functionality was copied from page #42. Unsupported part was commented. Please check it.
                         /*CurrPage.SalesLines.Page.*/
                         ShowSchedule;
@@ -146,33 +144,33 @@ page 60084 "Tender Subform"
 
     trigger OnInit();
     begin
-        SalesPerson.SETFILTER(SalesPerson."Salesperson/Purchaser",'sale');
+        SalesPerson.SETFILTER(SalesPerson."Salesperson/Purchaser", 'sale');
         // Rev01 >>
         // SalesPerson.SETRANGE(SalesPerson.Code,USERID);
         User.RESET;
-        User.SETRANGE("User Name",USERID);
+        User.SETRANGE("User Name", USERID);
         IF User.FINDFIRST THEN
-          SalesPerson.SETRANGE(SalesPerson.Code,User.EmployeeID);
-          //SalesPerson.SETRANGE(SalesPerson.Code,MiscUser.ReturnTrimmedUserID(USERID));
+            SalesPerson.SETRANGE(SalesPerson.Code, User.EmployeeID);
+        //SalesPerson.SETRANGE(SalesPerson.Code,MiscUser.ReturnTrimmedUserID(USERID));
         // Rev01 <<
         IF SalesPerson.FINDFIRST THEN;
     end;
 
     var
-        Temp : Decimal;
-        SalesPerson : Record "Salesperson/Purchaser";
-        item : Record Item;
-        MiscUser : Codeunit "Misc.User";
-        User : Record User;
+        Temp: Decimal;
+        SalesPerson: Record "Salesperson/Purchaser";
+        item: Record Item;
+        MiscUser: Codeunit "Misc.User";
+        User: Record User;
 
     [LineStart(10503)]
     procedure ShowSalesOrderWorkSheet();
     var
-        DesignWorksheetHeader : Record "Design Worksheet Header";
-        DesignWorksheetLine : Record "Design Worksheet Line";
-        Item : Record Item;
-        ItemDesignWorksheetHeader : Record "Item Design Worksheet Header";
-        ItemDesignWorksheetLine : Record "Item Design Worksheet Line";
+        DesignWorksheetHeader: Record "Design Worksheet Header";
+        DesignWorksheetLine: Record "Design Worksheet Line";
+        Item: Record Item;
+        ItemDesignWorksheetHeader: Record "Item Design Worksheet Header";
+        ItemDesignWorksheetLine: Record "Item Design Worksheet Line";
     begin
         /*
         //TESTFIELD("Document Type");
@@ -189,30 +187,30 @@ page 60084 "Tender Subform"
         */
         ItemDesignWorksheetHeader.RESET;
         IF ItemDesignWorksheetHeader.GET("No.") THEN BEGIN
-          DesignWorksheetHeader.INIT;
-          DesignWorksheetHeader.TRANSFERFIELDS(ItemDesignWorksheetHeader);
-          DesignWorksheetHeader."Document No.":="Document No.";
-          DesignWorksheetHeader."Document Line No.":="Line No.";
-          DesignWorksheetHeader."Document Type":=DesignWorksheetHeader."Document Type"::Tender;
-          IF DesignWorksheetHeader.INSERT THEN;
-          ItemDesignWorksheetLine.RESET;
-          ItemDesignWorksheetLine.SETRANGE(ItemDesignWorksheetLine."Item No",ItemDesignWorksheetHeader."Item No.");
-          IF ItemDesignWorksheetLine.FINDSET THEN
-            REPEAT
-              DesignWorksheetLine.INIT;
-              DesignWorksheetLine.TRANSFERFIELDS(ItemDesignWorksheetLine);
-              DesignWorksheetLine."Document No.":="Document No.";
-              DesignWorksheetLine."Document Line No.":="Line No.";
-              DesignWorksheetLine."Document Type":=DesignWorksheetLine."Document Type"::Tender;
-              IF DesignWorksheetLine.INSERT THEN;
-            UNTIL ItemDesignWorksheetLine.NEXT=0;
+            DesignWorksheetHeader.INIT;
+            DesignWorksheetHeader.TRANSFERFIELDS(ItemDesignWorksheetHeader);
+            DesignWorksheetHeader."Document No." := "Document No.";
+            DesignWorksheetHeader."Document Line No." := "Line No.";
+            DesignWorksheetHeader."Document Type" := DesignWorksheetHeader."Document Type"::Tender;
+            IF DesignWorksheetHeader.INSERT THEN;
+            ItemDesignWorksheetLine.RESET;
+            ItemDesignWorksheetLine.SETRANGE(ItemDesignWorksheetLine."Item No", ItemDesignWorksheetHeader."Item No.");
+            IF ItemDesignWorksheetLine.FINDSET THEN
+                REPEAT
+                    DesignWorksheetLine.INIT;
+                    DesignWorksheetLine.TRANSFERFIELDS(ItemDesignWorksheetLine);
+                    DesignWorksheetLine."Document No." := "Document No.";
+                    DesignWorksheetLine."Document Line No." := "Line No.";
+                    DesignWorksheetLine."Document Type" := DesignWorksheetLine."Document Type"::Tender;
+                    IF DesignWorksheetLine.INSERT THEN;
+                UNTIL ItemDesignWorksheetLine.NEXT = 0;
         END;
         COMMIT;
-        DesignWorksheetHeader.SETRANGE("Document Type",DesignWorksheetHeader."Document Type"::Tender);
-        DesignWorksheetHeader.SETRANGE("Document No.","Document No.");
+        DesignWorksheetHeader.SETRANGE("Document Type", DesignWorksheetHeader."Document Type"::Tender);
+        DesignWorksheetHeader.SETRANGE("Document No.", "Document No.");
         DesignWorksheetHeader.FILTERGROUP(2);
-        DesignWorksheetHeader.SETRANGE("Document Line No.","Line No.");
-        PAGE.RUNMODAL(PAGE::"Design Worksheet",DesignWorksheetHeader);
+        DesignWorksheetHeader.SETRANGE("Document Line No.", "Line No.");
+        PAGE.RUNMODAL(PAGE::"Design Worksheet", DesignWorksheetHeader);
         DesignWorksheetHeader.FILTERGROUP(0);
 
     end;
@@ -220,24 +218,24 @@ page 60084 "Tender Subform"
     [LineStart(10545)]
     procedure ShowSchedule2();
     var
-        Schedule : Record Schedule2;
+        Schedule: Record Schedule2;
     begin
         Schedule.RESET;
-        Schedule.SETRANGE("Document Type",Schedule."Document Type" :: Tender);
-        Schedule.SETRANGE("Document No.","Document No.");
-        Schedule.SETRANGE("Document Line No.","Line No.");
+        Schedule.SETRANGE("Document Type", Schedule."Document Type"::Tender);
+        Schedule.SETRANGE("Document No.", "Document No.");
+        Schedule.SETRANGE("Document Line No.", "Line No.");
         //Schedule.SETRANGE("Item No.","No.");
         //Schedule.SETRANGE(Quantity,Quantity);
         Schedule.FILTERGROUP(2);
-        PAGE.RUN(60125,Schedule);
+        PAGE.RUN(60125, Schedule);
         Schedule.FILTERGROUP(0);
     end;
 
     [LineStart(10556)]
     procedure ShowSchedule3();
     var
-        Schedule : Record Schedule2;
-        TenderLine : Record "Tender Line";
+        Schedule: Record Schedule2;
+        TenderLine: Record "Tender Line";
     begin
         /*
         TenderLine.RESET;
@@ -261,32 +259,32 @@ page 60084 "Tender Subform"
         END
         */
         TenderLine.RESET;
-        TenderLine.SETRANGE("Document No.","Document No.");
-        TenderLine.SETRANGE("Line No.","Line No.");
+        TenderLine.SETRANGE("Document No.", "Document No.");
+        TenderLine.SETRANGE("Line No.", "Line No.");
         IF TenderLine.FINDSET THEN
-          REPEAT
-            Schedule.INIT;
-            Schedule."Document Type":=Schedule."Document Type"::Tender;
-            Schedule."Document No.":=TenderLine."Document No.";
-            Schedule."Document Line No.":=TenderLine."Line No.";
-            Schedule."Line No.":=TenderLine."Line No.";
-            Schedule.Type:=Schedule.Type::Item;
-            Schedule.VALIDATE("No.",TenderLine."No.");
-            Schedule.Quantity := TenderLine.Quantity;
-            //TenderLine.CALCFIELDS("Estimated Unit Cost");
-            IF Schedule.INSERT THEN;
-          UNTIL TenderLine.NEXT=0;
-          COMMIT;
-        
+            REPEAT
+                Schedule.INIT;
+                Schedule."Document Type" := Schedule."Document Type"::Tender;
+                Schedule."Document No." := TenderLine."Document No.";
+                Schedule."Document Line No." := TenderLine."Line No.";
+                Schedule."Line No." := TenderLine."Line No.";
+                Schedule.Type := Schedule.Type::Item;
+                Schedule.VALIDATE("No.", TenderLine."No.");
+                Schedule.Quantity := TenderLine.Quantity;
+                //TenderLine.CALCFIELDS("Estimated Unit Cost");
+                IF Schedule.INSERT THEN;
+            UNTIL TenderLine.NEXT = 0;
+        COMMIT;
+
         Schedule.RESET;
-        Schedule.SETRANGE("Document Type",Schedule."Document Type" :: Tender);
-        Schedule.SETRANGE("Document No.","Document No.");
-        Schedule.SETRANGE("Document Line No.","Line No.");
+        Schedule.SETRANGE("Document Type", Schedule."Document Type"::Tender);
+        Schedule.SETRANGE("Document No.", "Document No.");
+        Schedule.SETRANGE("Document Line No.", "Line No.");
         //Schedule.SETRANGE("Item No.","No.");
         //Schedule.SETRANGE(Quantity,Quantity);
         Schedule.FILTERGROUP(2);
-        PAGE.RUN(60125,Schedule);
-        
+        PAGE.RUN(60125, Schedule);
+
         Schedule.FILTERGROUP(0);
 
     end;
@@ -294,8 +292,8 @@ page 60084 "Tender Subform"
     [LineStart(10607)]
     procedure ShowSchedule();
     var
-        Schedule : Record Schedule2;
-        TenderLine : Record "Tender Line";
+        Schedule: Record Schedule2;
+        TenderLine: Record "Tender Line";
     begin
         /*
         TenderLine.RESET;
@@ -318,46 +316,47 @@ page 60084 "Tender Subform"
           END
         END
         */
-        IF Type=Type::Item THEN BEGIN
-        TenderLine.RESET;
-        TenderLine.SETRANGE("Document No.","Document No.");
-        TenderLine.SETRANGE("Line No.","Line No.");
-        IF TenderLine.FINDSET THEN
-          REPEAT
-            Schedule.INIT;
-            Schedule."Document Type":=Schedule."Document Type"::Tender;
-            Schedule."Document No.":=TenderLine."Document No.";
-            Schedule."Document Line No.":=TenderLine."Line No.";
-            Schedule."Line No.":=TenderLine."Line No.";
-            Schedule.Type:=Schedule.Type::Item;
-            Schedule.VALIDATE("No.",TenderLine."No.");
-            Schedule.Quantity := TenderLine.Quantity;
-            Schedule."Estimated Total Unit Price":=Schedule."Estimated Unit Price"*Quantity;
-            //TenderLine.CALCFIELDS("Estimated Unit Cost");
-            IF Schedule.INSERT THEN;
-          UNTIL TenderLine.NEXT=0;
-          COMMIT;
-        
-        Schedule.RESET;
-        Schedule.SETRANGE("Document Type",Schedule."Document Type" :: Tender);
-        Schedule.SETRANGE("Document No.","Document No.");
-        Schedule.SETRANGE("Document Line No.","Line No.");
-        //Schedule.SETRANGE("Item No.","No.");
-        //Schedule.SETRANGE(Quantity,Quantity);
-        Schedule.FILTERGROUP(2);
-        PAGE.RUN(60125,Schedule);
-        
-        Schedule.FILTERGROUP(0);
-        END ELSE IF Type=Type::"G/L Account" THEN BEGIN
-          Schedule.RESET;
-          Schedule.SETRANGE("Document Type",Schedule."Document Type" ::Tender);
-          Schedule.SETRANGE("Document No.","Document No.");
-          Schedule.SETRANGE("Document Line No.","Line No.");
-          Schedule.FILTERGROUP(2);
-          PAGE.RUN(60125,Schedule);
-          Schedule.FILTERGROUP(0);
-        
-        END;
+        IF Type = Type::Item THEN BEGIN
+            TenderLine.RESET;
+            TenderLine.SETRANGE("Document No.", "Document No.");
+            TenderLine.SETRANGE("Line No.", "Line No.");
+            IF TenderLine.FINDSET THEN
+                REPEAT
+                    Schedule.INIT;
+                    Schedule."Document Type" := Schedule."Document Type"::Tender;
+                    Schedule."Document No." := TenderLine."Document No.";
+                    Schedule."Document Line No." := TenderLine."Line No.";
+                    Schedule."Line No." := TenderLine."Line No.";
+                    Schedule.Type := Schedule.Type::Item;
+                    Schedule.VALIDATE("No.", TenderLine."No.");
+                    Schedule.Quantity := TenderLine.Quantity;
+                    Schedule."Estimated Total Unit Price" := Schedule."Estimated Unit Price" * Quantity;
+                    //TenderLine.CALCFIELDS("Estimated Unit Cost");
+                    IF Schedule.INSERT THEN;
+                UNTIL TenderLine.NEXT = 0;
+            COMMIT;
+
+            Schedule.RESET;
+            Schedule.SETRANGE("Document Type", Schedule."Document Type"::Tender);
+            Schedule.SETRANGE("Document No.", "Document No.");
+            Schedule.SETRANGE("Document Line No.", "Line No.");
+            //Schedule.SETRANGE("Item No.","No.");
+            //Schedule.SETRANGE(Quantity,Quantity);
+            Schedule.FILTERGROUP(2);
+            PAGE.RUN(60125, Schedule);
+
+            Schedule.FILTERGROUP(0);
+        END ELSE
+            IF Type = Type::"G/L Account" THEN BEGIN
+                Schedule.RESET;
+                Schedule.SETRANGE("Document Type", Schedule."Document Type"::Tender);
+                Schedule.SETRANGE("Document No.", "Document No.");
+                Schedule.SETRANGE("Document Line No.", "Line No.");
+                Schedule.FILTERGROUP(2);
+                PAGE.RUN(60125, Schedule);
+                Schedule.FILTERGROUP(0);
+
+            END;
 
     end;
 }

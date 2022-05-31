@@ -13,33 +13,33 @@ page 60303 Sessions2
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("My Session";"My Session")
+                field("My Session"; "My Session")
                 {
                 }
-                field("User ID";"User ID")
+                field("User ID"; "User ID")
                 {
                 }
-                field("Connection ID";"Connection ID")
+                field("Connection ID"; "Connection ID")
                 {
                 }
-                field("Records Scanned";"Records Scanned")
+                field("Records Scanned"; "Records Scanned")
                 {
                 }
-                field("""Found/Scanned Ratio %"" * 100";"Found/Scanned Ratio %" * 100)
+                field("""Found/Scanned Ratio %"" * 100"; "Found/Scanned Ratio %" * 100)
                 {
                     Caption = 'Found/Scanned Ratio %';
                     ExtendedDatatype = Ratio;
                 }
-                field("Disk Reads";"Disk Reads")
+                field("Disk Reads"; "Disk Reads")
                 {
                 }
-                field("Disk Writes";"Disk Writes")
+                field("Disk Writes"; "Disk Writes")
                 {
                 }
-                field(username;username)
+                field(username; username)
                 {
                 }
-                field("""Cache Hit Ratio %"" * 100";"Cache Hit Ratio %" * 100)
+                field("""Cache Hit Ratio %"" * 100"; "Cache Hit Ratio %" * 100)
                 {
                     Caption = 'Cache Hit Ratio %';
                     ExtendedDatatype = Ratio;

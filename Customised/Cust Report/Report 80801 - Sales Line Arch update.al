@@ -5,7 +5,7 @@ report 80801 "Sales Line Arch update"
 
     dataset
     {
-        dataitem("Sales Line Archive";"Sales Line Archive")
+        dataitem("Sales Line Archive"; "Sales Line Archive")
         {
 
             trigger OnAfterGetRecord();

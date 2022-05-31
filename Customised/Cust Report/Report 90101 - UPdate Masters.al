@@ -5,12 +5,12 @@ report 90101 "UPdate Masters"
 
     dataset
     {
-        dataitem(Item;Item)
+        dataitem(Item; Item)
         {
 
             trigger OnAfterGetRecord();
             begin
-                Item.VALIDATE("VAT Prod. Posting Group",VatProdPostGroup.Code);
+                Item.VALIDATE("VAT Prod. Posting Group", VatProdPostGroup.Code);
                 MODIFY(TRUE);
             end;
 
@@ -19,12 +19,12 @@ report 90101 "UPdate Masters"
                 IF VatProdPostGroup.FINDFIRST THEN;
             end;
         }
-        dataitem(Customer;Customer)
+        dataitem(Customer; Customer)
         {
 
             trigger OnAfterGetRecord();
             begin
-                Customer.VALIDATE("VAT Bus. Posting Group",VatBusPostGroup.Code);
+                Customer.VALIDATE("VAT Bus. Posting Group", VatBusPostGroup.Code);
                 MODIFY(TRUE);
             end;
 
@@ -33,12 +33,12 @@ report 90101 "UPdate Masters"
                 IF VatBusPostGroup.FINDFIRST THEN;
             end;
         }
-        dataitem(Vendor;Vendor)
+        dataitem(Vendor; Vendor)
         {
 
             trigger OnAfterGetRecord();
             begin
-                Customer.VALIDATE("VAT Bus. Posting Group",VatBusPostGroup.Code);
+                Customer.VALIDATE("VAT Bus. Posting Group", VatBusPostGroup.Code);
                 MODIFY(TRUE);
             end;
 
@@ -66,7 +66,7 @@ report 90101 "UPdate Masters"
     }
 
     var
-        VatProdPostGroup : Record "VAT Product Posting Group";
-        VatBusPostGroup : Record "VAT Business Posting Group";
+        VatProdPostGroup: Record "VAT Product Posting Group";
+        VatBusPostGroup: Record "VAT Business Posting Group";
 }
 

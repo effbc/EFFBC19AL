@@ -5,13 +5,13 @@ xmlport 80038 "Excise E.C.C. Nos."
     {
         textelement(ECCNos)
         {
-            tableelement("<eccnos>";"E.C.C. Nos.")
+            tableelement("<eccnos>"; "E.C.C. Nos.")
             {
                 XmlName = 'ECCNos';
-                fieldelement(Code;"<ECCNos>".Code)
+                fieldelement(Code; "<ECCNos>".Code)
                 {
                 }
-                fieldelement(Description;"<ECCNos>".Description)
+                fieldelement(Description; "<ECCNos>".Description)
                 {
                 }
             }

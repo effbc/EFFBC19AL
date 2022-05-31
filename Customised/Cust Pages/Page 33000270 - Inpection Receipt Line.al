@@ -16,86 +16,86 @@ page 33000270 "Inpection Receipt Line"
                 IndentationColumn = DescriptionIndent;
                 IndentationControls = Description;
                 ShowCaption = false;
-                field("Character Code";"Character Code")
+                field("Character Code"; "Character Code")
                 {
                     Editable = false;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Editable = false;
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field("Sampling Plan Code";"Sampling Plan Code")
-                {
-                    Editable = false;
-                }
-                field("Normal Value (Num)";"Normal Value (Num)")
+                field("Sampling Plan Code"; "Sampling Plan Code")
                 {
                     Editable = false;
                 }
-                field("Min. Value (Num)";"Min. Value (Num)")
+                field("Normal Value (Num)"; "Normal Value (Num)")
                 {
                     Editable = false;
                 }
-                field("Max. Value (Num)";"Max. Value (Num)")
+                field("Min. Value (Num)"; "Min. Value (Num)")
                 {
                     Editable = false;
                 }
-                field("Normal Value (Text)";"Normal Value (Text)")
+                field("Max. Value (Num)"; "Max. Value (Num)")
                 {
                     Editable = false;
                 }
-                field("Min. Value (Text)";"Min. Value (Text)")
+                field("Normal Value (Text)"; "Normal Value (Text)")
                 {
                     Editable = false;
                 }
-                field("Max. Value (Text)";"Max. Value (Text)")
+                field("Min. Value (Text)"; "Min. Value (Text)")
                 {
                     Editable = false;
                 }
-                field("Unit Of Measure Code";"Unit Of Measure Code")
+                field("Max. Value (Text)"; "Max. Value (Text)")
                 {
                     Editable = false;
                 }
-                field("Lot Size - Min";"Lot Size - Min")
+                field("Unit Of Measure Code"; "Unit Of Measure Code")
                 {
                     Editable = false;
                 }
-                field("Lot Size - Max";"Lot Size - Max")
+                field("Lot Size - Min"; "Lot Size - Min")
                 {
                     Editable = false;
                 }
-                field("Allowable Defects - Max";"Allowable Defects - Max")
+                field("Lot Size - Max"; "Lot Size - Max")
                 {
                     Editable = false;
                 }
-                field("Total Qty";"Total Qty")
+                field("Allowable Defects - Max"; "Allowable Defects - Max")
                 {
                     Editable = false;
                 }
-                field("Accepted Qty";"Accepted Qty")
+                field("Total Qty"; "Total Qty")
                 {
                     Editable = false;
                 }
-                field("Rejected Qty";"Rejected Qty")
+                field("Accepted Qty"; "Accepted Qty")
                 {
                     Editable = false;
                 }
-                field(Accept;Accept)
+                field("Rejected Qty"; "Rejected Qty")
+                {
+                    Editable = false;
+                }
+                field(Accept; Accept)
                 {
                 }
-                field("Reason Code";"Reason Code")
+                field("Reason Code"; "Reason Code")
                 {
                 }
-                field("Rework Reason Code";"Rework Reason Code")
+                field("Rework Reason Code"; "Rework Reason Code")
                 {
                 }
-                field("Inspection Persons";"Inspection Persons")
+                field("Inspection Persons"; "Inspection Persons")
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
             }
@@ -134,20 +134,20 @@ page 33000270 "Inpection Receipt Line"
     end;
 
     var
-        DefectTracking : Record "Defect Tracking Details";
+        DefectTracking: Record "Defect Tracking Details";
         [InDataSet]
-        "Character CodeEmphasize" : Boolean;
+        "Character CodeEmphasize": Boolean;
         [InDataSet]
-        DescriptionEmphasize : Boolean;
+        DescriptionEmphasize: Boolean;
         [InDataSet]
-        DescriptionIndent : Integer;
+        DescriptionIndent: Integer;
 
     [LineStart(23580)]
     procedure ShowDefectsPage();
     begin
-        DefectTracking.SETRANGE("IDS No.","IDS No.");
-        DefectTracking.SETRANGE("IDS Line No.","IDS Line No.");
-        PAGE.RUN(60075,DefectTracking);
+        DefectTracking.SETRANGE("IDS No.", "IDS No.");
+        DefectTracking.SETRANGE("IDS Line No.", "IDS Line No.");
+        PAGE.RUN(60075, DefectTracking);
     end;
 
     [LineStart(23585)]

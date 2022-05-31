@@ -4,28 +4,32 @@ table 33000072 "Pay Business Posting Group"
 
     DrillDownPageID = 33000165;
     LookupPageID = 33000165;
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"Code";Code[10])
+        field(1; "Code"; Code[10])
         {
             Caption = 'Code';
             NotBlank = true;
+            DataClassification = CustomerContent;
         }
-        field(2;Description;Text[50])
+        field(2; Description; Text[50])
         {
             Caption = 'Description';
+            DataClassification = CustomerContent;
         }
-        field(3;"Auto Insert Default";Boolean)
+        field(3; "Auto Insert Default"; Boolean)
         {
             Caption = 'Auto Insert Default';
             InitValue = true;
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(Key1;"Code")
+        key(Key1; "Code")
         {
         }
     }

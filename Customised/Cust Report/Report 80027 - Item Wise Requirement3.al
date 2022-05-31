@@ -7,10 +7,10 @@ report 80027 "Item Wise Requirement3"
 
     dataset
     {
-        dataitem("Prod. Order Component";"Prod. Order Component")
+        dataitem("Prod. Order Component"; "Prod. Order Component")
         {
             CalcFields = Qty. in Posted Material Issues;
-            DataItemTableView = SORTING(Production Plan Date,Item No.,Prod. Order No.) ORDER(Ascending) WHERE(Production Plan Date=FILTER(>05/26/09));
+            DataItemTableView = SORTING(Production Plan Date, Item No., Prod. Order No.) ORDER(Ascending) WHERE(Production Plan Date=FILTER(>05/26/09));
             RequestFilterFields = "Item No.";
             column(Prod__Order_Component___Expected_Quantity___Qty__in_Posted_Material_Issues_;"Prod. Order Component"."Expected Quantity"-"Qty. in Posted Material Issues")
             {

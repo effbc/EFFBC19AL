@@ -5,43 +5,43 @@ xmlport 60003 "Update Component Details"
     {
         textelement(Items)
         {
-            tableelement(Item;Item)
+            tableelement(Item; Item)
             {
                 XmlName = 'Item';
-                fieldelement(No;Item."No.")
+                fieldelement(No; Item."No.")
                 {
                 }
-                fieldelement(Make;Item.Make)
+                fieldelement(Make; Item.Make)
                 {
                 }
-                fieldelement(PartNumber;Item."Part Number")
+                fieldelement(PartNumber; Item."Part Number")
                 {
                 }
-                fieldelement(Package;Item.Package)
+                fieldelement(Package; Item.Package)
                 {
                 }
-                fieldelement(OperatingTemperature;Item."Operating Temperature")
+                fieldelement(OperatingTemperature; Item."Operating Temperature")
                 {
                 }
-                fieldelement(StorageTemperature;Item."Storage Temperature")
+                fieldelement(StorageTemperature; Item."Storage Temperature")
                 {
                 }
-                fieldelement(Humidity;Item.Humidity)
+                fieldelement(Humidity; Item.Humidity)
                 {
                 }
-                fieldelement(ESDSensitive;Item."ESD Sensitive")
+                fieldelement(ESDSensitive; Item."ESD Sensitive")
                 {
                 }
-                fieldelement(ESD;Item.ESD)
+                fieldelement(ESD; Item.ESD)
                 {
                 }
-                fieldelement(WorkareaTempHumadity;Item."Work area Temp &  Humadity")
+                fieldelement(WorkareaTempHumadity; Item."Work area Temp &  Humadity")
                 {
                 }
-                fieldelement(SolderingTemp;Item."Soldering Temp.")
+                fieldelement(SolderingTemp; Item."Soldering Temp.")
                 {
                 }
-                fieldelement(SolderingTimeSec;Item."Soldering Time (Sec)")
+                fieldelement(SolderingTimeSec; Item."Soldering Time (Sec)")
                 {
                 }
             }

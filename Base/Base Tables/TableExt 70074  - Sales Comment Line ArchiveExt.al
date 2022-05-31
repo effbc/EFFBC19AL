@@ -4,7 +4,7 @@ tableextension 70074 SalesCommentLineArchiveExt extends "Sales Comment Line Arch
     {
         field(60001; "User ID"; Code[40])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -15,7 +15,7 @@ tableextension 70074 SalesCommentLineArchiveExt extends "Sales Comment Line Arch
         }
         field(60002; "Responsible Person"; Code[40])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -26,20 +26,20 @@ tableextension 70074 SalesCommentLineArchiveExt extends "Sales Comment Line Arch
         }
         field(60003; Status; Enum Status)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Editable = true;
         }
         field(60004; "Exp Completion Date"; DateTime)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(60005; Priority; Enum Priority)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(60006; Product; Code[50])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -50,33 +50,33 @@ tableextension 70074 SalesCommentLineArchiveExt extends "Sales Comment Line Arch
         }
         field(60007; "Customer Number"; Code[30])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
             TableRelation = Customer."No.";
         }
         field(60008; "Customer Name"; Text[60])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
         }
         field(60009; "Remainder Date"; Date)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
         }
         field(60010; "Quote Status"; Enum QuoteStatus)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
         }
         field(60011; Convert; Boolean)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
         }
         field(60012; "Converted Order Number"; Code[20])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
         }
     }

@@ -5,7 +5,7 @@ report 50224 "To be returned DC Items"
 
     dataset
     {
-        dataitem("DC Header";"DC Header")
+        dataitem("DC Header"; "DC Header")
         {
             DataItemTableView = WHERE(No.=FILTER(STR*|RND*),NonReturnable=FILTER(No),Returned=FILTER(No));
             RequestFilterFields = Indented;

@@ -10,274 +10,265 @@ report 50034 "Indent Status"
 
     dataset
     {
-        dataitem("Indent Header";"Indent Header")
+        dataitem("Indent Header"; "Indent Header")
         {
             DataItemTableView = WHERE(Released Status=CONST(Released));
-            RequestFilterFields = "No.","Person Code",Department1,"Production Order No.","Last Modified Date","Creation Date";
+            RequestFilterFields = "No.", "Person Code", Department1, "Production Order No.", "Last Modified Date", "Creation Date";
             ReqFilterHeading = 'Indent Status (Header)';
-            column(FORMAT_TODAY_0_4_;FORMAT(TODAY,0,4))
+            column(FORMAT_TODAY_0_4_; FORMAT(TODAY, 0, 4))
             {
             }
-            column(USERID;USERID)
+            column(USERID; USERID)
             {
             }
-            column(COMPANYNAME;COMPANYNAME)
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(total;total)
+            column(total; total)
             {
             }
-            column(Tot_Qty;Tot_Qty)
+            column(Tot_Qty; Tot_Qty)
             {
             }
-            column(RemarksCaption;RemarksCaptionLbl)
+            column(RemarksCaption; RemarksCaptionLbl)
             {
             }
-            column(Unit_CostCaption;Unit_CostCaptionLbl)
+            column(Unit_CostCaption; Unit_CostCaptionLbl)
             {
             }
-            column(Released_DateCaption;Released_DateCaptionLbl)
+            column(Released_DateCaption; Released_DateCaptionLbl)
             {
             }
-            column(Current_Stock_in_StoresCaption;Current_Stock_in_StoresCaptionLbl)
+            column(Current_Stock_in_StoresCaption; Current_Stock_in_StoresCaptionLbl)
             {
             }
-            column(Requested_QuantityCaption;Requested_QuantityCaptionLbl)
+            column(Requested_QuantityCaption; Requested_QuantityCaptionLbl)
             {
             }
-            column(DescriptionCaption;DescriptionCaptionLbl)
+            column(DescriptionCaption; DescriptionCaptionLbl)
             {
             }
-            column(Item_NoCaption;Item_NoCaptionLbl)
+            column(Item_NoCaption; Item_NoCaptionLbl)
             {
             }
-            column(ProjectCaption;ProjectCaptionLbl)
+            column(ProjectCaption; ProjectCaptionLbl)
             {
             }
-            column(Indent_NoCaption;Indent_NoCaptionLbl)
+            column(Indent_NoCaption; Indent_NoCaptionLbl)
             {
             }
-            column(SNoCaption;SNoCaptionLbl)
+            column(SNoCaption; SNoCaptionLbl)
             {
             }
-            column(Indent_StatusCaption;Indent_StatusCaptionLbl)
+            column(Indent_StatusCaption; Indent_StatusCaptionLbl)
             {
             }
-            column(Purchase_Order_NoCaption;Purchase_Order_NoCaptionLbl)
+            column(Purchase_Order_NoCaption; Purchase_Order_NoCaptionLbl)
             {
             }
-            column(Time_To_Make_OrderCaption;Time_To_Make_OrderCaptionLbl)
+            column(Time_To_Make_OrderCaption; Time_To_Make_OrderCaptionLbl)
             {
             }
-            column(Project_Start_DateCaption;Project_Start_DateCaptionLbl)
+            column(Project_Start_DateCaption; Project_Start_DateCaptionLbl)
             {
             }
-            column(Indent_Line__Sale_Order_No__Caption;"Indent Line".FIELDCAPTION("Sale Order No."))
+            column(Indent_Line__Sale_Order_No__Caption; "Indent Line".FIELDCAPTION("Sale Order No."))
             {
             }
-            column(Indent_Line__Sale_Order_Description_Caption;"Indent Line".FIELDCAPTION("Sale Order Description"))
+            column(Indent_Line__Sale_Order_Description_Caption; "Indent Line".FIELDCAPTION("Sale Order Description"))
             {
             }
-            column(Indent_StatusCaption_Control1102154015;Indent_StatusCaption_Control1102154015Lbl)
+            column(Indent_StatusCaption_Control1102154015; Indent_StatusCaption_Control1102154015Lbl)
             {
             }
-            column(Indent_Header_No_;"No.")
+            column(Indent_Header_No_; "No.")
             {
             }
-            dataitem("Indent Line";"Indent Line")
+            dataitem("Indent Line"; "Indent Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Document No.,Line No.) ORDER(Ascending) WHERE(Description=FILTER(<>''));
-                RequestFilterFields = "Indent Status",Type,"No.";
+                DataItemTableView = SORTING(Document No., Line No.) ORDER(Ascending) WHERE(Description = FILTER(<> ''));
+                RequestFilterFields = "Indent Status", Type, "No.";
                 ReqFilterHeading = 'Indent Status( Line )';
-                column(Indent_Line__Indent_Line___Purchase_Remarks_;"Indent Line"."Purchase Remarks")
+                column(Indent_Line__Indent_Line___Purchase_Remarks_; "Indent Line"."Purchase Remarks")
                 {
                 }
-                column(DUC;DUC)
+                column(DUC; DUC)
                 {
                 }
-                column(Indent_Line__Indent_Line___Due_Date_;"Indent Line"."Due Date")
+                column(Indent_Line__Indent_Line___Due_Date_; "Indent Line"."Due Date")
                 {
                 }
-                column(Indent_Line__Store_Qty_;"Store Qty")
+                column(Indent_Line__Store_Qty_; "Store Qty")
                 {
                 }
-                column(Indent_Line_Quantity;Quantity)
+                column(Indent_Line_Quantity; Quantity)
                 {
                 }
-                column(Indent_Line_Description;Description)
+                column(Indent_Line_Description; Description)
                 {
                 }
-                column(Indent_Line__No__;"No.")
+                column(Indent_Line__No__; "No.")
                 {
                 }
-                column(Indent_Header___Production_Order_Description_;"Indent Header"."Production Order Description")
+                column(Indent_Header___Production_Order_Description_; "Indent Header"."Production Order Description")
                 {
                 }
-                column(Indent_Line__Document_No__;"Document No.")
+                column(Indent_Line__Document_No__; "Document No.")
                 {
                 }
-                column(sno;sno)
+                column(sno; sno)
                 {
                 }
-                column(PO;PO)
+                column(PO; PO)
                 {
                 }
-                column(Delay;Delay)
+                column(Delay; Delay)
                 {
                 }
-                column(Indent_Header___Production_Start_date_;"Indent Header"."Production Start date")
+                column(Indent_Header___Production_Start_date_; "Indent Header"."Production Start date")
                 {
                 }
-                column(Indent_Line__Unit_of_Measure_;"Unit of Measure")
+                column(Indent_Line__Unit_of_Measure_; "Unit of Measure")
                 {
                 }
-                column(Indent_Line__Sale_Order_No__;"Sale Order No.")
+                column(Indent_Line__Sale_Order_No__; "Sale Order No.")
                 {
                 }
-                column(Indent_Line__Sale_Order_Description_;"Sale Order Description")
+                column(Indent_Line__Sale_Order_Description_; "Sale Order Description")
                 {
                 }
-                column(Indent_Line__Indent_Line___Indent_Status_;"Indent Line"."Indent Status")
+                column(Indent_Line__Indent_Line___Indent_Status_; "Indent Line"."Indent Status")
                 {
                 }
-                column(Indent_Line_Line_No_;"Line No.")
+                column(Indent_Line_Line_No_; "Line No.")
                 {
                 }
 
                 trigger OnAfterGetRecord();
                 begin
-                       sno := sno + 1;
-                       PO:='';
-                       Delay:=0;
-                      IF Cancel AND ("Indent Line"."Indent Status"="Indent Line"."Indent Status"::Indent) THEN
-                      BEGIN
-                        "Indent Line"."Indent Status":="Indent Line"."Indent Status"::Cancel;
-                        "Indent Line"."Purchase Remarks":=Cancel_Reason;
-                          "Indent Line".MODIFY;
-                      END;
-                      IF  ("Indent Line"."ICN No."=ICNNO ) AND ("Indent Line"."Suitable Vendor"<>'') THEN
-                      BEGIN
-                        "Indent Line"."ICN No.":=COPYSTR(ICNNO,1,STRLEN(ICNNO)-2);
+                    sno := sno + 1;
+                    PO := '';
+                    Delay := 0;
+                    IF Cancel AND ("Indent Line"."Indent Status" = "Indent Line"."Indent Status"::Indent) THEN BEGIN
+                        "Indent Line"."Indent Status" := "Indent Line"."Indent Status"::Cancel;
+                        "Indent Line"."Purchase Remarks" := Cancel_Reason;
                         "Indent Line".MODIFY;
-                      END;
-
-                    // Rev01 Code copy from //Indent Line, Body (2) - OnPreSection()
-                      DUC:=0;
-                      IH.SETRANGE(IH."No.","Indent Line"."Document No.");
-                      IF "Indent Header"."Project Description"<>'' THEN
-                      Desc:="Indent Header"."Project Description"
-                      ELSE BEGIN
-                        IF IH.FIND('-') THEN
-                        BEGIN
-                          "Prod. Order".SETRANGE("Prod. Order"."No.",COPYSTR("Indent Header".Description,1,20));
-                          IF "Prod. Order".FIND('-') THEN
-                            Desc:="Prod. Order".Description
-                          ELSE
-                            Desc:=IH.Description;
-                       END;
-                      END;
-                      Item.SETRANGE(Item."No.","Indent Line"."No.");
-                      IF Item.FIND('-') THEN
-                      DUC:=Item."Avg Unit Cost";
-
-                      PL.SETCURRENTKEY(PL."ICN No.",PL."No.");
-                      PL.SETRANGE(PL."ICN No.","Indent Line"."ICN No.");
-                      PL.SETRANGE(PL."No.","Indent Line"."No.");
-                      PL.SETRANGE(PL."Location Code","Indent Line"."Delivery Location");
-                      IF PL.FIND('-') THEN
-                      BEGIN
-                        PO:=PL."Document No.";
-                        PH.SETRANGE(PH."No.",PL."Document No.");
-                        IF PH.FIND('-') THEN
-                        BEGIN
-                          IF (PH."Order Date">0D) AND ("Indent Line"."Due Date">0D) THEN
-                             Delay:=PH."Order Date"-"Indent Line"."Due Date";
-                        END;
-                      END;
-                     row+=1;
-                    IF excel1 THEN
-                    BEGIN
-                      entercell(row,1,FORMAT(sno),FALSE,TempExcelBuffer."Cell Type"::Number);
-                      entercell(row,2,"Indent Line"."Document No.",FALSE,TempExcelBuffer."Cell Type"::Text);
-                      entercell(row,3,"Indent Line"."Sale Order No.",FALSE,TempExcelBuffer."Cell Type"::Text);
-                      entercell(row,4,"Indent Header"."Project Description",FALSE,TempExcelBuffer."Cell Type"::Text);
-                      entercell(row,5,"Indent Line".Description,FALSE,TempExcelBuffer."Cell Type"::Text);
-                      entercell(row,6,FORMAT("Indent Line".Quantity),FALSE,TempExcelBuffer."Cell Type"::Number);
-                      entercell(row,7,FORMAT(DT2DATE("Indent Header"."Release Date Time")),FALSE,TempExcelBuffer."Cell Type"::Date);
-                      entercell(row,8,FORMAT(DUC),FALSE,TempExcelBuffer."Cell Type"::Text);
-                      entercell(row,9,PO,FALSE,TempExcelBuffer."Cell Type"::Text);
-                      entercell(row,10,FORMAT(Delay),FALSE,TempExcelBuffer."Cell Type"::Text);
-                      entercell(row,11,"Indent Line"."Purchase Remarks",FALSE,TempExcelBuffer."Cell Type"::Text);
-                      entercell(row,12,FORMAT("Indent Line"."Indent Status"),FALSE,TempExcelBuffer."Cell Type"::Text);
+                    END;
+                    IF ("Indent Line"."ICN No." = ICNNO) AND ("Indent Line"."Suitable Vendor" <> '') THEN BEGIN
+                        "Indent Line"."ICN No." := COPYSTR(ICNNO, 1, STRLEN(ICNNO) - 2);
+                        "Indent Line".MODIFY;
                     END;
 
-                    total+="Indent Line".Quantity*DUC;
-                    Tot_Qty+="Indent Line".Quantity;
+                    // Rev01 Code copy from //Indent Line, Body (2) - OnPreSection()
+                    DUC := 0;
+                    IH.SETRANGE(IH."No.", "Indent Line"."Document No.");
+                    IF "Indent Header"."Project Description" <> '' THEN
+                        Desc := "Indent Header"."Project Description"
+                    ELSE BEGIN
+                        IF IH.FIND('-') THEN BEGIN
+                            "Prod. Order".SETRANGE("Prod. Order"."No.", COPYSTR("Indent Header".Description, 1, 20));
+                            IF "Prod. Order".FIND('-') THEN
+                                Desc := "Prod. Order".Description
+                            ELSE
+                                Desc := IH.Description;
+                        END;
+                    END;
+                    Item.SETRANGE(Item."No.", "Indent Line"."No.");
+                    IF Item.FIND('-') THEN
+                        DUC := Item."Avg Unit Cost";
+
+                    PL.SETCURRENTKEY(PL."ICN No.", PL."No.");
+                    PL.SETRANGE(PL."ICN No.", "Indent Line"."ICN No.");
+                    PL.SETRANGE(PL."No.", "Indent Line"."No.");
+                    PL.SETRANGE(PL."Location Code", "Indent Line"."Delivery Location");
+                    IF PL.FIND('-') THEN BEGIN
+                        PO := PL."Document No.";
+                        PH.SETRANGE(PH."No.", PL."Document No.");
+                        IF PH.FIND('-') THEN BEGIN
+                            IF (PH."Order Date" > 0D) AND ("Indent Line"."Due Date" > 0D) THEN
+                                Delay := PH."Order Date" - "Indent Line"."Due Date";
+                        END;
+                    END;
+                    row += 1;
+                    IF excel1 THEN BEGIN
+                        entercell(row, 1, FORMAT(sno), FALSE, TempExcelBuffer."Cell Type"::Number);
+                        entercell(row, 2, "Indent Line"."Document No.", FALSE, TempExcelBuffer."Cell Type"::Text);
+                        entercell(row, 3, "Indent Line"."Sale Order No.", FALSE, TempExcelBuffer."Cell Type"::Text);
+                        entercell(row, 4, "Indent Header"."Project Description", FALSE, TempExcelBuffer."Cell Type"::Text);
+                        entercell(row, 5, "Indent Line".Description, FALSE, TempExcelBuffer."Cell Type"::Text);
+                        entercell(row, 6, FORMAT("Indent Line".Quantity), FALSE, TempExcelBuffer."Cell Type"::Number);
+                        entercell(row, 7, FORMAT(DT2DATE("Indent Header"."Release Date Time")), FALSE, TempExcelBuffer."Cell Type"::Date);
+                        entercell(row, 8, FORMAT(DUC), FALSE, TempExcelBuffer."Cell Type"::Text);
+                        entercell(row, 9, PO, FALSE, TempExcelBuffer."Cell Type"::Text);
+                        entercell(row, 10, FORMAT(Delay), FALSE, TempExcelBuffer."Cell Type"::Text);
+                        entercell(row, 11, "Indent Line"."Purchase Remarks", FALSE, TempExcelBuffer."Cell Type"::Text);
+                        entercell(row, 12, FORMAT("Indent Line"."Indent Status"), FALSE, TempExcelBuffer."Cell Type"::Text);
+                    END;
+
+                    total += "Indent Line".Quantity * DUC;
+                    Tot_Qty += "Indent Line".Quantity;
                     // Rev01 Code copy from //Indent Line, Body (2) - OnPreSection()
                 end;
 
                 trigger OnPreDataItem();
                 begin
-                     //  IF "Indent Line".GETFILTER("Indent Line"."Indent Status")='' THEN
-                     //     "Indent Line".SETFILTER("Indent Line"."Indent Status",'Indent');
+                    //  IF "Indent Line".GETFILTER("Indent Line"."Indent Status")='' THEN
+                    //     "Indent Line".SETFILTER("Indent Line"."Indent Status",'Indent');
                 end;
             }
 
             trigger OnAfterGetRecord();
             begin
-                "Rel.Date":="Indent Header"."Released Date";
+                "Rel.Date" := "Indent Header"."Released Date";
             end;
 
             trigger OnPostDataItem();
             begin
-                 row+=1;
+                row += 1;
                 IF excel1 THEN
-                  entercell(row,10,FORMAT(total),FALSE,TempExcelBuffer."Cell Type"::Number);
+                    entercell(row, 10, FORMAT(total), FALSE, TempExcelBuffer."Cell Type"::Number);
             end;
 
             trigger OnPreDataItem();
             begin
-                IF  Choice<>Choice::Indent THEN
+                IF Choice <> Choice::Indent THEN
                     CurrReport.BREAK;
 
-                IF excel1 THEN
-                BEGIN
-                  TempExcelBuffer.DELETEALL;
-                  CLEAR(TempExcelBuffer);
-                  row:=1;
+                IF excel1 THEN BEGIN
+                    TempExcelBuffer.DELETEALL;
+                    CLEAR(TempExcelBuffer);
+                    row := 1;
                 END;
 
 
-                IF ("Indent Header"."ICN No."=ICNNO) AND ("Indent Header"."ICN No."<>'')  THEN
-                BEGIN
-                  "Indent Header"."ICN No.":=COPYSTR(ICNNO,1,STRLEN(ICNNO)-2);
-                  "Indent Header".MODIFY;
+                IF ("Indent Header"."ICN No." = ICNNO) AND ("Indent Header"."ICN No." <> '') THEN BEGIN
+                    "Indent Header"."ICN No." := COPYSTR(ICNNO, 1, STRLEN(ICNNO) - 2);
+                    "Indent Header".MODIFY;
                 END;
                 // Rev01 Code copy from //Indent Header, Header (1) - OnPostSection()
 
-                IF excel1 THEN
-                BEGIN
-                  entercell(1,1,'No',TRUE,TempExcelBuffer."Cell Type"::Text);
-                  entercell(1,2,'Indent No',TRUE,TempExcelBuffer."Cell Type"::Text);
-                  entercell(1,3,'Indent Description',TRUE,TempExcelBuffer."Cell Type"::Text);
-                  entercell(1,4,'Sales Order No.',TRUE,TempExcelBuffer."Cell Type"::Text);
-                  entercell(1,5,'Customer',TRUE,TempExcelBuffer."Cell Type"::Text);
-                  entercell(1,6,'Item No',TRUE,TempExcelBuffer."Cell Type"::Text);
-                  entercell(1,7,'Description',TRUE,TempExcelBuffer."Cell Type"::Text);
-                  entercell(1,8,'Requested Qty',TRUE,TempExcelBuffer."Cell Type"::Text);
-                  entercell(1,9,'UOM',TRUE,TempExcelBuffer."Cell Type"::Text);
-                  entercell(1,10,'Current Stock in Stores',TRUE,TempExcelBuffer."Cell Type"::Text);
-                  entercell(1,11,'Released Date',TRUE,TempExcelBuffer."Cell Type"::Text);
-                  entercell(1,12,'Unit cost',TRUE,TempExcelBuffer."Cell Type"::Text);
-                  entercell(1,13,'Released Date',TRUE,TempExcelBuffer."Cell Type"::Text);
-                  entercell(1,14,'Time to make order',TRUE,TempExcelBuffer."Cell Type"::Text);
-                  entercell(1,15,'Remarks',TRUE,TempExcelBuffer."Cell Type"::Text);
+                IF excel1 THEN BEGIN
+                    entercell(1, 1, 'No', TRUE, TempExcelBuffer."Cell Type"::Text);
+                    entercell(1, 2, 'Indent No', TRUE, TempExcelBuffer."Cell Type"::Text);
+                    entercell(1, 3, 'Indent Description', TRUE, TempExcelBuffer."Cell Type"::Text);
+                    entercell(1, 4, 'Sales Order No.', TRUE, TempExcelBuffer."Cell Type"::Text);
+                    entercell(1, 5, 'Customer', TRUE, TempExcelBuffer."Cell Type"::Text);
+                    entercell(1, 6, 'Item No', TRUE, TempExcelBuffer."Cell Type"::Text);
+                    entercell(1, 7, 'Description', TRUE, TempExcelBuffer."Cell Type"::Text);
+                    entercell(1, 8, 'Requested Qty', TRUE, TempExcelBuffer."Cell Type"::Text);
+                    entercell(1, 9, 'UOM', TRUE, TempExcelBuffer."Cell Type"::Text);
+                    entercell(1, 10, 'Current Stock in Stores', TRUE, TempExcelBuffer."Cell Type"::Text);
+                    entercell(1, 11, 'Released Date', TRUE, TempExcelBuffer."Cell Type"::Text);
+                    entercell(1, 12, 'Unit cost', TRUE, TempExcelBuffer."Cell Type"::Text);
+                    entercell(1, 13, 'Released Date', TRUE, TempExcelBuffer."Cell Type"::Text);
+                    entercell(1, 14, 'Time to make order', TRUE, TempExcelBuffer."Cell Type"::Text);
+                    entercell(1, 15, 'Remarks', TRUE, TempExcelBuffer."Cell Type"::Text);
                 END;
                 // Rev01 Code copy from //Indent Header, Header (1) - OnPostSection()
             end;
         }
-        dataitem("Purchase Line";"Purchase Line")
+        dataitem("Purchase Line"; "Purchase Line")
         {
             DataItemTableView = SORTING(Indent No.) ORDER(Ascending) WHERE(Document Type=CONST(Order),Quantity=FILTER(>0));
             RequestFilterFields = "Document Date","Indent No.","Direct Unit Cost",Type,"No.","Buy-from Vendor No.","Quantity Received","Quantity Invoiced";

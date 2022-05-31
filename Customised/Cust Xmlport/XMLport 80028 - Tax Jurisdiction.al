@@ -6,31 +6,31 @@ xmlport 80028 "Tax Jurisdiction"
     {
         textelement(TaxJurisdiction)
         {
-            tableelement("<taxjurisdiction>";"Tax Jurisdiction")
+            tableelement("<taxjurisdiction>"; "Tax Jurisdiction")
             {
                 XmlName = 'TaxJurisdiction';
-                fieldelement(Code;"<TaxJurisdiction>".Code)
+                fieldelement(Code; "<TaxJurisdiction>".Code)
                 {
                 }
-                fieldelement(Description;"<TaxJurisdiction>".Description)
+                fieldelement(Description; "<TaxJurisdiction>".Description)
                 {
                 }
-                fieldelement(TaxAccountSales;"<TaxJurisdiction>"."Tax Account (Sales)")
+                fieldelement(TaxAccountSales; "<TaxJurisdiction>"."Tax Account (Sales)")
                 {
                 }
-                fieldelement(TaxAccountPurchases;"<TaxJurisdiction>"."Tax Account (Purchases)")
+                fieldelement(TaxAccountPurchases; "<TaxJurisdiction>"."Tax Account (Purchases)")
                 {
                 }
-                fieldelement(CalculateTaxonTax;"<TaxJurisdiction>"."Calculate Tax on Tax")
+                fieldelement(CalculateTaxonTax; "<TaxJurisdiction>"."Calculate Tax on Tax")
                 {
                 }
-                fieldelement(AdjustforPaymentDiscount;"<TaxJurisdiction>"."Adjust for Payment Discount")
+                fieldelement(AdjustforPaymentDiscount; "<TaxJurisdiction>"."Adjust for Payment Discount")
                 {
                 }
-                fieldelement(FormsNotApplicable;"<TaxJurisdiction>"."Forms Not Applicable")
+                fieldelement(FormsNotApplicable; "<TaxJurisdiction>"."Forms Not Applicable")
                 {
                 }
-                fieldelement(TaxType;"<TaxJurisdiction>"."Tax Type")
+                fieldelement(TaxType; "<TaxJurisdiction>"."Tax Type")
                 {
                 }
             }

@@ -265,7 +265,7 @@ page 50003 "CAN Blanket Sales Order"
                     Caption = 'Card';
                     Image = Card;
                     RunObject = Page "Customer Card";
-                    RunPageLink = No.=FIELD(Sell-to Customer No.);
+                                    RunPageLink = No.=FIELD(Sell-to Customer No.);
                     ShortCutKey = 'Shift+F5';
                 }
                 action("Co&mments")
@@ -273,14 +273,14 @@ page 50003 "CAN Blanket Sales Order"
                     Caption = 'Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Sales Comment Sheet";
-                    RunPageLink = Document Type=CONST(Blanket Order),No.=FIELD(No.);
+                                    RunPageLink = Document Type=CONST(Blanket Order),No.=FIELD(No.);
                 }
                 action(Structure)
                 {
                     Caption = 'Structure';
                     Image = CheckList;
                     RunObject = Page "Structure Order Details";
-                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),Structure Code=FIELD(Structure);
+                                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),Structure Code=FIELD(Structure);
                 }
             }
             group("&Line")
@@ -562,60 +562,60 @@ page 50003 "CAN Blanket Sales Order"
         ReturnRcptLine : Record "Return Receipt Line";
         SalesCrMemoLine : Record "Sales Cr.Memo Line";
         CopySalesDoc : Report "Copy Sales Document";
-        DocPrint : Codeunit "Document-Print";
-        SalesSetup : Record "Sales & Receivables Setup";
-        UserMgt : Codeunit "User Setup Management";
-        "Mail-Id" : Record User;
-        "from Mail" : Text[100];
-        "to mail" : Text[1000];
-        Mail_Subject : Text[250];
-        Mail_Body : Text[250];
-        mail : Codeunit Mail;
-        SalesPlanLine : Record "Sales Planning Line";
-        Quantity : Decimal;
-        I : Integer;
-        Qty : Integer;
-        SalesLineRec : Record "Sales Line";
-        NewStatus : Option Simulated,Planned,"Firm Planned",Released;
-        NewOrderType : Option ItemOrder,ProjectOrder;
-        charline : Char;
-        SH : Record "Sales Header";
-        Attachment : Text[1000];
-        objEmailConf : Automation "'{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0:'{CD000002-8B95-11D1-82DB-00C04FB1625D}':''{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0'.Configuration";
-        objEmail : Automation "'{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0:'{CD000001-8B95-11D1-82DB-00C04FB1625D}':''{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0'.Message";
-        flds : Automation "'{00000205-0000-0010-8000-00AA006D2EA4}' 2.5:'{00000564-0000-0010-8000-00AA006D2EA4}':''{00000205-0000-0010-8000-00AA006D2EA4}' 2.5'.Fields";
-        fld : Automation "'{00000205-0000-0010-8000-00AA006D2EA4}' 2.5:'{00000569-0000-0010-8000-00AA006D2EA4}':''{00000205-0000-0010-8000-00AA006D2EA4}' 2.5'.Field";
-        SMTPSETUP : Record "Product Customer's List";
-        ChangeExchangeRate : Page "Change Exchange Rate";
+                           DocPrint : Codeunit "Document-Print";
+                           SalesSetup : Record "Sales & Receivables Setup";
+                           UserMgt : Codeunit "User Setup Management";
+                           "Mail-Id" : Record User;
+                           "from Mail" : Text[100];
+                           "to mail" : Text[1000];
+                           Mail_Subject : Text[250];
+                           Mail_Body : Text[250];
+                           mail : Codeunit Mail;
+                           SalesPlanLine : Record "Sales Planning Line";
+                           Quantity : Decimal;
+                           I : Integer;
+                           Qty : Integer;
+                           SalesLineRec : Record "Sales Line";
+                           NewStatus : Option Simulated,Planned,"Firm Planned",Released;
+                           NewOrderType : Option ItemOrder,ProjectOrder;
+                           charline : Char;
+                           SH : Record "Sales Header";
+                           Attachment : Text[1000];
+                           objEmailConf : Automation "'{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0:'{CD000002-8B95-11D1-82DB-00C04FB1625D}':''{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0'.Configuration";
+                           objEmail : Automation "'{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0:'{CD000001-8B95-11D1-82DB-00C04FB1625D}':''{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0'.Message";
+                           flds : Automation "'{00000205-0000-0010-8000-00AA006D2EA4}' 2.5:'{00000564-0000-0010-8000-00AA006D2EA4}':''{00000205-0000-0010-8000-00AA006D2EA4}' 2.5'.Fields";
+                           fld : Automation "'{00000205-0000-0010-8000-00AA006D2EA4}' 2.5:'{00000569-0000-0010-8000-00AA006D2EA4}':''{00000205-0000-0010-8000-00AA006D2EA4}' 2.5'.Field";
+                           SMTPSETUP : Record "Product Customer's List";
+                           ChangeExchangeRate : Page "Change Exchange Rate";
 
     [LineStart(17)]
-    procedure CreateOrders(Qtyparam : Decimal) OrdersCreated : Boolean;
+    procedure CreateOrders(Qtyparam: Decimal) OrdersCreated: Boolean;
     var
-        Item : Record Item;
-        SalesLine : Record "Sales Line";
-        ProdOrderFromSale : Codeunit "Create Prod. Order from Sale";
+        Item: Record Item;
+        SalesLine: Record "Sales Line";
+        ProdOrderFromSale: Codeunit "Create Prod. Order from Sale";
     begin
         IF NOT SalesPlanLine.FINDSET THEN
-          EXIT;
+            EXIT;
 
         REPEAT
-          SalesLine.GET(
-            SalesLine."Document Type"::"Blanket Order",
-            SalesPlanLine."Sales Order No.",
-            SalesPlanLine."Sales Order Line No.");
+            SalesLine.GET(
+              SalesLine."Document Type"::"Blanket Order",
+              SalesPlanLine."Sales Order No.",
+              SalesPlanLine."Sales Order Line No.");
             //SalesLine.TESTFIELD("Shipment Date");
-          SalesLine.CALCFIELDS("Reserved Qty. (Base)");
-          //IF SalesLine."Outstanding Qty. (Base)" > SalesLine."Reserved Qty. (Base)" THEN BEGIN
+            SalesLine.CALCFIELDS("Reserved Qty. (Base)");
+            //IF SalesLine."Outstanding Qty. (Base)" > SalesLine."Reserved Qty. (Base)" THEN BEGIN
             Item.GET(SalesLine."No.");
 
             IF Item."Replenishment System" = Item."Replenishment System"::"Prod. Order" THEN BEGIN
-              OrdersCreated := TRUE;
-              ProdOrderFromSale.CreateProdOrder2(
-                SalesLine,NewStatus::Released,NewOrderType::ItemOrder,1);
-              IF NewOrderType = NewOrderType::ProjectOrder THEN
-                EXIT;
+                OrdersCreated := TRUE;
+                ProdOrderFromSale.CreateProdOrder2(
+                  SalesLine, NewStatus::Released, NewOrderType::ItemOrder, 1);
+                IF NewOrderType = NewOrderType::ProjectOrder THEN
+                    EXIT;
             END;
-          //END;
+        //END;
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 

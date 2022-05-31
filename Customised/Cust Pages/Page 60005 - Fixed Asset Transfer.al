@@ -13,31 +13,31 @@ page 60005 "Fixed Asset Transfer"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Fixed Asset No.";"Fixed Asset No.")
+                field("Fixed Asset No."; "Fixed Asset No.")
                 {
                 }
-                field("FA Location";"FA Location")
+                field("FA Location"; "FA Location")
                 {
                 }
-                field("FA New Location";"FA New Location")
+                field("FA New Location"; "FA New Location")
                 {
                 }
-                field("Location Trns. Reason";"Location Trns. Reason")
+                field("Location Trns. Reason"; "Location Trns. Reason")
                 {
                 }
-                field("Responsible Employee";"Responsible Employee")
+                field("Responsible Employee"; "Responsible Employee")
                 {
                 }
-                field("New Responsible Employee";"New Responsible Employee")
+                field("New Responsible Employee"; "New Responsible Employee")
                 {
                 }
-                field("Employee Trns. Reason";"Employee Trns. Reason")
+                field("Employee Trns. Reason"; "Employee Trns. Reason")
                 {
                 }
-                field("User id";"User id")
+                field("User id"; "User id")
                 {
                 }
-                field(Date;Date)
+                field(Date; Date)
                 {
                 }
             }

@@ -5,7 +5,7 @@ page 60252 "Sales Tracking List"
     PageType = List;
     SourceTable = "Sales Header Archive";
     SourceTableTemporary = true;
-    SourceTableView = SORTING(Document Type,No.,Date Archived,Time Archived) ORDER(Ascending) WHERE(Document Type=FILTER(Order|Amc),Customer Posting Group=CONST(RAILWAYS));
+    SourceTableView = SORTING(Document Type, No., Date Archived, Time Archived) ORDER(Ascending) WHERE(Document Type=FILTER(Order|Amc),Customer Posting Group=CONST(RAILWAYS));
 
     layout
     {

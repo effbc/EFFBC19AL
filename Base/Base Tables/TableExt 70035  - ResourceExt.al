@@ -10,11 +10,13 @@ tableextension 70035 "ResourceExt Temp" extends Resource
         {
             Description = 'b2b';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60100; Department; Code[10])
         {
             Editable = true;
             TableRelation = "Work Center"."No.";
+            DataClassification = CustomerContent;
         }
     }
 

@@ -12,182 +12,179 @@ page 60158 Calibration
             group(General)
             {
                 Caption = 'General';
-                field("Equipment No";"Equipment No")
+                field("Equipment No"; "Equipment No")
                 {
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field("Not an ERP Integrated";"Not an ERP Integrated")
+                field("Not an ERP Integrated"; "Not an ERP Integrated")
                 {
                     Editable = Not_erp_item_flg;
                     Visible = true;
 
                     trigger OnValidate();
                     begin
-                        IF( ("Not an ERP Integrated" =TRUE)) THEN
-                          BEGIN
-                          "IR Flag" := FALSE;
-                           purchse_date_flg := TRUE;
-                           unit_Cost_flg := TRUE;
-                           equpmnt_sno_flg := TRUE;
-                           END
-                        ELSE
-                          BEGIN
-                          "IR Flag" := TRUE;
-                           purchse_date_flg := FALSE;
-                           unit_Cost_flg := FALSE;
-                           equpmnt_sno_flg := FALSE;
-                          END;
+                        IF (("Not an ERP Integrated" = TRUE)) THEN BEGIN
+                            "IR Flag" := FALSE;
+                            purchse_date_flg := TRUE;
+                            unit_Cost_flg := TRUE;
+                            equpmnt_sno_flg := TRUE;
+                        END
+                        ELSE BEGIN
+                            "IR Flag" := TRUE;
+                            purchse_date_flg := FALSE;
+                            unit_Cost_flg := FALSE;
+                            equpmnt_sno_flg := FALSE;
+                        END;
                     end;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("IR No";"IR No")
+                field("IR No"; "IR No")
                 {
                     Editable = "IR Flag";
                 }
-                field("Item No";"Item No")
+                field("Item No"; "Item No")
                 {
                     Editable = false;
                 }
-                field("Item Desc";"Item Desc")
+                field("Item Desc"; "Item Desc")
                 {
                 }
-                field("Unit cost(LCY)";"Unit cost(LCY)")
+                field("Unit cost(LCY)"; "Unit cost(LCY)")
                 {
                     Editable = unit_Cost_flg;
                 }
-                field("Inward/Purchase Date";"Purchase Date")
+                field("Inward/Purchase Date"; "Purchase Date")
                 {
                     Editable = purchse_date_flg;
 
                     trigger OnValidate();
                     begin
                         //MESSAGE(FORMAT(TODAY-"Purchase Date"));
-                        days :=(TODAY-"Purchase Date");
-                        days := ROUND(days/365,2);
+                        days := (TODAY - "Purchase Date");
+                        days := ROUND(days / 365, 2);
                         //MESSAGE(FORMAT(days));
                         //"Life Time" := days;
                         "Life time in Yrs" := days;
                     end;
                 }
-                field("Eqpt. Serial No.";"Eqpt. Serial No.")
+                field("Eqpt. Serial No."; "Eqpt. Serial No.")
                 {
                     Editable = true;
                 }
-                field("Equipment Type";"Equipment Type")
+                field("Equipment Type"; "Equipment Type")
                 {
                 }
-                field(Manufacturer;Manufacturer)
+                field(Manufacturer; Manufacturer)
                 {
                 }
-                field("Eff Batch No";"MFG. Serial No.")
+                field("Eff Batch No"; "MFG. Serial No.")
                 {
                     Editable = equpmnt_sno_flg;
                 }
-                field("Model No.";"Model No.")
+                field("Model No."; "Model No.")
                 {
                 }
-                field("Calibration Type";"Calibration Party")
+                field("Calibration Type"; "Calibration Party")
                 {
 
                     trigger OnValidate();
                     begin
-                        IF (("Calibration Party" = "Calibration Party"::Damage ) OR ("Calibration Party"= "Calibration Party"::Missing) ) THEN
-                          BEGIN
-                          calibration_period_flg := FALSE;
-                          "Next Calibration Due On" := 0D;
-                          END
+                        IF (("Calibration Party" = "Calibration Party"::Damage) OR ("Calibration Party" = "Calibration Party"::Missing)) THEN BEGIN
+                            calibration_period_flg := FALSE;
+                            "Next Calibration Due On" := 0D;
+                        END
                         ELSE
-                          calibration_period_flg := TRUE;
+                            calibration_period_flg := TRUE;
                     end;
                 }
-                field("Calibration Date";"Last Calibration Date")
+                field("Calibration Date"; "Last Calibration Date")
                 {
                     Caption = 'Calibration Date';
 
                     trigger OnValidate();
                     begin
-                        IF ("Delay Days"> 0 ) THEN
-                        delay_remarks_flg := TRUE
+                        IF ("Delay Days" > 0) THEN
+                            delay_remarks_flg := TRUE
                         ELSE
-                        delay_remarks_flg := FALSE;
+                            delay_remarks_flg := FALSE;
                     end;
                 }
-                field("Calibration Period";"Calibration Period")
+                field("Calibration Period"; "Calibration Period")
                 {
                     Editable = calibration_period_flg;
 
                     trigger OnValidate();
                     begin
-                        IF ("Delay Days"> 0 ) THEN
-                        delay_remarks_flg := TRUE
+                        IF ("Delay Days" > 0) THEN
+                            delay_remarks_flg := TRUE
                         ELSE
-                        delay_remarks_flg := FALSE;
+                            delay_remarks_flg := FALSE;
                     end;
                 }
-                field("Next Calibration Due On";"Next Calibration Due On")
+                field("Next Calibration Due On"; "Next Calibration Due On")
                 {
                     Editable = false;
                 }
-                field("Previously Calibrated Times";"Previously Calibrated Times")
+                field("Previously Calibrated Times"; "Previously Calibrated Times")
                 {
                 }
-                field("No. Of Times Calibrated";"Least Count")
-                {
-                    Editable = false;
-                }
-                field("Created By";"Created By")
+                field("No. Of Times Calibrated"; "Least Count")
                 {
                     Editable = false;
                 }
-                field("Created Date";"Created Date")
+                field("Created By"; "Created By")
                 {
                     Editable = false;
                 }
-                field("Last Modified Date";"Last Modified Date")
+                field("Created Date"; "Created Date")
                 {
                     Editable = false;
                 }
-                field("Modified By";"Modified By")
+                field("Last Modified Date"; "Last Modified Date")
                 {
                     Editable = false;
                 }
-                field("Entry No";"Entry No")
+                field("Modified By"; "Modified By")
+                {
+                    Editable = false;
+                }
+                field("Entry No"; "Entry No")
                 {
                 }
             }
             group(Transaction)
             {
                 Caption = 'Transaction';
-                field("Master Item";"Master Item")
+                field("Master Item"; "Master Item")
                 {
                 }
-                field("Owner of the Equpmnt";"Owner of the Equpmnt")
+                field("Owner of the Equpmnt"; "Owner of the Equpmnt")
                 {
                 }
-                field("Owner of the Equpmnt_Dept";"Owner of the Equpmnt_Dept")
+                field("Owner of the Equpmnt_Dept"; "Owner of the Equpmnt_Dept")
                 {
                 }
-                field(Classification;Classification)
+                field(Classification; Classification)
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
-                field("Reason for Delay";"Reason for Delay")
+                field("Reason for Delay"; "Reason for Delay")
                 {
                     Editable = delay_remarks_flg;
                 }
-                field("Delay Days";"Delay Days")
+                field("Delay Days"; "Delay Days")
                 {
                 }
-                field("Life time in Yrs";"Life time in Yrs")
+                field("Life time in Yrs"; "Life time in Yrs")
                 {
                     Editable = false;
                 }
@@ -196,7 +193,7 @@ page 60158 Calibration
             {
                 Caption = 'Attachments';
                 Visible = false;
-                field("Invoice Copy";"Invoice Copy")
+                field("Invoice Copy"; "Invoice Copy")
                 {
                     Caption = 'Invoice Copy';
 
@@ -206,7 +203,7 @@ page 60158 Calibration
                         Attachments_invoice_cpy;
                     end;
                 }
-                field(Specifications;Specifications)
+                field(Specifications; Specifications)
                 {
 
                     trigger OnAssistEdit();
@@ -214,7 +211,7 @@ page 60158 Calibration
                         Attachments_spec;
                     end;
                 }
-                field("Warranty Certificate";"Warranty Certificate")
+                field("Warranty Certificate"; "Warranty Certificate")
                 {
 
                     trigger OnAssistEdit();
@@ -222,7 +219,7 @@ page 60158 Calibration
                         Attachments_warranty_certficate;
                     end;
                 }
-                field("User Manual";"User Manual")
+                field("User Manual"; "User Manual")
                 {
 
                     trigger OnAssistEdit();
@@ -235,66 +232,66 @@ page 60158 Calibration
             {
                 Caption = 'Vendor';
                 Visible = false;
-                field("Vendor No.";"Vendor No.")
+                field("Vendor No."; "Vendor No.")
                 {
                 }
-                field("Vendor Name";"Vendor Name")
-                {
-                    Editable = false;
-                }
-                field(Address1;Address1)
+                field("Vendor Name"; "Vendor Name")
                 {
                     Editable = false;
                 }
-                field(Address2;Address2)
+                field(Address1; Address1)
                 {
                     Editable = false;
                 }
-                field(City;City)
+                field(Address2; Address2)
                 {
                     Editable = false;
                 }
-                field("Contact Person";"Contact Person")
+                field(City; City)
+                {
+                    Editable = false;
+                }
+                field("Contact Person"; "Contact Person")
                 {
                 }
-                field("Contact Phone No.";"Contact Phone No.")
+                field("Contact Phone No."; "Contact Phone No.")
                 {
                 }
-                field("Purchase Date";"Purchase Date")
+                field("Purchase Date"; "Purchase Date")
                 {
                 }
-                field("Service Agent";"Service Agent")
+                field("Service Agent"; "Service Agent")
                 {
                     TableRelation = Vendor;
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
                     Editable = false;
                 }
-                field("S Address1";"S Address1")
+                field("S Address1"; "S Address1")
                 {
                     Caption = '" Address1"';
                     Editable = false;
                 }
-                field("S Address2";"S Address2")
+                field("S Address2"; "S Address2")
                 {
                     Caption = '" Address2"';
                     Editable = false;
                 }
-                field("S City";"S City")
+                field("S City"; "S City")
                 {
                     Caption = '" City"';
                     Editable = false;
                 }
-                field("S Contact Person";"S Contact Person")
+                field("S Contact Person"; "S Contact Person")
                 {
                     Caption = 'Contact Person';
                 }
-                field("S Contact Phone No.";"S Contact Phone No.")
+                field("S Contact Phone No."; "S Contact Phone No.")
                 {
                     Caption = 'Contact Phone No.';
                 }
-                field("E-Mail Address";"E-Mail Address")
+                field("E-Mail Address"; "E-Mail Address")
                 {
                 }
             }
@@ -302,10 +299,10 @@ page 60158 Calibration
             {
                 Caption = 'Quality';
                 Visible = false;
-                field("Spec Id";"Spec Id")
+                field("Spec Id"; "Spec Id")
                 {
                 }
-                field("QC Enabled";"QC Enabled")
+                field("QC Enabled"; "QC Enabled")
                 {
                 }
             }
@@ -313,32 +310,32 @@ page 60158 Calibration
             {
                 Caption = 'Details';
                 Visible = false;
-                field("Measuring Range";"Measuring Range")
+                field("Measuring Range"; "Measuring Range")
                 {
                 }
-                field("Least Count";"Least Count")
+                field("Least Count"; "Least Count")
                 {
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                 }
-                field("Calibration Party";"Calibration Party")
+                field("Calibration Party"; "Calibration Party")
                 {
                 }
-                field("Calibration Cert No./ IR No";"Calibration Cert No./ IR No")
-                {
-                    Editable = false;
-                }
-                field(Results;Results)
+                field("Calibration Cert No./ IR No"; "Calibration Cert No./ IR No")
                 {
                     Editable = false;
                 }
-                field(Recommendations;Recommendations)
+                field(Results; Results)
                 {
                     Editable = false;
                 }
-                field("Response Time";"Response Time")
+                field(Recommendations; Recommendations)
+                {
+                    Editable = false;
+                }
+                field("Response Time"; "Response Time")
                 {
                 }
-                field("Expected Return Date";"Expected Return Date")
+                field("Expected Return Date"; "Expected Return Date")
                 {
                     Editable = false;
                 }
@@ -401,12 +398,12 @@ page 60158 Calibration
 
                     trigger OnAction();
                     var
-                        QualityStatusValue : Text[50];
+                        QualityStatusValue: Text[50];
                     begin
-                        IF CONFIRM(Text33000260,FALSE) THEN BEGIN
-                          QualityStatusValue := 'Cancel';
-                          CancelInspection(QualityStatusValue);
-                          CurrPage.UPDATE(FALSE);
+                        IF CONFIRM(Text33000260, FALSE) THEN BEGIN
+                            QualityStatusValue := 'Cancel';
+                            CancelInspection(QualityStatusValue);
+                            CurrPage.UPDATE(FALSE);
                         END;
                     end;
                 }
@@ -423,7 +420,7 @@ page 60158 Calibration
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = Page "Quality Comment Sheet";
-                    RunPageLink = Type=CONST(Calibration),No.=FIELD(Equipment No);
+                    RunPageLink = Type = CONST(Calibration), No.=FIELD(Equipment No);
                 }
                 separator(Action1102152102)
                 {
@@ -447,7 +444,7 @@ page 60158 Calibration
                     Caption = 'Measuring Parameters';
                     Image = Campaign;
                     RunObject = Page "Measuring Parameters";
-                    RunPageLink = Equipment No.=FIELD(Equipment No);
+                                    RunPageLink = Equipment No.=FIELD(Equipment No);
                 }
                 separator(Action1102152130)
                 {
@@ -540,7 +537,7 @@ page 60158 Calibration
                     Caption = 'Calibration Procedure Set&up';
                     Image = Setup;
                     RunObject = Page "Calibration Setup";
-                    RunPageLink = Equipment No.=FIELD(Equipment No);
+                                    RunPageLink = Equipment No.=FIELD(Equipment No);
                 }
                 action("&Calibration Procedure")
                 {
@@ -691,7 +688,7 @@ page 60158 Calibration
                     Caption = 'Get Eqpt. Due for Calibration';
                     Image = GetEntries;
                     RunObject = Report Report60023;
-                    Visible = true;
+                                    Visible = true;
                 }
             }
             group(Transactions)
@@ -712,7 +709,7 @@ page 60158 Calibration
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Quality Comment Sheet";
-                RunPageLink = Type=CONST(Calibration),No.=FIELD(Equipment No);
+                                RunPageLink = Type=CONST(Calibration),No.=FIELD(Equipment No);
                 ToolTip = 'Comment';
                 Visible = false;
             }

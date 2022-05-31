@@ -379,26 +379,26 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
         {
             CaptionML = ENU = 'T.I.N. No.',
                         ENN = 'T.I.N. No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "T.I.N. Nos.";
         }
         field(13704; "L.S.T. No."; Code[20])
         {
             CaptionML = ENU = 'L.S.T. No.',
                         ENN = 'L.S.T. No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(13705; "C.S.T No."; Code[30])
         {
             CaptionML = ENU = 'C.S.T No.',
                         ENN = 'C.S.T No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(13706; "P.A.N. No."; Code[20])
         {
             CaptionML = ENU = 'P.A.N. No.',
                         ENN = 'P.A.N. No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -414,14 +414,14 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
         {
             CaptionML = ENU = 'E.C.C. No.',
                         ENN = 'E.C.C. No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "E.C.C. Nos.";
         }
         field(13709; "T.A.N. No."; Code[10])
         {
             CaptionML = ENU = 'T.A.N. No.',
                         ENN = 'T.A.N. No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "T.A.N. Nos.";
 
             trigger OnValidate();
@@ -433,50 +433,50 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
         {
             CaptionML = ENU = 'C.E. Registration No.',
                         ENN = 'C.E. Registration No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(13712; "C.E. Range"; Code[20])
         {
             CaptionML = ENU = 'C.E. Range',
                         ENN = 'C.E. Range';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(13713; "C.E. Commissionerate"; Code[20])
         {
             CaptionML = ENU = 'C.E. Commissionerate',
                         ENN = 'C.E. Commissionerate';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(13714; State; Code[10])
         {
             CaptionML = ENU = 'State',
                         ENN = 'State';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = State.Code;
         }
         field(13715; "Manufacturers Code"; Code[20])
         {
             CaptionML = ENU = 'Manufacturers Code',
                         ENN = 'Manufacturers Code';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(13719; "Factories Act. Regd. No."; Code[20])
         {
             CaptionML = ENU = 'Factories Act. Regd. No.',
                         ENN = 'Factories Act. Regd. No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(13722; "C.E. Division"; Code[20])
         {
             CaptionML = ENU = 'C.E. Division',
                         ENN = 'C.E. Division';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(13725; "Company Status"; Option)
         {
             CaptionML = ENU = 'Company Status',
                         ENN = 'Company Status';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionCaptionML = ENU = 'Public Limited Co.,Private Limited Co.,Others,Government,Individual/Proprietary,Registered Trust,Partnership,Society/Co-op Society',
                               ENN = 'Public Limited Co.,Private Limited Co.,Others,Government,Individual/Proprietary,Registered Trust,Partnership,Society/Co-op Society';
             OptionMembers = "Public Limited Co.","Private Limited Co.",Others,Government,"Individual/Proprietary","Registered Trust",Partnership,"Society/Co-op Society";
@@ -485,45 +485,45 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
         {
             CaptionML = ENU = 'Company Registration  No.',
                         ENN = 'Company Registration  No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(13745; "Circle No."; Text[30])
         {
             CaptionML = ENU = 'Circle No.',
                         ENN = 'Circle No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(13746; "Ward No."; Text[30])
         {
             CaptionML = ENU = 'Ward No.',
                         ENN = 'Ward No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(13747; "Assessing Officer"; Text[30])
         {
             CaptionML = ENU = 'Assessing Officer',
                         ENN = 'Assessing Officer';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(13749; "Cash Account No."; Code[20])
         {
             CaptionML = ENU = 'Cash Account No.',
                         ENN = 'Cash Account No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "G/L Account";
         }
         field(16465; "Service Tax Registration No."; Code[20])
         {
             CaptionML = ENU = 'Service Tax Registration No.',
                         ENN = 'Service Tax Registration No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "Service Tax Registration Nos.".Code;
         }
         field(16500; "T.C.A.N. No."; Code[10])
         {
             CaptionML = ENU = 'T.C.A.N. No.',
                         ENN = 'T.C.A.N. No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "T.C.A.N. No.";
 
             trigger OnValidate();
@@ -535,19 +535,19 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
         {
             CaptionML = ENU = 'Composition',
                         ENN = 'Composition';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16502; "Export or Deemed Export"; Boolean)
         {
             CaptionML = ENU = 'Export or Deemed Export',
                         ENN = 'Export or Deemed Export';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16503; "Composition Type"; Option)
         {
             CaptionML = ENU = 'Composition Type',
                         ENN = 'Composition Type';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionCaptionML = ENU = ' ,Retailer,Works Contract,Bakery,Restaurant / Club,Second Hand Motor Vehicle',
                               ENN = ' ,Retailer,Works Contract,Bakery,Restaurant / Club,Second Hand Motor Vehicle';
             OptionMembers = " ",Retailer,"Works Contract",Bakery,"Restaurant / Club","Second Hand Motor Vehicle";
@@ -556,32 +556,32 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
         {
             CaptionML = ENU = 'Trading Co.',
                         ENN = 'Trading Co.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16505; "Large Tax Payer"; Boolean)
         {
             CaptionML = ENU = 'Large Tax Payer',
                         ENN = 'Large Tax Payer';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16506; "Large Tax Payer City"; Text[30])
         {
             CaptionML = ENU = 'Large Tax Payer City',
                         ENN = 'Large Tax Payer City';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "Post Code".City;
         }
         field(16507; "Input Service Distributor"; Boolean)
         {
             CaptionML = ENU = 'Input Service Distributor',
                         ENN = 'Input Service Distributor';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16508; "ST Payment Period"; Option)
         {
             CaptionML = ENU = 'ST Payment Period',
                         ENN = 'ST Payment Period';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionCaptionML = ENU = 'Monthly,Quarterly',
                               ENN = 'Monthly,Quarterly';
             OptionMembers = Monthly,Quarterly;
@@ -590,13 +590,13 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
         {
             CaptionML = ENU = 'Central STC Applicable',
                         ENN = 'Central STC Applicable';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16510; "ST Payment Due Day"; Integer)
         {
             CaptionML = ENU = 'ST Payment Due Day',
                         ENN = 'ST Payment Due Day';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             MaxValue = 31;
             MinValue = 0;
         }
@@ -604,7 +604,7 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
         {
             CaptionML = ENU = 'P.A.N. Status',
                         ENN = 'P.A.N. Status';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             InitValue = "Not available";
             OptionCaptionML = ENU = 'Available,Not available',
                               ENN = 'Available,Not available';
@@ -624,31 +624,31 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
         {
             CaptionML = ENU = 'PAO Code',
                         ENN = 'PAO Code';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16513; "PAO Registration No."; Code[7])
         {
             CaptionML = ENU = 'PAO Registration No.',
                         ENN = 'PAO Registration No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16514; "DDO Code"; Code[20])
         {
             CaptionML = ENU = 'DDO Code',
                         ENN = 'DDO Code';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16515; "DDO Registration No."; Code[10])
         {
             CaptionML = ENU = 'DDO Registration No.',
                         ENN = 'DDO Registration No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16516; "Ministry Code"; Code[3])
         {
             CaptionML = ENU = 'Ministry Code',
                         ENN = 'Ministry Code';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = IF ("Ministry Type" = CONST(Others)) Ministry WHERE("Other Ministry" = FILTER(true))
             ELSE
             IF ("Ministry Type" = CONST(Regular)) Ministry WHERE("Other Ministry" = CONST(false));
@@ -657,7 +657,7 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
         {
             CaptionML = ENU = 'Deductor Category',
                         ENN = 'Deductor Category';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "Deductor Category";
 
             trigger OnValidate();
@@ -683,7 +683,7 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
         {
             CaptionML = ENU = 'Ministry Type',
                         ENN = 'Ministry Type';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionCaptionML = ENU = ' ,Regular,Others',
                               ENN = ' ,Regular,Others';
             OptionMembers = " ",Regular,Others;
@@ -692,13 +692,13 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
         {
             CaptionML = ENU = 'STD Code',
                         ENN = 'STD Code';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16520; "TAN Registration No."; Code[12])
         {
             CaptionML = ENU = 'TAN Registration No.',
                         ENN = 'TAN Registration No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -712,7 +712,7 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
         {
             CaptionML = ENU = 'GST Registration No.',
                         ENN = 'GST Registration No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "GST Registration Nos." WHERE("State Code" = FIELD(State));
 
             trigger OnValidate();
@@ -724,16 +724,19 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
         {
             CaptionML = ENU = 'ARN No.',
                         ENN = 'ARN No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(50001; "C.S.T.Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60000; "Insurance Policy No."; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60001; "Insurance Policy Name"; Text[150])
         {
+            DataClassification = CustomerContent;
         }
     }
     keys

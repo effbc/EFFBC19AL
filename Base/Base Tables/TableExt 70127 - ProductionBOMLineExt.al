@@ -552,52 +552,62 @@ tableextension 70127 ProductionBOMLineExt extends "Production BOM Line"
         {
             Description = 'B2B';
             TableRelation = "Item Substitution"."Substitute No." WHERE("No." = FIELD("No."));
+            DataClassification = CustomerContent;
         }
         field(60002; "Allow Excess Qty."; Boolean)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60003; "No. of Pins"; Decimal)
         {
             BlankZero = true;
             Description = 'B2B';
             Editable = true;
+            DataClassification = CustomerContent;
         }
         field(60004; "No. of Soldering Points"; Decimal)
         {
             BlankZero = true;
             Description = 'B2B';
             Editable = true;
+            DataClassification = CustomerContent;
         }
         field(60005; "No. of Opportunities"; Decimal)
         {
             BlankZero = true;
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60006; "Type of Solder"; Enum TypeofSolder)
         {
             Description = 'B2B';
             Editable = true;
+            DataClassification = CustomerContent;
         }
         field(60007; "Shelf No."; Code[20])
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60008; "Change Type"; Enum "Change Type")
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60009; "No. of Fixing Holes"; Integer)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60010; "Position 4"; Code[250])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -761,36 +771,45 @@ tableextension 70127 ProductionBOMLineExt extends "Production BOM Line"
         field(60011; "Description 2"; Text[50])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60012; PCB; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60013; "Product group code"; Code[10])
         {
             Description = 'renuka';
+            DataClassification = CustomerContent;
         }
         field(60014; "Include in SO Schedule"; Boolean)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60015; "BOM Type"; Enum BOMType)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60016; "Avg Cost"; Decimal)
         {
             Description = 'Cost1.0';
+            DataClassification = CustomerContent;
         }
         field(60017; "Manufacturing Cost"; Decimal)
         {
             Description = 'Cost1.0';
+            DataClassification = CustomerContent;
         }
         field(60018; "Tot Avg Cost"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60019; "Material Reqired Day"; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60020; Status; Enum Status2)
         {
@@ -800,6 +819,7 @@ tableextension 70127 ProductionBOMLineExt extends "Production BOM Line"
         field(60021; "Scrap Quantity"; Decimal)
         {
             DecimalPlaces = 1 : 4;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -809,15 +829,19 @@ tableextension 70127 ProductionBOMLineExt extends "Production BOM Line"
         }
         field(60022; "No. of SMD Points"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60023; "No. of DIP Point"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60024; "Part number"; Code[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60025; "Storage Temperature"; Text[30])
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -827,21 +851,26 @@ tableextension 70127 ProductionBOMLineExt extends "Production BOM Line"
         }
         field(60026; Make; Code[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60027; Package; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60028; Certify; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60029; Dept; Code[10])
         {
             Description = 'pranavi';
+            DataClassification = CustomerContent;
         }
         field(60030; "Operation No."; Code[10])
         {
             Description = 'pranavi';
             TableRelation = "Routing Line"."Operation No." WHERE("Routing No." = FIELD("Production BOM No."));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -866,13 +895,13 @@ tableextension 70127 ProductionBOMLineExt extends "Production BOM Line"
         }
     }
 
-  keys
-  {
-    key(Key4; "Tot Avg Cost")
+    keys
     {
-      
+        key(Key4; "Tot Avg Cost")
+        {
+
+        }
     }
-  }
 
     trigger OnBeforeInsert()
     begin
@@ -1001,7 +1030,7 @@ tableextension 70127 ProductionBOMLineExt extends "Production BOM Line"
         ProdBOMLine: Record "Production BOM Line";
         ProdBOMHeaderRec: Record "Production BOM Header";
         ProdBOMHeader: Record "Production BOM Header";
-         IS_SKIPPED: Boolean;
+        IS_SKIPPED: Boolean;
         char: Text[30];
         char1: Text[30];
         single_pos: Boolean;
@@ -1031,80 +1060,79 @@ tableextension 70127 ProductionBOMLineExt extends "Production BOM Line"
         Day: Integer;
         Month: Integer;
         Year: Integer;
-        Datecon: Text; 
+        Datecon: Text;
 
-      
-      PROCEDURE GetBOMLineQtyPerUOM(Item: Record Item) : Decimal;
+
+    PROCEDURE GetBOMLineQtyPerUOM(Item: Record Item): Decimal;
     VAR
-      ItemUnitOfMeasure: Record "Item Unit of Measure";
-      UOMMgt: Codeunit "Unit of Measure Management";
+        ItemUnitOfMeasure: Record "Item Unit of Measure";
+        UOMMgt: Codeunit "Unit of Measure Management";
     BEGIN
-      if "No." = '' then
-        exit(1);
+        if "No." = '' then
+            exit(1);
 
-      if not ItemUnitOfMeasure.Get(Item."No.","Unit of Measure Code") then
-        Error(BOMLineUOMErr,"Unit of Measure Code",Item."No.","Production BOM No.","Version Code","Line No.");
-      exit(UOMMgt.GetQtyPerUnitOfMeasure(Item,"Unit of Measure Code"));
+        if not ItemUnitOfMeasure.Get(Item."No.", "Unit of Measure Code") then
+            Error(BOMLineUOMErr, "Unit of Measure Code", Item."No.", "Production BOM No.", "Version Code", "Line No.");
+        exit(UOMMgt.GetQtyPerUnitOfMeasure(Item, "Unit of Measure Code"));
     END;
 
-   
+
     PROCEDURE Updateparameters(VAR Item: Record Item);
     VAR
-      ProductionBomLine: Record "Production BOM Line";
+        ProductionBomLine: Record "Production BOM Line";
     BEGIN
-      "No. of Pins" := 0;
-      "No. of Soldering Points" := 0;
-      "No. of Opportunities" := 0;
-      "No. of Fixing Holes" := 0;
+        "No. of Pins" := 0;
+        "No. of Soldering Points" := 0;
+        "No. of Opportunities" := 0;
+        "No. of Fixing Holes" := 0;
 
-      ProductionBomLine.SetRange("Production BOM No.",Item."Production BOM No.");
-      if ProductionBomLine.Find('-') then
-        repeat
-          if ProductionBomLine.Type = ProductionBomLine.Type :: Item then begin
-            "No. of Pins" := "No. of Pins" + ProductionBomLine."No. of Pins";
-            "No. of Soldering Points" := "No. of Soldering Points" + ProductionBomLine."No. of Soldering Points";
-            "No. of Opportunities" := "No. of Opportunities" + ProductionBomLine."No. of Opportunities";
-            "No. of Fixing Holes" := "No. of Fixing Holes" + ProductionBomLine."No. of Fixing Holes";
-          end;
-        until ProductionBomLine.Next = 0
-      else begin
-         Item.Get("No.");
-        "No. of Pins" := Item."No. of Pins";
-        "No. of Opportunities" := Item."No. of Opportunities";
-        "No. of Fixing Holes" := Item."No.of Fixing Holes";
-        "No. of Soldering Points" := Item."No. of Soldering Points";
-      end;
+        ProductionBomLine.SetRange("Production BOM No.", Item."Production BOM No.");
+        if ProductionBomLine.Find('-') then
+            repeat
+                if ProductionBomLine.Type = ProductionBomLine.Type::Item then begin
+                    "No. of Pins" := "No. of Pins" + ProductionBomLine."No. of Pins";
+                    "No. of Soldering Points" := "No. of Soldering Points" + ProductionBomLine."No. of Soldering Points";
+                    "No. of Opportunities" := "No. of Opportunities" + ProductionBomLine."No. of Opportunities";
+                    "No. of Fixing Holes" := "No. of Fixing Holes" + ProductionBomLine."No. of Fixing Holes";
+                end;
+            until ProductionBomLine.Next = 0
+        else begin
+            Item.Get("No.");
+            "No. of Pins" := Item."No. of Pins";
+            "No. of Opportunities" := Item."No. of Opportunities";
+            "No. of Fixing Holes" := Item."No.of Fixing Holes";
+            "No. of Soldering Points" := Item."No. of Soldering Points";
+        end;
     END;
 
-   
-    PROCEDURE UpdateparametersQty(VAR Item : Record Item;Qty : Decimal);
+
+    PROCEDURE UpdateparametersQty(VAR Item: Record Item; Qty: Decimal);
     VAR
-      ProductionBomLine : Record "Production BOM Line";
+        ProductionBomLine: Record "Production BOM Line";
     BEGIN
-      "No. of Pins" := 0;
-      "No. of Soldering Points" := 0;
-      "No. of Opportunities" := 0;
-      "No. of Fixing Holes" := 0;
-      ProductionBomLine.SetRange("Production BOM No.",Item."Production BOM No.");
-      if ProductionBomLine.Find('-') then
-        repeat
-            "No. of Pins" := "No. of Pins" + ProductionBomLine."No. of Pins";
-            "No. of Soldering Points" := "No. of Soldering Points" + ProductionBomLine."No. of Soldering Points";
-            "No. of Opportunities" := "No. of Opportunities" + ProductionBomLine."No. of Opportunities";
-            "No. of Fixing Holes" := "No. of Fixing Holes" + ProductionBomLine."No. of Fixing Holes";
-          if ProductionBomLine.Type = ProductionBomLine.Type :: Item then begin
-          end;
-        until ProductionBomLine.Next = 0;
+        "No. of Pins" := 0;
+        "No. of Soldering Points" := 0;
+        "No. of Opportunities" := 0;
+        "No. of Fixing Holes" := 0;
+        ProductionBomLine.SetRange("Production BOM No.", Item."Production BOM No.");
+        if ProductionBomLine.Find('-') then
+            repeat
+                "No. of Pins" := "No. of Pins" + ProductionBomLine."No. of Pins";
+                "No. of Soldering Points" := "No. of Soldering Points" + ProductionBomLine."No. of Soldering Points";
+                "No. of Opportunities" := "No. of Opportunities" + ProductionBomLine."No. of Opportunities";
+                "No. of Fixing Holes" := "No. of Fixing Holes" + ProductionBomLine."No. of Fixing Holes";
+                if ProductionBomLine.Type = ProductionBomLine.Type::Item then begin
+                end;
+            until ProductionBomLine.Next = 0;
     END;
 
-  
+
     LOCAL PROCEDURE TestType();
     BEGIN
-      if Item.Get("No.") then
-        begin
-          if Type = Type::"Production BOM" then
-            Error('Item Should be Picked as Type');
-          end;
+        if Item.Get("No.") then begin
+            if Type = Type::"Production BOM" then
+                Error('Item Should be Picked as Type');
+        end;
     END;
 }
 

@@ -62,19 +62,23 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
             Description = 'B2B';
             Editable = true;
             TableRelation = IF (Type = FILTER(<> " ")) "Indent Line" WHERE("Indent Status" = FILTER(Indent | Enquiry | Offer | Order));
+            DataClassification = CustomerContent;
         }
         field(60002; "Indent Line No."; Integer)
         {
             Description = 'B2B';
             Editable = true;
+            DataClassification = CustomerContent;
         }
         field(60003; Remarks; Text[80])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60004; "ICN No."; Code[20])
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
         }
         field(60005; "Document Date"; Date)
         {
@@ -83,6 +87,7 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         }
         field(60006; "Deviated Receipt Date"; Date)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -94,6 +99,7 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         }
         field(60010; Period; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60011; "Vendor Name"; Text[50])
         {
@@ -103,15 +109,19 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         field(60012; "Deviated By"; Option)
         {
             OptionMembers = Vendor,Organisation;
+            DataClassification = CustomerContent;
         }
         field(60013; Sample; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60014; Make; Code[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60015; "Account No."; Code[10])
         {
+            DataClassification = CustomerContent;
         }
         field(60016; "Purchase Orders"; Integer)
         {
@@ -123,24 +133,29 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         }
         field(60017; "Customs Duty Value"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60018; "Customs Duty Paid to"; Code[10])
         {
             TableRelation = Vendor WHERE(Blocked = CONST(" "));
+            DataClassification = CustomerContent;
         }
         field(60019; "Customs To be Paid on"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60090; "Dimension Corrected"; Boolean)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60091; "OLD Dim Set ID"; Integer)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
             TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -149,9 +164,11 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         }
         field(60093; "AMC Order"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60094; "Frieght Charges"; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -164,6 +181,7 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         }
         field(60095; "Purchase_Order No."; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60096; "No. Of Deviations"; Integer)
         {
@@ -182,32 +200,41 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         }
         field(60099; "Material Received at Site"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(70000; "VAT %age 2"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(70001; "VAT Base 2"; Decimal)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(70002; "VAT Amount 2"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(70003; "Vendor Commitment Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(70004; Package; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(70005; "Part Number"; Code[30])
         {
+            DataClassification = CustomerContent;
         }
         field(70006; MailSent; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(70007; "Courier Agency"; Option)
         {
             OptionMembers = " ",DHL,DTDC,FEDEX,UPS,TNT,"GATI-KWE",VRL,Komitla,BlueDart,"First-Flight",SreeMarutiCourier,Trackon,Sindu,SafExpress,Kesineni,SRMT,SriNandan,MoringStar,Kaveri,Spoton,TCIXPS,Tirupati,Jabbar,SreeKaleswari,ByVehicle,"Professional-Couriers",PatelRoadWays;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -217,6 +244,7 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         }
         field(70008; "Docket No"; Text[30])
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -230,24 +258,30 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         }
         field(70009; "Tracking Status"; Text[250])
         {
+            DataClassification = CustomerContent;
         }
         field(70010; "Tracking Status Last Updated"; DateTime)
         {
+            DataClassification = CustomerContent;
         }
         field(70011; "Tracking URL"; Text[250])
         {
             ExtendedDatatype = URL;
+            DataClassification = CustomerContent;
         }
         field(70012; "Courier Agency Name"; Text[80])
         {
+            DataClassification = CustomerContent;
         }
         field(70013; "Courier Dispatch Started On"; Text[30])
         {
+            DataClassification = CustomerContent;
         }
         field(70014; "PCB Mode"; Option)
         {
             OptionCaption = 'Normal,Fast,Super Fast';
             OptionMembers = Normal,Fast,"Super Fast";
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -258,6 +292,7 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         {
             OptionCaption = ', ,Sampling for NewVendor,Onhold as Stock Available';
             OptionMembers = ," ","Sampling for NewVendor","Onhold as Stock Available";
+            DataClassification = CustomerContent;
         }
         field(70016; "Stock At Stores"; Decimal)
         {
@@ -381,6 +416,7 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         }
         field(70020; "Vendor Mat. Dispatch Date"; Date)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -399,9 +435,11 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         }
         field(70021; "Mat. Dispatched"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(70022; "Order Confimed"; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -412,6 +450,7 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         }
         field(70023; "Scheduled Date"; Date)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -422,9 +461,11 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         }
         field(70024; Earliest_Mat_Req_Date; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(70025; "Requested Rcpt Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(70026; gst_group_code_reverse_charge; Boolean)
         {
@@ -434,6 +475,7 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         field(33000250; "Spec ID"; Code[20])
         {
             TableRelation = "Specification Header";
+            DataClassification = CustomerContent;
         }
         field(33000251; "Quantity Accepted"; Decimal)
         {
@@ -454,6 +496,7 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         }
         field(33000253; "QC Enabled"; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -476,6 +519,7 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         }
         field(33000255; "Quality Before Receipt"; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -496,22 +540,27 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         field(33000256; "Qty. Sending To Quality"; Decimal)
         {
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(33000257; "Qty. Sent To Quality"; Decimal)
         {
             Editable = false;
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(33000258; "Qty. Sending To Quality(R)"; Decimal)
         {
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(33000259; "Spec Version"; Code[20])
         {
             TableRelation = "Specification Version"."Version Code" WHERE("Specification No." = FIELD("Spec ID"));
+            DataClassification = CustomerContent;
         }
         field(33000260; "Sample Lot Inspection"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(99000760; "Qty on Prod order Components"; Decimal)
         {

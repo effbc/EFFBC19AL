@@ -12,10 +12,10 @@ page 60050 "QCS From"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Minumum Value";"Minumum Value")
+                field("Minumum Value"; "Minumum Value")
                 {
                 }
-                field(Rating;Rating)
+                field(Rating; Rating)
                 {
                 }
             }

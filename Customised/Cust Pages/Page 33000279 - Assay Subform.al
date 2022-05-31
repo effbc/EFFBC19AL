@@ -14,34 +14,34 @@ page 33000279 "Assay Subform"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Character Code";"Character Code")
+                field("Character Code"; "Character Code")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Normal Value (Num)";"Normal Value (Num)")
+                field("Normal Value (Num)"; "Normal Value (Num)")
                 {
                 }
-                field("Min. Value (Num)";"Min. Value (Num)")
+                field("Min. Value (Num)"; "Min. Value (Num)")
                 {
                 }
-                field("Max. Value (Num)";"Max. Value (Num)")
+                field("Max. Value (Num)"; "Max. Value (Num)")
                 {
                 }
-                field("Normal Value (Char)";"Normal Value (Char)")
+                field("Normal Value (Char)"; "Normal Value (Char)")
                 {
                 }
-                field("Min. Value (Char)";"Min. Value (Char)")
+                field("Min. Value (Char)"; "Min. Value (Char)")
                 {
                 }
-                field("Max. Value (Char)";"Max. Value (Char)")
+                field("Max. Value (Char)"; "Max. Value (Char)")
                 {
                 }
-                field("Unit Of Measure Code";"Unit Of Measure Code")
+                field("Unit Of Measure Code"; "Unit Of Measure Code")
                 {
                 }
-                field(Qualitative;Qualitative)
+                field(Qualitative; Qualitative)
                 {
                 }
             }

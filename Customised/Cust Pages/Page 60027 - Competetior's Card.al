@@ -12,60 +12,60 @@ page 60027 "Competetior's Card"
             group(General)
             {
                 Caption = 'General';
-                field("Code";Code)
+                field("Code"; Code)
                 {
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field("Competitor's Name";"Competitor's Name")
+                field("Competitor's Name"; "Competitor's Name")
                 {
                 }
-                field("Competitor's Name 2";"Competitor's Name 2")
+                field("Competitor's Name 2"; "Competitor's Name 2")
                 {
                 }
-                field("Competitor's Address";"Competitor's Address")
+                field("Competitor's Address"; "Competitor's Address")
                 {
                 }
-                field("Competitor's Address 2";"Competitor's Address 2")
+                field("Competitor's Address 2"; "Competitor's Address 2")
                 {
                 }
-                field("Post Code";"Post Code")
+                field("Post Code"; "Post Code")
                 {
                 }
-                field(City;City)
+                field(City; City)
                 {
                     Caption = 'City / Post Code';
                 }
-                field("Country Code";"Country Code")
+                field("Country Code"; "Country Code")
                 {
                 }
-                field(County;County)
+                field(County; County)
                 {
                     Caption = 'County Code / Country';
                 }
-                field(State;State)
+                field(State; State)
                 {
                 }
-                field("Competitor's Contact";"Competitor's Contact")
+                field("Competitor's Contact"; "Competitor's Contact")
                 {
                 }
-                field("Phone No.";"Phone No.")
+                field("Phone No."; "Phone No.")
                 {
                 }
-                field("Telex No.";"Telex No.")
+                field("Telex No."; "Telex No.")
                 {
                 }
-                field("Fax No.";"Fax No.")
+                field("Fax No."; "Fax No.")
                 {
                 }
-                field("E-Mail";"E-Mail")
+                field("E-Mail"; "E-Mail")
                 {
                 }
-                field("Home Page";"Home Page")
+                field("Home Page"; "Home Page")
                 {
                 }
             }

@@ -5,7 +5,7 @@ report 50180 "Customer Transactions"
 
     dataset
     {
-        dataitem("Cust. Ledger Entry";"Cust. Ledger Entry")
+        dataitem("Cust. Ledger Entry"; "Cust. Ledger Entry")
         {
             DataItemTableView = WHERE(Document Type=FILTER(Invoice));
             RequestFilterFields = "Customer No.";

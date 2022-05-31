@@ -6,46 +6,46 @@ xmlport 50035 BG
     {
         textelement(BankGuarantees)
         {
-            tableelement("<bankguarantee>";"Bank Guarantee")
+            tableelement("<bankguarantee>"; "Bank Guarantee")
             {
                 XmlName = 'BankGuarantee';
-                fieldelement(BGNo;"<BankGuarantee>"."BG No.")
+                fieldelement(BGNo; "<BankGuarantee>"."BG No.")
                 {
                 }
-                fieldelement(Description;"<BankGuarantee>".Description)
+                fieldelement(Description; "<BankGuarantee>".Description)
                 {
                 }
-                fieldelement(IssuingBank;"<BankGuarantee>"."Issuing Bank")
+                fieldelement(IssuingBank; "<BankGuarantee>"."Issuing Bank")
                 {
                 }
-                fieldelement(Branch;"<BankGuarantee>".Branch)
+                fieldelement(Branch; "<BankGuarantee>".Branch)
                 {
                 }
-                fieldelement(PostCode;"<BankGuarantee>"."Post Code")
+                fieldelement(PostCode; "<BankGuarantee>"."Post Code")
                 {
                 }
-                fieldelement(City;"<BankGuarantee>".City)
+                fieldelement(City; "<BankGuarantee>".City)
                 {
                 }
-                fieldelement(State;"<BankGuarantee>".State)
+                fieldelement(State; "<BankGuarantee>".State)
                 {
                 }
-                fieldelement(TransactionType;"<BankGuarantee>"."Transaction Type")
+                fieldelement(TransactionType; "<BankGuarantee>"."Transaction Type")
                 {
                 }
-                fieldelement(ExpiryDate;"<BankGuarantee>"."Expiry Date")
+                fieldelement(ExpiryDate; "<BankGuarantee>"."Expiry Date")
                 {
                 }
-                fieldelement(TypeofBG;"<BankGuarantee>"."Type of BG")
+                fieldelement(TypeofBG; "<BankGuarantee>"."Type of BG")
                 {
                 }
-                fieldelement(BGValue;"<BankGuarantee>"."BG Value")
+                fieldelement(BGValue; "<BankGuarantee>"."BG Value")
                 {
                 }
-                fieldelement(BGMarginAmount;"<BankGuarantee>"."BG Margin Amount")
+                fieldelement(BGMarginAmount; "<BankGuarantee>"."BG Margin Amount")
                 {
                 }
-                fieldelement(AccountNo;"<BankGuarantee>"."Account No.")
+                fieldelement(AccountNo; "<BankGuarantee>"."Account No.")
                 {
                 }
             }

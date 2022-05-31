@@ -5,9 +5,9 @@ tableextension 70149 CustInvoiceDiscext extends "Cust. Invoice Disc."
     fields
     {
 
-      
+
 
     }
-    
+
 }
 

@@ -26,6 +26,7 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         field(50000; "MSPT Date"; Date)
         {
             Description = 'MSPT1.0';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -46,6 +47,7 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         {
             Description = 'MSPT1.0';
             TableRelation = "MSPT Header".Code WHERE(Status = CONST(Released));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -88,33 +90,40 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         field(50002; "MSPT Applicable at Line Level"; Boolean)
         {
             Description = 'MSPT1.0';
+            DataClassification = CustomerContent;
         }
         field(50003; WayBillNo; Text[30])
         {
+            DataClassification = CustomerContent;
         }
         field(50004; "posting time"; Time)
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(50005; userid1; Code[50])
         {
             Description = 'Rev01';
             Enabled = false;
             TableRelation = User;
+            DataClassification = CustomerContent;
         }
         field(50006; "Work Order Number"; Text[30])
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60001; "RDSO Charges Paid By"; Option)
         {
             Description = 'B2B';
             OptionMembers = " ","By Customer","By Railways";
+            DataClassification = CustomerContent;
         }
         field(60002; "CA Number"; Code[20])
         {
             Description = 'B2B';
             Enabled = false;
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -129,97 +138,116 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         field(60003; "CA Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60004; "Type of Enquiry"; Option)
         {
             Description = 'B2B';
             OptionMembers = Direct,Indirect;
+            DataClassification = CustomerContent;
         }
         field(60005; "Type of Product"; Option)
         {
             Description = 'B2B';
             OptionMembers = Standard,Customized;
+            DataClassification = CustomerContent;
         }
         field(60006; "Document Position"; Option)
         {
             Description = 'B2B';
             Editable = false;
             OptionMembers = Sales,Design,CRM;
+            DataClassification = CustomerContent;
         }
         field(60007; "Cancel Short Close"; Option)
         {
             Description = 'B2B';
             OptionCaption = '" ,Cancelled,Short Closed"';
             OptionMembers = " ",Cancelled,"Short Closed";
+            DataClassification = CustomerContent;
         }
         field(60008; "RDSO Inspection Required"; Boolean)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60009; "RDSO Inspection By"; Option)
         {
             Description = 'B2B';
             OptionMembers = " ","By RDSO","By Consignee";
+            DataClassification = CustomerContent;
         }
         field(60010; "BG Required"; Boolean)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60011; "BG No."; Code[20])
         {
             Description = 'B2B';
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60012; Territory; Code[20])
         {
             Description = 'B2B';
             TableRelation = Territory;
+            DataClassification = CustomerContent;
         }
         field(60013; "Security Status"; Code[20])
         {
             Description = 'B2B';
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60014; "LD Amount"; Decimal)
         {
             BlankZero = true;
             Description = 'B2B';
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60015; "RDSO Charges"; Decimal)
         {
             BlankZero = true;
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60016; "Customer OrderNo."; Code[65])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60017; "Customer Order Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60018; "Security Deposit"; Option)
         {
             Description = 'B2B';
             OptionCaption = '" ,BG,FDR,DD,Running Bills"';
             OptionMembers = " ",BG,FDR,DD,"Running Bills";
+            DataClassification = CustomerContent;
         }
         field(60019; "RDSO Call Letter"; Option)
         {
             Description = 'B2B';
             OptionCaption = '" ,Customer,RDSO"';
             OptionMembers = " ",Customer,RDSO;
+            DataClassification = CustomerContent;
         }
         field(60020; "Enquiry Status"; Option)
         {
             Description = 'B2B';
             OptionCaption = 'Open,Closed,Order Received';
             OptionMembers = Open,Closed,"Order Received";
+            DataClassification = CustomerContent;
         }
         field(60021; "Project Completion Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -232,29 +260,35 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         field(60022; "Extended Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60023; "Bktord Des Approval"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60024; "SalOrd Des Approval"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60030; "Type of Customer"; Option)
         {
             Description = 'B2B';
             OptionCaption = 'Existing,New';
             OptionMembers = Existing,New;
+            DataClassification = CustomerContent;
         }
         field(60031; "Nature of Enquiry"; Option)
         {
             Description = 'B2B';
             OptionCaption = 'Single,Multiple';
             OptionMembers = Single,Multiple;
+            DataClassification = CustomerContent;
         }
         field(60032; Product; Code[10])
         {
             Description = 'B2B';
             TableRelation = "Service Item Group";
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -318,31 +352,38 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         field(60041; "Security Deposit Amount"; Decimal)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60042; "Deposit Payment Due Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60043; "Deposit Payment Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60044; "Security Deposit Status"; Code[20])
         {
             Description = 'B2B';
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60045; "SD Requested Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60046; "SD Required Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60047; "SecurityDeposit Exp. Rcpt Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60048; "Adjusted from EMD"; Decimal)
         {
@@ -368,6 +409,7 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         {
             Description = 'B2B';
             TableRelation = "Tender Header";
+            DataClassification = CustomerContent;
         }
         field(60051; "SD Paid Amount"; Decimal)
         {
@@ -392,6 +434,7 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         field(60053; "Final Bill Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -401,6 +444,7 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         field(60054; "Warranty Period"; DateFormula)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -413,6 +457,7 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
             Description = 'B2B';
             OptionCaption = 'Not Received,Received,NA';
             OptionMembers = "Not Received",Received,NA;
+            DataClassification = CustomerContent;
         }
         field(60056; "Released to Sales User ID"; Code[50])
         {
@@ -420,10 +465,12 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
             Editable = false;
             Enabled = false;
             TableRelation = User."User Name";
+            DataClassification = CustomerContent;
         }
         field(60057; "Released to Sales Date"; Date)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60058; "Released to Design User ID"; Code[40])
         {
@@ -431,37 +478,46 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
             Editable = false;
             Enabled = false;
             TableRelation = User;
+            DataClassification = CustomerContent;
         }
         field(60059; "Released to Design Date"; Date)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60060; "Quote No 2."; Code[20])
         {
             Description = 'B2B';
             Editable = false;
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60061; "Sale Order Total Amount"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60062; "Reason For Pending"; Text[230])
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60063; "Order Status"; Option)
         {
             OptionMembers = ,Dispatched,Inprogress,"Ready For Dispatch","Ready For RDSO","Under RDSO Inspection","Yet to Start","Order Pending","   ","Temporary Close";
+            DataClassification = CustomerContent;
         }
         field(60064; Inspection; Code[50])
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60065; CallLetterExpireDate; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60066; CallLetterRecivedDate; Date)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -478,33 +534,41 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         field(60067; "Payments Date"; Date)
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60068; Installation; Option)
         {
             OptionMembers = " ",RlyInstallation,EffInstallation,"RLY&EFF";
+            DataClassification = CustomerContent;
         }
         field(60069; "Inst.Status"; Option)
         {
             OptionMembers = ," Raliway Pending","Railway Inprogress",Inprogress,Planned,"To Be Planned",Completed," ";
+            DataClassification = CustomerContent;
         }
         field(60070; "Base PLan Comp. Date"; Date)
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60071; "Revised Target Date"; Date)
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60072; "Sales Date"; Date)
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60073; Remarks; Text[230])
         {
+            DataClassification = CustomerContent;
         }
         field(60074; "Call letters Status"; Option)
         {
             OptionMembers = " ",Received,Pending,NA,"Cust.Pending";
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -520,6 +584,7 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         }
         field(60075; "Call Letter Exp.Date"; Date)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -540,64 +605,81 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         field(60076; "BG Status"; Option)
         {
             OptionMembers = " ",Submitted,Pending,NA;
+            DataClassification = CustomerContent;
         }
         field(60077; "Inst.Start Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60078; "Exp.Payment"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60080; "Revised Comp.Date"; Date)
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60081; "Assured Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60082; "Deviated Days"; Code[10])
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60083; "Product 1"; Text[30])
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60084; "Product 2"; Text[30])
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60085; "Product 3"; Text[30])
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60086; "Product 4"; Text[30])
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60087; Consignee; Text[50])
         {
             Description = 'modified from station name to consignee by sujani';
+            DataClassification = CustomerContent;
         }
         field(60088; "Shortage Calculation"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60089; "Sale Order No."; Code[20])
         {
             TableRelation = "Sales Header"."No." WHERE("Document Type" = CONST(Order));
+            DataClassification = CustomerContent;
         }
         field(60090; "RDSO Inspection Req"; Option)
         {
             OptionMembers = " ",YES,NA;
+            DataClassification = CustomerContent;
         }
         field(60095; "Order Assurance"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60096; "Expected Order Month"; Option)
         {
             OptionMembers = "  ",APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC,JAN,FEB,MAR,"     ";
+            DataClassification = CustomerContent;
         }
         field(60097; "Sale Order Created"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60098; "Purchase Value"; Decimal)
         {
@@ -606,23 +688,28 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         }
         field(60099; "Request for Authorisation"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60110; "Shipment Type"; Option)
         {
             Description = 'added by sujani';
             OptionMembers = "  ","Partially Allowed","Partially Not Allowed","No issue in Shipment";
+            DataClassification = CustomerContent;
         }
         field(60115; "SD Running Bill Percent"; Decimal)
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60116; "Order Completion Period"; Integer)
         {
             MaxValue = 360;
             MinValue = 1;
+            DataClassification = CustomerContent;
         }
         field(60117; "Expecting Week"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60119; "Total Order(LOA)Value"; Decimal)
         {
@@ -637,20 +724,25 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         }
         field(60121; "Blanket Order No"; Text[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60122; "Installation Amount(CS)"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60139; "First Released Date Time"; DateTime)
         {
+            DataClassification = CustomerContent;
         }
         field(80000; "Order Released Date"; Date)
         {
             Caption = 'Order Released Date';
+            DataClassification = CustomerContent;
         }
         field(80001; "Payment Received"; Boolean)
         {
             Description = 'Pranavi';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -673,38 +765,46 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         field(80002; "Order Verified"; Boolean)
         {
             Description = 'Pranavi';
+            DataClassification = CustomerContent;
         }
         field(80003; "Calculate Tax Structure"; Boolean)
         {
             Description = 'Pranavi';
+            DataClassification = CustomerContent;
         }
         field(80004; "RDSO No"; Option)
         {
             Description = 'Added by Vijaya';
             OptionMembers = ,Pending,"RDSO 01","RDSO 02","RDSO 03","RDSO 04","RDSO 05","RDSO 06","RDSO 07","RDSO 08","RDSO 09","RDSO 10";
+            DataClassification = CustomerContent;
         }
         field(80005; "EMD Amount"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(80006; "Verfication Req MailID"; Text[30])
         {
             Description = 'Added by Vijaya';
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(80007; "Verification Status"; Option)
         {
             Description = 'Added by Vijaya';
             OptionMembers = " ",Accept,Reject,Request;
+            DataClassification = CustomerContent;
         }
         field(80008; SecDepStatus; Option)
         {
             Description = 'Added by Pranavi for sd tracking';
             OptionCaption = 'Running,Warranty,Due,Received';
             OptionMembers = Running,Warranty,Due,Received;
+            DataClassification = CustomerContent;
         }
         field(80009; "Remarks for Sales Status"; Text[20])
         {
             Enabled = false;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -718,40 +818,49 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         {
             Description = 'Added by Pranavi for PT Authorizations';
             OptionMembers = " ","Sent For Auth",Authorized,Rejected;
+            DataClassification = CustomerContent;
         }
         field(80011; "PT Post Auth Stutus"; Option)
         {
             Description = 'Added by Pranavi for PT Authorizations';
             OptionMembers = " ","Sent For Auth",Authorized,Rejected;
+            DataClassification = CustomerContent;
         }
         field(80012; Order_After_CF_Integration; Boolean)
         {
             Description = 'Added by Pranavi for PT Authorizations';
+            DataClassification = CustomerContent;
         }
         field(80013; "Order Confirmed"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(80014; "SD Fin Verification"; Option)
         {
             Description = 'Added by Vijaya for Finance Verification';
             OptionCaption = '" ,Released,Order Verified, Final Payment,Final Verified,Need Data Correction"';
             OptionMembers = " ",Released,"Order Verified"," Final Payment","Final Verified","Need Data Correction";
+            DataClassification = CustomerContent;
         }
         field(80017; Vertical; Option)
         {
             Description = 'Added by Vijaya for Vertical information';
             OptionMembers = " ","Smart Signalling","Smart Cities","Smart Building",IOT,other;
+            DataClassification = CustomerContent;
         }
         field(80022; "Tender Published Date"; Date)
         {
             Description = 'added by sujani for Pre Expected orderes';
+            DataClassification = CustomerContent;
         }
         field(80023; "Tender Due Date"; Date)
         {
             Description = 'added by sujani for Pre Expected orderes';
+            DataClassification = CustomerContent;
         }
         field(80024; "Railway Division"; Code[10])
         {
+            DataClassification = CustomerContent;
             //TableRelation = Division."Division Code";
         }
         field(80025; "BG Fin Status"; Option)
@@ -759,17 +868,19 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
             Description = 'Added By Vishnu for BG Status Confirmation';
             OptionCaption = '" ,Final Payment"';
             OptionMembers = " ","Final Payment";
+            DataClassification = CustomerContent;
         }
         field(80100; "Insurance Applicable"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(80101; Customer_PAN_No; Code[20])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(80102; Location_PAN_No; Code[20])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
     }
     trigger OnAfterInsert()
@@ -1199,8 +1310,8 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         END;
     END;
 
-    
-    PROCEDURE RemoveSpecialChar(TextLPar : Text) ReturnText: Text;
+
+    PROCEDURE RemoveSpecialChar(TextLPar: Text) ReturnText: Text;
     BEGIN
         ReturnText := DELCHR(TextLPar, '=', '|\?/<>,.@#$%^&*()!-=_+');
     END;

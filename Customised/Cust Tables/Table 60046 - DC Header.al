@@ -3,65 +3,71 @@ table 60046 "DC Header"
     // version B2B1.0,Rev01
 
     LookupPageID = "DC List";
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"No.";Code[20])
+        field(1; "No."; Code[20])
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
                 IF "No." <> xRec."No." THEN BEGIN
-                  GetInvtSetup;
-                 // NoSeriesMgt.TestManual(InvtSetup."DC Nos.");
-                  "No. Series" := '';
+                    GetInvtSetup;
+                    // NoSeriesMgt.TestManual(InvtSetup."DC Nos.");
+                    "No. Series" := '';
                 END;
             end;
         }
-        field(3;"Document Date";Date)
+        field(3; "Document Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
-        field(4;Type;Option)
+        field(4; Type; Option)
         {
             OptionCaption = 'Customer,Vendor,Site';
             OptionMembers = Customer,Vendor,Site;
+            DataClassification = CustomerContent;
         }
-        field(5;"Customer No.";Code[20])
+        field(5; "Customer No."; Code[20])
         {
-            TableRelation = IF (Type=CONST(Customer)) Customer ELSE IF (Type=CONST(Vendor)) Vendor ELSE IF (Type=CONST(Site)) Employee;
+            TableRelation = IF (Type = CONST(Customer)) Customer ELSE
+            IF (Type = CONST(Vendor)) Vendor ELSE
+            IF (Type = CONST(Site)) Employee;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
                 // Added by Pranavi on 28-Jan-2016 for LED Cards Process
-                IF Type=Type::Customer THEN
-                BEGIN
-                  IF CustmrGRec.GET(CustmrGRec."No.") THEN
-                  BEGIN
-                    "Sell-to Customer Name" := CustmrGRec.Name;
-                    "Sell-to Customer Name 2":= CustmrGRec."Name 2";
-                    "Sell-to Address" := CustmrGRec.Address;
-                    "Sell-to Address 2" := CustmrGRec."Address 2";
-                    "Sell-to City" := CustmrGRec.City;
-                    "Sell-to Contact" := CustmrGRec.Contact;
-                    "Sell-to Post Code" := CustmrGRec."Post Code";
-                    "Sell-to Country Code" := CustmrGRec.County;
-                    "Ship-to Code" := CustmrGRec."No.";
-                    "Ship-to Name" := CustmrGRec.Name;
-                    "Ship-to Name 2" := CustmrGRec."Name 2";
-                    "Ship-to Address" := CustmrGRec.Address;
-                    "Ship-to Address 2" := CustmrGRec."Address 2";
-                    "Ship-to City" := CustmrGRec.City;
-                    "Ship-to Contact" := CustmrGRec.Contact;
-                    "Ship-to Post Code" := CustmrGRec."Post Code";
-                    "Ship-to Country Code" := CustmrGRec.County;
-                  END;
+                IF Type = Type::Customer THEN BEGIN
+                    IF CustmrGRec.GET(CustmrGRec."No.") THEN BEGIN
+                        "Sell-to Customer Name" := CustmrGRec.Name;
+                        "Sell-to Customer Name 2" := CustmrGRec."Name 2";
+                        "Sell-to Address" := CustmrGRec.Address;
+                        "Sell-to Address 2" := CustmrGRec."Address 2";
+                        "Sell-to City" := CustmrGRec.City;
+                        "Sell-to Contact" := CustmrGRec.Contact;
+                        "Sell-to Post Code" := CustmrGRec."Post Code";
+                        "Sell-to Country Code" := CustmrGRec.County;
+                        "Ship-to Code" := CustmrGRec."No.";
+                        "Ship-to Name" := CustmrGRec.Name;
+                        "Ship-to Name 2" := CustmrGRec."Name 2";
+                        "Ship-to Address" := CustmrGRec.Address;
+                        "Ship-to Address 2" := CustmrGRec."Address 2";
+                        "Ship-to City" := CustmrGRec.City;
+                        "Ship-to Contact" := CustmrGRec.Contact;
+                        "Ship-to Post Code" := CustmrGRec."Post Code";
+                        "Ship-to Country Code" := CustmrGRec.County;
+                    END;
                 END;
                 // End by Pranavi
             end;
         }
-        field(6;"Sales Order No.";Code[20])
+        field(6; "Sales Order No."; Code[20])
         {
-            TableRelation = "Sales Header".No. WHERE (Document Type=CONST(Order),Sell-to Customer No.=FIELD(Customer No.));
+            TableRelation = "Sales Header".No            DataClassification = CustomerContent;
+. WHERE (Document Type=CONST(Order),Sell-to Customer No.=FIELD(Customer No.));
 
             trigger OnValidate();
             begin

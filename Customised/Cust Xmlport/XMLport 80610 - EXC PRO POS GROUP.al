@@ -6,16 +6,16 @@ xmlport 80610 "EXC PRO POS GROUP"
     {
         textelement(ExciseProdPostingGroups)
         {
-            tableelement("<exciseprodpostinggroup>";"Excise Prod. Posting Group")
+            tableelement("<exciseprodpostinggroup>"; "Excise Prod. Posting Group")
             {
                 XmlName = 'ExciseProdPostingGroup';
-                fieldelement(Description;"<ExciseProdPostingGroup>".Description)
+                fieldelement(Description; "<ExciseProdPostingGroup>".Description)
                 {
                 }
-                fieldelement(ChapterNo;"<ExciseProdPostingGroup>"."Chapter No.")
+                fieldelement(ChapterNo; "<ExciseProdPostingGroup>"."Chapter No.")
                 {
                 }
-                fieldelement(Code;"<ExciseProdPostingGroup>".Code)
+                fieldelement(Code; "<ExciseProdPostingGroup>".Code)
                 {
                 }
             }

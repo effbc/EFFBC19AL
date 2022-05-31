@@ -4,10 +4,10 @@ page 60260 "Dispatch Info Entry"
     InsertAllowed = false;
     LinksAllowed = true;
     PageType = List;
-    Permissions = TableData "Sales Invoice Header"=rm;
+    Permissions = TableData "Sales Invoice Header" = rm;
     ShowFilter = true;
     SourceTable = "Sales Invoice Header";
-    SourceTableView = SORTING(Order No.,Posting Date) ORDER(Descending) WHERE(Posting Date=FILTER(>=04/01/16));
+    SourceTableView = SORTING(Order No., Posting Date) ORDER(Descending) WHERE(Posting Date=FILTER(>=04/01/16));
 
     layout
     {

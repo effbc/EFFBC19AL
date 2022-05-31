@@ -4,6 +4,7 @@ tableextension 70099 ServiceMgtSetupExt extends "Service Mgt. Setup"
     {
         field(60001; "Last DC No."; Code[20])
         {
+            DataClassification = CustomerContent;
         }
     }
 }

@@ -10,29 +10,35 @@ tableextension 70044 BankAccountLedgerEntryExt extends "Bank Account Ledger Entr
 
         field(60063; "customer ord no"; Code[65])
         {
+            DataClassification = CustomerContent;
         }
         field(60064; "Payment Type"; Enum "Payment Type")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60073; "DD/FDR No."; Code[20])
         {
             Description = 'Rev01';
+            DataClassification = CustomerContent;
         }
         field(60074; "Payment Through"; Enum "Payment Through")
         {
             Description = 'Rev01';
+            DataClassification = CustomerContent;
         }
         field(60090; "Dimension Corrected"; Boolean)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60091; "OLD Dim Set ID"; Integer)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
             TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin

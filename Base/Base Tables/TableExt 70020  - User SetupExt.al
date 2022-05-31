@@ -28,25 +28,31 @@ tableextension 70020 UserSetupExt extends "User Setup"
 
         field(60001; "Transfer- From Code"; Code[10])
         {
+            DataClassification = CustomerContent;
         }
         field(60002; "Transfer- To Code"; Code[10])
         {
+            DataClassification = CustomerContent;
         }
         field(60003; "Production Order"; Code[20])
         {
             TableRelation = "Production Order"."No." WHERE(Status = CONST(Released));
+            DataClassification = CustomerContent;
         }
         field(60050; "Current UserId"; Code[20])
         {
             Description = 'UserId';
+            DataClassification = CustomerContent;
         }
         field(60051; Executed; Boolean)
         {
             Description = 'UserId';
+            DataClassification = CustomerContent;
         }
         field(60052; "Edit Posted Ledger Entries"; Boolean)
         {
             Description = 'sundar';
+            DataClassification = CustomerContent;
         }
     }
     keys

@@ -6,16 +6,16 @@ xmlport 80182 "CRM Segment Line"
     {
         textelement(SegmentLines)
         {
-            tableelement("<segmentline>";"Segment Line")
+            tableelement("<segmentline>"; "Segment Line")
             {
                 XmlName = 'SegmentLine';
-                fieldelement(SegmentNo;"<SegmentLine>"."Segment No.")
+                fieldelement(SegmentNo; "<SegmentLine>"."Segment No.")
                 {
                 }
-                fieldelement(LineNo;"<SegmentLine>"."Line No.")
+                fieldelement(LineNo; "<SegmentLine>"."Line No.")
                 {
                 }
-                fieldelement(ContactNo;"<SegmentLine>"."Contact No.")
+                fieldelement(ContactNo; "<SegmentLine>"."Contact No.")
                 {
                 }
             }

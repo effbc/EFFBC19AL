@@ -139,8 +139,8 @@ codeunit 60022 "BOM Cost Updation"
         
          UNTIL "Posted Material Issues Header".NEXT=0;
          */
-        
-        
+
+
         //"Material Issues header".SETFILTER("Material Issues header"."No.",'M*');
         //SCS09HMU1551..SCS09HMU2220
         //SCS09HMU2223..SCS09HMU3400
@@ -156,43 +156,43 @@ codeunit 60022 "BOM Cost Updation"
         //SCS09GSL0201..SCS09GSL0263
         //SCS09GSL1001..SCS09GSL1171
         //SCS09CRL2597..SCS09CRL2706
-        
-        "Material Issues header".SETRANGE("Material Issues header"."Prod. Order No.",'SCS09CRL2597','SCS09CRL2706');
-        "Material Issues header".SETRANGE("Material Issues header"."Prod. Order Line No.",10000);
-        "Material Issues header".SETRANGE("Material Issues header".Status,"Material Issues header".Status::Released);
+
+        "Material Issues header".SETRANGE("Material Issues header"."Prod. Order No.", 'SCS09CRL2597', 'SCS09CRL2706');
+        "Material Issues header".SETRANGE("Material Issues header"."Prod. Order Line No.", 10000);
+        "Material Issues header".SETRANGE("Material Issues header".Status, "Material Issues header".Status::Released);
         MESSAGE(FORMAT("Material Issues header".COUNT));
         IF "Material Issues header".FINDSET THEN
-        REPEAT
-          "Material Issues header".Rejected:=TRUE;
-          "Material Issues header".MODIFY;
-          /*"Material Issues Line".RESET;
-          "Material Issues Line".SETRANGE("Material Issues Line"."Document No.","Material Issues header"."No.");
-          IF "Material Issues Line".FINDSET THEN
-          REPEAT
-            "Material Issues Line".DELETE;
-          UNTIL "Material Issues Line".NEXT=0;
-          "Material Issues header".DELETE;
-          "Tracking Specification".RESET;
-          "Tracking Specification".SETRANGE("Tracking Specification"."Order No.","Material Issues header"."No.");
-          IF "Tracking Specification".FINDSET THEN
-          REPEAT
-            "Tracking Specification".DELETE;
-          UNTIL "Tracking Specification".NEXT=0;*/
-        UNTIL "Material Issues header".NEXT=0;
+            REPEAT
+                "Material Issues header".Rejected := TRUE;
+                "Material Issues header".MODIFY;
+            /*"Material Issues Line".RESET;
+            "Material Issues Line".SETRANGE("Material Issues Line"."Document No.","Material Issues header"."No.");
+            IF "Material Issues Line".FINDSET THEN
+            REPEAT
+              "Material Issues Line".DELETE;
+            UNTIL "Material Issues Line".NEXT=0;
+            "Material Issues header".DELETE;
+            "Tracking Specification".RESET;
+            "Tracking Specification".SETRANGE("Tracking Specification"."Order No.","Material Issues header"."No.");
+            IF "Tracking Specification".FINDSET THEN
+            REPEAT
+              "Tracking Specification".DELETE;
+            UNTIL "Tracking Specification".NEXT=0;*/
+            UNTIL "Material Issues header".NEXT = 0;
 
     end;
 
     var
-        ProdBOMHeader : Record "Production BOM Header";
-        ProdBOMHeader2 : Record "Production BOM Header";
-        ProdBOMLine : Record "Production BOM Line";
-        Item : Record Item;
-        "Material Issues header" : Record "Material Issues Header";
-        "Material Issues Line" : Record "Material Issues Line";
-        "Tracking Specification" : Record "Mat.Issue Track. Specification";
-        "tRACKING qTY" : Decimal;
-        "Posted Material Issues Header" : Record "Posted Material Issues Header";
-        Pending_Qty : Decimal;
-        x : Codeunit "Release MaterialIssue Document";
+        ProdBOMHeader: Record "Production BOM Header";
+        ProdBOMHeader2: Record "Production BOM Header";
+        ProdBOMLine: Record "Production BOM Line";
+        Item: Record Item;
+        "Material Issues header": Record "Material Issues Header";
+        "Material Issues Line": Record "Material Issues Line";
+        "Tracking Specification": Record "Mat.Issue Track. Specification";
+        "tRACKING qTY": Decimal;
+        "Posted Material Issues Header": Record "Posted Material Issues Header";
+        Pending_Qty: Decimal;
+        x: Codeunit "Release MaterialIssue Document";
 }
 

@@ -2,10 +2,10 @@ page 99000764 "Routing List"
 {
     // version NAVW17.00
 
-    CaptionML = ENU='Routing List',
-                ENN='Routing List';
+    CaptionML = ENU = 'Routing List',
+                ENN = 'Routing List';
     CardPageID = Routing;
-    DataCaptionFields = "No.",Description;
+    DataCaptionFields = "No.", Description;
     Editable = false;
     PageType = List;
     SourceTable = "Routing Header";
@@ -17,34 +17,34 @@ page 99000764 "Routing List"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Style = Favorable;
                     StyleExpr = Running_bom_flag;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Style = Unfavorable;
                     StyleExpr = old_bom_flag;
                 }
-                field(Type;Type)
+                field(Type; Type)
                 {
                     Visible = false;
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                     Visible = false;
                 }
-                field("Version Nos.";"Version Nos.")
+                field("Version Nos."; "Version Nos.")
                 {
                     Visible = false;
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("Last Date Modified"; "Last Date Modified")
                 {
                     Visible = false;
                 }
             }
-            field("xRec.COUNTAPPROX";xRec.COUNTAPPROX)
+            field("xRec.COUNTAPPROX"; xRec.COUNTAPPROX)
             {
             }
             group(Control1102152000)
@@ -56,12 +56,12 @@ page 99000764 "Routing List"
                     group(Control1102152003)
                     {
                         ShowCaption = false;
-                        field("Bom Status Running";"Bom Status Running")
+                        field("Bom Status Running"; "Bom Status Running")
                         {
                             Style = Favorable;
                             StyleExpr = TRUE;
                         }
-                        field("Bom Status old";"Bom Status old")
+                        field("Bom Status old"; "Bom Status old")
                         {
                             Style = Unfavorable;
                             StyleExpr = TRUE;
@@ -72,11 +72,11 @@ page 99000764 "Routing List"
         }
         area(factboxes)
         {
-            systempart(Control1900383207;Links)
+            systempart(Control1900383207; Links)
             {
                 Visible = false;
             }
-            systempart(Control1905767507;Notes)
+            systempart(Control1905767507; Notes)
             {
                 Visible = true;
             }
@@ -89,13 +89,13 @@ page 99000764 "Routing List"
         {
             group("&Routing")
             {
-                CaptionML = ENU='&Routing',
-                            ENN='&Routing';
+                CaptionML = ENU = '&Routing',
+                            ENN = '&Routing';
                 Image = Route;
                 action("Co&mments")
                 {
-                    CaptionML = ENU='Co&mments',
-                                ENN='Co&mments';
+                    CaptionML = ENU = 'Co&mments',
+                                ENN = 'Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Manufacturing Comment Sheet";
                     RunPageLink = Table Name=CONST(Routing Header),No.=FIELD(No.);
@@ -109,7 +109,7 @@ page 99000764 "Routing List"
                     //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                     //PromotedCategory = Process;
                     RunObject = Page "Routing Version List";
-                    RunPageLink = Routing No.=FIELD(No.);
+                                    RunPageLink = Routing No.=FIELD(No.);
                 }
                 action("Where-used")
                 {
@@ -117,7 +117,7 @@ page 99000764 "Routing List"
                                 ENN='Where-used';
                     Image = "Where-Used";
                     RunObject = Page "Where-Used Item List";
-                    RunPageLink = Routing No.=FIELD(No.);
+                                    RunPageLink = Routing No.=FIELD(No.);
                     RunPageView = SORTING(Routing No.);
                 }
             }

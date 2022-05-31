@@ -12,10 +12,10 @@ page 60132 "ICN Numbers"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("ICN No.";"ICN No.")
+                field("ICN No."; "ICN No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
             }

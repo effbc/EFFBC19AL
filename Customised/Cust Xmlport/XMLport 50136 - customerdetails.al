@@ -6,16 +6,16 @@ xmlport 50136 customerdetails
     {
         textelement(Customers)
         {
-            tableelement(Customer;Customer)
+            tableelement(Customer; Customer)
             {
                 XmlName = 'Customer';
-                fieldelement(No;Customer."No.")
+                fieldelement(No; Customer."No.")
                 {
                 }
-                fieldelement(Name;Customer.Name)
+                fieldelement(Name; Customer.Name)
                 {
                 }
-                fieldelement(TallyRef;Customer."Tally Ref")
+                fieldelement(TallyRef; Customer."Tally Ref")
                 {
                 }
             }

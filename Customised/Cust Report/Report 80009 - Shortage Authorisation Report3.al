@@ -23,9 +23,9 @@ report 80009 "Shortage Authorisation Report3"
 
     dataset
     {
-        dataitem("Item Lot Numbers2";"Item Lot Numbers")
+        dataitem("Item Lot Numbers2"; "Item Lot Numbers")
         {
-            DataItemTableView = SORTING(Sales Order No.,Product Type,Production Order No.,Authorisation,Lead Time2) ORDER(Ascending) WHERE(Authorisation=FILTER(WAP|WFA|Authorised|indent),Shortage=FILTER(>0),Sales Order No.=FILTER(<>''));
+            DataItemTableView = SORTING(Sales Order No., Product Type, Production Order No., Authorisation, Lead Time2) ORDER(Ascending) WHERE(Authorisation = FILTER(WAP | WFA | Authorised | indent), Shortage = FILTER(> 0), Sales Order No.=FILTER(<>''));
             column(SALE_ORDER_TOTAL1;SALE_ORDER_TOTAL1)
             {
             }

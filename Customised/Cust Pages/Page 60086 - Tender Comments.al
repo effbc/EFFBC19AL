@@ -13,10 +13,10 @@ page 60086 "Tender Comments"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field(Date;Date)
+                field(Date; Date)
                 {
                 }
-                field(Comment;Comment)
+                field(Comment; Comment)
                 {
                 }
             }
@@ -27,7 +27,7 @@ page 60086 "Tender Comments"
     {
     }
 
-    trigger OnNewRecord(BelowxRec : Boolean);
+    trigger OnNewRecord(BelowxRec: Boolean);
     begin
         SetUpNewLine;
     end;

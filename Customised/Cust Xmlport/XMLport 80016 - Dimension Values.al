@@ -6,19 +6,19 @@ xmlport 80016 "Dimension Values"
     {
         textelement(DimensionValues)
         {
-            tableelement("Dimension Value";"Dimension Value")
+            tableelement("Dimension Value"; "Dimension Value")
             {
                 XmlName = 'DimensionValue';
-                fieldelement(DimensionCode;"Dimension Value"."Dimension Code")
+                fieldelement(DimensionCode; "Dimension Value"."Dimension Code")
                 {
                 }
-                fieldelement(Code;"Dimension Value".Code)
+                fieldelement(Code; "Dimension Value".Code)
                 {
                 }
-                fieldelement(Name;"Dimension Value".Name)
+                fieldelement(Name; "Dimension Value".Name)
                 {
                 }
-                fieldelement(DimensionValueType;"Dimension Value"."Dimension Value Type")
+                fieldelement(DimensionValueType; "Dimension Value"."Dimension Value Type")
                 {
                 }
             }

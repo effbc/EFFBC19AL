@@ -6,19 +6,19 @@ xmlport 80106 "QC Specification Header"
     {
         textelement(SpecificationHeader)
         {
-            tableelement("<specificationheader>";"Specification Header")
+            tableelement("<specificationheader>"; "Specification Header")
             {
                 XmlName = 'SpecificationHeader';
-                fieldelement(SpecID;"<SpecificationHeader>"."Spec ID")
+                fieldelement(SpecID; "<SpecificationHeader>"."Spec ID")
                 {
                 }
-                fieldelement(Description;"<SpecificationHeader>".Description)
+                fieldelement(Description; "<SpecificationHeader>".Description)
                 {
                 }
-                fieldelement(SamplingPlan;"<SpecificationHeader>"."Sampling Plan")
+                fieldelement(SamplingPlan; "<SpecificationHeader>"."Sampling Plan")
                 {
                 }
-                fieldelement(Status;"<SpecificationHeader>".Status)
+                fieldelement(Status; "<SpecificationHeader>".Status)
                 {
                 }
             }

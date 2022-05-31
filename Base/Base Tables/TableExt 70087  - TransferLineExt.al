@@ -5,30 +5,36 @@ tableextension 70087 TransferLineExt extends "Transfer Line"
         field(60000; "Position Reference No."; Code[20])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60001; "Prod. Order No."; Code[20])
         {
             Description = 'B2B';
             TableRelation = "Production Order"."No." WHERE(Status = CONST(Released));
+            DataClassification = CustomerContent;
         }
         field(60002; "Prod. Order Line No."; Integer)
         {
             Description = 'B2B';
             TableRelation = "Prod. Order Line"."Line No." WHERE("Prod. Order No." = FIELD("Prod. Order No."),
                                                                  Status = CONST(Released));
+            DataClassification = CustomerContent;
         }
         field(60003; "Allow Excess Qty."; Boolean)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60004; "Shelf No."; Code[20])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60005; "Production BOM No."; Code[20])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             var
@@ -56,11 +62,13 @@ tableextension 70087 TransferLineExt extends "Transfer Line"
         field(60006; "Type of Material"; Enum TypeofMaterial)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60007; "Reason Code"; Code[20])
         {
             Description = 'B2B';
             TableRelation = "Reason Code".Code;
+            DataClassification = CustomerContent;
         }
         field(60008; "Prod. Order Comp. Line No."; Integer)
         {
@@ -69,6 +77,7 @@ tableextension 70087 TransferLineExt extends "Transfer Line"
             TableRelation = "Prod. Order Component"."Line No." WHERE(Status = CONST(Released),
                                                                       "Prod. Order No." = FIELD("Prod. Order No."),
                                                                       "Prod. Order Line No." = FIELD("Prod. Order Line No."));
+            DataClassification = CustomerContent;
         }
         field(60009; Inventory; Decimal)
         {
@@ -83,12 +92,14 @@ tableextension 70087 TransferLineExt extends "Transfer Line"
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60091; "OLD Dim Set ID"; Integer)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
             TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -98,16 +109,20 @@ tableextension 70087 TransferLineExt extends "Transfer Line"
         field(60100; Copy; Boolean)
         {
             Description = 'B2B-Internal field used for Allow excess Qty. field Validations';
+            DataClassification = CustomerContent;
         }
         field(60101; Reason; Text[150])
         {
+            DataClassification = CustomerContent;
         }
         field(60102; Priority; Enum Prority)
         {
+            DataClassification = CustomerContent;
 
         }
         field(60103; "Status."; Enum Status1)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -117,38 +132,48 @@ tableextension 70087 TransferLineExt extends "Transfer Line"
         field(60104; "Updation Date Time"; DateTime)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60105; Station; Code[10])
         {
             TableRelation = Station;
+            DataClassification = CustomerContent;
         }
         field(60106; "Required Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60107; "DL Model"; Code[20])
         {
             TableRelation = "Service Price Group";
+            DataClassification = CustomerContent;
         }
         field(60108; Type; Text[50])
         {
+            DataClassification = CustomerContent;
         }
         field(60109; "Station Name"; Text[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60110; "Promised Receipt Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60111; "Requirement Reason"; Enum "Requirement Reason")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60112; Remarks; Text[150])
         {
+            DataClassification = CustomerContent;
         }
         field(33000250; "Spec ID"; Code[20])
         {
             Description = 'QC1.0';
             TableRelation = "Specification Header";
+            DataClassification = CustomerContent;
         }
         field(33000251; "Quantity Accepted"; Decimal)
         {
@@ -172,6 +197,7 @@ tableextension 70087 TransferLineExt extends "Transfer Line"
         {
             Description = 'QC1.0';
             Editable = false;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -191,6 +217,7 @@ tableextension 70087 TransferLineExt extends "Transfer Line"
         {
             Description = 'QC1.0';
             MinValue = 0;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -203,15 +230,18 @@ tableextension 70087 TransferLineExt extends "Transfer Line"
             Description = 'QC1.0';
             Editable = false;
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(33000258; "Qty. Sending To Quality(R)"; Decimal)
         {
             Description = 'QC1.0';
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(33000259; "Spec Version"; Code[20])
         {
             TableRelation = "Specification Version"."Version Code" WHERE("Specification No." = FIELD("Spec ID"));
+            DataClassification = CustomerContent;
         }
     }
     keys

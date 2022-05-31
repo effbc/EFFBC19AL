@@ -6,28 +6,28 @@ xmlport 80205 item1
     {
         textelement(Customers)
         {
-            tableelement(Customer;Customer)
+            tableelement(Customer; Customer)
             {
                 XmlName = 'Customer';
-                fieldelement(No;Customer."No.")
+                fieldelement(No; Customer."No.")
                 {
                 }
-                fieldelement(Name;Customer.Name)
+                fieldelement(Name; Customer.Name)
                 {
                 }
-                fieldelement(VATBusPostingGroup;Customer."VAT Bus. Posting Group")
+                fieldelement(VATBusPostingGroup; Customer."VAT Bus. Posting Group")
                 {
                 }
-                fieldelement(ExciseBusPostingGroup;Customer."Excise Bus. Posting Group")
+                fieldelement(ExciseBusPostingGroup; Customer."Excise Bus. Posting Group")
                 {
                 }
-                fieldelement(CustomerPostingGroup;Customer."Customer Posting Group")
+                fieldelement(CustomerPostingGroup; Customer."Customer Posting Group")
                 {
                 }
-                fieldelement(GenBusPostingGroup;Customer."Gen. Bus. Posting Group")
+                fieldelement(GenBusPostingGroup; Customer."Gen. Bus. Posting Group")
                 {
                 }
-                fieldelement(VATBusinessPostingGroup;Customer."VAT Bus. Posting Group")
+                fieldelement(VATBusinessPostingGroup; Customer."VAT Bus. Posting Group")
                 {
                 }
             }

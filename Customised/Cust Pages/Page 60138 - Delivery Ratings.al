@@ -12,13 +12,13 @@ page 60138 "Delivery Ratings"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Minumum Value";"Minumum Value")
+                field("Minumum Value"; "Minumum Value")
                 {
                 }
-                field("Maximum Value";"Maximum Value")
+                field("Maximum Value"; "Maximum Value")
                 {
                 }
-                field(Rating;Rating)
+                field(Rating; Rating)
                 {
                 }
             }

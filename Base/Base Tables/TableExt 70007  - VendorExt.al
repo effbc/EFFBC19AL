@@ -8,10 +8,12 @@ tableextension 70007 VendorExt extends Vendor
         {
             Description = 'MSPT 1.0';
             TableRelation = "MSPT Header".Code WHERE(Status = CONST(Released));
+            DataClassification = CustomerContent;
         }
         field(50002; "MSPT Applicable at Line Level"; Boolean)
         {
             Description = 'MSPT 1.0';
+            DataClassification = CustomerContent;
         }
         field(50003; "MSPT Balance Due"; Decimal)
         {
@@ -26,40 +28,50 @@ tableextension 70007 VendorExt extends Vendor
         }
         field(50004; "Tally Reference"; Text[100])
         {
+            DataClassification = CustomerContent;
         }
         field(60001; "Address 3"; Text[70])
         {
+            DataClassification = CustomerContent;
         }
         field(60085; Type; Enum "Vendor Enum")
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
 
         }
         field(60086; "Updated in Cashflow"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60087; "Standard Insurnece %"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60088; "Consider Vendor Invoice Date"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60089; "Standard Packing %"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60090; "User Id"; Code[50])
         {
             Description = 'Rev01';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60091; "First Order Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60101; "Personal Account"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60102; "Vendor Balance Verified"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60103; "Prod Vendor Balance"; Decimal)
         {
@@ -93,31 +105,40 @@ tableextension 70007 VendorExt extends Vendor
         }
         field(60106; category; Enum "Vendor category")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60107; "Mobile No."; Text[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60108; "Name of Bank"; Text[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60109; "Branch Name"; Text[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60110; "RTGS Code"; Code[15])
         {
+            DataClassification = CustomerContent;
         }
         field(60111; "Phone No2"; Text[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60112; "Phone No3"; Text[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60113; "Phone No4"; Text[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60114; "C-Form"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60115; "Admin Vendor Balance"; Decimal)
         {
@@ -131,76 +152,94 @@ tableextension 70007 VendorExt extends Vendor
         }
         field(70001; "Vendor Opening Balance"; Decimal)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Durga maheswari';
         }
         field(70002; "Vendor Closing Balance"; Decimal)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Durgamaheswari';
         }
         field(80000; "Excise Registration No.2"; Text[20])
         {
+            DataClassification = CustomerContent;
         }
         field(80001; "VAT Business Posting Group 2"; Code[10])
         {
             TableRelation = "VAT Business Posting Group".Code;
+            DataClassification = CustomerContent;
         }
         field(80002; Remarks; Text[100])
         {
+            DataClassification = CustomerContent;
         }
         field(80003; "TAN Number"; Code[10])
         {
+            DataClassification = CustomerContent;
         }
         field(80005; "TDS Alert"; Boolean)
         {
             Description = 'Rev01';
+            DataClassification = CustomerContent;
         }
         field(33000250; "Rework Location"; Code[20])
         {
             TableRelation = Location;
+            DataClassification = CustomerContent;
         }
         field(33000251; "Need to send Mail"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(33000252; "Way bill Required"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(33000253; "Mail Required"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(33000254; "Send Mail"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(33000255; "T.I.N Status"; Enum "Vendor TIN Status")
         {
+            DataClassification = CustomerContent;
 
         }
         field(33000256; "Vendor Category"; Enum "Vendor Category1")
         {
+            DataClassification = CustomerContent;
 
         }
         field(33000257; "Vendor Status"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(33000258; "Transportation Days"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(33000259; "Online Vendor"; Boolean)
         {
             Description = 'Added on 19-12-2017 Inorder to have Online/Offline vendor Segregation';
+            DataClassification = CustomerContent;
         }
         field(33000260; "GST Verification"; Boolean)
         {
             Description = 'Added on 23-05-2018 for GST Verification';
+            DataClassification = CustomerContent;
         }
         field(33000261; Created_Date_time; Date)
         {
             Description = 'added on 10-jul-18 by sujani';
+            DataClassification = CustomerContent;
         }
         field(33000262; "Minimum Order Value"; Decimal)
         {
             Description = 'added on 14-dec-18 by sujani';
+            DataClassification = CustomerContent;
         }
         field(33000263; "No Of POs"; Integer)
         {
@@ -212,20 +251,21 @@ tableextension 70007 VendorExt extends Vendor
         field(33000264; Maintenacecommonmail; Boolean)
         {
             Description = 'Added by Vishnu on 03-07-2019';
+            DataClassification = CustomerContent;
         }
         field(33000265; "Maanager Approved"; Boolean)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu on 12-11-2020';
         }
         field(33000266; "Approved By"; Code[50])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu on 12-11-2020';
         }
         field(33000267; Purchase_Finance; Enum "Purchase_Finance Enum")
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
 
         }
     }

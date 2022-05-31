@@ -4,7 +4,7 @@ page 60245 "Effe Hyd Sale Orders"
 
     Caption = 'Sales Order';
     PageType = Document;
-    Permissions = TableData "Sales Invoice Header"=rm;
+    Permissions = TableData "Sales Invoice Header" = rm;
     RefreshOnActivate = true;
     SourceTable = "Sales Header";
     SourceTableView = WHERE(Document Type=FILTER(Order),Order Status=FILTER(<>Temporary Close),No.=FILTER(EFF/SAL/*/T*));
@@ -926,7 +926,7 @@ page 60245 "Effe Hyd Sale Orders"
                     Caption = 'Card';
                     Image = Card;
                     RunObject = Page "Customer Card";
-                    RunPageLink = No.=FIELD(Sell-to Customer No.);
+                                    RunPageLink = No.=FIELD(Sell-to Customer No.);
                     ShortCutKey = 'Shift+F7';
                 }
                 action("Co&mments")
@@ -934,14 +934,14 @@ page 60245 "Effe Hyd Sale Orders"
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = Page "Sales Comment Sheet";
-                    RunPageLink = Document Type=FIELD(Document Type),No.=FIELD(No.),Document Line No.=CONST(0);
+                                    RunPageLink = Document Type=FIELD(Document Type),No.=FIELD(No.),Document Line No.=CONST(0);
                 }
                 action("S&hipments")
                 {
                     Caption = 'S&hipments';
                     Image = Shipment;
                     RunObject = Page "Posted Sales Shipments";
-                    RunPageLink = Order No.=FIELD(No.);
+                                    RunPageLink = Order No.=FIELD(No.);
                     RunPageView = SORTING(Order No.);
                 }
                 action(Invoices)
@@ -949,7 +949,7 @@ page 60245 "Effe Hyd Sale Orders"
                     Caption = 'Invoices';
                     Image = Invoice;
                     RunObject = Page "Posted Sales Invoices";
-                    RunPageLink = Order No.=FIELD(No.);
+                                    RunPageLink = Order No.=FIELD(No.);
                     RunPageView = SORTING(Order No.);
                 }
                 action("Prepa&yment Invoices")
@@ -957,7 +957,7 @@ page 60245 "Effe Hyd Sale Orders"
                     Caption = 'Prepa&yment Invoices';
                     Image = PrepaymentInvoice;
                     RunObject = Page "Posted Sales Invoices";
-                    RunPageLink = Prepayment Order No.=FIELD(No.);
+                                    RunPageLink = Prepayment Order No.=FIELD(No.);
                     RunPageView = SORTING(Prepayment Order No.);
                 }
                 action("Prepayment Credi&t Memos")
@@ -965,7 +965,7 @@ page 60245 "Effe Hyd Sale Orders"
                     Caption = 'Prepayment Credi&t Memos';
                     Image = PrepaymentCreditMemo;
                     RunObject = Page "Posted Sales Credit Memos";
-                    RunPageLink = Prepayment Order No.=FIELD(No.);
+                                    RunPageLink = Prepayment Order No.=FIELD(No.);
                     RunPageView = SORTING(Prepayment Order No.);
                 }
                 action(Dimensions)
@@ -999,7 +999,7 @@ page 60245 "Effe Hyd Sale Orders"
                     Caption = 'Whse. Shipment Lines';
                     Image = ShipmentLines;
                     RunObject = Page "Whse. Shipment Lines";
-                    RunPageLink = Source Type=CONST(37),Source Subtype=FIELD(Document Type),Source No.=FIELD(No.);
+                                    RunPageLink = Source Type=CONST(37),Source Subtype=FIELD(Document Type),Source No.=FIELD(No.);
                     RunPageView = SORTING(Source Type,Source Subtype,Source No.,Source Line No.);
                     Visible = false;
                 }
@@ -1008,7 +1008,7 @@ page 60245 "Effe Hyd Sale Orders"
                     Caption = 'In&vt. Put-away/Pick Lines';
                     Image = PickLines;
                     RunObject = Page "Warehouse Activity List";
-                    RunPageLink = Source Document=CONST(Sales Order),Source No.=FIELD(No.);
+                                    RunPageLink = Source Document=CONST(Sales Order),Source No.=FIELD(No.);
                     RunPageView = SORTING(Source Document,Source No.,Location Code);
                     Visible = false;
                 }
@@ -1050,21 +1050,21 @@ page 60245 "Effe Hyd Sale Orders"
                     Caption = 'St&ructure';
                     Image = Hierarchy;
                     RunObject = Page "Structure Order Details";
-                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),Structure Code=FIELD(Structure),Document Line No.=FILTER(0);
+                                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),Structure Code=FIELD(Structure),Document Line No.=FILTER(0);
                 }
                 action("Transit Documents")
                 {
                     Caption = 'Transit Documents';
                     Image = TransferOrder;
                     RunObject = Page "Transit Document Order Details";
-                    RunPageLink = Type=CONST(Sale),PO / SO No.=FIELD(No.),Vendor / Customer Ref.=FIELD(Sell-to Customer No.),State=FIELD(State);
+                                    RunPageLink = Type=CONST(Sale),PO / SO No.=FIELD(No.),Vendor / Customer Ref.=FIELD(Sell-to Customer No.),State=FIELD(State);
                 }
                 action("Detailed &Tax")
                 {
                     Caption = 'Detailed &Tax';
                     Image = TaxDetail;
                     RunObject = Page "Sale Detailed Tax";
-                    RunPageLink = Document Type=FIELD(Document Type),Document No.=FIELD(No.),Transaction Type=CONST(Sale);
+                                    RunPageLink = Document Type=FIELD(Document Type),Document No.=FIELD(No.),Transaction Type=CONST(Sale);
                 }
                 separator(Action1102152025)
                 {
@@ -1074,21 +1074,21 @@ page 60245 "Effe Hyd Sale Orders"
                     Caption = 'Check List';
                     Image = CheckList;
                     RunObject = Page "Check List";
-                    RunPageLink = Document Type=CONST(Sales),Document No.=FIELD(No.);
+                                    RunPageLink = Document Type=CONST(Sales),Document No.=FIELD(No.);
                 }
                 action("&MSPT Order Details")
                 {
                     Caption = '&MSPT Order Details';
                     Image = ViewDetails;
                     RunObject = Page "MSPT Order Details";
-                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),MSPT Header Code=FIELD(MSPT Code),Party No.=FIELD(Sell-to Customer No.);
+                                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),MSPT Header Code=FIELD(MSPT Code),Party No.=FIELD(Sell-to Customer No.);
                 }
                 action(Schedule)
                 {
                     Caption = 'Schedule';
                     Image = PlannedOrder;
                     RunObject = Page Schedule;
-                    RunPageLink = Document No.=FIELD(Tender No.),Document Type=CONST(Order);
+                                    RunPageLink = Document No.=FIELD(Tender No.),Document Type=CONST(Order);
                 }
             }
             group(Approval)
@@ -2816,16 +2816,16 @@ page 60245 "Effe Hyd Sale Orders"
     var
         Text000 : Label 'Unable to execute this function while in view only mode.';
         CopySalesDoc : Report "Copy Sales Document";
-        MoveNegSalesLines : Report "Move Negative Sales Lines";
-        ApprovalsMgmt : Codeunit "Approvals Mgmt.";
-        ReportPrint : Codeunit "Test Report-Print";
-        DocPrint : Codeunit "Document-Print";
-        ArchiveManagement : Codeunit ArchiveManagement;
-        SalesInfoPaneMgt : Codeunit "Sales Info-Pane Management";
-        SalesSetup : Record "Sales & Receivables Setup";
-        UserMgt : Codeunit "User Setup Management";
-        Usage : Option "Order Confirmation","Work Order";
-        Text001 : Label 'There are non posted Prepayment Amounts on %1 %2.';
+                           MoveNegSalesLines : Report "Move Negative Sales Lines";
+                           ApprovalsMgmt : Codeunit "Approvals Mgmt.";
+                           ReportPrint : Codeunit "Test Report-Print";
+                           DocPrint : Codeunit "Document-Print";
+                           ArchiveManagement : Codeunit ArchiveManagement;
+                           SalesInfoPaneMgt : Codeunit "Sales Info-Pane Management";
+                           SalesSetup : Record "Sales & Receivables Setup";
+                           UserMgt : Codeunit "User Setup Management";
+                           Usage : Option "Order Confirmation","Work Order";
+                           Text001 : Label 'There are non posted Prepayment Amounts on %1 %2.';
         Text002 : Label 'There are unpaid Prepayment Invoices related to %1 %2.';
         SalesLine : Record "Sales Line";
         Text16500 : Label 'You can not uncheck Re-Dispatch until Return Receipt No. is Blank.';
@@ -2928,74 +2928,74 @@ page 60245 "Effe Hyd Sale Orders"
         Text19070588 : Label 'Sell-to Customer';
         Text19069283 : Label 'Bill-to Customer';
         ChangeExchangeRate : Page "Change Exchange Rate";
-        "--Rev01" : Integer;
-        SQLConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
-        RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
-        DepartmentsCode : Text[5];
-        SaleInvHeadRec : Record "Sales Invoice Header";
-        Warranty_Var : DateFormula;
-        SHNew : Record "Sales Header";
-        OrderNo : Code[30];
-        OMSIntegrateCode : Codeunit SQLIntegration;
-        POSTEDINVOICE1 : Record "Sales Invoice Header";
-        Fyear : Integer;
-        SalesLine1 : Record "Sales Line";
-        ScheduleComp : Record Schedule2;
-        ReservationEntry : Record "Reservation Entry";
-        Item : Record Item;
-        "PT_Adv%" : Decimal;
-        "PT_Del%" : Decimal;
-        "PT_Crd%" : Decimal;
-        SL1 : Record "Sales Line";
-        LineAmtLOA : Decimal;
-        AdvAmt : Decimal;
-        RetentionAmt : Decimal;
-        SupplyAmt : Decimal;
-        InstAmt : Decimal;
-        CustPostGrp : Code[10];
-        SQLInt : Codeunit SQLIntegration;
-        Schedl2 : Record Schedule2;
-        ExteranlDoc : Code[15];
-        PostingDt : Date;
-        CustNo : Code[20];
-        PayTerm : Record "Payment Terms";
-        CustLedgEntr : Record "Cust. Ledger Entry";
-        Editable_Bool : Boolean;
-        TH : Record "Tender Header";
-        "--EFFUPG--" : Integer;
-        TempFileName : Text;
-        OpenApprovalEntriesExist : Boolean;
-        OpenApprovalEntriesExistForCurrUser : Boolean;
+                                 "--Rev01" : Integer;
+                                 SQLConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
+                                 RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
+                                 DepartmentsCode : Text[5];
+                                 SaleInvHeadRec : Record "Sales Invoice Header";
+                                 Warranty_Var : DateFormula;
+                                 SHNew : Record "Sales Header";
+                                 OrderNo : Code[30];
+                                 OMSIntegrateCode : Codeunit SQLIntegration;
+                                 POSTEDINVOICE1 : Record "Sales Invoice Header";
+                                 Fyear : Integer;
+                                 SalesLine1 : Record "Sales Line";
+                                 ScheduleComp : Record Schedule2;
+                                 ReservationEntry : Record "Reservation Entry";
+                                 Item : Record Item;
+                                 "PT_Adv%" : Decimal;
+                                 "PT_Del%" : Decimal;
+                                 "PT_Crd%" : Decimal;
+                                 SL1 : Record "Sales Line";
+                                 LineAmtLOA : Decimal;
+                                 AdvAmt : Decimal;
+                                 RetentionAmt : Decimal;
+                                 SupplyAmt : Decimal;
+                                 InstAmt : Decimal;
+                                 CustPostGrp : Code[10];
+                                 SQLInt : Codeunit SQLIntegration;
+                                 Schedl2 : Record Schedule2;
+                                 ExteranlDoc : Code[15];
+                                 PostingDt : Date;
+                                 CustNo : Code[20];
+                                 PayTerm : Record "Payment Terms";
+                                 CustLedgEntr : Record "Cust. Ledger Entry";
+                                 Editable_Bool : Boolean;
+                                 TH : Record "Tender Header";
+                                 "--EFFUPG--" : Integer;
+                                 TempFileName : Text;
+                                 OpenApprovalEntriesExist : Boolean;
+                                 OpenApprovalEntriesExistForCurrUser : Boolean;
 
     [LineStart(19790)]
-    local procedure Post(PostingCodeunitID : Integer);
+    local procedure Post(PostingCodeunitID: Integer);
     begin
         SendToPosting(PostingCodeunitID);
         IF "Job Queue Status" = "Job Queue Status"::"Scheduled for Posting" THEN
-          CurrPage.CLOSE;
+            CurrPage.CLOSE;
         CurrPage.UPDATE(FALSE);
     end;
 
     [LineStart(19796)]
-    procedure UpdateAllowed() : Boolean;
+    procedure UpdateAllowed(): Boolean;
     begin
         IF CurrPage.EDITABLE = FALSE THEN
-          ERROR(Text000);
+            ERROR(Text000);
         EXIT(TRUE);
     end;
 
     [LineStart(19801)]
     local procedure UpdateInfoPanel();
     var
-        DifferSellToBillTo : Boolean;
+        DifferSellToBillTo: Boolean;
     begin
         DifferSellToBillTo := "Sell-to Customer No." <> "Bill-to Customer No.";
         SalesHistoryBtnVisible := DifferSellToBillTo;
         BillToCommentPictVisible := DifferSellToBillTo;
         BillToCommentBtnVisible := DifferSellToBillTo;
-        SalesHistoryStnVisible := SalesInfoPaneMgt.DocExist(Rec,"Sell-to Customer No.");
+        SalesHistoryStnVisible := SalesInfoPaneMgt.DocExist(Rec, "Sell-to Customer No.");
         IF DifferSellToBillTo THEN
-          SalesHistoryBtnVisible := SalesInfoPaneMgt.DocExist(Rec,"Bill-to Customer No.")
+            SalesHistoryBtnVisible := SalesInfoPaneMgt.DocExist(Rec, "Bill-to Customer No.")
     end;
 
     [LineStart(19810)]
@@ -3007,7 +3007,7 @@ page 60245 "Effe Hyd Sale Orders"
     [LineStart(19813)]
     local procedure SetControlVisibility();
     var
-        ApprovalsMgmt : Codeunit "Approvals Mgmt.";
+        ApprovalsMgmt: Codeunit "Approvals Mgmt.";
     begin
         //JobQueueVisible := "Job Queue Status" = "Job Queue Status"::"Scheduled for Posting";
         //HasIncomingDocument := "Incoming Document Entry No." <> 0;
@@ -3035,222 +3035,218 @@ page 60245 "Effe Hyd Sale Orders"
     end;
 
     [LineStart(19832)]
-    procedure CreateOrders(Qtyparam : Decimal) OrdersCreated : Boolean;
+    procedure CreateOrders(Qtyparam: Decimal) OrdersCreated: Boolean;
     var
-        Item : Record Item;
-        SalesLine : Record "Sales Line";
-        ProdOrderFromSale : Codeunit "Create Prod. Order from Sale";
+        Item: Record Item;
+        SalesLine: Record "Sales Line";
+        ProdOrderFromSale: Codeunit "Create Prod. Order from Sale";
     begin
         IF NOT SalesPlanLine.FINDSET THEN
-          EXIT;
+            EXIT;
 
         REPEAT
-          SalesLine.GET(
-            SalesLine."Document Type"::Order,
-            SalesPlanLine."Sales Order No.",
-            SalesPlanLine."Sales Order Line No.");
+            SalesLine.GET(
+              SalesLine."Document Type"::Order,
+              SalesPlanLine."Sales Order No.",
+              SalesPlanLine."Sales Order Line No.");
             //SalesLine.TESTFIELD("Shipment Date");
-          SalesLine.CALCFIELDS("Reserved Qty. (Base)");
-          //IF SalesLine."Outstanding Qty. (Base)" > SalesLine."Reserved Qty. (Base)" THEN BEGIN
+            SalesLine.CALCFIELDS("Reserved Qty. (Base)");
+            //IF SalesLine."Outstanding Qty. (Base)" > SalesLine."Reserved Qty. (Base)" THEN BEGIN
             Item.GET(SalesLine."No.");
             IF Item."Replenishment System" = Item."Replenishment System"::"Prod. Order" THEN BEGIN
-              OrdersCreated := TRUE;
-              ProdOrderFromSale.CreateProdOrder2(
-                SalesLine,NewStatus::Released,NewOrderType::ItemOrder,1);
-              IF NewOrderType = NewOrderType::ProjectOrder THEN
-                EXIT;
+                OrdersCreated := TRUE;
+                ProdOrderFromSale.CreateProdOrder2(
+                  SalesLine, NewStatus::Released, NewOrderType::ItemOrder, 1);
+                IF NewOrderType = NewOrderType::ProjectOrder THEN
+                    EXIT;
             END;
-          //END;
+        //END;
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
     [LineStart(19855)]
     procedure calcamt();
     begin
-        "Sale Order Total Amount":=0;
-        SalesLine.SETRANGE(SalesLine."Document No.","No.");
+        "Sale Order Total Amount" := 0;
+        SalesLine.SETRANGE(SalesLine."Document No.", "No.");
         IF SalesLine.FINDSET THEN
-         REPEAT
-          "Sale Order Total Amount"+=SalesLine."Line Amount"+SalesLine."Excise Amount"+SalesLine."Tax Amount";
-         UNTIL SalesLine.NEXT=0;
-         MODIFY;
+            REPEAT
+                "Sale Order Total Amount" += SalesLine."Line Amount" + SalesLine."Excise Amount" + SalesLine."Tax Amount";
+            UNTIL SalesLine.NEXT = 0;
+        MODIFY;
     end;
 
     [LineStart(19864)]
     procedure ChooseInvoice();
     var
-        temp : Integer;
+        temp: Integer;
     begin
-        temp:=0;
+        temp := 0;
         "sales header".RESET;
-        "sales header".SETFILTER("sales header"."External Document No.",'<>%1',' ');
+        "sales header".SETFILTER("sales header"."External Document No.", '<>%1', ' ');
         IF "sales header".FINDSET THEN
-        REPEAT
-        "sales header"."External Document No.":='';
-        "sales header".MODIFY;
-        UNTIL "sales header".NEXT=0;
-        
+            REPEAT
+                "sales header"."External Document No." := '';
+                "sales header".MODIFY;
+            UNTIL "sales header".NEXT = 0;
+
         CASE InvoiceNos OF
-        1:
-        BEGIN
-        
-          salhed.SETFILTER(salhed."Document Type",'Order');
-          salhed.SETFILTER(salhed."External Document No.",'<>%1','');
-          IF salhed.COUNT>0 THEN
-          IF salhed.FINDSET THEN
-          REPEAT
-          ERROR(salhed."No."+'  Sale Have the Invoice Number');
-          UNTIL salhed.NEXT=0;
-        
-        //ERROR('Invoice Number Already Assign to Another Sale Order');
-          //POSTEDINVOICE.RESET;
-        /*  POSTEDINVOICE.SETCURRENTKEY(POSTEDINVOICE."External Document No.");  //sreenivas modified this line
-          POSTEDINVOICE.ASCENDING;      //this line too
-          POSTEDINVOICE.SETRANGE(POSTEDINVOICE."Posting Date",(010412D),(310313D));
-          POSTEDINVOICE.SETFILTER(POSTEDINVOICE."External Document No.",'L00000..L99999');
-        //MESSAGE(FORMAT(POSTEDINVOICE.COUNT));
-          IF POSTEDINVOICE.FINDLAST THEN
-          BEGIN
-          y:='0';
-          y:=POSTEDINVOICE."External Document No.";
-          temp:=1;
-          END;
-          IF temp=0 THEN
-            "External Document No.":='L00001'
-          ELSE
-          "External Document No.":=INCSTR(y);*/
-        
-          POSTEDINVOICE.SETCURRENTKEY(POSTEDINVOICE."External Document No.");  //sreenivas modified this line
-          POSTEDINVOICE.ASCENDING;      //this line too
-          POSTEDINVOICE.SETRANGE(POSTEDINVOICE."Posting Date",(040113D),(033114D));
-          POSTEDINVOICE.SETFILTER(POSTEDINVOICE."External Document No.",'0..999');
-        //MESSAGE(FORMAT(POSTEDINVOICE.COUNT));
-          IF POSTEDINVOICE.FINDLAST THEN
-          BEGIN
-          y:='0';
-          y:=POSTEDINVOICE."External Document No.";
-          temp:=1;
-          END;
-          IF temp=0 THEN
-            "External Document No.":='001'
-          ELSE
-          "External Document No.":=INCSTR(y);
-        
-        //  UNTIL POSTEDINVOICE.NEXT = 0;
-        //  "External Document No.":=INCSTR(y);
-        //MESSAGE(FORMAT("External Document No."));
-          MODIFY;
-        END;
-        
-        2:
-        BEGIN
-          salhed.SETFILTER(salhed."Document Type",'Order');
-          salhed.SETFILTER(salhed."External Document No.",'<>%1','');
-          IF salhed.COUNT>0 THEN
-          IF salhed.FINDSET THEN
-          REPEAT
-          ERROR(salhed."No."+'  Sale Have the Invoice Number');
-          UNTIL salhed.NEXT=0;
-        
-          //ERROR('Invoice Number Already Assign to Another Sale Order');
-          POSTEDINVOICE.SETCURRENTKEY(POSTEDINVOICE."External Document No.");  //sreenivas modified this line
-          POSTEDINVOICE.ASCENDING;      //this line too
-          POSTEDINVOICE.SETRANGE(POSTEDINVOICE."Posting Date",(040113D),(033114D));
-          POSTEDINVOICE.SETFILTER(POSTEDINVOICE."External Document No.",'SI*');
-          //MESSAGE(FORMAT(POSTEDINVOICE.COUNT));
-          IF POSTEDINVOICE.FINDLAST THEN
-          BEGIN
-          y:='0';
-          y:=POSTEDINVOICE."External Document No.";
-          temp:=1;
-          END;
-          IF temp=0 THEN
-            "External Document No.":='SI-001'
-          ELSE
-          "External Document No.":=INCSTR(y);
-        
-         /* IF POSTEDINVOICE.FINDLAST THEN
-          REPEAT
-          y:=POSTEDINVOICE."External Document No.";
-          UNTIL POSTEDINVOICE.NEXT = 0;
-          "External Document No.":=INCSTR(y);*/
-          //MESSAGE(FORMAT("External Document No."));
-          MODIFY;
-        
-        END;
-        3:
-        BEGIN
-          salhed.SETFILTER(salhed."Document Type",'Order');
-          salhed.SETFILTER(salhed."External Document No.",'<>%1','');
-          IF salhed.COUNT>0 THEN
-          IF salhed.FINDSET THEN
-          REPEAT
-          ERROR(salhed."No."+'  Sale Have the Invoice Number');
-          UNTIL salhed.NEXT=0;
-        
-          //ERROR('Invoice Number Already Assign to Another Sale Order');
-          POSTEDINVOICE.SETCURRENTKEY(POSTEDINVOICE."External Document No.");  //sreenivas modified this line
-          POSTEDINVOICE.ASCENDING;      //this line too
-          POSTEDINVOICE.SETRANGE(POSTEDINVOICE."Posting Date",(040113D),(033114D));
-          POSTEDINVOICE.SETFILTER(POSTEDINVOICE."External Document No.",'CI*');
-          //MESSAGE(FORMAT(POSTEDINVOICE.COUNT));
-          IF POSTEDINVOICE.FINDLAST THEN
-          BEGIN
-          y:='0';
-          y:=POSTEDINVOICE."External Document No.";
-          temp:=1;
-          END;
-          IF temp=0 THEN
-            "External Document No.":='CI-001'
-          ELSE
-          "External Document No.":=INCSTR(y);
-        
-          /*IF POSTEDINVOICE.FINDLAST THEN
-          REPEAT
-          y:=POSTEDINVOICE."External Document No.";
-          UNTIL POSTEDINVOICE.NEXT = 0;
-          "External Document No.":=INCSTR(y);*/
-          //MESSAGE(FORMAT("External Document No."));
-          MODIFY;
-        
-        END;
-        4:
-        BEGIN
-          salhed.SETFILTER(salhed."Document Type",'Order');
-          salhed.SETFILTER(salhed."External Document No.",'<>%1','');
-          IF salhed.COUNT>0 THEN
-          IF salhed.FINDSET THEN
-          REPEAT
-          ERROR(salhed."No."+'  Sale Have the Invoice Number');
-          UNTIL salhed.NEXT=0;
-        
-          //ERROR('Invoice Number Already Assign to Another Sale Order');
-          POSTEDINVOICE.SETCURRENTKEY(POSTEDINVOICE."External Document No.");  //sreenivas modified this line
-          POSTEDINVOICE.ASCENDING;      //this line too
-          POSTEDINVOICE.SETRANGE(POSTEDINVOICE."Posting Date",(040113D),(033114D));
-          POSTEDINVOICE.SETFILTER(POSTEDINVOICE."External Document No.",'IN*');
-          //MESSAGE(FORMAT(POSTEDINVOICE.COUNT));
-          IF POSTEDINVOICE.FINDLAST THEN
-          BEGIN
-          y:='0';
-          y:=POSTEDINVOICE."External Document No.";
-          temp:=1;
-          END;
-          IF temp=0 THEN
-            "External Document No.":='IN-001'
-          ELSE
-          "External Document No.":=INCSTR(y);
-        
-          /*IF POSTEDINVOICE.FINDLAST THEN
-          REPEAT
-          y:=POSTEDINVOICE."External Document No.";
-          UNTIL POSTEDINVOICE.NEXT = 0;
-          "External Document No.":=INCSTR(y);*/
-          //MESSAGE(FORMAT("External Document No."));
-          MODIFY;
-        
-        END;
-        
+            1:
+                BEGIN
+
+                    salhed.SETFILTER(salhed."Document Type", 'Order');
+                    salhed.SETFILTER(salhed."External Document No.", '<>%1', '');
+                    IF salhed.COUNT > 0 THEN
+                        IF salhed.FINDSET THEN
+                            REPEAT
+                                ERROR(salhed."No." + '  Sale Have the Invoice Number');
+                            UNTIL salhed.NEXT = 0;
+
+                    //ERROR('Invoice Number Already Assign to Another Sale Order');
+                    //POSTEDINVOICE.RESET;
+                    /*  POSTEDINVOICE.SETCURRENTKEY(POSTEDINVOICE."External Document No.");  //sreenivas modified this line
+                      POSTEDINVOICE.ASCENDING;      //this line too
+                      POSTEDINVOICE.SETRANGE(POSTEDINVOICE."Posting Date",(010412D),(310313D));
+                      POSTEDINVOICE.SETFILTER(POSTEDINVOICE."External Document No.",'L00000..L99999');
+                    //MESSAGE(FORMAT(POSTEDINVOICE.COUNT));
+                      IF POSTEDINVOICE.FINDLAST THEN
+                      BEGIN
+                      y:='0';
+                      y:=POSTEDINVOICE."External Document No.";
+                      temp:=1;
+                      END;
+                      IF temp=0 THEN
+                        "External Document No.":='L00001'
+                      ELSE
+                      "External Document No.":=INCSTR(y);*/
+
+                    POSTEDINVOICE.SETCURRENTKEY(POSTEDINVOICE."External Document No.");  //sreenivas modified this line
+                    POSTEDINVOICE.ASCENDING;      //this line too
+                    POSTEDINVOICE.SETRANGE(POSTEDINVOICE."Posting Date", (040113D), (033114D));
+                    POSTEDINVOICE.SETFILTER(POSTEDINVOICE."External Document No.", '0..999');
+                    //MESSAGE(FORMAT(POSTEDINVOICE.COUNT));
+                    IF POSTEDINVOICE.FINDLAST THEN BEGIN
+                        y := '0';
+                        y := POSTEDINVOICE."External Document No.";
+                        temp := 1;
+                    END;
+                    IF temp = 0 THEN
+                        "External Document No." := '001'
+                    ELSE
+                        "External Document No." := INCSTR(y);
+
+                    //  UNTIL POSTEDINVOICE.NEXT = 0;
+                    //  "External Document No.":=INCSTR(y);
+                    //MESSAGE(FORMAT("External Document No."));
+                    MODIFY;
+                END;
+
+            2:
+                BEGIN
+                    salhed.SETFILTER(salhed."Document Type", 'Order');
+                    salhed.SETFILTER(salhed."External Document No.", '<>%1', '');
+                    IF salhed.COUNT > 0 THEN
+                        IF salhed.FINDSET THEN
+                            REPEAT
+                                ERROR(salhed."No." + '  Sale Have the Invoice Number');
+                            UNTIL salhed.NEXT = 0;
+
+                    //ERROR('Invoice Number Already Assign to Another Sale Order');
+                    POSTEDINVOICE.SETCURRENTKEY(POSTEDINVOICE."External Document No.");  //sreenivas modified this line
+                    POSTEDINVOICE.ASCENDING;      //this line too
+                    POSTEDINVOICE.SETRANGE(POSTEDINVOICE."Posting Date", (040113D), (033114D));
+                    POSTEDINVOICE.SETFILTER(POSTEDINVOICE."External Document No.", 'SI*');
+                    //MESSAGE(FORMAT(POSTEDINVOICE.COUNT));
+                    IF POSTEDINVOICE.FINDLAST THEN BEGIN
+                        y := '0';
+                        y := POSTEDINVOICE."External Document No.";
+                        temp := 1;
+                    END;
+                    IF temp = 0 THEN
+                        "External Document No." := 'SI-001'
+                    ELSE
+                        "External Document No." := INCSTR(y);
+
+                    /* IF POSTEDINVOICE.FINDLAST THEN
+                     REPEAT
+                     y:=POSTEDINVOICE."External Document No.";
+                     UNTIL POSTEDINVOICE.NEXT = 0;
+                     "External Document No.":=INCSTR(y);*/
+                    //MESSAGE(FORMAT("External Document No."));
+                    MODIFY;
+
+                END;
+            3:
+                BEGIN
+                    salhed.SETFILTER(salhed."Document Type", 'Order');
+                    salhed.SETFILTER(salhed."External Document No.", '<>%1', '');
+                    IF salhed.COUNT > 0 THEN
+                        IF salhed.FINDSET THEN
+                            REPEAT
+                                ERROR(salhed."No." + '  Sale Have the Invoice Number');
+                            UNTIL salhed.NEXT = 0;
+
+                    //ERROR('Invoice Number Already Assign to Another Sale Order');
+                    POSTEDINVOICE.SETCURRENTKEY(POSTEDINVOICE."External Document No.");  //sreenivas modified this line
+                    POSTEDINVOICE.ASCENDING;      //this line too
+                    POSTEDINVOICE.SETRANGE(POSTEDINVOICE."Posting Date", (040113D), (033114D));
+                    POSTEDINVOICE.SETFILTER(POSTEDINVOICE."External Document No.", 'CI*');
+                    //MESSAGE(FORMAT(POSTEDINVOICE.COUNT));
+                    IF POSTEDINVOICE.FINDLAST THEN BEGIN
+                        y := '0';
+                        y := POSTEDINVOICE."External Document No.";
+                        temp := 1;
+                    END;
+                    IF temp = 0 THEN
+                        "External Document No." := 'CI-001'
+                    ELSE
+                        "External Document No." := INCSTR(y);
+
+                    /*IF POSTEDINVOICE.FINDLAST THEN
+                    REPEAT
+                    y:=POSTEDINVOICE."External Document No.";
+                    UNTIL POSTEDINVOICE.NEXT = 0;
+                    "External Document No.":=INCSTR(y);*/
+                    //MESSAGE(FORMAT("External Document No."));
+                    MODIFY;
+
+                END;
+            4:
+                BEGIN
+                    salhed.SETFILTER(salhed."Document Type", 'Order');
+                    salhed.SETFILTER(salhed."External Document No.", '<>%1', '');
+                    IF salhed.COUNT > 0 THEN
+                        IF salhed.FINDSET THEN
+                            REPEAT
+                                ERROR(salhed."No." + '  Sale Have the Invoice Number');
+                            UNTIL salhed.NEXT = 0;
+
+                    //ERROR('Invoice Number Already Assign to Another Sale Order');
+                    POSTEDINVOICE.SETCURRENTKEY(POSTEDINVOICE."External Document No.");  //sreenivas modified this line
+                    POSTEDINVOICE.ASCENDING;      //this line too
+                    POSTEDINVOICE.SETRANGE(POSTEDINVOICE."Posting Date", (040113D), (033114D));
+                    POSTEDINVOICE.SETFILTER(POSTEDINVOICE."External Document No.", 'IN*');
+                    //MESSAGE(FORMAT(POSTEDINVOICE.COUNT));
+                    IF POSTEDINVOICE.FINDLAST THEN BEGIN
+                        y := '0';
+                        y := POSTEDINVOICE."External Document No.";
+                        temp := 1;
+                    END;
+                    IF temp = 0 THEN
+                        "External Document No." := 'IN-001'
+                    ELSE
+                        "External Document No." := INCSTR(y);
+
+                    /*IF POSTEDINVOICE.FINDLAST THEN
+                    REPEAT
+                    y:=POSTEDINVOICE."External Document No.";
+                    UNTIL POSTEDINVOICE.NEXT = 0;
+                    "External Document No.":=INCSTR(y);*/
+                    //MESSAGE(FORMAT("External Document No."));
+                    MODIFY;
+
+                END;
+
         END;
 
     end;
@@ -3304,44 +3300,40 @@ page 60245 "Effe Hyd Sale Orders"
     end;
 
     [LineStart(20061)]
-    local procedure SelltoCityOnInputChange(var Text : Text[1024]);
+    local procedure SelltoCityOnInputChange(var Text: Text[1024]);
     begin
-         IF "Sell-to City" <>'' THEN
-         BEGIN
-           "Bill-to City":= "Sell-to City";
-           "Ship-to City":="Sell-to City";
+        IF "Sell-to City" <> '' THEN BEGIN
+            "Bill-to City" := "Sell-to City";
+            "Ship-to City" := "Sell-to City";
 
-         END;
-         IF "Sell-to Post Code" <>'' THEN
-         BEGIN
-           "Bill-to Post Code":="Sell-to Post Code";
-           "Ship-to Post Code":="Sell-to Post Code";
-         END;
+        END;
+        IF "Sell-to Post Code" <> '' THEN BEGIN
+            "Bill-to Post Code" := "Sell-to Post Code";
+            "Ship-to Post Code" := "Sell-to Post Code";
+        END;
     end;
 
     [LineStart(20074)]
-    local procedure SelltoPostCodeOnInputChange(var Text : Text[1024]);
+    local procedure SelltoPostCodeOnInputChange(var Text: Text[1024]);
     begin
-         IF "Sell-to Post Code" <>'' THEN
-         BEGIN
-           "Bill-to Post Code":="Sell-to Post Code";
-           "Ship-to Post Code":="Sell-to Post Code";
-         END;
-         IF "Sell-to City" <>'' THEN
-         BEGIN
-           "Bill-to City":= "Sell-to City";
-           "Ship-to City":="Sell-to City";
+        IF "Sell-to Post Code" <> '' THEN BEGIN
+            "Bill-to Post Code" := "Sell-to Post Code";
+            "Ship-to Post Code" := "Sell-to Post Code";
+        END;
+        IF "Sell-to City" <> '' THEN BEGIN
+            "Bill-to City" := "Sell-to City";
+            "Ship-to City" := "Sell-to City";
 
-         END;
+        END;
     end;
 
     [LineStart(20087)]
     local procedure ReDispatchOnPush();
     begin
         IF "Re-Dispatch" THEN
-          CurrPage.SalesLines.PAGE.MakeVisibleLineControl
+            CurrPage.SalesLines.PAGE.MakeVisibleLineControl
         ELSE
-          CurrPage.SalesLines.PAGE.MakeInvisibleLineControl;
+            CurrPage.SalesLines.PAGE.MakeInvisibleLineControl;
     end;
 
     [LineStart(20093)]
@@ -3371,20 +3363,18 @@ page 60245 "Effe Hyd Sale Orders"
     [LineStart(20105)]
     local procedure InvoiceNosOnPush();
     begin
-        "External Document No.":='';
+        "External Document No." := '';
         MODIFY;
     end;
 
     [LineStart(20109)]
     local procedure NoOnFormat();
     begin
-        IF "SalOrd Des Approval"=TRUE THEN
-        BEGIN
-        "No.Emphasize" :=TRUE;
+        IF "SalOrd Des Approval" = TRUE THEN BEGIN
+            "No.Emphasize" := TRUE;
         END
-        ELSE
-        BEGIN
-        "No.Emphasize" :=TRUE;
+        ELSE BEGIN
+            "No.Emphasize" := TRUE;
         END;
     end;
 
@@ -3421,94 +3411,94 @@ page 60245 "Effe Hyd Sale Orders"
     [LineStart(20134)]
     procedure CustAttachments();
     var
-        CustAttach : Record Attachments;
+        CustAttach: Record Attachments;
     begin
         CustAttach.RESET;
-        CustAttach.SETRANGE("Table ID",DATABASE::"Sales Header");
-        CustAttach.SETRANGE("Document No.","No.");
-        CustAttach.SETRANGE("Document Type","Document Type");
+        CustAttach.SETRANGE("Table ID", DATABASE::"Sales Header");
+        CustAttach.SETRANGE("Document No.", "No.");
+        CustAttach.SETRANGE("Document Type", "Document Type");
 
-        PAGE.RUN(PAGE::"ESPL Attachments",CustAttach);
+        PAGE.RUN(PAGE::"ESPL Attachments", CustAttach);
     end;
 
     [LineStart(20142)]
     procedure TestRPOStatus();
     var
-        SLn : Record "Sales Line";
-        ILEs : Record "Item Ledger Entry";
-        RPOs : Record "Production Order";
-        REs : Record "Reservation Entry";
-        Lot : Text;
+        SLn: Record "Sales Line";
+        ILEs: Record "Item Ledger Entry";
+        RPOs: Record "Production Order";
+        REs: Record "Reservation Entry";
+        Lot: Text;
     begin
         //Added by Pranavi on 28-10-2015 for not allowing to post if RPO is not finished
         SLn.RESET;
-        SLn.SETFILTER(SLn."Document Type",'%1',"Document Type");
-        SLn.SETFILTER(SLn.Type,'%1',SLn.Type::Item);
-        SLn.SETFILTER(SLn."Document No.","No.");
-        SLn.SETFILTER(SLn."Qty. to Ship",'>%1',0);
+        SLn.SETFILTER(SLn."Document Type", '%1', "Document Type");
+        SLn.SETFILTER(SLn.Type, '%1', SLn.Type::Item);
+        SLn.SETFILTER(SLn."Document No.", "No.");
+        SLn.SETFILTER(SLn."Qty. to Ship", '>%1', 0);
         IF SLn.FINDSET THEN
-        REPEAT
-          REs.RESET;
-          REs.SETFILTER(REs."Item No.",SLn."No.");
-          REs.SETFILTER(REs."Source ID","No.");
-          REs.SETFILTER(REs."Source Ref. No.",'%1',SLn."Line No.");
-          IF REs.FINDSET THEN
-          REPEAT
-            ILEs.RESET;
-            ILEs.SETFILTER(ILEs."Entry Type",'%1',ILEs."Entry Type"::Output);
-            ILEs.SETFILTER(ILEs."Item No.",SLn."No.");
-            ILEs.SETFILTER(ILEs."Serial No.",REs."Serial No.");
-            ILEs.SETFILTER(ILEs."Lot No.",REs."Lot No.");
-            IF ILEs.FINDFIRST THEN
-            BEGIN
-              Lot := '';
-              IF ILEs."Lot No." <> '' THEN
-                Lot := ' Lot No.: '+ILEs."Lot No.";
-              RPOs.RESET;
-              RPOs.SETFILTER(RPOs.Status,'%1',RPOs.Status::Released);
-              RPOs.SETFILTER(RPOs."No.",ILEs."Order No.");
-              IF RPOs.FINDFIRST THEN
-                ERROR('Released Prod Order '+ILEs."Order No."+' is not Finished for Item '+ILEs."Item No."+'\Serial No.: '+ILEs."Serial No."+Lot);
-            END;
-          UNTIL REs.NEXT=0;
-        UNTIL SLn.NEXT=0;
+            REPEAT
+                REs.RESET;
+                REs.SETFILTER(REs."Item No.", SLn."No.");
+                REs.SETFILTER(REs."Source ID", "No.");
+                REs.SETFILTER(REs."Source Ref. No.", '%1', SLn."Line No.");
+                IF REs.FINDSET THEN
+                    REPEAT
+                        ILEs.RESET;
+                        ILEs.SETFILTER(ILEs."Entry Type", '%1', ILEs."Entry Type"::Output);
+                        ILEs.SETFILTER(ILEs."Item No.", SLn."No.");
+                        ILEs.SETFILTER(ILEs."Serial No.", REs."Serial No.");
+                        ILEs.SETFILTER(ILEs."Lot No.", REs."Lot No.");
+                        IF ILEs.FINDFIRST THEN BEGIN
+                            Lot := '';
+                            IF ILEs."Lot No." <> '' THEN
+                                Lot := ' Lot No.: ' + ILEs."Lot No.";
+                            RPOs.RESET;
+                            RPOs.SETFILTER(RPOs.Status, '%1', RPOs.Status::Released);
+                            RPOs.SETFILTER(RPOs."No.", ILEs."Order No.");
+                            IF RPOs.FINDFIRST THEN
+                                ERROR('Released Prod Order ' + ILEs."Order No." + ' is not Finished for Item ' + ILEs."Item No." + '\Serial No.: ' + ILEs."Serial No." + Lot);
+                        END;
+                    UNTIL REs.NEXT = 0;
+            UNTIL SLn.NEXT = 0;
         //End by Pranavi
     end;
 
     [LineStart(20177)]
-    procedure SendForAuth(TypeFlag : Code[10]);
+    procedure SendForAuth(TypeFlag: Code[10]);
     var
-        Body : Text;
-        Mail_From : Text[250];
-        Mail_To : Text[250];
-        Mail : Codeunit Mail;
-        Subject : Text[250];
-        SMTP_MAIL : Codeunit "SMTP Mail";
-        AuthorizedID : Text[50];
-        ReqUserGRec : Record User;
-        AuthUserGRec : Record User;
-        PT : Record "Payment Terms";
-        PT_Name : Text[100];
-        Auth_User : Text[50];
-        Req_User : Text[50];
-        SP : Record "Salesperson/Purchaser";
-        Req_Person_Id : Code[10];
+        Body: Text;
+        Mail_From: Text[250];
+        Mail_To: Text[250];
+        Mail: Codeunit Mail;
+        Subject: Text[250];
+        SMTP_MAIL: Codeunit "SMTP Mail";
+        AuthorizedID: Text[50];
+        ReqUserGRec: Record User;
+        AuthUserGRec: Record User;
+        PT: Record "Payment Terms";
+        PT_Name: Text[100];
+        Auth_User: Text[50];
+        Req_User: Text[50];
+        SP: Record "Salesperson/Purchaser";
+        Req_Person_Id: Code[10];
     begin
-        Body:='';
-        Mail_From:='';
-        Mail_To:='';
-        Req_Person_Id:='';
+        Body := '';
+        Mail_From := '';
+        Mail_To := '';
+        Req_Person_Id := '';
         ReqUserGRec.RESET;
-        ReqUserGRec.SETRANGE(ReqUserGRec."User Name",USERID);
-        IF ReqUserGRec.FINDFIRST THEN
-        BEGIN
-          Req_User:=ReqUserGRec."User Name";
-          Req_Person_Id := ReqUserGRec.EmployeeID;
-          IF ReqUserGRec.MailID <> '' THEN
-            Mail_From := ReqUserGRec.MailID
-          ELSE Mail_From := 'erp@efftronics.com';
-        END ELSE Mail_From := 'erp@efftronics.com';
-        Req_User := COPYSTR(USERID,12,STRLEN(USERID));
+        ReqUserGRec.SETRANGE(ReqUserGRec."User Name", USERID);
+        IF ReqUserGRec.FINDFIRST THEN BEGIN
+            Req_User := ReqUserGRec."User Name";
+            Req_Person_Id := ReqUserGRec.EmployeeID;
+            IF ReqUserGRec.MailID <> '' THEN
+                Mail_From := ReqUserGRec.MailID
+            ELSE
+                Mail_From := 'erp@efftronics.com';
+        END ELSE
+            Mail_From := 'erp@efftronics.com';
+        Req_User := COPYSTR(USERID, 12, STRLEN(USERID));
         /*
         IF COPYSTR("No.",14,2) IN['/L','/T'] THEN
         BEGIN
@@ -3531,62 +3521,66 @@ page 60245 "Effe Hyd Sale Orders"
         Auth_User := 'Murali Krishna M';
         Mail_To := 'mk@effe.in,erp@efftronics.com';
         PT.RESET;
-        PT.SETRANGE(PT.Code,"Payment Terms Code");
+        PT.SETRANGE(PT.Code, "Payment Terms Code");
         IF PT.FINDFIRST THEN
-          PT_Name := PT.Description;
-        IF TypeFlag IN['Release','RELEASE'] THEN
-          Subject:='ERP-Request for Authorisation for Order Release without Advance Payment for '+FORMAT("No.")+'-'+FORMAT("Sell-to Customer Name")
+            PT_Name := PT.Description;
+        IF TypeFlag IN ['Release', 'RELEASE'] THEN
+            Subject := 'ERP-Request for Authorisation for Order Release without Advance Payment for ' + FORMAT("No.") + '-' + FORMAT("Sell-to Customer Name")
         ELSE
-          Subject:='ERP-Request for Authorisation for Billing Order without Advance Payment for '+FORMAT("No.")+'-'+FORMAT("Sell-to Customer Name");
-        Body:='<html><head><style> divone{background-color: white; width: 700px; padding: 20px; border-style:solid ; border-color:#666699;  margin: 20px;} </style></head>';
-        Body+='<body><div style="border-color:#666699;  margin: 20px; border-width:15px;   border-style:solid; padding: 20px; width: 600px;"><label><font size="6">Customer Details</font></label>';
-        Body+='<hr style=solid; color= #3333CC>';
-        Body+='<table border="1" style="border-collapse:collapse; width:100%; font-size:10pt;">';
-        Body+='<tr><td>Sale Order</td><td>'+"No."+'</td></tr><br>';
-        Body+='<tr><td>Customer</td><td>'+"Sell-to Customer Name"+'</td></tr><br>';
-        Body+='<tr><td>Order Value</td><td>'+FORMAT("Sale Order Total Amount")+'</td></tr><br>';
-        Body+='<tr><td>Payment Term</td><td>'+"Payment Terms Code"+':- '+PT_Name+'</td></tr><br>';
+            Subject := 'ERP-Request for Authorisation for Billing Order without Advance Payment for ' + FORMAT("No.") + '-' + FORMAT("Sell-to Customer Name");
+        Body := '<html><head><style> divone{background-color: white; width: 700px; padding: 20px; border-style:solid ; border-color:#666699;  margin: 20px;} </style></head>';
+        Body += '<body><div style="border-color:#666699;  margin: 20px; border-width:15px;   border-style:solid; padding: 20px; width: 600px;"><label><font size="6">Customer Details</font></label>';
+        Body += '<hr style=solid; color= #3333CC>';
+        Body += '<table border="1" style="border-collapse:collapse; width:100%; font-size:10pt;">';
+        Body += '<tr><td>Sale Order</td><td>' + "No." + '</td></tr><br>';
+        Body += '<tr><td>Customer</td><td>' + "Sell-to Customer Name" + '</td></tr><br>';
+        Body += '<tr><td>Order Value</td><td>' + FORMAT("Sale Order Total Amount") + '</td></tr><br>';
+        Body += '<tr><td>Payment Term</td><td>' + "Payment Terms Code" + ':- ' + PT_Name + '</td></tr><br>';
         SP.RESET;
-        SP.SETRANGE(SP.Code,"Salesperson Code");
+        SP.SETRANGE(SP.Code, "Salesperson Code");
         IF SP.FINDFIRST THEN
-          Body+='<tr><td>Sales Executive</td><td>'+SP.Name+'</td></tr>'
-        ELSE  Body+='<tr><td>Sales Executive</td><td>'+"Salesperson Code"+'</td></tr>';
-        Body+='<tr><td>Customer Type</td><td>'+"Customer Posting Group"+'</td></tr>';
-        
-        Body+='<tr><td bgcolor="green">';
-        Body+='<a Href="http://app.efftronics.org:8567/erp_reports/AdvancePaymentAuth.aspx?ORDERNO='+FORMAT("No.")+'&CUSTNAME='+FORMAT("Sell-to Customer Name");
-        Body+='&AUTHPERSON='+FORMAT(Auth_User);
-        Body+='&REQPERSON='+FORMAT(Req_User);
-        Body+='&REQPERSONMAIL='+Mail_From;
-        Body+='&REQID='+Req_Person_Id;
-        IF TypeFlag IN['Release','RELEASE'] THEN
-          Body+='&AUTHSTATUS=1"target="_blank">'
-        ELSE Body+='&AUTHSTATUS=3"target="_blank">';
-        Body+='<font face="arial" color="#ffffff">ACCEPT</font></a>';
-        
-        Body+='</td><td bgcolor="red">';
-        Body+='<a Href="http://app.efftronics.org:8567/erp_reports/AdvancePaymentAuth.aspx?CUSTNO='+FORMAT("No.")+'&CUSTNAME='+FORMAT("Sell-to Customer Name");
-        Body+='&AUTHPERSON='+FORMAT(Auth_User);
-        Body+='&REQPERSON='+FORMAT(Req_User);
-        Body+='&REQPERSONMAIL='+Mail_From;
-        Body+='&REQID='+Req_Person_Id;
-        IF TypeFlag IN['Release','RELEASE'] THEN
-          Body+='&AUTHSTATUS=0"target="_blank">'
-        ELSE Body+='&AUTHSTATUS=2"target="_blank">';
-        Body+='<font face="arial" color="#ffffff">REJECT</font></a></td></tr>';
-        
-        Body+='</table><br>';
-        Body+='<br><p align = "center">:: Note: Auto Generated mail from ERP</b> :: </b></P></div></body></html>';
+            Body += '<tr><td>Sales Executive</td><td>' + SP.Name + '</td></tr>'
+        ELSE
+            Body += '<tr><td>Sales Executive</td><td>' + "Salesperson Code" + '</td></tr>';
+        Body += '<tr><td>Customer Type</td><td>' + "Customer Posting Group" + '</td></tr>';
+
+        Body += '<tr><td bgcolor="green">';
+        Body += '<a Href="http://app.efftronics.org:8567/erp_reports/AdvancePaymentAuth.aspx?ORDERNO=' + FORMAT("No.") + '&CUSTNAME=' + FORMAT("Sell-to Customer Name");
+        Body += '&AUTHPERSON=' + FORMAT(Auth_User);
+        Body += '&REQPERSON=' + FORMAT(Req_User);
+        Body += '&REQPERSONMAIL=' + Mail_From;
+        Body += '&REQID=' + Req_Person_Id;
+        IF TypeFlag IN ['Release', 'RELEASE'] THEN
+            Body += '&AUTHSTATUS=1"target="_blank">'
+        ELSE
+            Body += '&AUTHSTATUS=3"target="_blank">';
+        Body += '<font face="arial" color="#ffffff">ACCEPT</font></a>';
+
+        Body += '</td><td bgcolor="red">';
+        Body += '<a Href="http://app.efftronics.org:8567/erp_reports/AdvancePaymentAuth.aspx?CUSTNO=' + FORMAT("No.") + '&CUSTNAME=' + FORMAT("Sell-to Customer Name");
+        Body += '&AUTHPERSON=' + FORMAT(Auth_User);
+        Body += '&REQPERSON=' + FORMAT(Req_User);
+        Body += '&REQPERSONMAIL=' + Mail_From;
+        Body += '&REQID=' + Req_Person_Id;
+        IF TypeFlag IN ['Release', 'RELEASE'] THEN
+            Body += '&AUTHSTATUS=0"target="_blank">'
+        ELSE
+            Body += '&AUTHSTATUS=2"target="_blank">';
+        Body += '<font face="arial" color="#ffffff">REJECT</font></a></td></tr>';
+
+        Body += '</table><br>';
+        Body += '<br><p align = "center">:: Note: Auto Generated mail from ERP</b> :: </b></P></div></body></html>';
         //Mail_From:='pranavi@efftronics.com';
         //Mail_To:='pranavi@efftronics.com';
-        SMTP_MAIL.CreateMessage('ERP',Mail_From,Mail_To,Subject,Body,TRUE);
+        SMTP_MAIL.CreateMessage('ERP', Mail_From, Mail_To, Subject, Body, TRUE);
         SMTP_MAIL.Send;
         MESSAGE(TypeFlag);
-        IF TypeFlag IN['Release','RELEASE'] THEN
-          "PT Release Auth Stutus" := "PT Release Auth Stutus"::"Sent For Auth"
-        ELSE  "PT Post Auth Stutus" := "PT Post Auth Stutus"::"Sent For Auth";
+        IF TypeFlag IN ['Release', 'RELEASE'] THEN
+            "PT Release Auth Stutus" := "PT Release Auth Stutus"::"Sent For Auth"
+        ELSE
+            "PT Post Auth Stutus" := "PT Post Auth Stutus"::"Sent For Auth";
         MODIFY;
-        
+
         MESSAGE('Authorization Mail Has been Sent!');
 
     end;

@@ -424,16 +424,16 @@ page 60018 "Sales Order-Design"
     var
         Text000 : Label 'Unable to execute this function while in view only mode.';
         CopySalesDoc : Report "Copy Sales Document";
-        MoveNegSalesLines : Report "Move Negative Sales Lines";
-        ReportPrint : Codeunit "Test Report-Print";
-        DocPrint : Codeunit "Document-Print";
-        ArchiveManagement : Codeunit ArchiveManagement;
-        SalesSetup : Record "Sales & Receivables Setup";
-        UserMgt : Codeunit "User Setup Management";
-        "-NAVIN-" : Integer;
-        SalesLine : Record "Sales Line";
-        "--NAVIN--" : ;
-        Text001 : Label 'Do you want to convert the Order to an Export order?';
+                           MoveNegSalesLines : Report "Move Negative Sales Lines";
+                           ReportPrint : Codeunit "Test Report-Print";
+                           DocPrint : Codeunit "Document-Print";
+                           ArchiveManagement : Codeunit ArchiveManagement;
+                           SalesSetup : Record "Sales & Receivables Setup";
+                           UserMgt : Codeunit "User Setup Management";
+                           "-NAVIN-" : Integer;
+                           SalesLine : Record "Sales Line";
+                           "--NAVIN--" : ;
+                           Text001 : Label 'Do you want to convert the Order to an Export order?';
         Text002 : Label 'Order number %1 has been converted to Export order number %2.';
         Text13000 : Label 'No Setup exists for this Amount.';
         Text13001 : Label 'Do you want to send the order for Authorization?';
@@ -456,10 +456,10 @@ page 60018 "Sales Order-Design"
         ChangeExchangeRate : Page "Change Exchange Rate";
 
     [LineStart(4303)]
-    procedure UpdateAllowed() : Boolean;
+    procedure UpdateAllowed(): Boolean;
     begin
         IF CurrPage.EDITABLE = FALSE THEN
-          ERROR(Text000);
+            ERROR(Text000);
         EXIT(TRUE);
     end;
 
@@ -469,27 +469,27 @@ page 60018 "Sales Order-Design"
     end;
 
     [LineStart(4311)]
-    procedure ConvertOrdertoExportOrder(var Rec : Record "Sales Header");
+    procedure ConvertOrdertoExportOrder(var Rec: Record "Sales Header");
     var
-        OldSalesCommentLine : Record "Sales Comment Line";
-        SalesExportOrderHeader : Record "Sales Header";
-        SalesExportOrderLine : Record "Sales Line";
-        SalesCommentLine : Record "Sales Comment Line";
-        ItemChargeAssgntSales : Record "Item Charge Assignment (Sales)";
-        ReserveSalesLine : Codeunit "Sales Line-Reserve";
-        SalesOrderLine : Record "Sales Line";
-        FromDocDim : Record "Dimension Set Entry";
-        ToDocDim : Record "Dimension Set Entry";
+        OldSalesCommentLine: Record "Sales Comment Line";
+        SalesExportOrderHeader: Record "Sales Header";
+        SalesExportOrderLine: Record "Sales Line";
+        SalesCommentLine: Record "Sales Comment Line";
+        ItemChargeAssgntSales: Record "Item Charge Assignment (Sales)";
+        ReserveSalesLine: Codeunit "Sales Line-Reserve";
+        SalesOrderLine: Record "Sales Line";
+        FromDocDim: Record "Dimension Set Entry";
+        ToDocDim: Record "Dimension Set Entry";
     begin
-        IF NOT CONFIRM(Text001,FALSE) THEN
-          EXIT;
+        IF NOT CONFIRM(Text001, FALSE) THEN
+            EXIT;
         SalesExportOrderHeader := Rec;
         SalesExportOrderHeader."Document Type" := SalesExportOrderHeader."Document Type"::Order;
         //SalesExportOrderHeader."Export Document" := TRUE;//B2B
         SalesExportOrderHeader."No. Printed" := 0;
         SalesExportOrderHeader.Status := SalesExportOrderHeader.Status::Open;
         SalesExportOrderHeader."No." := '';
-        
+
         SalesExportOrderLine.LOCKTABLE;
         SalesExportOrderHeader.INSERT(TRUE);
         //DIM1.0 Start
@@ -519,7 +519,7 @@ page 60018 "Sales Order-Design"
         
         */
         //DIM1.0 End
-        
+
         SalesExportOrderHeader."Order Date" := "Order Date";
         SalesExportOrderHeader."Posting Date" := "Posting Date";
         SalesExportOrderHeader."Document Date" := "Document Date";
@@ -532,10 +532,10 @@ page 60018 "Sales Order-Design"
         //SalesExportOrderHeader."Date Sent" := 0D; //B2b1.0
         //SalesExportOrderHeader."Time Sent" := 0T; //B2b1.0
         SalesExportOrderHeader.MODIFY;
-        
-        SalesOrderLine.SETRANGE("Document Type","Document Type");
-        SalesOrderLine.SETRANGE("Document No.","No.");
-        
+
+        SalesOrderLine.SETRANGE("Document Type", "Document Type");
+        SalesOrderLine.SETRANGE("Document No.", "No.");
+
         //DIM1.0 Start
         //Code Commented
         /*
@@ -543,24 +543,24 @@ page 60018 "Sales Order-Design"
         ToDocDim.SETRANGE("Table ID",DATABASE::"Purchase Line");
         */
         //DIM1.0 End
-        
-        
+
+
         IF SalesOrderLine.FINDSET THEN
-          REPEAT
-            SalesExportOrderLine := SalesOrderLine;
-            SalesExportOrderLine."Document Type" := SalesExportOrderHeader."Document Type";
-            SalesExportOrderLine."Document No." := SalesExportOrderHeader."No.";
-            SalesExportOrderLine."Shipment Date" := SalesExportOrderHeader."Shipment Date";
-            ReserveSalesLine.TransferSaleLineToSalesLine(
-              SalesOrderLine,SalesExportOrderLine,SalesOrderLine."Reserved Qty. (Base)");
-            SalesExportOrderLine."Shortcut Dimension 1 Code" := SalesOrderLine."Shortcut Dimension 1 Code";
-            SalesExportOrderLine."Shortcut Dimension 2 Code" := SalesOrderLine."Shortcut Dimension 2 Code";
-            //DIM1.0 Start
-            SalesExportOrderLine."Dimension Set ID" := SalesOrderLine."Dimension Set ID";
-            //DIM1.0  End
-            SalesExportOrderLine.INSERT;
-        
-        
+            REPEAT
+                SalesExportOrderLine := SalesOrderLine;
+                SalesExportOrderLine."Document Type" := SalesExportOrderHeader."Document Type";
+                SalesExportOrderLine."Document No." := SalesExportOrderHeader."No.";
+                SalesExportOrderLine."Shipment Date" := SalesExportOrderHeader."Shipment Date";
+                ReserveSalesLine.TransferSaleLineToSalesLine(
+                  SalesOrderLine, SalesExportOrderLine, SalesOrderLine."Reserved Qty. (Base)");
+                SalesExportOrderLine."Shortcut Dimension 1 Code" := SalesOrderLine."Shortcut Dimension 1 Code";
+                SalesExportOrderLine."Shortcut Dimension 2 Code" := SalesOrderLine."Shortcut Dimension 2 Code";
+                //DIM1.0 Start
+                SalesExportOrderLine."Dimension Set ID" := SalesOrderLine."Dimension Set ID";
+                //DIM1.0  End
+                SalesExportOrderLine.INSERT;
+
+
             //DIM1.0 Start
             /*
             FromDocDim.SETRANGE("Line No.",SalesOrderLine."Line No.");
@@ -580,42 +580,42 @@ page 60018 "Sales Order-Design"
             END;
             */
             //DIM1.0 End
-        
-          UNTIL SalesOrderLine.NEXT = 0;
-        
-        SalesCommentLine.SETRANGE("Document Type","Document Type");
-        SalesCommentLine.SETRANGE("No.","No.");
+
+            UNTIL SalesOrderLine.NEXT = 0;
+
+        SalesCommentLine.SETRANGE("Document Type", "Document Type");
+        SalesCommentLine.SETRANGE("No.", "No.");
         IF NOT SalesCommentLine.ISEMPTY THEN BEGIN
-          SalesCommentLine.LOCKTABLE;
-          IF SalesCommentLine.FINDSET THEN
-            REPEAT
-              OldSalesCommentLine := SalesCommentLine;
-              SalesCommentLine.DELETE;
-              SalesCommentLine."Document Type" := SalesExportOrderHeader."Document Type";
-              SalesCommentLine."No." := SalesExportOrderHeader."No.";
-              SalesCommentLine.INSERT;
-              SalesCommentLine := OldSalesCommentLine;
-            UNTIL SalesCommentLine.NEXT = 0;
+            SalesCommentLine.LOCKTABLE;
+            IF SalesCommentLine.FINDSET THEN
+                REPEAT
+                    OldSalesCommentLine := SalesCommentLine;
+                    SalesCommentLine.DELETE;
+                    SalesCommentLine."Document Type" := SalesExportOrderHeader."Document Type";
+                    SalesCommentLine."No." := SalesExportOrderHeader."No.";
+                    SalesCommentLine.INSERT;
+                    SalesCommentLine := OldSalesCommentLine;
+                UNTIL SalesCommentLine.NEXT = 0;
         END;
-        
+
         ItemChargeAssgntSales.RESET;
-        ItemChargeAssgntSales.SETRANGE("Document Type","Document Type");
-        ItemChargeAssgntSales.SETRANGE("Document No.","No.");
-        
+        ItemChargeAssgntSales.SETRANGE("Document Type", "Document Type");
+        ItemChargeAssgntSales.SETRANGE("Document No.", "No.");
+
         WHILE ItemChargeAssgntSales.FINDFIRST DO BEGIN
-          ItemChargeAssgntSales.DELETE;
-          ItemChargeAssgntSales."Document Type" := SalesExportOrderHeader."Document Type";
-          ItemChargeAssgntSales."Document No." := SalesExportOrderHeader."No.";
-          IF NOT (ItemChargeAssgntSales."Applies-to Doc. Type" IN
-            [ItemChargeAssgntSales."Applies-to Doc. Type"::Shipment,
-             ItemChargeAssgntSales."Applies-to Doc. Type"::"Return Receipt"])
-          THEN BEGIN
-            ItemChargeAssgntSales."Applies-to Doc. Type" := SalesExportOrderHeader."Document Type";
-            ItemChargeAssgntSales."Applies-to Doc. No." := SalesExportOrderHeader."No.";
-          END;
-          ItemChargeAssgntSales.INSERT;
+            ItemChargeAssgntSales.DELETE;
+            ItemChargeAssgntSales."Document Type" := SalesExportOrderHeader."Document Type";
+            ItemChargeAssgntSales."Document No." := SalesExportOrderHeader."No.";
+            IF NOT (ItemChargeAssgntSales."Applies-to Doc. Type" IN
+              [ItemChargeAssgntSales."Applies-to Doc. Type"::Shipment,
+               ItemChargeAssgntSales."Applies-to Doc. Type"::"Return Receipt"])
+            THEN BEGIN
+                ItemChargeAssgntSales."Applies-to Doc. Type" := SalesExportOrderHeader."Document Type";
+                ItemChargeAssgntSales."Applies-to Doc. No." := SalesExportOrderHeader."No.";
+            END;
+            ItemChargeAssgntSales.INSERT;
         END;
-        
+
         DELETE;
         SalesOrderLine.DELETEALL;
         //DIM1.0 Start
@@ -624,26 +624,26 @@ page 60018 "Sales Order-Design"
         FromDocDim.DELETEALL;
         */
         //DIM1.0 End
-        
+
         MESSAGE(
           Text002,
-          "No.",SalesExportOrderHeader."No.");
+          "No.", SalesExportOrderHeader."No.");
 
     end;
 
     [LineStart(4460)]
     procedure MaketoOrder();
     var
-        Text000 : Label 'Do you want to convert the Tender to Order?';
-        Text001 : Label 'Tender %1 has been Converted to order %2';
-        SalesHeader : Record "Sales Header";
-        SalesLine : Record "Sales Line";
-        Cust : Record Customer;
-        TenderLine : Record "Tender Line";
-        Schedule : Record Schedule2;
-        Schedule2 : Record Schedule2;
-        Schedule3 : Record Schedule2;
-        OMSIntegration : Codeunit SQLIntegration;
+        Text000: Label 'Do you want to convert the Tender to Order?';
+        Text001: Label 'Tender %1 has been Converted to order %2';
+        SalesHeader: Record "Sales Header";
+        SalesLine: Record "Sales Line";
+        Cust: Record Customer;
+        TenderLine: Record "Tender Line";
+        Schedule: Record Schedule2;
+        Schedule2: Record Schedule2;
+        Schedule3: Record Schedule2;
+        OMSIntegration: Codeunit SQLIntegration;
     begin
         /*IF "Document Position"="Document Position"::Finance THEN
           ERROR(Text008);
@@ -897,10 +897,10 @@ page 60018 "Sales Order-Design"
         COMMIT;
         */
         //OMS integration
-        
+
         //IF (Status=Status::Open) THEN
-          OMSIntegration.TendertoBlanketorOrder(SalesHeader."No." ,2,"Tender No.",0);
-        
+        OMSIntegration.TendertoBlanketorOrder(SalesHeader."No.", 2, "Tender No.", 0);
+
         //OMS integration
 
     end;
@@ -908,16 +908,16 @@ page 60018 "Sales Order-Design"
     [LineStart(4719)]
     procedure MakeToBlanketOrder();
     var
-        Text005 : Label 'Do you want to convert the Tender to Blanket Order?';
-        Text006 : Label 'Tender %1 has been Converted to Blanket order %2';
-        Text007 : Label 'Blanket Order already created';
-        SalesHeader : Record "Sales Header";
-        SalesLine : Record "Sales Line";
-        Cust : Record Customer;
-        TenderLine : Record "Tender Line";
-        Schedule : Record Schedule2;
-        Schedule2 : Record Schedule2;
-        OMSIntegration : Codeunit SQLIntegration;
+        Text005: Label 'Do you want to convert the Tender to Blanket Order?';
+        Text006: Label 'Tender %1 has been Converted to Blanket order %2';
+        Text007: Label 'Blanket Order already created';
+        SalesHeader: Record "Sales Header";
+        SalesLine: Record "Sales Line";
+        Cust: Record Customer;
+        TenderLine: Record "Tender Line";
+        Schedule: Record Schedule2;
+        Schedule2: Record Schedule2;
+        OMSIntegration: Codeunit SQLIntegration;
     begin
         /*
         IF "Document Position"="Document Position"::Finance THEN
@@ -1142,9 +1142,9 @@ page 60018 "Sales Order-Design"
         
         //OMS integration
          */
-          MESSAGE(SalesHeader."No.");
-          OMSIntegration.TendertoBlanketorOrder(SalesHeader."No." ,1,"Tender No.",0);
-        
+        MESSAGE(SalesHeader."No.");
+        OMSIntegration.TendertoBlanketorOrder(SalesHeader."No.", 1, "Tender No.", 0);
+
         //OMS integration
 
     end;

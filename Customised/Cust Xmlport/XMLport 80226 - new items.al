@@ -6,43 +6,43 @@ xmlport 80226 "new items"
     {
         textelement(Items)
         {
-            tableelement(Item;Item)
+            tableelement(Item; Item)
             {
                 XmlName = 'Item';
-                fieldelement(No;Item."No.")
+                fieldelement(No; Item."No.")
                 {
                 }
-                fieldelement(Description;Item.Description)
+                fieldelement(Description; Item.Description)
                 {
                 }
-                fieldelement(InventoryPostingGroup;Item."Inventory Posting Group")
+                fieldelement(InventoryPostingGroup; Item."Inventory Posting Group")
                 {
                 }
-                fieldelement(CostingMethod;Item."Costing Method")
+                fieldelement(CostingMethod; Item."Costing Method")
                 {
                 }
-                fieldelement(GenProdPostingGroup;Item."Gen. Prod. Posting Group")
+                fieldelement(GenProdPostingGroup; Item."Gen. Prod. Posting Group")
                 {
                 }
-                fieldelement(PurchUnitofMeasure;Item."Purch. Unit of Measure")
+                fieldelement(PurchUnitofMeasure; Item."Purch. Unit of Measure")
                 {
                 }
-                fieldelement(SalesUnitofMeasure;Item."Sales Unit of Measure")
+                fieldelement(SalesUnitofMeasure; Item."Sales Unit of Measure")
                 {
                 }
-                fieldelement(ReplenishmentSystem;Item."Replenishment System")
+                fieldelement(ReplenishmentSystem; Item."Replenishment System")
                 {
                 }
-                fieldelement(ProductGroupCode;Item."Product Group Code")
+                fieldelement(ProductGroupCode; Item."Product Group Code")
                 {
                 }
-                fieldelement(ItemSubGroupCode;Item."Item Sub Group Code")
+                fieldelement(ItemSubGroupCode; Item."Item Sub Group Code")
                 {
                 }
-                fieldelement(ItemSubSubGroupCode;Item."Item Sub Sub Group Code")
+                fieldelement(ItemSubSubGroupCode; Item."Item Sub Sub Group Code")
                 {
                 }
-                fieldelement(BaseUnitofMeasure;Item."Base Unit of Measure")
+                fieldelement(BaseUnitofMeasure; Item."Base Unit of Measure")
                 {
                 }
             }

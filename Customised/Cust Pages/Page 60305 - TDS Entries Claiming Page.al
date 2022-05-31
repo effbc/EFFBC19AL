@@ -1,9 +1,9 @@
 page 60305 "TDS Entries Claiming Page"
 {
     PageType = List;
-    Permissions = TableData "G/L Entry"=rm;
+    Permissions = TableData "G/L Entry" = rm;
     SourceTable = "G/L Entry";
-    SourceTableView = SORTING(G/L Account No.,Posting Date) ORDER(Ascending) WHERE(G/L Account No.=CONST(24634..24639),Amount=FILTER(>0),GST TDS Claimed Date=FILTER(''));
+    SourceTableView = SORTING(G/L Account No., Posting Date) ORDER(Ascending) WHERE(G/L Account No.=CONST(24634..24639),Amount=FILTER(>0),GST TDS Claimed Date=FILTER(''));
 
     layout
     {

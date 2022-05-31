@@ -12,29 +12,29 @@ page 33000286 "Sub Assembly Unit of Measure"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Sub Assembly No.";"Sub Assembly No.")
+                field("Sub Assembly No."; "Sub Assembly No.")
                 {
                     Caption = 'Sub Assembly No.';
                 }
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field("Qty. per Unit of Measure";"Qty. per Unit of Measure")
+                field("Qty. per Unit of Measure"; "Qty. per Unit of Measure")
                 {
                 }
-                field(Length;Length)
+                field(Length; Length)
                 {
                 }
-                field(Width;Width)
+                field(Width; Width)
                 {
                 }
-                field(Height;Height)
+                field(Height; Height)
                 {
                 }
-                field(Cubage;Cubage)
+                field(Cubage; Cubage)
                 {
                 }
-                field(Weight;Weight)
+                field(Weight; Weight)
                 {
                 }
             }

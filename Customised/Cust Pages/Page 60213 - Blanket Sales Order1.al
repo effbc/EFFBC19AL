@@ -377,7 +377,7 @@ page 60213 "Blanket Sales Order1"
                     Caption = 'Card';
                     Image = Card;
                     RunObject = Page "Customer Card";
-                    RunPageLink = No.=FIELD(Sell-to Customer No.);
+                                    RunPageLink = No.=FIELD(Sell-to Customer No.);
                     ShortCutKey = 'Shift+F5';
                 }
                 action("Co&mments")
@@ -385,7 +385,7 @@ page 60213 "Blanket Sales Order1"
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = Page "Sales Comment Sheet";
-                    RunPageLink = Document Type=CONST(Blanket Order),No.=FIELD(No.),Document Line No.=CONST(0);
+                                    RunPageLink = Document Type=CONST(Blanket Order),No.=FIELD(No.),Document Line No.=CONST(0);
                 }
                 action(Dimensions)
                 {
@@ -415,7 +415,7 @@ page 60213 "Blanket Sales Order1"
                     Caption = 'St&ructure';
                     Image = Hierarchy;
                     RunObject = Page "Structure Order Details";
-                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),Structure Code=FIELD(Structure),Document Line No.=FILTER(0);
+                                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),Structure Code=FIELD(Structure),Document Line No.=FILTER(0);
                 }
             }
         }
@@ -730,7 +730,7 @@ page 60213 "Blanket Sales Order1"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Sales Comment Sheet";
-                RunPageLink = Document Type=CONST(Blanket Order),No.=FIELD(No.),Document Line No.=CONST(0);
+                                RunPageLink = Document Type=CONST(Blanket Order),No.=FIELD(No.),Document Line No.=CONST(0);
                 ToolTip = 'Comment';
             }
             action(Action1102152004)
@@ -806,34 +806,34 @@ page 60213 "Blanket Sales Order1"
         ReturnRcptLine : Record "Return Receipt Line";
         SalesCrMemoLine : Record "Sales Cr.Memo Line";
         ChangeExchangeRate : Page "Change Exchange Rate";
-        CopySalesDoc : Report "Copy Sales Document";
-        DocPrint : Codeunit "Document-Print";
-        SalesSetup : Record "Sales & Receivables Setup";
-        UserMgt : Codeunit "User Setup Management";
-        Text16500 : TextConst ENU='To calculate invoice discount, check Cal. Inv. Discount on header when Price Inclusive of Tax = Yes.\This option cannot be used to calculate invoice discount when Price Inclusive Tax = Yes.';
-        "Mail-Id" : Record User;
-        "from Mail" : Text[100];
-        "to mail" : Text[1000];
-        Mail_Subject : Text[250];
-        Mail_Body : Text[250];
-        mail : Codeunit Mail;
-        SalesPlanLine : Record "Sales Planning Line";
-        Quantity : Decimal;
-        I : Integer;
-        Qty : Integer;
-        SalesLineRec : Record "Sales Line";
-        NewStatus : Option Simulated,Planned,"Firm Planned",Released;
-        NewOrderType : Option ItemOrder,ProjectOrder;
-        charline : Char;
-        SH : Record "Sales Header";
-        Attachment : Text[1000];
-        objEmailConf : Automation "'{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0:'{CD000002-8B95-11D1-82DB-00C04FB1625D}':''{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0'.Configuration";
-        objEmail : Automation "'{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0:'{CD000001-8B95-11D1-82DB-00C04FB1625D}':''{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0'.Message";
-        flds : Automation "'{00000205-0000-0010-8000-00AA006D2EA4}' 2.5:'{00000564-0000-0010-8000-00AA006D2EA4}':''{00000205-0000-0010-8000-00AA006D2EA4}' 2.5'.Fields";
-        fld : Automation "'{00000205-0000-0010-8000-00AA006D2EA4}' 2.5:'{00000569-0000-0010-8000-00AA006D2EA4}':''{00000205-0000-0010-8000-00AA006D2EA4}' 2.5'.Field";
-        SMTPSETUP : Record "Product Customer's List";
-        newline : Char;
-        Text01 : Label 'Do You want to Send the Document to Design?';
+                                 CopySalesDoc : Report "Copy Sales Document";
+                                 DocPrint : Codeunit "Document-Print";
+                                 SalesSetup : Record "Sales & Receivables Setup";
+                                 UserMgt : Codeunit "User Setup Management";
+                                 Text16500 : TextConst ENU='To calculate invoice discount, check Cal. Inv. Discount on header when Price Inclusive of Tax = Yes.\This option cannot be used to calculate invoice discount when Price Inclusive Tax = Yes.';
+                                 "Mail-Id" : Record User;
+                                 "from Mail" : Text[100];
+                                 "to mail" : Text[1000];
+                                 Mail_Subject : Text[250];
+                                 Mail_Body : Text[250];
+                                 mail : Codeunit Mail;
+                                 SalesPlanLine : Record "Sales Planning Line";
+                                 Quantity : Decimal;
+                                 I : Integer;
+                                 Qty : Integer;
+                                 SalesLineRec : Record "Sales Line";
+                                 NewStatus : Option Simulated,Planned,"Firm Planned",Released;
+                                 NewOrderType : Option ItemOrder,ProjectOrder;
+                                 charline : Char;
+                                 SH : Record "Sales Header";
+                                 Attachment : Text[1000];
+                                 objEmailConf : Automation "'{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0:'{CD000002-8B95-11D1-82DB-00C04FB1625D}':''{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0'.Configuration";
+                                 objEmail : Automation "'{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0:'{CD000001-8B95-11D1-82DB-00C04FB1625D}':''{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0'.Message";
+                                 flds : Automation "'{00000205-0000-0010-8000-00AA006D2EA4}' 2.5:'{00000564-0000-0010-8000-00AA006D2EA4}':''{00000205-0000-0010-8000-00AA006D2EA4}' 2.5'.Fields";
+                                 fld : Automation "'{00000205-0000-0010-8000-00AA006D2EA4}' 2.5:'{00000569-0000-0010-8000-00AA006D2EA4}':''{00000205-0000-0010-8000-00AA006D2EA4}' 2.5'.Field";
+                                 SMTPSETUP : Record "Product Customer's List";
+                                 newline : Char;
+                                 Text01 : Label 'Do You want to Send the Document to Design?';
         SMTP_MAIL : Codeunit "SMTP Mail";
         forwordtooms : Text[50];
         CHANGELOGSETUP : Record "Change Log Entry";

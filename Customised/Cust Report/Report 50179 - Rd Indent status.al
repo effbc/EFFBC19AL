@@ -5,7 +5,7 @@ report 50179 "Rd Indent status"
 
     dataset
     {
-        dataitem("Indent Header";"Indent Header")
+        dataitem("Indent Header"; "Indent Header")
         {
             DataItemTableView = WHERE(Delivery Location=FILTER('R&D STR'),Released Status=FILTER(Released));
             RequestFilterFields = "Person Code";

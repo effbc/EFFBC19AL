@@ -1,4 +1,4 @@
-pageextension 70235 TaxGroupsExt extends "Tax Groups" 
+pageextension 70235 TaxGroupsExt extends "Tax Groups"
 {
     // version NAVW17.00,NAVIN7.00
 

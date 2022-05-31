@@ -5,7 +5,7 @@ report 50152 "Payment Terms"
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
             DataItemTableView = ORDER(Ascending) WHERE(Document Type=FILTER(Order));
             column(Sales_Header__No__;"No.")

@@ -12,10 +12,10 @@ page 33000250 "Inspection Groups"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
             }

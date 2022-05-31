@@ -2,8 +2,8 @@ page 99000787 "Production BOM List"
 {
     // version NAVW17.00
 
-    CaptionML = ENU='Production BOM List',
-                ENN='Production BOM List';
+    CaptionML = ENU = 'Production BOM List',
+                ENN = 'Production BOM List';
     CardPageID = "Production BOM";
     DataCaptionFields = "No.";
     DeleteAllowed = false;
@@ -24,13 +24,13 @@ page 99000787 "Production BOM List"
                     group(Control1102152011)
                     {
                         ShowCaption = false;
-                        field("xRec.COUNT";xRec.COUNT)
+                        field("xRec.COUNT"; xRec.COUNT)
                         {
                         }
                         group(Control1102152013)
                         {
                             ShowCaption = false;
-                            field(Bom_Status_running;Bom_Status_running)
+                            field(Bom_Status_running; Bom_Status_running)
                             {
                                 Style = Favorable;
                                 StyleExpr = TRUE;
@@ -38,7 +38,7 @@ page 99000787 "Production BOM List"
                             group(Control1102152015)
                             {
                                 ShowCaption = false;
-                                field(Bom_Status_old;Bom_Status_old)
+                                field(Bom_Status_old; Bom_Status_old)
                                 {
                                     Style = Unfavorable;
                                     StyleExpr = TRUE;
@@ -51,93 +51,93 @@ page 99000787 "Production BOM List"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Style = Favorable;
                     StyleExpr = Running_bom_flag;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Style = Unfavorable;
                     StyleExpr = old_bom_flag;
                 }
-                field("Low-Level Code";"Low-Level Code")
+                field("Low-Level Code"; "Low-Level Code")
                 {
                 }
-                field("Modified User ID";"Modified User ID")
+                field("Modified User ID"; "Modified User ID")
                 {
                 }
-                field("Bench Mark Time(In Hours)";"Bench Mark Time(In Hours)")
+                field("Bench Mark Time(In Hours)"; "Bench Mark Time(In Hours)")
                 {
                 }
-                field("Stranded BOM";"Stranded BOM")
+                field("Stranded BOM"; "Stranded BOM")
                 {
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("Last Date Modified"; "Last Date Modified")
                 {
                 }
-                field("BOM Type";"BOM Type")
+                field("BOM Type"; "BOM Type")
                 {
                 }
-                field("Version Nos.";"Version Nos.")
+                field("Version Nos."; "Version Nos.")
                 {
                 }
-                field("Total No. of Fixing Holes";"Total No. of Fixing Holes")
+                field("Total No. of Fixing Holes"; "Total No. of Fixing Holes")
                 {
                 }
-                field("Total Soldering Points";"Total Soldering Points")
+                field("Total Soldering Points"; "Total Soldering Points")
                 {
                 }
-                field("Total Soldering Points DIP";"Total Soldering Points DIP")
+                field("Total Soldering Points DIP"; "Total Soldering Points DIP")
                 {
                 }
-                field("Total Soldering Points SMD";"Total Soldering Points SMD")
+                field("Total Soldering Points SMD"; "Total Soldering Points SMD")
                 {
                 }
-                field("Creation Date";"Creation Date")
+                field("Creation Date"; "Creation Date")
                 {
                 }
-                field("Description 2";"Description 2")
+                field("Description 2"; "Description 2")
                 {
                     Visible = false;
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
 
                     trigger OnValidate();
                     begin
-                         IF (COPYSTR(ProdBOMHeader."No.",1,8)<>'ECMPBPCB') AND (Status=Status::Certified) AND NOT (USERID IN ['EFFTRONICS\JHANSI','EFFTRONICS\SUJANI','EFFTRONICS\ANILKUMAR','EFFTRONICS\VIJAYA']) THEN
+                        IF (COPYSTR(ProdBOMHeader."No.", 1, 8) <> 'ECMPBPCB') AND (Status = Status::Certified) AND NOT (USERID IN ['EFFTRONICS\JHANSI', 'EFFTRONICS\SUJANI', 'EFFTRONICS\ANILKUMAR', 'EFFTRONICS\VIJAYA']) THEN
                             ERROR('You dont have permissions to Certify the BOM');
                     end;
                 }
-                field("Unit of Measure Code";"Unit of Measure Code")
+                field("Unit of Measure Code"; "Unit of Measure Code")
                 {
                 }
-                field("Search Name";"Search Name")
+                field("Search Name"; "Search Name")
                 {
                     Visible = false;
                 }
-                field(Configuration;Configuration)
+                field(Configuration; Configuration)
                 {
                 }
-                field("BOM Running Status";"BOM Running Status")
+                field("BOM Running Status"; "BOM Running Status")
                 {
                 }
-                field("Inherited From";"Inherited From")
+                field("Inherited From"; "Inherited From")
                 {
                 }
-                field("BOM Category";"BOM Category")
+                field("BOM Category"; "BOM Category")
                 {
                 }
             }
         }
         area(factboxes)
         {
-            systempart(Control1900383207;Links)
+            systempart(Control1900383207; Links)
             {
                 Visible = false;
             }
-            systempart(Control1905767507;Notes)
+            systempart(Control1905767507; Notes)
             {
                 Visible = true;
             }
@@ -150,13 +150,13 @@ page 99000787 "Production BOM List"
         {
             group("&Prod. BOM")
             {
-                CaptionML = ENU='&Prod. BOM',
-                            ENN='&Prod. BOM';
+                CaptionML = ENU = '&Prod. BOM',
+                            ENN = '&Prod. BOM';
                 Image = BOM;
                 action("Co&mments")
                 {
-                    CaptionML = ENU='Co&mments',
-                                ENN='Co&mments';
+                    CaptionML = ENU = 'Co&mments',
+                                ENN = 'Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Manufacturing Comment Sheet";
                     RunPageLink = Table Name=CONST(Production BOM Header),No.=FIELD(No.);
@@ -170,7 +170,7 @@ page 99000787 "Production BOM List"
                     //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                     //PromotedCategory = Process;
                     RunObject = Page "Prod. BOM Version List";
-                    RunPageLink = Production BOM No.=FIELD(No.);
+                                    RunPageLink = Production BOM No.=FIELD(No.);
                 }
                 action("Ma&trix per Version")
                 {
@@ -280,8 +280,8 @@ page 99000787 "Production BOM List"
 
     var
         ProdBOMWhereUsed : Page "Prod. BOM Where-Used";
-        ProdBOMHeader : Record "Production BOM Header";
-        Bom_Status_running : Label '"Running BOM "';
+                               ProdBOMHeader : Record "Production BOM Header";
+                               Bom_Status_running : Label '"Running BOM "';
         Bom_Status_old : Label 'Old BOM';
         Running_bom_flag : Boolean;
         old_bom_flag : Boolean;

@@ -7,14 +7,14 @@ xmlport 56759 Testing
     {
         textelement(Item_Prices)
         {
-            tableelement(Item;Item)
+            tableelement(Item; Item)
             {
                 AutoSave = false;
                 XmlName = 'ItemRecord';
-                fieldelement(No;Item."No.")
+                fieldelement(No; Item."No.")
                 {
                 }
-                fieldelement(UnitPrice;Item."Unit Price")
+                fieldelement(UnitPrice; Item."Unit Price")
                 {
                 }
 
@@ -42,6 +42,6 @@ xmlport 56759 Testing
     }
 
     var
-        ItemRec : Record Item;
+        ItemRec: Record Item;
 }
 

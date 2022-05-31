@@ -1,4 +1,4 @@
-pageextension 70202 SalutationsExt extends Salutations 
+pageextension 70202 SalutationsExt extends Salutations
 {
     // version NAVW17.00
 

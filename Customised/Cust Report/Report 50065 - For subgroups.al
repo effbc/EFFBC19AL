@@ -11,13 +11,13 @@ report 50065 "For subgroups"
     RDLCLayout = './For subgroups.rdlc';
 
     Caption = 'For subgroups';
-    Permissions = TableData "Item Ledger Entry"=rm;
+    Permissions = TableData "Item Ledger Entry" = rm;
 
     dataset
     {
-        dataitem("Item Ledger Entry";"Item Ledger Entry")
+        dataitem("Item Ledger Entry"; "Item Ledger Entry")
         {
-            DataItemTableView = SORTING(Location Code,Global Dimension 2 Code,Item No.) ORDER(Ascending) WHERE(Location Code=CONST(SITE),Global Dimension 2 Code=FILTER(<>''),Remaining Quantity=FILTER(>0),Entry Type=CONST(Transfer),DC Check=CONST(No));
+            DataItemTableView = SORTING(Location Code, Global Dimension 2 Code, Item No.) ORDER(Ascending) WHERE(Location Code=CONST(SITE),Global Dimension 2 Code=FILTER(<>''),Remaining Quantity=FILTER(>0),Entry Type=CONST(Transfer),DC Check=CONST(No));
             RequestFilterFields = "Posting Date","Global Dimension 2 Code";
             column(company_information__Name;"company information".Name)
             {
@@ -2059,191 +2059,186 @@ report 50065 "For subgroups"
         CTLedgGRec : Record "CS Stock Ledger";
         TransNoGVar : Code[20];
         CTCardGPag : Page "CS Transaction Card";
-        StatusGVar : Option Working;
-        totCardsGVar : Decimal;
-        entryNoGVar : Integer;
-        ItemGRec : Record Item;
-        PMIL : Record "Posted Material Issues Line";
-        reasonGvar : Code[20];
-        StatGVar : Code[20];
-        PMIH : Record "Posted Material Issues Header";
-        ILEGVar : Record "Item Ledger Entry";
-        NoSeriesMgt : Codeunit NoSeriesManagement;
-        noseries : Code[10];
-        transID : Code[20];
-        hasLines : Boolean;
-        tin : Record "T.I.N. Nos.";
-        TNo : Text[20];
-        CSTNo : Text;
-        Type1 : Code[50];
-        Type2 : Code[50];
-        ItemCodes : Text;
-        ItemCodes1 : Text;
-        Itm2 : Record Item;
-        flag : Boolean;
-        PMIHNEW : Record "Posted Material Issues Header";
-        conformation : Boolean;
-        prevDoc : Code[15];
-        prevGDC : Code[15];
-        PMIHCheck : Record "Posted Material Issues Header";
-        ILECheck : Record "Item Ledger Entry";
-        outwardnumber : Text;
-        ItemsTobeDeleted : Text;
-        ItemsTobeDeleted1 : Text;
-        projectcode : Code[20];
-        ILENew1 : Record "Item Ledger Entry";
-        DCLINE1 : Record "DC Line";
-        prevdcno : Code[50];
-        PrevFrmLoc : Code[20];
-        testing : Text;
-        ItemUOM : Code[20];
-        Test : Code[10];
-        DCHeader1 : Record "DC Header";
-        DCLINE2 : Record "DC Line";
-        PostedMatIssHdr : Record "Posted Material Issues Header";
-        CustrNo : Code[20];
-        CustGRec : Record Customer;
-        SP : Record "Salesperson/Purchaser";
-        AuthNo : Text[50];
-        AuthName : Text[100];
-        RespPersn : Code[30];
-        TempCHLG : Record "CS Stock Ledger";
-        Divsn : Record Division;
-        SendToLoc : Option Customer,Site;
-        Site : Code[20];
-        DimValGRec : Record "Dimension Value";
-        modeOfTransf : Text[50];
-        AMC_Orders : Code[65];
-        AMCGRec : Record "Sales Header";
-        AMCNo : Code[30];
-        AMC_Loc : Text;
-        DivGRec : Record Division;
-        ZoneGRec : Record Zones;
-        sqlintegratation_codeunit : Codeunit SQLIntegration;
-        SQLConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
-        RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
-        mobno : Text;
-        ConnectionOpen : Integer;
-        SQLQuery : Text[1000];
-        RowCount : Integer;
-        incharge_name : Text[1024];
-        incharge_no : Text[30];
-        incharge_id_no : Text[7];
+                         StatusGVar : Option Working;
+                         totCardsGVar : Decimal;
+                         entryNoGVar : Integer;
+                         ItemGRec : Record Item;
+                         PMIL : Record "Posted Material Issues Line";
+                         reasonGvar : Code[20];
+                         StatGVar : Code[20];
+                         PMIH : Record "Posted Material Issues Header";
+                         ILEGVar : Record "Item Ledger Entry";
+                         NoSeriesMgt : Codeunit NoSeriesManagement;
+                         noseries : Code[10];
+                         transID : Code[20];
+                         hasLines : Boolean;
+                         tin : Record "T.I.N. Nos.";
+                         TNo : Text[20];
+                         CSTNo : Text;
+                         Type1 : Code[50];
+                         Type2 : Code[50];
+                         ItemCodes : Text;
+                         ItemCodes1 : Text;
+                         Itm2 : Record Item;
+                         flag : Boolean;
+                         PMIHNEW : Record "Posted Material Issues Header";
+                         conformation : Boolean;
+                         prevDoc : Code[15];
+                         prevGDC : Code[15];
+                         PMIHCheck : Record "Posted Material Issues Header";
+                         ILECheck : Record "Item Ledger Entry";
+                         outwardnumber : Text;
+                         ItemsTobeDeleted : Text;
+                         ItemsTobeDeleted1 : Text;
+                         projectcode : Code[20];
+                         ILENew1 : Record "Item Ledger Entry";
+                         DCLINE1 : Record "DC Line";
+                         prevdcno : Code[50];
+                         PrevFrmLoc : Code[20];
+                         testing : Text;
+                         ItemUOM : Code[20];
+                         Test : Code[10];
+                         DCHeader1 : Record "DC Header";
+                         DCLINE2 : Record "DC Line";
+                         PostedMatIssHdr : Record "Posted Material Issues Header";
+                         CustrNo : Code[20];
+                         CustGRec : Record Customer;
+                         SP : Record "Salesperson/Purchaser";
+                         AuthNo : Text[50];
+                         AuthName : Text[100];
+                         RespPersn : Code[30];
+                         TempCHLG : Record "CS Stock Ledger";
+                         Divsn : Record Division;
+                         SendToLoc : Option Customer,Site;
+                         Site : Code[20];
+                         DimValGRec : Record "Dimension Value";
+                         modeOfTransf : Text[50];
+                         AMC_Orders : Code[65];
+                         AMCGRec : Record "Sales Header";
+                         AMCNo : Code[30];
+                         AMC_Loc : Text;
+                         DivGRec : Record Division;
+                         ZoneGRec : Record Zones;
+                         sqlintegratation_codeunit : Codeunit SQLIntegration;
+                         SQLConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
+                         RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
+                         mobno : Text;
+                         ConnectionOpen : Integer;
+                         SQLQuery : Text[1000];
+                         RowCount : Integer;
+                         incharge_name : Text[1024];
+                         incharge_no : Text[30];
+                         incharge_id_no : Text[7];
 
     [LineStart(4135)]
-    procedure Cards_Calc(Item : Code[20];Status : Option Working,"Non Working") res : Decimal;
+    procedure Cards_Calc(Item: Code[20]; Status: Option Working,"Non Working") res: Decimal;
     var
-        CsLedgerLRec : Record "CS Stock Ledger";
+        CsLedgerLRec: Record "CS Stock Ledger";
     begin
 
-          totCardsGVar:=0;
-          CsLedgerLRec.RESET;
-          CsLedgerLRec.SETFILTER(CsLedgerLRec.Location,'H-OFF');
-          CsLedgerLRec.SETFILTER(CsLedgerLRec."Item No",Item);
-          CsLedgerLRec.SETFILTER(CsLedgerLRec.Received,'%1',TRUE);
-          CsLedgerLRec.SETFILTER(CsLedgerLRec."Card Status",'%1',Status);
-          IF  CsLedgerLRec.FINDFIRST THEN
-          REPEAT
-            totCardsGVar:=totCardsGVar+CsLedgerLRec.Quantity;
-          UNTIL CsLedgerLRec.NEXT=0;
+        totCardsGVar := 0;
+        CsLedgerLRec.RESET;
+        CsLedgerLRec.SETFILTER(CsLedgerLRec.Location, 'H-OFF');
+        CsLedgerLRec.SETFILTER(CsLedgerLRec."Item No", Item);
+        CsLedgerLRec.SETFILTER(CsLedgerLRec.Received, '%1', TRUE);
+        CsLedgerLRec.SETFILTER(CsLedgerLRec."Card Status", '%1', Status);
+        IF CsLedgerLRec.FINDFIRST THEN
+            REPEAT
+                totCardsGVar := totCardsGVar + CsLedgerLRec.Quantity;
+            UNTIL CsLedgerLRec.NEXT = 0;
 
-          CsLedgerLRec.RESET;
-          CsLedgerLRec.SETFILTER(CsLedgerLRec.Location,'H-OFF');
-          CsLedgerLRec.SETFILTER(CsLedgerLRec."Item No",Item);
-          CsLedgerLRec.SETFILTER(CsLedgerLRec.Received,'%1',FALSE);
-          CsLedgerLRec.SETFILTER(CsLedgerLRec."Card Status",'%1',Status);
-          CsLedgerLRec.SETFILTER(CsLedgerLRec.Quantity,'<0');
-          IF  CsLedgerLRec.FINDFIRST THEN
-          REPEAT
-            totCardsGVar:=totCardsGVar+CsLedgerLRec.Quantity;
-          UNTIL CsLedgerLRec.NEXT=0;
+        CsLedgerLRec.RESET;
+        CsLedgerLRec.SETFILTER(CsLedgerLRec.Location, 'H-OFF');
+        CsLedgerLRec.SETFILTER(CsLedgerLRec."Item No", Item);
+        CsLedgerLRec.SETFILTER(CsLedgerLRec.Received, '%1', FALSE);
+        CsLedgerLRec.SETFILTER(CsLedgerLRec."Card Status", '%1', Status);
+        CsLedgerLRec.SETFILTER(CsLedgerLRec.Quantity, '<0');
+        IF CsLedgerLRec.FINDFIRST THEN
+            REPEAT
+                totCardsGVar := totCardsGVar + CsLedgerLRec.Quantity;
+            UNTIL CsLedgerLRec.NEXT = 0;
 
-         //ILEGVar.SETFILTER();
+        //ILEGVar.SETFILTER();
         // ILE
-          res:=totCardsGVar;
+        res := totCardsGVar;
     end;
 
     [LineStart(4163)]
     procedure CstransEntry();
     var
-        CSLGE : Record "CS Stock Ledger";
-        NeededQty : Decimal;
-        DateVar : Date;
-        DCHead : Record "DC Header";
-        DCLn : Record "DC Line";
+        CSLGE: Record "CS Stock Ledger";
+        NeededQty: Decimal;
+        DateVar: Date;
+        DCHead: Record "DC Header";
+        DCLn: Record "DC Line";
     begin
         //ItemGRec.RESET;
-        Type1:='';
-        Type2:='';
+        Type1 := '';
+        Type2 := '';
         IF ItemGRec.GET(PrevItemNo) AND (PrevFrmLoc = 'CS') THEN
           //IF (ItemGRec."CS IGC"<>'') AND (ItemGRec."CS IGC"<>'SHOULD NOT COME IN STOCK') THEN   //commented by pranavi on 25-07-2015 15:25 PM
           BEGIN
-            IF hasLines=FALSE THEN
-            BEGIN
-              PostedMatIssHdr.RESET;
-              IF PostedMatIssHdr.GET("Item Ledger Entry"."Document No.") THEN
-              BEGIN
-                CustrNo:=PostedMatIssHdr."Customer No";
-                TempCHLG.RESET;
-                TempCHLG.SETRANGE(TempCHLG."Transaction ID",PostedMatIssHdr."Transaction ID");
-                IF TempCHLG.FINDFIRST THEN
-                  RespPersn:= TempCHLG."Responsible Persion";
-              END;
-              IF RespPersn = '' THEN
-              BEGIN
-                IF "Item Ledger Entry".GETFILTER("Item Ledger Entry"."Global Dimension 2 Code") = 'LED-GEN' THEN
-                BEGIN
-        //          RespPersn:="Authorised By";
-                  RespPersn:=incharge_id_no;
-                END
-                ELSE BEGIN
-                  Divsn.RESET;
-                  Divsn.SETRANGE(Divsn."Division Code","Item Ledger Entry".GETFILTER("Item Ledger Entry"."Global Dimension 2 Code"));
-                  IF Divsn.FINDFIRST THEN
-                  BEGIN
-                    User.RESET;
-                    User.SETRANGE(User.EmployeeID,Divsn."Project Manager");
-                    IF User.FINDFIRST THEN
-                      RespPersn:=User."User Name";
-                  END;
+            IF hasLines = FALSE THEN BEGIN
+                PostedMatIssHdr.RESET;
+                IF PostedMatIssHdr.GET("Item Ledger Entry"."Document No.") THEN BEGIN
+                    CustrNo := PostedMatIssHdr."Customer No";
+                    TempCHLG.RESET;
+                    TempCHLG.SETRANGE(TempCHLG."Transaction ID", PostedMatIssHdr."Transaction ID");
+                    IF TempCHLG.FINDFIRST THEN
+                        RespPersn := TempCHLG."Responsible Persion";
                 END;
-              END;
-              noseries:='CS TRANS';
-              NoSeriesMgt.InitSeries('CS TRANS','CS TRANS',TODAY,TransNoGVar,noseries);
-        
-        
-              CTHGRec.INIT;
-              CTHGRec."Transaction ID":=TransNoGVar;
-              IF Type='Non-Returnable' THEN
-                CTHGRec."Transaction Type":=CTHGRec."Transaction Type"::"Customer card Transfer"
-              ELSE
-                CTHGRec."Transaction Type":=CTHGRec."Transaction Type"::"Card Transfer";
-        
-              CTHGRec."Transfer From Location":='H-OFF';
-              CTHGRec."Transfer To Location":="Item Ledger Entry".GETFILTER("Item Ledger Entry"."Global Dimension 2 Code");
-              CTHGRec."Mode of Transport":="Mode Of Transport";
-              CTHGRec."Courier Details":=' ';
-              CTHGRec."Transaction Status":= CTHGRec."Transaction Status"::"In-Transit";
-              CTHGRec.Status:=CTHGRec.Status::Open;
-              CTHGRec."Posting Date":=TODAY;
-              CTHGRec."User ID":=USERID;
-              CTHGRec."Created Date":=TODAY;
-              CTHGRec.Remarks:=FORMAT(Purpose);
-              CTHGRec."DC No":="Outward No.";
-              CTHGRec."Customer No":=CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
-              CTHGRec.VALIDATE("Customer No");
-              CTHGRec."Responsible Persion":=RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
-              CTHGRec.INSERT;
-              hasLines:=TRUE;
+                IF RespPersn = '' THEN BEGIN
+                    IF "Item Ledger Entry".GETFILTER("Item Ledger Entry"."Global Dimension 2 Code") = 'LED-GEN' THEN BEGIN
+                        //          RespPersn:="Authorised By";
+                        RespPersn := incharge_id_no;
+                    END
+                    ELSE BEGIN
+                        Divsn.RESET;
+                        Divsn.SETRANGE(Divsn."Division Code", "Item Ledger Entry".GETFILTER("Item Ledger Entry"."Global Dimension 2 Code"));
+                        IF Divsn.FINDFIRST THEN BEGIN
+                            User.RESET;
+                            User.SETRANGE(User.EmployeeID, Divsn."Project Manager");
+                            IF User.FINDFIRST THEN
+                                RespPersn := User."User Name";
+                        END;
+                    END;
+                END;
+                noseries := 'CS TRANS';
+                NoSeriesMgt.InitSeries('CS TRANS', 'CS TRANS', TODAY, TransNoGVar, noseries);
+
+
+                CTHGRec.INIT;
+                CTHGRec."Transaction ID" := TransNoGVar;
+                IF Type = 'Non-Returnable' THEN
+                    CTHGRec."Transaction Type" := CTHGRec."Transaction Type"::"Customer card Transfer"
+                ELSE
+                    CTHGRec."Transaction Type" := CTHGRec."Transaction Type"::"Card Transfer";
+
+                CTHGRec."Transfer From Location" := 'H-OFF';
+                CTHGRec."Transfer To Location" := "Item Ledger Entry".GETFILTER("Item Ledger Entry"."Global Dimension 2 Code");
+                CTHGRec."Mode of Transport" := "Mode Of Transport";
+                CTHGRec."Courier Details" := ' ';
+                CTHGRec."Transaction Status" := CTHGRec."Transaction Status"::"In-Transit";
+                CTHGRec.Status := CTHGRec.Status::Open;
+                CTHGRec."Posting Date" := TODAY;
+                CTHGRec."User ID" := USERID;
+                CTHGRec."Created Date" := TODAY;
+                CTHGRec.Remarks := FORMAT(Purpose);
+                CTHGRec."DC No" := "Outward No.";
+                CTHGRec."Customer No" := CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
+                CTHGRec.VALIDATE("Customer No");
+                CTHGRec."Responsible Persion" := RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
+                CTHGRec.INSERT;
+                hasLines := TRUE;
             END;
-        
-        
+
+
             //site stock transaction entry. Added by mnraju on 20-Mar-2014
-        
-         //   totCardsGVar:=Cards_Calc(PrevItemNo,StatusGVar::Working);
-         //   IF totCardsGVar< GrouptotalQty THEN
-        //      ERROR('Quantity for Item %1 Status %2 must be equal or less than %3',PrevItemNo,StatusGVar::Working,FORMAT(totCardsGVar));
-         //   MESSAGE('line');
+
+            //   totCardsGVar:=Cards_Calc(PrevItemNo,StatusGVar::Working);
+            //   IF totCardsGVar< GrouptotalQty THEN
+            //      ERROR('Quantity for Item %1 Status %2 must be equal or less than %3',PrevItemNo,StatusGVar::Working,FORMAT(totCardsGVar));
+            //   MESSAGE('line');
             //EFFUPG1.0>>
             /*
             IF USERID = 'EFFTRONICS\PRANAVI' THEN
@@ -2251,464 +2246,449 @@ report 50065 "For subgroups"
             ELSE
               EVALUATE(DateVar,'7/21/15');
             */
-            DateVar:= DMY2DATE(21,7,2015);
+            DateVar := DMY2DATE(21, 7, 2015);
             //EFFUPG1.0<<
             NeededQty := 0;
-            ItemCodes:='';
-            ItemCodes1:='';
+            ItemCodes := '';
+            ItemCodes1 := '';
             Itm2.RESET;
-            IF  ItemGRec."CS IGC" <> '' THEN                  //Added by Pranavi on 25-07-2015
-              Itm2.SETFILTER(Itm2."CS IGC",ItemGRec."CS IGC")
+            IF ItemGRec."CS IGC" <> '' THEN                  //Added by Pranavi on 25-07-2015
+                Itm2.SETFILTER(Itm2."CS IGC", ItemGRec."CS IGC")
             ELSE
-              Itm2.SETFILTER(Itm2."No.",ItemGRec."No.");
+                Itm2.SETFILTER(Itm2."No.", ItemGRec."No.");
             IF Itm2.FINDSET THEN
-            REPEAT
-              ItemCodes:=ItemCodes+Itm2."No."+'|';
-            UNTIL Itm2.NEXT=0;
-            IF  ItemCodes <> '' THEN
-              ItemCodes1:=COPYSTR(ItemCodes,1,STRLEN(ItemCodes)-1);
+                REPEAT
+                    ItemCodes := ItemCodes + Itm2."No." + '|';
+                UNTIL Itm2.NEXT = 0;
+            IF ItemCodes <> '' THEN
+                ItemCodes1 := COPYSTR(ItemCodes, 1, STRLEN(ItemCodes) - 1);
             //MESSAGE(ItemCodes+'\'+ItemCodes1);
             //MESSAGE(ItemCodes1);
             CSLGE.RESET;
-            CSLGE.SETFILTER(CSLGE."Posting Date",'>=%1',DateVar);
-            CSLGE.SETFILTER(CSLGE.Location,"Item Ledger Entry".GETFILTER("Item Ledger Entry"."Global Dimension 2 Code"));
+            CSLGE.SETFILTER(CSLGE."Posting Date", '>=%1', DateVar);
+            CSLGE.SETFILTER(CSLGE.Location, "Item Ledger Entry".GETFILTER("Item Ledger Entry"."Global Dimension 2 Code"));
             IF "Item Ledger Entry".GETFILTER("Item Ledger Entry"."Global Dimension 2 Code") = 'LED-GEN' THEN
-              CSLGE.SETFILTER(CSLGE."Customer No",CustrNo);
-            CSLGE.SETFILTER(CSLGE."Transaction Type",'%1',CSLGE."Transaction Type"::"Custmer card Transfer");
-            CSLGE.SETFILTER(CSLGE."Item No",'<>%1','');
+                CSLGE.SETFILTER(CSLGE."Customer No", CustrNo);
+            CSLGE.SETFILTER(CSLGE."Transaction Type", '%1', CSLGE."Transaction Type"::"Custmer card Transfer");
+            CSLGE.SETFILTER(CSLGE."Item No", '<>%1', '');
             //CSLGE.SETFILTER(CSLGE.NonReturnable,'%1',TRUE);
-            CSLGE.SETFILTER(CSLGE."Item No",ItemCodes1);
+            CSLGE.SETFILTER(CSLGE."Item No", ItemCodes1);
             //testing := '';
             IF CSLGE.FINDSET THEN
-            REPEAT
-              //testing:=testing+CSLGE."Item No"+',';
-              NeededQty := NeededQty+CSLGE.Quantity;
-            UNTIL CSLGE.NEXT = 0;
+                REPEAT
+                    //testing:=testing+CSLGE."Item No"+',';
+                    NeededQty := NeededQty + CSLGE.Quantity;
+                UNTIL CSLGE.NEXT = 0;
             //MESSAGE(testing);
-            IF NeededQty < 0 THEN
-            BEGIN
-              IF GrouptotalQty <= -NeededQty THEN
-              BEGIN
-                CTLGRec.INIT;
-                CTLGRec."Transaction ID":=TransNoGVar;
-                CTLGRec."Line No.":=LINE_NO;
-                CTLGRec."Item No.":= PrevItemNo;
-                CTLGRec.VALIDATE("Item No.");
-                CTLGRec.Quantity:=GrouptotalQty;
-                CTLGRec.Status:=CTLGRec.Status::Working;
-                CTLGRec.Reason:=reasonGvar;
-                CTLGRec.Station:=StatGVar;
-            /*   IF Type='Non-Returnable' THEN */
-                  CTLGRec.NonReturnable:=TRUE;
-             // CTLGRec."Order No":=
-                CTLGRec.INSERT;
-                DC_LINE.INIT;
-                DC_LINE."Document No.":="Outward No.";
-                DC_LINE."Line No.":=LINE_NO;
-                DC_LINE.Type:=DC_LINE.Type::Item;
-                DC_LINE."No.":= PrevItemNo;
-                DC_LINE.VALIDATE(DC_LINE."No.");
-                DC_LINE.Quantity:=GrouptotalQty;
-                DC_LINE."Non-Returnable":=TRUE;
-                DC_LINE.INSERT;
-                Type1:='Non-Returnable--'+FORMAT(GrouptotalQty);
-              END   // End_of_GrouptotalQty <= -NeededQty
-              ELSE
-              BEGIN
-                CTLGRec.INIT;
-                CTLGRec."Transaction ID":=TransNoGVar;
-                CTLGRec."Line No.":=LINE_NO;
-                CTLGRec."Item No.":= PrevItemNo;
-                CTLGRec.VALIDATE("Item No.");
-                CTLGRec.Quantity:=-NeededQty;
-                CTLGRec.Status:=CTLGRec.Status::Working;
-                CTLGRec.Reason:=reasonGvar;
-                CTLGRec.Station:=StatGVar;
-            /*   IF Type='Non-Returnable' THEN */
-                  CTLGRec.NonReturnable:=TRUE;
-             // CTLGRec."Order No":=
-                CTLGRec.INSERT;
-                CTLGRec.INIT;
-                CTLGRec."Transaction ID":=TransNoGVar;
-                CTLGRec."Line No.":=LINE_NO+10000;
-                CTLGRec."Item No.":= PrevItemNo;
-                CTLGRec.VALIDATE("Item No.");
-                CTLGRec.Quantity:=GrouptotalQty+NeededQty;
-                CTLGRec.Status:=CTLGRec.Status::Working;
-                CTLGRec.Reason:=reasonGvar;
-                CTLGRec.Station:=StatGVar;
-            /*   IF Type='Non-Returnable' THEN */
-                  CTLGRec.NonReturnable:=FALSE;
-             // CTLGRec."Order No":=
-                CTLGRec.INSERT;
-                DC_LINE.INIT;
-                DC_LINE."Document No.":="Outward No.";
-                DC_LINE."Line No.":=LINE_NO;
-                DC_LINE.Type:=DC_LINE.Type::Item;
-                DC_LINE."No.":= PrevItemNo;
-                DC_LINE.VALIDATE(DC_LINE."No.");
-                DC_LINE.Quantity:=-NeededQty;
-                DC_LINE."Non-Returnable":=TRUE;
-                DC_LINE.INSERT;
-                DC_LINE.INIT;
-                DC_LINE."Document No.":="Outward No.";
-                DC_LINE."Line No.":=LINE_NO+10000;
-                DC_LINE.Type:=DC_LINE.Type::Item;
-                DC_LINE."No.":= PrevItemNo;
-                DC_LINE.VALIDATE(DC_LINE."No.");
-                DC_LINE.Quantity:=GrouptotalQty+NeededQty;
-                DC_LINE."Non-Returnable":=FALSE;
-                DC_LINE.INSERT;
-                Type1:='Non-Returnable--'+FORMAT(-NeededQty);
-                Type2:=', Returnable--'+FORMAT(GrouptotalQty+NeededQty);
-        
-                CTHGRec.RESET;
-                CTHGRec.SETFILTER(CTHGRec."Transaction ID",'%1',TransNoGVar);
-                IF CTHGRec.FINDFIRST THEN
-                BEGIN
-                  CTHGRec."Transaction Type":=CTHGRec."Transaction Type"::"Card Transfer";
-                  CTHGRec.MODIFY;
+            IF NeededQty < 0 THEN BEGIN
+                IF GrouptotalQty <= -NeededQty THEN BEGIN
+                    CTLGRec.INIT;
+                    CTLGRec."Transaction ID" := TransNoGVar;
+                    CTLGRec."Line No." := LINE_NO;
+                    CTLGRec."Item No." := PrevItemNo;
+                    CTLGRec.VALIDATE("Item No.");
+                    CTLGRec.Quantity := GrouptotalQty;
+                    CTLGRec.Status := CTLGRec.Status::Working;
+                    CTLGRec.Reason := reasonGvar;
+                    CTLGRec.Station := StatGVar;
+                    /*   IF Type='Non-Returnable' THEN */
+                    CTLGRec.NonReturnable := TRUE;
+                    // CTLGRec."Order No":=
+                    CTLGRec.INSERT;
+                    DC_LINE.INIT;
+                    DC_LINE."Document No." := "Outward No.";
+                    DC_LINE."Line No." := LINE_NO;
+                    DC_LINE.Type := DC_LINE.Type::Item;
+                    DC_LINE."No." := PrevItemNo;
+                    DC_LINE.VALIDATE(DC_LINE."No.");
+                    DC_LINE.Quantity := GrouptotalQty;
+                    DC_LINE."Non-Returnable" := TRUE;
+                    DC_LINE.INSERT;
+                    Type1 := 'Non-Returnable--' + FORMAT(GrouptotalQty);
+                END   // End_of_GrouptotalQty <= -NeededQty
+                ELSE BEGIN
+                    CTLGRec.INIT;
+                    CTLGRec."Transaction ID" := TransNoGVar;
+                    CTLGRec."Line No." := LINE_NO;
+                    CTLGRec."Item No." := PrevItemNo;
+                    CTLGRec.VALIDATE("Item No.");
+                    CTLGRec.Quantity := -NeededQty;
+                    CTLGRec.Status := CTLGRec.Status::Working;
+                    CTLGRec.Reason := reasonGvar;
+                    CTLGRec.Station := StatGVar;
+                    /*   IF Type='Non-Returnable' THEN */
+                    CTLGRec.NonReturnable := TRUE;
+                    // CTLGRec."Order No":=
+                    CTLGRec.INSERT;
+                    CTLGRec.INIT;
+                    CTLGRec."Transaction ID" := TransNoGVar;
+                    CTLGRec."Line No." := LINE_NO + 10000;
+                    CTLGRec."Item No." := PrevItemNo;
+                    CTLGRec.VALIDATE("Item No.");
+                    CTLGRec.Quantity := GrouptotalQty + NeededQty;
+                    CTLGRec.Status := CTLGRec.Status::Working;
+                    CTLGRec.Reason := reasonGvar;
+                    CTLGRec.Station := StatGVar;
+                    /*   IF Type='Non-Returnable' THEN */
+                    CTLGRec.NonReturnable := FALSE;
+                    // CTLGRec."Order No":=
+                    CTLGRec.INSERT;
+                    DC_LINE.INIT;
+                    DC_LINE."Document No." := "Outward No.";
+                    DC_LINE."Line No." := LINE_NO;
+                    DC_LINE.Type := DC_LINE.Type::Item;
+                    DC_LINE."No." := PrevItemNo;
+                    DC_LINE.VALIDATE(DC_LINE."No.");
+                    DC_LINE.Quantity := -NeededQty;
+                    DC_LINE."Non-Returnable" := TRUE;
+                    DC_LINE.INSERT;
+                    DC_LINE.INIT;
+                    DC_LINE."Document No." := "Outward No.";
+                    DC_LINE."Line No." := LINE_NO + 10000;
+                    DC_LINE.Type := DC_LINE.Type::Item;
+                    DC_LINE."No." := PrevItemNo;
+                    DC_LINE.VALIDATE(DC_LINE."No.");
+                    DC_LINE.Quantity := GrouptotalQty + NeededQty;
+                    DC_LINE."Non-Returnable" := FALSE;
+                    DC_LINE.INSERT;
+                    Type1 := 'Non-Returnable--' + FORMAT(-NeededQty);
+                    Type2 := ', Returnable--' + FORMAT(GrouptotalQty + NeededQty);
+
+                    CTHGRec.RESET;
+                    CTHGRec.SETFILTER(CTHGRec."Transaction ID", '%1', TransNoGVar);
+                    IF CTHGRec.FINDFIRST THEN BEGIN
+                        CTHGRec."Transaction Type" := CTHGRec."Transaction Type"::"Card Transfer";
+                        CTHGRec.MODIFY;
+                    END;
+
                 END;
-        
-              END;
-              CTLedgGRec.LOCKTABLE;
-        
-           // REC1
-           // MESSAGE('ledger');
-              CTLedgGRec.RESET;
-              CTLedgGRec.SETCURRENTKEY(CTLedgGRec."Entry No.");
-              IF CTLedgGRec.FINDLAST THEN
-              BEGIN
-                entryNoGVar:=CTLedgGRec."Entry No.";
-              END;
-           // MESSAGE(FORMAT(entryNoGVar));
-              IF GrouptotalQty <= -NeededQty THEN
-              BEGIN
-                CTLedgGRec.INIT;
-                CTLedgGRec."Entry No.":=entryNoGVar+1;
-                CTLedgGRec."Posted By":=USERID;
-                CTLedgGRec."Posting Date":=TODAY;
-                CTLedgGRec.Received:=FALSE;
-                CTLedgGRec.Quantity:=-GrouptotalQty;
-                CTLedgGRec."Transaction ID":=TransNoGVar;
-                CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Customer card Transfer";
-        
-                CTLedgGRec.Location:='H-OFF';
-                CTLedgGRec."User ID":=USERID;
-                CTLedgGRec."Mode of Transport":="Mode Of Transport";
-                CTLedgGRec."Courier Details":=' ';
-                CTLedgGRec.Remarks:=FORMAT(Purpose);
-                CTLedgGRec."Line No.":=LINE_NO;
-                CTLedgGRec."Item No":=PrevItemNo;
-                CTLedgGRec.Reason:=reasonGvar;
-                CTLedgGRec.Station:=StatGVar;
-                CTLedgGRec."Card Status":=CTLGRec.Status::Working;
-                CTLedgGRec."DC No":="Outward No.";
-                CTLedgGRec."Customer No":=CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
-                CTLedgGRec."Responsible Persion":=RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
-                CTLedgGRec.NonReturnable:=TRUE;
-        
-        
-                CTLedgGRec.INSERT;
-        
-              //REC2
-                entryNoGVar:=entryNoGVar+2;
-                CTLedgGRec.INIT;
-                CTLedgGRec."Entry No.":=entryNoGVar;
-                CTLedgGRec."Posted By":=USERID;
-                CTLedgGRec."Posting Date":=TODAY;
-                CTLedgGRec.Received:=FALSE;
-                CTLedgGRec.Location:="Item Ledger Entry"."Global Dimension 2 Code";
-                CTLedgGRec."Card Status":=CTLGRec.Status::Working;
-                CTLedgGRec.Quantity:=GrouptotalQty;
-                CTLedgGRec."Transaction ID":=TransNoGVar;
-                CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Customer card Transfer";
-                CTLedgGRec."User ID":=USERID;
-                CTLedgGRec."Mode of Transport":="Mode Of Transport";
-                CTLedgGRec."Courier Details":=' ';
-                CTLedgGRec.Remarks:=FORMAT(Purpose);
-                CTLedgGRec."Line No.":=LINE_NO;
-                CTLedgGRec."Item No":=PrevItemNo;
-                CTLedgGRec.Reason:=reasonGvar;
-                CTLedgGRec.Station:=StatGVar;
-                CTLedgGRec."DC No":="Outward No.";
-                CTLedgGRec."Customer No":=CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
-                CTLedgGRec."Responsible Persion":=RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
-                CTLedgGRec.NonReturnable:=TRUE;
-        
-                CTLedgGRec.INSERT;
-                //end of mnraju
-              END
-              ELSE
-              BEGIN
-                CTLedgGRec.INIT;
-                CTLedgGRec."Entry No.":=entryNoGVar+1;
-                CTLedgGRec."Posted By":=USERID;
-                CTLedgGRec."Posting Date":=TODAY;
-                CTLedgGRec.Received:=FALSE;
-                CTLedgGRec.Quantity:=NeededQty;
-                CTLedgGRec."Transaction ID":=TransNoGVar;
-                CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Customer card Transfer";
-                CTLedgGRec.Location:='H-OFF';
-                CTLedgGRec."User ID":=USERID;
-                CTLedgGRec."Mode of Transport":="Mode Of Transport";
-                CTLedgGRec."Courier Details":=' ';
-                CTLedgGRec.Remarks:=FORMAT(Purpose);
-                CTLedgGRec."Line No.":=LINE_NO;
-                CTLedgGRec."Item No":=PrevItemNo;
-                CTLedgGRec.Reason:=reasonGvar;
-                CTLedgGRec.Station:=StatGVar;
-                CTLedgGRec."Card Status":=CTLGRec.Status::Working;
-                CTLedgGRec."DC No":="Outward No.";
-                CTLedgGRec.NonReturnable:=TRUE;
-                CTLedgGRec."Customer No":=CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
-                CTLedgGRec."Responsible Persion":=RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
-                CTLedgGRec.INSERT;
-        
-              //REC2
-                entryNoGVar:=entryNoGVar+2;
-                CTLedgGRec.INIT;
-                CTLedgGRec."Entry No.":=entryNoGVar;
-                CTLedgGRec."Posted By":=USERID;
-                CTLedgGRec."Posting Date":=TODAY;
-                CTLedgGRec.Received:=FALSE;
-                CTLedgGRec.Location:="Item Ledger Entry"."Global Dimension 2 Code";
-                CTLedgGRec."Card Status":=CTLGRec.Status::Working;
-                CTLedgGRec.Quantity:=-NeededQty;
-                CTLedgGRec."Transaction ID":=TransNoGVar;
-                CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Customer card Transfer";
-                CTLedgGRec."User ID":=USERID;
-                CTLedgGRec."Mode of Transport":="Mode Of Transport";
-                CTLedgGRec."Courier Details":=' ';
-                CTLedgGRec.Remarks:=FORMAT(Purpose);
-                CTLedgGRec."Line No.":=LINE_NO;
-                CTLedgGRec."Item No":=PrevItemNo;
-                CTLedgGRec.Reason:=reasonGvar;
-                CTLedgGRec.Station:=StatGVar;
-                CTLedgGRec."DC No":="Outward No.";
-                CTLedgGRec.NonReturnable:=TRUE;
-                CTLedgGRec."Customer No":=CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
-                CTLedgGRec."Responsible Persion":=RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
-                CTLedgGRec.INSERT;
-                //end of mnraju
-                CTLedgGRec.INIT;
-                CTLedgGRec."Entry No.":=entryNoGVar+1;
-                CTLedgGRec."Posted By":=USERID;
-                CTLedgGRec."Posting Date":=TODAY;
-                CTLedgGRec.Received:=FALSE;
-                CTLedgGRec.Quantity:=-(GrouptotalQty+NeededQty);
-                CTLedgGRec."Transaction ID":=TransNoGVar;
-                CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Card Transfer";
-                CTLedgGRec.Location:='H-OFF';
-                CTLedgGRec."User ID":=USERID;
-                CTLedgGRec."Mode of Transport":="Mode Of Transport";
-                CTLedgGRec."Courier Details":=' ';
-                CTLedgGRec.Remarks:=FORMAT(Purpose);
-                CTLedgGRec."Line No.":=LINE_NO+10000;
-                CTLedgGRec."Item No":=PrevItemNo;
-                CTLedgGRec.Reason:=reasonGvar;
-                CTLedgGRec.Station:=StatGVar;
-                CTLedgGRec."Card Status":=CTLGRec.Status::Working;
-                CTLedgGRec."DC No":="Outward No.";
-                CTLedgGRec.NonReturnable:=FALSE;
-                CTLedgGRec."Customer No":=CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
-                CTLedgGRec."Responsible Persion":=RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
-                CTLedgGRec.INSERT;
-        
-               //REC2
-                entryNoGVar:=entryNoGVar+2;
-                CTLedgGRec.INIT;
-                CTLedgGRec."Entry No.":=entryNoGVar;
-                CTLedgGRec."Posted By":=USERID;
-                CTLedgGRec."Posting Date":=TODAY;
-                CTLedgGRec.Received:=FALSE;
-                CTLedgGRec.Location:="Item Ledger Entry"."Global Dimension 2 Code";
-                CTLedgGRec."Card Status":=CTLGRec.Status::Working;
-                CTLedgGRec.Quantity:=(GrouptotalQty+NeededQty);
-                CTLedgGRec."Transaction ID":=TransNoGVar;
-                CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Card Transfer";
-                CTLedgGRec."User ID":=USERID;
-                CTLedgGRec."Mode of Transport":="Mode Of Transport";
-                CTLedgGRec."Courier Details":=' ';
-                CTLedgGRec.Remarks:=FORMAT(Purpose);
-                CTLedgGRec."Line No.":=LINE_NO+10000;
-                CTLedgGRec."Item No":=PrevItemNo;
-                CTLedgGRec.Reason:=reasonGvar;
-                CTLedgGRec.Station:=StatGVar;
-                CTLedgGRec."DC No":="Outward No.";
-                CTLedgGRec.NonReturnable:=FALSE;
-                CTLedgGRec.INSERT;
-                CTLedgGRec."Customer No":=CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
-                CTLedgGRec."Responsible Persion":=RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
-                LINE_NO:=LINE_NO+10000; //pranavi1
-                //end of mnraju
-              END;
+                CTLedgGRec.LOCKTABLE;
+
+                // REC1
+                // MESSAGE('ledger');
+                CTLedgGRec.RESET;
+                CTLedgGRec.SETCURRENTKEY(CTLedgGRec."Entry No.");
+                IF CTLedgGRec.FINDLAST THEN BEGIN
+                    entryNoGVar := CTLedgGRec."Entry No.";
+                END;
+                // MESSAGE(FORMAT(entryNoGVar));
+                IF GrouptotalQty <= -NeededQty THEN BEGIN
+                    CTLedgGRec.INIT;
+                    CTLedgGRec."Entry No." := entryNoGVar + 1;
+                    CTLedgGRec."Posted By" := USERID;
+                    CTLedgGRec."Posting Date" := TODAY;
+                    CTLedgGRec.Received := FALSE;
+                    CTLedgGRec.Quantity := -GrouptotalQty;
+                    CTLedgGRec."Transaction ID" := TransNoGVar;
+                    CTLedgGRec."Transaction Type" := CTHGRec."Transaction Type"::"Customer card Transfer";
+
+                    CTLedgGRec.Location := 'H-OFF';
+                    CTLedgGRec."User ID" := USERID;
+                    CTLedgGRec."Mode of Transport" := "Mode Of Transport";
+                    CTLedgGRec."Courier Details" := ' ';
+                    CTLedgGRec.Remarks := FORMAT(Purpose);
+                    CTLedgGRec."Line No." := LINE_NO;
+                    CTLedgGRec."Item No" := PrevItemNo;
+                    CTLedgGRec.Reason := reasonGvar;
+                    CTLedgGRec.Station := StatGVar;
+                    CTLedgGRec."Card Status" := CTLGRec.Status::Working;
+                    CTLedgGRec."DC No" := "Outward No.";
+                    CTLedgGRec."Customer No" := CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
+                    CTLedgGRec."Responsible Persion" := RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
+                    CTLedgGRec.NonReturnable := TRUE;
+
+
+                    CTLedgGRec.INSERT;
+
+                    //REC2
+                    entryNoGVar := entryNoGVar + 2;
+                    CTLedgGRec.INIT;
+                    CTLedgGRec."Entry No." := entryNoGVar;
+                    CTLedgGRec."Posted By" := USERID;
+                    CTLedgGRec."Posting Date" := TODAY;
+                    CTLedgGRec.Received := FALSE;
+                    CTLedgGRec.Location := "Item Ledger Entry"."Global Dimension 2 Code";
+                    CTLedgGRec."Card Status" := CTLGRec.Status::Working;
+                    CTLedgGRec.Quantity := GrouptotalQty;
+                    CTLedgGRec."Transaction ID" := TransNoGVar;
+                    CTLedgGRec."Transaction Type" := CTHGRec."Transaction Type"::"Customer card Transfer";
+                    CTLedgGRec."User ID" := USERID;
+                    CTLedgGRec."Mode of Transport" := "Mode Of Transport";
+                    CTLedgGRec."Courier Details" := ' ';
+                    CTLedgGRec.Remarks := FORMAT(Purpose);
+                    CTLedgGRec."Line No." := LINE_NO;
+                    CTLedgGRec."Item No" := PrevItemNo;
+                    CTLedgGRec.Reason := reasonGvar;
+                    CTLedgGRec.Station := StatGVar;
+                    CTLedgGRec."DC No" := "Outward No.";
+                    CTLedgGRec."Customer No" := CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
+                    CTLedgGRec."Responsible Persion" := RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
+                    CTLedgGRec.NonReturnable := TRUE;
+
+                    CTLedgGRec.INSERT;
+                    //end of mnraju
+                END
+                ELSE BEGIN
+                    CTLedgGRec.INIT;
+                    CTLedgGRec."Entry No." := entryNoGVar + 1;
+                    CTLedgGRec."Posted By" := USERID;
+                    CTLedgGRec."Posting Date" := TODAY;
+                    CTLedgGRec.Received := FALSE;
+                    CTLedgGRec.Quantity := NeededQty;
+                    CTLedgGRec."Transaction ID" := TransNoGVar;
+                    CTLedgGRec."Transaction Type" := CTHGRec."Transaction Type"::"Customer card Transfer";
+                    CTLedgGRec.Location := 'H-OFF';
+                    CTLedgGRec."User ID" := USERID;
+                    CTLedgGRec."Mode of Transport" := "Mode Of Transport";
+                    CTLedgGRec."Courier Details" := ' ';
+                    CTLedgGRec.Remarks := FORMAT(Purpose);
+                    CTLedgGRec."Line No." := LINE_NO;
+                    CTLedgGRec."Item No" := PrevItemNo;
+                    CTLedgGRec.Reason := reasonGvar;
+                    CTLedgGRec.Station := StatGVar;
+                    CTLedgGRec."Card Status" := CTLGRec.Status::Working;
+                    CTLedgGRec."DC No" := "Outward No.";
+                    CTLedgGRec.NonReturnable := TRUE;
+                    CTLedgGRec."Customer No" := CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
+                    CTLedgGRec."Responsible Persion" := RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
+                    CTLedgGRec.INSERT;
+
+                    //REC2
+                    entryNoGVar := entryNoGVar + 2;
+                    CTLedgGRec.INIT;
+                    CTLedgGRec."Entry No." := entryNoGVar;
+                    CTLedgGRec."Posted By" := USERID;
+                    CTLedgGRec."Posting Date" := TODAY;
+                    CTLedgGRec.Received := FALSE;
+                    CTLedgGRec.Location := "Item Ledger Entry"."Global Dimension 2 Code";
+                    CTLedgGRec."Card Status" := CTLGRec.Status::Working;
+                    CTLedgGRec.Quantity := -NeededQty;
+                    CTLedgGRec."Transaction ID" := TransNoGVar;
+                    CTLedgGRec."Transaction Type" := CTHGRec."Transaction Type"::"Customer card Transfer";
+                    CTLedgGRec."User ID" := USERID;
+                    CTLedgGRec."Mode of Transport" := "Mode Of Transport";
+                    CTLedgGRec."Courier Details" := ' ';
+                    CTLedgGRec.Remarks := FORMAT(Purpose);
+                    CTLedgGRec."Line No." := LINE_NO;
+                    CTLedgGRec."Item No" := PrevItemNo;
+                    CTLedgGRec.Reason := reasonGvar;
+                    CTLedgGRec.Station := StatGVar;
+                    CTLedgGRec."DC No" := "Outward No.";
+                    CTLedgGRec.NonReturnable := TRUE;
+                    CTLedgGRec."Customer No" := CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
+                    CTLedgGRec."Responsible Persion" := RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
+                    CTLedgGRec.INSERT;
+                    //end of mnraju
+                    CTLedgGRec.INIT;
+                    CTLedgGRec."Entry No." := entryNoGVar + 1;
+                    CTLedgGRec."Posted By" := USERID;
+                    CTLedgGRec."Posting Date" := TODAY;
+                    CTLedgGRec.Received := FALSE;
+                    CTLedgGRec.Quantity := -(GrouptotalQty + NeededQty);
+                    CTLedgGRec."Transaction ID" := TransNoGVar;
+                    CTLedgGRec."Transaction Type" := CTHGRec."Transaction Type"::"Card Transfer";
+                    CTLedgGRec.Location := 'H-OFF';
+                    CTLedgGRec."User ID" := USERID;
+                    CTLedgGRec."Mode of Transport" := "Mode Of Transport";
+                    CTLedgGRec."Courier Details" := ' ';
+                    CTLedgGRec.Remarks := FORMAT(Purpose);
+                    CTLedgGRec."Line No." := LINE_NO + 10000;
+                    CTLedgGRec."Item No" := PrevItemNo;
+                    CTLedgGRec.Reason := reasonGvar;
+                    CTLedgGRec.Station := StatGVar;
+                    CTLedgGRec."Card Status" := CTLGRec.Status::Working;
+                    CTLedgGRec."DC No" := "Outward No.";
+                    CTLedgGRec.NonReturnable := FALSE;
+                    CTLedgGRec."Customer No" := CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
+                    CTLedgGRec."Responsible Persion" := RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
+                    CTLedgGRec.INSERT;
+
+                    //REC2
+                    entryNoGVar := entryNoGVar + 2;
+                    CTLedgGRec.INIT;
+                    CTLedgGRec."Entry No." := entryNoGVar;
+                    CTLedgGRec."Posted By" := USERID;
+                    CTLedgGRec."Posting Date" := TODAY;
+                    CTLedgGRec.Received := FALSE;
+                    CTLedgGRec.Location := "Item Ledger Entry"."Global Dimension 2 Code";
+                    CTLedgGRec."Card Status" := CTLGRec.Status::Working;
+                    CTLedgGRec.Quantity := (GrouptotalQty + NeededQty);
+                    CTLedgGRec."Transaction ID" := TransNoGVar;
+                    CTLedgGRec."Transaction Type" := CTHGRec."Transaction Type"::"Card Transfer";
+                    CTLedgGRec."User ID" := USERID;
+                    CTLedgGRec."Mode of Transport" := "Mode Of Transport";
+                    CTLedgGRec."Courier Details" := ' ';
+                    CTLedgGRec.Remarks := FORMAT(Purpose);
+                    CTLedgGRec."Line No." := LINE_NO + 10000;
+                    CTLedgGRec."Item No" := PrevItemNo;
+                    CTLedgGRec.Reason := reasonGvar;
+                    CTLedgGRec.Station := StatGVar;
+                    CTLedgGRec."DC No" := "Outward No.";
+                    CTLedgGRec.NonReturnable := FALSE;
+                    CTLedgGRec.INSERT;
+                    CTLedgGRec."Customer No" := CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
+                    CTLedgGRec."Responsible Persion" := RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
+                    LINE_NO := LINE_NO + 10000; //pranavi1
+                                                //end of mnraju
+                END;
             END  //End_of_IF_NeedQty<0
-            ELSE
-            BEGIN
-              CTLGRec.INIT;
-              CTLGRec."Transaction ID":=TransNoGVar;
-              CTLGRec."Line No.":=LINE_NO;
-              CTLGRec."Item No.":= PrevItemNo;
-              CTLGRec.VALIDATE("Item No.");
-              CTLGRec.Quantity:=GrouptotalQty;
-              CTLGRec.Status:=CTLGRec.Status::Working;
-              CTLGRec.Reason:=reasonGvar;
-              CTLGRec.Station:=StatGVar;
-             /*IF Type='Non-Returnable' THEN
-                CTLGRec.NonReturnable:=TRUE; */
-              IF reasonGvar = 'INSTALLA' THEN
-                CTLGRec.NonReturnable := TRUE
-              ELSE
-                CTLGRec.NonReturnable := FALSE;
-            //   CTLGRec."Order No":=
-              CTLGRec.INSERT;
-              DC_LINE.INIT;
-              DC_LINE."Document No.":="Outward No.";
-              DC_LINE."Line No.":=LINE_NO;
-              DC_LINE.Type:=DC_LINE.Type::Item;
-              DC_LINE."No.":= PrevItemNo;
-              DC_LINE.VALIDATE(DC_LINE."No.");
-              DC_LINE.Quantity:=GrouptotalQty;
-              IF reasonGvar = 'INSTALLA' THEN
-              BEGIN
-                DC_LINE."Non-Returnable":=TRUE;
-                Type1:='Non-Returnable--'+FORMAT(GrouptotalQty);
-              END
-              ELSE
-              BEGIN
-                DC_LINE."Non-Returnable":=FALSE;
-                Type1:='Returnable--'+FORMAT(GrouptotalQty);
-              END;
-              DC_LINE.INSERT;
-              CTHGRec.RESET;
-              CTHGRec.SETFILTER(CTHGRec."Transaction ID",'%1',TransNoGVar);
-              IF CTHGRec.FINDFIRST THEN
-              BEGIN
-                CTHGRec."Transaction Type":=CTHGRec."Transaction Type"::"Card Transfer";
-                CTHGRec.MODIFY;
-              END;
-              CTLedgGRec.LOCKTABLE;
-        
-           //REC1
-           // MESSAGE('ledger');
-              CTLedgGRec.RESET;
-              CTLedgGRec.SETCURRENTKEY(CTLedgGRec."Entry No.");
-              IF CTLedgGRec.FINDLAST THEN
-              BEGIN
-                entryNoGVar:=CTLedgGRec."Entry No.";
-              END;
-           // MESSAGE(FORMAT(entryNoGVar));
-        
-              CTLedgGRec.INIT;
-              CTLedgGRec."Entry No.":=entryNoGVar+1;
-              CTLedgGRec."Posted By":=USERID;
-              CTLedgGRec."Posting Date":=TODAY;
-              CTLedgGRec.Received:=FALSE;
-              CTLedgGRec.Quantity:=-GrouptotalQty;
-        
-              CTLedgGRec."Transaction ID":=TransNoGVar;
-            /*  IF Type='Non-Returnable' THEN
-                CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Customer card Transfer"
-              ELSE  */
-                CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Card Transfer";
-        
-              CTLedgGRec.Location:='H-OFF';
-              CTLedgGRec."User ID":=USERID;
-              CTLedgGRec."Mode of Transport":="Mode Of Transport";
-              CTLedgGRec."Courier Details":=' ';
-              CTLedgGRec.Remarks:=FORMAT(Purpose);
-              CTLedgGRec."Line No.":=LINE_NO;
-              CTLedgGRec."Item No":=PrevItemNo;
-              CTLedgGRec.Reason:=reasonGvar;
-              CTLedgGRec.Station:=StatGVar;
-              CTLedgGRec."Card Status":=CTLGRec.Status::Working;
-              CTLedgGRec."DC No":="Outward No.";
-              /*  IF Type='Non-Returnable' THEN
-                  CTLedgGRec.NonReturnable:=TRUE;  */
-              CTLedgGRec.NonReturnable := FALSE;
-        
-              CTLedgGRec."Customer No":=CustrNo;   // Added by Pranavi on 28-jan-2016 for led lights process
-              CTLedgGRec."Responsible Persion":=RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
-              CTLedgGRec.INSERT;
-        
-             //REC2
-              entryNoGVar:=entryNoGVar+2;
-              CTLedgGRec.INIT;
-              CTLedgGRec."Entry No.":=entryNoGVar;
-              CTLedgGRec."Posted By":=USERID;
-              CTLedgGRec."Posting Date":=TODAY;
-              CTLedgGRec.Received:=FALSE;
-              CTLedgGRec.Location:="Item Ledger Entry"."Global Dimension 2 Code";
-              CTLedgGRec."Card Status":=CTLGRec.Status::Working;
-              CTLedgGRec.Quantity:=GrouptotalQty;
-        
-              CTLedgGRec."Transaction ID":=TransNoGVar;
-            /*  IF Type='Non-Returnable' THEN
-                CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Customer card Transfer"
-              ELSE    */
-                CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Card Transfer";
-        
-              CTLedgGRec."User ID":=USERID;
-              CTLedgGRec."Mode of Transport":="Mode Of Transport";
-              CTLedgGRec."Courier Details":=' ';
-              CTLedgGRec.Remarks:=FORMAT(Purpose);
-              CTLedgGRec."Line No.":=LINE_NO;
-              CTLedgGRec."Item No":=PrevItemNo;
-              CTLedgGRec.Reason:=reasonGvar;
-              CTLedgGRec.Station:=StatGVar;
-              CTLedgGRec."DC No":="Outward No.";
-              /*  IF Type='Non-Returnable' THEN
-                  CTLedgGRec.NonReturnable:=TRUE;   */
-              IF reasonGvar = 'INSTALLA' THEN
-                CTLedgGRec.NonReturnable := TRUE
-              ELSE
+            ELSE BEGIN
+                CTLGRec.INIT;
+                CTLGRec."Transaction ID" := TransNoGVar;
+                CTLGRec."Line No." := LINE_NO;
+                CTLGRec."Item No." := PrevItemNo;
+                CTLGRec.VALIDATE("Item No.");
+                CTLGRec.Quantity := GrouptotalQty;
+                CTLGRec.Status := CTLGRec.Status::Working;
+                CTLGRec.Reason := reasonGvar;
+                CTLGRec.Station := StatGVar;
+                /*IF Type='Non-Returnable' THEN
+                   CTLGRec.NonReturnable:=TRUE; */
+                IF reasonGvar = 'INSTALLA' THEN
+                    CTLGRec.NonReturnable := TRUE
+                ELSE
+                    CTLGRec.NonReturnable := FALSE;
+                //   CTLGRec."Order No":=
+                CTLGRec.INSERT;
+                DC_LINE.INIT;
+                DC_LINE."Document No." := "Outward No.";
+                DC_LINE."Line No." := LINE_NO;
+                DC_LINE.Type := DC_LINE.Type::Item;
+                DC_LINE."No." := PrevItemNo;
+                DC_LINE.VALIDATE(DC_LINE."No.");
+                DC_LINE.Quantity := GrouptotalQty;
+                IF reasonGvar = 'INSTALLA' THEN BEGIN
+                    DC_LINE."Non-Returnable" := TRUE;
+                    Type1 := 'Non-Returnable--' + FORMAT(GrouptotalQty);
+                END
+                ELSE BEGIN
+                    DC_LINE."Non-Returnable" := FALSE;
+                    Type1 := 'Returnable--' + FORMAT(GrouptotalQty);
+                END;
+                DC_LINE.INSERT;
+                CTHGRec.RESET;
+                CTHGRec.SETFILTER(CTHGRec."Transaction ID", '%1', TransNoGVar);
+                IF CTHGRec.FINDFIRST THEN BEGIN
+                    CTHGRec."Transaction Type" := CTHGRec."Transaction Type"::"Card Transfer";
+                    CTHGRec.MODIFY;
+                END;
+                CTLedgGRec.LOCKTABLE;
+
+                //REC1
+                // MESSAGE('ledger');
+                CTLedgGRec.RESET;
+                CTLedgGRec.SETCURRENTKEY(CTLedgGRec."Entry No.");
+                IF CTLedgGRec.FINDLAST THEN BEGIN
+                    entryNoGVar := CTLedgGRec."Entry No.";
+                END;
+                // MESSAGE(FORMAT(entryNoGVar));
+
+                CTLedgGRec.INIT;
+                CTLedgGRec."Entry No." := entryNoGVar + 1;
+                CTLedgGRec."Posted By" := USERID;
+                CTLedgGRec."Posting Date" := TODAY;
+                CTLedgGRec.Received := FALSE;
+                CTLedgGRec.Quantity := -GrouptotalQty;
+
+                CTLedgGRec."Transaction ID" := TransNoGVar;
+                /*  IF Type='Non-Returnable' THEN
+                    CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Customer card Transfer"
+                  ELSE  */
+                CTLedgGRec."Transaction Type" := CTHGRec."Transaction Type"::"Card Transfer";
+
+                CTLedgGRec.Location := 'H-OFF';
+                CTLedgGRec."User ID" := USERID;
+                CTLedgGRec."Mode of Transport" := "Mode Of Transport";
+                CTLedgGRec."Courier Details" := ' ';
+                CTLedgGRec.Remarks := FORMAT(Purpose);
+                CTLedgGRec."Line No." := LINE_NO;
+                CTLedgGRec."Item No" := PrevItemNo;
+                CTLedgGRec.Reason := reasonGvar;
+                CTLedgGRec.Station := StatGVar;
+                CTLedgGRec."Card Status" := CTLGRec.Status::Working;
+                CTLedgGRec."DC No" := "Outward No.";
+                /*  IF Type='Non-Returnable' THEN
+                    CTLedgGRec.NonReturnable:=TRUE;  */
                 CTLedgGRec.NonReturnable := FALSE;
-              CTLedgGRec."Customer No":=CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
-              CTLedgGRec."Responsible Persion":=RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
-              CTLedgGRec.INSERT;
-              LINE_NO:=LINE_NO+10000;  //pranavi1
-              //end of mnraju
-        
+
+                CTLedgGRec."Customer No" := CustrNo;   // Added by Pranavi on 28-jan-2016 for led lights process
+                CTLedgGRec."Responsible Persion" := RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
+                CTLedgGRec.INSERT;
+
+                //REC2
+                entryNoGVar := entryNoGVar + 2;
+                CTLedgGRec.INIT;
+                CTLedgGRec."Entry No." := entryNoGVar;
+                CTLedgGRec."Posted By" := USERID;
+                CTLedgGRec."Posting Date" := TODAY;
+                CTLedgGRec.Received := FALSE;
+                CTLedgGRec.Location := "Item Ledger Entry"."Global Dimension 2 Code";
+                CTLedgGRec."Card Status" := CTLGRec.Status::Working;
+                CTLedgGRec.Quantity := GrouptotalQty;
+
+                CTLedgGRec."Transaction ID" := TransNoGVar;
+                /*  IF Type='Non-Returnable' THEN
+                    CTLedgGRec."Transaction Type":=CTHGRec."Transaction Type"::"Customer card Transfer"
+                  ELSE    */
+                CTLedgGRec."Transaction Type" := CTHGRec."Transaction Type"::"Card Transfer";
+
+                CTLedgGRec."User ID" := USERID;
+                CTLedgGRec."Mode of Transport" := "Mode Of Transport";
+                CTLedgGRec."Courier Details" := ' ';
+                CTLedgGRec.Remarks := FORMAT(Purpose);
+                CTLedgGRec."Line No." := LINE_NO;
+                CTLedgGRec."Item No" := PrevItemNo;
+                CTLedgGRec.Reason := reasonGvar;
+                CTLedgGRec.Station := StatGVar;
+                CTLedgGRec."DC No" := "Outward No.";
+                /*  IF Type='Non-Returnable' THEN
+                    CTLedgGRec.NonReturnable:=TRUE;   */
+                IF reasonGvar = 'INSTALLA' THEN
+                    CTLedgGRec.NonReturnable := TRUE
+                ELSE
+                    CTLedgGRec.NonReturnable := FALSE;
+                CTLedgGRec."Customer No" := CustrNo;   // Added by Pranavi on 28-jan-2016 for led cards process
+                CTLedgGRec."Responsible Persion" := RespPersn;   // Added by Pranavi on 29-Jan-2016 for Resp Person Tracking for LED cards process
+                CTLedgGRec.INSERT;
+                LINE_NO := LINE_NO + 10000;  //pranavi1
+                                             //end of mnraju
+
             END;
-          END
-          ELSE
-          BEGIN
+        END
+        ELSE BEGIN
             DC_LINE.INIT;
-            DC_LINE."Document No.":="Outward No.";
-            DC_LINE."Line No.":=LINE_NO;
-            DC_LINE.Type:=DC_LINE.Type::Item;
-            DC_LINE."No.":= PrevItemNo;
+            DC_LINE."Document No." := "Outward No.";
+            DC_LINE."Line No." := LINE_NO;
+            DC_LINE.Type := DC_LINE.Type::Item;
+            DC_LINE."No." := PrevItemNo;
             DC_LINE.VALIDATE(DC_LINE."No.");
-            DC_LINE.Quantity:=GrouptotalQty;
-            IF (reasonGvar = 'INSTALLA') OR (projectcode = 'EFF14STA01') THEN
-            BEGIN
-              DC_LINE."Non-Returnable":=TRUE;
-              Type1:='Non-Returnable--'+FORMAT(GrouptotalQty);
+            DC_LINE.Quantity := GrouptotalQty;
+            IF (reasonGvar = 'INSTALLA') OR (projectcode = 'EFF14STA01') THEN BEGIN
+                DC_LINE."Non-Returnable" := TRUE;
+                Type1 := 'Non-Returnable--' + FORMAT(GrouptotalQty);
             END
-            ELSE
-            BEGIN
-              DC_LINE."Non-Returnable":=FALSE;
-              Type1:='Returnable--'+FORMAT(GrouptotalQty);
+            ELSE BEGIN
+                DC_LINE."Non-Returnable" := FALSE;
+                Type1 := 'Returnable--' + FORMAT(GrouptotalQty);
             END;
             DC_LINE.INSERT;
-           // Type1:='Returnable--'+FORMAT(GrouptotalQty);
-          END;
+            // Type1:='Returnable--'+FORMAT(GrouptotalQty);
+        END;
         ILENew1.RESET;
-        ILENew1.SETCURRENTKEY(ILENew1."Location Code",ILENew1."Posting Date",ILENew1."Item No.");
-        ILENew1.SETFILTER(ILENew1."Entry Type",'%1',ILENew1."Entry Type"::Transfer);
-        ILENew1.SETFILTER(ILENew1."Item No.",PrevItemNo);
-        ILENew1.SETFILTER(ILENew1."Posting Date",'%1',"Item Ledger Entry"."Posting Date");
-        ILENew1.SETFILTER(ILENew1."Global Dimension 2 Code","Item Ledger Entry"."Global Dimension 2 Code");
+        ILENew1.SETCURRENTKEY(ILENew1."Location Code", ILENew1."Posting Date", ILENew1."Item No.");
+        ILENew1.SETFILTER(ILENew1."Entry Type", '%1', ILENew1."Entry Type"::Transfer);
+        ILENew1.SETFILTER(ILENew1."Item No.", PrevItemNo);
+        ILENew1.SETFILTER(ILENew1."Posting Date", '%1', "Item Ledger Entry"."Posting Date");
+        ILENew1.SETFILTER(ILENew1."Global Dimension 2 Code", "Item Ledger Entry"."Global Dimension 2 Code");
         IF "Item Ledger Entry"."Document No." <> '' THEN    //Added by Pranavi on 31-Dec-2015 to solve empty DC generation problem
-           ILENew1.SETFILTER(ILENew1."Document No.","Item Ledger Entry"."Document No.");
-        ILENew1.SETFILTER(ILENew1."Location Code",'%1','SITE');
-        ILENew1.SETFILTER(ILENew1."Remaining Quantity",'>%1',0);
+            ILENew1.SETFILTER(ILENew1."Document No.", "Item Ledger Entry"."Document No.");
+        ILENew1.SETFILTER(ILENew1."Location Code", '%1', 'SITE');
+        ILENew1.SETFILTER(ILENew1."Remaining Quantity", '>%1', 0);
         IF ILENew1.FINDSET THEN
-        REPEAT
-          ILENew1."DC Check":=TRUE;
-          ILENew1.MODIFY;
-        UNTIL ILENew1.NEXT = 0;
+            REPEAT
+                ILENew1."DC Check" := TRUE;
+                ILENew1.MODIFY;
+            UNTIL ILENew1.NEXT = 0;
 
     end;
 

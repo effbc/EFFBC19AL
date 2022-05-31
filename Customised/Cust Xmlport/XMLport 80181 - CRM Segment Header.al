@@ -6,13 +6,13 @@ xmlport 80181 "CRM Segment Header"
     {
         textelement(SegmentHeader)
         {
-            tableelement("<segmentheader>";"Segment Header")
+            tableelement("<segmentheader>"; "Segment Header")
             {
                 XmlName = 'SegmentHeader';
-                fieldelement(No;"<SegmentHeader>"."No.")
+                fieldelement(No; "<SegmentHeader>"."No.")
                 {
                 }
-                fieldelement(Description;"<SegmentHeader>".Description)
+                fieldelement(Description; "<SegmentHeader>".Description)
                 {
                 }
             }

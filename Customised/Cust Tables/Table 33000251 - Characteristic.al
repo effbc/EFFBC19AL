@@ -3,38 +3,46 @@ table 33000251 Characteristic
     // version QC1.0
 
     LookupPageID = Characteristics;
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"Code";Code[20])
+        field(1; "Code"; Code[20])
         {
             NotBlank = true;
+            DataClassification = CustomerContent;
         }
-        field(2;Description;Text[50])
+        field(2; Description; Text[50])
         {
+            DataClassification = CustomerContent;
         }
-        field(3;"Inspection Group Code";Code[20])
+        field(3; "Inspection Group Code"; Code[20])
         {
             TableRelation = "Inspection Group".Code;
+            DataClassification = CustomerContent;
         }
-        field(4;Attachment60098;BLOB)
+        field(4; Attachment60098; BLOB)
         {
+            DataClassification = CustomerContent;
         }
-        field(5;"File Extension";Text[50])
+        field(5; "File Extension"; Text[50])
         {
+            DataClassification = CustomerContent;
         }
-        field(6;"Unit Of Measure Code";Code[20])
+        field(6; "Unit Of Measure Code"; Code[20])
         {
             TableRelation = "Unit of Measure";
+            DataClassification = CustomerContent;
         }
-        field(7;Qualitative;Boolean)
+        field(7; Qualitative; Boolean)
         {
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(Key1;"Code")
+        key(Key1; "Code")
         {
         }
     }
@@ -47,163 +55,163 @@ table 33000251 Characteristic
     begin
 
         //B2B ESPL prasad
-        Specificationline.SetRange("Character Code",Code);
+        Specificationline.SetRange("Character Code", Code);
         if Specificationline.Find('-') then
-          Error('This Character is being used in Specifications');
+            Error('This Character is being used in Specifications');
 
-        assayline.SetRange("Character Code",Code);
+        assayline.SetRange("Character Code", Code);
         if assayline.Find('-') then
-          Error('This Character is being used in Assay');
+            Error('This Character is being used in Assay');
         //B2B ESPL prasad
     end;
 
     var
-        Text002 : Label 'The attachment is empty.';
-        Text003 : Label 'Attachment is already in use on this machine.';
-        Text004 : Label 'When you have saved your document, click Yes to import the document.';
-        Text005 : Label 'Export Attachment';
-        Text006 : Label 'Import Attachment';
-        Text007 : Label 'All Files (*.*)|*.*';
-        Text008 : Label 'Error during copying file.';
-        Text009 : Label 'Do you want to remove %1?';
-        Text010 : Label 'External file could not be removed.';
-        Text012 : Label '\Doc';
-        Text013 : Label 'Only Microsoft Word documents can be printed.';
-        Text014 : Label 'Only Microsoft Word documents can be faxed.';
-        Specificationline : Record "Specification Line";
-        Characteristi : Record Characteristic;
-        assayline : Record "Assay Line";
+        Text002: Label 'The attachment is empty.';
+        Text003: Label 'Attachment is already in use on this machine.';
+        Text004: Label 'When you have saved your document, click Yes to import the document.';
+        Text005: Label 'Export Attachment';
+        Text006: Label 'Import Attachment';
+        Text007: Label 'All Files (*.*)|*.*';
+        Text008: Label 'Error during copying file.';
+        Text009: Label 'Do you want to remove %1?';
+        Text010: Label 'External file could not be removed.';
+        Text012: Label '\Doc';
+        Text013: Label 'Only Microsoft Word documents can be printed.';
+        Text014: Label 'Only Microsoft Word documents can be faxed.';
+        Specificationline: Record "Specification Line";
+        Characteristi: Record Characteristic;
+        assayline: Record "Assay Line";
 
     [LineStart(7139)]
-    procedure ImportAttchment() : Boolean;
+    procedure ImportAttchment(): Boolean;
     var
-        AttachmentManagement : Codeunit AttachmentManagement;
-        FileName : Text[260];
+        AttachmentManagement: Codeunit AttachmentManagement;
+        FileName: Text[260];
     begin
         //Deleted Local Var(CommonDialogMgtCodeunitCodeunit412)
         //B2b1.0>> SInce CommonDialogMgt CU doesn't exist in Nav 2013
         //FileName := CommonDialogMgt.OpenFile(Text006,'',4,Text007,0);
         //B2b1.0<<
         if FileName <> '' then begin
-          Attachment60098.Import(FileName);
-          //B2b1.0>>Since Function doesn't exist in Nav 2013
-          //"File Extension" := UPPERCASE(AttachmentManagement.FileExtension(FileName));
-          //B2b1.0<<
-          Modify;
-          exit(true)
+            Attachment60098.Import(FileName);
+            //B2b1.0>>Since Function doesn't exist in Nav 2013
+            //"File Extension" := UPPERCASE(AttachmentManagement.FileExtension(FileName));
+            //B2b1.0<<
+            Modify;
+            exit(true)
         end else
-         exit(false);
+            exit(false);
     end;
 
     [LineStart(7154)]
-    procedure ExportAttachment(ExportToFile : Text[260]) : Boolean;
+    procedure ExportAttachment(ExportToFile: Text[260]): Boolean;
     var
-        FileName : Text[260];
-        FileFilter : Text[260];
+        FileName: Text[260];
+        FileFilter: Text[260];
     begin
         //Deleted Local Var(CommonDialogMgtCodeunitCodeunit412)
         CalcFields(Attachment60098);
         if Attachment60098.HasValue then begin
-          if ExportToFile = '' then begin
-            FileFilter := UpperCase("File Extension") + ' ';
-            FileFilter := FileFilter + '(*.' + "File Extension" + ')|*.' + "File Extension";
-            //B2b1.0>> SInce CommonDialogMgt CU doesn't exist in Nav 2013
-            //FileName := CommonDialogMgt.OpenFile(Text005,'',4,FileFilter,1);
-            //B2b1.0<<
-          end else
-            FileName := ExportToFile;
-          if FileName <> '' then begin
-            Attachment60098.Export(FileName);
-            exit(true);
-          end else
-            exit(false)
-          end else
+            if ExportToFile = '' then begin
+                FileFilter := UpperCase("File Extension") + ' ';
+                FileFilter := FileFilter + '(*.' + "File Extension" + ')|*.' + "File Extension";
+                //B2b1.0>> SInce CommonDialogMgt CU doesn't exist in Nav 2013
+                //FileName := CommonDialogMgt.OpenFile(Text005,'',4,FileFilter,1);
+                //B2b1.0<<
+            end else
+                FileName := ExportToFile;
+            if FileName <> '' then begin
+                Attachment60098.Export(FileName);
+                exit(true);
+            end else
+                exit(false)
+        end else
             exit(false)
     end;
 
     [LineStart(7174)]
     procedure OpenAttachment();
     var
-        WordManagement : Codeunit WordManagement;
-        AttachmentManagement : Codeunit AttachmentManagement;
-        FileName : Text[260];
+        WordManagement: Codeunit WordManagement;
+        AttachmentManagement: Codeunit AttachmentManagement;
+        FileName: Text[260];
     begin
-            CalcFields(Attachment60098);
-            if not Attachment60098.HasValue then
-              Error(Text002);
-            FileName := ConstFilename;
-            if Exists(FileName) then
-              if not DeleteFile(FileName) then
+        CalcFields(Attachment60098);
+        if not Attachment60098.HasValue then
+            Error(Text002);
+        FileName := ConstFilename;
+        if Exists(FileName) then
+            if not DeleteFile(FileName) then
                 Error(Text003);
-            ExportAttachment(FileName);
-            //IF AttachmentManagement.UseComServer("File Extension",FALSE) THEN
-            //  WordManagement.OpenWordAttachment(Rec1,FileName,'',False);
-            //ELSE BEGIN
-              HyperLink(FileName);
-            /*  IF NOT "Read Only" THEN BEGIN
-                IF CONFIRM(Text004,TRUE) THEN BEGIN
-                  ImportAttachment(FileName,IsTemporary);
-                  MODIFY(TRUE);
-                END;
-              END ELSE
-                SLEEP(10000);*/
-            //END;
-        
-            DeleteFile(FileName);
+        ExportAttachment(FileName);
+        //IF AttachmentManagement.UseComServer("File Extension",FALSE) THEN
+        //  WordManagement.OpenWordAttachment(Rec1,FileName,'',False);
+        //ELSE BEGIN
+        HyperLink(FileName);
+        /*  IF NOT "Read Only" THEN BEGIN
+            IF CONFIRM(Text004,TRUE) THEN BEGIN
+              ImportAttachment(FileName,IsTemporary);
+              MODIFY(TRUE);
+            END;
+          END ELSE
+            SLEEP(10000);*/
+        //END;
+
+        DeleteFile(FileName);
 
     end;
 
     [LineStart(7198)]
-    procedure ConstFilename() FileName : Text[260];
+    procedure ConstFilename() FileName: Text[260];
     var
-        I : Integer;
-        DocNo : Text[30];
+        I: Integer;
+        DocNo: Text[30];
     begin
         repeat
-          if I <> 0 then
-            DocNo := Format(I);
-          FileName := Environ('TEMP') + Text012 + DocNo + '.' + "File Extension";
-          if not Exists(FileName) then
-            exit;
-          I := I +1;
-        until I=999;
-        Message('%1',FileName);
+            if I <> 0 then
+                DocNo := Format(I);
+            FileName := Environ('TEMP') + Text012 + DocNo + '.' + "File Extension";
+            if not Exists(FileName) then
+                exit;
+            I := I + 1;
+        until I = 999;
+        Message('%1', FileName);
     end;
 
     [LineStart(7209)]
-    procedure DeleteFile(FileName : Text[260]) : Boolean;
+    procedure DeleteFile(FileName: Text[260]): Boolean;
     var
-        I : Integer;
+        I: Integer;
     begin
         if FileName = '' then
-          exit(false);
+            exit(false);
 
         if not Exists(FileName) then
-          exit(true);
+            exit(true);
 
         repeat
-          Sleep(250);
-          I := I + 1;
+            Sleep(250);
+            I := I + 1;
         until Erase(FileName) or (I = 25);
         exit(not Exists(FileName));
     end;
 
     [LineStart(7222)]
-    procedure RemoveAttachment(Prompt : Boolean) DeleteOK : Boolean;
+    procedure RemoveAttachment(Prompt: Boolean) DeleteOK: Boolean;
     var
-        DeleteYesNo : Boolean;
+        DeleteYesNo: Boolean;
     begin
         DeleteOK := false;
         DeleteYesNo := true;
         if Prompt then
-          if not Confirm(
-            Text009,false,FieldCaption(Attachment60098))
-          then
-            DeleteYesNo := false;
+            if not Confirm(
+              Text009, false, FieldCaption(Attachment60098))
+            then
+                DeleteYesNo := false;
         if DeleteYesNo then begin
-          Clear(Attachment60098);
-          "File Extension" := '';
-          DeleteOK := true;
+            Clear(Attachment60098);
+            "File Extension" := '';
+            DeleteOK := true;
         end;
     end;
 }

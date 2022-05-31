@@ -10,6 +10,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         field(60000; Rating; Decimal)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -18,6 +19,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         }
         field(60001; "Update In Cashflow"; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -26,6 +28,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         }
         field(60002; "Percentage 1"; Integer)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -38,6 +41,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         }
         field(60003; "Percentage 2"; Integer)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -55,6 +59,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         field(60004; "Stage 1"; Option)
         {
             OptionMembers = " ",Advance,Delivery,Credit,Against_RDSO_IC,Before_Delivery;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -64,6 +69,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         field(60005; "Stage 2"; Option)
         {
             OptionMembers = " ",Advance,Delivery,Credit,Against_RDSO_IC,Before_Delivery;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -72,6 +78,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         }
         field(60006; Purchase; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -80,6 +87,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         }
         field(60007; Sales; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -88,6 +96,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         }
         field(60008; "Percentage 3"; Integer)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -109,6 +118,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         field(60009; "Stage 3"; Option)
         {
             OptionMembers = " ",Advance,Delivery,Credit,Against_RDSO_IC,Before_Delivery;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -118,6 +128,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         field(60010; DueDays; Integer)
         {
             Description = 'Added by sujani on 24-04-2018';
+            DataClassification = CustomerContent;
         }
     }
     keys

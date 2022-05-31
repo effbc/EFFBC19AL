@@ -12,10 +12,10 @@ page 60052 "Specification Parameters"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
             }
@@ -26,7 +26,7 @@ page 60052 "Specification Parameters"
     {
     }
 
-    trigger OnInsertRecord(BelowxRec : Boolean) : Boolean;
+    trigger OnInsertRecord(BelowxRec: Boolean): Boolean;
     begin
         "User Id" := USERID;
     end;

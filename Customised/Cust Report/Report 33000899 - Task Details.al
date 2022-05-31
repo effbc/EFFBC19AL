@@ -5,42 +5,42 @@ report 33000899 "Task Details"
 
     dataset
     {
-        dataitem("Issue Track Header";"Issue Track Header")
+        dataitem("Issue Track Header"; "Issue Track Header")
         {
-            column(IssueId;"Issue Track Header"."Issue Id")
+            column(IssueId; "Issue Track Header"."Issue Id")
             {
             }
-            column(Log;"Issue Track Header"."Issue Logged By")
+            column(Log; "Issue Track Header"."Issue Logged By")
             {
             }
-            column(LogDate;"Issue Track Header"."Issued Logged Date")
+            column(LogDate; "Issue Track Header"."Issued Logged Date")
             {
             }
-            column(Description;"Issue Track Header".Description)
+            column(Description; "Issue Track Header".Description)
             {
             }
-            column(Handledby;"Issue Track Header"."Handled By")
+            column(Handledby; "Issue Track Header"."Handled By")
             {
             }
-            column(HandledDate;"Issue Track Header"."Handled Date Time")
+            column(HandledDate; "Issue Track Header"."Handled Date Time")
             {
             }
-            column(Status;"Issue Track Header".Status)
+            column(Status; "Issue Track Header".Status)
             {
             }
-            column(Remarks;"Issue Track Header".Remarks)
+            column(Remarks; "Issue Track Header".Remarks)
             {
             }
-            column(ReopenResion;"Issue Track Header"."Reason for Reopen")
+            column(ReopenResion; "Issue Track Header"."Reason for Reopen")
             {
             }
-            column(SlNo;SlNo)
+            column(SlNo; SlNo)
             {
             }
 
             trigger OnAfterGetRecord();
             begin
-                SlNo +=1;
+                SlNo += 1;
             end;
         }
     }
@@ -62,6 +62,6 @@ report 33000899 "Task Details"
     }
 
     var
-        SlNo : Integer;
+        SlNo: Integer;
 }
 

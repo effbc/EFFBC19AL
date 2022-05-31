@@ -5,6 +5,7 @@ tableextension 70042 ItemJournalBatchExt extends "Item Journal Batch"
         field(50001; "Material Issues"; Boolean)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
     }
 }

@@ -6,22 +6,22 @@ xmlport 80223 "shop calendar holidays"
     {
         textelement(ShopCalendarHolidays)
         {
-            tableelement("<shopcalendarholiday>";"Shop Calendar Holiday")
+            tableelement("<shopcalendarholiday>"; "Shop Calendar Holiday")
             {
                 XmlName = 'ShopCalendarHoliday';
-                fieldelement(ShopCalendarCode;"<ShopCalendarHoliday>"."Shop Calendar Code")
+                fieldelement(ShopCalendarCode; "<ShopCalendarHoliday>"."Shop Calendar Code")
                 {
                 }
-                fieldelement(Date;"<ShopCalendarHoliday>".Date)
+                fieldelement(Date; "<ShopCalendarHoliday>".Date)
                 {
                 }
-                fieldelement(StartingTime;"<ShopCalendarHoliday>"."Starting Time")
+                fieldelement(StartingTime; "<ShopCalendarHoliday>"."Starting Time")
                 {
                 }
-                fieldelement(EndingTime;"<ShopCalendarHoliday>"."Ending Time")
+                fieldelement(EndingTime; "<ShopCalendarHoliday>"."Ending Time")
                 {
                 }
-                fieldelement(Description;"<ShopCalendarHoliday>".Description)
+                fieldelement(Description; "<ShopCalendarHoliday>".Description)
                 {
                 }
             }

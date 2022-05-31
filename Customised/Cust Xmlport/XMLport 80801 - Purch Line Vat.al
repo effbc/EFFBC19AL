@@ -6,25 +6,25 @@ xmlport 80801 "Purch Line Vat"
     {
         textelement(PurchLineVats)
         {
-            tableelement("<purchlinevat>";"Purch Line Vat")
+            tableelement("<purchlinevat>"; "Purch Line Vat")
             {
                 XmlName = 'PurchLineVat';
-                fieldelement(DocumentType;"<PurchLineVat>"."Document Type")
+                fieldelement(DocumentType; "<PurchLineVat>"."Document Type")
                 {
                 }
-                fieldelement(DocumentNo;"<PurchLineVat>"."Document No.")
+                fieldelement(DocumentNo; "<PurchLineVat>"."Document No.")
                 {
                 }
-                fieldelement(LineNo;"<PurchLineVat>"."Line No.")
+                fieldelement(LineNo; "<PurchLineVat>"."Line No.")
                 {
                 }
-                fieldelement(VatPerge;"<PurchLineVat>"."Vat %age")
+                fieldelement(VatPerge; "<PurchLineVat>"."Vat %age")
                 {
                 }
-                fieldelement(VatBase;"<PurchLineVat>"."Vat Base")
+                fieldelement(VatBase; "<PurchLineVat>"."Vat Base")
                 {
                 }
-                fieldelement(VatAmount;"<PurchLineVat>"."Vat Amount")
+                fieldelement(VatAmount; "<PurchLineVat>"."Vat Amount")
                 {
                 }
             }

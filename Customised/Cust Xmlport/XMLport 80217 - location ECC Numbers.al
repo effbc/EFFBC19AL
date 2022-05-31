@@ -6,13 +6,13 @@ xmlport 80217 "location ECC Numbers"
     {
         textelement(Locations)
         {
-            tableelement(Location;Location)
+            tableelement(Location; Location)
             {
                 XmlName = 'Location';
-                fieldelement(Code;Location.Code)
+                fieldelement(Code; Location.Code)
                 {
                 }
-                fieldelement(ECCNo;Location."E.C.C. No.")
+                fieldelement(ECCNo; Location."E.C.C. No.")
                 {
                 }
             }

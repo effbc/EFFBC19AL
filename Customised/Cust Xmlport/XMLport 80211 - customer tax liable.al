@@ -6,16 +6,16 @@ xmlport 80211 "customer tax liable"
     {
         textelement(Customers)
         {
-            tableelement(Customer;Customer)
+            tableelement(Customer; Customer)
             {
                 XmlName = 'Customer';
-                fieldelement(No;Customer."No.")
+                fieldelement(No; Customer."No.")
                 {
                 }
-                fieldelement(Name;Customer.Name)
+                fieldelement(Name; Customer.Name)
                 {
                 }
-                fieldelement(TaxLiable;Customer."Tax Liable")
+                fieldelement(TaxLiable; Customer."Tax Liable")
                 {
                 }
             }

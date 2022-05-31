@@ -12,19 +12,19 @@ page 60006 "Fixed Assert Location Transfer"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field(Date;Date)
+                field(Date; Date)
                 {
                 }
-                field("Fixed Asset No.";"Fixed Asset No.")
+                field("Fixed Asset No."; "Fixed Asset No.")
                 {
                 }
-                field("FA Location";"FA Location")
+                field("FA Location"; "FA Location")
                 {
                 }
-                field("FA New Location";"FA New Location")
+                field("FA New Location"; "FA New Location")
                 {
                 }
-                field("Location Trns. Reason";"Location Trns. Reason")
+                field("Location Trns. Reason"; "Location Trns. Reason")
                 {
                 }
             }
@@ -35,10 +35,10 @@ page 60006 "Fixed Assert Location Transfer"
     {
     }
 
-    trigger OnQueryClosePage(CloseAction : Action) : Boolean;
+    trigger OnQueryClosePage(CloseAction: Action): Boolean;
     begin
-        IF ("Location Trns. Reason" = '') AND ("Fixed Asset No." <>'') THEN
-           ERROR('Plz Enter the Transfer reason');
+        IF ("Location Trns. Reason" = '') AND ("Fixed Asset No." <> '') THEN
+            ERROR('Plz Enter the Transfer reason');
     end;
 }
 

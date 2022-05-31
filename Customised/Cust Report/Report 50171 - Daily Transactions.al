@@ -5,54 +5,54 @@ report 50171 "Daily Transactions"
 
     dataset
     {
-        dataitem("<G/L Entry1>";"G/L Entry")
+        dataitem("<G/L Entry1>"; "G/L Entry")
         {
-            DataItemTableView = SORTING(G/L Account No.,Posting Date) ORDER(Ascending);
+            DataItemTableView = SORTING(G/L Account No., Posting Date) ORDER(Ascending);
             RequestFilterFields = "Posting Date";
-            column(DAT;DAT)
+            column(DAT; DAT)
             {
             }
-            column(debitamt;debitamt)
+            column(debitamt; debitamt)
             {
             }
-            column(creditamt;creditamt)
+            column(creditamt; creditamt)
             {
             }
-            column(debname;debname)
+            column(debname; debname)
             {
             }
-            column(crename;crename)
+            column(crename; crename)
             {
             }
-            column(TOTDEB1;TOTDEB1)
+            column(TOTDEB1; TOTDEB1)
             {
             }
-            column(TOTCRE1;TOTCRE1)
+            column(TOTCRE1; TOTCRE1)
             {
             }
-            column(Transactions_as_on_Caption;Transactions_as_on_CaptionLbl)
+            column(Transactions_as_on_Caption; Transactions_as_on_CaptionLbl)
             {
             }
-            column(Paid_AmountCaption;Paid_AmountCaptionLbl)
+            column(Paid_AmountCaption; Paid_AmountCaptionLbl)
             {
             }
-            column(Account_NameCaption;Account_NameCaptionLbl)
+            column(Account_NameCaption; Account_NameCaptionLbl)
             {
             }
-            column(Account_NameCaption_Control1102154021;Account_NameCaption_Control1102154021Lbl)
+            column(Account_NameCaption_Control1102154021; Account_NameCaption_Control1102154021Lbl)
             {
             }
-            column(Received_AmountCaption;Received_AmountCaptionLbl)
+            column(Received_AmountCaption; Received_AmountCaptionLbl)
             {
             }
-            column(G_L_Entry1__Entry_No_;"Entry No.")
+            column(G_L_Entry1__Entry_No_; "Entry No.")
             {
             }
-            column(G_L_Entry1__G_L_Account_No_;"G/L Account No.")
+            column(G_L_Entry1__G_L_Account_No_; "G/L Account No.")
             {
             }
         }
-        dataitem("G/L Account";"G/L Account")
+        dataitem("G/L Account"; "G/L Account")
         {
             DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Account Type=FILTER(Posting));
             RequestFilterFields = "No.","Date Filter","Global Dimension 1 Filter","Global Dimension 2 Filter";

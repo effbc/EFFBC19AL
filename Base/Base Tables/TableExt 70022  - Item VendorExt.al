@@ -39,6 +39,7 @@ tableextension 70022 ItemVendorExt extends "Item Vendor"
         {
             Description = 'B2B';
             TableRelation = "Item Variant".Make;
+            DataClassification = CustomerContent;
         }
         field(60002; "Total Qty. Supplied"; Decimal)
         {
@@ -53,10 +54,12 @@ tableextension 70022 ItemVendorExt extends "Item Vendor"
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60004; Approved; Boolean)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -71,6 +74,7 @@ tableextension 70022 ItemVendorExt extends "Item Vendor"
         field(60005; "Refernce Number"; Boolean)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
         }
         field(60006; "Delivery Rating"; Decimal)
         {
@@ -85,28 +89,34 @@ tableextension 70022 ItemVendorExt extends "Item Vendor"
         {
             Description = 'POAU';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60008; "Avg. Quality Rating"; Decimal)
         {
             Description = 'POAU';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60015; "Quality Rating"; Decimal)
         {
             Description = 'POAU';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60016; Description; Text[30])
         {
             Caption = 'Description';
             TableRelation = Item.Description WHERE("No." = FIELD("Item No."));
+            DataClassification = CustomerContent;
         }
         field(60017; Priority; Code[10])
         {
+            DataClassification = CustomerContent;
         }
         field(60018; "Minimum Order Quantity"; Decimal)
         {
             Caption = 'Variant Code';
+            DataClassification = CustomerContent;
         }
     }
     keys

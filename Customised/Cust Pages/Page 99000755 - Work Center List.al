@@ -2,8 +2,8 @@ page 99000755 "Work Center List"
 {
     // version NAVW19.00.00.45778
 
-    CaptionML = ENU='Work Center List',
-                ENN='Work Center List';
+    CaptionML = ENU = 'Work Center List',
+                ENN = 'Work Center List';
     CardPageID = "Work Center Card";
     Editable = false;
     PageType = List;
@@ -19,7 +19,7 @@ page 99000755 "Work Center List"
                 group(Control1102152002)
                 {
                     ShowCaption = false;
-                    field("xRec.COUNT";xRec.COUNT)
+                    field("xRec.COUNT"; xRec.COUNT)
                     {
                     }
                 }
@@ -27,82 +27,82 @@ page 99000755 "Work Center List"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
                 }
-                field("Alternate Work Center";"Alternate Work Center")
+                field("Alternate Work Center"; "Alternate Work Center")
                 {
                 }
-                field("Work Center Group Code";"Work Center Group Code")
+                field("Work Center Group Code"; "Work Center Group Code")
                 {
                 }
-                field("Global Dimension 1 Code";"Global Dimension 1 Code")
-                {
-                    Visible = false;
-                }
-                field("Consolidated Calendar";"Consolidated Calendar")
-                {
-                }
-                field("Global Dimension 2 Code";"Global Dimension 2 Code")
+                field("Global Dimension 1 Code"; "Global Dimension 1 Code")
                 {
                     Visible = false;
                 }
-                field("Direct Unit Cost";"Direct Unit Cost")
+                field("Consolidated Calendar"; "Consolidated Calendar")
+                {
+                }
+                field("Global Dimension 2 Code"; "Global Dimension 2 Code")
                 {
                     Visible = false;
                 }
-                field("Indirect Cost %";"Indirect Cost %")
+                field("Direct Unit Cost"; "Direct Unit Cost")
                 {
                     Visible = false;
                 }
-                field("Unit Cost";"Unit Cost")
+                field("Indirect Cost %"; "Indirect Cost %")
                 {
                     Visible = false;
                 }
-                field("Unit of Measure Code";"Unit of Measure Code")
-                {
-                }
-                field(Capacity;Capacity)
-                {
-                }
-                field(Efficiency;Efficiency)
+                field("Unit Cost"; "Unit Cost")
                 {
                     Visible = false;
                 }
-                field("Maximum Efficiency";"Maximum Efficiency")
+                field("Unit of Measure Code"; "Unit of Measure Code")
+                {
+                }
+                field(Capacity; Capacity)
+                {
+                }
+                field(Efficiency; Efficiency)
                 {
                     Visible = false;
                 }
-                field("Minimum Efficiency";"Minimum Efficiency")
+                field("Maximum Efficiency"; "Maximum Efficiency")
                 {
                     Visible = false;
                 }
-                field("Simulation Type";"Simulation Type")
+                field("Minimum Efficiency"; "Minimum Efficiency")
                 {
                     Visible = false;
                 }
-                field("Shop Calendar Code";"Shop Calendar Code")
-                {
-                }
-                field("Search Name";"Search Name")
-                {
-                }
-                field("Overhead Rate";"Overhead Rate")
+                field("Simulation Type"; "Simulation Type")
                 {
                     Visible = false;
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("Shop Calendar Code"; "Shop Calendar Code")
+                {
+                }
+                field("Search Name"; "Search Name")
+                {
+                }
+                field("Overhead Rate"; "Overhead Rate")
                 {
                     Visible = false;
                 }
-                field("Flushing Method";"Flushing Method")
+                field("Last Date Modified"; "Last Date Modified")
                 {
                     Visible = false;
                 }
-                field("Subcontractor No.";"Subcontractor No.")
+                field("Flushing Method"; "Flushing Method")
+                {
+                    Visible = false;
+                }
+                field("Subcontractor No."; "Subcontractor No.")
                 {
                     Visible = false;
                 }
@@ -110,11 +110,11 @@ page 99000755 "Work Center List"
         }
         area(factboxes)
         {
-            systempart(Control1900383207;Links)
+            systempart(Control1900383207; Links)
             {
                 Visible = false;
             }
-            systempart(Control1905767507;Notes)
+            systempart(Control1905767507; Notes)
             {
                 Visible = true;
             }
@@ -127,13 +127,13 @@ page 99000755 "Work Center List"
         {
             group("Wor&k Ctr.")
             {
-                CaptionML = ENU='Wor&k Ctr.',
-                            ENN='Wor&k Ctr.';
+                CaptionML = ENU = 'Wor&k Ctr.',
+                            ENN = 'Wor&k Ctr.';
                 Image = WorkCenter;
                 action("Capacity Ledger E&ntries")
                 {
-                    CaptionML = ENU='Capacity Ledger E&ntries',
-                                ENN='Capacity Ledger E&ntries';
+                    CaptionML = ENU = 'Capacity Ledger E&ntries',
+                                ENN = 'Capacity Ledger E&ntries';
                     Image = CapacityLedger;
                     RunObject = Page "Capacity Ledger Entries";
                     RunPageLink = Work Center No.=FIELD(No.),Posting Date=FIELD(Date Filter);
@@ -146,8 +146,9 @@ page 99000755 "Work Center List"
                                 ENN='Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Manufacturing Comment Sheet";
-                    RunPageLink = No.=FIELD(No.);
-                    RunPageView = WHERE(Table Name=CONST(Work Center));
+                                    RunPageLink = No.=FIELD(No.);
+                    RunPageView = WHERE(Table Name    DataClassification = CustomerContent;
+=CONST(Work Center));
                 }
                 group(Dimensions)
                 {
@@ -160,7 +161,7 @@ page 99000755 "Work Center List"
                                     ENN='Dimensions-Single';
                         Image = Dimensions;
                         RunObject = Page "Default Dimensions";
-                        ShortCutKey = 'Shift+Ctrl+D';
+                                        ShortCutKey = 'Shift+Ctrl+D';
                     }
                     action("Dimensions-&Multiple")
                     {
@@ -186,7 +187,7 @@ page 99000755 "Work Center List"
                                 ENN='Lo&ad';
                     Image = WorkCenterLoad;
                     RunObject = Page "Work Center Load";
-                    RunPageLink = No.=FIELD(No.);
+                                    RunPageLink = No.=FIELD(No.);
                     RunPageView = SORTING(No.);
                 }
                 separator(Action33)
@@ -200,7 +201,7 @@ page 99000755 "Work Center List"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Work Center Statistics";
-                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Work Shift Filter=FIELD(Work Shift Filter);
+                                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Work Shift Filter=FIELD(Work Shift Filter);
                     ShortCutKey = 'F7';
                 }
             }
@@ -226,7 +227,7 @@ page 99000755 "Work Center List"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Capacity Absence";
-                    RunPageLink = Capacity Type=CONST(Work Center),No.=FIELD(No.),Date=FIELD(Date Filter);
+                                    RunPageLink = Capacity Type=CONST(Work Center),No.=FIELD(No.),Date=FIELD(Date Filter);
                 }
                 action("Ta&sk List")
                 {
@@ -236,7 +237,7 @@ page 99000755 "Work Center List"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Work Center Task List";
-                    RunPageLink = No.=FIELD(No.);
+                                    RunPageLink = No.=FIELD(No.);
                     RunPageView = SORTING(Type,No.) WHERE(Type=CONST(Work Center),Status=FILTER(..Released),Routing Status=FILTER(<>Finished));
                 }
             }

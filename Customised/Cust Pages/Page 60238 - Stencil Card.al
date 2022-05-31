@@ -9,17 +9,17 @@ page 60238 "Stencil Card"
         {
             group(General)
             {
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Importance = Promoted;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Fixed Asset no";"Fixed Asset no")
+                field("Fixed Asset no"; "Fixed Asset no")
                 {
                 }
             }

@@ -12,16 +12,16 @@ page 60137 "RFQ Numbers"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Production Order No.";"Production Order No.")
+                field("Production Order No."; "Production Order No.")
                 {
                 }
-                field("BOM Type";"BOM Type")
+                field("BOM Type"; "BOM Type")
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field("Production Order Line No.";"Production Order Line No.")
+                field("Production Order Line No."; "Production Order Line No.")
                 {
                 }
             }

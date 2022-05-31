@@ -13,20 +13,20 @@ page 60162 "Calibration Procedure"
             group(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
             }
-            part(Control7;"Cal Proc Subform")
+            part(Control7; "Cal Proc Subform")
             {
                 SubPageLink = No.=FIELD(No.);
             }

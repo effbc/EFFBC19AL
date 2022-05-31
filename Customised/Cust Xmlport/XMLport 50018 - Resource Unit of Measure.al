@@ -5,19 +5,19 @@ xmlport 50018 "Resource Unit of Measure"
     {
         textelement(ResourceUnitofMeasures)
         {
-            tableelement("<resourceunitofmeasure>";"Resource Unit of Measure")
+            tableelement("<resourceunitofmeasure>"; "Resource Unit of Measure")
             {
                 XmlName = 'ResourceUnitofMeasure';
-                fieldelement(ResourceNo;"<ResourceUnitofMeasure>"."Resource No.")
+                fieldelement(ResourceNo; "<ResourceUnitofMeasure>"."Resource No.")
                 {
                 }
-                fieldelement(Code;"<ResourceUnitofMeasure>".Code)
+                fieldelement(Code; "<ResourceUnitofMeasure>".Code)
                 {
                 }
-                fieldelement(QtyperUnitofMeasure;"<ResourceUnitofMeasure>"."Qty. per Unit of Measure")
+                fieldelement(QtyperUnitofMeasure; "<ResourceUnitofMeasure>"."Qty. per Unit of Measure")
                 {
                 }
-                fieldelement(RelatedtoBaseUnitofMeas;"<ResourceUnitofMeasure>"."Related to Base Unit of Meas.")
+                fieldelement(RelatedtoBaseUnitofMeas; "<ResourceUnitofMeasure>"."Related to Base Unit of Meas.")
                 {
                 }
             }

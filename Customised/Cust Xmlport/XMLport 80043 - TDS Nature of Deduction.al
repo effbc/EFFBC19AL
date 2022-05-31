@@ -6,19 +6,19 @@ xmlport 80043 "TDS Nature of Deduction"
     {
         textelement(TDSNatureofDeductions)
         {
-            tableelement("<tdsnatureofdeduction>";"TDS Nature of Deduction")
+            tableelement("<tdsnatureofdeduction>"; "TDS Nature of Deduction")
             {
                 XmlName = 'TDSNatureofDeduction';
-                fieldelement(Code;"<TDSNatureofDeduction>".Code)
+                fieldelement(Code; "<TDSNatureofDeduction>".Code)
                 {
                 }
-                fieldelement(Description;"<TDSNatureofDeduction>".Description)
+                fieldelement(Description; "<TDSNatureofDeduction>".Description)
                 {
                 }
-                fieldelement(Category;"<TDSNatureofDeduction>".Category)
+                fieldelement(Category; "<TDSNatureofDeduction>".Category)
                 {
                 }
-                fieldelement(TDSGroup;"<TDSNatureofDeduction>"."TDS Group")
+                fieldelement(TDSGroup; "<TDSNatureofDeduction>"."TDS Group")
                 {
                 }
             }

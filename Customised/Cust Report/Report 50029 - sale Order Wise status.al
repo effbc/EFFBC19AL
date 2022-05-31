@@ -7,7 +7,7 @@ report 50029 "sale Order Wise status"
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
             DataItemTableView = WHERE(Document Type=CONST(Order),No.=FILTER(EFF/SAL/08-09/*));
             RequestFilterFields = "No.","Order Date";

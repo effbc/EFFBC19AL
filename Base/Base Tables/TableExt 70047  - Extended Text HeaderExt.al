@@ -4,6 +4,7 @@ tableextension 70047 ExtendedTextHeaderExt extends "Extended Text Header"
     {
         field(60001; Tender; Boolean)
         {
+            DataClassification = CustomerContent;
         }
     }
 }

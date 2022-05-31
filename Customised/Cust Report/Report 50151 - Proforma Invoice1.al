@@ -5,7 +5,7 @@ report 50151 "Proforma Invoice1"
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
             DataItemTableView = WHERE(Document Type=FILTER(Order));
             RequestFilterFields = "No.";
@@ -319,14 +319,14 @@ report 50151 "Proforma Invoice1"
         totvat : Decimal;
         totcst : Decimal;
         check : Report Check;
-        s : Decimal;
-        advance : Decimal;
-        n : Integer;
-        DescriptionLine : array [2] of Text[132];
-        desc : Text[30];
-        BED : Decimal;
-        EPS : Record "Excise Posting Setup";
-        ConsigneeCaptionLbl : Label 'Consignee';
+                    s : Decimal;
+                    advance : Decimal;
+                    n : Integer;
+                    DescriptionLine : array [2] of Text[132];
+                    desc : Text[30];
+                    BED : Decimal;
+                    EPS : Record "Excise Posting Setup";
+                    ConsigneeCaptionLbl : Label 'Consignee';
         Sold_toCaptionLbl : Label 'Sold-to';
         With_Reference_to_the_above_purchase_order__we_here_by_inform_that_RDSO_inspection_is_completed__will_be_completed_in______daLbl : Label 'With Reference to the above purchase order ,we here by inform that RDSO inspection is completed/ will be completed in ____ days. Hence We request to kindly Release the payment at the earliest';
         Dear_Sir_CaptionLbl : Label 'Dear Sir,';

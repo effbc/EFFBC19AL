@@ -6,13 +6,13 @@ xmlport 50180 "Blocked item"
     {
         textelement(Items)
         {
-            tableelement(Item;Item)
+            tableelement(Item; Item)
             {
                 XmlName = 'Item';
-                fieldelement(No;Item."No.")
+                fieldelement(No; Item."No.")
                 {
                 }
-                fieldelement(SafetyStockQuantity;Item."Safety Stock Quantity")
+                fieldelement(SafetyStockQuantity; Item."Safety Stock Quantity")
                 {
                 }
             }

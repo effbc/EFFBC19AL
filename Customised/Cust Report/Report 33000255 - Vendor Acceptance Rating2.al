@@ -7,38 +7,38 @@ report 33000255 "Vendor Acceptance Rating2"
 
     dataset
     {
-        dataitem("Vendor Rating";"Vendor Rating")
+        dataitem("Vendor Rating"; "Vendor Rating")
         {
             PrintOnlyIfDetail = true;
-            RequestFilterFields = "Item No.","Vendor No.";
-            column(Vendor_Rating__Item_No__;"Item No.")
+            RequestFilterFields = "Item No.", "Vendor No.";
+            column(Vendor_Rating__Item_No__; "Item No.")
             {
             }
-            column(Vendor_Rating__Vendor_No__;"Vendor No.")
+            column(Vendor_Rating__Vendor_No__; "Vendor No.")
             {
             }
-            column(Vendor_RatingCaption;Vendor_RatingCaptionLbl)
+            column(Vendor_RatingCaption; Vendor_RatingCaptionLbl)
             {
             }
-            column(Inspect__Recpt__Accept_Level_QuantityCaption;"Inspect. Recpt. Accept Level".FIELDCAPTION(Quantity))
+            column(Inspect__Recpt__Accept_Level_QuantityCaption; "Inspect. Recpt. Accept Level".FIELDCAPTION(Quantity))
             {
             }
-            column(Inspect__Recpt__Accept_Level__Reason_Code_Caption;"Inspect. Recpt. Accept Level".FIELDCAPTION("Reason Code"))
+            column(Inspect__Recpt__Accept_Level__Reason_Code_Caption; "Inspect. Recpt. Accept Level".FIELDCAPTION("Reason Code"))
             {
             }
-            column(Inspect__Recpt__Accept_Level__Acceptance_Code_Caption;"Inspect. Recpt. Accept Level".FIELDCAPTION("Acceptance Code"))
+            column(Inspect__Recpt__Accept_Level__Acceptance_Code_Caption; "Inspect. Recpt. Accept Level".FIELDCAPTION("Acceptance Code"))
             {
             }
-            column(Inspect__Recpt__Accept_Level__Quality_Type_Caption;"Inspect. Recpt. Accept Level".FIELDCAPTION("Quality Type"))
+            column(Inspect__Recpt__Accept_Level__Quality_Type_Caption; "Inspect. Recpt. Accept Level".FIELDCAPTION("Quality Type"))
             {
             }
-            column(Vendor_Rating__Item_No__Caption;FIELDCAPTION("Item No."))
+            column(Vendor_Rating__Item_No__Caption; FIELDCAPTION("Item No."))
             {
             }
-            column(Vendor_Rating__Vendor_No__Caption;FIELDCAPTION("Vendor No."))
+            column(Vendor_Rating__Vendor_No__Caption; FIELDCAPTION("Vendor No."))
             {
             }
-            dataitem("Inspect. Recpt. Accept Level";"Inspect. Recpt. Accept Level")
+            dataitem("Inspect. Recpt. Accept Level"; "Inspect. Recpt. Accept Level")
             {
                 DataItemLink = Item No.=FIELD(Item No.),Vendor No.=FIELD(Vendor No.);
                 DataItemTableView = SORTING(Item No.,Vendor No.,Acceptance Code) WHERE(Status=CONST(Yes));

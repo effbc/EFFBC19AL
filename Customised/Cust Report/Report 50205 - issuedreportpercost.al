@@ -15,34 +15,34 @@ report 50205 issuedreportpercost
 
     dataset
     {
-        dataitem("Posted Material Issues Header";"Posted Material Issues Header")
+        dataitem("Posted Material Issues Header"; "Posted Material Issues Header")
         {
-            RequestFilterFields = "Transfer-from Code","Transfer-to Code","Prod. Order No.","Posting Date";
-            column(Item_Ledger_Entry___Serial_No__Caption;"Item Ledger Entry".FIELDCAPTION("Serial No."))
+            RequestFilterFields = "Transfer-from Code", "Transfer-to Code", "Prod. Order No.", "Posting Date";
+            column(Item_Ledger_Entry___Serial_No__Caption; "Item Ledger Entry".FIELDCAPTION("Serial No."))
             {
             }
-            column(Item_Ledger_Entry___Lot_No__Caption;"Item Ledger Entry".FIELDCAPTION("Lot No."))
+            column(Item_Ledger_Entry___Lot_No__Caption; "Item Ledger Entry".FIELDCAPTION("Lot No."))
             {
             }
-            column(Value_Entry___Cost_per_Unit_Caption;"Value Entry".FIELDCAPTION("Cost per Unit"))
+            column(Value_Entry___Cost_per_Unit_Caption; "Value Entry".FIELDCAPTION("Cost per Unit"))
             {
             }
-            column(Value_Entry___Invoiced_Quantity_Caption;"Value Entry".FIELDCAPTION("Invoiced Quantity"))
+            column(Value_Entry___Invoiced_Quantity_Caption; "Value Entry".FIELDCAPTION("Invoiced Quantity"))
             {
             }
-            column(Value_Entry___Valued_Quantity_Caption;"Value Entry".FIELDCAPTION("Valued Quantity"))
+            column(Value_Entry___Valued_Quantity_Caption; "Value Entry".FIELDCAPTION("Valued Quantity"))
             {
             }
-            column(Value_Entry___Item_No__Caption;"Value Entry".FIELDCAPTION("Item No."))
+            column(Value_Entry___Item_No__Caption; "Value Entry".FIELDCAPTION("Item No."))
             {
             }
-            column(Posted_Material_Issues_Header_No_;"No.")
+            column(Posted_Material_Issues_Header_No_; "No.")
             {
             }
-            dataitem("Value Entry";"Value Entry")
+            dataitem("Value Entry"; "Value Entry")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Document No.,Posting Date) WHERE(Item Ledger Entry Quantity=FILTER(>0));
+                DataItemTableView = SORTING(Document No., Posting Date) WHERE(Item Ledger Entry Quantity=FILTER(>0));
                 column(Value_Entry_Entry_No_;"Entry No.")
                 {
                 }

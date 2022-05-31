@@ -7,9 +7,9 @@ report 50023 "AMC Order Dump"
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
-            DataItemTableView = SORTING(Document Type,No.) ORDER(Ascending) WHERE(Document Type=CONST(Amc),Sell-to Customer No.=FILTER(<>''));
+            DataItemTableView = SORTING(Document Type, No.) ORDER(Ascending) WHERE(Document Type=CONST(Amc),Sell-to Customer No.=FILTER(<>''));
             RequestFilterFields = "No.";
             column(Sales_Header__No__;"No.")
             {

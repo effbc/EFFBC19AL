@@ -1,11 +1,12 @@
 table 14125608 "Einvoice Sample2"
 {
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;Data;Option)
+        field(1; Data; Option)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionCaption = ',Item,GlEntry';
             OptionMembers = ,Item,GlEntry;
         }
@@ -13,7 +14,7 @@ table 14125608 "Einvoice Sample2"
 
     keys
     {
-        key(Key1;Data)
+        key(Key1; Data)
         {
         }
     }

@@ -6,22 +6,22 @@ xmlport 80084 "Item Category"
     {
         textelement(ItemCategories)
         {
-            tableelement("<itemcategory>";"Item Category")
+            tableelement("<itemcategory>"; "Item Category")
             {
                 XmlName = 'ItemCategory';
-                fieldelement(Code;"<ItemCategory>".Code)
+                fieldelement(Code; "<ItemCategory>".Code)
                 {
                 }
-                fieldelement(Description;"<ItemCategory>".Description)
+                fieldelement(Description; "<ItemCategory>".Description)
                 {
                 }
-                fieldelement(DefGenProdPostingGroup;"<ItemCategory>"."Def. Gen. Prod. Posting Group")
+                fieldelement(DefGenProdPostingGroup; "<ItemCategory>"."Def. Gen. Prod. Posting Group")
                 {
                 }
-                fieldelement(DefInventoryPostingGroup;"<ItemCategory>"."Def. Inventory Posting Group")
+                fieldelement(DefInventoryPostingGroup; "<ItemCategory>"."Def. Inventory Posting Group")
                 {
                 }
-                fieldelement(DefCostingMethod;"<ItemCategory>"."Def. Costing Method")
+                fieldelement(DefCostingMethod; "<ItemCategory>"."Def. Costing Method")
                 {
                 }
             }

@@ -29,6 +29,7 @@ tableextension 70057 TrackingSpecificationExt extends "Tracking Specification"
         field(60002; "Item Entry No."; Integer)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
     }
     keys

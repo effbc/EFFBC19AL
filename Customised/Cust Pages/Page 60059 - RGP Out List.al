@@ -14,40 +14,40 @@ page 60059 "RGP Out List"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("RGP Out No.";"RGP Out No.")
+                field("RGP Out No."; "RGP Out No.")
                 {
                 }
-                field("RGP Date";"RGP Date")
+                field("RGP Date"; "RGP Date")
                 {
                 }
-                field("RGP Posting Date";"RGP Posting Date")
+                field("RGP Posting Date"; "RGP Posting Date")
                 {
                 }
-                field(Consignee;Consignee)
+                field(Consignee; Consignee)
                 {
                 }
-                field("Consignee No.";"Consignee No.")
+                field("Consignee No."; "Consignee No.")
                 {
                 }
-                field("Consignee Name";"Consignee Name")
+                field("Consignee Name"; "Consignee Name")
                 {
                 }
-                field(Address;Address)
+                field(Address; Address)
                 {
                 }
-                field("Consignee City";"Consignee City")
+                field("Consignee City"; "Consignee City")
                 {
                 }
-                field("Consignee Contact";"Consignee Contact")
+                field("Consignee Contact"; "Consignee Contact")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("No. Series";"No. Series")
+                field("No. Series"; "No. Series")
                 {
                 }
-                field("Equipment No";"Equipment No")
+                field("Equipment No"; "Equipment No")
                 {
                 }
             }
@@ -68,7 +68,7 @@ page 60059 "RGP Out List"
 
                     trigger OnAction();
                     begin
-                        PAGE.RUN(PAGE::"Posted RGP Out",Rec);
+                        PAGE.RUN(PAGE::"Posted RGP Out", Rec);
                     end;
                 }
             }

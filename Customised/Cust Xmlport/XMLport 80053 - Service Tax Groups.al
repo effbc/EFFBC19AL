@@ -6,13 +6,13 @@ xmlport 80053 "Service Tax Groups"
     {
         textelement(ServiceTaxGroups)
         {
-            tableelement("<servicetaxgroup>";"Service Tax Groups")
+            tableelement("<servicetaxgroup>"; "Service Tax Groups")
             {
                 XmlName = 'ServiceTaxGroup';
-                fieldelement(Code;"<ServiceTaxGroup>".Code)
+                fieldelement(Code; "<ServiceTaxGroup>".Code)
                 {
                 }
-                fieldelement(Description;"<ServiceTaxGroup>".Description)
+                fieldelement(Description; "<ServiceTaxGroup>".Description)
                 {
                 }
             }

@@ -6,10 +6,10 @@ page 60261 "Pending Material Issues"
     DeleteAllowed = false;
     InsertAllowed = false;
     PageType = List;
-    Permissions = TableData "Material Issues Line"=rm;
+    Permissions = TableData "Material Issues Line" = rm;
     SaveValues = true;
     SourceTable = "Material Issues Line";
-    SourceTableView = SORTING(Prod. Order No.,Prod. Order Line No.,Prod. Order Comp. Line No.) ORDER(Ascending) WHERE(Outstanding Quantity=FILTER(>0),Transfer-from Code=FILTER(<>CS&<>SITE),Transfer-to Code=FILTER(<>CS&<>SITE&<>DAMAGE&<>CS STR&<>'R&D STR'&<>STR),Status=FILTER(Released));
+    SourceTableView = SORTING(Prod. Order No., Prod. Order Line No., Prod. Order Comp. Line No.) ORDER(Ascending) WHERE(Outstanding Quantity=FILTER(>0),Transfer-from Code=FILTER(<>CS&<>SITE),Transfer-to Code=FILTER(<>CS&<>SITE&<>DAMAGE&<>CS STR&<>'R&D STR'&<>STR),Status=FILTER(Released));
 
     layout
     {

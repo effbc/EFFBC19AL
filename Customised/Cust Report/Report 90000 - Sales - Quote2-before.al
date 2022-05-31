@@ -29,131 +29,131 @@ report 90000 "Sales - Quote2-before"
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
-            DataItemTableView = SORTING(Document Type,No.) WHERE(Document Type=CONST(Quote));
+            DataItemTableView = SORTING(Document Type, No.) WHERE(Document Type=CONST(Quote));
             PrintOnlyIfDetail = true;
-            RequestFilterFields = "No.","Sell-to Customer No.","No. Printed";
+            RequestFilterFields = "No.", "Sell-to Customer No.", "No. Printed";
             ReqFilterHeading = 'Sales Order';
-            column(Sales_Header_Document_Type;"Document Type")
+            column(Sales_Header_Document_Type; "Document Type")
             {
             }
-            column(Sales_Header_No_;"No.")
+            column(Sales_Header_No_; "No.")
             {
             }
-            dataitem(CopyLoop;"Integer")
+            dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
-                dataitem(PageLoop;"Integer")
+                dataitem(PageLoop; "Integer")
                 {
-                    DataItemTableView = SORTING(Number) WHERE(Number=CONST(1));
+                    DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
                     PrintOnlyIfDetail = true;
-                    column(CustAddr_2_;CustAddr[2])
+                    column(CustAddr_2_; CustAddr[2])
                     {
                     }
-                    column(CustAddr_3_;CustAddr[3])
+                    column(CustAddr_3_; CustAddr[3])
                     {
                     }
-                    column(CustAddr_4_;CustAddr[4])
+                    column(CustAddr_4_; CustAddr[4])
                     {
                     }
-                    column(CustAddr_1_;CustAddr[1])
+                    column(CustAddr_1_; CustAddr[1])
                     {
                     }
-                    column(FORMAT__Sales_Header___Order_Date__0_4_;FORMAT("Sales Header"."Order Date",0,4))
+                    column(FORMAT__Sales_Header___Order_Date__0_4_; FORMAT("Sales Header"."Order Date", 0, 4))
                     {
                     }
-                    column(Sales_Header___Quote_No__;"Sales Header"."Quote No.")
+                    column(Sales_Header___Quote_No__; "Sales Header"."Quote No.")
                     {
                     }
-                    column(Sales_Header___No__;"Sales Header"."No.")
+                    column(Sales_Header___No__; "Sales Header"."No.")
                     {
                     }
-                    column(data_1__data_2__data_3_;data[1]+data[2]+data[3])
+                    column(data_1__data_2__data_3_; data[1] + data[2] + data[3])
                     {
                     }
-                    column(str1;str1)
+                    column(str1; str1)
                     {
                     }
-                    column(desc1;desc1)
+                    column(desc1; desc1)
                     {
                     }
-                    column(data_29_;data[29])
+                    column(data_29_; data[29])
                     {
                     }
-                    column(data_24__data_25__data_26__data_27__data_28_;data[24]+data[25]+data[26]+data[27]+data[28])
+                    column(data_24__data_25__data_26__data_27__data_28_; data[24] + data[25] + data[26] + data[27] + data[28])
                     {
                     }
-                    column(data_30_;data[30])
+                    column(data_30_; data[30])
                     {
                     }
-                    column(data_31_;data[31])
+                    column(data_31_; data[31])
                     {
                     }
-                    column(salesman;salesman)
+                    column(salesman; salesman)
                     {
                     }
-                    column(desigantion1;desigantion1)
+                    column(desigantion1; desigantion1)
                     {
                     }
-                    column(name2;name2)
+                    column(name2; name2)
                     {
                     }
-                    column(designation2;designation2)
+                    column(designation2; designation2)
                     {
                     }
-                    column(Ref_No___Caption;Ref_No___CaptionLbl)
+                    column(Ref_No___Caption; Ref_No___CaptionLbl)
                     {
                     }
-                    column(Dt_Caption;Dt_CaptionLbl)
+                    column(Dt_Caption; Dt_CaptionLbl)
                     {
                     }
-                    column(Dear_Sir_Caption;Dear_Sir_CaptionLbl)
+                    column(Dear_Sir_Caption; Dear_Sir_CaptionLbl)
                     {
                     }
-                    column(SUB__________Caption;SUB__________CaptionLbl)
+                    column(SUB__________Caption; SUB__________CaptionLbl)
                     {
                     }
-                    column(SCHEDULE_Caption;SCHEDULE_CaptionLbl)
+                    column(SCHEDULE_Caption; SCHEDULE_CaptionLbl)
                     {
                     }
-                    column(TERMS___CONDITIONS__Caption;TERMS___CONDITIONS__CaptionLbl)
+                    column(TERMS___CONDITIONS__Caption; TERMS___CONDITIONS__CaptionLbl)
                     {
                     }
-                    column(V4__PAYMENT________________Caption;V4__PAYMENT________________CaptionLbl)
+                    column(V4__PAYMENT________________Caption; V4__PAYMENT________________CaptionLbl)
                     {
                     }
-                    column(RDSO_INSPECTION_CHARGESCaption;RDSO_INSPECTION_CHARGESCaptionLbl)
+                    column(RDSO_INSPECTION_CHARGESCaption; RDSO_INSPECTION_CHARGESCaptionLbl)
                     {
                     }
-                    column(V2__DELIVERY_______________Caption;V2__DELIVERY_______________CaptionLbl)
+                    column(V2__DELIVERY_______________Caption; V2__DELIVERY_______________CaptionLbl)
                     {
                     }
-                    column(V1__WARRANTYCaption;V1__WARRANTYCaptionLbl)
+                    column(V1__WARRANTYCaption; V1__WARRANTYCaptionLbl)
                     {
                     }
-                    column(V3__OFFER_VALIDITY___Caption;V3__OFFER_VALIDITY___CaptionLbl)
+                    column(V3__OFFER_VALIDITY___Caption; V3__OFFER_VALIDITY___CaptionLbl)
                     {
                     }
-                    column(Thanking_You_Caption;Thanking_You_CaptionLbl)
+                    column(Thanking_You_Caption; Thanking_You_CaptionLbl)
                     {
                     }
-                    column(Yours_faithfullyCaption;Yours_faithfullyCaptionLbl)
+                    column(Yours_faithfullyCaption; Yours_faithfullyCaptionLbl)
                     {
                     }
-                    column(EFFTRONICS__SYSTEMS_PVT__LTD_Caption;EFFTRONICS__SYSTEMS_PVT__LTD_CaptionLbl)
+                    column(EFFTRONICS__SYSTEMS_PVT__LTD_Caption; EFFTRONICS__SYSTEMS_PVT__LTD_CaptionLbl)
                     {
                     }
-                    column(For_any_further_clarifications__please_contact_us_Caption;For_any_further_clarifications__please_contact_us_CaptionLbl)
+                    column(For_any_further_clarifications__please_contact_us_Caption; For_any_further_clarifications__please_contact_us_CaptionLbl)
                     {
                     }
-                    column(PageLoop_Number;Number)
+                    column(PageLoop_Number; Number)
                     {
                     }
-                    dataitem(DimensionLoop1;"Integer")
+                    dataitem(DimensionLoop1; "Integer")
                     {
                         DataItemLinkReference = "Sales Header";
-                        DataItemTableView = SORTING(Number) WHERE(Number=FILTER(1..));
+                        DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
 
                         trigger OnAfterGetRecord();
                         begin
@@ -186,29 +186,29 @@ report 90000 "Sales - Quote2-before"
                               END;
                             UNTIL (DocDim1.NEXT = 0);
                             */
-                            
+
                             IF Number = 1 THEN BEGIN
-                              IF NOT DimSetEntryGRec.FINDFIRST THEN
-                                CurrReport.BREAK;
+                                IF NOT DimSetEntryGRec.FINDFIRST THEN
+                                    CurrReport.BREAK;
                             END ELSE
-                              IF NOT Continue THEN
-                                CurrReport.BREAK;
-                            
+                                IF NOT Continue THEN
+                                    CurrReport.BREAK;
+
                             CLEAR(DimText);
                             Continue := FALSE;
                             REPEAT
-                              OldDimText := DimText;
-                              IF DimText = '' THEN
-                                DimText := STRSUBSTNO('%1 %2',DimSetEntryGRec."Dimension Code",DimSetEntryGRec."Dimension Value Code")
-                              ELSE
-                                DimText :=
-                                  STRSUBSTNO(
-                                    '%1, %2 %3',DimText,DimSetEntryGRec."Dimension Code",DimSetEntryGRec."Dimension Value Code");
-                              IF STRLEN(DimText) > MAXSTRLEN(OldDimText) THEN BEGIN
-                                DimText := OldDimText;
-                                Continue := TRUE;
-                                EXIT;
-                              END;
+                                OldDimText := DimText;
+                                IF DimText = '' THEN
+                                    DimText := STRSUBSTNO('%1 %2', DimSetEntryGRec."Dimension Code", DimSetEntryGRec."Dimension Value Code")
+                                ELSE
+                                    DimText :=
+                                      STRSUBSTNO(
+                                        '%1, %2 %3', DimText, DimSetEntryGRec."Dimension Code", DimSetEntryGRec."Dimension Value Code");
+                                IF STRLEN(DimText) > MAXSTRLEN(OldDimText) THEN BEGIN
+                                    DimText := OldDimText;
+                                    Continue := TRUE;
+                                    EXIT;
+                                END;
                             UNTIL DimSetEntryGRec.NEXT = 0;
                             //DIM1.0 End
 
@@ -217,10 +217,10 @@ report 90000 "Sales - Quote2-before"
                         trigger OnPreDataItem();
                         begin
                             IF NOT ShowInternalInfo THEN
-                              CurrReport.BREAK;
+                                CurrReport.BREAK;
                         end;
                     }
-                    dataitem("Sales Line";"Sales Line")
+                    dataitem("Sales Line"; "Sales Line")
                     {
                         DataItemLink = Document Type=FIELD(Document Type),Document No.=FIELD(No.);
                         DataItemLinkReference = "Sales Header";
@@ -814,50 +814,50 @@ report 90000 "Sales - Quote2-before"
         desc : Text[50];
         "Total Amount" : Integer;
         Check : Report Check;
-        NumerText : array [2] of Text[50];
-        attach : array [8] of Text[100];
-        CustAttach : Record "Inst. PreSite Check List";
-        no : Text[50];
-        descri : Text[1000];
-        itemtable : Record Item;
-        name1 : Text[80];
-        desigantion1 : Text[80];
-        name2 : Text[80];
-        designation2 : Text[80];
-        headprint : Boolean;
-        TechSlNo : Integer;
-        TechBol : Boolean;
-        UnitPrice : Text[50];
-        TotalPrice1 : Text[50];
-        CurrencyCode : Text[50];
-        TextinWords : Text[50];
-        TextInWordsText : Text[200];
-        deliveryadd : array [8] of Text[30];
-        str : Text[200];
-        str1 : Text[100];
-        pos : Integer;
-        "sales comment" : Record "Sales Comment Line";
-        "payment terms" : Record "Payment Terms";
-        desc1 : Text[200];
-        des : array [10,6] of Text[50];
-        j : Integer;
-        des1 : array [10,6] of Text[50];
-        choice : Option A,B;
-        a : Text[1];
-        k : Integer;
-        text1 : Text[1];
-        text2 : Text[1];
-        cusname : Text[30];
-        rcaption : Text[5];
-        pos1 : Integer;
-        SLNO1 : Integer;
-        data : array [50] of Text[200];
-        l : Integer;
-        salesman : Text[30];
-        des2 : Text[50];
-        hardcopy : Boolean;
-        softcopy : Boolean;
-        Ref_No___CaptionLbl : Label 'Ref No  :';
+                    NumerText : array [2] of Text[50];
+                    attach : array [8] of Text[100];
+                    CustAttach : Record "Inst. PreSite Check List";
+                    no : Text[50];
+                    descri : Text[1000];
+                    itemtable : Record Item;
+                    name1 : Text[80];
+                    desigantion1 : Text[80];
+                    name2 : Text[80];
+                    designation2 : Text[80];
+                    headprint : Boolean;
+                    TechSlNo : Integer;
+                    TechBol : Boolean;
+                    UnitPrice : Text[50];
+                    TotalPrice1 : Text[50];
+                    CurrencyCode : Text[50];
+                    TextinWords : Text[50];
+                    TextInWordsText : Text[200];
+                    deliveryadd : array [8] of Text[30];
+                    str : Text[200];
+                    str1 : Text[100];
+                    pos : Integer;
+                    "sales comment" : Record "Sales Comment Line";
+                    "payment terms" : Record "Payment Terms";
+                    desc1 : Text[200];
+                    des : array [10,6] of Text[50];
+                    j : Integer;
+                    des1 : array [10,6] of Text[50];
+                    choice : Option A,B;
+                    a : Text[1];
+                    k : Integer;
+                    text1 : Text[1];
+                    text2 : Text[1];
+                    cusname : Text[30];
+                    rcaption : Text[5];
+                    pos1 : Integer;
+                    SLNO1 : Integer;
+                    data : array [50] of Text[200];
+                    l : Integer;
+                    salesman : Text[30];
+                    des2 : Text[50];
+                    hardcopy : Boolean;
+                    softcopy : Boolean;
+                    Ref_No___CaptionLbl : Label 'Ref No  :';
         Dt_CaptionLbl : Label 'Dt:';
         Dear_Sir_CaptionLbl : Label 'Dear Sir,';
         SUB__________CaptionLbl : Label 'SUB         :';

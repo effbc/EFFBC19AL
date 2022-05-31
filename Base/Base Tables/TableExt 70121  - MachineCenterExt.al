@@ -6,6 +6,7 @@ tableextension 70121 MachineCenterExt extends "Machine Center"
         {
             Description = 'b2b';
             Editable = false;
+            DataClassification = CustomerContent;
         }
     }
 }

@@ -17,7 +17,7 @@ report 50242 Pur_invoices_Tally
 
     dataset
     {
-        dataitem("Purch. Inv. Header";"Purch. Inv. Header")
+        dataitem("Purch. Inv. Header"; "Purch. Inv. Header")
         {
             DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Payment Terms Code=FILTER(<>CASH));
             RequestFilterFields = "Posting Date","Buy-from Vendor No.";

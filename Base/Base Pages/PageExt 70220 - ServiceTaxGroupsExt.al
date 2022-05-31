@@ -1,4 +1,4 @@
-pageextension 70220 ServiceTaxGroupsExt extends "Service Tax Groups" 
+pageextension 70220 ServiceTaxGroupsExt extends "Service Tax Groups"
 {
     // version NAVIN7.10
 

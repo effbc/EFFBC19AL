@@ -5,9 +5,11 @@ tableextension 70061 DetailedCustLedgEntryExt extends "Detailed Cust. Ledg. Entr
     {
         field(60063; "Customer Ord No"; Code[65])
         {
+            DataClassification = CustomerContent;
         }
         field(60064; "Payment Type"; Enum "Detailed Cust. Ledg. Entry")
         {
+            DataClassification = CustomerContent;
 
         }
     }

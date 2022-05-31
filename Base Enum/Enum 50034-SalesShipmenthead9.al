@@ -13,5 +13,5 @@ enum 50034 "Sales Shipment Enum9"
     value(2; "RDSO")
     {
     }
-  
+
 }

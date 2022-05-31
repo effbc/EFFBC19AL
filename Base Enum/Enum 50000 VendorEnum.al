@@ -6,11 +6,11 @@ enum 50000 "Vendor Enum"
     {
 
     }
-    value(1;MSME)
+    value(1; MSME)
     {
 
     }
-    value(2;TDS)
+    value(2; TDS)
     {
 
     }

@@ -15,7 +15,7 @@ page 60307 "Sales Order Temp"
         {
             repeater(Group)
             {
-                field("Sales Order No.";"Sales Order No.")
+                field("Sales Order No."; "Sales Order No.")
                 {
                 }
             }
@@ -27,7 +27,7 @@ page 60307 "Sales Order Temp"
     }
 
     [LineStart(21876)]
-    procedure SetSelection(var SalesOrdersTemp : Record "Sales Orders Temp");
+    procedure SetSelection(var SalesOrdersTemp: Record "Sales Orders Temp");
     begin
         CurrPage.SETSELECTIONFILTER(SalesOrdersTemp);
     end;

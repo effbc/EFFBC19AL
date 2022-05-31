@@ -14,28 +14,28 @@ page 60024 "Product List"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field("Product Type";"Product Type")
+                field("Product Type"; "Product Type")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Technology;Technology)
+                field(Technology; Technology)
                 {
                 }
-                field("Key Features";"Key Features")
+                field("Key Features"; "Key Features")
                 {
                 }
-                field("Launched Year";"Launched Year")
+                field("Launched Year"; "Launched Year")
                 {
                 }
-                field(Segment;Segment)
+                field(Segment; Segment)
                 {
                 }
-                field(Price;Price)
+                field(Price; Price)
                 {
                 }
             }

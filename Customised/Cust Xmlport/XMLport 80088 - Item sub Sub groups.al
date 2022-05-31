@@ -6,16 +6,16 @@ xmlport 80088 "Item sub Sub groups"
     {
         textelement(ItemSubSubGroups)
         {
-            tableelement("<itemsubsubgroup>";"Item Sub Sub Group")
+            tableelement("<itemsubsubgroup>"; "Item Sub Sub Group")
             {
                 XmlName = 'ItemSubSubGroup';
-                fieldelement(ItemSubGroupCode;"<ItemSubSubGroup>"."Item Sub Group Code")
+                fieldelement(ItemSubGroupCode; "<ItemSubSubGroup>"."Item Sub Group Code")
                 {
                 }
-                fieldelement(Code;"<ItemSubSubGroup>".Code)
+                fieldelement(Code; "<ItemSubSubGroup>".Code)
                 {
                 }
-                fieldelement(Description;"<ItemSubSubGroup>".Description)
+                fieldelement(Description; "<ItemSubSubGroup>".Description)
                 {
                 }
             }
