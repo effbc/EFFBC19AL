@@ -158,6 +158,19 @@ codeunit 50001 "Tables Codeunit"
 
 
             end;
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Invoice Line", 'OnAfterInitFromSalesLine', '', false, false)]
+    local procedure OnAfterInitFromSalesLine(var SalesInvLine: Record "Sales Invoice Line"; SalesInvHeader: Record "Sales Invoice Header"; SalesLine: Record "Sales Line")
+    begin
+        "Schedule Type" := SalesLine."Schedule Type";//EFFUPG
+        "Order No." := SalesLine."Document No.";//EFFUPG
+        "Order Line No." := SalesLine."Line No.";   // pranavi added on 23-mar-2016
+        "External Document No." := SalesInvHeader."External Document No.";//EFFUPG
+        "Supply Portion" := SalesLine."Supply Portion";//EFFUPG
+        "Retention Portion" := SalesLine."Retention Portion";//EFFUPG
+        "Schedule No" := SalesLine."Schedule No";//EFFUPG
+    end;
 
 
 
