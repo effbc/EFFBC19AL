@@ -1,6 +1,5 @@
 tableextension 70052 IssuedFinChargeMemoHeaderExt extends "Issued Fin. Charge Memo Header"
 {
-
     fields
     {
         field(60090; "Dimension Corrected"; Boolean)
