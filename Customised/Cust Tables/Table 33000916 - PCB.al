@@ -1,5 +1,6 @@
 table 33000916 PCB
 {
+    DataClassification = CustomerContent;
     // sten.RESET;
     // sten.SETRANGE(sten."No.",Stencil);
     // IF PAGE.RUNMODAL(60239,sten) = ACTION:: LookupOK THEN
@@ -9,154 +10,164 @@ table 33000916 PCB
 
     fields
     {
-        field(1;"PCB No.";Code[20])
+        field(1; "PCB No."; Code[20])
         {
-            TableRelation = Item."No." WHERE ("Product Group Code"=FILTER('PCB'|'CPCB'|'MPCB'));
+            TableRelation = Item."No." WHERE("Product Group Code" = FILTER('PCB' | 'CPCB' | 'MPCB'));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
                 if Item.Get("PCB No.") then
-                Description:=Item.Description;
+                    Description := Item.Description;
             end;
         }
-        field(2;Description;Text[50])
+        field(2; Description; Text[50])
         {
+            DataClassification = CustomerContent;
         }
-        field(3;"PCB Thickness";Decimal)
+        field(3; "PCB Thickness"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(4;"Copper Clad Thinkness";Decimal)
+        field(4; "Copper Clad Thinkness"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(5;"PCB Area";Decimal)
+        field(5; "PCB Area"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(6;Length;Decimal)
+        field(6; Length; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(7;Width;Decimal)
+        field(7; Width; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(8;"PCB Shape";Option)
+        field(8; "PCB Shape"; Option)
         {
             OptionMembers = ,Rectangle,Circular;
+            DataClassification = CustomerContent;
         }
-        field(9;"On C-side";Option)
+        field(9; "On C-side"; Option)
         {
             OptionMembers = "0",Green,White,Black,Blue;
+            DataClassification = CustomerContent;
         }
-        field(10;"On D-side";Option)
+        field(10; "On D-side"; Option)
         {
             OptionMembers = "0",Green,White,Black,Blue;
+            DataClassification = CustomerContent;
         }
-        field(11;"On S-side";Option)
+        field(11; "On S-side"; Option)
         {
             OptionMembers = "0",Green,White,Black,Blue;
+            DataClassification = CustomerContent;
         }
-        field(12;Stencil;Code[20])
+        field(12; Stencil; Code[20])
         {
             TableRelation = Stencil."No.";
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
                 sten.Reset;
-                if PAGE.RunModal(60238,sten) = ACTION:: LookupOK then
-                Validate(Stencil,sten."No.");
+                if PAGE.RunModal(60238, sten) = ACTION::LookupOK then
+                    Validate(Stencil, sten."No.");
             end;
 
             trigger OnValidate();
             begin
                 Item.Reset;
-                Item.SetFilter(Item."No.","PCB No.");
-                if Item.FindFirst then
-                begin
-                  if Item."Product Group Code"='MPCB' then
-                  begin
-                    PcbGRec.Reset;
-                    PcbGRec.SetFilter(PcbGRec."Master PCB","PCB No.");
-                    if PcbGRec.FindSet then
-                    repeat
-                      PcbGRec.Stencil:=Stencil;
-                      PcbGRec.Modify;
-                    until PcbGRec.Next=0;
-                  end else if Item."Product Group Code"='PCB' then
-                  begin
-                    PBL.Reset;
-                    PBL.SetFilter(PBL."No.","PCB No.");
-                    if PBL.FindFirst then
-                    repeat
-                      PcbGRec.Reset;
-                      PcbGRec.SetFilter(PcbGRec."PCB No.",PBL."Production BOM No.");
-                      if PcbGRec.FindFirst then
-                      begin
-                        PcbGRec.Stencil:=Stencil;
-                        PcbGRec.Modify;
-                      end;
-                    until PBL.Next=0;
-                  end;
+                Item.SetFilter(Item."No.", "PCB No.");
+                if Item.FindFirst then begin
+                    if Item."Product Group Code" = 'MPCB' then begin
+                        PcbGRec.Reset;
+                        PcbGRec.SetFilter(PcbGRec."Master PCB", "PCB No.");
+                        if PcbGRec.FindSet then
+                            repeat
+                                PcbGRec.Stencil := Stencil;
+                                PcbGRec.Modify;
+                            until PcbGRec.Next = 0;
+                    end else
+                        if Item."Product Group Code" = 'PCB' then begin
+                            PBL.Reset;
+                            PBL.SetFilter(PBL."No.", "PCB No.");
+                            if PBL.FindFirst then
+                                repeat
+                                    PcbGRec.Reset;
+                                    PcbGRec.SetFilter(PcbGRec."PCB No.", PBL."Production BOM No.");
+                                    if PcbGRec.FindFirst then begin
+                                        PcbGRec.Stencil := Stencil;
+                                        PcbGRec.Modify;
+                                    end;
+                                until PBL.Next = 0;
+                        end;
                 end;
             end;
         }
-        field(13;"Soldering Area";Decimal)
+        field(13; "Soldering Area"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(14;"Master PCB";Code[20])
+        field(14; "Master PCB"; Code[20])
         {
-            TableRelation = Item."No." WHERE ("Product Group Code"=FILTER('MPCB'));
+            TableRelation = Item."No." WHERE("Product Group Code" = FILTER('MPCB'));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
                 PcbGRec.Reset;
                 //IF PcbGRec.GET("Master PCB") THEN //UPGREV2.0
-                 PcbGRec.SetRange(PcbGRec."PCB No.","Master PCB");
-                 if PcbGRec.FindFirst then
-                  Stencil:=PcbGRec.Stencil;
+                PcbGRec.SetRange(PcbGRec."PCB No.", "Master PCB");
+                if PcbGRec.FindFirst then
+                    Stencil := PcbGRec.Stencil;
             end;
         }
-        field(15;Multiples_Per_Stencil;Decimal)
+        field(15; Multiples_Per_Stencil; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(16;"Double Side Stencil";Code[20])
+        field(16; "Double Side Stencil"; Code[20])
         {
             TableRelation = Stencil."No.";
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
                 sten.Reset;
-                if PAGE.RunModal(60238,sten) = ACTION:: LookupOK then
-                Validate(Stencil,sten."No.");
+                if PAGE.RunModal(60238, sten) = ACTION::LookupOK then
+                    Validate(Stencil, sten."No.");
             end;
 
             trigger OnValidate();
             begin
                 Item.Reset;
-                Item.SetFilter(Item."No.","PCB No.");
-                if Item.FindFirst then
-                begin
-                  if Item."Product Group Code"='MPCB' then
-                  begin
-                    PcbGRec.Reset;
-                    PcbGRec.SetFilter(PcbGRec."Master PCB","PCB No.");
-                    if PcbGRec.FindSet then
-                    repeat
-                      PcbGRec.Stencil:=Stencil;
-                      PcbGRec.Modify;
-                    until PcbGRec.Next=0;
-                  end else if Item."Product Group Code"='PCB' then
-                  begin
-                    PBL.Reset;
-                    PBL.SetFilter(PBL."No.","PCB No.");
-                    if PBL.FindFirst then
-                    repeat
-                      PcbGRec.Reset;
-                      PcbGRec.SetFilter(PcbGRec."PCB No.",PBL."Production BOM No.");
-                      if PcbGRec.FindFirst then
-                      begin
-                        PcbGRec.Stencil:=Stencil;
-                        PcbGRec.Modify;
-                      end;
-                    until PBL.Next=0;
-                  end;
+                Item.SetFilter(Item."No.", "PCB No.");
+                if Item.FindFirst then begin
+                    if Item."Product Group Code" = 'MPCB' then begin
+                        PcbGRec.Reset;
+                        PcbGRec.SetFilter(PcbGRec."Master PCB", "PCB No.");
+                        if PcbGRec.FindSet then
+                            repeat
+                                PcbGRec.Stencil := Stencil;
+                                PcbGRec.Modify;
+                            until PcbGRec.Next = 0;
+                    end else
+                        if Item."Product Group Code" = 'PCB' then begin
+                            PBL.Reset;
+                            PBL.SetFilter(PBL."No.", "PCB No.");
+                            if PBL.FindFirst then
+                                repeat
+                                    PcbGRec.Reset;
+                                    PcbGRec.SetFilter(PcbGRec."PCB No.", PBL."Production BOM No.");
+                                    if PcbGRec.FindFirst then begin
+                                        PcbGRec.Stencil := Stencil;
+                                        PcbGRec.Modify;
+                                    end;
+                                until PBL.Next = 0;
+                        end;
                 end;
             end;
         }
@@ -164,7 +175,7 @@ table 33000916 PCB
 
     keys
     {
-        key(Key1;"PCB No.")
+        key(Key1; "PCB No.")
         {
         }
     }
@@ -174,9 +185,9 @@ table 33000916 PCB
     }
 
     var
-        sten : Record Stencil;
-        Item : Record Item;
-        PcbGRec : Record PCB;
-        PBL : Record "Production BOM Line";
+        sten: Record Stencil;
+        Item: Record Item;
+        PcbGRec: Record PCB;
+        PBL: Record "Production BOM Line";
 }
 

@@ -6,25 +6,25 @@ xmlport 80108 "QC Master Sub Assembly"
     {
         textelement(SubAssemblies)
         {
-            tableelement("<subassembly>";"Sub Assembly")
+            tableelement("<subassembly>"; "Sub Assembly")
             {
                 XmlName = 'SubAssembly';
-                fieldelement(No;"<SubAssembly>"."No.")
+                fieldelement(No; "<SubAssembly>"."No.")
                 {
                 }
-                fieldelement(Description;"<SubAssembly>".Description)
+                fieldelement(Description; "<SubAssembly>".Description)
                 {
                 }
-                fieldelement(SearchName;"<SubAssembly>"."Search Name")
+                fieldelement(SearchName; "<SubAssembly>"."Search Name")
                 {
                 }
-                fieldelement(SpecId;"<SubAssembly>"."Spec Id")
+                fieldelement(SpecId; "<SubAssembly>"."Spec Id")
                 {
                 }
-                fieldelement(QCEnabled;"<SubAssembly>"."QC Enabled")
+                fieldelement(QCEnabled; "<SubAssembly>"."QC Enabled")
                 {
                 }
-                fieldelement(UnitOfMeasureCode;"<SubAssembly>"."Unit Of Measure Code")
+                fieldelement(UnitOfMeasureCode; "<SubAssembly>"."Unit Of Measure Code")
                 {
                 }
             }

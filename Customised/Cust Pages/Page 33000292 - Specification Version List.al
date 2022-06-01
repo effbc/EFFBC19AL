@@ -13,19 +13,19 @@ page 33000292 "Specification Version List"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Version Code";"Version Code")
+                field("Version Code"; "Version Code")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Starting Date";"Starting Date")
+                field("Starting Date"; "Starting Date")
                 {
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("Last Date Modified"; "Last Date Modified")
                 {
                 }
             }

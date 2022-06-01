@@ -23,44 +23,44 @@ page 60108 "MSPT Dtld. Cust. Ledg. Entries"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Entry No.";"Entry No.")
+                field("Entry No."; "Entry No.")
                 {
                 }
-                field("Cust. Ledger Entry No.";"Cust. Ledger Entry No.")
+                field("Cust. Ledger Entry No."; "Cust. Ledger Entry No.")
                 {
                 }
-                field("Entry Type";"Entry Type")
+                field("Entry Type"; "Entry Type")
                 {
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("Document Type";"Document Type")
+                field("Document Type"; "Document Type")
                 {
                 }
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                 }
-                field("Customer No.";"Customer No.")
+                field("Customer No."; "Customer No.")
                 {
                 }
-                field("MSPT Header Code";"MSPT Header Code")
+                field("MSPT Header Code"; "MSPT Header Code")
                 {
                 }
-                field("MSPT Line Code";"MSPT Line Code")
+                field("MSPT Line Code"; "MSPT Line Code")
                 {
                     Editable = false;
                 }
-                field("MSPT Amount";"MSPT Amount")
+                field("MSPT Amount"; "MSPT Amount")
                 {
                 }
-                field("MSPT Due Date";"MSPT Due Date")
+                field("MSPT Due Date"; "MSPT Due Date")
                 {
                 }
-                field("MSPT Cust. Led. Entry No.";"MSPT Cust. Led. Entry No.")
+                field("MSPT Cust. Led. Entry No."; "MSPT Cust. Led. Entry No.")
                 {
                 }
-                field("MSPT Dtld. Entry No.";"MSPT Dtld. Entry No.")
+                field("MSPT Dtld. Entry No."; "MSPT Dtld. Entry No.")
                 {
                 }
             }

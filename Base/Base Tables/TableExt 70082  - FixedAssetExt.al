@@ -73,25 +73,31 @@ tableextension 70082 FixedAssetExt extends "Fixed Asset"
         field(60001; "Location Trns. Reason"; Text[100])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60002; "Employee Trns. Reason"; Text[100])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60003; "AMC No."; Code[20])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60004; "AMC Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60005; "Service Tax Group Code"; Code[20])
         {
+            DataClassification = CustomerContent;
             //TableRelation = "Service Tax Groups".Code;
         }
         field(60006; Verified; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -101,17 +107,21 @@ tableextension 70082 FixedAssetExt extends "Fixed Asset"
         }
         field(60007; "Verified Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60008; "QR Code"; Code[50])
         {
+            DataClassification = CustomerContent;
         }
         field(60009; "Item Sub Sub Group Code"; Code[30])
         {
             TableRelation = "Item Sub Sub Group".Code WHERE("Item Sub Group Code" = FIELD("Item Sub Group Code"));
+            DataClassification = CustomerContent;
         }
         field(60010; "Item Sub Group Code"; Code[20])
         {
             TableRelation = "Item Sub Group".Code WHERE("Product Group Code" = CONST('B OUT'));
+            DataClassification = CustomerContent;
         }
         field(60011; "Responsible Emp Name"; Text[50])
         {

@@ -15,17 +15,17 @@ page 60251 "Items by Dimension Matrix"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Field1;MATRIX_CellData[1])
+                field(Field1; MATRIX_CellData[1])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[1];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field1Visible;
 
                     trigger OnDrillDown();
@@ -33,11 +33,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(1);
                     end;
                 }
-                field(Field2;MATRIX_CellData[2])
+                field(Field2; MATRIX_CellData[2])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[2];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field2Visible;
 
                     trigger OnDrillDown();
@@ -45,11 +45,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(2);
                     end;
                 }
-                field(Field3;MATRIX_CellData[3])
+                field(Field3; MATRIX_CellData[3])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[3];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field3Visible;
 
                     trigger OnDrillDown();
@@ -57,11 +57,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(3);
                     end;
                 }
-                field(Field4;MATRIX_CellData[4])
+                field(Field4; MATRIX_CellData[4])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[4];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field4Visible;
 
                     trigger OnDrillDown();
@@ -69,11 +69,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(4);
                     end;
                 }
-                field(Field5;MATRIX_CellData[5])
+                field(Field5; MATRIX_CellData[5])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[5];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field5Visible;
 
                     trigger OnDrillDown();
@@ -81,11 +81,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(5);
                     end;
                 }
-                field(Field6;MATRIX_CellData[6])
+                field(Field6; MATRIX_CellData[6])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[6];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field6Visible;
 
                     trigger OnDrillDown();
@@ -93,11 +93,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(6);
                     end;
                 }
-                field(Field7;MATRIX_CellData[7])
+                field(Field7; MATRIX_CellData[7])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[7];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field7Visible;
 
                     trigger OnDrillDown();
@@ -105,11 +105,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(7);
                     end;
                 }
-                field(Field8;MATRIX_CellData[8])
+                field(Field8; MATRIX_CellData[8])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[8];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field8Visible;
 
                     trigger OnDrillDown();
@@ -117,11 +117,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(8);
                     end;
                 }
-                field(Field9;MATRIX_CellData[9])
+                field(Field9; MATRIX_CellData[9])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[9];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field9Visible;
 
                     trigger OnDrillDown();
@@ -129,11 +129,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(9);
                     end;
                 }
-                field(Field10;MATRIX_CellData[10])
+                field(Field10; MATRIX_CellData[10])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[10];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field10Visible;
 
                     trigger OnDrillDown();
@@ -141,11 +141,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(10);
                     end;
                 }
-                field(Field11;MATRIX_CellData[11])
+                field(Field11; MATRIX_CellData[11])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[11];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field11Visible;
 
                     trigger OnDrillDown();
@@ -153,11 +153,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(11);
                     end;
                 }
-                field(Field12;MATRIX_CellData[12])
+                field(Field12; MATRIX_CellData[12])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[12];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field12Visible;
 
                     trigger OnDrillDown();
@@ -165,11 +165,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(12);
                     end;
                 }
-                field(Field13;MATRIX_CellData[13])
+                field(Field13; MATRIX_CellData[13])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[13];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field13Visible;
 
                     trigger OnDrillDown();
@@ -177,11 +177,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(13);
                     end;
                 }
-                field(Field14;MATRIX_CellData[14])
+                field(Field14; MATRIX_CellData[14])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[14];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field14Visible;
 
                     trigger OnDrillDown();
@@ -189,11 +189,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(14);
                     end;
                 }
-                field(Field15;MATRIX_CellData[15])
+                field(Field15; MATRIX_CellData[15])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[15];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field15Visible;
 
                     trigger OnDrillDown();
@@ -201,11 +201,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(15);
                     end;
                 }
-                field(Field16;MATRIX_CellData[16])
+                field(Field16; MATRIX_CellData[16])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[16];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field16Visible;
 
                     trigger OnDrillDown();
@@ -213,11 +213,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(16);
                     end;
                 }
-                field(Field17;MATRIX_CellData[17])
+                field(Field17; MATRIX_CellData[17])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[17];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field17Visible;
 
                     trigger OnDrillDown();
@@ -225,11 +225,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(17);
                     end;
                 }
-                field(Field18;MATRIX_CellData[18])
+                field(Field18; MATRIX_CellData[18])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[18];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field18Visible;
 
                     trigger OnDrillDown();
@@ -237,11 +237,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(18);
                     end;
                 }
-                field(Field19;MATRIX_CellData[19])
+                field(Field19; MATRIX_CellData[19])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[19];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field19Visible;
 
                     trigger OnDrillDown();
@@ -249,11 +249,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(19);
                     end;
                 }
-                field(Field20;MATRIX_CellData[20])
+                field(Field20; MATRIX_CellData[20])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[20];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field20Visible;
 
                     trigger OnDrillDown();
@@ -261,11 +261,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(20);
                     end;
                 }
-                field(Field21;MATRIX_CellData[21])
+                field(Field21; MATRIX_CellData[21])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[21];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field21Visible;
 
                     trigger OnDrillDown();
@@ -273,11 +273,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(21);
                     end;
                 }
-                field(Field22;MATRIX_CellData[22])
+                field(Field22; MATRIX_CellData[22])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[22];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field22Visible;
 
                     trigger OnDrillDown();
@@ -285,11 +285,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(22);
                     end;
                 }
-                field(Field23;MATRIX_CellData[23])
+                field(Field23; MATRIX_CellData[23])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[23];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field23Visible;
 
                     trigger OnDrillDown();
@@ -297,11 +297,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(23);
                     end;
                 }
-                field(Field24;MATRIX_CellData[24])
+                field(Field24; MATRIX_CellData[24])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[24];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field24Visible;
 
                     trigger OnDrillDown();
@@ -309,11 +309,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(24);
                     end;
                 }
-                field(Field25;MATRIX_CellData[25])
+                field(Field25; MATRIX_CellData[25])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[25];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field25Visible;
 
                     trigger OnDrillDown();
@@ -321,11 +321,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(25);
                     end;
                 }
-                field(Field26;MATRIX_CellData[26])
+                field(Field26; MATRIX_CellData[26])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[26];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field26Visible;
 
                     trigger OnDrillDown();
@@ -333,11 +333,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(26);
                     end;
                 }
-                field(Field27;MATRIX_CellData[27])
+                field(Field27; MATRIX_CellData[27])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[27];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field27Visible;
 
                     trigger OnDrillDown();
@@ -345,11 +345,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(27);
                     end;
                 }
-                field(Field28;MATRIX_CellData[28])
+                field(Field28; MATRIX_CellData[28])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[28];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field28Visible;
 
                     trigger OnDrillDown();
@@ -357,11 +357,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(28);
                     end;
                 }
-                field(Field29;MATRIX_CellData[29])
+                field(Field29; MATRIX_CellData[29])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[29];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field29Visible;
 
                     trigger OnDrillDown();
@@ -369,11 +369,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(29);
                     end;
                 }
-                field(Field30;MATRIX_CellData[30])
+                field(Field30; MATRIX_CellData[30])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[30];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field30Visible;
 
                     trigger OnDrillDown();
@@ -381,11 +381,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(10);
                     end;
                 }
-                field(Field31;MATRIX_CellData[31])
+                field(Field31; MATRIX_CellData[31])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[31];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field31Visible;
 
                     trigger OnDrillDown();
@@ -393,11 +393,11 @@ page 60251 "Items by Dimension Matrix"
                         MatrixOnDrillDown(31);
                     end;
                 }
-                field(Field32;MATRIX_CellData[32])
+                field(Field32; MATRIX_CellData[32])
                 {
                     BlankNumbers = BlankZero;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[32];
-                    DecimalPlaces = 0:5;
+                    DecimalPlaces = 0 : 5;
                     Visible = Field32Visible;
 
                     trigger OnDrillDown();
@@ -432,14 +432,14 @@ page 60251 "Items by Dimension Matrix"
                         Caption = 'Variant';
                         Image = AvailableToPromise;
                         RunObject = Page "Item Availability by Variant";
-                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                     action(Location)
                     {
                         Caption = 'Location';
                         Image = ItemAvailbyLoc;
                         RunObject = Page "Item Availability by Location";
-                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                 }
             }

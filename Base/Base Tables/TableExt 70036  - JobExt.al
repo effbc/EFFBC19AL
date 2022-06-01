@@ -8,6 +8,7 @@ tableextension 70036 ResourceExt extends Job
         field(60001; "Starting Time"; Time)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -17,6 +18,7 @@ tableextension 70036 ResourceExt extends Job
         field(60002; "Ending Time"; Time)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -29,6 +31,7 @@ tableextension 70036 ResourceExt extends Job
             AutoFormatType = 10;
             DecimalPlaces = 2 :;
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -43,6 +46,7 @@ tableextension 70036 ResourceExt extends Job
             AutoFormatType = 10;
             DecimalPlaces = 2 :;
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -56,17 +60,20 @@ tableextension 70036 ResourceExt extends Job
             Description = 'B2B';
             TableRelation = Status.Code WHERE("Document No." = FIELD("No."),
                                                "Document Type" = CONST(Jobs));
+            DataClassification = CustomerContent;
         }
         field(60006; "Sales Order No."; Code[20])
         {
             Description = 'B2B';
             TableRelation = "Sales Header"."No." WHERE("Document Type" = CONST(Order));
+            DataClassification = CustomerContent;
         }
         field(60007; "Sales Order Line No."; Integer)
         {
             Description = 'B2B';
             TableRelation = "Sales Line"."Line No." WHERE("Document Type" = CONST(Order),
                                                            "Document No." = FIELD("Sales Order No."));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -81,16 +88,19 @@ tableextension 70036 ResourceExt extends Job
         field(60008; "Product Qty"; Decimal)
         {
             Description = 'B2B eff';
+            DataClassification = CustomerContent;
         }
         field(60009; "Item No."; Code[20])
         {
             Description = 'B2B eff';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60010; "Item Description"; Text[50])
         {
             Description = 'B2B eff';
             Editable = false;
+            DataClassification = CustomerContent;
         }
     }
     PROCEDURE JobAttachments();

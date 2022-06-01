@@ -5,9 +5,9 @@ report 33000276 "Bank Ledger Updation"
 
     dataset
     {
-        dataitem("Bank Account Ledger Entry";"Bank Account Ledger Entry")
+        dataitem("Bank Account Ledger Entry"; "Bank Account Ledger Entry")
         {
-            DataItemTableView = WHERE(Open=CONST(Yes));
+            DataItemTableView = WHERE(Open = CONST(Yes));
 
             trigger OnPreDataItem();
             begin
@@ -15,9 +15,9 @@ report 33000276 "Bank Ledger Updation"
                 "Bank Account Ledger Entry".MODIFY;
             end;
         }
-        dataitem("Check Ledger Entry";"Check Ledger Entry")
+        dataitem("Check Ledger Entry"; "Check Ledger Entry")
         {
-            DataItemTableView = WHERE(Open=CONST(Yes));
+            DataItemTableView = WHERE(Open = CONST(Yes));
 
             trigger OnPreDataItem();
             begin

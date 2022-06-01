@@ -5,13 +5,13 @@ report 60001 "Mail test"
 
     dataset
     {
-        dataitem("Integer";"Integer")
+        dataitem("Integer"; "Integer")
         {
-            DataItemTableView = SORTING(Number) WHERE(Number=CONST(1));
+            DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
 
             trigger OnAfterGetRecord();
             begin
-                smtp_mail.CreateMessage('test','santhoshk@efftronics.com','santhoshk@efftronics.com','test','hi',FALSE);
+                smtp_mail.CreateMessage('test', 'santhoshk@efftronics.com', 'santhoshk@efftronics.com', 'test', 'hi', FALSE);
                 smtp_mail.Send;
                 MESSAGE('sent');
             end;
@@ -35,6 +35,6 @@ report 60001 "Mail test"
     }
 
     var
-        smtp_mail : Codeunit "SMTP Mail";
+        smtp_mail: Codeunit "SMTP Mail";
 }
 

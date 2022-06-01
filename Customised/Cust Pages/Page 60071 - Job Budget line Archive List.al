@@ -12,16 +12,16 @@ page 60071 "Job Budget line Archive List"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Required Quantity";"Required Quantity")
+                field("Required Quantity"; "Required Quantity")
                 {
                 }
-                field("Qty. In Material Issues";"Qty. In Material Issues")
+                field("Qty. In Material Issues"; "Qty. In Material Issues")
                 {
                 }
             }

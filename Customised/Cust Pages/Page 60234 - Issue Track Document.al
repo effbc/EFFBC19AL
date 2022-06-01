@@ -16,43 +16,43 @@ page 60234 "Issue Track Document"
             group(Control1102152001)
             {
                 ShowCaption = false;
-                field("Issue Id";"Issue Id")
+                field("Issue Id"; "Issue Id")
                 {
                 }
-                field("Issue Logged By";"Issue Logged By")
+                field("Issue Logged By"; "Issue Logged By")
                 {
                     Visible = IssueLoggedByVisible;
                 }
-                field("Issued Logged Date";"Issued Logged Date")
+                field("Issued Logged Date"; "Issued Logged Date")
                 {
                     Editable = true;
                     Visible = IssueLoggedDateVisible;
                 }
-                field(Project;Project)
+                field(Project; Project)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     MultiLine = true;
                 }
-                field("Handled By";"Handled By")
+                field("Handled By"; "Handled By")
                 {
                     Editable = MakeHandleEditable;
                 }
-                field("Handled Date Time";"Handled Date Time")
+                field("Handled Date Time"; "Handled Date Time")
                 {
                     Editable = MakeHandleEditable;
                 }
-                field("EFF. Attachment";"EFF. Attachment")
+                field("EFF. Attachment"; "EFF. Attachment")
                 {
                 }
-                field("Reason for Reopen";"Reason for Reopen")
+                field("Reason for Reopen"; "Reason for Reopen")
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
             }
@@ -73,8 +73,8 @@ page 60234 "Issue Track Document"
                     PromotedCategory = New;
                     PromotedIsBig = true;
                     RunObject = Page Page96001;
-                    RunPageLink = Field1=FIELD(Issue Id);
-                    RunPageView = SORTING(Field1,Field2) ORDER(Ascending);
+                    RunPageLink = Field1 = FIELD(Issue Id);
+                    RunPageView = SORTING(Field1, Field2) ORDER(Ascending);
                 }
             }
             action(Attachments)
@@ -87,9 +87,9 @@ page 60234 "Issue Track Document"
                 trigger OnAction();
                 begin
                     attachments.RESET;
-                    attachments.SETRANGE("Table ID",DATABASE::Table96000);
-                    attachments.SETRANGE("Document No.",FORMAT("Issue Id"));
-                    PAGE.RUN(PAGE::"ESPL Attachments",attachments);
+                    attachments.SETRANGE("Table ID", DATABASE::Table96000);
+                    attachments.SETRANGE("Document No.", FORMAT("Issue Id"));
+                    PAGE.RUN(PAGE::"ESPL Attachments", attachments);
                 end;
             }
         }
@@ -156,64 +156,64 @@ page 60234 "Issue Track Document"
     begin
 
         IF IsAdministrator THEN BEGIN
-          SetCompletedVisible := TRUE;
-          MakeHandleEditable := TRUE;
-          IssueLoggedByVisible:=TRUE;
-          IssueLoggedDateVisible:=TRUE;
+            SetCompletedVisible := TRUE;
+            MakeHandleEditable := TRUE;
+            IssueLoggedByVisible := TRUE;
+            IssueLoggedDateVisible := TRUE;
         END ELSE BEGIN
-          SetCompletedVisible := FALSE;
-          MakeHandleEditable := FALSE;
-          IssueLoggedByVisible:=FALSE;
-          IssueLoggedDateVisible:=FALSE;
+            SetCompletedVisible := FALSE;
+            MakeHandleEditable := FALSE;
+            IssueLoggedByVisible := FALSE;
+            IssueLoggedDateVisible := FALSE;
         END;
     end;
 
-    trigger OnNewRecord(BelowxRec : Boolean);
+    trigger OnNewRecord(BelowxRec: Boolean);
     begin
         IF IsAdministrator THEN BEGIN
-          SetCompletedVisible := TRUE;
-          MakeHandleEditable := TRUE;
-          IssueLoggedByVisible:=TRUE;
-          IssueLoggedDateVisible:=TRUE;
+            SetCompletedVisible := TRUE;
+            MakeHandleEditable := TRUE;
+            IssueLoggedByVisible := TRUE;
+            IssueLoggedDateVisible := TRUE;
         END ELSE BEGIN
-          SetCompletedVisible := FALSE;
-          MakeHandleEditable := FALSE;
-          IssueLoggedByVisible:=FALSE;
-          IssueLoggedDateVisible:=FALSE;
+            SetCompletedVisible := FALSE;
+            MakeHandleEditable := FALSE;
+            IssueLoggedByVisible := FALSE;
+            IssueLoggedDateVisible := FALSE;
         END;
 
         IssueTrackHeader.RESET;
         IF IssueTrackHeader.FINDLAST THEN BEGIN
-          "Issue Id" := INCSTR(IssueTrackHeader."Issue Id");
+            "Issue Id" := INCSTR(IssueTrackHeader."Issue Id");
         END ELSE
-          "Issue Id" := '000001';
-        Status := Status :: Open;
+            "Issue Id" := '000001';
+        Status := Status::Open;
     end;
 
     trigger OnOpenPage();
     begin
         IF IsAdministrator THEN BEGIN
-          SetCompletedVisible := TRUE;
-          MakeHandleEditable := TRUE;
-          IssueLoggedByVisible:=TRUE;
-          IssueLoggedDateVisible:=TRUE;
+            SetCompletedVisible := TRUE;
+            MakeHandleEditable := TRUE;
+            IssueLoggedByVisible := TRUE;
+            IssueLoggedDateVisible := TRUE;
         END ELSE BEGIN
-          SetCompletedVisible := FALSE;
-          MakeHandleEditable := FALSE;
-          IssueLoggedByVisible:=FALSE;
-          IssueLoggedDateVisible:=FALSE;
+            SetCompletedVisible := FALSE;
+            MakeHandleEditable := FALSE;
+            IssueLoggedByVisible := FALSE;
+            IssueLoggedDateVisible := FALSE;
         END;
     end;
 
     var
         [InDataSet]
-        SetCompletedVisible : Boolean;
+        SetCompletedVisible: Boolean;
         [InDataSet]
-        MakeHandleEditable : Boolean;
-        attachments : Record Attachments;
-        IssueTrackHeader : Record "Issue Track Header";
-        IssueTrackerLine : Record "Issue Tracker Line";
-        IssueLoggedByVisible : Boolean;
-        IssueLoggedDateVisible : Boolean;
+        MakeHandleEditable: Boolean;
+        attachments: Record Attachments;
+        IssueTrackHeader: Record "Issue Track Header";
+        IssueTrackerLine: Record "Issue Tracker Line";
+        IssueLoggedByVisible: Boolean;
+        IssueLoggedDateVisible: Boolean;
 }
 

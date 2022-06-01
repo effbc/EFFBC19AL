@@ -13,13 +13,13 @@ page 60078 "Deveation Master"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Item No";"Item No")
+                field("Item No"; "Item No")
                 {
                 }
-                field("Lot No.";"Lot No.")
+                field("Lot No."; "Lot No.")
                 {
                 }
-                field(Location;Location)
+                field(Location; Location)
                 {
                 }
             }

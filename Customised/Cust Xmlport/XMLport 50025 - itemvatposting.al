@@ -6,19 +6,19 @@ xmlport 50025 itemvatposting
     {
         textelement(Items)
         {
-            tableelement(Item;Item)
+            tableelement(Item; Item)
             {
                 XmlName = 'Item';
-                fieldelement(No;Item."No.")
+                fieldelement(No; Item."No.")
                 {
                 }
-                fieldelement(VATProductPostingGroup;Item."VAT Prod. Posting Group")
+                fieldelement(VATProductPostingGroup; Item."VAT Prod. Posting Group")
                 {
                 }
-                fieldelement(GenProdPostingGroup;Item."Gen. Prod. Posting Group")
+                fieldelement(GenProdPostingGroup; Item."Gen. Prod. Posting Group")
                 {
                 }
-                fieldelement(TaxGroupCode;Item."Tax Group Code")
+                fieldelement(TaxGroupCode; Item."Tax Group Code")
                 {
                 }
             }

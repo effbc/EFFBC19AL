@@ -6,19 +6,19 @@ xmlport 80102 "QC Characteristics"
     {
         textelement(Characteristics)
         {
-            tableelement(Characteristic;Characteristic)
+            tableelement(Characteristic; Characteristic)
             {
                 XmlName = 'Characteristic';
-                fieldelement(Code;Characteristic.Code)
+                fieldelement(Code; Characteristic.Code)
                 {
                 }
-                fieldelement(Description;Characteristic.Description)
+                fieldelement(Description; Characteristic.Description)
                 {
                 }
-                fieldelement(Qualitative;Characteristic.Qualitative)
+                fieldelement(Qualitative; Characteristic.Qualitative)
                 {
                 }
-                fieldelement(UnitOfMeasureCode;Characteristic."Unit Of Measure Code")
+                fieldelement(UnitOfMeasureCode; Characteristic."Unit Of Measure Code")
                 {
                 }
             }

@@ -6,7 +6,7 @@ page 60248 LatestSaleOrder
     RefreshOnActivate = true;
     SourceTable = "Sales Header";
     SourceTableTemporary = false;
-    SourceTableView = SORTING(Document Type,No.) ORDER(Descending) WHERE(No.=FILTER(*14-15*&<>*/L*));
+    SourceTableView = SORTING(Document Type, No.) ORDER(Descending) WHERE(No.=FILTER(*14-15*&<>*/L*));
 
     layout
     {

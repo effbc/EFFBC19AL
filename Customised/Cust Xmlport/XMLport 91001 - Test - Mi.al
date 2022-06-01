@@ -6,10 +6,10 @@ xmlport 91001 "Test - Mi"
     {
         textelement(TestMi)
         {
-            tableelement("Test - Mi";"Test - Mi")
+            tableelement("Test - Mi"; "Test - Mi")
             {
                 XmlName = 'TestMi';
-                fieldelement(DocumentNo;"Test - Mi"."Document No.")
+                fieldelement(DocumentNo; "Test - Mi"."Document No.")
                 {
                 }
             }

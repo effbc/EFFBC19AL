@@ -15,176 +15,175 @@ page 60083 Tender
             group(General)
             {
                 Caption = 'General';
-                field("Tender No.";"Tender No.")
+                field("Tender No."; "Tender No.")
                 {
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(Rec) THEN
-                        CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field(TenderType;TenderType)
+                field(TenderType; TenderType)
                 {
                     Caption = 'TenderType*';
                 }
-                field(Product;Product)
+                field(Product; Product)
                 {
                     Caption = 'Product*';
                 }
-                field("Customer No.";"Customer No.")
+                field("Customer No."; "Customer No.")
                 {
 
                     trigger OnValidate();
                     begin
                         // Added by Pranavi on 22-Jun-2016
-                        IF "Customer No." <> '' THEN
-                        BEGIN
-                          CUST.RESET;
-                          CUST.SETRANGE(CUST."No.","Customer No.");
-                          IF CUST.FINDFIRST THEN
-                            "Salesperson Code":= CUST."Salesperson Code";
-                          "Tender Posting Group" := 'GENERAL';
+                        IF "Customer No." <> '' THEN BEGIN
+                            CUST.RESET;
+                            CUST.SETRANGE(CUST."No.", "Customer No.");
+                            IF CUST.FINDFIRST THEN
+                                "Salesperson Code" := CUST."Salesperson Code";
+                            "Tender Posting Group" := 'GENERAL';
                         END;
                         // End by Pranavi
                     end;
                 }
-                field("Customer Name";"Customer Name")
+                field("Customer Name"; "Customer Name")
                 {
                 }
-                field("Customer Tender No.";"Customer Tender No.")
+                field("Customer Tender No."; "Customer Tender No.")
                 {
                     Caption = 'Customer Tender No.*';
                 }
-                field("Tender Source";"Tender Source")
+                field("Tender Source"; "Tender Source")
                 {
                 }
-                field("Tender Source Name";"Tender Source Name")
+                field("Tender Source Name"; "Tender Source Name")
                 {
                 }
-                field("Tender Source Date";"Tender Source Date")
+                field("Tender Source Date"; "Tender Source Date")
                 {
                     Caption = 'Tender Source Date*';
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Tender Position";"Tender Position")
+                field("Tender Position"; "Tender Position")
                 {
 
                     trigger OnValidate();
                     begin
-                         IF ("Tender Position"="Tender Position"::L1) AND ("Supporting Tender"=TRUE) THEN
-                         ERROR('Tender postion must not be L1 for supporting tender');
+                        IF ("Tender Position" = "Tender Position"::L1) AND ("Supporting Tender" = TRUE) THEN
+                            ERROR('Tender postion must not be L1 for supporting tender');
                     end;
                 }
-                field("Tender Relese Date Time";"Tender Relese Date Time")
+                field("Tender Relese Date Time"; "Tender Relese Date Time")
                 {
                     Editable = false;
                 }
-                field("Tender Dated";"Tender Dated")
+                field("Tender Dated"; "Tender Dated")
                 {
                 }
-                field("Tender Application No.";"Tender Application No.")
+                field("Tender Application No."; "Tender Application No.")
                 {
                 }
-                field("Tender Document Cost";"Tender Document Cost")
+                field("Tender Document Cost"; "Tender Document Cost")
                 {
                     Caption = 'Tender Document Cost*';
                 }
-                field("Tender doc Issue From";"Tender doc Issue From")
+                field("Tender doc Issue From"; "Tender doc Issue From")
                 {
                 }
-                field("Tender doc Issue To";"Tender doc Issue To")
+                field("Tender doc Issue To"; "Tender doc Issue To")
                 {
                 }
-                field("Supporting Tender";"Supporting Tender")
+                field("Supporting Tender"; "Supporting Tender")
                 {
 
                     trigger OnValidate();
                     begin
-                         IF ("Tender Position"="Tender Position"::L1) AND ("Supporting Tender"=TRUE) THEN
-                         ERROR('Tender postion must not be L1 for supporting tender');
+                        IF ("Tender Position" = "Tender Position"::L1) AND ("Supporting Tender" = TRUE) THEN
+                            ERROR('Tender postion must not be L1 for supporting tender');
                     end;
                 }
-                field("Tender Doc Cost in form of";"Tender Doc Cost in form of")
+                field("Tender Doc Cost in form of"; "Tender Doc Cost in form of")
                 {
                 }
-                field("Payable At";"Payable At")
+                field("Payable At"; "Payable At")
                 {
                     Caption = 'Payable At*';
                 }
-                field("Expected Order month";"Expected Order month")
+                field("Expected Order month"; "Expected Order month")
                 {
                 }
-                field("Blanket Order Created";"Blanket Order Created")
-                {
-                    Editable = Editable_Bool;
-                }
-                field("Sales Order Created";"Sales Order Created")
+                field("Blanket Order Created"; "Blanket Order Created")
                 {
                     Editable = Editable_Bool;
                 }
-                field(Remarks;Remarks)
+                field("Sales Order Created"; "Sales Order Created")
+                {
+                    Editable = Editable_Bool;
+                }
+                field(Remarks; Remarks)
                 {
                 }
             }
-            part(TenderLines;"Tender Subform")
+            part(TenderLines; "Tender Subform")
             {
                 SubPageLink = Document No.=FIELD(Tender No.);
             }
             group(Customer)
             {
                 Caption = 'Customer';
-                field("<Customer Name2>";"Customer Name")
+                field("<Customer Name2>"; "Customer Name")
                 {
                 }
-                field("Customer Name 2";"Customer Name 2")
+                field("Customer Name 2"; "Customer Name 2")
                 {
                 }
-                field("Customer Address";"Customer Address")
+                field("Customer Address"; "Customer Address")
                 {
                 }
-                field("Customer Address 2";"Customer Address 2")
+                field("Customer Address 2"; "Customer Address 2")
                 {
                 }
-                field(City;City)
+                field(City; City)
                 {
                 }
-                field("Post Code";"Post Code")
+                field("Post Code"; "Post Code")
                 {
                 }
-                field(Country;Country)
+                field(Country; Country)
                 {
                 }
-                field("Country Code";"Country Code")
+                field("Country Code"; "Country Code")
                 {
                 }
-                field(State;State)
+                field(State; State)
                 {
                 }
-                field("Phone No.";"Phone No.")
+                field("Phone No."; "Phone No.")
                 {
                 }
-                field("Telex No.";"Telex No.")
+                field("Telex No."; "Telex No.")
                 {
                 }
-                field("Fax No.";"Fax No.")
+                field("Fax No."; "Fax No.")
                 {
                 }
-                field("E-Mail";"E-Mail")
+                field("E-Mail"; "E-Mail")
                 {
                 }
-                field("Home Page";"Home Page")
+                field("Home Page"; "Home Page")
                 {
                 }
-                field("Customer Contact";"Customer Contact")
+                field("Customer Contact"; "Customer Contact")
                 {
                 }
-                field(Territory;Territory)
+                field(Territory; Territory)
                 {
                 }
-                field("Salesperson Code";"Salesperson Code")
+                field("Salesperson Code"; "Salesperson Code")
                 {
                     Caption = 'Salesperson Code*';
                 }
@@ -192,172 +191,172 @@ page 60083 Tender
             group("Bid Details")
             {
                 Caption = 'Bid Details';
-                field("Tender Quote Value";"Tender Quote Value")
+                field("Tender Quote Value"; "Tender Quote Value")
                 {
                 }
-                field("Minimum Bid Amount";"Minimum Bid Amount")
+                field("Minimum Bid Amount"; "Minimum Bid Amount")
                 {
                     Caption = 'Minimum Bid Amount*';
                 }
-                field("Quote %";"Quote %")
+                field("Quote %"; "Quote %")
                 {
                 }
-                field("Submission Due Date";"Submission Due Date")
+                field("Submission Due Date"; "Submission Due Date")
                 {
                 }
-                field("Submission Due Time";"Submission Due Time")
+                field("Submission Due Time"; "Submission Due Time")
                 {
                 }
-                field("Tech. Bid Opening Date";"Tech. Bid Opening Date")
+                field("Tech. Bid Opening Date"; "Tech. Bid Opening Date")
                 {
                 }
-                field("Tech. Bid Opening Time";"Tech. Bid Opening Time")
+                field("Tech. Bid Opening Time"; "Tech. Bid Opening Time")
                 {
                 }
-                field("Tender Status";"Tender Status")
+                field("Tender Status"; "Tender Status")
                 {
                     Caption = 'Tender Status*';
                     Editable = RecEditable;
                     Enabled = RecEditable;
                 }
-                field("Schedule A Percentage";"Schedule A Percentage")
+                field("Schedule A Percentage"; "Schedule A Percentage")
                 {
                 }
-                field("Schedule B Percentage";"Schedule B Percentage")
+                field("Schedule B Percentage"; "Schedule B Percentage")
                 {
                 }
-                field("Tender Posting Group";"Tender Posting Group")
+                field("Tender Posting Group"; "Tender Posting Group")
                 {
                 }
-                field("Not Participated";"Not Participated")
+                field("Not Participated"; "Not Participated")
                 {
                 }
-                field("Tender Submitted Date";"Tender Submitted Date")
+                field("Tender Submitted Date"; "Tender Submitted Date")
                 {
                 }
-                field("Tender Dispatch Details";"Tender Dispatch Details")
+                field("Tender Dispatch Details"; "Tender Dispatch Details")
                 {
                 }
-                field("Document Position";"Document Position")
+                field("Document Position"; "Document Position")
                 {
                 }
-                field("<Sales Order Created2>";"Sales Order Created")
+                field("<Sales Order Created2>"; "Sales Order Created")
                 {
                 }
-                field("Order Completion Period";"Order Completion Period")
+                field("Order Completion Period"; "Order Completion Period")
                 {
                     Caption = 'Order Completion Period - in Days';
                 }
-                field("Schedule C Percentage";"Schedule C Percentage")
+                field("Schedule C Percentage"; "Schedule C Percentage")
                 {
                 }
             }
             group(EMD)
             {
                 Caption = 'EMD';
-                field("EMD Amount";"EMD Amount")
+                field("EMD Amount"; "EMD Amount")
                 {
                     Caption = 'EMD Amount*';
 
                     trigger OnValidate();
                     begin
                         IF "EMD Satus" = "EMD Satus"::NA THEN
-                          ERROR('EMD Status Should not be NA!');
+                            ERROR('EMD Status Should not be NA!');
                     end;
                 }
-                field("EMD Payment Date";"EMD Payment Date")
+                field("EMD Payment Date"; "EMD Payment Date")
                 {
                 }
-                field("EMD Received Date";"EMD Received Date")
+                field("EMD Received Date"; "EMD Received Date")
                 {
                 }
-                field("EMD Requested Date";"EMD Requested Date")
+                field("EMD Requested Date"; "EMD Requested Date")
                 {
                     Editable = false;
                 }
-                field("EMD Required Date";"EMD Required Date")
+                field("EMD Required Date"; "EMD Required Date")
                 {
                     Caption = 'EMD Required Date*';
                 }
-                field("InFavour of";"InFavour of")
+                field("InFavour of"; "InFavour of")
                 {
                     Caption = 'InFavour of*';
                 }
-                field("EMD Mode of Payment";"EMD Mode of Payment")
+                field("EMD Mode of Payment"; "EMD Mode of Payment")
                 {
                     Caption = 'EMD Mode of Payment*';
                 }
-                field("EMD DD No.";"EMD DD No.")
+                field("EMD DD No."; "EMD DD No.")
                 {
                     Caption = 'EMD DD/FDR No.*';
                 }
-                field("EMD Expected Date";"EMD Expected Date")
+                field("EMD Expected Date"; "EMD Expected Date")
                 {
                     Caption = 'EMD Expected Return Date*';
                 }
-                field("EMD Paid Amount";"EMD Paid Amount")
+                field("EMD Paid Amount"; "EMD Paid Amount")
                 {
                 }
-                field("EMD Received Amount";"EMD Received Amount")
+                field("EMD Received Amount"; "EMD Received Amount")
                 {
                 }
-                field("EMD Adjusted Amount";"EMD Adjusted Amount")
+                field("EMD Adjusted Amount"; "EMD Adjusted Amount")
                 {
                 }
-                field("EMD Satus";"EMD Satus")
+                field("EMD Satus"; "EMD Satus")
                 {
                     Caption = 'EMD Status*';
                 }
-                field("EMD Status";"EMD Status")
+                field("EMD Status"; "EMD Status")
                 {
                     Caption = 'EMD Status1';
                 }
-                field("Released to Finance";"Released to Finance")
+                field("Released to Finance"; "Released to Finance")
                 {
                     Editable = false;
                 }
-                field("Released to Sales";"Released to Sales")
+                field("Released to Sales"; "Released to Sales")
                 {
                     Editable = false;
                 }
-                field("Sent For Auth";"Sent For Auth")
+                field("Sent For Auth"; "Sent For Auth")
                 {
                     Caption = 'Sent For Authurization';
                     Editable = false;
                 }
-                field("Security Deposit Amount";"Security Deposit Amount")
+                field("Security Deposit Amount"; "Security Deposit Amount")
                 {
                     Caption = 'Security Deposit Amount*';
                 }
-                field("Security Mode of Payment";"Security Mode of Payment")
+                field("Security Mode of Payment"; "Security Mode of Payment")
                 {
                 }
             }
             group(Details)
             {
                 Caption = 'Details';
-                field("Standard/Customize";"Standard/Customize")
+                field("Standard/Customize"; "Standard/Customize")
                 {
                 }
-                field("Doc. No. Occurrence";"Doc. No. Occurrence")
+                field("Doc. No. Occurrence"; "Doc. No. Occurrence")
                 {
                 }
-                field("No. of Archived Versions";"No. of Archived Versions")
+                field("No. of Archived Versions"; "No. of Archived Versions")
                 {
                 }
-                field("Product Type";"Product Type")
+                field("Product Type"; "Product Type")
                 {
                 }
-                field("No. of Sales Order";"No. of Sales Order")
+                field("No. of Sales Order"; "No. of Sales Order")
                 {
                 }
-                field("No. of Posted Sales Order";"No. of Posted Sales Order")
+                field("No. of Posted Sales Order"; "No. of Posted Sales Order")
                 {
                 }
-                field("Released to Design User ID";"Released to Design User ID")
+                field("Released to Design User ID"; "Released to Design User ID")
                 {
                 }
-                field("Released to Design Date";"Released to Design Date")
+                field("Released to Design Date"; "Released to Design Date")
                 {
                 }
             }
@@ -400,7 +399,7 @@ page 60083 Tender
                     Image = LedgerEntries;
                     Promoted = true;
                     RunObject = Page "Tender Ledger Entries";
-                    RunPageLink = Tender No.=FIELD(Tender No.);
+                                    RunPageLink = Tender No.=FIELD(Tender No.);
                 }
                 separator(Action1102152176)
                 {
@@ -431,7 +430,7 @@ page 60083 Tender
                     Caption = 'Ch&eck List';
                     Image = CheckList;
                     RunObject = Page "Check List";
-                    RunPageLink = Document Type=CONST(Tender),Document No.=FIELD(Tender No.);
+                                    RunPageLink = Document Type=CONST(Tender),Document No.=FIELD(Tender No.);
                 }
                 action("&Design Check List")
                 {
@@ -439,7 +438,7 @@ page 60083 Tender
                     Image = Design;
                     Promoted = true;
                     RunObject = Page "Design Check List";
-                    RunPageLink = Tender No.=FIELD(Tender No.);
+                                    RunPageLink = Tender No.=FIELD(Tender No.);
                 }
                 separator(Action1102152026)
                 {
@@ -449,7 +448,7 @@ page 60083 Tender
                     Caption = '&Tender Competitor''s Details';
                     Image = ViewDetails;
                     RunObject = Page "Tender Competitor's Details";
-                    RunPageLink = Tender No.=FIELD(Tender No.);
+                                    RunPageLink = Tender No.=FIELD(Tender No.);
                 }
             }
         }
@@ -1264,7 +1263,7 @@ page 60083 Tender
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Tender Comments";
-                RunPageLink = No.=FIELD(Tender No.);
+                                RunPageLink = No.=FIELD(Tender No.);
                 ToolTip = 'Comment';
             }
         }

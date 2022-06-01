@@ -5,6 +5,7 @@ tableextension 70043 RequisitionLineExt extends "Requisition Line"
         field(60001; "Enquiry Created"; Boolean)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
         }
     }
 

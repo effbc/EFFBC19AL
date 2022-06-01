@@ -7,41 +7,41 @@ report 50216 "Customer Statement-EFF"
 
     dataset
     {
-        dataitem(Customer;Customer)
+        dataitem(Customer; Customer)
         {
             DataItemTableView = SORTING(Customer Posting Group) ORDER(Ascending);
-            RequestFilterFields = "No.","Date Filter","Customer Posting Group";
-            column(CUSTOMER__NAMECaption;CUSTOMER__NAMECaptionLbl)
+            RequestFilterFields = "No.", "Date Filter", "Customer Posting Group";
+            column(CUSTOMER__NAMECaption; CUSTOMER__NAMECaptionLbl)
             {
             }
-            column(POSTING_GROUPCaption;POSTING_GROUPCaptionLbl)
+            column(POSTING_GROUPCaption; POSTING_GROUPCaptionLbl)
             {
             }
-            column(Sal_BalanceCaption;Sal_BalanceCaptionLbl)
+            column(Sal_BalanceCaption; Sal_BalanceCaptionLbl)
             {
             }
-            column(CS_BalanceCaption;CS_BalanceCaptionLbl)
+            column(CS_BalanceCaption; CS_BalanceCaptionLbl)
             {
             }
-            column(BalanceCaption;BalanceCaptionLbl)
+            column(BalanceCaption; BalanceCaptionLbl)
             {
             }
-            column(Customer_No_;"No.")
+            column(Customer_No_; "No.")
             {
             }
-            column(Customer_Date_Filter;"Date Filter")
+            column(Customer_Date_Filter; "Date Filter")
             {
             }
-            column(Customer_Currency_Filter;"Currency Filter")
+            column(Customer_Currency_Filter; "Currency Filter")
             {
             }
-            column(Customer_Global_Dimension_1_Filter;"Global Dimension 1 Filter")
+            column(Customer_Global_Dimension_1_Filter; "Global Dimension 1 Filter")
             {
             }
-            column(Customer_Global_Dimension_2_Filter;"Global Dimension 2 Filter")
+            column(Customer_Global_Dimension_2_Filter; "Global Dimension 2 Filter")
             {
             }
-            dataitem("Detailed Cust. Ledg. Entry";"Detailed Cust. Ledg. Entry")
+            dataitem("Detailed Cust. Ledg. Entry"; "Detailed Cust. Ledg. Entry")
             {
                 DataItemLink = Customer No.=FIELD(No.),Posting Date=FIELD(Date Filter),Currency Code=FIELD(Currency Filter),Initial Entry Global Dim. 1=FIELD(Global Dimension 1 Filter),Initial Entry Global Dim. 2=FIELD(Global Dimension 2 Filter);
                 DataItemTableView = SORTING(Customer No.,Initial Document Type,Document Type,Entry Type,Posting Date) WHERE(Posting Date=FILTER(>=04/01/08),Entry Type=FILTER(Initial Entry));

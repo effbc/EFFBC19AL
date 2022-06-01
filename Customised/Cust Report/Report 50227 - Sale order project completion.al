@@ -7,9 +7,9 @@ report 50227 "Sale order project completion"
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
-            DataItemTableView = SORTING(Document Type,No.) ORDER(Ascending) WHERE(Customer Posting Group=FILTER(RAILWAYS),Order Status=FILTER(<>Temporary Close),Status=FILTER(Released));
+            DataItemTableView = SORTING(Document Type, No.) ORDER(Ascending) WHERE(Customer Posting Group=FILTER(RAILWAYS),Order Status=FILTER(<>Temporary Close),Status=FILTER(Released));
             column(Sales_Header__No__;"No.")
             {
             }

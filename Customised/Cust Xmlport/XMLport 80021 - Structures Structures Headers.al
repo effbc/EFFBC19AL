@@ -6,13 +6,13 @@ xmlport 80021 "Structures Structures Headers"
     {
         textelement(StructureHeader)
         {
-            tableelement("<structureheader>";"Structure Header")
+            tableelement("<structureheader>"; "Structure Header")
             {
                 XmlName = 'StructureHeader';
-                fieldelement(Code;"<StructureHeader>".Code)
+                fieldelement(Code; "<StructureHeader>".Code)
                 {
                 }
-                fieldelement(Description;"<StructureHeader>".Description)
+                fieldelement(Description; "<StructureHeader>".Description)
                 {
                 }
             }

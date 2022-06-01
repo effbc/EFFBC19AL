@@ -5,9 +5,9 @@ report 50218 "R&D Indents"
 
     dataset
     {
-        dataitem("Indent Line";"Indent Line")
+        dataitem("Indent Line"; "Indent Line")
         {
-            DataItemTableView = SORTING(Document No.,Line No.) ORDER(Ascending) WHERE(Indent Status=FILTER(Indent),Delivery Location=FILTER('R&D STR'),Release Status=FILTER(Released));
+            DataItemTableView = SORTING(Document No., Line No.) ORDER(Ascending) WHERE(Indent Status=FILTER(Indent),Delivery Location=FILTER('R&D STR'),Release Status=FILTER(Released));
             column(Indent_Line__Document_No__;"Document No.")
             {
             }

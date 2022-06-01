@@ -5,19 +5,19 @@ xmlport 50028 "BOM Update"
     {
         textelement(ProdBOMLines)
         {
-            tableelement("<prodbomline>";"Production BOM Line")
+            tableelement("<prodbomline>"; "Production BOM Line")
             {
                 XmlName = 'ProdBOMLine';
-                fieldelement(ProductionBOMNo;"<ProdBOMLine>"."Production BOM No.")
+                fieldelement(ProductionBOMNo; "<ProdBOMLine>"."Production BOM No.")
                 {
                 }
-                fieldelement(LineNo;"<ProdBOMLine>"."Line No.")
+                fieldelement(LineNo; "<ProdBOMLine>"."Line No.")
                 {
                 }
-                fieldelement(VersionCode;"<ProdBOMLine>"."Version Code")
+                fieldelement(VersionCode; "<ProdBOMLine>"."Version Code")
                 {
                 }
-                fieldelement(No;"<ProdBOMLine>"."No.")
+                fieldelement(No; "<ProdBOMLine>"."No.")
                 {
                 }
             }

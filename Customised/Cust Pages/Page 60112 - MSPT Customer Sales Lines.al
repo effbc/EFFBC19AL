@@ -22,13 +22,13 @@ page 60112 "MSPT Customer Sales Lines"
             {
                 Editable = false;
                 ShowCaption = false;
-                field("Period Start";"Period Start")
+                field("Period Start"; "Period Start")
                 {
                 }
-                field("Period Name";"Period Name")
+                field("Period Name"; "Period Name")
                 {
                 }
-                field("Cust.""MSPT Balance Due""";Cust."MSPT Balance Due")
+                field("Cust.""MSPT Balance Due"""; Cust."MSPT Balance Due")
                 {
                     AutoFormatType = 1;
                     Caption = '"Balance Due "';
@@ -53,14 +53,14 @@ page 60112 "MSPT Customer Sales Lines"
         Cust.CALCFIELDS("MSPT Balance Due");
     end;
 
-    trigger OnFindRecord(Which : Text) : Boolean;
+    trigger OnFindRecord(Which: Text): Boolean;
     begin
-        EXIT(PeriodFormMgt.FindDate(Which,Rec,CustPeriodLength));
+        EXIT(PeriodFormMgt.FindDate(Which, Rec, CustPeriodLength));
     end;
 
-    trigger OnNextRecord(Steps : Integer) : Integer;
+    trigger OnNextRecord(Steps: Integer): Integer;
     begin
-        EXIT(PeriodFormMgt.NextDate(Steps,Rec,CustPeriodLength));
+        EXIT(PeriodFormMgt.NextDate(Steps, Rec, CustPeriodLength));
     end;
 
     trigger OnOpenPage();
@@ -69,14 +69,14 @@ page 60112 "MSPT Customer Sales Lines"
     end;
 
     var
-        Cust : Record Customer;
-        MSPTCustLedgEntry : Record "MSPT Customer Ledger Entry";
-        PeriodFormMgt : Codeunit PeriodFormManagement;
-        CustPeriodLength : Option Day,Week,Month,Quarter,Year,Period;
-        AmountType : Option "Net Change","Balance at Date";
+        Cust: Record Customer;
+        MSPTCustLedgEntry: Record "MSPT Customer Ledger Entry";
+        PeriodFormMgt: Codeunit PeriodFormManagement;
+        CustPeriodLength: Option Day,Week,Month,Quarter,Year,Period;
+        AmountType: Option "Net Change","Balance at Date";
 
     [LineStart(11042)]
-    procedure Set(var NewCust : Record Customer;NewCustPeriodLength : Integer;NewAmountType : Option "Net Change","Balance at Date");
+    procedure Set(var NewCust: Record Customer; NewCustPeriodLength: Integer; NewAmountType: Option "Net Change","Balance at Date");
     begin
         Cust.COPY(NewCust);
         CustPeriodLength := NewCustPeriodLength;
@@ -105,22 +105,22 @@ page 60112 "MSPT Customer Sales Lines"
         SetDateFilter;
         MSPTCustLedgEntry.RESET;
         //MSPTCustLedgEntry.SETCURRENTKEY("Customer No.",Open,Positive,"MSPT Due Date");
-        MSPTCustLedgEntry.SETCURRENTKEY("Customer No.",Open,"MSPT Due Date");
-        MSPTCustLedgEntry.SETRANGE("Customer No.",Cust."No.");
-        MSPTCustLedgEntry.SETRANGE(Open,TRUE);
-        MSPTCustLedgEntry.SETFILTER("MSPT Due Date",Cust.GETFILTER("Date Filter"));
-        MSPTCustLedgEntry.SETFILTER("Global Dimension 1 Code",Cust.GETFILTER("Global Dimension 1 Filter"));
-        MSPTCustLedgEntry.SETFILTER("Global Dimension 2 Code",Cust.GETFILTER("Global Dimension 2 Filter"));
-        PAGE.RUN(0,MSPTCustLedgEntry)
+        MSPTCustLedgEntry.SETCURRENTKEY("Customer No.", Open, "MSPT Due Date");
+        MSPTCustLedgEntry.SETRANGE("Customer No.", Cust."No.");
+        MSPTCustLedgEntry.SETRANGE(Open, TRUE);
+        MSPTCustLedgEntry.SETFILTER("MSPT Due Date", Cust.GETFILTER("Date Filter"));
+        MSPTCustLedgEntry.SETFILTER("Global Dimension 1 Code", Cust.GETFILTER("Global Dimension 1 Filter"));
+        MSPTCustLedgEntry.SETFILTER("Global Dimension 2 Code", Cust.GETFILTER("Global Dimension 2 Filter"));
+        PAGE.RUN(0, MSPTCustLedgEntry)
     end;
 
     [LineStart(11071)]
     local procedure SetDateFilter();
     begin
         IF AmountType = AmountType::"Net Change" THEN
-          Cust.SETRANGE("Date Filter","Period Start","Period End")
+            Cust.SETRANGE("Date Filter", "Period Start", "Period End")
         ELSE
-          Cust.SETRANGE("Date Filter",0D,"Period End");
+            Cust.SETRANGE("Date Filter", 0D, "Period End");
     end;
 }
 

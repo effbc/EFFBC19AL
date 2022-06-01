@@ -13,13 +13,13 @@ page 60051 "Stationary Items List"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field(Make;Make)
+                field(Make; Make)
                 {
                 }
-                field("Created By";"Created By")
+                field("Created By"; "Created By")
                 {
                 }
-                field("Entry Date Time";"Entry Date Time")
+                field("Entry Date Time"; "Entry Date Time")
                 {
                 }
             }

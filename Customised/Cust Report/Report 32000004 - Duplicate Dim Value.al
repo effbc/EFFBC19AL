@@ -7,19 +7,19 @@ report 32000004 "Duplicate Dim Value"
 
     dataset
     {
-        dataitem("Dimension Value";"Dimension Value")
+        dataitem("Dimension Value"; "Dimension Value")
         {
-            column(DimensionValueID_DimensionValue;"Dimension Value"."Dimension Value ID")
+            column(DimensionValueID_DimensionValue; "Dimension Value"."Dimension Value ID")
             {
             }
 
             trigger OnAfterGetRecord();
             begin
                 DimensionValue.RESET;
-                DimensionValue.SETRANGE(DimensionValue."Dimension Value ID","Dimension Value ID");
+                DimensionValue.SETRANGE(DimensionValue."Dimension Value ID", "Dimension Value ID");
                 IF DimensionValue.FINDSET THEN
-                  IF DimensionValue.COUNT = 1 THEN
-                    CurrReport.SKIP;
+                    IF DimensionValue.COUNT = 1 THEN
+                        CurrReport.SKIP;
             end;
         }
     }
@@ -41,6 +41,6 @@ report 32000004 "Duplicate Dim Value"
     }
 
     var
-        DimensionValue : Record "Dimension Value";
+        DimensionValue: Record "Dimension Value";
 }
 

@@ -13,22 +13,22 @@ page 33000273 "Vendor Item Quality Approval"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field("Starting Date";"Starting Date")
+                field("Starting Date"; "Starting Date")
                 {
                 }
-                field("Spec Id";"Spec Id")
+                field("Spec Id"; "Spec Id")
                 {
                 }
-                field("Ending Date";"Ending Date")
+                field("Ending Date"; "Ending Date")
                 {
                 }
-                field("Certified Agency";"Certified Agency")
+                field("Certified Agency"; "Certified Agency")
                 {
                 }
-                field("Attachment.HASVALUE";Attachment.HASVALUE)
+                field("Attachment.HASVALUE"; Attachment.HASVALUE)
                 {
                     AssistEdit = true;
                     Caption = 'Attachment';
@@ -36,8 +36,8 @@ page 33000273 "Vendor Item Quality Approval"
                     trigger OnAssistEdit();
                     begin
                         IF Attachment.HASVALUE THEN BEGIN
-                          QualityAttachmentMgt.SetVendorItemApproval(Rec);
-                          QualityAttachmentMgt.OpenAttachment;
+                            QualityAttachmentMgt.SetVendorItemApproval(Rec);
+                            QualityAttachmentMgt.OpenAttachment;
                         END;
                     end;
                 }
@@ -108,10 +108,10 @@ page 33000273 "Vendor Item Quality Approval"
     trigger OnAfterGetRecord();
     begin
         IF "Item No." <> '' THEN
-          CALCFIELDS(Attachment);
+            CALCFIELDS(Attachment);
     end;
 
     var
-        QualityAttachmentMgt : Codeunit QualityAttachmentManagement;
+        QualityAttachmentMgt: Codeunit QualityAttachmentManagement;
 }
 

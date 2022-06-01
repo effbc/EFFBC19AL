@@ -12,6 +12,7 @@ tableextension 70113 ReturnShipmentHeaderExt extends "Return Shipment Header"
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
             TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -22,10 +23,12 @@ tableextension 70113 ReturnShipmentHeaderExt extends "Return Shipment Header"
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(33000250; "Inspect. Receipt No."; Code[20])
         {
             TableRelation = "Inspection Receipt Header"."No.";
+            DataClassification = CustomerContent;
         }
     }
 

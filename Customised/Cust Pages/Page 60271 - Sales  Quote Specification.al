@@ -12,69 +12,69 @@ page 60271 "Sales  Quote Specification"
         {
             repeater(Group)
             {
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("Lookup Type ID";"Lookup Type ID")
+                field("Lookup Type ID"; "Lookup Type ID")
                 {
                 }
-                field("Lookup Type Name";"Lookup Type Name")
+                field("Lookup Type Name"; "Lookup Type Name")
                 {
                 }
-                field("Lookup Code";"Lookup Code")
+                field("Lookup Code"; "Lookup Code")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Sales Quote No.";"Sales Quote No.")
+                field("Sales Quote No."; "Sales Quote No.")
                 {
                 }
-                field(FieldNo1;FieldNo1)
-                {
-                    Editable = EditLookUp;
-                }
-                field(FieldNo2;FieldNo2)
+                field(FieldNo1; FieldNo1)
                 {
                     Editable = EditLookUp;
                 }
-                field(FieldNo3;FieldNo3)
+                field(FieldNo2; FieldNo2)
                 {
                     Editable = EditLookUp;
                 }
-                field(FieldNo4;FieldNo4)
+                field(FieldNo3; FieldNo3)
                 {
                     Editable = EditLookUp;
                 }
-                field(FieldNo5;FieldNo5)
+                field(FieldNo4; FieldNo4)
                 {
                     Editable = EditLookUp;
                 }
-                field(FieldNo6;FieldNo6)
+                field(FieldNo5; FieldNo5)
                 {
                     Editable = EditLookUp;
                 }
-                field(Qty;Qty)
+                field(FieldNo6; FieldNo6)
                 {
                     Editable = EditLookUp;
                 }
-                field(Rate;Rate)
+                field(Qty; Qty)
                 {
                     Editable = EditLookUp;
                 }
-                field(Amount;Amount)
+                field(Rate; Rate)
                 {
                     Editable = EditLookUp;
                 }
-                field(Remarks;Remarks)
+                field(Amount; Amount)
                 {
                     Editable = EditLookUp;
                 }
-                field("Terms LookUp";"Terms LookUp")
+                field(Remarks; Remarks)
+                {
+                    Editable = EditLookUp;
+                }
+                field("Terms LookUp"; "Terms LookUp")
                 {
                     Editable = TermLookUp;
                 }
-                field("Schedule LookUp";"Schedule LookUp")
+                field("Schedule LookUp"; "Schedule LookUp")
                 {
                     Editable = SechLookup;
                 }
@@ -97,13 +97,13 @@ page 60271 "Sales  Quote Specification"
                     trigger OnAction();
                     begin
                         LookUpType.RESET;
-                        LookUpType.SETRANGE("Lookup Type ID",Rec."Lookup Type ID");
+                        LookUpType.SETRANGE("Lookup Type ID", Rec."Lookup Type ID");
                         CLEAR(QuoteLookUpList);
                         QuoteLookUpList.SETRECORD(LookUpType);
                         QuoteLookUpList.SETTABLEVIEW(LookUpType);
                         QuoteLookUpList.LOOKUPMODE(TRUE);
                         QuoteLookUpList.CarrySalesQuoteNo(Rec."Sales Quote No.");
-                        IF QuoteLookUpList.RUNMODAL = ACTION ::LookupOK THEN;
+                        IF QuoteLookUpList.RUNMODAL = ACTION::LookupOK THEN;
 
                     end;
                 }
@@ -114,26 +114,26 @@ page 60271 "Sales  Quote Specification"
     trigger OnAfterGetRecord();
     begin
         IF "Lookup Type ID" = 5 THEN
-          SechLookup := TRUE
+            SechLookup := TRUE
         ELSE
-          SechLookup := FALSE;
+            SechLookup := FALSE;
 
         IF "Lookup Type ID" = 3 THEN
-          TermLookUp := TRUE
+            TermLookUp := TRUE
         ELSE
-          TermLookUp := FALSE;
+            TermLookUp := FALSE;
 
         IF ("Lookup Type ID" = 5) OR ("Lookup Type ID" = 3) THEN
-          EditLookUp := TRUE
+            EditLookUp := TRUE
         ELSE
-          EditLookUp :=FALSE;
+            EditLookUp := FALSE;
     end;
 
     var
-        LookUpType : Record "Quote Lookup";
-        QuoteLookUpList : Page "Quote LookUp List";
-        EditLookUp : Boolean;
-        SechLookup : Boolean;
-        TermLookUp : Boolean;
+        LookUpType: Record "Quote Lookup";
+        QuoteLookUpList: Page "Quote LookUp List";
+        EditLookUp: Boolean;
+        SechLookup: Boolean;
+        TermLookUp: Boolean;
 }
 

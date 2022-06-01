@@ -12,29 +12,29 @@ page 33000291 "Specificatinn Version"
             group(General)
             {
                 Caption = 'General';
-                field("Version Code";"Version Code")
+                field("Version Code"; "Version Code")
                 {
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Starting Date";"Starting Date")
+                field("Starting Date"; "Starting Date")
                 {
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("Last Date Modified"; "Last Date Modified")
                 {
                 }
             }
-            part(Control1102152012;"Specification Subform")
+            part(Control1102152012; "Specification Subform")
             {
                 SubPageLink = Spec ID=FIELD(Specification No.),Version Code=FIELD(Version Code);
             }

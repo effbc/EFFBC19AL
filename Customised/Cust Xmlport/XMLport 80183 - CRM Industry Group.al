@@ -6,13 +6,13 @@ xmlport 80183 "CRM Industry Group"
     {
         textelement(IndustryGroups)
         {
-            tableelement("<industrygroup>";"Industry Group")
+            tableelement("<industrygroup>"; "Industry Group")
             {
                 XmlName = 'IndustryGroup';
-                fieldelement(Code;"<IndustryGroup>".Code)
+                fieldelement(Code; "<IndustryGroup>".Code)
                 {
                 }
-                fieldelement(Description;"<IndustryGroup>".Description)
+                fieldelement(Description; "<IndustryGroup>".Description)
                 {
                 }
             }

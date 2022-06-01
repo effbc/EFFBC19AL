@@ -3,60 +3,60 @@ report 3010601 "Update TCS Opening Balances1"
     // version TCSOB
 
     Caption = 'Update TCS Opening Balances';
-    Permissions = TableData "TCS Entry"=rim;
+    Permissions = TableData "TCS Entry" = rim;
     ProcessingOnly = true;
 
     dataset
     {
-        dataitem(Customer;Customer)
+        dataitem(Customer; Customer)
         {
             DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Tax Liable=CONST(Yes),Blocked=CONST(" "));
-            RequestFilterFields = "No.","Customer Posting Group";
+            RequestFilterFields = "No.", "Customer Posting Group";
 
             trigger OnAfterGetRecord();
             begin
                 CLEAR(TCSOpeningBal);
                 NODLines.RESET;
-                NODLines.SETRANGE(Type,NODLines.Type::Customer);
-                NODLines.SETRANGE("No.",Customer."No.");
+                NODLines.SETRANGE(Type, NODLines.Type::Customer);
+                NODLines.SETRANGE("No.", Customer."No.");
                 IF NOT NODLines.FINDFIRST THEN BEGIN
-                  NonNODCustoemer := TRUE;
-                  CurrReport.SKIP;
+                    NonNODCustoemer := TRUE;
+                    CurrReport.SKIP;
 
                 END;
 
                 TCSEntryExists.RESET;
-                TCSEntryExists.SETRANGE("Party Type",TCSEntryExists."Party Type"::Customer);
-                TCSEntryExists.SETRANGE("Party Code",Customer."No.");
-                TCSEntryExists.SETRANGE("Document No.",'OB');
+                TCSEntryExists.SETRANGE("Party Type", TCSEntryExists."Party Type"::Customer);
+                TCSEntryExists.SETRANGE("Party Code", Customer."No.");
+                TCSEntryExists.SETRANGE("Document No.", 'OB');
                 IF TCSEntryExists.FINDFIRST THEN
-                  CurrReport.SKIP;
+                    CurrReport.SKIP;
 
                 SalesInvoiceLine.RESET;
-                SalesInvoiceLine.SETRANGE("Sell-to Customer No.",Customer."No.");
-                SalesInvoiceLine.SETRANGE(Type,SalesInvoiceLine.Type::Item);
-                SalesInvoiceLine.SETRANGE("Posting Date",DMY2DATE(1,4,DATE2DMY(PostingDate,3)),PostingDate);
+                SalesInvoiceLine.SETRANGE("Sell-to Customer No.", Customer."No.");
+                SalesInvoiceLine.SETRANGE(Type, SalesInvoiceLine.Type::Item);
+                SalesInvoiceLine.SETRANGE("Posting Date", DMY2DATE(1, 4, DATE2DMY(PostingDate, 3)), PostingDate);
                 IF SalesInvoiceLine.FINDSET THEN BEGIN
-                  //SalesInvoiceLine.CALCSUMS("Amount Including VAT"); //Commented by Vishnu Priya on 13-11-2020
-                  SalesInvoiceLine.CALCSUMS("Amount To Customer");
-                  TCSOpeningBal := SalesInvoiceLine."Amount To Customer";
+                    //SalesInvoiceLine.CALCSUMS("Amount Including VAT"); //Commented by Vishnu Priya on 13-11-2020
+                    SalesInvoiceLine.CALCSUMS("Amount To Customer");
+                    TCSOpeningBal := SalesInvoiceLine."Amount To Customer";
                 END;
                 IF TCSOpeningBal > 0 THEN
-                  InsertTCSEntry(Customer."No.",TCSOpeningBal);
+                    InsertTCSEntry(Customer."No.", TCSOpeningBal);
             end;
 
             trigger OnPostDataItem();
             begin
                 IF NonNODCustoemer THEN
-                  MESSAGE('Customer without NOD/NOC Lines exists which are not updated')
+                    MESSAGE('Customer without NOD/NOC Lines exists which are not updated')
                 ELSE
-                  MESSAGE('TCS Opening Balances updated');
+                    MESSAGE('TCS Opening Balances updated');
             end;
 
             trigger OnPreDataItem();
             begin
                 IF (PostingDate = 0D) OR (TCSNature = '') OR (AssessCode = '') OR (GLAccount = '') THEN
-                  ERROR('Provide Mandatory values in the Request page');
+                    ERROR('Provide Mandatory values in the Request page');
                 CLEAR(NonNODCustoemer);
             end;
         }
@@ -71,11 +71,11 @@ report 3010601 "Update TCS Opening Balances1"
             {
                 group(Choose)
                 {
-                    field("TCS Closing Date";PostingDate)
+                    field("TCS Closing Date"; PostingDate)
                     {
                         Importance = Promoted;
                     }
-                    field("G/L Account";GLAccount)
+                    field("G/L Account"; GLAccount)
                     {
                         TableRelation = "G/L Account".No.;
                     }

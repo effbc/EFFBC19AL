@@ -9,22 +9,27 @@ tableextension 70009 ItemExt extends Item
         field(60001; "No. of Pins"; Integer)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60002; "No. of Soldering Points"; Integer)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60003; "No. of Opportunities"; Integer)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60004; Sample; Boolean)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60005; "Item Sub Group Code"; Code[20])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
             //  TableRelation = "Item Sub Group".Code WHERE("Product Group Code" = FIELD("Product Group Code"));
 
             trigger OnValidate();
@@ -41,19 +46,23 @@ tableextension 70009 ItemExt extends Item
         {
             Description = 'B2B';
             TableRelation = "Item Sub Sub Group".Code WHERE("Item Sub Group Code" = FIELD("Item Sub Group Code"));
+            DataClassification = CustomerContent;
         }
         field(60007; "Purchaser Code"; Code[20])
         {
             Description = 'B2B';
             TableRelation = "Salesperson/Purchaser".Code WHERE("Salesperson/Purchaser" = CONST(Purchase));
+            DataClassification = CustomerContent;
         }
         field(60008; "Type of Solder"; Enum "Item Type of Solder")
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
         }
         field(60009; "Item Stock Value"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60010; "Stock At MCH Location"; Decimal)
         {
@@ -70,45 +79,59 @@ tableextension 70009 ItemExt extends Item
         field(60015; "No.of Fixing Holes"; Integer)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60016; "Used In DL"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60017; DL_Consumption; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60018; "Used In MFEP"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60019; MFEP_Consumption; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60020; "Used In RTU"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60021; RTU_Consumption; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60022; "Used In PMU"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60023; PMU_Consumption; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60024; "Standard Packing Quantity"; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60025; "Bom Cost"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60026; "Cs Stock Verified"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60027; "Inspection Bench Mark(In Min)"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60028; "Sampling Count"; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -119,6 +142,7 @@ tableextension 70009 ItemExt extends Item
         }
         field(60029; "Sampling %"; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -129,40 +153,52 @@ tableextension 70009 ItemExt extends Item
         }
         field(60030; Qc_Item; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60031; "Service Tax Group Code"; Code[20])
         {
+            DataClassification = CustomerContent;
             //TableRelation = "Service Tax Groups".Code;
         }
         field(60032; "Used In BMU"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60033; "Used In IPIS"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60035; "Used In PC"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60036; "Used In RLY.LMP"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60037; "Used In Bus Displays"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60038; "Soldering Temp."; Code[15])
         {
+            DataClassification = CustomerContent;
         }
         field(60039; "Soldering Time (Sec)"; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60040; "Work area Temp &  Humadity"; Code[25])
         {
+            DataClassification = CustomerContent;
         }
         field(60041; ESD; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60042; "Dispatch Material"; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -172,9 +208,11 @@ tableextension 70009 ItemExt extends Item
         }
         field(60043; Package; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60044; "Part Number"; Code[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60099; "Inventory at Stores"; Decimal)
         {
@@ -199,11 +237,13 @@ tableextension 70009 ItemExt extends Item
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60101; "Insp. Time WIP(In Min.)"; Decimal)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60102; InventoryDim; Decimal)
         {
@@ -220,14 +260,17 @@ tableextension 70009 ItemExt extends Item
         field(60103; "Total Inventory"; Decimal)
         {
             Description = 'B2B (For Shortage List Report)';
+            DataClassification = CustomerContent;
         }
         field(60105; PCB; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60200; "Avg Unit Cost"; Decimal)
         {
             Description = 'Cost1.0';
             Editable = false;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -238,14 +281,17 @@ tableextension 70009 ItemExt extends Item
         field(60201; "Manufacturing Cost"; Decimal)
         {
             Description = 'Cost1.0';
+            DataClassification = CustomerContent;
         }
         field(60202; "User ID"; Code[50])
         {
             Description = 'Rev01';
             TableRelation = User."User Name";
+            DataClassification = CustomerContent;
         }
         field(60203; Item_verified; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -256,12 +302,15 @@ tableextension 70009 ItemExt extends Item
         field(60204; "Item Location"; Code[10])
         {
             TableRelation = Location.Code;
+            DataClassification = CustomerContent;
         }
         field(60205; "Qty. on Mat.Req"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60206; "Stock at Stores"; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -322,27 +371,33 @@ tableextension 70009 ItemExt extends Item
         }
         field(60209; PROD_USED; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60210; "Safety Stock Qty (CS)"; Decimal)
         {
             DecimalPlaces = 0 : 5;
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(60211; "Safety Stock Qty (R&D)"; Decimal)
         {
             DecimalPlaces = 0 : 5;
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(60212; ProductType; Option)
         {
             OptionMembers = " ",DL,RlyLamp,RoadLamp,DIS,SYS,Others;
+            DataClassification = CustomerContent;
         }
         field(60213; Dum_Avg_Cot; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60215; "No.of Units"; Decimal)
         {
             DecimalPlaces = 0 : 5;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -359,6 +414,7 @@ tableextension 70009 ItemExt extends Item
         }
         field(60216; ItemlastTransDate; Date)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -371,41 +427,52 @@ tableextension 70009 ItemExt extends Item
         }
         field(60217; "Operating Temperature"; Text[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60218; "Storage Temperature"; Text[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60219; Humidity; Text[10])
         {
+            DataClassification = CustomerContent;
         }
         field(60220; "ESD Sensitive"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60221; "Item Status"; Enum "Item Status")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60222; Make; Code[30])
         {
             TableRelation = Make;
+            DataClassification = CustomerContent;
         }
         field(60223; "Item Final Cost"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60224; "Safety Stock Qty (MCH)"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60225; "PCB thickness"; Decimal)
         {
             Caption = 'PCB thickness(In mm)';
+            DataClassification = CustomerContent;
         }
         field(60226; "Copper Clad Thickness"; Decimal)
         {
             Caption = 'Copper Clad Thickness(In Microns)';
+            DataClassification = CustomerContent;
         }
         field(60227; "PCB Area"; Decimal)
         {
             Caption = 'PCB Area(In Sq cm)';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -418,6 +485,7 @@ tableextension 70009 ItemExt extends Item
         field(60228; Length; Decimal)
         {
             Caption = 'Length(In mm)';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -430,6 +498,7 @@ tableextension 70009 ItemExt extends Item
         field(60229; Width; Decimal)
         {
             Caption = 'Width(In mm)';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -441,6 +510,7 @@ tableextension 70009 ItemExt extends Item
         }
         field(60230; "PCB Shape"; Enum "Item Pcb")
         {
+            DataClassification = CustomerContent;
 
 
             trigger OnValidate();
@@ -456,14 +526,17 @@ tableextension 70009 ItemExt extends Item
         }
         field(60231; "On C-Side"; Enum "Item Cside")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60232; "On D-Side"; Enum "Item Cside")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60233; "On S-Side"; Enum "Item Cside")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60234; "Stock at PROD Stores"; Decimal)
@@ -480,29 +553,37 @@ tableextension 70009 ItemExt extends Item
         }
         field(60235; "Semi Mounted"; Enum "Item semi")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60236; "Surface Finish"; Enum "Item Surface")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60237; "Used in LED Lamps"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60238; "Used in LC GATE"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60239; "USED in MLRI"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60240; "Used in BI"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60241; "Used in Road lamp WTLC"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60242; "Invert Solder type"; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -522,85 +603,109 @@ tableextension 70009 ItemExt extends Item
         }
         field(60243; EFF_MOQ; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60244; ROHS; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60245; REACH; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60246; "CS IGC"; Code[50])
         {
             Description = 'cs item sub group code';
+            DataClassification = CustomerContent;
         }
         field(60248; "Need to be returned"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60249; "Lead Time Modified Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60250; Verified_Date; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60251; "PO Blocked"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60252; "BIN Address"; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60253; Remarks; Text[250])
         {
             Description = 'For TEMC Remarks';
+            DataClassification = CustomerContent;
         }
         field(60254; "Stock Address"; Code[10])
         {
             Description = 'For Store Stock Address';
+            DataClassification = CustomerContent;
         }
         field(60255; "Thickness of Package"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60256; MSL; Enum "Item Msl")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60257; "ESD Class"; Enum ItemESD)
         {
+            DataClassification = CustomerContent;
         }
         field(60258; "Floor Life at 25 C 40% RH"; Code[15])
         {
+            DataClassification = CustomerContent;
         }
         field(60259; "Bake Hours"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60260; "Component Shelf Life(Years)"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60261; "Panel Length"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60262; "Panel Width"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60263; "Item End of Date in Market"; Date)
         {
             Description = 'Added by Vishnu Priya';
+            DataClassification = CustomerContent;
         }
         field(60264; "Effe Cost"; Decimal)
         {
             Description = 'Added by Vishnu Priya';
+            DataClassification = CustomerContent;
         }
         field(60265; "Effe Status"; Enum "Item Effe")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60266; "Packing Type"; Enum "Item Packing")
         {
             Description = 'Added by Vishnu Priya';
+            DataClassification = CustomerContent;
 
         }
         field(60267; "Packing Dimension"; Text[30])
         {
             Description = 'Added by Vishnu Priya';
+            DataClassification = CustomerContent;
         }
         field(60278; "Stock at Mag Stores"; Decimal)
         {
@@ -629,72 +734,88 @@ tableextension 70009 ItemExt extends Item
         field(60280; "Revised Sampling Count"; Decimal)
         {
             Description = 'Added by Vishnu for Inwards Planning';
+            DataClassification = CustomerContent;
         }
         field(60281; "Revised Sampling Percentage"; Decimal)
         {
             Description = 'Added by Vishnu for Inwards Planning';
+            DataClassification = CustomerContent;
         }
         field(60282; "Revised Sampling Time Mins"; Decimal)
         {
             Description = 'Added by Vishnu for Inwards Planning';
+            DataClassification = CustomerContent;
         }
         field(60283; "Visual Sampling Count"; Decimal)
         {
             Description = 'Added by Vishnu for Inwards Planning';
+            DataClassification = CustomerContent;
         }
         field(60284; "Visual Sampling Percentage"; Decimal)
         {
             Description = 'Added by Vishnu for Inwards Planning';
+            DataClassification = CustomerContent;
         }
         field(60285; "Visual Sampling Time Mins"; Decimal)
         {
             Description = 'Added by Vishnu for Inwards Planning';
+            DataClassification = CustomerContent;
         }
         field(60286; "Dimensions Sampling Count"; Decimal)
         {
             Description = 'Added by Vishnu for Inwards Planning';
+            DataClassification = CustomerContent;
         }
         field(60287; "Dimensions Sampling Percentage"; Decimal)
         {
             Description = 'Added by Vishnu for Inwards Planning';
+            DataClassification = CustomerContent;
         }
         field(60288; "Dimensions Sampling Time Mins"; Decimal)
         {
             Description = 'Added by Vishnu for Inwards Planning';
+            DataClassification = CustomerContent;
         }
         field(60289; "Basic Functional Sampling Cnt"; Decimal)
         {
             Description = 'Added by Vishnu for Inwards Planning';
+            DataClassification = CustomerContent;
         }
         field(60290; "Basic Functional Sampling Per"; Decimal)
         {
             Description = 'Added by Vishnu for Inwards Planning';
+            DataClassification = CustomerContent;
         }
         field(60291; "Basic Func Sampling Time -Mins"; Decimal)
         {
             Description = 'Added by Vishnu for Inwards Planning';
+            DataClassification = CustomerContent;
         }
         field(60292; "Documentation Time"; Decimal)
         {
             Description = 'Added by Vishnu for Inwards Planning';
+            DataClassification = CustomerContent;
         }
         field(60293; "Item Grp Verified Date"; DateTime)
         {
             Description = 'Added by Vishnu for Item Grps Validation';
+            DataClassification = CustomerContent;
         }
         field(60294; "Feeder Packing Type"; Enum "Item Feeder")
         {
             Description = 'Added by Vishnu for Machine Feeders Logging';
+            DataClassification = CustomerContent;
 
 
         }
         field(60295; "Feeder Packing Width(mm)"; Decimal)
         {
             Description = 'Added by Vishnu for Machine Feeders Logging';
+            DataClassification = CustomerContent;
         }
         field(60296; "Shop floor Units"; Decimal)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Suvarchaladevi for Production';
 
             trigger OnValidate();
@@ -705,7 +826,7 @@ tableextension 70009 ItemExt extends Item
         }
         field(60297; "Wiring Units"; Decimal)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Suvarchaladevi for Production';
 
             trigger OnValidate();
@@ -716,7 +837,7 @@ tableextension 70009 ItemExt extends Item
         }
         field(60298; "Testing Units"; Decimal)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Suvarchaladevi for Production';
 
             trigger OnValidate();
@@ -727,7 +848,7 @@ tableextension 70009 ItemExt extends Item
         }
         field(60299; "Benchmarks(in Min)"; Decimal)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Suvarchaladevi for Production Plan';
 
             trigger OnValidate();
@@ -745,11 +866,13 @@ tableextension 70009 ItemExt extends Item
         field(60300; "Quote Item"; Boolean)
         {
             Description = 'B2BQTO';
+            DataClassification = CustomerContent;
         }
         field(33000250; "Spec ID"; Code[20])
         {
             Description = 'QC1.0';
             TableRelation = "Specification Header"."Spec ID" WHERE(Status = CONST(Certified));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -766,6 +889,7 @@ tableextension 70009 ItemExt extends Item
         field(33000251; "QC Enabled"; Boolean)
         {
             Description = 'QC1.0';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -780,6 +904,7 @@ tableextension 70009 ItemExt extends Item
         field(33000252; "Lots Accept"; Boolean)
         {
             Description = 'QC1.0';
+            DataClassification = CustomerContent;
         }
         field(33000253; "Quantity Under Inspection"; Decimal)
         {
@@ -817,6 +942,7 @@ tableextension 70009 ItemExt extends Item
         {
             Description = 'QC1.0';
             TableRelation = "Specification Header"."Spec ID";
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -833,6 +959,7 @@ tableextension 70009 ItemExt extends Item
         field(33000256; "WIP QC Enabled"; Boolean)
         {
             Description = 'QC1.0';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -844,6 +971,7 @@ tableextension 70009 ItemExt extends Item
         {
             Description = 'QC1.0';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(33000258; "Quantity Rework"; Decimal)
         {
@@ -881,12 +1009,15 @@ tableextension 70009 ItemExt extends Item
         field(99008501; Stock_Threshold_Value; Decimal)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(99008502; SMD_But_mchine_cant_do; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(99008503; "No of Panels"; Integer)
         {
+            DataClassification = CustomerContent;
         }
     }
 

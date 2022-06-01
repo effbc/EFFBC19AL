@@ -13,35 +13,35 @@ page 60016 "Archived Design Worksheet"
             group(General)
             {
                 Caption = 'General';
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                 }
-                field("Document Type";"Document Type")
+                field("Document Type"; "Document Type")
                 {
                 }
-                field("Document Line No.";"Document Line No.")
+                field("Document Line No."; "Document Line No.")
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field("Unit of Measure";"Unit of Measure")
+                field("Unit of Measure"; "Unit of Measure")
                 {
                 }
-                field("Production Bom No.";"Production Bom No.")
+                field("Production Bom No."; "Production Bom No.")
                 {
                 }
-                field("Production Bom Version No.";"Production Bom Version No.")
+                field("Production Bom Version No."; "Production Bom Version No.")
                 {
                 }
             }
-            part(DesignWorksheetLines;"Archived Designsheet Subform")
+            part(DesignWorksheetLines; "Archived Designsheet Subform")
             {
                 SubPageLink = Document No.=FIELD(Document No.),Document Type=FIELD(Document Type),Document Line No.=FIELD(Document Line No.),Version No.=FIELD(Version No.);
             }

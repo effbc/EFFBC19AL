@@ -1,4 +1,4 @@
-pageextension 70223 ServiceZonesExt extends "Service Zones" 
+pageextension 70223 ServiceZonesExt extends "Service Zones"
 {
     // version NAVW17.00
 
@@ -37,7 +37,7 @@ pageextension 70223 ServiceZonesExt extends "Service Zones"
 
         addafter("Control 4")
         {
-            field("Project Manager";"Project Manager")
+            field("Project Manager"; "Project Manager")
             {
             }
         }

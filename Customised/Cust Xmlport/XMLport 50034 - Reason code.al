@@ -6,13 +6,13 @@ xmlport 50034 "Reason code"
     {
         textelement(ReasonCodes)
         {
-            tableelement("<reasoncode>";"Reason Code")
+            tableelement("<reasoncode>"; "Reason Code")
             {
                 XmlName = 'ReasonCode';
-                fieldelement(Code;"<ReasonCode>".Code)
+                fieldelement(Code; "<ReasonCode>".Code)
                 {
                 }
-                fieldelement(Description;"<ReasonCode>".Description)
+                fieldelement(Description; "<ReasonCode>".Description)
                 {
                 }
             }

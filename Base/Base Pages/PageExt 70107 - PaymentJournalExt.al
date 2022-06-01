@@ -1,4 +1,4 @@
-pageextension 70107  PaymentJournalExt extends "Payment Journal" 
+pageextension 70107 PaymentJournalExt extends "Payment Journal"
 {
     // version NAVW19.00.00.51685,NAVIN9.00.00.51685,TFS223871,Rev01
 
@@ -944,7 +944,7 @@ pageextension 70107  PaymentJournalExt extends "Payment Journal"
             group("Work Date")
             {
                 Caption = 'Work Date';
-                field(WorkDate;WORKDATE)
+                field(WorkDate; WORKDATE)
                 {
                     Editable = false;
                 }
@@ -1177,408 +1177,408 @@ pageextension 70107  PaymentJournalExt extends "Payment Journal"
     //Unsupported feature: PropertyModification on "IncomingDoc(Action 92).OnAction.IncomingDocument(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //IncomingDoc : 130;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //IncomingDoc : "Incoming Document";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //IncomingDoc : 130;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //IncomingDoc : "Incoming Document";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "SuggestVendorPayments(Action 42).OnAction.SuggestVendorPayments(Variable 1001)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //SuggestVendorPayments : 393;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //SuggestVendorPayments : "Suggest Vendor Payments";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //SuggestVendorPayments : 393;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //SuggestVendorPayments : "Suggest Vendor Payments";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "Approvals(Action 54).OnAction.GenJournalLine(Variable 1001)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //Approvals : 81;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //Approvals : "Gen. Journal Line";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //Approvals : 81;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Approvals : "Gen. Journal Line";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "Approvals(Action 54).OnAction.ApprovalsMgmt(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //Approvals : 1535;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //Approvals : "Approvals Mgmt.";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //Approvals : 1535;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Approvals : "Approvals Mgmt.";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "ExportPaymentsToFile(Action 15).OnAction.GenJnlLine(Variable 1001)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //ExportPaymentsToFile : 81;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //ExportPaymentsToFile : "Gen. Journal Line";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //ExportPaymentsToFile : 81;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //ExportPaymentsToFile : "Gen. Journal Line";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "PositivePayExport(Action 34).OnAction.GenJnlBatch(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //PositivePayExport : 232;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //PositivePayExport : "Gen. Journal Batch";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //PositivePayExport : 232;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //PositivePayExport : "Gen. Journal Batch";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "PositivePayExport(Action 34).OnAction.BankAcc(Variable 1001)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //PositivePayExport : 270;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //PositivePayExport : "Bank Account";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //PositivePayExport : 270;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //PositivePayExport : "Bank Account";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "PreCheck(Action 78).OnAction.GenJournalBatch(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //PreCheck : 232;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //PreCheck : "Gen. Journal Batch";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //PreCheck : 232;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //PreCheck : "Gen. Journal Batch";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "Preview(Action 32).OnAction.GenJnlPost(Variable 1001)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //Preview : 231;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //Preview : "Gen. Jnl.-Post";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //Preview : 231;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Preview : "Gen. Jnl.-Post";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "SendApprovalRequestJournalBatch(Action 76).OnAction.ApprovalsMgmt(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //SendApprovalRequestJournalBatch : 1535;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //SendApprovalRequestJournalBatch : "Approvals Mgmt.";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //SendApprovalRequestJournalBatch : 1535;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //SendApprovalRequestJournalBatch : "Approvals Mgmt.";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "SendApprovalRequestJournalLine(Action 74).OnAction.GenJournalLine(Variable 1001)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //SendApprovalRequestJournalLine : 81;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //SendApprovalRequestJournalLine : "Gen. Journal Line";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //SendApprovalRequestJournalLine : 81;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //SendApprovalRequestJournalLine : "Gen. Journal Line";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "SendApprovalRequestJournalLine(Action 74).OnAction.ApprovalsMgmt(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //SendApprovalRequestJournalLine : 1535;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //SendApprovalRequestJournalLine : "Approvals Mgmt.";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //SendApprovalRequestJournalLine : 1535;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //SendApprovalRequestJournalLine : "Approvals Mgmt.";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "CancelApprovalRequestJournalBatch(Action 50).OnAction.ApprovalsMgmt(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //CancelApprovalRequestJournalBatch : 1535;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //CancelApprovalRequestJournalBatch : "Approvals Mgmt.";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //CancelApprovalRequestJournalBatch : 1535;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //CancelApprovalRequestJournalBatch : "Approvals Mgmt.";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "CancelApprovalRequestJournalLine(Action 96).OnAction.GenJournalLine(Variable 1001)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //CancelApprovalRequestJournalLine : 81;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //CancelApprovalRequestJournalLine : "Gen. Journal Line";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //CancelApprovalRequestJournalLine : 81;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //CancelApprovalRequestJournalLine : "Gen. Journal Line";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "CancelApprovalRequestJournalLine(Action 96).OnAction.ApprovalsMgmt(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //CancelApprovalRequestJournalLine : 1535;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //CancelApprovalRequestJournalLine : "Approvals Mgmt.";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //CancelApprovalRequestJournalLine : 1535;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //CancelApprovalRequestJournalLine : "Approvals Mgmt.";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "Approve(Action 70).OnAction.GenJournalBatch(Variable 1001)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //Approve : 232;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //Approve : "Gen. Journal Batch";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //Approve : 232;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Approve : "Gen. Journal Batch";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "Approve(Action 70).OnAction.ApprovalsMgmt(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //Approve : 1535;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //Approve : "Approvals Mgmt.";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //Approve : 1535;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Approve : "Approvals Mgmt.";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "Reject(Action 62).OnAction.GenJournalBatch(Variable 1001)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //Reject : 232;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //Reject : "Gen. Journal Batch";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //Reject : 232;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Reject : "Gen. Journal Batch";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "Reject(Action 62).OnAction.ApprovalsMgmt(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //Reject : 1535;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //Reject : "Approvals Mgmt.";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //Reject : 1535;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Reject : "Approvals Mgmt.";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "Delegate(Action 60).OnAction.GenJournalBatch(Variable 1001)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //Delegate : 232;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //Delegate : "Gen. Journal Batch";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //Delegate : 232;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Delegate : "Gen. Journal Batch";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "Delegate(Action 60).OnAction.ApprovalsMgmt(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //Delegate : 1535;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //Delegate : "Approvals Mgmt.";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //Delegate : 1535;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Delegate : "Approvals Mgmt.";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "Comment(Action 56).OnAction.ApprovalsMgmt(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //Comment : 1535;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //Comment : "Approvals Mgmt.";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //Comment : 1535;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Comment : "Approvals Mgmt.";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "OnAfterGetCurrRecord.GenJournalBatch(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //OnAfterGetCurrRecord.GenJournalBatch : 232;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //OnAfterGetCurrRecord.GenJournalBatch : "Gen. Journal Batch";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //OnAfterGetCurrRecord.GenJournalBatch : 232;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //OnAfterGetCurrRecord.GenJournalBatch : "Gen. Journal Batch";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "CheckForPmtJnlErrors(PROCEDURE 5).BankAccount(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //CheckForPmtJnlErrors : 270;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //CheckForPmtJnlErrors : "Bank Account";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //CheckForPmtJnlErrors : 270;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //CheckForPmtJnlErrors : "Bank Account";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "CheckForPmtJnlErrors(PROCEDURE 5).BankExportImportSetup(Variable 1001)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //CheckForPmtJnlErrors : 1200;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //CheckForPmtJnlErrors : "Bank Export/Import Setup";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //CheckForPmtJnlErrors : 1200;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //CheckForPmtJnlErrors : "Bank Export/Import Setup";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "SetControlAppearance(PROCEDURE 4).GenJournalBatch(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //SetControlAppearance : 232;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //SetControlAppearance : "Gen. Journal Batch";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //SetControlAppearance : 232;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //SetControlAppearance : "Gen. Journal Batch";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "SetControlAppearance(PROCEDURE 4).ApprovalsMgmt(Variable 1002)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //SetControlAppearance : 1535;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //SetControlAppearance : "Approvals Mgmt.";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //SetControlAppearance : 1535;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //SetControlAppearance : "Approvals Mgmt.";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "GenJnlLine(Variable 1003)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //GenJnlLine : 81;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //GenJnlLine : "Gen. Journal Line";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //GenJnlLine : 81;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //GenJnlLine : "Gen. Journal Line";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "GenJnlLine2(Variable 1004)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //GenJnlLine2 : 81;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //GenJnlLine2 : "Gen. Journal Line";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //GenJnlLine2 : 81;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //GenJnlLine2 : "Gen. Journal Line";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "GenJnlManagement(Variable 1007)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //GenJnlManagement : 230;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //GenJnlManagement : GenJnlManagement;
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //GenJnlManagement : 230;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //GenJnlManagement : GenJnlManagement;
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "ReportPrint(Variable 1008)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //ReportPrint : 228;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //ReportPrint : "Test Report-Print";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //ReportPrint : 228;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //ReportPrint : "Test Report-Print";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "DocPrint(Variable 1009)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //DocPrint : 229;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //DocPrint : "Document-Print";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //DocPrint : 229;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //DocPrint : "Document-Print";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "CheckManagement(Variable 1010)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //CheckManagement : 367;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //CheckManagement : CheckManagement;
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //CheckManagement : 367;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //CheckManagement : CheckManagement;
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "ChangeExchangeRate(Variable 1005)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //ChangeExchangeRate : 511;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //ChangeExchangeRate : "Change Exchange Rate";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //ChangeExchangeRate : 511;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //ChangeExchangeRate : "Change Exchange Rate";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "GLReconcile(Variable 1002)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //GLReconcile : 345;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //GLReconcile : Reconciliation;
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //GLReconcile : 345;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //GLReconcile : Reconciliation;
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "GLSetup(Variable 1500000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //GLSetup : 98;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //GLSetup : "General Ledger Setup";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //GLSetup : 98;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //GLSetup : "General Ledger Setup";
+    //Variable type has not been exported.
 
 
     //Unsupported feature: PropertyModification on "PaymentofTaxes(Variable 1500050)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //PaymentofTaxes : 13705;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //PaymentofTaxes : "Payment of Taxes";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //PaymentofTaxes : 13705;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //PaymentofTaxes : "Payment of Taxes";
+    //Variable type has not been exported.
 
     //Unsupported feature: PropertyChange. Please convert manually.
 

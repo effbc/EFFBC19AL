@@ -5,7 +5,7 @@ report 60098 testmanu
 
     dataset
     {
-        dataitem(Item;Item)
+        dataitem(Item; Item)
         {
             DataItemTableView = WHERE(Product Group Code=FILTER(FPRODUCT));
             column(Manf_Cost_;"Manf.Cost")

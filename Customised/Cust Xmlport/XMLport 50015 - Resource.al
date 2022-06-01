@@ -6,37 +6,37 @@ xmlport 50015 Resource
     {
         textelement(Resources)
         {
-            tableelement(Resource;Resource)
+            tableelement(Resource; Resource)
             {
                 XmlName = 'Resource';
-                fieldelement(No;Resource."No.")
+                fieldelement(No; Resource."No.")
                 {
                 }
-                fieldelement(Type;Resource.Type)
+                fieldelement(Type; Resource.Type)
                 {
                 }
-                fieldelement(Name;Resource.Name)
+                fieldelement(Name; Resource.Name)
                 {
                 }
-                fieldelement(SearchName;Resource."Search Name")
+                fieldelement(SearchName; Resource."Search Name")
                 {
                 }
-                fieldelement(ResourceGroupNo;Resource."Resource Group No.")
+                fieldelement(ResourceGroupNo; Resource."Resource Group No.")
                 {
                 }
-                fieldelement(BaseUnitofMeasure;Resource."Base Unit of Measure")
+                fieldelement(BaseUnitofMeasure; Resource."Base Unit of Measure")
                 {
                 }
-                fieldelement(GenProdPostingGroup;Resource."Gen. Prod. Posting Group")
+                fieldelement(GenProdPostingGroup; Resource."Gen. Prod. Posting Group")
                 {
                 }
-                fieldelement(DirectUnitCost;Resource."Direct Unit Cost")
+                fieldelement(DirectUnitCost; Resource."Direct Unit Cost")
                 {
                 }
-                fieldelement(IndirectCostPer;Resource."Indirect Cost %")
+                fieldelement(IndirectCostPer; Resource."Indirect Cost %")
                 {
                 }
-                fieldelement(UnitPrice;Resource."Unit Price")
+                fieldelement(UnitPrice; Resource."Unit Price")
                 {
                 }
             }

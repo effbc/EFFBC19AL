@@ -12,10 +12,10 @@ page 50000 "Location of service item"
             repeater(Control1000000009)
             {
                 ShowCaption = false;
-                field("Station No";"Station No")
+                field("Station No"; "Station No")
                 {
                 }
-                field("Station name";"Station name")
+                field("Station name"; "Station name")
                 {
                 }
             }

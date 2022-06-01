@@ -13,16 +13,16 @@ page 33000272 "Posted Inspect. DS Details"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("Posted By";"Posted By")
+                field("Posted By"; "Posted By")
                 {
                 }
-                field("Posted Date";"Posted Date")
+                field("Posted Date"; "Posted Date")
                 {
                 }
-                field("Posted Time";"Posted Time")
+                field("Posted Time"; "Posted Time")
                 {
                 }
             }

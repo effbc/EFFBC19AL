@@ -5,76 +5,76 @@ report 50008 "Rejection Note"
 
     dataset
     {
-        dataitem("Purch. Rcpt. Header";"Purch. Rcpt. Header")
+        dataitem("Purch. Rcpt. Header"; "Purch. Rcpt. Header")
         {
-            RequestFilterFields = "No.","Order No.";
-            column(text;text)
+            RequestFilterFields = "No.", "Order No.";
+            column(text; text)
             {
             }
-            column(ssss;TEXT1)
+            column(ssss; TEXT1)
             {
             }
-            column(Text2;Text2)
+            column(Text2; Text2)
             {
             }
-            column(Inspection_Receipt_Header___Nature_Of_Rejection_;"Inspection Receipt Header"."Nature Of Rejection")
+            column(Inspection_Receipt_Header___Nature_Of_Rejection_; "Inspection Receipt Header"."Nature Of Rejection")
             {
             }
-            column(Person;Person)
+            column(Person; Person)
             {
             }
-            column(Inspection_Receipt_Header___Posting_Date_;"Inspection Receipt Header"."Posting Date")
+            column(Inspection_Receipt_Header___Posting_Date_; "Inspection Receipt Header"."Posting Date")
             {
             }
-            column(QC_Confirmation__Rejection_NoteCaption;QC_Confirmation__Rejection_NoteCaptionLbl)
+            column(QC_Confirmation__Rejection_NoteCaption; QC_Confirmation__Rejection_NoteCaptionLbl)
             {
             }
-            column(EfftronicsCaption;EfftronicsCaptionLbl)
+            column(EfftronicsCaption; EfftronicsCaptionLbl)
             {
             }
-            column(Clearance_Rejection_Service_ReportCaption;Clearance_Rejection_Service_ReportCaptionLbl)
+            column(Clearance_Rejection_Service_ReportCaption; Clearance_Rejection_Service_ReportCaptionLbl)
             {
             }
-            column(QMS__Std__Ref__7_4Caption;QMS__Std__Ref__7_4CaptionLbl)
+            column(QMS__Std__Ref__7_4Caption; QMS__Std__Ref__7_4CaptionLbl)
             {
             }
-            column(EFF_QAS_R_038Caption;EFF_QAS_R_038CaptionLbl)
+            column(EFF_QAS_R_038Caption; EFF_QAS_R_038CaptionLbl)
             {
             }
-            column(REVISION__1_Caption;REVISION__1_CaptionLbl)
+            column(REVISION__1_Caption; REVISION__1_CaptionLbl)
             {
             }
-            column(V_BharatCaption;V_BharatCaptionLbl)
+            column(V_BharatCaption; V_BharatCaptionLbl)
             {
             }
-            column(INCHARGE___QC_Caption;INCHARGE___QC_CaptionLbl)
+            column(INCHARGE___QC_Caption; INCHARGE___QC_CaptionLbl)
             {
             }
-            column(RemarksCaption;RemarksCaptionLbl)
+            column(RemarksCaption; RemarksCaptionLbl)
             {
             }
-            column(Prepared_ByCaption;Prepared_ByCaptionLbl)
+            column(Prepared_ByCaption; Prepared_ByCaptionLbl)
             {
             }
-            column(Approved_ByCaption;Approved_ByCaptionLbl)
+            column(Approved_ByCaption; Approved_ByCaptionLbl)
             {
             }
-            column(QAS_ManagerCaption;QAS_ManagerCaptionLbl)
+            column(QAS_ManagerCaption; QAS_ManagerCaptionLbl)
             {
             }
-            column(DateCaption;DateCaptionLbl)
+            column(DateCaption; DateCaptionLbl)
             {
             }
-            column(PAGE_NO__1_of_1Caption;PAGE_NO__1_of_1CaptionLbl)
+            column(PAGE_NO__1_of_1Caption; PAGE_NO__1_of_1CaptionLbl)
             {
             }
-            column(Purch__Rcpt__Header_No_;"No.")
+            column(Purch__Rcpt__Header_No_; "No.")
             {
             }
-            column(Purch__Rcpt__Header_Order_No_;"Order No.")
+            column(Purch__Rcpt__Header_Order_No_; "Order No.")
             {
             }
-            dataitem("Purch. Rcpt. Line";"Purch. Rcpt. Line")
+            dataitem("Purch. Rcpt. Line"; "Purch. Rcpt. Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
                 DataItemTableView = WHERE(Quantity Rejected=FILTER(>0));

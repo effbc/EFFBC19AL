@@ -9,25 +9,25 @@ page 60242 "Product Model List"
         {
             repeater(Group)
             {
-                field(Product;Product)
+                field(Product; Product)
                 {
                 }
-                field(Model;Model)
+                field(Model; Model)
                 {
                 }
-                field("CS IGC";"CS IGC")
+                field("CS IGC"; "CS IGC")
                 {
                 }
-                field(Module;Module)
+                field(Module; Module)
                 {
                 }
-                field("Sub-Module";"Sub-Module")
+                field("Sub-Module"; "Sub-Module")
                 {
                 }
-                field(Module1;Module1)
+                field(Module1; Module1)
                 {
                 }
-                field("Sub-Module1";"Sub-Module1")
+                field("Sub-Module1"; "Sub-Module1")
                 {
                 }
             }

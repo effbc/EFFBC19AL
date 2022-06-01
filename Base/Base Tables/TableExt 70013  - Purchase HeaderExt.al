@@ -90,6 +90,7 @@ tableextension 70013 PurhaseheaderExt extends "Purchase Header"
 
         field(50000; "MSPT Date"; Date)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -110,6 +111,7 @@ tableextension 70013 PurhaseheaderExt extends "Purchase Header"
         {
             Description = 'MSPT1.0';
             TableRelation = "MSPT Header".Code WHERE(Status = CONST(Released));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             var
@@ -153,90 +155,112 @@ tableextension 70013 PurhaseheaderExt extends "Purchase Header"
         field(50002; "MSPT Applicable at Line Level"; Boolean)
         {
             Description = 'MSPT1.0';
+            DataClassification = CustomerContent;
         }
         field(60001; "Vendor Excise Invoice No."; Code[10])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60002; "Vend. Excise Inv. Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60003; "Cancel Short Close"; Option)
         {
             Description = 'B2B';
             OptionCaption = '" ,Cancelled,Short Closed"';
             OptionMembers = " ",Cancelled,"Short Closed";
+            DataClassification = CustomerContent;
         }
         field(60004; "RFQ No."; Code[10])
         {
             Description = 'B2B';
             TableRelation = "Mech & Wirning Items"."Production Order No.";
+            DataClassification = CustomerContent;
         }
         field(60005; Make; Text[50])
         {
             Description = 'B2B';
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60006; "Packing Type"; Text[25])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60007; Verification; Text[50])
         {
             Description = 'B2B';
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60008; "Quotation No."; Code[30])
         {
             Description = 'PH1.0';
+            DataClassification = CustomerContent;
         }
         field(60009; "ICN No."; Code[10])
         {
             Description = 'PH1.0';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60010; "Release Date Time"; DateTime)
         {
+            DataClassification = CustomerContent;
         }
         field(60011; "Tender No"; Code[20])
         {
             TableRelation = "Tender Header"."Tender No.";
+            DataClassification = CustomerContent;
         }
         field(60012; "Sale Order No"; Code[30])
         {
             TableRelation = "Sales Header"."No.";
+            DataClassification = CustomerContent;
         }
         field(60013; "Bill Received"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60014; "Duplicate For Transporter"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60018; "Quotation Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60019; "Vendor Invoice Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60020; "Purchase Journal"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60021; "Calculate Tax Structure"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60079; "Order (Digits)"; Code[10])
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60090; "Buy-from Address 3"; Text[50])
         {
+            DataClassification = CustomerContent;
         }
         field(60091; "OLD Dim Set ID"; Integer)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
             TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -247,85 +271,108 @@ tableextension 70013 PurhaseheaderExt extends "Purchase Header"
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60095; "Actual Invoiced Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60096; "Additional Duty Value"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60097; "Type of Supplier"; Option)
         {
             OptionCaption = '" ,Manufacturer,First Stage Dealer,Importer"';
             OptionMembers = " ",Manufacturer,"First Stage Dealer",Importer;
+            DataClassification = CustomerContent;
         }
         field(60098; "Inclusive of All Taxes"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60100; "Vehicle Number"; Text[12])
         {
+            DataClassification = CustomerContent;
         }
         field(60101; "Transporter Name"; Text[20])
         {
             TableRelation = "Transport Method";
+            DataClassification = CustomerContent;
         }
         field(60102; "C-Form Number"; Code[20])
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60103; "C-Form Issue Date"; Date)
         {
             Enabled = false;
+            DataClassification = CustomerContent;
         }
         field(60115; "OrderCreated by"; Code[35])
         {
             Description = 'Rev01';
             TableRelation = User."User Name";
+            DataClassification = CustomerContent;
         }
         field(60116; "Released By"; Code[35])
         {
             Description = 'Rev01';
             TableRelation = User."User Name";
+            DataClassification = CustomerContent;
         }
         field(60117; Mail_Sent; DateTime)
         {
+            DataClassification = CustomerContent;
         }
         field(60118; "Way bill"; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60119; Mail_count; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60120; "Acknowledge Given by"; Text[15])
         {
+            DataClassification = CustomerContent;
         }
         field(60121; "Acknowledged Dt"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60122; "Tarrif Heading No"; Code[35])
         {
+            DataClassification = CustomerContent;
         }
         field(60123; QA_Auth_Status; Option)
         {
             OptionMembers = " ","Sent For Auth",Authorized,Rejected;
+            DataClassification = CustomerContent;
         }
         field(60124; QA_Auth_Date; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60125; "First Release DateTime"; DateTime)
         {
+            DataClassification = CustomerContent;
         }
         field(60126; "First Release By"; Code[35])
         {
+            DataClassification = CustomerContent;
         }
         field(60128; "USER ID"; Code[35])
         {
             Editable = false;
             TableRelation = User."User Name";
+            DataClassification = CustomerContent;
         }
         field(60129; "Do not Consider GST"; Boolean)
         {
             Description = 'Do not Consider GST in cashflow or not';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -335,6 +382,7 @@ tableextension 70013 PurhaseheaderExt extends "Purchase Header"
         }
         field(70000; "Sales Order Ref No."; Code[20])
         {
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             var

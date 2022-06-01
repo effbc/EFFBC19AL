@@ -6,13 +6,13 @@ xmlport 50016 "Resource Group"
     {
         textelement(ResourceGroups)
         {
-            tableelement("<resourcegroup>";"Resource Group")
+            tableelement("<resourcegroup>"; "Resource Group")
             {
                 XmlName = 'ResourceGroup';
-                fieldelement(No;"<ResourceGroup>"."No.")
+                fieldelement(No; "<ResourceGroup>"."No.")
                 {
                 }
-                fieldelement(Name;"<ResourceGroup>".Name)
+                fieldelement(Name; "<ResourceGroup>".Name)
                 {
                 }
             }

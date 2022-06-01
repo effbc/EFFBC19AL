@@ -14,32 +14,32 @@ page 33000266 "Inspection Lots"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Lot No.";"Lot No.")
+                field("Lot No."; "Lot No.")
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
 
                     trigger OnValidate();
                     begin
                         TESTFIELD("Lot No.");
-                        PostPurchRcptLine.SETRANGE("Document No.","Document No.");
-                        PostPurchRcptLine.SETRANGE("Line No.","Purch. Line No.");
+                        PostPurchRcptLine.SETRANGE("Document No.", "Document No.");
+                        PostPurchRcptLine.SETRANGE("Line No.", "Purch. Line No.");
                         IF PostPurchRcptLine.FINDFIRST THEN
-                          Qty := PostPurchRcptLine.Quantity;
+                            Qty := PostPurchRcptLine.Quantity;
 
-                        InspLot.SETRANGE("Document No.","Document No.");
-                        InspLot.SETRANGE("Purch. Line No.","Purch. Line No.");
-                        InspLot.SETFILTER("Lot No.",'<>%1',Rec."Lot No.");
+                        InspLot.SETRANGE("Document No.", "Document No.");
+                        InspLot.SETRANGE("Purch. Line No.", "Purch. Line No.");
+                        InspLot.SETFILTER("Lot No.", '<>%1', Rec."Lot No.");
                         InspLot.CALCSUMS(Quantity);
                         IF InspLot.Quantity + Rec.Quantity > Qty THEN
-                          ERROR(Text001,InspLot.Quantity + Rec.Quantity,Qty);
+                            ERROR(Text001, InspLot.Quantity + Rec.Quantity, Qty);
                     end;
                 }
-                field("Spec Id";"Spec Id")
+                field("Spec Id"; "Spec Id")
                 {
                 }
-                field("Inspect. Data sheet created";"Inspect. Data sheet created")
+                field("Inspect. Data sheet created"; "Inspect. Data sheet created")
                 {
                     Editable = false;
                 }
@@ -71,7 +71,7 @@ page 33000266 "Inspection Lots"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Posted Inspect Data Sheet List";
-                    RunPageLink = Receipt No.=FIELD(Document No.),Purch Line No=FIELD(Purch. Line No.),Lot No.=FIELD(Lot No.);
+                                    RunPageLink = Receipt No.=FIELD(Document No.),Purch Line No=FIELD(Purch. Line No.),Lot No.=FIELD(Lot No.);
                 }
                 action("Inspection Receipt")
                 {
@@ -80,7 +80,7 @@ page 33000266 "Inspection Lots"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Inspection Receipt List";
-                    RunPageLink = Receipt No.=FIELD(Document No.),Purch Line No=FIELD(Purch. Line No.),Lot No.=FIELD(Lot No.);
+                                    RunPageLink = Receipt No.=FIELD(Document No.),Purch Line No=FIELD(Purch. Line No.),Lot No.=FIELD(Lot No.);
                 }
                 action("Posted Inspection Receipt")
                 {
@@ -89,7 +89,7 @@ page 33000266 "Inspection Lots"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Posted Inspect. Receipt List";
-                    RunPageLink = Receipt No.=FIELD(Document No.),Purch Line No=FIELD(Purch. Line No.),Lot No.=FIELD(Lot No.),Status=FILTER(<>No);
+                                    RunPageLink = Receipt No.=FIELD(Document No.),Purch Line No=FIELD(Purch. Line No.),Lot No.=FIELD(Lot No.),Status=FILTER(<>No);
                 }
             }
         }

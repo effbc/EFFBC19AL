@@ -6,25 +6,25 @@ xmlport 80206 "VENDOR POSTING GROUP"
     {
         textelement(Vendors)
         {
-            tableelement(Vendor;Vendor)
+            tableelement(Vendor; Vendor)
             {
                 XmlName = 'Vendor';
-                fieldelement(No;Vendor."No.")
+                fieldelement(No; Vendor."No.")
                 {
                 }
-                fieldelement(Name;Vendor.Name)
+                fieldelement(Name; Vendor.Name)
                 {
                 }
-                fieldelement(ExciseBusPostingGroup;Vendor."Excise Bus. Posting Group")
+                fieldelement(ExciseBusPostingGroup; Vendor."Excise Bus. Posting Group")
                 {
                 }
-                fieldelement(VATBusinessPostingGroup;Vendor."VAT Bus. Posting Group")
+                fieldelement(VATBusinessPostingGroup; Vendor."VAT Bus. Posting Group")
                 {
                 }
-                fieldelement(VendorPostingGroup;Vendor."Vendor Posting Group")
+                fieldelement(VendorPostingGroup; Vendor."Vendor Posting Group")
                 {
                 }
-                fieldelement(GenBusPostingGroup;Vendor."Gen. Bus. Posting Group")
+                fieldelement(GenBusPostingGroup; Vendor."Gen. Bus. Posting Group")
                 {
                 }
             }

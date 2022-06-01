@@ -7,17 +7,17 @@ report 50049 "Vendor Statement - EFF"
 
     dataset
     {
-        dataitem(Vendor;Vendor)
+        dataitem(Vendor; Vendor)
         {
             DataItemTableView = SORTING(Search Name) ORDER(Ascending);
-            RequestFilterFields = "No.","Date Filter","Vendor Posting Group";
-            column(Vendor_No_;"No.")
+            RequestFilterFields = "No.", "Date Filter", "Vendor Posting Group";
+            column(Vendor_No_; "No.")
             {
             }
-            column(Vendor_Date_Filter;"Date Filter")
+            column(Vendor_Date_Filter; "Date Filter")
             {
             }
-            dataitem("Vendor Ledger Entry";"Vendor Ledger Entry")
+            dataitem("Vendor Ledger Entry"; "Vendor Ledger Entry")
             {
                 DataItemLink = Vendor No.=FIELD(No.),Posting Date=FIELD(Date Filter);
                 DataItemTableView = SORTING(Document No.,Document Type,Vendor No.);

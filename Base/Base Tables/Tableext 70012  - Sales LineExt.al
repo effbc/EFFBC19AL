@@ -52,11 +52,13 @@ tableextension 70012 SalesLineExt extends "Sales Line"
 
         field(50002; "Packet No"; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60001; "Production BOM No."; Code[20])
         {
             Description = 'B2B';
             TableRelation = "Production BOM Header"."No.";
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -67,6 +69,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         {
             Description = 'B2B';
             TableRelation = "Production BOM Version"."Version Code" WHERE("Production BOM No." = FIELD("Production BOM No."));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -91,6 +94,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         {
             BlankZero = true;
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -101,6 +105,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         {
             BlankZero = true;
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -110,6 +115,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         field(60006; "Prod Start Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -120,6 +126,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         {
             BlankZero = true;
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -130,6 +137,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         {
             Description = 'B2B';
             OptionMembers = " ","By Customer","By Railways";
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -139,6 +147,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         field(60009; "RDSO Inspection Required"; Boolean)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -149,6 +158,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         {
             Description = 'B2B';
             OptionMembers = " ","By RDSO"," By Consignee";
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -159,6 +169,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         {
             BlankZero = true;
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -171,6 +182,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
             Description = 'B2B';
             OptionCaption = '" ,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z"';
             OptionMembers = " ",A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z;
+            DataClassification = CustomerContent;
         }
         field(60013; "Prod. Order Quantity"; Decimal)
         {
@@ -182,12 +194,15 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         }
         field(60014; "Tender No."; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60015; "Tender Line No."; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60016; "Prod. Qty"; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -198,6 +213,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         }
         field(60017; "Prod. Due Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60018; "Item Sub Group Code"; Code[20])
         {
@@ -206,37 +222,46 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         }
         field(60019; "To Be Shipped Qty"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60020; "Material Reuired Date"; Date)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60021; "Dummy Unit Cost"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60022; "Plan Shifting Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60023; "Change to Specified Plan Date"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60024; "CL_CNSGN  rcvd Qty"; Integer)
         {
             Description = 'added  by sujani for renucha mam';
+            DataClassification = CustomerContent;
         }
         field(60025; "CL_CNSGN  rcvd Date1"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60090; "Dimension Corrected"; Boolean)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60091; "OLD Dim Set ID"; Integer)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
             TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -245,6 +270,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         }
         field(60110; "Supply Portion"; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -255,6 +281,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         }
         field(60111; "Retention Portion"; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -266,137 +293,166 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         field(60112; "Type of Item"; Option)
         {
             OptionMembers = " ","Only Supply","Supply & Inst","Supply & Laying","Only Inst";
+            DataClassification = CustomerContent;
         }
         field(60113; "Schedule No"; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60114; "Unitcost(LOA)"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60115; "Line Amount(LOA)"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60116; "OutStanding(LOA)"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60117; "BOI Status"; Option)
         {
             OptionCaption = '" ,To be Ordered,To be Received,Received,To be Dispatched,Confirmation Pending,Material Supplied,Cancelled"';
             OptionMembers = " ","To be Ordered","To be Received",Received,"To be Dispatched","Confirmation Pending","Material Supplied",Cancelled;
+            DataClassification = CustomerContent;
         }
         field(60118; MainCategory; Option)
         {
             Description = 'added by sujani on 2-11-2018 for analysis purpose';
             OptionMembers = "  ",Sales,"No Issue","R&D","Need to Specify",CS,MKT,LMD,"Temp-Closed";
+            DataClassification = CustomerContent;
         }
         field(60119; SubCategory; Option)
         {
             Description = 'added by sujani on 2-11-2018 for analysis purpose';
             OptionMembers = "  ","Yet to Start","Under Inspection","Ready for Inspection","Under Production","Inspection Completed","Ready For Dispatch","BOM Pending","PO Pending","BOI Pending","Docs Pending","RDSO renewal Pending","S/W Pending","Call Letter Pending","Customer side Pending","Installation material pending","Site not ready","R&D Pending","Installation Inprogress",Commisioned,"Completion letter taken","Yet to dispatch",Received,"To Be Received","Under Design","Dispatched on DC";
+            DataClassification = CustomerContent;
         }
         field(60120; Reason; Text[100])
         {
             Description = 'added by sujani on 2-11-2018 for analysis purpose';
+            DataClassification = CustomerContent;
         }
         field(60121; Remarks; Text[100])
         {
             Description = 'added by sujani on 2-11-2018 for analysis purpose';
+            DataClassification = CustomerContent;
         }
         field(60122; ProductGroup; Code[20])
         {
             Description = 'added by sujani on 2-11-2018 for analysis purpose';
             TableRelation = "Item Sub Group".Code;
+            DataClassification = CustomerContent;
         }
         field(60123; Main_CATEGORY; Option)
         {
             OptionMembers = "  ",Sales,"No Issue","R&D","Need to Specify",CS,MKT;
+            DataClassification = CustomerContent;
         }
         field(60124; "Call Letter Status"; Option)
         {
             Description = 'added by sujani on 30-11-2018 for pending orders analysis purpose';
             OptionMembers = " ",Received,Pending,NA,"Cust.Pending";
+            DataClassification = CustomerContent;
         }
         field(60125; "RDSO Number"; Code[15])
         {
             Description = 'added by sujani on 30-11-2018 for pending orders analysis purpose';
+            DataClassification = CustomerContent;
         }
         field(60126; Vertical; Option)
         {
             Description = 'added by sujani on 30-11-2018 for pending orders analysis purpose';
             OptionMembers = " ","Smart Signalling","Smart Cities","Smart Building",IOT,other;
+            DataClassification = CustomerContent;
         }
         field(60127; "Deviated Dispatch Date"; DateTime)
         {
             Description = 'added by sujani on 30-11-2018 for pending orders analysis purpose';
+            DataClassification = CustomerContent;
         }
         field(60128; "Dispatch Date"; DateTime)
         {
             Description = 'added by sujani on 30-11-2018 for pending orders analysis purpose';
+            DataClassification = CustomerContent;
         }
         field(60129; "Call Letter Exp Date"; Date)
         {
             Description = 'added by sujani on 07-12-2018 for pending orders analysis purpose';
+            DataClassification = CustomerContent;
         }
         field(60130; "Sell-to Customer Name"; Text[50])
         {
             CaptionML = ENU = 'Sell-to Customer Name',
                         ENN = 'Sell-to Customer Name';
+            DataClassification = CustomerContent;
         }
         field(60131; "Tentative RDSO Date"; Date)
         {
             Description = 'Added by Vishnu Priya on 14-12-2018';
+            DataClassification = CustomerContent;
         }
         field(60132; "Production Confirmed Status"; Boolean)
         {
             Description = 'Added by Vishnu Priya on 26-05-2020 for Sales Process Tracking';
+            DataClassification = CustomerContent;
         }
         field(60133; "Dispatch Confirm Date"; Date)
         {
             Description = 'Added by Vishnu Priya on 26-05-2020 for Sales Process Tracking';
+            DataClassification = CustomerContent;
         }
         field(60134; "Production Stage"; Option)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya on 04-11-2020 for Sales Process Tracking';
             OptionCaption = '" ,Soldering ,Testing,Product Integration,Call letter Registration,Inspection Completed,Final Testing,QA Completed,Offer to QA,IP QA,Ready For Inspection"';
             OptionMembers = " ","Soldering ",Testing,"Product Integration","Call letter Registration","Inspection Completed","Final Testing","QA Completed","Offer to QA","IP QA","Ready For Inspection";
         }
         field(60135; "Product ready Date Committed"; Date)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya on 04-11-2020 for Sales Process Tracking';
         }
         field(60136; "Product ready Date (Revised)"; Date)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya on 04-11-2020 for Sales Process Tracking';
         }
         field(80000; "VAT Business Posting Group 2"; Code[10])
         {
             TableRelation = "VAT Business Posting Group".Code;
+            DataClassification = CustomerContent;
         }
         field(80001; "VAT Product Posting Group 2"; Code[10])
         {
             TableRelation = "VAT Business Posting Group".Code;
+            DataClassification = CustomerContent;
         }
         field(80002; "VAT %age 2"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(80003; "VAT Base 2"; Decimal)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(80004; "VAT Amount 2"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(80005; "Service Tax % 2"; Decimal)
         {
             BlankZero = true;
             Caption = 'Service Tax %';
+            DataClassification = CustomerContent;
         }
         field(80006; "Pending By"; Option)
         {
             OptionMembers = " ","R&D",Sales,LMD,Customer,Purchase,CUS;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -410,20 +466,24 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         }
         field(80007; "Pending By Removed Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(80008; "Purchase Remarks"; Option)
         {
             OptionCaption = '" ,Sales Configuration Pending,Purchase order placed Mat Exp,Call letters Pending,Purchase Prices under negotiations,Material Received,Material Supplied-Invoice Pending,PO will place before Mfg items Ready,Will supply at site"';
             OptionMembers = " ","Sales Conformation Pending","Purchase order placed Mat Exp","Call letters Pending","Purchase Prices under negotiations","Material Received","Material Supplied-Invoice Pending","PO will place before Mfg items Ready","Will supply at site";
+            DataClassification = CustomerContent;
         }
         field(80009; "Planned Dispatch Date"; Date)
         {
             Description = 'Pranavi-for BOI Planning';
+            DataClassification = CustomerContent;
         }
         field(33000250; "Spec ID"; Code[20])
         {
             Description = 'QC1.0';
             TableRelation = "Specification Header";
+            DataClassification = CustomerContent;
         }
         field(33000251; "Quantity Accepted"; Decimal)
         {
@@ -448,6 +508,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         field(33000253; "QC Enabled"; Boolean)
         {
             Description = 'QC1.0';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -473,6 +534,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         field(33000255; "Quality Before Receipt"; Boolean)
         {
             Description = 'QC1.0';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -495,6 +557,7 @@ tableextension 70012 SalesLineExt extends "Sales Line"
             BlankZero = true;
             Description = 'QC1.0';
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(33000257; "Qty. Sent To Quality"; Decimal)
         {
@@ -502,17 +565,20 @@ tableextension 70012 SalesLineExt extends "Sales Line"
             Description = 'QC1.0';
             Editable = false;
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(33000258; "Qty. Sending To Quality(R)"; Decimal)
         {
             BlankZero = true;
             Description = 'QC1.0';
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(33000259; "Spec Version"; Code[20])
         {
             Description = 'QC1.0';
             TableRelation = "Specification Version"."Version Code" WHERE("Specification No." = FIELD("Spec ID"));
+            DataClassification = CustomerContent;
         }
         field(33000260; "Reg/Non reg Product"; Option)
         {
@@ -522,25 +588,25 @@ tableextension 70012 SalesLineExt extends "Sales Line"
         }
         field(33000261; Priority; Option)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'added by priyanka on 24-02-2022';
             OptionMembers = " ","1","2","3";
         }
         field(33000262; "M Stage"; Option)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'added by priyanka on 02-03-2022';
             OptionMembers = " ",Machine,Man,Method,Material;
         }
         field(33000263; "Non Regular Stages"; Option)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'added by priyanka on 03-03-2022';
             OptionMembers = " ","Sample PCB Evaluation","Hardware-Temp BOM","Final BOM","Inst BOM",Firmware,Software,"Production DOC","UPG BOM","Design In-Progress","Design to be Start";
         }
         field(33000264; "Responsible Dept"; Option)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'added by priyanka on 03-03-2022';
             OptionMembers = " ","R&D",DQA,CS;
         }

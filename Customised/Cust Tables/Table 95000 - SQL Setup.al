@@ -1,5 +1,6 @@
 table 95000 "SQL Setup"
 {
+    DataClassification = CustomerContent;
     // version SessionKiller 1.0/Tarek Demiati
 
     // ______________________________________________________________________________________________________________________________
@@ -17,12 +18,14 @@ table 95000 "SQL Setup"
 
     fields
     {
-        field(1;"Primary Key";Code[10])
+        field(1; "Primary Key"; Code[10])
         {
             Editable = true;
+            DataClassification = CustomerContent;
         }
-        field(2;"SQL Server Name";Text[100])
+        field(2; "SQL Server Name"; Text[100])
         {
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -39,11 +42,13 @@ table 95000 "SQL Setup"
 
             end;
         }
-        field(3;"SQL Server Login";Text[100])
+        field(3; "SQL Server Login"; Text[100])
         {
+            DataClassification = CustomerContent;
         }
-        field(4;"SQL Server Password";Text[100])
+        field(4; "SQL Server Password"; Text[100])
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -51,9 +56,9 @@ table 95000 "SQL Setup"
                 // Use encrytion method from the User table here
             end;
         }
-        field(5;"SQL Server Database Name";Text[100])
+        field(5; "SQL Server Database Name"; Text[100])
         {
-            CalcFormula = Lookup(Session."Database Name" WHERE ("My Session"=CONST(true)));
+            CalcFormula = Lookup(Session."Database Name" WHERE("My Session" = CONST(true)));
             Editable = false;
             FieldClass = FlowField;
         }
@@ -61,7 +66,7 @@ table 95000 "SQL Setup"
 
     keys
     {
-        key(Key1;"Primary Key")
+        key(Key1; "Primary Key")
         {
         }
     }
@@ -71,7 +76,7 @@ table 95000 "SQL Setup"
     }
 
     var
-        recServer : Record Server;
-        LookupAction : Action;
+        recServer: Record Server;
+        LookupAction: Action;
 }
 

@@ -2,7 +2,7 @@ page 60119 "ESPL Attachments (Read Only)"
 {
     // version B2B1.0,Rev01
 
-    DataCaptionFields = "Document Type","Document No.";
+    DataCaptionFields = "Document Type", "Document No.";
     Editable = false;
     PageType = List;
     SourceTable = Attachments;
@@ -14,11 +14,11 @@ page 60119 "ESPL Attachments (Read Only)"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field(Description;Description)
+                field(Description; Description)
                 {
                     NotBlank = false;
                 }
-                field("Attachment Status";"Attachment Status")
+                field("Attachment Status"; "Attachment Status")
                 {
                     Editable = false;
                 }
@@ -40,13 +40,13 @@ page 60119 "ESPL Attachments (Read Only)"
 
                     trigger OnAction();
                     var
-                        Attachment : Record Attachments;
+                        Attachment: Record Attachments;
                     begin
                         TESTFIELD(Description);
                         IF "No." = 0 THEN
-                          EXIT;
-                        Attachment.GET("No.","Table ID","Document Type","Document No.","Document Line No.");
-                        Attachment.OpenAttachment(Description,FALSE);
+                            EXIT;
+                        Attachment.GET("No.", "Table ID", "Document Type", "Document No.", "Document Line No.");
+                        Attachment.OpenAttachment(Description, FALSE);
                     end;
                 }
                 action(Create)
@@ -71,11 +71,11 @@ page 60119 "ESPL Attachments (Read Only)"
 
                     trigger OnAction();
                     var
-                        FileName : Text[260];
-                        AttachVoith : Record Attachments;
+                        FileName: Text[260];
+                        AttachVoith: Record Attachments;
                     begin
                         TESTFIELD(Description);
-                        AttachVoith.ImportAttachment(FileName,FALSE,TRUE);//EFFUPG Deleted Rec
+                        AttachVoith.ImportAttachment(FileName, FALSE, TRUE);//EFFUPG Deleted Rec
                     end;
                 }
                 action("E&xport")
@@ -86,7 +86,7 @@ page 60119 "ESPL Attachments (Read Only)"
 
                     trigger OnAction();
                     var
-                        FileName : Text[260];
+                        FileName: Text[260];
                     begin
                         TESTFIELD(Description);
                         ExportAttachment(FileName);//EFFUPG Added FileName
@@ -109,7 +109,7 @@ page 60119 "ESPL Attachments (Read Only)"
     }
 
     var
-        CustAttachments : Record Attachments;
-        AttachNo : Integer;
+        CustAttachments: Record Attachments;
+        AttachNo: Integer;
 }
 

@@ -7,9 +7,9 @@ report 50185 "Day wise Prod.Requests"
 
     dataset
     {
-        dataitem("Posted Material Issues Header";"Posted Material Issues Header")
+        dataitem("Posted Material Issues Header"; "Posted Material Issues Header")
         {
-            DataItemTableView = SORTING(Prod. Order No.,Prod. Order Line No.) ORDER(Ascending) WHERE(Transfer-to Code=FILTER(PROD),Prod. Order No.=FILTER(<>''),Prod. Order Line No.=FILTER(<>10000));
+            DataItemTableView = SORTING(Prod. Order No., Prod. Order Line No.) ORDER(Ascending) WHERE(Transfer-to Code=FILTER(PROD),Prod. Order No.=FILTER(<>''),Prod. Order Line No.=FILTER(<>10000));
             RequestFilterFields = "Posting Date";
             column(Posted_Material_Issues_Header__Posted_Material_Issues_Header___Prod__Order_No__;"Posted Material Issues Header"."Prod. Order No.")
             {

@@ -3,8 +3,8 @@ page 99000818 "Prod. Order Components"
     // version NAVW19.00.00.45778
 
     AutoSplitKey = true;
-    CaptionML = ENU='Prod. Order Components',
-                ENN='Prod. Order Components';
+    CaptionML = ENU = 'Prod. Order Components',
+                ENN = 'Prod. Order Components';
     DataCaptionExpression = Caption;
     DelayedInsert = true;
     Editable = true;
@@ -16,60 +16,60 @@ page 99000818 "Prod. Order Components"
     {
         area(content)
         {
-            field("COUNT";COUNT)
+            field("COUNT"; COUNT)
             {
             }
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Prod. Order No.";"Prod. Order No.")
+                field("Prod. Order No."; "Prod. Order No.")
                 {
                     Editable = false;
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Product Group Code";"Product Group Code")
+                field("Product Group Code"; "Product Group Code")
                 {
                 }
-                field("Type of Solder";"Type of Solder")
+                field("Type of Solder"; "Type of Solder")
                 {
                 }
-                field("Don't Consider";"Don't Consider")
+                field("Don't Consider"; "Don't Consider")
                 {
                 }
-                field("Line No.";"Line No.")
+                field("Line No."; "Line No.")
                 {
                 }
-                field("Prod. Order Line No.";"Prod. Order Line No.")
+                field("Prod. Order Line No."; "Prod. Order Line No.")
                 {
                     Editable = false;
                 }
-                field("Material Required Day";"Material Required Day")
+                field("Material Required Day"; "Material Required Day")
                 {
                 }
-                field("Production Plan Date";"Production Plan Date")
+                field("Production Plan Date"; "Production Plan Date")
                 {
                 }
-                field("Material Requisition Date";"Material Requisition Date")
+                field("Material Requisition Date"; "Material Requisition Date")
                 {
                 }
-                field(PCB;PCB)
+                field(PCB; PCB)
                 {
                 }
-                field("Source No.";"Source No.")
+                field("Source No."; "Source No.")
                 {
                 }
-                field("Act. Consumption (Qty)";"Act. Consumption (Qty)")
+                field("Act. Consumption (Qty)"; "Act. Consumption (Qty)")
                 {
                 }
-                field("BOM Type";"BOM Type")
+                field("BOM Type"; "BOM Type")
                 {
                     Editable = true;
                     Enabled = true;
                     OptionCaption = '" ,Mechanical,Wiring,Testing,Packing"';
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
 
                     trigger OnValidate();
@@ -77,25 +77,25 @@ page 99000818 "Prod. Order Components"
                         ItemNoOnAfterValidate;
                     end;
                 }
-                field("Variant Code";"Variant Code")
+                field("Variant Code"; "Variant Code")
                 {
                     Visible = false;
                 }
-                field("Due Date-Time";"Due Date-Time")
+                field("Due Date-Time"; "Due Date-Time")
                 {
                     Visible = false;
                 }
-                field("Due Date";"Due Date")
+                field("Due Date"; "Due Date")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Editable = false;
                 }
-                field("Routing Link Code";"Routing Link Code")
+                field("Routing Link Code"; "Routing Link Code")
                 {
                 }
-                field("Scrap %";"Scrap %")
+                field("Scrap %"; "Scrap %")
                 {
                     Visible = false;
 
@@ -104,7 +104,7 @@ page 99000818 "Prod. Order Components"
                         Scrap37OnAfterValidate;
                     end;
                 }
-                field("Calculation Formula";"Calculation Formula")
+                field("Calculation Formula"; "Calculation Formula")
                 {
                     Visible = false;
 
@@ -113,7 +113,7 @@ page 99000818 "Prod. Order Components"
                         CalculationFormulaOnAfterValid;
                     end;
                 }
-                field(Length;Length)
+                field(Length; Length)
                 {
                     Visible = false;
 
@@ -122,7 +122,7 @@ page 99000818 "Prod. Order Components"
                         LengthOnAfterValidate;
                     end;
                 }
-                field(Width;Width)
+                field(Width; Width)
                 {
                     Visible = false;
 
@@ -131,7 +131,7 @@ page 99000818 "Prod. Order Components"
                         WidthOnAfterValidate;
                     end;
                 }
-                field(Weight;Weight)
+                field(Weight; Weight)
                 {
                     Visible = false;
 
@@ -140,7 +140,7 @@ page 99000818 "Prod. Order Components"
                         WeightOnAfterValidate;
                     end;
                 }
-                field(Depth;Depth)
+                field(Depth; Depth)
                 {
                     Visible = false;
 
@@ -149,7 +149,7 @@ page 99000818 "Prod. Order Components"
                         DepthOnAfterValidate;
                     end;
                 }
-                field("Quantity per";"Quantity per")
+                field("Quantity per"; "Quantity per")
                 {
                     Editable = true;
                     Enabled = true;
@@ -159,7 +159,7 @@ page 99000818 "Prod. Order Components"
                         QuantityperOnAfterValidate;
                     end;
                 }
-                field("Reserved Quantity";"Reserved Quantity")
+                field("Reserved Quantity"; "Reserved Quantity")
                 {
                     Visible = false;
 
@@ -169,7 +169,7 @@ page 99000818 "Prod. Order Components"
                         CurrPage.UPDATE(FALSE);
                     end;
                 }
-                field("Unit of Measure Code";"Unit of Measure Code")
+                field("Unit of Measure Code"; "Unit of Measure Code")
                 {
 
                     trigger OnValidate();
@@ -177,97 +177,97 @@ page 99000818 "Prod. Order Components"
                         UnitofMeasureCodeOnAfterValida;
                     end;
                 }
-                field("Flushing Method";"Flushing Method")
+                field("Flushing Method"; "Flushing Method")
                 {
                     Visible = false;
                 }
-                field("Expected Quantity";"Expected Quantity")
+                field("Expected Quantity"; "Expected Quantity")
                 {
                 }
-                field("Qty. in Material Issues";"Qty. in Material Issues")
+                field("Qty. in Material Issues"; "Qty. in Material Issues")
                 {
                 }
-                field("Qty. in Posted Material Issues";"Qty. in Posted Material Issues")
+                field("Qty. in Posted Material Issues"; "Qty. in Posted Material Issues")
                 {
                 }
-                field("Remaining Quantity";"Remaining Quantity")
+                field("Remaining Quantity"; "Remaining Quantity")
                 {
                 }
-                field("Shortcut Dimension 1 Code";"Shortcut Dimension 1 Code")
-                {
-                    Visible = false;
-                }
-                field("Shortcut Dimension 2 Code";"Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
                 {
                     Visible = false;
                 }
-                field("ShortcutDimCode[3]";ShortcutDimCode[3])
+                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
+                {
+                    Visible = false;
+                }
+                field("ShortcutDimCode[3]"; ShortcutDimCode[3])
                 {
                     CaptionClass = '1,2,3';
-                    TableRelation = "Dimension Value".Code WHERE (Global Dimension No.=CONST(3),Dimension Value Type=CONST(Standard),Blocked=CONST(No));
+                    TableRelation = "Dimension Value".Code WHERE(Global Dimension No.=CONST(3),Dimension Value Type=CONST(Standard),Blocked=CONST(No));
                     Visible = false;
 
                     trigger OnValidate();
                     begin
-                        ValidateShortcutDimCode(3,ShortcutDimCode[3]);
+                        ValidateShortcutDimCode(3, ShortcutDimCode[3]);
                     end;
                 }
-                field("ShortcutDimCode[4]";ShortcutDimCode[4])
+                field("ShortcutDimCode[4]"; ShortcutDimCode[4])
                 {
                     CaptionClass = '1,2,4';
-                    TableRelation = "Dimension Value".Code WHERE (Global Dimension No.=CONST(4),Dimension Value Type=CONST(Standard),Blocked=CONST(No));
+                    TableRelation = "Dimension Value".Code WHERE(Global Dimension No.=CONST(4),Dimension Value Type=CONST(Standard),Blocked=CONST(No));
                     Visible = false;
 
                     trigger OnValidate();
                     begin
-                        ValidateShortcutDimCode(4,ShortcutDimCode[4]);
+                        ValidateShortcutDimCode(4, ShortcutDimCode[4]);
                     end;
                 }
-                field("ShortcutDimCode[5]";ShortcutDimCode[5])
+                field("ShortcutDimCode[5]"; ShortcutDimCode[5])
                 {
                     CaptionClass = '1,2,5';
-                    TableRelation = "Dimension Value".Code WHERE (Global Dimension No.=CONST(5),Dimension Value Type=CONST(Standard),Blocked=CONST(No));
+                    TableRelation = "Dimension Value".Code WHERE(Global Dimension No.=CONST(5),Dimension Value Type=CONST(Standard),Blocked=CONST(No));
                     Visible = false;
 
                     trigger OnValidate();
                     begin
-                        ValidateShortcutDimCode(5,ShortcutDimCode[5]);
+                        ValidateShortcutDimCode(5, ShortcutDimCode[5]);
                     end;
                 }
-                field("ShortcutDimCode[6]";ShortcutDimCode[6])
+                field("ShortcutDimCode[6]"; ShortcutDimCode[6])
                 {
                     CaptionClass = '1,2,6';
-                    TableRelation = "Dimension Value".Code WHERE (Global Dimension No.=CONST(6),Dimension Value Type=CONST(Standard),Blocked=CONST(No));
+                    TableRelation = "Dimension Value".Code WHERE(Global Dimension No.=CONST(6),Dimension Value Type=CONST(Standard),Blocked=CONST(No));
                     Visible = false;
 
                     trigger OnValidate();
                     begin
-                        ValidateShortcutDimCode(6,ShortcutDimCode[6]);
+                        ValidateShortcutDimCode(6, ShortcutDimCode[6]);
                     end;
                 }
-                field("ShortcutDimCode[7]";ShortcutDimCode[7])
+                field("ShortcutDimCode[7]"; ShortcutDimCode[7])
                 {
                     CaptionClass = '1,2,7';
-                    TableRelation = "Dimension Value".Code WHERE (Global Dimension No.=CONST(7),Dimension Value Type=CONST(Standard),Blocked=CONST(No));
+                    TableRelation = "Dimension Value".Code WHERE(Global Dimension No.=CONST(7),Dimension Value Type=CONST(Standard),Blocked=CONST(No));
                     Visible = false;
 
                     trigger OnValidate();
                     begin
-                        ValidateShortcutDimCode(7,ShortcutDimCode[7]);
+                        ValidateShortcutDimCode(7, ShortcutDimCode[7]);
                     end;
                 }
-                field("ShortcutDimCode[8]";ShortcutDimCode[8])
+                field("ShortcutDimCode[8]"; ShortcutDimCode[8])
                 {
                     CaptionClass = '1,2,8';
-                    TableRelation = "Dimension Value".Code WHERE (Global Dimension No.=CONST(8),Dimension Value Type=CONST(Standard),Blocked=CONST(No));
+                    TableRelation = "Dimension Value".Code WHERE(Global Dimension No.=CONST(8),Dimension Value Type=CONST(Standard),Blocked=CONST(No));
                     Visible = false;
 
                     trigger OnValidate();
                     begin
-                        ValidateShortcutDimCode(8,ShortcutDimCode[8]);
+                        ValidateShortcutDimCode(8, ShortcutDimCode[8]);
                     end;
                 }
-                field("Location Code";"Location Code")
+                field("Location Code"; "Location Code")
                 {
                     Visible = false;
 
@@ -276,63 +276,63 @@ page 99000818 "Prod. Order Components"
                         LocationCodeOnAfterValidate;
                     end;
                 }
-                field("Bin Code";"Bin Code")
+                field("Bin Code"; "Bin Code")
                 {
                     Visible = false;
                 }
-                field("Unit Cost";"Unit Cost")
+                field("Unit Cost"; "Unit Cost")
                 {
                     Visible = false;
                 }
-                field("Cost Amount";"Cost Amount")
+                field("Cost Amount"; "Cost Amount")
                 {
                     Visible = false;
                 }
-                field(Position;Position)
+                field(Position; Position)
                 {
                     Visible = false;
                 }
-                field("Position 2";"Position 2")
+                field("Position 2"; "Position 2")
                 {
                     Visible = false;
                 }
-                field("Position 3";"Position 3")
+                field("Position 3"; "Position 3")
                 {
                     Visible = false;
                 }
-                field("Lead-Time Offset";"Lead-Time Offset")
+                field("Lead-Time Offset"; "Lead-Time Offset")
                 {
                     Visible = false;
                 }
-                field("Qty. Picked";"Qty. Picked")
+                field("Qty. Picked"; "Qty. Picked")
                 {
                     Visible = false;
                 }
-                field("Qty. Picked (Base)";"Qty. Picked (Base)")
+                field("Qty. Picked (Base)"; "Qty. Picked (Base)")
                 {
                     Visible = false;
                 }
-                field("Substitution Available";"Substitution Available")
+                field("Substitution Available"; "Substitution Available")
                 {
                 }
-                field("Operation No.";"Operation No.")
+                field("Operation No."; "Operation No.")
                 {
                 }
-                field(Dept;Dept)
+                field(Dept; Dept)
                 {
                 }
-                field("Type of Solder2";"Type of Solder2")
+                field("Type of Solder2"; "Type of Solder2")
                 {
                 }
             }
         }
         area(factboxes)
         {
-            systempart(Control1900383207;Links)
+            systempart(Control1900383207; Links)
             {
                 Visible = false;
             }
-            systempart(Control1905767507;Notes)
+            systempart(Control1905767507; Notes)
             {
                 Visible = false;
             }
@@ -345,78 +345,78 @@ page 99000818 "Prod. Order Components"
         {
             group("&Line")
             {
-                CaptionML = ENU='&Line',
-                            ENN='&Line';
+                CaptionML = ENU = '&Line',
+                            ENN = '&Line';
                 Image = Line;
                 group("Item Availability by")
                 {
-                    CaptionML = ENU='Item Availability by',
-                                ENN='Item Availability by';
+                    CaptionML = ENU = 'Item Availability by',
+                                ENN = 'Item Availability by';
                     Image = ItemAvailability;
                     action("Event")
                     {
-                        CaptionML = ENU='Event',
-                                    ENN='Event';
+                        CaptionML = ENU = 'Event',
+                                    ENN = 'Event';
                         Image = "Event";
 
                         trigger OnAction();
                         begin
-                            ItemAvailFormsMgt.ShowItemAvailFromProdOrderComp(Rec,ItemAvailFormsMgt.ByEvent);
+                            ItemAvailFormsMgt.ShowItemAvailFromProdOrderComp(Rec, ItemAvailFormsMgt.ByEvent);
                         end;
                     }
                     action(Period)
                     {
-                        CaptionML = ENU='Period',
-                                    ENN='Period';
+                        CaptionML = ENU = 'Period',
+                                    ENN = 'Period';
                         Image = Period;
 
                         trigger OnAction();
                         begin
-                            ItemAvailFormsMgt.ShowItemAvailFromProdOrderComp(Rec,ItemAvailFormsMgt.ByPeriod);
+                            ItemAvailFormsMgt.ShowItemAvailFromProdOrderComp(Rec, ItemAvailFormsMgt.ByPeriod);
                         end;
                     }
                     action(Variant)
                     {
-                        CaptionML = ENU='Variant',
-                                    ENN='Variant';
+                        CaptionML = ENU = 'Variant',
+                                    ENN = 'Variant';
                         Image = ItemVariant;
 
                         trigger OnAction();
                         begin
-                            ItemAvailFormsMgt.ShowItemAvailFromProdOrderComp(Rec,ItemAvailFormsMgt.ByVariant);
+                            ItemAvailFormsMgt.ShowItemAvailFromProdOrderComp(Rec, ItemAvailFormsMgt.ByVariant);
                         end;
                     }
                     action(Location)
                     {
-                        AccessByPermission = TableData Location=R;
-                        CaptionML = ENU='Location',
-                                    ENN='Location';
+                        AccessByPermission = TableData Location = R;
+                        CaptionML = ENU = 'Location',
+                                    ENN = 'Location';
                         Image = Warehouse;
 
                         trigger OnAction();
                         begin
-                            ItemAvailFormsMgt.ShowItemAvailFromProdOrderComp(Rec,ItemAvailFormsMgt.ByLocation);
+                            ItemAvailFormsMgt.ShowItemAvailFromProdOrderComp(Rec, ItemAvailFormsMgt.ByLocation);
                         end;
                     }
                     action("BOM Level")
                     {
-                        CaptionML = ENU='BOM Level',
-                                    ENN='BOM Level';
+                        CaptionML = ENU = 'BOM Level',
+                                    ENN = 'BOM Level';
                         Image = BOMLevel;
 
                         trigger OnAction();
                         begin
-                            ItemAvailFormsMgt.ShowItemAvailFromProdOrderComp(Rec,ItemAvailFormsMgt.ByBOM);
+                            ItemAvailFormsMgt.ShowItemAvailFromProdOrderComp(Rec, ItemAvailFormsMgt.ByBOM);
                         end;
                     }
                 }
                 action("Co&mments")
                 {
-                    CaptionML = ENU='Co&mments',
-                                ENN='Co&mments';
+                    CaptionML = ENU = 'Co&mments',
+                                ENN = 'Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Prod. Order Comp. Cmt. Sheet";
-                    RunPageLink = Status=FIELD(Status),Prod. Order No.=FIELD(Prod. Order No.),Prod. Order Line No.=FIELD(Prod. Order Line No.),Prod. Order BOM Line No.=FIELD(Line No.);
+                    RunPageLink = Status = FIELD(Status), Prod. Order No.=FIELD(Prod. Order No.),Prod. Order Line No.=FIELD(Prod. Order Line No.),Prod. Order BOM Line No.=FIELD(Line No.);
                 }
                 action(Dimensions)
                 {
@@ -450,7 +450,7 @@ page 99000818 "Prod. Order Components"
                                 ENN='Bin Contents';
                     Image = BinContent;
                     RunObject = Page "Bin Contents List";
-                    RunPageLink = Location Code=FIELD(Location Code),Item No.=FIELD(Item No.),Variant Code=FIELD(Variant Code);
+                                    RunPageLink = Location Code=FIELD(Location Code),Item No.=FIELD(Item No.),Variant Code=FIELD(Variant Code);
                     RunPageView = SORTING(Location Code,Bin Code,Item No.,Variant Code);
                 }
                 action("&Select Item Substitution")
@@ -477,7 +477,7 @@ page 99000818 "Prod. Order Components"
                                 ENN='Put-away/Pick Lines/Movement Lines';
                     Image = PutawayLines;
                     RunObject = Page "Warehouse Activity Lines";
-                    RunPageLink = Source Type=CONST(5407),Source Subtype=CONST(3),Source No.=FIELD(Prod. Order No.),Source Line No.=FIELD(Prod. Order Line No.),Source Subline No.=FIELD(Line No.);
+                                    RunPageLink = Source Type=CONST(5407),Source Subtype=CONST(3),Source No.=FIELD(Prod. Order No.),Source Line No.=FIELD(Prod. Order Line No.),Source Subline No.=FIELD(Line No.);
                     RunPageView = SORTING(Source Type,Source Subtype,Source No.,Source Line No.,Source Subline No.,Unit of Measure Code,Action Type,Breakbulk No.,Original Breakbulk);
                 }
             }

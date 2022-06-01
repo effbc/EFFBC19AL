@@ -5,7 +5,7 @@ report 80000 "update Sales Head"
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
 
             trigger OnAfterGetRecord();
@@ -21,7 +21,7 @@ report 80000 "update Sales Head"
                 "Revised Target Date" := 0D;
                 "Sales Date" := 0D;
                 Remarks := '';
-                "Revised Comp.Date"  := 0D;
+                "Revised Comp.Date" := 0D;
                 "Deviated Days" := '';
                 "SD Running Bill Percent" := 0;
                 "Product 1" := '';

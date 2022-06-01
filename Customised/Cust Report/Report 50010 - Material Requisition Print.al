@@ -7,153 +7,153 @@ report 50010 "Material Requisition Print"
 
     dataset
     {
-        dataitem("Material Issues Header";"Material Issues Header")
+        dataitem("Material Issues Header"; "Material Issues Header")
         {
             DataItemTableView = SORTING(No.);
-            RequestFilterFields = "No.","Transfer-from Code","Transfer-to Code","Prod. Order No.","Prod. Order Line No.","Prod. BOM No.","Posting Date";
+            RequestFilterFields = "No.", "Transfer-from Code", "Transfer-to Code", "Prod. Order No.", "Prod. Order Line No.", "Prod. BOM No.", "Posting Date";
             ReqFilterHeading = 'Material Issue';
-            column(CURRENTDATETIME_Control1000000106;CURRENTDATETIME)
+            column(CURRENTDATETIME_Control1000000106; CURRENTDATETIME)
             {
             }
-            column(ISSUE_DATE___TIMECaption;ISSUE_DATE___TIMECaptionLbl)
+            column(ISSUE_DATE___TIMECaption; ISSUE_DATE___TIMECaptionLbl)
             {
             }
-            column(Codes;Codes)
+            column(Codes; Codes)
             {
             }
-            column(PROJECT_CODESCaption;PROJECT_CODESCaptionLbl)
+            column(PROJECT_CODESCaption; PROJECT_CODESCaptionLbl)
             {
             }
-            column(DESCRIPTION_2Caption;DESCRIPTION_2CaptionLbl)
+            column(DESCRIPTION_2Caption; DESCRIPTION_2CaptionLbl)
             {
             }
-            column(TOCaption;TOCaptionLbl)
+            column(TOCaption; TOCaptionLbl)
             {
             }
-            column(PRODUCTION_ORDERSCaption;PRODUCTION_ORDERSCaptionLbl)
+            column(PRODUCTION_ORDERSCaption; PRODUCTION_ORDERSCaptionLbl)
             {
             }
-            column(SER_NO_Caption_Control1000000079;SER_NO_Caption_Control1000000079Lbl)
+            column(SER_NO_Caption_Control1000000079; SER_NO_Caption_Control1000000079Lbl)
             {
             }
-            column(LOT_NOCaption;LOT_NOCaptionLbl)
+            column(LOT_NOCaption; LOT_NOCaptionLbl)
             {
             }
-            column(ITEMCaption_Control1000000082;ITEMCaption_Control1000000082Lbl)
+            column(ITEMCaption_Control1000000082; ITEMCaption_Control1000000082Lbl)
             {
             }
-            column(QTY_SET_Caption;QTY_SET_CaptionLbl)
+            column(QTY_SET_Caption; QTY_SET_CaptionLbl)
             {
             }
-            column(UOMCaption_Control1000000127;UOMCaption_Control1000000127Lbl)
+            column(UOMCaption_Control1000000127; UOMCaption_Control1000000127Lbl)
             {
             }
-            column(QTYCaption;QTYCaptionLbl)
+            column(QTYCaption; QTYCaptionLbl)
             {
             }
-            column(REQUEST_BYCaption;REQUEST_BYCaptionLbl)
+            column(REQUEST_BYCaption; REQUEST_BYCaptionLbl)
             {
             }
-            column(REQUEST_DATE___TIMECaption;REQUEST_DATE___TIMECaptionLbl)
+            column(REQUEST_DATE___TIMECaption; REQUEST_DATE___TIMECaptionLbl)
             {
             }
-            column(DEPT_Caption;DEPT_CaptionLbl)
+            column(DEPT_Caption; DEPT_CaptionLbl)
             {
             }
-            column(REQUISATION_SCaption;REQUISATION_SCaptionLbl)
+            column(REQUISATION_SCaption; REQUISATION_SCaptionLbl)
             {
             }
-            column(Material_Issues_Head_Choice;Choice)
+            column(Material_Issues_Head_Choice; Choice)
             {
             }
-            column(COMPANYNAME;COMPANYNAME)
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(CURRENTDATETIME;CURRENTDATETIME)
+            column(CURRENTDATETIME; CURRENTDATETIME)
             {
             }
-            column(Material_Issues_Header__Material_Issues_Header___Released_Date_;"Material Issues Header"."Released Date")
+            column(Material_Issues_Header__Material_Issues_Header___Released_Date_; "Material Issues Header"."Released Date")
             {
             }
-            column(Material_Issues_Header__Material_Issues_Header___Released_Time_;"Material Issues Header"."Released Time")
+            column(Material_Issues_Header__Material_Issues_Header___Released_Time_; "Material Issues Header"."Released Time")
             {
             }
-            column(Material_Issues_Header__Material_Issues_Header___Posting_Date_;"Material Issues Header"."Posting Date")
+            column(Material_Issues_Header__Material_Issues_Header___Posting_Date_; "Material Issues Header"."Posting Date")
             {
             }
-            column(LocationsCode;LocationsCode)
+            column(LocationsCode; LocationsCode)
             {
             }
-            column(COMPANYNAME_Control1102154043;COMPANYNAME)
+            column(COMPANYNAME_Control1102154043; COMPANYNAME)
             {
             }
-            column(CURRENTDATETIME_Control1102154053;CURRENTDATETIME)
+            column(CURRENTDATETIME_Control1102154053; CURRENTDATETIME)
             {
             }
-            column(Sets_Heading_;"Sets Heading")
+            column(Sets_Heading_; "Sets Heading")
             {
             }
-            column(Material_Issues_Header__No__;"No.")
+            column(Material_Issues_Header__No__; "No.")
             {
             }
-            column(Material_Issues_Header__Transfer_from_Code_;"Transfer-from Code")
+            column(Material_Issues_Header__Transfer_from_Code_; "Transfer-from Code")
             {
             }
-            column(Material_Issues_Header__Prod__Order_No__;"Prod. Order No.")
+            column(Material_Issues_Header__Prod__Order_No__; "Prod. Order No.")
             {
             }
-            column(Material_Issues_Header__Transfer_to_Code_;"Transfer-to Code")
+            column(Material_Issues_Header__Transfer_to_Code_; "Transfer-to Code")
             {
             }
-            column(Material_Issues_Header__Material_Issues_Header___Resource_Name_;"Material Issues Header"."Resource Name")
+            column(Material_Issues_Header__Material_Issues_Header___Resource_Name_; "Material Issues Header"."Resource Name")
             {
             }
-            column(PCB_description_;"PCB description")
+            column(PCB_description_; "PCB description")
             {
             }
-            column(Material_Issues_Header__Material_Issues_Header___User_ID_;"Material Issues Header"."User ID")
+            column(Material_Issues_Header__Material_Issues_Header___User_ID_; "Material Issues Header"."User ID")
             {
             }
-            column(Material_RequestCaption;Material_RequestCaptionLbl)
+            column(Material_RequestCaption; Material_RequestCaptionLbl)
             {
             }
-            column(To_Provide_Insight_For_Enhancing_WealthCaption;To_Provide_Insight_For_Enhancing_WealthCaptionLbl)
+            column(To_Provide_Insight_For_Enhancing_WealthCaption; To_Provide_Insight_For_Enhancing_WealthCaptionLbl)
             {
             }
-            column(Released_Date___TimeCaption;Released_Date___TimeCaptionLbl)
+            column(Released_Date___TimeCaption; Released_Date___TimeCaptionLbl)
             {
             }
-            column(To_Provide_Insight_For_Enhancing_WealthCaption_Control1102154046;To_Provide_Insight_For_Enhancing_WealthCaption_Control1102154046Lbl)
+            column(To_Provide_Insight_For_Enhancing_WealthCaption_Control1102154046; To_Provide_Insight_For_Enhancing_WealthCaption_Control1102154046Lbl)
             {
             }
-            column(Requested__By_Caption;Requested__By_CaptionLbl)
+            column(Requested__By_Caption; Requested__By_CaptionLbl)
             {
             }
-            column(Requisition_NoCaption;Requisition_NoCaptionLbl)
+            column(Requisition_NoCaption; Requisition_NoCaptionLbl)
             {
             }
-            column(Material_Issues_Header__Transfer_from_Code_Caption;FIELDCAPTION("Transfer-from Code"))
+            column(Material_Issues_Header__Transfer_from_Code_Caption; FIELDCAPTION("Transfer-from Code"))
             {
             }
-            column(Material_Issues_Header__Prod__Order_No__Caption;FIELDCAPTION("Prod. Order No."))
+            column(Material_Issues_Header__Prod__Order_No__Caption; FIELDCAPTION("Prod. Order No."))
             {
             }
-            column(Material_Issues_Header__Transfer_to_Code_Caption;FIELDCAPTION("Transfer-to Code"))
+            column(Material_Issues_Header__Transfer_to_Code_Caption; FIELDCAPTION("Transfer-to Code"))
             {
             }
-            column(PCB_DescriptionCaption;PCB_DescriptionCaptionLbl)
+            column(PCB_DescriptionCaption; PCB_DescriptionCaptionLbl)
             {
             }
-            column(EmptyStringCaption;EmptyStringCaptionLbl)
+            column(EmptyStringCaption; EmptyStringCaptionLbl)
             {
             }
-            column(EmptyStringCaption_Control1102154021;EmptyStringCaption_Control1102154021Lbl)
+            column(EmptyStringCaption_Control1102154021; EmptyStringCaption_Control1102154021Lbl)
             {
             }
-            dataitem("Material Issues Line";"Material Issues Line")
+            dataitem("Material Issues Line"; "Material Issues Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Document No.,Line No.) ORDER(Ascending) WHERE(Item No.=FILTER(<>''));
+                DataItemTableView = SORTING(Document No., Line No.) ORDER(Ascending) WHERE(Item No.=FILTER(<>''));
                 RequestFilterFields = "Item No.";
                 column(MatIssueLineBody4;MatIssueLineBody4)
                 {

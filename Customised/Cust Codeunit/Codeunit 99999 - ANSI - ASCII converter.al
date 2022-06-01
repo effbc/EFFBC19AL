@@ -5,35 +5,35 @@ codeunit 99999 "ANSI <-> ASCII converter"
 
     trigger OnRun();
     var
-        Slimslam : Text[30];
-        Slimslam2 : Text[54];
+        Slimslam: Text[30];
+        Slimslam2: Text[54];
     begin
     end;
 
     var
-        AsciiStr : Text[250];
-        AnsiStr : Text[250];
-        CharVar : array [32] of Char;
+        AsciiStr: Text[250];
+        AnsiStr: Text[250];
+        CharVar: array[32] of Char;
 
     [LineStart(43057)]
-    procedure Ansi2Ascii(_Text : Text[250]) : Text[250];
+    procedure Ansi2Ascii(_Text: Text[250]): Text[250];
     begin
         MakeVars;
-        EXIT(CONVERTSTR(_Text,AnsiStr,AsciiStr));
+        EXIT(CONVERTSTR(_Text, AnsiStr, AsciiStr));
     end;
 
     [LineStart(43061)]
-    procedure Ascii2Ansi(_Text : Text[250]) : Text[250];
+    procedure Ascii2Ansi(_Text: Text[250]): Text[250];
     begin
         MakeVars;
-        EXIT(CONVERTSTR(_Text,AsciiStr,AnsiStr));
+        EXIT(CONVERTSTR(_Text, AsciiStr, AnsiStr));
     end;
 
     [LineStart(43065)]
     procedure MakeVars();
     begin
         AsciiStr := 'ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜ¢£¥ƒáíóúñÑªº¿¬½¼¡«»¦¦¦¦¦…†‡ˆ¦¦++Ž++--+-+–—++--¦-+';
-        AsciiStr := AsciiStr +'Ÿ¨©­®¯i´¸¹++¦_¦ÃØÊßËÌÍÎµÏÐÒÓÔÕ×ØÙÚ±=ÝÞã÷ð°õ·øý²¦ ';
+        AsciiStr := AsciiStr + 'Ÿ¨©­®¯i´¸¹++¦_¦ÃØÊßËÌÍÎµÏÐÒÓÔÕ×ØÙÚ±=ÝÞã÷ð°õ·øý²¦ ';
         CharVar[1] := 196;
         CharVar[2] := 197;
         CharVar[3] := 201;
@@ -66,15 +66,15 @@ codeunit 99999 "ANSI <-> ASCII converter"
         CharVar[30] := 185;
         CharVar[31] := 179;
         CharVar[32] := 178;
-        AnsiStr  := '—ýÒËÍÊÎÏÓÔÐÙØÕ'+FORMAT(CharVar[1])+FORMAT(CharVar[2])+FORMAT(CharVar[3])+ 'µ–Þ÷'+FORMAT(CharVar[4]);
-        AnsiStr := AnsiStr + 'øõ ´'+FORMAT(CharVar[5])+'°ú¹¸âß×Ý·±©¬'+FORMAT(CharVar[6])+FORMAT(CharVar[7]);
-        AnsiStr := AnsiStr + '«¼'+FORMAT(CharVar[8])+'í½'+FORMAT(CharVar[9])+'___ªª' + FORMAT(CharVar[10])+FORMAT(CharVar[11]);
+        AnsiStr := '—ýÒËÍÊÎÏÓÔÐÙØÕ' + FORMAT(CharVar[1]) + FORMAT(CharVar[2]) + FORMAT(CharVar[3]) + 'µ–Þ÷' + FORMAT(CharVar[4]);
+        AnsiStr := AnsiStr + 'øõ ´' + FORMAT(CharVar[5]) + '°ú¹¸âß×Ý·±©¬' + FORMAT(CharVar[6]) + FORMAT(CharVar[7]);
+        AnsiStr := AnsiStr + '«¼' + FORMAT(CharVar[8]) + 'í½' + FORMAT(CharVar[9]) + '___ªª' + FORMAT(CharVar[10]) + FORMAT(CharVar[11]);
         AnsiStr := AnsiStr + FORMAT(CharVar[12]) + 'ªª++óÑ++--+-+Ì' + FORMAT(CharVar[13]) + '++--ª-+ñÚ¨';
-        AnsiStr  :=  AnsiStr +FORMAT(CharVar[14])+FORMAT(CharVar[15])+FORMAT(CharVar[16])+'i'+FORMAT(CharVar[17])+FORMAT(CharVar[18]);
-        AnsiStr  :=  AnsiStr + 'Ÿ++__ª' + FORMAT(CharVar[19])+FORMAT(CharVar[20])+'®'+FORMAT(CharVar[21])+'¯­ã';
-        AnsiStr  :=  AnsiStr + FORMAT(CharVar[22]) + '…' + FORMAT(CharVar[23]) + 'Ã' + FORMAT(CharVar[24])+ FORMAT(CharVar[25]);
-        AnsiStr  :=  AnsiStr + FORMAT(CharVar[26]) + '²¦»' + FORMAT(CharVar[27]) + '¡' + FORMAT(CharVar[28]) +'=Ž†ºðˆ'+ FORMAT(CharVar[29]);
-        AnsiStr  :=  AnsiStr + '¿‡' + FORMAT(CharVar[30]) +FORMAT(CharVar[31]) +FORMAT(CharVar[32]) +'_ ';
+        AnsiStr := AnsiStr + FORMAT(CharVar[14]) + FORMAT(CharVar[15]) + FORMAT(CharVar[16]) + 'i' + FORMAT(CharVar[17]) + FORMAT(CharVar[18]);
+        AnsiStr := AnsiStr + 'Ÿ++__ª' + FORMAT(CharVar[19]) + FORMAT(CharVar[20]) + '®' + FORMAT(CharVar[21]) + '¯­ã';
+        AnsiStr := AnsiStr + FORMAT(CharVar[22]) + '…' + FORMAT(CharVar[23]) + 'Ã' + FORMAT(CharVar[24]) + FORMAT(CharVar[25]);
+        AnsiStr := AnsiStr + FORMAT(CharVar[26]) + '²¦»' + FORMAT(CharVar[27]) + '¡' + FORMAT(CharVar[28]) + '=Ž†ºðˆ' + FORMAT(CharVar[29]);
+        AnsiStr := AnsiStr + '¿‡' + FORMAT(CharVar[30]) + FORMAT(CharVar[31]) + FORMAT(CharVar[32]) + '_ ';
     end;
 }
 

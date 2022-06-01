@@ -6,22 +6,22 @@ xmlport 80804 "PrchInvLine Vat"
     {
         textelement(PurchInvLineVats)
         {
-            tableelement("<purchinvlinevat>";"PurchInvLine Vat")
+            tableelement("<purchinvlinevat>"; "PurchInvLine Vat")
             {
                 XmlName = 'PurchInvLineVat';
-                fieldelement(DocumentNo;"<PurchInvLineVat>"."Document No.")
+                fieldelement(DocumentNo; "<PurchInvLineVat>"."Document No.")
                 {
                 }
-                fieldelement(LineNo;"<PurchInvLineVat>"."Line No.")
+                fieldelement(LineNo; "<PurchInvLineVat>"."Line No.")
                 {
                 }
-                fieldelement(VatPertage;"<PurchInvLineVat>"."Vat %age")
+                fieldelement(VatPertage; "<PurchInvLineVat>"."Vat %age")
                 {
                 }
-                fieldelement(VatBase;"<PurchInvLineVat>"."Vat Base")
+                fieldelement(VatBase; "<PurchInvLineVat>"."Vat Base")
                 {
                 }
-                fieldelement(VatAmount;"<PurchInvLineVat>"."Vat Amount")
+                fieldelement(VatAmount; "<PurchInvLineVat>"."Vat Amount")
                 {
                 }
             }

@@ -5,11 +5,12 @@ report 80899 "update Mig"
 
     dataset
     {
-        dataitem("Config. Package Record";"Config. Package Record")
+        dataitem("Config. Package Record"; "Config. Package Record")
         {
-            dataitem("Config. Package Data";"Config. Package Data")
+            dataitem("Config. Package Data"; "Config. Package Data")
             {
-                DataItemLink = Package Code=FIELD(Package Code),Table ID=FIELD(Table ID);
+                DataItemLink = Package Code=FIELD(Package Code),Table ID=FIELD(Table ID    DataClassification = CustomerContent;
+);
 
                 trigger OnAfterGetRecord();
                 begin

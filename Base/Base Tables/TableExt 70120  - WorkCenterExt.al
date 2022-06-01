@@ -5,6 +5,7 @@ tableextension 70120 WorkCenterExt extends "Work Center"
         field(90080; "User Id"; Code[20])
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
     }
 

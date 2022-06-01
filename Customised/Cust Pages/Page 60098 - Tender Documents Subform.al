@@ -14,25 +14,25 @@ page 60098 "Tender Documents Subform"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field(Type;Type)
+                field(Type; Type)
                 {
                 }
-                field(Purpose;Purpose)
+                field(Purpose; Purpose)
                 {
                 }
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("Transaction Type";"Transaction Type")
+                field("Transaction Type"; "Transaction Type")
                 {
                 }
-                field("Payment/Receipt/Adjusted Date";"Payment/Receipt/Adjusted Date")
+                field("Payment/Receipt/Adjusted Date"; "Payment/Receipt/Adjusted Date")
                 {
                 }
-                field(Amount;Amount)
+                field(Amount; Amount)
                 {
                 }
-                field("Received / Adjusted";"Received / Adjusted")
+                field("Received / Adjusted"; "Received / Adjusted")
                 {
                 }
             }

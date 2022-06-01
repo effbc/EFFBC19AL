@@ -5,19 +5,19 @@ report 60003 "Vendor Day wise Balance"
 
     dataset
     {
-        dataitem(Vendor;Vendor)
+        dataitem(Vendor; Vendor)
         {
-            DataItemTableView = SORTING(Search Name) ORDER(Ascending) WHERE(Blocked=CONST(" "));
+            DataItemTableView = SORTING(Search Name) ORDER(Ascending) WHERE(Blocked = CONST(" "));
             PrintOnlyIfDetail = true;
             RequestFilterFields = "No.";
-            column(Vendor_No_;"No.")
+            column(Vendor_No_; "No.")
             {
             }
-            dataitem("Vendor Ledger Entry";"Vendor Ledger Entry")
+            dataitem("Vendor Ledger Entry"; "Vendor Ledger Entry")
             {
                 CalcFields = Amount (LCY);
                 DataItemLink = Vendor No.=FIELD(No.);
-                DataItemTableView = SORTING(Vendor No.,Posting Date,Currency Code) ORDER(Ascending) WHERE(Posting Date=FILTER(04/01/09..03/31/2035));
+                DataItemTableView = SORTING(Vendor No., Posting Date, Currency Code) ORDER(Ascending) WHERE(Posting Date=FILTER(04/01/09..03/31/2035));
                 column(TODAY;TODAY)
                 {
                 }

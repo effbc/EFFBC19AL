@@ -6,13 +6,13 @@ xmlport 80219 "post codes"
     {
         textelement(PostCodes)
         {
-            tableelement("<postcode>";"Post Code")
+            tableelement("<postcode>"; "Post Code")
             {
                 XmlName = 'PostCode';
-                fieldelement(Code;"<PostCode>".Code)
+                fieldelement(Code; "<PostCode>".Code)
                 {
                 }
-                fieldelement(City;"<PostCode>".City)
+                fieldelement(City; "<PostCode>".City)
                 {
                 }
             }

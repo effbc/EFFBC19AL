@@ -21,82 +21,82 @@ page 60194 "Posted Material Issue Subform"
     {
         area(content)
         {
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
             }
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                 }
-                field("Material Issue No.";"Material Issue No.")
+                field("Material Issue No."; "Material Issue No.")
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Receipt Date";"Receipt Date")
+                field("Receipt Date"; "Receipt Date")
                 {
                 }
-                field("Issued DateTime";"Issued DateTime")
+                field("Issued DateTime"; "Issued DateTime")
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
-                field("Shortcut Dimension 2 Code";"Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
                 {
                     Editable = Visibility;
                 }
-                field("Station Name";"Station Name")
+                field("Station Name"; "Station Name")
                 {
                 }
-                field("Avg. unit cost";"Avg. unit cost")
+                field("Avg. unit cost"; "Avg. unit cost")
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field("Unit of Measure Code";"Unit of Measure Code")
+                field("Unit of Measure Code"; "Unit of Measure Code")
                 {
                 }
-                field("Transfer-from Code";"Transfer-from Code")
+                field("Transfer-from Code"; "Transfer-from Code")
                 {
                     Editable = false;
                 }
-                field("Transfer-to Code";"Transfer-to Code")
+                field("Transfer-to Code"; "Transfer-to Code")
                 {
                     Editable = Visibility;
                 }
-                field("Prod. Order No.";"Prod. Order No.")
+                field("Prod. Order No."; "Prod. Order No.")
                 {
                 }
-                field("Prod. Order Line No.";"Prod. Order Line No.")
+                field("Prod. Order Line No."; "Prod. Order Line No.")
                 {
                 }
-                field("Prod. Order Comp. Line No.";"Prod. Order Comp. Line No.")
+                field("Prod. Order Comp. Line No."; "Prod. Order Comp. Line No.")
                 {
                 }
-                field("Operation No.";"Operation No.")
+                field("Operation No."; "Operation No.")
                 {
                 }
-                field(Dept;Dept)
+                field(Dept; Dept)
                 {
                 }
-                field("Material Requisition Date";"Material Requisition Date")
+                field("Material Requisition Date"; "Material Requisition Date")
                 {
                 }
-                field("Material Picked";"Material Picked")
+                field("Material Picked"; "Material Picked")
                 {
                 }
-                field("Non-Returnable";"Non-Returnable")
+                field("Non-Returnable"; "Non-Returnable")
                 {
                 }
-                field("Material Picked Date";"Material Picked Date")
+                field("Material Picked Date"; "Material Picked Date")
                 {
                 }
             }
@@ -144,23 +144,23 @@ page 60194 "Posted Material Issue Subform"
     trigger OnOpenPage();
     begin
 
-        IF USERID IN ['EFFTRONICS\VISHNUPRIYA','EFFTRONICS\ANILKUMAR'] THEN
-          Visibility := TRUE
+        IF USERID IN ['EFFTRONICS\VISHNUPRIYA', 'EFFTRONICS\ANILKUMAR'] THEN
+            Visibility := TRUE
         ELSE
-          Visibility:= FALSE;
+            Visibility := FALSE;
     end;
 
     var
-        "-DIM1.0" : Integer;
-        DimMgt : Codeunit DimensionManagement;
-        Visibility : Boolean;
+        "-DIM1.0": Integer;
+        DimMgt: Codeunit DimensionManagement;
+        Visibility: Boolean;
 
     [LineStart(15639)]
     procedure ShowItemTrackingLines();
     var
-        ItemTrackingDocMgt : Codeunit "Item Tracking Doc. Management";
+        ItemTrackingDocMgt: Codeunit "Item Tracking Doc. Management";
     begin
-        ItemTrackingDocMgt.ShowItemTrackingForShptRcptLine(DATABASE::"Posted Material Issues Line",0,"Document No.",'',0,"Line No.");
+        ItemTrackingDocMgt.ShowItemTrackingForShptRcptLine(DATABASE::"Posted Material Issues Line", 0, "Document No.", '', 0, "Line No.");
     end;
 
     [LineStart(15642)]
@@ -177,8 +177,8 @@ page 60194 "Posted Material Issue Subform"
         PostedDocDimensions.SETTABLEVIEW(PostedDocDim);
         PostedDocDimensions.RUNMODAL;
         */
-        
-        DimMgt.ShowDimensionSet("Dimension Set ID",STRSUBSTNO('%1 %2',"Document No.","Line No."));
+
+        DimMgt.ShowDimensionSet("Dimension Set ID", STRSUBSTNO('%1 %2', "Document No.", "Line No."));
         //DIM1.0 End
 
     end;

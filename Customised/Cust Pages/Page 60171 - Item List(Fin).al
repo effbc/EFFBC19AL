@@ -6,8 +6,8 @@ page 60171 "Item List(Fin)"
     //     <change releaseversion="IN6.00"/>
     // </changelog>
 
-    CaptionML = ENU='Item List',
-                ENN='Item List';
+    CaptionML = ENU = 'Item List',
+                ENN = 'Item List';
     CardPageID = "Item Card (fin)";
     Editable = true;
     PageType = List;
@@ -20,398 +20,398 @@ page 60171 "Item List(Fin)"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Editable = false;
                     Style = Favorable;
                     StyleExpr = "No.Emphasize";
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Editable = false;
                     Style = Favorable;
                     StyleExpr = DescriptionEmphasize;
                 }
-                field("Description 2";"Description 2")
+                field("Description 2"; "Description 2")
                 {
                 }
-                field("Stock at Stores";"Stock at Stores")
-                {
-                    Editable = false;
-                    Visible = false;
-                }
-                field(Package;Package)
-                {
-                }
-                field(EFF_MOQ;EFF_MOQ)
-                {
-                }
-                field("Stock at RD Stores";"Stock at RD Stores")
+                field("Stock at Stores"; "Stock at Stores")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Qty. on Purch. Order";"Qty. on Purch. Order")
+                field(Package; Package)
                 {
                 }
-                field("Stock at CS Stores";"Stock at CS Stores")
+                field(EFF_MOQ; EFF_MOQ)
+                {
+                }
+                field("Stock at RD Stores"; "Stock at RD Stores")
+                {
+                    Editable = false;
+                    Visible = false;
+                }
+                field("Qty. on Purch. Order"; "Qty. on Purch. Order")
+                {
+                }
+                field("Stock at CS Stores"; "Stock at CS Stores")
                 {
                     Editable = false;
                 }
-                field("Stock at PROD Stores";"Stock at PROD Stores")
+                field("Stock at PROD Stores"; "Stock at PROD Stores")
                 {
                     Editable = false;
                 }
-                field("Item Final Cost";"Item Final Cost")
+                field("Item Final Cost"; "Item Final Cost")
                 {
                     Editable = false;
                 }
-                field("Item Location";"Item Location")
+                field("Item Location"; "Item Location")
                 {
                     Editable = false;
                 }
-                field(Make;Make)
+                field(Make; Make)
                 {
                     Editable = false;
                 }
-                field("Part Number";"Part Number")
+                field("Part Number"; "Part Number")
                 {
                     Editable = false;
                 }
-                field("Quantity Rejected";"Quantity Rejected")
+                field("Quantity Rejected"; "Quantity Rejected")
                 {
                     Editable = false;
                 }
-                field("Operating Temperature";"Operating Temperature")
+                field("Operating Temperature"; "Operating Temperature")
                 {
                     Editable = false;
                 }
-                field("Storage Temperature";"Storage Temperature")
+                field("Storage Temperature"; "Storage Temperature")
                 {
                     Editable = false;
                 }
-                field(Humidity;Humidity)
+                field(Humidity; Humidity)
                 {
                     Editable = false;
                 }
-                field("ESD Sensitive";"ESD Sensitive")
+                field("ESD Sensitive"; "ESD Sensitive")
                 {
                     Editable = false;
                 }
-                field("Standard Packing Quantity";"Standard Packing Quantity")
+                field("Standard Packing Quantity"; "Standard Packing Quantity")
                 {
                     Editable = false;
                 }
-                field("Minimum Order Quantity";"Minimum Order Quantity")
+                field("Minimum Order Quantity"; "Minimum Order Quantity")
                 {
                     Editable = true;
                 }
-                field("Item Status";"Item Status")
+                field("Item Status"; "Item Status")
                 {
                     Editable = false;
                 }
-                field("Order Multiple";"Order Multiple")
+                field("Order Multiple"; "Order Multiple")
                 {
                 }
-                field("Safety Stock Quantity";"Safety Stock Quantity")
+                field("Safety Stock Quantity"; "Safety Stock Quantity")
                 {
                     Editable = false;
                 }
-                field("Safety Lead Time";"Safety Lead Time")
+                field("Safety Lead Time"; "Safety Lead Time")
                 {
                     Editable = true;
                 }
-                field(ESD;ESD)
+                field(ESD; ESD)
                 {
                     Editable = false;
                 }
-                field("Soldering Time (Sec)";"Soldering Time (Sec)")
+                field("Soldering Time (Sec)"; "Soldering Time (Sec)")
                 {
                     Editable = false;
                 }
-                field("Work area Temp &  Humadity";"Work area Temp &  Humadity")
+                field("Work area Temp &  Humadity"; "Work area Temp &  Humadity")
                 {
                     Editable = false;
                 }
-                field("Soldering Temp.";"Soldering Temp.")
+                field("Soldering Temp."; "Soldering Temp.")
                 {
                     Editable = false;
                 }
-                field("Stockkeeping Unit Exists";"Stockkeeping Unit Exists")
-                {
-                    Editable = false;
-                    Visible = false;
-                }
-                field("Assembly BOM";"Assembly BOM")
+                field("Stockkeeping Unit Exists"; "Stockkeeping Unit Exists")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Production BOM No.";"Production BOM No.")
-                {
-                    Editable = false;
-                }
-                field("Routing No.";"Routing No.")
-                {
-                    Editable = false;
-                }
-                field("Base Unit of Measure";"Base Unit of Measure")
-                {
-                    Editable = false;
-                }
-                field("Substitutes Exist";"Substitutes Exist")
-                {
-                    Editable = false;
-                }
-                field("Shelf No.";"Shelf No.")
-                {
-                    Visible = false;
-                }
-                field("Costing Method";"Costing Method")
-                {
-                    Visible = false;
-                }
-                field("Cost is Adjusted";"Cost is Adjusted")
-                {
-                }
-                field("Standard Cost";"Standard Cost")
-                {
-                    Visible = false;
-                }
-                field("Unit Cost";"Unit Cost")
-                {
-                    Editable = false;
-                }
-                field("Last Direct Cost";"Last Direct Cost")
+                field("Assembly BOM"; "Assembly BOM")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Price/Profit Calculation";"Price/Profit Calculation")
-                {
-                    Visible = false;
-                }
-                field("Profit %";"Profit %")
-                {
-                    Visible = false;
-                }
-                field("Unit Price";"Unit Price")
+                field("Production BOM No."; "Production BOM No.")
                 {
                     Editable = false;
                 }
-                field("Inventory Posting Group";"Inventory Posting Group")
+                field("Routing No."; "Routing No.")
                 {
                     Editable = false;
+                }
+                field("Base Unit of Measure"; "Base Unit of Measure")
+                {
+                    Editable = false;
+                }
+                field("Substitutes Exist"; "Substitutes Exist")
+                {
+                    Editable = false;
+                }
+                field("Shelf No."; "Shelf No.")
+                {
                     Visible = false;
                 }
-                field("Gen. Prod. Posting Group";"Gen. Prod. Posting Group")
+                field("Costing Method"; "Costing Method")
                 {
-                    Editable = false;
                     Visible = false;
                 }
-                field("VAT Prod. Posting Group";"VAT Prod. Posting Group")
+                field("Cost is Adjusted"; "Cost is Adjusted")
                 {
-                    Editable = false;
+                }
+                field("Standard Cost"; "Standard Cost")
+                {
                     Visible = false;
                 }
-                field("Item Disc. Group";"Item Disc. Group")
-                {
-                    Editable = false;
-                    Visible = false;
-                }
-                field("Vendor No.";"Vendor No.")
+                field("Unit Cost"; "Unit Cost")
                 {
                     Editable = false;
                 }
-                field("Vendor Item No.";"Vendor Item No.")
-                {
-                    Editable = false;
-                    Visible = false;
-                }
-                field("Tariff No.";"Tariff No.")
+                field("Last Direct Cost"; "Last Direct Cost")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Search Description";"Search Description")
-                {
-                    Editable = false;
-                }
-                field("Overhead Rate";"Overhead Rate")
-                {
-                    Editable = false;
-                    Visible = false;
-                }
-                field("Indirect Cost %";"Indirect Cost %")
+                field("Price/Profit Calculation"; "Price/Profit Calculation")
                 {
                     Visible = false;
                 }
-                field("Item Category Code";"Item Category Code")
+                field("Profit %"; "Profit %")
                 {
-                    Editable = false;
                     Visible = false;
                 }
-                field("Product Group Code";"Product Group Code")
+                field("Unit Price"; "Unit Price")
+                {
+                    Editable = false;
+                }
+                field("Inventory Posting Group"; "Inventory Posting Group")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field(Blocked;Blocked)
+                field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("VAT Prod. Posting Group"; "VAT Prod. Posting Group")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Sales Unit of Measure";"Sales Unit of Measure")
+                field("Item Disc. Group"; "Item Disc. Group")
+                {
+                    Editable = false;
+                    Visible = false;
+                }
+                field("Vendor No."; "Vendor No.")
+                {
+                    Editable = false;
+                }
+                field("Vendor Item No."; "Vendor Item No.")
+                {
+                    Editable = false;
+                    Visible = false;
+                }
+                field("Tariff No."; "Tariff No.")
+                {
+                    Editable = false;
+                    Visible = false;
+                }
+                field("Search Description"; "Search Description")
+                {
+                    Editable = false;
+                }
+                field("Overhead Rate"; "Overhead Rate")
+                {
+                    Editable = false;
+                    Visible = false;
+                }
+                field("Indirect Cost %"; "Indirect Cost %")
                 {
                     Visible = false;
                 }
-                field("Replenishment System";"Replenishment System")
+                field("Item Category Code"; "Item Category Code")
+                {
+                    Editable = false;
+                    Visible = false;
+                }
+                field("Product Group Code"; "Product Group Code")
+                {
+                    Editable = false;
+                    Visible = false;
+                }
+                field(Blocked; Blocked)
+                {
+                    Editable = false;
+                    Visible = false;
+                }
+                field("Last Date Modified"; "Last Date Modified")
+                {
+                    Editable = false;
+                    Visible = false;
+                }
+                field("Sales Unit of Measure"; "Sales Unit of Measure")
                 {
                     Visible = false;
                 }
-                field("Purch. Unit of Measure";"Purch. Unit of Measure")
+                field("Replenishment System"; "Replenishment System")
                 {
                     Visible = false;
                 }
-                field("Lead Time Calculation";"Lead Time Calculation")
+                field("Purch. Unit of Measure"; "Purch. Unit of Measure")
                 {
                     Visible = false;
                 }
-                field("Manufacturing Policy";"Manufacturing Policy")
+                field("Lead Time Calculation"; "Lead Time Calculation")
                 {
                     Visible = false;
                 }
-                field("Flushing Method";"Flushing Method")
+                field("Manufacturing Policy"; "Manufacturing Policy")
                 {
                     Visible = false;
                 }
-                field("Assembly Policy";"Assembly Policy")
+                field("Flushing Method"; "Flushing Method")
                 {
                     Visible = false;
                 }
-                field("Item Tracking Code";"Item Tracking Code")
+                field("Assembly Policy"; "Assembly Policy")
                 {
                     Visible = false;
                 }
-                field("No.of Units";"No.of Units")
-                {
-                }
-                field(PROD_USED;PROD_USED)
-                {
-                }
-                field("Quantity Under Inspection";"Quantity Under Inspection")
+                field("Item Tracking Code"; "Item Tracking Code")
                 {
                     Visible = false;
                 }
-                field("Created From Nonstock Item";"Created From Nonstock Item")
+                field("No.of Units"; "No.of Units")
+                {
+                }
+                field(PROD_USED; PROD_USED)
+                {
+                }
+                field("Quantity Under Inspection"; "Quantity Under Inspection")
                 {
                     Visible = false;
                 }
-                field("Stock At MCH Location";"Stock At MCH Location")
+                field("Created From Nonstock Item"; "Created From Nonstock Item")
                 {
                     Visible = false;
                 }
-                field(Item_verified;Item_verified)
+                field("Stock At MCH Location"; "Stock At MCH Location")
+                {
+                    Visible = false;
+                }
+                field(Item_verified; Item_verified)
                 {
                 }
-                field(PCB;PCB)
+                field(PCB; PCB)
                 {
                     Editable = true;
                 }
-                field("Avg Unit Cost";"Avg Unit Cost")
+                field("Avg Unit Cost"; "Avg Unit Cost")
                 {
                 }
-                field("No.of Fixing Holes";"No.of Fixing Holes")
+                field("No.of Fixing Holes"; "No.of Fixing Holes")
                 {
                 }
-                field(Inventory;Inventory)
-                {
-                    Visible = false;
-                }
-                field("Inventory at Stores";"Inventory at Stores")
+                field(Inventory; Inventory)
                 {
                     Visible = false;
                 }
-                field("Tax Group Code";"Tax Group Code")
+                field("Inventory at Stores"; "Inventory at Stores")
+                {
+                    Visible = false;
+                }
+                field("Tax Group Code"; "Tax Group Code")
                 {
                 }
-                field("Excise Prod. Posting Group";"Excise Prod. Posting Group")
+                field("Excise Prod. Posting Group"; "Excise Prod. Posting Group")
                 {
                 }
-                field("QC Enabled";"QC Enabled")
+                field("QC Enabled"; "QC Enabled")
                 {
                 }
-                field("Spec ID";"Spec ID")
+                field("Spec ID"; "Spec ID")
                 {
                 }
-                field("WIP QC Enabled";"WIP QC Enabled")
+                field("WIP QC Enabled"; "WIP QC Enabled")
                 {
                 }
-                field("WIP Spec ID";"WIP Spec ID")
+                field("WIP Spec ID"; "WIP Spec ID")
                 {
                 }
-                field("Item Sub Group Code";"Item Sub Group Code")
+                field("Item Sub Group Code"; "Item Sub Group Code")
                 {
                 }
-                field("Item Sub Sub Group Code";"Item Sub Sub Group Code")
+                field("Item Sub Sub Group Code"; "Item Sub Sub Group Code")
                 {
                 }
-                field("No. of Pins";"No. of Pins")
+                field("No. of Pins"; "No. of Pins")
                 {
                 }
-                field("No. of Soldering Points";"No. of Soldering Points")
+                field("No. of Soldering Points"; "No. of Soldering Points")
                 {
                 }
-                field("Type of Solder";"Type of Solder")
+                field("Type of Solder"; "Type of Solder")
                 {
                 }
-                field("PCB thickness";"PCB thickness")
+                field("PCB thickness"; "PCB thickness")
                 {
                 }
-                field("Copper Clad Thickness";"Copper Clad Thickness")
+                field("Copper Clad Thickness"; "Copper Clad Thickness")
                 {
                 }
-                field("PCB Shape";"PCB Shape")
+                field("PCB Shape"; "PCB Shape")
                 {
                 }
-                field(Length;Length)
+                field(Length; Length)
                 {
                 }
-                field(Width;Width)
+                field(Width; Width)
                 {
                 }
-                field("PCB Area";"PCB Area")
+                field("PCB Area"; "PCB Area")
                 {
                 }
-                field("Surface Finish";"Surface Finish")
+                field("Surface Finish"; "Surface Finish")
                 {
                 }
-                field("Semi Mounted";"Semi Mounted")
+                field("Semi Mounted"; "Semi Mounted")
                 {
                 }
-                field("No. of Opportunities";"No. of Opportunities")
+                field("No. of Opportunities"; "No. of Opportunities")
                 {
                 }
-                field("Capital Item";"Capital Item")
+                field("Capital Item"; "Capital Item")
                 {
                 }
             }
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
             }
         }
         area(factboxes)
         {
-            systempart(Control1900383207;Links)
+            systempart(Control1900383207; Links)
             {
                 Visible = true;
             }
-            systempart(Control1905767507;Notes)
+            systempart(Control1905767507; Notes)
             {
                 Visible = true;
             }
@@ -424,18 +424,18 @@ page 60171 "Item List(Fin)"
         {
             group(Availability)
             {
-                CaptionML = ENU='Availability',
-                            ENN='Availability';
+                CaptionML = ENU = 'Availability',
+                            ENN = 'Availability';
                 Image = Item;
                 action("Items b&y Location")
                 {
-                    CaptionML = ENU='Items b&y Location',
-                                ENN='Items b&y Location';
+                    CaptionML = ENU = 'Items b&y Location',
+                                ENN = 'Items b&y Location';
                     Image = ItemAvailbyLoc;
 
                     trigger OnAction();
                     var
-                        ItemsByLocation : Page "Items by Location";
+                        ItemsByLocation: Page "Items by Location";
                     begin
                         ItemsByLocation.SETRECORD(Rec);
                         ItemsByLocation.RUN;
@@ -443,24 +443,24 @@ page 60171 "Item List(Fin)"
                 }
                 group("&Item Availability by")
                 {
-                    CaptionML = ENU='&Item Availability by',
-                                ENN='&Item Availability by';
+                    CaptionML = ENU = '&Item Availability by',
+                                ENN = '&Item Availability by';
                     Image = ItemAvailability;
                     action("<Action5>")
                     {
-                        CaptionML = ENU='Event',
-                                    ENN='Event';
+                        CaptionML = ENU = 'Event',
+                                    ENN = 'Event';
                         Image = "Event";
 
                         trigger OnAction();
                         begin
-                            ItemAvailFormsMgt.ShowItemAvailFromItem(Rec,ItemAvailFormsMgt.ByEvent);
+                            ItemAvailFormsMgt.ShowItemAvailFromItem(Rec, ItemAvailFormsMgt.ByEvent);
                         end;
                     }
                     action(Period)
                     {
-                        CaptionML = ENU='Period',
-                                    ENN='Period';
+                        CaptionML = ENU = 'Period',
+                                    ENN = 'Period';
                         Image = Period;
                         RunObject = Page "Item Availability by Periods";
                         RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
@@ -471,7 +471,7 @@ page 60171 "Item List(Fin)"
                                     ENN='Variant';
                         Image = ItemVariant;
                         RunObject = Page "Item Availability by Variant";
-                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                     action(Location)
                     {
@@ -479,7 +479,7 @@ page 60171 "Item List(Fin)"
                                     ENN='Location';
                         Image = Warehouse;
                         RunObject = Page "Item Availability by Location";
-                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                     action("BOM Level")
                     {
@@ -516,7 +516,7 @@ page 60171 "Item List(Fin)"
                                 ENN='&Units of Measure';
                     Image = UnitOfMeasure;
                     RunObject = Page "Item Units of Measure";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 action("Va&riants")
                 {
@@ -524,7 +524,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Va&riants';
                     Image = ItemVariant;
                     RunObject = Page "Item Variants";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 group(Dimensions)
                 {
@@ -537,7 +537,7 @@ page 60171 "Item List(Fin)"
                                     ENN='Dimensions-Single';
                         Image = Dimensions;
                         RunObject = Page "Default Dimensions";
-                        RunPageLink = Table ID=CONST(27),No.=FIELD(No.);
+                                        RunPageLink = Table ID=CONST(27),No.=FIELD(No.);
                         ShortCutKey = 'Shift+Ctrl+D';
                     }
                     action("Dimensions-&Multiple")
@@ -563,7 +563,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Substituti&ons';
                     Image = ItemSubstitution;
                     RunObject = Page "Item Substitution Entry";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                 }
                 action("Cross Re&ferences")
                 {
@@ -571,7 +571,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Cross Re&ferences';
                     Image = Change;
                     RunObject = Page "Item Cross Reference Entries";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 action("E&xtended Texts")
                 {
@@ -579,8 +579,9 @@ page 60171 "Item List(Fin)"
                                 ENN='E&xtended Texts';
                     Image = Text;
                     RunObject = Page "Extended Text List";
-                    RunPageLink = Table Name=CONST(Item),No.=FIELD(No.);
-                    RunPageView = SORTING(Table Name,No.,Language Code,All Language Codes,Starting Date,Ending Date);
+                                    RunPageLink = Table Name=CONST(Item),No.=FIELD(No.);
+                    RunPageView = SORTING(Table Name    DataClassification = CustomerContent;
+,No.,Language Code,All Language Codes,Starting Date,Ending Date);
                 }
                 action(Translations)
                 {
@@ -588,7 +589,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Translations';
                     Image = Translations;
                     RunObject = Page "Item Translations";
-                    RunPageLink = Item No.=FIELD(No.),Variant Code=CONST();
+                                    RunPageLink = Item No.=FIELD(No.),Variant Code=CONST();
                 }
                 action("&Picture")
                 {
@@ -596,7 +597,7 @@ page 60171 "Item List(Fin)"
                                 ENN='&Picture';
                     Image = Picture;
                     RunObject = Page "Item Picture";
-                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                 }
                 action(Identifiers)
                 {
@@ -604,7 +605,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Identifiers';
                     Image = BarCode;
                     RunObject = Page "Item Identifiers";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.,Variant Code,Unit of Measure Code);
                 }
                 action("ECC No./Item Categories")
@@ -613,7 +614,7 @@ page 60171 "Item List(Fin)"
                                 ENN='ECC No./Item Categories';
                     Image = Category;
                     RunObject = Page "ECC No./Item Categories";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
             }
             group("Assembly/Production")
@@ -671,7 +672,7 @@ page 60171 "Item List(Fin)"
                                     ENN='Assembly BOM';
                         Image = BOM;
                         RunObject = Page "Assembly BOM";
-                        RunPageLink = Parent Item No.=FIELD(No.);
+                                        RunPageLink = Parent Item No.=FIELD(No.);
                     }
                     action("Where-Used")
                     {
@@ -679,7 +680,7 @@ page 60171 "Item List(Fin)"
                                     ENN='Where-Used';
                         Image = Track;
                         RunObject = Page "Where-Used List";
-                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                         RunPageView = SORTING(Type,No.);
                     }
                     action("Calc. Stan&dard Cost")
@@ -716,7 +717,7 @@ page 60171 "Item List(Fin)"
                                     ENN='Production BOM';
                         Image = BOM;
                         RunObject = Page "Production BOM";
-                        RunPageLink = No.=FIELD(No.);
+                                        RunPageLink = No.=FIELD(No.);
                     }
                     action(Action29)
                     {
@@ -764,7 +765,7 @@ page 60171 "Item List(Fin)"
                         //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                         //PromotedCategory = Process;
                         RunObject = Page "Item Ledger Entries";
-                        RunPageLink = Item No.=FIELD(No.);
+                                        RunPageLink = Item No.=FIELD(No.);
                         RunPageView = SORTING(Item No.);
                         ShortCutKey = 'Ctrl+F7';
                     }
@@ -774,7 +775,7 @@ page 60171 "Item List(Fin)"
                                     ENN='&Reservation Entries';
                         Image = ReservationLedger;
                         RunObject = Page "Reservation Entries";
-                        RunPageLink = Reservation Status=CONST(Reservation),Item No.=FIELD(No.);
+                                        RunPageLink = Reservation Status=CONST(Reservation),Item No.=FIELD(No.);
                         RunPageView = SORTING(Item No.,Variant Code,Location Code,Reservation Status);
                     }
                     action("&Phys. Inventory Ledger Entries")
@@ -783,7 +784,7 @@ page 60171 "Item List(Fin)"
                                     ENN='&Phys. Inventory Ledger Entries';
                         Image = PhysicalInventoryLedger;
                         RunObject = Page "Phys. Inventory Ledger Entries";
-                        RunPageLink = Item No.=FIELD(No.);
+                                        RunPageLink = Item No.=FIELD(No.);
                         RunPageView = SORTING(Item No.);
                     }
                     action("&Value Entries")
@@ -792,7 +793,7 @@ page 60171 "Item List(Fin)"
                                     ENN='&Value Entries';
                         Image = ValueLedger;
                         RunObject = Page "Value Entries";
-                        RunPageLink = Item No.=FIELD(No.);
+                                        RunPageLink = Item No.=FIELD(No.);
                         RunPageView = SORTING(Item No.);
                     }
                     action("Item &Tracking Entries")
@@ -814,7 +815,7 @@ page 60171 "Item List(Fin)"
                                     ENN='&Warehouse Entries';
                         Image = BinLedger;
                         RunObject = Page "Warehouse Entries";
-                        RunPageLink = Item No.=FIELD(No.);
+                                        RunPageLink = Item No.=FIELD(No.);
                         RunPageView = SORTING(Item No.,Bin Code,Location Code,Variant Code,Unit of Measure Code,Lot No.,Serial No.,Entry Type,Dedicated);
                     }
                 }
@@ -846,7 +847,7 @@ page 60171 "Item List(Fin)"
                                     ENN='Entry Statistics';
                         Image = EntryStatistics;
                         RunObject = Page "Item Entry Statistics";
-                        RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                     action("T&urnover")
                     {
@@ -854,7 +855,7 @@ page 60171 "Item List(Fin)"
                                     ENN='T&urnover';
                         Image = Turnover;
                         RunObject = Page "Item Turnover";
-                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                 }
                 action("Co&mments")
@@ -863,14 +864,14 @@ page 60171 "Item List(Fin)"
                                 ENN='Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Comment Sheet";
-                    RunPageLink = Table Name=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Table Name=CONST(Item),No.=FIELD(No.);
                 }
                 action("Item Specifications")
                 {
                     Caption = 'Item Specifications';
                     Image = CheckList;
                     RunObject = Page "Item Specification";
-                    RunPageLink = Item No.=FIELD(No.),Product Group Code=FIELD(Product Group Code),Item Category Code=FIELD(Item Category Code),Item Sub Group Code=FIELD(Item Sub Group Code),Item Sub Sub Group Code=FIELD(Item Sub Sub Group Code);
+                                    RunPageLink = Item No.=FIELD(No.),Product Group Code=FIELD(Product Group Code),Item Category Code=FIELD(Item Category Code),Item Sub Group Code=FIELD(Item Sub Group Code),Item Sub Sub Group Code=FIELD(Item Sub Sub Group Code);
                 }
             }
             group("S&ales")
@@ -884,7 +885,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Prices';
                     Image = Price;
                     RunObject = Page "Sales Prices";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 action("Line Discounts")
@@ -893,7 +894,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Line Discounts';
                     Image = LineDiscount;
                     RunObject = Page "Sales Line Discounts";
-                    RunPageLink = Type=CONST(Item),Code=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),Code=FIELD(No.);
                     RunPageView = SORTING(Type,Code);
                 }
                 action("Prepa&yment Percentages")
@@ -902,7 +903,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Prepa&yment Percentages';
                     Image = PrepaymentPercentages;
                     RunObject = Page "Sales Prepayment Percentages";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 action(Orders)
                 {
@@ -910,7 +911,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Orders';
                     Image = Document;
                     RunObject = Page "Sales Orders";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Type,No.);
                 }
                 action("Returns Orders")
@@ -919,7 +920,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Returns Orders';
                     Image = ReturnOrder;
                     RunObject = Page "Sales Return Orders";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Type,No.);
                 }
             }
@@ -934,7 +935,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Ven&dors';
                     Image = Vendor;
                     RunObject = Page "Item Vendor Catalog";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 action(Action39)
@@ -943,7 +944,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Prices';
                     Image = Price;
                     RunObject = Page "Purchase Prices";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 action(Action42)
@@ -952,7 +953,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Line Discounts';
                     Image = LineDiscount;
                     RunObject = Page "Purchase Line Discounts";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 action(Action125)
@@ -961,7 +962,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Prepa&yment Percentages';
                     Image = PrepaymentPercentages;
                     RunObject = Page "Purchase Prepmt. Percentages";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 action(Action40)
                 {
@@ -969,7 +970,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Orders';
                     Image = Document;
                     RunObject = Page "Purchase Orders";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Type,No.);
                 }
                 action("Return Orders")
@@ -978,7 +979,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Return Orders';
                     Image = ReturnOrder;
                     RunObject = Page "Purchase Return Orders";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Type,No.);
                 }
                 action("Nonstoc&k Items")
@@ -1000,7 +1001,7 @@ page 60171 "Item List(Fin)"
                                 ENN='&Bin Contents';
                     Image = BinContent;
                     RunObject = Page "Item Bin Contents";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 action("Stockkeepin&g Units")
@@ -1009,7 +1010,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Stockkeepin&g Units';
                     Image = SKU;
                     RunObject = Page "Stockkeeping Unit List";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
             }
@@ -1024,7 +1025,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Ser&vice Items';
                     Image = ServiceItem;
                     RunObject = Page "Service Items";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 action(Troubleshooting)
@@ -1046,7 +1047,7 @@ page 60171 "Item List(Fin)"
                                 ENN='Troubleshooting Setup';
                     Image = Troubleshoot;
                     RunObject = Page "Troubleshooting Setup";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                 }
             }
             group(Resources)
@@ -1065,7 +1066,7 @@ page 60171 "Item List(Fin)"
                                     ENN='Resource &Skills';
                         Image = ResourceSkills;
                         RunObject = Page "Resource Skills";
-                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     }
                     action("Skilled R&esources")
                     {
@@ -1146,7 +1147,7 @@ page 60171 "Item List(Fin)"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Sales Prices";
-                RunPageLink = Item No.=FIELD(No.);
+                                RunPageLink = Item No.=FIELD(No.);
                 RunPageView = SORTING(Item No.);
             }
             action("Purchase Prices")
@@ -1157,7 +1158,7 @@ page 60171 "Item List(Fin)"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Purchase Prices";
-                RunPageLink = Item No.=FIELD(No.);
+                                RunPageLink = Item No.=FIELD(No.);
                 RunPageView = SORTING(Item No.);
             }
             action("Sales Line Discounts")
@@ -1169,7 +1170,7 @@ page 60171 "Item List(Fin)"
                 //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                 //PromotedCategory = Process;
                 RunObject = Page "Sales Line Discounts";
-                RunPageLink = Type=CONST(Item),Code=FIELD(No.);
+                                RunPageLink = Type=CONST(Item),Code=FIELD(No.);
                 RunPageView = SORTING(Type,Code);
             }
             action("Requisition Worksheet")
@@ -1631,13 +1632,14 @@ page 60171 "Item List(Fin)"
 
     var
         SkilledResourceList : Page "Skilled Resource List";
-        CalculateStdCost : Codeunit "Calculate Standard Cost";
-        ItemAvailFormsMgt : Codeunit "Item Availability Forms Mgt";
-        user : Record User;
-        Alternate_items : Record "Alternate Items";
-        IRH : Record "Inspection Receipt Header";
-        [InDataSet]
-        "No.Emphasize" : Boolean;
+                                  CalculateStdCost : Codeunit "Calculate Standard Cost";
+                                  ItemAvailFormsMgt : Codeunit "Item Availability Forms Mgt";
+                                  user : Record User;
+                                  Alternate_items : Record "Alternate Items";
+                                  IRH : Record "Inspection Receipt Header";
+    [InDataSet]
+
+    "No.Emphasize" : Boolean;
         [InDataSet]
         DescriptionEmphasize : Boolean;
 

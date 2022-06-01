@@ -6,7 +6,7 @@ page 60164 "Calibration Inspection Receipt"
     InsertAllowed = false;
     PageType = Document;
     SourceTable = "Inspection Receipt Header";
-    SourceTableView = SORTING(No.) WHERE(Status=FILTER(No));
+    SourceTableView = SORTING(No.) WHERE(Status = FILTER(No));
 
     layout
     {
@@ -15,59 +15,59 @@ page 60164 "Calibration Inspection Receipt"
             group(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Editable = false;
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                     Editable = false;
                 }
-                field("Item Description";"Item Description")
+                field("Item Description"; "Item Description")
                 {
                     Editable = false;
                 }
-                field("Unit Of Measure Code";"Unit Of Measure Code")
+                field("Unit Of Measure Code"; "Unit Of Measure Code")
                 {
                     Editable = false;
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                     Editable = false;
                 }
-                field("Spec ID";"Spec ID")
+                field("Spec ID"; "Spec ID")
                 {
                     Editable = false;
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("Document Date";"Document Date")
-                {
-                    Editable = false;
-                }
-                field("Rework Reference No.";"Rework Reference No.")
+                field("Document Date"; "Document Date")
                 {
                     Editable = false;
                 }
-                field("Source Type";"Source Type")
+                field("Rework Reference No."; "Rework Reference No.")
                 {
                     Editable = false;
                 }
-                field(Status;Status)
+                field("Source Type"; "Source Type")
                 {
                     Editable = false;
                 }
-                field("Spec Version";"Spec Version")
+                field(Status; Status)
                 {
                     Editable = false;
                 }
-                field("Lot No.";"Lot No.")
+                field("Spec Version"; "Spec Version")
+                {
+                    Editable = false;
+                }
+                field("Lot No."; "Lot No.")
                 {
                     Editable = false;
                 }
             }
-            part(Control1000000032;"Inpection Receipt Line")
+            part(Control1000000032; "Inpection Receipt Line")
             {
                 SubPageLink = Document No.=FIELD(No.),Purch Line No.=FIELD(Purch Line No);
             }
@@ -151,8 +151,8 @@ page 60164 "Calibration Inspection Receipt"
                     Caption = '&List';
                     Image = EditList;
                     RunObject = Page "Calib Inspection Receipt List";
-                    RunPageLink = Source Type=CONST(Calibration);
-                    ShortCutKey = 'F5';
+                                    RunPageLink = Source Type=CONST(Calibration);
+                                    ShortCutKey = 'F5';
                 }
                 action("&Inspection Data Sheets")
                 {
@@ -161,7 +161,7 @@ page 60164 "Calibration Inspection Receipt"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Inspection Data Sheet List";
-                    RunPageLink = Receipt No.=FIELD(Receipt No.),Order No.=FIELD(Order No.),Purch Line No=FIELD(Purch Line No),Lot No.=FIELD(Lot No.);
+                                    RunPageLink = Receipt No.=FIELD(Receipt No.),Order No.=FIELD(Order No.),Purch Line No=FIELD(Purch Line No),Lot No.=FIELD(Lot No.);
                 }
                 action("P&osted Inspect. Data Sheets")
                 {
@@ -170,7 +170,7 @@ page 60164 "Calibration Inspection Receipt"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Posted Inspect Data Sheet List";
-                    RunPageLink = Inspection Receipt No.=FIELD(No.);
+                                    RunPageLink = Inspection Receipt No.=FIELD(No.);
                 }
             }
             group("P&osting")

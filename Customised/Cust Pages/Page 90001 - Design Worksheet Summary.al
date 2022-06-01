@@ -10,45 +10,45 @@ page 90001 "Design Worksheet Summary"
     {
         area(content)
         {
-            field("Material Direct Cost";"Material Direct Cost")
+            field("Material Direct Cost"; "Material Direct Cost")
             {
                 Caption = 'Material Cost';
             }
-            field("Labour Direct Cost";"Labour Direct Cost")
+            field("Labour Direct Cost"; "Labour Direct Cost")
             {
                 Caption = 'Labour Cost';
             }
-            field("Other Direct Cost";"Other Direct Cost")
+            field("Other Direct Cost"; "Other Direct Cost")
             {
                 Caption = 'Other Cost';
             }
-            field("Totals Direct Cost";"Totals Direct Cost")
+            field("Totals Direct Cost"; "Totals Direct Cost")
             {
             }
-            field("Material Indirect Cost";"Material Indirect Cost")
+            field("Material Indirect Cost"; "Material Indirect Cost")
             {
                 Caption = 'Material Cost';
             }
-            field("Labour Indirect Cost";"Labour Indirect Cost")
+            field("Labour Indirect Cost"; "Labour Indirect Cost")
             {
                 Caption = 'Labour Cost';
             }
-            field("Other Indirect Cost";"Other Indirect Cost")
+            field("Other Indirect Cost"; "Other Indirect Cost")
             {
                 Caption = 'Other Cost';
             }
-            field("Total Indirect Cost";"Total Indirect Cost")
+            field("Total Indirect Cost"; "Total Indirect Cost")
             {
                 Caption = 'Total Indirect Cost';
             }
-            field(Control1102152028;'')
+            field(Control1102152028; '')
             {
                 CaptionClass = Text19062819;
                 ShowCaption = false;
                 Style = Standard;
                 StyleExpr = TRUE;
             }
-            field(Control1102152012;'')
+            field(Control1102152012; '')
             {
                 CaptionClass = Text19039083;
                 ShowCaption = false;
@@ -63,7 +63,7 @@ page 90001 "Design Worksheet Summary"
     }
 
     var
-        Text19039083 : Label 'InDirect Cost';
-        Text19062819 : Label 'Profit %';
+        Text19039083: Label 'InDirect Cost';
+        Text19062819: Label 'Profit %';
 }
 

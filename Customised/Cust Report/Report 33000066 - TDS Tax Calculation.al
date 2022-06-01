@@ -7,7 +7,7 @@ report 33000066 "TDS Tax Calculation"
 
     dataset
     {
-        dataitem(Employee;Employee)
+        dataitem(Employee; Employee)
         {
             RequestFilterFields = "No.";
         }
@@ -31,7 +31,7 @@ report 33000066 "TDS Tax Calculation"
 
     trigger OnPostReport();
     begin
-        PayTaxCalculation.AskedPayYearID(AYID, Employee.GETFILTER("No."),AYStartDate,AYEndDate);
+        PayTaxCalculation.AskedPayYearID(AYID, Employee.GETFILTER("No."), AYStartDate, AYEndDate);
         PayTaxCalculation.RUN;
     end;
 
@@ -41,11 +41,11 @@ report 33000066 "TDS Tax Calculation"
     end;
 
     var
-        AYID : Integer;
-        AYStartDate : Date;
-        AYEndDate : Date;
-        PayYear : Record "Pay Year";
-        PayTaxCalculation : Codeunit "Pay Tax Calculation";
-        Text000 : Label 'Required Assessment Year';
+        AYID: Integer;
+        AYStartDate: Date;
+        AYEndDate: Date;
+        PayYear: Record "Pay Year";
+        PayTaxCalculation: Codeunit "Pay Tax Calculation";
+        Text000: Label 'Required Assessment Year';
 }
 

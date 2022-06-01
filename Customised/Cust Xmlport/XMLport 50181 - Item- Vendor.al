@@ -6,16 +6,16 @@ xmlport 50181 "Item- Vendor"
     {
         textelement(ItemVendors)
         {
-            tableelement("<itemvendor>";"Item Vendor")
+            tableelement("<itemvendor>"; "Item Vendor")
             {
                 XmlName = 'ItemVendor';
-                fieldelement(ItemNo;"<ItemVendor>"."Item No.")
+                fieldelement(ItemNo; "<ItemVendor>"."Item No.")
                 {
                 }
-                fieldelement(VendorNo;"<ItemVendor>"."Vendor No.")
+                fieldelement(VendorNo; "<ItemVendor>"."Vendor No.")
                 {
                 }
-                fieldelement(LeadTimeCalculation;"<ItemVendor>"."Lead Time Calculation")
+                fieldelement(LeadTimeCalculation; "<ItemVendor>"."Lead Time Calculation")
                 {
                 }
             }

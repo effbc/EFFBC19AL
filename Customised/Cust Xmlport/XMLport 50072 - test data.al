@@ -6,28 +6,28 @@ xmlport 50072 "test data"
     {
         textelement(StockStatements)
         {
-            tableelement("Stock Statement";"Stock Statement")
+            tableelement("Stock Statement"; "Stock Statement")
             {
                 XmlName = 'StockStatement';
-                fieldelement(Month;"Stock Statement".Month)
+                fieldelement(Month; "Stock Statement".Month)
                 {
                 }
-                fieldelement(Year;"Stock Statement".Year)
+                fieldelement(Year; "Stock Statement".Year)
                 {
                 }
-                fieldelement(Item;"Stock Statement".Item)
+                fieldelement(Item; "Stock Statement".Item)
                 {
                 }
-                fieldelement(StockQty;"Stock Statement"."Stock Qty")
+                fieldelement(StockQty; "Stock Statement"."Stock Qty")
                 {
                 }
-                fieldelement(UnitCost;"Stock Statement"."Unit Cost")
+                fieldelement(UnitCost; "Stock Statement"."Unit Cost")
                 {
                 }
-                fieldelement(TotalCost;"Stock Statement"."Total Cost")
+                fieldelement(TotalCost; "Stock Statement"."Total Cost")
                 {
                 }
-                fieldelement(MonthName;"Stock Statement"."Month Name")
+                fieldelement(MonthName; "Stock Statement"."Month Name")
                 {
                 }
             }

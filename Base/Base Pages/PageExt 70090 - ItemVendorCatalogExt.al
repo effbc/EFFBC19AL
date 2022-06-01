@@ -1,4 +1,4 @@
-pageextension 70090 ItemVendorCatalogExt extends "Item Vendor Catalog" 
+pageextension 70090 ItemVendorCatalogExt extends "Item Vendor Catalog"
 {
     // version NAVW17.00
 
@@ -55,22 +55,22 @@ pageextension 70090 ItemVendorCatalogExt extends "Item Vendor Catalog"
 
         addafter("Control 10")
         {
-            field("Minimum Order Quantity";"Minimum Order Quantity")
+            field("Minimum Order Quantity"; "Minimum Order Quantity")
             {
             }
-            field(Priority;Priority)
+            field(Priority; Priority)
             {
             }
-            field("Total Qty. Supplied";"Total Qty. Supplied")
+            field("Total Qty. Supplied"; "Total Qty. Supplied")
             {
             }
-            field("Qty. Supplied With in DueDate";"Qty. Supplied With in DueDate")
+            field("Qty. Supplied With in DueDate"; "Qty. Supplied With in DueDate")
             {
 
                 trigger OnDrillDown();
                 var
-                    PurchRcptHeader1 : Record "Purch. Rcpt. Header";
-                    PurchRcptLine1 : Record "Purch. Rcpt. Line";
+                    PurchRcptHeader1: Record "Purch. Rcpt. Header";
+                    PurchRcptLine1: Record "Purch. Rcpt. Line";
                 begin
                     /*
                     PurchRcptHeader1.RESET;
@@ -91,11 +91,11 @@ pageextension 70090 ItemVendorCatalogExt extends "Item Vendor Catalog"
                     END;
                     */
                     PurchRcptLine.MARKEDONLY(TRUE);
-                    PAGE.RUNMODAL(0,PurchRcptLine);
+                    PAGE.RUNMODAL(0, PurchRcptLine);
 
                 end;
             }
-            field("Sampling Plan Code";"Sampling Plan Code")
+            field("Sampling Plan Code"; "Sampling Plan Code")
             {
             }
         }
@@ -129,31 +129,31 @@ pageextension 70090 ItemVendorCatalogExt extends "Item Vendor Catalog"
     }
 
     var
-        PurchRcptHeader : Record "Purch. Rcpt. Header";
-        PurchRcptLine : Record "Purch. Rcpt. Line";
+        PurchRcptHeader: Record "Purch. Rcpt. Header";
+        PurchRcptLine: Record "Purch. Rcpt. Line";
 
 
     //Unsupported feature: CodeInsertion on "OnAfterGetRecord". Please convert manually.
 
     //trigger OnAfterGetRecord();
     //begin
-        /*
-        "Qty. Supplied With in DueDate" := 0;
-        PurchRcptHeader.SETRANGE("Buy-from Vendor No.","Vendor No.");
-        IF PurchRcptHeader.FINDSET THEN
+    /*
+    "Qty. Supplied With in DueDate" := 0;
+    PurchRcptHeader.SETRANGE("Buy-from Vendor No.","Vendor No.");
+    IF PurchRcptHeader.FINDSET THEN
+      REPEAT
+        PurchRcptLine.SETRANGE("Document No.",PurchRcptHeader."No.");
+        PurchRcptLine.SETRANGE(Type,PurchRcptLine.Type::Item);
+        PurchRcptLine.SETRANGE("No.","Item No.");
+        IF PurchRcptLine.FINDSET THEN
           REPEAT
-            PurchRcptLine.SETRANGE("Document No.",PurchRcptHeader."No.");
-            PurchRcptLine.SETRANGE(Type,PurchRcptLine.Type::Item);
-            PurchRcptLine.SETRANGE("No.","Item No.");
-            IF PurchRcptLine.FINDSET THEN
-              REPEAT
-                IF PurchRcptHeader."Posting Date" < PurchRcptLine."Expected Receipt Date" THEN BEGIN
-                  "Qty. Supplied With in DueDate" := "Qty. Supplied With in DueDate" + PurchRcptLine.Quantity;
-                  PurchRcptLine.MARK(TRUE);
-                END;
-              UNTIL PurchRcptLine.NEXT = 0;
-          UNTIL PurchRcptHeader.NEXT = 0;
-        */
+            IF PurchRcptHeader."Posting Date" < PurchRcptLine."Expected Receipt Date" THEN BEGIN
+              "Qty. Supplied With in DueDate" := "Qty. Supplied With in DueDate" + PurchRcptLine.Quantity;
+              PurchRcptLine.MARK(TRUE);
+            END;
+          UNTIL PurchRcptLine.NEXT = 0;
+      UNTIL PurchRcptHeader.NEXT = 0;
+    */
     //end;
 
     //Unsupported feature: PropertyChange. Please convert manually.

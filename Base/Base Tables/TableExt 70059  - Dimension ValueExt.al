@@ -4,12 +4,15 @@ tableextension 70059 DimensionValueExt extends "Dimension Value"
     {
         field(60010; "Division code"; Code[10])
         {
+            DataClassification = CustomerContent;
         }
         field(60011; Address1; Text[200])
         {
+            DataClassification = CustomerContent;
         }
         field(60012; Address2; Text[200])
         {
+            DataClassification = CustomerContent;
         }
     }
     trigger OnBeforeInsert()

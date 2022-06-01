@@ -4,81 +4,81 @@ report 99000788 "Prod. Order - Shortage List"
 
     DefaultLayout = RDLC;
     RDLCLayout = './Prod. Order - Shortage List.rdlc';
-    CaptionML = ENU='Prod. Order - Shortage List',
-                ENN='Prod. Order - Shortage List';
+    CaptionML = ENU = 'Prod. Order - Shortage List',
+                ENN = 'Prod. Order - Shortage List';
 
     dataset
     {
-        dataitem("Production Order";"Production Order")
+        dataitem("Production Order"; "Production Order")
         {
-            DataItemTableView = SORTING(Status,No.);
+            DataItemTableView = SORTING(Status, No.);
             PrintOnlyIfDetail = true;
-            RequestFilterFields = Status,"No.","Date Filter";
-            column(TodayFormatted;FORMAT(TODAY,0,4))
+            RequestFilterFields = Status, "No.", "Date Filter";
+            column(TodayFormatted; FORMAT(TODAY, 0, 4))
             {
             }
-            column(CompanyName;COMPANYNAME)
+            column(CompanyName; COMPANYNAME)
             {
             }
-            column(Status_ProdOrder;Status)
+            column(Status_ProdOrder; Status)
             {
                 IncludeCaption = false;
             }
-            column(No_ProdOrder;"No.")
+            column(No_ProdOrder; "No.")
             {
                 IncludeCaption = true;
             }
-            column(Desc_ProdOrder;Description)
+            column(Desc_ProdOrder; Description)
             {
                 IncludeCaption = true;
             }
-            column(DueDate_ProdOrder;FORMAT("Due Date"))
+            column(DueDate_ProdOrder; FORMAT("Due Date"))
             {
             }
-            column(ShortageListCaption;ShortageListCaptionLbl)
+            column(ShortageListCaption; ShortageListCaptionLbl)
             {
             }
-            column(PageNoCaption;PageNoCaptionLbl)
+            column(PageNoCaption; PageNoCaptionLbl)
             {
             }
-            column(DueDateCaption;DueDateCaptionLbl)
+            column(DueDateCaption; DueDateCaptionLbl)
             {
             }
-            column(NeededQtyCaption;NeededQtyCaptionLbl)
+            column(NeededQtyCaption; NeededQtyCaptionLbl)
             {
             }
-            column(CompItemScheduledNeedQtyCaption;CompItemScheduledNeedQtyCaptionLbl)
+            column(CompItemScheduledNeedQtyCaption; CompItemScheduledNeedQtyCaptionLbl)
             {
             }
-            column(CompItemInventoryCaption;CompItemInventoryCaptionLbl)
+            column(CompItemInventoryCaption; CompItemInventoryCaptionLbl)
             {
             }
-            column(RemainingQtyBaseCaption;RemainingQtyBaseCaptionLbl)
+            column(RemainingQtyBaseCaption; RemainingQtyBaseCaptionLbl)
             {
             }
-            column(RemQtyBaseCaption;RemQtyBaseCaptionLbl)
+            column(RemQtyBaseCaption; RemQtyBaseCaptionLbl)
             {
             }
-            column(ReceiptQtyCaption;ReceiptQtyCaptionLbl)
+            column(ReceiptQtyCaption; ReceiptQtyCaptionLbl)
             {
             }
-            column(QtyonPurchOrderCaption;QtyonPurchOrderCaptionLbl)
+            column(QtyonPurchOrderCaption; QtyonPurchOrderCaptionLbl)
             {
             }
-            column(QtyonSalesOrderCaption;QtyonSalesOrderCaptionLbl)
+            column(QtyonSalesOrderCaption; QtyonSalesOrderCaptionLbl)
             {
             }
-            dataitem("Prod. Order Line";"Prod. Order Line")
+            dataitem("Prod. Order Line"; "Prod. Order Line")
             {
-                DataItemLink = Status=FIELD(Status),Prod. Order No.=FIELD(No.);
-                DataItemTableView = SORTING(Status,Prod. Order No.,Line No.);
+                DataItemLink = Status = FIELD(Status), Prod. Order No.=FIELD(No.);
+                DataItemTableView = SORTING(Status, Prod. Order No., Line No.);
                 PrintOnlyIfDetail = true;
-                column(LineNo_ProdOrderLine;"Line No.")
+                column(LineNo_ProdOrderLine; "Line No.")
                 {
                 }
-                dataitem("Prod. Order Component";"Prod. Order Component")
+                dataitem("Prod. Order Component"; "Prod. Order Component")
                 {
-                    DataItemLink = Status=FIELD(Status),Prod. Order No.=FIELD(Prod. Order No.),Prod. Order Line No.=FIELD(Line No.);
+                    DataItemLink = Status = FIELD(Status), Prod. Order No.=FIELD(Prod. Order No.),Prod. Order Line No.=FIELD(Line No.);
                     DataItemTableView = SORTING(Status,Item No.,Variant Code,Location Code,Due Date);
                     column(CompItemInventory;CompItem.Inventory)
                     {

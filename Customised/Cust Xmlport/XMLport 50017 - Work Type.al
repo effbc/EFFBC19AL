@@ -6,16 +6,16 @@ xmlport 50017 "Work Type"
     {
         textelement(WorkTypes)
         {
-            tableelement("<worktype>";"Work Type")
+            tableelement("<worktype>"; "Work Type")
             {
                 XmlName = 'WorkType';
-                fieldelement(Code;"<WorkType>".Code)
+                fieldelement(Code; "<WorkType>".Code)
                 {
                 }
-                fieldelement(Description;"<WorkType>".Description)
+                fieldelement(Description; "<WorkType>".Description)
                 {
                 }
-                fieldelement(UnitofMeasureCode;"<WorkType>"."Unit of Measure Code")
+                fieldelement(UnitofMeasureCode; "<WorkType>"."Unit of Measure Code")
                 {
                 }
             }

@@ -10,13 +10,15 @@ tableextension 70001 SalespersonPurchaserExt extends "Salesperson/Purchaser"
         {
             Description = 'B2B';
             OptionMembers = Sale,Purchase,CS;
+            DataClassification = CustomerContent;
         }
         field(60001; PastEmp; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60002; "Sales Person Signature"; BLOB)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             SubType = Bitmap;
         }
     }

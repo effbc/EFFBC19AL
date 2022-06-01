@@ -9,34 +9,34 @@ page 50017 "Permission Range"
         {
             repeater(Group)
             {
-                field("Object Type";"Object Type")
+                field("Object Type"; "Object Type")
                 {
                 }
-                field(Index;Index)
+                field(Index; Index)
                 {
                 }
-                field(From;From)
+                field(From; From)
                 {
                 }
-                field("To";"To")
+                field("To"; "To")
                 {
                 }
-                field("Read Permission";"Read Permission")
+                field("Read Permission"; "Read Permission")
                 {
                 }
-                field("Insert Permission";"Insert Permission")
+                field("Insert Permission"; "Insert Permission")
                 {
                 }
-                field("Modify Permission";"Modify Permission")
+                field("Modify Permission"; "Modify Permission")
                 {
                 }
-                field("Delete Permission";"Delete Permission")
+                field("Delete Permission"; "Delete Permission")
                 {
                 }
-                field("Execute Permission";"Execute Permission")
+                field("Execute Permission"; "Execute Permission")
                 {
                 }
-                field("Limited Usage Permission";"Limited Usage Permission")
+                field("Limited Usage Permission"; "Limited Usage Permission")
                 {
                 }
             }

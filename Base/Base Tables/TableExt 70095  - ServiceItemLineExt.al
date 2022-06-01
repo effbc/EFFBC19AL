@@ -57,19 +57,24 @@ tableextension 70095 ServiceItemLineExt extends "Service Item Line"
         }
         field(60003; "Resolution Description"; Text[50])
         {
+            DataClassification = CustomerContent;
         }
         field(60004; "Fault Code Description"; Text[50])
         {
+            DataClassification = CustomerContent;
         }
         field(60005; "Fault Area Description"; Text[50])
         {
+            DataClassification = CustomerContent;
         }
         field(60006; "Symptom Description"; Text[50])
         {
+            DataClassification = CustomerContent;
         }
         field(60010; "From Location"; Code[10])
         {
             TableRelation = "Dimension Value".Code WHERE("Dimension Code" = FILTER('LOCATIONS'));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -81,6 +86,7 @@ tableextension 70095 ServiceItemLineExt extends "Service Item Line"
         {
             TableRelation = "Dimension Value".Code WHERE("Dimension Code" = FILTER('LOCATIONS'),
                                                           Code = FILTER(<> 'HAR'));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -106,6 +112,7 @@ tableextension 70095 ServiceItemLineExt extends "Service Item Line"
         }
         field(60012; Account; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -193,54 +200,68 @@ tableextension 70095 ServiceItemLineExt extends "Service Item Line"
         }
         field(60030; "Countrol Section"; Code[10])
         {
+            DataClassification = CustomerContent;
         }
         field(60031; "N/W Stand Alone"; Enum "NetWork Stand Alone")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60032; IDNO; Code[10])
         {
+            DataClassification = CustomerContent;
         }
         field(60033; "F/W Version"; Code[10])
         {
+            DataClassification = CustomerContent;
         }
         field(60034; "S/W Version"; Text[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60035; "H/W Process Type"; Text[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60036; "Operating Voltage"; Enum "Operating Voltage")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60037; "Supply Giving From"; Text[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60038; "Earth Status"; Enum "Earth Status")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60039; "Communication Media"; Enum "Communication Media")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60040; "Warr/AMC/None"; Enum "Warr AMC None")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60041; Zone; Code[10])
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60042; Division; Code[10])
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60043; Station; Code[20])
         {
             Editable = true;
             TableRelation = Station;
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -284,23 +305,29 @@ tableextension 70095 ServiceItemLineExt extends "Service Item Line"
         field(60045; "Sent date time"; DateTime)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60046; "Unit cost"; Decimal)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60047; "AMC Order No"; Code[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60048; Tested; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60049; "Accounted Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60050; "Sub Module Code"; Code[20])
         {
             TableRelation = "Troubleshooting Header"."No.";
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -314,26 +341,33 @@ tableextension 70095 ServiceItemLineExt extends "Service Item Line"
         }
         field(60051; "Sub Module Descrption"; Text[50])
         {
+            DataClassification = CustomerContent;
         }
         field(60052; "Problem from Site"; Text[100])
         {
+            DataClassification = CustomerContent;
         }
         field(60053; "QC internal Remarks"; Text[100])
         {
+            DataClassification = CustomerContent;
         }
         field(60054; "Site Feedback"; Text[100])
         {
+            DataClassification = CustomerContent;
         }
         field(60055; "Site Problem Matched"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60056; "Service Level"; Enum "Service Level")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60057; "Station Name"; Text[30])
         {
             Description = 'added by vijaya';
+            DataClassification = CustomerContent;
         }
         field(60058; "CS Product"; Code[50])
         {
@@ -360,12 +394,14 @@ tableextension 70095 ServiceItemLineExt extends "Service Item Line"
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60091; "OLD Dim Set ID"; Integer)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
             TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin

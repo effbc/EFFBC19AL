@@ -86,44 +86,44 @@ codeunit 60028 "item stock at stores"
         
         UNTIL item.NEXT=0;
          */
-        MIH.SETFILTER(MIH."No.",'C*');
+        MIH.SETFILTER(MIH."No.", 'C*');
         IF MIH.FINDSET THEN
-        REPEAT
-          MIL.RESET;
-          MIL.SETFILTER(MIL."Document No.",MIH."No.");
-          IF MIL.FINDSET THEN
-          REPEAT
-            MIL.DELETE;
-          UNTIL MIL.NEXT=0;
-          MIH.DELETE;
-        UNTIL MIH.NEXT=0;
+            REPEAT
+                MIL.RESET;
+                MIL.SETFILTER(MIL."Document No.", MIH."No.");
+                IF MIL.FINDSET THEN
+                    REPEAT
+                        MIL.DELETE;
+                    UNTIL MIL.NEXT = 0;
+                MIH.DELETE;
+            UNTIL MIH.NEXT = 0;
 
     end;
 
     var
-        TroubleshHeader : Record "Troubleshooting Header";
-        SkilledResourceList : Page "Skilled Resource List";
-        ItemCostMgt : Codeunit ItemCostManagement;
-        CalculateStdCost : Codeunit "Calculate Standard Cost";
-        AverageCostLCY : Decimal;
-        AverageCostACY : Decimal;
-        "Inventory at STR" : Decimal;
-        "--B2B--" : Integer;
-        PurchaseInvLine : Record "Purch. Inv. Line";
-        TotVendorAmt : Decimal;
-        TotQty : Decimal;
-        ItemCostUpdation : Codeunit "Item Cost Updation";
-        atta : Boolean;
-        attachments : Record Attachments;
-        ItemLedgEntry : Record "Item Ledger Entry";
-        QualityItemLedgEntry : Record "Quality Item Ledger Entry";
-        item : Record Item;
-        ItemLedgEntry2 : Record "Item Ledger Entry";
-        Dum_Count : Decimal;
-        "Stock at Stores" : Decimal;
-        "Excepted Receipt Date Tracking" : Record "Excepted Rcpt.Date Tracking";
-        "Purchase Line" : Record "Purchase Line";
-        MIH : Record "Material Issues Header";
-        MIL : Record "Material Issues Line";
+        TroubleshHeader: Record "Troubleshooting Header";
+        SkilledResourceList: Page "Skilled Resource List";
+        ItemCostMgt: Codeunit ItemCostManagement;
+        CalculateStdCost: Codeunit "Calculate Standard Cost";
+        AverageCostLCY: Decimal;
+        AverageCostACY: Decimal;
+        "Inventory at STR": Decimal;
+        "--B2B--": Integer;
+        PurchaseInvLine: Record "Purch. Inv. Line";
+        TotVendorAmt: Decimal;
+        TotQty: Decimal;
+        ItemCostUpdation: Codeunit "Item Cost Updation";
+        atta: Boolean;
+        attachments: Record Attachments;
+        ItemLedgEntry: Record "Item Ledger Entry";
+        QualityItemLedgEntry: Record "Quality Item Ledger Entry";
+        item: Record Item;
+        ItemLedgEntry2: Record "Item Ledger Entry";
+        Dum_Count: Decimal;
+        "Stock at Stores": Decimal;
+        "Excepted Receipt Date Tracking": Record "Excepted Rcpt.Date Tracking";
+        "Purchase Line": Record "Purchase Line";
+        MIH: Record "Material Issues Header";
+        MIL: Record "Material Issues Line";
 }
 

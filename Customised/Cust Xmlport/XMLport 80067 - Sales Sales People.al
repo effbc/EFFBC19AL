@@ -6,13 +6,13 @@ xmlport 80067 "Sales Sales People"
     {
         textelement(SalespersonPurchasers)
         {
-            tableelement("<salespersonpurchaser>";"Salesperson/Purchaser")
+            tableelement("<salespersonpurchaser>"; "Salesperson/Purchaser")
             {
                 XmlName = 'SalespersonPurchaser';
-                fieldelement(Code;"<SalespersonPurchaser>".Code)
+                fieldelement(Code; "<SalespersonPurchaser>".Code)
                 {
                 }
-                fieldelement(Name;"<SalespersonPurchaser>".Name)
+                fieldelement(Name; "<SalespersonPurchaser>".Name)
                 {
                 }
             }

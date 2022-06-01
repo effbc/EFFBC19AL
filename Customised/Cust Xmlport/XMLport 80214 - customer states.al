@@ -6,16 +6,16 @@ xmlport 80214 "customer states"
     {
         textelement(Customers)
         {
-            tableelement(Customer;Customer)
+            tableelement(Customer; Customer)
             {
                 XmlName = 'Customer';
-                fieldelement(No;Customer."No.")
+                fieldelement(No; Customer."No.")
                 {
                 }
-                fieldelement(PostCode;Customer."Post Code")
+                fieldelement(PostCode; Customer."Post Code")
                 {
                 }
-                fieldelement(StateCode;Customer."State Code")
+                fieldelement(StateCode; Customer."State Code")
                 {
                 }
             }

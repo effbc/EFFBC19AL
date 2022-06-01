@@ -8,10 +8,10 @@ report 80008 "Vendor - List3"
 
     dataset
     {
-        dataitem("Purch. Rcpt. Line";"Purch. Rcpt. Line")
+        dataitem("Purch. Rcpt. Line"; "Purch. Rcpt. Line")
         {
             CalcFields = Field60008;
-            DataItemTableView = SORTING(Document No.,Line No.) WHERE(Quantity=FILTER(>0), Qty. Rcd. Not Invoiced=FILTER(>0), Field60013=CONST(No));
+            DataItemTableView = SORTING(Document No., Line No.) WHERE(Quantity = FILTER(> 0), Qty. Rcd. Not Invoiced=FILTER(>0), Field60013=CONST(No));
             RequestFilterFields = "Buy-from Vendor No.";
             column(FORMAT_TODAY_0_4_;FORMAT(TODAY,0,4))
             {

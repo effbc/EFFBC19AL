@@ -5,7 +5,7 @@ xmlport 50019 "User ID's Posting"
     {
         textelement(Employees)
         {
-            tableelement(Employee;Employee)
+            tableelement(Employee; Employee)
             {
                 XmlName = 'Employee';
             }

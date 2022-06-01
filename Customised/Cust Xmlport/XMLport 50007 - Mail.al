@@ -6,19 +6,19 @@ xmlport 50007 Mail
     {
         textelement(Mails)
         {
-            tableelement("<mail>";"MAILID LIST")
+            tableelement("<mail>"; "MAILID LIST")
             {
                 XmlName = 'Mail';
-                fieldelement(USERID;"<Mail>".USERID)
+                fieldelement(USERID; "<Mail>".USERID)
                 {
                 }
-                fieldelement(USERNAME;"<Mail>"."USER NAME")
+                fieldelement(USERNAME; "<Mail>"."USER NAME")
                 {
                 }
-                fieldelement(DEPT;"<Mail>".DEPT)
+                fieldelement(DEPT; "<Mail>".DEPT)
                 {
                 }
-                fieldelement(MAILID;"<Mail>"."MAIL ID")
+                fieldelement(MAILID; "<Mail>"."MAIL ID")
                 {
                 }
             }

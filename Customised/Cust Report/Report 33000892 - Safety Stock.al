@@ -8,7 +8,7 @@ report 33000892 "Safety Stock"
 
     dataset
     {
-        dataitem(Item;Item)
+        dataitem(Item; Item)
         {
             CalcFields = Stock at CS Stores;
             DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Safety Stock Quantity=FILTER(>0));

@@ -15,15 +15,18 @@ tableextension 70079 ProdOrderLineExt extends "Prod. Order Line"
         {
             Description = 'B2B';
             TableRelation = "Machine Center"."No.";
+            DataClassification = CustomerContent;
         }
         field(60002; "Sales Order No"; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60091; "OLD Dim Set ID"; Integer)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
             TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -34,21 +37,26 @@ tableextension 70079 ProdOrderLineExt extends "Prod. Order Line"
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(33000250; "WIP QC Enabled"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(33000251; "WIP Spec Id"; Code[20])
         {
             TableRelation = "Specification Header";
+            DataClassification = CustomerContent;
         }
         field(33000252; "Quantity Sent To Quality"; Decimal)
         {
             Editable = true;
+            DataClassification = CustomerContent;
         }
         field(33000253; "Quantity Sending To Quality"; Decimal)
         {
             MinValue = 0;
+            DataClassification = CustomerContent;
         }
         field(33000254; "Quantity Accepted"; Decimal)
         {
@@ -81,6 +89,7 @@ tableextension 70079 ProdOrderLineExt extends "Prod. Order Line"
         field(33000257; "Spec Version Code"; Code[20])
         {
             TableRelation = "Specification Version"."Version Code" WHERE("Specification No." = FIELD("WIP Spec Id"));
+            DataClassification = CustomerContent;
         }
     }
 

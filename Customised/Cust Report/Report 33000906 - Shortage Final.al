@@ -23,94 +23,93 @@ report 33000906 "Shortage Final"
 
     dataset
     {
-        dataitem(ProductionOrder9;"Production Order")
+        dataitem(ProductionOrder9; "Production Order")
         {
-            DataItemTableView = WHERE(Status=FILTER(Released));
+            DataItemTableView = WHERE(Status = FILTER(Released));
 
             trigger OnAfterGetRecord();
             begin
-                  //MESSAGE('%1',ProductionOrder9."No.");
-                  //IF ProductionOrder9."No." = 'BRM18CHR0007' THEN
-                  //  MESSAGE('Production Order...BRM18CHR0007');
-                  ItemLotNumbers9.RESET;
-                  ItemLotNumbers9.SETRANGE("Production Order No.",ProductionOrder9."No.");
-                  ItemLotNumbers9.SETFILTER(Shortage,'<>%1',0);
-                  ItemLotNumbers9.SETFILTER(Authorisation,'<>%1',0);
-                  IF ItemLotNumbers9.FINDFIRST THEN BEGIN
+                //MESSAGE('%1',ProductionOrder9."No.");
+                //IF ProductionOrder9."No." = 'BRM18CHR0007' THEN
+                //  MESSAGE('Production Order...BRM18CHR0007');
+                ItemLotNumbers9.RESET;
+                ItemLotNumbers9.SETRANGE("Production Order No.", ProductionOrder9."No.");
+                ItemLotNumbers9.SETFILTER(Shortage, '<>%1', 0);
+                ItemLotNumbers9.SETFILTER(Authorisation, '<>%1', 0);
+                IF ItemLotNumbers9.FINDFIRST THEN BEGIN
                     //IF ItemLotNumbers9."Production Order No." = 'BRM18CHR0007' THEN
                     //ERROR('%1',ProductionOrder9);
-                  Row+=1;
+                    Row += 1;
                     xlWorkSheet1.Range('A' + FORMAT(Row)).Value := ProductionOrder9."No.";
                     xlWorkSheet1.Range('B' + FORMAT(Row)).Value := ProductionOrder9."Prod Start date";
-                
-                
-                  Item.RESET;
-                  Item.SETFILTER(Item."No.",ProductionOrder9."Source No.");
-                  IF Item.FINDFIRST THEN
-                  BEGIN
-                    xlWorkSheet1.Range('C' + FORMAT(Row)).Value := Item."Item Sub Group Code";
-                    xlWorkSheet1.Range('D' + FORMAT(Row)).Value := ProductionOrder9.Quantity;
-                    xlWorkSheet1.Range('E' + FORMAT(Row)).Value := Item."No.of Units"*ProductionOrder9.Quantity;
-                  END;
+
+
+                    Item.RESET;
+                    Item.SETFILTER(Item."No.", ProductionOrder9."Source No.");
+                    IF Item.FINDFIRST THEN BEGIN
+                        xlWorkSheet1.Range('C' + FORMAT(Row)).Value := Item."Item Sub Group Code";
+                        xlWorkSheet1.Range('D' + FORMAT(Row)).Value := ProductionOrder9.Quantity;
+                        xlWorkSheet1.Range('E' + FORMAT(Row)).Value := Item."No.of Units" * ProductionOrder9.Quantity;
+                    END;
                 END;
-                
-                  /*
-                IF PrevPDNo <> "Item Lot Numbers9"."Production Order No." THEN BEGIN
-                   //IF PrevPDNo <> '' THEN
-                   //MESSAGE('1...%1.2...%2',PrevPDNo,"Item Lot Numbers9"."Production Order No.");
-                  IF rpo.GET(3,"Production Order No.") THEN;
-                  ERROR('PO9."No." %1.%2',rpo."No.","Item Lot Numbers9"."Production Order No.");
-                  Row+=1;
-                  xlWorkSheet1.Range('A' + FORMAT(Row)).Value := "Item Lot Numbers9"."Production Order No.";
-                  xlWorkSheet1.Range('B' + FORMAT(Row)).Value := PO9."Prod Start date";
-                  Item.RESET;
-                  Item.SETFILTER(Item."No.",PO9."Source No.");
-                  IF Item.FINDFIRST THEN
-                  BEGIN
-                    xlWorkSheet1.Range('C' + FORMAT(Row)).Value := Item."Item Sub Group Code";
-                    xlWorkSheet1.Range('D' + FORMAT(Row)).Value := PO9.Quantity;
-                    xlWorkSheet1.Range('E' + FORMAT(Row)).Value := Item."No.of Units"*PO9.Quantity;
-                  END;
-                  PrevPDNo := "Item Lot Numbers9"."Production Order No."
+
+                /*
+              IF PrevPDNo <> "Item Lot Numbers9"."Production Order No." THEN BEGIN
+                 //IF PrevPDNo <> '' THEN
+                 //MESSAGE('1...%1.2...%2',PrevPDNo,"Item Lot Numbers9"."Production Order No.");
+                IF rpo.GET(3,"Production Order No.") THEN;
+                ERROR('PO9."No." %1.%2',rpo."No.","Item Lot Numbers9"."Production Order No.");
+                Row+=1;
+                xlWorkSheet1.Range('A' + FORMAT(Row)).Value := "Item Lot Numbers9"."Production Order No.";
+                xlWorkSheet1.Range('B' + FORMAT(Row)).Value := PO9."Prod Start date";
+                Item.RESET;
+                Item.SETFILTER(Item."No.",PO9."Source No.");
+                IF Item.FINDFIRST THEN
+                BEGIN
+                  xlWorkSheet1.Range('C' + FORMAT(Row)).Value := Item."Item Sub Group Code";
+                  xlWorkSheet1.Range('D' + FORMAT(Row)).Value := PO9.Quantity;
+                  xlWorkSheet1.Range('E' + FORMAT(Row)).Value := Item."No.of Units"*PO9.Quantity;
                 END;
-                */
+                PrevPDNo := "Item Lot Numbers9"."Production Order No."
+              END;
+              */
 
             end;
 
             trigger OnPreDataItem();
             begin
-                  CLEAR(XLaPP);
-                  CLEAR(xlRange);
+                CLEAR(XLaPP);
+                CLEAR(xlRange);
                 //  CLEAR(xlWorkBooks);
-                  CLEAR(xlWorkBook);
-                  CLEAR(xlRange);
-                  //CLEAR(xlSheets);
-                  CLEAR(xlWorkSheet);
-                  CLEAR(PrevPDNo);
-                  CREATE(XLaPP,TRUE,TRUE);
-                  XLaPP.SheetsInNewWorkbook := 1;
+                CLEAR(xlWorkBook);
+                CLEAR(xlRange);
+                //CLEAR(xlSheets);
+                CLEAR(xlWorkSheet);
+                CLEAR(PrevPDNo);
+                CREATE(XLaPP, TRUE, TRUE);
+                XLaPP.SheetsInNewWorkbook := 1;
 
-                  XLaPP.Workbooks.Add();
+                XLaPP.Workbooks.Add();
 
-                  xlWorkSheet1 := XLaPP.ActiveSheet;
-                  xlWorkSheet1.Name := 'Production_Plan';
-                  xlSheetName:=xlWorkSheet1.Name;
-                  xlSheetName := CONVERTSTR(xlSheetName,' -+','___');
-                 // xlSheetName := CONVERTSTR(xlSheetName,' -+&','____');sujani
-                  xlWorkSheet1.Range('A1').Value := 'Production Order no.';
-                  xlWorkSheet1.Range('B1').Value := 'Production Start Date';
-                  xlWorkSheet1.Range('C1').Value := 'Product Type';
-                  xlWorkSheet1.Range('D1').Value := 'Quantity';
-                  xlWorkSheet1.Range('E1').Value := 'No.of Units';
-                  xlWorkSheet1.Range('F1').Value := 'Shortage';
+                xlWorkSheet1 := XLaPP.ActiveSheet;
+                xlWorkSheet1.Name := 'Production_Plan';
+                xlSheetName := xlWorkSheet1.Name;
+                xlSheetName := CONVERTSTR(xlSheetName, ' -+', '___');
+                // xlSheetName := CONVERTSTR(xlSheetName,' -+&','____');sujani
+                xlWorkSheet1.Range('A1').Value := 'Production Order no.';
+                xlWorkSheet1.Range('B1').Value := 'Production Start Date';
+                xlWorkSheet1.Range('C1').Value := 'Product Type';
+                xlWorkSheet1.Range('D1').Value := 'Quantity';
+                xlWorkSheet1.Range('E1').Value := 'No.of Units';
+                xlWorkSheet1.Range('F1').Value := 'Shortage';
 
-                  //"Production Order".SETRANGE("Production Order"."Prod Start date",TODAY-3,TODAY+365);
-                  //"Production Order".SETFILTER("Production Order"."Prod Start date",'<%1',TODAY+365);
+                //"Production Order".SETRANGE("Production Order"."Prod Start date",TODAY-3,TODAY+365);
+                //"Production Order".SETFILTER("Production Order"."Prod Start date",'<%1',TODAY+365);
             end;
         }
-        dataitem("Item Lot Numbers2";"Item Lot Numbers")
+        dataitem("Item Lot Numbers2"; "Item Lot Numbers")
         {
-            DataItemTableView = SORTING(Sales Order No.,Product Type,Production Order No.,Authorisation,Lead Time2) ORDER(Ascending) WHERE(Authorisation=FILTER(WAP|WFA|Authorised|indent),Shortage=FILTER(>0),Sales Order No.=FILTER(<>''));
+            DataItemTableView = SORTING(Sales Order No., Product Type, Production Order No., Authorisation, Lead Time2) ORDER(Ascending) WHERE(Authorisation = FILTER(WAP | WFA | Authorised | indent), Shortage = FILTER(> 0), Sales Order No.=FILTER(<>''));
             column(LotGroupFooter5;LotGroupFooter5)
             {
             }

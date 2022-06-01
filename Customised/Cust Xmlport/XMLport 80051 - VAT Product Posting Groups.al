@@ -5,13 +5,13 @@ xmlport 80051 "VAT Product Posting Groups"
     {
         textelement(VATProductPostingGroups)
         {
-            tableelement("<vatproductpostinggroup>";"VAT Product Posting Group")
+            tableelement("<vatproductpostinggroup>"; "VAT Product Posting Group")
             {
                 XmlName = 'VATProductPostingGroup';
-                fieldelement(Code;"<VATProductPostingGroup>".Code)
+                fieldelement(Code; "<VATProductPostingGroup>".Code)
                 {
                 }
-                fieldelement(Description;"<VATProductPostingGroup>".Description)
+                fieldelement(Description; "<VATProductPostingGroup>".Description)
                 {
                 }
             }

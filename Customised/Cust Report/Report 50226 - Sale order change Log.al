@@ -5,9 +5,9 @@ report 50226 "Sale order change Log"
 
     dataset
     {
-        dataitem("<Change Log Entry>";"Change Log Entry")
+        dataitem("<Change Log Entry>"; "Change Log Entry")
         {
-            DataItemTableView = SORTING(Table No.,Primary Key Field 1 Value) ORDER(Ascending) WHERE(Table No.=FILTER(37|60025),Type of Change=FILTER(<>Insertion),Primary Key Field 1 Value=FILTER(Order|Blanket Order),Field No.=FILTER(5|6|7|11|15|18|153));
+            DataItemTableView = SORTING(Table No., Primary Key Field 1 Value) ORDER(Ascending) WHERE(Table No.=FILTER(37|60025),Type of Change=FILTER(<>Insertion),Primary Key Field 1 Value=FILTER(Order|Blanket Order),Field No.=FILTER(5|6|7|11|15|18|153));
             RequestFilterFields = "Date and Time";
             column(Title;Title)
             {
@@ -51,7 +51,9 @@ report 50226 "Sale order change Log"
             dataitem("<Change Log Entry1>";"Change Log Entry")
             {
                 DataItemLink = Primary Key Field 2 Value=FIELD(Primary Key Field 2 Value);
-                DataItemTableView = SORTING(Table No.,Primary Key Field 1 Value) ORDER(Ascending) WHERE(Table No.=FILTER(37),Field No.=FILTER(6|11|15));
+                DataItemTableView = SORTING(Table No    DataClassification = CustomerContent;
+.,Primary Key Field 1 Value) ORDER(Ascending) WHERE(Table No    DataClassification = CustomerContent;
+.=FILTER(37),Field No.=FILTER(6|11|15));
                 column(Change_Log_Entry1___Table_Name_;"Table Name")
                 {
                 }
@@ -176,7 +178,9 @@ report 50226 "Sale order change Log"
             dataitem("<Change Log Entry2>";"Change Log Entry")
             {
                 DataItemLink = Primary Key Field 2 Value=FIELD(Primary Key Field 2 Value);
-                DataItemTableView = SORTING(Table No.,Primary Key Field 1 Value) ORDER(Ascending) WHERE(Table No.=FILTER(60095),Field No.=FILTER(5|6|7|153));
+                DataItemTableView = SORTING(Table No    DataClassification = CustomerContent;
+.,Primary Key Field 1 Value) ORDER(Ascending) WHERE(Table No    DataClassification = CustomerContent;
+.=FILTER(60095),Field No.=FILTER(5|6|7|153));
                 column(Change_Log_Entry2___Table_Name_;"Table Name")
                 {
                 }

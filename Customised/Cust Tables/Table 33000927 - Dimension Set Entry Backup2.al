@@ -2,70 +2,75 @@ table 33000927 "Dimension Set Entry Backup2"
 {
     // version NAVW17.00
 
-    CaptionML = ENU='Dimension Set Entry Backup',
-                ENN='Dimension Set Entry';
+    CaptionML = ENU = 'Dimension Set Entry Backup',
+                ENN = 'Dimension Set Entry';
     DrillDownPageID = "dimension set entry page old";
     LookupPageID = "dimension set entry page old";
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"Dimension Set ID";Integer)
+        field(1; "Dimension Set ID"; Integer)
         {
-            CaptionML = ENU='Dimension Set ID',
-                        ENN='Dimension Set ID';
+            CaptionML = ENU = 'Dimension Set ID',
+                        ENN = 'Dimension Set ID';
+            DataClassification = CustomerContent;
         }
-        field(2;"Dimension Code";Code[20])
+        field(2; "Dimension Code"; Code[20])
         {
-            CaptionML = ENU='Dimension Code',
-                        ENN='Dimension Code';
+            CaptionML = ENU = 'Dimension Code',
+                        ENN = 'Dimension Code';
             NotBlank = true;
             TableRelation = Dimension;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
                 if not DimMgt.CheckDim("Dimension Code") then
-                  Error(DimMgt.GetDimErr);
+                    Error(DimMgt.GetDimErr);
                 if "Dimension Code" <> xRec."Dimension Code" then begin
-                  "Dimension Value Code" := '';
-                  "Dimension Value ID" := 0;
+                    "Dimension Value Code" := '';
+                    "Dimension Value ID" := 0;
                 end;
             end;
         }
-        field(3;"Dimension Value Code";Code[20])
+        field(3; "Dimension Value Code"; Code[20])
         {
-            CaptionML = ENU='Dimension Value Code',
-                        ENN='Dimension Value Code';
+            CaptionML = ENU = 'Dimension Value Code',
+                        ENN = 'Dimension Value Code';
             NotBlank = true;
-            TableRelation = "Dimension Value".Code WHERE ("Dimension Code"=FIELD("Dimension Code"));
+            TableRelation = "Dimension Value".Code WHERE("Dimension Code" = FIELD("Dimension Code"));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
-                if not DimMgt.CheckDimValue("Dimension Code","Dimension Value Code") then
-                  Error(DimMgt.GetDimErr);
+                if not DimMgt.CheckDimValue("Dimension Code", "Dimension Value Code") then
+                    Error(DimMgt.GetDimErr);
 
-                DimVal.Get("Dimension Code","Dimension Value Code");
+                DimVal.Get("Dimension Code", "Dimension Value Code");
                 "Dimension Value ID" := DimVal."Dimension Value ID";
             end;
         }
-        field(4;"Dimension Value ID";Integer)
+        field(4; "Dimension Value ID"; Integer)
         {
-            CaptionML = ENU='Dimension Value ID',
-                        ENN='Dimension Value ID';
+            CaptionML = ENU = 'Dimension Value ID',
+                        ENN = 'Dimension Value ID';
+            DataClassification = CustomerContent;
         }
-        field(5;"Dimension Name";Text[30])
+        field(5; "Dimension Name"; Text[30])
         {
-            CalcFormula = Lookup(Dimension.Name WHERE (Code=FIELD("Dimension Code")));
-            CaptionML = ENU='Dimension Name',
-                        ENN='Dimension Name';
+            CalcFormula = Lookup(Dimension.Name WHERE(Code = FIELD("Dimension Code")));
+            CaptionML = ENU = 'Dimension Name',
+                        ENN = 'Dimension Name';
             Editable = true;
             FieldClass = FlowField;
         }
-        field(6;"Dimension Value Name";Text[50])
+        field(6; "Dimension Value Name"; Text[50])
         {
-            CalcFormula = Lookup("Dimension Value".Name WHERE ("Dimension Code"=FIELD("Dimension Code"),
-                                                               Code=FIELD("Dimension Value Code")));
-            CaptionML = ENU='Dimension Value Name',
-                        ENN='Dimension Value Name';
+            CalcFormula = Lookup("Dimension Value".Name WHERE("Dimension Code" = FIELD("Dimension Code"),
+                                                               Code = FIELD("Dimension Value Code")));
+            CaptionML = ENU = 'Dimension Value Name',
+                        ENN = 'Dimension Value Name';
             Editable = true;
             FieldClass = FlowField;
         }
@@ -73,10 +78,10 @@ table 33000927 "Dimension Set Entry Backup2"
 
     keys
     {
-        key(Key1;"Dimension Set ID","Dimension Code")
+        key(Key1; "Dimension Set ID", "Dimension Code")
         {
         }
-        key(Key2;"Dimension Value ID")
+        key(Key2; "Dimension Value ID")
         {
         }
     }
@@ -87,18 +92,18 @@ table 33000927 "Dimension Set Entry Backup2"
 
     trigger OnInsert();
     begin
-        if DimVal.Get("Dimension Code","Dimension Value Code") then
-          "Dimension Value ID" := DimVal."Dimension Value ID"
+        if DimVal.Get("Dimension Code", "Dimension Value Code") then
+            "Dimension Value ID" := DimVal."Dimension Value ID"
         else
-          "Dimension Value ID" := 0;
+            "Dimension Value ID" := 0;
     end;
 
     trigger OnModify();
     begin
-        if DimVal.Get("Dimension Code","Dimension Value Code") then
-          "Dimension Value ID" := DimVal."Dimension Value ID"
+        if DimVal.Get("Dimension Code", "Dimension Value Code") then
+            "Dimension Value ID" := DimVal."Dimension Value ID"
         else
-          "Dimension Value ID" := 0;
+            "Dimension Value ID" := 0;
         /*OldDim.RESET;
         OldDim.SETFILTER(OldDim."Dimension Code","Dimension Code");
         OldDim.SETFILTER(OldDim.Code,"Dimension Value Code");
@@ -134,69 +139,70 @@ table 33000927 "Dimension Set Entry Backup2"
 
     trigger OnRename();
     begin
-        if not (UserId  in ['EFFTRONICS\SUJANI'])
+        if not (UserId in ['EFFTRONICS\SUJANI'])
 
-        then Error('You Donot have Right to Rename '+Format("Dimension Set ID"));
+        then
+            Error('You Donot have Right to Rename ' + Format("Dimension Set ID"));
     end;
 
     var
-        DimVal : Record "Dimension Value";
-        DimMgt : Codeunit DimensionManagement;
-        Body : Text;
-        Subject : Text;
-        Mail_To : Text;
-        Mail_From : Text;
-        Mail : Codeunit Mail;
-        SMTP_MAIL : Codeunit "SMTP Mail";
-        OldDim : Record "Dimension Value";
-        NewDim : Record "Dimension Value";
-        OldDimValName : Text;
-        NewDimValName : Text;
+        DimVal: Record "Dimension Value";
+        DimMgt: Codeunit DimensionManagement;
+        Body: Text;
+        Subject: Text;
+        Mail_To: Text;
+        Mail_From: Text;
+        Mail: Codeunit Mail;
+        SMTP_MAIL: Codeunit "SMTP Mail";
+        OldDim: Record "Dimension Value";
+        NewDim: Record "Dimension Value";
+        OldDimValName: Text;
+        NewDimValName: Text;
 
     [LineStart(8702)]
-    procedure GetDimensionSetID(var DimSetEntry : Record "Dimension Set Entry") : Integer;
+    procedure GetDimensionSetID(var DimSetEntry: Record "Dimension Set Entry"): Integer;
     var
-        DimSetEntry2 : Record "Dimension Set Entry";
-        DimSetTreeNode : Record "Dimension Set Tree Node";
-        Found : Boolean;
+        DimSetEntry2: Record "Dimension Set Entry";
+        DimSetTreeNode: Record "Dimension Set Tree Node";
+        Found: Boolean;
     begin
         DimSetEntry2.Copy(DimSetEntry);
         if DimSetEntry."Dimension Set ID" > 0 then
-          DimSetEntry.SetRange("Dimension Set ID",DimSetEntry."Dimension Set ID");
+            DimSetEntry.SetRange("Dimension Set ID", DimSetEntry."Dimension Set ID");
 
         DimSetEntry.SetCurrentKey("Dimension Value ID");
-        DimSetEntry.SetFilter("Dimension Code",'<>%1','');
-        DimSetEntry.SetFilter("Dimension Value Code",'<>%1','');
+        DimSetEntry.SetFilter("Dimension Code", '<>%1', '');
+        DimSetEntry.SetFilter("Dimension Value Code", '<>%1', '');
 
         if not DimSetEntry.FindSet then
-          exit(0);
+            exit(0);
 
         Found := true;
         DimSetTreeNode."Dimension Set ID" := 0;
         repeat
-          DimSetEntry.TestField("Dimension Value ID");
-          if Found then
-            if not DimSetTreeNode.Get(DimSetTreeNode."Dimension Set ID",DimSetEntry."Dimension Value ID") then begin
-              Found := false;
-              DimSetTreeNode.LockTable;
+            DimSetEntry.TestField("Dimension Value ID");
+            if Found then
+                if not DimSetTreeNode.Get(DimSetTreeNode."Dimension Set ID", DimSetEntry."Dimension Value ID") then begin
+                    Found := false;
+                    DimSetTreeNode.LockTable;
+                end;
+            if not Found then begin
+                DimSetTreeNode."Parent Dimension Set ID" := DimSetTreeNode."Dimension Set ID";
+                DimSetTreeNode."Dimension Value ID" := DimSetEntry."Dimension Value ID";
+                DimSetTreeNode."Dimension Set ID" := 0;
+                DimSetTreeNode."In Use" := false;
+                if not DimSetTreeNode.Insert(true) then
+                    DimSetTreeNode.Get(DimSetTreeNode."Parent Dimension Set ID", DimSetTreeNode."Dimension Value ID");
             end;
-          if not Found then begin
-            DimSetTreeNode."Parent Dimension Set ID" := DimSetTreeNode."Dimension Set ID";
-            DimSetTreeNode."Dimension Value ID" := DimSetEntry."Dimension Value ID";
-            DimSetTreeNode."Dimension Set ID" := 0;
-            DimSetTreeNode."In Use" := false;
-            if not DimSetTreeNode.Insert(true) then
-              DimSetTreeNode.Get(DimSetTreeNode."Parent Dimension Set ID",DimSetTreeNode."Dimension Value ID");
-          end;
         until DimSetEntry.Next = 0;
         if not DimSetTreeNode."In Use" then begin
-          if Found then begin
-            DimSetTreeNode.LockTable;
-            DimSetTreeNode.Get(DimSetTreeNode."Parent Dimension Set ID",DimSetTreeNode."Dimension Value ID");
-          end;
-          DimSetTreeNode."In Use" := true;
-          DimSetTreeNode.Modify;
-          InsertDimSetEntries(DimSetEntry,DimSetTreeNode."Dimension Set ID");
+            if Found then begin
+                DimSetTreeNode.LockTable;
+                DimSetTreeNode.Get(DimSetTreeNode."Parent Dimension Set ID", DimSetTreeNode."Dimension Value ID");
+            end;
+            DimSetTreeNode."In Use" := true;
+            DimSetTreeNode.Modify;
+            InsertDimSetEntries(DimSetEntry, DimSetTreeNode."Dimension Set ID");
         end;
 
         DimSetEntry.Copy(DimSetEntry2);
@@ -205,17 +211,17 @@ table 33000927 "Dimension Set Entry Backup2"
     end;
 
     [LineStart(8746)]
-    local procedure InsertDimSetEntries(var DimSetEntry : Record "Dimension Set Entry";NewID : Integer);
+    local procedure InsertDimSetEntries(var DimSetEntry: Record "Dimension Set Entry"; NewID: Integer);
     var
-        DimSetEntry2 : Record "Dimension Set Entry";
+        DimSetEntry2: Record "Dimension Set Entry";
     begin
         DimSetEntry2.LockTable;
         if DimSetEntry.FindSet then
-          repeat
-            DimSetEntry2 := DimSetEntry;
-            DimSetEntry2."Dimension Set ID" := NewID;
-            DimSetEntry2.Insert;
-          until DimSetEntry.Next = 0;
+            repeat
+                DimSetEntry2 := DimSetEntry;
+                DimSetEntry2."Dimension Set ID" := NewID;
+                DimSetEntry2.Insert;
+            until DimSetEntry.Next = 0;
     end;
 }
 

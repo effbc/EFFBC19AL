@@ -37,6 +37,7 @@ tableextension 70123 RoutingHeaderExt extends "Routing Header"
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60002; "Man Cost"; Decimal)
         {
@@ -47,14 +48,17 @@ tableextension 70123 RoutingHeaderExt extends "Routing Header"
         field(60003; "Tot Man Cost/Hour"; Decimal)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(90080; "User Id"; Code[50])
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(90081; "Modifef User ID"; Code[50])
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
     }
 
@@ -62,10 +66,11 @@ tableextension 70123 RoutingHeaderExt extends "Routing Header"
         RoutingLine: Record "Routing Line";
         TotMin: Decimal;
         TotHours: Decimal;
-        CheckRouting : Codeunit "Check Routing Lines";
+        CheckRouting: Codeunit "Check Routing Lines";
         Text001: Label 'ENU=All versions attached to the routing will be closed. Close routing?;ENN=All versions attached to the routing will be closed. Close routing?';
         RtngVersion: Record "Routing Version";
-    PROCEDURE statusValidate(Status : Enum "Routing Status");
+
+    PROCEDURE statusValidate(Status: Enum "Routing Status");
     BEGIN
 
         if (Status = Status::Certified) then begin

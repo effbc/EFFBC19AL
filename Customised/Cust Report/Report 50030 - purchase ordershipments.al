@@ -24,53 +24,53 @@ report 50030 "purchase ordershipments"
 
     dataset
     {
-        dataitem("Purchase Header";"Purchase Header")
+        dataitem("Purchase Header"; "Purchase Header")
         {
-            DataItemTableView = SORTING(Document Type,No.) WHERE(Document Type=CONST(Order));
-            RequestFilterFields = "Document Type","No.";
-            column(COMPANYNAME;COMPANYNAME)
+            DataItemTableView = SORTING(Document Type, No.) WHERE(Document Type=CONST(Order));
+            RequestFilterFields = "Document Type", "No.";
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(TODAY;TODAY)
+            column(TODAY; TODAY)
             {
             }
-            column(USERID;USERID)
+            column(USERID; USERID)
             {
             }
-            column(TODAY_Control1000000039;TODAY)
+            column(TODAY_Control1000000039; TODAY)
             {
             }
-            column(USERID_Control1000000038;USERID)
+            column(USERID_Control1000000038; USERID)
             {
             }
-            column(COMPANYNAME_Control1000000036;COMPANYNAME)
+            column(COMPANYNAME_Control1000000036; COMPANYNAME)
             {
             }
-            column(No__Of_Orders_;"No. Of Orders")
+            column(No__Of_Orders_; "No. Of Orders")
             {
             }
-            column(Received_Purchase_Orders_ListCaption;Received_Purchase_Orders_ListCaptionLbl)
+            column(Received_Purchase_Orders_ListCaption; Received_Purchase_Orders_ListCaptionLbl)
             {
             }
-            column(Partially_Recived_Purchase_Orders_ListCaption;Partially_Recived_Purchase_Orders_ListCaptionLbl)
+            column(Partially_Recived_Purchase_Orders_ListCaption; Partially_Recived_Purchase_Orders_ListCaptionLbl)
             {
             }
-            column(Pending_Purchase_Order_ListCaption;Pending_Purchase_Order_ListCaptionLbl)
+            column(Pending_Purchase_Order_ListCaption; Pending_Purchase_Order_ListCaptionLbl)
             {
             }
-            column(No__Of_OrdersCaption;No__Of_OrdersCaptionLbl)
+            column(No__Of_OrdersCaption; No__Of_OrdersCaptionLbl)
             {
             }
-            column(Purchase_Header_Document_Type;"Document Type")
+            column(Purchase_Header_Document_Type; "Document Type")
             {
             }
-            column(Purchase_Header_No_;"No.")
+            column(Purchase_Header_No_; "No.")
             {
             }
-            dataitem("<Purchase Line1>";"Purchase Line")
+            dataitem("<Purchase Line1>"; "Purchase Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Document Type,Document No.,Line No.) WHERE(Quantity=FILTER(>0),Expected Receipt Date=FILTER(<>''));
+                DataItemTableView = SORTING(Document Type, Document No., Line No.) WHERE(Quantity = FILTER(> 0), Expected Receipt Date=FILTER(<>''));
                 column(Purchase_Line1___Document_No__;"Document No.")
                 {
                 }

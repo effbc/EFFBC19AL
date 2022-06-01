@@ -6,13 +6,13 @@ xmlport 80096 "CRP Work Centre Group"
     {
         textelement(WorkCenterGroups)
         {
-            tableelement("<workcentergroup>";"Work Center Group")
+            tableelement("<workcentergroup>"; "Work Center Group")
             {
                 XmlName = 'WorkCenterGroup';
-                fieldelement(Code;"<WorkCenterGroup>".Code)
+                fieldelement(Code; "<WorkCenterGroup>".Code)
                 {
                 }
-                fieldelement(Name;"<WorkCenterGroup>".Name)
+                fieldelement(Name; "<WorkCenterGroup>".Name)
                 {
                 }
             }

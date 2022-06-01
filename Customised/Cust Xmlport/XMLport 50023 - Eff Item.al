@@ -6,100 +6,100 @@ xmlport 50023 "Eff Item"
     {
         textelement(Items)
         {
-            tableelement(Item;Item)
+            tableelement(Item; Item)
             {
                 XmlName = 'Item';
-                fieldelement(No;Item."No.")
+                fieldelement(No; Item."No.")
                 {
                 }
-                fieldelement(Description;Item.Description)
+                fieldelement(Description; Item.Description)
                 {
                 }
-                fieldelement(Description2;Item."Description 2")
+                fieldelement(Description2; Item."Description 2")
                 {
                 }
-                fieldelement(NoofFixingHoles;Item."No.of Fixing Holes")
+                fieldelement(NoofFixingHoles; Item."No.of Fixing Holes")
                 {
                 }
-                fieldelement(InventoryatStores;Item."Inventory at Stores")
+                fieldelement(InventoryatStores; Item."Inventory at Stores")
                 {
                 }
-                fieldelement(TaxGroupCode;Item."Tax Group Code")
+                fieldelement(TaxGroupCode; Item."Tax Group Code")
                 {
                 }
-                fieldelement(ExciseProdPostingGroup;Item."Excise Prod. Posting Group")
+                fieldelement(ExciseProdPostingGroup; Item."Excise Prod. Posting Group")
                 {
                 }
-                fieldelement(GenProdPostingGroup;Item."Gen. Prod. Posting Group")
+                fieldelement(GenProdPostingGroup; Item."Gen. Prod. Posting Group")
                 {
                 }
-                fieldelement(ShelfNo;Item."Shelf No.")
+                fieldelement(ShelfNo; Item."Shelf No.")
                 {
                 }
-                fieldelement(InventoryPostingGroup;Item."Inventory Posting Group")
+                fieldelement(InventoryPostingGroup; Item."Inventory Posting Group")
                 {
                 }
-                fieldelement(VATProductPostingGroup;Item."VAT Prod. Posting Group")
+                fieldelement(VATProductPostingGroup; Item."VAT Prod. Posting Group")
                 {
                 }
-                fieldelement(QCEnabled;Item."QC Enabled")
+                fieldelement(QCEnabled; Item."QC Enabled")
                 {
                 }
-                fieldelement(SpecID;Item."Spec ID")
+                fieldelement(SpecID; Item."Spec ID")
                 {
                 }
-                fieldelement(WIPQCEnabled;Item."WIP QC Enabled")
+                fieldelement(WIPQCEnabled; Item."WIP QC Enabled")
                 {
                 }
-                fieldelement(WIPSpecID;Item."WIP Spec ID")
+                fieldelement(WIPSpecID; Item."WIP Spec ID")
                 {
                 }
-                fieldelement(ItemCategoryCode;Item."Item Category Code")
+                fieldelement(ItemCategoryCode; Item."Item Category Code")
                 {
                 }
-                fieldelement(ProductGroupCode;Item."Product Group Code")
+                fieldelement(ProductGroupCode; Item."Product Group Code")
                 {
                 }
-                fieldelement(ItemSubGroupCode;Item."Item Sub Group Code")
+                fieldelement(ItemSubGroupCode; Item."Item Sub Group Code")
                 {
                 }
-                fieldelement(ItemSubSubGroupCode;Item."Item Sub Sub Group Code")
+                fieldelement(ItemSubSubGroupCode; Item."Item Sub Sub Group Code")
                 {
                 }
-                fieldelement(ProductionBOMNo;Item."Production BOM No.")
+                fieldelement(ProductionBOMNo; Item."Production BOM No.")
                 {
                 }
-                fieldelement(RoutingNo;Item."Routing No.")
+                fieldelement(RoutingNo; Item."Routing No.")
                 {
                 }
-                fieldelement(NoofPins;Item."No. of Pins")
+                fieldelement(NoofPins; Item."No. of Pins")
                 {
                 }
-                fieldelement(NoofSolderingPoints;Item."No. of Soldering Points")
+                fieldelement(NoofSolderingPoints; Item."No. of Soldering Points")
                 {
                 }
-                fieldelement(TypeofSolder;Item."Type of Solder")
+                fieldelement(TypeofSolder; Item."Type of Solder")
                 {
                 }
-                fieldelement(NoofOpportunities;Item."No. of Opportunities")
+                fieldelement(NoofOpportunities; Item."No. of Opportunities")
                 {
                 }
-                fieldelement(CapitalItem;Item."Capital Item")
+                fieldelement(CapitalItem; Item."Capital Item")
                 {
                 }
-                fieldelement(SubstitutesExist;Item."Substitutes Exist")
+                fieldelement(SubstitutesExist; Item."Substitutes Exist")
                 {
                 }
-                fieldelement(BaseUnitofMeasure;Item."Base Unit of Measure")
+                fieldelement(BaseUnitofMeasure; Item."Base Unit of Measure")
                 {
                 }
-                fieldelement(UnitCost;Item."Unit Cost")
+                fieldelement(UnitCost; Item."Unit Cost")
                 {
                 }
-                fieldelement(UnitPrice;Item."Unit Price")
+                fieldelement(UnitPrice; Item."Unit Price")
                 {
                 }
-                fieldelement(ItemTrackingCode;Item."Item Tracking Code")
+                fieldelement(ItemTrackingCode; Item."Item Tracking Code")
                 {
                 }
             }

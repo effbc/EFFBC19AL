@@ -7,9 +7,9 @@ report 50061 "DC CHARGES"
 
     dataset
     {
-        dataitem("DC Header";"DC Header")
+        dataitem("DC Header"; "DC Header")
         {
-            DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Type=CONST(Site),No.=FILTER(CUS*));
+            DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Type = CONST(Site), No.=FILTER(CUS*));
             RequestFilterFields = "Created Date","Location Code";
             column(CURRENTDATETIME;CURRENTDATETIME)
             {

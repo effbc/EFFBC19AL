@@ -7,7 +7,7 @@ report 33000898 "Travelling Advance"
 
     dataset
     {
-        dataitem("Analysis View Entry";"Analysis View Entry")
+        dataitem("Analysis View Entry"; "Analysis View Entry")
         {
             DataItemTableView = SORTING(Posting Date) ORDER(Ascending) WHERE(Analysis View Code=FILTER(TA),Account No.=FILTER(24000));
             RequestFilterFields = "Dimension 2 Value Code";

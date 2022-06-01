@@ -8,196 +8,196 @@ report 50139 "GSTR1 Sales"
 
     dataset
     {
-        dataitem(General;"Integer")
+        dataitem(General; "Integer")
         {
-            DataItemTableView = WHERE(Number=CONST(1));
-            column(Number_General;General.Number)
+            DataItemTableView = WHERE(Number = CONST(1));
+            column(Number_General; General.Number)
             {
             }
-            column(LocationErr;LocationErr)
+            column(LocationErr; LocationErr)
             {
             }
-            column(GSTIN_Caption;GSTIN_CaptionLbl)
+            column(GSTIN_Caption; GSTIN_CaptionLbl)
             {
             }
-            column(NameofTax_Caption;NameofTax_CaptionLbl)
+            column(NameofTax_Caption; NameofTax_CaptionLbl)
             {
             }
-            column(Period_Caption;Period_CaptionLbl)
+            column(Period_Caption; Period_CaptionLbl)
             {
             }
-            column(One_Caption;One_CaptionLbl)
+            column(One_Caption; One_CaptionLbl)
             {
             }
-            column(Two_Caption;Two_CaptionLbl)
+            column(Two_Caption; Two_CaptionLbl)
             {
             }
-            column(Three_Caption;Three_CaptionLbl)
+            column(Three_Caption; Three_CaptionLbl)
             {
             }
-            column(INSTRUCTIONS_Caption;INSTRUCTIONS_CaptionLbl)
+            column(INSTRUCTIONS_Caption; INSTRUCTIONS_CaptionLbl)
             {
             }
-            column(Ex_Caption;Ex_CaptionLbl)
+            column(Ex_Caption; Ex_CaptionLbl)
             {
             }
-            column(Avoid_Cut_Caption;Avoid_Cut_CaptionLbl)
+            column(Avoid_Cut_Caption; Avoid_Cut_CaptionLbl)
             {
             }
-            column(To_Enter_Caption;To_Enter_CaptionLbl)
+            column(To_Enter_Caption; To_Enter_CaptionLbl)
             {
             }
-            column(While_Pasting_Caption;While_Pasting_CaptionLbl)
+            column(While_Pasting_Caption; While_Pasting_CaptionLbl)
             {
             }
-            column(Before_any_Caption;Before_any_CaptionLbl)
+            column(Before_any_Caption; Before_any_CaptionLbl)
             {
             }
-            column(Avoid_using_Caption;Avoid_using_CaptionLbl)
+            column(Avoid_using_Caption; Avoid_using_CaptionLbl)
             {
             }
-            column(If_mandatory_Caption;If_mandatory_CaptionLbl)
+            column(If_mandatory_Caption; If_mandatory_CaptionLbl)
             {
             }
-            column(Option_Field_Caption;Option_Field_CaptionLbl)
+            column(Option_Field_Caption; Option_Field_CaptionLbl)
             {
             }
-            column(Mandatory_Field_Caption;Mandatory_Field_CaptionLbl)
+            column(Mandatory_Field_Caption; Mandatory_Field_CaptionLbl)
             {
             }
-            column(GeneralVisibility;GeneralVisibility)
+            column(GeneralVisibility; GeneralVisibility)
             {
             }
-            column(GSTIN;GSTIN)
+            column(GSTIN; GSTIN)
             {
             }
-            column(TaxablePerson;TaxablePerson)
+            column(TaxablePerson; TaxablePerson)
             {
             }
-            column(Period;Period)
+            column(Period; Period)
             {
             }
-            column(GeneralDate;GeneralDate)
+            column(GeneralDate; GeneralDate)
             {
             }
-            column(G1_Caption;G1_CaptionLbl)
+            column(G1_Caption; G1_CaptionLbl)
             {
             }
-            column(G2_Caption;G2_CaptionLbl)
+            column(G2_Caption; G2_CaptionLbl)
             {
             }
-            column(G3_Caption;G3_CaptionLbl)
+            column(G3_Caption; G3_CaptionLbl)
             {
             }
-            column(G4_Caption;G4_CaptionLbl)
+            column(G4_Caption; G4_CaptionLbl)
             {
             }
-            column(G5_Caption;G5_CaptionLbl)
+            column(G5_Caption; G5_CaptionLbl)
             {
             }
-            column(G6_Caption;G6_CaptionLbl)
+            column(G6_Caption; G6_CaptionLbl)
             {
             }
-            column(G7_Caption;G7_CaptionLbl)
+            column(G7_Caption; G7_CaptionLbl)
             {
             }
-            column(G8_Caption;G8_CaptionLbl)
+            column(G8_Caption; G8_CaptionLbl)
             {
             }
-            column(G9_Caption;G9_CaptionLbl)
+            column(G9_Caption; G9_CaptionLbl)
             {
             }
-            column(G10_Caption;G10_CaptionLbl)
+            column(G10_Caption; G10_CaptionLbl)
             {
             }
-            column(G11_Caption;G11_CaptionLbl)
+            column(G11_Caption; G11_CaptionLbl)
             {
             }
-            column(G12_Caption;G12_CaptionLbl)
+            column(G12_Caption; G12_CaptionLbl)
             {
             }
-            column(G13_Caption;G13_CaptionLbl)
+            column(G13_Caption; G13_CaptionLbl)
             {
             }
-            column(G14_Caption;G14_CaptionLbl)
+            column(G14_Caption; G14_CaptionLbl)
             {
             }
-            column(G15_Caption;G15_CaptionLbl)
+            column(G15_Caption; G15_CaptionLbl)
             {
             }
-            column(G16_Caption;G16_CaptionLbl)
+            column(G16_Caption; G16_CaptionLbl)
             {
             }
-            column(Notes_Caption;Notes_CaptionLbl)
+            column(Notes_Caption; Notes_CaptionLbl)
             {
             }
-            column(Taxable_Person_Caption;Taxable_Person_CaptionLbl)
+            column(Taxable_Person_Caption; Taxable_Person_CaptionLbl)
             {
             }
-            column(In_case_of_Caption;In_case_of_CaptionLbl)
+            column(In_case_of_Caption; In_case_of_CaptionLbl)
             {
             }
-            column(In_case_of_intra_Caption;In_case_of_intra_CaptionLbl)
+            column(In_case_of_intra_Caption; In_case_of_intra_CaptionLbl)
             {
             }
-            column(Taxable_outward_Caption;Taxable_outward_CaptionLbl)
+            column(Taxable_outward_Caption; Taxable_outward_CaptionLbl)
             {
             }
-            column(GSTIN_UID_Caption;GSTIN_UID_CaptionLbl)
+            column(GSTIN_UID_Caption; GSTIN_UID_CaptionLbl)
             {
             }
-            column(Party_Name_Caption;Party_Name_CaptionLbl)
+            column(Party_Name_Caption; Party_Name_CaptionLbl)
             {
             }
-            column(Invoice_Caption;Invoice_CaptionLbl)
+            column(Invoice_Caption; Invoice_CaptionLbl)
             {
             }
-            column(Number_Caption;Number_CaptionLbl)
+            column(Number_Caption; Number_CaptionLbl)
             {
             }
-            column(Date_Caption;Date_CaptionLbl)
+            column(Date_Caption; Date_CaptionLbl)
             {
             }
-            column(Value_Caption;Value_CaptionLbl)
+            column(Value_Caption; Value_CaptionLbl)
             {
             }
-            column(Taxable_Value_Caption;Taxable_Value_CaptionLbl)
+            column(Taxable_Value_Caption; Taxable_Value_CaptionLbl)
             {
             }
-            column(GST_Rate_Caption;GST_Rate_CaptionLbl)
+            column(GST_Rate_Caption; GST_Rate_CaptionLbl)
             {
             }
-            column(IGST_Caption;IGST_CaptionLbl)
+            column(IGST_Caption; IGST_CaptionLbl)
             {
             }
-            column(CGST_Caption;CGST_CaptionLbl)
+            column(CGST_Caption; CGST_CaptionLbl)
             {
             }
-            column(SGST_UTGST_Caption;SGST_UTGST_CaptionLbl)
+            column(SGST_UTGST_Caption; SGST_UTGST_CaptionLbl)
             {
             }
-            column(CESS_Caption;CESS_CaptionLbl)
+            column(CESS_Caption; CESS_CaptionLbl)
             {
             }
-            column(POS_only_if_Caption;POS_only_if_CaptionLbl)
+            column(POS_only_if_Caption; POS_only_if_CaptionLbl)
             {
             }
-            column(Reverse_Charge_Caption;Reverse_Charge_CaptionLbl)
+            column(Reverse_Charge_Caption; Reverse_Charge_CaptionLbl)
             {
             }
-            column(Indicate_supply_Caption;Indicate_supply_CaptionLbl)
+            column(Indicate_supply_Caption; Indicate_supply_CaptionLbl)
             {
             }
-            column(GSTIN_of_ecommerce_Caption;GSTIN_of_ecommerce_CaptionLbl)
+            column(GSTIN_of_ecommerce_Caption; GSTIN_of_ecommerce_CaptionLbl)
             {
             }
-            column(Original_Invoice_Caption;Original_Invoice_CaptionLbl)
+            column(Original_Invoice_Caption; Original_Invoice_CaptionLbl)
             {
             }
-            column(No_Caption;No_CaptionLbl)
+            column(No_Caption; No_CaptionLbl)
             {
             }
-            column(Amount_Caption;Amount_CaptionLbl)
+            column(Amount_Caption; Amount_CaptionLbl)
             {
             }
 
@@ -208,10 +208,10 @@ report 50139 "GSTR1 Sales"
 
             trigger OnPreDataItem();
             begin
-                GeneralDate := DMY2DATE(1,Period,Year);
+                GeneralDate := DMY2DATE(1, Period, Year);
             end;
         }
-        dataitem("Sales Invoice Header";"Sales Invoice Header")
+        dataitem("Sales Invoice Header"; "Sales Invoice Header")
         {
             DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(GST Customer Type=FILTER(<>Export));
             column(No_SalesInvoiceHeader;"Sales Invoice Header"."No.")

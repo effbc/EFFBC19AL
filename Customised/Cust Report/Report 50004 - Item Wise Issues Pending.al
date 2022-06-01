@@ -7,121 +7,121 @@ report 50004 "Item Wise Issues Pending"
 
     dataset
     {
-        dataitem("Material Issues Header";"Material Issues Header")
+        dataitem("Material Issues Header"; "Material Issues Header")
         {
-            DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Status=CONST(Released));
-            RequestFilterFields = "No.","Prod. Order No.","Reason Code","Transfer-to Code","Transfer-from Code","User ID";
-            column(MIH_Choice;Choice)
+            DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Status = CONST(Released));
+            RequestFilterFields = "No.", "Prod. Order No.", "Reason Code", "Transfer-to Code", "Transfer-from Code", "User ID";
+            column(MIH_Choice; Choice)
             {
             }
-            column(COMPANYNAME;COMPANYNAME)
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(CurrReport_PAGENO;CurrReport.PAGENO)
+            column(CurrReport_PAGENO; CurrReport.PAGENO)
             {
             }
-            column(USERID;USERID)
+            column(USERID; USERID)
             {
             }
-            column(TODAY;TODAY)
+            column(TODAY; TODAY)
             {
             }
-            column(Tot_Pending_Qty;Tot_Pending_Qty)
+            column(Tot_Pending_Qty; Tot_Pending_Qty)
             {
             }
-            column(Item_Wise_Issues_PendingCaption;Item_Wise_Issues_PendingCaptionLbl)
+            column(Item_Wise_Issues_PendingCaption; Item_Wise_Issues_PendingCaptionLbl)
             {
             }
-            column(Page_No___Caption;Page_No___CaptionLbl)
+            column(Page_No___Caption; Page_No___CaptionLbl)
             {
             }
-            column(Project_CodeCaption;Project_CodeCaptionLbl)
+            column(Project_CodeCaption; Project_CodeCaptionLbl)
             {
             }
-            column(Req_NoCaption;Req_NoCaptionLbl)
+            column(Req_NoCaption; Req_NoCaptionLbl)
             {
             }
-            column(Material_Issues_Line__Item_No__Caption;"Material Issues Line".FIELDCAPTION("Item No."))
+            column(Material_Issues_Line__Item_No__Caption; "Material Issues Line".FIELDCAPTION("Item No."))
             {
             }
-            column(Employee_NameCaption;Employee_NameCaptionLbl)
+            column(Employee_NameCaption; Employee_NameCaptionLbl)
             {
             }
-            column(Requested_dateCaption;Requested_dateCaptionLbl)
+            column(Requested_dateCaption; Requested_dateCaptionLbl)
             {
             }
-            column(DepartmentCaption;DepartmentCaptionLbl)
+            column(DepartmentCaption; DepartmentCaptionLbl)
             {
             }
-            column(Requested_QuantityCaption;Requested_QuantityCaptionLbl)
+            column(Requested_QuantityCaption; Requested_QuantityCaptionLbl)
             {
             }
-            column(Qty__to_Receive_Caption;Qty__to_Receive_CaptionLbl)
+            column(Qty__to_Receive_Caption; Qty__to_Receive_CaptionLbl)
             {
             }
-            column(Material_Issues_Line__Qty__Received__Base__Caption;"Material Issues Line".FIELDCAPTION("Qty. Received (Base)"))
+            column(Material_Issues_Line__Qty__Received__Base__Caption; "Material Issues Line".FIELDCAPTION("Qty. Received (Base)"))
             {
             }
-            column(DescriptionCaption;DescriptionCaptionLbl)
+            column(DescriptionCaption; DescriptionCaptionLbl)
             {
             }
-            column(Unit_CostCaption;Unit_CostCaptionLbl)
+            column(Unit_CostCaption; Unit_CostCaptionLbl)
             {
             }
-            column(UOMCaption;UOMCaptionLbl)
+            column(UOMCaption; UOMCaptionLbl)
             {
             }
-            column(Material_Issues_Header_No_;"No.")
+            column(Material_Issues_Header_No_; "No.")
             {
             }
-            dataitem("Material Issues Line";"Material Issues Line")
+            dataitem("Material Issues Line"; "Material Issues Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Document No.,Line No.);
-                RequestFilterFields = "Item No.",Rejected;
-                column(Tot_Qty;Tot_Qty)
+                DataItemTableView = SORTING(Document No., Line No.);
+                RequestFilterFields = "Item No.", Rejected;
+                column(Tot_Qty; Tot_Qty)
                 {
                 }
-                column(MILBody1;MILBody1)
+                column(MILBody1; MILBody1)
                 {
                 }
-                column(Material_Issues_Line__Transfer_to_Code_;"Transfer-to Code")
+                column(Material_Issues_Line__Transfer_to_Code_; "Transfer-to Code")
                 {
                 }
-                column(Material_Issues_Line_Quantity;Quantity)
+                column(Material_Issues_Line_Quantity; Quantity)
                 {
                 }
-                column(Material_Issues_Line__Qty__Received__Base__;"Qty. Received (Base)")
+                column(Material_Issues_Line__Qty__Received__Base__; "Qty. Received (Base)")
                 {
                 }
-                column(Material_Issues_Line__Item_No__;"Item No.")
+                column(Material_Issues_Line__Item_No__; "Item No.")
                 {
                 }
-                column(Material_Issues_Header___Resource_Name_;"Material Issues Header"."Resource Name")
+                column(Material_Issues_Header___Resource_Name_; "Material Issues Header"."Resource Name")
                 {
                 }
-                column(Material_Issues_Line__Document_No__;"Document No.")
+                column(Material_Issues_Line__Document_No__; "Document No.")
                 {
                 }
-                column(Reason;Reason)
+                column(Reason; Reason)
                 {
                 }
-                column(Material_Issues_Line__Material_Issues_Line__Description;"Material Issues Line".Description)
+                column(Material_Issues_Line__Material_Issues_Line__Description; "Material Issues Line".Description)
                 {
                 }
-                column(Item__Avg_Unit_Cost_;cost)
+                column(Item__Avg_Unit_Cost_; cost)
                 {
                 }
-                column(Material_Issues_Line__Unit_of_Measure_Code_;"Unit of Measure Code")
+                column(Material_Issues_Line__Unit_of_Measure_Code_; "Unit of Measure Code")
                 {
                 }
-                column(Material_Issues_Header___Released_Date_;"Material Issues Header"."Released Date")
+                column(Material_Issues_Header___Released_Date_; "Material Issues Header"."Released Date")
                 {
                 }
-                column(Quantity__Qty__Received__Base__;Quantity-"Qty. Received (Base)")
+                column(Quantity__Qty__Received__Base__; Quantity - "Qty. Received (Base)")
                 {
                 }
-                column(Material_Issues_Line_Line_No_;"Line No.")
+                column(Material_Issues_Line_Line_No_; "Line No.")
                 {
                 }
 
@@ -130,56 +130,54 @@ report 50004 "Item Wise Issues Pending"
                     //Rev01
 
                     //Material Issues Line, Body (1) - OnPreSection()
-                     // MILBody1 := TRUE;
+                    // MILBody1 := TRUE;
                     //Quantity_to_receive:=0;
                     //"Material Issues Line".CALCFIELDS("Material Issues Line"."Qty. to Receive");
                     //Quantity_to_receive:="Material Issues Line"."Qty. to Receive";
-                    IF "Material Issues Line".Quantity="Material Issues Line"."Quantity Received" THEN
-                     BEGIN
-                      MILBody1 := TRUE;   //CurrReport.SHOWOUTPUT:=FALSE;
-                     END
-                    ELSE
-                     BEGIN
-                      Reason:="Material Issues Header"."Prod. Order No.";
-                      Tot_Pending_Qty+=Quantity-"Qty. Received (Base)";
-                      Tot_Qty := Tot_Qty + "Material Issues Line".Quantity;
-                      //CurrReport.SHOWOUTPUT:=TRUE;
-                     MILBody1 := FALSE;
-                      sno:=sno+1;
-                      IF "Verify Requests" THEN BEGIN
-                        "Posted Material Issues Line".RESET;
-                        "Posted Material Issues Line".SETCURRENTKEY("Posted Material Issues Line"."Prod. Order No.",
-                                                                    "Posted Material Issues Line"."Prod. Order Line No.",
-                                                                    "Posted Material Issues Line"."Item No.");
-                        "Posted Material Issues Line".SETRANGE("Posted Material Issues Line"."Prod. Order No."
-                                                                      ,"Material Issues Line"."Prod. Order No.");
-                        "Posted Material Issues Line".SETRANGE("Posted Material Issues Line"."Prod. Order Line No.",
-                                                                      "Material Issues Line"."Prod. Order Line No.");
-                        "Posted Material Issues Line".SETRANGE("Posted Material Issues Line"."Item No.","Material Issues Line"."Item No.");
-                        IF "Posted Material Issues Line".FIND('-') THEN BEGIN
-                          "Material Issues Line".Rejected:=TRUE;
-                          "Material Issues Line".MODIFY;
+                    IF "Material Issues Line".Quantity = "Material Issues Line"."Quantity Received" THEN BEGIN
+                        MILBody1 := TRUE;   //CurrReport.SHOWOUTPUT:=FALSE;
+                    END
+                    ELSE BEGIN
+                        Reason := "Material Issues Header"."Prod. Order No.";
+                        Tot_Pending_Qty += Quantity - "Qty. Received (Base)";
+                        Tot_Qty := Tot_Qty + "Material Issues Line".Quantity;
+                        //CurrReport.SHOWOUTPUT:=TRUE;
+                        MILBody1 := FALSE;
+                        sno := sno + 1;
+                        IF "Verify Requests" THEN BEGIN
+                            "Posted Material Issues Line".RESET;
+                            "Posted Material Issues Line".SETCURRENTKEY("Posted Material Issues Line"."Prod. Order No.",
+                                                                        "Posted Material Issues Line"."Prod. Order Line No.",
+                                                                        "Posted Material Issues Line"."Item No.");
+                            "Posted Material Issues Line".SETRANGE("Posted Material Issues Line"."Prod. Order No."
+                                                                          , "Material Issues Line"."Prod. Order No.");
+                            "Posted Material Issues Line".SETRANGE("Posted Material Issues Line"."Prod. Order Line No.",
+                                                                          "Material Issues Line"."Prod. Order Line No.");
+                            "Posted Material Issues Line".SETRANGE("Posted Material Issues Line"."Item No.", "Material Issues Line"."Item No.");
+                            IF "Posted Material Issues Line".FIND('-') THEN BEGIN
+                                "Material Issues Line".Rejected := TRUE;
+                                "Material Issues Line".MODIFY;
+                            END;
                         END;
-                      END;
-                      Item.SETRANGE(Item."No.","Material Issues Line"."Item No.");
-                      IF Item.FINDFIRST THEN
-                        cost:=Item."Avg Unit Cost";
-                     IF excel THEN BEGIN
-                        Row+=1;
-                        Entercell(Row,1,"Material Issues Line"."Item No.",FALSE,TempExcelbuffer."Cell Type" :: Text);
-                        Entercell(Row,2,"Material Issues Line".Description,FALSE,TempExcelbuffer."Cell Type" :: Text);
-                        Entercell(Row,3,FORMAT("Material Issues Line".Quantity),FALSE,TempExcelbuffer."Cell Type" :: Number);
-                        Entercell(Row,4,FORMAT("Material Issues Line".Quantity-"Material Issues Line"."Quantity Received"),FALSE,TempExcelbuffer."Cell Type" :: Number);
-                        Entercell(Row,5,FORMAT("Material Issues Line"."Qty. Received (Base)"),FALSE,TempExcelbuffer."Cell Type" :: Number);
-                        Entercell(Row,6,FORMAT(cost),FALSE,TempExcelbuffer."Cell Type" :: Number);
-                        Entercell(Row,7,"Material Issues Line"."Document No.",FALSE,TempExcelbuffer."Cell Type" :: Text);
-                        Entercell(Row,8,FORMAT("Material Issues Header"."Released Date"),FALSE,TempExcelbuffer."Cell Type" :: Text);
-                        Entercell(Row,9,"Material Issues Header"."Prod. Order No.",FALSE,TempExcelbuffer."Cell Type" :: Text);
-                        Entercell(Row,10,FORMAT("Material Issues Line"."Prod. Order Line No."),FALSE,TempExcelbuffer."Cell Type" :: Number);
-                        Entercell(Row,11,"Material Issues Line"."Unit of Measure",FALSE,TempExcelbuffer."Cell Type" :: Text);
-                        Entercell(Row,12,"Material Issues Line"."Transfer-to Code",FALSE,TempExcelbuffer."Cell Type" :: Text);
-                        Entercell(Row,13,"Material Issues Header"."Resource Name",FALSE,TempExcelbuffer."Cell Type" :: Text);
-                      END;
+                        Item.SETRANGE(Item."No.", "Material Issues Line"."Item No.");
+                        IF Item.FINDFIRST THEN
+                            cost := Item."Avg Unit Cost";
+                        IF excel THEN BEGIN
+                            Row += 1;
+                            Entercell(Row, 1, "Material Issues Line"."Item No.", FALSE, TempExcelbuffer."Cell Type"::Text);
+                            Entercell(Row, 2, "Material Issues Line".Description, FALSE, TempExcelbuffer."Cell Type"::Text);
+                            Entercell(Row, 3, FORMAT("Material Issues Line".Quantity), FALSE, TempExcelbuffer."Cell Type"::Number);
+                            Entercell(Row, 4, FORMAT("Material Issues Line".Quantity - "Material Issues Line"."Quantity Received"), FALSE, TempExcelbuffer."Cell Type"::Number);
+                            Entercell(Row, 5, FORMAT("Material Issues Line"."Qty. Received (Base)"), FALSE, TempExcelbuffer."Cell Type"::Number);
+                            Entercell(Row, 6, FORMAT(cost), FALSE, TempExcelbuffer."Cell Type"::Number);
+                            Entercell(Row, 7, "Material Issues Line"."Document No.", FALSE, TempExcelbuffer."Cell Type"::Text);
+                            Entercell(Row, 8, FORMAT("Material Issues Header"."Released Date"), FALSE, TempExcelbuffer."Cell Type"::Text);
+                            Entercell(Row, 9, "Material Issues Header"."Prod. Order No.", FALSE, TempExcelbuffer."Cell Type"::Text);
+                            Entercell(Row, 10, FORMAT("Material Issues Line"."Prod. Order Line No."), FALSE, TempExcelbuffer."Cell Type"::Number);
+                            Entercell(Row, 11, "Material Issues Line"."Unit of Measure", FALSE, TempExcelbuffer."Cell Type"::Text);
+                            Entercell(Row, 12, "Material Issues Line"."Transfer-to Code", FALSE, TempExcelbuffer."Cell Type"::Text);
+                            Entercell(Row, 13, "Material Issues Header"."Resource Name", FALSE, TempExcelbuffer."Cell Type"::Text);
+                        END;
                     END;
 
                     //IF Item.GET("Material Issues Line"."Item No.") THEN
@@ -198,7 +196,7 @@ report 50004 "Item Wise Issues Pending"
             trigger OnAfterGetRecord();
             begin
                 //Rev01
-                
+
                 //Material Issues Header, Header (1) - OnPreSection()
                 /*sno:=0;
                 IF excel THEN BEGIN
@@ -217,32 +215,32 @@ report 50004 "Item Wise Issues Pending"
 
             trigger OnPreDataItem();
             begin
-                IF Choice<>Choice::Prod THEN
-                  CurrReport.BREAK;
-                IF "Material Issues Header".GETFILTER("Material Issues Header"."Transfer-from Code")='' THEN
-                  "Material Issues Header".SETFILTER("Material Issues Header"."Transfer-from Code",'STR|''R&D STR''|CS STR|MCH');
-                sno:=0;
+                IF Choice <> Choice::Prod THEN
+                    CurrReport.BREAK;
+                IF "Material Issues Header".GETFILTER("Material Issues Header"."Transfer-from Code") = '' THEN
+                    "Material Issues Header".SETFILTER("Material Issues Header"."Transfer-from Code", 'STR|''R&D STR''|CS STR|MCH');
+                sno := 0;
                 IF excel THEN BEGIN
-                  Row+=1;
-                  EnterHeadings(Row,1,'Item No.',TRUE,TempExcelbuffer."Cell Type" :: Text);
-                  EnterHeadings(Row,2,'Description',TRUE,TempExcelbuffer."Cell Type" :: Text);
-                  EnterHeadings(Row,3,'Quantity Requested',TRUE,TempExcelbuffer."Cell Type" :: Text);
-                  EnterHeadings(Row,4,'Quantity Pending',TRUE,TempExcelbuffer."Cell Type" :: Text);
-                  EnterHeadings(Row,5,'Quantity Received (Base)',TRUE,TempExcelbuffer."Cell Type" :: Text);
-                  EnterHeadings(Row,6,'Unit Cost',TRUE,TempExcelbuffer."Cell Type" :: Text);
-                  EnterHeadings(Row,7,'Request No.',TRUE,TempExcelbuffer."Cell Type" :: Text);
-                  EnterHeadings(Row,8,'Released Date',TRUE,TempExcelbuffer."Cell Type" :: Text);
-                  EnterHeadings(Row,9,'Production Order',TRUE,TempExcelbuffer."Cell Type" :: Text);
-                  EnterHeadings(Row,10,'Production Order Line',TRUE,TempExcelbuffer."Cell Type" :: Text);
-                  EnterHeadings(Row,11,'UOM',TRUE,TempExcelbuffer."Cell Type" :: Text);
-                  EnterHeadings(Row,12,'Department',TRUE,TempExcelbuffer."Cell Type" :: Text);
-                  EnterHeadings(Row,13,'Employee Name',TRUE,TempExcelbuffer."Cell Type" :: Text);
+                    Row += 1;
+                    EnterHeadings(Row, 1, 'Item No.', TRUE, TempExcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 2, 'Description', TRUE, TempExcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 3, 'Quantity Requested', TRUE, TempExcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 4, 'Quantity Pending', TRUE, TempExcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 5, 'Quantity Received (Base)', TRUE, TempExcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 6, 'Unit Cost', TRUE, TempExcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 7, 'Request No.', TRUE, TempExcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 8, 'Released Date', TRUE, TempExcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 9, 'Production Order', TRUE, TempExcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 10, 'Production Order Line', TRUE, TempExcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 11, 'UOM', TRUE, TempExcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 12, 'Department', TRUE, TempExcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 13, 'Employee Name', TRUE, TempExcelbuffer."Cell Type"::Text);
                 END;
             end;
         }
-        dataitem("Material Issues Line1";"Material Issues Line")
+        dataitem("Material Issues Line1"; "Material Issues Line")
         {
-            DataItemTableView = SORTING(Item No.,Prod. Order No.,Prod. Order Line No.) ORDER(Ascending) WHERE(Item No.=FILTER(<>''),Status=CONST(Released));
+            DataItemTableView = SORTING(Item No., Prod. Order No., Prod. Order Line No.) ORDER(Ascending) WHERE(Item No.=FILTER(<>''),Status=CONST(Released));
             RequestFilterFields = "Sales Order No.";
             ReqFilterHeading = 'Sale Order Wise Pending Items';
             column(MIL1_Choice;Choice)

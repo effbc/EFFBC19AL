@@ -6,28 +6,28 @@ xmlport 80216 "GEN Templates"
     {
         textelement(GenJournalTemplates)
         {
-            tableelement("<genjournaltemplate>";"Gen. Journal Template")
+            tableelement("<genjournaltemplate>"; "Gen. Journal Template")
             {
                 XmlName = 'GenJournalTemplate';
-                fieldelement(Name;"<GenJournalTemplate>".Name)
+                fieldelement(Name; "<GenJournalTemplate>".Name)
                 {
                 }
-                fieldelement(Description;"<GenJournalTemplate>".Description)
+                fieldelement(Description; "<GenJournalTemplate>".Description)
                 {
                 }
-                fieldelement(Type;"<GenJournalTemplate>".Type)
+                fieldelement(Type; "<GenJournalTemplate>".Type)
                 {
                 }
-                fieldelement(Recurring;"<GenJournalTemplate>".Recurring)
+                fieldelement(Recurring; "<GenJournalTemplate>".Recurring)
                 {
                 }
-                fieldelement(BalAccountType;"<GenJournalTemplate>"."Bal. Account Type")
+                fieldelement(BalAccountType; "<GenJournalTemplate>"."Bal. Account Type")
                 {
                 }
-                fieldelement(SourceCode;"<GenJournalTemplate>"."Source Code")
+                fieldelement(SourceCode; "<GenJournalTemplate>"."Source Code")
                 {
                 }
-                fieldelement(ForceDocBalance;"<GenJournalTemplate>"."Force Doc. Balance")
+                fieldelement(ForceDocBalance; "<GenJournalTemplate>"."Force Doc. Balance")
                 {
                 }
             }

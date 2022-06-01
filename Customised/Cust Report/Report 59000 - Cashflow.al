@@ -5,13 +5,13 @@ report 59000 Cashflow
 
     dataset
     {
-        dataitem("G/L Entry";"G/L Entry")
+        dataitem("G/L Entry"; "G/L Entry")
         {
-            RequestFilterFields = "Document No.","System Date";
-            dataitem("Purch. Inv. Line";"Purch. Inv. Line")
+            RequestFilterFields = "Document No.", "System Date";
+            dataitem("Purch. Inv. Line"; "Purch. Inv. Line")
             {
                 DataItemLink = Document No.=FIELD(Document No.);
-                DataItemTableView = SORTING(Document No.,Line No.) ORDER(Ascending) WHERE(Quantity=FILTER(>0));
+                DataItemTableView = SORTING(Document No., Line No.) ORDER(Ascending) WHERE(Quantity = FILTER(> 0));
 
                 trigger OnAfterGetRecord();
                 begin
@@ -271,10 +271,10 @@ report 59000 Cashflow
                 end;
             }
         }
-        dataitem("Purch. Rcpt. Line";"Purch. Rcpt. Line")
+        dataitem("Purch. Rcpt. Line"; "Purch. Rcpt. Line")
         {
-            DataItemTableView = SORTING(Document No.,Line No.) ORDER(Ascending) WHERE(Quantity=FILTER(>0),Correction=FILTER(No));
-            RequestFilterFields = "Document No.","Buy-from Vendor No.";
+            DataItemTableView = SORTING(Document No., Line No.) ORDER(Ascending) WHERE(Quantity = FILTER(> 0), Correction = FILTER(No));
+            RequestFilterFields = "Document No.", "Buy-from Vendor No.";
 
             trigger OnAfterGetRecord();
             begin
@@ -375,10 +375,9 @@ report 59000 Cashflow
 
     trigger OnPostReport();
     begin
-          IF ConnectionOpen=1 THEN
-          BEGIN
+        IF ConnectionOpen = 1 THEN BEGIN
             SQLConnection.CommitTrans;
-          END;
+        END;
     end;
 
     trigger OnPreReport();
@@ -387,162 +386,161 @@ report 59000 Cashflow
     end;
 
     var
-        "G\L" : Record "General Ledger Setup";
-        RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
-        SQLConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
-        SQLQuery : Text[1000];
-        "Count" : Integer;
-        ConnectionOpen : Integer;
-        RowCount : Integer;
-        Structure_Amount : Decimal;
-        Packing_Value : Decimal;
-        Additional_Duty : Decimal;
-        VAT_AMOUNT : Decimal;
-        CST_AMOUNT : Decimal;
-        Frieght_Value : Decimal;
-        Insurance_Value : Decimal;
-        Service_Amount : Decimal;
-        PurchRcptLine : Record "Purch. Rcpt. Line";
-        Order_No : Code[30];
-        OrderLineNo : Integer;
-        StrOrdLineDetails : Record "Structure Order Line Details";
-        PIH : Record "Purch. Inv. Header";
-        StrOrderDetails : Record "Structure Order Details";
-        Dept : Text[25];
-        Vend : Record Vendor;
-        PRH : Record "Purch. Rcpt. Header";
+        "G\L": Record "General Ledger Setup";
+        RecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
+        SQLConnection: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
+        SQLQuery: Text[1000];
+        "Count": Integer;
+        ConnectionOpen: Integer;
+        RowCount: Integer;
+        Structure_Amount: Decimal;
+        Packing_Value: Decimal;
+        Additional_Duty: Decimal;
+        VAT_AMOUNT: Decimal;
+        CST_AMOUNT: Decimal;
+        Frieght_Value: Decimal;
+        Insurance_Value: Decimal;
+        Service_Amount: Decimal;
+        PurchRcptLine: Record "Purch. Rcpt. Line";
+        Order_No: Code[30];
+        OrderLineNo: Integer;
+        StrOrdLineDetails: Record "Structure Order Line Details";
+        PIH: Record "Purch. Inv. Header";
+        StrOrderDetails: Record "Structure Order Details";
+        Dept: Text[25];
+        Vend: Record Vendor;
+        PRH: Record "Purch. Rcpt. Header";
 
     [LineStart(11390)]
-    procedure CommaRemoval(Base : Text[30]) Converted : Text[30];
+    procedure CommaRemoval(Base: Text[30]) Converted: Text[30];
     var
-        i : Integer;
+        i: Integer;
     begin
-         FOR i:=1 TO STRLEN(Base) DO
-         BEGIN
-           IF COPYSTR(Base,i,1)<>',' THEN
-             Converted+=COPYSTR(Base,i,1);
-         END;
-         EXIT(Converted);
+        FOR i := 1 TO STRLEN(Base) DO BEGIN
+            IF COPYSTR(Base, i, 1) <> ',' THEN
+                Converted += COPYSTR(Base, i, 1);
+        END;
+        EXIT(Converted);
     end;
 
     //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event SQLConnection(TransactionLevel : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event SQLConnection(var Source : Text[1024];CursorType : Integer;LockType : Integer;var Options : Integer;adStatus : Integer;pCommand : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{B08400BD-F9D1-4D02-B856-71D5DBA123E9}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Command";pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset";pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event SQLConnection(RecordsAffected : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pCommand : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{B08400BD-F9D1-4D02-B856-71D5DBA123E9}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Command";pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset";pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event SQLConnection(var ConnectionString : Text[1024];var UserID : Text[1024];var Password : Text[1024];var Options : Integer;adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event SQLConnection(adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event RecordSet(cFields : Integer;"Fields" : Variant;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event RecordSet(cFields : Integer;"Fields" : Variant;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event RecordSet(adReason : Integer;cRecords : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event RecordSet(adReason : Integer;cRecords : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event RecordSet(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event RecordSet(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event RecordSet(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event RecordSet(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event RecordSet(var fMoreData : Boolean;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event RecordSet(Progress : Integer;MaxProgress : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 
     //event RecordSet(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
     //begin
-        /*
-        */
+    /*
+    */
     //end;
 }
 

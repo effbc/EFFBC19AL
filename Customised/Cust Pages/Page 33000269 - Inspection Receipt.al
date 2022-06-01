@@ -5,9 +5,9 @@ page 33000269 "Inspection Receipt"
     DeleteAllowed = false;
     InsertAllowed = false;
     PageType = Document;
-    Permissions = TableData "Item Ledger Entry"=rimd;
+    Permissions = TableData "Item Ledger Entry" = rimd;
     SourceTable = "Inspection Receipt Header";
-    SourceTableView = SORTING(No.) WHERE(Status=FILTER(No),Source Type=CONST(In Bound));
+    SourceTableView = SORTING(No.) WHERE(Status = FILTER(No), Source Type=CONST(In Bound));
 
     layout
     {
@@ -16,100 +16,100 @@ page 33000269 "Inspection Receipt"
             group(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Editable = false;
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                     Editable = false;
                 }
-                field("Item Description";"Item Description")
+                field("Item Description"; "Item Description")
                 {
                     Editable = false;
                 }
-                field("Unit Of Measure Code";"Unit Of Measure Code")
+                field("Unit Of Measure Code"; "Unit Of Measure Code")
                 {
                     Editable = false;
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                     Editable = false;
                 }
-                field("Spec ID";"Spec ID")
+                field("Spec ID"; "Spec ID")
                 {
                     Editable = false;
                 }
-                field("IDS Posted By";"IDS Posted By")
+                field("IDS Posted By"; "IDS Posted By")
                 {
                     Editable = false;
                 }
-                field("Created Date";"Created Date")
+                field("Created Date"; "Created Date")
                 {
                     Editable = false;
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("Document Date";"Document Date")
-                {
-                    Editable = false;
-                }
-                field("Rework Reference No.";"Rework Reference No.")
+                field("Document Date"; "Document Date")
                 {
                     Editable = false;
                 }
-                field("Source Type";"Source Type")
+                field("Rework Reference No."; "Rework Reference No.")
                 {
                     Editable = false;
                 }
-                field(Status;Status)
+                field("Source Type"; "Source Type")
+                {
+                    Editable = false;
+                }
+                field(Status; Status)
                 {
                     Editable = editfields;
                 }
-                field(Make;Make)
+                field(Make; Make)
                 {
                     Editable = false;
                 }
-                field("Lot No.";"Lot No.")
+                field("Lot No."; "Lot No.")
                 {
                     Editable = false;
                 }
-                field("Reason code";"Reason code")
+                field("Reason code"; "Reason code")
                 {
                 }
-                field(MSL;MSL)
+                field(MSL; MSL)
                 {
                     Caption = 'MSL';
                     Editable = false;
                     Visible = Visible_Bool;
                 }
-                field("ESD Class";"ESD Class")
+                field("ESD Class"; "ESD Class")
                 {
                     Caption = 'ESD Class';
                     Editable = false;
                     Visible = Visible_Bool;
                 }
-                field("Floor Life at 25 C 40% RH";"Floor Life at 25 C 40% RH")
+                field("Floor Life at 25 C 40% RH"; "Floor Life at 25 C 40% RH")
                 {
                     Caption = 'Floor Life at 25 C 40% RH';
                     Editable = false;
                     Visible = Visible_Bool;
                 }
-                field("Component Shelf Life(Years)";"Component Shelf Life(Years)")
+                field("Component Shelf Life(Years)"; "Component Shelf Life(Years)")
                 {
                     Caption = 'Component Shelf Life(Years)';
                     Editable = false;
                     Visible = Visible_Bool;
                 }
-                field("Bake Hours";"Bake Hours")
+                field("Bake Hours"; "Bake Hours")
                 {
                     Caption = 'Component Bake Hours';
                     Editable = false;
                     Visible = Visible_Bool;
                 }
             }
-            part(InpectionReceiptLine;"Inpection Receipt Line")
+            part(InpectionReceiptLine; "Inpection Receipt Line")
             {
                 SubPageLink = Document No.=FIELD(No.),Purch Line No.=FIELD(Purch Line No);
             }
@@ -545,7 +545,7 @@ page 33000269 "Inspection Receipt"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Inspection Data Sheet List";
-                    RunPageLink = Receipt No.=FIELD(Receipt No.),Order No.=FIELD(Order No.),Purch Line No=FIELD(Purch Line No),Lot No.=FIELD(Lot No.);
+                                    RunPageLink = Receipt No.=FIELD(Receipt No.),Order No.=FIELD(Order No.),Purch Line No=FIELD(Purch Line No),Lot No.=FIELD(Lot No.);
                 }
                 action("P&osted Inspect. Data Sheets")
                 {
@@ -554,7 +554,7 @@ page 33000269 "Inspection Receipt"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Posted Inspect Data Sheet List";
-                    RunPageLink = Inspection Receipt No.=FIELD(No.);
+                                    RunPageLink = Inspection Receipt No.=FIELD(No.);
                 }
                 separator("-----")
                 {
@@ -567,7 +567,7 @@ page 33000269 "Inspection Receipt"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Posted Purchase Receipt";
-                    RunPageLink = No.=FIELD(Receipt No.);
+                                    RunPageLink = No.=FIELD(Receipt No.);
                 }
                 separator(Action1102152062)
                 {
@@ -1562,66 +1562,66 @@ page 33000269 "Inspection Receipt"
         "MBB Shelf Life" : Decimal;
         Visible_Bool : Boolean;
         DateAndTime : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.DateAndTime";
-        DayofWeekInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstDayOfWeek";
-        WeekofYearInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstWeekOfYear";
-        TEMCMail : Page "Material Requests";
-        REASON : Record "Reason Code";
-        FileDirectory : Text[100];
-        FileName_rej : Text[100];
-        QC_ATCH : Text;
-        attachments : Record Attachments;
-        IRH1 : Record "Inspection Receipt Header";
-        QCSetup : Record "Quality Control Setup";
-        NoSeriesMgt : Codeunit NoSeriesManagement;
-        Transfer_to_calibration : Boolean;
-        editfields : Boolean;
-        PIDSH : Record "Posted Inspect DatasheetHeader";
-        PARENT_IDS_QTY : Decimal;
+                          DayofWeekInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstDayOfWeek";
+                          WeekofYearInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstWeekOfYear";
+                          TEMCMail : Page "Material Requests";
+                          REASON : Record "Reason Code";
+                          FileDirectory : Text[100];
+                          FileName_rej : Text[100];
+                          QC_ATCH : Text;
+                          attachments : Record Attachments;
+                          IRH1 : Record "Inspection Receipt Header";
+                          QCSetup : Record "Quality Control Setup";
+                          NoSeriesMgt : Codeunit NoSeriesManagement;
+                          Transfer_to_calibration : Boolean;
+                          editfields : Boolean;
+                          PIDSH : Record "Posted Inspect DatasheetHeader";
+                          PARENT_IDS_QTY : Decimal;
 
     [LineStart(23175)]
     procedure CalculateUndefinedQty();
     begin
-        UndefinedQty := Quantity - "Qty. Accepted" - "Qty. Rejected" - "Qty. Rework" -"Qty. Accepted Under Deviation";
+        UndefinedQty := Quantity - "Qty. Accepted" - "Qty. Rejected" - "Qty. Rework" - "Qty. Accepted Under Deviation";
     end;
 
     [LineStart(23178)]
-    procedure CancelReservation(var InspectionReceipt : Record "Inspection Receipt Header");
+    procedure CancelReservation(var InspectionReceipt: Record "Inspection Receipt Header");
     var
-        ReservationEntry : Record "Reservation Entry";
-        ReservationEntry2 : Record "Reservation Entry";
-        ReservEngineMgt : Codeunit "Reservation Engine Mgt.";
+        ReservationEntry: Record "Reservation Entry";
+        ReservationEntry2: Record "Reservation Entry";
+        ReservEngineMgt: Codeunit "Reservation Engine Mgt.";
     begin
-        ReservationEntry.SETRANGE("Item No.",InspectionReceipt."Item No."); //300708
-        ReservationEntry.SETRANGE("Source Ref. No.",InspectionReceipt."Item Ledger Entry No.");
+        ReservationEntry.SETRANGE("Item No.", InspectionReceipt."Item No."); //300708
+        ReservationEntry.SETRANGE("Source Ref. No.", InspectionReceipt."Item Ledger Entry No.");
         IF ReservationEntry.FINDFIRST THEN BEGIN
-          ReservationEntry2.SETRANGE("Entry No.",ReservationEntry."Entry No.");
-          IF ReservationEntry2.FINDSET THEN
-          REPEAT
-            ReservationEntry2.TESTFIELD("Reservation Status",ReservationEntry2."Reservation Status"::Reservation);
-           // ReservEngineMgt.CloseReservEntry2(ReservationEntry2,TRUE,FALSE);
-           // commented for navision upgradation
-             COMMIT;
-          UNTIL ReservationEntry2.NEXT = 0;
+            ReservationEntry2.SETRANGE("Entry No.", ReservationEntry."Entry No.");
+            IF ReservationEntry2.FINDSET THEN
+                REPEAT
+                    ReservationEntry2.TESTFIELD("Reservation Status", ReservationEntry2."Reservation Status"::Reservation);
+                    // ReservEngineMgt.CloseReservEntry2(ReservationEntry2,TRUE,FALSE);
+                    // commented for navision upgradation
+                    COMMIT;
+                UNTIL ReservationEntry2.NEXT = 0;
         END;
     end;
 
     [LineStart(23192)]
-    procedure UpdateQCCheck(InspecRcpt : Record "Inspection Receipt Header");
+    procedure UpdateQCCheck(InspecRcpt: Record "Inspection Receipt Header");
     begin
         IF InspecRcpt."Item Ledger Entry No." <> 0 THEN BEGIN
-         IF InspecRcpt."Rework Level" <> 0 THEN BEGIN
-          ItemLedgEntry.GET(InspecRcpt."DC Inbound Ledger Entry.");
-          IF ItemLedgEntry."Remaining Quantity" = 0 THEN BEGIN
-            ItemLedgEntry."QC Check" := FALSE;
-            ItemLedgEntry.MODIFY;
-          END;
-         END ELSE BEGIN
-          ItemLedgEntry.GET(InspecRcpt."Item Ledger Entry No.");
-          IF ItemLedgEntry."Remaining Quantity" = 0 THEN BEGIN
-            ItemLedgEntry."QC Check" := FALSE;
-            ItemLedgEntry.MODIFY;
-          END;
-          END;
+            IF InspecRcpt."Rework Level" <> 0 THEN BEGIN
+                ItemLedgEntry.GET(InspecRcpt."DC Inbound Ledger Entry.");
+                IF ItemLedgEntry."Remaining Quantity" = 0 THEN BEGIN
+                    ItemLedgEntry."QC Check" := FALSE;
+                    ItemLedgEntry.MODIFY;
+                END;
+            END ELSE BEGIN
+                ItemLedgEntry.GET(InspecRcpt."Item Ledger Entry No.");
+                IF ItemLedgEntry."Remaining Quantity" = 0 THEN BEGIN
+                    ItemLedgEntry."QC Check" := FALSE;
+                    ItemLedgEntry.MODIFY;
+                END;
+            END;
         END;
     end;
 
@@ -1629,96 +1629,97 @@ page 33000269 "Inspection Receipt"
     local procedure ReworkTimeInMinutesOnBeforeInp();
     begin
         IF "Rework Reference No." = '' THEN
-          ReworkTimeInMinutesEditable := FALSE
+            ReworkTimeInMinutesEditable := FALSE
         ELSE
-          ReworkTimeInMinutesEditable := TRUE;
+            ReworkTimeInMinutesEditable := TRUE;
     end;
 
     [LineStart(23215)]
     procedure CreateIndent();
     var
-        Indent_No : Code[20];
-        "Indent Header" : Record "Indent Header";
-        "Indent Line" : Record "Indent Line";
-        Prev_Indent : Code[20];
-        Prev_Indent_Series : Code[20];
-        "No. Series" : Record "No. Series";
-        "No. Series Line" : Record "No. Series Line";
-        NoSeriesMgt : Codeunit NoSeriesManagement;
-        Line_No : Integer;
-        User : Record User;
-        UserName : Code[100];
-        DimVal : Record "Dimension Value";
-        PRL : Record "Purch. Rcpt. Line";
-        IndntHdr : Record "Indent Header";
+        Indent_No: Code[20];
+        "Indent Header": Record "Indent Header";
+        "Indent Line": Record "Indent Line";
+        Prev_Indent: Code[20];
+        Prev_Indent_Series: Code[20];
+        "No. Series": Record "No. Series";
+        "No. Series Line": Record "No. Series Line";
+        NoSeriesMgt: Codeunit NoSeriesManagement;
+        Line_No: Integer;
+        User: Record User;
+        UserName: Code[100];
+        DimVal: Record "Dimension Value";
+        PRL: Record "Purch. Rcpt. Line";
+        IndntHdr: Record "Indent Header";
     begin
         // Added by Pranavi on 20-Aug-2016 auto indent creation for rejected qty
 
-        Indent_No := ''; UserName:= '';
+        Indent_No := '';
+        UserName := '';
 
         User.RESET;
-        User.SETRANGE(User."User Name",USERID);
+        User.SETRANGE(User."User Name", USERID);
         IF User.FINDFIRST THEN
-          UserName:= User."Full Name";
+            UserName := User."Full Name";
 
         // Indent Header Creating
         "Indent Header".RESET;
         "Indent Header".INIT;
-        NoSeriesMgt.InitSeries('P-INDENT','P-INDENT',TODAY,
-                                                      Indent_No,"Indent Header"."No. Series");
-        "Indent Header"."No.":=Indent_No;
-        "Indent Header".Description:='Created From QC Inward Item Rejection';
+        NoSeriesMgt.InitSeries('P-INDENT', 'P-INDENT', TODAY,
+                                                      Indent_No, "Indent Header"."No. Series");
+        "Indent Header"."No." := Indent_No;
+        "Indent Header".Description := 'Created From QC Inward Item Rejection';
 
         PRL.RESET;
-        PRL.SETRANGE(PRL."Document No.","Receipt No.");
-        PRL.SETRANGE(PRL."No.","Item No.");
-        IF PRL.FINDFIRST THEN
-        BEGIN
-          "Indent Header"."Delivery Location":=PRL."Location Code";
-          DimVal.RESET;
-          DimVal.SETRANGE(DimVal."Dimension Code",'DEPARTMENTS');
-          DimVal.SETRANGE(DimVal.Code,PRL."Shortcut Dimension 1 Code");
-          IF DimVal.FINDFIRST THEN
-            "Indent Header".Department:=DimVal.Name
-          ELSE  "Indent Header".Department:='PROD';
-          IndntHdr.RESET;
-          IndntHdr.SETRANGE(IndntHdr."No.",PRL."Indent No.");
-          IF IndntHdr.FINDFIRST THEN BEGIN
-            "Indent Header"."Indent Reference":=IndntHdr."Indent Reference";
-            "Indent Header"."Person Code":=IndntHdr."Person Code";
-            "Indent Header"."Contact Person" := IndntHdr."Contact Person";
-          END ELSE BEGIN
-            "Indent Header"."Contact Person":=UserName;
-            "Indent Header"."Indent Reference":=UserName;
-            "Indent Header"."Person Code":=USERID;
-          END;
+        PRL.SETRANGE(PRL."Document No.", "Receipt No.");
+        PRL.SETRANGE(PRL."No.", "Item No.");
+        IF PRL.FINDFIRST THEN BEGIN
+            "Indent Header"."Delivery Location" := PRL."Location Code";
+            DimVal.RESET;
+            DimVal.SETRANGE(DimVal."Dimension Code", 'DEPARTMENTS');
+            DimVal.SETRANGE(DimVal.Code, PRL."Shortcut Dimension 1 Code");
+            IF DimVal.FINDFIRST THEN
+                "Indent Header".Department := DimVal.Name
+            ELSE
+                "Indent Header".Department := 'PROD';
+            IndntHdr.RESET;
+            IndntHdr.SETRANGE(IndntHdr."No.", PRL."Indent No.");
+            IF IndntHdr.FINDFIRST THEN BEGIN
+                "Indent Header"."Indent Reference" := IndntHdr."Indent Reference";
+                "Indent Header"."Person Code" := IndntHdr."Person Code";
+                "Indent Header"."Contact Person" := IndntHdr."Contact Person";
+            END ELSE BEGIN
+                "Indent Header"."Contact Person" := UserName;
+                "Indent Header"."Indent Reference" := UserName;
+                "Indent Header"."Person Code" := USERID;
+            END;
         END
         ELSE BEGIN
-          "Indent Header"."Delivery Location":='STR';
-          "Indent Header".Department:='PROD';
-          "Indent Header"."Contact Person":=UserName;
-          "Indent Header"."Indent Reference":=UserName;
-          "Indent Header"."Person Code":=USERID;
+            "Indent Header"."Delivery Location" := 'STR';
+            "Indent Header".Department := 'PROD';
+            "Indent Header"."Contact Person" := UserName;
+            "Indent Header"."Indent Reference" := UserName;
+            "Indent Header"."Person Code" := USERID;
         END;
-        "Indent Header"."Delivery Place":="Indent Header"."Delivery Place"::Store;
-        "Indent Header"."User Id":=USERID;
-        "Indent Header"."ICN No.":=ICNNO(TODAY);
-        "Indent Header"."Creation Date":=TODAY;
-        "Indent Header".VALIDATE("Indent Header"."Production Order No.","Prod. Order No.");
+        "Indent Header"."Delivery Place" := "Indent Header"."Delivery Place"::Store;
+        "Indent Header"."User Id" := USERID;
+        "Indent Header"."ICN No." := ICNNO(TODAY);
+        "Indent Header"."Creation Date" := TODAY;
+        "Indent Header".VALIDATE("Indent Header"."Production Order No.", "Prod. Order No.");
         "Indent Header"."IR Number" := "No.";
         "Indent Header".INSERT;
 
         // Indent Line Creating
-        Line_No:=0;
+        Line_No := 0;
         "Indent Line".INIT;
-        "Indent Line"."Document No.":=Indent_No;
-        Line_No:=Line_No+10000;
-        "Indent Line"."Line No.":=Line_No;
-        "Indent Line"."No.":="Item No.";
-        "Indent Line".VALIDATE("Indent Line"."No.","Item No.");
-        "Indent Line"."ICN No.":=ICNNO(TODAY);
-        "Indent Line".Description:="Item Description";
-        "Indent Line".Quantity:="Qty. Rejected";
+        "Indent Line"."Document No." := Indent_No;
+        Line_No := Line_No + 10000;
+        "Indent Line"."Line No." := Line_No;
+        "Indent Line"."No." := "Item No.";
+        "Indent Line".VALIDATE("Indent Line"."No.", "Item No.");
+        "Indent Line"."ICN No." := ICNNO(TODAY);
+        "Indent Line".Description := "Item Description";
+        "Indent Line".Quantity := "Qty. Rejected";
         "Indent Line".INSERT;
 
         "Indent Header".ReleaseIndent1("Indent Header"."No.");    // Release indent
@@ -1726,38 +1727,39 @@ page 33000269 "Inspection Receipt"
         // Updating No.Series
         "No. Series Line".RESET;
         //"No. Series Line".SETRANGE("No. Series Line"."Series Code",'P-INDENT');
-        "No. Series Line".SETRANGE("No. Series Line"."Series Code",'P-IND1112');
-        "No. Series Line".SETRANGE("No. Series Line".Open,TRUE);
-        IF "No. Series Line".FINDFIRST THEN
-        BEGIN
-          "No. Series Line"."Last No. Used":=Indent_No;
-          "No. Series Line"."Last Date Used":=TODAY;
-          "No. Series Line".MODIFY;
+        "No. Series Line".SETRANGE("No. Series Line"."Series Code", 'P-IND1112');
+        "No. Series Line".SETRANGE("No. Series Line".Open, TRUE);
+        IF "No. Series Line".FINDFIRST THEN BEGIN
+            "No. Series Line"."Last No. Used" := Indent_No;
+            "No. Series Line"."Last Date Used" := TODAY;
+            "No. Series Line".MODIFY;
         END;
 
-        MESSAGE('INDENT CREATED FOR THE ITEM: '+"Item Description"+'\INDENT NO.: '+Indent_No);
+        MESSAGE('INDENT CREATED FOR THE ITEM: ' + "Item Description" + '\INDENT NO.: ' + Indent_No);
         "Indent Header".RESET;
         // End by pranavi
     end;
 
     [LineStart(23303)]
-    procedure ICNNO(DT : Date) ICN : Code[10];
+    procedure ICNNO(DT: Date) ICN: Code[10];
     var
-        Dat : Code[10];
-        Mon : Code[10];
-        Yer : Code[10];
+        Dat: Code[10];
+        Mon: Code[10];
+        Yer: Code[10];
     begin
-        IF DATE2DMY(DT,1) < 10 THEN
-          Dat:= '0'+FORMAT(DATE2DMY(DT,1))
-        ELSE Dat:= FORMAT(DATE2DMY(DT,1));
+        IF DATE2DMY(DT, 1) < 10 THEN
+            Dat := '0' + FORMAT(DATE2DMY(DT, 1))
+        ELSE
+            Dat := FORMAT(DATE2DMY(DT, 1));
 
-        IF DATE2DMY(DT,2) < 10 THEN
-          Mon:= '0'+FORMAT(DATE2DMY(DT,2))
-        ELSE Mon:= FORMAT(DATE2DMY(DT,2));
+        IF DATE2DMY(DT, 2) < 10 THEN
+            Mon := '0' + FORMAT(DATE2DMY(DT, 2))
+        ELSE
+            Mon := FORMAT(DATE2DMY(DT, 2));
 
         //IF DATE2DMY(DT,2) < 10 THEN
-          Yer:= COPYSTR(FORMAT(DATE2DMY(DT,3)),3,2);
-        ICN:=Dat+Mon+Yer;
+        Yer := COPYSTR(FORMAT(DATE2DMY(DT, 3)), 3, 2);
+        ICN := Dat + Mon + Yer;
         EXIT(ICN);
     end;
 
@@ -1769,263 +1771,247 @@ page 33000269 "Inspection Receipt"
     [LineStart(23320)]
     local procedure Trasfer_To_calibration_module();
     begin
-        IF Rec."Equp Model" ='' THEN
-          ERROR('Enter the Equipment Serial No Under Calibration tab');
+        IF Rec."Equp Model" = '' THEN
+            ERROR('Enter the Equipment Serial No Under Calibration tab');
         IF Rec."Eqpt. Serial No." = '' THEN
-          ERROR('Enter the Equipment Serial No Under Calibration tab');
+            ERROR('Enter the Equipment Serial No Under Calibration tab');
         IF Rec."Equp Desc" = '' THEN
-          ERROR('Enter the Equipment Description Under Calibration tab');
-        IF(FORMAT(Rec."Calibration frequency") ='')   THEN
-          ERROR('Enter the Freuency of Callibration Under Calibration tab');
+            ERROR('Enter the Equipment Description Under Calibration tab');
+        IF (FORMAT(Rec."Calibration frequency") = '') THEN
+            ERROR('Enter the Freuency of Callibration Under Calibration tab');
 
         Calibration.RESET;
-        Calibration.SETFILTER("IR No",Rec."No.");
+        Calibration.SETFILTER("IR No", Rec."No.");
         IF Calibration.FINDSET THEN
-          ERROR('This Item has alredy there in calibration with Calibration id ' + Calibration."Equipment No")
-          ELSE
-         BEGIN
-          QCSetup.GET;
-          QCSetup.TESTFIELD(QCSetup."Equipment No.");
-          NoSeriesMgt.InitSeries(QCSetup."Equipment No.",Calibration."No. Series",0D,Calibration."Equipment No",Calibration."No. Series");
-          Calibration."Eqpt. Serial No." := Rec."Eqpt. Serial No.";
-          Calibration.Description := Rec."Equp Desc";
-          Calibration.Manufacturer := Rec.Make;
-          Calibration."Model No." := Rec."Equp Model";
-          Calibration."Equipment Type" := Rec."Equp Type";
-          Calibration."Calibration Party" := Rec."Calibration Party";
-          Calibration."IR No" := Rec."No.";
-          Calibration."Item No" := Rec."Item No.";
-          Calibration."Item Desc" := Rec."Item Description";
-          Calibration."Created By" :=USERID;
-          Calibration."Created Date" :=TODAY;
-          Calibration.Transfered_from :=Calibration.Transfered_from::IR;
-          Calibration."MFG. Serial No." := Rec."Lot No.";
-          Calibration."Last Calibration Date" := Rec."Calibration Date";
-          Calibration."Next Calibration Due On":=Rec."Next calib date";
-          Calibration."Calibration Period" := Rec."Calibration frequency";
-          PRL.RESET;
-          PRL.SETFILTER("Document No.",Rec."Receipt No.");
-          PRL.SETFILTER("Order Line No.",FORMAT(Rec."Purch Line No"));
-          PRL.SETFILTER("No.",Rec."Item No.");
-           IF PRL.FINDSET THEN
-              BEGIN
-                 PRH.RESET;
-                 PRH.SETFILTER("No.",PRL."Document No.");
-                 IF PRH.FINDSET THEN
-                   BEGIN
-                      Calibration."Purchase Date":= PRH."Posting Date";
-                      Calibration."Unit cost(LCY)" := PRL."Unit Cost (LCY)";
-                   END;
-               END;
-          Calibration.INSERT;
-          COMMIT;
+            ERROR('This Item has alredy there in calibration with Calibration id ' + Calibration."Equipment No")
+        ELSE BEGIN
+            QCSetup.GET;
+            QCSetup.TESTFIELD(QCSetup."Equipment No.");
+            NoSeriesMgt.InitSeries(QCSetup."Equipment No.", Calibration."No. Series", 0D, Calibration."Equipment No", Calibration."No. Series");
+            Calibration."Eqpt. Serial No." := Rec."Eqpt. Serial No.";
+            Calibration.Description := Rec."Equp Desc";
+            Calibration.Manufacturer := Rec.Make;
+            Calibration."Model No." := Rec."Equp Model";
+            Calibration."Equipment Type" := Rec."Equp Type";
+            Calibration."Calibration Party" := Rec."Calibration Party";
+            Calibration."IR No" := Rec."No.";
+            Calibration."Item No" := Rec."Item No.";
+            Calibration."Item Desc" := Rec."Item Description";
+            Calibration."Created By" := USERID;
+            Calibration."Created Date" := TODAY;
+            Calibration.Transfered_from := Calibration.Transfered_from::IR;
+            Calibration."MFG. Serial No." := Rec."Lot No.";
+            Calibration."Last Calibration Date" := Rec."Calibration Date";
+            Calibration."Next Calibration Due On" := Rec."Next calib date";
+            Calibration."Calibration Period" := Rec."Calibration frequency";
+            PRL.RESET;
+            PRL.SETFILTER("Document No.", Rec."Receipt No.");
+            PRL.SETFILTER("Order Line No.", FORMAT(Rec."Purch Line No"));
+            PRL.SETFILTER("No.", Rec."Item No.");
+            IF PRL.FINDSET THEN BEGIN
+                PRH.RESET;
+                PRH.SETFILTER("No.", PRL."Document No.");
+                IF PRH.FINDSET THEN BEGIN
+                    Calibration."Purchase Date" := PRH."Posting Date";
+                    Calibration."Unit cost(LCY)" := PRL."Unit Cost (LCY)";
+                END;
+            END;
+            Calibration.INSERT;
+            COMMIT;
 
-        MESSAGE('Transfered for Calibration with Calibration ID' +Calibration."Equipment No");
+            MESSAGE('Transfered for Calibration with Calibration ID' + Calibration."Equipment No");
         END;
     end;
 
     [LineStart(23375)]
     local procedure UnderDeviationMails();
     begin
-         "total price":=0;
-          "acc amt":=0;
-          "rej amt":=0;
-        
-          IF "Qty. Accepted Under Deviation" <>0 THEN
-          BEGIN
-            Mail_Subject:='Inward - QA Accepted Under Deviation, Item: '+"Item Description";
-            ITEM_LEAD_TIME:='';
-            ITEM_STOCK:=0;
-            item.SETRANGE(item."No.","Item No.");
-            IF item.FINDFIRST THEN
-            BEGIN
-              ITEM_LEAD_TIME:=FORMAT(item."Safety Lead Time");
-              IF item."Avg Unit Cost"<>0 THEN
-              BEGIN
-                "total price":=ROUND(item."Avg Unit Cost"*Quantity,1);
-                "acc amt":=ROUND(item."Avg Unit Cost"*"Qty. Accepted",1);
-                "rej amt":=ROUND(item."Avg Unit Cost"*"Qty. Accepted Under Deviation",1);
-              END;
-            END ELSE
-            BEGIN
-              PRL.SETRANGE(PRL."Document No.","Receipt No.");
-              PRL.SETRANGE(PRL."No.","Item No.");
-              IF PRL.FINDFIRST THEN
-              BEGIN
-                "total price":=ROUND(PRL.Quantity*PRL."Unit Cost",1);
-                "acc amt":=ROUND(PRL."Unit Cost"*"Qty. Accepted",1);
-                "rej amt":=ROUND(PRL."Unit Cost"*"Qty. Accepted Under Deviation",1);
-              END;
-            END;
-            "Mail-Id".SETRANGE("Mail-Id"."User Name",USERID);
-            IF "Mail-Id".FINDFIRST THEN
-              "from Mail":="Mail-Id".MailID;
-            "from Mail":='erp@efftronics.com';
-            "to mail"+='purchase@efftronics.com,padmasri@efftronics.com,bharat@efftronics.com,dineel@efftronics.com,erp@efftronics.com,vijayalakshmib@efftronics.com';
-            "to mail"+=',padmaja@efftronics.com';
-            "to mail"+=',qainward@efftronics.com';
-            "to mail"+=',Temc@efftronics.com';
-            "to mail"+=',store@efftronics.com';
-            "to mail"+=',pardhu@efftronics.com';
-        
-            item.SETRANGE(item."No.","Item No.");
-            IF item.FINDFIRST THEN
-            BEGIN
-              IF item."Item Category Code"='MECH' THEN
-                "to mail"+=',ubedulla@efftronics.com';
-              IF item."Product Group Code"='B OUT' THEN
-              BEGIN
-                PH.RESET;
-                PH.SETFILTER(PH."No.","Order No.");
-                PH.SETFILTER(PH."Sale Order No",'<>%1','');
-                IF PH.FINDFIRST THEN
-                  "to mail"+=',pmsubhani@efftronics.com';
-              END;
-            END;
-            accper:=ROUND((("Qty. Accepted"/Quantity)*100),0.01);
-            rejper:=ROUND((("Qty. Accepted Under Deviation"/Quantity)*100),0.01);
-            IF ("rej amt">10000)OR(rejper>10) THEN
-              "to mail"+=',ceo@efftronics.com';
-        
-            PL.SETRANGE(PL."Document No.","Order No.");
-            PL.SETRANGE(PL."No.","Item No.");
-            IF PL.FINDFIRST THEN
-            BEGIN
-              IH.SETRANGE(IH."No.",PL."Indent No.");
-              "Mail-Id".RESET;
-              IF IH.FINDFIRST THEN
-              BEGIN
-                "Mail-Id".SETRANGE("Mail-Id"."User Name",IH."Person Code");
-                IF "Mail-Id".FINDFIRST THEN
-                BEGIN
-                 // QCMail.AppendBody('<tr><td><b>Indented By</b></td><td> '+"Mail-Id"."User Name"+'</td></tr>');
-                  IF "Mail-Id".MailID<>'' THEN        //added by pranavi on 23-04-2015 to check user has mail ID
-                    "to mail"+=','+"Mail-Id".MailID;
+        "total price" := 0;
+        "acc amt" := 0;
+        "rej amt" := 0;
+
+        IF "Qty. Accepted Under Deviation" <> 0 THEN BEGIN
+            Mail_Subject := 'Inward - QA Accepted Under Deviation, Item: ' + "Item Description";
+            ITEM_LEAD_TIME := '';
+            ITEM_STOCK := 0;
+            item.SETRANGE(item."No.", "Item No.");
+            IF item.FINDFIRST THEN BEGIN
+                ITEM_LEAD_TIME := FORMAT(item."Safety Lead Time");
+                IF item."Avg Unit Cost" <> 0 THEN BEGIN
+                    "total price" := ROUND(item."Avg Unit Cost" * Quantity, 1);
+                    "acc amt" := ROUND(item."Avg Unit Cost" * "Qty. Accepted", 1);
+                    "rej amt" := ROUND(item."Avg Unit Cost" * "Qty. Accepted Under Deviation", 1);
                 END;
-              END;
+            END ELSE BEGIN
+                PRL.SETRANGE(PRL."Document No.", "Receipt No.");
+                PRL.SETRANGE(PRL."No.", "Item No.");
+                IF PRL.FINDFIRST THEN BEGIN
+                    "total price" := ROUND(PRL.Quantity * PRL."Unit Cost", 1);
+                    "acc amt" := ROUND(PRL."Unit Cost" * "Qty. Accepted", 1);
+                    "rej amt" := ROUND(PRL."Unit Cost" * "Qty. Accepted Under Deviation", 1);
+                END;
             END;
-        
-        
+            "Mail-Id".SETRANGE("Mail-Id"."User Name", USERID);
+            IF "Mail-Id".FINDFIRST THEN
+                "from Mail" := "Mail-Id".MailID;
+            "from Mail" := 'erp@efftronics.com';
+            "to mail" += 'purchase@efftronics.com,padmasri@efftronics.com,bharat@efftronics.com,dineel@efftronics.com,erp@efftronics.com,vijayalakshmib@efftronics.com';
+            "to mail" += ',padmaja@efftronics.com';
+            "to mail" += ',qainward@efftronics.com';
+            "to mail" += ',Temc@efftronics.com';
+            "to mail" += ',store@efftronics.com';
+            "to mail" += ',pardhu@efftronics.com';
+
+            item.SETRANGE(item."No.", "Item No.");
+            IF item.FINDFIRST THEN BEGIN
+                IF item."Item Category Code" = 'MECH' THEN
+                    "to mail" += ',ubedulla@efftronics.com';
+                IF item."Product Group Code" = 'B OUT' THEN BEGIN
+                    PH.RESET;
+                    PH.SETFILTER(PH."No.", "Order No.");
+                    PH.SETFILTER(PH."Sale Order No", '<>%1', '');
+                    IF PH.FINDFIRST THEN
+                        "to mail" += ',pmsubhani@efftronics.com';
+                END;
+            END;
+            accper := ROUND((("Qty. Accepted" / Quantity) * 100), 0.01);
+            rejper := ROUND((("Qty. Accepted Under Deviation" / Quantity) * 100), 0.01);
+            IF ("rej amt" > 10000) OR (rejper > 10) THEN
+                "to mail" += ',ceo@efftronics.com';
+
+            PL.SETRANGE(PL."Document No.", "Order No.");
+            PL.SETRANGE(PL."No.", "Item No.");
+            IF PL.FINDFIRST THEN BEGIN
+                IH.SETRANGE(IH."No.", PL."Indent No.");
+                "Mail-Id".RESET;
+                IF IH.FINDFIRST THEN BEGIN
+                    "Mail-Id".SETRANGE("Mail-Id"."User Name", IH."Person Code");
+                    IF "Mail-Id".FINDFIRST THEN BEGIN
+                        // QCMail.AppendBody('<tr><td><b>Indented By</b></td><td> '+"Mail-Id"."User Name"+'</td></tr>');
+                        IF "Mail-Id".MailID <> '' THEN        //added by pranavi on 23-04-2015 to check user has mail ID
+                            "to mail" += ',' + "Mail-Id".MailID;
+                    END;
+                END;
+            END;
+
+
             //************************************new format of mail*********************************************//
-            QCMail.CreateMessage('EFF','erp@efftronics.com',"to mail",Mail_Subject,Mail_Body,TRUE);
+            QCMail.CreateMessage('EFF', 'erp@efftronics.com', "to mail", Mail_Subject, Mail_Body, TRUE);
             QCMail.AppendBody('<html><head><style> divone{background-color: white; width: 700px; padding: 20px; border-style:solid ; border-color:#666699;  margin: 20px;} </style></head>');
             QCMail.AppendBody('<body><div style="border-color:#025E4D;  margin: 20px; border-width:15px;   border-style:solid; padding: 20px; width: 600px;"><label><font size="6"> Under Deviation Accepted ITEM DETAILS </font></label>');
             QCMail.AppendBody('<hr style=solid; color= #3333CC>');
             QCMail.AppendBody('<h>Dear Sir/Madam,</h><br>');
             QCMail.AppendBody('<P>Under deviation Accepted ITEM DETAILS </P>');
             QCMail.AppendBody('<table border="1" style="border-collapse:collapse; width:100%; font-size:10pt;">');
-            QCMail.AppendBody('<tr><td width= "40%"><b>Vendor Name  </b> </td><td>'+"Vendor Name"+'</td></tr> ');
-            QCMail.AppendBody('<tr><td ><b>Item no. </b></td><td>'+"Item No."+'</td></tr> ');
-            QCMail.AppendBody('<tr><td ><b>Item Description </b></td><td>'+"Item Description"+'</td></tr> ');
-            QCMail.AppendBody('<tr><td ><b>Location Code </b></td><td>'+"Location Code"+'</td></tr> ');
-            QCMail.AppendBody('<tr><td><b> Make</b></td><td>'+Make+'</td></tr>');
-            QCMail.AppendBody('<tr><td><b> Accepted Quantity </b></td><td>'+FORMAT("Qty. Accepted")+'</td></tr>');
+            QCMail.AppendBody('<tr><td width= "40%"><b>Vendor Name  </b> </td><td>' + "Vendor Name" + '</td></tr> ');
+            QCMail.AppendBody('<tr><td ><b>Item no. </b></td><td>' + "Item No." + '</td></tr> ');
+            QCMail.AppendBody('<tr><td ><b>Item Description </b></td><td>' + "Item Description" + '</td></tr> ');
+            QCMail.AppendBody('<tr><td ><b>Location Code </b></td><td>' + "Location Code" + '</td></tr> ');
+            QCMail.AppendBody('<tr><td><b> Make</b></td><td>' + Make + '</td></tr>');
+            QCMail.AppendBody('<tr><td><b> Accepted Quantity </b></td><td>' + FORMAT("Qty. Accepted") + '</td></tr>');
             //QCMail.AppendBody('<tr><td><b> Rejected Quantity  </b></td><td>'+FORMAT("Qty. Rejected")+'</td></tr>');
-            QCMail.AppendBody('<tr><td><b> Under Deviation Quantity  </b></td><td>'+FORMAT("Qty. Accepted Under Deviation")+'</td></tr>');
-               //added by sujani for the Rejection note
-             /* IRH1.RESET;
-              IRH1.SETFILTER("No.",Rec."No.");
-              IF IRH1.FINDSET THEN
-              BEGIN
-        
-              FileDirectory := '\\erpserver\ErpAttachments\QC_Rejection_Note\';
-              //FileName:=IRH."No.");
-              //filesub:=COPYSTR("No.",5,5);
-              FileName_rej :='QC Rejection Note '+IRH1."No."+ '.pdf';
-              REPORT.RUN(32000006,FALSE,FALSE,IRH1);
-              REPORT.SAVEASPDF(32000006,FileDirectory+FileName_rej,IRH1);
-              QC_ATCH:=FileDirectory+FileName_rej;
-              QCMail.AddAttachment(QC_ATCH,FileName_rej);
-              END;
-              */
-        
-        
-            ids.SETRANGE(ids."No.","Parent IDS");
-            IF ids.FINDFIRST THEN   BEGIN
-              inwqty:=ids.Quantity;
-              IF Quantity < inwqty THEN BEGIN
-                QCMail.AppendBody('<tr><td><b>Total Quantity Checked at QC</b></td><td>'+FORMAT(Quantity)+'</td></tr>');
-                 //  Mail_Body+=FORMAT(nextline);
-              END
-              ELSE BEGIN
-                QCMail.AppendBody('<tr><td><b>Total Quantity </b></td><td>'+FORMAT(Quantity)+'</td></tr>') ;
-                Mail_Body+=FORMAT(nextline);
-                QCMail.AppendBody('<tr><td><b>Inward Quantity </b></td><td>'+FORMAT(inwqty)+'</td></tr>');
-              END;
-             // Mail_Body+=FORMAT(nextline);
-            END
-            ELSE IF inwqty=0 THEN
-            BEGIN
-              postedids.SETRANGE(postedids."No.","Parent IDS");
-              IF postedids.FINDFIRST THEN
-              BEGIN
-                inwqty:=postedids.Quantity;
+            QCMail.AppendBody('<tr><td><b> Under Deviation Quantity  </b></td><td>' + FORMAT("Qty. Accepted Under Deviation") + '</td></tr>');
+            //added by sujani for the Rejection note
+            /* IRH1.RESET;
+             IRH1.SETFILTER("No.",Rec."No.");
+             IF IRH1.FINDSET THEN
+             BEGIN
+
+             FileDirectory := '\\erpserver\ErpAttachments\QC_Rejection_Note\';
+             //FileName:=IRH."No.");
+             //filesub:=COPYSTR("No.",5,5);
+             FileName_rej :='QC Rejection Note '+IRH1."No."+ '.pdf';
+             REPORT.RUN(32000006,FALSE,FALSE,IRH1);
+             REPORT.SAVEASPDF(32000006,FileDirectory+FileName_rej,IRH1);
+             QC_ATCH:=FileDirectory+FileName_rej;
+             QCMail.AddAttachment(QC_ATCH,FileName_rej);
+             END;
+             */
+
+
+            ids.SETRANGE(ids."No.", "Parent IDS");
+            IF ids.FINDFIRST THEN BEGIN
+                inwqty := ids.Quantity;
                 IF Quantity < inwqty THEN BEGIN
-                   QCMail.AppendBody('<tr><td><b>Total Quantity Checked at QC</b></td><td>'+FORMAT(Quantity)+'</td></tr>');
-                 // Mail_Body+=FORMAT(nextline);
+                    QCMail.AppendBody('<tr><td><b>Total Quantity Checked at QC</b></td><td>' + FORMAT(Quantity) + '</td></tr>');
+                    //  Mail_Body+=FORMAT(nextline);
                 END
                 ELSE BEGIN
-                  QCMail.AppendBody('<tr><td><b>Total Quantity </b></td><td>'+FORMAT(Quantity)+'</td></tr>');
-                  // Mail_Body+=FORMAT(nextline);
+                    QCMail.AppendBody('<tr><td><b>Total Quantity </b></td><td>' + FORMAT(Quantity) + '</td></tr>');
+                    Mail_Body += FORMAT(nextline);
+                    QCMail.AppendBody('<tr><td><b>Inward Quantity </b></td><td>' + FORMAT(inwqty) + '</td></tr>');
                 END;
-                QCMail.AppendBody('<tr><td><b>Inward Quantity </b></td><td>'+FORMAT(inwqty)+'</td></tr>');
-              END;
+                // Mail_Body+=FORMAT(nextline);
             END
-            ELSE BEGIN
-              QCMail.AppendBody('<tr><td><b> Total Quantity </b></td><td>'+FORMAT(Quantity)+'</td></tr>');
-              QCMail.AppendBody('<tr><td><b> Inward Quantity </b></td><td>'+FORMAT(inwqty)+'</td></tr>');
-            END;
-            accper:=ROUND((("Qty. Accepted"/Quantity)*100),0.01);
-            QCMail.AppendBody('<tr><td><b> Accepted % </b></td><td><div style="width:' +FORMAT(accper)+'; background: rgb(128, 177, 133); overflow:visible;">'+FORMAT(accper)+'%</div></td></tr>');
-            rejper:=ROUND((("Qty. Accepted Under Deviation"/Quantity)*100),0.01);
-            QCMail.AppendBody('<tr><td><b> Under Deviation % </b></td><td>'+FORMAT(rejper)+'%</td></tr>');
-            QCMail.AppendBody('<tr><td><b> Accepted Quantity price  </b></td><td>'+FORMAT("acc amt")+'</td></tr>');
-            QCMail.AppendBody('<tr><td><b> Under Deviation Qty  Price  </b></td><td>'+FORMAT("rej amt")+'</td></tr>');
-            QCMail.AppendBody('<tr><td><b> Total Quantity Price </b></td><td>'+FORMAT("total price")+'</td></tr>');
-            IF "Nature Of Rejection"='' THEN
-              ERROR('Please update Nature of Rejection');
-            QCMail.AppendBody('<tr><td><b> Rejected Category    </b></td><td>'+"Nature Of Rejection"+'</td></tr>');
-            QCMail.AppendBody('<tr><td><b>Reason Description </b></td><td><b>'+"Reason Description"+'</b></td></tr>');
-            QCMail.AppendBody('<tr><td><b>Under Deviation Reason</b></td><td>'+"Qty. Accepted UD Reason"+'</td></tr>');
-            QCMail.AppendBody('<tr><td><b>Inward Date </b></td><td>'+FORMAT(("IDS creation Date"),0,4)+'</td></tr>');
-            PRH.SETRANGE(PRH."No.","Receipt No.");
-            IF PRH.FINDFIRST THEN
-              QCMail.AppendBody('<tr><td><b>Invoice No.  </b></td><td> '+PRH."Vendor Order No."+'</td></tr>');;
-            Mail_Body+=FORMAT(nextline);
-            QCMail.AppendBody('<tr><td><b>DC No.</b></td><td>  '+PRH."Vendor Shipment No."+'</td></tr>');
-            Mail_Body+=FORMAT(nextline);
-            QCMail.AppendBody('<tr><td><b>Batch No</b></td><td>'+"Lot No."+'</td></tr>');
-            // Mail_Body+='***** Auto Mail Generated from ERP *****';
-            "to mail"+=',Temc@efftronics.com';
-            user.SETRANGE(user."User Name",USERID);
-            IF user.FINDFIRST THEN
-              "user name":=user."User Name";
-            QCMail.AppendBody('<tr><td><b>QC Passed By    </b></td><td>'+"user name"+'</td></tr>');
-            QCMail.AppendBody('<tr><td><b>Purch Order No. </b></td><td>'+"Order No."+'</td></tr>');
-        
-            PL.SETRANGE(PL."Document No.","Order No.");
-            PL.SETRANGE(PL."No.","Item No.");
-            IF PL.FINDFIRST THEN
-            BEGIN
-              IH.SETRANGE(IH."No.",PL."Indent No.");
-              "Mail-Id".RESET;
-              IF IH.FINDFIRST THEN
-              BEGIN
-                "Mail-Id".SETRANGE("Mail-Id"."User Name",IH."Person Code");
-                IF "Mail-Id".FINDFIRST THEN
-                BEGIN
-                  QCMail.AppendBody('<tr><td><b>Indented By</b></td><td> '+"Mail-Id"."User Name"+'</td></tr>');
-                  IF "Mail-Id".MailID<>'' THEN
-                   "to mail"+=','+"Mail-Id".MailID;
+            ELSE
+                IF inwqty = 0 THEN BEGIN
+                    postedids.SETRANGE(postedids."No.", "Parent IDS");
+                    IF postedids.FINDFIRST THEN BEGIN
+                        inwqty := postedids.Quantity;
+                        IF Quantity < inwqty THEN BEGIN
+                            QCMail.AppendBody('<tr><td><b>Total Quantity Checked at QC</b></td><td>' + FORMAT(Quantity) + '</td></tr>');
+                            // Mail_Body+=FORMAT(nextline);
+                        END
+                        ELSE BEGIN
+                            QCMail.AppendBody('<tr><td><b>Total Quantity </b></td><td>' + FORMAT(Quantity) + '</td></tr>');
+                            // Mail_Body+=FORMAT(nextline);
+                        END;
+                        QCMail.AppendBody('<tr><td><b>Inward Quantity </b></td><td>' + FORMAT(inwqty) + '</td></tr>');
+                    END;
+                END
+                ELSE BEGIN
+                    QCMail.AppendBody('<tr><td><b> Total Quantity </b></td><td>' + FORMAT(Quantity) + '</td></tr>');
+                    QCMail.AppendBody('<tr><td><b> Inward Quantity </b></td><td>' + FORMAT(inwqty) + '</td></tr>');
                 END;
-              END;
+            accper := ROUND((("Qty. Accepted" / Quantity) * 100), 0.01);
+            QCMail.AppendBody('<tr><td><b> Accepted % </b></td><td><div style="width:' + FORMAT(accper) + '; background: rgb(128, 177, 133); overflow:visible;">' + FORMAT(accper) + '%</div></td></tr>');
+            rejper := ROUND((("Qty. Accepted Under Deviation" / Quantity) * 100), 0.01);
+            QCMail.AppendBody('<tr><td><b> Under Deviation % </b></td><td>' + FORMAT(rejper) + '%</td></tr>');
+            QCMail.AppendBody('<tr><td><b> Accepted Quantity price  </b></td><td>' + FORMAT("acc amt") + '</td></tr>');
+            QCMail.AppendBody('<tr><td><b> Under Deviation Qty  Price  </b></td><td>' + FORMAT("rej amt") + '</td></tr>');
+            QCMail.AppendBody('<tr><td><b> Total Quantity Price </b></td><td>' + FORMAT("total price") + '</td></tr>');
+            IF "Nature Of Rejection" = '' THEN
+                ERROR('Please update Nature of Rejection');
+            QCMail.AppendBody('<tr><td><b> Rejected Category    </b></td><td>' + "Nature Of Rejection" + '</td></tr>');
+            QCMail.AppendBody('<tr><td><b>Reason Description </b></td><td><b>' + "Reason Description" + '</b></td></tr>');
+            QCMail.AppendBody('<tr><td><b>Under Deviation Reason</b></td><td>' + "Qty. Accepted UD Reason" + '</td></tr>');
+            QCMail.AppendBody('<tr><td><b>Inward Date </b></td><td>' + FORMAT(("IDS creation Date"), 0, 4) + '</td></tr>');
+            PRH.SETRANGE(PRH."No.", "Receipt No.");
+            IF PRH.FINDFIRST THEN
+                QCMail.AppendBody('<tr><td><b>Invoice No.  </b></td><td> ' + PRH."Vendor Order No." + '</td></tr>');
+            ;
+            Mail_Body += FORMAT(nextline);
+            QCMail.AppendBody('<tr><td><b>DC No.</b></td><td>  ' + PRH."Vendor Shipment No." + '</td></tr>');
+            Mail_Body += FORMAT(nextline);
+            QCMail.AppendBody('<tr><td><b>Batch No</b></td><td>' + "Lot No." + '</td></tr>');
+            // Mail_Body+='***** Auto Mail Generated from ERP *****';
+            "to mail" += ',Temc@efftronics.com';
+            user.SETRANGE(user."User Name", USERID);
+            IF user.FINDFIRST THEN
+                "user name" := user."User Name";
+            QCMail.AppendBody('<tr><td><b>QC Passed By    </b></td><td>' + "user name" + '</td></tr>');
+            QCMail.AppendBody('<tr><td><b>Purch Order No. </b></td><td>' + "Order No." + '</td></tr>');
+
+            PL.SETRANGE(PL."Document No.", "Order No.");
+            PL.SETRANGE(PL."No.", "Item No.");
+            IF PL.FINDFIRST THEN BEGIN
+                IH.SETRANGE(IH."No.", PL."Indent No.");
+                "Mail-Id".RESET;
+                IF IH.FINDFIRST THEN BEGIN
+                    "Mail-Id".SETRANGE("Mail-Id"."User Name", IH."Person Code");
+                    IF "Mail-Id".FINDFIRST THEN BEGIN
+                        QCMail.AppendBody('<tr><td><b>Indented By</b></td><td> ' + "Mail-Id"."User Name" + '</td></tr>');
+                        IF "Mail-Id".MailID <> '' THEN
+                            "to mail" += ',' + "Mail-Id".MailID;
+                    END;
+                END;
             END;
             QCMail.AppendBody('</table>');
             QCMail.AppendBody('<BR><p align ="left"> Regards,<br>ERP Team </p>');
             QCMail.AppendBody('<br><p align = "center">::::Note: Auto Generated mail from ERP:::: </b></P></div></body></html>');
             QCMail.Send;
-            END;
-              //  mail.NewCDOMessage("from Mail","to mail",Mail_Subject,Mail_Body,'');
+        END;
+        //  mail.NewCDOMessage("from Mail","to mail",Mail_Subject,Mail_Body,'');
 
     end;
 }

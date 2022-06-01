@@ -7,105 +7,104 @@ report 50133 "Central Sales Tax1"
 
     dataset
     {
-        dataitem("Company Information";"Company Information")
+        dataitem("Company Information"; "Company Information")
         {
             DataItemTableView = SORTING(Primary Key) ORDER(Ascending);
-            column(Company_Information_Name;Name)
+            column(Company_Information_Name; Name)
             {
             }
-            column(Company_Information_Address;Address)
+            column(Company_Information_Address; Address)
             {
             }
-            column(Company_Information__C_S_T_No__;"C.S.T No.")
+            column(Company_Information__C_S_T_No__; "C.S.T No.")
             {
             }
-            column(STRSUBSTNO_Text002__Address_2__City_StateDesc_;STRSUBSTNO(Text002,"Address 2",City,StateDesc))
+            column(STRSUBSTNO_Text002__Address_2__City_StateDesc_; STRSUBSTNO(Text002, "Address 2", City, StateDesc))
             {
             }
-            column(StartDate;StartDate)
+            column(StartDate; StartDate)
             {
             }
-            column(Return;Return)
+            column(Return; Return)
             {
             }
-            column(EndDate;EndDate)
+            column(EndDate; EndDate)
             {
             }
-            column(TODAY__;TODAY())
+            column(TODAY__; TODAY())
             {
             }
-            column(Name_of_the_Registered_DealerCaption;Name_of_the_Registered_DealerCaptionLbl)
+            column(Name_of_the_Registered_DealerCaption; Name_of_the_Registered_DealerCaptionLbl)
             {
             }
-            column(Company_Information_AddressCaption;FIELDCAPTION(Address))
+            column(Company_Information_AddressCaption; FIELDCAPTION(Address))
             {
             }
-            column(Registration_No_Caption;Registration_No_CaptionLbl)
+            column(Registration_No_Caption; Registration_No_CaptionLbl)
             {
             }
-            column(Form___C_S_T____VICaption;Form___C_S_T____VICaptionLbl)
+            column(Form___C_S_T____VICaption; Form___C_S_T____VICaptionLbl)
             {
             }
-            column(Form_of_Return_under_Rule_14_A_of_the_Central_Sales_Tax_Rules__1957__Andhra_Pradesh_Caption;Form_of_Return_under_Rule_14_A_of_the_Central_Sales_Tax_Rules__1957__Andhra_Pradesh_CaptionLbl)
+            column(Form_of_Return_under_Rule_14_A_of_the_Central_Sales_Tax_Rules__1957__Andhra_Pradesh_Caption; Form_of_Return_under_Rule_14_A_of_the_Central_Sales_Tax_Rules__1957__Andhra_Pradesh_CaptionLbl)
             {
             }
-            column(Starting_DateCaption;Starting_DateCaptionLbl)
+            column(Starting_DateCaption; Starting_DateCaptionLbl)
             {
             }
-            column(Ending_DateCaption;Ending_DateCaptionLbl)
+            column(Ending_DateCaption; Ending_DateCaptionLbl)
             {
             }
-            column(DateCaption;DateCaptionLbl)
+            column(DateCaption; DateCaptionLbl)
             {
             }
-            column(Status_Caption;Status_CaptionLbl)
+            column(Status_Caption; Status_CaptionLbl)
             {
             }
-            column(Style_of_Business_Caption;Style_of_Business_CaptionLbl)
+            column(Style_of_Business_Caption; Style_of_Business_CaptionLbl)
             {
             }
-            column(CompanyCaption;CompanyCaptionLbl)
+            column(CompanyCaption; CompanyCaptionLbl)
             {
             }
-            column(Manufacturing_of_Data_Loggers___Electronic_Moving_Display_BoardCaption;Manufacturing_of_Data_Loggers___Electronic_Moving_Display_BoardCaptionLbl)
+            column(Manufacturing_of_Data_Loggers___Electronic_Moving_Display_BoardCaption; Manufacturing_of_Data_Loggers___Electronic_Moving_Display_BoardCaptionLbl)
             {
             }
-            column(Company_Information_Primary_Key;"Primary Key")
+            column(Company_Information_Primary_Key; "Primary Key")
             {
             }
 
             trigger OnPreDataItem();
             begin
-                IF ReturnYear = 0 THEN
-                BEGIN
-                  MESSAGE('Please enter a Valid Year');
-                  CurrReport.QUIT;
+                IF ReturnYear = 0 THEN BEGIN
+                    MESSAGE('Please enter a Valid Year');
+                    CurrReport.QUIT;
                 END
             end;
         }
-        dataitem("Sales Invoice Header";"Sales Invoice Header")
+        dataitem("Sales Invoice Header"; "Sales Invoice Header")
         {
             DataItemTableView = SORTING(Posting Date);
-            dataitem("Sales Invoice Line";"Sales Invoice Line")
+            dataitem("Sales Invoice Line"; "Sales Invoice Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Document No.,Line No.) ORDER(Ascending);
+                DataItemTableView = SORTING(Document No., Line No.) ORDER(Ascending);
 
                 trigger OnPostDataItem();
                 begin
                     CurrReport.CREATETOTALS(Amount);
                 end;
             }
-            dataitem("Cust. Ledger Entry";"Cust. Ledger Entry")
+            dataitem("Cust. Ledger Entry"; "Cust. Ledger Entry")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Customer No.,Posting Date,Currency Code) ORDER(Ascending);
+                DataItemTableView = SORTING(Customer No., Posting Date, Currency Code) ORDER(Ascending);
             }
 
             trigger OnPreDataItem();
             begin
                 RESET;
-                SETRANGE("Posting Date",StartDate,EndDate);
+                SETRANGE("Posting Date", StartDate, EndDate);
                 /*IF FIND('-') THEN
                   FromDocNo := "No.";
                 IF FIND('+') THEN
@@ -114,199 +113,199 @@ report 50133 "Central Sales Tax1"
 
             end;
         }
-        dataitem("Sales Cr.Memo Header";"Sales Cr.Memo Header")
+        dataitem("Sales Cr.Memo Header"; "Sales Cr.Memo Header")
         {
             DataItemTableView = SORTING(No.) ORDER(Ascending);
-            dataitem("Sales Cr.Memo Line";"Sales Cr.Memo Line")
+            dataitem("Sales Cr.Memo Line"; "Sales Cr.Memo Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Document No.,Line No.) ORDER(Ascending);
+                DataItemTableView = SORTING(Document No., Line No.) ORDER(Ascending);
             }
 
             trigger OnPreDataItem();
             begin
-                SETRANGE("Posting Date",StartDate,EndDate);
+                SETRANGE("Posting Date", StartDate, EndDate);
             end;
         }
-        dataitem("Transfer Shipment Header";"Transfer Shipment Header")
+        dataitem("Transfer Shipment Header"; "Transfer Shipment Header")
         {
             DataItemTableView = SORTING(No.) ORDER(Ascending);
-            dataitem("Transfer Shipment Line";"Transfer Shipment Line")
+            dataitem("Transfer Shipment Line"; "Transfer Shipment Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Document No.,Line No.) ORDER(Ascending);
+                DataItemTableView = SORTING(Document No., Line No.) ORDER(Ascending);
             }
 
             trigger OnPreDataItem();
             begin
-                SETRANGE("Posting Date",StartDate,EndDate);
+                SETRANGE("Posting Date", StartDate, EndDate);
             end;
         }
-        dataitem("Integer";"Integer")
+        dataitem("Integer"; "Integer")
         {
             DataItemTableView = SORTING(Number) ORDER(Ascending);
             MaxIteration = 1;
-            column(ROUND_TaxAmountTot_1_;ROUND(TaxAmountTot,1))
+            column(ROUND_TaxAmountTot_1_; ROUND(TaxAmountTot, 1))
             {
             }
-            column(Freight;Freight)
+            column(Freight; Freight)
             {
             }
-            column(ROUND__GTO___LocalTO__1_;ROUND((GTO - LocalTO),1))
+            column(ROUND__GTO___LocalTO__1_; ROUND((GTO - LocalTO), 1))
             {
             }
-            column(ROUND_LocalTO_1_;ROUND(LocalTO,1))
+            column(ROUND_LocalTO_1_; ROUND(LocalTO, 1))
             {
             }
-            column(ROUND_GTO_1_;ROUND(GTO,1))
+            column(ROUND_GTO_1_; ROUND(GTO, 1))
             {
             }
-            column(GoodsReturned;GoodsReturned)
+            column(GoodsReturned; GoodsReturned)
             {
             }
-            column(CashDiscAmt;CashDiscAmt)
+            column(CashDiscAmt; CashDiscAmt)
             {
             }
-            column(JobWrksAmt;JobWrksAmt)
+            column(JobWrksAmt; JobWrksAmt)
             {
             }
-            column(CentralTOLessAmt;ROUND((Freight + GoodsReturned +(TaxAmountTot) + CashDiscAmt + JobWrksAmt),1))
+            column(CentralTOLessAmt; ROUND((Freight + GoodsReturned + (TaxAmountTot) + CashDiscAmt + JobWrksAmt), 1))
             {
             }
-            column(ROUND__GTO_LocalTO___Freight___GoodsReturned____TaxAmountTot_____CashDiscAmt___JobWrksAmt___1_;ROUND((GTO-LocalTO- (Freight + GoodsReturned + (TaxAmountTot ) + CashDiscAmt + JobWrksAmt)),1))
+            column(ROUND__GTO_LocalTO___Freight___GoodsReturned____TaxAmountTot_____CashDiscAmt___JobWrksAmt___1_; ROUND((GTO - LocalTO - (Freight + GoodsReturned + (TaxAmountTot) + CashDiscAmt + JobWrksAmt)), 1))
             {
             }
-            column(DataItem1280019;ROUND((GTO-LocalTO-TaxAmountTot- (Freight + GoodsReturned + TaxAmount + CashDiscAmt + JobWrksAmt) - (ExportsAmt + HighSeaSalesAmt + HFormAmt + TransferAmt + EIEIIFormAmt + SalesTaxExemptAmt + SalesProvisoAmt + SalesOutAmt)),1))
+            column(DataItem1280019; ROUND((GTO - LocalTO - TaxAmountTot - (Freight + GoodsReturned + TaxAmount + CashDiscAmt + JobWrksAmt) - (ExportsAmt + HighSeaSalesAmt + HFormAmt + TransferAmt + EIEIIFormAmt + SalesTaxExemptAmt + SalesProvisoAmt + SalesOutAmt)), 1))
             {
             }
-            column(STRSUBSTNO_Text003_StateDesc_;STRSUBSTNO(Text003,StateDesc))
+            column(STRSUBSTNO_Text003_StateDesc_; STRSUBSTNO(Text003, StateDesc))
             {
             }
-            column(V7_Caption;V7_CaptionLbl)
+            column(V7_Caption; V7_CaptionLbl)
             {
             }
-            column(Goods_wise_break_up_of_6Caption;Goods_wise_break_up_of_6CaptionLbl)
+            column(Goods_wise_break_up_of_6Caption; Goods_wise_break_up_of_6CaptionLbl)
             {
             }
-            column(V6_Caption;V6_CaptionLbl)
+            column(V6_Caption; V6_CaptionLbl)
             {
             }
-            column(Balance_Total_Taxable_Turnover_of_Interstate_Sales_5_Caption;Balance_Total_Taxable_Turnover_of_Interstate_Sales_5_CaptionLbl)
+            column(Balance_Total_Taxable_Turnover_of_Interstate_Sales_5_Caption; Balance_Total_Taxable_Turnover_of_Interstate_Sales_5_CaptionLbl)
             {
             }
-            column(V5_Caption;V5_CaptionLbl)
+            column(V5_Caption; V5_CaptionLbl)
             {
             }
-            column(Net_Turnover_Central__3_4_Caption;Net_Turnover_Central__3_4_CaptionLbl)
+            column(Net_Turnover_Central__3_4_Caption; Net_Turnover_Central__3_4_CaptionLbl)
             {
             }
-            column(Total_of_4_A___B___C___D___E_Caption;Total_of_4_A___B___C___D___E_CaptionLbl)
+            column(Total_of_4_A___B___C___D___E_Caption; Total_of_4_A___B___C___D___E_CaptionLbl)
             {
             }
-            column(E_Caption;E_CaptionLbl)
+            column(E_Caption; E_CaptionLbl)
             {
             }
-            column(Job_work___Work_contracts_not_accounting_to_sales_but_included_in_the_Central_TurnoverCaption;Job_work___Work_contracts_not_accounting_to_sales_but_included_in_the_Central_TurnoverCaptionLbl)
+            column(Job_work___Work_contracts_not_accounting_to_sales_but_included_in_the_Central_TurnoverCaption; Job_work___Work_contracts_not_accounting_to_sales_but_included_in_the_Central_TurnoverCaptionLbl)
             {
             }
-            column(D_Caption;D_CaptionLbl)
+            column(D_Caption; D_CaptionLbl)
             {
             }
-            column(Cash_Discount_allowed_according_to_ordinary_trade_practices_and_included_in_Central_TurnoverCaption;Cash_Discount_allowed_according_to_ordinary_trade_practices_and_included_in_Central_TurnoverCaptionLbl)
+            column(Cash_Discount_allowed_according_to_ordinary_trade_practices_and_included_in_Central_TurnoverCaption; Cash_Discount_allowed_according_to_ordinary_trade_practices_and_included_in_Central_TurnoverCaptionLbl)
             {
             }
-            column(C_Caption;C_CaptionLbl)
+            column(C_Caption; C_CaptionLbl)
             {
             }
-            column(Tax_collected_included_in_the_Central_TurnoverCaption;Tax_collected_included_in_the_Central_TurnoverCaptionLbl)
+            column(Tax_collected_included_in_the_Central_TurnoverCaption; Tax_collected_included_in_the_Central_TurnoverCaptionLbl)
             {
             }
-            column(Value_of_goods_returned_under_CST_ActCaption;Value_of_goods_returned_under_CST_ActCaptionLbl)
+            column(Value_of_goods_returned_under_CST_ActCaption; Value_of_goods_returned_under_CST_ActCaptionLbl)
             {
             }
-            column(B_Caption;B_CaptionLbl)
+            column(B_Caption; B_CaptionLbl)
             {
             }
-            column(Cost_of_freight_deliveries_freight_or_installation_separately_charged_but_included_in_the_TurnoverCaption;Cost_of_freight_deliveries_freight_or_installation_separately_charged_but_included_in_the_TurnoverCaptionLbl)
+            column(Cost_of_freight_deliveries_freight_or_installation_separately_charged_but_included_in_the_TurnoverCaption; Cost_of_freight_deliveries_freight_or_installation_separately_charged_but_included_in_the_TurnoverCaptionLbl)
             {
             }
-            column(A_Caption;A_CaptionLbl)
+            column(A_Caption; A_CaptionLbl)
             {
             }
-            column(V4_Caption;V4_CaptionLbl)
+            column(V4_Caption; V4_CaptionLbl)
             {
             }
-            column(Less__in_respect_of_Central_Turnover_only_Caption;Less__in_respect_of_Central_Turnover_only_CaptionLbl)
+            column(Less__in_respect_of_Central_Turnover_only_Caption; Less__in_respect_of_Central_Turnover_only_CaptionLbl)
             {
             }
-            column(V3_Caption;V3_CaptionLbl)
+            column(V3_Caption; V3_CaptionLbl)
             {
             }
-            column(Turnover__Central___1_2_Caption;Turnover__Central___1_2_CaptionLbl)
+            column(Turnover__Central___1_2_Caption; Turnover__Central___1_2_CaptionLbl)
             {
             }
-            column(V2_Caption;V2_CaptionLbl)
+            column(V2_Caption; V2_CaptionLbl)
             {
             }
-            column(Gross_Turnover__GTO___Inclusive_of_Jobworks__work_contracts__Branch_Transfer_etc__Caption;Gross_Turnover__GTO___Inclusive_of_Jobworks__work_contracts__Branch_Transfer_etc__CaptionLbl)
+            column(Gross_Turnover__GTO___Inclusive_of_Jobworks__work_contracts__Branch_Transfer_etc__Caption; Gross_Turnover__GTO___Inclusive_of_Jobworks__work_contracts__Branch_Transfer_etc__CaptionLbl)
             {
             }
-            column(V1_Caption;V1_CaptionLbl)
+            column(V1_Caption; V1_CaptionLbl)
             {
             }
-            column(Nature_of_GoodsCaption;Nature_of_GoodsCaptionLbl)
+            column(Nature_of_GoodsCaption; Nature_of_GoodsCaptionLbl)
             {
             }
-            column(Commodity_codeCaption;Commodity_codeCaptionLbl)
+            column(Commodity_codeCaption; Commodity_codeCaptionLbl)
             {
             }
-            column(Rate_of_TaxCaption;Rate_of_TaxCaptionLbl)
+            column(Rate_of_TaxCaption; Rate_of_TaxCaptionLbl)
             {
             }
-            column(Sales_relating_to_Reg_Dealers_on_prescribed_Declaration_in_Form___CCaption;Sales_relating_to_Reg_Dealers_on_prescribed_Declaration_in_Form___CCaptionLbl)
+            column(Sales_relating_to_Reg_Dealers_on_prescribed_Declaration_in_Form___CCaption; Sales_relating_to_Reg_Dealers_on_prescribed_Declaration_in_Form___CCaptionLbl)
             {
             }
-            column(Sales_to_Govt__not_being_a_Regd__Dealer_on_prescrined_certificate_in_Form_DCaption;Sales_to_Govt__not_being_a_Regd__Dealer_on_prescrined_certificate_in_Form_DCaptionLbl)
+            column(Sales_to_Govt__not_being_a_Regd__Dealer_on_prescrined_certificate_in_Form_DCaption; Sales_to_Govt__not_being_a_Regd__Dealer_on_prescrined_certificate_in_Form_DCaptionLbl)
             {
             }
-            column(Other_salesCaption;Other_salesCaptionLbl)
+            column(Other_salesCaption; Other_salesCaptionLbl)
             {
             }
-            column(Total_SalesCaption;Total_SalesCaptionLbl)
+            column(Total_SalesCaption; Total_SalesCaptionLbl)
             {
             }
-            column(Tax_dueCaption;Tax_dueCaptionLbl)
+            column(Tax_dueCaption; Tax_dueCaptionLbl)
             {
             }
-            column(V1Caption;V1CaptionLbl)
+            column(V1Caption; V1CaptionLbl)
             {
             }
-            column(V2Caption;V2CaptionLbl)
+            column(V2Caption; V2CaptionLbl)
             {
             }
-            column(V3Caption;V3CaptionLbl)
+            column(V3Caption; V3CaptionLbl)
             {
             }
-            column(V4Caption;V4CaptionLbl)
+            column(V4Caption; V4CaptionLbl)
             {
             }
-            column(V5Caption;V5CaptionLbl)
+            column(V5Caption; V5CaptionLbl)
             {
             }
-            column(V6Caption;V6CaptionLbl)
+            column(V6Caption; V6CaptionLbl)
             {
             }
-            column(V7Caption;V7CaptionLbl)
+            column(V7Caption; V7CaptionLbl)
             {
             }
-            column(V8Caption;V8CaptionLbl)
+            column(V8Caption; V8CaptionLbl)
             {
             }
-            column(Integer_Number;Number)
+            column(Integer_Number; Number)
             {
             }
         }
-        dataitem("<Sales Invoice Line2>";"Sales Invoice Line")
+        dataitem("<Sales Invoice Line2>"; "Sales Invoice Line")
         {
             DataItemTableView = SORTING(Tax %) ORDER(Ascending) WHERE(Tax Liable=CONST(Yes),Tax %=FILTER(<>0));
             column(FORMAT__Tax________;FORMAT("Tax %")+'%')

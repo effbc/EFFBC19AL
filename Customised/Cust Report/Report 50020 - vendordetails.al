@@ -7,7 +7,7 @@ report 50020 vendordetails
 
     dataset
     {
-        dataitem("Vendor Ledger Entry";"Vendor Ledger Entry")
+        dataitem("Vendor Ledger Entry"; "Vendor Ledger Entry")
         {
             DataItemTableView = SORTING(Entry No.) ORDER(Ascending) WHERE(Amount (LCY)=FILTER(>0));
             RequestFilterFields = "Posting Date";

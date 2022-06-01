@@ -7,7 +7,7 @@ report 33000076 "Payroll Bonus Calculation"
 
     dataset
     {
-        dataitem(Employee;Employee)
+        dataitem(Employee; Employee)
         {
             DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Leave Date=FILTER(''));
             RequestFilterFields = "No.","Job Title/Grade";

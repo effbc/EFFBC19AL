@@ -6,55 +6,55 @@ xmlport 80107 "QC Specification Line"
     {
         textelement(SpecificationLines)
         {
-            tableelement("<specificationline>";"Specification Line")
+            tableelement("<specificationline>"; "Specification Line")
             {
                 XmlName = 'SpecificationLine';
-                fieldelement(SpecID;"<SpecificationLine>"."Spec ID")
+                fieldelement(SpecID; "<SpecificationLine>"."Spec ID")
                 {
                 }
-                fieldelement(LineNo;"<SpecificationLine>"."Line No.")
+                fieldelement(LineNo; "<SpecificationLine>"."Line No.")
                 {
                 }
-                fieldelement(CharacterCode;"<SpecificationLine>"."Character Code")
+                fieldelement(CharacterCode; "<SpecificationLine>"."Character Code")
                 {
                 }
-                fieldelement(Description;"<SpecificationLine>".Description)
+                fieldelement(Description; "<SpecificationLine>".Description)
                 {
                 }
-                fieldelement(SamplingCode;"<SpecificationLine>"."Sampling Code")
+                fieldelement(SamplingCode; "<SpecificationLine>"."Sampling Code")
                 {
                 }
-                fieldelement(NormalValueNum;"<SpecificationLine>"."Normal Value (Num)")
+                fieldelement(NormalValueNum; "<SpecificationLine>"."Normal Value (Num)")
                 {
                 }
-                fieldelement(MinValueNum;"<SpecificationLine>"."Min. Value (Num)")
+                fieldelement(MinValueNum; "<SpecificationLine>"."Min. Value (Num)")
                 {
                 }
-                fieldelement(MaxValueNum;"<SpecificationLine>"."Max. Value (Num)")
+                fieldelement(MaxValueNum; "<SpecificationLine>"."Max. Value (Num)")
                 {
                 }
-                fieldelement(NormalValueChar;"<SpecificationLine>"."Normal Value (Char)")
+                fieldelement(NormalValueChar; "<SpecificationLine>"."Normal Value (Char)")
                 {
                 }
-                fieldelement(MinValueChar;"<SpecificationLine>"."Min. Value (Char)")
+                fieldelement(MinValueChar; "<SpecificationLine>"."Min. Value (Char)")
                 {
                 }
-                fieldelement(MaxValueChar;"<SpecificationLine>"."Max. Value (Char)")
+                fieldelement(MaxValueChar; "<SpecificationLine>"."Max. Value (Char)")
                 {
                 }
-                fieldelement(InspectionGroupCode;"<SpecificationLine>"."Inspection Group Code")
+                fieldelement(InspectionGroupCode; "<SpecificationLine>"."Inspection Group Code")
                 {
                 }
-                fieldelement(UnitOfMeasureCode;"<SpecificationLine>"."Unit Of Measure Code")
+                fieldelement(UnitOfMeasureCode; "<SpecificationLine>"."Unit Of Measure Code")
                 {
                 }
-                fieldelement(Qualitative;"<SpecificationLine>".Qualitative)
+                fieldelement(Qualitative; "<SpecificationLine>".Qualitative)
                 {
                 }
-                fieldelement(CharacterType;"<SpecificationLine>"."Character Type")
+                fieldelement(CharacterType; "<SpecificationLine>"."Character Type")
                 {
                 }
-                fieldelement(Indentation;"<SpecificationLine>".Indentation)
+                fieldelement(Indentation; "<SpecificationLine>".Indentation)
                 {
                 }
             }

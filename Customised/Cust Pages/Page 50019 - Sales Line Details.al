@@ -2,7 +2,7 @@ page 50019 "Sales Line Details"
 {
     PageType = List;
     SourceTable = "Sales Line";
-    SourceTableView = SORTING(Document Type,Document No.,Line No.) ORDER(Ascending) WHERE(Document No.=FILTER(<>EFF/AMC/*),Outstanding Quantity=FILTER(>0),MainCategory=FILTER(<>Temp-Closed),Sell-to Customer No.=FILTER(<>CUST02007));
+    SourceTableView = SORTING(Document Type, Document No., Line No.) ORDER(Ascending) WHERE(Document No.=FILTER(<>EFF/AMC/*),Outstanding Quantity=FILTER(>0),MainCategory=FILTER(<>Temp-Closed),Sell-to Customer No.=FILTER(<>CUST02007));
 
     layout
     {

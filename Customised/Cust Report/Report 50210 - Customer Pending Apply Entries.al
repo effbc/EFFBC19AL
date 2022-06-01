@@ -4,11 +4,11 @@ report 50210 "Customer Pending Apply Entries"
 
     DefaultLayout = RDLC;
     RDLCLayout = './Customer Pending Apply Entries.rdlc';
-    Permissions = TableData "Cust. Ledger Entry"=rimd;
+    Permissions = TableData "Cust. Ledger Entry" = rimd;
 
     dataset
     {
-        dataitem("Cust. Ledger Entry";"Cust. Ledger Entry")
+        dataitem("Cust. Ledger Entry"; "Cust. Ledger Entry")
         {
             DataItemTableView = WHERE(Remaining Amount=FILTER(<-100),Posting Date=FILTER(>=04/01/08),Payment Type=FILTER(<>Advance));
             column(Cust__Ledger_Entry__Customer_No__;"Customer No.")

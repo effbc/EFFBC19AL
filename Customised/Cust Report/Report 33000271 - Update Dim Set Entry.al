@@ -2,11 +2,11 @@ report 33000271 "Update Dim Set Entry"
 {
     DefaultLayout = RDLC;
     RDLCLayout = './Update Dim Set Entry.rdlc';
-    Permissions = TableData "Dimension Set Tree Node"=rm;
+    Permissions = TableData "Dimension Set Tree Node" = rm;
 
     dataset
     {
-        dataitem("Dimension Set Tree Node";"Dimension Set Tree Node")
+        dataitem("Dimension Set Tree Node"; "Dimension Set Tree Node")
         {
 
             trigger OnAfterGetRecord();
@@ -18,7 +18,7 @@ report 33000271 "Update Dim Set Entry"
                 "Dimension Set Tree Node"."Dimension Set ID":=6191;
                 "Dimension Set Tree Node".MODIFY;
                 */
-                "Dimension Set Tree Node".RENAME("Dimension Set Tree Node"."Parent Dimension Set ID",2830);
+                "Dimension Set Tree Node".RENAME("Dimension Set Tree Node"."Parent Dimension Set ID", 2830);
 
             end;
 
@@ -33,20 +33,20 @@ report 33000271 "Update Dim Set Entry"
                 SETRANGE("Dimension Set Entry"."Dimension Code", 'EMPLOYEE CODES');
                 IF COUNT >1 THEN
                   ERROR('do not run');*/
-                  /*
-                  SETRANGE("Dimension Set Tree Node"."Dimension Value ID",2499);
-                  SETRANGE("Dimension Set Tree Node"."Dimension Set ID",6849);
-                  SETRANGE("Dimension Set Tree Node"."Parent Dimension Set ID",85);
-                  IF COUNT >1 THEN
-                  ERROR('do not run');
-                  */
-                   SETRANGE("Dimension Set Tree Node"."Dimension Value ID",17321);
-                  //SETRANGE("Dimension Set Tree Node"."Dimension Set ID",25594);
-                  SETRANGE("Dimension Set Tree Node"."Parent Dimension Set ID",0);
-                  IF COUNT >1 THEN
-                  ERROR('do not run');
-                
-                
+                /*
+                SETRANGE("Dimension Set Tree Node"."Dimension Value ID",2499);
+                SETRANGE("Dimension Set Tree Node"."Dimension Set ID",6849);
+                SETRANGE("Dimension Set Tree Node"."Parent Dimension Set ID",85);
+                IF COUNT >1 THEN
+                ERROR('do not run');
+                */
+                SETRANGE("Dimension Set Tree Node"."Dimension Value ID", 17321);
+                //SETRANGE("Dimension Set Tree Node"."Dimension Set ID",25594);
+                SETRANGE("Dimension Set Tree Node"."Parent Dimension Set ID", 0);
+                IF COUNT > 1 THEN
+                    ERROR('do not run');
+
+
 
             end;
         }

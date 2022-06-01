@@ -6,16 +6,16 @@ xmlport 80044 "TDS Assessee Code"
     {
         textelement(AssesseeCodes)
         {
-            tableelement("<assesseecode>";"Assessee Code")
+            tableelement("<assesseecode>"; "Assessee Code")
             {
                 XmlName = 'AssesseeCode';
-                fieldelement(Code;"<AssesseeCode>".Code)
+                fieldelement(Code; "<AssesseeCode>".Code)
                 {
                 }
-                fieldelement(Description;"<AssesseeCode>".Description)
+                fieldelement(Description; "<AssesseeCode>".Description)
                 {
                 }
-                fieldelement(Type;"<AssesseeCode>".Type)
+                fieldelement(Type; "<AssesseeCode>".Type)
                 {
                 }
             }

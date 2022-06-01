@@ -8,6 +8,7 @@ tableextension 70045 BankAccReconciliationLineExt extends "Bank Acc. Reconciliat
                         ENN = 'Cheque No.';
             Description = 'Rev01';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(50001; "Cheque Date"; Date)
         {
@@ -15,15 +16,18 @@ tableextension 70045 BankAccReconciliationLineExt extends "Bank Acc. Reconciliat
                         ENN = 'Cheque Date';
             Description = 'Rev01';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(50002; "Transfer to Gen. Jnl"; Boolean)
         {
             Caption = 'Transfer to Gen. Jnl';
             Description = 'B2BN1.0 11Dec2018';
+            DataClassification = CustomerContent;
         }
         field(50060; "Bank Acc LE"; Integer)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
     }
 

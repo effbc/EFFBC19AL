@@ -5,66 +5,82 @@ tableextension 70081 ProdOrderRoutingLineExt extends "Prod. Order Routing Line"
         field(60001; "Operation Description"; Text[50])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60002; "Item No."; Code[20])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60003; Move; Boolean)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60004; "Total Time"; Decimal)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60005; "Item Description"; Text[50])
         {
             Description = 'B2B,length changed from 30-50(sundar)';
+            DataClassification = CustomerContent;
         }
         field(60100; "Allocated Qty.1"; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60101; "Person.2"; Code[20])
         {
             TableRelation = IF (Type = CONST("Work Center")) "Work Center" ELSE
             IF (Type = CONST("Machine Center")) "Machine Center";
+            DataClassification = CustomerContent;
         }
         field(60102; "Allocated Qty.2"; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60103; "Person.3"; Code[20])
         {
             TableRelation = IF (Type = CONST("Work Center")) "Work Center" ELSE
             IF (Type = CONST("Machine Center")) "Machine Center";
+            DataClassification = CustomerContent;
         }
         field(60104; "Allocated Qty.3"; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60105; "Person.4"; Code[20])
         {
             TableRelation = IF (Type = CONST("Work Center")) "Work Center" ELSE
             IF (Type = CONST("Machine Center")) "Machine Center";
+            DataClassification = CustomerContent;
         }
         field(60106; "Allocated Qty.4"; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60107; "Person.5"; Code[20])
         {
             TableRelation = IF (Type = CONST("Work Center")) "Work Center" ELSE
             IF (Type = CONST("Machine Center")) "Machine Center";
+            DataClassification = CustomerContent;
         }
         field(60108; "Allocated Qty.5"; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(60109; PlannedStartDate; Date)
         {
             Description = 'Added by sujani for Routing day wise activities calculation';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(33000250; "Sub Assembly"; Code[20])
         {
             TableRelation = "Sub Assembly";
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -87,20 +103,25 @@ tableextension 70081 ProdOrderRoutingLineExt extends "Prod. Order Routing Line"
         }
         field(33000251; Quantity; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(33000252; "Spec Id"; Code[20])
         {
             TableRelation = "Specification Header";
+            DataClassification = CustomerContent;
         }
         field(33000253; "QC Enabled"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(33000254; "Sub Assembly Unit Of Meas.Code"; Code[20])
         {
             TableRelation = "Sub Assembly Unit of Measure".Code;
+            DataClassification = CustomerContent;
         }
         field(33000255; "Qty.To Produce"; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -112,6 +133,7 @@ tableextension 70081 ProdOrderRoutingLineExt extends "Prod. Order Routing Line"
         }
         field(33000256; "Quantity Produced"; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -120,13 +142,16 @@ tableextension 70081 ProdOrderRoutingLineExt extends "Prod. Order Routing Line"
         }
         field(33000257; "Sub Assembly Description"; Text[30])
         {
+            DataClassification = CustomerContent;
         }
         field(33000258; "Spec Version Code"; Code[20])
         {
+            DataClassification = CustomerContent;
         }
         field(33000259; "Quantity Sent To Quality"; Decimal)
         {
             Description = 'B2B 1.1';
+            DataClassification = CustomerContent;
         }
         field(33000260; "Quantity Accepted"; Decimal)
         {
@@ -138,22 +163,27 @@ tableextension 70081 ProdOrderRoutingLineExt extends "Prod. Order Routing Line"
         field(33000261; "Quantity Rejected"; Decimal)
         {
             Description = 'B2B 1.1';
+            DataClassification = CustomerContent;
         }
         field(33000262; "Quantity Rework"; Decimal)
         {
             Description = 'B2B 1.1';
+            DataClassification = CustomerContent;
         }
         field(33000263; "Newly Added Opearation"; Boolean)
         {
             Description = 'B2B 1.1,QCB2B1.2';
+            DataClassification = CustomerContent;
         }
         field(33000264; "Prev. Qty"; Decimal)
         {
             Description = 'B2B 1.1,QCB2B1.2';
+            DataClassification = CustomerContent;
         }
         field(33000265; "QAS/MPR"; Enum "QAS MPR Options")
         {
             Description = 'B2B 1.1,QCB2B1.2';
+            DataClassification = CustomerContent;
         }
     }
     keys

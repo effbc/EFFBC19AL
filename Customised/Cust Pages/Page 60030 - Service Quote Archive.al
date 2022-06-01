@@ -294,7 +294,7 @@ page 60030 "Service Quote Archive"
         UserMgt : Codeunit "User Setup Management";
         CreateServiceOrder : Codeunit "Serv-Quote to Order (Yes/No)";
         ChangeExchangeRate : Page "Change Exchange Rate";
-        FaultResolutionRelation : Page "Fault/Resol. Cod. Relationship";
+                                 FaultResolutionRelation : Page "Fault/Resol. Cod. Relationship";
 
     [LineStart(5420)]
     local procedure CustomerNoOnAfterValidate();

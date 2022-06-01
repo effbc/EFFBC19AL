@@ -10,10 +10,10 @@ page 99999 sample123
             group(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("No. 2";"No. 2")
+                field("No. 2"; "No. 2")
                 {
                 }
             }
@@ -33,17 +33,17 @@ page 99999 sample123
                 trigger OnAction();
                 begin
                     Rec.FINDFIRST;
-                    Body := "No."+Description;
-                    CU.CreateMessage('Ramesh','santhoshk@efftronics.com','santhoshk@efftronics.com','TEST',Body,FALSE);
+                    Body := "No." + Description;
+                    CU.CreateMessage('Ramesh', 'santhoshk@efftronics.com', 'santhoshk@efftronics.com', 'TEST', Body, FALSE);
 
                     Rec.NEXT;
 
                     REPEAT
 
-                    body1 := "No."+Description;
-                    len+=STRLEN(body1);
-                    CU.AppendBody(body1);
-                    UNTIL NEXT=0;
+                        body1 := "No." + Description;
+                        len += STRLEN(body1);
+                        CU.AppendBody(body1);
+                    UNTIL NEXT = 0;
 
                     CU.Send;
                     MESSAGE('Mail Sent');
@@ -54,10 +54,10 @@ page 99999 sample123
     }
 
     var
-        CU : Codeunit "SMTP Mail";
-        Tb : Record "SMTP Mail Setup";
-        Body : Text[1024];
-        body1 : Text[1024];
-        len : Integer;
+        CU: Codeunit "SMTP Mail";
+        Tb: Record "SMTP Mail Setup";
+        Body: Text[1024];
+        body1: Text[1024];
+        len: Integer;
 }
 

@@ -2,22 +2,22 @@ report 99001026 "Replan Production Order"
 {
     // version NAVW19.00.00.47444
 
-    CaptionML = ENU='Replan Production Order',
-                ENN='Replan Production Order';
+    CaptionML = ENU = 'Replan Production Order',
+                ENN = 'Replan Production Order';
     ProcessingOnly = true;
 
     dataset
     {
-        dataitem("Production Order";"Production Order")
+        dataitem("Production Order"; "Production Order")
         {
-            DataItemTableView = SORTING(Status,No.) WHERE(Status=FILTER(..Released));
-            dataitem("Prod. Order Line";"Prod. Order Line")
+            DataItemTableView = SORTING(Status, No.) WHERE(Status = FILTER(.. Released));
+            dataitem("Prod. Order Line"; "Prod. Order Line")
             {
-                DataItemLink = Status=FIELD(Status),Prod. Order No.=FIELD(No.);
-                DataItemTableView = SORTING(Status,Prod. Order No.,Planning Level Code);
-                dataitem("Prod. Order Routing Line";"Prod. Order Routing Line")
+                DataItemLink = Status = FIELD(Status), Prod. Order No.=FIELD(No.);
+                DataItemTableView = SORTING(Status, Prod. Order No., Planning Level Code);
+                dataitem("Prod. Order Routing Line"; "Prod. Order Routing Line")
                 {
-                    DataItemLink = Status=FIELD(Status),Prod. Order No.=FIELD(Prod. Order No.),Routing No.=FIELD(Routing No.);
+                    DataItemLink = Status = FIELD(Status), Prod. Order No.=FIELD(Prod. Order No.),Routing No.=FIELD(Routing No.);
                     DataItemTableView = SORTING(Status,Prod. Order No.,Routing Reference No.,Routing No.,Operation No.);
 
                     trigger OnAfterGetRecord();

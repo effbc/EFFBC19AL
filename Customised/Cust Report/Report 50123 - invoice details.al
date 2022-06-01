@@ -5,29 +5,29 @@ report 50123 "invoice details"
 
     dataset
     {
-        dataitem("Sales Invoice Header";"Sales Invoice Header")
+        dataitem("Sales Invoice Header"; "Sales Invoice Header")
         {
-            DataItemTableView = SORTING(Order No.,No.) ORDER(Ascending);
-            RequestFilterFields = "Order No.","Shipment Date";
-            column(amt;amt)
+            DataItemTableView = SORTING(Order No., No.) ORDER(Ascending);
+            RequestFilterFields = "Order No.", "Shipment Date";
+            column(amt; amt)
             {
             }
-            column(Sales_Invoice_Header__External_Document_No__;"External Document No.")
+            column(Sales_Invoice_Header__External_Document_No__; "External Document No.")
             {
             }
-            column(Sales_Invoice_Header__Order_No__;"Order No.")
+            column(Sales_Invoice_Header__Order_No__; "Order No.")
             {
             }
-            column(Sales_Invoice_Header__Sales_Invoice_Header___Posting_Date_;"Sales Invoice Header"."Posting Date")
+            column(Sales_Invoice_Header__Sales_Invoice_Header___Posting_Date_; "Sales Invoice Header"."Posting Date")
             {
             }
-            column(totamt;totamt)
+            column(totamt; totamt)
             {
             }
-            column(Total_Amount_Caption;Total_Amount_CaptionLbl)
+            column(Total_Amount_Caption; Total_Amount_CaptionLbl)
             {
             }
-            column(Sales_Invoice_Header_No_;"No.")
+            column(Sales_Invoice_Header_No_; "No.")
             {
             }
         }
@@ -50,9 +50,9 @@ report 50123 "invoice details"
     }
 
     var
-        sil : Record "Sales Invoice Line";
-        amt : Decimal;
-        totamt : Decimal;
-        Total_Amount_CaptionLbl : Label '"Total Amount "';
+        sil: Record "Sales Invoice Line";
+        amt: Decimal;
+        totamt: Decimal;
+        Total_Amount_CaptionLbl: Label '"Total Amount "';
 }
 

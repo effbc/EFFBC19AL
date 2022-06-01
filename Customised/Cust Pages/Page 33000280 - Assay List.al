@@ -14,19 +14,19 @@ page 33000280 "Assay List"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Sampling Plan Code";"Sampling Plan Code")
+                field("Sampling Plan Code"; "Sampling Plan Code")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Inspection Group Code";"Inspection Group Code")
+                field("Inspection Group Code"; "Inspection Group Code")
                 {
                 }
             }

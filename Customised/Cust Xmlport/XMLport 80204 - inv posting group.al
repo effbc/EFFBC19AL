@@ -6,28 +6,28 @@ xmlport 80204 "inv posting group"
     {
         textelement(Items)
         {
-            tableelement(Item;Item)
+            tableelement(Item; Item)
             {
                 XmlName = 'Item';
-                fieldelement(No;Item."No.")
+                fieldelement(No; Item."No.")
                 {
                 }
-                fieldelement(Description;Item.Description)
+                fieldelement(Description; Item.Description)
                 {
                 }
-                fieldelement(GenProdPostingGroup;Item."Gen. Prod. Posting Group")
+                fieldelement(GenProdPostingGroup; Item."Gen. Prod. Posting Group")
                 {
                 }
-                fieldelement(InventoryPostingGroup;Item."Inventory Posting Group")
+                fieldelement(InventoryPostingGroup; Item."Inventory Posting Group")
                 {
                 }
-                fieldelement(TaxGroupCode;Item."Tax Group Code")
+                fieldelement(TaxGroupCode; Item."Tax Group Code")
                 {
                 }
-                fieldelement(VATProdPostingGroup;Item."VAT Prod. Posting Group")
+                fieldelement(VATProdPostingGroup; Item."VAT Prod. Posting Group")
                 {
                 }
-                fieldelement(ExciseProdPostingGroup;Item."Excise Prod. Posting Group")
+                fieldelement(ExciseProdPostingGroup; Item."Excise Prod. Posting Group")
                 {
                 }
             }

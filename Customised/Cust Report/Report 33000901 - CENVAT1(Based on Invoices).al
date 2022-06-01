@@ -9,92 +9,92 @@ report 33000901 "CENVAT1(Based on Invoices)"
 
     dataset
     {
-        dataitem(RG2AHdr;"Integer")
+        dataitem(RG2AHdr; "Integer")
         {
             DataItemTableView = SORTING(Number) ORDER(Ascending);
             MaxIteration = 1;
-            column(FORMAT_StartDt_0_4_;FORMAT(StartDt,0,4))
+            column(FORMAT_StartDt_0_4_; FORMAT(StartDt, 0, 4))
             {
             }
-            column(FORMAT_EndDt_0_4_;FORMAT(EndDt,0,4))
+            column(FORMAT_EndDt_0_4_; FORMAT(EndDt, 0, 4))
             {
             }
-            column(ANNEXURE_10Caption;ANNEXURE_10CaptionLbl)
+            column(ANNEXURE_10Caption; ANNEXURE_10CaptionLbl)
             {
             }
-            column(See_sub_rule_5__of_rule_7_Caption;See_sub_rule_5__of_rule_7_CaptionLbl)
+            column(See_sub_rule_5__of_rule_7_Caption; See_sub_rule_5__of_rule_7_CaptionLbl)
             {
             }
-            column(Monthly_Return_under_Rule_7_of_the_Cenvat_Credit_Rules_2002Caption;Monthly_Return_under_Rule_7_of_the_Cenvat_Credit_Rules_2002CaptionLbl)
+            column(Monthly_Return_under_Rule_7_of_the_Cenvat_Credit_Rules_2002Caption; Monthly_Return_under_Rule_7_of_the_Cenvat_Credit_Rules_2002CaptionLbl)
             {
             }
-            column(INPUTSCaption;INPUTSCaptionLbl)
+            column(INPUTSCaption; INPUTSCaptionLbl)
             {
             }
-            column(ToCaption;ToCaptionLbl)
+            column(ToCaption; ToCaptionLbl)
             {
             }
-            column(For_the_PeriodCaption;For_the_PeriodCaptionLbl)
+            column(For_the_PeriodCaption; For_the_PeriodCaptionLbl)
             {
             }
-            column(Qty_Caption;Qty_CaptionLbl)
+            column(Qty_Caption; Qty_CaptionLbl)
             {
             }
-            column(SubheadingCaption;SubheadingCaptionLbl)
+            column(SubheadingCaption; SubheadingCaptionLbl)
             {
             }
-            column(DescriptionCaption;DescriptionCaptionLbl)
+            column(DescriptionCaption; DescriptionCaptionLbl)
             {
             }
-            column(OtherCaption;OtherCaptionLbl)
+            column(OtherCaption; OtherCaptionLbl)
             {
             }
-            column(For_the_main_item_in_the_documentCaption;For_the_main_item_in_the_documentCaptionLbl)
+            column(For_the_main_item_in_the_documentCaption; For_the_main_item_in_the_documentCaptionLbl)
             {
             }
-            column(Addl___DutyCaption;Addl___DutyCaptionLbl)
+            column(Addl___DutyCaption; Addl___DutyCaptionLbl)
             {
             }
-            column(SEDCaption;SEDCaptionLbl)
+            column(SEDCaption; SEDCaptionLbl)
             {
             }
-            column(AEDCaption;AEDCaptionLbl)
+            column(AEDCaption; AEDCaptionLbl)
             {
             }
-            column(Details_of_credit_takenCaption;Details_of_credit_takenCaptionLbl)
+            column(Details_of_credit_takenCaption; Details_of_credit_takenCaptionLbl)
             {
             }
-            column(CENVATCaption;CENVATCaptionLbl)
+            column(CENVATCaption; CENVATCaptionLbl)
             {
             }
-            column(ValueCaption;ValueCaptionLbl)
+            column(ValueCaption; ValueCaptionLbl)
             {
             }
-            column(Date_on_which_inputs_receivedCaption;Date_on_which_inputs_receivedCaptionLbl)
+            column(Date_on_which_inputs_receivedCaption; Date_on_which_inputs_receivedCaptionLbl)
             {
             }
-            column(ECC_number_of_the_supplierCaption;ECC_number_of_the_supplierCaptionLbl)
+            column(ECC_number_of_the_supplierCaption; ECC_number_of_the_supplierCaptionLbl)
             {
             }
-            column(Type_of_supplierCaption;Type_of_supplierCaptionLbl)
+            column(Type_of_supplierCaption; Type_of_supplierCaptionLbl)
             {
             }
-            column(Name_of_the_supplierCaption;Name_of_the_supplierCaptionLbl)
+            column(Name_of_the_supplierCaption; Name_of_the_supplierCaptionLbl)
             {
             }
-            column(Date_of_documentCaption;Date_of_documentCaptionLbl)
+            column(Date_of_documentCaption; Date_of_documentCaptionLbl)
             {
             }
-            column(Number_of_DocumentCaption;Number_of_DocumentCaptionLbl)
+            column(Number_of_DocumentCaption; Number_of_DocumentCaptionLbl)
             {
             }
-            column(Type_of_docu__mentCaption;Type_of_docu__mentCaptionLbl)
+            column(Type_of_docu__mentCaption; Type_of_docu__mentCaptionLbl)
             {
             }
-            column(Sl__No_Caption;Sl__No_CaptionLbl)
+            column(Sl__No_Caption; Sl__No_CaptionLbl)
             {
             }
-            column(RG2AHdr_Number;Number)
+            column(RG2AHdr_Number; Number)
             {
             }
 
@@ -102,200 +102,194 @@ report 33000901 "CENVAT1(Based on Invoices)"
             begin
                 TempExcelbuffer.DELETEALL;
                 CLEAR(TempExcelbuffer);
-                Row:=0;
-                i:=0;
+                Row := 0;
+                i := 0;
                 // Rev01 Code copy from //RG2AHdr, Header (2) - OnPostSection()
-                Row+=1;
-                EnterHeadings(Row,1,'SERIAL NO',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,2,'DOCMENT TYPE',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,3,'NUMBER OF THE DOCUMENT',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,4,'DATE OF DOCUMENT',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,5,'NAME OF THE SUPPLIER',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,6,'TYPE OF SUPPLIER',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,7,'ECC NUMBER',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,8,'DATE ON WHICH INPUTS RECEIVED',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,9,'VALUE',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,10,'CENVAT',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,11,'AED',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,12,'SED',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,13,'ADDL.DUTY',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,14,'CESS2%',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,15,'CESS1%',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,16,'DESCRIPTION',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,17,'SUBHEADING',TRUE,TempExcelbuffer."Cell Type"::Text);
-                EnterHeadings(Row,18,'QTY',TRUE,TempExcelbuffer."Cell Type"::Text);  //swathi on 26-sep-13
-                EnterHeadings(Row,19,'InvoiceNo',TRUE,TempExcelbuffer."Cell Type"::Text);
+                Row += 1;
+                EnterHeadings(Row, 1, 'SERIAL NO', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 2, 'DOCMENT TYPE', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 3, 'NUMBER OF THE DOCUMENT', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 4, 'DATE OF DOCUMENT', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 5, 'NAME OF THE SUPPLIER', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 6, 'TYPE OF SUPPLIER', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 7, 'ECC NUMBER', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 8, 'DATE ON WHICH INPUTS RECEIVED', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 9, 'VALUE', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 10, 'CENVAT', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 11, 'AED', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 12, 'SED', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 13, 'ADDL.DUTY', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 14, 'CESS2%', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 15, 'CESS1%', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 16, 'DESCRIPTION', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 17, 'SUBHEADING', TRUE, TempExcelbuffer."Cell Type"::Text);
+                EnterHeadings(Row, 18, 'QTY', TRUE, TempExcelbuffer."Cell Type"::Text);  //swathi on 26-sep-13
+                EnterHeadings(Row, 19, 'InvoiceNo', TRUE, TempExcelbuffer."Cell Type"::Text);
 
                 // Rev01 Code copy from //RG2AHdr, Header (2) - OnPostSection()
             end;
         }
-        dataitem("G/L Entry";"G/L Entry")
+        dataitem("G/L Entry"; "G/L Entry")
         {
-            DataItemTableView = SORTING(Entry No.) ORDER(Ascending) WHERE(Amount=FILTER(>0));
-            column(i;i)
+            DataItemTableView = SORTING(Entry No.) ORDER(Ascending) WHERE(Amount = FILTER(> 0));
+            column(i; i)
             {
             }
-            column(G_L_Entry___External_Document_No____JV_;"G/L Entry"."External Document No."+'JV')
+            column(G_L_Entry___External_Document_No____JV_; "G/L Entry"."External Document No." + 'JV')
             {
             }
-            column(G_L_Entry__G_L_Entry___Posting_Date_;"G/L Entry"."Posting Date")
+            column(G_L_Entry__G_L_Entry___Posting_Date_; "G/L Entry"."Posting Date")
             {
             }
-            column(vendor__E_C_C__No__;vendor."E.C.C. No.")
+            column(vendor__E_C_C__No__; vendor."E.C.C. No.")
             {
             }
-            column(vname;vname)
+            column(vname; vname)
             {
             }
-            column(ROUND_jvbase_1_;ROUND(jvbase,1))
+            column(ROUND_jvbase_1_; ROUND(jvbase, 1))
             {
             }
-            column(ROUND_ABS_jvexcise__1_;ROUND(ABS(jvexcise),1))
+            column(ROUND_ABS_jvexcise__1_; ROUND(ABS(jvexcise), 1))
             {
             }
-            column(ROUND__jvcess__1_;ROUND((jvcess),1))
+            column(ROUND__jvcess__1_; ROUND((jvcess), 1))
             {
             }
-            column(ROUND_jvadd_1_;ROUND(jvadd,1))
+            column(ROUND_jvadd_1_; ROUND(jvadd, 1))
             {
             }
-            column(typeofuspplier;typeofuspplier)
+            column(typeofuspplier; typeofuspplier)
             {
             }
-            column(InvoiceCaption;InvoiceCaptionLbl)
+            column(InvoiceCaption; InvoiceCaptionLbl)
             {
             }
-            column(G_L_Entry_Entry_No_;"Entry No.")
+            column(G_L_Entry_Entry_No_; "Entry No.")
             {
             }
-            column(ShowOutPutGVar;ShowOutPutGLGVar)
+            column(ShowOutPutGVar; ShowOutPutGLGVar)
             {
             }
 
             trigger OnAfterGetRecord();
             begin
                 ShowOutPutGLGVar := FALSE;
-                print:=FALSE;
-                IF ((jvpredocno='') OR (jvpredocno<>"G/L Entry"."Document No.")) THEN
-                BEGIN
-                  vname:='';
-                  jvexcise:=0;
-                  jvbase:=0;
-                  jvadd:=0;
-                  jvbed:=0;
-                  jvcess:=0;
-                  VLE.SETRANGE(VLE."Document No.","G/L Entry"."Document No.");
-                  VLE.SETRANGE(VLE."External Document No.","G/L Entry"."External Document No.");
-                  IF VLE.FIND('-') THEN
-                  BEGIN
-                    vno:=VLE."Vendor No.";
-                    vendor.SETRANGE(vendor."No.",vno);
-                    IF vendor.FIND('-') THEN
-                    BEGIN
-                      vname:=vendor.Name;
-                      veccno:=vendor."E.C.C. No.";
-                      IF vendor."Vendor Type"=1 THEN
-                      typeofuspplier:='Manufacturer';
-                      IF vendor."Vendor Type"=2 THEN
-                      typeofuspplier:='First Stage Dealer';
-                      IF vendor."Vendor Type"=3 THEN
-                      typeofuspplier:='Second Stage Dealer';
-                      IF vendor."Vendor Type"=4 THEN
-                      typeofuspplier:='Importer';
-                      IF vendor."Vendor Type"=5 THEN
-                      typeofuspplier:='Trader';
+                print := FALSE;
+                IF ((jvpredocno = '') OR (jvpredocno <> "G/L Entry"."Document No.")) THEN BEGIN
+                    vname := '';
+                    jvexcise := 0;
+                    jvbase := 0;
+                    jvadd := 0;
+                    jvbed := 0;
+                    jvcess := 0;
+                    VLE.SETRANGE(VLE."Document No.", "G/L Entry"."Document No.");
+                    VLE.SETRANGE(VLE."External Document No.", "G/L Entry"."External Document No.");
+                    IF VLE.FIND('-') THEN BEGIN
+                        vno := VLE."Vendor No.";
+                        vendor.SETRANGE(vendor."No.", vno);
+                        IF vendor.FIND('-') THEN BEGIN
+                            vname := vendor.Name;
+                            veccno := vendor."E.C.C. No.";
+                            IF vendor."Vendor Type" = 1 THEN
+                                typeofuspplier := 'Manufacturer';
+                            IF vendor."Vendor Type" = 2 THEN
+                                typeofuspplier := 'First Stage Dealer';
+                            IF vendor."Vendor Type" = 3 THEN
+                                typeofuspplier := 'Second Stage Dealer';
+                            IF vendor."Vendor Type" = 4 THEN
+                                typeofuspplier := 'Importer';
+                            IF vendor."Vendor Type" = 5 THEN
+                                typeofuspplier := 'Trader';
+                        END;
                     END;
-                  END;
-                
-                  temp:=ABS("G/L Entry".Amount);
-                  GL1.SETCURRENTKEY(GL1."Document No.",GL1."Posting Date");
-                  GL1.SETRANGE(GL1."Document No.","G/L Entry"."Document No.");
-                  IF GL1.FIND('-') THEN
-                  REPEAT
-                    IF GL1."G/L Account No."='51100' THEN
-                    BEGIN
-                     jvbase:=jvbase+ABS(GL1.Amount);
-                    // MESSAGE(FORMAT(jvbase));
+
+                    temp := ABS("G/L Entry".Amount);
+                    GL1.SETCURRENTKEY(GL1."Document No.", GL1."Posting Date");
+                    GL1.SETRANGE(GL1."Document No.", "G/L Entry"."Document No.");
+                    IF GL1.FIND('-') THEN
+                        REPEAT
+                            IF GL1."G/L Account No." = '51100' THEN BEGIN
+                                jvbase := jvbase + ABS(GL1.Amount);
+                                // MESSAGE(FORMAT(jvbase));
+                            END;
+                        UNTIL GL1.NEXT = 0;
+
+                    IF jvbase <> 0 THEN BEGIN
+                        jvcess := jvbase * 3 / 100;
+                        jvexcise := jvbase - jvcess;
+                        /*jvexcise:=jvbase*8.24/100;
+                         jvbed:=jvbase*8/100;
+                         jvcess:=jvbed*3/100;
+                         IF temp>jvexcise THEN  anil comented
+                          jvadd:=temp-jvexcise;
+                         IF "G/L Entry"."External Document No."='1351 (EX-035) JV' THEN
+                         BEGIN
+                          jvbase:=0;
+                          jvadd:=0;
+                          jvbed:=4657;
+                          //jvexcise:=4657;
+                          jvcess:=139;
+                         END;
+                        */
                     END;
-                  UNTIL GL1.NEXT=0;
-                
-                  IF jvbase<>0 THEN
-                  BEGIN
-                    jvcess:=jvbase*3/100;
-                    jvexcise:=jvbase-jvcess;
-                    /*jvexcise:=jvbase*8.24/100;
-                     jvbed:=jvbase*8/100;
-                     jvcess:=jvbed*3/100;
-                     IF temp>jvexcise THEN  anil comented
-                      jvadd:=temp-jvexcise;
-                     IF "G/L Entry"."External Document No."='1351 (EX-035) JV' THEN
-                     BEGIN
-                      jvbase:=0;
-                      jvadd:=0;
-                      jvbed:=4657;
-                      //jvexcise:=4657;
-                      jvcess:=139;
-                     END;
-                    */
-                  END;
-                  jvpredocno:="G/L Entry"."Document No.";
-                  IF jvexcise<>0 THEN
-                    print:=TRUE
-                  ELSE
-                    print:=FALSE;
-                
-                  totassessable:=totassessable+jvbase;
-                  //totcenvat:=totcenvat+jvbed;
-                  totcenvat:=totcenvat+jvexcise;
-                  tototherduty:=tototherduty+jvcess;
+                    jvpredocno := "G/L Entry"."Document No.";
+                    IF jvexcise <> 0 THEN
+                        print := TRUE
+                    ELSE
+                        print := FALSE;
+
+                    totassessable := totassessable + jvbase;
+                    //totcenvat:=totcenvat+jvbed;
+                    totcenvat := totcenvat + jvexcise;
+                    tototherduty := tototherduty + jvcess;
                 END;
-                
+
                 // Rev01 Code copy from //G/L Entry, Body (1) - OnPostSection()
-                IF print THEN
-                BEGIN
-                 Testing := Testing + "G/L Entry"."External Document No." + '|';
-                  Row+=1;
-                  Entercell(Row,1,FORMAT(i),FALSE,TempExcelbuffer."Cell Type"::Number);
-                  Entercell(Row,2,FORMAT('Invoice'),FALSE,TempExcelbuffer."Cell Type"::Text);
-                  Entercell(Row,3,FORMAT("G/L Entry"."External Document No."),FALSE,TempExcelbuffer."Cell Type"::Text);
-                  Entercell(Row,4,FORMAT("G/L Entry"."Posting Date"),FALSE,TempExcelbuffer."Cell Type"::Date);
-                  IF vname<>'' THEN BEGIN
-                    Entercell(Row,5,FORMAT(vname),FALSE,TempExcelbuffer."Cell Type"::Text);
-                    Entercell(Row,6,FORMAT(''),FALSE,TempExcelbuffer."Cell Type"::Text);
-                    Entercell(Row,7,FORMAT(vendor."E.C.C. No."),FALSE,TempExcelbuffer."Cell Type"::Text);
-                    Entercell(Row,8,FORMAT(''),FALSE,TempExcelbuffer."Cell Type"::Text);
-                  END;
-                  Entercell(Row,9,FORMAT(ROUND(jvbase,0.01)),FALSE,TempExcelbuffer."Cell Type"::Number);
-                  Entercell(Row,10,FORMAT(ROUND(jvexcise,0.01)),FALSE,TempExcelbuffer."Cell Type"::Number);
-                  Entercell(Row,11,FORMAT(''),FALSE,TempExcelbuffer."Cell Type"::Text);
-                  Entercell(Row,12,FORMAT(''),FALSE,TempExcelbuffer."Cell Type"::Text);
-                  Entercell(Row,13,FORMAT(ROUND(jvadd,0.01)),FALSE,TempExcelbuffer."Cell Type"::Number);
-                  Entercell(Row,14,FORMAT(ROUND(jvcess*2/3,0.01)),FALSE,TempExcelbuffer."Cell Type"::Number);
-                  Entercell(Row,15,FORMAT(ROUND(jvcess/3,0.01)),FALSE,TempExcelbuffer."Cell Type"::Number);
-                  Entercell(Row,16,FORMAT(Subheading),FALSE,TempExcelbuffer."Cell Type"::Text);
-                  Entercell(Row,17,FORMAT(Qty),FALSE,TempExcelbuffer."Cell Type"::Number);     //swathi on 26-sep-13
-                  totaddduty:=totaddduty+jvadd;
-                  ShowOutPutGLGVar:=TRUE;
-                  i:=i+1;
+                IF print THEN BEGIN
+                    Testing := Testing + "G/L Entry"."External Document No." + '|';
+                    Row += 1;
+                    Entercell(Row, 1, FORMAT(i), FALSE, TempExcelbuffer."Cell Type"::Number);
+                    Entercell(Row, 2, FORMAT('Invoice'), FALSE, TempExcelbuffer."Cell Type"::Text);
+                    Entercell(Row, 3, FORMAT("G/L Entry"."External Document No."), FALSE, TempExcelbuffer."Cell Type"::Text);
+                    Entercell(Row, 4, FORMAT("G/L Entry"."Posting Date"), FALSE, TempExcelbuffer."Cell Type"::Date);
+                    IF vname <> '' THEN BEGIN
+                        Entercell(Row, 5, FORMAT(vname), FALSE, TempExcelbuffer."Cell Type"::Text);
+                        Entercell(Row, 6, FORMAT(''), FALSE, TempExcelbuffer."Cell Type"::Text);
+                        Entercell(Row, 7, FORMAT(vendor."E.C.C. No."), FALSE, TempExcelbuffer."Cell Type"::Text);
+                        Entercell(Row, 8, FORMAT(''), FALSE, TempExcelbuffer."Cell Type"::Text);
+                    END;
+                    Entercell(Row, 9, FORMAT(ROUND(jvbase, 0.01)), FALSE, TempExcelbuffer."Cell Type"::Number);
+                    Entercell(Row, 10, FORMAT(ROUND(jvexcise, 0.01)), FALSE, TempExcelbuffer."Cell Type"::Number);
+                    Entercell(Row, 11, FORMAT(''), FALSE, TempExcelbuffer."Cell Type"::Text);
+                    Entercell(Row, 12, FORMAT(''), FALSE, TempExcelbuffer."Cell Type"::Text);
+                    Entercell(Row, 13, FORMAT(ROUND(jvadd, 0.01)), FALSE, TempExcelbuffer."Cell Type"::Number);
+                    Entercell(Row, 14, FORMAT(ROUND(jvcess * 2 / 3, 0.01)), FALSE, TempExcelbuffer."Cell Type"::Number);
+                    Entercell(Row, 15, FORMAT(ROUND(jvcess / 3, 0.01)), FALSE, TempExcelbuffer."Cell Type"::Number);
+                    Entercell(Row, 16, FORMAT(Subheading), FALSE, TempExcelbuffer."Cell Type"::Text);
+                    Entercell(Row, 17, FORMAT(Qty), FALSE, TempExcelbuffer."Cell Type"::Number);     //swathi on 26-sep-13
+                    totaddduty := totaddduty + jvadd;
+                    ShowOutPutGLGVar := TRUE;
+                    i := i + 1;
                 END ELSE
-                  ShowOutPutGLGVar:=FALSE;
+                    ShowOutPutGLGVar := FALSE;
                 // Rev01 Code copy from //G/L Entry, Body (1) - OnPostSection()
 
             end;
 
             trigger OnPreDataItem();
             begin
-                jvpredocno:='';
-                "G/L Entry".SETCURRENTKEY("G/L Entry"."G/L Account No.","G/L Entry"."Posting Date");
-                "G/L Entry".SETRANGE("G/L Entry"."System Date",StartDt,EndDt);
-                "G/L Entry".SETFILTER("G/L Entry"."G/L Account No.",'23300');
-                "G/L Entry".SETFILTER("G/L Entry"."Document No.",'JV*');
+                jvpredocno := '';
+                "G/L Entry".SETCURRENTKEY("G/L Entry"."G/L Account No.", "G/L Entry"."Posting Date");
+                "G/L Entry".SETRANGE("G/L Entry"."System Date", StartDt, EndDt);
+                "G/L Entry".SETFILTER("G/L Entry"."G/L Account No.", '23300');
+                "G/L Entry".SETFILTER("G/L Entry"."Document No.", 'JV*');
                 // MESSAGE(FORMAT("G/L Entry".COUNT));
             end;
         }
-        dataitem("Purch. Inv. Header";"Purch. Inv. Header")
+        dataitem("Purch. Inv. Header"; "Purch. Inv. Header")
         {
-            DataItemTableView = SORTING(Type of Supplier,Buy-from Vendor Name) ORDER(Ascending) WHERE(Excise Not to Consider=FILTER(No));
+            DataItemTableView = SORTING(Type of Supplier, Buy-from Vendor Name) ORDER(Ascending) WHERE(Excise Not to Consider=FILTER(No));
             RequestFilterFields = "Document Date";
             column(i_Control1000000000;i)
             {

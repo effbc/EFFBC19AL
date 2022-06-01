@@ -6,13 +6,13 @@ xmlport 80047 "TDS Concessional Codes"
     {
         textelement(ConcessionalCodes)
         {
-            tableelement("<concessionalcode>";"Concessional Codes")
+            tableelement("<concessionalcode>"; "Concessional Codes")
             {
                 XmlName = 'ConcessionalCode';
-                fieldelement(Code;"<ConcessionalCode>".Code)
+                fieldelement(Code; "<ConcessionalCode>".Code)
                 {
                 }
-                fieldelement(Description;"<ConcessionalCode>".Description)
+                fieldelement(Description; "<ConcessionalCode>".Description)
                 {
                 }
             }

@@ -9,7 +9,7 @@ page 60256 "Convert Sale Order"
         {
             group(Present)
             {
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Editable = false;
                     TableRelation = "Production Order".No. WHERE (Status=CONST(Released));

@@ -6,166 +6,166 @@ xmlport 80075 "Purchase Vendors"
     {
         textelement(Vendors)
         {
-            tableelement(Vendor;Vendor)
+            tableelement(Vendor; Vendor)
             {
                 XmlName = 'Vendor';
-                fieldelement(No;Vendor."No.")
+                fieldelement(No; Vendor."No.")
                 {
                 }
-                fieldelement(Name;Vendor.Name)
+                fieldelement(Name; Vendor.Name)
                 {
                 }
-                fieldelement(SearchName;Vendor."Search Name")
+                fieldelement(SearchName; Vendor."Search Name")
                 {
                 }
-                fieldelement(Name2;Vendor."Name 2")
+                fieldelement(Name2; Vendor."Name 2")
                 {
                 }
-                fieldelement(Address;Vendor.Address)
+                fieldelement(Address; Vendor.Address)
                 {
                 }
-                fieldelement(Address2;Vendor."Address 2")
+                fieldelement(Address2; Vendor."Address 2")
                 {
                 }
-                fieldelement(City;Vendor.City)
+                fieldelement(City; Vendor.City)
                 {
                 }
-                fieldelement(Contact;Vendor.Contact)
+                fieldelement(Contact; Vendor.Contact)
                 {
                 }
-                fieldelement(PhoneNo;Vendor."Phone No.")
+                fieldelement(PhoneNo; Vendor."Phone No.")
                 {
                 }
-                fieldelement(TelexNo;Vendor."Telex No.")
+                fieldelement(TelexNo; Vendor."Telex No.")
                 {
                 }
-                fieldelement(OurAccountNo;Vendor."Our Account No.")
+                fieldelement(OurAccountNo; Vendor."Our Account No.")
                 {
                 }
-                fieldelement(VendorPostingGroup;Vendor."Vendor Posting Group")
+                fieldelement(VendorPostingGroup; Vendor."Vendor Posting Group")
                 {
                 }
-                fieldelement(CurrencyCode;Vendor."Currency Code")
+                fieldelement(CurrencyCode; Vendor."Currency Code")
                 {
                 }
-                fieldelement(PaymentTermsCode;Vendor."Payment Terms Code")
+                fieldelement(PaymentTermsCode; Vendor."Payment Terms Code")
                 {
                 }
-                fieldelement(FinChargeTermsCode;Vendor."Fin. Charge Terms Code")
+                fieldelement(FinChargeTermsCode; Vendor."Fin. Charge Terms Code")
                 {
                 }
-                fieldelement(PurchaserCode;Vendor."Purchaser Code")
+                fieldelement(PurchaserCode; Vendor."Purchaser Code")
                 {
                 }
-                fieldelement(ShipmentMethodCode;Vendor."Shipment Method Code")
+                fieldelement(ShipmentMethodCode; Vendor."Shipment Method Code")
                 {
                 }
-                fieldelement(ShippingAgentCode;Vendor."Shipping Agent Code")
+                fieldelement(ShippingAgentCode; Vendor."Shipping Agent Code")
                 {
                 }
-                fieldelement(CountryRegionCode;Vendor."Country/Region Code")
+                fieldelement(CountryRegionCode; Vendor."Country/Region Code")
                 {
                 }
-                fieldelement(PaytoVendorNo;Vendor."Pay-to Vendor No.")
+                fieldelement(PaytoVendorNo; Vendor."Pay-to Vendor No.")
                 {
                 }
-                fieldelement(PaymentMethodCode;Vendor."Payment Method Code")
+                fieldelement(PaymentMethodCode; Vendor."Payment Method Code")
                 {
                 }
-                fieldelement(ApplicationMethod;Vendor."Application Method")
+                fieldelement(ApplicationMethod; Vendor."Application Method")
                 {
                 }
-                fieldelement(FaxNo;Vendor."Fax No.")
+                fieldelement(FaxNo; Vendor."Fax No.")
                 {
                 }
-                fieldelement(TelexAnswerBack;Vendor."Telex Answer Back")
+                fieldelement(TelexAnswerBack; Vendor."Telex Answer Back")
                 {
                 }
-                fieldelement(VATRegistrationNo;Vendor."VAT Registration No.")
+                fieldelement(VATRegistrationNo; Vendor."VAT Registration No.")
                 {
                 }
-                fieldelement(GenBusPostingGroup;Vendor."Gen. Bus. Posting Group")
+                fieldelement(GenBusPostingGroup; Vendor."Gen. Bus. Posting Group")
                 {
                 }
-                fieldelement(PostCode;Vendor."Post Code")
+                fieldelement(PostCode; Vendor."Post Code")
                 {
                 }
-                fieldelement(EMail;Vendor."E-Mail")
+                fieldelement(EMail; Vendor."E-Mail")
                 {
                 }
-                fieldelement(HomePage;Vendor."Home Page")
+                fieldelement(HomePage; Vendor."Home Page")
                 {
                 }
-                fieldelement(TaxAreaCode;Vendor."Tax Area Code")
+                fieldelement(TaxAreaCode; Vendor."Tax Area Code")
                 {
                 }
-                fieldelement(TaxLiable;Vendor."Tax Liable")
+                fieldelement(TaxLiable; Vendor."Tax Liable")
                 {
                 }
-                fieldelement(VATBusinessPostingGroup;Vendor."VAT Bus. Posting Group")
+                fieldelement(VATBusinessPostingGroup; Vendor."VAT Bus. Posting Group")
                 {
                 }
-                fieldelement(PrimaryContactNo;Vendor."Primary Contact No.")
+                fieldelement(PrimaryContactNo; Vendor."Primary Contact No.")
                 {
                 }
-                fieldelement(ResponsibilityCenter;Vendor."Responsibility Center")
+                fieldelement(ResponsibilityCenter; Vendor."Responsibility Center")
                 {
                 }
-                fieldelement(LocationCode;Vendor."Location Code")
+                fieldelement(LocationCode; Vendor."Location Code")
                 {
                 }
-                fieldelement(TINNo;Vendor."T.I.N. No.")
+                fieldelement(TINNo; Vendor."T.I.N. No.")
                 {
                 }
-                fieldelement(LSTNo;Vendor."L.S.T. No.")
+                fieldelement(LSTNo; Vendor."L.S.T. No.")
                 {
                 }
-                fieldelement(CSTNo;Vendor."C.S.T. No.")
+                fieldelement(CSTNo; Vendor."C.S.T. No.")
                 {
                 }
-                fieldelement(PANNo;Vendor."P.A.N. No.")
+                fieldelement(PANNo; Vendor."P.A.N. No.")
                 {
                 }
-                fieldelement(ECCNo;Vendor."E.C.C. No.")
+                fieldelement(ECCNo; Vendor."E.C.C. No.")
                 {
                 }
-                fieldelement(Range;Vendor.Range)
+                fieldelement(Range; Vendor.Range)
                 {
                 }
-                fieldelement(Collectorate;Vendor.Collectorate)
+                fieldelement(Collectorate; Vendor.Collectorate)
                 {
                 }
-                fieldelement(StateCode;Vendor."State Code")
+                fieldelement(StateCode; Vendor."State Code")
                 {
                 }
-                fieldelement(ExciseBusPostingGroup;Vendor."Excise Bus. Posting Group")
+                fieldelement(ExciseBusPostingGroup; Vendor."Excise Bus. Posting Group")
                 {
                 }
-                fieldelement(ExciseRegistrationNo;Vendor."Excise Registration No.2")
+                fieldelement(ExciseRegistrationNo; Vendor."Excise Registration No.2")
                 {
                 }
-                fieldelement(SSI;Vendor.SSI)
+                fieldelement(SSI; Vendor.SSI)
                 {
                 }
-                fieldelement(SSIValidityDate;Vendor."SSI Validity Date")
+                fieldelement(SSIValidityDate; Vendor."SSI Validity Date")
                 {
                 }
-                fieldelement(Structure;Vendor.Structure)
+                fieldelement(Structure; Vendor.Structure)
                 {
                 }
-                fieldelement(VendorType;Vendor."Vendor Type")
+                fieldelement(VendorType; Vendor."Vendor Type")
                 {
                 }
-                fieldelement(Subcontractor;Vendor.Subcontractor)
+                fieldelement(Subcontractor; Vendor.Subcontractor)
                 {
                 }
-                fieldelement(VendorLocation;Vendor."Vendor Location")
+                fieldelement(VendorLocation; Vendor."Vendor Location")
                 {
                 }
-                fieldelement(CommissionersPermissionNo;Vendor."Commissioner's Permission No.")
+                fieldelement(CommissionersPermissionNo; Vendor."Commissioner's Permission No.")
                 {
                 }
-                fieldelement(ServiceTaxRegistrationNo;Vendor."Service Tax Registration No.")
+                fieldelement(ServiceTaxRegistrationNo; Vendor."Service Tax Registration No.")
                 {
                 }
             }

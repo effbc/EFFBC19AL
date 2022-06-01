@@ -8,6 +8,7 @@ tableextension 70015 PurchCommentLineExt extends "Purch. Comment Line"
 
         field(50001; Type; Enum "Puch Comment Line Enum")
         {
+            DataClassification = CustomerContent;
 
         }
     }

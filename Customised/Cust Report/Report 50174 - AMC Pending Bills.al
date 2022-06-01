@@ -5,7 +5,7 @@ report 50174 "AMC Pending Bills"
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
             DataItemTableView = WHERE(Document Type=FILTER(Amc));
             RequestFilterFields = "No.";

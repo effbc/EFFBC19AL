@@ -1,4 +1,4 @@
-pageextension 70233 TaxDetailsExt extends "Tax Details" 
+pageextension 70233 TaxDetailsExt extends "Tax Details"
 {
     // version NAVW17.00,NAVIN7.00
 
@@ -97,7 +97,7 @@ pageextension 70233 TaxDetailsExt extends "Tax Details"
 
         addafter("Control 8")
         {
-            field("Forms Not Applicable";"Forms Not Applicable")
+            field("Forms Not Applicable"; "Forms Not Applicable")
             {
             }
         }
@@ -123,12 +123,12 @@ pageextension 70233 TaxDetailsExt extends "Tax Details"
     //Unsupported feature: PropertyModification on "Action 20.OnAction.VATEntry(Variable 1001)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //Action 20.OnAction.VATEntry : 254;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //Action 20.OnAction.VATEntry : "VAT Entry";
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //Action 20.OnAction.VATEntry : 254;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Action 20.OnAction.VATEntry : "VAT Entry";
+    //Variable type has not been exported.
 
     //Unsupported feature: PropertyChange. Please convert manually.
 

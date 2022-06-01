@@ -29,155 +29,155 @@ report 50075 "Sales - Quote2"
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
-            DataItemTableView = SORTING(Document Type,No.) WHERE(Document Type=CONST(Quote));
+            DataItemTableView = SORTING(Document Type, No.) WHERE(Document Type=CONST(Quote));
             PrintOnlyIfDetail = true;
-            RequestFilterFields = "Document Type","No.","Sell-to Customer No.","No. Printed","Enquiry Status","Type of Product","Type of Enquiry","Sell-to Post Code","Salesperson Code";
+            RequestFilterFields = "Document Type", "No.", "Sell-to Customer No.", "No. Printed", "Enquiry Status", "Type of Product", "Type of Enquiry", "Sell-to Post Code", "Salesperson Code";
             ReqFilterHeading = 'Sales Order';
-            column(Sales_Header_Document_Type;"Document Type")
+            column(Sales_Header_Document_Type; "Document Type")
             {
             }
-            column(Sales_Header_No_;"No.")
+            column(Sales_Header_No_; "No.")
             {
             }
-            dataitem(CopyLoop;"Integer")
+            dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
-                dataitem(PageLoop;"Integer")
+                dataitem(PageLoop; "Integer")
                 {
-                    DataItemTableView = SORTING(Number) WHERE(Number=CONST(1));
+                    DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
                     PrintOnlyIfDetail = true;
-                    column(CompanyInfo__Home_Page_;CompanyInfo."Home Page")
+                    column(CompanyInfo__Home_Page_; CompanyInfo."Home Page")
                     {
                     }
-                    column(CompanyInfo__E_Mail_;CompanyInfo."E-Mail")
+                    column(CompanyInfo__E_Mail_; CompanyInfo."E-Mail")
                     {
                     }
-                    column(CompanyInfo__Phone_No__;CompanyInfo."Phone No.")
+                    column(CompanyInfo__Phone_No__; CompanyInfo."Phone No.")
                     {
                     }
-                    column(CompanyInfo__Fax_No__;CompanyInfo."Fax No.")
+                    column(CompanyInfo__Fax_No__; CompanyInfo."Fax No.")
                     {
                     }
-                    column(CompanyAddr_3_;CompanyAddr[3])
+                    column(CompanyAddr_3_; CompanyAddr[3])
                     {
                     }
-                    column(CompanyAddr_2_;CompanyAddr[2])
+                    column(CompanyAddr_2_; CompanyAddr[2])
                     {
                     }
-                    column(CompanyAddr_1_;CompanyAddr[1])
+                    column(CompanyAddr_1_; CompanyAddr[1])
                     {
                     }
-                    column(CompanyInfo_Picture;CompanyInfo.Picture)
+                    column(CompanyInfo_Picture; CompanyInfo.Picture)
                     {
                     }
-                    column(CustAddr_2_;CustAddr[2])
+                    column(CustAddr_2_; CustAddr[2])
                     {
                     }
-                    column(CustAddr_3_;CustAddr[3])
+                    column(CustAddr_3_; CustAddr[3])
                     {
                     }
-                    column(CustAddr_4_;CustAddr[4])
+                    column(CustAddr_4_; CustAddr[4])
                     {
                     }
-                    column(CustAddr_5_;CustAddr[5])
+                    column(CustAddr_5_; CustAddr[5])
                     {
                     }
-                    column(CustAddr_6_;CustAddr[6])
+                    column(CustAddr_6_; CustAddr[6])
                     {
                     }
-                    column(CustAddr_7_;CustAddr[7])
+                    column(CustAddr_7_; CustAddr[7])
                     {
                     }
-                    column(CustAddr_8_;CustAddr[8])
+                    column(CustAddr_8_; CustAddr[8])
                     {
                     }
-                    column(CustAddr_1_;CustAddr[1])
+                    column(CustAddr_1_; CustAddr[1])
                     {
                     }
-                    column(Sales_Header___Order_Date_;"Sales Header"."Order Date")
+                    column(Sales_Header___Order_Date_; "Sales Header"."Order Date")
                     {
                     }
-                    column(Sales_Header___No__;"Sales Header"."No.")
+                    column(Sales_Header___No__; "Sales Header"."No.")
                     {
                     }
-                    column(name1;name1)
+                    column(name1; name1)
                     {
                     }
-                    column(desigantion1;desigantion1)
+                    column(desigantion1; desigantion1)
                     {
                     }
-                    column(name2;name2)
+                    column(name2; name2)
                     {
                     }
-                    column(attach_1_;attach[1])
+                    column(attach_1_; attach[1])
                     {
                     }
-                    column(attach_2_;attach[2])
+                    column(attach_2_; attach[2])
                     {
                     }
-                    column(attach_3_;attach[3])
+                    column(attach_3_; attach[3])
                     {
                     }
-                    column(attach_4_;attach[4])
+                    column(attach_4_; attach[4])
                     {
                     }
-                    column(designation2;designation2)
+                    column(designation2; designation2)
                     {
                     }
-                    column(E__Mail_Caption;E__Mail_CaptionLbl)
+                    column(E__Mail_Caption; E__Mail_CaptionLbl)
                     {
                     }
-                    column(FAX_Caption;FAX_CaptionLbl)
+                    column(FAX_Caption; FAX_CaptionLbl)
                     {
                     }
-                    column(URL_Caption;URL_CaptionLbl)
+                    column(URL_Caption; URL_CaptionLbl)
                     {
                     }
-                    column(Ph_Caption;Ph_CaptionLbl)
+                    column(Ph_Caption; Ph_CaptionLbl)
                     {
                     }
-                    column(To_Provide_Insight_For_Enhancing_WealthCaption;To_Provide_Insight_For_Enhancing_WealthCaptionLbl)
+                    column(To_Provide_Insight_For_Enhancing_WealthCaption; To_Provide_Insight_For_Enhancing_WealthCaptionLbl)
                     {
                     }
-                    column(Enquiry_Ref_NO_Caption;Enquiry_Ref_NO_CaptionLbl)
+                    column(Enquiry_Ref_NO_Caption; Enquiry_Ref_NO_CaptionLbl)
                     {
                     }
-                    column(Date___Caption;Date___CaptionLbl)
+                    column(Date___Caption; Date___CaptionLbl)
                     {
                     }
-                    column(Customer_NameCaption;Customer_NameCaptionLbl)
+                    column(Customer_NameCaption; Customer_NameCaptionLbl)
                     {
                     }
-                    column(Quote_NoCaption;Quote_NoCaptionLbl)
+                    column(Quote_NoCaption; Quote_NoCaptionLbl)
                     {
                     }
-                    column(Dear_Sir_Caption;Dear_Sir_CaptionLbl)
+                    column(Dear_Sir_Caption; Dear_Sir_CaptionLbl)
                     {
                     }
-                    column(With_Reference_to_your_enquiry__we_are_here_with_furnishing_our_offer_for_your_kind_considerationCaption;With_Reference_to_your_enquiry__we_are_here_with_furnishing_our_offer_for_your_kind_considerationCaptionLbl)
+                    column(With_Reference_to_your_enquiry__we_are_here_with_furnishing_our_offer_for_your_kind_considerationCaption; With_Reference_to_your_enquiry__we_are_here_with_furnishing_our_offer_for_your_kind_considerationCaptionLbl)
                     {
                     }
-                    column(Thanking_You_Caption;Thanking_You_CaptionLbl)
+                    column(Thanking_You_Caption; Thanking_You_CaptionLbl)
                     {
                     }
-                    column(Yours_faithfullyCaption;Yours_faithfullyCaptionLbl)
+                    column(Yours_faithfullyCaption; Yours_faithfullyCaptionLbl)
                     {
                     }
-                    column(Enclosures_Caption;Enclosures_CaptionLbl)
+                    column(Enclosures_Caption; Enclosures_CaptionLbl)
                     {
                     }
-                    column(EFFTRONICS__SYSTEMS_PVT__LTD_Caption;EFFTRONICS__SYSTEMS_PVT__LTD_CaptionLbl)
+                    column(EFFTRONICS__SYSTEMS_PVT__LTD_Caption; EFFTRONICS__SYSTEMS_PVT__LTD_CaptionLbl)
                     {
                     }
-                    column(PageLoop_Number;Number)
+                    column(PageLoop_Number; Number)
                     {
                     }
-                    dataitem(DimensionLoop1;"Integer")
+                    dataitem(DimensionLoop1; "Integer")
                     {
                         DataItemLinkReference = "Sales Header";
-                        DataItemTableView = SORTING(Number) WHERE(Number=FILTER(1..));
+                        DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
 
                         trigger OnAfterGetRecord();
                         begin
@@ -210,29 +210,29 @@ report 50075 "Sales - Quote2"
                               END;
                             UNTIL (DocDim1.NEXT = 0);
                             */
-                            
+
                             IF Number = 1 THEN BEGIN
-                              IF NOT DimSetEntryGRec.FINDSET THEN
-                                CurrReport.BREAK;
+                                IF NOT DimSetEntryGRec.FINDSET THEN
+                                    CurrReport.BREAK;
                             END ELSE
-                              IF NOT Continue THEN
-                                CurrReport.BREAK;
-                            
+                                IF NOT Continue THEN
+                                    CurrReport.BREAK;
+
                             CLEAR(DimText);
                             Continue := FALSE;
                             REPEAT
-                              OldDimText := DimText;
-                              IF DimText = '' THEN
-                                DimText := STRSUBSTNO('%1 %2',DimSetEntryGRec."Dimension Code",DimSetEntryGRec."Dimension Value Code")
-                              ELSE
-                                DimText :=
-                                  STRSUBSTNO(
-                                    '%1, %2 %3',DimText,DimSetEntryGRec."Dimension Code",DimSetEntryGRec."Dimension Value Code");
-                              IF STRLEN(DimText) > MAXSTRLEN(OldDimText) THEN BEGIN
-                                DimText := OldDimText;
-                                Continue := TRUE;
-                                EXIT;
-                              END;
+                                OldDimText := DimText;
+                                IF DimText = '' THEN
+                                    DimText := STRSUBSTNO('%1 %2', DimSetEntryGRec."Dimension Code", DimSetEntryGRec."Dimension Value Code")
+                                ELSE
+                                    DimText :=
+                                      STRSUBSTNO(
+                                        '%1, %2 %3', DimText, DimSetEntryGRec."Dimension Code", DimSetEntryGRec."Dimension Value Code");
+                                IF STRLEN(DimText) > MAXSTRLEN(OldDimText) THEN BEGIN
+                                    DimText := OldDimText;
+                                    Continue := TRUE;
+                                    EXIT;
+                                END;
                             UNTIL DimSetEntryGRec.NEXT = 0;
                             //Dim1.0<< end
 
@@ -241,10 +241,10 @@ report 50075 "Sales - Quote2"
                         trigger OnPreDataItem();
                         begin
                             IF NOT ShowInternalInfo THEN
-                              CurrReport.BREAK;
+                                CurrReport.BREAK;
                         end;
                     }
-                    dataitem("Sales Line";"Sales Line")
+                    dataitem("Sales Line"; "Sales Line")
                     {
                         DataItemLink = Document Type=FIELD(Document Type),Document No.=FIELD(No.);
                         DataItemLinkReference = "Sales Header";
@@ -771,32 +771,32 @@ report 50075 "Sales - Quote2"
         desc : Text[50];
         "Total Amount" : Integer;
         Check : Report Check;
-        NumerText : array [2] of Text[50];
-        attach : array [8] of Text[100];
-        CustAttach : Record "Inst. PreSite Check List";
-        no : Text[50];
-        descri : Text[60];
-        itemtable : Record Item;
-        name1 : Text[80];
-        desigantion1 : Text[80];
-        name2 : Text[80];
-        designation2 : Text[80];
-        headprint : Boolean;
-        TechSlNo : Integer;
-        TechBol : Boolean;
-        UnitPrice : Text[50];
-        TotalPrice1 : Text[50];
-        CurrencyCode : Text[50];
-        TextinWords : Text[50];
-        TextInWordsText : Text[200];
-        deliveryadd : array [8] of Text[30];
-        Note : Text[100];
-        Note1 : Text[100];
-        Note2 : Text[100];
-        Note3 : Text[100];
-        Note4 : Text[100];
-        Note5 : Text[100];
-        E__Mail_CaptionLbl : Label 'E- Mail:';
+                    NumerText : array [2] of Text[50];
+                    attach : array [8] of Text[100];
+                    CustAttach : Record "Inst. PreSite Check List";
+                    no : Text[50];
+                    descri : Text[60];
+                    itemtable : Record Item;
+                    name1 : Text[80];
+                    desigantion1 : Text[80];
+                    name2 : Text[80];
+                    designation2 : Text[80];
+                    headprint : Boolean;
+                    TechSlNo : Integer;
+                    TechBol : Boolean;
+                    UnitPrice : Text[50];
+                    TotalPrice1 : Text[50];
+                    CurrencyCode : Text[50];
+                    TextinWords : Text[50];
+                    TextInWordsText : Text[200];
+                    deliveryadd : array [8] of Text[30];
+                    Note : Text[100];
+                    Note1 : Text[100];
+                    Note2 : Text[100];
+                    Note3 : Text[100];
+                    Note4 : Text[100];
+                    Note5 : Text[100];
+                    E__Mail_CaptionLbl : Label 'E- Mail:';
         FAX_CaptionLbl : Label 'FAX:';
         URL_CaptionLbl : Label 'URL:';
         Ph_CaptionLbl : Label 'Ph:';

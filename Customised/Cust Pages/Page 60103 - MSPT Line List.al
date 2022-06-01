@@ -21,25 +21,25 @@ page 60103 "MSPT Line List"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("MSPT Header Code";"MSPT Header Code")
+                field("MSPT Header Code"; "MSPT Header Code")
                 {
                 }
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field("Line No.";"Line No.")
+                field("Line No."; "Line No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Percentage;Percentage)
+                field(Percentage; Percentage)
                 {
                 }
-                field("Calculation Period";"Calculation Period")
+                field("Calculation Period"; "Calculation Period")
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
             }
@@ -58,7 +58,7 @@ page 60103 "MSPT Line List"
                     Caption = 'Card';
                     Image = Card;
                     RunObject = Page "Mile Stone Payments";
-                    RunPageLink = Code=FIELD(MSPT Header Code);
+                    RunPageLink = Code = FIELD(MSPT Header Code);
                     ShortCutKey = 'Shift+F7';
                 }
             }

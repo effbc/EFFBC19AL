@@ -6,13 +6,13 @@ xmlport 50014 "FA Acq Date"
     {
         textelement(FixedAssets)
         {
-            tableelement("<fixedasset>";"Fixed Asset")
+            tableelement("<fixedasset>"; "Fixed Asset")
             {
                 XmlName = 'FixedAsset';
-                fieldelement(No;"<FixedAsset>"."No.")
+                fieldelement(No; "<FixedAsset>"."No.")
                 {
                 }
-                fieldelement(ServiceTaxGroupCode;"<FixedAsset>"."Service Tax Group Code")
+                fieldelement(ServiceTaxGroupCode; "<FixedAsset>"."Service Tax Group Code")
                 {
                 }
             }

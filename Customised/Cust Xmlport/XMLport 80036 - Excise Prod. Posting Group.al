@@ -6,22 +6,22 @@ xmlport 80036 "Excise Prod. Posting Group"
     {
         textelement(ExciseProdPostingGroups)
         {
-            tableelement("<exciseprodpostinggroup>";"Excise Prod. Posting Group")
+            tableelement("<exciseprodpostinggroup>"; "Excise Prod. Posting Group")
             {
                 XmlName = 'ExciseProdPostingGroup';
-                fieldelement(Code;"<ExciseProdPostingGroup>".Code)
+                fieldelement(Code; "<ExciseProdPostingGroup>".Code)
                 {
                 }
-                fieldelement(Description;"<ExciseProdPostingGroup>".Description)
+                fieldelement(Description; "<ExciseProdPostingGroup>".Description)
                 {
                 }
-                fieldelement(ChapterNo;"<ExciseProdPostingGroup>"."Chapter No.")
+                fieldelement(ChapterNo; "<ExciseProdPostingGroup>"."Chapter No.")
                 {
                 }
-                fieldelement(HeadingNo;"<ExciseProdPostingGroup>"."Heading No")
+                fieldelement(HeadingNo; "<ExciseProdPostingGroup>"."Heading No")
                 {
                 }
-                fieldelement(UnitofMeasureCode;"<ExciseProdPostingGroup>"."Unit of Measure Code")
+                fieldelement(UnitofMeasureCode; "<ExciseProdPostingGroup>"."Unit of Measure Code")
                 {
                 }
             }

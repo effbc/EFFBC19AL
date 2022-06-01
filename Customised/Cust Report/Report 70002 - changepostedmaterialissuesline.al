@@ -5,16 +5,16 @@ report 70002 changepostedmaterialissuesline
 
     dataset
     {
-        dataitem("Posted Material Issues Header";"Posted Material Issues Header")
+        dataitem("Posted Material Issues Header"; "Posted Material Issues Header")
         {
             RequestFilterFields = "Prod. Order No.";
-            column(Posted_Material_Issues_Header__Prod__Order_No__;"Prod. Order No.")
+            column(Posted_Material_Issues_Header__Prod__Order_No__; "Prod. Order No.")
             {
             }
-            column(Posted_Material_Issues_Header__Prod__Order_No__Caption;FIELDCAPTION("Prod. Order No."))
+            column(Posted_Material_Issues_Header__Prod__Order_No__Caption; FIELDCAPTION("Prod. Order No."))
             {
             }
-            column(Posted_Material_Issues_Header_No_;"No.")
+            column(Posted_Material_Issues_Header_No_; "No.")
             {
             }
 
@@ -28,8 +28,8 @@ report 70002 changepostedmaterialissuesline
 
             trigger OnPreDataItem();
             begin
-                 IF  "Posted Material Issues Header"."Prod. Order No."='' THEN
-                  EXIT;
+                IF "Posted Material Issues Header"."Prod. Order No." = '' THEN
+                    EXIT;
             end;
         }
     }
@@ -51,7 +51,7 @@ report 70002 changepostedmaterialissuesline
     }
 
     var
-        requdate : Date;
-        issueddatetime : DateTime;
+        requdate: Date;
+        issueddatetime: DateTime;
 }
 

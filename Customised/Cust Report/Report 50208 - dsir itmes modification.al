@@ -5,29 +5,29 @@ report 50208 "dsir itmes modification"
 
     dataset
     {
-        dataitem("Posted Material Issues Header";"Posted Material Issues Header")
+        dataitem("Posted Material Issues Header"; "Posted Material Issues Header")
         {
             RequestFilterFields = "Material Issue No.";
-            column(Posted_Material_Issues_Header_No_;"No.")
+            column(Posted_Material_Issues_Header_No_; "No.")
             {
             }
-            dataitem("Posted Material Issues Line";"Posted Material Issues Line")
+            dataitem("Posted Material Issues Line"; "Posted Material Issues Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = WHERE(Quantity=FILTER(>0));
-                column(Posted_Material_Issues_Line_Document_No_;"Document No.")
+                DataItemTableView = WHERE(Quantity = FILTER(> 0));
+                column(Posted_Material_Issues_Line_Document_No_; "Document No.")
                 {
                 }
-                column(Posted_Material_Issues_Line_Line_No_;"Line No.")
+                column(Posted_Material_Issues_Line_Line_No_; "Line No.")
                 {
                 }
-                column(Posted_Material_Issues_Line_Item_No_;"Item No.")
+                column(Posted_Material_Issues_Line_Item_No_; "Item No.")
                 {
                 }
-                column(Posted_Material_Issues_Line_Material_Issue_No_;"Material Issue No.")
+                column(Posted_Material_Issues_Line_Material_Issue_No_; "Material Issue No.")
                 {
                 }
-                dataitem("Item Ledger Entry";"Item Ledger Entry")
+                dataitem("Item Ledger Entry"; "Item Ledger Entry")
                 {
                     DataItemLink = Document No.=FIELD(Document No.),Item No.=FIELD(Item No.),Order No.=FIELD(Material Issue No.);
                     DataItemTableView = SORTING(Document No.,Posting Date) WHERE(Entry Type=FILTER(Transfer));

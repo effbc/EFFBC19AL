@@ -5,27 +5,34 @@ table 60091 Calibration
     DrillDownPageID = "Calibration List Form";
     LookupPageID = "Calibration List Form";
     PasteIsValid = false;
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"Equipment No";Code[20])
+        field(1; "Equipment No"; Code[20])
         {
+            DataClassification = CustomerContent;
         }
-        field(2;Description;Text[50])
+        field(2; Description; Text[50])
         {
+            DataClassification = CustomerContent;
         }
-        field(3;"Equipment Type";Option)
+        field(3; "Equipment Type"; Option)
         {
             OptionCaption = ',DMM,Tepm.Meter,Lux Meter,Vernier,Screw Guage,Torque Meter,Potting Machine,CHAMBER,Power Meter,Burst-Generator,Surge-Generator,Voltage Interruption Simulator,Weighing Machine,RF Analyzer,Mixer,ESD ,Stacker,Air Compressor,Packing Machine,Clamp Meter,DC SUPPLY,FUNCTION GENERATOR,HV TESTER,IR Tester,LCR METER,MYDATA,Oscilloscope,DPM,Rheostat,VARIAC,CVT,Scale,Microscope,Sound Meter,De-Soldering System,Soldering System,Soldering Station,Hot Air Gun,Screw Driver,Hammer Machine,Drilling Machine,Cutting Tool,Thickness Gauge,Pick & Place,Wire Harnessing,Engraving Machine';
             OptionMembers = ,DMM,"Tepm.Meter","Lux Meter",Vernier,"Screw Guage","Torque Meter","Potting Machine",CHAMBER,"Power Meter","Burst-Generator","Surge-Generator","Voltage Interruption Simulator","Weighing Machine","RF Analyzer",Mixer,"ESD ",Stacker,"Air Compressor","Packing Machine","Clamp Meter","DC SUPPLY","FUNCTION GENERATOR","HV TESTER","IR Tester","LCR METER",MYDATA,Oscilloscope,DPM,Rheostat,VARIAC,CVT,Scale,Microscope,"Sound Meter","De-Soldering System","Soldering System","Soldering Station","Hot Air Gun","Screw Driver","Hammer Machine","Drilling Machine","Cutting Tool","Thickness Gauge","Pick & Place","Wire Harnessing","Engraving Machine";
+            DataClassification = CustomerContent;
         }
-        field(4;"Unit Of Measure";Code[10])
+        field(4; "Unit Of Measure"; Code[10])
         {
             TableRelation = "Unit of Measure";
+            DataClassification = CustomerContent;
         }
-        field(5;"Least Count";Integer)
+        field(5; "Least Count"; Integer)
         {
-            CalcFormula = Count("Calibration Ledger Entries" WHERE (Description=FIELD(Description),Eqpt. Serial No.=FIELD(Eqpt. Serial No.)));
+            CalcFormula = Count("Calibration Ledger Entries" WHERE(Description = FIELD(Description), Eqpt. Serial No.=            DataClassification = CustomerContent;
+FIELD(Eqpt    DataClassification = CustomerContent;
+. Serial No.)));
             FieldClass = FlowField;
         }
         field(6;"Measuring Range";Text[30])

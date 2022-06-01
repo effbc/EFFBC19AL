@@ -9,7 +9,7 @@ page 50024 "Einvoice Sample1"
         {
             repeater(Group)
             {
-                field("Is Big";"Is Big")
+                field("Is Big"; "Is Big")
                 {
                 }
             }

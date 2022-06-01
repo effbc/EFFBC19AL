@@ -6,19 +6,19 @@ xmlport 80015 Dimension
     {
         textelement(Dimensions)
         {
-            tableelement(Dimension;Dimension)
+            tableelement(Dimension; Dimension)
             {
                 XmlName = 'Dimension';
-                fieldelement(Code;Dimension.Code)
+                fieldelement(Code; Dimension.Code)
                 {
                 }
-                fieldelement(Name;Dimension.Name)
+                fieldelement(Name; Dimension.Name)
                 {
                 }
-                fieldelement(CodeCaption;Dimension."Code Caption")
+                fieldelement(CodeCaption; Dimension."Code Caption")
                 {
                 }
-                fieldelement(FilterCaption;Dimension."Filter Caption")
+                fieldelement(FilterCaption; Dimension."Filter Caption")
                 {
                 }
             }

@@ -6,13 +6,13 @@ xmlport 50029 "Mail IDS"
     {
         textelement(UserSetup)
         {
-            tableelement("<usersetup>";"User Setup")
+            tableelement("<usersetup>"; "User Setup")
             {
                 XmlName = 'UserSetup';
-                fieldelement(UserID;"<UserSetup>"."User ID")
+                fieldelement(UserID; "<UserSetup>"."User ID")
                 {
                 }
-                fieldelement(EMail;"<UserSetup>"."E-Mail")
+                fieldelement(EMail; "<UserSetup>"."E-Mail")
                 {
                 }
             }

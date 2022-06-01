@@ -6,28 +6,28 @@ xmlport 80045 "TDS Detail"
     {
         textelement(TDSSetup)
         {
-            tableelement("<tdssetup>";"TDS Setup")
+            tableelement("<tdssetup>"; "TDS Setup")
             {
                 XmlName = 'TDSSetup';
-                fieldelement(TDSNatureofDeduction;"<TDSSetup>"."TDS Nature of Deduction")
+                fieldelement(TDSNatureofDeduction; "<TDSSetup>"."TDS Nature of Deduction")
                 {
                 }
-                fieldelement(AssesseeCode;"<TDSSetup>"."Assessee Code")
+                fieldelement(AssesseeCode; "<TDSSetup>"."Assessee Code")
                 {
                 }
-                fieldelement(TDSGroup;"<TDSSetup>"."TDS Group")
+                fieldelement(TDSGroup; "<TDSSetup>"."TDS Group")
                 {
                 }
-                fieldelement(EffectiveDate;"<TDSSetup>"."Effective Date")
+                fieldelement(EffectiveDate; "<TDSSetup>"."Effective Date")
                 {
                 }
-                fieldelement(TDSPer;"<TDSSetup>"."TDS %")
+                fieldelement(TDSPer; "<TDSSetup>"."TDS %")
                 {
                 }
-                fieldelement(SurchargePer;"<TDSSetup>"."Surcharge %")
+                fieldelement(SurchargePer; "<TDSSetup>"."Surcharge %")
                 {
                 }
-                fieldelement(eCESSPer;"<TDSSetup>"."eCESS %")
+                fieldelement(eCESSPer; "<TDSSetup>"."eCESS %")
                 {
                 }
             }

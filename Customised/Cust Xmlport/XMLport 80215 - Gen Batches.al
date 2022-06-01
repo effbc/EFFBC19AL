@@ -6,22 +6,22 @@ xmlport 80215 "Gen Batches"
     {
         textelement(GenJournalBatchs)
         {
-            tableelement("<genjournalbatch>";"Gen. Journal Batch")
+            tableelement("<genjournalbatch>"; "Gen. Journal Batch")
             {
                 XmlName = 'GenJournalBatch';
-                fieldelement(JournalTemplateName;"<GenJournalBatch>"."Journal Template Name")
+                fieldelement(JournalTemplateName; "<GenJournalBatch>"."Journal Template Name")
                 {
                 }
-                fieldelement(Name;"<GenJournalBatch>".Name)
+                fieldelement(Name; "<GenJournalBatch>".Name)
                 {
                 }
-                fieldelement(Description;"<GenJournalBatch>".Description)
+                fieldelement(Description; "<GenJournalBatch>".Description)
                 {
                 }
-                fieldelement(BalAccountType;"<GenJournalBatch>"."Bal. Account Type")
+                fieldelement(BalAccountType; "<GenJournalBatch>"."Bal. Account Type")
                 {
                 }
-                fieldelement(NoSeries;"<GenJournalBatch>"."No. Series")
+                fieldelement(NoSeries; "<GenJournalBatch>"."No. Series")
                 {
                 }
             }

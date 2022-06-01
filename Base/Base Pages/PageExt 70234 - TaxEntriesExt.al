@@ -1,4 +1,4 @@
-pageextension 70234 TaxEntriesExt extends "Tax Entries" 
+pageextension 70234 TaxEntriesExt extends "Tax Entries"
 {
     // version NAVIN7.00
 
@@ -140,10 +140,10 @@ pageextension 70234 TaxEntriesExt extends "Tax Entries"
         }
         addafter("Control 16")
         {
-            field("Account No.";"Account No.")
+            field("Account No."; "Account No.")
             {
             }
-            field("Tax Group Code";"Tax Group Code")
+            field("Tax Group Code"; "Tax Group Code")
             {
             }
         }
@@ -166,12 +166,12 @@ pageextension 70234 TaxEntriesExt extends "Tax Entries"
     //Unsupported feature: PropertyModification on "Navigate(Variable 1000)". Please convert manually.
 
     //var
-        //>>>> ORIGINAL VALUE:
-        //Navigate : 344;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //Navigate : Navigate;
-        //Variable type has not been exported.
+    //>>>> ORIGINAL VALUE:
+    //Navigate : 344;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Navigate : Navigate;
+    //Variable type has not been exported.
 
     //Unsupported feature: PropertyChange. Please convert manually.
 

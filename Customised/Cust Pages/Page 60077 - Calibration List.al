@@ -14,46 +14,46 @@ page 60077 "Calibration List"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
                 }
-                field("Equipment Type";"Equipment Type")
+                field("Equipment Type"; "Equipment Type")
                 {
                 }
-                field("Calibration Next Due Date";"Calibration Next Due Date")
+                field("Calibration Next Due Date"; "Calibration Next Due Date")
                 {
                 }
-                field(Frequency;Frequency)
+                field(Frequency; Frequency)
                 {
                 }
-                field("Notice Period";"Notice Period")
+                field("Notice Period"; "Notice Period")
                 {
                 }
-                field("Current Status";"Current Status")
+                field("Current Status"; "Current Status")
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
-                field("Inspection Party";"Inspection Party")
+                field("Inspection Party"; "Inspection Party")
                 {
                 }
-                field(Agency;Agency)
+                field(Agency; Agency)
                 {
                 }
-                field("Purpose of Instrument";"Purpose of Instrument")
+                field("Purpose of Instrument"; "Purpose of Instrument")
                 {
                 }
-                field("Usage Type";"Usage Type")
+                field("Usage Type"; "Usage Type")
                 {
                 }
-                field("Least Count";"Least Count")
+                field("Least Count"; "Least Count")
                 {
                 }
-                field(UOM;UOM)
+                field(UOM; UOM)
                 {
                 }
             }

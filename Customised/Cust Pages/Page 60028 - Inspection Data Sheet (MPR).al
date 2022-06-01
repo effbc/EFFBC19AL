@@ -407,7 +407,7 @@ page 60028 "Inspection Data Sheet (MPR)"
                     Caption = 'Purch. Receipt';
                     Image = PostedReceipt;
                     RunObject = Page "Posted Purchase Receipt";
-                    RunPageLink = No.=FIELD(Receipt No.);
+                                    RunPageLink = No.=FIELD(Receipt No.);
                 }
                 action("Calibration  &Procedure")
                 {
@@ -424,7 +424,7 @@ page 60028 "Inspection Data Sheet (MPR)"
                     Caption = 'Specifications';
                     Image = CodesList;
                     RunObject = Page "Sales Amc Subform1";
-                    RunPageLink = Document Type=FIELD(Item No.);
+                                    RunPageLink = Document Type=FIELD(Item No.);
                 }
             }
             group("&Line")

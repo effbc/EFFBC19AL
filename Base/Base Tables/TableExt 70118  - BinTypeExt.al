@@ -9,6 +9,7 @@ tableextension 70118 BinTypeExt extends "Bin Type"
         field(60001; "Item No"; Code[30])
         {
             TableRelation = Item."No.";
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -19,9 +20,11 @@ tableextension 70118 BinTypeExt extends "Bin Type"
         field(60002; QTY; Decimal)
         {
             DecimalPlaces = 2 : 5;
+            DataClassification = CustomerContent;
         }
         field(60003; "Material Required Day"; Integer)
         {
+            DataClassification = CustomerContent;
         }
     }
 

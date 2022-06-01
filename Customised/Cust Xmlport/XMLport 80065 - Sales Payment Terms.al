@@ -6,13 +6,13 @@ xmlport 80065 "Sales Payment Terms"
     {
         textelement(PaymentTerms)
         {
-            tableelement("<paymentterm>";"Payment Terms")
+            tableelement("<paymentterm>"; "Payment Terms")
             {
                 XmlName = 'PaymentTerm';
-                fieldelement(Code;"<PaymentTerm>".Code)
+                fieldelement(Code; "<PaymentTerm>".Code)
                 {
                 }
-                fieldelement(Description;"<PaymentTerm>".Description)
+                fieldelement(Description; "<PaymentTerm>".Description)
                 {
                 }
             }

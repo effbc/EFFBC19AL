@@ -7,12 +7,14 @@ tableextension 70086 TransferHeaderExt extends "Transfer Header"
         {
             Description = 'B2B';
             TableRelation = "Production Order"."No." WHERE(Status = CONST(Released));
+            DataClassification = CustomerContent;
         }
         field(60002; "Prod. Order Line No."; Integer)
         {
             Description = 'B2B';
             TableRelation = "Prod. Order Line"."Line No." WHERE("Prod. Order No." = FIELD("Prod. Order No."),
                                                                  Status = CONST(Released));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -28,15 +30,18 @@ tableextension 70086 TransferHeaderExt extends "Transfer Header"
         {
             Description = 'B2B';
             TableRelation = "Service Item"."No.";
+            DataClassification = CustomerContent;
         }
         field(60004; "Customer No."; Code[20])
         {
             Description = 'B2B';
             TableRelation = Customer."No.";
+            DataClassification = CustomerContent;
         }
         field(60005; "Prod. BOM No."; Code[20])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             var
@@ -59,6 +64,7 @@ tableextension 70086 TransferHeaderExt extends "Transfer Header"
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -74,14 +80,17 @@ tableextension 70086 TransferHeaderExt extends "Transfer Header"
             Description = 'Rev01';
             Editable = false;
             TableRelation = User."User Name";
+            DataClassification = CustomerContent;
         }
         field(60008; "Required Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60009; "Operation No."; Code[20])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             var
@@ -103,34 +112,41 @@ tableextension 70086 TransferHeaderExt extends "Transfer Header"
         field(60010; "Due Date"; Date)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60011; "Released Date"; Date)
         {
             Description = 'B2B';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60012; "Released By"; Code[50])
         {
             Description = 'Rev01';
             Editable = false;
             TableRelation = User."User Name";
+            DataClassification = CustomerContent;
         }
         field(60013; "Sales Order No."; Code[20])
         {
             Description = 'B2B';
             TableRelation = "Sales Header"."No." WHERE("Document Type" = FILTER(Order));
+            DataClassification = CustomerContent;
         }
         field(60014; "Service Order No."; Code[20])
         {
             Description = 'B2B';
             TableRelation = "Service Header"."No.";
+            DataClassification = CustomerContent;
         }
         field(60015; "Released Time"; Time)
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
         }
         field(60016; "Req Date Time"; DateTime)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -139,25 +155,30 @@ tableextension 70086 TransferHeaderExt extends "Transfer Header"
         }
         field(60017; "CST Status"; Enum "CST Status")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60018; "Created Date Time"; DateTime)
         {
             Editable = true;
+            DataClassification = CustomerContent;
         }
         field(60019; "Way Bill No."; Code[30])
         {
+            DataClassification = CustomerContent;
         }
         field(60090; "Dimension Corrected"; Boolean)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60091; "OLD Dim Set ID"; Integer)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
             TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin

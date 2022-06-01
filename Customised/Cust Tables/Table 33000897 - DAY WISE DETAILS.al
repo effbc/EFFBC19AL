@@ -1,104 +1,135 @@
 table 33000897 "DAY WISE DETAILS"
 {
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"POSTING DATE";Date)
+        field(1; "POSTING DATE"; Date)
         {
             NotBlank = true;
+            DataClassification = CustomerContent;
         }
-        field(2;"STR STOCK VALUE";Decimal)
+        field(2; "STR STOCK VALUE"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(3;"R&D STR STOCK VALUE";Decimal)
+        field(3; "R&D STR STOCK VALUE"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(4;"CS STR STOCK VALUE";Decimal)
+        field(4; "CS STR STOCK VALUE"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(5;"STR_DAMAGE VALUE";Decimal)
+        field(5; "STR_DAMAGE VALUE"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(6;"R&D DAMAGE VALUE";Decimal)
+        field(6; "R&D DAMAGE VALUE"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(7;"CS DAMAGE VALUE";Decimal)
+        field(7; "CS DAMAGE VALUE"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(8;"BMU STOCK";Decimal)
+        field(8; "BMU STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(9;"DL STOCK";Decimal)
+        field(9; "DL STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(10;"EP STOCK";Decimal)
+        field(10; "EP STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(11;"IPIS STOCK";Decimal)
+        field(11; "IPIS STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(12;"PMU STOCK";Decimal)
+        field(12; "PMU STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(13;"PROTOCAL CONVERTER STOCK";Decimal)
+        field(13; "PROTOCAL CONVERTER STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(14;"RTU STOCK";Decimal)
+        field(14; "RTU STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(15;"SIGNAL LAMP STOCK";Decimal)
+        field(15; "SIGNAL LAMP STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(16;"SSIDL STOCK";Decimal)
+        field(16; "SSIDL STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(17;"REMAINING STOCK";Decimal)
+        field(17; "REMAINING STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(18;"DEAD STOCK";Decimal)
+        field(18; "DEAD STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(19;"DAY WISE ISSUES VALUE";Decimal)
+        field(19; "DAY WISE ISSUES VALUE"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(20;"DAY WISE INWARD VALUE";Decimal)
+        field(20; "DAY WISE INWARD VALUE"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(21;"DAY WISE ADJUSTMENT VALUE";Decimal)
+        field(21; "DAY WISE ADJUSTMENT VALUE"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(22;"PRODUCT WISE ISSUES POSTED";Boolean)
+        field(22; "PRODUCT WISE ISSUES POSTED"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
-        field(23;PLANNED_PROD_UNITS;Decimal)
+        field(23; PLANNED_PROD_UNITS; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(24;"PRD STR STOCK VALUE";Decimal)
+        field(24; "PRD STR STOCK VALUE"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(25;"PRD DAMAGE VALUE";Decimal)
+        field(25; "PRD DAMAGE VALUE"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(26;"LED LAMPS STOCK";Decimal)
+        field(26; "LED LAMPS STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(27;"LC GATE STOCK";Decimal)
+        field(27; "LC GATE STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(28;"MLRI STOCK";Decimal)
+        field(28; "MLRI STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(29;"BI STOCK";Decimal)
+        field(29; "BI STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(30;"WTLC STOCK";Decimal)
+        field(30; "WTLC STOCK"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(Key1;"POSTING DATE")
+        key(Key1; "POSTING DATE")
         {
         }
     }

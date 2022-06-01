@@ -8,7 +8,7 @@ report 80018 "Resource Journal - Test3"
 
     dataset
     {
-        dataitem(Item;Item)
+        dataitem(Item; Item)
         {
             CalcFields = Stock at CS Stores;
             DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Safety Stock Qty (CS)=FILTER(>0));

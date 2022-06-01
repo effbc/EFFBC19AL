@@ -17,130 +17,128 @@ report 50015 "Week Wise Rejections"
 
     dataset
     {
-        dataitem("Posted Inspect DatasheetHeader";"Posted Inspect DatasheetHeader")
+        dataitem("Posted Inspect DatasheetHeader"; "Posted Inspect DatasheetHeader")
         {
-            DataItemTableView = SORTING(Inspection Receipt No.,Item No.) ORDER(Ascending) WHERE(Source Type=CONST(In Bound));
-            RequestFilterFields = "Posting Date","Vendor No.","Item No.";
-            column(WORKDATE;FORMAT(WORKDATE))
+            DataItemTableView = SORTING(Inspection Receipt No., Item No.) ORDER(Ascending) WHERE(Source Type=CONST(In Bound));
+            RequestFilterFields = "Posting Date", "Vendor No.", "Item No.";
+            column(WORKDATE; FORMAT(WORKDATE))
             {
             }
-            column(CompanyName;CompanyInfo.Name)
+            column(CompanyName; CompanyInfo.Name)
             {
             }
-            column(CompanyPicture;CompanyInfo.Picture)
+            column(CompanyPicture; CompanyInfo.Picture)
             {
             }
-            column("filter";filter)
+            column("filter"; filter)
             {
             }
-            column(j;j)
+            column(j; j)
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Vendor_Name_;"Vendor Name")
+            column(Posted_Inspect_DatasheetHeader__Vendor_Name_; "Vendor Name")
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Item_Description_;"Item Description")
+            column(Posted_Inspect_DatasheetHeader__Item_Description_; "Item Description")
             {
             }
-            column(Actual_Lot_;"Actual Lot")
+            column(Actual_Lot_; "Actual Lot")
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Posted_Inspect_DatasheetHeader__Quantity;"Posted Inspect DatasheetHeader".Quantity)
+            column(Posted_Inspect_DatasheetHeader__Posted_Inspect_DatasheetHeader__Quantity; "Posted Inspect DatasheetHeader".Quantity)
             {
             }
-            column(sno;sno)
+            column(sno; sno)
             {
             }
-            column(Accepted_Quantity_;"Accepted Quantity")
+            column(Accepted_Quantity_; "Accepted Quantity")
             {
             }
-            column(Per__Of_REJ_;"Per. Of REJ")
+            column(Per__Of_REJ_; "Per. Of REJ")
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Posted_Inspect_DatasheetHeader___Unit_Of_Measure_Code_;"Posted Inspect DatasheetHeader"."Unit Of Measure Code")
+            column(Posted_Inspect_DatasheetHeader__Posted_Inspect_DatasheetHeader___Unit_Of_Measure_Code_; "Posted Inspect DatasheetHeader"."Unit Of Measure Code")
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Item_No__;"Item No.")
+            column(Posted_Inspect_DatasheetHeader__Item_No__; "Item No.")
             {
             }
-            column(Posted_Inspect_DatasheetHeader_Quantity;Quantity)
+            column(Posted_Inspect_DatasheetHeader_Quantity; Quantity)
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Order_No__;"Order No.")
+            column(Posted_Inspect_DatasheetHeader__Order_No__; "Order No.")
             {
             }
-            column(S_NoCaption;S_NoCaptionLbl)
+            column(S_NoCaption; S_NoCaptionLbl)
             {
             }
-            column(Vendor_NameCaption;Vendor_NameCaptionLbl)
+            column(Vendor_NameCaption; Vendor_NameCaptionLbl)
             {
             }
-            column(ItemCaption;ItemCaptionLbl)
+            column(ItemCaption; ItemCaptionLbl)
             {
             }
-            column(Rjctd_QtyCaption;Rjctd_QtyCaptionLbl)
+            column(Rjctd_QtyCaption; Rjctd_QtyCaptionLbl)
             {
             }
-            column(Lot_No_Caption;Lot_No_CaptionLbl)
+            column(Lot_No_Caption; Lot_No_CaptionLbl)
             {
             }
-            column(Tot_QtyCaption;Tot_QtyCaptionLbl)
+            column(Tot_QtyCaption; Tot_QtyCaptionLbl)
             {
             }
-            column(Acptd_QtyCaption;Acptd_QtyCaptionLbl)
+            column(Acptd_QtyCaption; Acptd_QtyCaptionLbl)
             {
             }
-            column(Of__RejectionCaption;Of__RejectionCaptionLbl)
+            column(Of__RejectionCaption; Of__RejectionCaptionLbl)
             {
             }
-            column(UOMCaption;UOMCaptionLbl)
+            column(UOMCaption; UOMCaptionLbl)
             {
             }
-            column(Inspection_Receipt_Header__Nature_Of_Rejection_Caption;"Inspection Receipt Header"."Reason Description")
+            column(Inspection_Receipt_Header__Nature_Of_Rejection_Caption; "Inspection Receipt Header"."Reason Description")
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Item_No__Caption;FIELDCAPTION("Item No."))
+            column(Posted_Inspect_DatasheetHeader__Item_No__Caption; FIELDCAPTION("Item No."))
             {
             }
-            column(Posted_Inspect_DatasheetHeader__Order_No__Caption;FIELDCAPTION("Order No."))
+            column(Posted_Inspect_DatasheetHeader__Order_No__Caption; FIELDCAPTION("Order No."))
             {
             }
-            column(EmptyStringCaption;EmptyStringCaptionLbl)
+            column(EmptyStringCaption; EmptyStringCaptionLbl)
             {
             }
-            column(Posted_Inspect_DatasheetHeader_No_;"No.")
+            column(Posted_Inspect_DatasheetHeader_No_; "No.")
             {
             }
 
             trigger OnAfterGetRecord();
             begin
-                j:=0;
-                "max Qty":=0;
-                IF STRLEN("Posted Inspect DatasheetHeader"."Lot No.") =11 THEN
-                BEGIN
-                  cod:=COPYSTR("Posted Inspect DatasheetHeader"."Lot No.",11);
-                  IF cod = 'R' THEN BEGIN
-                    "Rejected Lots"[i]:="Posted Inspect DatasheetHeader"."Lot No.";
-                    j:=1;
-                    "item desc":="Posted Inspect DatasheetHeader"."Item Description";
+                j := 0;
+                "max Qty" := 0;
+                IF STRLEN("Posted Inspect DatasheetHeader"."Lot No.") = 11 THEN BEGIN
+                    cod := COPYSTR("Posted Inspect DatasheetHeader"."Lot No.", 11);
+                    IF cod = 'R' THEN BEGIN
+                        "Rejected Lots"[i] := "Posted Inspect DatasheetHeader"."Lot No.";
+                        j := 1;
+                        "item desc" := "Posted Inspect DatasheetHeader"."Item Description";
 
-                    "Actual Lot":=DELSTR("Posted Inspect DatasheetHeader"."Lot No.",11);
+                        "Actual Lot" := DELSTR("Posted Inspect DatasheetHeader"."Lot No.", 11);
 
-                    qle.SETRANGE(qle."Lot No.","Actual Lot");
-                    qle.SETRANGE(qle."Item No.", "Posted Inspect DatasheetHeader"."Item No.");
-                    IF qle.FIND('-') THEN
-                    BEGIN
-                      "max Qty":=qle.Quantity;
+                        qle.SETRANGE(qle."Lot No.", "Actual Lot");
+                        qle.SETRANGE(qle."Item No.", "Posted Inspect DatasheetHeader"."Item No.");
+                        IF qle.FIND('-') THEN BEGIN
+                            "max Qty" := qle.Quantity;
+                        END;
+                        IF "max Qty" = 0 THEN
+                            "max Qty" := "Posted Inspect DatasheetHeader".Quantity;
                     END;
-                    IF "max Qty"=0 THEN
-                      "max Qty":="Posted Inspect DatasheetHeader".Quantity;
-                  END;
                 END;
                 ////Sections Code B2B1.0>>
 
-                IF (j=1) THEN BEGIN
-                  sno:=sno+1;
-                  "Accepted Quantity":="max Qty"-"Posted Inspect DatasheetHeader".Quantity;
+                IF (j = 1) THEN BEGIN
+                    sno := sno + 1;
+                    "Accepted Quantity" := "max Qty" - "Posted Inspect DatasheetHeader".Quantity;
                 END;
                 ////Sections Code B2B1.0<<
             end;
@@ -150,51 +148,51 @@ report 50015 "Week Wise Rejections"
                 //B2B1.0>>
                 CompanyInfo.GET;
                 CompanyInfo.CALCFIELDS(Picture);
-                filter:="Posted Inspect DatasheetHeader".GETFILTERS;
+                filter := "Posted Inspect DatasheetHeader".GETFILTERS;
                 //B2B1.0<<
                 IF EXCEL THEN BEGIN
-                  CLEAR(Tempexcelbuffer);
-                  Tempexcelbuffer.DELETEALL;
+                    CLEAR(Tempexcelbuffer);
+                    Tempexcelbuffer.DELETEALL;
                 END;
 
 
-                i:=1;
-                IF filter<>'' THEN BEGIN
-                  min:="Posted Inspect DatasheetHeader".GETRANGEMIN("Posted Inspect DatasheetHeader"."Posting Date");
-                  max:="Posted Inspect DatasheetHeader".GETRANGEMAX("Posted Inspect DatasheetHeader"."Posting Date");
-                  cnt:="Posted Inspect DatasheetHeader".COUNT;
-                  IF ("Posted Inspect DatasheetHeader".GETFILTER("Posted Inspect DatasheetHeader"."Vendor No.")) <>''  THEN
-                    vendor:="Posted Inspect DatasheetHeader".GETFILTER("Posted Inspect DatasheetHeader"."Vendor No.");
-                  IF ("Posted Inspect DatasheetHeader".GETFILTER("Posted Inspect DatasheetHeader"."Item No.")) <>''  THEN
-                    Item:="Posted Inspect DatasheetHeader".GETFILTER("Posted Inspect DatasheetHeader"."Item No.");
-                END ;
+                i := 1;
+                IF filter <> '' THEN BEGIN
+                    min := "Posted Inspect DatasheetHeader".GETRANGEMIN("Posted Inspect DatasheetHeader"."Posting Date");
+                    max := "Posted Inspect DatasheetHeader".GETRANGEMAX("Posted Inspect DatasheetHeader"."Posting Date");
+                    cnt := "Posted Inspect DatasheetHeader".COUNT;
+                    IF ("Posted Inspect DatasheetHeader".GETFILTER("Posted Inspect DatasheetHeader"."Vendor No.")) <> '' THEN
+                        vendor := "Posted Inspect DatasheetHeader".GETFILTER("Posted Inspect DatasheetHeader"."Vendor No.");
+                    IF ("Posted Inspect DatasheetHeader".GETFILTER("Posted Inspect DatasheetHeader"."Item No.")) <> '' THEN
+                        Item := "Posted Inspect DatasheetHeader".GETFILTER("Posted Inspect DatasheetHeader"."Item No.");
+                END;
                 IF EXCEL THEN BEGIN
-                  Row+=1;
-                  EnterHeadings(Row,1,'SNO',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,2,'PURCHASE ORDER NO',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,3,'VENDOR NAME',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,4,'ITEM NO',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,5,'ITEM DESCRIPTION',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,6,'UNIT OF MEASEURE',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,7,'ACCEPTED QUANTITY',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,8,'REJECTED QUNATITY',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,9,'TOTAL QUANTITY',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,10,'PER OF REJECTION',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,11,'TYPE OF REJECTION',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,12,'MAKE',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,13,'VENDOR NO',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,14,'LOT NO.',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  // EnterHeadings(Row,15,'NATURE OF REJECTION',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,15,'REJECTION REASON',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,16,'PRODUCT GROUP CODE',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,17,'REJECTION DATE',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  // added by vishnu on 02-05-2019
-                  EnterHeadings(Row,18,'NATURE OF REJECTION',TRUE,Tempexcelbuffer."Cell Type"::Text);
+                    Row += 1;
+                    EnterHeadings(Row, 1, 'SNO', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 2, 'PURCHASE ORDER NO', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 3, 'VENDOR NAME', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 4, 'ITEM NO', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 5, 'ITEM DESCRIPTION', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 6, 'UNIT OF MEASEURE', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 7, 'ACCEPTED QUANTITY', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 8, 'REJECTED QUNATITY', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 9, 'TOTAL QUANTITY', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 10, 'PER OF REJECTION', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 11, 'TYPE OF REJECTION', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 12, 'MAKE', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 13, 'VENDOR NO', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 14, 'LOT NO.', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    // EnterHeadings(Row,15,'NATURE OF REJECTION',TRUE,Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 15, 'REJECTION REASON', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 16, 'PRODUCT GROUP CODE', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 17, 'REJECTION DATE', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    // added by vishnu on 02-05-2019
+                    EnterHeadings(Row, 18, 'NATURE OF REJECTION', TRUE, Tempexcelbuffer."Cell Type"::Text);
 
                 END;
             end;
         }
-        dataitem("Inspection Receipt Header";"Inspection Receipt Header")
+        dataitem("Inspection Receipt Header"; "Inspection Receipt Header")
         {
             DataItemTableView = WHERE(Source Type=CONST(In Bound),Status=CONST(Yes),Qty. Rejected=FILTER(>0));
             column(Inspection_Receipt_Header__Vendor_Name_;"Vendor Name")

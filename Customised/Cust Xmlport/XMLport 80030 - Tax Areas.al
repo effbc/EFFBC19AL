@@ -6,13 +6,13 @@ xmlport 80030 "Tax Areas"
     {
         textelement(TaxAreas)
         {
-            tableelement("<taxarea>";"Tax Area")
+            tableelement("<taxarea>"; "Tax Area")
             {
                 XmlName = 'TaxArea';
-                fieldelement(Code;"<TaxArea>".Code)
+                fieldelement(Code; "<TaxArea>".Code)
                 {
                 }
-                fieldelement(Description;"<TaxArea>".Description)
+                fieldelement(Description; "<TaxArea>".Description)
                 {
                 }
             }

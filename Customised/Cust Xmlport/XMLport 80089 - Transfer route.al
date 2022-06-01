@@ -6,22 +6,22 @@ xmlport 80089 "Transfer route"
     {
         textelement(TransferRoutes)
         {
-            tableelement("<transferroute>";"Transfer Route")
+            tableelement("<transferroute>"; "Transfer Route")
             {
                 XmlName = 'TransferRoute';
-                fieldelement(TransferfromCode;"<TransferRoute>"."Transfer-from Code")
+                fieldelement(TransferfromCode; "<TransferRoute>"."Transfer-from Code")
                 {
                 }
-                fieldelement(TransfertoCode;"<TransferRoute>"."Transfer-to Code")
+                fieldelement(TransfertoCode; "<TransferRoute>"."Transfer-to Code")
                 {
                 }
-                fieldelement(InTransitCode;"<TransferRoute>"."In-Transit Code")
+                fieldelement(InTransitCode; "<TransferRoute>"."In-Transit Code")
                 {
                 }
-                fieldelement(ShippingAgentCode;"<TransferRoute>"."Shipping Agent Code")
+                fieldelement(ShippingAgentCode; "<TransferRoute>"."Shipping Agent Code")
                 {
                 }
-                fieldelement(ShippingAgentServiceCode;"<TransferRoute>"."Shipping Agent Service Code")
+                fieldelement(ShippingAgentServiceCode; "<TransferRoute>"."Shipping Agent Service Code")
                 {
                 }
             }

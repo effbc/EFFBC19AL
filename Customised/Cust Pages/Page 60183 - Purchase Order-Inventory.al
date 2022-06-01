@@ -468,7 +468,7 @@ page 60183 "Purchase Order-Inventory"
                     Caption = 'Card';
                     Image = Vendor;
                     RunObject = Page "Vendor Card";
-                    RunPageLink = No.=FIELD(Buy-from Vendor No.);
+                                    RunPageLink = No.=FIELD(Buy-from Vendor No.);
                     ShortCutKey = 'Shift+F5';
                 }
                 action("Co&mments")
@@ -476,14 +476,14 @@ page 60183 "Purchase Order-Inventory"
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = Page "Purch. Comment Sheet";
-                    RunPageLink = Document Type=FIELD(Document Type),No.=FIELD(No.);
+                                    RunPageLink = Document Type=FIELD(Document Type),No.=FIELD(No.);
                 }
                 action(Receipts)
                 {
                     Caption = 'Receipts';
                     Image = Receipt;
                     RunObject = Page "Posted Purchase Receipts";
-                    RunPageLink = Order No.=FIELD(No.);
+                                    RunPageLink = Order No.=FIELD(No.);
                     RunPageView = SORTING(Order No.);
                 }
                 action(Invoices)
@@ -491,7 +491,7 @@ page 60183 "Purchase Order-Inventory"
                     Caption = 'Invoices';
                     Image = Invoice;
                     RunObject = Page "Posted Purchase Invoices";
-                    RunPageLink = Order No.=FIELD(No.);
+                                    RunPageLink = Order No.=FIELD(No.);
                     RunPageView = SORTING(Order No.);
                 }
                 separator(Action181)
@@ -502,7 +502,7 @@ page 60183 "Purchase Order-Inventory"
                     Caption = 'Whse. Receipt Lines';
                     Image = NewWarehouseReceipt;
                     RunObject = Page "Whse. Receipt Lines";
-                    RunPageLink = Source Type=CONST(39),Source Subtype=FIELD(Document Type),Source No.=FIELD(No.);
+                                    RunPageLink = Source Type=CONST(39),Source Subtype=FIELD(Document Type),Source No.=FIELD(No.);
                     RunPageView = SORTING(Source Type,Source Subtype,Source No.,Source Line No.);
                 }
                 action("In&vt. Put-away/Pick Lines")
@@ -510,7 +510,7 @@ page 60183 "Purchase Order-Inventory"
                     Caption = 'In&vt. Put-away/Pick Lines';
                     Image = PutawayLines;
                     RunObject = Page "Warehouse Activity List";
-                    RunPageLink = Source Document=CONST(Purchase Order),Source No.=FIELD(No.);
+                                    RunPageLink = Source Document=CONST(Purchase Order),Source No.=FIELD(No.);
                     RunPageView = SORTING(Source Document,Source No.,Location Code);
                 }
                 separator(Action182)
@@ -555,21 +555,21 @@ page 60183 "Purchase Order-Inventory"
                     Caption = 'Transit Documents';
                     Image = Documents;
                     RunObject = Page "Transit Document Order Details";
-                    RunPageLink = Type=CONST(Purchase),PO / SO No.=FIELD(No.),Vendor / Customer Ref.=FIELD(Buy-from Vendor No.);
+                                    RunPageLink = Type=CONST(Purchase),PO / SO No.=FIELD(No.),Vendor / Customer Ref.=FIELD(Buy-from Vendor No.);
                 }
                 action(Structure)
                 {
                     Caption = 'Structure';
                     Image = CollectedTax;
                     RunObject = Page "Structure Order Details";
-                    RunPageLink = Type=CONST(Purchase),Document Type=FIELD(Document Type),Document No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Purchase),Document Type=FIELD(Document Type),Document No.=FIELD(No.);
                 }
                 action("Authorization Information")
                 {
                     Caption = 'Authorization Information';
                     Image = Approval;
                     RunObject = Page "VAT Opening Detail";
-                    RunPageLink = Transaction Type=CONST(Purchase),Document Type=CONST(Order),Document No.=FIELD(No.);
+                                    RunPageLink = Transaction Type=CONST(Purchase),Document Type=CONST(Order),Document No.=FIELD(No.);
                 }
                 separator(Action1102152034)
                 {
@@ -579,7 +579,7 @@ page 60183 "Purchase Order-Inventory"
                     Caption = 'MSPT Order Details';
                     Image = BlanketOrder;
                     RunObject = Page "MSPT Order Details";
-                    RunPageLink = Type=CONST(Purchase),Document Type=FIELD(Document Type),Document No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Purchase),Document Type=FIELD(Document Type),Document No.=FIELD(No.);
                 }
             }
         }
@@ -1001,17 +1001,17 @@ page 60183 "Purchase Order-Inventory"
     var
         PurchSetup : Record "Purchases & Payables Setup";
         ChangeExchangeRate : Page "Change Exchange Rate";
-        CopyPurchDoc : Report "Copy Purchase Document";
-        MoveNegPurchLines : Report "Move Negative Purchase Lines";
-        ReportPrint : Codeunit "Test Report-Print";
-        DocPrint : Codeunit "Document-Print";
-        UserMgt : Codeunit "User Setup Management";
-        ArchiveManagement : Codeunit ArchiveManagement;
-        "-NAVIN-" : Integer;
-        PurchLine : Record "Purchase Line";
-        OK : Boolean;
-        "--NAVIN--" : ;
-        Text000 : Label 'Do you want to convert the Order to an Import order?';
+                                 CopyPurchDoc : Report "Copy Purchase Document";
+                                 MoveNegPurchLines : Report "Move Negative Purchase Lines";
+                                 ReportPrint : Codeunit "Test Report-Print";
+                                 DocPrint : Codeunit "Document-Print";
+                                 UserMgt : Codeunit "User Setup Management";
+                                 ArchiveManagement : Codeunit ArchiveManagement;
+                                 "-NAVIN-" : Integer;
+                                 PurchLine : Record "Purchase Line";
+                                 OK : Boolean;
+                                 "--NAVIN--" : ;
+                                 Text000 : Label 'Do you want to convert the Order to an Import order?';
         Text001 : Label 'Order number %1 has been converted to Import order number %2.';
         "-- NAVIN" : Integer;
         Text13000 : Label 'No Setup exists for this Amount.';

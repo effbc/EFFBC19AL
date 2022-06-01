@@ -7,22 +7,22 @@ page 60206 Station
     {
         area(content)
         {
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
             }
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Station Name";"Station Name")
+                field("Station Name"; "Station Name")
                 {
                 }
-                field("Station Code";"Station Code")
+                field("Station Code"; "Station Code")
                 {
                 }
-                field("Division code";"Division code")
+                field("Division code"; "Division code")
                 {
                 }
-                field(Zone;Zone)
+                field(Zone; Zone)
                 {
                 }
             }

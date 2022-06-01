@@ -6,16 +6,16 @@ xmlport 50030 "For Subgroups"
     {
         textelement(AlternateItems)
         {
-            tableelement("<alternateitems>";"Alternate Items")
+            tableelement("<alternateitems>"; "Alternate Items")
             {
                 XmlName = 'AlternateItems';
-                fieldelement(ProudctType;"<AlternateItems>"."Proudct Type")
+                fieldelement(ProudctType; "<AlternateItems>"."Proudct Type")
                 {
                 }
-                fieldelement(AlternativeItemDescription;"<AlternateItems>"."Alternative Item Description")
+                fieldelement(AlternativeItemDescription; "<AlternateItems>"."Alternative Item Description")
                 {
                 }
-                fieldelement(Make;"<AlternateItems>".Make)
+                fieldelement(Make; "<AlternateItems>".Make)
                 {
                 }
             }

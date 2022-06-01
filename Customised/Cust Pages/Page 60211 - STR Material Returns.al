@@ -123,7 +123,7 @@ page 60211 "STR Material Returns"
                     Caption = 'Statistics';
                     Image = RefreshLines;
                     RunObject = Page "Material Issue Statistics";
-                    RunPageLink = No.=FIELD(No.);
+                                    RunPageLink = No.=FIELD(No.);
                     ShortCutKey = 'F7';
                     Visible = false;
                 }
@@ -132,14 +132,14 @@ page 60211 "STR Material Returns"
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = Page "Inventory Comment Sheet";
-                    RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
+                                    RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
                 }
                 action("Iss&ues")
                 {
                     Caption = 'Iss&ues';
                     Image = ErrorLog;
                     RunObject = Page "Posted Material Issue List";
-                    RunPageLink = Material Issue No.=FIELD(No.);
+                                    RunPageLink = Material Issue No.=FIELD(No.);
                 }
             }
         }
@@ -430,7 +430,7 @@ page 60211 "STR Material Returns"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Inventory Comment Sheet";
-                RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
+                                RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
                 ToolTip = 'Comment';
             }
         }

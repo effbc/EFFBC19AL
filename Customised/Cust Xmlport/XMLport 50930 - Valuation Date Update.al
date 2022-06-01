@@ -6,13 +6,13 @@ xmlport 50930 "Valuation Date Update"
     {
         textelement(ValueEntries)
         {
-            tableelement("<valueentry>";"Value Entry")
+            tableelement("<valueentry>"; "Value Entry")
             {
                 XmlName = 'ValueEntry';
-                fieldelement(EntryNo;"<ValueEntry>"."Entry No.")
+                fieldelement(EntryNo; "<ValueEntry>"."Entry No.")
                 {
                 }
-                fieldelement(ValuationDate;"<ValueEntry>"."Valuation Date")
+                fieldelement(ValuationDate; "<ValueEntry>"."Valuation Date")
                 {
                 }
             }

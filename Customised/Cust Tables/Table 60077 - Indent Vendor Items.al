@@ -1,5 +1,6 @@
 table 60077 "Indent Vendor Items"
 {
+    DataClassification = CustomerContent;
     // version POAU
 
     // Project : B2B Pharma
@@ -12,73 +13,87 @@ table 60077 "Indent Vendor Items"
 
     fields
     {
-        field(1;"Item No.";Code[20])
+        field(1; "Item No."; Code[20])
         {
+            DataClassification = CustomerContent;
         }
-        field(2;Quantity;Decimal)
+        field(2; Quantity; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(3;"Vendor No.";Code[20])
+        field(3; "Vendor No."; Code[20])
         {
+            DataClassification = CustomerContent;
         }
-        field(4;"Indent No.";Code[20])
+        field(4; "Indent No."; Code[20])
         {
+            DataClassification = CustomerContent;
         }
-        field(5;"Indent Line No.";Integer)
+        field(5; "Indent Line No."; Integer)
         {
+            DataClassification = CustomerContent;
         }
-        field(6;"Due Date";Date)
+        field(6; "Due Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
-        field(7;Check;Boolean)
+        field(7; Check; Boolean)
         {
+            DataClassification = CustomerContent;
         }
-        field(8;"Location Code";Code[10])
+        field(8; "Location Code"; Code[10])
         {
+            DataClassification = CustomerContent;
         }
-        field(9;"ICN No.";Code[20])
+        field(9; "ICN No."; Code[20])
         {
+            DataClassification = CustomerContent;
         }
-        field(10;Subcontracting;Boolean)
+        field(10; Subcontracting; Boolean)
         {
+            DataClassification = CustomerContent;
         }
-        field(11;"Manufacturer Code";Code[20])
+        field(11; "Manufacturer Code"; Code[20])
         {
             TableRelation = Vendor;
+            DataClassification = CustomerContent;
         }
-        field(12;Approved;Boolean)
+        field(12; Approved; Boolean)
         {
             Description = 'NSS';
+            DataClassification = CustomerContent;
         }
-        field(15;"Unit of Measure";Code[10])
+        field(15; "Unit of Measure"; Code[10])
         {
             TableRelation = "Unit of Measure";
+            DataClassification = CustomerContent;
         }
-        field(16;"Lead Time";Text[10])
+        field(16; "Lead Time"; Text[10])
         {
+            DataClassification = CustomerContent;
         }
-        field(17;Type;Option)
+        field(17; Type; Option)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'aaded by Vishnu Priya on 09-11-2020';
             OptionCaption = 'Item,Miscellaneous,Description, ,G/L Account,Fixed Asset';
             OptionMembers = Item,Miscellaneous,Description," ","G/L Account","Fixed Asset";
         }
-        field(18;Description;Text[50])
+        field(18; Description; Text[50])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'aaded by Vishnu Priya on 11-11-2020';
         }
-        field(19;"Part Number";Code[30])
+        field(19; "Part Number"; Code[30])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya on 13-11-2020';
         }
     }
 
     keys
     {
-        key(Key1;"Vendor No.","Item No.","Indent No.","Indent Line No.")
+        key(Key1; "Vendor No.", "Item No.", "Indent No.", "Indent Line No.")
         {
         }
     }

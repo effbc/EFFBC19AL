@@ -1,17 +1,18 @@
 table 33000936 "Sample Test Table1"
 {
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;Name;Text[50])
+        field(1; Name; Text[50])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(Key1;Name)
+        key(Key1; Name)
         {
         }
     }

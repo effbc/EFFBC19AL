@@ -22,24 +22,24 @@ page 60104 "MSPT Subform"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field("Line No.";"Line No.")
+                field("Line No."; "Line No.")
                 {
                     Visible = false;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Percentage;Percentage)
+                field(Percentage; Percentage)
                 {
                 }
-                field("Calculation Period";"Calculation Period")
+                field("Calculation Period"; "Calculation Period")
                 {
                     NotBlank = true;
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
             }
@@ -51,9 +51,9 @@ page 60104 "MSPT Subform"
     }
 
     var
-        MSPTHeader : Record "MSPT Header";
-        TotalPercentage : Decimal;
-        TEXT001 : Label 'Total percentage should be equal to 100%';
-        MSPTLine : Record "MSPT Line";
+        MSPTHeader: Record "MSPT Header";
+        TotalPercentage: Decimal;
+        TEXT001: Label 'Total percentage should be equal to 100%';
+        MSPTLine: Record "MSPT Line";
 }
 

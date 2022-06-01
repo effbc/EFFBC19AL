@@ -6,16 +6,16 @@ xmlport 50071 "Item Costs"
     {
         textelement(Testing)
         {
-            tableelement("<testingdummytable>";"Item Op Balance")
+            tableelement("<testingdummytable>"; "Item Op Balance")
             {
                 XmlName = 'TestingDummyTable';
-                fieldelement(Name;"<TestingDummyTable>"."Entry No.")
+                fieldelement(Name; "<TestingDummyTable>"."Entry No.")
                 {
                 }
-                fieldelement(ID;"<TestingDummyTable>"."No.")
+                fieldelement(ID; "<TestingDummyTable>"."No.")
                 {
                 }
-                fieldelement(Dept;"<TestingDummyTable>".Location)
+                fieldelement(Dept; "<TestingDummyTable>".Location)
                 {
                 }
             }

@@ -12,10 +12,10 @@ page 33000277 "Quality Reason Codes"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
             }

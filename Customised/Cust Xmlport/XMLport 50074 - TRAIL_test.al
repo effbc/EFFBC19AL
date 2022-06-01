@@ -5,13 +5,13 @@ xmlport 50074 TRAIL_test
     {
         textelement(TEST)
         {
-            tableelement(PCB;PCB)
+            tableelement(PCB; PCB)
             {
                 XmlName = 'PCB';
-                fieldelement(No;PCB."PCB No.")
+                fieldelement(No; PCB."PCB No.")
                 {
                 }
-                fieldelement(Desc;PCB.Description)
+                fieldelement(Desc; PCB.Description)
                 {
                 }
             }

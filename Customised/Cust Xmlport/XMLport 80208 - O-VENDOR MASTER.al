@@ -6,22 +6,22 @@ xmlport 80208 "O-VENDOR MASTER"
     {
         textelement(Vendors)
         {
-            tableelement(Vendor;Vendor)
+            tableelement(Vendor; Vendor)
             {
                 XmlName = 'Vendor';
-                fieldelement(No;Vendor."No.")
+                fieldelement(No; Vendor."No.")
                 {
                 }
-                fieldelement(Name;Vendor.Name)
+                fieldelement(Name; Vendor.Name)
                 {
                 }
-                fieldelement(Address;Vendor.Address)
+                fieldelement(Address; Vendor.Address)
                 {
                 }
-                fieldelement(Address2;Vendor."Address 2")
+                fieldelement(Address2; Vendor."Address 2")
                 {
                 }
-                fieldelement(PANNo;Vendor."P.A.N. No.")
+                fieldelement(PANNo; Vendor."P.A.N. No.")
                 {
                 }
             }

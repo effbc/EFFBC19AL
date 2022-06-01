@@ -4,57 +4,57 @@ report 99000768 "Prod. Order - Detailed Calc."
 
     DefaultLayout = RDLC;
     RDLCLayout = './Prod. Order - Detailed Calc..rdlc';
-    CaptionML = ENU='Prod. Order - Detailed Calc.',
-                ENN='Prod. Order - Detailed Calc.';
+    CaptionML = ENU = 'Prod. Order - Detailed Calc.',
+                ENN = 'Prod. Order - Detailed Calc.';
 
     dataset
     {
-        dataitem("Production Order";"Production Order")
+        dataitem("Production Order"; "Production Order")
         {
-            DataItemTableView = SORTING(Status,No.);
-            RequestFilterFields = Status,"No.","Source Type","Source No.";
-            column(TodayFormatted;FORMAT(TODAY,0,4))
+            DataItemTableView = SORTING(Status, No.);
+            RequestFilterFields = Status, "No.", "Source Type", "Source No.";
+            column(TodayFormatted; FORMAT(TODAY, 0, 4))
             {
             }
-            column(CompanyName;COMPANYNAME)
+            column(CompanyName; COMPANYNAME)
             {
             }
-            column(ProdOrderTableCaptionFilter;TABLECAPTION + ':' + ProdOrderFilter)
+            column(ProdOrderTableCaptionFilter; TABLECAPTION + ':' + ProdOrderFilter)
             {
             }
-            column(ProdOrderFilter;ProdOrderFilter)
+            column(ProdOrderFilter; ProdOrderFilter)
             {
             }
-            column(No_ProdOrder;"No.")
+            column(No_ProdOrder; "No.")
             {
             }
-            column(Desc_ProdOrder;Description)
+            column(Desc_ProdOrder; Description)
             {
             }
-            column(SourceNo_ProdOrder;"Source No.")
+            column(SourceNo_ProdOrder; "Source No.")
             {
                 IncludeCaption = true;
             }
-            column(Qty_ProdOrder;Quantity)
+            column(Qty_ProdOrder; Quantity)
             {
                 IncludeCaption = true;
             }
-            column(ProdOrderDetailedCalcCaption;ProdOrderDetailedCalcCaptionLbl)
+            column(ProdOrderDetailedCalcCaption; ProdOrderDetailedCalcCaptionLbl)
             {
             }
-            column(CurrReportPageNoCaption;CurrReportPageNoCaptionLbl)
+            column(CurrReportPageNoCaption; CurrReportPageNoCaptionLbl)
             {
             }
-            dataitem("Prod. Order Line";"Prod. Order Line")
+            dataitem("Prod. Order Line"; "Prod. Order Line")
             {
-                DataItemLink = Status=FIELD(Status),Prod. Order No.=FIELD(No.);
-                DataItemTableView = SORTING(Status,Prod. Order No.,Line No.) WHERE(Planning Level Code=CONST(0));
-                column(LineNo_ProdOrderLine;"Line No.")
+                DataItemLink = Status = FIELD(Status), Prod. Order No.=FIELD(No.);
+                DataItemTableView = SORTING(Status, Prod. Order No., Line No.) WHERE(Planning Level Code=CONST(0));
+                column(LineNo_ProdOrderLine; "Line No.")
                 {
                 }
-                dataitem("Prod. Order Routing Line";"Prod. Order Routing Line")
+                dataitem("Prod. Order Routing Line"; "Prod. Order Routing Line")
                 {
-                    DataItemLink = Status=FIELD(Status),Prod. Order No.=FIELD(Prod. Order No.),Routing Reference No.=FIELD(Line No.);
+                    DataItemLink = Status = FIELD(Status), Prod. Order No.=FIELD(Prod. Order No.),Routing Reference No.=FIELD(Line No.);
                     DataItemTableView = SORTING(Status,Prod. Order No.,Routing Reference No.,Routing No.,Operation No.);
                     column(OPNo_ProdOrderRtngLine;"Operation No.")
                     {

@@ -10,19 +10,19 @@ page 60239 "Stencil List"
         {
             repeater(Group)
             {
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Editable = true;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Editable = true;
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                     Editable = false;
                 }
-                field("Fixed Asset no";"Fixed Asset no")
+                field("Fixed Asset no"; "Fixed Asset no")
                 {
                     Editable = false;
                 }

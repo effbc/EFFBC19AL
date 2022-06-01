@@ -6,13 +6,13 @@ xmlport 80100 "QC Inspection Groups"
     {
         textelement(InspectionGroups)
         {
-            tableelement("<inspectiongroup>";"Inspection Group")
+            tableelement("<inspectiongroup>"; "Inspection Group")
             {
                 XmlName = 'InspectionGroup';
-                fieldelement(Code;"<InspectionGroup>".Code)
+                fieldelement(Code; "<InspectionGroup>".Code)
                 {
                 }
-                fieldelement(Description;"<InspectionGroup>".Description)
+                fieldelement(Description; "<InspectionGroup>".Description)
                 {
                 }
             }

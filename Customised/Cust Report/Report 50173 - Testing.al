@@ -5,7 +5,7 @@ report 50173 Testing
 
     dataset
     {
-        dataitem("Dimension Value";"Dimension Value")
+        dataitem("Dimension Value"; "Dimension Value")
         {
 
             trigger OnAfterGetRecord();
@@ -16,8 +16,8 @@ report 50173 Testing
 
             trigger OnPreDataItem();
             begin
-                "Dimension Value".SETFILTER("Dimension Value"."Dimension Code",'EMPLOYEE CODES');
-                "Dimension Value".SETFILTER("Dimension Value".Code,'%1','17CA074');
+                "Dimension Value".SETFILTER("Dimension Value"."Dimension Code", 'EMPLOYEE CODES');
+                "Dimension Value".SETFILTER("Dimension Value".Code, '%1', '17CA074');
             end;
         }
     }

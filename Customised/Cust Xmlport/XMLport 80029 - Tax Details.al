@@ -6,25 +6,25 @@ xmlport 80029 "Tax Details"
     {
         textelement(TaxDetails)
         {
-            tableelement("<taxdetail>";"Tax Detail")
+            tableelement("<taxdetail>"; "Tax Detail")
             {
                 XmlName = 'TaxDetail';
-                fieldelement(TaxJurisdictionCode;"<TaxDetail>"."Tax Jurisdiction Code")
+                fieldelement(TaxJurisdictionCode; "<TaxDetail>"."Tax Jurisdiction Code")
                 {
                 }
-                fieldelement(TaxGroupCode;"<TaxDetail>"."Tax Group Code")
+                fieldelement(TaxGroupCode; "<TaxDetail>"."Tax Group Code")
                 {
                 }
-                fieldelement(EffectiveDate;"<TaxDetail>"."Effective Date")
+                fieldelement(EffectiveDate; "<TaxDetail>"."Effective Date")
                 {
                 }
-                fieldelement(TaxBelowMaximum;"<TaxDetail>"."Tax Below Maximum")
+                fieldelement(TaxBelowMaximum; "<TaxDetail>"."Tax Below Maximum")
                 {
                 }
-                fieldelement(FormsNotApplicable;"<TaxDetail>"."Forms Not Applicable")
+                fieldelement(FormsNotApplicable; "<TaxDetail>"."Forms Not Applicable")
                 {
                 }
-                fieldelement(FormCode;"<TaxDetail>"."Form Code")
+                fieldelement(FormCode; "<TaxDetail>"."Form Code")
                 {
                 }
             }

@@ -10,11 +10,11 @@ report 50014 "Lead Time"
 
     dataset
     {
-        dataitem("Company Information";"Company Information")
+        dataitem("Company Information"; "Company Information")
         {
             DataItemTableView = SORTING(Primary Key);
         }
-        dataitem("Purch. Rcpt. Header";"Purch. Rcpt. Header")
+        dataitem("Purch. Rcpt. Header"; "Purch. Rcpt. Header")
         {
             DataItemTableView = WHERE(Expected Receipt Date=FILTER(<>''));
             RequestFilterFields = "Posting Date","Order Date";

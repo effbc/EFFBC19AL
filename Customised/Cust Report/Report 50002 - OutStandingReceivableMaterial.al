@@ -7,7 +7,7 @@ report 50002 "OutStanding/ReceivableMaterial"
 
     dataset
     {
-        dataitem("Purchase Line";"Purchase Line")
+        dataitem("Purchase Line"; "Purchase Line")
         {
             DataItemTableView = WHERE(Outstanding Quantity=FILTER(>0),Document Type=CONST(Order),No.=FILTER(<>''));
             RequestFilterFields = "Expected Receipt Date";

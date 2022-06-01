@@ -6,19 +6,19 @@ report 60000 "Generate HTML Help"
 
     dataset
     {
-        dataitem(HelpTopics;"Object")
+        dataitem(HelpTopics; "Object")
         {
-            DataItemTableView = SORTING(Type,Company Name,ID) WHERE(Type=FILTER(Table..Codeunit));
-            RequestFilterFields = Type,ID;
-            dataitem("Field";"Field")
+            DataItemTableView = SORTING(Type, Company Name, ID) WHERE(Type = FILTER(Table .. Codeunit));
+            RequestFilterFields = Type, ID;
+            dataitem("Field"; "Field")
             {
-                DataItemLink = TableNo=FIELD(ID);
-                DataItemTableView = SORTING(TableNo,No.);
+                DataItemLink = TableNo = FIELD(ID);
+                DataItemTableView = SORTING(TableNo, No.);
                 RequestFilterFields = "No.";
 
                 trigger OnAfterGetRecord();
                 begin
-                    CreateTableTopic(HelpTopics,Field."No.",ProjectFolder + '\Source');
+                    CreateTableTopic(HelpTopics, Field."No.", ProjectFolder + '\Source');
                 end;
 
                 trigger OnPreDataItem();
@@ -30,85 +30,86 @@ report 60000 "Generate HTML Help"
             trigger OnAfterGetRecord();
             begin
                 CASE TRUE OF
-                ((Type = Type::Table) OR (Type = Type::Report)) AND (FieldFilter.GETFILTERS = ''):
-                  CreateTableTopic(HelpTopics,0,ProjectFolder + '\Source');
-                (Type = Type::Page) AND (FieldFilter.GETFILTERS = ''): CreateFormTopic(HelpTopics,0,ProjectFolder + '\Source');
+                    ((Type = Type::Table) OR (Type = Type::Report)) AND (FieldFilter.GETFILTERS = ''):
+                        CreateTableTopic(HelpTopics, 0, ProjectFolder + '\Source');
+                    (Type = Type::Page) AND (FieldFilter.GETFILTERS = ''):
+                        CreateFormTopic(HelpTopics, 0, ProjectFolder + '\Source');
                 END;
                 Process := Process + 1;
-                UpdateWindow(2,Total,Process);
+                UpdateWindow(2, Total, Process);
             end;
 
             trigger OnPreDataItem();
             begin
                 IF ProjectFolder = '' THEN
-                  ERROR(Error001);
+                    ERROR(Error001);
                 CurrReport.LANGUAGE(Language."Language ID");
                 IF NOT MakeTopics THEN CurrReport.BREAK;
                 Total := HelpTopics.COUNTAPPROX;
-                Window.UPDATE(1,'Creating Topics');
+                Window.UPDATE(1, 'Creating Topics');
             end;
         }
-        dataitem("Integer";"Integer")
+        dataitem("Integer"; "Integer")
         {
-            DataItemTableView = SORTING(Number) WHERE(Number=CONST(1));
-            dataitem(Gate;"Object")
+            DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+            dataitem(Gate; "Object")
             {
-                DataItemTableView = SORTING(Type,Company Name,ID);
+                DataItemTableView = SORTING(Type, Company Name, ID);
 
                 trigger OnAfterGetRecord();
                 begin
-                    GateFile.WRITE(STRSUBSTNO('%1_%2: "%3"',GetObjectLetter(Gate),ID,Ascii2Ansi(GetCurrLangObjName(Gate))));
+                    GateFile.WRITE(STRSUBSTNO('%1_%2: "%3"', GetObjectLetter(Gate), ID, Ascii2Ansi(GetCurrLangObjName(Gate))));
                     Process := Process + 1;
-                    UpdateWindow(2,Total,Process);
+                    UpdateWindow(2, Total, Process);
                 end;
 
                 trigger OnPreDataItem();
                 begin
                     Gate.COPYFILTERS(ObjectFilter);
                     GateField.COPYFILTERS(FieldFilter);
-                    ObjectFilter.COPYFILTER(ID,GateField.TableNo);
+                    ObjectFilter.COPYFILTER(ID, GateField.TableNo);
                     Process := 0;
-                    Window.UPDATE(1,'Creating Object.txt');
+                    Window.UPDATE(1, 'Creating Object.txt');
                     IF FieldFilter.GETFILTERS <> '' THEN BEGIN
-                      Total := GateField.COUNT;
-                      CurrReport.BREAK;
+                        Total := GateField.COUNT;
+                        CurrReport.BREAK;
                     END ELSE
-                      Total := Gate.COUNT + GateField.COUNT;
+                        Total := Gate.COUNT + GateField.COUNT;
                 end;
             }
-            dataitem(Gate2;"Object")
+            dataitem(Gate2; "Object")
             {
-                DataItemTableView = SORTING(Type,Company Name,ID);
-                dataitem(GateField;"Field")
+                DataItemTableView = SORTING(Type, Company Name, ID);
+                dataitem(GateField; "Field")
                 {
-                    DataItemLink = TableNo=FIELD(ID);
-                    DataItemTableView = SORTING(TableNo,No.);
+                    DataItemLink = TableNo = FIELD(ID);
+                    DataItemTableView = SORTING(TableNo, No.);
 
                     trigger OnAfterGetRecord();
                     begin
-                        GateFile.WRITE(STRSUBSTNO('%1_%2_%3: "%4"',GetObjectLetter(Gate2),Gate2.ID,"No.",Ascii2Ansi("Field Caption")));
+                        GateFile.WRITE(STRSUBSTNO('%1_%2_%3: "%4"', GetObjectLetter(Gate2), Gate2.ID, "No.", Ascii2Ansi("Field Caption")));
                         Process := Process + 1;
-                        Window.UPDATE(1,GateField.TableName);
-                        Window.UPDATE(2,ROUND(Process/Total*10000,1));
+                        Window.UPDATE(1, GateField.TableName);
+                        Window.UPDATE(2, ROUND(Process / Total * 10000, 1));
                     end;
 
                     trigger OnPreDataItem();
                     begin
-                        FieldFilter.COPYFILTER("No.",GateField."No.");
+                        FieldFilter.COPYFILTER("No.", GateField."No.");
                     end;
                 }
 
                 trigger OnPreDataItem();
                 begin
                     Gate2.COPYFILTERS(ObjectFilter);
-                    Gate2.SETRANGE(Type,Gate2.Type::Table);
+                    Gate2.SETRANGE(Type, Gate2.Type::Table);
                 end;
             }
 
             trigger OnPostDataItem();
             begin
                 IF NOT MakeObjTxt THEN CurrReport.BREAK;
-                  GateFile.CLOSE;
+                GateFile.CLOSE;
             end;
 
             trigger OnPreDataItem();
@@ -116,64 +117,68 @@ report 60000 "Generate HTML Help"
                 IF NOT MakeObjTxt THEN CurrReport.BREAK;
                 GateFile.TEXTMODE(TRUE);
                 IF FILE.EXISTS(ProjectFolder + '\Application\Object.txt') THEN BEGIN
-                  CASE FileExistsObject OF
-                  FileExistsObject::Ignore: BEGIN
-                    MakeObjTxt := FALSE;
-                    CurrReport.BREAK;
-                  END;
-                  FileExistsObject::Append: BEGIN
-                    GateFile.WRITEMODE(TRUE);
-                    GateFile.OPEN(ProjectFolder + '\Application\Object.txt');
-                    GateFile.SEEK(GateFile.LEN);
-                  END;
-                  FileExistsObject::Owerwrite:
-                    GateFile.CREATE(ProjectFolder + '\Application\Object.txt');
-                  END;
+                    CASE FileExistsObject OF
+                        FileExistsObject::Ignore:
+                            BEGIN
+                                MakeObjTxt := FALSE;
+                                CurrReport.BREAK;
+                            END;
+                        FileExistsObject::Append:
+                            BEGIN
+                                GateFile.WRITEMODE(TRUE);
+                                GateFile.OPEN(ProjectFolder + '\Application\Object.txt');
+                                GateFile.SEEK(GateFile.LEN);
+                            END;
+                        FileExistsObject::Owerwrite:
+                            GateFile.CREATE(ProjectFolder + '\Application\Object.txt');
+                    END;
                 END ELSE
-                  GateFile.CREATE(ProjectFolder + '\Application\Object.txt');
+                    GateFile.CREATE(ProjectFolder + '\Application\Object.txt');
             end;
         }
-        dataitem(Toc;"Object")
+        dataitem(Toc; "Object")
         {
-            DataItemTableView = SORTING(Type,Name);
+            DataItemTableView = SORTING(Type, Name);
 
             trigger OnAfterGetRecord();
             begin
                 IF Type <> LastTocLevel THEN BEGIN
-                  IF LastTocLevel > 0 THEN
-                    TocFile.WRITE('</UL>');
-                  CASE Type OF
-                    Type::Table:TOCGroupHeader(TocFile,TocTableTypeTxt);
-                    Type::Report:TOCGroupHeader(TocFile,TocReportTypeTxt);
-                  ELSE
-                    TOCGroupHeader(TocFile,STRSUBSTNO(TocUnsupTypeTxt,Toc.Type));
-                  END;
-                  TocFile.WRITE('<UL>');
+                    IF LastTocLevel > 0 THEN
+                        TocFile.WRITE('</UL>');
+                    CASE Type OF
+                        Type::Table:
+                            TOCGroupHeader(TocFile, TocTableTypeTxt);
+                        Type::Report:
+                            TOCGroupHeader(TocFile, TocReportTypeTxt);
+                        ELSE
+                            TOCGroupHeader(TocFile, STRSUBSTNO(TocUnsupTypeTxt, Toc.Type));
+                    END;
+                    TocFile.WRITE('<UL>');
                 END;
                 IF IsABatchJob(Toc) THEN BEGIN
-                  BatchJobsToc := Toc;
-                  BatchJobsToc.INSERT;
+                    BatchJobsToc := Toc;
+                    BatchJobsToc.INSERT;
                 END ELSE
-                  TOCEntry(TocFile,Toc);
+                    TOCEntry(TocFile, Toc);
                 LastTocLevel := Type;
                 Process := Process + 1;
-                UpdateWindow(2,Total,Process);
+                UpdateWindow(2, Total, Process);
             end;
 
             trigger OnPostDataItem();
             begin
                 IF NOT MakeTOC THEN CurrReport.BREAK;
                 TocFile.WRITE('</UL>');
-                TOCGroupHeader(TocFile,TocBatchTypeTxt);
-                BatchJobsToc.SETCURRENTKEY(Type,Name);
+                TOCGroupHeader(TocFile, TocBatchTypeTxt);
+                BatchJobsToc.SETCURRENTKEY(Type, Name);
                 IF BatchJobsToc.FIND('-') THEN BEGIN
-                  TocFile.WRITE('<UL>');
-                  REPEAT
-                    TOCEntry(TocFile,BatchJobsToc);
-                    Process := Process + 1;
-                    UpdateWindow(2,Total,Process);
-                  UNTIL BatchJobsToc.NEXT = 0;
-                  TocFile.WRITE('</UL>');
+                    TocFile.WRITE('<UL>');
+                    REPEAT
+                        TOCEntry(TocFile, BatchJobsToc);
+                        Process := Process + 1;
+                        UpdateWindow(2, Total, Process);
+                    UNTIL BatchJobsToc.NEXT = 0;
+                    TocFile.WRITE('</UL>');
                 END;
                 TocFile.WRITE('</UL>');
                 TOCFooter(TocFile);
@@ -183,20 +188,20 @@ report 60000 "Generate HTML Help"
             begin
                 IF NOT MakeTOC THEN CurrReport.BREAK;
                 IF FILE.EXISTS(ProjectFolder + '\Source\Contents.hhc') THEN
-                  IF FileExistsToc = FileExistsToc::Ignore THEN BEGIN
-                    MakeTOC := FALSE;
-                    CurrReport.BREAK;
-                  END;
+                    IF FileExistsToc = FileExistsToc::Ignore THEN BEGIN
+                        MakeTOC := FALSE;
+                        CurrReport.BREAK;
+                    END;
                 CurrReport.LANGUAGE(Language."Language ID");
                 Toc.COPYFILTERS(ObjectFilter);
                 Process := 0;
                 Total := Toc.COUNTAPPROX;
-                Window.UPDATE(1,'Creating TOC');
+                Window.UPDATE(1, 'Creating TOC');
                 TocFile.TEXTMODE(TRUE);
                 TocFile.CREATE(ProjectFolder + '\Source\Contents.hhc');
                 TOCHeader(TocFile);
                 TocFile.WRITE('<UL>');
-                TOCGroupHeader(TocFile,TocHeaderTxt);
+                TOCGroupHeader(TocFile, TocHeaderTxt);
                 TocFile.WRITE('<UL>');
             end;
         }
@@ -233,45 +238,45 @@ report 60000 "Generate HTML Help"
     end;
 
     var
-        FieldFilter : Record "Field";
-        ObjectFilter : Record "Object";
-        BatchJobsToc : Record "Object" temporary;
-        Language : Record "Windows Language";
-        ProjectFolder : Text[250];
-        AsciiStr : Text[250];
-        AnsiStr : Text[250];
-        Window : Dialog;
-        GateFile : File;
-        TocFile : File;
-        TocHeaderTxt : TextConst DAN='Tabeller, Rapporter &amp; K¢rsler',ENU='Tables, Reports &amp; Batch Jobs';
-        TocTableTypeTxt : TextConst DAN='Tabeller',ENU='Tables';
-        TocReportTypeTxt : TextConst DAN='Rapporter',ENU='Reports';
-        LastTocLevel : Integer;
-        TocUnsupTypeTxt : TextConst DAN='Objekttypen %1 skal ikke være i TOC',ENU='The object type %1 should not be in the TOC';
-        TocBatchTypeTxt : TextConst DAN='K¢rsler',ENU='Batch Jobs';
-        Process : Integer;
-        Total : Integer;
-        LastTime : Time;
-        FileExistsTopics : Option Ignore,Confirm,Owerwrite;
-        FileExistsObject : Option Ignore,Append,Owerwrite;
-        FileExistsToc : Option Ignore,Owerwrite;
-        Created : Boolean;
-        Error001 : TextConst DAN='Projektmappe skal udfyldes',ENU='Project Folder must not be empty';
-        MakeTopics : Boolean;
-        MakeObjTxt : Boolean;
-        MakeTOC : Boolean;
+        FieldFilter: Record "Field";
+        ObjectFilter: Record "Object";
+        BatchJobsToc: Record "Object" temporary;
+        Language: Record "Windows Language";
+        ProjectFolder: Text[250];
+        AsciiStr: Text[250];
+        AnsiStr: Text[250];
+        Window: Dialog;
+        GateFile: File;
+        TocFile: File;
+        TocHeaderTxt: TextConst DAN = 'Tabeller, Rapporter &amp; K¢rsler', ENU = 'Tables, Reports &amp; Batch Jobs';
+        TocTableTypeTxt: TextConst DAN = 'Tabeller', ENU = 'Tables';
+        TocReportTypeTxt: TextConst DAN = 'Rapporter', ENU = 'Reports';
+        LastTocLevel: Integer;
+        TocUnsupTypeTxt: TextConst DAN = 'Objekttypen %1 skal ikke være i TOC', ENU = 'The object type %1 should not be in the TOC';
+        TocBatchTypeTxt: TextConst DAN = 'K¢rsler', ENU = 'Batch Jobs';
+        Process: Integer;
+        Total: Integer;
+        LastTime: Time;
+        FileExistsTopics: Option Ignore,Confirm,Owerwrite;
+        FileExistsObject: Option Ignore,Append,Owerwrite;
+        FileExistsToc: Option Ignore,Owerwrite;
+        Created: Boolean;
+        Error001: TextConst DAN = 'Projektmappe skal udfyldes', ENU = 'Project Folder must not be empty';
+        MakeTopics: Boolean;
+        MakeObjTxt: Boolean;
+        MakeTOC: Boolean;
 
     [LineStart(11448)]
-    procedure UpdateWindow(LineNo : Integer;Total : Integer;Process : Integer);
+    procedure UpdateWindow(LineNo: Integer; Total: Integer; Process: Integer);
     begin
         IF TIME - LastTime > 500 THEN BEGIN
-          Window.UPDATE(LineNo,ROUND(Process/Total*10000,1));
-          LastTime := TIME;
+            Window.UPDATE(LineNo, ROUND(Process / Total * 10000, 1));
+            LastTime := TIME;
         END;
     end;
 
     [LineStart(11454)]
-    procedure TOCHeader(var TocFile : File);
+    procedure TOCHeader(var TocFile: File);
     begin
         TocFile.WRITE('<html>');
         TocFile.WRITE('<!-- Sitemap 1.0 -->');
@@ -283,47 +288,47 @@ report 60000 "Generate HTML Help"
     end;
 
     [LineStart(11463)]
-    procedure TOCGroupHeader(var TocFile : File;TextLine : Text[250]);
+    procedure TOCGroupHeader(var TocFile: File; TextLine: Text[250]);
     begin
         TocFile.WRITE('<li><object type="text/sitemap">');
-        TocFile.WRITE(STRSUBSTNO('<param name="Name" value="%1">',Ascii2Ansi(TextLine)));
+        TocFile.WRITE(STRSUBSTNO('<param name="Name" value="%1">', Ascii2Ansi(TextLine)));
         TocFile.WRITE('</object>');
     end;
 
     [LineStart(11468)]
-    procedure TOCEntry(var TocFile : File;"Object" : Record "Object");
+    procedure TOCEntry(var TocFile: File; "Object": Record "Object");
     begin
         TocFile.WRITE('<li><object type="text/sitemap">');
-        TocFile.WRITE(STRSUBSTNO('<param name="Name" value="%1">',Ascii2Ansi(CreateContextString(Object,0))));
-        TocFile.WRITE(STRSUBSTNO('<param name="Local" value="%1">',CreateFileName(Object,0)));
+        TocFile.WRITE(STRSUBSTNO('<param name="Name" value="%1">', Ascii2Ansi(CreateContextString(Object, 0))));
+        TocFile.WRITE(STRSUBSTNO('<param name="Local" value="%1">', CreateFileName(Object, 0)));
         TocFile.WRITE('</object>');
     end;
 
     [LineStart(11474)]
-    procedure TOCFooter(var TocFile : File);
+    procedure TOCFooter(var TocFile: File);
     begin
         TocFile.WRITE('</html>');
     end;
 
     [LineStart(11477)]
-    procedure CreateTableTopic("Object" : Record "Object";Parameter : Integer;Path : Text[250]);
+    procedure CreateTableTopic("Object": Record "Object"; Parameter: Integer; Path: Text[250]);
     var
-        f : File;
-        TempContextString : Text[100];
+        f: File;
+        TempContextString: Text[100];
     begin
-        IF FILE.EXISTS(STRSUBSTNO('%1\%2',Path,CreateFileName(Object,Parameter))) THEN
-          IF FileExistsTopics = FileExistsTopics::Ignore THEN EXIT;
-        TempContextString := Ascii2Ansi(CreateContextString(Object,Parameter));
+        IF FILE.EXISTS(STRSUBSTNO('%1\%2', Path, CreateFileName(Object, Parameter))) THEN
+            IF FileExistsTopics = FileExistsTopics::Ignore THEN EXIT;
+        TempContextString := Ascii2Ansi(CreateContextString(Object, Parameter));
         f.QUERYREPLACE(FileExistsTopics = FileExistsTopics::Confirm);
         f.TEXTMODE(TRUE);
-        f.CREATE(STRSUBSTNO('%1\%2',Path,CreateFileName(Object,Parameter)));
+        f.CREATE(STRSUBSTNO('%1\%2', Path, CreateFileName(Object, Parameter)));
         f.WRITE('<HTML>');
         f.WRITE('<HEAD>');
-        f.WRITE(STRSUBSTNO('<TITLE>%1</TITLE>',TempContextString));
+        f.WRITE(STRSUBSTNO('<TITLE>%1</TITLE>', TempContextString));
         f.WRITE('<LINK rel="stylesheet" href="master.css" type="text/css">');
         f.WRITE('</HEAD>');
         f.WRITE('<BODY>');
-        f.WRITE(STRSUBSTNO('<H1>%1</H1>',TempContextString));
+        f.WRITE(STRSUBSTNO('<H1>%1</H1>', TempContextString));
         f.WRITE('<P>&nbsp;</P>');
         f.WRITE('</BODY>');
         f.WRITE('</HTML>');
@@ -331,21 +336,21 @@ report 60000 "Generate HTML Help"
     end;
 
     [LineStart(11496)]
-    procedure CreateFormTopic("Object" : Record "Object";Parameter : Integer;Path : Text[250]);
+    procedure CreateFormTopic("Object": Record "Object"; Parameter: Integer; Path: Text[250]);
     var
-        f : File;
-        TempContextString : Text[100];
+        f: File;
+        TempContextString: Text[100];
     begin
-        TempContextString := Ascii2Ansi(CreateContextString(Object,Parameter));
+        TempContextString := Ascii2Ansi(CreateContextString(Object, Parameter));
         f.TEXTMODE(TRUE);
-        f.CREATE(STRSUBSTNO('%1\%2',Path,CreateFileName(Object,Parameter)));
+        f.CREATE(STRSUBSTNO('%1\%2', Path, CreateFileName(Object, Parameter)));
         f.WRITE('<HTML>');
         f.WRITE('<HEAD>');
-        f.WRITE(STRSUBSTNO('<TITLE>%1</TITLE>',TempContextString));
+        f.WRITE(STRSUBSTNO('<TITLE>%1</TITLE>', TempContextString));
         f.WRITE('<LINK rel="stylesheet" href="master.css" type="text/css">');
         f.WRITE('</HEAD>');
         f.WRITE('<BODY>');
-        f.WRITE(STRSUBSTNO('<H1>%1</H1>',TempContextString));
+        f.WRITE(STRSUBSTNO('<H1>%1</H1>', TempContextString));
         f.WRITE('<P>&nbsp;</P>');
         f.WRITE('<P>');
         f.WRITE('<A HREF="javascript:Alink1.Click()">Related Tasks<OBJECT');
@@ -358,7 +363,7 @@ report 60000 "Generate HTML Help"
         f.WRITE('NAME="Command" VALUE="ALink,MENU"><PARAM');
         f.WRITE('NAME="Font" VALUE="MS Sans Serif,8,0,,"><PARAM');
         f.WRITE('NAME="Item1" VALUE=""><PARAM');
-        f.WRITE(STRSUBSTNO('NAME="Item2" VALUE="F_%1_TASKS"></OBJECT></A></P>',Object.ID));
+        f.WRITE(STRSUBSTNO('NAME="Item2" VALUE="F_%1_TASKS"></OBJECT></A></P>', Object.ID));
         f.WRITE('<P>');
         f.WRITE('<A HREF="javascript:Alink2.Click()">More Information<OBJECT');
         f.WRITE('CLASSID = "clsid:ADB880A6-D8FF-11CF-9377-00AA003B7A11"');
@@ -370,78 +375,78 @@ report 60000 "Generate HTML Help"
         f.WRITE('NAME="Command" VALUE="ALink,MENU"><PARAM');
         f.WRITE('NAME="Font" VALUE="MS Sans Serif,8,0,,"><PARAM');
         f.WRITE('NAME="Item1" VALUE=""><PARAM');
-        f.WRITE(STRSUBSTNO('NAME="Item2" VALUE="F_%1_OVERVIEWS"></OBJECT></A></P>',Object.ID));
+        f.WRITE(STRSUBSTNO('NAME="Item2" VALUE="F_%1_OVERVIEWS"></OBJECT></A></P>', Object.ID));
         f.WRITE('</BODY>');
         f.WRITE('</HTML>');
         f.CLOSE;
     end;
 
     [LineStart(11536)]
-    procedure CreateFileName("Object" : Record "Object";Parameter : Integer) : Text[100];
+    procedure CreateFileName("Object": Record "Object"; Parameter: Integer): Text[100];
     begin
         IF Parameter <> 0 THEN
-          EXIT(STRSUBSTNO('%1_%2_%3.htm',GetObjectLetter(Object),Object.ID,Parameter))
+            EXIT(STRSUBSTNO('%1_%2_%3.htm', GetObjectLetter(Object), Object.ID, Parameter))
         ELSE
-          EXIT(STRSUBSTNO('%1_%2.htm',GetObjectLetter(Object),Object.ID));
+            EXIT(STRSUBSTNO('%1_%2.htm', GetObjectLetter(Object), Object.ID));
     end;
 
     [LineStart(11542)]
-    procedure CreateContextString("Object" : Record "Object";Parameter : Integer) : Text[100];
+    procedure CreateContextString("Object": Record "Object"; Parameter: Integer): Text[100];
     var
-        Field2 : Record "Field";
+        Field2: Record "Field";
     begin
         IF Parameter <> 0 THEN BEGIN
-          IF Field2.GET(Object.ID,Parameter) THEN
-            EXIT(STRSUBSTNO('($ %1_%2_%3 %4 $)',GetObjectLetter(Object),Object.ID,Parameter,Field2."Field Caption"));
-          END
+            IF Field2.GET(Object.ID, Parameter) THEN
+                EXIT(STRSUBSTNO('($ %1_%2_%3 %4 $)', GetObjectLetter(Object), Object.ID, Parameter, Field2."Field Caption"));
+        END
         ELSE
-          EXIT(STRSUBSTNO('($ %1_%2 %3 $)',GetObjectLetter(Object),Object.ID,GetCurrLangObjName(Object)));
+            EXIT(STRSUBSTNO('($ %1_%2 %3 $)', GetObjectLetter(Object), Object.ID, GetCurrLangObjName(Object)));
     end;
 
     [LineStart(11550)]
-    procedure GetCurrLangObjName(Obj : Record "Object") : Text[30];
+    procedure GetCurrLangObjName(Obj: Record "Object"): Text[30];
     var
-        ObjTrans : Record "Object Translation";
+        ObjTrans: Record "Object Translation";
     begin
-        ObjTrans.SETRANGE("Object Type",Obj.Type);
-        ObjTrans.SETRANGE("Object ID",Obj.ID);
-        ObjTrans.SETRANGE("Language ID",Language."Language ID");
+        ObjTrans.SETRANGE("Object Type", Obj.Type);
+        ObjTrans.SETRANGE("Object ID", Obj.ID);
+        ObjTrans.SETRANGE("Language ID", Language."Language ID");
         IF ObjTrans.FIND('-') THEN
-          EXIT(ObjTrans.Description)
+            EXIT(ObjTrans.Description)
         ELSE
-          EXIT(Obj.Name);
+            EXIT(Obj.Name);
     end;
 
     [LineStart(11559)]
-    procedure GetObjectLetter(Obj : Record "Object") : Text[1];
+    procedure GetObjectLetter(Obj: Record "Object"): Text[1];
     begin
         IF Obj.Type = Obj.Type::Report THEN
-          IF IsABatchJob(Obj) THEN
-            EXIT('B')
-          ELSE
-            EXIT('R')
+            IF IsABatchJob(Obj) THEN
+                EXIT('B')
+            ELSE
+                EXIT('R')
         ELSE
-          EXIT(COPYSTR(FORMAT(Obj.Type),1,1));
+            EXIT(COPYSTR(FORMAT(Obj.Type), 1, 1));
     end;
 
     [LineStart(11568)]
-    procedure IsABatchJob(Obj : Record "Object") : Boolean;
+    procedure IsABatchJob(Obj: Record "Object"): Boolean;
     var
-        ObjStream : InStream;
-        BinData : Binary[2000];
+        ObjStream: InStream;
+        BinData: Binary[2000];
         Counter : Integer;
         intChar : array [3] of Integer;
     begin
         IF Obj.Type <> Obj.Type::Report THEN EXIT(FALSE);
-        Obj.CALCFIELDS("BLOB Reference");
-        Obj."BLOB Reference".CREATEINSTREAM(ObjStream);
-        WHILE NOT ObjStream.EOS DO BEGIN
+                                     Obj.CALCFIELDS("BLOB Reference");
+                                     Obj."BLOB Reference".CREATEINSTREAM(ObjStream);
+                                     WHILE NOT ObjStream.EOS DO BEGIN
           Counter := ObjStream.READ(BinData);
-          FOR Counter := 1 TO 1998 DO BEGIN
+                                     FOR Counter := 1 TO 1998 DO BEGIN
             intChar[1] := BinData[Counter];
-            intChar[2] := BinData[Counter+1];
-            intChar[3] := BinData[Counter+2];
-            IF (intChar[1] = 37) AND (intChar[2] = 72) AND (intChar[3] = 4) THEN
+                                     intChar[2] := BinData[Counter+1];
+                                     intChar[3] := BinData[Counter+2];
+                                     IF (intChar[1] = 37) AND (intChar[2] = 72) AND (intChar[3] = 4) THEN
               IF BinData[Counter+4] = 1 THEN
                 EXIT(TRUE);
           END;

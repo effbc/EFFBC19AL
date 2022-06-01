@@ -7,53 +7,53 @@ report 33000028 "Pay Emp. Project Cost (Hourly)"
 
     dataset
     {
-        dataitem("Pay Employee Project Cost";"Pay Employee Project Cost")
+        dataitem("Pay Employee Project Cost"; "Pay Employee Project Cost")
         {
-            DataItemTableView = SORTING(Employee No.,Project Code,OnDate);
+            DataItemTableView = SORTING(Employee No., Project Code, OnDate);
             RequestFilterFields = "Employee No.";
-            column(FORMAT_TODAY_0_4_;FORMAT(TODAY,0,4))
+            column(FORMAT_TODAY_0_4_; FORMAT(TODAY, 0, 4))
             {
             }
-            column(COMPANYNAME;COMPANYNAME)
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(CurrReport_PAGENO;CurrReport.PAGENO)
+            column(CurrReport_PAGENO; CurrReport.PAGENO)
             {
             }
-            column(USERID;USERID)
+            column(USERID; USERID)
             {
             }
-            column(Pay_Employee_Project_Cost__Employee_No__;"Employee No.")
+            column(Pay_Employee_Project_Cost__Employee_No__; "Employee No.")
             {
             }
-            column(EmployeeName;EmployeeName)
+            column(EmployeeName; EmployeeName)
             {
             }
-            column(Pay_Employee_Project_Cost__Project_Code_;"Project Code")
+            column(Pay_Employee_Project_Cost__Project_Code_; "Project Code")
             {
             }
-            column(Pay_Employee_Project_Cost_OnDate;OnDate)
+            column(Pay_Employee_Project_Cost_OnDate; OnDate)
             {
             }
-            column(Pay_Employee_Project_Cost_Hours;Hours)
+            column(Pay_Employee_Project_Cost_Hours; Hours)
             {
             }
-            column(Pay_Employee_Project_Cost__Hourly_Basis_Caption;Pay_Employee_Project_Cost__Hourly_Basis_CaptionLbl)
+            column(Pay_Employee_Project_Cost__Hourly_Basis_Caption; Pay_Employee_Project_Cost__Hourly_Basis_CaptionLbl)
             {
             }
-            column(CurrReport_PAGENOCaption;CurrReport_PAGENOCaptionLbl)
+            column(CurrReport_PAGENOCaption; CurrReport_PAGENOCaptionLbl)
             {
             }
-            column(Pay_Employee_Project_Cost__Employee_No__Caption;FIELDCAPTION("Employee No."))
+            column(Pay_Employee_Project_Cost__Employee_No__Caption; FIELDCAPTION("Employee No."))
             {
             }
-            column(No__of_Hours_worked_Caption;No__of_Hours_worked_CaptionLbl)
+            column(No__of_Hours_worked_Caption; No__of_Hours_worked_CaptionLbl)
             {
             }
-            column(Pay_Employee_Project_Cost_OnDateCaption;FIELDCAPTION(OnDate))
+            column(Pay_Employee_Project_Cost_OnDateCaption; FIELDCAPTION(OnDate))
             {
             }
-            column(Pay_Employee_Project_Cost__Project_Code_Caption;FIELDCAPTION("Project Code"))
+            column(Pay_Employee_Project_Cost__Project_Code_Caption; FIELDCAPTION("Project Code"))
             {
             }
 
@@ -81,12 +81,12 @@ report 33000028 "Pay Emp. Project Cost (Hourly)"
     }
 
     var
-        LastFieldNo : Integer;
-        FooterPrinted : Boolean;
-        EmployeeName : Text[50];
-        PayPayrollEmployee : Record Employee;
-        Pay_Employee_Project_Cost__Hourly_Basis_CaptionLbl : Label 'Pay Employee Project Cost (Hourly Basis)';
-        CurrReport_PAGENOCaptionLbl : Label 'Page';
-        No__of_Hours_worked_CaptionLbl : Label 'No. of Hours worked.';
+        LastFieldNo: Integer;
+        FooterPrinted: Boolean;
+        EmployeeName: Text[50];
+        PayPayrollEmployee: Record Employee;
+        Pay_Employee_Project_Cost__Hourly_Basis_CaptionLbl: Label 'Pay Employee Project Cost (Hourly Basis)';
+        CurrReport_PAGENOCaptionLbl: Label 'Page';
+        No__of_Hours_worked_CaptionLbl: Label 'No. of Hours worked.';
 }
 

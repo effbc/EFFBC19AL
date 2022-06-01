@@ -5,120 +5,120 @@ report 33000905 "Day Wise Issues New1"
 
     dataset
     {
-        dataitem("Posted Material Issues Line";"Posted Material Issues Line")
+        dataitem("Posted Material Issues Line"; "Posted Material Issues Line")
         {
-            DataItemTableView = SORTING(Material Requisition Date,Production BOM No.,Issued DateTime,Dept,Item No.) ORDER(Ascending);
-            RequestFilterFields = "Material Requisition Date",Dept,"Production BOM No.";
+            DataItemTableView = SORTING(Material Requisition Date, Production BOM No., Issued DateTime, Dept, Item No.) ORDER(Ascending);
+            RequestFilterFields = "Material Requisition Date", Dept, "Production BOM No.";
             ReqFilterHeading = 'Posted Material Issues Line';
-            column(Item_No;"Posted Material Issues Line"."Item No.")
+            column(Item_No; "Posted Material Issues Line"."Item No.")
             {
             }
-            column(Desc;"Posted Material Issues Line".Description)
+            column(Desc; "Posted Material Issues Line".Description)
             {
             }
-            column(Qty;"Posted Material Issues Line".Quantity)
+            column(Qty; "Posted Material Issues Line".Quantity)
             {
             }
-            column(UOM;"Posted Material Issues Line"."Unit of Measure")
+            column(UOM; "Posted Material Issues Line"."Unit of Measure")
             {
             }
-            column(Mat_Req_Date;"Posted Material Issues Line"."Material Requisition Date")
+            column(Mat_Req_Date; "Posted Material Issues Line"."Material Requisition Date")
             {
             }
-            column(Dept;"Posted Material Issues Line".Dept)
+            column(Dept; "Posted Material Issues Line".Dept)
             {
             }
-            column(Prod_Ordr_No;"Posted Material Issues Line"."Prod. Order No.")
+            column(Prod_Ordr_No; "Posted Material Issues Line"."Prod. Order No.")
             {
             }
-            column(Prod_Order_Line_No;"Posted Material Issues Line"."Prod. Order Line No.")
+            column(Prod_Order_Line_No; "Posted Material Issues Line"."Prod. Order Line No.")
             {
             }
-            column(Prod_BOM_No;ProdBOMNo)
+            column(Prod_BOM_No; ProdBOMNo)
             {
             }
-            column(CURRENTDATETIME;CURRENTDATETIME)
+            column(CURRENTDATETIME; CURRENTDATETIME)
             {
             }
-            column(BinAddrs;BinAddrs)
+            column(BinAddrs; BinAddrs)
             {
             }
-            column(MechOrWring;MechOrWring)
+            column(MechOrWring; MechOrWring)
             {
             }
-            column(HeaderDesc;HeaderDesc)
+            column(HeaderDesc; HeaderDesc)
             {
             }
-            column(ProdBOMDesc;ProdBOMDesc)
+            column(ProdBOMDesc; ProdBOMDesc)
             {
             }
-            column(ReleasedDateTime;ReleasedDateTime)
+            column(ReleasedDateTime; ReleasedDateTime)
             {
             }
-            column(IssuedDateTime;IssuedDateTime)
+            column(IssuedDateTime; IssuedDateTime)
             {
             }
-            column(PostingDate;PostingDate)
+            column(PostingDate; PostingDate)
             {
             }
-            column(Req_By;Req_By)
+            column(Req_By; Req_By)
             {
             }
-            column(ProjCodes;ProjCodes)
+            column(ProjCodes; ProjCodes)
             {
             }
-            column(PMINos;PMINos)
+            column(PMINos; PMINos)
             {
             }
-            column(TransferFromCode;"Posted Material Issues Line"."Transfer-from Code")
+            column(TransferFromCode; "Posted Material Issues Line"."Transfer-from Code")
             {
             }
-            column(TransferToCode;"Posted Material Issues Line"."Transfer-to Code")
+            column(TransferToCode; "Posted Material Issues Line"."Transfer-to Code")
             {
             }
-            column(ProdOrderNosSeries;ProdOrderNos)
+            column(ProdOrderNosSeries; ProdOrderNos)
             {
             }
-            column(ItmDesc2;ItmDesc2)
+            column(ItmDesc2; ItmDesc2)
             {
             }
-            column(ShortageCount;ShortageCount)
+            column(ShortageCount; ShortageCount)
             {
             }
-            column(RequestedByCaption;RequestedByCaption)
+            column(RequestedByCaption; RequestedByCaption)
             {
             }
-            column(ProdCodesCaption;ProdCodesCaption)
+            column(ProdCodesCaption; ProdCodesCaption)
             {
             }
-            column(Tran4CodeCaption;Tran4CodeCaption)
+            column(Tran4CodeCaption; Tran4CodeCaption)
             {
             }
-            column(Trans2CodeCaption;Trans2CodeCaption)
+            column(Trans2CodeCaption; Trans2CodeCaption)
             {
             }
-            column(CompPCBCaption;CompPCBCaption)
+            column(CompPCBCaption; CompPCBCaption)
             {
             }
-            column(ReqDateCaption;ReqDateCaption)
+            column(ReqDateCaption; ReqDateCaption)
             {
             }
-            column(IssuedDateCaption;IssuedDateCaption)
+            column(IssuedDateCaption; IssuedDateCaption)
             {
             }
-            column(CompanyNameCaption;CompanyNameCaption)
+            column(CompanyNameCaption; CompanyNameCaption)
             {
             }
-            column(MatReqDateCaption;MatReqDateCaption)
+            column(MatReqDateCaption; MatReqDateCaption)
             {
             }
-            column(CurrtDateTime;CurrtDateTime)
+            column(CurrtDateTime; CurrtDateTime)
             {
             }
-            column(setcount;setcount)
+            column(setcount; setcount)
             {
             }
-            dataitem("Item Ledger Entry";"Item Ledger Entry")
+            dataitem("Item Ledger Entry"; "Item Ledger Entry")
             {
                 DataItemLink = Document No.=FIELD(Document No.),Item No.=FIELD(Item No.);
                 DataItemTableView = SORTING(Document No.,Item No.,Posting Date) ORDER(Ascending) WHERE(Entry Type=CONST(Transfer),Quantity=FILTER(>0));

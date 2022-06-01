@@ -15,10 +15,10 @@ page 60161 "Cal Proc Header List"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
             }
@@ -30,6 +30,6 @@ page 60161 "Cal Proc Header List"
     }
 
     var
-        CalProcSetup : Record "Calibration Setup";
+        CalProcSetup: Record "Calibration Setup";
 }
 

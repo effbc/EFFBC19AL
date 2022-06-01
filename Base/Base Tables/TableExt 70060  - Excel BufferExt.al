@@ -5,18 +5,23 @@ tableextension 70060 ExcelBufferExt extends "Excel Buffer"
     {
         field(50000; "Font Name"; Text[100])
         {
+            DataClassification = CustomerContent;
         }
         field(50001; "Font Size"; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(50002; "Font Color"; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(50003; "Background Color"; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(50004; "Using Custom Format"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
     }
 

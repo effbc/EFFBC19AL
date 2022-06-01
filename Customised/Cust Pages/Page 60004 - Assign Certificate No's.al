@@ -12,25 +12,25 @@ page 60004 "Assign Certificate No's"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                 }
-                field("Document Type";"Document Type")
+                field("Document Type"; "Document Type")
                 {
                 }
-                field("Customer Acc.No.";"Customer Acc.No.")
+                field("Customer Acc.No."; "Customer Acc.No.")
                 {
                 }
-                field("TDS / Work Tax Amount";"TDS / Work Tax Amount")
+                field("TDS / Work Tax Amount"; "TDS / Work Tax Amount")
                 {
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field(Type;Type)
+                field(Type; Type)
                 {
                 }
-                field(Assign;Assign)
+                field(Assign; Assign)
                 {
                 }
             }

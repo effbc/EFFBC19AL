@@ -6,16 +6,16 @@ xmlport 80086 "Item Locations"
     {
         textelement(Locations)
         {
-            tableelement(Location;Location)
+            tableelement(Location; Location)
             {
                 XmlName = 'Location';
-                fieldelement(Code;Location.Code)
+                fieldelement(Code; Location.Code)
                 {
                 }
-                fieldelement(Name;Location.Name)
+                fieldelement(Name; Location.Name)
                 {
                 }
-                fieldelement(UseAsInTransit;Location."Use As In-Transit")
+                fieldelement(UseAsInTransit; Location."Use As In-Transit")
                 {
                 }
             }

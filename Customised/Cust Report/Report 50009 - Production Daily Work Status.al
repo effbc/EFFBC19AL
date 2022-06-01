@@ -7,70 +7,70 @@ report 50009 "Production Daily Work Status"
 
     dataset
     {
-        dataitem("Production Order";"Production Order")
+        dataitem("Production Order"; "Production Order")
         {
-            RequestFilterFields = Status,"No.","Prod Start date","Sales Order No.";
-            column(PlanOptionCaption;Plan)
+            RequestFilterFields = Status, "No.", "Prod Start date", "Sales Order No.";
+            column(PlanOptionCaption; Plan)
             {
             }
-            column(RoutOptionCaption;Rout)
+            column(RoutOptionCaption; Rout)
             {
             }
-            column(ConsumeOptionCaption;Consume)
+            column(ConsumeOptionCaption; Consume)
             {
             }
-            column(ReqOptionCaption;Req)
+            column(ReqOptionCaption; Req)
             {
             }
-            column(FinishOptionCaption;Finish)
+            column(FinishOptionCaption; Finish)
             {
             }
-            column(ProdOrderHead1Visible;ProdOrderHead1Visible)
+            column(ProdOrderHead1Visible; ProdOrderHead1Visible)
             {
             }
-            column(ProdOrderHead2Visible;ProdOrderHead2Visible)
+            column(ProdOrderHead2Visible; ProdOrderHead2Visible)
             {
             }
-            column(ProdBody3Visible;ProdBody3Visible)
+            column(ProdBody3Visible; ProdBody3Visible)
             {
             }
-            column(COMPANYNAME;COMPANYNAME)
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(Production_Order__No__;"No.")
+            column(Production_Order__No__; "No.")
             {
             }
-            column(Production_Order__Sales_Order_No__;"Sales Order No.")
+            column(Production_Order__Sales_Order_No__; "Sales Order No.")
             {
             }
-            column(Production_Request_PlanCaption;Production_Request_PlanCaptionLbl)
+            column(Production_Request_PlanCaption; Production_Request_PlanCaptionLbl)
             {
             }
-            column(Prod__Order_No_Caption;Prod__Order_No_CaptionLbl)
+            column(Prod__Order_No_Caption; Prod__Order_No_CaptionLbl)
             {
             }
-            column(Line_No_Caption;Line_No_CaptionLbl)
+            column(Line_No_Caption; Line_No_CaptionLbl)
             {
             }
-            column(Item_No_Caption;Item_No_CaptionLbl)
+            column(Item_No_Caption; Item_No_CaptionLbl)
             {
             }
-            column(DescriptionCaption;DescriptionCaptionLbl)
+            column(DescriptionCaption; DescriptionCaptionLbl)
             {
             }
-            column(QuantityCaption;QuantityCaptionLbl)
+            column(QuantityCaption; QuantityCaptionLbl)
             {
             }
-            column(Pending_QuantityCaption;Pending_QuantityCaptionLbl)
+            column(Pending_QuantityCaption; Pending_QuantityCaptionLbl)
             {
             }
-            column(Production_Order_Status;Status)
+            column(Production_Order_Status; Status)
             {
             }
-            dataitem("Prod. Order Routing Line";"Prod. Order Routing Line")
+            dataitem("Prod. Order Routing Line"; "Prod. Order Routing Line")
             {
                 DataItemLink = Prod. Order No.=FIELD(No.);
-                DataItemTableView = SORTING(Status,Prod. Order No.,Routing Reference No.,Routing No.,Operation No.) ORDER(Ascending) WHERE(Operation No.=FILTER(1000..9999));
+                DataItemTableView = SORTING(Status, Prod. Order No., Routing Reference No., Routing No., Operation No.) ORDER(Ascending) WHERE(Operation No.=FILTER(1000..9999));
                 RequestFilterFields = "Work Center No.";
                 ReqFilterHeading = 'Plan  And  Routing';
                 column(ProdRoutLineHead1Visible;ProdRoutLineHead1Visible)

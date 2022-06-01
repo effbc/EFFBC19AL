@@ -9,293 +9,286 @@ page 60210 "CS Others"
     {
         area(content)
         {
-            field(CurrentJnlBatchName;CurrentJnlBatchName)
+            field(CurrentJnlBatchName; CurrentJnlBatchName)
             {
                 Caption = 'Batch Name';
                 Lookup = true;
 
-                trigger OnLookup(Text : Text) : Boolean;
+                trigger OnLookup(Text: Text): Boolean;
                 begin
                     CurrPage.SAVERECORD;
-                    ResJnlManagement.LookupName(CurrentJnlBatchName,Rec);
+                    ResJnlManagement.LookupName(CurrentJnlBatchName, Rec);
                     CurrPage.UPDATE(FALSE);
 
-                    IF CurrentJnlBatchName='INST-OTH' THEN
-                    BEGIN
-                    ZonesVisible :=FALSE;
-                    DivisionVisible :=FALSE;
-                    StationVisible :=FALSE;
-                    StateVisible :=TRUE;
-                    DistrictVisible :=TRUE;
-                    CityVisible :=TRUE;
-                    "Product typeVisible" :=TRUE;
-                    "Sale order noVisible" :=TRUE;
-                    "Serial noVisible" :=TRUE;
-                    "Work DescriptionVisible" :=FALSE;
-                    "Training/DemoVisible" :=FALSE;
-                    DesignationVisible :=FALSE;
-                    LocationVisible :=FALSE;
-                    "Action takenVisible" :=FALSE;
-                    ReasonVisible :=FALSE;
-                    RemarksVisible :=FALSE;
-                    "Work Type CodeVisible" :=FALSE;
+                    IF CurrentJnlBatchName = 'INST-OTH' THEN BEGIN
+                        ZonesVisible := FALSE;
+                        DivisionVisible := FALSE;
+                        StationVisible := FALSE;
+                        StateVisible := TRUE;
+                        DistrictVisible := TRUE;
+                        CityVisible := TRUE;
+                        "Product typeVisible" := TRUE;
+                        "Sale order noVisible" := TRUE;
+                        "Serial noVisible" := TRUE;
+                        "Work DescriptionVisible" := FALSE;
+                        "Training/DemoVisible" := FALSE;
+                        DesignationVisible := FALSE;
+                        LocationVisible := FALSE;
+                        "Action takenVisible" := FALSE;
+                        ReasonVisible := FALSE;
+                        RemarksVisible := FALSE;
+                        "Work Type CodeVisible" := FALSE;
                     END ELSE
-                    IF CurrentJnlBatchName='MAIN' THEN
-                    BEGIN
-                    "Document No.Visible" :=TRUE;
-                    "Document No.Enable" :=FALSE;
-                    ZonesVisible :=FALSE;
-                    DivisionVisible :=FALSE;
-                    StationVisible :=FALSE;
-                    StateVisible :=TRUE;
-                    DistrictVisible :=TRUE;
-                    CityVisible :=TRUE;
-                    "Product typeVisible" :=TRUE;
-                    "Sale order noVisible" :=FALSE;
-                    "Serial noVisible" :=FALSE;
-                    "Work DescriptionVisible" :=TRUE;
-                    "Training/DemoVisible" :=FALSE;
-                    DesignationVisible :=FALSE;
-                    LocationVisible :=FALSE;
-                    "Action takenVisible" :=FALSE;
-                    ReasonVisible :=FALSE;
-                    RemarksVisible :=FALSE;
-                    "Work Type CodeVisible" :=FALSE;
-                    END ELSE
-                    IF CurrentJnlBatchName='GENERAL' THEN
-                    BEGIN
-                    ZonesVisible :=FALSE;
-                    DivisionVisible :=FALSE;
-                    StationVisible :=FALSE;
-                    StateVisible :=TRUE;
-                    DistrictVisible :=TRUE;
-                    CityVisible :=TRUE;
-                    PlaceVisible :=TRUE;
-                    "Work DescriptionVisible" :=TRUE;
-                    "Product typeVisible" :=TRUE;
-                    "Sale order noVisible" :=FALSE;
-                    "Serial noVisible" :=FALSE;
-                    "Action takenVisible" :=TRUE;
-                    "Work Type CodeVisible" :=FALSE;
-                    "Training/DemoVisible" :=FALSE;
-                    DesignationVisible :=FALSE;
-                    LocationVisible :=FALSE;
-                    "Work DescriptionVisible" :=TRUE;
-                    RemarksVisible :=TRUE;
-                    END ELSE
-                    IF CurrentJnlBatchName='DEMO' THEN
-                    BEGIN
-                    ShortcutDimension1CodeVisible :=TRUE;
-                    ZonesVisible :=FALSE;
-                    DivisionVisible :=FALSE;
-                    StationVisible :=FALSE;
-                    StateVisible :=TRUE;
-                    DistrictVisible :=TRUE;
-                    CityVisible :=TRUE;
-                    PlaceVisible :=TRUE;
-                    "Work DescriptionVisible" :=FALSE;
-                    "Product typeVisible" :=TRUE;
-                    "Sale order noVisible" :=FALSE;
-                    "Serial noVisible" :=FALSE;
-                    "Action takenVisible" :=FALSE;
-                    ReasonVisible :=FALSE;
-                    RemarksVisible :=FALSE;
-                    "Work Type CodeVisible" :=FALSE;
-                    "Service itemVisible" :=FALSE;
-                    END ELSE
-                    IF CurrentJnlBatchName='LEAVE' THEN
-                    BEGIN
-                    ZonesVisible :=FALSE;
-                    DivisionVisible :=FALSE;
-                    StationVisible :=FALSE;
-                    StateVisible :=FALSE;
-                    DistrictVisible :=FALSE;
-                    CityVisible :=FALSE;
-                    PlaceVisible :=FALSE;
-                    "Work DescriptionVisible" :=TRUE;
-                    "Product typeVisible" :=FALSE;
-                    "Sale order noVisible" :=FALSE;
-                    "Serial noVisible" :=FALSE;
-                    "Action takenVisible" :=FALSE;
-                    ReasonVisible :=FALSE;
-                    RemarksVisible :=FALSE;
-                    "Work Type CodeVisible" :=FALSE;
-                    "Training/DemoVisible" :=FALSE;
-                    DesignationVisible :=FALSE;
-                    LocationVisible :=FALSE;
-                    "Service itemVisible" :=FALSE;
+                        IF CurrentJnlBatchName = 'MAIN' THEN BEGIN
+                            "Document No.Visible" := TRUE;
+                            "Document No.Enable" := FALSE;
+                            ZonesVisible := FALSE;
+                            DivisionVisible := FALSE;
+                            StationVisible := FALSE;
+                            StateVisible := TRUE;
+                            DistrictVisible := TRUE;
+                            CityVisible := TRUE;
+                            "Product typeVisible" := TRUE;
+                            "Sale order noVisible" := FALSE;
+                            "Serial noVisible" := FALSE;
+                            "Work DescriptionVisible" := TRUE;
+                            "Training/DemoVisible" := FALSE;
+                            DesignationVisible := FALSE;
+                            LocationVisible := FALSE;
+                            "Action takenVisible" := FALSE;
+                            ReasonVisible := FALSE;
+                            RemarksVisible := FALSE;
+                            "Work Type CodeVisible" := FALSE;
+                        END ELSE
+                            IF CurrentJnlBatchName = 'GENERAL' THEN BEGIN
+                                ZonesVisible := FALSE;
+                                DivisionVisible := FALSE;
+                                StationVisible := FALSE;
+                                StateVisible := TRUE;
+                                DistrictVisible := TRUE;
+                                CityVisible := TRUE;
+                                PlaceVisible := TRUE;
+                                "Work DescriptionVisible" := TRUE;
+                                "Product typeVisible" := TRUE;
+                                "Sale order noVisible" := FALSE;
+                                "Serial noVisible" := FALSE;
+                                "Action takenVisible" := TRUE;
+                                "Work Type CodeVisible" := FALSE;
+                                "Training/DemoVisible" := FALSE;
+                                DesignationVisible := FALSE;
+                                LocationVisible := FALSE;
+                                "Work DescriptionVisible" := TRUE;
+                                RemarksVisible := TRUE;
+                            END ELSE
+                                IF CurrentJnlBatchName = 'DEMO' THEN BEGIN
+                                    ShortcutDimension1CodeVisible := TRUE;
+                                    ZonesVisible := FALSE;
+                                    DivisionVisible := FALSE;
+                                    StationVisible := FALSE;
+                                    StateVisible := TRUE;
+                                    DistrictVisible := TRUE;
+                                    CityVisible := TRUE;
+                                    PlaceVisible := TRUE;
+                                    "Work DescriptionVisible" := FALSE;
+                                    "Product typeVisible" := TRUE;
+                                    "Sale order noVisible" := FALSE;
+                                    "Serial noVisible" := FALSE;
+                                    "Action takenVisible" := FALSE;
+                                    ReasonVisible := FALSE;
+                                    RemarksVisible := FALSE;
+                                    "Work Type CodeVisible" := FALSE;
+                                    "Service itemVisible" := FALSE;
+                                END ELSE
+                                    IF CurrentJnlBatchName = 'LEAVE' THEN BEGIN
+                                        ZonesVisible := FALSE;
+                                        DivisionVisible := FALSE;
+                                        StationVisible := FALSE;
+                                        StateVisible := FALSE;
+                                        DistrictVisible := FALSE;
+                                        CityVisible := FALSE;
+                                        PlaceVisible := FALSE;
+                                        "Work DescriptionVisible" := TRUE;
+                                        "Product typeVisible" := FALSE;
+                                        "Sale order noVisible" := FALSE;
+                                        "Serial noVisible" := FALSE;
+                                        "Action takenVisible" := FALSE;
+                                        ReasonVisible := FALSE;
+                                        RemarksVisible := FALSE;
+                                        "Work Type CodeVisible" := FALSE;
+                                        "Training/DemoVisible" := FALSE;
+                                        DesignationVisible := FALSE;
+                                        LocationVisible := FALSE;
+                                        "Service itemVisible" := FALSE;
 
-                    END ELSE
-                    IF CurrentJnlBatchName='TRAINING' THEN
-                    BEGIN
-                    ShortcutDimension1CodeVisible :=TRUE;
-                    ShortcutDimension2CodeVisible :=TRUE;
-                    ZonesVisible :=FALSE;
-                    DivisionVisible :=FALSE;
-                    StationVisible :=FALSE;
-                    StateVisible :=TRUE;
-                    DistrictVisible :=TRUE;
-                    CityVisible :=TRUE;
-                    PlaceVisible :=TRUE;
-                    "Work DescriptionVisible" :=FALSE;
-                    "Product typeVisible" :=FALSE;
-                    "Sale order noVisible" :=FALSE;
-                    "Serial noVisible" :=FALSE;
-                    "Action takenVisible" :=FALSE;
-                    ReasonVisible :=FALSE;
-                    RemarksVisible :=FALSE;
-                    "Work Type CodeVisible" :=FALSE;
-                    "Service itemVisible" :=FALSE;
+                                    END ELSE
+                                        IF CurrentJnlBatchName = 'TRAINING' THEN BEGIN
+                                            ShortcutDimension1CodeVisible := TRUE;
+                                            ShortcutDimension2CodeVisible := TRUE;
+                                            ZonesVisible := FALSE;
+                                            DivisionVisible := FALSE;
+                                            StationVisible := FALSE;
+                                            StateVisible := TRUE;
+                                            DistrictVisible := TRUE;
+                                            CityVisible := TRUE;
+                                            PlaceVisible := TRUE;
+                                            "Work DescriptionVisible" := FALSE;
+                                            "Product typeVisible" := FALSE;
+                                            "Sale order noVisible" := FALSE;
+                                            "Serial noVisible" := FALSE;
+                                            "Action takenVisible" := FALSE;
+                                            ReasonVisible := FALSE;
+                                            RemarksVisible := FALSE;
+                                            "Work Type CodeVisible" := FALSE;
+                                            "Service itemVisible" := FALSE;
 
-                    END ELSE IF CurrentJnlBatchName='IN-DEPT' THEN
-                    BEGIN
-                    ZonesVisible :=FALSE;
-                    DivisionVisible :=FALSE;
-                    StationVisible :=FALSE;
-                    StateVisible :=TRUE;
-                    DistrictVisible :=TRUE;
-                    CityVisible :=TRUE;
-                    PlaceVisible :=TRUE;
-                    "Work DescriptionVisible" :=TRUE;
-                    "Product typeVisible" :=FALSE;
-                    "Sale order noVisible" :=FALSE;
-                    "Serial noVisible" :=FALSE;
-                    "Action takenVisible" :=FALSE;
-                    ReasonVisible :=FALSE;
-                    RemarksVisible :=FALSE;
-                    ShortcutDimension2CodeVisible :=FALSE;
-                    "Work Type CodeVisible" :=FALSE;
-                    "Training/DemoVisible" :=FALSE;
-                    DesignationVisible :=FALSE;
-                    LocationVisible :=FALSE;
-                    "Service itemVisible" :=FALSE;
+                                        END ELSE
+                                            IF CurrentJnlBatchName = 'IN-DEPT' THEN BEGIN
+                                                ZonesVisible := FALSE;
+                                                DivisionVisible := FALSE;
+                                                StationVisible := FALSE;
+                                                StateVisible := TRUE;
+                                                DistrictVisible := TRUE;
+                                                CityVisible := TRUE;
+                                                PlaceVisible := TRUE;
+                                                "Work DescriptionVisible" := TRUE;
+                                                "Product typeVisible" := FALSE;
+                                                "Sale order noVisible" := FALSE;
+                                                "Serial noVisible" := FALSE;
+                                                "Action takenVisible" := FALSE;
+                                                ReasonVisible := FALSE;
+                                                RemarksVisible := FALSE;
+                                                ShortcutDimension2CodeVisible := FALSE;
+                                                "Work Type CodeVisible" := FALSE;
+                                                "Training/DemoVisible" := FALSE;
+                                                DesignationVisible := FALSE;
+                                                LocationVisible := FALSE;
+                                                "Service itemVisible" := FALSE;
 
-                    END ELSE
-                    BEGIN
-                    ZonesVisible :=TRUE;
-                    DivisionVisible :=TRUE;
-                    StationVisible :=TRUE;
-                    StateVisible :=TRUE;
-                    DistrictVisible :=TRUE;
-                    CityVisible :=TRUE;
-                    //CurrPage.Place.VISIBLE:=TRUE;
-                    "Product typeVisible" :=TRUE;
-                    "Sale order noVisible" :=TRUE;
-                    "Serial noVisible" :=TRUE;
-                    "Work DescriptionVisible" :=TRUE;
-                    END;
+                                            END ELSE BEGIN
+                                                ZonesVisible := TRUE;
+                                                DivisionVisible := TRUE;
+                                                StationVisible := TRUE;
+                                                StateVisible := TRUE;
+                                                DistrictVisible := TRUE;
+                                                CityVisible := TRUE;
+                                                //CurrPage.Place.VISIBLE:=TRUE;
+                                                "Product typeVisible" := TRUE;
+                                                "Sale order noVisible" := TRUE;
+                                                "Serial noVisible" := TRUE;
+                                                "Work DescriptionVisible" := TRUE;
+                                            END;
                 end;
 
                 trigger OnValidate();
                 begin
-                    ResJnlManagement.CheckName(CurrentJnlBatchName,Rec);
-                      CurrentJnlBatchNameOnAfterVali;
+                    ResJnlManagement.CheckName(CurrentJnlBatchName, Rec);
+                    CurrentJnlBatchNameOnAfterVali;
                 end;
             }
             repeater(Control1000000016)
             {
                 ShowCaption = false;
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                     Enabled = "Document No.Enable";
                     Visible = "Document No.Visible";
                 }
-                field("Line No.";"Line No.")
+                field("Line No."; "Line No.")
                 {
                 }
-                field("Document Date";"Document Date")
+                field("Document Date"; "Document Date")
                 {
                     Visible = false;
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("Product type";"Product type")
+                field("Product type"; "Product type")
                 {
                     Visible = "Product typeVisible";
                 }
-                field(Zones;Zones)
+                field(Zones; Zones)
                 {
                     Visible = ZonesVisible;
                 }
-                field(Division;Division)
+                field(Division; Division)
                 {
                     Visible = DivisionVisible;
                 }
-                field(Station;Station)
+                field(Station; Station)
                 {
                     Visible = StationVisible;
                 }
-                field("Training/Demo";"Training/Demo")
+                field("Training/Demo"; "Training/Demo")
                 {
                     Visible = "Training/DemoVisible";
                 }
-                field("Service item";"Service item")
+                field("Service item"; "Service item")
                 {
                     Visible = "Service itemVisible";
                 }
-                field(Location;Location)
+                field(Location; Location)
                 {
                     Visible = LocationVisible;
                 }
-                field(Designation;Designation)
+                field(Designation; Designation)
                 {
                     Visible = DesignationVisible;
                 }
-                field(State;State)
+                field(State; State)
                 {
                     Visible = StateVisible;
                 }
-                field("Action taken";"Action taken")
+                field("Action taken"; "Action taken")
                 {
                     Visible = "Action takenVisible";
                 }
-                field(Reason;Reason)
+                field(Reason; Reason)
                 {
                     Visible = ReasonVisible;
                 }
-                field(District;District)
+                field(District; District)
                 {
                     Visible = DistrictVisible;
                 }
-                field(City;City)
+                field(City; City)
                 {
                     Visible = CityVisible;
                 }
-                field(Place;Place)
+                field(Place; Place)
                 {
                     Visible = PlaceVisible;
                 }
-                field("Sale order no";"Sale order no")
+                field("Sale order no"; "Sale order no")
                 {
                     Visible = "Sale order noVisible";
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                     Visible = RemarksVisible;
                 }
-                field("Serial no";"Serial no")
+                field("Serial no"; "Serial no")
                 {
                     Visible = "Serial noVisible";
                 }
-                field("External Document No.";"External Document No.")
+                field("External Document No."; "External Document No.")
                 {
                     Visible = false;
                 }
-                field("Work Description";"Work Description")
+                field("Work Description"; "Work Description")
                 {
                     Visible = "Work DescriptionVisible";
                 }
-                field("Resource No.";"Resource No.")
+                field("Resource No."; "Resource No.")
                 {
 
                     trigger OnValidate();
                     begin
-                        ResJnlManagement.GetRes("Resource No.",ResName);
+                        ResJnlManagement.GetRes("Resource No.", ResName);
                         ShowShortcutDimCode(ShortcutDimCode);
                     end;
                 }
-                field("Resource Group No.";"Resource Group No.")
+                field("Resource Group No."; "Resource Group No.")
                 {
                     Visible = false;
 
@@ -304,137 +297,137 @@ page 60210 "CS Others"
                         ShowShortcutDimCode(ShortcutDimCode);
                     end;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Caption = 'Name';
                 }
-                field("Shortcut Dimension 1 Code";"Shortcut Dimension 1 Code")
+                field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
                 {
                     Visible = ShortcutDimension1CodeVisible;
                 }
-                field("Planned Hr's";"Planned Hr's")
+                field("Planned Hr's"; "Planned Hr's")
                 {
                 }
-                field("Shortcut Dimension 2 Code";"Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
                 {
                     Visible = ShortcutDimension2CodeVisible;
                 }
-                field("ShortcutDimCode[3]";ShortcutDimCode[3])
+                field("ShortcutDimCode[3]"; ShortcutDimCode[3])
                 {
                     CaptionClass = '1,2,3';
                     Visible = false;
 
-                    trigger OnLookup(Text : Text) : Boolean;
+                    trigger OnLookup(Text: Text): Boolean;
                     begin
-                        LookupShortcutDimCode(3,ShortcutDimCode[3]);
+                        LookupShortcutDimCode(3, ShortcutDimCode[3]);
                     end;
 
                     trigger OnValidate();
                     begin
-                        ValidateShortcutDimCode(3,ShortcutDimCode[3]);
+                        ValidateShortcutDimCode(3, ShortcutDimCode[3]);
                     end;
                 }
-                field("ShortcutDimCode[4]";ShortcutDimCode[4])
+                field("ShortcutDimCode[4]"; ShortcutDimCode[4])
                 {
                     CaptionClass = '1,2,4';
                     Visible = false;
 
-                    trigger OnLookup(Text : Text) : Boolean;
+                    trigger OnLookup(Text: Text): Boolean;
                     begin
-                        LookupShortcutDimCode(4,ShortcutDimCode[4]);
+                        LookupShortcutDimCode(4, ShortcutDimCode[4]);
                     end;
 
                     trigger OnValidate();
                     begin
-                        ValidateShortcutDimCode(4,ShortcutDimCode[4]);
+                        ValidateShortcutDimCode(4, ShortcutDimCode[4]);
                     end;
                 }
-                field("ShortcutDimCode[5]";ShortcutDimCode[5])
+                field("ShortcutDimCode[5]"; ShortcutDimCode[5])
                 {
                     CaptionClass = '1,2,5';
                     Visible = false;
 
-                    trigger OnLookup(Text : Text) : Boolean;
+                    trigger OnLookup(Text: Text): Boolean;
                     begin
-                        LookupShortcutDimCode(5,ShortcutDimCode[5]);
+                        LookupShortcutDimCode(5, ShortcutDimCode[5]);
                     end;
 
                     trigger OnValidate();
                     begin
-                        ValidateShortcutDimCode(5,ShortcutDimCode[5]);
+                        ValidateShortcutDimCode(5, ShortcutDimCode[5]);
                     end;
                 }
-                field("ShortcutDimCode[6]";ShortcutDimCode[6])
+                field("ShortcutDimCode[6]"; ShortcutDimCode[6])
                 {
                     CaptionClass = '1,2,6';
                     Visible = false;
 
-                    trigger OnLookup(Text : Text) : Boolean;
+                    trigger OnLookup(Text: Text): Boolean;
                     begin
-                        LookupShortcutDimCode(6,ShortcutDimCode[6]);
+                        LookupShortcutDimCode(6, ShortcutDimCode[6]);
                     end;
 
                     trigger OnValidate();
                     begin
-                        ValidateShortcutDimCode(6,ShortcutDimCode[6]);
+                        ValidateShortcutDimCode(6, ShortcutDimCode[6]);
                     end;
                 }
-                field("ShortcutDimCode[7]";ShortcutDimCode[7])
+                field("ShortcutDimCode[7]"; ShortcutDimCode[7])
                 {
                     CaptionClass = '1,2,7';
                     Visible = false;
 
-                    trigger OnLookup(Text : Text) : Boolean;
+                    trigger OnLookup(Text: Text): Boolean;
                     begin
-                        LookupShortcutDimCode(7,ShortcutDimCode[7]);
+                        LookupShortcutDimCode(7, ShortcutDimCode[7]);
                     end;
 
                     trigger OnValidate();
                     begin
-                        ValidateShortcutDimCode(7,ShortcutDimCode[7]);
+                        ValidateShortcutDimCode(7, ShortcutDimCode[7]);
                     end;
                 }
-                field("ShortcutDimCode[8]";ShortcutDimCode[8])
+                field("ShortcutDimCode[8]"; ShortcutDimCode[8])
                 {
                     CaptionClass = '1,2,8';
                     Visible = false;
 
-                    trigger OnLookup(Text : Text) : Boolean;
+                    trigger OnLookup(Text: Text): Boolean;
                     begin
-                        LookupShortcutDimCode(8,ShortcutDimCode[8]);
+                        LookupShortcutDimCode(8, ShortcutDimCode[8]);
                     end;
 
                     trigger OnValidate();
                     begin
-                        ValidateShortcutDimCode(8,ShortcutDimCode[8]);
+                        ValidateShortcutDimCode(8, ShortcutDimCode[8]);
                     end;
                 }
-                field("Work Type Code";"Work Type Code")
+                field("Work Type Code"; "Work Type Code")
                 {
                     Caption = 'Activity Code';
                     Visible = "Work Type CodeVisible";
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                     Caption = 'Spent Hr''s';
                 }
-                field("Unit of Measure Code";"Unit of Measure Code")
+                field("Unit of Measure Code"; "Unit of Measure Code")
                 {
                 }
-                field("Direct Unit Cost";"Direct Unit Cost")
+                field("Direct Unit Cost"; "Direct Unit Cost")
                 {
                 }
-                field("Unit Cost";"Unit Cost")
+                field("Unit Cost"; "Unit Cost")
                 {
                 }
             }
             group(Control1000000002)
             {
                 ShowCaption = false;
-                field(ResName;ResName)
+                field(ResName; ResName)
                 {
                     Caption = 'Resource Name';
                     Editable = false;
@@ -476,7 +469,7 @@ page 60210 "CS Others"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Resource Ledger Entries";
-                    RunPageLink = Resource No.=FIELD(Resource No.);
+                                    RunPageLink = Resource No.=FIELD(Resource No.);
                     RunPageView = SORTING(Resource No.);
                     ShortCutKey = 'Ctrl+F5';
                 }

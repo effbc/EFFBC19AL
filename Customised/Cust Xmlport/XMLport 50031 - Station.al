@@ -6,16 +6,16 @@ xmlport 50031 Station
     {
         textelement(Stations)
         {
-            tableelement(Station;Station)
+            tableelement(Station; Station)
             {
                 XmlName = 'Station';
-                fieldelement(StationCode;Station."Station Code")
+                fieldelement(StationCode; Station."Station Code")
                 {
                 }
-                fieldelement(Divisioncode;Station."Division code")
+                fieldelement(Divisioncode; Station."Division code")
                 {
                 }
-                fieldelement(StationName;Station."Station Name")
+                fieldelement(StationName; Station."Station Name")
                 {
                 }
             }

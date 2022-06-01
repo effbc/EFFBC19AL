@@ -356,13 +356,13 @@ page 60020 "Sales Quote-Design"
         Text000 : Label 'Unable to execute this function while in view only mode.';
         SalesSetup : Record "Sales & Receivables Setup";
         CopySalesDoc : Report "Copy Sales Document";
-        DocPrint : Codeunit "Document-Print";
-        UserMgt : Codeunit "User Setup Management";
-        ArchiveManagement : Codeunit ArchiveManagement;
-        SalesHeaderArchive : Record "Sales Header Archive";
-        "--NAVIN" : Integer;
-        "--NAVIN--" : ;
-        Text13000 : Label 'No Setup exists for this Amount.';
+                           DocPrint : Codeunit "Document-Print";
+                           UserMgt : Codeunit "User Setup Management";
+                           ArchiveManagement : Codeunit ArchiveManagement;
+                           SalesHeaderArchive : Record "Sales Header Archive";
+                           "--NAVIN" : Integer;
+                           "--NAVIN--" : ;
+                           Text13000 : Label 'No Setup exists for this Amount.';
         Text13001 : Label 'Do you want to send the Quote for Authorization?';
         Text13002 : Label 'The Quote Is Authorized, You Cannot Resend For Authorization';
         Text13003 : Label 'You Cannot Resend For Authorization';
@@ -379,13 +379,13 @@ page 60020 "Sales Quote-Design"
         ChangeExchangeRate : Page "Change Exchange Rate";
 
     [LineStart(5204)]
-    procedure UpdateAllowed() : Boolean;
+    procedure UpdateAllowed(): Boolean;
     begin
         IF CurrPage.EDITABLE = FALSE THEN BEGIN
-          MESSAGE(Text000);
-          EXIT(FALSE);
+            MESSAGE(Text000);
+            EXIT(FALSE);
         END ELSE
-          EXIT(TRUE);
+            EXIT(TRUE);
     end;
 
     [LineStart(5211)]

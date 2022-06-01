@@ -6,7 +6,7 @@ page 50006 "Purchase To Be Received Items"
     PageType = List;
     SaveValues = false;
     SourceTable = "Purchase Line";
-    SourceTableView = SORTING(No.,Buy-from Vendor No.) ORDER(Ascending) WHERE(Qty. to Receive=FILTER(>0),Document Type=CONST(Order));
+    SourceTableView = SORTING(No., Buy-from Vendor No.) ORDER(Ascending) WHERE(Qty. to Receive=FILTER(>0),Document Type=CONST(Order));
 
     layout
     {
@@ -604,15 +604,15 @@ page 50006 "Purchase To Be Received Items"
         username : Text[50];
         mailcount : Integer;
         VendorList : Page "Purchase Automail VendorsList";
-        Statuss : Option Open,Released,"Pending Approval","Pending Prepayment";
-        coloring : Boolean;
-        Color_Open : Text;
-        Totalcount : Text;
-        MatReqDate : Date;
-        ProdStartDate : Date;
-        IndentLine : Record "Indent Line";
-        POC : Record "Prod. Order Component";
-        Color_Txt_Old_Dev_Rec_Date : Label 'Deviated Receipt Date < Today';
+                         Statuss : Option Open,Released,"Pending Approval","Pending Prepayment";
+                         coloring : Boolean;
+                         Color_Open : Text;
+                         Totalcount : Text;
+                         MatReqDate : Date;
+                         ProdStartDate : Date;
+                         IndentLine : Record "Indent Line";
+                         POC : Record "Prod. Order Component";
+                         Color_Txt_Old_Dev_Rec_Date : Label 'Deviated Receipt Date < Today';
         coloring1 : Boolean;
         Indented_user : Text;
         IH : Record "Indent Header";

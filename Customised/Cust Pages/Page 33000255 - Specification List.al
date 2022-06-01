@@ -11,7 +11,7 @@ page 33000255 "Specification List"
     {
         area(content)
         {
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
                 Style = Standard;
                 StyleExpr = TRUE;
@@ -19,13 +19,13 @@ page 33000255 "Specification List"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Spec ID";"Spec ID")
+                field("Spec ID"; "Spec ID")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
             }

@@ -6,25 +6,25 @@ xmlport 50003 "product categories"
     {
         textelement(Items)
         {
-            tableelement(Item;Item)
+            tableelement(Item; Item)
             {
                 XmlName = 'Item';
-                fieldelement(No;Item."No.")
+                fieldelement(No; Item."No.")
                 {
                 }
-                fieldelement(Description;Item.Description)
+                fieldelement(Description; Item.Description)
                 {
                 }
-                fieldelement(ItemCategoryCode;Item."Item Category Code")
+                fieldelement(ItemCategoryCode; Item."Item Category Code")
                 {
                 }
-                fieldelement(ProdGroupCode;Item."Product Group Code")
+                fieldelement(ProdGroupCode; Item."Product Group Code")
                 {
                 }
-                fieldelement(ItemSubGroupCode;Item."Item Sub Group Code")
+                fieldelement(ItemSubGroupCode; Item."Item Sub Group Code")
                 {
                 }
-                fieldelement(ItemSubSubGroupCode;Item."Item Sub Sub Group Code")
+                fieldelement(ItemSubSubGroupCode; Item."Item Sub Sub Group Code")
                 {
                 }
             }

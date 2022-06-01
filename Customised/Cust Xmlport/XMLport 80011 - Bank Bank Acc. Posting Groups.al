@@ -6,13 +6,13 @@ xmlport 80011 "Bank Bank Acc. Posting Groups"
     {
         textelement(BankAccountPostingGroups)
         {
-            tableelement("<bankaccountpostinggroup>";"Bank Account Posting Group")
+            tableelement("<bankaccountpostinggroup>"; "Bank Account Posting Group")
             {
                 XmlName = 'BankAccountPostingGroup';
-                fieldelement(Code;"<BankAccountPostingGroup>".Code)
+                fieldelement(Code; "<BankAccountPostingGroup>".Code)
                 {
                 }
-                fieldelement(GLBankAccountNo;"<BankAccountPostingGroup>"."G/L Bank Account No.")
+                fieldelement(GLBankAccountNo; "<BankAccountPostingGroup>"."G/L Bank Account No.")
                 {
                 }
             }

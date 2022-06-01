@@ -3,19 +3,23 @@ table 33000255 "Inspection Datasheet Header"
     // version QC1.1,WIP1.1,QCB2B1.2,QC1.2,Cal1.0,RQC1.0,Rev01
 
     LookupPageID = "Inspection Data Sheet List";
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"No.";Code[20])
+        field(1; "No."; Code[20])
         {
             NotBlank = true;
+            DataClassification = CustomerContent;
         }
-        field(2;Description;Text[50])
+        field(2; Description; Text[50])
         {
+            DataClassification = CustomerContent;
         }
-        field(3;"Receipt No.";Code[20])
+        field(3; "Receipt No."; Code[20])
         {
-            TableRelation = "Purch. Rcpt. Header".No.;
+            TableRelation = "Purch. Rcpt. Header".No            DataClassification = CustomerContent;
+.;
         }
         field(4;"Order No.";Code[20])
         {

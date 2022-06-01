@@ -5,9 +5,9 @@ report 50170 "Pending Site Bills"
 
     dataset
     {
-        dataitem("Purchase Line";"Purchase Line")
+        dataitem("Purchase Line"; "Purchase Line")
         {
-            DataItemTableView = SORTING(Document Type,Document No.,Line No.) ORDER(Ascending) WHERE(Location Code=FILTER(SITE),Material Received at Site=FILTER(Yes),Document Type=FILTER(Order),Qty. to Invoice=FILTER(>0));
+            DataItemTableView = SORTING(Document Type, Document No., Line No.) ORDER(Ascending) WHERE(Location Code=FILTER(SITE),Material Received at Site=FILTER(Yes),Document Type=FILTER(Order),Qty. to Invoice=FILTER(>0));
             RequestFilterFields = "Document Type";
             column(FORMAT_TODAY_0_4_;FORMAT(TODAY,0,4))
             {

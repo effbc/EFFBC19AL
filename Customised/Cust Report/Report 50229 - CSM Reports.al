@@ -7,7 +7,7 @@ report 50229 "CSM Reports"
 
     dataset
     {
-        dataitem("Service Header";"Service Header")
+        dataitem("Service Header"; "Service Header")
         {
             DataItemTableView = WHERE(Document Type=CONST(Order),Order Date=FILTER(>=04/01/11));
             RequestFilterFields = "Order Date";

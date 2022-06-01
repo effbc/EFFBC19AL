@@ -5,6 +5,7 @@ tableextension 70041 PostCodeExt extends "Post Code"
         field(60010; State; Code[10])
         {
             TableRelation = State.Code WHERE(Code = FIELD(Code));
+            DataClassification = CustomerContent;
         }
     }
 }

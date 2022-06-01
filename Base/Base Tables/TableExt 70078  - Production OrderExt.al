@@ -7,10 +7,11 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
             CaptionML = ENU = 'Production Order No.', ENN = 'Production Order No.';
         }
 
-        
+
         field(60001; "Sales Order No."; Code[20])
         {
             TableRelation = "Sales Header"."No." WHERE("Document Type" = FILTER(Order | "Blanket Order"));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -30,6 +31,7 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
         field(60002; "Sales Order Line No."; Integer)
         {
             TableRelation = "Sales Line"."Line No." WHERE("Document No." = FIELD("Sales Order No."));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -76,6 +78,7 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
         field(60005; "Item Sub Group Code"; Code[20])
         {
             Description = 'B2B';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             var
@@ -87,6 +90,7 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
         {
             Caption = 'Product Group Code';
             Description = 'B2B-Modified Added code in Onvalidate Trigger';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             var
@@ -96,6 +100,7 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
         }
         field(60007; "Planned Dispatch Date"; Date)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -110,6 +115,7 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
         }
         field(60008; Week; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60009; Customer; Text[50])
         {
@@ -118,6 +124,7 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
         }
         field(60010; "Shortage Verified"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60011; "Shortage Items"; Integer)
         {
@@ -129,6 +136,7 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
             TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -139,12 +147,14 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(60100; "Schedule Line No."; Integer)
         {
             TableRelation = Schedule2."Line No." WHERE("Document No." = FIELD("Sales Order No."),
                                                         "Document Line No." = FIELD("Sales Order Line No."),
                                                         "Document Type" = FILTER(Order | "Blanket Order"));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -198,66 +208,81 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
         {
             Description = 'B2B EFF';
             TableRelation = "Service Header"."No." WHERE("Document Type" = CONST(Order));
+            DataClassification = CustomerContent;
         }
         field(60102; "Change Status"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60103; RefreshProdTime; DateTime)
         {
+            DataClassification = CustomerContent;
         }
         field(60104; Refreshdate; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(60105; StatusTemp; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(60106; "Production Order Status"; Option)
         {
             OptionMembers = "Yet to Start","Under Production",Soldering,Integration,"Ready for Inspection","Call Letter Registered","Inspection Completed","Final Testing","Ready for Dispatch","Convertion- Need to close";
+            DataClassification = CustomerContent;
         }
         field(60107; "Work.MesurInUnits(ASM)"; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60108; "Work.MesurInUnits(TST)"; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60109; "Work.MesurInUnits(SHF)"; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60110; "Total Unts"; Integer)
         {
+            DataClassification = CustomerContent;
         }
         field(60111; Remarks; Text[100])
         {
             Description = 'added by sujani 29-11-18 to update the sale order  deviation remarks';
+            DataClassification = CustomerContent;
         }
         field(60112; Itm_card_No_of_Units; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60113; Itm_Card_ttl_units; Decimal)
         {
+            DataClassification = CustomerContent;
         }
         field(60114; "Sell-to Customer Name"; Text[50])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Suvarchala devi for tracking customer name in RPOs';
         }
         field(60115; "Benchmarks(in Min)"; Decimal)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Suvarchala devi for Item Benchmarks';
         }
         field(60116; "Total Time"; Decimal)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Suvarchala devi for Item Benchmarks';
         }
         field(90080; "User Id"; Code[50])
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(90081; "Prod Start date"; Date)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -355,9 +380,11 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
         }
         field(90082; "Plan Shifting Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(90083; "Change To Specified Plan Date"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(90085; "No. Of Shortage Items"; Integer)
         {
@@ -366,9 +393,11 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
         }
         field(90086; "Virtual Production Start Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(90087; "Suppose to Plan"; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -385,43 +414,45 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
         }
         field(90088; "Authorization Status"; Boolean)
         {
+            DataClassification = CustomerContent;
         }
         field(90089; "RDSO No"; Integer)
         {
+            DataClassification = CustomerContent;
         }
     }
     keys
     {
         key(Key9; "Prod Start date")
         {
-            
+
         }
-        key(Key10; "Sales Order No.","Item Sub Group Code")
+        key(Key10; "Sales Order No.", "Item Sub Group Code")
         {
             Enabled = false;
         }
         key(Key11; "No.")
         {
-            
+
         }
-        key(Key12; "Sales Order No.","Source No.","Prod Start date")
+        key(Key12; "Sales Order No.", "Source No.", "Prod Start date")
         {
-            
+
         }
-        key(Key13; Week,"Sales Order No.","Source No.")
+        key(Key13; Week, "Sales Order No.", "Source No.")
         {
-            
+
         }
-        key(Key14; Status,"Prod Start date","No.")
+        key(Key14; Status, "Prod Start date", "No.")
         {
-            
+
         }
     }
-    
+
 
     trigger OnBeforeModify()
     begin
-        if UpperCase(UserId)<>'06PD012' then;
+        if UpperCase(UserId) <> '06PD012' then;
     end;
 
     var
@@ -445,22 +476,22 @@ tableextension 70078 ProductionOrderExt extends "Production Order"
         ITEM: Record Item;
         ITEM_LEAD_TEMP: Text[30];
 
-    
-     PROCEDURE Planned_Units(Prod_Date : Date) "Units Planned" : Decimal;
-    VAR
-      Prod_Order: Record "Production Order";
-      Item: Record Item;
-    BEGIN
-      Prod_Order.SetCurrentKey(Prod_Order."Prod Start date");
-      Prod_Order.SetRange(Prod_Order."Prod Start date",Prod_Date);
-      if Prod_Order.Find('-') then
-      repeat
-        Item.Reset;
-        if Item.Get(Prod_Order."Source No.") then
-           "Units Planned"+=Prod_Order.Quantity*Item."No.of Units";
 
-      until Prod_Order.Next=0;
-      exit("Units Planned");
+    PROCEDURE Planned_Units(Prod_Date: Date) "Units Planned": Decimal;
+    VAR
+        Prod_Order: Record "Production Order";
+        Item: Record Item;
+    BEGIN
+        Prod_Order.SetCurrentKey(Prod_Order."Prod Start date");
+        Prod_Order.SetRange(Prod_Order."Prod Start date", Prod_Date);
+        if Prod_Order.Find('-') then
+            repeat
+                Item.Reset;
+                if Item.Get(Prod_Order."Source No.") then
+                    "Units Planned" += Prod_Order.Quantity * Item."No.of Units";
+
+            until Prod_Order.Next = 0;
+        exit("Units Planned");
     END;
 }
 

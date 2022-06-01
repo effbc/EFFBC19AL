@@ -5,141 +5,141 @@ report 33000275 General_Ledger_MIPL
 
     dataset
     {
-        dataitem("G/L Account";"G/L Account")
+        dataitem("G/L Account"; "G/L Account")
         {
             PrintOnlyIfDetail = false;
             RequestFilterFields = "No.";
-            column(No_GLAccount;"G/L Account"."No.")
+            column(No_GLAccount; "G/L Account"."No.")
             {
             }
-            column(Name_GLAccount;"G/L Account".Name)
+            column(Name_GLAccount; "G/L Account".Name)
             {
             }
-            column(OpeningBalance;OpeningBalanceGVar)
+            column(OpeningBalance; OpeningBalanceGVar)
             {
             }
-            column(PostingDateCaption;PostingDateCaptionLbl)
+            column(PostingDateCaption; PostingDateCaptionLbl)
             {
             }
-            column(ParticularsCaption;ParticularsCaptionLbl)
+            column(ParticularsCaption; ParticularsCaptionLbl)
             {
             }
-            column(DocTypeCaption;DocTypeCaptionLbl)
+            column(DocTypeCaption; DocTypeCaptionLbl)
             {
             }
-            column(ExtDocNoCaption;ExtDocNoCaptionLbl)
+            column(ExtDocNoCaption; ExtDocNoCaptionLbl)
             {
             }
-            column(DocDateCaption;DocDateCaptionLbl)
+            column(DocDateCaption; DocDateCaptionLbl)
             {
             }
-            column(DebitCaption;DebitCaptionLbl)
+            column(DebitCaption; DebitCaptionLbl)
             {
             }
-            column(CreditCaption;CreditCaptionLbl)
+            column(CreditCaption; CreditCaptionLbl)
             {
             }
-            column(PageCaption;PageCaptionLbl)
+            column(PageCaption; PageCaptionLbl)
             {
             }
-            column(ClosingBalanceCaption;ClosingBalanceCaptionLbl)
+            column(ClosingBalanceCaption; ClosingBalanceCaptionLbl)
             {
             }
-            column(InternaldocNumberCaption;InternaldocNumberCaptionLbl)
+            column(InternaldocNumberCaption; InternaldocNumberCaptionLbl)
             {
             }
-            column(TelCaption;TelCaptionLbl)
+            column(TelCaption; TelCaptionLbl)
             {
             }
-            column(FaxCaption;FaxCaptionLbl)
+            column(FaxCaption; FaxCaptionLbl)
             {
             }
-            column(Name_CompanyInfo;CompanyInfo.Name)
+            column(Name_CompanyInfo; CompanyInfo.Name)
             {
             }
-            column(Address1_CompanyInfo;CompanyInfo.Address)
+            column(Address1_CompanyInfo; CompanyInfo.Address)
             {
             }
-            column(Address2_CompanyInfo;CompanyInfo."Address 2")
+            column(Address2_CompanyInfo; CompanyInfo."Address 2")
             {
             }
-            column(City_CompanyInfo;CompanyInfo.City)
+            column(City_CompanyInfo; CompanyInfo.City)
             {
             }
-            column(Postcode_CompanyInfo;CompanyInfo."Post Code")
+            column(Postcode_CompanyInfo; CompanyInfo."Post Code")
             {
             }
-            column(Phone_CompanyInfo;CompanyInfo."Phone No.")
+            column(Phone_CompanyInfo; CompanyInfo."Phone No.")
             {
             }
-            column(Fax__CompanyInfo;CompanyInfo."Fax No.")
+            column(Fax__CompanyInfo; CompanyInfo."Fax No.")
             {
             }
-            column(CIN__CompanyInfo;CompanyInfo."Registration No.")
+            column(CIN__CompanyInfo; CompanyInfo."Registration No.")
             {
             }
-            column(DateFilter;DateFilterGVar)
+            column(DateFilter; DateFilterGVar)
             {
             }
-            column(PrintDetails;PrintDetailsGvar)
+            column(PrintDetails; PrintDetailsGvar)
             {
             }
-            column(PositiveOpning;PositiveOpningGVar)
+            column(PositiveOpning; PositiveOpningGVar)
             {
             }
-            column(NegativeOpening;NegativeOpeningGVar)
+            column(NegativeOpening; NegativeOpeningGVar)
             {
             }
-            column(PrintClosingEntries;PrintClosingEntries)
+            column(PrintClosingEntries; PrintClosingEntries)
             {
             }
-            dataitem("G/L Entry";"G/L Entry")
+            dataitem("G/L Entry"; "G/L Entry")
             {
                 DataItemLink = G/L Account No.=FIELD(No.);
                 RequestFilterFields = "Posting Date";
-                column(EntryNo_GLEntry;"G/L Entry"."Entry No.")
+                column(EntryNo_GLEntry; "G/L Entry"."Entry No.")
                 {
                 }
-                column(PostingDate_GLEntry;"G/L Entry"."Posting Date")
+                column(PostingDate_GLEntry; "G/L Entry"."Posting Date")
                 {
                 }
-                column(Description_GLEntry;"G/L Entry".Description)
+                column(Description_GLEntry; "G/L Entry".Description)
                 {
                 }
-                column(DocumentType_GLEntry;"G/L Entry"."Document Type")
+                column(DocumentType_GLEntry; "G/L Entry"."Document Type")
                 {
                 }
-                column(ExternalDocumentNo_GLEntry;"G/L Entry"."External Document No.")
+                column(ExternalDocumentNo_GLEntry; "G/L Entry"."External Document No.")
                 {
                 }
-                column(DocumentNo_GLEntry;"G/L Entry"."Document No.")
+                column(DocumentNo_GLEntry; "G/L Entry"."Document No.")
                 {
                 }
-                column(DocumentDate_GLEntry;"G/L Entry"."Document Date")
+                column(DocumentDate_GLEntry; "G/L Entry"."Document Date")
                 {
                 }
-                column(Debit_GLEntry;DebitGVar)
+                column(Debit_GLEntry; DebitGVar)
                 {
                 }
-                column(Credit_GLEntry;CreditGVar)
+                column(Credit_GLEntry; CreditGVar)
                 {
                 }
-                column(Debitamount;Debitamountgvar)
+                column(Debitamount; Debitamountgvar)
                 {
                 }
-                column(Creditamount;Creditamountgvar)
+                column(Creditamount; Creditamountgvar)
                 {
                 }
-                column(GLDescription;GLDescriptionGvar )
+                column(GLDescription; GLDescriptionGvar)
                 {
                 }
-                column(VoucherNarrationVar_GLEntry;VoucherNarrationVar)
+                column(VoucherNarrationVar_GLEntry; VoucherNarrationVar)
                 {
                 }
-                column(LineNarrationGVar_GLEntry;LineNarrationGVar)
+                column(LineNarrationGVar_GLEntry; LineNarrationGVar)
                 {
                 }
-                dataitem("G/L Entry Details";"G/L Entry")
+                dataitem("G/L Entry Details"; "G/L Entry")
                 {
                     DataItemLink = Document Type=FIELD(Document Type),Transaction No.=FIELD(Transaction No.),Document No.=FIELD(Document No.);
                     DataItemTableView = SORTING(Document No.,Posting Date,Amount) ORDER(Descending);

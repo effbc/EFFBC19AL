@@ -16,6 +16,7 @@ tableextension 70016 SalesCommentLineExt extends "Sales Comment Line"
 
         field(60001; "User ID"; Code[40])
         {
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -26,6 +27,7 @@ tableextension 70016 SalesCommentLineExt extends "Sales Comment Line"
         }
         field(60002; "Responsible Person"; Code[40])
         {
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -37,17 +39,21 @@ tableextension 70016 SalesCommentLineExt extends "Sales Comment Line"
         field(60003; Status; Enum "Sales Comment Line Enum")
         {
             Editable = true;
+            DataClassification = CustomerContent;
 
         }
         field(60004; "Exp Completion Date"; DateTime)
         {
+            DataClassification = CustomerContent;
         }
         field(60005; Priority; Enum "Sale Comment Line Priority")
         {
+            DataClassification = CustomerContent;
 
         }
         field(60006; Product; Code[50])
         {
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -58,35 +64,35 @@ tableextension 70016 SalesCommentLineExt extends "Sales Comment Line"
         }
         field(60007; "Customer Number"; Code[30])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
             TableRelation = Customer."No.";
         }
         field(60008; "Customer Name"; Text[60])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
         }
         field(60009; "Remainder Date"; Date)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
         }
         field(60010; "Quote Status"; Option)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
             OptionCaption = '" ,Win,Loose,None"';
             OptionMembers = " ",Win,Loose,"None";
         }
         field(60011; Convert; Boolean)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
         }
         field(60012; "Converted Order Number"; Code[20])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
         }
     }

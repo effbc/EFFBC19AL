@@ -3,55 +3,68 @@ table 60013 Products
     // version B2B1.0
 
     LookupPageID = "Product List";
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"Code";Code[20])
+        field(1; "Code"; Code[20])
         {
             NotBlank = true;
             TableRelation = Item;
+            DataClassification = CustomerContent;
         }
-        field(2;"Product Type";Option)
+        field(2; "Product Type"; Option)
         {
             OptionMembers = "Data Logger","Display Board";
+            DataClassification = CustomerContent;
         }
-        field(3;Description;Text[70])
+        field(3; Description; Text[70])
         {
+            DataClassification = CustomerContent;
         }
-        field(4;Technology;Text[70])
+        field(4; Technology; Text[70])
         {
+            DataClassification = CustomerContent;
         }
-        field(5;"Key Features";Text[70])
+        field(5; "Key Features"; Text[70])
         {
+            DataClassification = CustomerContent;
         }
-        field(6;"Launched Year";Text[10])
+        field(6; "Launched Year"; Text[10])
         {
+            DataClassification = CustomerContent;
         }
-        field(7;Segment;Code[20])
+        field(7; Segment; Code[20])
         {
             TableRelation = "Segment Header";
+            DataClassification = CustomerContent;
         }
-        field(8;Price;Decimal)
+        field(8; Price; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(9;"Software Code";Code[20])
+        field(9; "Software Code"; Code[20])
         {
             TableRelation = CFormlist.vendor;
+            DataClassification = CustomerContent;
         }
-        field(10;"No. Series";Code[20])
+        field(10; "No. Series"; Code[20])
         {
+            DataClassification = CustomerContent;
         }
-        field(11;"Tools Used";Text[70])
+        field(11; "Tools Used"; Text[70])
         {
+            DataClassification = CustomerContent;
         }
-        field(12;Benefits;Text[70])
+        field(12; Benefits; Text[70])
         {
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(Key1;"Code")
+        key(Key1; "Code")
         {
         }
     }
@@ -61,11 +74,11 @@ table 60013 Products
     }
 
     [LineStart(1368)]
-    procedure AssistEdit(OldProduct : Record Products) : Boolean;
+    procedure AssistEdit(OldProduct: Record Products): Boolean;
     var
-        "RM Setup" : Record "Marketing Setup";
-        Products : Record Products;
-        NoSeriesMgt : Codeunit NoSeriesManagement;
+        "RM Setup": Record "Marketing Setup";
+        Products: Record Products;
+        NoSeriesMgt: Codeunit NoSeriesManagement;
     begin
         /*
         WITH Products DO BEGIN
@@ -87,14 +100,14 @@ table 60013 Products
     [LineStart(1384)]
     procedure OpenAttachments();
     var
-        Attachment : Record Attachments;
+        Attachment: Record Attachments;
     begin
         Attachment.Reset;
-        Attachment.SetRange("Table ID",DATABASE::Products);
-        Attachment.SetRange("Document No.",Code);
-        Attachment.SetRange("Document Type","Product Type");
+        Attachment.SetRange("Table ID", DATABASE::Products);
+        Attachment.SetRange("Document No.", Code);
+        Attachment.SetRange("Document Type", "Product Type");
 
-        PAGE.Run(PAGE::"ESPL Attachments",Attachment);
+        PAGE.Run(PAGE::"ESPL Attachments", Attachment);
     end;
 }
 

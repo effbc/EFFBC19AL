@@ -12,34 +12,34 @@ page 60048 "Except Rcpt. Date Tracking"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Entry No.";"Entry No.")
+                field("Entry No."; "Entry No.")
                 {
                 }
-                field("Document Type";"Document Type")
+                field("Document Type"; "Document Type")
                 {
                 }
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                 }
-                field("Document Line No.";"Document Line No.")
+                field("Document Line No."; "Document Line No.")
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field("User Id";"User Id")
+                field("User Id"; "User Id")
                 {
                 }
-                field("Excepted Receipt Old Date";"Excepted Receipt Old Date")
+                field("Excepted Receipt Old Date"; "Excepted Receipt Old Date")
                 {
                 }
-                field(Reason;Reason)
+                field(Reason; Reason)
                 {
                 }
-                field("Excepted Receipt New Date";"Excepted Receipt New Date")
+                field("Excepted Receipt New Date"; "Excepted Receipt New Date")
                 {
                 }
-                field("Modified Date";"Modified Date")
+                field("Modified Date"; "Modified Date")
                 {
                 }
             }
@@ -50,10 +50,10 @@ page 60048 "Except Rcpt. Date Tracking"
     {
     }
 
-    trigger OnQueryClosePage(CloseAction : Action) : Boolean;
+    trigger OnQueryClosePage(CloseAction: Action): Boolean;
     begin
         IF (Reason = '') AND ("Item No." <> '') THEN
-           ERROR('Plz Enter the Reason of the Excepted Receipt Date change');
+            ERROR('Plz Enter the Reason of the Excepted Receipt Date change');
     end;
 }
 

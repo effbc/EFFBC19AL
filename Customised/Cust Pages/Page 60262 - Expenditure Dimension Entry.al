@@ -3,7 +3,7 @@ page 60262 "Expenditure Dimension Entry"
     DeleteAllowed = false;
     InsertAllowed = false;
     PageType = List;
-    Permissions = TableData "G/L Entry"=rm;
+    Permissions = TableData "G/L Entry" = rm;
     SourceTable = "G/L Entry";
     SourceTableView = WHERE(Posting Date=FILTER(>=04/01/18),Debit Amount=FILTER(>0),G/L Account No.=FILTER(<>36200&<>36300&<>41000));
 

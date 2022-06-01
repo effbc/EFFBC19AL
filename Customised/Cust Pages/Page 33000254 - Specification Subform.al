@@ -16,50 +16,50 @@ page 33000254 "Specification Subform"
                 IndentationColumn = DescriptionIndent;
                 IndentationControls = Description;
                 ShowCaption = false;
-                field("Character Code";"Character Code")
+                field("Character Code"; "Character Code")
                 {
                 }
-                field("Character Type";"Character Type")
+                field("Character Type"; "Character Type")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                     Lookup = true;
                 }
-                field("Inspection Group Code";"Inspection Group Code")
+                field("Inspection Group Code"; "Inspection Group Code")
                 {
                 }
-                field("Sampling Code";"Sampling Code")
+                field("Sampling Code"; "Sampling Code")
                 {
                 }
-                field("Unit Of Measure Code";"Unit Of Measure Code")
+                field("Unit Of Measure Code"; "Unit Of Measure Code")
                 {
                 }
-                field("Inspection Time(In Min.)";"Inspection Time(In Min.)")
+                field("Inspection Time(In Min.)"; "Inspection Time(In Min.)")
                 {
                 }
-                field("Normal Value (Num)";"Normal Value (Num)")
+                field("Normal Value (Num)"; "Normal Value (Num)")
                 {
                 }
-                field("Min. Value (Num)";"Min. Value (Num)")
+                field("Min. Value (Num)"; "Min. Value (Num)")
                 {
                 }
-                field("Max. Value (Num)";"Max. Value (Num)")
+                field("Max. Value (Num)"; "Max. Value (Num)")
                 {
                 }
-                field(Qualitative;Qualitative)
+                field(Qualitative; Qualitative)
                 {
                 }
-                field("Normal Value (Char)";"Normal Value (Char)")
+                field("Normal Value (Char)"; "Normal Value (Char)")
                 {
                 }
-                field("Min. Value (Char)";"Min. Value (Char)")
+                field("Min. Value (Char)"; "Min. Value (Char)")
                 {
                 }
-                field("Max. Value (Char)";"Max. Value (Char)")
+                field("Max. Value (Char)"; "Max. Value (Char)")
                 {
                 }
             }
@@ -79,11 +79,11 @@ page 33000254 "Specification Subform"
 
     var
         [InDataSet]
-        "Character CodeEmphasize" : Boolean;
+        "Character CodeEmphasize": Boolean;
         [InDataSet]
-        DescriptionEmphasize : Boolean;
+        DescriptionEmphasize: Boolean;
         [InDataSet]
-        DescriptionIndent : Integer;
+        DescriptionIndent: Integer;
 
     [LineStart(22947)]
     local procedure CharacterCodeOnFormat();

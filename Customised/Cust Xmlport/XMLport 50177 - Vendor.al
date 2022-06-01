@@ -6,13 +6,13 @@ xmlport 50177 Vendor
     {
         textelement(Vendors)
         {
-            tableelement(Vendor;Vendor)
+            tableelement(Vendor; Vendor)
             {
                 XmlName = 'Vendor';
-                fieldelement(No;Vendor."No.")
+                fieldelement(No; Vendor."No.")
                 {
                 }
-                fieldelement(EMail;Vendor."E-Mail")
+                fieldelement(EMail; Vendor."E-Mail")
                 {
                 }
             }

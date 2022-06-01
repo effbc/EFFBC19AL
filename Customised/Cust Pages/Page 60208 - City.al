@@ -10,13 +10,13 @@ page 60208 City
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("City Code";"City Code")
+                field("City Code"; "City Code")
                 {
                 }
-                field("City Name";"City Name")
+                field("City Name"; "City Name")
                 {
                 }
-                field("District Code";"District Code")
+                field("District Code"; "District Code")
                 {
                 }
             }

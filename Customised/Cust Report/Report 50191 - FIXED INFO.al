@@ -17,16 +17,16 @@ report 50191 "FIXED INFO"
 
     dataset
     {
-        dataitem("Purchase Header";"Purchase Header")
+        dataitem("Purchase Header"; "Purchase Header")
         {
             RequestFilterFields = "Posting Date";
-            column(Purchase_Header_Document_Type;"Document Type")
+            column(Purchase_Header_Document_Type; "Document Type")
             {
             }
-            column(Purchase_Header_No_;"No.")
+            column(Purchase_Header_No_; "No.")
             {
             }
-            dataitem("Purchase Line";"Purchase Line")
+            dataitem("Purchase Line"; "Purchase Line")
             {
                 DataItemLink = Document Type=FIELD(Document Type),Document No.=FIELD(No.);
                 DataItemTableView = SORTING(Document Type,Document No.,Line No.) ORDER(Ascending) WHERE(Type=CONST(Fixed Asset));

@@ -12,9 +12,9 @@ page 60269 "Quote Specification"
         {
             repeater(Group)
             {
-                field("LookUp Code";"LookUp Code")
+                field("LookUp Code"; "LookUp Code")
                 {
-                    TableRelation = "Quote Lookup"."Lookup Code" WHERE (Lookup Type ID=FILTER(4));
+                    TableRelation = "Quote Lookup"."Lookup Code" WHERE(Lookup Type ID=FILTER(4));
 
                     trigger OnValidate();
                     begin

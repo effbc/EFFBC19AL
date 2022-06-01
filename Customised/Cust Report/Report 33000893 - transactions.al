@@ -17,7 +17,7 @@ report 33000893 transactions
 
     dataset
     {
-        dataitem("G/L Entry";"G/L Entry")
+        dataitem("G/L Entry"; "G/L Entry")
         {
             DataItemTableView = SORTING(Entry No.) ORDER(Ascending) WHERE(Source Code=FILTER(<>SALESAPPL));
             RequestFilterFields = "System Date","User ID";

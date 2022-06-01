@@ -4,7 +4,7 @@ report 50163 "Test report- Orders"
 
     dataset
     {
-        dataitem("Order Address";"Order Address")
+        dataitem("Order Address"; "Order Address")
         {
 
             trigger OnAfterGetRecord();
