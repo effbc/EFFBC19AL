@@ -1,6 +1,6 @@
 tableextension 70012 SalesLineExt extends "Sales Line"
 {
-    // version NAVW19.00.00.51947,NAVIN9.00.00.51947,TFS225680,B2B1.0,DWS1.0,SH1.0
+    
 
     fields
     {

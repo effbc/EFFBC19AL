@@ -1,35 +1,20 @@
 tableextension 70032 PurchInvLineExt extends "Purch. Inv. Line"
 {
-    // version NAVW19.00.00.51685,NAVIN9.00.00.51685,TDS-REGEF-194Q
+
 
     fields
     {
 
-        //Unsupported feature: Change Editable on ""Buy-from Vendor No."(Field 2)". Please convert manually.
 
-
-        //Unsupported feature: Change OptionString on "Type(Field 5)". Please convert manually.
-
-
-        //Unsupported feature: Change TableRelation on ""No."(Field 6)". Please convert manually.
-
-
-        //Unsupported feature: Change TableRelation on ""Location Code"(Field 7)". Please convert manually.
-
-
-        //Unsupported feature: Change TableRelation on ""Posting Group"(Field 8)". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on ""Posting Group"(Field 8)". Please convert manually.
 
         modify("Direct Unit Cost")
         {
             CaptionClass = GetCaptionClass(FieldNo("Direct Unit Cost"));
         }
 
-        //Unsupported feature: Change Editable on ""VAT %"(Field 25)". Please convert manually.
 
 
+<<<<<<< HEAD
         //Unsupported feature: Change InitValue on ""Allow Invoice Disc."(Field 32)". Please convert manually.
 
 
@@ -1039,6 +1024,8 @@ tableextension 70032 PurchInvLineExt extends "Purch. Inv. Line"
             DataClassification = CustomerContent;
             Editable = false;
         }
+=======
+>>>>>>> 92e9343b97066cd41289b021406784be0d52ea8b
         field(60001; "Indent No."; Code[20])
         {
             Description = 'B2B';
@@ -1086,8 +1073,9 @@ tableextension 70032 PurchInvLineExt extends "Purch. Inv. Line"
         {
             FieldClass = FlowField;
         }
-        field(70027; "GST Claiming Status"; Option)
+        field(70027; "GST Claiming Status"; Enum "Purch Inv Enum1")
         {
+<<<<<<< HEAD
             DataClassification = CustomerContent;
             OptionCaption = '" ,Ineligible,Missed,Can Claim in Future,Claimed"';
             OptionMembers = " ",Ineligible,Missed,"Can Claim in Future",Claimed;
@@ -1095,321 +1083,15 @@ tableextension 70032 PurchInvLineExt extends "Purch. Inv. Line"
     }
     keys
     {
+=======
+            DataClassification = ToBeClassified;
+>>>>>>> 92e9343b97066cd41289b021406784be0d52ea8b
 
-        //Unsupported feature: Deletion on ""Document No.,Line No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Blanket Order No.,Blanket Order Line No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Type,No.,Variant Code"(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Buy-from Vendor No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Order No.,Order Line No.,Posting Date"(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Document No.,Location Code"(Key)". Please convert manually.
-
-        key(Key1; "Document No.", "Line No.")
-        {
-            SumIndexFields = Amount, "Amount Including VAT", "Amount To Vendor";
-        }
-        key(Key2; "Blanket Order No.", "Blanket Order Line No.")
-        {
-        }
-        key(Key3; Type, "No.", "Variant Code", "Invoice Date")
-        {
-        }
-        key(Key4; "Buy-from Vendor No.")
-        {
-        }
-        key(Key5; "Order No.", "Order Line No.", "Posting Date")
-        {
-        }
-        key(Key6; "Document No.", "Location Code")
-        {
-            MaintainSQLIndex = false;
-            SumIndexFields = Amount, "Amount Including VAT";
         }
     }
 
 
-    //Unsupported feature: CodeModification on "OnDelete". Please convert manually.
 
-    //trigger OnDelete();
-    //Parameters and return type have not been exported.
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    PurchDocLineComments.SETRANGE("Document Type",PurchDocLineComments."Document Type"::"Posted Invoice");
-    PurchDocLineComments.SETRANGE("No.","Document No.");
-    PurchDocLineComments.SETRANGE("Document Line No.","Line No.");
-    IF NOT PurchDocLineComments.ISEMPTY THEN
-      PurchDocLineComments.DELETEALL;
-
-    PostedDeferralHeader.DeleteHeader(DeferralUtilities.GetPurchDeferralDocType,'','',
-      PurchDocLineComments."Document Type"::"Posted Invoice","Document No.","Line No.");
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    Body:='****  Auto Mail Generated From ERP  ****';
-    Mail_From:='erp@efftronics.net';
-    Mail_To:='anilkumar@efftronics.net,santhoshk@efftronics.net,swarupa@efftronics.net,sreenu@efftronics.net,phani@efftronics.net';
-    // Mail_To:='santhoshk@efftronics.net';
-     USER.SetRange(USER."User Security ID" ,UserId);// Changed User."User Id" to User."User Security ID" B2B//UPGREV2.0
-     USER.SetRange("User Name" ,UserId);//UPGREV2.0
-     if USER.Find('-') then
-     Subject:=USER."User Name"+'  is trying to Delete Purchase Invoice Line Records';// Changed User."Name" to User."User Name" B2B
-     //Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
-      Error('U Dont Have Permissions to Delete');
-    PurchDocLineComments.SetRange("Document Type",PurchDocLineComments."Document Type"::"Posted Invoice");
-    PurchDocLineComments.SetRange("No.","Document No.");
-    PurchDocLineComments.SetRange("Document Line No.","Line No.");
-    if not PurchDocLineComments.IsEmpty then
-      PurchDocLineComments.DeleteAll;
-    #6..8
-    */
-    //end;
-
-    //Unsupported feature: InsertAfter on "Documentation". Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-
-    //Unsupported feature: PropertyModification on "OnDelete.PurchDocLineComments(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //OnDelete.PurchDocLineComments : 43;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //OnDelete.PurchDocLineComments : "Purch. Comment Line";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "OnDelete.PostedDeferralHeader(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //OnDelete.PostedDeferralHeader : 1704;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //OnDelete.PostedDeferralHeader : "Posted Deferral Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "GetCurrencyCode(PROCEDURE 1).PurchInvHeader(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //GetCurrencyCode : 122;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //GetCurrencyCode : "Purch. Inv. Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ShowItemTrackingLines(PROCEDURE 3).ItemTrackingDocMgt(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowItemTrackingLines : 6503;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowItemTrackingLines : "Item Tracking Doc. Management";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "GetFieldCaption(PROCEDURE 31).Field(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //GetFieldCaption : 2000000041;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //GetFieldCaption : Field;
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "GetCaptionClass(PROCEDURE 34).PurchInvHeader(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //GetCaptionClass : 122;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //GetCaptionClass : "Purch. Inv. Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "RowID1(PROCEDURE 44).ItemTrackingMgt(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //RowID1 : 6500;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //RowID1 : "Item Tracking Management";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "GetPurchRcptLines(PROCEDURE 5).PurchRcptLine(Variable 1003)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //GetPurchRcptLines : 121;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //GetPurchRcptLines : "Purch. Rcpt. Line";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "GetPurchRcptLines(PROCEDURE 5).ItemLedgEntry(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //GetPurchRcptLines : 32;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //GetPurchRcptLines : "Item Ledger Entry";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "GetPurchRcptLines(PROCEDURE 5).ValueEntry(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //GetPurchRcptLines : 5802;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //GetPurchRcptLines : "Value Entry";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "CalcReceivedPurchNotReturned(PROCEDURE 4).TempItemLedgEntry(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //CalcReceivedPurchNotReturned : 32;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //CalcReceivedPurchNotReturned : "Item Ledger Entry";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "GetItemLedgEntries(PROCEDURE 6).ItemLedgEntry(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //GetItemLedgEntries : 32;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //GetItemLedgEntries : "Item Ledger Entry";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "GetItemLedgEntries(PROCEDURE 6).ValueEntry(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //GetItemLedgEntries : 5802;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //GetItemLedgEntries : "Value Entry";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ShowItemReceiptLines(PROCEDURE 9).TempPurchRcptLine(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowItemReceiptLines : 121;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowItemReceiptLines : "Purch. Rcpt. Line";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ShowLineComments(PROCEDURE 8).PurchCommentLine(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowLineComments : 43;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowLineComments : "Purch. Comment Line";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "GetDocumentType(PROCEDURE 14).PurchCommentLine(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //GetDocumentType : 43;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //GetDocumentType : "Purch. Comment Line";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "FormatType(PROCEDURE 144).PurchaseLine(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //FormatType : 39;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //FormatType : "Purchase Line";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "DimMgt(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //DimMgt : 408;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //DimMgt : DimensionManagement;
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "UOMMgt(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //UOMMgt : 5402;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //UOMMgt : "Unit of Measure Management";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "DeferralUtilities(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //DeferralUtilities : 1720;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //DeferralUtilities : "Deferral Utilities";
-    //Variable type has not been exported.
 
     var
         USER: Record User;

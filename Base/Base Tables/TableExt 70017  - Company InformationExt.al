@@ -1,10 +1,11 @@
 tableextension 70017 CompanyInformationExt extends "Company Information"
 {
-    // version NAVW19.00.00.51852,NAVIN9.00.00.51852
+  
 
     fields
     {
 
+<<<<<<< HEAD
         //Unsupported feature: Change TableRelation on "City(Field 6)". Please convert manually.
 
 
@@ -726,6 +727,9 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
                         ENN = 'ARN No.';
             DataClassification = CustomerContent;
         }
+=======
+      
+>>>>>>> 92e9343b97066cd41289b021406784be0d52ea8b
         field(50001; "C.S.T.Date"; Date)
         {
             DataClassification = CustomerContent;
@@ -739,248 +743,5 @@ tableextension 70017 CompanyInformationExt extends "Company Information"
             DataClassification = CustomerContent;
         }
     }
-    keys
-    {
-
-        //Unsupported feature: Deletion on ""Primary Key"(Key)". Please convert manually.
-
-        key(Key1; "Primary Key")
-        {
-        }
-    }
-
-
-    //Unsupported feature: CodeModification on "OnInsert". Please convert manually.
-
-    //trigger OnInsert();
-    //Parameters and return type have not been exported.
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    "Last Modified Date Time" := CURRENTDATETIME;
-    IF PictureUpdated THEN
-      "Picture - Last Mod. Date Time" := "Last Modified Date Time";
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    "Last Modified Date Time" := CurrentDateTime;
-    if PictureUpdated then
-      "Picture - Last Mod. Date Time" := "Last Modified Date Time";
-    */
-    //end;
-
-
-    //Unsupported feature: CodeModification on "OnModify". Please convert manually.
-
-    //trigger OnModify();
-    //Parameters and return type have not been exported.
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    "Last Modified Date Time" := CURRENTDATETIME;
-    IF PictureUpdated THEN
-      "Picture - Last Mod. Date Time" := "Last Modified Date Time";
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    "Last Modified Date Time" := CurrentDateTime;
-    if PictureUpdated then
-      "Picture - Last Mod. Date Time" := "Last Modified Date Time";
-    */
-    //end;
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-
-    //Unsupported feature: PropertyModification on ""VAT Registration No."(Field 19).OnValidate.VATRegNoFormat(Variable 1005)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //"VAT Registration No." : 381;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //"VAT Registration No." : "VAT Registration No. Format";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on ""VAT Registration No."(Field 19).OnValidate.VATRegistrationLog(Variable 1004)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //"VAT Registration No." : 249;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //"VAT Registration No." : "VAT Registration Log";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on ""VAT Registration No."(Field 19).OnValidate.VATRegistrationLogMgt(Variable 1003)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //"VAT Registration No." : 249;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //"VAT Registration No." : "VAT Registration Log Mgt.";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on ""E-Mail"(Field 34).OnValidate.MailManagement(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //"E-Mail" : 9520;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //"E-Mail" : "Mail Management";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on ""IC Inbox Details"(Field 43).OnLookup.FileMgt(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //"IC Inbox Details" : 419;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //"IC Inbox Details" : "File Management";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "GLN(Field 90).OnValidate.GLNCalculator(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //GLN : 1607;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //GLN : "GLN Calculator";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on ""Sync with O365 Bus. profile"(Field 7603).OnValidate.GraphIntBusinessProfile(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //"Sync with O365 Bus. profile" : 5442;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //"Sync with O365 Bus. profile" : "Graph Int - Business Profile";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "IBANError(PROCEDURE 12).ConfirmManagement(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //IBANError : 27;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //IBANError : "Confirm Management";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "DisplayMap(PROCEDURE 7).MapPoint(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //DisplayMap : 800;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //DisplayMap : "Online Map Setup";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "DisplayMap(PROCEDURE 7).MapMgt(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //DisplayMap : 802;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //DisplayMap : "Online Map Management";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "VerifyAndSetPaymentInfo(PROCEDURE 6).ConfirmManagement(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //VerifyAndSetPaymentInfo : 27;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //VerifyAndSetPaymentInfo : "Confirm Management";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "VerifyAndSetPaymentInfo(PROCEDURE 6).CompanyInformationPage(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //VerifyAndSetPaymentInfo : 1;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //VerifyAndSetPaymentInfo : "Company Information";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "GetDatabaseIndicatorText(PROCEDURE 9).ActiveSession(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //GetDatabaseIndicatorText : 2000000110;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //GetDatabaseIndicatorText : "Active Session";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "GetCompanyCountryRegionCode(PROCEDURE 25).MediaResourcesMgt(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //GetCompanyCountryRegionCode : 9755;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //GetCompanyCountryRegionCode : "Media Resources Mgt.";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "IsSyncEnabledForOtherCompany(PROCEDURE 21).CompanyInformation(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //IsSyncEnabledForOtherCompany : 79;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //IsSyncEnabledForOtherCompany : "Company Information";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "IsSyncEnabledForOtherCompany(PROCEDURE 21).Company(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //IsSyncEnabledForOtherCompany : 2000000006;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //IsSyncEnabledForOtherCompany : Company;
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "PostCode(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //PostCode : 225;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //PostCode : "Post Code";
-    //Variable type has not been exported.
-}
+ }
 

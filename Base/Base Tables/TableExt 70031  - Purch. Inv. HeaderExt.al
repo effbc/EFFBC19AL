@@ -1,13 +1,13 @@
 tableextension 70031 PurchInvHeaderExt extends "Purch. Inv. Header"
 {
-    // version NAVW19.00.00.51685,NAVIN9.00.00.51685,TFS223871,B2B1.0
+
 
     fields
     {
 
-        //Unsupported feature: Change NotBlank on ""Buy-from Vendor No."(Field 2)". Please convert manually.
 
 
+<<<<<<< HEAD
         //Unsupported feature: Change NotBlank on ""Pay-to Vendor No."(Field 4)". Please convert manually.
 
 
@@ -590,6 +590,8 @@ tableextension 70031 PurchInvHeaderExt extends "Purch. Inv. Header"
             DataClassification = CustomerContent;
             Editable = false;
         }
+=======
+>>>>>>> 92e9343b97066cd41289b021406784be0d52ea8b
         field(50000; "MSPT Date"; Date)
         {
             Description = 'MSPT1.0';
@@ -705,10 +707,14 @@ tableextension 70031 PurchInvHeaderExt extends "Purch. Inv. Header"
         {
             DataClassification = CustomerContent;
         }
-        field(60099; "C Status"; Option)
+        field(60099; "C Status"; Enum "Purch Line Enum8")
         {
+<<<<<<< HEAD
             OptionMembers = " ",ToBeSent,Sent;
             DataClassification = CustomerContent;
+=======
+            //OptionMembers = " ",ToBeSent,Sent;
+>>>>>>> 92e9343b97066cd41289b021406784be0d52ea8b
         }
         field(60100; "Vehicle Number"; Text[30])
         {
@@ -731,10 +737,14 @@ tableextension 70031 PurchInvHeaderExt extends "Purch. Inv. Header"
             Editable = false;
             DataClassification = CustomerContent;
         }
-        field(60105; ExciseRemarks; Option)
+        field(60105; ExciseRemarks; Enum "Purch Line Enum4")
         {
+<<<<<<< HEAD
             OptionMembers = " "," Claimed","Bill Not rcvd"," Need To Claim"," Not Known"," Need Not Claim";
             DataClassification = CustomerContent;
+=======
+            // OptionMembers = " "," Claimed","Bill Not rcvd"," Need To Claim"," Not Known"," Need Not Claim";
+>>>>>>> 92e9343b97066cd41289b021406784be0d52ea8b
         }
         field(60122; "Tarrif Heading No"; Code[50])
         {
@@ -745,9 +755,10 @@ tableextension 70031 PurchInvHeaderExt extends "Purch. Inv. Header"
             Editable = false;
             DataClassification = CustomerContent;
         }
-        field(70001; "% of input for Claimed Month"; Option)
+        field(70001; "% of input for Claimed Month"; Enum "Purch Line Enum7")
         {
             Description = 'added by vishnu Priya for the GST Claiming  Purpose';
+<<<<<<< HEAD
             OptionCaption = '" ,20,10,5"';
             OptionMembers = " ","20","10","5";
             DataClassification = CustomerContent;
@@ -755,284 +766,12 @@ tableextension 70031 PurchInvHeaderExt extends "Purch. Inv. Header"
     }
     keys
     {
+=======
+>>>>>>> 92e9343b97066cd41289b021406784be0d52ea8b
 
-        //Unsupported feature: Deletion on ""No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Order No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Pre-Assigned No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Vendor Invoice No.,Posting Date"(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Buy-from Vendor No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Prepayment Order No.,Prepayment Invoice"(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Pay-to Vendor No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Posting Date"(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Due Date"(Key)". Please convert manually.
-
-        key(Key1; "No.")
-        {
-        }
-        key(Key2; "Order No.")
-        {
-        }
-        key(Key3; "Pre-Assigned No.")
-        {
-        }
-        key(Key4; "Vendor Invoice No.", "Posting Date")
-        {
-        }
-        key(Key5; "Buy-from Vendor No.")
-        {
-        }
-        key(Key6; "Prepayment Order No.", "Prepayment Invoice")
-        {
-        }
-        key(Key7; "Pay-to Vendor No.")
-        {
-        }
-        key(Key8; "Due Date")
-        {
-        }
-        key(Key9; "Type of Supplier", "Buy-from Vendor Name")
-        {
-        }
-        key(Key10; "Posting Date")
-        {
         }
     }
 
-
-    //Unsupported feature: CodeModification on "OnDelete". Please convert manually.
-
-    //trigger OnDelete();
-    //Parameters and return type have not been exported.
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    PostPurchDelete.IsDocumentDeletionAllowed("Posting Date");
-    LOCKTABLE;
-    PostPurchDelete.DeletePurchInvLines(Rec);
-
-    PurchCommentLine.SETRANGE("Document Type",PurchCommentLine."Document Type"::"Posted Invoice");
-    PurchCommentLine.SETRANGE("No.","No.");
-    PurchCommentLine.DELETEALL;
-
-    ApprovalsMgmt.DeletePostedApprovalEntries(RECORDID);
-    PostedDeferralHeader.DeleteForDoc(DeferralUtilities.GetPurchDeferralDocType,'','',
-      PurchCommentLine."Document Type"::"Posted Invoice","No.");
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    PostPurchDelete.IsDocumentDeletionAllowed("Posting Date");
-    LockTable;
-    PostPurchDelete.DeletePurchInvLines(Rec);
-
-    PurchCommentLine.SetRange("Document Type",PurchCommentLine."Document Type"::"Posted Invoice");
-    PurchCommentLine.SetRange("No.","No.");
-    PurchCommentLine.DeleteAll;
-
-    Body:='****  Auto Mail Generated From ERP  ****';
-     Mail_From:='erp@efftronics.net';
-    Mail_To:='anilkumar@efftronics.net,santhoshk@efftronics.net,swarupa@efftronics.net,sreenu@efftronics.net,phani@efftronics.net';
-    // Mail_To:='santhoshk@efftronics.net';
-     //USER.SETRANGE(USER."User Security ID",USERID);// Changed User."User Id" to User."User Security ID" B2B //UPGREV2.0
-     USER.SetRange("User Name",UserId);//UPGREV2.0
-     if USER.Find('-') then
-     Subject:=USER."User Name"+'  is trying to Delete Purchase Invoice Header Records';// Changed User."Name" to User."User Name" B2B
-     //Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
-      Error('U Dont Have Permissions to Delete');
-    ApprovalsMgmt.DeletePostedApprovalEntries(RecordId);
-    PostedDeferralHeader.DeleteForDoc(DeferralUtilities.GetPurchDeferralDocType,'','',
-      PurchCommentLine."Document Type"::"Posted Invoice","No.");
-    */
-    //end;
-
-    //Unsupported feature: InsertAfter on "Documentation". Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-
-    //Unsupported feature: PropertyModification on ""User ID"(Field 112).OnLookup.UserMgt(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //"User ID" : 418;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //"User ID" : "User Management";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "OnDelete.PostedDeferralHeader(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //OnDelete.PostedDeferralHeader : 1704;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //OnDelete.PostedDeferralHeader : "Posted Deferral Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "OnDelete.PostPurchDelete(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //OnDelete.PostPurchDelete : 364;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //OnDelete.PostPurchDelete : "PostPurch-Delete";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "OnDelete.DeferralUtilities(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //OnDelete.DeferralUtilities : 1720;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //OnDelete.DeferralUtilities : "Deferral Utilities";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "PrintRecords(PROCEDURE 1).ReportSelection(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //PrintRecords : 77;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //PrintRecords : "Report Selections";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "Navigate(PROCEDURE 2).NavigateForm(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //Navigate : 344;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //Navigate : Navigate;
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ShowCorrectiveCreditMemo(PROCEDURE 19).PurchCrMemoHdr(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowCorrectiveCreditMemo : 124;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowCorrectiveCreditMemo : "Purch. Cr. Memo Hdr.";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ShowCancelledCreditMemo(PROCEDURE 5).PurchCrMemoHdr(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowCancelledCreditMemo : 124;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowCancelledCreditMemo : "Purch. Cr. Memo Hdr.";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "PurchInvHeader(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //PurchInvHeader : 122;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //PurchInvHeader : "Purch. Inv. Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "PurchCommentLine(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //PurchCommentLine : 43;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //PurchCommentLine : "Purch. Comment Line";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "VendLedgEntry(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //VendLedgEntry : 25;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //VendLedgEntry : "Vendor Ledger Entry";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "DimMgt(Variable 1004)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //DimMgt : 408;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //DimMgt : DimensionManagement;
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ApprovalsMgmt(Variable 1008)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ApprovalsMgmt : 1535;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ApprovalsMgmt : "Approvals Mgmt.";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "UserSetupMgt(Variable 1005)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //UserSetupMgt : 5700;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //UserSetupMgt : "User Setup Management";
-    //Variable type has not been exported.
 
     var
         USER: Record User;
