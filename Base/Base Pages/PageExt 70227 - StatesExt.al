@@ -17,7 +17,7 @@ pageextension 70227 StatesExt extends States
 
 
 
-        modify("Action 1500002")
+        modify("Action")
         {
 
 
