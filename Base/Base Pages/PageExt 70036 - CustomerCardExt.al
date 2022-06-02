@@ -2,60 +2,15 @@ pageextension 70036 CustomerCardExt extends 21
 {
     layout
     {
-        addfirst("Control 1")
+        addfirst(General)
         {
-            field("No."; "No.")
-            {
-                Importance = Promoted;
 
-                trigger OnAssistEdit();
-                begin
-                    IF AssistEdit(xRec) THEN
-                        CurrPage.UPDATE;
-                end;
-            }
-            field(Name; Name)
-            {
-                CaptionML = ENU = 'Name*',
-                            ENN = 'Name';
-                Importance = Promoted;
-                ShowMandatory = true;
-                StyleExpr = false;
-            }
-            field(Address; Address)
-            {
-                CaptionML = ENU = 'Address *',
-                            ENN = 'Address';
-                Style = None;
-                StyleExpr = TRUE;
-            }
-            field("Address 2"; "Address 2")
-            {
-            }
-            field("Post Code"; "Post Code")
-            {
-                Caption = 'Post Code/City *';
-                Importance = Promoted;
-            }
-            field(City; City)
-            {
-            }
-            field("Country/Region Code"; "Country/Region Code")
-            {
-                CaptionML = ENU = 'Country/Region Code *',
-                            ENN = 'Country/Region Code';
-            }
             field("State Code"; "State Code")
             {
                 CaptionML = ENU = 'State Code *',
                             ENN = 'State Code';
             }
-            field("Phone No."; "Phone No.")
-            {
-            }
-            field("Primary Contact No."; "Primary Contact No.")
-            {
-            }
+
             field(Contact; Contact)
             {
                 Editable = ContactEditable;
@@ -69,38 +24,7 @@ pageextension 70036 CustomerCardExt extends 21
             field("Tally Ref"; "Tally Ref")
             {
             }
-            field("Tax Area Code"; "Tax Area Code")
-            {
-                CaptionML = ENU = 'Tax Area Code *',
-                            ENN = 'Tax Area Code';
-            }
-            field("Search Name"; "Search Name")
-            {
-            }
-            field("Balance (LCY)"; "Balance (LCY)")
-            {
 
-                trigger OnDrillDown();
-                var
-                    DtldCustLedgEntry: Record "Detailed Cust. Ledg. Entry";
-                    CustLedgEntry: Record "Cust. Ledger Entry";
-                begin
-                    DtldCustLedgEntry.SETRANGE("Customer No.", "No.");
-                    COPYFILTER("Global Dimension 1 Filter", DtldCustLedgEntry."Initial Entry Global Dim. 1");
-                    COPYFILTER("Global Dimension 2 Filter", DtldCustLedgEntry."Initial Entry Global Dim. 2");
-                    COPYFILTER("Currency Filter", DtldCustLedgEntry."Currency Code");
-                    CustLedgEntry.DrillDownOnEntries(DtldCustLedgEntry);
-                end;
-            }
-            field("Credit Limit (LCY)"; "Credit Limit (LCY)")
-            {
-                StyleExpr = StyleTxt;
-
-                trigger OnValidate();
-                begin
-                    StyleTxt := SetStyle;
-                end;
-            }
             field(SalBalance; SalBalance)
             {
                 Editable = false;
@@ -147,23 +71,7 @@ pageextension 70036 CustomerCardExt extends 21
                     PAGE.RUN(0, CustLedgEntry);
                 end;
             }
-            field("Salesperson Code"; "Salesperson Code")
-            {
-            }
-            field("Responsibility Center"; "Responsibility Center")
-            {
-            }
-            field("Service Zone Code"; "Service Zone Code")
-            {
-            }
-            field(Blocked; Blocked)
-            {
-                Editable = true;
-                Enabled = true;
-            }
-            field("Last Date Modified"; "Last Date Modified")
-            {
-            }
+
             field("User Id"; "User Id")
             {
             }
@@ -178,24 +86,21 @@ pageextension 70036 CustomerCardExt extends 21
             field("MSPT Code"; "MSPT Code")
             {
             }
-            field("Payment Terms Code"; "Payment Terms Code")
-            {
-                CaptionML = ENU = 'Payment Terms Code *',
-                            ENN = 'Payment Terms Code';
-
-                trigger OnValidate();
-                begin
-                    // added by Pranavi on 01-Oct-2016 for payment terms process
-                    IF ("Payment Terms Code" <> xRec."Payment Terms Code") AND (xRec."Payment Terms Code" <> '') THEN BEGIN
-                        SH.RESET;
-                        SH.SETRANGE(SH."Payment Terms Code", "Payment Terms Code");
-                        SH.SETRANGE(SH."Document Type", SH."Document Type"::Order);
-                        IF SH.FINDSET THEN
-                            ERROR('You cannot change the payment terms code as there are ' + FORMAT(SH.COUNT) + 'sale orders with the customer presently!');
-                    END;
-                    // end by pranavi
-                end;
-            }
+        }
+        modify("Payment Terms Code")
+        {
+            trigger OnBeforeValidate()
+            begin
+                // added by Pranavi on 01-Oct-2016 for payment terms process
+                IF ("Payment Terms Code" <> xRec."Payment Terms Code") AND (xRec."Payment Terms Code" <> '') THEN BEGIN
+                    SH.RESET;
+                    SH.SETRANGE(SH."Payment Terms Code", "Payment Terms Code");
+                    SH.SETRANGE(SH."Document Type", SH."Document Type"::Order);
+                    IF SH.FINDSET THEN
+                        ERROR('You cannot change the payment terms code as there are ' + FORMAT(SH.COUNT) + 'sale orders with the customer presently!');
+                END;
+                // end by pranavi
+            end;
         }
         addafter("Allow Line Disc.")
         {
@@ -209,14 +114,11 @@ pageextension 70036 CustomerCardExt extends 21
             {
             }
         }
-        addafter("GST Registration No.")
+        addafter("Customized Calendar")
         {
             field("GST TDS Number"; "GST TDS Number")
             {
             }
-        }
-        addafter("Control 1500032")
-        {
             field("TAN Number"; "TAN Number")
             {
             }
@@ -228,7 +130,7 @@ pageextension 70036 CustomerCardExt extends 21
         {
             Promoted = false;
         }
-        modify(Statistics)
+        modify(Action76)
         {
             Promoted = true;
         }
@@ -256,28 +158,23 @@ pageextension 70036 CustomerCardExt extends 21
         {
             Promoted = false;
         }
-        modify("Service Quote")
+        modify(NewServiceQuote)
         {
             Promoted = false;
         }
-        modify("Service Invoice")
+        modify(NewServiceInvoice)
         {
             Promoted = false;
         }
-        modify("Service Credit Memo")
+        modify(NewServiceCreditMemo)
         {
             Promoted = false;
         }
-
-        modify("Action 1901662105")
-        {
-            Promoted = false;
-        }
-        modify(Reminder)
+        modify(NewReminder)
         {
             Promoted = true;
         }
-        modify("Finance Charge Memo")
+        modify(NewFinanceChargeMemo)
         {
             Promoted = false;
         }
@@ -307,7 +204,7 @@ pageextension 70036 CustomerCardExt extends 21
         {
             Promoted = true;
         }
-        modify("Cash Receipt Journal")
+        modify("Post Cash Receipts")
         {
             Promoted = true;
         }
@@ -315,15 +212,15 @@ pageextension 70036 CustomerCardExt extends 21
         {
             Promoted = true;
         }
-        modify("Customer Detailed Aging")
+        modify("Report Customer Detailed Aging")
         {
             Promoted = false;
         }
-        modify("Customer - Labels")
+        modify("Report Customer - Labels")
         {
             Promoted = false;
         }
-        modify("Customer - Balance to Date")
+        modify("Report Customer - Balance to Date")
         {
             Promoted = true;
         }
@@ -334,7 +231,7 @@ pageextension 70036 CustomerCardExt extends 21
                 Caption = 'Sales &History';
             }
         }
-        addafter("e-Commerce Merchant Id")
+        addafter(CustomerReportSelections)
         {
             action(CustomerSpecification)
             {
@@ -357,7 +254,7 @@ pageextension 70036 CustomerCardExt extends 21
                 RunPageLink = "No." = FIELD("No."), "Global Dimension 1 Filter" = FIELD("Global Dimension 1 Filter"), "Global Dimension 2 Filter" = FIELD("Global Dimension 2 Filter");
             }
         }
-        addafter("Customer - Balance to Date")
+        addafter("Report Customer - Balance to Date")
         {
             action("GST Details")
             {
@@ -632,7 +529,7 @@ pageextension 70036 CustomerCardExt extends 21
         ConnectionOpen: Integer;
         SIH: Integer;
         CLE: Record "Cust. Ledger Entry";
-    //DGSTLE: Record "Detailed GST Ledger Entry";
+        DGSTLE: Record "Detailed GST Ledger Entry";
 
 
 
