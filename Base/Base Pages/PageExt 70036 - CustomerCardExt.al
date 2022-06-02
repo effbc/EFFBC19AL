@@ -114,14 +114,11 @@ pageextension 70036 CustomerCardExt extends 21
             {
             }
         }
-        addafter("GST Registration No.")
+        addafter("Customized Calendar")
         {
             field("GST TDS Number"; "GST TDS Number")
             {
             }
-        }
-        addafter("Control 1500032")
-        {
             field("TAN Number"; "TAN Number")
             {
             }
@@ -133,7 +130,7 @@ pageextension 70036 CustomerCardExt extends 21
         {
             Promoted = false;
         }
-        modify(Statistics)
+        modify(Action76)
         {
             Promoted = true;
         }
@@ -161,28 +158,23 @@ pageextension 70036 CustomerCardExt extends 21
         {
             Promoted = false;
         }
-        modify("Service Quote")
+        modify(NewServiceQuote)
         {
             Promoted = false;
         }
-        modify("Service Invoice")
+        modify(NewServiceInvoice)
         {
             Promoted = false;
         }
-        modify("Service Credit Memo")
+        modify(NewServiceCreditMemo)
         {
             Promoted = false;
         }
-
-        modify("Action 1901662105")
-        {
-            Promoted = false;
-        }
-        modify(Reminder)
+        modify(NewReminder)
         {
             Promoted = true;
         }
-        modify("Finance Charge Memo")
+        modify(NewFinanceChargeMemo)
         {
             Promoted = false;
         }
@@ -212,7 +204,7 @@ pageextension 70036 CustomerCardExt extends 21
         {
             Promoted = true;
         }
-        modify("Cash Receipt Journal")
+        modify("Post Cash Receipts")
         {
             Promoted = true;
         }
@@ -220,15 +212,15 @@ pageextension 70036 CustomerCardExt extends 21
         {
             Promoted = true;
         }
-        modify("Customer Detailed Aging")
+        modify("Report Customer Detailed Aging")
         {
             Promoted = false;
         }
-        modify("Customer - Labels")
+        modify("Report Customer - Labels")
         {
             Promoted = false;
         }
-        modify("Customer - Balance to Date")
+        modify("Report Customer - Balance to Date")
         {
             Promoted = true;
         }
@@ -239,7 +231,7 @@ pageextension 70036 CustomerCardExt extends 21
                 Caption = 'Sales &History';
             }
         }
-        addafter("e-Commerce Merchant Id")
+        addafter(CustomerReportSelections)
         {
             action(CustomerSpecification)
             {
@@ -262,7 +254,7 @@ pageextension 70036 CustomerCardExt extends 21
                 RunPageLink = "No." = FIELD("No."), "Global Dimension 1 Filter" = FIELD("Global Dimension 1 Filter"), "Global Dimension 2 Filter" = FIELD("Global Dimension 2 Filter");
             }
         }
-        addafter("Customer - Balance to Date")
+        addafter("Report Customer - Balance to Date")
         {
             action("GST Details")
             {
@@ -537,7 +529,7 @@ pageextension 70036 CustomerCardExt extends 21
         ConnectionOpen: Integer;
         SIH: Integer;
         CLE: Record "Cust. Ledger Entry";
-    //DGSTLE: Record "Detailed GST Ledger Entry";
+        DGSTLE: Record "Detailed GST Ledger Entry";
 
 
 
