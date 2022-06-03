@@ -6,49 +6,49 @@ xmlport 80224 "service item"
     {
         textelement(ServiceItems)
         {
-            tableelement("<serviceitem>";"Service Item")
+            tableelement("<serviceitem>"; "Service Item")
             {
                 XmlName = 'ServiceItem';
-                fieldelement(No;"<ServiceItem>"."No.")
+                fieldelement(No; "<ServiceItem>"."No.")
                 {
                 }
-                fieldelement(ServiceItemGroupCode;"<ServiceItem>"."Service Item Group Code")
+                fieldelement(ServiceItemGroupCode; "<ServiceItem>"."Service Item Group Code")
                 {
                 }
-                fieldelement(Description;"<ServiceItem>".Description)
+                fieldelement(Description; "<ServiceItem>".Description)
                 {
                 }
-                fieldelement(Priority;"<ServiceItem>".Priority)
+                fieldelement(Priority; "<ServiceItem>".Priority)
                 {
                 }
-                fieldelement(CustomerNo;"<ServiceItem>"."Customer No.")
+                fieldelement(CustomerNo; "<ServiceItem>"."Customer No.")
                 {
                 }
-                fieldelement(Name;"<ServiceItem>".Name)
+                fieldelement(Name; "<ServiceItem>".Name)
                 {
                 }
-                fieldelement(PostCode;"<ServiceItem>"."Post Code")
+                fieldelement(PostCode; "<ServiceItem>"."Post Code")
                 {
                 }
-                fieldelement(City;"<ServiceItem>".City)
+                fieldelement(City; "<ServiceItem>".City)
                 {
                 }
-                fieldelement(ItemNo;"<ServiceItem>"."Item No.")
+                fieldelement(ItemNo; "<ServiceItem>"."Item No.")
                 {
                 }
-                fieldelement(ShiptoName;"<ServiceItem>"."Ship-to Name")
+                fieldelement(ShiptoName; "<ServiceItem>"."Ship-to Name")
                 {
                 }
-                fieldelement(ShiptoPostCode;"<ServiceItem>"."Ship-to Post Code")
+                fieldelement(ShiptoPostCode; "<ServiceItem>"."Ship-to Post Code")
                 {
                 }
-                fieldelement(ShiptoCity;"<ServiceItem>"."Ship-to City")
+                fieldelement(ShiptoCity; "<ServiceItem>"."Ship-to City")
                 {
                 }
-                fieldelement(LocationofServiceItem;"<ServiceItem>"."Location of Service Item")
+                fieldelement(LocationofServiceItem; "<ServiceItem>"."Location of Service Item")
                 {
                 }
-                fieldelement(UnitofMeasureCode;"<ServiceItem>"."Unit of Measure Code")
+                fieldelement(UnitofMeasureCode; "<ServiceItem>"."Unit of Measure Code")
                 {
                 }
             }

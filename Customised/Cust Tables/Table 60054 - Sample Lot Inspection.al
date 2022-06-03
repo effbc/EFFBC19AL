@@ -1,78 +1,86 @@
 table 60054 "Sample Lot Inspection"
 {
+    DataClassification = CustomerContent;
     // version B2B1.0
 
 
     fields
     {
-        field(1;"Purchase Order No.";Code[20])
+        field(1; "Purchase Order No."; Code[20])
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
-        field(2;"Purchase Line No.";Integer)
+        field(2; "Purchase Line No."; Integer)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
-        field(3;"Line No.";Integer)
+        field(3; "Line No."; Integer)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
-        field(4;Quantity;Decimal)
+        field(4; Quantity; Decimal)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
-        field(5;"Sample Qty.";Decimal)
+        field(5; "Sample Qty."; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             var
-                Text01 : Label 'Sample should be Less than or Equal to the Quantity..!';
+                Text01: Label 'Sample should be Less than or Equal to the Quantity..!';
             begin
                 if (Quantity < "Sample Qty.") then
-                   Error(Text01);
+                    Error(Text01);
                 if Create = true then
-                  Error(Text002);
+                    Error(Text002);
             end;
         }
-        field(6;"Accepted Qty.";Decimal)
+        field(6; "Accepted Qty."; Decimal)
         {
-            CalcFormula = Sum("Quality Ledger Entry".Quantity WHERE ("Order No."=FIELD("Purchase Order No."),
-                                                                     "Order Line No."=FIELD("Purchase Line No."),
-                                                                     "Sample Inspection Line No."=FIELD("Line No."),
-                                                                     "Entry Type"=CONST(Accepted)));
+            CalcFormula = Sum("Quality Ledger Entry".Quantity WHERE("Order No." = FIELD("Purchase Order No."),
+                                                                     "Order Line No." = FIELD("Purchase Line No."),
+                                                                     "Sample Inspection Line No." = FIELD("Line No."),
+                                                                     "Entry Type" = CONST(Accepted)));
             Editable = false;
             FieldClass = FlowField;
         }
-        field(7;"Rejected Qty.";Decimal)
+        field(7; "Rejected Qty."; Decimal)
         {
-            CalcFormula = Sum("Quality Ledger Entry".Quantity WHERE ("Order No."=FIELD("Purchase Order No."),
-                                                                     "Order Line No."=FIELD("Purchase Line No."),
-                                                                     "Sample Inspection Line No."=FIELD("Line No."),
-                                                                     "Entry Type"=CONST(Reject)));
+            CalcFormula = Sum("Quality Ledger Entry".Quantity WHERE("Order No." = FIELD("Purchase Order No."),
+                                                                     "Order Line No." = FIELD("Purchase Line No."),
+                                                                     "Sample Inspection Line No." = FIELD("Line No."),
+                                                                     "Entry Type" = CONST(Reject)));
             Editable = false;
             FieldClass = FlowField;
         }
-        field(8;"Rework Qty.";Decimal)
+        field(8; "Rework Qty."; Decimal)
         {
-            CalcFormula = Sum("Quality Ledger Entry"."Remaining Quantity" WHERE ("Order No."=FIELD("Purchase Order No."),
-                                                                                 "Order Line No."=FIELD("Purchase Line No."),
-                                                                                 "Sample Inspection Line No."=FIELD("Line No."),
-                                                                                 "Entry Type"=CONST(Rework)));
+            CalcFormula = Sum("Quality Ledger Entry"."Remaining Quantity" WHERE("Order No." = FIELD("Purchase Order No."),
+                                                                                 "Order Line No." = FIELD("Purchase Line No."),
+                                                                                 "Sample Inspection Line No." = FIELD("Line No."),
+                                                                                 "Entry Type" = CONST(Rework)));
             Editable = false;
             FieldClass = FlowField;
         }
-        field(9;Accept;Boolean)
+        field(9; Accept; Boolean)
         {
             Editable = false;
+            DataClassification = CustomerContent;
         }
-        field(100;Create;Boolean)
+        field(100; Create; Boolean)
         {
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(Key1;"Purchase Order No.","Purchase Line No.",Quantity,"Line No.")
+        key(Key1; "Purchase Order No.", "Purchase Line No.", Quantity, "Line No.")
         {
         }
     }
@@ -83,51 +91,51 @@ table 60054 "Sample Lot Inspection"
 
     trigger OnDelete();
     begin
-        InspectionDataSheetHeader.SetRange("Order No.","Purchase Order No.");
-        InspectionDataSheetHeader.SetRange("Purch Line No","Purchase Line No.");
-        InspectionDataSheetHeader.SetRange("Sample Inspection Line No.","Line No.");
+        InspectionDataSheetHeader.SetRange("Order No.", "Purchase Order No.");
+        InspectionDataSheetHeader.SetRange("Purch Line No", "Purchase Line No.");
+        InspectionDataSheetHeader.SetRange("Sample Inspection Line No.", "Line No.");
         if InspectionDataSheetHeader.Find('-') then
-          Error(Text001);
+            Error(Text001);
 
-        InspectionReceiptHeader.SetRange("Order No.","Purchase Order No.");
-        InspectionReceiptHeader.SetRange("Purch Line No","Purchase Line No.");
-        InspectionReceiptHeader.SetRange("Sample Inspection Line No.","Line No.");
-        InspectionReceiptHeader.SetFilter(Status,'NO');
+        InspectionReceiptHeader.SetRange("Order No.", "Purchase Order No.");
+        InspectionReceiptHeader.SetRange("Purch Line No", "Purchase Line No.");
+        InspectionReceiptHeader.SetRange("Sample Inspection Line No.", "Line No.");
+        InspectionReceiptHeader.SetFilter(Status, 'NO');
         if InspectionReceiptHeader.Find('-') then
-          Error(Text001);
+            Error(Text001);
     end;
 
     trigger OnInsert();
     var
-        Text001 : Label 'Status should be Release for Purchase Order :%1';
+        Text001: Label 'Status should be Release for Purchase Order :%1';
     begin
-        PurchaseHeader.SetRange(PurchaseHeader."No.","Purchase Order No.");
+        PurchaseHeader.SetRange(PurchaseHeader."No.", "Purchase Order No.");
         if PurchaseHeader.Find('-') then
-          if PurchaseHeader.Status = PurchaseHeader.Status::Open then
-             Error(Text001,PurchaseHeader."No.");
+            if PurchaseHeader.Status = PurchaseHeader.Status::Open then
+                Error(Text001, PurchaseHeader."No.");
 
-        SampleLotInspection.SetRange("Purchase Order No.","Purchase Order No.");
-        SampleLotInspection.SetRange("Purchase Line No.","Purchase Line No.");
-        SampleLotInspection.SetFilter(Accept,'YES');
+        SampleLotInspection.SetRange("Purchase Order No.", "Purchase Order No.");
+        SampleLotInspection.SetRange("Purchase Line No.", "Purchase Line No.");
+        SampleLotInspection.SetFilter(Accept, 'YES');
         if SampleLotInspection.Find('-') then
-          if not Confirm(Text01,false) then
-            exit;
+            if not Confirm(Text01, false) then
+                exit;
     end;
 
     var
-        SampleLotInspection : Record "Sample Lot Inspection";
-        Text01 : Label 'Sample Lot is already Accepted do you want again inspect the Lot.!';
-        InspectionDataSheetHeader : Record "Inspection Datasheet Header";
-        InspectionReceiptHeader : Record "Inspection Receipt Header";
-        Text001 : Label 'You can not Delete the Entries IDS/IR Exists.';
-        Text002 : Label '"You can not Modify the Quantity "';
-        PurchaseHeader : Record "Purchase Header";
+        SampleLotInspection: Record "Sample Lot Inspection";
+        Text01: Label 'Sample Lot is already Accepted do you want again inspect the Lot.!';
+        InspectionDataSheetHeader: Record "Inspection Datasheet Header";
+        InspectionReceiptHeader: Record "Inspection Receipt Header";
+        Text001: Label 'You can not Delete the Entries IDS/IR Exists.';
+        Text002: Label '"You can not Modify the Quantity "';
+        PurchaseHeader: Record "Purchase Header";
 
     [LineStart(2505)]
     procedure UpdateQualityPurchLines();
     var
-        SpecHeader : Record "Specification Header";
-        ActiveVersionCode : Code[20];
+        SpecHeader: Record "Specification Header";
+        ActiveVersionCode: Code[20];
     begin
         /*
         "Spec ID" := VendorQualityApprovalSpecId;
@@ -150,15 +158,15 @@ table 60054 "Sample Lot Inspection"
     [LineStart(2522)]
     procedure CreateInspectionDataSheets();
     var
-        InspectDataSheets : Codeunit "Inspection Data Sheets";
-        PurchHeader : Record "Purchase Header";
-        WhseRcptLine : Record "Warehouse Receipt Line";
+        InspectDataSheets: Codeunit "Inspection Data Sheets";
+        PurchHeader: Record "Purchase Header";
+        WhseRcptLine: Record "Warehouse Receipt Line";
     begin
-        PurchHeader.Get(PurchHeader."Document Type" :: Order,"Purchase Order No.");
-        PurchHeader.TestField(Status,PurchHeader.Status ::Released);
+        PurchHeader.Get(PurchHeader."Document Type"::Order, "Purchase Order No.");
+        PurchHeader.TestField(Status, PurchHeader.Status::Released);
         //TESTFIELD("Quality Before Receipt",TRUE);
         TestField("Sample Qty.");
-        
+
         /*
         WhseRcptLine.SETRANGE("Source Type",39);
         WhseRcptLine.SETRANGE("Source Subtype",1);
@@ -175,7 +183,7 @@ table 60054 "Sample Lot Inspection"
     [LineStart(2539)]
     procedure ShowDataSheets();
     var
-        InspectDataSheet : Record "Inspection Datasheet Header";
+        InspectDataSheet: Record "Inspection Datasheet Header";
     begin
         /*
         InspectDataSheet.SETRANGE("Order No.","Document No.");
@@ -189,7 +197,7 @@ table 60054 "Sample Lot Inspection"
     [LineStart(2547)]
     procedure ShowPostDataSheets();
     var
-        PostInspectDataSheet : Record "Posted Inspect DatasheetHeader";
+        PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
     begin
         /*
         PostInspectDataSheet.SETRANGE("Order No.","Document No.");
@@ -203,7 +211,7 @@ table 60054 "Sample Lot Inspection"
     [LineStart(2555)]
     procedure ShowInspectReceipt();
     var
-        InspectionReceipt : Record "Inspection Receipt Header";
+        InspectionReceipt: Record "Inspection Receipt Header";
     begin
         /*
         InspectionReceipt.SETRANGE("Order No.","Document No.");
@@ -218,7 +226,7 @@ table 60054 "Sample Lot Inspection"
     [LineStart(2564)]
     procedure ShowPostInspectReceipt();
     var
-        InspectionReceipt : Record "Inspection Receipt Header";
+        InspectionReceipt: Record "Inspection Receipt Header";
     begin
         /*
         InspectionReceipt.SETRANGE("Order No.","Document No.");
@@ -242,11 +250,11 @@ table 60054 "Sample Lot Inspection"
     end;
 
     [LineStart(2580)]
-    procedure VendorQualityApprovalSpecId() : Code[20];
+    procedure VendorQualityApprovalSpecId(): Code[20];
     var
-        VendorItemQA : Record "Vendor Item Quality Approval";
-        PurchHeader : Record "Purchase Header";
-        PostingDate : Date;
+        VendorItemQA: Record "Vendor Item Quality Approval";
+        PurchHeader: Record "Purchase Header";
+        PostingDate: Date;
     begin
         /*
         VendorItemQA.SETRANGE("Vendor No.","Buy-from Vendor No.");
@@ -264,13 +272,13 @@ table 60054 "Sample Lot Inspection"
     end;
 
     [LineStart(2594)]
-    procedure CancelInspection(var QualityStatus : Text[50]);
+    procedure CancelInspection(var QualityStatus: Text[50]);
     var
-        IDS : Record "Inspection Datasheet Header";
-        IDSL : Record "Inspection Datasheet Line";
-        QILE : Record "Quality Item Ledger Entry";
-        PIDS : Record "Posted Inspect DatasheetHeader";
-        PIDSL : Record "Posted Inspect Datasheet Line";
+        IDS: Record "Inspection Datasheet Header";
+        IDSL: Record "Inspection Datasheet Line";
+        QILE: Record "Quality Item Ledger Entry";
+        PIDS: Record "Posted Inspect DatasheetHeader";
+        PIDSL: Record "Posted Inspect Datasheet Line";
     begin
         /*
         IF "Quality Before Receipt" = TRUE THEN BEGIN
@@ -333,11 +341,11 @@ table 60054 "Sample Lot Inspection"
     end;
 
     [LineStart(2653)]
-    procedure CloseInspection(var QualityStatus : Text[50]);
+    procedure CloseInspection(var QualityStatus: Text[50]);
     var
-        IR : Record "Inspection Receipt Header";
-        IRL : Record "Inspection Receipt Line";
-        QILE : Record "Quality Item Ledger Entry";
+        IR: Record "Inspection Receipt Header";
+        IRL: Record "Inspection Receipt Line";
+        QILE: Record "Quality Item Ledger Entry";
     begin
         /*
         IR.SETRANGE("Order No.","Document No.");

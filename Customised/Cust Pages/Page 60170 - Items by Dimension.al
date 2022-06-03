@@ -16,12 +16,12 @@ page 60170 "Items by Dimension"
     }
 
     var
-        ItemLedgerEntry : Record "Item Ledger Entry";
-        MatrixHeader : Text[250];
-        ShowColumnName : Boolean;
-        ShowInTransit : Boolean;
-        DimValue : Record "Dimension Value";
-        ItemNo : Code[20];
+        ItemLedgerEntry: Record "Item Ledger Entry";
+        MatrixHeader: Text[250];
+        ShowColumnName: Boolean;
+        ShowInTransit: Boolean;
+        DimValue: Record "Dimension Value";
+        ItemNo: Code[20];
 
     [LineStart(13677)]
     local procedure InventoryDrillDown();

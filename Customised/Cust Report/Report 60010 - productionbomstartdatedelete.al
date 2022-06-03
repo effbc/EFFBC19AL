@@ -5,7 +5,7 @@ report 60010 productionbomstartdatedelete
 
     dataset
     {
-        dataitem("Production BOM Line";"Production BOM Line")
+        dataitem("Production BOM Line"; "Production BOM Line")
         {
             DataItemTableView = WHERE(Starting Date=FILTER(<>''));
             RequestFilterFields = "Production BOM No.";

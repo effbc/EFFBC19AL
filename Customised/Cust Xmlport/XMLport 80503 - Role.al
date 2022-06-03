@@ -6,37 +6,37 @@ xmlport 80503 Role
     {
         textelement(Permissions)
         {
-            tableelement(Permission;Permission)
+            tableelement(Permission; Permission)
             {
                 XmlName = 'Permission';
-                fieldelement(RoleID;Permission."Role ID")
+                fieldelement(RoleID; Permission."Role ID")
                 {
                 }
-                fieldelement(RoleName;Permission."Role Name")
+                fieldelement(RoleName; Permission."Role Name")
                 {
                 }
-                fieldelement(ObjectType;Permission."Object Type")
+                fieldelement(ObjectType; Permission."Object Type")
                 {
                 }
-                fieldelement(ObjectID;Permission."Object ID")
+                fieldelement(ObjectID; Permission."Object ID")
                 {
                 }
-                fieldelement(ObjectName;Permission."Object Name")
+                fieldelement(ObjectName; Permission."Object Name")
                 {
                 }
-                fieldelement(ReadPermission;Permission."Read Permission")
+                fieldelement(ReadPermission; Permission."Read Permission")
                 {
                 }
-                fieldelement(InsertPermission;Permission."Insert Permission")
+                fieldelement(InsertPermission; Permission."Insert Permission")
                 {
                 }
-                fieldelement(ModifyPermission;Permission."Modify Permission")
+                fieldelement(ModifyPermission; Permission."Modify Permission")
                 {
                 }
-                fieldelement(DeletPermission;Permission."Delete Permission")
+                fieldelement(DeletPermission; Permission."Delete Permission")
                 {
                 }
-                fieldelement(ExecutePermission;Permission."Execute Permission")
+                fieldelement(ExecutePermission; Permission."Execute Permission")
                 {
                 }
             }

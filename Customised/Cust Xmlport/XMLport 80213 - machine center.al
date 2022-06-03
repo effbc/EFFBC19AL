@@ -6,16 +6,16 @@ xmlport 80213 "machine center"
     {
         textelement(MachineCenters)
         {
-            tableelement("<machinecenter>";"Machine Center")
+            tableelement("<machinecenter>"; "Machine Center")
             {
                 XmlName = 'MachineCenter';
-                fieldelement(No;"<MachineCenter>"."No.")
+                fieldelement(No; "<MachineCenter>"."No.")
                 {
                 }
-                fieldelement(Name;"<MachineCenter>".Name)
+                fieldelement(Name; "<MachineCenter>".Name)
                 {
                 }
-                fieldelement(GenProdPostingGroup;"<MachineCenter>"."Gen. Prod. Posting Group")
+                fieldelement(GenProdPostingGroup; "<MachineCenter>"."Gen. Prod. Posting Group")
                 {
                 }
             }

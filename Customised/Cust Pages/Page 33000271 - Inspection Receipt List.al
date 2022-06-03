@@ -7,13 +7,13 @@ page 33000271 "Inspection Receipt List"
     PageType = List;
     SaveValues = true;
     SourceTable = "Inspection Receipt Header";
-    SourceTableView = SORTING(No.) WHERE(Status=FILTER(No),Source Type=CONST(In Bound));
+    SourceTableView = SORTING(No.) WHERE(Status = FILTER(No), Source Type=CONST(In Bound));
 
     layout
     {
         area(content)
         {
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
                 Style = Standard;
                 StyleExpr = TRUE;
@@ -21,146 +21,146 @@ page 33000271 "Inspection Receipt List"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Document Date";"Document Date")
+                field("Document Date"; "Document Date")
                 {
                 }
-                field("Parent IDS";"Parent IDS")
+                field("Parent IDS"; "Parent IDS")
                 {
                 }
-                field("Ids Reference No.";"Ids Reference No.")
+                field("Ids Reference No."; "Ids Reference No.")
                 {
                 }
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("Created Date";"Created Date")
+                field("Created Date"; "Created Date")
                 {
                 }
-                field("Receipt No.";"Receipt No.")
+                field("Receipt No."; "Receipt No.")
                 {
                 }
-                field("Rejection Category";"Rejection Category")
+                field("Rejection Category"; "Rejection Category")
                 {
                 }
-                field("Rejection Reason";"Rejection Reason")
+                field("Rejection Reason"; "Rejection Reason")
                 {
                 }
-                field("Order No.";"Order No.")
+                field("Order No."; "Order No.")
                 {
                 }
-                field("Nature Of Rejection";"Nature Of Rejection")
+                field("Nature Of Rejection"; "Nature Of Rejection")
                 {
                 }
-                field("Trans. Order No.";"Trans. Order No.")
+                field("Trans. Order No."; "Trans. Order No.")
                 {
                 }
-                field("Stock Rcvd from QC";"Stock Rcvd from QC")
+                field("Stock Rcvd from QC"; "Stock Rcvd from QC")
                 {
                 }
-                field("OutPut Jr Serial No.";"OutPut Jr Serial No.")
+                field("OutPut Jr Serial No."; "OutPut Jr Serial No.")
                 {
                 }
-                field("IDS creation Date";"IDS creation Date")
+                field("IDS creation Date"; "IDS creation Date")
                 {
                 }
-                field("Vendor No.";"Vendor No.")
+                field("Vendor No."; "Vendor No.")
                 {
                 }
-                field("Qty. To Vendor (Rejected)";"Qty. To Vendor (Rejected)")
+                field("Qty. To Vendor (Rejected)"; "Qty. To Vendor (Rejected)")
                 {
                 }
-                field("Qty. To Receive(Rework)";"Qty. To Receive(Rework)")
+                field("Qty. To Receive(Rework)"; "Qty. To Receive(Rework)")
                 {
                 }
-                field("Qty. Received(Rework)";"Qty. Received(Rework)")
+                field("Qty. Received(Rework)"; "Qty. Received(Rework)")
                 {
                 }
-                field("Qty. Sent To Vendor (Rejected)";"Qty. Sent To Vendor (Rejected)")
+                field("Qty. Sent To Vendor (Rejected)"; "Qty. Sent To Vendor (Rejected)")
                 {
                 }
-                field("Qty. Rework";"Qty. Rework")
+                field("Qty. Rework"; "Qty. Rework")
                 {
                 }
-                field("Lot No.";"Lot No.")
+                field("Lot No."; "Lot No.")
                 {
                 }
-                field("Prod. Order Line";"Prod. Order Line")
+                field("Prod. Order Line"; "Prod. Order Line")
                 {
                 }
-                field("IDS Posted By";"IDS Posted By")
+                field("IDS Posted By"; "IDS Posted By")
                 {
                 }
-                field("IR Posted By";"IR Posted By")
+                field("IR Posted By"; "IR Posted By")
                 {
                 }
-                field("Prod. Description";"Prod. Description")
+                field("Prod. Description"; "Prod. Description")
                 {
                 }
-                field("Prod. Order No.";"Prod. Order No.")
+                field("Prod. Order No."; "Prod. Order No.")
                 {
                 }
-                field("Vendor Name";"Vendor Name")
+                field("Vendor Name"; "Vendor Name")
                 {
                 }
-                field("Reason for Pending";"Reason for Pending")
+                field("Reason for Pending"; "Reason for Pending")
                 {
                     Editable = true;
                 }
-                field("Operation Description";"Operation Description")
+                field("Operation Description"; "Operation Description")
                 {
                 }
-                field(Resource;Resource)
+                field(Resource; Resource)
                 {
                 }
-                field("Product Group Code";"Product Group Code")
+                field("Product Group Code"; "Product Group Code")
                 {
                 }
-                field("Item Sub Group Code";"Item Sub Group Code")
+                field("Item Sub Group Code"; "Item Sub Group Code")
                 {
                 }
-                field("Item Sub Sub Group Code";"Item Sub Sub Group Code")
+                field("Item Sub Sub Group Code"; "Item Sub Sub Group Code")
                 {
                 }
-                field("Item Category Code";"Item Category Code")
+                field("Item Category Code"; "Item Category Code")
                 {
                 }
-                field("Rework Level";"Rework Level")
+                field("Rework Level"; "Rework Level")
                 {
                 }
-                field("Rework Reference No.";"Rework Reference No.")
+                field("Rework Reference No."; "Rework Reference No.")
                 {
                 }
-                field("Rework Inspect DS Created";"Rework Inspect DS Created")
+                field("Rework Inspect DS Created"; "Rework Inspect DS Created")
                 {
                 }
-                field("Last Rework Level";"Last Rework Level")
+                field("Last Rework Level"; "Last Rework Level")
                 {
                 }
-                field("Item Ledger Entry No.";"Item Ledger Entry No.")
+                field("Item Ledger Entry No."; "Item Ledger Entry No.")
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field("Item Description";"Item Description")
+                field("Item Description"; "Item Description")
                 {
                 }
-                field("Purch Line No";"Purch Line No")
+                field("Purch Line No"; "Purch Line No")
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field("Qty. Accepted";"Qty. Accepted")
+                field("Qty. Accepted"; "Qty. Accepted")
                 {
                 }
-                field("Qty. Rejected";"Qty. Rejected")
+                field("Qty. Rejected"; "Qty. Rejected")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Issues For Pending";"Issues For Pending")
+                field("Issues For Pending"; "Issues For Pending")
                 {
                 }
             }
@@ -183,9 +183,9 @@ page 33000271 "Inspection Receipt List"
                     trigger OnAction();
                     begin
                         IF NOT Status THEN
-                          PAGE.RUN(PAGE::"Inspection Receipt",Rec)
+                            PAGE.RUN(PAGE::"Inspection Receipt", Rec)
                         ELSE
-                          PAGE.RUN(PAGE::"Posted Inspection Receipt",Rec);
+                            PAGE.RUN(PAGE::"Posted Inspection Receipt", Rec);
                     end;
                 }
                 separator("----")

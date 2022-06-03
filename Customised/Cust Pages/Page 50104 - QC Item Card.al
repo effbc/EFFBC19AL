@@ -132,7 +132,7 @@ page 50104 "QC Item Card"
                     Caption = 'Stockkeepin&g Units';
                     Image = SKU;
                     RunObject = Page "Stockkeeping Unit List";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 group("E&ntries")
@@ -144,7 +144,7 @@ page 50104 "QC Item Card"
                         Caption = 'Ledger E&ntries';
                         Image = ItemLedger;
                         RunObject = Page "Item Ledger Entries";
-                        RunPageLink = Item No.=FIELD(No.);
+                                        RunPageLink = Item No.=FIELD(No.);
                         RunPageView = SORTING(Item No.);
                         ShortCutKey = 'Ctrl+F7';
                     }
@@ -153,7 +153,7 @@ page 50104 "QC Item Card"
                         Caption = '&Reservation Entries';
                         Image = ReservationLedger;
                         RunObject = Page "Reservation Entries";
-                        RunPageLink = Reservation Status=CONST(Reservation),Item No.=FIELD(No.);
+                                        RunPageLink = Reservation Status=CONST(Reservation),Item No.=FIELD(No.);
                         RunPageView = SORTING(Reservation Status,Item No.,Variant Code,Location Code);
                     }
                     action("&Phys. Inventory Ledger Entries")
@@ -161,7 +161,7 @@ page 50104 "QC Item Card"
                         Caption = '&Phys. Inventory Ledger Entries';
                         Image = PhysicalInventoryLedger;
                         RunObject = Page "Phys. Inventory Ledger Entries";
-                        RunPageLink = Item No.=FIELD(No.);
+                                        RunPageLink = Item No.=FIELD(No.);
                         RunPageView = SORTING(Item No.);
                     }
                     action("&Value Entries")
@@ -169,14 +169,14 @@ page 50104 "QC Item Card"
                         Caption = '&Value Entries';
                         Image = ValueLedger;
                         RunObject = Page "Value Entries";
-                        RunPageLink = Item No.=FIELD(No.);
+                                        RunPageLink = Item No.=FIELD(No.);
                         RunPageView = SORTING(Item No.);
                     }
                     action("&Quality Ledger Entries")
                     {
                         Caption = '&Quality Ledger Entries';
                         RunObject = Page "Quality Ledger Entries";
-                        RunPageLink = Item No.=FIELD(No.);
+                                        RunPageLink = Item No.=FIELD(No.);
                     }
                     action("Item &Tracking Entries")
                     {
@@ -214,14 +214,14 @@ page 50104 "QC Item Card"
                         Caption = 'Entry Statistics';
                         Image = EntryStatistics;
                         RunObject = Page "Item Entry Statistics";
-                        RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                     action("T&urnover")
                     {
                         Caption = 'T&urnover';
                         Image = Turnover;
                         RunObject = Page "Item Turnover";
-                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                 }
                 action("Items b&y Location")
@@ -246,21 +246,21 @@ page 50104 "QC Item Card"
                         Caption = 'Period';
                         Image = Period;
                         RunObject = Page "Item Availability by Periods";
-                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                     action(Variant)
                     {
                         Caption = 'Variant';
                         Image = ItemVariant;
                         RunObject = Page "Item Availability by Variant";
-                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                     action(Location)
                     {
                         Caption = 'Location';
                         Image = Warehouse;
                         RunObject = Page "Item Availability by Location";
-                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                 }
                 action("&Bin Contents")
@@ -268,7 +268,7 @@ page 50104 "QC Item Card"
                     Caption = '&Bin Contents';
                     Image = BinContent;
                     RunObject = Page "Item Bin Contents";
-                    RunPageLink = Item No.=FIELD(No.),Unit of Measure Code=FIELD(Base Unit of Measure);
+                                    RunPageLink = Item No.=FIELD(No.),Unit of Measure Code=FIELD(Base Unit of Measure);
                     RunPageView = SORTING(Item No.);
                 }
                 action("Co&mments")
@@ -276,14 +276,14 @@ page 50104 "QC Item Card"
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = Page "Comment Sheet";
-                    RunPageLink = Table Name=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Table Name=CONST(Item),No.=FIELD(No.);
                 }
                 action(Dimensions)
                 {
                     Caption = 'Dimensions';
                     Image = Dimensions;
                     RunObject = Page "Default Dimensions";
-                    RunPageLink = Table ID=CONST(27),No.=FIELD(No.);
+                                    RunPageLink = Table ID=CONST(27),No.=FIELD(No.);
                     ShortCutKey = 'Shift+Ctrl+D';
                 }
                 action("&Picture")
@@ -291,7 +291,7 @@ page 50104 "QC Item Card"
                     Caption = '&Picture';
                     Image = Picture;
                     RunObject = Page "Item Picture";
-                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                 }
                 separator(Action113)
                 {
@@ -301,28 +301,28 @@ page 50104 "QC Item Card"
                     Caption = '&Units of Measure';
                     Image = UnitOfMeasure;
                     RunObject = Page "Item Units of Measure";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 action("Va&riants")
                 {
                     Caption = 'Va&riants';
                     Image = ItemVariant;
                     RunObject = Page "Item Variants";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 action("Cross Re&ferences")
                 {
                     Caption = 'Cross Re&ferences';
                     Image = Text;
                     RunObject = Page "Item Cross Reference Entries";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 action("Substituti&ons")
                 {
                     Caption = 'Substituti&ons';
                     Image = ItemSubstitution;
                     RunObject = Page "Item Substitution Entry";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                 }
                 action("Nonstoc&k Items")
                 {
@@ -349,15 +349,16 @@ page 50104 "QC Item Card"
                     Caption = 'Translations';
                     Image = Translations;
                     RunObject = Page "Item Translations";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 action("E&xtended Texts")
                 {
                     Caption = 'E&xtended Texts';
                     Image = Text;
                     RunObject = Page "Extended Text";
-                    RunPageLink = Table Name=CONST(Item),No.=FIELD(No.);
-                    RunPageView = SORTING(Table Name,No.,Language Code,All Language Codes,Starting Date,Ending Date);
+                                    RunPageLink = Table Name=CONST(Item),No.=FIELD(No.);
+                    RunPageView = SORTING(Table Name    DataClassification = CustomerContent;
+,No.,Language Code,All Language Codes,Starting Date,Ending Date);
                 }
                 separator(Action120)
                 {
@@ -371,14 +372,14 @@ page 50104 "QC Item Card"
                         Caption = 'Bill of Materials';
                         Image = BOM;
                         RunObject = Page "Assembly BOM";
-                        RunPageLink = Parent Item No.=FIELD(No.);
+                                        RunPageLink = Parent Item No.=FIELD(No.);
                     }
                     action("Where-Used List")
                     {
                         Caption = 'Where-Used List';
                         Image = "Where-Used";
                         RunObject = Page "Where-Used List";
-                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                         RunPageView = SORTING(Type,No.);
                     }
                     action("Calc. Stan&dard Cost")
@@ -429,7 +430,7 @@ page 50104 "QC Item Card"
                     Caption = 'Ser&vice Items';
                     Image = ServiceItem;
                     RunObject = Page "Service Items";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 group("Troubles&hooting")
@@ -441,7 +442,7 @@ page 50104 "QC Item Card"
                         Caption = 'Troubleshooting &Setup';
                         Image = Troubleshoot;
                         RunObject = Page "Troubleshooting Setup";
-                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     }
                     action(Action186)
                     {
@@ -463,7 +464,7 @@ page 50104 "QC Item Card"
                         Caption = 'Resource Skills';
                         Image = ResourceSkills;
                         RunObject = Page "Resource Skills";
-                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     }
                     action("Skilled Resources")
                     {
@@ -486,7 +487,7 @@ page 50104 "QC Item Card"
                     Caption = 'Identifiers';
                     Image = BarCode;
                     RunObject = Page "Item Identifiers";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.,Variant Code,Unit of Measure Code);
                 }
                 action(Specifications)
@@ -494,21 +495,21 @@ page 50104 "QC Item Card"
                     Caption = 'Specifications';
                     Image = Versions;
                     RunObject = Page "Item Specification";
-                    RunPageLink = Item No.=FIELD(No.),Product Group Code=FIELD(Product Group Code),Item Category Code=FIELD(Item Category Code),Item Sub Group Code=FIELD(Item Sub Group Code),Item Sub Sub Group Code=FIELD(Item Sub Sub Group Code);
+                                    RunPageLink = Item No.=FIELD(No.),Product Group Code=FIELD(Product Group Code),Item Category Code=FIELD(Item Category Code),Item Sub Group Code=FIELD(Item Sub Group Code),Item Sub Sub Group Code=FIELD(Item Sub Sub Group Code);
                 }
                 action(Attachments)
                 {
                     Caption = 'Attachments';
                     Image = Attachments;
                     RunObject = Page "ESPL Attachments";
-                    RunPageLink = Table ID=CONST(27),Document No.=FIELD(No.);
+                                    RunPageLink = Table ID=CONST(27),Document No.=FIELD(No.);
                 }
                 action("Design Work Sheet")
                 {
                     Caption = 'Design Work Sheet';
                     Image = PlanningWorksheet;
                     RunObject = Page "Item Design WorkSheet Header";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
             }
             group("S&ales")
@@ -520,7 +521,7 @@ page 50104 "QC Item Card"
                     Caption = 'Prices';
                     Image = Price;
                     RunObject = Page "Sales Prices";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 action("Line Discounts")
@@ -528,7 +529,7 @@ page 50104 "QC Item Card"
                     Caption = 'Line Discounts';
                     Image = LineDiscount;
                     RunObject = Page "Sales Line Discounts";
-                    RunPageLink = Type=CONST(Item),Code=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),Code=FIELD(No.);
                     RunPageView = SORTING(Type,Code);
                 }
                 separator(Action46)
@@ -539,7 +540,7 @@ page 50104 "QC Item Card"
                     Caption = 'Orders';
                     Image = "Order";
                     RunObject = Page "Sales Orders";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Type,No.);
                 }
                 action("Return Orders")
@@ -547,7 +548,7 @@ page 50104 "QC Item Card"
                     Caption = 'Return Orders';
                     Image = ReturnOrder;
                     RunObject = Page "Sales Return Orders";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Type,No.);
                 }
             }
@@ -560,7 +561,7 @@ page 50104 "QC Item Card"
                     Caption = 'Ven&dors';
                     Image = Vendor;
                     RunObject = Page "Item Vendor Catalog";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 action(Action85)
@@ -568,7 +569,7 @@ page 50104 "QC Item Card"
                     Caption = 'Prices';
                     Image = Price;
                     RunObject = Page "Purchase Prices";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 action(Action86)
@@ -576,7 +577,7 @@ page 50104 "QC Item Card"
                     Caption = 'Line Discounts';
                     Image = LineDiscount;
                     RunObject = Page "Purchase Line Discounts";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 separator(Action47)
                 {
@@ -586,7 +587,7 @@ page 50104 "QC Item Card"
                     Caption = 'Orders';
                     Image = "Order";
                     RunObject = Page "Purchase Orders";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Type,No.);
                 }
                 action(Action191)
@@ -594,7 +595,7 @@ page 50104 "QC Item Card"
                     Caption = 'Return Orders';
                     Image = ReturnOrder;
                     RunObject = Page "Purchase Return Orders";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Type,No.);
                 }
             }
@@ -891,17 +892,17 @@ page 50104 "QC Item Card"
     [LineStart(3420)]
     procedure EnablePlanningControls();
     var
-        PlanningGetParam : Codeunit "Planning-Get Parameters";
-        ReorderCycleEnabled : Boolean;
-        SafetyLeadTimeEnabled : Boolean;
-        SafetyStockQtyEnabled : Boolean;
-        ReorderPointEnabled : Boolean;
-        ReorderQuantityEnabled : Boolean;
-        MaximumInventoryEnabled : Boolean;
-        MinimumOrderQtyEnabled : Boolean;
-        MaximumOrderQtyEnabled : Boolean;
-        OrderMultipleEnabled : Boolean;
-        IncludeInventoryEnabled : Boolean;
+        PlanningGetParam: Codeunit "Planning-Get Parameters";
+        ReorderCycleEnabled: Boolean;
+        SafetyLeadTimeEnabled: Boolean;
+        SafetyStockQtyEnabled: Boolean;
+        ReorderPointEnabled: Boolean;
+        ReorderQuantityEnabled: Boolean;
+        MaximumInventoryEnabled: Boolean;
+        MinimumOrderQtyEnabled: Boolean;
+        MaximumOrderQtyEnabled: Boolean;
+        OrderMultipleEnabled: Boolean;
+        IncludeInventoryEnabled: Boolean;
     begin
     end;
 }

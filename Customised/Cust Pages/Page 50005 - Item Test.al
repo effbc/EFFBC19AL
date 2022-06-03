@@ -11,16 +11,16 @@ page 50005 "Item Test"
         {
             group(General)
             {
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("No. 2";"No. 2")
+                field("No. 2"; "No. 2")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Search Description";"Search Description")
+                field("Search Description"; "Search Description")
                 {
                 }
             }

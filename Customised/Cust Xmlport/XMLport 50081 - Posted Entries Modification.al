@@ -5,7 +5,7 @@ xmlport 50081 "Posted Entries Modification"
     {
         textelement(PostedPurInvoices)
         {
-            tableelement(Integer;Integer)
+            tableelement(Integer; Integer)
             {
                 AutoSave = false;
                 XmlName = 'Integer';
@@ -38,13 +38,13 @@ xmlport 50081 "Posted Entries Modification"
     }
 
     var
-        PurchInvHeader : Record "Purch. Inv. Header";
-        GLEntry : Record "G/L Entry";
-        VendorLedgerEntry : Record "Vendor Ledger Entry";
-        DetailedVendorLedgEntry : Record "Detailed Vendor Ledg. Entry";
-        ValueEntry : Record "Value Entry";
-        GSTLedgerEntry : Record "GST Ledger Entry";
-        DetailedGSTLedgerEntry : Record "Detailed GST Ledger Entry";
-        Pdate : Date;
+        PurchInvHeader: Record "Purch. Inv. Header";
+        GLEntry: Record "G/L Entry";
+        VendorLedgerEntry: Record "Vendor Ledger Entry";
+        DetailedVendorLedgEntry: Record "Detailed Vendor Ledg. Entry";
+        ValueEntry: Record "Value Entry";
+        GSTLedgerEntry: Record "GST Ledger Entry";
+        DetailedGSTLedgerEntry: Record "Detailed GST Ledger Entry";
+        Pdate: Date;
 }
 

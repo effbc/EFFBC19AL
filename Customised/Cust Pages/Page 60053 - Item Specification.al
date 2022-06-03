@@ -14,28 +14,28 @@ page 60053 "Item Specification"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field("Product Group Code";"Product Group Code")
+                field("Product Group Code"; "Product Group Code")
                 {
                 }
-                field("Item Category Code";"Item Category Code")
+                field("Item Category Code"; "Item Category Code")
                 {
                 }
-                field("Item Sub Group Code";"Item Sub Group Code")
+                field("Item Sub Group Code"; "Item Sub Group Code")
                 {
                 }
-                field("Item Sub Sub Group Code";"Item Sub Sub Group Code")
+                field("Item Sub Sub Group Code"; "Item Sub Sub Group Code")
                 {
                 }
-                field("Specification Code";"Specification Code")
+                field("Specification Code"; "Specification Code")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Value;Value)
+                field(Value; Value)
                 {
                 }
             }
@@ -46,15 +46,15 @@ page 60053 "Item Specification"
     {
     }
 
-    trigger OnQueryClosePage(CloseAction : Action) : Boolean;
+    trigger OnQueryClosePage(CloseAction: Action): Boolean;
     var
-        DuplicateItems : Record "Alternate Items";
-        ItemSpecifications : Record "Item Specification";
+        DuplicateItems: Record "Alternate Items";
+        ItemSpecifications: Record "Item Specification";
     begin
         //MESSAGE('Restarting....');
         CLEAR(TempCount);
         CLEAR(CountSpec);
-        Flag:=TRUE;
+        Flag := TRUE;
         CLEAR(ItemSpecifications);
         CLEAR(SubSpecific);
         CLEAR(MainSpecific);
@@ -62,69 +62,69 @@ page 60053 "Item Specification"
 
 
         ItemSpecifications.SETCURRENTKEY(ItemSpecifications."Item No.");
-        ItemSpecifications.SETRANGE("Item No.","Item No.");
-        ItemSpecifications.SETRANGE("Product Group Code","Product Group Code");
-        ItemSpecifications.SETRANGE("Item Category Code","Item Category Code");
-        ItemSpecifications.SETRANGE("Item Sub Group Code","Item Sub Group Code");
-        ItemSpecifications.SETRANGE("Item Sub Sub Group Code","Item Sub Sub Group Code");
+        ItemSpecifications.SETRANGE("Item No.", "Item No.");
+        ItemSpecifications.SETRANGE("Product Group Code", "Product Group Code");
+        ItemSpecifications.SETRANGE("Item Category Code", "Item Category Code");
+        ItemSpecifications.SETRANGE("Item Sub Group Code", "Item Sub Group Code");
+        ItemSpecifications.SETRANGE("Item Sub Sub Group Code", "Item Sub Sub Group Code");
         //ItemSpecifications.SETRANGE("Specification Code","Specification Code");
         CountSpec := ItemSpecifications.COUNT;
         //ItemSpecifications.FINDFIRST;
-        IF NOT   ItemSpecifications.FINDFIRST THEN
-           EXIT(TRUE) ELSE BEGIN
-             SubSpecific.SETCURRENTKEY(SubSpecific."Item No.");
-             SubSpecific.FINDFIRST;
-             MainSpecific.SETCURRENTKEY(MainSpecific."Item No.");
-             MainSpecific.FINDFIRST;
-             REPEAT
-               SubSpecific.SETRANGE("Item No.",MainSpecific."Item No.");
-               SubSpecific.SETRANGE("Product Group Code","Product Group Code");
-               SubSpecific.SETRANGE("Item Category Code","Item Category Code");
-               SubSpecific.SETRANGE("Item Sub Group Code","Item Sub Group Code");
-               SubSpecific.SETRANGE("Item Sub Sub Group Code","Item Sub Sub Group Code");
-               //SubSpecific.SETRANGE("Specification Code","Specification Code");
-               IF NOT SubSpecific.FINDFIRST THEN;// EXIT(TRUE);
-               IF SubSpecific."Item No." <> ItemSpecifications."Item No." THEN BEGIN
-                  //MESSAGE('SubSpecific.COUNT : %1',SubSpecific.COUNT);
-                  //MESSAGE('CountSpec : %1',CountSpec);
-                  IF SubSpecific.COUNT = CountSpec THEN BEGIN
-                     ItemSpecifications.FINDFIRST;
-                     CheckCount := 0;
-                     REPEAT
-                       TempCount := 1;
-                       SubSpecific.FINDFIRST;
-                       WHILE (TempCount <= CountSpec) DO BEGIN
-                         TempCount := TempCount + 1;
-                         IF (ItemSpecifications."Specification Code" <> SubSpecific."Specification Code") OR
-                           (ItemSpecifications.Value <> SubSpecific.Value) THEN
-                              Flag := FALSE
-                          ELSE
-                          CheckCount := CheckCount +1;
-                          SubSpecific.NEXT;
+        IF NOT ItemSpecifications.FINDFIRST THEN
+            EXIT(TRUE) ELSE BEGIN
+            SubSpecific.SETCURRENTKEY(SubSpecific."Item No.");
+            SubSpecific.FINDFIRST;
+            MainSpecific.SETCURRENTKEY(MainSpecific."Item No.");
+            MainSpecific.FINDFIRST;
+            REPEAT
+                SubSpecific.SETRANGE("Item No.", MainSpecific."Item No.");
+                SubSpecific.SETRANGE("Product Group Code", "Product Group Code");
+                SubSpecific.SETRANGE("Item Category Code", "Item Category Code");
+                SubSpecific.SETRANGE("Item Sub Group Code", "Item Sub Group Code");
+                SubSpecific.SETRANGE("Item Sub Sub Group Code", "Item Sub Sub Group Code");
+                //SubSpecific.SETRANGE("Specification Code","Specification Code");
+                IF NOT SubSpecific.FINDFIRST THEN;// EXIT(TRUE);
+                IF SubSpecific."Item No." <> ItemSpecifications."Item No." THEN BEGIN
+                    //MESSAGE('SubSpecific.COUNT : %1',SubSpecific.COUNT);
+                    //MESSAGE('CountSpec : %1',CountSpec);
+                    IF SubSpecific.COUNT = CountSpec THEN BEGIN
+                        ItemSpecifications.FINDFIRST;
+                        CheckCount := 0;
+                        REPEAT
+                            TempCount := 1;
+                            SubSpecific.FINDFIRST;
+                            WHILE (TempCount <= CountSpec) DO BEGIN
+                                TempCount := TempCount + 1;
+                                IF (ItemSpecifications."Specification Code" <> SubSpecific."Specification Code") OR
+                                  (ItemSpecifications.Value <> SubSpecific.Value) THEN
+                                    Flag := FALSE
+                                ELSE
+                                    CheckCount := CheckCount + 1;
+                                SubSpecific.NEXT;
+                            END;
+                        UNTIL ItemSpecifications.NEXT = 0;
+                        IF CheckCount = CountSpec THEN BEGIN
+                            IF NOT CONFIRM('THIS SPECIFICATION EXIST FOR ONE OF THE ITEMS,DO YOU WANT TO CHANGE') THEN BEGIN
+                                ItemSpecifications.DELETEALL;
+                                EXIT(TRUE)
+                            END ELSE
+                                EXIT(FALSE);
                         END;
-                      UNTIL ItemSpecifications.NEXT = 0;
-                     IF CheckCount = CountSpec THEN BEGIN
-                       IF NOT CONFIRM('THIS SPECIFICATION EXIST FOR ONE OF THE ITEMS,DO YOU WANT TO CHANGE') THEN BEGIN
-                          ItemSpecifications.DELETEALL;
-                          EXIT(TRUE)
-                       END ELSE
-                          EXIT(FALSE);
                     END;
-                  END;
-               END;
-            UNTIL MainSpecific.NEXT=0;
+                END;
+            UNTIL MainSpecific.NEXT = 0;
         END;
     end;
 
     var
-        ItemRec : Record Item;
-        ItemSpecificationRec : Record "Item Specification";
-        ItemSpecificTest : Record "Item Specification";
-        CountSpec : Integer;
-        MainSpecific : Record "Item Specification";
-        SubSpecific : Record "Item Specification";
-        TempCount : Integer;
-        Flag : Boolean;
-        CheckCount : Integer;
+        ItemRec: Record Item;
+        ItemSpecificationRec: Record "Item Specification";
+        ItemSpecificTest: Record "Item Specification";
+        CountSpec: Integer;
+        MainSpecific: Record "Item Specification";
+        SubSpecific: Record "Item Specification";
+        TempCount: Integer;
+        Flag: Boolean;
+        CheckCount: Integer;
 }
 

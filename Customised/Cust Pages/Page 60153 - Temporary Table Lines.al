@@ -9,58 +9,58 @@ page 60153 "Temporary Table Lines"
         {
             repeater(Group)
             {
-                field("Entry No.";"Entry No.")
+                field("Entry No."; "Entry No.")
                 {
                 }
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Location;Location)
+                field(Location; Location)
                 {
                 }
-                field("Lot No.";"Lot No.")
+                field("Lot No."; "Lot No.")
                 {
                 }
-                field("Serial No.";"Serial No.")
+                field("Serial No."; "Serial No.")
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field("Unit Cost";"Unit Cost")
+                field("Unit Cost"; "Unit Cost")
                 {
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field(UOM;UOM)
+                field(UOM; UOM)
                 {
                 }
-                field("Document Date";"Document Date")
+                field("Document Date"; "Document Date")
                 {
                 }
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                 }
-                field("Line No";"Line No")
+                field("Line No"; "Line No")
                 {
                 }
-                field("Entry Type";"Entry Type")
+                field("Entry Type"; "Entry Type")
                 {
                 }
-                field("New Location";"New Location")
+                field("New Location"; "New Location")
                 {
                 }
-                field("New Lot No.";"New Lot No.")
+                field("New Lot No."; "New Lot No.")
                 {
                 }
-                field("New Serial No.";"New Serial No.")
+                field("New Serial No."; "New Serial No.")
                 {
                 }
-                field(Inserted;Inserted)
+                field(Inserted; Inserted)
                 {
                 }
-                field("Error Text";"Error Text")
+                field("Error Text"; "Error Text")
                 {
                 }
             }
@@ -88,6 +88,6 @@ page 60153 "Temporary Table Lines"
     }
 
     var
-        OMSDumping_ItemReclass : Codeunit OMSDumping;
+        OMSDumping_ItemReclass: Codeunit OMSDumping;
 }
 

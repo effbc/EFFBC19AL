@@ -90,7 +90,7 @@ page 60177 "Material Damages List"
                     Caption = 'Statistics';
                     Image = Statistics;
                     RunObject = Page "Material Issue Statistics";
-                    RunPageLink = No.=FIELD(No.);
+                                    RunPageLink = No.=FIELD(No.);
                     ShortCutKey = 'F9';
                     Visible = false;
                 }
@@ -99,14 +99,14 @@ page 60177 "Material Damages List"
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = Page "Inventory Comment Sheet";
-                    RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
+                                    RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
                 }
                 action("Iss&ues")
                 {
                     Caption = 'Iss&ues';
                     Image = TransferToLines;
                     RunObject = Page "Posted Material Issue List";
-                    RunPageLink = Material Issue No.=FIELD(No.);
+                                    RunPageLink = Material Issue No.=FIELD(No.);
                 }
                 action(Dimensions)
                 {
@@ -1011,12 +1011,12 @@ page 60177 "Material Damages List"
                 PromotedCategory = Process;
                 RunObject = Report "Material Requisition Print";
 
-                trigger OnAction();
-                begin
-                    //REPORT.RUN(50010,TRUE,FALSE,MaterialIssuesHeader);
-                    MaterialIssuesHeader.SETRANGE(MaterialIssuesHeader."No.","No.");
-                    REPORT.RUN(50010,TRUE,FALSE,MaterialIssuesHeader);
-                end;
+    trigger OnAction();
+    begin
+        //REPORT.RUN(50010,TRUE,FALSE,MaterialIssuesHeader);
+        MaterialIssuesHeader.SETRANGE(MaterialIssuesHeader."No.", "No.");
+        REPORT.RUN(50010, TRUE, FALSE, MaterialIssuesHeader);
+    end;
             }
             action("&Refresh")
             {
@@ -1080,7 +1080,7 @@ page 60177 "Material Damages List"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Inventory Comment Sheet";
-                RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
+                                RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
                 ToolTip = 'Comment';
             }
         }

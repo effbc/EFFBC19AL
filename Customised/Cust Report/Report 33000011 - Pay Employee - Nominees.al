@@ -7,89 +7,89 @@ report 33000011 "Pay Employee - Nominees"
 
     dataset
     {
-        dataitem(Employee;Employee)
+        dataitem(Employee; Employee)
         {
             DataItemTableView = SORTING(No.);
-            RequestFilterFields = "No.","Job Title/Grade","Department Code";
-            column(USERID;USERID)
+            RequestFilterFields = "No.", "Job Title/Grade", "Department Code";
+            column(USERID; USERID)
             {
             }
-            column(COMPANYNAME;COMPANYNAME)
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(CurrReport_PAGENO;CurrReport.PAGENO)
+            column(CurrReport_PAGENO; CurrReport.PAGENO)
             {
             }
-            column(FORMAT_TODAY_0_4_;FORMAT(TODAY,0,4))
+            column(FORMAT_TODAY_0_4_; FORMAT(TODAY, 0, 4))
             {
             }
-            column(Employee_TABLECAPTION___________EmpFilter;Employee.TABLECAPTION + ' : ' + EmpFilter)
+            column(Employee_TABLECAPTION___________EmpFilter; Employee.TABLECAPTION + ' : ' + EmpFilter)
             {
             }
-            column(Employee__No__;"No.")
+            column(Employee__No__; "No.")
             {
             }
-            column(Name;Name)
+            column(Name; Name)
             {
             }
-            column(Employee___NomineesCaption;Employee___NomineesCaptionLbl)
+            column(Employee___NomineesCaption; Employee___NomineesCaptionLbl)
             {
             }
-            column(CurrReport_PAGENOCaption;CurrReport_PAGENOCaptionLbl)
+            column(CurrReport_PAGENOCaption; CurrReport_PAGENOCaptionLbl)
             {
             }
-            column(NameCaption;NameCaptionLbl)
+            column(NameCaption; NameCaptionLbl)
             {
             }
-            column(Employee_CodeCaption;Employee_CodeCaptionLbl)
+            column(Employee_CodeCaption; Employee_CodeCaptionLbl)
             {
             }
-            column(Pay_Employee_Nominee__Nominee_Name_Caption;"Pay Employee Nominee".FIELDCAPTION("Nominee Name"))
+            column(Pay_Employee_Nominee__Nominee_Name_Caption; "Pay Employee Nominee".FIELDCAPTION("Nominee Name"))
             {
             }
-            column(Pay_Employee_Nominee__Nominee_DOB_Caption;"Pay Employee Nominee".FIELDCAPTION("Nominee DOB"))
+            column(Pay_Employee_Nominee__Nominee_DOB_Caption; "Pay Employee Nominee".FIELDCAPTION("Nominee DOB"))
             {
             }
-            column(Pay_Employee_Nominee__Nominee_Relation_Caption;"Pay Employee Nominee".FIELDCAPTION("Nominee Relation"))
+            column(Pay_Employee_Nominee__Nominee_Relation_Caption; "Pay Employee Nominee".FIELDCAPTION("Nominee Relation"))
             {
             }
-            column(Pay_Employee_Nominee__Nominee_Dependent_Caption;"Pay Employee Nominee".FIELDCAPTION("Nominee Dependent"))
+            column(Pay_Employee_Nominee__Nominee_Dependent_Caption; "Pay Employee Nominee".FIELDCAPTION("Nominee Dependent"))
             {
             }
-            column(Nominee_AddressCaption;Nominee_AddressCaptionLbl)
+            column(Nominee_AddressCaption; Nominee_AddressCaptionLbl)
             {
             }
-            column(Pay_Employee_Nominee__Nominee_PF_Share_Percent_Caption;"Pay Employee Nominee".FIELDCAPTION("Nominee PF Share Percent"))
+            column(Pay_Employee_Nominee__Nominee_PF_Share_Percent_Caption; "Pay Employee Nominee".FIELDCAPTION("Nominee PF Share Percent"))
             {
             }
-            column(SNoCaption;SNoCaptionLbl)
+            column(SNoCaption; SNoCaptionLbl)
             {
             }
-            dataitem("Pay Employee Nominee";"Pay Employee Nominee")
+            dataitem("Pay Employee Nominee"; "Pay Employee Nominee")
             {
                 DataItemLink = Employee No=FIELD(No.);
-                column(Pay_Employee_Nominee__Nominee_PF_Share_Percent_;"Nominee PF Share Percent")
+                column(Pay_Employee_Nominee__Nominee_PF_Share_Percent_; "Nominee PF Share Percent")
                 {
                 }
-                column(Pay_Employee_Nominee__Nominee_Name_;"Nominee Name")
+                column(Pay_Employee_Nominee__Nominee_Name_; "Nominee Name")
                 {
                 }
-                column(Pay_Employee_Nominee__Nominee_DOB_;"Nominee DOB")
+                column(Pay_Employee_Nominee__Nominee_DOB_; "Nominee DOB")
                 {
                 }
-                column(Pay_Employee_Nominee__Nominee_Relation_;"Nominee Relation")
+                column(Pay_Employee_Nominee__Nominee_Relation_; "Nominee Relation")
                 {
                 }
-                column(Pay_Employee_Nominee__Nominee_Dependent_;"Nominee Dependent")
+                column(Pay_Employee_Nominee__Nominee_Dependent_; "Nominee Dependent")
                 {
                 }
-                column(Address;Address)
+                column(Address; Address)
                 {
                 }
-                column(SNo;SNo)
+                column(SNo; SNo)
                 {
                 }
-                column(Pay_Employee_Nominee_Employee_No;"Employee No")
+                column(Pay_Employee_Nominee_Employee_No; "Employee No")
                 {
                 }
             }
@@ -118,15 +118,15 @@ report 33000011 "Pay Employee - Nominees"
     end;
 
     var
-        Name : Text[50];
-        Address : Text[200];
-        SNo : Integer;
-        EmpFilter : Text[250];
-        Employee___NomineesCaptionLbl : Label 'Employee - Nominees';
-        CurrReport_PAGENOCaptionLbl : Label 'Page';
-        NameCaptionLbl : Label 'Name';
-        Employee_CodeCaptionLbl : Label 'Employee Code';
-        Nominee_AddressCaptionLbl : Label 'Nominee Address';
-        SNoCaptionLbl : Label 'SNo';
+        Name: Text[50];
+        Address: Text[200];
+        SNo: Integer;
+        EmpFilter: Text[250];
+        Employee___NomineesCaptionLbl: Label 'Employee - Nominees';
+        CurrReport_PAGENOCaptionLbl: Label 'Page';
+        NameCaptionLbl: Label 'Name';
+        Employee_CodeCaptionLbl: Label 'Employee Code';
+        Nominee_AddressCaptionLbl: Label 'Nominee Address';
+        SNoCaptionLbl: Label 'SNo';
 }
 

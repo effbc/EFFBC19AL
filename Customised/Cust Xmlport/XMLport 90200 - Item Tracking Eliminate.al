@@ -6,13 +6,13 @@ xmlport 90200 "Item Tracking Eliminate"
     {
         textelement(Items)
         {
-            tableelement(Item;Item)
+            tableelement(Item; Item)
             {
                 XmlName = 'Item';
-                fieldelement(No;Item."No.")
+                fieldelement(No; Item."No.")
                 {
                 }
-                fieldelement(ItemTrackingCode;Item."Item Category Code")
+                fieldelement(ItemTrackingCode; Item."Item Category Code")
                 {
                 }
             }

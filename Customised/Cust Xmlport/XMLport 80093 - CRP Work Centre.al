@@ -6,55 +6,55 @@ xmlport 80093 "CRP Work Centre"
     {
         textelement(WorkCenters)
         {
-            tableelement("<workcenter>";"Work Center")
+            tableelement("<workcenter>"; "Work Center")
             {
                 XmlName = 'WorkCenter';
-                fieldelement(No;"<WorkCenter>"."No.")
+                fieldelement(No; "<WorkCenter>"."No.")
                 {
                 }
-                fieldelement(Name;"<WorkCenter>".Name)
+                fieldelement(Name; "<WorkCenter>".Name)
                 {
                 }
-                fieldelement(SearchName;"<WorkCenter>"."Search Name")
+                fieldelement(SearchName; "<WorkCenter>"."Search Name")
                 {
                 }
-                fieldelement(IndirectCostPer;"<WorkCenter>"."Indirect Cost %")
+                fieldelement(IndirectCostPer; "<WorkCenter>"."Indirect Cost %")
                 {
                 }
-                fieldelement(UnitCost;"<WorkCenter>"."Unit Cost")
+                fieldelement(UnitCost; "<WorkCenter>"."Unit Cost")
                 {
                 }
-                fieldelement(AlternateWorkCenter;"<WorkCenter>"."Alternate Work Center")
+                fieldelement(AlternateWorkCenter; "<WorkCenter>"."Alternate Work Center")
                 {
                 }
-                fieldelement(WorkCenterGroupCode;"<WorkCenter>"."Work Center Group Code")
+                fieldelement(WorkCenterGroupCode; "<WorkCenter>"."Work Center Group Code")
                 {
                 }
-                fieldelement(UnitofMeasureCode;"<WorkCenter>"."Unit of Measure Code")
+                fieldelement(UnitofMeasureCode; "<WorkCenter>"."Unit of Measure Code")
                 {
                 }
-                fieldelement(SubcontractorNo;"<WorkCenter>"."Subcontractor No.")
+                fieldelement(SubcontractorNo; "<WorkCenter>"."Subcontractor No.")
                 {
                 }
-                fieldelement(DirectUnitCost;"<WorkCenter>"."Direct Unit Cost")
+                fieldelement(DirectUnitCost; "<WorkCenter>"."Direct Unit Cost")
                 {
                 }
-                fieldelement(Capacity;"<WorkCenter>".Capacity)
+                fieldelement(Capacity; "<WorkCenter>".Capacity)
                 {
                 }
-                fieldelement(Efficiency;"<WorkCenter>".Efficiency)
+                fieldelement(Efficiency; "<WorkCenter>".Efficiency)
                 {
                 }
-                fieldelement(ShopCalendarCode;"<WorkCenter>"."Shop Calendar Code")
+                fieldelement(ShopCalendarCode; "<WorkCenter>"."Shop Calendar Code")
                 {
                 }
-                fieldelement(UnitCostCalculation;"<WorkCenter>"."Unit Cost Calculation")
+                fieldelement(UnitCostCalculation; "<WorkCenter>"."Unit Cost Calculation")
                 {
                 }
-                fieldelement(OverheadRate;"<WorkCenter>"."Overhead Rate")
+                fieldelement(OverheadRate; "<WorkCenter>"."Overhead Rate")
                 {
                 }
-                fieldelement(GenProdPostingGroup;"<WorkCenter>"."Gen. Prod. Posting Group")
+                fieldelement(GenProdPostingGroup; "<WorkCenter>"."Gen. Prod. Posting Group")
                 {
                 }
             }

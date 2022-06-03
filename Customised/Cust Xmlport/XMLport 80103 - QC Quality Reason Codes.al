@@ -6,13 +6,13 @@ xmlport 80103 "QC Quality Reason Codes"
     {
         textelement(QualityReasonCodes)
         {
-            tableelement("<qualityreasoncode>";"Quality Reason Code")
+            tableelement("<qualityreasoncode>"; "Quality Reason Code")
             {
                 XmlName = 'QualityReasonCode';
-                fieldelement(Code;"<QualityReasonCode>".Code)
+                fieldelement(Code; "<QualityReasonCode>".Code)
                 {
                 }
-                fieldelement(Description;"<QualityReasonCode>".Description)
+                fieldelement(Description; "<QualityReasonCode>".Description)
                 {
                 }
             }

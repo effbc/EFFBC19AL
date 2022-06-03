@@ -6,13 +6,13 @@ xmlport 50009 User
     {
         textelement(Users)
         {
-            tableelement(User;User)
+            tableelement(User; User)
             {
                 XmlName = 'User';
-                fieldelement(UserSecurityID;User."User Security ID")
+                fieldelement(UserSecurityID; User."User Security ID")
                 {
                 }
-                fieldelement(UserName;User."User Name")
+                fieldelement(UserName; User."User Name")
                 {
                 }
             }

@@ -44,130 +44,130 @@ report 50011 "Production Status"
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
             RequestFilterFields = "Customer OrderNo.";
             ReqFilterHeading = 'Production Status';
-            column(companyinfo_Name;companyinfo.Name)
+            column(companyinfo_Name; companyinfo.Name)
             {
             }
-            column(USERID;USERID)
+            column(USERID; USERID)
             {
             }
-            column(FORMAT_TODAY_0_4_;FORMAT(TODAY,0,4))
+            column(FORMAT_TODAY_0_4_; FORMAT(TODAY, 0, 4))
             {
             }
-            column(CurrReport_PAGENO;CurrReport.PAGENO)
+            column(CurrReport_PAGENO; CurrReport.PAGENO)
             {
             }
-            column(USERID_Control1000000019;USERID)
+            column(USERID_Control1000000019; USERID)
             {
             }
-            column(CurrReport_PAGENO_Control1000000024;CurrReport.PAGENO)
+            column(CurrReport_PAGENO_Control1000000024; CurrReport.PAGENO)
             {
             }
-            column(companyinfo_Name_Control1000000025;companyinfo.Name)
+            column(companyinfo_Name_Control1000000025; companyinfo.Name)
             {
             }
-            column(FORMAT_TODAY_0_4__Control1000000026;FORMAT(TODAY,0,4))
+            column(FORMAT_TODAY_0_4__Control1000000026; FORMAT(TODAY, 0, 4))
             {
             }
-            column(PageCaption;PageCaptionLbl)
+            column(PageCaption; PageCaptionLbl)
             {
             }
-            column(Sale_Order___Production_StatusCaption;Sale_Order___Production_StatusCaptionLbl)
+            column(Sale_Order___Production_StatusCaption; Sale_Order___Production_StatusCaptionLbl)
             {
             }
-            column(PageCaption_Control1000000023;PageCaption_Control1000000023Lbl)
+            column(PageCaption_Control1000000023; PageCaption_Control1000000023Lbl)
             {
             }
-            column(Sale_Order___Production_StatusCaption_Control1000000027;Sale_Order___Production_StatusCaption_Control1000000027Lbl)
+            column(Sale_Order___Production_StatusCaption_Control1000000027; Sale_Order___Production_StatusCaption_Control1000000027Lbl)
             {
             }
-            column(StatusCaption;StatusCaptionLbl)
+            column(StatusCaption; StatusCaptionLbl)
             {
             }
-            column(Compound_ItemCaption;Compound_ItemCaptionLbl)
+            column(Compound_ItemCaption; Compound_ItemCaptionLbl)
             {
             }
-            column(Sales_Header_Document_Type;"Document Type")
+            column(Sales_Header_Document_Type; "Document Type")
             {
             }
-            column(Sales_Header_No_;"No.")
+            column(Sales_Header_No_; "No.")
             {
             }
-            dataitem("Production Order";"Production Order")
+            dataitem("Production Order"; "Production Order")
             {
                 DataItemLink = Sales Order No.=FIELD(No.);
-                RequestFilterFields = Status,"No.","Sales Order No.";
-                column(Production_Order_Status;Status)
+                RequestFilterFields = Status, "No.", "Sales Order No.";
+                column(Production_Order_Status; Status)
                 {
                 }
-                column(Production_Order_No_;"No.")
+                column(Production_Order_No_; "No.")
                 {
                 }
-                column(Production_Order_Sales_Order_No_;"Sales Order No.")
+                column(Production_Order_Sales_Order_No_; "Sales Order No.")
                 {
                 }
-                dataitem("Prod. Order Line";"Prod. Order Line")
+                dataitem("Prod. Order Line"; "Prod. Order Line")
                 {
                     DataItemLink = Prod. Order No.=FIELD(No.);
                     RequestFilterFields = "Line No.";
-                    column(Production_Order___Sales_Order_No__;"Production Order"."Sales Order No.")
+                    column(Production_Order___Sales_Order_No__; "Production Order"."Sales Order No.")
                     {
                     }
-                    column(Prod__Order_Line__Prod__Order_No__;"Prod. Order No.")
+                    column(Prod__Order_Line__Prod__Order_No__; "Prod. Order No.")
                     {
                     }
-                    column(Production_Order__Description;"Production Order".Description)
+                    column(Production_Order__Description; "Production Order".Description)
                     {
                     }
-                    column(Production_Order___Due_Date_;"Production Order"."Due Date")
+                    column(Production_Order___Due_Date_; "Production Order"."Due Date")
                     {
                     }
-                    column(Sales_Header___Bill_to_Name_;"Sales Header"."Bill-to Name")
+                    column(Sales_Header___Bill_to_Name_; "Sales Header"."Bill-to Name")
                     {
                     }
-                    column(Sales_Header___Bill_to_Address_;"Sales Header"."Bill-to Address")
+                    column(Sales_Header___Bill_to_Address_; "Sales Header"."Bill-to Address")
                     {
                     }
-                    column(Sales_Header___Customer_OrderNo__;"Sales Header"."Customer OrderNo.")
+                    column(Sales_Header___Customer_OrderNo__; "Sales Header"."Customer OrderNo.")
                     {
                     }
-                    column(Sales_Header___Bill_to_City_;"Sales Header"."Bill-to City")
+                    column(Sales_Header___Bill_to_City_; "Sales Header"."Bill-to City")
                     {
                     }
-                    column(Sale_Order_No__Caption;Sale_Order_No__CaptionLbl)
+                    column(Sale_Order_No__Caption; Sale_Order_No__CaptionLbl)
                     {
                     }
-                    column(StatusCaption_Control1000000046;StatusCaption_Control1000000046Lbl)
+                    column(StatusCaption_Control1000000046; StatusCaption_Control1000000046Lbl)
                     {
                     }
-                    column(Compound_ItemCaption_Control1000000047;Compound_ItemCaption_Control1000000047Lbl)
+                    column(Compound_ItemCaption_Control1000000047; Compound_ItemCaption_Control1000000047Lbl)
                     {
                     }
-                    column(Production_Order_No__Caption;Production_Order_No__CaptionLbl)
+                    column(Production_Order_No__Caption; Production_Order_No__CaptionLbl)
                     {
                     }
-                    column(ProductCaption;ProductCaptionLbl)
+                    column(ProductCaption; ProductCaptionLbl)
                     {
                     }
-                    column(Due_Date_Caption;Due_Date_CaptionLbl)
+                    column(Due_Date_Caption; Due_Date_CaptionLbl)
                     {
                     }
-                    column(CustName_Caption;CustName_CaptionLbl)
+                    column(CustName_Caption; CustName_CaptionLbl)
                     {
                     }
-                    column(Customer_Order_No__Caption;Customer_Order_No__CaptionLbl)
+                    column(Customer_Order_No__Caption; Customer_Order_No__CaptionLbl)
                     {
                     }
-                    column(Prod__Order_Line_Status;Status)
+                    column(Prod__Order_Line_Status; Status)
                     {
                     }
-                    column(Prod__Order_Line_Line_No_;"Line No.")
+                    column(Prod__Order_Line_Line_No_; "Line No.")
                     {
                     }
-                    dataitem("Prod. Order Routing Line";"Prod. Order Routing Line")
+                    dataitem("Prod. Order Routing Line"; "Prod. Order Routing Line")
                     {
                         DataItemLink = Prod. Order No.=FIELD(Prod. Order No.),Routing Reference No.=FIELD(Line No.);
                         DataItemTableView = SORTING(Status,Prod. Order No.,Routing Reference No.,Routing No.,Operation No.);

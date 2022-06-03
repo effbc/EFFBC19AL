@@ -11,19 +11,19 @@ page 60219 "Sale orders-CUS"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("Sell-to Customer No.";"Sell-to Customer No.")
+                field("Sell-to Customer No."; "Sell-to Customer No.")
                 {
                 }
-                field("Bill-to Name";"Bill-to Name")
+                field("Bill-to Name"; "Bill-to Name")
                 {
                 }
-                field("Customer OrderNo.";"Customer OrderNo.")
+                field("Customer OrderNo."; "Customer OrderNo.")
                 {
                 }
-                field("Customer Posting Group";"Customer Posting Group")
+                field("Customer Posting Group"; "Customer Posting Group")
                 {
                 }
             }

@@ -6,13 +6,13 @@ xmlport 50036 "Item-Net weights"
     {
         textelement(Items)
         {
-            tableelement(Item;Item)
+            tableelement(Item; Item)
             {
                 XmlName = 'Item';
-                fieldelement(No;Item."No.")
+                fieldelement(No; Item."No.")
                 {
                 }
-                fieldelement(NetWeight;Item."Net Weight")
+                fieldelement(NetWeight; Item."Net Weight")
                 {
                 }
             }

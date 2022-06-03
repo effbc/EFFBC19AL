@@ -14,79 +14,79 @@ page 60081 "Bank Guarntee List"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("BG No.";"BG No.")
+                field("BG No."; "BG No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Issuing Bank";"Issuing Bank")
+                field("Issuing Bank"; "Issuing Bank")
                 {
                 }
-                field(Extended;Extended)
+                field(Extended; Extended)
                 {
                 }
-                field("Customer Order No.";"Customer Order No.")
+                field("Customer Order No."; "Customer Order No.")
                 {
                 }
-                field(Closed;Closed)
+                field(Closed; Closed)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field(Branch;Branch)
+                field(Branch; Branch)
                 {
                 }
-                field("Transaction Type";"Transaction Type")
+                field("Transaction Type"; "Transaction Type")
                 {
                 }
-                field("Issued to/Received from";"Issued to/Received from")
+                field("Issued to/Received from"; "Issued to/Received from")
                 {
                 }
-                field("Customer Name";"Customer Name")
+                field("Customer Name"; "Customer Name")
                 {
                 }
-                field("Doc No.";"Doc No.")
+                field("Doc No."; "Doc No.")
                 {
                 }
-                field("Date of Issue";"Date of Issue")
+                field("Date of Issue"; "Date of Issue")
                 {
                 }
-                field("Expiry Date";"Expiry Date")
+                field("Expiry Date"; "Expiry Date")
                 {
                 }
-                field("Claim Date";"Claim Date")
+                field("Claim Date"; "Claim Date")
                 {
                 }
-                field("Type of BG";"Type of BG")
+                field("Type of BG"; "Type of BG")
                 {
                 }
-                field("BG Value";"BG Value")
+                field("BG Value"; "BG Value")
                 {
                 }
-                field("Tender No.";"Tender No.")
+                field("Tender No."; "Tender No.")
                 {
                 }
-                field("Confirmed BY";"Confirmed BY")
+                field("Confirmed BY"; "Confirmed BY")
                 {
                 }
-                field("Confirmed BY Name";"Confirmed BY Name")
+                field("Confirmed BY Name"; "Confirmed BY Name")
                 {
                 }
-                field("Security Deposit No.";"Security Deposit No.")
+                field("Security Deposit No."; "Security Deposit No.")
                 {
                 }
-                field("Final Railway Bill Date";"Final Railway Bill Date")
+                field("Final Railway Bill Date"; "Final Railway Bill Date")
                 {
                 }
-                field("Warranty Period";"Warranty Period")
+                field("Warranty Period"; "Warranty Period")
                 {
                 }
-                field("BG Warranty Completion Date";"BG Warranty Completion Date")
+                field("BG Warranty Completion Date"; "BG Warranty Completion Date")
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
             }

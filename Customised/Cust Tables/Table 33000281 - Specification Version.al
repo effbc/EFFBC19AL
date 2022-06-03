@@ -3,60 +3,68 @@ table 33000281 "Specification Version"
     // version QC1.1
 
     Caption = 'Specification Version';
-    DataCaptionFields = "Specification No.","Version Code",Description;
+    DataCaptionFields = "Specification No.", "Version Code", Description;
     DrillDownPageID = "Specification Version List";
     LookupPageID = "Specification Version List";
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"Specification No.";Code[20])
+        field(1; "Specification No."; Code[20])
         {
             Caption = 'Specification No.';
             NotBlank = true;
             TableRelation = "Specification Header";
+            DataClassification = CustomerContent;
         }
-        field(2;"Version Code";Code[10])
+        field(2; "Version Code"; Code[10])
         {
             Caption = 'Version Code';
+            DataClassification = CustomerContent;
         }
-        field(3;Description;Text[30])
+        field(3; Description; Text[30])
         {
             Caption = 'Description';
+            DataClassification = CustomerContent;
         }
-        field(7;Status;Option)
+        field(7; Status; Option)
         {
             OptionCaption = 'New,Under Development,Certified';
             OptionMembers = New,"Under Development",Certified;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
-                if Status = Status :: Certified then
-                  TestStatus;
+                if Status = Status::Certified then
+                    TestStatus;
             end;
         }
-        field(10;"Starting Date";Date)
+        field(10; "Starting Date"; Date)
         {
             Caption = 'Starting Date';
+            DataClassification = CustomerContent;
         }
-        field(22;"Last Date Modified";Date)
+        field(22; "Last Date Modified"; Date)
         {
             Caption = 'Last Date Modified';
             Editable = false;
+            DataClassification = CustomerContent;
         }
-        field(50;"No. Series";Code[10])
+        field(50; "No. Series"; Code[10])
         {
             Caption = 'No. Series';
             Editable = false;
             TableRelation = "No. Series";
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(Key1;"Specification No.","Version Code")
+        key(Key1; "Specification No.", "Version Code")
         {
         }
-        key(Key2;"Specification No.","Starting Date")
+        key(Key2; "Specification No.", "Starting Date")
         {
         }
     }
@@ -67,10 +75,10 @@ table 33000281 "Specification Version"
 
     trigger OnDelete();
     var
-        SpecLine : Record "Specification Line";
+        SpecLine: Record "Specification Line";
     begin
-        SpecLine.SetRange("Spec ID","Specification No.");
-        SpecLine.SetRange("Version Code","Version Code");
+        SpecLine.SetRange("Spec ID", "Specification No.");
+        SpecLine.SetRange("Version Code", "Version Code");
         SpecLine.DeleteAll(true);
     end;
 
@@ -78,8 +86,8 @@ table 33000281 "Specification Version"
     begin
         SpecHeader.Get("Specification No.");
         if "Version Code" = '' then
-          SpecHeader.TestField("Version Nos.");
-        NoSeriesMgt.InitSeries(SpecHeader."Version Nos.",xRec."No. Series",0D,"Version Code","No. Series");
+            SpecHeader.TestField("Version Nos.");
+        NoSeriesMgt.InitSeries(SpecHeader."Version Nos.", xRec."No. Series", 0D, "Version Code", "No. Series");
     end;
 
     trigger OnModify();
@@ -88,68 +96,68 @@ table 33000281 "Specification Version"
     end;
 
     var
-        SpecHeader : Record "Specification Header";
-        SpecVersion : Record "Specification Version";
-        NoSeriesMgt : Codeunit NoSeriesManagement;
-        SpecIndent : Codeunit "Spec Line-Indent";
+        SpecHeader: Record "Specification Header";
+        SpecVersion: Record "Specification Version";
+        NoSeriesMgt: Codeunit NoSeriesManagement;
+        SpecIndent: Codeunit "Spec Line-Indent";
 
     [LineStart(8120)]
-    procedure AssistEdit(OldSpecVersion : Record "Specification Version") : Boolean;
+    procedure AssistEdit(OldSpecVersion: Record "Specification Version"): Boolean;
     begin
         with SpecVersion do begin
-          SpecVersion := Rec;
-          SpecHeader.Get("Specification No.");
-          SpecHeader.TestField("Version Nos.");
-          if NoSeriesMgt.SelectSeries(SpecHeader."Version Nos.",OldSpecVersion."No. Series","No. Series") then begin
-            NoSeriesMgt.SetSeries("Version Code");
-            Rec := SpecVersion;
-            exit(true);
-          end;
+            SpecVersion := Rec;
+            SpecHeader.Get("Specification No.");
+            SpecHeader.TestField("Version Nos.");
+            if NoSeriesMgt.SelectSeries(SpecHeader."Version Nos.", OldSpecVersion."No. Series", "No. Series") then begin
+                NoSeriesMgt.SetSeries("Version Code");
+                Rec := SpecVersion;
+                exit(true);
+            end;
         end;
     end;
 
     [LineStart(8132)]
     procedure TestStatus();
     var
-        SpecLine2 : Record "Specification Line";
-        SpecIndent : Codeunit "Spec Line-Indent";
-        InspectGroupCode : Code[20];
-        SamplingPlanCode : Code[20];
-        EndCheck : Boolean;
-        BeginCheck : Boolean;
+        SpecLine2: Record "Specification Line";
+        SpecIndent: Codeunit "Spec Line-Indent";
+        InspectGroupCode: Code[20];
+        SamplingPlanCode: Code[20];
+        EndCheck: Boolean;
+        BeginCheck: Boolean;
     begin
         SpecIndent.ChangeStatus;
         SpecIndent.IndentSpecVersion(Rec);
-        SpecLine2.SetRange("Spec ID","Specification No.");
+        SpecLine2.SetRange("Spec ID", "Specification No.");
         if SpecLine2.Find('-') then begin
-          SpecLine2.TestField("Character Type",SpecLine2."Character Type" :: "Begin");
-          repeat
-            if BeginCheck then begin
-               BeginCheck := false;
-               SpecLine2.TestField("Character Type",SpecLine2."Character Type" :: Standard);
-            end;
+            SpecLine2.TestField("Character Type", SpecLine2."Character Type"::"Begin");
+            repeat
+                if BeginCheck then begin
+                    BeginCheck := false;
+                    SpecLine2.TestField("Character Type", SpecLine2."Character Type"::Standard);
+                end;
 
-            if EndCheck then begin
-               EndCheck := false;
-               SpecLine2.TestField("Character Type",SpecLine2."Character Type" :: "Begin");
-            end;
+                if EndCheck then begin
+                    EndCheck := false;
+                    SpecLine2.TestField("Character Type", SpecLine2."Character Type"::"Begin");
+                end;
 
-            if SpecLine2."Character Type" = SpecLine2."Character Type" :: "Begin" then begin
-              BeginCheck := true;
-              SpecLine2.TestField("Sampling Code");
-              SpecLine2.TestField("Inspection Group Code");
-              SamplingPlanCode := SpecLine2."Sampling Code";
-              InspectGroupCode := SpecLine2."Inspection Group Code"
-            end else begin
-              if SpecLine2."Character Type" = SpecLine2."Character Type" :: "End" then
-                EndCheck := true;
-              SpecLine2."Sampling Code" := SamplingPlanCode;
-              SpecLine2."Inspection Group Code" := InspectGroupCode;
-              SpecLine2.Modify;
-            end;
-          until SpecLine2.Next = 0
+                if SpecLine2."Character Type" = SpecLine2."Character Type"::"Begin" then begin
+                    BeginCheck := true;
+                    SpecLine2.TestField("Sampling Code");
+                    SpecLine2.TestField("Inspection Group Code");
+                    SamplingPlanCode := SpecLine2."Sampling Code";
+                    InspectGroupCode := SpecLine2."Inspection Group Code"
+                end else begin
+                    if SpecLine2."Character Type" = SpecLine2."Character Type"::"End" then
+                        EndCheck := true;
+                    SpecLine2."Sampling Code" := SamplingPlanCode;
+                    SpecLine2."Inspection Group Code" := InspectGroupCode;
+                    SpecLine2.Modify;
+                end;
+            until SpecLine2.Next = 0
         end else
-          Error('No specification lines exists');
+            Error('No specification lines exists');
     end;
 }
 

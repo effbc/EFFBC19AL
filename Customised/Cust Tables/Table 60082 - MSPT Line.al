@@ -12,41 +12,48 @@ table 60082 "MSPT Line"
 
     DrillDownPageID = "MSPT Line List";
     LookupPageID = "MSPT Line List";
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"MSPT Header Code";Code[20])
+        field(1; "MSPT Header Code"; Code[20])
         {
             TableRelation = "MSPT Header".Code;
+            DataClassification = CustomerContent;
         }
-        field(2;"Code";Code[20])
+        field(2; "Code"; Code[20])
         {
             NotBlank = true;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
                 MSPTTestField;
             end;
         }
-        field(3;"Line No.";Integer)
+        field(3; "Line No."; Integer)
         {
+            DataClassification = CustomerContent;
         }
-        field(4;Type;Option)
+        field(4; Type; Option)
         {
             Editable = false;
             Enabled = false;
             OptionMembers = Percentage,"Fixed Value";
+            DataClassification = CustomerContent;
         }
-        field(5;Description;Text[80])
+        field(5; Description; Text[80])
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
                 MSPTTestField;
             end;
         }
-        field(6;Percentage;Decimal)
+        field(6; Percentage; Decimal)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -58,13 +65,14 @@ table 60082 "MSPT Line"
                 */
                 MSPTTestField;
                 if Percentage < 0 then
-                  Error(Text001);
+                    Error(Text001);
 
             end;
         }
-        field(7;Amount;Decimal)
+        field(7; Amount; Decimal)
         {
             Enabled = false;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -77,17 +85,19 @@ table 60082 "MSPT Line"
 
             end;
         }
-        field(8;"Calculation Period";DateFormula)
+        field(8; "Calculation Period"; DateFormula)
         {
             NotBlank = true;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
                 MSPTTestField;
             end;
         }
-        field(9;Remarks;Text[80])
+        field(9; Remarks; Text[80])
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -98,7 +108,7 @@ table 60082 "MSPT Line"
 
     keys
     {
-        key(Key1;"Code","MSPT Header Code","Line No.")
+        key(Key1; "Code", "MSPT Header Code", "Line No.")
         {
         }
     }
@@ -128,17 +138,17 @@ table 60082 "MSPT Line"
     end;
 
     var
-        MSPTHeader : Record "MSPT Header";
-        TotalPercentage : Decimal;
-        MSPTLine : Record "MSPT Line";
-        Text001 : Label 'Percentage Must Be Positive Value';
+        MSPTHeader: Record "MSPT Header";
+        TotalPercentage: Decimal;
+        MSPTLine: Record "MSPT Line";
+        Text001: Label 'Percentage Must Be Positive Value';
 
     [LineStart(3618)]
     procedure MSPTTestField();
     begin
-        MSPTHeader.SetRange(Code,"MSPT Header Code");
+        MSPTHeader.SetRange(Code, "MSPT Header Code");
         if MSPTHeader.Find('-') then begin
-          MSPTHeader.TestField(Status,MSPTHeader.Status::Open);
+            MSPTHeader.TestField(Status, MSPTHeader.Status::Open);
         end;
     end;
 }

@@ -2,7 +2,7 @@ page 60220 "Need to Change Deviated Dates"
 {
     PageType = Worksheet;
     SourceTable = "Purchase Line";
-    SourceTableView = SORTING(Document Type,Document No.,Line No.) ORDER(Ascending) WHERE(Document Type=CONST(Order),Type=CONST(Item),Location Code=CONST(STR),Outstanding Quantity=FILTER(>0));
+    SourceTableView = SORTING(Document Type, Document No., Line No.) ORDER(Ascending) WHERE(Document Type=CONST(Order),Type=CONST(Item),Location Code=CONST(STR),Outstanding Quantity=FILTER(>0));
 
     layout
     {

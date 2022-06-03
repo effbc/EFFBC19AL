@@ -2,11 +2,11 @@ page 60274 "Quote Customer List"
 {
     // version B2BQTO
 
-    CaptionML = ENU='Customer List',
-                ENN='Customer List';
+    CaptionML = ENU = 'Customer List',
+                ENN = 'Customer List';
     PageType = List;
-    PromotedActionCategoriesML = ENU='New,Process,Report,Approve',
-                                 ENN='New,Process,Report,Approve';
+    PromotedActionCategoriesML = ENU = 'New,Process,Report,Approve',
+                                 ENN = 'New,Process,Report,Approve';
     SourceTable = Customer;
 
     layout
@@ -16,194 +16,194 @@ page 60274 "Quote Customer List"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Editable = false;
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
                     Editable = false;
                 }
-                field("Service Zone Code";"Service Zone Code")
+                field("Service Zone Code"; "Service Zone Code")
                 {
                 }
-                field("Territory Code";"Territory Code")
+                field("Territory Code"; "Territory Code")
                 {
                 }
-                field(Address;Address)
-                {
-                    Editable = false;
-                }
-                field("Make A Quote";"Make A Quote")
-                {
-                }
-                field("Tally Ref";"Tally Ref")
-                {
-                }
-                field(SalBalance;SalBalance)
-                {
-                }
-                field(CSBalance;CSBalance)
-                {
-                }
-                field("Address 2";"Address 2")
+                field(Address; Address)
                 {
                     Editable = false;
                 }
-                field("State Code";"State Code")
+                field("Make A Quote"; "Make A Quote")
+                {
+                }
+                field("Tally Ref"; "Tally Ref")
+                {
+                }
+                field(SalBalance; SalBalance)
+                {
+                }
+                field(CSBalance; CSBalance)
+                {
+                }
+                field("Address 2"; "Address 2")
                 {
                     Editable = false;
                 }
-                field(City;City)
-                {
-                }
-                field("Primary Contact No.";"Primary Contact No.")
-                {
-                }
-                field("Responsibility Center";"Responsibility Center")
-                {
-                }
-                field("Location Code";"Location Code")
-                {
-                }
-                field("Post Code";"Post Code")
+                field("State Code"; "State Code")
                 {
                     Editable = false;
-                    Visible = false;
                 }
-                field("Country/Region Code";"Country/Region Code")
+                field(City; City)
+                {
+                }
+                field("Primary Contact No."; "Primary Contact No.")
+                {
+                }
+                field("Responsibility Center"; "Responsibility Center")
+                {
+                }
+                field("Location Code"; "Location Code")
+                {
+                }
+                field("Post Code"; "Post Code")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Phone No.";"Phone No.")
-                {
-                    Editable = false;
-                }
-                field("Fax No.";"Fax No.")
+                field("Country/Region Code"; "Country/Region Code")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("IC Partner Code";"IC Partner Code")
+                field("Phone No."; "Phone No.")
                 {
-                    Visible = false;
+                    Editable = false;
                 }
-                field(Contact;Contact)
-                {
-                }
-                field("Salesperson Code";"Salesperson Code")
+                field("Fax No."; "Fax No.")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Customer Posting Group";"Customer Posting Group")
+                field("IC Partner Code"; "IC Partner Code")
                 {
                     Visible = false;
                 }
-                field("Gen. Bus. Posting Group";"Gen. Bus. Posting Group")
+                field(Contact; Contact)
+                {
+                }
+                field("Salesperson Code"; "Salesperson Code")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Customer Price Group";"Customer Price Group")
+                field("Customer Posting Group"; "Customer Posting Group")
+                {
+                    Visible = false;
+                }
+                field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Customer Disc. Group";"Customer Disc. Group")
+                field("Customer Price Group"; "Customer Price Group")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Payment Terms Code";"Payment Terms Code")
+                field("Customer Disc. Group"; "Customer Disc. Group")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Reminder Terms Code";"Reminder Terms Code")
+                field("Payment Terms Code"; "Payment Terms Code")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Fin. Charge Terms Code";"Fin. Charge Terms Code")
+                field("Reminder Terms Code"; "Reminder Terms Code")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Currency Code";"Currency Code")
+                field("Fin. Charge Terms Code"; "Fin. Charge Terms Code")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Language Code";"Language Code")
+                field("Currency Code"; "Currency Code")
                 {
                     Editable = false;
                     Visible = false;
                 }
-                field("Search Name";"Search Name")
+                field("Language Code"; "Language Code")
+                {
+                    Editable = false;
+                    Visible = false;
+                }
+                field("Search Name"; "Search Name")
                 {
                     Editable = false;
                 }
-                field("Credit Limit (LCY)";"Credit Limit (LCY)")
+                field("Credit Limit (LCY)"; "Credit Limit (LCY)")
                 {
                     Style = None;
                     Visible = false;
                 }
-                field(Blocked;Blocked)
+                field(Blocked; Blocked)
                 {
                     Visible = false;
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("Last Date Modified"; "Last Date Modified")
                 {
                     Visible = false;
                 }
-                field("Application Method";"Application Method")
+                field("Application Method"; "Application Method")
                 {
                     Visible = false;
                 }
-                field("Combine Shipments";"Combine Shipments")
+                field("Combine Shipments"; "Combine Shipments")
                 {
                     Visible = false;
                 }
-                field(Reserve;Reserve)
+                field(Reserve; Reserve)
                 {
                     Visible = false;
                 }
-                field("Shipping Advice";"Shipping Advice")
+                field("Shipping Advice"; "Shipping Advice")
                 {
                     Visible = false;
                 }
-                field("Shipping Agent Code";"Shipping Agent Code")
+                field("Shipping Agent Code"; "Shipping Agent Code")
                 {
                     Visible = false;
                 }
-                field("Base Calendar Code";"Base Calendar Code")
+                field("Base Calendar Code"; "Base Calendar Code")
                 {
                     Visible = false;
                 }
-                field("E-Mail";"E-Mail")
+                field("E-Mail"; "E-Mail")
                 {
                 }
-                field("VAT Bus. Posting Group";"VAT Bus. Posting Group")
+                field("VAT Bus. Posting Group"; "VAT Bus. Posting Group")
                 {
                     Editable = false;
                 }
-                field("Excise Bus. Posting Group";"Excise Bus. Posting Group")
+                field("Excise Bus. Posting Group"; "Excise Bus. Posting Group")
                 {
                     Editable = false;
                 }
-                field("Tax Area Code";"Tax Area Code")
+                field("Tax Area Code"; "Tax Area Code")
                 {
                     Editable = false;
                 }
-                field("Balance (LCY)";"Balance (LCY)")
+                field("Balance (LCY)"; "Balance (LCY)")
                 {
                 }
-                field("T.I.N. No.";"T.I.N. No.")
+                field("T.I.N. No."; "T.I.N. No.")
                 {
                 }
-                field("Payment Realization Period";"Payment Realization Period")
+                field("Payment Realization Period"; "Payment Realization Period")
                 {
                 }
             }
@@ -217,7 +217,7 @@ page 60274 "Quote Customer List"
                     group(Control1102152010)
                     {
                         ShowCaption = false;
-                        field("TotalCustomers+FORMAT(Rec.COUNT)";TotalCustomers+FORMAT(Rec.COUNT))
+                        field("TotalCustomers+FORMAT(Rec.COUNT)"; TotalCustomers + FORMAT(Rec.COUNT))
                         {
                             Editable = false;
                         }
@@ -225,7 +225,7 @@ page 60274 "Quote Customer List"
                     group(Control1102152001)
                     {
                         ShowCaption = false;
-                        field(Color_GST_Update_C;Color_GST_Update_C)
+                        field(Color_GST_Update_C; Color_GST_Update_C)
                         {
                             Editable = false;
                             Style = StrongAccent;
@@ -237,23 +237,23 @@ page 60274 "Quote Customer List"
         }
         area(factboxes)
         {
-            part(Control99;"CRM Statistics FactBox")
+            part(Control99; "CRM Statistics FactBox")
             {
                 SubPageLink = No.=FIELD(No.);
-                Visible = CRMIsCoupledToRecord;
+                    Visible = CRMIsCoupledToRecord;
             }
-            part(Control35;"Social Listening FactBox")
+            part(Control35; "Social Listening FactBox")
             {
                 SubPageLink = Source Type=CONST(Customer),Source No.=FIELD(No.);
-                Visible = SocialListeningVisible;
+                    Visible = SocialListeningVisible;
             }
-            part(Control33;"Social Listening Setup FactBox")
+            part(Control33; "Social Listening Setup FactBox")
             {
                 SubPageLink = Source Type=CONST(Customer),Source No.=FIELD(No.);
-                UpdatePropagation = Both;
-                Visible = SocialListeningSetupVisible;
+                    UpdatePropagation = Both;
+                    Visible = SocialListeningSetupVisible;
             }
-            part(Control1903720907;"Sales Hist. Sell-to FactBox")
+            part(Control1903720907; "Sales Hist. Sell-to FactBox")
             {
                 SubPageLink = No.=FIELD(No.),Currency Filter=FIELD(Currency Filter),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter);
                 Visible = true;
@@ -309,7 +309,7 @@ page 60274 "Quote Customer List"
                                 ENN='Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Comment Sheet";
-                    RunPageLink = Table Name=CONST(Customer),No.=FIELD(No.);
+                                    RunPageLink = Table Name=CONST(Customer),No.=FIELD(No.);
                 }
                 group(Dimensions)
                 {
@@ -322,7 +322,7 @@ page 60274 "Quote Customer List"
                                     ENN='Dimensions-Single';
                         Image = Dimensions;
                         RunObject = Page "Default Dimensions";
-                        RunPageLink = Table ID=CONST(18),No.=FIELD(No.);
+                                        RunPageLink = Table ID=CONST(18),No.=FIELD(No.);
                         ShortCutKey = 'Shift+Ctrl+D';
                     }
                     action("Dimensions-&Multiple")
@@ -349,7 +349,7 @@ page 60274 "Quote Customer List"
                                 ENN='Bank Accounts';
                     Image = BankAccount;
                     RunObject = Page "Customer Bank Account List";
-                    RunPageLink = Customer No.=FIELD(No.);
+                                    RunPageLink = Customer No.=FIELD(No.);
                 }
                 action("Direct Debit Mandates")
                 {
@@ -357,7 +357,7 @@ page 60274 "Quote Customer List"
                                 ENN='Direct Debit Mandates';
                     Image = MakeAgreement;
                     RunObject = Page "SEPA Direct Debit Mandates";
-                    RunPageLink = Customer No.=FIELD(No.);
+                                    RunPageLink = Customer No.=FIELD(No.);
                 }
                 action("Ship-&to Addresses")
                 {
@@ -365,7 +365,7 @@ page 60274 "Quote Customer List"
                                 ENN='Ship-&to Addresses';
                     Image = ShipAddress;
                     RunObject = Page "Ship-to Address List";
-                    RunPageLink = Customer No.=FIELD(No.);
+                                    RunPageLink = Customer No.=FIELD(No.);
                 }
                 action("C&ontact")
                 {
@@ -385,7 +385,7 @@ page 60274 "Quote Customer List"
                                 ENN='Cross Re&ferences';
                     Image = Change;
                     RunObject = Page "Cross References";
-                    RunPageLink = Cross-Reference Type=CONST(Customer),Cross-Reference Type No.=FIELD(No.);
+                                    RunPageLink = Cross-Reference Type=CONST(Customer),Cross-Reference Type No.=FIELD(No.);
                     RunPageView = SORTING(Cross-Reference Type,Cross-Reference Type No.);
                 }
                 action(ApprovalEntries)
@@ -555,7 +555,7 @@ page 60274 "Quote Customer List"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Customer Ledger Entries";
-                    RunPageLink = Customer No.=FIELD(No.);
+                                    RunPageLink = Customer No.=FIELD(No.);
                     RunPageView = SORTING(Customer No.);
                     ShortCutKey = 'Ctrl+F7';
                 }
@@ -567,7 +567,7 @@ page 60274 "Quote Customer List"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Customer Statistics";
-                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter);
+                                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter);
                     ShortCutKey = 'F7';
                 }
                 action("S&ales")
@@ -576,7 +576,7 @@ page 60274 "Quote Customer List"
                                 ENN='S&ales';
                     Image = Sales;
                     RunObject = Page "Customer Sales";
-                    RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter);
+                                    RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter);
                 }
                 action("Entry Statistics")
                 {
@@ -584,7 +584,7 @@ page 60274 "Quote Customer List"
                                 ENN='Entry Statistics';
                     Image = EntryStatistics;
                     RunObject = Page "Customer Entry Statistics";
-                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter);
+                                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter);
                 }
                 action("Statistics by C&urrencies")
                 {
@@ -592,7 +592,7 @@ page 60274 "Quote Customer List"
                                 ENN='Statistics by C&urrencies';
                     Image = Currencies;
                     RunObject = Page "Cust. Stats. by Curr. Lines";
-                    RunPageLink = Customer Filter=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Date Filter=FIELD(Date Filter);
+                                    RunPageLink = Customer Filter=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Date Filter=FIELD(Date Filter);
                 }
                 action("Item &Tracking Entries")
                 {
@@ -619,7 +619,7 @@ page 60274 "Quote Customer List"
                                 ENN='Invoice &Discounts';
                     Image = CalculateInvoiceDiscount;
                     RunObject = Page "Cust. Invoice Discounts";
-                    RunPageLink = Code=FIELD(Invoice Disc. Code);
+                                    RunPageLink = Code=FIELD(Invoice Disc. Code);
                 }
                 action(Sales_Prices)
                 {
@@ -627,7 +627,7 @@ page 60274 "Quote Customer List"
                                 ENN='Prices';
                     Image = Price;
                     RunObject = Page "Sales Prices";
-                    RunPageLink = Sales Type=CONST(Customer),Sales Code=FIELD(No.);
+                                    RunPageLink = Sales Type=CONST(Customer),Sales Code=FIELD(No.);
                     RunPageView = SORTING(Sales Type,Sales Code);
                 }
                 action(Sales_LineDiscounts)
@@ -636,7 +636,7 @@ page 60274 "Quote Customer List"
                                 ENN='Line Discounts';
                     Image = LineDiscount;
                     RunObject = Page "Sales Line Discounts";
-                    RunPageLink = Sales Type=CONST(Customer),Sales Code=FIELD(No.);
+                                    RunPageLink = Sales Type=CONST(Customer),Sales Code=FIELD(No.);
                     RunPageView = SORTING(Sales Type,Sales Code);
                 }
                 action("Prepa&yment Percentages")
@@ -645,7 +645,7 @@ page 60274 "Quote Customer List"
                                 ENN='Prepa&yment Percentages';
                     Image = PrepaymentPercentages;
                     RunObject = Page "Sales Prepayment Percentages";
-                    RunPageLink = Sales Type=CONST(Customer),Sales Code=FIELD(No.);
+                                    RunPageLink = Sales Type=CONST(Customer),Sales Code=FIELD(No.);
                     RunPageView = SORTING(Sales Type,Sales Code);
                 }
                 action("S&td. Cust. Sales Codes")
@@ -654,7 +654,7 @@ page 60274 "Quote Customer List"
                                 ENN='S&td. Cust. Sales Codes';
                     Image = CodesList;
                     RunObject = Page "Standard Customer Sales Codes";
-                    RunPageLink = Customer No.=FIELD(No.);
+                                    RunPageLink = Customer No.=FIELD(No.);
                 }
             }
             group(Documents)
@@ -668,7 +668,7 @@ page 60274 "Quote Customer List"
                                 ENN='Quotes';
                     Image = Quote;
                     RunObject = Page "Sales Quotes";
-                    RunPageLink = Sell-to Customer No.=FIELD(No.);
+                                    RunPageLink = Sell-to Customer No.=FIELD(No.);
                     RunPageView = SORTING(Sell-to Customer No.);
                 }
                 action(Orders)
@@ -677,7 +677,7 @@ page 60274 "Quote Customer List"
                                 ENN='Orders';
                     Image = Document;
                     RunObject = Page "Sales Order List";
-                    RunPageLink = Sell-to Customer No.=FIELD(No.);
+                                    RunPageLink = Sell-to Customer No.=FIELD(No.);
                     RunPageView = SORTING(Sell-to Customer No.);
                 }
                 action("Return Orders")
@@ -686,7 +686,7 @@ page 60274 "Quote Customer List"
                                 ENN='Return Orders';
                     Image = ReturnOrder;
                     RunObject = Page "Sales Return Order List";
-                    RunPageLink = Sell-to Customer No.=FIELD(No.);
+                                    RunPageLink = Sell-to Customer No.=FIELD(No.);
                     RunPageView = SORTING(Sell-to Customer No.);
                 }
                 group("Issued Documents")
@@ -700,7 +700,7 @@ page 60274 "Quote Customer List"
                                     ENN='Issued &Reminders';
                         Image = OrderReminder;
                         RunObject = Page "Issued Reminder List";
-                        RunPageLink = Customer No.=FIELD(No.);
+                                        RunPageLink = Customer No.=FIELD(No.);
                         RunPageView = SORTING(Customer No.,Posting Date);
                     }
                     action("Issued &Finance Charge Memos")
@@ -709,7 +709,7 @@ page 60274 "Quote Customer List"
                                     ENN='Issued &Finance Charge Memos';
                         Image = FinChargeMemo;
                         RunObject = Page "Issued Fin. Charge Memo List";
-                        RunPageLink = Customer No.=FIELD(No.);
+                                        RunPageLink = Customer No.=FIELD(No.);
                         RunPageView = SORTING(Customer No.,Posting Date);
                     }
                 }
@@ -719,7 +719,7 @@ page 60274 "Quote Customer List"
                                 ENN='Blanket Orders';
                     Image = BlanketOrder;
                     RunObject = Page "Blanket Sales Orders";
-                    RunPageLink = Sell-to Customer No.=FIELD(No.);
+                                    RunPageLink = Sell-to Customer No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Sell-to Customer No.);
                 }
             }
@@ -739,7 +739,7 @@ page 60274 "Quote Customer List"
                                     ENN='C&redit Cards';
                         Image = CreditCard;
                         RunObject = Page "DO Payment Credit Card List";
-                        RunPageLink = Customer No.=FIELD(No.);
+                                        RunPageLink = Customer No.=FIELD(No.);
                     }
                     action("Credit Cards Transaction Lo&g Entries")
                     {
@@ -747,7 +747,7 @@ page 60274 "Quote Customer List"
                                     ENN='Credit Cards Transaction Lo&g Entries';
                         Image = CreditCardLog;
                         RunObject = Page "DO Payment Trans. Log Entries";
-                        RunPageLink = Customer No.=FIELD(No.);
+                                        RunPageLink = Customer No.=FIELD(No.);
                     }
                 }
             }
@@ -762,7 +762,7 @@ page 60274 "Quote Customer List"
                                 ENN='Service Orders';
                     Image = Document;
                     RunObject = Page "Service Orders";
-                    RunPageLink = Customer No.=FIELD(No.);
+                                    RunPageLink = Customer No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Customer No.);
                 }
                 action("Ser&vice Contracts")
@@ -771,7 +771,7 @@ page 60274 "Quote Customer List"
                                 ENN='Ser&vice Contracts';
                     Image = ServiceAgreement;
                     RunObject = Page "Customer Service Contracts";
-                    RunPageLink = Customer No.=FIELD(No.);
+                                    RunPageLink = Customer No.=FIELD(No.);
                     RunPageView = SORTING(Customer No.,Ship-to Code);
                 }
                 action("Service &Items")
@@ -780,7 +780,7 @@ page 60274 "Quote Customer List"
                                 ENN='Service &Items';
                     Image = ServiceItem;
                     RunObject = Page "Service Items";
-                    RunPageLink = Customer No.=FIELD(No.);
+                                    RunPageLink = Customer No.=FIELD(No.);
                     RunPageView = SORTING(Customer No.,Ship-to Code,Item No.,Serial No.);
                 }
             }
@@ -796,7 +796,7 @@ page 60274 "Quote Customer List"
                 //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                 //PromotedCategory = New;
                 RunObject = Page "Blanket Sales Order";
-                RunPageLink = Sell-to Customer No.=FIELD(No.);
+                                RunPageLink = Sell-to Customer No.=FIELD(No.);
                 RunPageMode = Create;
             }
             action("Sales Quote")
@@ -807,7 +807,7 @@ page 60274 "Quote Customer List"
                 Promoted = true;
                 PromotedCategory = New;
                 RunObject = Page "Sales Quote";
-                RunPageLink = Sell-to Customer No.=FIELD(No.);
+                                RunPageLink = Sell-to Customer No.=FIELD(No.);
                 RunPageMode = Create;
             }
             action("Sales Invoice")
@@ -818,7 +818,7 @@ page 60274 "Quote Customer List"
                 Promoted = true;
                 PromotedCategory = New;
                 RunObject = Page "Sales Invoice";
-                RunPageLink = Sell-to Customer No.=FIELD(No.);
+                                RunPageLink = Sell-to Customer No.=FIELD(No.);
                 RunPageMode = Create;
             }
             action("Sales Order")
@@ -829,7 +829,7 @@ page 60274 "Quote Customer List"
                 Promoted = true;
                 PromotedCategory = New;
                 RunObject = Page "Sales Order";
-                RunPageLink = Sell-to Customer No.=FIELD(No.);
+                                RunPageLink = Sell-to Customer No.=FIELD(No.);
                 RunPageMode = Create;
             }
             action("Sales Credit Memo")
@@ -841,7 +841,7 @@ page 60274 "Quote Customer List"
                 //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                 //PromotedCategory = New;
                 RunObject = Page "Sales Credit Memo";
-                RunPageLink = Sell-to Customer No.=FIELD(No.);
+                                RunPageLink = Sell-to Customer No.=FIELD(No.);
                 RunPageMode = Create;
             }
             action("Sales Return Order")
@@ -853,7 +853,7 @@ page 60274 "Quote Customer List"
                 //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                 //PromotedCategory = New;
                 RunObject = Page "Sales Return Order";
-                RunPageLink = Sell-to Customer No.=FIELD(No.);
+                                RunPageLink = Sell-to Customer No.=FIELD(No.);
                 RunPageMode = Create;
             }
             action("Service Quote")
@@ -865,7 +865,7 @@ page 60274 "Quote Customer List"
                 //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                 //PromotedCategory = New;
                 RunObject = Page "Service Quote";
-                RunPageLink = Customer No.=FIELD(No.);
+                                RunPageLink = Customer No.=FIELD(No.);
                 RunPageMode = Create;
             }
             action("Service Invoice")
@@ -877,7 +877,7 @@ page 60274 "Quote Customer List"
                 //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                 //PromotedCategory = New;
                 RunObject = Page "Service Invoice";
-                RunPageLink = Customer No.=FIELD(No.);
+                                RunPageLink = Customer No.=FIELD(No.);
                 RunPageMode = Create;
             }
             action("Service Order")
@@ -889,7 +889,7 @@ page 60274 "Quote Customer List"
                 //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                 //PromotedCategory = New;
                 RunObject = Page "Service Order";
-                RunPageLink = Customer No.=FIELD(No.);
+                                RunPageLink = Customer No.=FIELD(No.);
                 RunPageMode = Create;
             }
             action("Service Credit Memo")
@@ -901,7 +901,7 @@ page 60274 "Quote Customer List"
                 //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                 //PromotedCategory = New;
                 RunObject = Page "Service Credit Memo";
-                RunPageLink = Customer No.=FIELD(No.);
+                                RunPageLink = Customer No.=FIELD(No.);
                 RunPageMode = Create;
             }
             action(Reminder)
@@ -912,7 +912,7 @@ page 60274 "Quote Customer List"
                 Promoted = true;
                 PromotedCategory = New;
                 RunObject = Page Reminder;
-                RunPageLink = Customer No.=FIELD(No.);
+                                RunPageLink = Customer No.=FIELD(No.);
                 RunPageMode = Create;
             }
             action("Finance Charge Memo")
@@ -924,7 +924,7 @@ page 60274 "Quote Customer List"
                 //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                 //PromotedCategory = New;
                 RunObject = Page "Finance Charge Memo";
-                RunPageLink = Customer No.=FIELD(No.);
+                                RunPageLink = Customer No.=FIELD(No.);
                 RunPageMode = Create;
             }
         }

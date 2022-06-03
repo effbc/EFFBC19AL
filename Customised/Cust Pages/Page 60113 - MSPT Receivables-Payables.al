@@ -19,10 +19,10 @@ page 60113 "MSPT Receivables-Payables"
     {
         area(content)
         {
-            part(MSPTReceivPayablesLines;"MSPTReceivables-Payables Lines")
+            part(MSPTReceivPayablesLines; "MSPTReceivables-Payables Lines")
             {
             }
-            field(PeriodType;PeriodType)
+            field(PeriodType; PeriodType)
             {
                 OptionCaption = 'Day,Week,Month,Quarter,Year,Period';
                 ToolTip = 'Day';
@@ -30,20 +30,20 @@ page 60113 "MSPT Receivables-Payables"
                 trigger OnValidate();
                 begin
                     IF PeriodType = PeriodType::Period THEN
-                      PeriodPeriodTypeOnValidate;
+                        PeriodPeriodTypeOnValidate;
                     IF PeriodType = PeriodType::Year THEN
-                      YearPeriodTypeOnValidate;
+                        YearPeriodTypeOnValidate;
                     IF PeriodType = PeriodType::Quarter THEN
-                      QuarterPeriodTypeOnValidate;
+                        QuarterPeriodTypeOnValidate;
                     IF PeriodType = PeriodType::Month THEN
-                      MonthPeriodTypeOnValidate;
+                        MonthPeriodTypeOnValidate;
                     IF PeriodType = PeriodType::Week THEN
-                      WeekPeriodTypeOnValidate;
+                        WeekPeriodTypeOnValidate;
                     IF PeriodType = PeriodType::Day THEN
-                      DayPeriodTypeOnValidate;
+                        DayPeriodTypeOnValidate;
                 end;
             }
-            field(AmountType;AmountType)
+            field(AmountType; AmountType)
             {
                 OptionCaption = 'Net Change,Balance at Date';
                 ToolTip = 'Net Change';
@@ -51,9 +51,9 @@ page 60113 "MSPT Receivables-Payables"
                 trigger OnValidate();
                 begin
                     IF AmountType = AmountType::"Balance at Date" THEN
-                      BalanceatDateAmountTypeOnValid;
+                        BalanceatDateAmountTypeOnValid;
                     IF AmountType = AmountType::"Net Change" THEN
-                      NetChangeAmountTypeOnValidate;
+                        NetChangeAmountTypeOnValidate;
                 end;
             }
         }
@@ -69,13 +69,13 @@ page 60113 "MSPT Receivables-Payables"
     end;
 
     var
-        PeriodType : Option Day,Week,Month,Quarter,Year,Period;
-        AmountType : Option "Net Change","Balance at Date";
+        PeriodType: Option Day,Week,Month,Quarter,Year,Period;
+        AmountType: Option "Net Change","Balance at Date";
 
     [LineStart(11080)]
     procedure UpdateSubForm();
     begin
-        CurrPage.MSPTReceivPayablesLines.PAGE.Set(Rec,PeriodType,AmountType);
+        CurrPage.MSPTReceivPayablesLines.PAGE.Set(Rec, PeriodType, AmountType);
     end;
 
     [LineStart(11083)]

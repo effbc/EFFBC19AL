@@ -6,22 +6,22 @@ xmlport 80031 "Tax Area Locations"
     {
         textelement(TaxAreaLocations)
         {
-            tableelement("<taxarealocation>";"Tax Area Locations")
+            tableelement("<taxarealocation>"; "Tax Area Locations")
             {
                 XmlName = 'TaxAreaLocation';
-                fieldelement(Type;"<TaxAreaLocation>".Type)
+                fieldelement(Type; "<TaxAreaLocation>".Type)
                 {
                 }
-                fieldelement(DispatchReceivingLocation;"<TaxAreaLocation>"."Dispatch / Receiving Location")
+                fieldelement(DispatchReceivingLocation; "<TaxAreaLocation>"."Dispatch / Receiving Location")
                 {
                 }
-                fieldelement(CustomerVendorLocation;"<TaxAreaLocation>"."Customer / Vendor Location")
+                fieldelement(CustomerVendorLocation; "<TaxAreaLocation>"."Customer / Vendor Location")
                 {
                 }
-                fieldelement(VATApplicable;"<TaxAreaLocation>"."VAT Applicable")
+                fieldelement(VATApplicable; "<TaxAreaLocation>"."VAT Applicable")
                 {
                 }
-                fieldelement(TaxAreaCode;"<TaxAreaLocation>"."Tax Area Code")
+                fieldelement(TaxAreaCode; "<TaxAreaLocation>"."Tax Area Code")
                 {
                 }
             }

@@ -8,38 +8,37 @@ report 50025 Certify
 
     dataset
     {
-        dataitem(pbh;"Production BOM Header")
+        dataitem(pbh; "Production BOM Header")
         {
             RequestFilterFields = "No.";
 
             trigger OnAfterGetRecord();
             begin
-                i:=-1;
-                j:=-1;
-                direct_vertical:=-1;
-                rnoMgr:='';
-                rnoVh:='';
-                save:=TRUE;
-                
+                i := -1;
+                j := -1;
+                direct_vertical := -1;
+                rnoMgr := '';
+                rnoVh := '';
+                save := TRUE;
+
                 // Code Added  by Vishnu Priya  on 30-09-2020
                 Mail_Send_To := 'bharat@efftronics.com';
                 rnoVh := '89FD002';
                 user.RESET;
-                user.SETFILTER("User Name",USERID);
-                user.SETRANGE(levels,TRUE);
-                IF user.FINDFIRST THEN
-                  BEGIN
+                user.SETFILTER("User Name", USERID);
+                user.SETRANGE(levels, TRUE);
+                IF user.FINDFIRST THEN BEGIN
                     Mail_To := user.MailID;
                     rnoMgr := user.EmployeeID;
-                    i:= 5;
-                    j:= 5
-                  END
-                  ELSE
-                  ERROR('You are not an Authorized User to send BOMs in erp.');
-                
+                    i := 5;
+                    j := 5
+                END
+                ELSE
+                    ERROR('You are not an Authorized User to send BOMs in erp.');
+
                 // Code Added  by Vishnu Priya  on 30-09-2020
                 // Code commented  by Vishnu Priya  on 30-09-2020
-                
+
                 /*
                 IF vh1=TRUE THEN
                 BEGIN
@@ -342,53 +341,45 @@ report 50025 Certify
                 
                 */
                 //***************added by sujani on 03-Nov-18 for direct vertical Authorization
-                IF DV1 = TRUE THEN
-                BEGIN
-                
-                  direct_vertical :=1;
-                  IF (i<0)  THEN
-                    ERROR('Select Vertical Manager')
-                  ELSE
-                    BEGIN
-                      BEGIN
-                           IF pbh.Status=pbh.Status::Certified THEN
-                             BEGIN
-                               ERROR('BOM was Already Certified');
+                IF DV1 = TRUE THEN BEGIN
+
+                    direct_vertical := 1;
+                    IF (i < 0) THEN
+                        ERROR('Select Vertical Manager')
+                    ELSE BEGIN
+                        BEGIN
+                            IF pbh.Status = pbh.Status::Certified THEN BEGIN
+                                ERROR('BOM was Already Certified');
                             END
-                         ELSE
-                           BEGIN
-                              pbh.StatusCheck3_check(pbh."No.");
-                              REPORT.RUNMODAL(50050,FALSE,FALSE,pbh);
-                              REPORT.RUNMODAL(50093,FALSE,FALSE,pbh);
-                              Single_Approval_Mail;
-                          END;
-                      END
-                
+                            ELSE BEGIN
+                                pbh.StatusCheck3_check(pbh."No.");
+                                REPORT.RUNMODAL(50050, FALSE, FALSE, pbh);
+                                REPORT.RUNMODAL(50093, FALSE, FALSE, pbh);
+                                Single_Approval_Mail;
+                            END;
+                        END
+
                     END;
                 END
-                
-                ELSE
-                BEGIN
-                
-                IF (i>0) AND (j>0) THEN
-                BEGIN
-                  IF pbh.Status=pbh.Status::Certified THEN
-                  BEGIN
-                    ERROR('BOM was Already Certified');
-                  END
-                  ELSE
-                  BEGIN
-                    pbh.StatusCheck3_check(pbh."No.");
-                    REPORT.RUNMODAL(50050,FALSE,FALSE,pbh);
-                    REPORT.RUNMODAL(50093,FALSE,FALSE,pbh);
-                
-                    // tempexcelbuffer.SaveRout(pbh."No.");     //mnraju
-                    // }
-                    Mails;
-                  END;
-                END
-                ELSE
-                  ERROR('Select Atleast one Vertical Head and Vertical Manager')
+
+                ELSE BEGIN
+
+                    IF (i > 0) AND (j > 0) THEN BEGIN
+                        IF pbh.Status = pbh.Status::Certified THEN BEGIN
+                            ERROR('BOM was Already Certified');
+                        END
+                        ELSE BEGIN
+                            pbh.StatusCheck3_check(pbh."No.");
+                            REPORT.RUNMODAL(50050, FALSE, FALSE, pbh);
+                            REPORT.RUNMODAL(50093, FALSE, FALSE, pbh);
+
+                            // tempexcelbuffer.SaveRout(pbh."No.");     //mnraju
+                            // }
+                            Mails;
+                        END;
+                    END
+                    ELSE
+                        ERROR('Select Atleast one Vertical Head and Vertical Manager')
                 END;
                 //***************added by sujani on 03-Nov-18 for direct vertical Authorization
                 /*IF (i>0) AND (j>0) THEN
@@ -416,17 +407,17 @@ report 50025 Certify
 
             trigger OnPostDataItem();
             begin
-                item.SETFILTER(item."No.",pbh."No.");
+                item.SETFILTER(item."No.", pbh."No.");
                 IF item.FINDFIRST THEN
-                  groupCode:=item."Item Sub Group Code";
+                    groupCode := item."Item Sub Group Code";
                 // MESSAGE(groupCode);
             end;
 
             trigger OnPreDataItem();
             begin
-                Test:=pbh.GETFILTER(pbh."No.");
-                IF Test='' THEN
-                  ERROR('Enter Item No.');
+                Test := pbh.GETFILTER(pbh."No.");
+                IF Test = '' THEN
+                    ERROR('Enter Item No.');
             end;
         }
     }
@@ -451,37 +442,37 @@ report 50025 Certify
                             Caption = 'Vertical Heads';
                             Enabled = true;
                             Visible = true;
-                            field(vh1;vh1)
+                            field(vh1; vh1)
                             {
                                 Caption = 'T.BHAVANI SHANKAR';
                                 Enabled = true;
                                 Visible = true;
                             }
-                            field(vh2;vh2)
+                            field(vh2; vh2)
                             {
                                 Caption = 'S.R.T.RAMASAMY';
                             }
-                            field(vh3;vh3)
+                            field(vh3; vh3)
                             {
                                 Caption = 'K.BALA KRISHNA';
                             }
-                            field(vh4;vh4)
+                            field(vh4; vh4)
                             {
                                 Caption = 'S.BHAVANI SHANKAR';
                             }
-                            field(vh5;vh5)
+                            field(vh5; vh5)
                             {
                                 Caption = 'D.ANVESH';
                             }
-                            field(vh6;vh6)
+                            field(vh6; vh6)
                             {
                                 Caption = 'N.ANIL KUMAR';
                             }
-                            field(vh7;vh7)
+                            field(vh7; vh7)
                             {
                                 Caption = 'D. PRASANTHI';
                             }
-                            field(vh8;vh8)
+                            field(vh8; vh8)
                             {
                                 Caption = 'MD Sir';
                             }
@@ -499,65 +490,65 @@ report 50025 Certify
                         group(Control1102152016)
                         {
                             Caption = 'R&D Managers';
-                            field(vm1;vm1)
+                            field(vm1; vm1)
                             {
                                 Caption = 'T.BHAVANI SHANKAR';
                             }
-                            field(vm2;vm2)
+                            field(vm2; vm2)
                             {
                                 Caption = 'S.R.T.RAMASAMY';
                             }
-                            field(vm3;vm3)
+                            field(vm3; vm3)
                             {
                                 Caption = 'J.S.S.SOMAYAJULU';
                             }
-                            field(vm4;vm4)
+                            field(vm4; vm4)
                             {
                                 Caption = 'SK.UBEDULLA';
                                 Visible = false;
                             }
-                            field(vm5;vm5)
+                            field(vm5; vm5)
                             {
                                 Caption = 'K.BALA KRISHNA';
                             }
-                            field(vm6;vm6)
+                            field(vm6; vm6)
                             {
                                 Caption = 'R.PARVATHI';
                             }
-                            field(vm27;vm27)
+                            field(vm27; vm27)
                             {
                                 Caption = 'Y.NARESH';
                             }
-                            field(vm28;vm28)
+                            field(vm28; vm28)
                             {
                                 Caption = 'G.SANDHYA';
                             }
-                            field(vm7;vm7)
+                            field(vm7; vm7)
                             {
                                 Caption = 'E.JHANSI RANI';
                                 Visible = false;
                             }
-                            field(vm32;vm32)
+                            field(vm32; vm32)
                             {
                                 Caption = 'B.SUPRIYA';
                             }
-                            field(vm34;vm34)
+                            field(vm34; vm34)
                             {
                                 Caption = 'V.SARAT';
                             }
-                            field(vm35;vm35)
+                            field(vm35; vm35)
                             {
                                 Caption = 'P.JAYA NAGA SAI GOVIND';
                             }
-                            field(vm33;vm33)
+                            field(vm33; vm33)
                             {
                                 Caption = 'K.VENKATESH';
                             }
-                            field(vm31;vm31)
+                            field(vm31; vm31)
                             {
                                 Caption = 'D.ANVESH';
                             }
-                            field(vm29;vm29)
+                            field(vm29; vm29)
                             {
                                 Caption = 'BHARAT VENIGALLA';
                                 Visible = false;
@@ -576,35 +567,35 @@ report 50025 Certify
                         group(Control1102152025)
                         {
                             Caption = 'CS Mangers';
-                            field(vm8;vm8)
+                            field(vm8; vm8)
                             {
                                 Caption = 'C.H.R.K.P.RANGA RAO';
                             }
-                            field(vm9;vm9)
+                            field(vm9; vm9)
                             {
                                 Caption = 'NAGA MALLESWARA RAO THOTA';
                             }
-                            field(vm10;vm10)
+                            field(vm10; vm10)
                             {
                                 Caption = 'N V VARA PRASAD RAVVA';
                             }
-                            field(vm11;vm11)
+                            field(vm11; vm11)
                             {
                                 Caption = 'VEERA VASANTHA RAO NAGIDI';
                             }
-                            field(vm12;vm12)
+                            field(vm12; vm12)
                             {
                                 Caption = 'CHITTI KANTHA RAO GOLLA';
                             }
-                            field(vm13;vm13)
+                            field(vm13; vm13)
                             {
                                 Caption = 'NARENDRA. BOLEM';
                             }
-                            field(vm14;vm14)
+                            field(vm14; vm14)
                             {
                                 Caption = 'SUBBA RAO . GAJJALAKONDA';
                             }
-                            field(vm15;vm15)
+                            field(vm15; vm15)
                             {
                                 Caption = 'BHARGAVRAM PRASAD JUNNURU';
                             }
@@ -617,31 +608,31 @@ report 50025 Certify
                         group(Control1102152026)
                         {
                             Caption = 'CS Mangers';
-                            field(vm16;vm16)
+                            field(vm16; vm16)
                             {
                                 Caption = 'SIVA NAGA BABU NAINAVARAP';
                             }
-                            field(vm17;vm17)
+                            field(vm17; vm17)
                             {
                                 Caption = 'SAMSON PRADEEP KUMAR.K';
                             }
-                            field(vm18;vm18)
+                            field(vm18; vm18)
                             {
                                 Caption = 'SRIKANTH.INDRAKANTI';
                             }
-                            field(vm19;vm19)
+                            field(vm19; vm19)
                             {
                                 Caption = 'VENKANNA.KODURU';
                             }
-                            field(vm20;vm20)
+                            field(vm20; vm20)
                             {
                                 Caption = 'ABDUL MUNAFF';
                             }
-                            field(vm21;vm21)
+                            field(vm21; vm21)
                             {
                                 Caption = 'CHANDRASEKHAR KONDURI';
                             }
-                            field(vm22;vm22)
+                            field(vm22; vm22)
                             {
                                 Caption = 'NAGESWARA RAO KOMMU';
                             }
@@ -654,23 +645,23 @@ report 50025 Certify
                         group(Control1102152027)
                         {
                             Caption = 'CS Mangers';
-                            field(vm23;vm23)
+                            field(vm23; vm23)
                             {
                                 Caption = 'SREE HARI KODALI';
                             }
-                            field(vm24;vm24)
+                            field(vm24; vm24)
                             {
                                 Caption = 'SATYANARAYANA D V V';
                             }
-                            field(vm25;vm25)
+                            field(vm25; vm25)
                             {
                                 Caption = 'VENKATA SIVA SYAMPRASAD G';
                             }
-                            field(vm26;vm26)
+                            field(vm26; vm26)
                             {
                                 Caption = 'KISHORE LANKA';
                             }
-                            field(vm30;vm30)
+                            field(vm30; vm30)
                             {
                                 Caption = 'D. PRASANTHI';
                             }
@@ -687,7 +678,7 @@ report 50025 Certify
                         group("Single Mail Authorization")
                         {
                             Caption = 'Single Mail Authorization';
-                            field(DV1;DV1)
+                            field(DV1; DV1)
                             {
                                 ShowCaption = false;
                             }
@@ -717,84 +708,84 @@ report 50025 Certify
     }
 
     var
-        Mail_Body : Text;
-        Mail_From : Text[250];
-        Mail_To : Text[250];
-        Mail : Codeunit "SMTP Mail";
-        Subject : Text[250];
-        fname1 : Text[150];
-        flag : Boolean;
-        attachment1 : Text[1000];
-        FileDirectory : Text[100];
-        SMTP_MAIL : Codeunit "SMTP Mail";
-        fname2 : Text[150];
-        attachment2 : Text[150];
-        Mail_Send_To : Text[250];
-        item : Record Item;
-        groupCode : Text[30];
-        vh1 : Boolean;
-        vh2 : Boolean;
-        vh3 : Boolean;
-        vh4 : Boolean;
-        vh5 : Boolean;
-        vh6 : Boolean;
-        vh7 : Boolean;
-        vm1 : Boolean;
-        vm2 : Boolean;
-        vm3 : Boolean;
-        vm4 : Boolean;
-        vm5 : Boolean;
-        vm6 : Boolean;
-        vm7 : Boolean;
-        vm8 : Boolean;
-        vm9 : Boolean;
-        Test : Code[20];
-        i : Integer;
-        j : Integer;
-        save : Boolean;
-        rnoMgr : Code[10];
-        rnoVh : Code[10];
-        bom : Report "Explosion Of Prod. BOM";
-        rout : Report "Explosion Of Routings";
-        str : Text[150];
-        user : Record User;
-        sender : Text[50];
-        Mail_Body1 : Text;
-        vm10 : Boolean;
-        vm11 : Boolean;
-        vm12 : Boolean;
-        vm13 : Boolean;
-        vm14 : Boolean;
-        vm15 : Boolean;
-        vm16 : Boolean;
-        vm17 : Boolean;
-        vm18 : Boolean;
-        vm19 : Boolean;
-        vm20 : Boolean;
-        vm21 : Boolean;
-        vm22 : Boolean;
-        vm23 : Boolean;
-        vm24 : Boolean;
-        vm25 : Boolean;
-        vm26 : Boolean;
-        vm27 : Boolean;
-        vm28 : Boolean;
-        vm29 : Boolean;
-        vm30 : Boolean;
-        vm31 : Boolean;
-        vm32 : Boolean;
-        vm33 : Boolean;
-        vm34 : Boolean;
-        vm35 : Boolean;
-        DV1 : Boolean;
-        direct_vertical : Integer;
-        vh8 : Boolean;
-        Enabled_or_not : Boolean;
+        Mail_Body: Text;
+        Mail_From: Text[250];
+        Mail_To: Text[250];
+        Mail: Codeunit "SMTP Mail";
+        Subject: Text[250];
+        fname1: Text[150];
+        flag: Boolean;
+        attachment1: Text[1000];
+        FileDirectory: Text[100];
+        SMTP_MAIL: Codeunit "SMTP Mail";
+        fname2: Text[150];
+        attachment2: Text[150];
+        Mail_Send_To: Text[250];
+        item: Record Item;
+        groupCode: Text[30];
+        vh1: Boolean;
+        vh2: Boolean;
+        vh3: Boolean;
+        vh4: Boolean;
+        vh5: Boolean;
+        vh6: Boolean;
+        vh7: Boolean;
+        vm1: Boolean;
+        vm2: Boolean;
+        vm3: Boolean;
+        vm4: Boolean;
+        vm5: Boolean;
+        vm6: Boolean;
+        vm7: Boolean;
+        vm8: Boolean;
+        vm9: Boolean;
+        Test: Code[20];
+        i: Integer;
+        j: Integer;
+        save: Boolean;
+        rnoMgr: Code[10];
+        rnoVh: Code[10];
+        bom: Report "Explosion Of Prod. BOM";
+        rout: Report "Explosion Of Routings";
+        str: Text[150];
+        user: Record User;
+        sender: Text[50];
+        Mail_Body1: Text;
+        vm10: Boolean;
+        vm11: Boolean;
+        vm12: Boolean;
+        vm13: Boolean;
+        vm14: Boolean;
+        vm15: Boolean;
+        vm16: Boolean;
+        vm17: Boolean;
+        vm18: Boolean;
+        vm19: Boolean;
+        vm20: Boolean;
+        vm21: Boolean;
+        vm22: Boolean;
+        vm23: Boolean;
+        vm24: Boolean;
+        vm25: Boolean;
+        vm26: Boolean;
+        vm27: Boolean;
+        vm28: Boolean;
+        vm29: Boolean;
+        vm30: Boolean;
+        vm31: Boolean;
+        vm32: Boolean;
+        vm33: Boolean;
+        vm34: Boolean;
+        vm35: Boolean;
+        DV1: Boolean;
+        direct_vertical: Integer;
+        vh8: Boolean;
+        Enabled_or_not: Boolean;
 
     [LineStart(845)]
     procedure Mails();
     begin
-        
+
         /*
         user.SETFILTER(user."User Name",USERID);
         IF user.FINDFIRST THEN
@@ -891,121 +882,118 @@ report 50025 Certify
           MESSAGE('Mail has been Sent')
         END;
         */
-        
-        
-        user.SETFILTER(user."User Name",USERID);
+
+
+        user.SETFILTER(user."User Name", USERID);
         IF user.FINDFIRST THEN
-          sender:=user.MailID;
-        
-        Mail_From:=sender;
-        
+            sender := user.MailID;
+
+        Mail_From := sender;
+
         /*
         // Mail_Send_To:='sundar@efftronics.com';
         // Mail_To:='mnraju@efftronics.com';
         rnoVh:='10RD010';
         rnoMgr:='12RD016';
         */
-        
+
         // Mail_Send_To:='mnraju@efftronics.com';
-        
-        flag:=FALSE;
-        IF (DIALOG.CONFIRM('Send Mail to: '+Mail_To)) THEN
-        BEGIN
-          flag:=TRUE;
+
+        flag := FALSE;
+        IF (DIALOG.CONFIRM('Send Mail to: ' + Mail_To)) THEN BEGIN
+            flag := TRUE;
         END
-        ELSE
-        BEGIN
-          ERROR('Cancel the process');
+        ELSE BEGIN
+            ERROR('Cancel the process');
         END;
-        
-        fname1:='';
-        str:='';
-        str:=pbh."No.";
-        WHILE STRPOS(str,'/') > 1 DO BEGIN
-          fname1:=fname1+COPYSTR(str,1,STRPOS(str,'/')-1)+'_';
-          str := COPYSTR(str,STRPOS(str,'/') + 1);
+
+        fname1 := '';
+        str := '';
+        str := pbh."No.";
+        WHILE STRPOS(str, '/') > 1 DO BEGIN
+            fname1 := fname1 + COPYSTR(str, 1, STRPOS(str, '/') - 1) + '_';
+            str := COPYSTR(str, STRPOS(str, '/') + 1);
         END;
-        fname1:=fname1+str;
-        str:=fname1;
-        
-        
-        IF flag=TRUE THEN
-        BEGIN
-          pbh.StatusCheck3_New(pbh."No.");
-        
-          /* IF USERID='SA' THEN
-            sender:='mnraju@efftronics.com';
-          */
-          fname1:='\\erpserver\ErpAttachments\Explosion of BOM\BOM_'+str+'.xls';
-          fname2:='\\erpserver\ErpAttachments\routing\Routing_'+str+'.xls';
-        
-          attachment1:=fname1;
-          attachment2:=fname2;
-        
-          Subject:='ERP- Bom for Approval- '+pbh."No.";
-        
-          Mail_Body:='<html><body><b>Present BOM Status:</b> '+FORMAT(pbh.Status);
-          Mail_Body+='<br><b>Product Name:</b> '+pbh.Description+' '+pbh."Description 2";
-          Mail_Body+='<br><b>BOM Category:</b> '+FORMAT(pbh."BOM Category");
-          Mail_Body+='<br><b>Reason:</b> '+FORMAT(pbh."Remarks/Reason");
-          Mail_Body+='<Body><form><br><table style="WIDTH:500px; HEIGHT: 20px;" border="1" align="center">';
-          // Mail_Body+='<Tr> <Td bgcolor=#99FF66 color=#FFFFFF  align="center" ><b><a href="http://eff-cpu-315/Certify'; //428/Bom_Auth';
-          // Mail_Body+='<Tr> <Td bgcolor=#99FF66 color=#FFFFFF  align="center" ><b><a href="http://eff-cpu-399:8085/Bom_Auth';
-         // Mail_Body+='<Tr> <Td bgcolor=#99FF66 color=#FFFFFF  align="center" ><b><a href="http://app.efftronics.org:8567/Bom_Auth';
-          Mail_Body+='<Tr> <Td bgcolor=#99FF66 color=#FFFFFF  align="center" ><b><a href="http://eff-cpu-393:8567/Bom_Auth';
-        
-          Mail_Body+='/Mail.aspx?no='+pbh."No.";   //bom no.
-          Mail_Body+='&desc='+pbh.Description;   //bom Desc
-          Mail_Body+='&accept=1';                 //accept
-          Mail_Body+='&mgr='+Mail_To+'$'+rnoMgr;              // manager
-          Mail_Body+='&erp=0';                     //type:from erp
-          Mail_Body+='&vh='+Mail_Send_To+'$'+rnoVh;   //vertical head and id
-          //Mail_Body+= '&dqa=bharat@efftronics.com$89FD002'; // commentd by vishnu
-          // Condition to check R&D BOM/CS BOM
-          IF COPYSTR(pbh."No.",1,4) = 'INST' THEN
-            Mail_Body+= '&dqa=sambireddy@efftronics.com$08MD002'
-          ELSE
-            Mail_Body+= '&dqa=ceo@efftronics.com$85MD001';  // CEO Mail
-          Mail_Body+='&sender='+sender;                  //sender mail
-          Mail_Body+='&category='+FORMAT(pbh."BOM Category");                  //BOM CATEROGORY
-          Mail_Body+='"  target="_blank">Verified</a></b></td>';
-        
-          // Mail_Body+=' <Td bgcolor=#ffaaaa color=#FFFFFF  align="center" ><b><a href="http://eff-cpu-315/Certify';
-         // Mail_Body+=' <Td bgcolor=#ffaaaa color=#FFFFFF  align="center" ><b><a href="http://app.efftronics.org:8567/Bom_Auth';
-          Mail_Body+=' <Td bgcolor=#ffaaaa color=#FFFFFF  align="center" ><b><a href="http://eff-cpu-393:8567/Bom_Auth';
-          Mail_Body+='/Mail.aspx?no='+pbh."No.";
-          Mail_Body+='&desc='+pbh.Description;   //bom Desc
-          Mail_Body+='&accept=0';                //reject
-          Mail_Body+='&mgr='+Mail_To+'$'+rnoMgr;
-          Mail_Body+='&erp=0';   //type: from erp
-          Mail_Body+='&vh='+Mail_Send_To+'$'+rnoVh;
-          //Mail_Body+= '&dqa=bharat@efftronics.com$89FD002'; // commentd by vishnu
-          // Condition to check R&D BOM/CS BOM
-          IF COPYSTR(pbh."No.",1,4) = 'INST' THEN
-            Mail_Body+= '&dqa=sambireddy@efftronics.com$08MD002'
-          ELSE
-            Mail_Body+= '&dqa=ceo@efftronics.com$85MD001';
-          Mail_Body+='&sender='+sender;
-          Mail_Body+='&category='+FORMAT(pbh."BOM Category");                  //BOM CATEROGORY
-          Mail_Body+='"  target="_blank">Rejected</a></b></td></tr></table>';
-        
-          Mail_Body1:='<br>Mail was automatically forwarded to DQA <b>'+Mail_Send_To+'</b> once Verified';
-          Mail_Body1+='<br><br><b>Please find the Attachments:</b> Explosion of BOM and Routings';
-        
-          // Mail_Body1+='<br><strong><br>Note: <br>If any modifications, contact ERP Team with Modifications';
-          // ERROR(Mail_Body);
-          SMTP_MAIL.CreateMessage('ERP','erp@efftronics.com',Mail_To,Subject,Mail_Body+Mail_Body1,TRUE); // Vishnu
-         // SMTP_MAIL.CreateMessage('ERP','erp@efftronics.com',Mail_To,Subject,Mail_Body+Mail_Body1,TRUE); // uncomment after test
-          //SMTP_MAIL.CreateMessage('ERP','erp@efftronics.com','sujani@efftronics.com',Subject,Mail_Body+Mail_Body1,TRUE);
-           SMTP_MAIL.AddCC:='erp@efftronics.com'; // uncomment after test
-        
-        
-          //END;
-          SMTP_MAIL.AddAttachment(attachment1,''); //EFFUPG
-          SMTP_MAIL.AddAttachment(attachment2,''); //EFFUPG
-        
-          SMTP_MAIL.Send;
-          MESSAGE('Mail has been Sent')
+        fname1 := fname1 + str;
+        str := fname1;
+
+
+        IF flag = TRUE THEN BEGIN
+            pbh.StatusCheck3_New(pbh."No.");
+
+            /* IF USERID='SA' THEN
+              sender:='mnraju@efftronics.com';
+            */
+            fname1 := '\\erpserver\ErpAttachments\Explosion of BOM\BOM_' + str + '.xls';
+            fname2 := '\\erpserver\ErpAttachments\routing\Routing_' + str + '.xls';
+
+            attachment1 := fname1;
+            attachment2 := fname2;
+
+            Subject := 'ERP- Bom for Approval- ' + pbh."No.";
+
+            Mail_Body := '<html><body><b>Present BOM Status:</b> ' + FORMAT(pbh.Status);
+            Mail_Body += '<br><b>Product Name:</b> ' + pbh.Description + ' ' + pbh."Description 2";
+            Mail_Body += '<br><b>BOM Category:</b> ' + FORMAT(pbh."BOM Category");
+            Mail_Body += '<br><b>Reason:</b> ' + FORMAT(pbh."Remarks/Reason");
+            Mail_Body += '<Body><form><br><table style="WIDTH:500px; HEIGHT: 20px;" border="1" align="center">';
+            // Mail_Body+='<Tr> <Td bgcolor=#99FF66 color=#FFFFFF  align="center" ><b><a href="http://eff-cpu-315/Certify'; //428/Bom_Auth';
+            // Mail_Body+='<Tr> <Td bgcolor=#99FF66 color=#FFFFFF  align="center" ><b><a href="http://eff-cpu-399:8085/Bom_Auth';
+            // Mail_Body+='<Tr> <Td bgcolor=#99FF66 color=#FFFFFF  align="center" ><b><a href="http://app.efftronics.org:8567/Bom_Auth';
+            Mail_Body += '<Tr> <Td bgcolor=#99FF66 color=#FFFFFF  align="center" ><b><a href="http://eff-cpu-393:8567/Bom_Auth';
+
+            Mail_Body += '/Mail.aspx?no=' + pbh."No.";   //bom no.
+            Mail_Body += '&desc=' + pbh.Description;   //bom Desc
+            Mail_Body += '&accept=1';                 //accept
+            Mail_Body += '&mgr=' + Mail_To + '$' + rnoMgr;              // manager
+            Mail_Body += '&erp=0';                     //type:from erp
+            Mail_Body += '&vh=' + Mail_Send_To + '$' + rnoVh;   //vertical head and id
+                                                                //Mail_Body+= '&dqa=bharat@efftronics.com$89FD002'; // commentd by vishnu
+                                                                // Condition to check R&D BOM/CS BOM
+            IF COPYSTR(pbh."No.", 1, 4) = 'INST' THEN
+                Mail_Body += '&dqa=sambireddy@efftronics.com$08MD002'
+            ELSE
+                Mail_Body += '&dqa=ceo@efftronics.com$85MD001';  // CEO Mail
+            Mail_Body += '&sender=' + sender;                  //sender mail
+            Mail_Body += '&category=' + FORMAT(pbh."BOM Category");                  //BOM CATEROGORY
+            Mail_Body += '"  target="_blank">Verified</a></b></td>';
+
+            // Mail_Body+=' <Td bgcolor=#ffaaaa color=#FFFFFF  align="center" ><b><a href="http://eff-cpu-315/Certify';
+            // Mail_Body+=' <Td bgcolor=#ffaaaa color=#FFFFFF  align="center" ><b><a href="http://app.efftronics.org:8567/Bom_Auth';
+            Mail_Body += ' <Td bgcolor=#ffaaaa color=#FFFFFF  align="center" ><b><a href="http://eff-cpu-393:8567/Bom_Auth';
+            Mail_Body += '/Mail.aspx?no=' + pbh."No.";
+            Mail_Body += '&desc=' + pbh.Description;   //bom Desc
+            Mail_Body += '&accept=0';                //reject
+            Mail_Body += '&mgr=' + Mail_To + '$' + rnoMgr;
+            Mail_Body += '&erp=0';   //type: from erp
+            Mail_Body += '&vh=' + Mail_Send_To + '$' + rnoVh;
+            //Mail_Body+= '&dqa=bharat@efftronics.com$89FD002'; // commentd by vishnu
+            // Condition to check R&D BOM/CS BOM
+            IF COPYSTR(pbh."No.", 1, 4) = 'INST' THEN
+                Mail_Body += '&dqa=sambireddy@efftronics.com$08MD002'
+            ELSE
+                Mail_Body += '&dqa=ceo@efftronics.com$85MD001';
+            Mail_Body += '&sender=' + sender;
+            Mail_Body += '&category=' + FORMAT(pbh."BOM Category");                  //BOM CATEROGORY
+            Mail_Body += '"  target="_blank">Rejected</a></b></td></tr></table>';
+
+            Mail_Body1 := '<br>Mail was automatically forwarded to DQA <b>' + Mail_Send_To + '</b> once Verified';
+            Mail_Body1 += '<br><br><b>Please find the Attachments:</b> Explosion of BOM and Routings';
+
+            // Mail_Body1+='<br><strong><br>Note: <br>If any modifications, contact ERP Team with Modifications';
+            // ERROR(Mail_Body);
+            SMTP_MAIL.CreateMessage('ERP', 'erp@efftronics.com', Mail_To, Subject, Mail_Body + Mail_Body1, TRUE); // Vishnu
+                                                                                                                  // SMTP_MAIL.CreateMessage('ERP','erp@efftronics.com',Mail_To,Subject,Mail_Body+Mail_Body1,TRUE); // uncomment after test
+                                                                                                                  //SMTP_MAIL.CreateMessage('ERP','erp@efftronics.com','sujani@efftronics.com',Subject,Mail_Body+Mail_Body1,TRUE);
+            SMTP_MAIL.AddCC := 'erp@efftronics.com'; // uncomment after test
+
+
+            //END;
+            SMTP_MAIL.AddAttachment(attachment1, ''); //EFFUPG
+            SMTP_MAIL.AddAttachment(attachment2, ''); //EFFUPG
+
+            SMTP_MAIL.Send;
+            MESSAGE('Mail has been Sent')
         END;
 
     end;
@@ -1013,105 +1001,102 @@ report 50025 Certify
     [LineStart(1060)]
     procedure Single_Approval_Mail();
     begin
-        user.SETFILTER(user."User Name",USERID);
+        user.SETFILTER(user."User Name", USERID);
         IF user.FINDFIRST THEN
-          sender:=user.MailID;
-        
-        Mail_From:=sender;
-        
+            sender := user.MailID;
+
+        Mail_From := sender;
+
         /*
         // Mail_Send_To:='sundar@efftronics.com';
         // Mail_To:='mnraju@efftronics.com';
         rnoVh:='10RD010';
         rnoMgr:='12RD016';
         */
-        
+
         // Mail_Send_To:='mnraju@efftronics.com';
-        
-        flag:=FALSE;
-        IF (DIALOG.CONFIRM('Send Mail to: '+Mail_Send_To)) THEN
-        BEGIN
-          flag:=TRUE;
+
+        flag := FALSE;
+        IF (DIALOG.CONFIRM('Send Mail to: ' + Mail_Send_To)) THEN BEGIN
+            flag := TRUE;
         END
-        ELSE
-        BEGIN
-          ERROR('Cancel the process');
+        ELSE BEGIN
+            ERROR('Cancel the process');
         END;
-        
-        
-        fname1:='';
-        str:='';
-        str:=pbh."No.";
-        WHILE STRPOS(str,'/') > 1 DO BEGIN
-          fname1:=fname1+COPYSTR(str,1,STRPOS(str,'/')-1)+'_';
-          str := COPYSTR(str,STRPOS(str,'/') + 1);
+
+
+        fname1 := '';
+        str := '';
+        str := pbh."No.";
+        WHILE STRPOS(str, '/') > 1 DO BEGIN
+            fname1 := fname1 + COPYSTR(str, 1, STRPOS(str, '/') - 1) + '_';
+            str := COPYSTR(str, STRPOS(str, '/') + 1);
         END;
-        fname1:=fname1+str;
-        str:=fname1;
-        
-        
-        
-        IF flag=TRUE THEN
-        BEGIN
-          //pbh.StatusCheck3_New(pbh."No.");
-          //pbh.StatusCheck4_New_single_level_Approval(pbh."No.");
-          pbh.StatusCheck4_New_single_level_Approval(pbh."No.");
-          fname1:='\\erpserver\ErpAttachments\Explosion of BOM\BOM_'+str+'.xls';
-          fname2:='\\erpserver\ErpAttachments\routing\Routing_'+str+'.xls';
-        
-          attachment1:=fname1;
-          attachment2:=fname2;
-        
-          Subject:='ERP- Bom for Vertical Approval- '+pbh."No.";
-        
-          Mail_Body:='<html><body><b>Present BOM Status:</b> '+FORMAT(pbh.Status);
-          Mail_Body+='<br><b>Product Name:</b> '+pbh.Description+' '+pbh."Description 2";
-          Mail_Body+='<br><b>BOM Category:</b> '+FORMAT(pbh."BOM Category");
-          Mail_Body+='<Body><form><br><table style="WIDTH:500px; HEIGHT: 20px;" border="1" align="center">';
-          //Mail_Body+='<Tr> <Td bgcolor=#99FF66 color=#FFFFFF  align="center" ><b><a href="http://app.efftronics.org:8567/Bom_Auth';
-          Mail_Body+='<Tr> <Td bgcolor=#99FF66 color=#FFFFFF  align="center" ><b><a href="http://eff-cpu-393:8567/Bom_Auth';
-          Mail_Body+='/Mail.aspx?no='+pbh."No.";   //bom no.
-          Mail_Body+='&desc='+pbh.Description;   //bom Desc
-          Mail_Body+='&accept=1';                 //accept
-          Mail_Body+='&mgr='+Mail_Send_To+'$'+rnoVh;              // manager
-          Mail_Body+='&erp=1';                     //type:from erp
-          Mail_Body+='&vh='+Mail_Send_To+'$'+rnoVh;   //vertical head and id
-          Mail_Body+= '&dqa=bharat@efftronics.com$89FD002';
-          Mail_Body+='&sender='+sender;                  //sender mail
-          Mail_Body+='&category='+FORMAT(pbh."BOM Category");                  //BOM CATEROGORY
-          Mail_Body+='"  target="_blank">Accept</a></b></td>';
-        
-        
-          //Mail_Body+=' <Td bgcolor=#ffaaaa color=#FFFFFF  align="center" ><b><a href="http://app.efftronics.org:8567/Bom_Auth';
-          Mail_Body+=' <Td bgcolor=#ffaaaa color=#FFFFFF  align="center" ><b><a href="http://eff-cpu-393:8567/Bom_Auth';
-          Mail_Body+='/Mail.aspx?no='+pbh."No.";
-          Mail_Body+='&desc='+pbh.Description;   //bom Desc
-          Mail_Body+='&accept=0';                //reject
-          Mail_Body+='&mgr='+Mail_Send_To+'$'+rnoVh;
-          Mail_Body+='&erp=1';   //type: from erp
-          Mail_Body+='&vh='+Mail_Send_To+'$'+rnoVh;
-          Mail_Body+= '&dqa=bharat@efftronics.com$89FD002';
-          Mail_Body+='&sender='+sender;
-          Mail_Body+='&category='+FORMAT(pbh."BOM Category");                  //BOM CATEROGORY
-          Mail_Body+='"  target="_blank">Reject</a></b></td></tr></table>';
-        
-         // Mail_Body1:='<br>Mail was automatically forwarded to Vertical Head <b>'+Mail_Send_To+'</b> once Verified';
-          Mail_Body1+='<br><br><b>Please find the Attachments:</b> Explosion of BOM and Routings';
-         // Mail_Body1+='<br><b><br>Please find the Attachments:</b> Explosion of BOM and Routings';
-        
-        
-          // Mail_Body1+='<br><strong><br>Note: <br>If any modifications, contact ERP Team with Modifications';
-        
-        
-          SMTP_MAIL.CreateMessage('ERP','erp@efftronics.com',Mail_Send_To,Subject,Mail_Body+Mail_Body1,TRUE);
-          SMTP_MAIL.AddCC:='erp@efftronics.com,vanidevi@efftronics.com';
-        
-          //    SMTP_MAIL.CreateMessage('ERP','erp@efftronics.com','sujani@efftronics.com',Subject,Mail_Body+Mail_Body1,TRUE);
-        
-          SMTP_MAIL.AddAttachment(attachment1,''); //EFFUPG
-          SMTP_MAIL.AddAttachment(attachment2,''); //EFFUPG
-          SMTP_MAIL.Send;
-          MESSAGE('Mail has been Sent')
+        fname1 := fname1 + str;
+        str := fname1;
+
+
+
+        IF flag = TRUE THEN BEGIN
+            //pbh.StatusCheck3_New(pbh."No.");
+            //pbh.StatusCheck4_New_single_level_Approval(pbh."No.");
+            pbh.StatusCheck4_New_single_level_Approval(pbh."No.");
+            fname1 := '\\erpserver\ErpAttachments\Explosion of BOM\BOM_' + str + '.xls';
+            fname2 := '\\erpserver\ErpAttachments\routing\Routing_' + str + '.xls';
+
+            attachment1 := fname1;
+            attachment2 := fname2;
+
+            Subject := 'ERP- Bom for Vertical Approval- ' + pbh."No.";
+
+            Mail_Body := '<html><body><b>Present BOM Status:</b> ' + FORMAT(pbh.Status);
+            Mail_Body += '<br><b>Product Name:</b> ' + pbh.Description + ' ' + pbh."Description 2";
+            Mail_Body += '<br><b>BOM Category:</b> ' + FORMAT(pbh."BOM Category");
+            Mail_Body += '<Body><form><br><table style="WIDTH:500px; HEIGHT: 20px;" border="1" align="center">';
+            //Mail_Body+='<Tr> <Td bgcolor=#99FF66 color=#FFFFFF  align="center" ><b><a href="http://app.efftronics.org:8567/Bom_Auth';
+            Mail_Body += '<Tr> <Td bgcolor=#99FF66 color=#FFFFFF  align="center" ><b><a href="http://eff-cpu-393:8567/Bom_Auth';
+            Mail_Body += '/Mail.aspx?no=' + pbh."No.";   //bom no.
+            Mail_Body += '&desc=' + pbh.Description;   //bom Desc
+            Mail_Body += '&accept=1';                 //accept
+            Mail_Body += '&mgr=' + Mail_Send_To + '$' + rnoVh;              // manager
+            Mail_Body += '&erp=1';                     //type:from erp
+            Mail_Body += '&vh=' + Mail_Send_To + '$' + rnoVh;   //vertical head and id
+            Mail_Body += '&dqa=bharat@efftronics.com$89FD002';
+            Mail_Body += '&sender=' + sender;                  //sender mail
+            Mail_Body += '&category=' + FORMAT(pbh."BOM Category");                  //BOM CATEROGORY
+            Mail_Body += '"  target="_blank">Accept</a></b></td>';
+
+
+            //Mail_Body+=' <Td bgcolor=#ffaaaa color=#FFFFFF  align="center" ><b><a href="http://app.efftronics.org:8567/Bom_Auth';
+            Mail_Body += ' <Td bgcolor=#ffaaaa color=#FFFFFF  align="center" ><b><a href="http://eff-cpu-393:8567/Bom_Auth';
+            Mail_Body += '/Mail.aspx?no=' + pbh."No.";
+            Mail_Body += '&desc=' + pbh.Description;   //bom Desc
+            Mail_Body += '&accept=0';                //reject
+            Mail_Body += '&mgr=' + Mail_Send_To + '$' + rnoVh;
+            Mail_Body += '&erp=1';   //type: from erp
+            Mail_Body += '&vh=' + Mail_Send_To + '$' + rnoVh;
+            Mail_Body += '&dqa=bharat@efftronics.com$89FD002';
+            Mail_Body += '&sender=' + sender;
+            Mail_Body += '&category=' + FORMAT(pbh."BOM Category");                  //BOM CATEROGORY
+            Mail_Body += '"  target="_blank">Reject</a></b></td></tr></table>';
+
+            // Mail_Body1:='<br>Mail was automatically forwarded to Vertical Head <b>'+Mail_Send_To+'</b> once Verified';
+            Mail_Body1 += '<br><br><b>Please find the Attachments:</b> Explosion of BOM and Routings';
+            // Mail_Body1+='<br><b><br>Please find the Attachments:</b> Explosion of BOM and Routings';
+
+
+            // Mail_Body1+='<br><strong><br>Note: <br>If any modifications, contact ERP Team with Modifications';
+
+
+            SMTP_MAIL.CreateMessage('ERP', 'erp@efftronics.com', Mail_Send_To, Subject, Mail_Body + Mail_Body1, TRUE);
+            SMTP_MAIL.AddCC := 'erp@efftronics.com,vanidevi@efftronics.com';
+
+            //    SMTP_MAIL.CreateMessage('ERP','erp@efftronics.com','sujani@efftronics.com',Subject,Mail_Body+Mail_Body1,TRUE);
+
+            SMTP_MAIL.AddAttachment(attachment1, ''); //EFFUPG
+            SMTP_MAIL.AddAttachment(attachment2, ''); //EFFUPG
+            SMTP_MAIL.Send;
+            MESSAGE('Mail has been Sent')
         END;
 
     end;

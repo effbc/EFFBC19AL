@@ -6,13 +6,13 @@ xmlport 80184 "CRM Teams"
     {
         textelement(Teams)
         {
-            tableelement(Team;Team)
+            tableelement(Team; Team)
             {
                 XmlName = 'Team';
-                fieldelement(Code;Team.Code)
+                fieldelement(Code; Team.Code)
                 {
                 }
-                fieldelement(Name;Team.Name)
+                fieldelement(Name; Team.Name)
                 {
                 }
             }

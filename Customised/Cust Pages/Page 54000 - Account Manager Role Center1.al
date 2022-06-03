@@ -208,7 +208,7 @@ page 54000 "Account Manager Role Center1"
                     Caption = 'Balance';
                     Image = Balance;
                     RunObject = Page "Customer List";
-                    RunPageView = WHERE(Balance (LCY)=FILTER(<>0));
+                                    RunPageView = WHERE(Balance (LCY)=FILTER(<>0));
                 }
                 action("Sales Orders")
                 {
@@ -223,79 +223,79 @@ page 54000 "Account Manager Role Center1"
                 {
                     Caption = 'Purchase Journals';
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE(Template Type=CONST(Purchases),Recurring=CONST(No));
+                                    RunPageView = WHERE(Template Type=CONST(Purchases),Recurring=CONST(No));
                 }
                 action("Sales Journals")
                 {
                     Caption = 'Sales Journals';
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE(Template Type=CONST(Sales),Recurring=CONST(No));
+                                    RunPageView = WHERE(Template Type=CONST(Sales),Recurring=CONST(No));
                 }
                 action("Cash Receipt Voucher")
                 {
                     Caption = 'Cash Receipt Voucher';
                     Image = Journals;
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE(Template Type=CONST(Cash Receipts),Sub Type=CONST(Cash Receipt Voucher),Recurring=CONST(No));
+                                    RunPageView = WHERE(Template Type=CONST(Cash Receipts),Sub Type=CONST(Cash Receipt Voucher),Recurring=CONST(No));
                 }
                 action("Cash Receipt Journals")
                 {
                     Caption = 'Cash Receipt Journals';
                     Image = Journals;
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE(Template Type=CONST(Cash Receipts),Recurring=CONST(No));
+                                    RunPageView = WHERE(Template Type=CONST(Cash Receipts),Recurring=CONST(No));
                 }
                 action("Bank Receipt Voucher")
                 {
                     Caption = 'Bank Receipt Voucher';
                     Image = Journals;
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE(Template Type=CONST(Cash Receipts),Sub Type=CONST(Bank Receipt Voucher),Recurring=CONST(No));
+                                    RunPageView = WHERE(Template Type=CONST(Cash Receipts),Sub Type=CONST(Bank Receipt Voucher),Recurring=CONST(No));
                 }
                 action("Payment Journals")
                 {
                     Caption = 'Payment Journals';
                     Image = Journals;
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE(Template Type=CONST(Payments),Recurring=CONST(No));
+                                    RunPageView = WHERE(Template Type=CONST(Payments),Recurring=CONST(No));
                 }
                 action("Cash Payment Voucher")
                 {
                     Caption = 'Cash Payment Voucher';
                     Image = Journals;
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE(Template Type=CONST(Payments),Sub Type=CONST(Cash Payment Voucher),Recurring=CONST(No));
+                                    RunPageView = WHERE(Template Type=CONST(Payments),Sub Type=CONST(Cash Payment Voucher),Recurring=CONST(No));
                 }
                 action("Bank Payment Voucher")
                 {
                     Caption = 'Bank Payment Voucher';
                     Image = Journals;
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE(Template Type=CONST(Payments),Sub Type=CONST(Bank Payment Voucher),Recurring=CONST(No));
+                                    RunPageView = WHERE(Template Type=CONST(Payments),Sub Type=CONST(Bank Payment Voucher),Recurring=CONST(No));
                 }
                 action("IC General Journals")
                 {
                     Caption = 'IC General Journals';
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE(Template Type=CONST(Intercompany),Recurring=CONST(No));
+                                    RunPageView = WHERE(Template Type=CONST(Intercompany),Recurring=CONST(No));
                 }
                 action("General Journals")
                 {
                     Caption = 'General Journals';
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE(Template Type=CONST(General),Recurring=CONST(No));
+                                    RunPageView = WHERE(Template Type=CONST(General),Recurring=CONST(No));
                 }
                 action("General Voucher")
                 {
                     Caption = 'General Voucher';
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE(Template Type=CONST(General),Sub Type=CONST(Journal Voucher),Recurring=CONST(No));
+                                    RunPageView = WHERE(Template Type=CONST(General),Sub Type=CONST(Journal Voucher),Recurring=CONST(No));
                 }
                 action("Contra Voucher")
                 {
                     Caption = 'Contra Voucher';
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE(Template Type=CONST(General),Sub Type=CONST(Contra Voucher),Recurring=CONST(No));
+                                    RunPageView = WHERE(Template Type=CONST(General),Sub Type=CONST(Contra Voucher),Recurring=CONST(No));
                 }
                 action("Intrastat Journals")
                 {
@@ -320,13 +320,13 @@ page 54000 "Account Manager Role Center1"
                 {
                     Caption = 'Fixed Assets G/L Journals';
                     RunObject = Page "General Journal Batches";
-                    RunPageView = WHERE(Template Type=CONST(Assets),Recurring=CONST(No));
+                                    RunPageView = WHERE(Template Type=CONST(Assets),Recurring=CONST(No));
                 }
                 action("Fixed Assets Journals")
                 {
                     Caption = 'Fixed Assets Journals';
                     RunObject = Page "FA Journal Batches";
-                    RunPageView = WHERE(Recurring=CONST(No));
+                                    RunPageView = WHERE(Recurring=CONST(No));
                 }
                 action("Fixed Assets Reclass. Journals")
                 {
@@ -342,7 +342,7 @@ page 54000 "Account Manager Role Center1"
                 {
                     Caption = 'Recurring Fixed Asset Journals';
                     RunObject = Page "FA Journal Batches";
-                    RunPageView = WHERE(Recurring=CONST(Yes));
+                                    RunPageView = WHERE(Recurring=CONST(Yes));
                 }
             }
             group("Posted Documents")

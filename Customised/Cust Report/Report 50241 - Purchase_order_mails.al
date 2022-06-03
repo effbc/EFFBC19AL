@@ -7,9 +7,9 @@ report 50241 Purchase_order_mails
 
     dataset
     {
-        dataitem("Purchase Header";"Purchase Header")
+        dataitem("Purchase Header"; "Purchase Header")
         {
-            DataItemTableView = SORTING(Document Type,Buy-from Vendor No.,No.) ORDER(Ascending) WHERE(Mail_Sent=FILTER(No),Document Type=FILTER(Order),Status=FILTER(Released));
+            DataItemTableView = SORTING(Document Type, Buy-from Vendor No., No.) ORDER(Ascending) WHERE(Mail_Sent = FILTER(No), Document Type=FILTER(Order),Status=FILTER(Released));
             RequestFilterFields = "Buy-from Vendor No.","No.","Order Date";
             column(Purchase_Header__Purchase_Header___No__;"Purchase Header"."No.")
             {

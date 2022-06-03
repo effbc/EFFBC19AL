@@ -4,23 +4,23 @@ codeunit 60005 "Designwork Sheet"
 
     trigger OnRun();
     var
-        Text001 : Label 'Do you want to Release the DesignWork Sheet?';
+        Text001: Label 'Do you want to Release the DesignWork Sheet?';
     begin
-        IF NOT CONFIRM(Text001,FALSE) THEN
-          EXIT;
-        TESTFIELD(Status,Status :: Open);
+        IF NOT CONFIRM(Text001, FALSE) THEN
+            EXIT;
+        TESTFIELD(Status, Status::Open);
         Status := Status::Release;
         MODIFY;
     end;
 
     [LineStart(1368)]
-    procedure Reopen(DesignWorksheetHeader : Record "Design Worksheet Header");
+    procedure Reopen(DesignWorksheetHeader: Record "Design Worksheet Header");
     var
-        Text001 : Label 'Do you want to Reopen the DesignWork Sheet?';
+        Text001: Label 'Do you want to Reopen the DesignWork Sheet?';
     begin
-        IF NOT CONFIRM(Text001,FALSE) THEN
-          EXIT;
-        DesignWorksheetHeader.TESTFIELD(Status,DesignWorksheetHeader.Status :: Release);
+        IF NOT CONFIRM(Text001, FALSE) THEN
+            EXIT;
+        DesignWorksheetHeader.TESTFIELD(Status, DesignWorksheetHeader.Status::Release);
         DesignWorksheetHeader.Status := DesignWorksheetHeader.Status::Open;
         DesignWorksheetHeader.MODIFY;
     end;

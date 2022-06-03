@@ -6,13 +6,13 @@ xmlport 80035 "Excise Bus. Posting Group"
     {
         textelement(ExciseBusPostingGroups)
         {
-            tableelement("<excisebuspostinggroup>";"Excise Bus. Posting Group")
+            tableelement("<excisebuspostinggroup>"; "Excise Bus. Posting Group")
             {
                 XmlName = 'ExciseBusPostingGroup';
-                fieldelement(Code;"<ExciseBusPostingGroup>".Code)
+                fieldelement(Code; "<ExciseBusPostingGroup>".Code)
                 {
                 }
-                fieldelement(Description;"<ExciseBusPostingGroup>".Description)
+                fieldelement(Description; "<ExciseBusPostingGroup>".Description)
                 {
                 }
             }

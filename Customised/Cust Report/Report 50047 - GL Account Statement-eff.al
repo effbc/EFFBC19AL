@@ -8,7 +8,7 @@ report 50047 "G/L Account Statement-eff"
 
     dataset
     {
-        dataitem("G/L Account";"G/L Account")
+        dataitem("G/L Account"; "G/L Account")
         {
             DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Account Type=FILTER(Posting));
             RequestFilterFields = "No.","Date Filter","Global Dimension 1 Filter","Global Dimension 2 Filter";

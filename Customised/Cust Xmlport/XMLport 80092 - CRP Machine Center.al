@@ -6,49 +6,49 @@ xmlport 80092 "CRP Machine Center"
     {
         textelement(MachineCenters)
         {
-            tableelement("<machinecenter>";"Machine Center")
+            tableelement("<machinecenter>"; "Machine Center")
             {
                 XmlName = 'MachineCenter';
-                fieldelement(No;"<MachineCenter>"."No.")
+                fieldelement(No; "<MachineCenter>"."No.")
                 {
                 }
-                fieldelement(Name;"<MachineCenter>".Name)
+                fieldelement(Name; "<MachineCenter>".Name)
                 {
                 }
-                fieldelement(SearchName;"<MachineCenter>"."Search Name")
+                fieldelement(SearchName; "<MachineCenter>"."Search Name")
                 {
                 }
-                fieldelement(WorkCenterNo;"<MachineCenter>"."Work Center No.")
+                fieldelement(WorkCenterNo; "<MachineCenter>"."Work Center No.")
                 {
                 }
-                fieldelement(DirectUnitCost;"<MachineCenter>"."Direct Unit Cost")
+                fieldelement(DirectUnitCost; "<MachineCenter>"."Direct Unit Cost")
                 {
                 }
-                fieldelement(IndirectCostPer;"<MachineCenter>"."Indirect Cost %")
+                fieldelement(IndirectCostPer; "<MachineCenter>"."Indirect Cost %")
                 {
                 }
-                fieldelement(UnitCost;"<MachineCenter>"."Unit Cost")
+                fieldelement(UnitCost; "<MachineCenter>"."Unit Cost")
                 {
                 }
-                fieldelement(Capacity;"<MachineCenter>".Capacity)
+                fieldelement(Capacity; "<MachineCenter>".Capacity)
                 {
                 }
-                fieldelement(Efficiency;"<MachineCenter>".Efficiency)
+                fieldelement(Efficiency; "<MachineCenter>".Efficiency)
                 {
                 }
-                fieldelement(SetupTime;"<MachineCenter>"."Setup Time")
+                fieldelement(SetupTime; "<MachineCenter>"."Setup Time")
                 {
                 }
-                fieldelement(SetupTimeUnitofMeasCode;"<MachineCenter>"."Setup Time Unit of Meas. Code")
+                fieldelement(SetupTimeUnitofMeasCode; "<MachineCenter>"."Setup Time Unit of Meas. Code")
                 {
                 }
-                fieldelement(ConcurrentCapacities;"<MachineCenter>"."Concurrent Capacities")
+                fieldelement(ConcurrentCapacities; "<MachineCenter>"."Concurrent Capacities")
                 {
                 }
-                fieldelement(OverheadRate;"<MachineCenter>"."Overhead Rate")
+                fieldelement(OverheadRate; "<MachineCenter>"."Overhead Rate")
                 {
                 }
-                fieldelement(GenProdPostingGroup;"<MachineCenter>"."Gen. Prod. Posting Group")
+                fieldelement(GenProdPostingGroup; "<MachineCenter>"."Gen. Prod. Posting Group")
                 {
                 }
             }

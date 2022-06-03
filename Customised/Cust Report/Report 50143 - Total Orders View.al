@@ -7,97 +7,97 @@ report 50143 "Total Orders View"
 
     dataset
     {
-        dataitem("Sales Header Archive";"Sales Header Archive")
+        dataitem("Sales Header Archive"; "Sales Header Archive")
         {
             RequestFilterFields = "No.";
-            column(Sell_to_Customer_Name________________Customer_OrderNo_______No;"Sell-to Customer Name"+'          '+"Customer OrderNo."+' '+No)
+            column(Sell_to_Customer_Name________________Customer_OrderNo_______No; "Sell-to Customer Name" + '          ' + "Customer OrderNo." + ' ' + No)
             {
             }
-            column(Sell_to_Customer_Name________________Customer_OrderNo_________No;"Sell-to Customer Name"+'          '+"Customer OrderNo."+'   '+No)
+            column(Sell_to_Customer_Name________________Customer_OrderNo_________No; "Sell-to Customer Name" + '          ' + "Customer OrderNo." + '   ' + No)
             {
             }
-            column(Item_No_Caption;Item_No_CaptionLbl)
+            column(Item_No_Caption; Item_No_CaptionLbl)
             {
             }
-            column(DescriptionCaption;DescriptionCaptionLbl)
+            column(DescriptionCaption; DescriptionCaptionLbl)
             {
             }
-            column(QuantityCaption;QuantityCaptionLbl)
+            column(QuantityCaption; QuantityCaptionLbl)
             {
             }
-            column(Unit_PriceCaption;Unit_PriceCaptionLbl)
+            column(Unit_PriceCaption; Unit_PriceCaptionLbl)
             {
             }
-            column(Line_AmountCaption;Line_AmountCaptionLbl)
+            column(Line_AmountCaption; Line_AmountCaptionLbl)
             {
             }
-            column(Invoiced_QtyCaption;Invoiced_QtyCaptionLbl)
+            column(Invoiced_QtyCaption; Invoiced_QtyCaptionLbl)
             {
             }
-            column(Invoiced_DatesCaption;Invoiced_DatesCaptionLbl)
+            column(Invoiced_DatesCaption; Invoiced_DatesCaptionLbl)
             {
             }
-            column(Invoiced_NosCaption;Invoiced_NosCaptionLbl)
+            column(Invoiced_NosCaption; Invoiced_NosCaptionLbl)
             {
             }
-            column(Total_Invoiced_AmountCaption;Total_Invoiced_AmountCaptionLbl)
+            column(Total_Invoiced_AmountCaption; Total_Invoiced_AmountCaptionLbl)
             {
             }
-            column(As_Per_LOACaption;As_Per_LOACaptionLbl)
+            column(As_Per_LOACaption; As_Per_LOACaptionLbl)
             {
             }
-            column(As_Per_OUR_BILLINGCaption;As_Per_OUR_BILLINGCaptionLbl)
+            column(As_Per_OUR_BILLINGCaption; As_Per_OUR_BILLINGCaptionLbl)
             {
             }
-            column(Item_No_Caption_Control1102154113;Item_No_Caption_Control1102154113Lbl)
+            column(Item_No_Caption_Control1102154113; Item_No_Caption_Control1102154113Lbl)
             {
             }
-            column(DescriptionCaption_Control1102154114;DescriptionCaption_Control1102154114Lbl)
+            column(DescriptionCaption_Control1102154114; DescriptionCaption_Control1102154114Lbl)
             {
             }
-            column(QuantityCaption_Control1102154116;QuantityCaption_Control1102154116Lbl)
+            column(QuantityCaption_Control1102154116; QuantityCaption_Control1102154116Lbl)
             {
             }
-            column(Unit_PriceCaption_Control1102154118;Unit_PriceCaption_Control1102154118Lbl)
+            column(Unit_PriceCaption_Control1102154118; Unit_PriceCaption_Control1102154118Lbl)
             {
             }
-            column(Line_AmountCaption_Control1102154120;Line_AmountCaption_Control1102154120Lbl)
+            column(Line_AmountCaption_Control1102154120; Line_AmountCaption_Control1102154120Lbl)
             {
             }
-            column(Invoiced_QtyCaption_Control1102154121;Invoiced_QtyCaption_Control1102154121Lbl)
+            column(Invoiced_QtyCaption_Control1102154121; Invoiced_QtyCaption_Control1102154121Lbl)
             {
             }
-            column(Invoiced_DatesCaption_Control1102154122;Invoiced_DatesCaption_Control1102154122Lbl)
+            column(Invoiced_DatesCaption_Control1102154122; Invoiced_DatesCaption_Control1102154122Lbl)
             {
             }
-            column(Invoiced_NosCaption_Control1102154123;Invoiced_NosCaption_Control1102154123Lbl)
+            column(Invoiced_NosCaption_Control1102154123; Invoiced_NosCaption_Control1102154123Lbl)
             {
             }
-            column(Total_Invoiced_AmountCaption_Control1102154124;Total_Invoiced_AmountCaption_Control1102154124Lbl)
+            column(Total_Invoiced_AmountCaption_Control1102154124; Total_Invoiced_AmountCaption_Control1102154124Lbl)
             {
             }
-            column(As_Per_LOACaption_Control1102154125;As_Per_LOACaption_Control1102154125Lbl)
+            column(As_Per_LOACaption_Control1102154125; As_Per_LOACaption_Control1102154125Lbl)
             {
             }
-            column(As_Per_OUR_BILLINGCaption_Control1102154126;As_Per_OUR_BILLINGCaption_Control1102154126Lbl)
+            column(As_Per_OUR_BILLINGCaption_Control1102154126; As_Per_OUR_BILLINGCaption_Control1102154126Lbl)
             {
             }
-            column(Sales_Header_Archive_Document_Type;"Document Type")
+            column(Sales_Header_Archive_Document_Type; "Document Type")
             {
             }
-            column(Sales_Header_Archive_No_;"No.")
+            column(Sales_Header_Archive_No_; "No.")
             {
             }
-            column(Sales_Header_Archive_Doc__No__Occurrence;"Doc. No. Occurrence")
+            column(Sales_Header_Archive_Doc__No__Occurrence; "Doc. No. Occurrence")
             {
             }
-            column(Sales_Header_Archive_Version_No_;"Version No.")
+            column(Sales_Header_Archive_Version_No_; "Version No.")
             {
             }
-            dataitem("Sales Line Archive";"Sales Line Archive")
+            dataitem("Sales Line Archive"; "Sales Line Archive")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Document Type,Document No.,Doc. No. Occurrence,Version No.,Line No.) ORDER(Ascending) WHERE(Unit Price=FILTER(>0),Version No.=FILTER(1));
+                DataItemTableView = SORTING(Document Type, Document No., Doc. No. Occurrence, Version No., Line No.) ORDER(Ascending) WHERE(Unit Price=FILTER(>0),Version No.=FILTER(1));
                 column(Sales_Line_Archive__No__;"No.")
                 {
                 }

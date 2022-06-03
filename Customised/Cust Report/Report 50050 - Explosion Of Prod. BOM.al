@@ -35,173 +35,173 @@ report 50050 "Explosion Of Prod. BOM"
 
     dataset
     {
-        dataitem("Production BOM Header";"Production BOM Header")
+        dataitem("Production BOM Header"; "Production BOM Header")
         {
             RequestFilterFields = "No.";
-            column(Prod_BOM_Head_ChoiceBomMod;ChoiceBomMod)
+            column(Prod_BOM_Head_ChoiceBomMod; ChoiceBomMod)
             {
             }
-            column(Prod_BOM_Head_ChoiceERT;ChoiceERT)
+            column(Prod_BOM_Head_ChoiceERT; ChoiceERT)
             {
             }
-            column(Prod_BOM_Head_ChoiceFForm;ChoiceFForm)
+            column(Prod_BOM_Head_ChoiceFForm; ChoiceFForm)
             {
             }
-            column(FORMAT_TODAY_0_4_;FORMAT(TODAY,0,4))
+            column(FORMAT_TODAY_0_4_; FORMAT(TODAY, 0, 4))
             {
             }
-            column(USERID;USERID)
+            column(USERID; USERID)
             {
             }
-            column(CurrReport_PAGENO;CurrReport.PAGENO)
+            column(CurrReport_PAGENO; CurrReport.PAGENO)
             {
             }
-            column(COMPANYNAME;COMPANYNAME)
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(Production_BOM_Header__No__;"No.")
+            column(Production_BOM_Header__No__; "No.")
             {
             }
-            column(Production_BOM_Header_Description;Description)
+            column(Production_BOM_Header_Description; Description)
             {
             }
-            column(Explosion_of_BOMCaption;Explosion_of_BOMCaptionLbl)
+            column(Explosion_of_BOMCaption; Explosion_of_BOMCaptionLbl)
             {
             }
-            column(CurrReport_PAGENOCaption;CurrReport_PAGENOCaptionLbl)
+            column(CurrReport_PAGENOCaption; CurrReport_PAGENOCaptionLbl)
             {
             }
-            column(Production_BOM_No_Caption;Production_BOM_No_CaptionLbl)
+            column(Production_BOM_No_Caption; Production_BOM_No_CaptionLbl)
             {
             }
-            column(DescriptionCaption;DescriptionCaptionLbl)
+            column(DescriptionCaption; DescriptionCaptionLbl)
             {
             }
-            dataitem("Production BOM Line";"Production BOM Line")
+            dataitem("Production BOM Line"; "Production BOM Line")
             {
                 DataItemLink = Production BOM No.=FIELD(No.);
                 DataItemTableView = SORTING(Tot Avg Cost) ORDER(Descending);
-                column(Prod_BOM_Line_ChoiceItem;ChoiceItem)
+                column(Prod_BOM_Line_ChoiceItem; ChoiceItem)
                 {
                 }
-                column(ROUND_TUC1_0_01__Control1102154177;ROUND(TUC1,0.01))
+                column(ROUND_TUC1_0_01__Control1102154177; ROUND(TUC1, 0.01))
                 {
                 }
-                column(Prod_BOM_Line_ProdBomLineFooter5;ProdBomLineFooter5)
+                column(Prod_BOM_Line_ProdBomLineFooter5; ProdBomLineFooter5)
                 {
                 }
-                column(Prod_BOM_Line_ChoiceBomMod;ChoiceBomMod)
+                column(Prod_BOM_Line_ChoiceBomMod; ChoiceBomMod)
                 {
                 }
-                column(Prod_BOM_Line_ChoiceCategory;ChoiceCategory)
+                column(Prod_BOM_Line_ChoiceCategory; ChoiceCategory)
                 {
                 }
-                column(Prod_BOM_Line_BOUT;BOUT)
+                column(Prod_BOM_Line_BOUT; BOUT)
                 {
                 }
-                column(ISSGC;ISSGC)
+                column(ISSGC; ISSGC)
                 {
                 }
-                column(ISGC;ISGC)
+                column(ISGC; ISGC)
                 {
                 }
-                column(PGC;PGC)
+                column(PGC; PGC)
                 {
                 }
-                column(ICC;ICC)
+                column(ICC; ICC)
                 {
                 }
-                column(Production_BOM_Line_Description;Description)
+                column(Production_BOM_Line_Description; Description)
                 {
                 }
-                column(Production_BOM_Line__No__;"No.")
+                column(Production_BOM_Line__No__; "No.")
                 {
                 }
-                column(Production_BOM_Line_Position;Position)
+                column(Production_BOM_Line_Position; Position)
                 {
                 }
-                column(ROUND_TC_0_01_;ROUND(TC,0.01))
+                column(ROUND_TC_0_01_; ROUND(TC, 0.01))
                 {
                 }
-                column(ROUND_UC_0_01_;ROUND(UC,0.01))
+                column(ROUND_UC_0_01_; ROUND(UC, 0.01))
                 {
                 }
-                column(Production_BOM_Line__Unit_of_Measure_Code_;"Unit of Measure Code")
+                column(Production_BOM_Line__Unit_of_Measure_Code_; "Unit of Measure Code")
                 {
                 }
-                column(Production_BOM_Line_Quantity;Quantity)
+                column(Production_BOM_Line_Quantity; Quantity)
                 {
                 }
-                column(Production_BOM_Line_Description_Control1000000055;Description)
+                column(Production_BOM_Line_Description_Control1000000055; Description)
                 {
                 }
-                column(Production_BOM_Line__No___Control1000000056;"No.")
+                column(Production_BOM_Line__No___Control1000000056; "No.")
                 {
                 }
-                column(Production_BOM_Line_Position_Control1000000061;Position)
+                column(Production_BOM_Line_Position_Control1000000061; Position)
                 {
                 }
-                column(Item__Safety_Lead_Time_;Item."Safety Lead Time")
+                column(Item__Safety_Lead_Time_; Item."Safety Lead Time")
                 {
                 }
-                column(ROUND_TUC1_0_01_;ROUND(TUC1,0.01))
+                column(ROUND_TUC1_0_01_; ROUND(TUC1, 0.01))
                 {
                 }
-                column(Item_Sub_Sub_Group_CodeCaption;Item_Sub_Sub_Group_CodeCaptionLbl)
+                column(Item_Sub_Sub_Group_CodeCaption; Item_Sub_Sub_Group_CodeCaptionLbl)
                 {
                 }
-                column(Item_Sub_Group_codeCaption;Item_Sub_Group_codeCaptionLbl)
+                column(Item_Sub_Group_codeCaption; Item_Sub_Group_codeCaptionLbl)
                 {
                 }
-                column(Product_Group_CodeCaption;Product_Group_CodeCaptionLbl)
+                column(Product_Group_CodeCaption; Product_Group_CodeCaptionLbl)
                 {
                 }
-                column(Item_Category_CodeCaption;Item_Category_CodeCaptionLbl)
+                column(Item_Category_CodeCaption; Item_Category_CodeCaptionLbl)
                 {
                 }
-                column(DescriptionCaption_Control1000000100;DescriptionCaption_Control1000000100Lbl)
+                column(DescriptionCaption_Control1000000100; DescriptionCaption_Control1000000100Lbl)
                 {
                 }
-                column(ItemCaption;ItemCaptionLbl)
+                column(ItemCaption; ItemCaptionLbl)
                 {
                 }
-                column(PositionCaption;PositionCaptionLbl)
+                column(PositionCaption; PositionCaptionLbl)
                 {
                 }
-                column(ItemCaption_Control1000000029;ItemCaption_Control1000000029Lbl)
+                column(ItemCaption_Control1000000029; ItemCaption_Control1000000029Lbl)
                 {
                 }
-                column(DescriptionCaption_Control1000000030;DescriptionCaption_Control1000000030Lbl)
+                column(DescriptionCaption_Control1000000030; DescriptionCaption_Control1000000030Lbl)
                 {
                 }
-                column(QuantityCaption;QuantityCaptionLbl)
+                column(QuantityCaption; QuantityCaptionLbl)
                 {
                 }
-                column(Unit_of_MeasureCaption;Unit_of_MeasureCaptionLbl)
+                column(Unit_of_MeasureCaption; Unit_of_MeasureCaptionLbl)
                 {
                 }
-                column(Unit_CostCaption;Unit_CostCaptionLbl)
+                column(Unit_CostCaption; Unit_CostCaptionLbl)
                 {
                 }
-                column(Total_CostCaption;Total_CostCaptionLbl)
+                column(Total_CostCaption; Total_CostCaptionLbl)
                 {
                 }
-                column(PositionCaption_Control1000000067;PositionCaption_Control1000000067Lbl)
+                column(PositionCaption_Control1000000067; PositionCaption_Control1000000067Lbl)
                 {
                 }
-                column(Lead_TimeCaption;Lead_TimeCaptionLbl)
+                column(Lead_TimeCaption; Lead_TimeCaptionLbl)
                 {
                 }
-                column(TOTALCaption;TOTALCaptionLbl)
+                column(TOTALCaption; TOTALCaptionLbl)
                 {
                 }
-                column(Production_BOM_Line_Production_BOM_No_;"Production BOM No.")
+                column(Production_BOM_Line_Production_BOM_No_; "Production BOM No.")
                 {
                 }
-                column(Production_BOM_Line_Version_Code;"Version Code")
+                column(Production_BOM_Line_Version_Code; "Version Code")
                 {
                 }
-                column(Production_BOM_Line_Line_No_;"Line No.")
+                column(Production_BOM_Line_Line_No_; "Line No.")
                 {
                 }
 
@@ -215,82 +215,81 @@ report 50050 "Explosion Of Prod. BOM"
                     //Production BOM Line, Header (1) - OnPreSection()
 
                     //Production BOM Line, Header (2) - OnPreSection()
-                      //CurrReport.SHOWOUTPUT(NOT (Choice=Choice::Category)); //Rev01
-                      CurrReport.SHOWOUTPUT(NOT ChoiceCategory);
+                    //CurrReport.SHOWOUTPUT(NOT (Choice=Choice::Category)); //Rev01
+                    CurrReport.SHOWOUTPUT(NOT ChoiceCategory);
                     //Production BOM Line, Header (2) - OnPreSection()
 
                     //Production BOM Line, Body (3) - OnPreSection()
                     //IF Choice=Choice::Category THEN BEGIN //Rev01
                     IF ChoiceCategory THEN BEGIN
-                      Item.SETRANGE(Item."No.","Production BOM Line"."No.");
-                      IF Item.FIND('-') THEN BEGIN
-                        ICC :=Item."Item Category Code";
-                        PGC:=Item."Product Group Code";
-                        ISGC:=Item."Item Sub Group Code";
-                        ISSGC:=Item."Item Sub Sub Group Code";
-                      END;
+                        Item.SETRANGE(Item."No.", "Production BOM Line"."No.");
+                        IF Item.FIND('-') THEN BEGIN
+                            ICC := Item."Item Category Code";
+                            PGC := Item."Product Group Code";
+                            ISGC := Item."Item Sub Group Code";
+                            ISSGC := Item."Item Sub Sub Group Code";
+                        END;
                     END ELSE
-                      CurrReport.SHOWOUTPUT:=FALSE;
+                        CurrReport.SHOWOUTPUT := FALSE;
                     //Production BOM Line, Body (3) - OnPreSection()
 
                     //Production BOM Line, Body (4) - OnPreSection()
-                    UC:=0;
-                    TC:=0;
+                    UC := 0;
+                    TC := 0;
                     //TUC1 := 0; //Rev01 //ADSK
 
                     //IF Choice=Choice::Item THEN BEGIN  //Rev01
                     IF ChoiceItem THEN BEGIN
-                      IF PBH.GET("Production BOM Line"."No.") THEN BEGIN
-                        UC:=PRODUCTION_BOM_COST("Production BOM Line"."No.");
-                        Temp:='C'
-                      END ELSE BEGIN
-                        IF Item.GET("Production BOM Line"."No.") THEN
-                           UC:=Item."Item Final Cost";
-                         Temp:='E';
-                      END;
-                      TC:="Production BOM Line".Quantity*UC;
-                      TUC1 += TC;
-                      IF Want_Excel  THEN BEGIN
-                        ROW+=1 ;
-                        Entercell(ROW,1,"Production BOM Line"."No.",FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                        Entercell(ROW,2,"Production BOM Line".Description,FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                        Entercell(ROW,3,FORMAT("Production BOM Line".Quantity),FALSE,Tempexcelbuffer."Cell Type" :: Number);
-                        Entercell(ROW,4,"Production BOM Line"."Unit of Measure Code",FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                        Entercell(ROW,5,FORMAT(Item."Safety Lead Time"),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                        IF With_Cost = TRUE THEN
-                        BEGIN
-                          Entercell(ROW,30,FORMAT(ROUND(UC)),FALSE,Tempexcelbuffer."Cell Type" :: Number);
-                          Entercell(ROW,31,FORMAT(ROUND(TC)),FALSE,Tempexcelbuffer."Cell Type" :: Number);
+                        IF PBH.GET("Production BOM Line"."No.") THEN BEGIN
+                            UC := PRODUCTION_BOM_COST("Production BOM Line"."No.");
+                            Temp := 'C'
+                        END ELSE BEGIN
+                            IF Item.GET("Production BOM Line"."No.") THEN
+                                UC := Item."Item Final Cost";
+                            Temp := 'E';
                         END;
-                        Entercell(ROW,25,"Production BOM Line".Position,FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                        Entercell(ROW,26,"Production BOM Line"."Position 2",FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                        Entercell(ROW,27,"Production BOM Line"."Position 3",FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                        Entercell(ROW,28,"Production BOM Line"."Position 4",FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                        Entercell(ROW,29,FORMAT("Production BOM Line"."BOM Type"),FALSE,Tempexcelbuffer."Cell Type"::Text);
-                        IF Item.GET("Production BOM Line"."No.") THEN  BEGIN
-                          Entercell(ROW,6,FORMAT(Item."Item Category Code"),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,7,FORMAT(Item."Product Group Code"),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,8,FORMAT(Item."Item Sub Group Code"),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,9,FORMAT(Item."Item Sub Sub Group Code"),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,10,FORMAT(Item."Type of Solder"),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,11,FORMAT(Item."No. of Pins"),FALSE,Tempexcelbuffer."Cell Type" :: Number);
-                          Entercell(ROW,12,FORMAT(Item."No. of Soldering Points"),FALSE,Tempexcelbuffer."Cell Type" :: Number);
-                          Entercell(ROW,13,FORMAT(Item.Make),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,14,FORMAT(Item."Operating Temperature"),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,15,FORMAT(Item."Storage Temperature"),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,16,FORMAT(Item.Humidity),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,17,FORMAT(Item."ESD Sensitive"),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,18,FORMAT(Item."Item Status"),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,19,FORMAT(Item."Soldering Temp."),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,20,FORMAT(Item."Soldering Time (Sec)"),FALSE,Tempexcelbuffer."Cell Type" :: Time);
-                          Entercell(ROW,21,FORMAT(Item."Work area Temp &  Humadity"),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,22,FORMAT(Item.ESD),FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,23,Item.Package,FALSE,Tempexcelbuffer."Cell Type" :: Text);
-                          Entercell(ROW,24,Item."Part Number",FALSE,Tempexcelbuffer."Cell Type" :: Text);
+                        TC := "Production BOM Line".Quantity * UC;
+                        TUC1 += TC;
+                        IF Want_Excel THEN BEGIN
+                            ROW += 1;
+                            Entercell(ROW, 1, "Production BOM Line"."No.", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                            Entercell(ROW, 2, "Production BOM Line".Description, FALSE, Tempexcelbuffer."Cell Type"::Text);
+                            Entercell(ROW, 3, FORMAT("Production BOM Line".Quantity), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                            Entercell(ROW, 4, "Production BOM Line"."Unit of Measure Code", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                            Entercell(ROW, 5, FORMAT(Item."Safety Lead Time"), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                            IF With_Cost = TRUE THEN BEGIN
+                                Entercell(ROW, 30, FORMAT(ROUND(UC)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(ROW, 31, FORMAT(ROUND(TC)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                            END;
+                            Entercell(ROW, 25, "Production BOM Line".Position, FALSE, Tempexcelbuffer."Cell Type"::Text);
+                            Entercell(ROW, 26, "Production BOM Line"."Position 2", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                            Entercell(ROW, 27, "Production BOM Line"."Position 3", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                            Entercell(ROW, 28, "Production BOM Line"."Position 4", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                            Entercell(ROW, 29, FORMAT("Production BOM Line"."BOM Type"), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                            IF Item.GET("Production BOM Line"."No.") THEN BEGIN
+                                Entercell(ROW, 6, FORMAT(Item."Item Category Code"), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 7, FORMAT(Item."Product Group Code"), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 8, FORMAT(Item."Item Sub Group Code"), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 9, FORMAT(Item."Item Sub Sub Group Code"), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 10, FORMAT(Item."Type of Solder"), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 11, FORMAT(Item."No. of Pins"), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(ROW, 12, FORMAT(Item."No. of Soldering Points"), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(ROW, 13, FORMAT(Item.Make), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 14, FORMAT(Item."Operating Temperature"), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 15, FORMAT(Item."Storage Temperature"), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 16, FORMAT(Item.Humidity), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 17, FORMAT(Item."ESD Sensitive"), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 18, FORMAT(Item."Item Status"), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 19, FORMAT(Item."Soldering Temp."), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 20, FORMAT(Item."Soldering Time (Sec)"), FALSE, Tempexcelbuffer."Cell Type"::Time);
+                                Entercell(ROW, 21, FORMAT(Item."Work area Temp &  Humadity"), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 22, FORMAT(Item.ESD), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 23, Item.Package, FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(ROW, 24, Item."Part Number", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                            END;
                         END;
-                      END;
                     END ELSE
-                      CurrReport.SHOWOUTPUT:=FALSE;
+                        CurrReport.SHOWOUTPUT := FALSE;
 
                     //Produmection BOM Line, Body (4) - OnPreSection()
 
@@ -304,22 +303,22 @@ report 50050 "Explosion Of Prod. BOM"
                     //Production BOM Line, Footer (5) - OnPreSection()
 
                     "Bin Type".RESET;
-                    "Bin Type".SETRANGE("Bin Type".Code,"Production BOM Header"."No.");
+                    "Bin Type".SETRANGE("Bin Type".Code, "Production BOM Header"."No.");
                     IF "Bin Type".FIND('-') THEN
-                      BOUT:=TRUE;
+                        BOUT := TRUE;
                     IF ((ChoiceItem) AND (NOT BOUT)) THEN BEGIN
-                      ProdBomLineFooter5 := TRUE;
-                      IF Want_Excel THEN BEGIN
-                        ROW:=ROW+1;
-                        //Entercell(ROW,7,FORMAT(TUC1),TRUE,Tempexcelbuffer."Cell Type" :: Text); //ADSK
-                        IF With_Cost = TRUE THEN
-                          Entercell(ROW,30,FORMAT(ROUND(TUC1)),TRUE,Tempexcelbuffer."Cell Type" :: Text); //ADSK
-                        //added ROUND() by swathi on 19-Sep-13
-                        ROW:=ROW+1;
-                      END;
+                        ProdBomLineFooter5 := TRUE;
+                        IF Want_Excel THEN BEGIN
+                            ROW := ROW + 1;
+                            //Entercell(ROW,7,FORMAT(TUC1),TRUE,Tempexcelbuffer."Cell Type" :: Text); //ADSK
+                            IF With_Cost = TRUE THEN
+                                Entercell(ROW, 30, FORMAT(ROUND(TUC1)), TRUE, Tempexcelbuffer."Cell Type"::Text); //ADSK
+                                                                                                                  //added ROUND() by swathi on 19-Sep-13
+                            ROW := ROW + 1;
+                        END;
                     END ELSE
-                      //CurrReport.SHOWOUTPUT:=FALSE;
-                      ProdBomLineFooter5 := FALSE;
+                        //CurrReport.SHOWOUTPUT:=FALSE;
+                        ProdBomLineFooter5 := FALSE;
                     //Production BOM Line, Footer (5) - OnPreSection()
                 end;
 
@@ -327,17 +326,17 @@ report 50050 "Explosion Of Prod. BOM"
                 begin
                     //IF Choice=Choice::FForm THEN //Rev01
                     IF ChoiceFForm THEN
-                       CurrReport.BREAK;
+                        CurrReport.BREAK;
 
-                    "Production BOM Line".SETRANGE("Production BOM Line"."Version Code",ActiveVersionCode);
-                    Total:=0;
-                    TUC2:=0;
+                    "Production BOM Line".SETRANGE("Production BOM Line"."Version Code", ActiveVersionCode);
+                    Total := 0;
+                    TUC2 := 0;
                 end;
             }
-            dataitem("<Production BOM Line3>";"Production BOM Line")
+            dataitem("<Production BOM Line3>"; "Production BOM Line")
             {
                 DataItemLink = Production BOM No.=FIELD(No.);
-                DataItemTableView = SORTING(Production BOM No.,Version Code,Line No.) WHERE(No.=FILTER(<>''));
+                DataItemTableView = SORTING(Production BOM No., Version Code, Line No.) WHERE(No.=FILTER(<>''));
                 column(Prod_BOM_Line3_ChoiceFForm;ChoiceFForm)
                 {
                 }
@@ -1829,7 +1828,9 @@ report 50050 "Explosion Of Prod. BOM"
         }
         dataitem("Manufacturing Comment Line";"Manufacturing Comment Line")
         {
-            DataItemTableView = SORTING(Table Name,No.,Line No.) ORDER(Ascending) WHERE(Table Name=CONST(Production BOM Header));
+            DataItemTableView = SORTING(Table Name    DataClassification = CustomerContent;
+,No.,Line No.) ORDER(Ascending) WHERE(Table Name    DataClassification = CustomerContent;
+=CONST(Production BOM Header));
             RequestFilterFields = Date,"Code";
             ReqFilterHeading = 'Bom Modifications';
             column(Manuf_Commt_Line_ChoiceBomMod;ChoiceBomMod)

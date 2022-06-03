@@ -2,8 +2,8 @@ page 99000811 "Prod. BOM Where-Used"
 {
     // version NAVW19.00.00.46621
 
-    CaptionML = ENU='Prod. BOM Where-Used',
-                ENN='Prod. BOM Where-Used';
+    CaptionML = ENU = 'Prod. BOM Where-Used',
+                ENN = 'Prod. BOM Where-Used';
     DataCaptionExpression = SetCaption;
     PageType = Worksheet;
     SourceTable = "Where-Used Line";
@@ -15,24 +15,24 @@ page 99000811 "Prod. BOM Where-Used"
         {
             group(Options)
             {
-                CaptionML = ENU='Options',
-                            ENN='Options';
-                field(CalculateDate;CalculateDate)
+                CaptionML = ENU = 'Options',
+                            ENN = 'Options';
+                field(CalculateDate; CalculateDate)
                 {
-                    CaptionML = ENU='Calculation Date',
-                                ENN='Calculation Date';
+                    CaptionML = ENU = 'Calculation Date',
+                                ENN = 'Calculation Date';
 
                     trigger OnValidate();
                     begin
                         CalculateDateOnAfterValidate;
                     end;
                 }
-                field(ShowLevel;ShowLevel)
+                field(ShowLevel; ShowLevel)
                 {
-                    CaptionML = ENU='Levels',
-                                ENN='Levels';
-                    OptionCaptionML = ENU='Single,Multi',
-                                      ENN='Single,Multi';
+                    CaptionML = ENU = 'Levels',
+                                ENN = 'Levels';
+                    OptionCaptionML = ENU = 'Single,Multi',
+                                      ENN = 'Single,Multi';
 
                     trigger OnValidate();
                     begin
@@ -46,33 +46,33 @@ page 99000811 "Prod. BOM Where-Used"
                 IndentationColumn = DescriptionIndent;
                 IndentationControls = Description;
                 ShowCaption = false;
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field("Version Code";"Version Code")
+                field("Version Code"; "Version Code")
                 {
                 }
-                field("Level Code";"Level Code")
+                field("Level Code"; "Level Code")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Quantity Needed";"Quantity Needed")
+                field("Quantity Needed"; "Quantity Needed")
                 {
                 }
             }
         }
         area(factboxes)
         {
-            systempart(Control1900383207;Links)
+            systempart(Control1900383207; Links)
             {
                 Visible = false;
             }
-            systempart(Control1905767507;Notes)
+            systempart(Control1905767507; Notes)
             {
                 Visible = false;
             }
@@ -90,14 +90,14 @@ page 99000811 "Prod. BOM Where-Used"
         CALCFIELDS(Status);
     end;
 
-    trigger OnFindRecord(Which : Text) : Boolean;
+    trigger OnFindRecord(Which: Text): Boolean;
     begin
-        EXIT(WhereUsedMgt.FindRecord(Which,Rec));
+        EXIT(WhereUsedMgt.FindRecord(Which, Rec));
     end;
 
-    trigger OnNextRecord(Steps : Integer) : Integer;
+    trigger OnNextRecord(Steps: Integer): Integer;
     begin
-        EXIT(WhereUsedMgt.NextRecord(Steps,Rec));
+        EXIT(WhereUsedMgt.NextRecord(Steps, Rec));
     end;
 
     trigger OnOpenPage();
@@ -106,23 +106,23 @@ page 99000811 "Prod. BOM Where-Used"
     end;
 
     var
-        Item : Record Item;
-        ProdBOM : Record "Production BOM Header";
-        WhereUsedMgt : Codeunit "Where-Used Management";
-        ShowLevel : Option Single,Multi;
-        CalculateDate : Date;
+        Item: Record Item;
+        ProdBOM: Record "Production BOM Header";
+        WhereUsedMgt: Codeunit "Where-Used Management";
+        ShowLevel: Option Single,Multi;
+        CalculateDate: Date;
         [InDataSet]
-        DescriptionIndent : Integer;
+        DescriptionIndent: Integer;
 
     [LineStart(24047)]
-    procedure SetProdBOM(NewProdBOM : Record "Production BOM Header";NewCalcDate : Date);
+    procedure SetProdBOM(NewProdBOM: Record "Production BOM Header"; NewCalcDate: Date);
     begin
         ProdBOM := NewProdBOM;
         CalculateDate := NewCalcDate;
     end;
 
     [LineStart(24051)]
-    procedure SetItem(NewItem : Record Item;NewCalcDate : Date);
+    procedure SetItem(NewItem: Record Item; NewCalcDate: Date);
     begin
         Item := NewItem;
         CalculateDate := NewCalcDate;
@@ -132,18 +132,18 @@ page 99000811 "Prod. BOM Where-Used"
     local procedure BuildForm();
     begin
         IF ProdBOM."No." <> '' THEN
-          WhereUsedMgt.WhereUsedFromProdBOM(ProdBOM,CalculateDate,ShowLevel = ShowLevel::Multi)
+            WhereUsedMgt.WhereUsedFromProdBOM(ProdBOM, CalculateDate, ShowLevel = ShowLevel::Multi)
         ELSE
-          WhereUsedMgt.WhereUsedFromItem(Item,CalculateDate,ShowLevel = ShowLevel::Multi);
+            WhereUsedMgt.WhereUsedFromItem(Item, CalculateDate, ShowLevel = ShowLevel::Multi);
     end;
 
     [LineStart(24061)]
-    procedure SetCaption() : Text[80];
+    procedure SetCaption(): Text[80];
     begin
         IF ProdBOM."No." <> '' THEN
-          EXIT(ProdBOM."No." + ' ' + ProdBOM.Description);
+            EXIT(ProdBOM."No." + ' ' + ProdBOM.Description);
         //IF STRLEN(Item."No." + ' ' + Item.Description) >0 THEN
-          //EXIT(COPYSTR(FORMAT(Item."No." + ' ' + Item.Description),1,50))        swathi on 26-sep-13
+        //EXIT(COPYSTR(FORMAT(Item."No." + ' ' + Item.Description),1,50))        swathi on 26-sep-13
         //ELSE
         EXIT(Item."No." + ' ' + Item.Description);
     end;

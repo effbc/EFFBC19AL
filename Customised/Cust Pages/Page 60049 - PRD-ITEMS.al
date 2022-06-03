@@ -15,143 +15,142 @@ page 60049 "PRD-ITEMS"
             group(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Description 2";"Description 2")
+                field("Description 2"; "Description 2")
                 {
                 }
-                field("Common Item No.";"Common Item No.")
+                field("Common Item No."; "Common Item No.")
                 {
                     Caption = 'Description3(Physical)';
                 }
-                field("Base Unit of Measure";"Base Unit of Measure")
+                field("Base Unit of Measure"; "Base Unit of Measure")
                 {
                 }
-                field("Assembly BOM";"Assembly BOM")
+                field("Assembly BOM"; "Assembly BOM")
                 {
                 }
-                field("Shelf No.";"Shelf No.")
+                field("Shelf No."; "Shelf No.")
                 {
                 }
-                field("Automatic Ext. Texts";"Automatic Ext. Texts")
+                field("Automatic Ext. Texts"; "Automatic Ext. Texts")
                 {
                 }
-                field("Item Category Code";"Item Category Code")
+                field("Item Category Code"; "Item Category Code")
                 {
                 }
-                field("Product Group Code";"Product Group Code")
+                field("Product Group Code"; "Product Group Code")
                 {
                 }
-                field("Item Sub Group Code";"Item Sub Group Code")
+                field("Item Sub Group Code"; "Item Sub Group Code")
                 {
                 }
-                field("Item Sub Sub Group Code";"Item Sub Sub Group Code")
+                field("Item Sub Sub Group Code"; "Item Sub Sub Group Code")
                 {
                 }
-                field("User ID";"User ID")
+                field("User ID"; "User ID")
                 {
                 }
-                field(Inventory;Inventory)
+                field(Inventory; Inventory)
                 {
                 }
-                field("Inventory at Stores";"Inventory at Stores")
+                field("Inventory at Stores"; "Inventory at Stores")
                 {
                 }
-                field("Quantity Under Inspection";"Quantity Under Inspection")
+                field("Quantity Under Inspection"; "Quantity Under Inspection")
                 {
                 }
-                field("Quantity Sent for Rework";"Quantity Sent for Rework")
+                field("Quantity Sent for Rework"; "Quantity Sent for Rework")
                 {
                 }
-                field("Quantity Rejected";"Quantity Rejected")
+                field("Quantity Rejected"; "Quantity Rejected")
                 {
                 }
-                field("Quantity Accepted";"Quantity Accepted")
+                field("Quantity Accepted"; "Quantity Accepted")
                 {
                     DrillDown = true;
 
                     trigger OnDrillDown();
                     var
-                        ItemLedgEntry : Record "Item Ledger Entry";
-                        QualityItemLedgEntry : Record "Quality Item Ledger Entry";
+                        ItemLedgEntry: Record "Item Ledger Entry";
+                        QualityItemLedgEntry: Record "Quality Item Ledger Entry";
                     begin
                         //B2BQC 1.1
-                        CALCFIELDS("Quantity Under Inspection","Quantity Rejected","Quantity Rework","Quantity Sent for Rework");
+                        CALCFIELDS("Quantity Under Inspection", "Quantity Rejected", "Quantity Rework", "Quantity Sent for Rework");
                         IF "QC Enabled" = TRUE THEN BEGIN
-                         IF ("Quantity Under Inspection"=0)AND ("Quantity Rejected"=0) AND ("Quantity Rework"=0) AND ("Quantity Sent for Rework"=0) THEN
-                          BEGIN
-                          ItemLedgEntry.RESET;
-                          ItemLedgEntry.SETCURRENTKEY("Location Code",Open,"Item No.");
-                          ItemLedgEntry.SETRANGE("Item No.","No.");
-                          ItemLedgEntry.SETRANGE(Open,TRUE);
-                          PAGE.RUNMODAL(38,ItemLedgEntry);
-                         END ELSE BEGIN
-                          ItemLedgEntry.RESET;
-                          //New line added on 140108
-                          ItemLedgEntry.SETCURRENTKEY("Location Code",Open,"Item No.");
-                          //New line added on 140108
-                          ItemLedgEntry.SETRANGE("Item No.","No.");
-                          ItemLedgEntry.SETRANGE(Open,TRUE);
-                          IF ItemLedgEntry.FINDSET THEN
-                          REPEAT
-                           ItemLedgEntry.MARK(TRUE);
-                           IF QualityItemLedgEntry.GET(ItemLedgEntry."Entry No.")THEN
-                            ItemLedgEntry.MARK(FALSE);
-                          UNTIL ItemLedgEntry.NEXT=0;
-                          ItemLedgEntry.MARKEDONLY(TRUE);
-                          PAGE.RUNMODAL(38,ItemLedgEntry);
-                          END;
+                            IF ("Quantity Under Inspection" = 0) AND ("Quantity Rejected" = 0) AND ("Quantity Rework" = 0) AND ("Quantity Sent for Rework" = 0) THEN BEGIN
+                                ItemLedgEntry.RESET;
+                                ItemLedgEntry.SETCURRENTKEY("Location Code", Open, "Item No.");
+                                ItemLedgEntry.SETRANGE("Item No.", "No.");
+                                ItemLedgEntry.SETRANGE(Open, TRUE);
+                                PAGE.RUNMODAL(38, ItemLedgEntry);
+                            END ELSE BEGIN
+                                ItemLedgEntry.RESET;
+                                //New line added on 140108
+                                ItemLedgEntry.SETCURRENTKEY("Location Code", Open, "Item No.");
+                                //New line added on 140108
+                                ItemLedgEntry.SETRANGE("Item No.", "No.");
+                                ItemLedgEntry.SETRANGE(Open, TRUE);
+                                IF ItemLedgEntry.FINDSET THEN
+                                    REPEAT
+                                        ItemLedgEntry.MARK(TRUE);
+                                        IF QualityItemLedgEntry.GET(ItemLedgEntry."Entry No.") THEN
+                                            ItemLedgEntry.MARK(FALSE);
+                                    UNTIL ItemLedgEntry.NEXT = 0;
+                                ItemLedgEntry.MARKEDONLY(TRUE);
+                                PAGE.RUNMODAL(38, ItemLedgEntry);
+                            END;
                         END;
                     end;
                 }
-                field("Quantity Rework";"Quantity Rework")
+                field("Quantity Rework"; "Quantity Rework")
                 {
                 }
-                field("Qty. on Purch. Order";"Qty. on Purch. Order")
+                field("Qty. on Purch. Order"; "Qty. on Purch. Order")
                 {
                 }
-                field("Qty. on Prod. Order";"Qty. on Prod. Order")
+                field("Qty. on Prod. Order"; "Qty. on Prod. Order")
                 {
                 }
-                field("Qty. on Component Lines";"Qty. on Component Lines")
+                field("Qty. on Component Lines"; "Qty. on Component Lines")
                 {
                 }
-                field("Qty. on Sales Order";"Qty. on Sales Order")
+                field("Qty. on Sales Order"; "Qty. on Sales Order")
                 {
                 }
-                field("Qty. on Service Order";"Qty. on Service Order")
+                field("Qty. on Service Order"; "Qty. on Service Order")
                 {
                 }
-                field("Service Item Group";"Service Item Group")
+                field("Service Item Group"; "Service Item Group")
                 {
                 }
-                field(Blocked;Blocked)
+                field(Blocked; Blocked)
                 {
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("Last Date Modified"; "Last Date Modified")
                 {
                 }
-                field(Sample;Sample)
+                field(Sample; Sample)
                 {
                 }
             }
             group(Invoicing)
             {
                 Caption = 'Invoicing';
-                field("Costing Method";"Costing Method")
+                field("Costing Method"; "Costing Method")
                 {
                 }
-                field(AverageCostLCY;AverageCostLCY)
+                field(AverageCostLCY; AverageCostLCY)
                 {
                     AutoFormatType = 2;
                     Caption = 'Average Cost (LCY)';
@@ -159,113 +158,113 @@ page 60049 "PRD-ITEMS"
 
                     trigger OnDrillDown();
                     begin
-                        CODEUNIT.RUN(CODEUNIT::"Show Avg. Calc. - Item",Rec);
+                        CODEUNIT.RUN(CODEUNIT::"Show Avg. Calc. - Item", Rec);
                     end;
                 }
-                field("Standard Cost";"Standard Cost")
+                field("Standard Cost"; "Standard Cost")
                 {
                 }
-                field("Avg Unit Cost";"Avg Unit Cost")
+                field("Avg Unit Cost"; "Avg Unit Cost")
                 {
                     Caption = 'Unit cost.';
                 }
-                field("Overhead Rate";"Overhead Rate")
+                field("Overhead Rate"; "Overhead Rate")
                 {
                 }
-                field("Indirect Cost %";"Indirect Cost %")
+                field("Indirect Cost %"; "Indirect Cost %")
                 {
                 }
-                field("Last Direct Cost";"Last Direct Cost")
+                field("Last Direct Cost"; "Last Direct Cost")
                 {
                 }
-                field("Price/Profit Calculation";"Price/Profit Calculation")
+                field("Price/Profit Calculation"; "Price/Profit Calculation")
                 {
                 }
-                field("Profit %";"Profit %")
+                field("Profit %"; "Profit %")
                 {
                 }
-                field("Unit Price";"Unit Price")
+                field("Unit Price"; "Unit Price")
                 {
                 }
-                field("Gen. Prod. Posting Group";"Gen. Prod. Posting Group")
+                field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
                 {
                 }
-                field("Excise Prod. Posting Group";"Excise Prod. Posting Group")
+                field("Excise Prod. Posting Group"; "Excise Prod. Posting Group")
                 {
                 }
-                field("Inventory Posting Group";"Inventory Posting Group")
+                field("Inventory Posting Group"; "Inventory Posting Group")
                 {
                 }
-                field("Net Invoiced Qty.";"Net Invoiced Qty.")
+                field("Net Invoiced Qty."; "Net Invoiced Qty.")
                 {
                 }
-                field("Allow Invoice Disc.";"Allow Invoice Disc.")
+                field("Allow Invoice Disc."; "Allow Invoice Disc.")
                 {
                 }
-                field("Item Disc. Group";"Item Disc. Group")
+                field("Item Disc. Group"; "Item Disc. Group")
                 {
                 }
-                field("Sales Unit of Measure";"Sales Unit of Measure")
+                field("Sales Unit of Measure"; "Sales Unit of Measure")
                 {
                 }
-                field("Excise Accounting Type";"Excise Accounting Type")
+                field("Excise Accounting Type"; "Excise Accounting Type")
                 {
                 }
-                field("Assessable Value";"Assessable Value")
+                field("Assessable Value"; "Assessable Value")
                 {
                 }
-                field("Tax Group Code";"Tax Group Code")
+                field("Tax Group Code"; "Tax Group Code")
                 {
                 }
-                field("Capital Item";"Capital Item")
+                field("Capital Item"; "Capital Item")
                 {
                 }
             }
             group(Replenishment)
             {
                 Caption = 'Replenishment';
-                field("Replenishment System";"Replenishment System")
+                field("Replenishment System"; "Replenishment System")
                 {
                     OptionCaption = 'Purchase,Prod. Order';
                 }
                 group(Purchase)
                 {
                     Caption = 'Purchase';
-                    field("Vendor No.";"Vendor No.")
+                    field("Vendor No."; "Vendor No.")
                     {
                     }
-                    field("Vendor Item No.";"Vendor Item No.")
+                    field("Vendor Item No."; "Vendor Item No.")
                     {
                     }
-                    field("Purch. Unit of Measure";"Purch. Unit of Measure")
+                    field("Purch. Unit of Measure"; "Purch. Unit of Measure")
                     {
                     }
-                    field("Lead Time Calculation";"Lead Time Calculation")
+                    field("Lead Time Calculation"; "Lead Time Calculation")
                     {
                     }
                 }
                 group(Production)
                 {
                     Caption = 'Production';
-                    field("Manufacturing Policy";"Manufacturing Policy")
+                    field("Manufacturing Policy"; "Manufacturing Policy")
                     {
                     }
-                    field("Routing No.";"Routing No.")
+                    field("Routing No."; "Routing No.")
                     {
                     }
-                    field("Production BOM No.";"Production BOM No.")
+                    field("Production BOM No."; "Production BOM No.")
                     {
                     }
-                    field("Rounding Precision";"Rounding Precision")
+                    field("Rounding Precision"; "Rounding Precision")
                     {
                     }
-                    field("Flushing Method";"Flushing Method")
+                    field("Flushing Method"; "Flushing Method")
                     {
                     }
-                    field("Scrap %";"Scrap %")
+                    field("Scrap %"; "Scrap %")
                     {
                     }
-                    field("Lot Size";"Lot Size")
+                    field("Lot Size"; "Lot Size")
                     {
                     }
                 }
@@ -273,7 +272,7 @@ page 60049 "PRD-ITEMS"
             group(Planning)
             {
                 Caption = 'Planning';
-                field("Reordering Policy";"Reordering Policy")
+                field("Reordering Policy"; "Reordering Policy")
                 {
 
                     trigger OnValidate();
@@ -281,70 +280,70 @@ page 60049 "PRD-ITEMS"
                         EnablePlanningControls
                     end;
                 }
-                field("Include Inventory";"Include Inventory")
+                field("Include Inventory"; "Include Inventory")
                 {
                     Enabled = "Include InventoryEnable";
                 }
-                field(Reserve;Reserve)
+                field(Reserve; Reserve)
                 {
                 }
-                field("Order Tracking Policy";"Order Tracking Policy")
+                field("Order Tracking Policy"; "Order Tracking Policy")
                 {
                 }
-                field("Stockkeeping Unit Exists";"Stockkeeping Unit Exists")
+                field("Stockkeeping Unit Exists"; "Stockkeeping Unit Exists")
                 {
                 }
-                field(Critical;Critical)
+                field(Critical; Critical)
                 {
                 }
-                field("Type of Solder";"Type of Solder")
+                field("Type of Solder"; "Type of Solder")
                 {
                 }
-                field("No. of Soldering Points";"No. of Soldering Points")
+                field("No. of Soldering Points"; "No. of Soldering Points")
                 {
                 }
-                field("No. of Pins";"No. of Pins")
+                field("No. of Pins"; "No. of Pins")
                 {
                 }
-                field("No. of Opportunities";"No. of Opportunities")
+                field("No. of Opportunities"; "No. of Opportunities")
                 {
                 }
-                field("No.of Fixing Holes";"No.of Fixing Holes")
+                field("No.of Fixing Holes"; "No.of Fixing Holes")
                 {
                 }
-                field("Time Bucket";"Time Bucket")
+                field("Time Bucket"; "Time Bucket")
                 {
                     Enabled = "Reorder CycleEnable";
                 }
-                field("Safety Lead Time";"Safety Lead Time")
+                field("Safety Lead Time"; "Safety Lead Time")
                 {
                     Enabled = "Safety Lead TimeEnable";
                 }
-                field("Safety Stock Quantity";"Safety Stock Quantity")
+                field("Safety Stock Quantity"; "Safety Stock Quantity")
                 {
                     Enabled = "Safety Stock QuantityEnable";
                 }
-                field("Reorder Point";"Reorder Point")
+                field("Reorder Point"; "Reorder Point")
                 {
                     Enabled = "Reorder PointEnable";
                 }
-                field("Reorder Quantity";"Reorder Quantity")
+                field("Reorder Quantity"; "Reorder Quantity")
                 {
                     Enabled = "Reorder QuantityEnable";
                 }
-                field("Maximum Inventory";"Maximum Inventory")
+                field("Maximum Inventory"; "Maximum Inventory")
                 {
                     Enabled = "Maximum InventoryEnable";
                 }
-                field("Minimum Order Quantity";"Minimum Order Quantity")
+                field("Minimum Order Quantity"; "Minimum Order Quantity")
                 {
                     Enabled = "Minimum Order QuantityEnable";
                 }
-                field("Maximum Order Quantity";"Maximum Order Quantity")
+                field("Maximum Order Quantity"; "Maximum Order Quantity")
                 {
                     Enabled = "Maximum Order QuantityEnable";
                 }
-                field("Order Multiple";"Order Multiple")
+                field("Order Multiple"; "Order Multiple")
                 {
                     Enabled = "Order MultipleEnable";
                 }
@@ -352,83 +351,83 @@ page 60049 "PRD-ITEMS"
             group("Foreign Trade")
             {
                 Caption = 'Foreign Trade';
-                field("Tariff No.";"Tariff No.")
+                field("Tariff No."; "Tariff No.")
                 {
                 }
-                field("Country/Region of Origin Code";"Country/Region of Origin Code")
+                field("Country/Region of Origin Code"; "Country/Region of Origin Code")
                 {
                 }
             }
             group("Item Tracking")
             {
                 Caption = 'Item Tracking';
-                field("Item Tracking Code";"Item Tracking Code")
+                field("Item Tracking Code"; "Item Tracking Code")
                 {
                 }
-                field("Serial Nos.";"Serial Nos.")
+                field("Serial Nos."; "Serial Nos.")
                 {
                 }
-                field("Lot Nos.";"Lot Nos.")
+                field("Lot Nos."; "Lot Nos.")
                 {
                 }
-                field("Expiration Calculation";"Expiration Calculation")
+                field("Expiration Calculation"; "Expiration Calculation")
                 {
                 }
             }
             group("Commerce Portal")
             {
                 Caption = 'Commerce Portal';
-                field(ProdOrderExist;ProdOrderExist)
+                field(ProdOrderExist; ProdOrderExist)
                 {
                 }
             }
             group(Warehouse)
             {
                 Caption = 'Warehouse';
-                field("Special Equipment Code";"Special Equipment Code")
+                field("Special Equipment Code"; "Special Equipment Code")
                 {
                 }
-                field("Put-away Template Code";"Put-away Template Code")
+                field("Put-away Template Code"; "Put-away Template Code")
                 {
                 }
-                field("Put-away Unit of Measure Code";"Put-away Unit of Measure Code")
+                field("Put-away Unit of Measure Code"; "Put-away Unit of Measure Code")
                 {
                 }
-                field("Phys Invt Counting Period Code";"Phys Invt Counting Period Code")
+                field("Phys Invt Counting Period Code"; "Phys Invt Counting Period Code")
                 {
                 }
-                field("Last Phys. Invt. Date";"Last Phys. Invt. Date")
+                field("Last Phys. Invt. Date"; "Last Phys. Invt. Date")
                 {
                 }
-                field("Last Counting Period Update";"Last Counting Period Update")
+                field("Last Counting Period Update"; "Last Counting Period Update")
                 {
                 }
-                field("Identifier Code";"Identifier Code")
+                field("Identifier Code"; "Identifier Code")
                 {
                 }
-                field("Use Cross-Docking";"Use Cross-Docking")
+                field("Use Cross-Docking"; "Use Cross-Docking")
                 {
                 }
             }
             group(Quality)
             {
                 Caption = 'Quality';
-                field("Spec ID";"Spec ID")
+                field("Spec ID"; "Spec ID")
                 {
                 }
-                field("QC Enabled";"QC Enabled")
+                field("QC Enabled"; "QC Enabled")
                 {
                 }
-                field("Insp. Time Inbound(In Min.)";"Insp. Time Inbound(In Min.)")
+                field("Insp. Time Inbound(In Min.)"; "Insp. Time Inbound(In Min.)")
                 {
                 }
-                field("WIP Spec ID";"WIP Spec ID")
+                field("WIP Spec ID"; "WIP Spec ID")
                 {
                 }
-                field("WIP QC Enabled";"WIP QC Enabled")
+                field("WIP QC Enabled"; "WIP QC Enabled")
                 {
                 }
-                field("Insp. Time WIP(In Min.)";"Insp. Time WIP(In Min.)")
+                field("Insp. Time WIP(In Min.)"; "Insp. Time WIP(In Min.)")
                 {
                 }
             }
@@ -523,7 +522,7 @@ page 60049 "PRD-ITEMS"
                         Caption = 'Ledger E&ntries';
                         Image = LedgerEntries;
                         RunObject = Page "Item Ledger Entries";
-                        RunPageLink = Item No.=FIELD(No.);
+                                        RunPageLink = Item No.=FIELD(No.);
                         RunPageView = SORTING(Item No.);
                         ShortCutKey = 'Ctrl+F5';
                     }
@@ -532,7 +531,7 @@ page 60049 "PRD-ITEMS"
                         Caption = '&Reservation Entries';
                         Image = GetEntries;
                         RunObject = Page "Reservation Entries";
-                        RunPageLink = Reservation Status=CONST(Reservation),Item No.=FIELD(No.);
+                                        RunPageLink = Reservation Status=CONST(Reservation),Item No.=FIELD(No.);
                         RunPageView = SORTING(Reservation Status,Item No.,Variant Code,Location Code);
                     }
                     action("&Phys. Inventory Ledger Entries")
@@ -540,7 +539,7 @@ page 60049 "PRD-ITEMS"
                         Caption = '&Phys. Inventory Ledger Entries';
                         Image = WIPEntries;
                         RunObject = Page "Phys. Inventory Ledger Entries";
-                        RunPageLink = Item No.=FIELD(No.);
+                                        RunPageLink = Item No.=FIELD(No.);
                         RunPageView = SORTING(Item No.);
                     }
                     action("&Value Entries")
@@ -548,7 +547,7 @@ page 60049 "PRD-ITEMS"
                         Caption = '&Value Entries';
                         Image = LedgerEntries;
                         RunObject = Page "Value Entries";
-                        RunPageLink = Item No.=FIELD(No.);
+                                        RunPageLink = Item No.=FIELD(No.);
                         RunPageView = SORTING(Item No.);
                     }
                     action("&Quality Ledger Entries")
@@ -556,7 +555,7 @@ page 60049 "PRD-ITEMS"
                         Caption = '&Quality Ledger Entries';
                         Image = VATEntries;
                         RunObject = Page "Quality Ledger Entries";
-                        RunPageLink = Item No.=FIELD(No.);
+                                        RunPageLink = Item No.=FIELD(No.);
                     }
                     action("Item &Tracking Entries")
                     {
@@ -594,14 +593,14 @@ page 60049 "PRD-ITEMS"
                         Caption = 'Entry Statistics';
                         Image = EntryStatistics;
                         RunObject = Page "Item Entry Statistics";
-                        RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                     action(TurnOver)
                     {
                         Caption = 'TurnOver';
                         Image = Turnover;
                         RunObject = Page "Item Turnover";
-                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                 }
                 action("Items b&y Location")
@@ -626,21 +625,21 @@ page 60049 "PRD-ITEMS"
                         Caption = 'Period';
                         Image = Period;
                         RunObject = Page "Item Availability by Periods";
-                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                     action(Variant)
                     {
                         Caption = 'Variant';
                         Image = ItemVariant;
                         RunObject = Page "Item Availability by Variant";
-                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                     action(Location)
                     {
                         Caption = 'Location';
                         Image = ItemAvailbyLoc;
                         RunObject = Page "Item Availability by Location";
-                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                        RunPageLink = No.=FIELD(No.),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                     }
                 }
                 action("&Bin Contents")
@@ -648,7 +647,7 @@ page 60049 "PRD-ITEMS"
                     Caption = '&Bin Contents';
                     Image = BinContent;
                     RunObject = Page "Item Bin Contents";
-                    RunPageLink = Item No.=FIELD(No.),Unit of Measure Code=FIELD(Base Unit of Measure);
+                                    RunPageLink = Item No.=FIELD(No.),Unit of Measure Code=FIELD(Base Unit of Measure);
                     RunPageView = SORTING(Item No.);
                 }
                 action("Co&mments")
@@ -656,14 +655,14 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = Page "Comment Sheet";
-                    RunPageLink = Table Name=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Table Name=CONST(Item),No.=FIELD(No.);
                 }
                 action(Dimensions)
                 {
                     Caption = 'Dimensions';
                     Image = Dimensions;
                     RunObject = Page "Default Dimensions";
-                    RunPageLink = Table ID=CONST(27),No.=FIELD(No.);
+                                    RunPageLink = Table ID=CONST(27),No.=FIELD(No.);
                     ShortCutKey = 'Shift+Ctrl+D';
                 }
                 action("&Picture")
@@ -671,7 +670,7 @@ page 60049 "PRD-ITEMS"
                     Caption = '&Picture';
                     Image = Picture;
                     RunObject = Page "Item Picture";
-                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
+                                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Global Dimension 1 Filter=FIELD(Global Dimension 1 Filter),Global Dimension 2 Filter=FIELD(Global Dimension 2 Filter),Location Filter=FIELD(Location Filter),Drop Shipment Filter=FIELD(Drop Shipment Filter),Variant Filter=FIELD(Variant Filter);
                 }
                 separator(Action113)
                 {
@@ -681,28 +680,28 @@ page 60049 "PRD-ITEMS"
                     Caption = '&Units of Measure';
                     Image = UnitOfMeasure;
                     RunObject = Page "Item Units of Measure";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 action("Va&riants")
                 {
                     Caption = 'Va&riants';
                     Image = VariableList;
                     RunObject = Page "Item Variants";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 action("Cross Re&ferences")
                 {
                     Caption = 'Cross Re&ferences';
                     Image = ContactReference;
                     RunObject = Page "Item Cross Reference Entries";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 action("Substituti&ons")
                 {
                     Caption = 'Substituti&ons';
                     Image = ItemSubstitution;
                     RunObject = Page "Item Substitution Entry";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                 }
                 action("Nonstoc&k Items")
                 {
@@ -718,15 +717,16 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Translations';
                     Image = Translations;
                     RunObject = Page "Item Translations";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 action("E&xtended Texts")
                 {
                     Caption = 'E&xtended Texts';
                     Image = Text;
                     RunObject = Page "Extended Text";
-                    RunPageLink = Table Name=CONST(Item),No.=FIELD(No.);
-                    RunPageView = SORTING(Table Name,No.,Language Code,All Language Codes,Starting Date,Ending Date);
+                                    RunPageLink = Table Name=CONST(Item),No.=FIELD(No.);
+                    RunPageView = SORTING(Table Name    DataClassification = CustomerContent;
+,No.,Language Code,All Language Codes,Starting Date,Ending Date);
                 }
                 separator(Action120)
                 {
@@ -740,14 +740,14 @@ page 60049 "PRD-ITEMS"
                         Caption = 'Bill of Materials';
                         Image = BOM;
                         RunObject = Page "Assembly BOM";
-                        RunPageLink = Parent Item No.=FIELD(No.);
+                                        RunPageLink = Parent Item No.=FIELD(No.);
                     }
                     action("Where-Used List")
                     {
                         Caption = 'Where-Used List';
                         Image = "Where-Used";
                         RunObject = Page "Where-Used List";
-                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                         RunPageView = SORTING(Type,No.);
                     }
                     action("Calc. Stan&dard Cost")
@@ -798,7 +798,7 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Ser&vice Items';
                     Image = ServiceLines;
                     RunObject = Page "Service Items";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 group("Troubles&hooting")
@@ -810,7 +810,7 @@ page 60049 "PRD-ITEMS"
                         Caption = 'Troubleshooting &Setup';
                         Image = Troubleshoot;
                         RunObject = Page "Troubleshooting Setup";
-                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     }
                     action(Action186)
                     {
@@ -832,7 +832,7 @@ page 60049 "PRD-ITEMS"
                         Caption = 'Resource Skills';
                         Image = ResourceSkills;
                         RunObject = Page "Resource Skills";
-                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                        RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     }
                     action("Skilled Resources")
                     {
@@ -856,7 +856,7 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Identifiers';
                     Image = ItemLines;
                     RunObject = Page "Item Identifiers";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.,Variant Code,Unit of Measure Code);
                 }
                 action(Specifications)
@@ -864,7 +864,7 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Specifications';
                     Image = ItemVariant;
                     RunObject = Page "Item Specification";
-                    RunPageLink = Item No.=FIELD(No.),Product Group Code=FIELD(Product Group Code),Item Category Code=FIELD(Item Category Code),Item Sub Group Code=FIELD(Item Sub Group Code),Item Sub Sub Group Code=FIELD(Item Sub Sub Group Code);
+                                    RunPageLink = Item No.=FIELD(No.),Product Group Code=FIELD(Product Group Code),Item Category Code=FIELD(Item Category Code),Item Sub Group Code=FIELD(Item Sub Group Code),Item Sub Sub Group Code=FIELD(Item Sub Sub Group Code);
 
                     trigger OnAction();
                     var
@@ -892,14 +892,14 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Attachments';
                     Image = Attachments;
                     RunObject = Page "ESPL Attachments";
-                    RunPageLink = Table ID=CONST(27),Document No.=FIELD(No.);
+                                    RunPageLink = Table ID=CONST(27),Document No.=FIELD(No.);
                 }
                 action("Design Work Sheet")
                 {
                     Caption = 'Design Work Sheet';
                     Image = Worksheet;
                     RunObject = Page "Item Design WorkSheet Header";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
             }
             group("S&ales")
@@ -910,7 +910,7 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Prices';
                     Image = Price;
                     RunObject = Page "Sales Prices";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 action("Line Discounts")
@@ -918,7 +918,7 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Line Discounts';
                     Image = LineDiscount;
                     RunObject = Page "Sales Line Discounts";
-                    RunPageLink = Type=CONST(Item),Code=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),Code=FIELD(No.);
                     RunPageView = SORTING(Type,Code);
                 }
                 separator(Action46)
@@ -929,7 +929,7 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Orders';
                     Image = "Order";
                     RunObject = Page "Sales Orders";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Type,No.);
                 }
                 action("Return Orders")
@@ -937,7 +937,7 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Return Orders';
                     Image = ReturnOrder;
                     RunObject = Page "Sales Return Orders";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Type,No.);
                 }
             }
@@ -949,7 +949,7 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Ven&dors';
                     Image = Vendor;
                     RunObject = Page "Item Vendor Catalog";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 action(Action85)
@@ -957,7 +957,7 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Prices';
                     Image = Price;
                     RunObject = Page "Purchase Prices";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                     RunPageView = SORTING(Item No.);
                 }
                 action(Action86)
@@ -965,7 +965,7 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Line Discounts';
                     Image = LineDiscount;
                     RunObject = Page "Purchase Line Discounts";
-                    RunPageLink = Item No.=FIELD(No.);
+                                    RunPageLink = Item No.=FIELD(No.);
                 }
                 separator(Action47)
                 {
@@ -975,7 +975,7 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Orders';
                     Image = "Order";
                     RunObject = Page "Purchase Orders";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Type,No.);
                 }
                 action(Action191)
@@ -983,7 +983,7 @@ page 60049 "PRD-ITEMS"
                     Caption = 'Return Orders';
                     Image = ReturnOrder;
                     RunObject = Page "Purchase Return Orders";
-                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
+                                    RunPageLink = Type=CONST(Item),No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Type,No.);
                 }
             }
@@ -1131,34 +1131,34 @@ page 60049 "PRD-ITEMS"
     [LineStart(5652)]
     procedure EnablePlanningControls();
     var
-        PlanningGetParam : Codeunit "Planning-Get Parameters";
-        ReorderCycleEnabled : Boolean;
-        SafetyLeadTimeEnabled : Boolean;
-        SafetyStockQtyEnabled : Boolean;
-        ReorderPointEnabled : Boolean;
-        ReorderQuantityEnabled : Boolean;
-        MaximumInventoryEnabled : Boolean;
-        MinimumOrderQtyEnabled : Boolean;
-        MaximumOrderQtyEnabled : Boolean;
-        OrderMultipleEnabled : Boolean;
-        IncludeInventoryEnabled : Boolean;
-        ReschedulingPeriodEnabled : Boolean;
-        LotAccumulationPeriodEnabled : Boolean;
-        DampenerPeriodEnabled : Boolean;
-        DampenerQuantityEnabled : Boolean;
-        OverflowLevelEnabled : Boolean;
+        PlanningGetParam: Codeunit "Planning-Get Parameters";
+        ReorderCycleEnabled: Boolean;
+        SafetyLeadTimeEnabled: Boolean;
+        SafetyStockQtyEnabled: Boolean;
+        ReorderPointEnabled: Boolean;
+        ReorderQuantityEnabled: Boolean;
+        MaximumInventoryEnabled: Boolean;
+        MinimumOrderQtyEnabled: Boolean;
+        MaximumOrderQtyEnabled: Boolean;
+        OrderMultipleEnabled: Boolean;
+        IncludeInventoryEnabled: Boolean;
+        ReschedulingPeriodEnabled: Boolean;
+        LotAccumulationPeriodEnabled: Boolean;
+        DampenerPeriodEnabled: Boolean;
+        DampenerQuantityEnabled: Boolean;
+        OverflowLevelEnabled: Boolean;
     begin
         //B2b1.0>>
         /*PlanningGetParam.SetUpPlanningControls("Reordering Policy","Include Inventory",
           ReorderCycleEnabled,SafetyLeadTimeEnabled,SafetyStockQtyEnabled,
           ReorderPointEnabled,ReorderQuantityEnabled,MaximumInventoryEnabled,
           MinimumOrderQtyEnabled,MaximumOrderQtyEnabled,OrderMultipleEnabled,IncludeInventoryEnabled);*/
-        
-        PlanningGetParam.SetUpPlanningControls("Reordering Policy","Include Inventory",
-          ReorderCycleEnabled,SafetyLeadTimeEnabled,SafetyStockQtyEnabled,
-          ReorderPointEnabled,ReorderQuantityEnabled,MaximumInventoryEnabled,
-          MinimumOrderQtyEnabled,MaximumOrderQtyEnabled,OrderMultipleEnabled,IncludeInventoryEnabled,ReschedulingPeriodEnabled,
-          LotAccumulationPeriodEnabled,DampenerPeriodEnabled,DampenerQuantityEnabled,OverflowLevelEnabled);
+
+        PlanningGetParam.SetUpPlanningControls("Reordering Policy", "Include Inventory",
+          ReorderCycleEnabled, SafetyLeadTimeEnabled, SafetyStockQtyEnabled,
+          ReorderPointEnabled, ReorderQuantityEnabled, MaximumInventoryEnabled,
+          MinimumOrderQtyEnabled, MaximumOrderQtyEnabled, OrderMultipleEnabled, IncludeInventoryEnabled, ReschedulingPeriodEnabled,
+          LotAccumulationPeriodEnabled, DampenerPeriodEnabled, DampenerQuantityEnabled, OverflowLevelEnabled);
         //B2b1.0<<
         "Reorder CycleEnable" := ReorderCycleEnabled;
         "Safety Lead TimeEnable" := SafetyLeadTimeEnabled;
@@ -1176,7 +1176,7 @@ page 60049 "PRD-ITEMS"
     [LineStart(5676)]
     local procedure AverageCostLCYOnActivate();
     begin
-        ItemCostMgt.CalculateAverageCost(Rec,AverageCostLCY,AverageCostACY);
+        ItemCostMgt.CalculateAverageCost(Rec, AverageCostLCY, AverageCostACY);
         ItemCostUpdation.RUN;
     end;
 }

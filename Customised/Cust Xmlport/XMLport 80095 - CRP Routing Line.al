@@ -6,52 +6,52 @@ xmlport 80095 "CRP Routing Line"
     {
         textelement(RoutingLines)
         {
-            tableelement("<routingline>";"Routing Line")
+            tableelement("<routingline>"; "Routing Line")
             {
                 XmlName = 'RoutingLine';
-                fieldelement(RoutingNo;"<RoutingLine>"."Routing No.")
+                fieldelement(RoutingNo; "<RoutingLine>"."Routing No.")
                 {
                 }
-                fieldelement(PreviousOperationNo;"<RoutingLine>"."Previous Operation No.")
+                fieldelement(PreviousOperationNo; "<RoutingLine>"."Previous Operation No.")
                 {
                 }
-                fieldelement(OperationNo;"<RoutingLine>"."Operation No.")
+                fieldelement(OperationNo; "<RoutingLine>"."Operation No.")
                 {
                 }
-                fieldelement(NextOperationNo;"<RoutingLine>"."Next Operation No.")
+                fieldelement(NextOperationNo; "<RoutingLine>"."Next Operation No.")
                 {
                 }
-                fieldelement(RoutingLinkCode;"<RoutingLine>"."Routing Link Code")
+                fieldelement(RoutingLinkCode; "<RoutingLine>"."Routing Link Code")
                 {
                 }
-                fieldelement(Type;"<RoutingLine>".Type)
+                fieldelement(Type; "<RoutingLine>".Type)
                 {
                 }
-                fieldelement(WorkCenterNo;"<RoutingLine>"."Work Center No.")
+                fieldelement(WorkCenterNo; "<RoutingLine>"."Work Center No.")
                 {
                 }
-                fieldelement(WorkCenterGroupCode;"<RoutingLine>"."Work Center Group Code")
+                fieldelement(WorkCenterGroupCode; "<RoutingLine>"."Work Center Group Code")
                 {
                 }
-                fieldelement(Description;"<RoutingLine>".Description)
+                fieldelement(Description; "<RoutingLine>".Description)
                 {
                 }
-                fieldelement(OperationDescription;"<RoutingLine>"."Operation Description")
+                fieldelement(OperationDescription; "<RoutingLine>"."Operation Description")
                 {
                 }
-                fieldelement(SubAssembly;"<RoutingLine>"."Sub Assembly")
+                fieldelement(SubAssembly; "<RoutingLine>"."Sub Assembly")
                 {
                 }
-                fieldelement(QCEnabled;"<RoutingLine>"."QC Enabled")
+                fieldelement(QCEnabled; "<RoutingLine>"."QC Enabled")
                 {
                 }
-                fieldelement(SpecId;"<RoutingLine>"."Spec Id")
+                fieldelement(SpecId; "<RoutingLine>"."Spec Id")
                 {
                 }
-                fieldelement(RunTime;"<RoutingLine>"."Run Time")
+                fieldelement(RunTime; "<RoutingLine>"."Run Time")
                 {
                 }
-                fieldelement(No;"<RoutingLine>"."No.")
+                fieldelement(No; "<RoutingLine>"."No.")
                 {
                 }
             }

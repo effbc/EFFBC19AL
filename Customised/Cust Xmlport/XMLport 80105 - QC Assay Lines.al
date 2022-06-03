@@ -6,43 +6,43 @@ xmlport 80105 "QC Assay Lines"
     {
         textelement(AssayLines)
         {
-            tableelement("<assayline>";"Assay Line")
+            tableelement("<assayline>"; "Assay Line")
             {
                 XmlName = 'AssayLine';
-                fieldelement(AssayNo;"<AssayLine>"."Assay No.")
+                fieldelement(AssayNo; "<AssayLine>"."Assay No.")
                 {
                 }
-                fieldelement(LineNo;"<AssayLine>"."Line No.")
+                fieldelement(LineNo; "<AssayLine>"."Line No.")
                 {
                 }
-                fieldelement(CharacterCode;"<AssayLine>"."Character Code")
+                fieldelement(CharacterCode; "<AssayLine>"."Character Code")
                 {
                 }
-                fieldelement(Description;"<AssayLine>".Description)
+                fieldelement(Description; "<AssayLine>".Description)
                 {
                 }
-                fieldelement(NormalValueNum;"<AssayLine>"."Normal Value (Num)")
+                fieldelement(NormalValueNum; "<AssayLine>"."Normal Value (Num)")
                 {
                 }
-                fieldelement(MinValueNum;"<AssayLine>"."Min. Value (Num)")
+                fieldelement(MinValueNum; "<AssayLine>"."Min. Value (Num)")
                 {
                 }
-                fieldelement(MaxValueNum;"<AssayLine>"."Max. Value (Num)")
+                fieldelement(MaxValueNum; "<AssayLine>"."Max. Value (Num)")
                 {
                 }
-                fieldelement(NormalValueChar;"<AssayLine>"."Normal Value (Char)")
+                fieldelement(NormalValueChar; "<AssayLine>"."Normal Value (Char)")
                 {
                 }
-                fieldelement(MinValueChar;"<AssayLine>"."Min. Value (Char)")
+                fieldelement(MinValueChar; "<AssayLine>"."Min. Value (Char)")
                 {
                 }
-                fieldelement(MaxValueChar;"<AssayLine>"."Max. Value (Char)")
+                fieldelement(MaxValueChar; "<AssayLine>"."Max. Value (Char)")
                 {
                 }
-                fieldelement(UnitOfMeasureCode;"<AssayLine>"."Unit Of Measure Code")
+                fieldelement(UnitOfMeasureCode; "<AssayLine>"."Unit Of Measure Code")
                 {
                 }
-                fieldelement(Qualitative;"<AssayLine>".Qualitative)
+                fieldelement(Qualitative; "<AssayLine>".Qualitative)
                 {
                 }
             }

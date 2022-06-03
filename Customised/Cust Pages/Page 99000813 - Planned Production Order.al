@@ -2,12 +2,12 @@ page 99000813 "Planned Production Order"
 {
     // version NAVW19.00.00.45778,Rev01
 
-    CaptionML = ENU='Planned Production Order',
-                ENN='Planned Production Order';
+    CaptionML = ENU = 'Planned Production Order',
+                ENN = 'Planned Production Order';
     PageType = Document;
     RefreshOnActivate = true;
     SourceTable = "Production Order";
-    SourceTableView = WHERE(Status=CONST(Planned));
+    SourceTableView = WHERE(Status = CONST(Planned));
 
     layout
     {
@@ -15,9 +15,9 @@ page 99000813 "Planned Production Order"
         {
             group(General)
             {
-                CaptionML = ENU='General',
-                            ENN='General';
-                field("No.";"No.")
+                CaptionML = ENU = 'General',
+                            ENN = 'General';
+                field("No."; "No.")
                 {
                     Importance = Promoted;
                     Lookup = false;
@@ -25,93 +25,93 @@ page 99000813 "Planned Production Order"
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Importance = Promoted;
                 }
-                field("Description 2";"Description 2")
+                field("Description 2"; "Description 2")
                 {
                 }
-                field("Source Type";"Source Type")
+                field("Source Type"; "Source Type")
                 {
 
                     trigger OnValidate();
                     begin
                         IF xRec."Source Type" <> "Source Type" THEN
-                          "Source No." := '';
+                            "Source No." := '';
                     end;
                 }
-                field("Source No.";"Source No.")
+                field("Source No."; "Source No.")
                 {
                 }
-                field("Search Description";"Search Description")
+                field("Search Description"; "Search Description")
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                     Importance = Promoted;
                 }
-                field("Due Date";"Due Date")
+                field("Due Date"; "Due Date")
                 {
                 }
-                field("Assigned User ID";"Assigned User ID")
+                field("Assigned User ID"; "Assigned User ID")
                 {
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("Last Date Modified"; "Last Date Modified")
                 {
                 }
             }
-            part(ProdOrderLines;"Planned Prod. Order Lines")
+            part(ProdOrderLines; "Planned Prod. Order Lines")
             {
                 SubPageLink = Prod. Order No.=FIELD(No.);
             }
             group(Schedule)
             {
-                CaptionML = ENU='Schedule',
-                            ENN='Schedule';
-                field("Starting Time";"Starting Time")
+                CaptionML = ENU = 'Schedule',
+                            ENN = 'Schedule';
+                field("Starting Time"; "Starting Time")
                 {
                     Importance = Promoted;
                 }
-                field("Starting Date";"Starting Date")
+                field("Starting Date"; "Starting Date")
                 {
                     Importance = Promoted;
                 }
-                field("Ending Time";"Ending Time")
+                field("Ending Time"; "Ending Time")
                 {
                     Importance = Promoted;
                 }
-                field("Ending Date";"Ending Date")
+                field("Ending Date"; "Ending Date")
                 {
                     Importance = Promoted;
                 }
-                field("Component Time";"Component Time")
+                field("Component Time"; "Component Time")
                 {
                     Caption = 'Component Time';
                 }
-                field("Component Date";"Component Date")
+                field("Component Date"; "Component Date")
                 {
                     Caption = 'Component Date';
                 }
             }
             group(Posting)
             {
-                CaptionML = ENU='Posting',
-                            ENN='Posting';
-                field("Inventory Posting Group";"Inventory Posting Group")
+                CaptionML = ENU = 'Posting',
+                            ENN = 'Posting';
+                field("Inventory Posting Group"; "Inventory Posting Group")
                 {
                     Importance = Promoted;
                 }
-                field("Gen. Prod. Posting Group";"Gen. Prod. Posting Group")
+                field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
                 {
                 }
-                field("Gen. Bus. Posting Group";"Gen. Bus. Posting Group")
+                field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
                 {
                 }
-                field("Shortcut Dimension 1 Code";"Shortcut Dimension 1 Code")
+                field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
                 {
 
                     trigger OnValidate();
@@ -119,7 +119,7 @@ page 99000813 "Planned Production Order"
                         ShortcutDimension1CodeOnAfterV;
                     end;
                 }
-                field("Shortcut Dimension 2 Code";"Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
                 {
 
                     trigger OnValidate();
@@ -127,11 +127,11 @@ page 99000813 "Planned Production Order"
                         ShortcutDimension2CodeOnAfterV;
                     end;
                 }
-                field("Location Code";"Location Code")
+                field("Location Code"; "Location Code")
                 {
                     Importance = Promoted;
                 }
-                field("Bin Code";"Bin Code")
+                field("Bin Code"; "Bin Code")
                 {
                     Importance = Promoted;
                 }
@@ -139,11 +139,11 @@ page 99000813 "Planned Production Order"
         }
         area(factboxes)
         {
-            systempart(Control1900383207;Links)
+            systempart(Control1900383207; Links)
             {
                 Visible = false;
             }
-            systempart(Control1905767507;Notes)
+            systempart(Control1905767507; Notes)
             {
                 Visible = true;
             }
@@ -156,16 +156,16 @@ page 99000813 "Planned Production Order"
         {
             group("O&rder")
             {
-                CaptionML = ENU='O&rder',
-                            ENN='O&rder';
+                CaptionML = ENU = 'O&rder',
+                            ENN = 'O&rder';
                 Image = "Order";
                 action("Co&mments")
                 {
-                    CaptionML = ENU='Co&mments',
-                                ENN='Co&mments';
+                    CaptionML = ENU = 'Co&mments',
+                                ENN = 'Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Prod. Order Comment Sheet";
-                    RunPageLink = Status=FIELD(Status),Prod. Order No.=FIELD(No.);
+                    RunPageLink = Status = FIELD(Status), Prod. Order No.=FIELD(No.);
                 }
                 action(Dimensions)
                 {
@@ -192,7 +192,7 @@ page 99000813 "Planned Production Order"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Production Order Statistics";
-                    RunPageLink = Status=FIELD(Status),No.=FIELD(No.),Date Filter=FIELD(Date Filter);
+                                    RunPageLink = Status=FIELD(Status),No.=FIELD(No.),Date Filter=FIELD(Date Filter);
                     ShortCutKey = 'F7';
                 }
                 separator(Action65)
@@ -393,14 +393,14 @@ page 99000813 "Planned Production Order"
 
     var
         CopyProdOrderDoc : Report "Copy Production Order Document";
-        "Component Date" : Date;
-        "Component Time" : Time;
-        ProdOrderLine : Record "Prod. Order Line";
-        ProdOrderLine2 : Record "Prod. Order Line";
-        ProdOrderLine3 : Record "Prod. Order Line";
-        TempDateTime : DateTime;
-        "Component DateTime" : DateTime;
-        Text001 : Label 'Component Date or Component Time should not be blank.';
+                               "Component Date" : Date;
+                               "Component Time" : Time;
+                               ProdOrderLine : Record "Prod. Order Line";
+                               ProdOrderLine2 : Record "Prod. Order Line";
+                               ProdOrderLine3 : Record "Prod. Order Line";
+                               TempDateTime : DateTime;
+                               "Component DateTime" : DateTime;
+                               Text001 : Label 'Component Date or Component Time should not be blank.';
         ProdOrderRoutingLine : Record "Prod. Order Routing Line";
         ProdOrderRoutingLine2 : Record "Prod. Order Routing Line";
         RunTime : Decimal;

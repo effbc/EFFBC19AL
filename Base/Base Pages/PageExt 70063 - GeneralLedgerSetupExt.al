@@ -6954,7 +6954,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
                 IF ISG1.FINDSET THEN
                     //newly adding on 09-10-2019
                     REPEAT
-                     t3 := t3 + ISG1.Code + '|';
+                        t3 := t3 + ISG1.Code + '|';
                     UNTIL ISG1.NEXT = 0;
                 t2 := DELCHR(t3, '>', '|');
                 //end by vishnu on 09-10-2019

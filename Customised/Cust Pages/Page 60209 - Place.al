@@ -10,11 +10,11 @@ page 60209 Place
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Place Code";"Place Code")
+                field("Place Code"; "Place Code")
                 {
                     Caption = '"Activity "';
                 }
-                field("Place Name";"Place Name")
+                field("Place Name"; "Place Name")
                 {
                     Caption = 'Activity Name';
                 }

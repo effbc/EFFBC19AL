@@ -13,22 +13,22 @@ page 60199 "Posted Material Issue Line"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Unit of Measure Code";"Unit of Measure Code")
+                field("Unit of Measure Code"; "Unit of Measure Code")
                 {
                 }
-                field("Qty. per Unit of Measure";"Qty. per Unit of Measure")
+                field("Qty. per Unit of Measure"; "Qty. per Unit of Measure")
                 {
                 }
-                field("Quantity (Base)";"Quantity (Base)")
+                field("Quantity (Base)"; "Quantity (Base)")
                 {
                 }
             }
@@ -52,10 +52,10 @@ page 60199 "Posted Material Issue Line"
 
                     trigger OnAction();
                     var
-                        PostedMaterialIssueHeader : Record "Posted Material Issues Header";
+                        PostedMaterialIssueHeader: Record "Posted Material Issues Header";
                     begin
                         PostedMaterialIssueHeader.GET("Document No.");
-                        PAGE.RUN(PAGE::"Posted Material Issue",PostedMaterialIssueHeader);
+                        PAGE.RUN(PAGE::"Posted Material Issue", PostedMaterialIssueHeader);
                     end;
                 }
                 action(Dimensions)

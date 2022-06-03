@@ -6,25 +6,25 @@ xmlport 50174 "Inward Data"
     {
         textelement(PurchaseInwardDatas)
         {
-            tableelement("<purchaseinwarddata>";"Purchase Inward Data")
+            tableelement("<purchaseinwarddata>"; "Purchase Inward Data")
             {
                 XmlName = 'PurchaseInwardData';
-                fieldelement(PurchaseOrder;"<PurchaseInwardData>"."Purchase Order")
+                fieldelement(PurchaseOrder; "<PurchaseInwardData>"."Purchase Order")
                 {
                 }
-                fieldelement(PostingDate;"<PurchaseInwardData>"."Posting Date")
+                fieldelement(PostingDate; "<PurchaseInwardData>"."Posting Date")
                 {
                 }
-                fieldelement(LocationCode;"<PurchaseInwardData>"."Location Code")
+                fieldelement(LocationCode; "<PurchaseInwardData>"."Location Code")
                 {
                 }
-                fieldelement(Item;"<PurchaseInwardData>".Item)
+                fieldelement(Item; "<PurchaseInwardData>".Item)
                 {
                 }
-                fieldelement(Qty;"<PurchaseInwardData>".Qty)
+                fieldelement(Qty; "<PurchaseInwardData>".Qty)
                 {
                 }
-                fieldelement(BatchCode;"<PurchaseInwardData>"."Batch Code")
+                fieldelement(BatchCode; "<PurchaseInwardData>"."Batch Code")
                 {
                 }
             }

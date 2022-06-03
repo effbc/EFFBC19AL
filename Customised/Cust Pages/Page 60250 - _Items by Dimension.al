@@ -17,7 +17,7 @@ page 60250 "_Items by Dimension"
             group(Options)
             {
                 Caption = 'Options';
-                field(ShowInTransit;ShowInTransit)
+                field(ShowInTransit; ShowInTransit)
                 {
                     Caption = 'Show Items in Transit';
 
@@ -26,7 +26,7 @@ page 60250 "_Items by Dimension"
                         ShowInTransitOnAfterValidate;
                     end;
                 }
-                field(ShowColumnName;ShowColumnName)
+                field(ShowColumnName; ShowColumnName)
                 {
                     Caption = 'Show Column Name';
 
@@ -39,7 +39,7 @@ page 60250 "_Items by Dimension"
             group("Matrix Options")
             {
                 Caption = 'Matrix Options';
-                field(MATRIX_CaptionRange;MATRIX_CaptionRange)
+                field(MATRIX_CaptionRange; MATRIX_CaptionRange)
                 {
                     Caption = 'Column Set';
                     Editable = false;
@@ -62,9 +62,9 @@ page 60250 "_Items by Dimension"
 
                 trigger OnAction();
                 var
-                    ItemsByDimensionMatrix : Page "Items by Dimension Matrix";
+                    ItemsByDimensionMatrix: Page "Items by Dimension Matrix";
                 begin
-                    ItemsByDimensionMatrix.Load(MATRIX_CaptionSet,MatrixRecords,MatrixRecord);
+                    ItemsByDimensionMatrix.Load(MATRIX_CaptionSet, MatrixRecords, MatrixRecord);
                     ItemsByDimensionMatrix.RUNMODAL;
                 end;
             }
@@ -105,26 +105,26 @@ page 60250 "_Items by Dimension"
     end;
 
     var
-        MatrixRecord : Record "Dimension Value";
-        MatrixRecords : array [32] of Record "Dimension Value";
-        MatrixRecordRef : RecordRef;
-        MATRIX_SetWanted : Option Initial,Previous,Same,Next;
-        ShowColumnName : Boolean;
-        ShowInTransit : Boolean;
-        MATRIX_CaptionSet : array [32] of Text[1024];
-        MATRIX_CaptionRange : Text[100];
-        MATRIX_PKFirstRecInCurrSet : Text[100];
-        MATRIX_CurrSetLength : Integer;
+        MatrixRecord: Record "Dimension Value";
+        MatrixRecords: array[32] of Record "Dimension Value";
+        MatrixRecordRef: RecordRef;
+        MATRIX_SetWanted: Option Initial,Previous,Same,Next;
+        ShowColumnName: Boolean;
+        ShowInTransit: Boolean;
+        MATRIX_CaptionSet: array[32] of Text[1024];
+        MATRIX_CaptionRange: Text[100];
+        MATRIX_PKFirstRecInCurrSet: Text[100];
+        MATRIX_CurrSetLength: Integer;
 
     [LineStart(20426)]
-    procedure SetColumns(SetWanted : Option Initial,Previous,Same,Next);
+    procedure SetColumns(SetWanted: Option Initial,Previous,Same,Next);
     var
-        MatrixMgt : Codeunit "Matrix Management";
-        CaptionFieldNo : Integer;
-        CurrentMatrixRecordOrdinal : Integer;
+        MatrixMgt: Codeunit "Matrix Management";
+        CaptionFieldNo: Integer;
+        CurrentMatrixRecordOrdinal: Integer;
     begin
         //MatrixRecord.SETRANGE("Use As In-Transit",ShowInTransit);
-        MatrixRecord.SETRANGE("Dimension Code",'Locations');
+        MatrixRecord.SETRANGE("Dimension Code", 'Locations');
         CLEAR(MATRIX_CaptionSet);
         CLEAR(MatrixRecords);
         CurrentMatrixRecordOrdinal := 1;
@@ -133,20 +133,20 @@ page 60250 "_Items by Dimension"
         MatrixRecordRef.SETTABLE(MatrixRecord);
 
         IF ShowColumnName THEN
-          CaptionFieldNo := MatrixRecord.FIELDNO(Name)
+            CaptionFieldNo := MatrixRecord.FIELDNO(Name)
         ELSE
-          CaptionFieldNo := MatrixRecord.FIELDNO(Code);
+            CaptionFieldNo := MatrixRecord.FIELDNO(Code);
 
-        MatrixMgt.GenerateMatrixData(MatrixRecordRef,SetWanted,ARRAYLEN(MatrixRecords),CaptionFieldNo,MATRIX_PKFirstRecInCurrSet,
-          MATRIX_CaptionSet,MATRIX_CaptionRange,MATRIX_CurrSetLength);
+        MatrixMgt.GenerateMatrixData(MatrixRecordRef, SetWanted, ARRAYLEN(MatrixRecords), CaptionFieldNo, MATRIX_PKFirstRecInCurrSet,
+          MATRIX_CaptionSet, MATRIX_CaptionRange, MATRIX_CurrSetLength);
 
         IF MATRIX_CurrSetLength > 0 THEN BEGIN
-          MatrixRecord.SETPOSITION(MATRIX_PKFirstRecInCurrSet);
-          MatrixRecord.FIND;
-          REPEAT
-            MatrixRecords[CurrentMatrixRecordOrdinal].COPY(MatrixRecord);
-            CurrentMatrixRecordOrdinal := CurrentMatrixRecordOrdinal + 1;
-          UNTIL (CurrentMatrixRecordOrdinal > MATRIX_CurrSetLength) OR (MatrixRecord.NEXT <> 1);
+            MatrixRecord.SETPOSITION(MATRIX_PKFirstRecInCurrSet);
+            MatrixRecord.FIND;
+            REPEAT
+                MatrixRecords[CurrentMatrixRecordOrdinal].COPY(MatrixRecord);
+                CurrentMatrixRecordOrdinal := CurrentMatrixRecordOrdinal + 1;
+            UNTIL (CurrentMatrixRecordOrdinal > MATRIX_CurrSetLength) OR (MatrixRecord.NEXT <> 1);
         END;
     end;
 

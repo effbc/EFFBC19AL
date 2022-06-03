@@ -7,9 +7,9 @@ report 50135 jvvatbills
 
     dataset
     {
-        dataitem("G/L Entry";"G/L Entry")
+        dataitem("G/L Entry"; "G/L Entry")
         {
-            DataItemTableView = SORTING(G/L Account No.,Posting Date) ORDER(Ascending) WHERE(G/L Account No.=FILTER(23800|23801|23802),Amount=FILTER(>0));
+            DataItemTableView = SORTING(G/L Account No., Posting Date) ORDER(Ascending) WHERE(G/L Account No.=FILTER(23800|23801|23802),Amount=FILTER(>0));
             RequestFilterFields = "Global Dimension 1 Code";
             column(GLvatper;GLvatper)
             {

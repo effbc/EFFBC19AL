@@ -15,82 +15,82 @@ page 60184 "Negative Adjustments"
     {
         area(content)
         {
-            field(CurrentJnlBatchName;CurrentJnlBatchName)
+            field(CurrentJnlBatchName; CurrentJnlBatchName)
             {
                 Caption = 'Batch Name';
                 Lookup = true;
 
-                trigger OnLookup(Text : Text) : Boolean;
+                trigger OnLookup(Text: Text): Boolean;
                 begin
                     CurrPage.SAVERECORD;
-                    ItemJnlMgt.LookupName(CurrentJnlBatchName,Rec);
+                    ItemJnlMgt.LookupName(CurrentJnlBatchName, Rec);
                     CurrPage.UPDATE(FALSE);
                 end;
 
                 trigger OnValidate();
                 begin
-                    ItemJnlMgt.CheckName(CurrentJnlBatchName,Rec);
-                      CurrentJnlBatchNameOnAfterVali;
+                    ItemJnlMgt.CheckName(CurrentJnlBatchName, Rec);
+                    CurrentJnlBatchNameOnAfterVali;
                 end;
             }
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("Document Date";"Document Date")
+                field("Document Date"; "Document Date")
                 {
                     Visible = false;
                 }
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
 
                     trigger OnValidate();
                     begin
-                        ItemJnlMgt.GetItem("Item No.",ItemDescription);
+                        ItemJnlMgt.GetItem("Item No.", ItemDescription);
                         ShowShortcutDimCode(ShortcutDimCode);
                     end;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
-                field("Reason Code";"Reason Code")
+                field("Reason Code"; "Reason Code")
                 {
                 }
-                field("Location Code";"Location Code")
+                field("Location Code"; "Location Code")
                 {
                     Visible = true;
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field("Unit of Measure Code";"Unit of Measure Code")
+                field("Unit of Measure Code"; "Unit of Measure Code")
                 {
                 }
-                field("Unit Amount";"Unit Amount")
+                field("Unit Amount"; "Unit Amount")
                 {
                 }
-                field(Amount;Amount)
+                field(Amount; Amount)
                 {
                 }
-                field("Unit Cost";"Unit Cost")
+                field("Unit Cost"; "Unit Cost")
                 {
                 }
-                field("Applies-to Entry";"Applies-to Entry")
+                field("Applies-to Entry"; "Applies-to Entry")
                 {
                 }
             }
             group(Control22)
             {
                 ShowCaption = false;
-                field(ItemDescription;ItemDescription)
+                field(ItemDescription; ItemDescription)
                 {
                     Caption = 'Item Description';
                     Editable = false;
@@ -138,7 +138,7 @@ page 60184 "Negative Adjustments"
                     Caption = 'Card';
                     Image = Card;
                     RunObject = Page "Item Card";
-                    RunPageLink = No.=FIELD(Item No.);
+                                    RunPageLink = No.=FIELD(Item No.);
                     ShortCutKey = 'Shift+F5';
                 }
                 action("Ledger E&ntries")
@@ -146,7 +146,7 @@ page 60184 "Negative Adjustments"
                     Caption = 'Ledger E&ntries';
                     Image = LedgerEntries;
                     RunObject = Page "Item Ledger Entries";
-                    RunPageLink = Item No.=FIELD(Item No.);
+                                    RunPageLink = Item No.=FIELD(Item No.);
                     RunPageView = SORTING(Item No.);
                     ShortCutKey = 'Ctrl+F5';
                 }
@@ -291,18 +291,18 @@ page 60184 "Negative Adjustments"
         ItemJnlMgt : Codeunit ItemJnlManagement;
         ReportPrint : Codeunit "Test Report-Print";
         CalcWhseAdjmt : Report "Calculate Whse. Adjustment";
-        CurrentJnlBatchName : Code[10];
-        ItemDescription : Text[50];
-        ShortcutDimCode : array [8] of Code[20];
-        "---B2B------" : Integer;
-        NegAdjItemJnlLine : Record "Item Journal Line";
-        item : Record Item;
+                            CurrentJnlBatchName : Code[10];
+                            ItemDescription : Text[50];
+                            ShortcutDimCode : array [8] of Code[20];
+                            "---B2B------" : Integer;
+                            NegAdjItemJnlLine : Record "Item Journal Line";
+                            item : Record Item;
 
     [LineStart(14939)]
     local procedure CurrentJnlBatchNameOnAfterVali();
     begin
         CurrPage.SAVERECORD;
-        ItemJnlMgt.SetName(CurrentJnlBatchName,Rec);
+        ItemJnlMgt.SetName(CurrentJnlBatchName, Rec);
         CurrPage.UPDATE(FALSE);
     end;
 
@@ -310,7 +310,7 @@ page 60184 "Negative Adjustments"
     local procedure OnAfterGetCurrRecord();
     begin
         xRec := Rec;
-        ItemJnlMgt.GetItem("Item No.",ItemDescription);
+        ItemJnlMgt.GetItem("Item No.", ItemDescription);
     end;
 }
 

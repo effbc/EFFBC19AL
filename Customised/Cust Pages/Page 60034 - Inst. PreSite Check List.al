@@ -13,13 +13,13 @@ page 60034 "Inst. PreSite Check List"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Pre Site Parameter";"Pre Site Parameter")
+                field("Pre Site Parameter"; "Pre Site Parameter")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
             }

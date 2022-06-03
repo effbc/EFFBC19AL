@@ -5,7 +5,7 @@ report 50203 "Dimension posting"
 
     dataset
     {
-        dataitem("G/L Entry";"G/L Entry")
+        dataitem("G/L Entry"; "G/L Entry")
         {
             DataItemTableView = SORTING(Entry No.) ORDER(Ascending) WHERE(Global Dimension 1 Code=FILTER(''));
             column(G_L_Entry__Entry_No__;"Entry No.")

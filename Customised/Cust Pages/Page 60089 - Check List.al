@@ -13,13 +13,13 @@ page 60089 "Check List"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field(Parameter;Parameter)
+                field(Parameter; Parameter)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
             }

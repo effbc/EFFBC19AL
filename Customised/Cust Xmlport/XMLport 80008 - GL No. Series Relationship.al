@@ -6,16 +6,16 @@ xmlport 80008 "G/L No. Series Relationship"
     {
         textelement(NoSeriesRelationships)
         {
-            tableelement("<noseriesrelationship>";"No. Series Relationship")
+            tableelement("<noseriesrelationship>"; "No. Series Relationship")
             {
                 XmlName = 'NoSeriesRelationship';
-                fieldelement(Code;"<NoSeriesRelationship>".Code)
+                fieldelement(Code; "<NoSeriesRelationship>".Code)
                 {
                 }
-                fieldelement(SeriesCode;"<NoSeriesRelationship>"."Series Code")
+                fieldelement(SeriesCode; "<NoSeriesRelationship>"."Series Code")
                 {
                 }
-                fieldelement(SeriesDescription;"<NoSeriesRelationship>"."Series Description")
+                fieldelement(SeriesDescription; "<NoSeriesRelationship>"."Series Description")
                 {
                 }
             }

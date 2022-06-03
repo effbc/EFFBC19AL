@@ -7,9 +7,9 @@ report 50000 "summary sales"
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
-            DataItemTableView = SORTING(Document Type,No.) ORDER(Ascending) WHERE(Order Status=FILTER(<>Temporary Close));
+            DataItemTableView = SORTING(Document Type, No.) ORDER(Ascending) WHERE(Order Status=FILTER(<>Temporary Close));
             column(yeardetails;yeardetails)
             {
             }

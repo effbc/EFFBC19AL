@@ -5,9 +5,9 @@ report 60006 "purchase report"
 
     dataset
     {
-        dataitem("Sales Line";"Sales Line")
+        dataitem("Sales Line"; "Sales Line")
         {
-            DataItemTableView = WHERE(Type=CONST(Item),Document Type=CONST(Order),Qty. to Invoice=FILTER(>0),Posting Group=CONST(BOI));
+            DataItemTableView = WHERE(Type = CONST(Item), Document Type=CONST(Order),Qty. to Invoice=FILTER(>0),Posting Group=CONST(BOI));
             column(Sales_Line__Document_No__;"Document No.")
             {
             }

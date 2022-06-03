@@ -2,8 +2,8 @@ page 99000815 "Production Order List"
 {
     // version NAVW19.00.00.45778,REV01
 
-    CaptionML = ENU='Production Order List',
-                ENN='Production Order List';
+    CaptionML = ENU = 'Production Order List',
+                ENN = 'Production Order List';
     CardPageID = "Released Production Order";
     DataCaptionFields = Status;
     Editable = false;
@@ -15,7 +15,7 @@ page 99000815 "Production Order List"
     {
         area(content)
         {
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
                 Style = Strong;
                 StyleExpr = TRUE;
@@ -23,53 +23,49 @@ page 99000815 "Production Order List"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Editable = true;
                     Lookup = false;
                     Style = StrongAccent;
                     StyleExpr = "No.Emphasize";
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Creation Date";"Creation Date")
+                field("Creation Date"; "Creation Date")
                 {
                 }
-                field("Prod Start date";"Prod Start date")
+                field("Prod Start date"; "Prod Start date")
                 {
 
                     trigger OnValidate();
                     begin
                         IF item.GET("Source No.") THEN
-                          item.TESTFIELD(item."No.of Units");
-                        
-                        IF "Prod Start date">0D THEN
-                        BEGIN
-                         /* IF (Planned_Units("Prod Start date")>10) AND (Planned_Units("Prod Start date")<12) THEN
-                            MESSAGE('YOU ARE EXCEEDING THE 10 UNITS PLAN ON '+FORMAT("Prod Start date"))
-                          ELSE IF (Planned_Units("Prod Start date")>16) THEN
-                            ERROR('YOU ARE EXCEEDING THE 16 UNITS PLAN ON '+FORMAT("Prod Start date"));*/
-                        
-                        "Prod. Order Component".SETRANGE("Prod. Order Component"."Prod. Order No.","No.");
-                        IF "Prod. Order Component".FINDSET THEN
-                        BEGIN
-                          "Prod. Order Component".MODIFYALL("Prod. Order Component"."Production Plan Date","Prod Start date")
-                        END ELSE
-                        ERROR('PLEASE REFRESH THE PRODUCTION ORDER PROPERLY');
-                        END ELSE
-                        BEGIN
-                          "Prod. Order Component".SETRANGE("Prod. Order Component"."Prod. Order No.","No.");
-                          IF "Prod. Order Component".FINDSET THEN
-                          BEGIN
-                            "Prod. Order Component".MODIFYALL("Prod. Order Component"."Production Plan Date","Prod Start date")
-                          END;
+                            item.TESTFIELD(item."No.of Units");
+
+                        IF "Prod Start date" > 0D THEN BEGIN
+                            /* IF (Planned_Units("Prod Start date")>10) AND (Planned_Units("Prod Start date")<12) THEN
+                               MESSAGE('YOU ARE EXCEEDING THE 10 UNITS PLAN ON '+FORMAT("Prod Start date"))
+                             ELSE IF (Planned_Units("Prod Start date")>16) THEN
+                               ERROR('YOU ARE EXCEEDING THE 16 UNITS PLAN ON '+FORMAT("Prod Start date"));*/
+
+                            "Prod. Order Component".SETRANGE("Prod. Order Component"."Prod. Order No.", "No.");
+                            IF "Prod. Order Component".FINDSET THEN BEGIN
+                                "Prod. Order Component".MODIFYALL("Prod. Order Component"."Production Plan Date", "Prod Start date")
+                            END ELSE
+                                ERROR('PLEASE REFRESH THE PRODUCTION ORDER PROPERLY');
+                        END ELSE BEGIN
+                            "Prod. Order Component".SETRANGE("Prod. Order Component"."Prod. Order No.", "No.");
+                            IF "Prod. Order Component".FINDSET THEN BEGIN
+                                "Prod. Order Component".MODIFYALL("Prod. Order Component"."Production Plan Date", "Prod Start date")
+                            END;
                         END;
-                        
-                        
-                        
-                        
-                        
+
+
+
+
+
                         /*IF item.GET("Source No.") THEN
                           item.TESTFIELD(item."No.of Units");
                         
@@ -105,234 +101,234 @@ page 99000815 "Production Order List"
 
                     end;
                 }
-                field("Planned Dispatch Date";"Planned Dispatch Date")
+                field("Planned Dispatch Date"; "Planned Dispatch Date")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Search Description";"Search Description")
+                field("Search Description"; "Search Description")
                 {
                 }
-                field("Description 2";"Description 2")
+                field("Description 2"; "Description 2")
                 {
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("Last Date Modified"; "Last Date Modified")
                 {
                 }
-                field("Source Type";"Source Type")
+                field("Source Type"; "Source Type")
                 {
                 }
-                field("Source No.";"Source No.")
+                field("Source No."; "Source No.")
                 {
                 }
-                field("Routing No.";"Routing No.")
+                field("Routing No."; "Routing No.")
                 {
                 }
-                field("Inventory Posting Group";"Inventory Posting Group")
+                field("Inventory Posting Group"; "Inventory Posting Group")
                 {
                 }
-                field("Gen. Prod. Posting Group";"Gen. Prod. Posting Group")
+                field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
                 {
                 }
-                field("Gen. Bus. Posting Group";"Gen. Bus. Posting Group")
+                field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
                 {
                 }
-                field(Comment;Comment)
+                field(Comment; Comment)
                 {
                 }
-                field("Starting Time";"Starting Time")
+                field("Starting Time"; "Starting Time")
                 {
                 }
-                field("Starting Date";"Starting Date")
+                field("Starting Date"; "Starting Date")
                 {
                 }
-                field("Ending Time";"Ending Time")
+                field("Ending Time"; "Ending Time")
                 {
                 }
-                field("Ending Date";"Ending Date")
+                field("Ending Date"; "Ending Date")
                 {
                 }
-                field("Due Date";"Due Date")
+                field("Due Date"; "Due Date")
                 {
                 }
-                field("Finished Date";"Finished Date")
+                field("Finished Date"; "Finished Date")
                 {
                 }
-                field(Blocked;Blocked)
+                field(Blocked; Blocked)
                 {
                 }
-                field("Shortcut Dimension 1 Code";"Shortcut Dimension 1 Code")
+                field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
                 {
                 }
-                field("Shortcut Dimension 2 Code";"Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
                 {
                 }
-                field("Location Code";"Location Code")
+                field("Location Code"; "Location Code")
                 {
                 }
-                field("Bin Code";"Bin Code")
+                field("Bin Code"; "Bin Code")
                 {
                 }
-                field("Replan Ref. No.";"Replan Ref. No.")
+                field("Replan Ref. No."; "Replan Ref. No.")
                 {
                 }
-                field("Replan Ref. Status";"Replan Ref. Status")
+                field("Replan Ref. Status"; "Replan Ref. Status")
                 {
                 }
-                field("Low-Level Code";"Low-Level Code")
+                field("Low-Level Code"; "Low-Level Code")
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field("Unit Cost";"Unit Cost")
+                field("Unit Cost"; "Unit Cost")
                 {
                 }
-                field("Cost Amount";"Cost Amount")
+                field("Cost Amount"; "Cost Amount")
                 {
                 }
-                field("Work Center Filter";"Work Center Filter")
+                field("Work Center Filter"; "Work Center Filter")
                 {
                 }
-                field("Capacity Type Filter";"Capacity Type Filter")
+                field("Capacity Type Filter"; "Capacity Type Filter")
                 {
                 }
-                field("Capacity No. Filter";"Capacity No. Filter")
+                field("Capacity No. Filter"; "Capacity No. Filter")
                 {
                 }
-                field("Date Filter";"Date Filter")
+                field("Date Filter"; "Date Filter")
                 {
                 }
-                field("Expected Operation Cost Amt.";"Expected Operation Cost Amt.")
+                field("Expected Operation Cost Amt."; "Expected Operation Cost Amt.")
                 {
                 }
-                field("Expected Component Cost Amt.";"Expected Component Cost Amt.")
+                field("Expected Component Cost Amt."; "Expected Component Cost Amt.")
                 {
                 }
-                field("Actual Time Used";"Actual Time Used")
+                field("Actual Time Used"; "Actual Time Used")
                 {
                 }
-                field("Allocated Capacity Need";"Allocated Capacity Need")
+                field("Allocated Capacity Need"; "Allocated Capacity Need")
                 {
                 }
-                field("Expected Capacity Need";"Expected Capacity Need")
+                field("Expected Capacity Need"; "Expected Capacity Need")
                 {
                 }
-                field("No. Series";"No. Series")
+                field("No. Series"; "No. Series")
                 {
                 }
-                field("Planned Order No.";"Planned Order No.")
+                field("Planned Order No."; "Planned Order No.")
                 {
                 }
-                field("Firm Planned Order No.";"Firm Planned Order No.")
+                field("Firm Planned Order No."; "Firm Planned Order No.")
                 {
                 }
-                field("Simulated Order No.";"Simulated Order No.")
+                field("Simulated Order No."; "Simulated Order No.")
                 {
                 }
-                field("Expected Material Ovhd. Cost";"Expected Material Ovhd. Cost")
+                field("Expected Material Ovhd. Cost"; "Expected Material Ovhd. Cost")
                 {
                 }
-                field("Expected Capacity Ovhd. Cost";"Expected Capacity Ovhd. Cost")
+                field("Expected Capacity Ovhd. Cost"; "Expected Capacity Ovhd. Cost")
                 {
                 }
-                field("Starting Date-Time";"Starting Date-Time")
+                field("Starting Date-Time"; "Starting Date-Time")
                 {
                 }
-                field("Ending Date-Time";"Ending Date-Time")
+                field("Ending Date-Time"; "Ending Date-Time")
                 {
                 }
-                field("Completely Picked";"Completely Picked")
+                field("Completely Picked"; "Completely Picked")
                 {
                 }
-                field("Assigned User ID";"Assigned User ID")
+                field("Assigned User ID"; "Assigned User ID")
                 {
                 }
-                field("Sales Order No.";"Sales Order No.")
+                field("Sales Order No."; "Sales Order No.")
                 {
                 }
-                field("Sales Order Line No.";"Sales Order Line No.")
+                field("Sales Order Line No."; "Sales Order Line No.")
                 {
                 }
-                field("Item Sub Group Code";"Item Sub Group Code")
+                field("Item Sub Group Code"; "Item Sub Group Code")
                 {
                 }
-                field("Product Group Code";"Product Group Code")
+                field("Product Group Code"; "Product Group Code")
                 {
                 }
-                field(Week;Week)
+                field(Week; Week)
                 {
                 }
-                field(Customer;Customer)
+                field(Customer; Customer)
                 {
                 }
-                field("Shortage Verified";"Shortage Verified")
+                field("Shortage Verified"; "Shortage Verified")
                 {
                 }
-                field("Shortage Items";"Shortage Items")
+                field("Shortage Items"; "Shortage Items")
                 {
                 }
-                field("Schedule Line No.";"Schedule Line No.")
+                field("Schedule Line No."; "Schedule Line No.")
                 {
                 }
-                field("Service Order No.";"Service Order No.")
+                field("Service Order No."; "Service Order No.")
                 {
                 }
-                field("Change Status";"Change Status")
+                field("Change Status"; "Change Status")
                 {
                 }
-                field(RefreshProdTime;RefreshProdTime)
+                field(RefreshProdTime; RefreshProdTime)
                 {
                 }
-                field(Refreshdate;Refreshdate)
+                field(Refreshdate; Refreshdate)
                 {
                 }
-                field(StatusTemp;StatusTemp)
+                field(StatusTemp; StatusTemp)
                 {
                 }
-                field("Production Order Status";"Production Order Status")
+                field("Production Order Status"; "Production Order Status")
                 {
                 }
-                field("Work.MesurInUnits(ASM)";"Work.MesurInUnits(ASM)")
+                field("Work.MesurInUnits(ASM)"; "Work.MesurInUnits(ASM)")
                 {
                 }
-                field("Work.MesurInUnits(TST)";"Work.MesurInUnits(TST)")
+                field("Work.MesurInUnits(TST)"; "Work.MesurInUnits(TST)")
                 {
                 }
-                field("Work.MesurInUnits(SHF)";"Work.MesurInUnits(SHF)")
+                field("Work.MesurInUnits(SHF)"; "Work.MesurInUnits(SHF)")
                 {
                 }
-                field("Total Unts";"Total Unts")
+                field("Total Unts"; "Total Unts")
                 {
                 }
-                field("User Id";"User Id")
+                field("User Id"; "User Id")
                 {
                 }
-                field("Plan Shifting Date";"Plan Shifting Date")
+                field("Plan Shifting Date"; "Plan Shifting Date")
                 {
                 }
-                field("Change To Specified Plan Date";"Change To Specified Plan Date")
+                field("Change To Specified Plan Date"; "Change To Specified Plan Date")
                 {
                 }
-                field("No. Of Shortage Items";"No. Of Shortage Items")
+                field("No. Of Shortage Items"; "No. Of Shortage Items")
                 {
                 }
-                field("Virtual Production Start Date";"Virtual Production Start Date")
+                field("Virtual Production Start Date"; "Virtual Production Start Date")
                 {
                 }
-                field("Suppose to Plan";"Suppose to Plan")
+                field("Suppose to Plan"; "Suppose to Plan")
                 {
                 }
             }
         }
         area(factboxes)
         {
-            systempart(Control1900383207;Links)
+            systempart(Control1900383207; Links)
             {
                 Visible = false;
             }
-            systempart(Control1905767507;Notes)
+            systempart(Control1905767507; Notes)
             {
                 Visible = false;
             }
@@ -345,41 +341,41 @@ page 99000815 "Production Order List"
         {
             group("Pro&d. Order")
             {
-                CaptionML = ENU='Pro&d. Order',
-                            ENN='Pro&d. Order';
+                CaptionML = ENU = 'Pro&d. Order',
+                            ENN = 'Pro&d. Order';
                 Image = "Order";
                 action(Card)
                 {
-                    CaptionML = ENU='Card',
-                                ENN='Card';
+                    CaptionML = ENU = 'Card',
+                                ENN = 'Card';
                     Image = EditLines;
                     ShortCutKey = 'Shift+F7';
 
                     trigger OnAction();
                     begin
                         CASE Status OF
-                          Status::Simulated:
-                            PAGE.RUN(PAGE::"Simulated Production Order",Rec);
-                          Status::Planned:
-                            PAGE.RUN(PAGE::"Planned Production Order",Rec);
-                          Status::"Firm Planned":
-                            PAGE.RUN(PAGE::"Firm Planned Prod. Order",Rec);
-                          Status::Released:
-                            PAGE.RUN(PAGE::"Released Production Order",Rec);
-                          Status::Finished:
-                            PAGE.RUN(PAGE::"Finished Production Order",Rec);
+                            Status::Simulated:
+                                PAGE.RUN(PAGE::"Simulated Production Order", Rec);
+                            Status::Planned:
+                                PAGE.RUN(PAGE::"Planned Production Order", Rec);
+                            Status::"Firm Planned":
+                                PAGE.RUN(PAGE::"Firm Planned Prod. Order", Rec);
+                            Status::Released:
+                                PAGE.RUN(PAGE::"Released Production Order", Rec);
+                            Status::Finished:
+                                PAGE.RUN(PAGE::"Finished Production Order", Rec);
                         END;
                     end;
                 }
                 group("E&ntries")
                 {
-                    CaptionML = ENU='E&ntries',
-                                ENN='E&ntries';
+                    CaptionML = ENU = 'E&ntries',
+                                ENN = 'E&ntries';
                     Image = Entries;
                     action("Item Ledger E&ntries")
                     {
-                        CaptionML = ENU='Item Ledger E&ntries',
-                                    ENN='Item Ledger E&ntries';
+                        CaptionML = ENU = 'Item Ledger E&ntries',
+                                    ENN = 'Item Ledger E&ntries';
                         Image = ItemLedger;
                         RunObject = Page "Item Ledger Entries";
                         RunPageLink = Order Type=CONST(Production),Order No.=FIELD(No.);
@@ -392,7 +388,7 @@ page 99000815 "Production Order List"
                                     ENN='Capacity Ledger Entries';
                         Image = CapacityLedger;
                         RunObject = Page "Capacity Ledger Entries";
-                        RunPageLink = Order Type=CONST(Production),Order No.=FIELD(No.);
+                                        RunPageLink = Order Type=CONST(Production),Order No.=FIELD(No.);
                         RunPageView = SORTING(Order Type,Order No.);
                     }
                     action("Value Entries")
@@ -401,7 +397,7 @@ page 99000815 "Production Order List"
                                     ENN='Value Entries';
                         Image = ValueLedger;
                         RunObject = Page "Value Entries";
-                        RunPageLink = Order Type=CONST(Production),Order No.=FIELD(No.);
+                                        RunPageLink = Order Type=CONST(Production),Order No.=FIELD(No.);
                         RunPageView = SORTING(Order Type,Order No.);
                     }
                     action("&Warehouse Entries")
@@ -410,7 +406,7 @@ page 99000815 "Production Order List"
                                     ENN='&Warehouse Entries';
                         Image = BinLedger;
                         RunObject = Page "Warehouse Entries";
-                        RunPageLink = Source Type=FILTER(83|5407),Source Subtype=FILTER(3|4|5),Source No.=FIELD(No.);
+                                        RunPageLink = Source Type=FILTER(83|5407),Source Subtype=FILTER(3|4|5),Source No.=FIELD(No.);
                         RunPageView = SORTING(Source Type,Source Subtype,Source No.);
                     }
                 }
@@ -420,7 +416,7 @@ page 99000815 "Production Order List"
                                 ENN='Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Prod. Order Comment Sheet";
-                    RunPageLink = Status=FIELD(Status),Prod. Order No.=FIELD(No.);
+                                    RunPageLink = Status=FIELD(Status),Prod. Order No.=FIELD(No.);
                 }
                 action(Dimensions)
                 {
@@ -447,7 +443,7 @@ page 99000815 "Production Order List"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Production Order Statistics";
-                    RunPageLink = Status=FIELD(Status),No.=FIELD(No.),Date Filter=FIELD(Date Filter);
+                                    RunPageLink = Status=FIELD(Status),No.=FIELD(No.),Date Filter=FIELD(Date Filter);
                     ShortCutKey = 'F7';
                 }
                 action("Change the Plan")

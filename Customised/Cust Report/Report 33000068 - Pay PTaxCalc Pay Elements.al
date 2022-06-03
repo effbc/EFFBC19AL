@@ -7,7 +7,7 @@ report 33000068 "Pay PTaxCalc Pay Elements"
 
     dataset
     {
-        dataitem(Employee;Employee)
+        dataitem(Employee; Employee)
         {
             RequestFilterFields = "No.";
         }
@@ -32,8 +32,8 @@ report 33000068 "Pay PTaxCalc Pay Elements"
     trigger OnPostReport();
     begin
         //ImportingTaxElements.TaxSalariesUpdation(AYID, Employee.GETFILTER("No."))
-        PayProfessionalTaxCalculation."Professional Tax Cal Pro"(PayYear.ID,AYID,State,Employee.GETFILTER("No."));
-        
+        PayProfessionalTaxCalculation."Professional Tax Cal Pro"(PayYear.ID, AYID, State, Employee.GETFILTER("No."));
+
         /*
         PayYear.RESET;
         PayYear.SETRANGE(PayYear.Type,3);
@@ -53,12 +53,12 @@ report 33000068 "Pay PTaxCalc Pay Elements"
     end;
 
     var
-        AYID : Integer;
-        AYStartDate : Date;
-        AYEndDate : Date;
-        PayYear : Record "Pay Year";
-        PayProfessionalTaxCalculation : Codeunit "Pay ProfessionalTaxCalculation";
-        Text000 : Label 'Required Assessment Year';
-        State : Code[20];
+        AYID: Integer;
+        AYStartDate: Date;
+        AYEndDate: Date;
+        PayYear: Record "Pay Year";
+        PayProfessionalTaxCalculation: Codeunit "Pay ProfessionalTaxCalculation";
+        Text000: Label 'Required Assessment Year';
+        State: Code[20];
 }
 

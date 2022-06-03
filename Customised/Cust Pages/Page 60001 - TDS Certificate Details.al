@@ -13,40 +13,40 @@ page 60001 "TDS Certificate Details"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Entry No.";"Entry No.")
+                field("Entry No."; "Entry No.")
                 {
                 }
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                 }
-                field("Document Type";"Document Type")
+                field("Document Type"; "Document Type")
                 {
                 }
-                field("Customer Acc.No.";"Customer Acc.No.")
+                field("Customer Acc.No."; "Customer Acc.No.")
                 {
                 }
-                field("Invoice No.";"Invoice No.")
+                field("Invoice No."; "Invoice No.")
                 {
                 }
-                field("TDS / Work Tax Amount";"TDS / Work Tax Amount")
+                field("TDS / Work Tax Amount"; "TDS / Work Tax Amount")
                 {
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("TDS Certificate No.";"TDS Certificate No.")
+                field("TDS Certificate No."; "TDS Certificate No.")
                 {
                 }
-                field("Certificate Date";"Certificate Date")
+                field("Certificate Date"; "Certificate Date")
                 {
                 }
-                field("Receipt Date";"Receipt Date")
+                field("Receipt Date"; "Receipt Date")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field(Type;Type)
+                field(Type; Type)
                 {
                 }
             }

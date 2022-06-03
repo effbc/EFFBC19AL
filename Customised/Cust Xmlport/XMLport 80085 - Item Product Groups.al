@@ -6,16 +6,16 @@ xmlport 80085 "Item Product Groups"
     {
         textelement(ProductGroups)
         {
-            tableelement("<productgroup>";"Product Group")
+            tableelement("<productgroup>"; "Product Group")
             {
                 XmlName = 'ProductGroup';
-                fieldelement(ItemCategoryCode;"<ProductGroup>"."Item Category Code")
+                fieldelement(ItemCategoryCode; "<ProductGroup>"."Item Category Code")
                 {
                 }
-                fieldelement(Code;"<ProductGroup>".Code)
+                fieldelement(Code; "<ProductGroup>".Code)
                 {
                 }
-                fieldelement(Description;"<ProductGroup>".Description)
+                fieldelement(Description; "<ProductGroup>".Description)
                 {
                 }
             }

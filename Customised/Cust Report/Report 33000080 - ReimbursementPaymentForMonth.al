@@ -2,7 +2,7 @@ report 33000080 ReimbursementPaymentForMonth
 {
     // version NEOGYNPAY13.70.00.06
 
-    Permissions = TableData "Pay Employee Elements"=m;
+    Permissions = TableData "Pay Employee Elements" = m;
     ProcessingOnly = true;
 
     dataset
@@ -31,11 +31,11 @@ report 33000080 ReimbursementPaymentForMonth
     end;
 
     var
-        PayEmployeeElements : Record "Pay Employee Elements";
-        PaymentForTheMonth : Decimal;
+        PayEmployeeElements: Record "Pay Employee Elements";
+        PaymentForTheMonth: Decimal;
 
     [LineStart(21009)]
-    procedure InitializationRecord(var Rec : Record "Pay Employee Elements");
+    procedure InitializationRecord(var Rec: Record "Pay Employee Elements");
     begin
         PayEmployeeElements.COPY(Rec);
         PaymentForTheMonth := PayEmployeeElements."Payment for Month";
@@ -45,7 +45,7 @@ report 33000080 ReimbursementPaymentForMonth
     procedure Modification();
     begin
         //Modification
-        PayEmployeeElements.VALIDATE("Payment for Month",PaymentForTheMonth);
+        PayEmployeeElements.VALIDATE("Payment for Month", PaymentForTheMonth);
         PayEmployeeElements.MODIFY;
     end;
 }

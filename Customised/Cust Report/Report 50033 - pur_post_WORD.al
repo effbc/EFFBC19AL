@@ -5,35 +5,35 @@ report 50033 pur_post_WORD
 
     dataset
     {
-        dataitem("Purch. Inv. Header";"Purch. Inv. Header")
+        dataitem("Purch. Inv. Header"; "Purch. Inv. Header")
         {
             MaxIteration = 1;
             RequestFilterFields = "No.";
-            column(VendorInvoiceNo;"Purch. Inv. Header"."Vendor Invoice No.")
+            column(VendorInvoiceNo; "Purch. Inv. Header"."Vendor Invoice No.")
             {
             }
-            column(VendorInvoicDate;"Purch. Inv. Header"."Vendor Invoice Date")
+            column(VendorInvoicDate; "Purch. Inv. Header"."Vendor Invoice Date")
             {
             }
-            column(BuyfromVendorName;"Purch. Inv. Header"."Buy-from Vendor Name")
+            column(BuyfromVendorName; "Purch. Inv. Header"."Buy-from Vendor Name")
             {
             }
-            column(unitname;Vendor.Name)
+            column(unitname; Vendor.Name)
             {
             }
-            column(Accountnumber;Vendor."Our Account No.")
+            column(Accountnumber; Vendor."Our Account No.")
             {
             }
-            column(bankname;Vendor."Name of Bank")
+            column(bankname; Vendor."Name of Bank")
             {
             }
-            column(branchname;Vendor."Branch Name")
+            column(branchname; Vendor."Branch Name")
             {
             }
-            column(ifsc_code;Vendor."RTGS Code")
+            column(ifsc_code; Vendor."RTGS Code")
             {
             }
-            column(Amt;Amt)
+            column(Amt; Amt)
             {
             }
 
@@ -41,10 +41,10 @@ report 50033 pur_post_WORD
             begin
                 Vendor.GET("Purch. Inv. Header"."Buy-from Vendor No.");
                 PurchInvLine.RESET;
-                PurchInvLine.SETRANGE("Document No.","Purch. Inv. Header"."No.");
+                PurchInvLine.SETRANGE("Document No.", "Purch. Inv. Header"."No.");
                 IF PurchInvLine.FINDSET THEN BEGIN
-                  PurchInvLine.CALCSUMS("Amount To Vendor");
-                  Amt := PurchInvLine."Amount To Vendor";
+                    PurchInvLine.CALCSUMS("Amount To Vendor");
+                    Amt := PurchInvLine."Amount To Vendor";
                 END;
             end;
         }
@@ -67,8 +67,8 @@ report 50033 pur_post_WORD
     }
 
     var
-        Vendor : Record Vendor;
-        Amt : Decimal;
-        PurchInvLine : Record "Purch. Inv. Line";
+        Vendor: Record Vendor;
+        Amt: Decimal;
+        PurchInvLine: Record "Purch. Inv. Line";
 }
 

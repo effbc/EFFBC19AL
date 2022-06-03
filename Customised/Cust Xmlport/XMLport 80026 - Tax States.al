@@ -6,16 +6,16 @@ xmlport 80026 "Tax States"
     {
         textelement(States)
         {
-            tableelement(State;State)
+            tableelement(State; State)
             {
                 XmlName = 'State';
-                fieldelement(Code;State.Code)
+                fieldelement(Code; State.Code)
                 {
                 }
-                fieldelement(Description;State.Description)
+                fieldelement(Description; State.Description)
                 {
                 }
-                fieldelement(StateCodeforeTDSTCS;State."State Code for eTDS/TCS")
+                fieldelement(StateCodeforeTDSTCS; State."State Code for eTDS/TCS")
                 {
                 }
             }

@@ -6,13 +6,13 @@ xmlport 80069 "Sales Shipment Methods"
     {
         textelement(ShipmentMethods)
         {
-            tableelement("<shipmentmethod>";"Shipment Method")
+            tableelement("<shipmentmethod>"; "Shipment Method")
             {
                 XmlName = 'ShipmentMethod';
-                fieldelement(Code;"<ShipmentMethod>".Code)
+                fieldelement(Code; "<ShipmentMethod>".Code)
                 {
                 }
-                fieldelement(Description;"<ShipmentMethod>".Description)
+                fieldelement(Description; "<ShipmentMethod>".Description)
                 {
                 }
             }

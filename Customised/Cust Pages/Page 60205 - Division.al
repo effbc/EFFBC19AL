@@ -8,19 +8,19 @@ page 60205 Division
     {
         area(content)
         {
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
             }
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Zone code";"Zone code")
+                field("Zone code"; "Zone code")
                 {
                 }
-                field("Division Code";"Division Code")
+                field("Division Code"; "Division Code")
                 {
                 }
-                field("Division Name";"Division Name")
+                field("Division Name"; "Division Name")
                 {
                 }
             }

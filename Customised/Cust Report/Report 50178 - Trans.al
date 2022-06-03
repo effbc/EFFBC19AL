@@ -5,7 +5,7 @@ report 50178 Trans
 
     dataset
     {
-        dataitem("Gen. Journal Line";"Gen. Journal Line")
+        dataitem("Gen. Journal Line"; "Gen. Journal Line")
         {
             DataItemTableView = WHERE(Validate Posting=FILTER(Yes));
             RequestFilterFields = "Posting Date","Journal Batch Name";

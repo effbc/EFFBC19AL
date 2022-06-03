@@ -6,34 +6,34 @@ xmlport 80010 "Bank Bank Account"
     {
         textelement(BankAccounts)
         {
-            tableelement("<bankaccount>";"Bank Account")
+            tableelement("<bankaccount>"; "Bank Account")
             {
                 XmlName = 'BankAccount';
-                fieldelement(No;"<BankAccount>"."No.")
+                fieldelement(No; "<BankAccount>"."No.")
                 {
                 }
-                fieldelement(Name;"<BankAccount>".Name)
+                fieldelement(Name; "<BankAccount>".Name)
                 {
                 }
-                fieldelement(Address;"<BankAccount>".Address)
+                fieldelement(Address; "<BankAccount>".Address)
                 {
                 }
-                fieldelement(Address2;"<BankAccount>"."Address 2")
+                fieldelement(Address2; "<BankAccount>"."Address 2")
                 {
                 }
-                fieldelement(City;"<BankAccount>".City)
+                fieldelement(City; "<BankAccount>".City)
                 {
                 }
-                fieldelement(BankAccountNo;"<BankAccount>"."Bank Account No.")
+                fieldelement(BankAccountNo; "<BankAccount>"."Bank Account No.")
                 {
                 }
-                fieldelement(CountryRegionCode;"<BankAccount>"."Country/Region Code")
+                fieldelement(CountryRegionCode; "<BankAccount>"."Country/Region Code")
                 {
                 }
-                fieldelement(PostCode;"<BankAccount>"."Post Code")
+                fieldelement(PostCode; "<BankAccount>"."Post Code")
                 {
                 }
-                fieldelement(BankAccPostingGroup;"<BankAccount>"."Bank Acc. Posting Group")
+                fieldelement(BankAccPostingGroup; "<BankAccount>"."Bank Acc. Posting Group")
                 {
                 }
             }

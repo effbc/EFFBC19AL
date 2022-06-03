@@ -12,13 +12,13 @@ page 60039 Status
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Status Sequence";"Status Sequence")
+                field("Status Sequence"; "Status Sequence")
                 {
                 }
             }

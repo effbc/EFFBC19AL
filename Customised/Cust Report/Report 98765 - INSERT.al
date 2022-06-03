@@ -5,14 +5,14 @@ report 98765 INSERT
 
     dataset
     {
-        dataitem(Item;Item)
+        dataitem(Item; Item)
         {
             DataItemTableView = SORTING(No.) ORDER(Ascending);
 
             trigger OnAfterGetRecord();
             begin
                 UPGItem.INIT;
-                UPGItem."No.":=Item."No.";
+                UPGItem."No." := Item."No.";
                 UPGItem.INSERT;
             end;
         }
@@ -40,6 +40,6 @@ report 98765 INSERT
     end;
 
     var
-        UPGItem : Record Table104067;
+        UPGItem: Record Table104067;
 }
 

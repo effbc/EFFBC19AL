@@ -17,70 +17,70 @@ page 33000288 "Prod. Order Inspect Components"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Calculation Formula";"Calculation Formula")
-                {
-                    Visible = false;
-                }
-                field(Length;Length)
+                field("Calculation Formula"; "Calculation Formula")
                 {
                     Visible = false;
                 }
-                field(Width;Width)
+                field(Length; Length)
                 {
                     Visible = false;
                 }
-                field(Weight;Weight)
+                field(Width; Width)
                 {
                     Visible = false;
                 }
-                field(Depth;Depth)
+                field(Weight; Weight)
                 {
                     Visible = false;
                 }
-                field("Unit of Measure Code";"Unit of Measure Code")
-                {
-                }
-                field("Expected Quantity";"Expected Quantity")
-                {
-                }
-                field("Remaining Quantity";"Remaining Quantity")
-                {
-                }
-                field("Location Code";"Location Code")
+                field(Depth; Depth)
                 {
                     Visible = false;
                 }
-                field("Quantity Consumed";"Quantity Consumed")
+                field("Unit of Measure Code"; "Unit of Measure Code")
+                {
+                }
+                field("Expected Quantity"; "Expected Quantity")
+                {
+                }
+                field("Remaining Quantity"; "Remaining Quantity")
+                {
+                }
+                field("Location Code"; "Location Code")
+                {
+                    Visible = false;
+                }
+                field("Quantity Consumed"; "Quantity Consumed")
                 {
                     Editable = false;
                 }
-                field("Unit Cost";"Unit Cost")
+                field("Unit Cost"; "Unit Cost")
                 {
                     Visible = false;
                 }
-                field("Cost Amount";"Cost Amount")
+                field("Cost Amount"; "Cost Amount")
                 {
                     Visible = false;
                 }
-                field(Position;Position)
+                field(Position; Position)
                 {
                     Visible = false;
                 }
-                field("Position 2";"Position 2")
+                field("Position 2"; "Position 2")
                 {
                     Visible = false;
                 }
-                field("Position 3";"Position 3")
+                field("Position 3"; "Position 3")
                 {
                     Visible = false;
                 }
-                field("Production Lead Time";"Production Lead Time")
+                field("Production Lead Time"; "Production Lead Time")
                 {
                     Visible = false;
                 }
@@ -93,7 +93,7 @@ page 33000288 "Prod. Order Inspect Components"
     }
 
     var
-        Text000 : Label 'You cannot reserve components with status %1.';
-        ShortcutDimCode : array [8] of Code[20];
+        Text000: Label 'You cannot reserve components with status %1.';
+        ShortcutDimCode: array[8] of Code[20];
 }
 

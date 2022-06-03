@@ -27,109 +27,109 @@ page 90012 "Sales AMC"
             group(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field("Sell-to Customer No.";"Sell-to Customer No.")
+                field("Sell-to Customer No."; "Sell-to Customer No.")
                 {
 
                     trigger OnValidate();
                     begin
-                        CUS.SETRANGE(CUS."No.","Sell-to Customer No.");
+                        CUS.SETRANGE(CUS."No.", "Sell-to Customer No.");
                         IF CUS.FINDFIRST THEN
-                        Territory:=CUS."Territory Code";
-                          SelltoCustomerNoOnAfterValidat;
+                            Territory := CUS."Territory Code";
+                        SelltoCustomerNoOnAfterValidat;
                     end;
                 }
-                field("Customer Posting Group";"Customer Posting Group")
+                field("Customer Posting Group"; "Customer Posting Group")
                 {
                     Editable = false;
                 }
-                field("Sell-to Customer Name";"Sell-to Customer Name")
+                field("Sell-to Customer Name"; "Sell-to Customer Name")
                 {
                     Editable = false;
                 }
-                field("Sell-to Address";"Sell-to Address")
+                field("Sell-to Address"; "Sell-to Address")
                 {
                 }
-                field("Sell-to Address 2";"Sell-to Address 2")
+                field("Sell-to Address 2"; "Sell-to Address 2")
                 {
                 }
-                field("Sell-to Post Code";"Sell-to Post Code")
+                field("Sell-to Post Code"; "Sell-to Post Code")
                 {
                     Caption = 'Sell-to Post Code/City';
                 }
-                field("Sell-to City";"Sell-to City")
+                field("Sell-to City"; "Sell-to City")
                 {
                 }
-                field(State;State)
+                field(State; State)
                 {
                     Editable = true;
                 }
-                field(Control1280009;Structure)
+                field(Control1280009; Structure)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Installation Amount";"Installation Amount")
+                field("Installation Amount"; "Installation Amount")
                 {
                 }
-                field("Bought out Items Amount";"Bought out Items Amount")
+                field("Bought out Items Amount"; "Bought out Items Amount")
                 {
                 }
-                field(Product;Product)
+                field(Product; Product)
                 {
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("Order Date";"Order Date")
+                field("Order Date"; "Order Date")
                 {
                 }
-                field("Shipment Date";"Shipment Date")
+                field("Shipment Date"; "Shipment Date")
                 {
                 }
-                field("Requested Delivery Date";"Requested Delivery Date")
+                field("Requested Delivery Date"; "Requested Delivery Date")
                 {
                     Caption = 'Amc Period  Start Date';
 
                     trigger OnValidate();
                     begin
-                          IF "Order Date">"Requested Delivery Date" THEN
-                             ERROR('Requested Delivery Date Must be Greater than Order Date');
+                        IF "Order Date" > "Requested Delivery Date" THEN
+                            ERROR('Requested Delivery Date Must be Greater than Order Date');
                     end;
                 }
-                field("Promised Delivery Date";"Promised Delivery Date")
+                field("Promised Delivery Date"; "Promised Delivery Date")
                 {
                     Caption = 'Amc Period  End  Date';
                 }
-                field("External Document No.";"External Document No.")
+                field("External Document No."; "External Document No.")
                 {
                     Caption = 'Invoice Number';
                 }
-                field("Salesperson Code";"Salesperson Code")
+                field("Salesperson Code"; "Salesperson Code")
                 {
                 }
-                field("Project Completion Date";"Project Completion Date")
+                field("Project Completion Date"; "Project Completion Date")
                 {
                 }
-                field("Extended Date";"Extended Date")
+                field("Extended Date"; "Extended Date")
                 {
                 }
-                field("Order Assurance";"Order Assurance")
+                field("Order Assurance"; "Order Assurance")
                 {
                     Editable = "Order AssuranceEditable";
 
                     trigger OnValidate();
                     begin
-                        
+
                         /*IF (USERID='SUPER') OR (USERID='EFFTRONICS\ANULATHA') THEN BEGIN
                         Mail_Subject:='Order Assurance';
                         newline:=10;
@@ -165,39 +165,38 @@ page 90012 "Sales AMC"
                         //END
                         //ELSE
                         //ERROR('You Do not Have Permission to Assure');
-                        
-                        IF "Order Assurance"=TRUE AND (Status=Status::Open) THEN
-                        BEGIN
-                        "Order AssuranceEditable" := FALSE;
-                        "Assured Date":=TODAY;
+
+                        IF "Order Assurance" = TRUE AND (Status = Status::Open) THEN BEGIN
+                            "Order AssuranceEditable" := FALSE;
+                            "Assured Date" := TODAY;
                         END ELSE
-                        "Order AssuranceEditable" := TRUE;
+                            "Order AssuranceEditable" := TRUE;
 
                     end;
                 }
-                field("Security Deposit Status";"Security Deposit Status")
+                field("Security Deposit Status"; "Security Deposit Status")
                 {
                     Caption = 'Status';
                 }
-                field("Sale Order Total Amount";"Sale Order Total Amount")
+                field("Sale Order Total Amount"; "Sale Order Total Amount")
                 {
                     Editable = true;
                 }
-                field("Customer OrderNo.";"Customer OrderNo.")
+                field("Customer OrderNo."; "Customer OrderNo.")
                 {
                 }
-                field("Customer Order Date";"Customer Order Date")
+                field("Customer Order Date"; "Customer Order Date")
                 {
                 }
             }
-            part(SalesLines;90013)
+            part(SalesLines; 90013)
             {
-                SubPageLink = Field3=FIELD(No.);
+                SubPageLink = Field3 = FIELD(No.);
             }
             group(Invoicing)
             {
                 Caption = 'Invoicing';
-                field("Bill-to Customer No.";"Bill-to Customer No.")
+                field("Bill-to Customer No."; "Bill-to Customer No.")
                 {
 
                     trigger OnValidate();
@@ -205,50 +204,50 @@ page 90012 "Sales AMC"
                         BilltoCustomerNoOnAfterValidat;
                     end;
                 }
-                field("Bill-to Contact No.";"Bill-to Contact No.")
+                field("Bill-to Contact No."; "Bill-to Contact No.")
                 {
                 }
-                field("Bill-to Name";"Bill-to Name")
+                field("Bill-to Name"; "Bill-to Name")
                 {
                 }
-                field("Bill-to Address";"Bill-to Address")
+                field("Bill-to Address"; "Bill-to Address")
                 {
                 }
-                field("Bill-to Address 2";"Bill-to Address 2")
+                field("Bill-to Address 2"; "Bill-to Address 2")
                 {
                 }
-                field("Bill-to Post Code";"Bill-to Post Code")
+                field("Bill-to Post Code"; "Bill-to Post Code")
                 {
                     Caption = 'Bill-to Post Code/City';
                 }
-                field("Bill-to City";"Bill-to City")
+                field("Bill-to City"; "Bill-to City")
                 {
                 }
-                field("Bill-to Contact";"Bill-to Contact")
+                field("Bill-to Contact"; "Bill-to Contact")
                 {
                 }
-                field("Tax Area Code";"Tax Area Code")
+                field("Tax Area Code"; "Tax Area Code")
                 {
                     Editable = false;
                 }
-                field("Form Code";"Form Code")
+                field("Form Code"; "Form Code")
                 {
                 }
-                field("Form No.";"Form No.")
+                field("Form No."; "Form No.")
                 {
                 }
-                field("No. Series";"No. Series")
+                field("No. Series"; "No. Series")
                 {
                     Editable = true;
                 }
-                field("Payment Discount %";"Payment Discount %")
+                field("Payment Discount %"; "Payment Discount %")
                 {
                     Caption = 'Expected Payment %';
                 }
-                field("Station Names";"Station Names")
+                field("Station Names"; "Station Names")
                 {
                 }
-                field("Shortcut Dimension 1 Code";"Shortcut Dimension 1 Code")
+                field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
                 {
 
                     trigger OnValidate();
@@ -256,7 +255,7 @@ page 90012 "Sales AMC"
                         ShortcutDimension1CodeOnAfterV;
                     end;
                 }
-                field("Shortcut Dimension 2 Code";"Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
                 {
 
                     trigger OnValidate();
@@ -264,48 +263,48 @@ page 90012 "Sales AMC"
                         ShortcutDimension2CodeOnAfterV;
                     end;
                 }
-                field("Currency Code";"Currency Code")
+                field("Currency Code"; "Currency Code")
                 {
                 }
-                field("Payment Terms Code";"Payment Terms Code")
+                field("Payment Terms Code"; "Payment Terms Code")
                 {
                 }
-                field("Due Date";"Due Date")
+                field("Due Date"; "Due Date")
                 {
                 }
-                field("Payment Method Code";"Payment Method Code")
+                field("Payment Method Code"; "Payment Method Code")
                 {
                 }
-                field("LC No.";"LC No.")
+                field("LC No."; "LC No.")
                 {
                 }
-                field("No. of Archived Versions";"No. of Archived Versions")
+                field("No. of Archived Versions"; "No. of Archived Versions")
                 {
 
                     trigger OnDrillDown();
                     var
-                        SalesHeaderArchive : Record "Sales Header Archive";
+                        SalesHeaderArchive: Record "Sales Header Archive";
                     begin
                         CurrPage.SAVERECORD;
                         COMMIT;
-                        SalesHeaderArchive.SETRANGE("Document Type","Document Type"::Order);
-                        SalesHeaderArchive.SETRANGE("No.","No.");
-                        SalesHeaderArchive.SETRANGE("Doc. No. Occurrence","Doc. No. Occurrence");
-                        IF SalesHeaderArchive.GET("Document Type"::Order,"No.","Doc. No. Occurrence","No. of Archived Versions") THEN ;
-                        PAGE.RUNMODAL(PAGE::"Sales List Archive",SalesHeaderArchive);
+                        SalesHeaderArchive.SETRANGE("Document Type", "Document Type"::Order);
+                        SalesHeaderArchive.SETRANGE("No.", "No.");
+                        SalesHeaderArchive.SETRANGE("Doc. No. Occurrence", "Doc. No. Occurrence");
+                        IF SalesHeaderArchive.GET("Document Type"::Order, "No.", "Doc. No. Occurrence", "No. of Archived Versions") THEN;
+                        PAGE.RUNMODAL(PAGE::"Sales List Archive", SalesHeaderArchive);
                         CurrPage.UPDATE(FALSE);
                     end;
                 }
-                field("VAT Bus. Posting Group";"VAT Bus. Posting Group")
+                field("VAT Bus. Posting Group"; "VAT Bus. Posting Group")
                 {
                 }
-                field("Language Code";"Language Code")
+                field("Language Code"; "Language Code")
                 {
                 }
-                field("Transport Method";"Transport Method")
+                field("Transport Method"; "Transport Method")
                 {
                 }
-                field("Tender No.";"Tender No.")
+                field("Tender No."; "Tender No.")
                 {
                     Editable = false;
                 }
@@ -313,129 +312,129 @@ page 90012 "Sales AMC"
             group(Shipping)
             {
                 Caption = 'Shipping';
-                field("Ship-to Code";"Ship-to Code")
+                field("Ship-to Code"; "Ship-to Code")
                 {
                 }
-                field("Ship-to Name";"Ship-to Name")
+                field("Ship-to Name"; "Ship-to Name")
                 {
                 }
-                field("Ship-to Address";"Ship-to Address")
+                field("Ship-to Address"; "Ship-to Address")
                 {
                 }
-                field("Ship-to Address 2";"Ship-to Address 2")
+                field("Ship-to Address 2"; "Ship-to Address 2")
                 {
                 }
-                field("Ship-to Post Code";"Ship-to Post Code")
+                field("Ship-to Post Code"; "Ship-to Post Code")
                 {
                     Caption = 'Ship-to Post Code/City';
                 }
-                field("Ship-to City";"Ship-to City")
+                field("Ship-to City"; "Ship-to City")
                 {
                 }
-                field("Ship-to Contact";"Ship-to Contact")
+                field("Ship-to Contact"; "Ship-to Contact")
                 {
                 }
-                field("Transit Document";"Transit Document")
+                field("Transit Document"; "Transit Document")
                 {
                 }
-                field("Posting No. Series";"Posting No. Series")
+                field("Posting No. Series"; "Posting No. Series")
                 {
                 }
-                field("Shipping No. Series";"Shipping No. Series")
+                field("Shipping No. Series"; "Shipping No. Series")
                 {
                 }
-                field("MSPT Date";"MSPT Date")
+                field("MSPT Date"; "MSPT Date")
                 {
                 }
-                field("MSPT Code";"MSPT Code")
+                field("MSPT Code"; "MSPT Code")
                 {
                 }
-                field("<Transport Method2>";"Transport Method")
+                field("<Transport Method2>"; "Transport Method")
                 {
                 }
-                field("Location Code";"Location Code")
+                field("Location Code"; "Location Code")
                 {
                 }
-                field("Shipment Method Code";"Shipment Method Code")
+                field("Shipment Method Code"; "Shipment Method Code")
                 {
                 }
-                field("Shipping Agent Code";"Shipping Agent Code")
+                field("Shipping Agent Code"; "Shipping Agent Code")
                 {
                 }
-                field("Shipping Agent Service Code";"Shipping Agent Service Code")
+                field("Shipping Agent Service Code"; "Shipping Agent Service Code")
                 {
                 }
-                field("Shipping Time";"Shipping Time")
+                field("Shipping Time"; "Shipping Time")
                 {
                     Editable = true;
                 }
-                field("Late Order Shipping";"Late Order Shipping")
+                field("Late Order Shipping"; "Late Order Shipping")
                 {
                 }
-                field("Package Tracking No.";"Package Tracking No.")
+                field("Package Tracking No."; "Package Tracking No.")
                 {
                 }
-                field("<Shipment Date2>";"Shipment Date")
+                field("<Shipment Date2>"; "Shipment Date")
                 {
 
                     trigger OnValidate();
                     begin
-                         SalesLine."Shipment Date":="Posting Date";
+                        SalesLine."Shipment Date" := "Posting Date";
                     end;
                 }
-                field("Shipping Advice";"Shipping Advice")
+                field("Shipping Advice"; "Shipping Advice")
                 {
                 }
-                field(WayBillNo;WayBillNo)
+                field(WayBillNo; WayBillNo)
                 {
                 }
             }
             group("Installtion Status")
             {
                 Caption = 'Installtion Status';
-                field(Installation;Installation)
+                field(Installation; Installation)
                 {
                 }
-                field("Inst.Status";"Inst.Status")
+                field("Inst.Status"; "Inst.Status")
                 {
                 }
-                field("Inst.Start Date";"Inst.Start Date")
+                field("Inst.Start Date"; "Inst.Start Date")
                 {
                     Caption = 'Base Plan Start date';
                 }
-                field("Assured Date";"Assured Date")
+                field("Assured Date"; "Assured Date")
                 {
                 }
-                field("Revised Target Date";"Revised Target Date")
+                field("Revised Target Date"; "Revised Target Date")
                 {
 
                     trigger OnValidate();
                     begin
-                         "Sales Date":=CALCDATE('15D',"Revised Target Date");
+                        "Sales Date" := CALCDATE('15D', "Revised Target Date");
                     end;
                 }
-                field("Base PLan Comp. Date";"Base PLan Comp. Date")
+                field("Base PLan Comp. Date"; "Base PLan Comp. Date")
                 {
                     Caption = 'Base PLan Comp. Date';
 
                     trigger OnValidate();
                     begin
-                        "Deviated Days":=FORMAT("Base PLan Comp. Date"-"Inst.Start Date");
+                        "Deviated Days" := FORMAT("Base PLan Comp. Date" - "Inst.Start Date");
                     end;
                 }
-                field("Revised Comp.Date";"Revised Comp.Date")
+                field("Revised Comp.Date"; "Revised Comp.Date")
                 {
                 }
-                field("Deviated Days";"Deviated Days")
+                field("Deviated Days"; "Deviated Days")
                 {
                     Editable = true;
                 }
-                field("Sales Date";"Sales Date")
+                field("Sales Date"; "Sales Date")
                 {
                     Caption = 'Payment Exp.Date';
                     Editable = true;
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                     Caption = 'Inst.Issues';
                 }
@@ -443,45 +442,45 @@ page 90012 "Sales AMC"
             group("Sales Status")
             {
                 Caption = 'Sales Status';
-                field("Order Status";"Order Status")
+                field("Order Status"; "Order Status")
                 {
                 }
-                field(Inspection;Inspection)
+                field(Inspection; Inspection)
                 {
                 }
-                field(CallLetterExpireDate;CallLetterExpireDate)
+                field(CallLetterExpireDate; CallLetterExpireDate)
                 {
                 }
-                field(CallLetterRecivedDate;CallLetterRecivedDate)
+                field(CallLetterRecivedDate; CallLetterRecivedDate)
                 {
                 }
-                field("Payment Date";"Payment Date")
+                field("Payment Date"; "Payment Date")
                 {
                 }
-                field("Reason For Pending";"Reason For Pending")
+                field("Reason For Pending"; "Reason For Pending")
                 {
                     Caption = 'Supply Issues';
                 }
-                field("Call letters Status";"Call letters Status")
+                field("Call letters Status"; "Call letters Status")
                 {
                 }
-                field("Call Letter Exp.Date";"Call Letter Exp.Date")
+                field("Call Letter Exp.Date"; "Call Letter Exp.Date")
                 {
                 }
-                field("BG Status";"BG Status")
+                field("BG Status"; "BG Status")
                 {
                 }
-                field("<Payment Terms Code2>";"Payment Terms Code")
+                field("<Payment Terms Code2>"; "Payment Terms Code")
                 {
                 }
-                field("Exp.Payment";"Exp.Payment")
+                field("Exp.Payment"; "Exp.Payment")
                 {
                     Caption = 'BG Value';
                 }
-                field("CA Date";"CA Date")
+                field("CA Date"; "CA Date")
                 {
                 }
-                field("Posting No.";"Posting No.")
+                field("Posting No."; "Posting No.")
                 {
                     Visible = false;
                 }
@@ -489,74 +488,74 @@ page 90012 "Sales AMC"
             group(" Others")
             {
                 Caption = '" Others"';
-                field("RDSO Charges Paid By";"RDSO Charges Paid By")
+                field("RDSO Charges Paid By"; "RDSO Charges Paid By")
                 {
                 }
-                field("RDSO Inspection Req";"RDSO Inspection Req")
+                field("RDSO Inspection Req"; "RDSO Inspection Req")
                 {
                 }
-                field("RDSO Inspection By";"RDSO Inspection By")
+                field("RDSO Inspection By"; "RDSO Inspection By")
                 {
                 }
-                field("RDSO Charges";"RDSO Charges")
+                field("RDSO Charges"; "RDSO Charges")
                 {
                 }
-                field("RDSO Call Letter";"RDSO Call Letter")
+                field("RDSO Call Letter"; "RDSO Call Letter")
                 {
                 }
-                field("<Tender No2.>";"Tender No.")
+                field("<Tender No2.>"; "Tender No.")
                 {
                 }
-                field("CA Number";"CA Number")
+                field("CA Number"; "CA Number")
                 {
                 }
-                field("LD Amount";"LD Amount")
+                field("LD Amount"; "LD Amount")
                 {
                 }
-                field("Document Position";"Document Position")
+                field("Document Position"; "Document Position")
                 {
                 }
-                field("Reason Code";"Reason Code")
+                field("Reason Code"; "Reason Code")
                 {
                 }
-                field("Security Deposit";"Security Deposit")
+                field("Security Deposit"; "Security Deposit")
                 {
                 }
             }
             group(Control1904868001)
             {
                 Caption = 'Security Deposit';
-                field("Security Deposit Amount";"Security Deposit Amount")
+                field("Security Deposit Amount"; "Security Deposit Amount")
                 {
                 }
-                field("Deposit Payment Due Date";"Deposit Payment Due Date")
+                field("Deposit Payment Due Date"; "Deposit Payment Due Date")
                 {
                 }
-                field("Deposit Payment Date";"Deposit Payment Date")
+                field("Deposit Payment Date"; "Deposit Payment Date")
                 {
                 }
-                field("<Security Deposit Status2>";"Security Deposit Status")
+                field("<Security Deposit Status2>"; "Security Deposit Status")
                 {
                 }
-                field("SD Requested Date";"SD Requested Date")
+                field("SD Requested Date"; "SD Requested Date")
                 {
                 }
-                field("SD Required Date";"SD Required Date")
+                field("SD Required Date"; "SD Required Date")
                 {
                 }
-                field("SecurityDeposit Exp. Rcpt Date";"SecurityDeposit Exp. Rcpt Date")
+                field("SecurityDeposit Exp. Rcpt Date"; "SecurityDeposit Exp. Rcpt Date")
                 {
                 }
-                field("Final Bill Date";"Final Bill Date")
+                field("Final Bill Date"; "Final Bill Date")
                 {
                 }
-                field("Warranty Period";"Warranty Period")
+                field("Warranty Period"; "Warranty Period")
                 {
                 }
-                field("<Due Date2>";"Due Date")
+                field("<Due Date2>"; "Due Date")
                 {
                 }
-                field("SD Status";"SD Status")
+                field("SD Status"; "SD Status")
                 {
                 }
             }
@@ -579,10 +578,10 @@ page 90012 "Sales AMC"
                     begin
                         SalesSetup.GET;
                         IF SalesSetup."Calc. Inv. Discount" THEN BEGIN
-                          CurrPage.SalesLines.PAGE.CalcInvDisc;
-                          COMMIT
+                            CurrPage.SalesLines.PAGE.CalcInvDisc;
+                            COMMIT
                         END;
-                        PAGE.RUNMODAL(PAGE::"Sales Order Statistics",Rec);
+                        PAGE.RUNMODAL(PAGE::"Sales Order Statistics", Rec);
                     end;
                 }
                 action(Card)
@@ -596,20 +595,20 @@ page 90012 "Sales AMC"
                 {
                     Caption = 'Co&mments';
                     RunObject = Page "Sales Comment Sheet";
-                    RunPageLink = Document Type=FIELD(Document Type),No.=FIELD(No.);
+                                    RunPageLink = Document Type=FIELD(Document Type),No.=FIELD(No.);
                 }
                 action("S&hipments")
                 {
                     Caption = 'S&hipments';
                     RunObject = Page "Posted Sales Shipments";
-                    RunPageLink = Order No.=FIELD(No.);
+                                    RunPageLink = Order No.=FIELD(No.);
                     RunPageView = SORTING(Order No.);
                 }
                 action(Invoices)
                 {
                     Caption = 'Invoices';
                     RunObject = Page "Posted Sales Invoices";
-                    RunPageLink = Order No.=FIELD(No.);
+                                    RunPageLink = Order No.=FIELD(No.);
                     RunPageView = SORTING(Order No.);
                 }
                 separator(Action1280029)
@@ -619,19 +618,19 @@ page 90012 "Sales AMC"
                 {
                     Caption = 'Transit Documents';
                     RunObject = Page "Transit Document Order Details";
-                    RunPageLink = Type=CONST(Sale),PO / SO No.=FIELD(No.),Vendor / Customer Ref.=FIELD(Sell-to Customer No.);
+                                    RunPageLink = Type=CONST(Sale),PO / SO No.=FIELD(No.),Vendor / Customer Ref.=FIELD(Sell-to Customer No.);
                 }
                 action(Structure)
                 {
                     Caption = 'Structure';
                     RunObject = Page "Structure Order Details";
-                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),Structure Code=FIELD(Structure);
+                                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),Structure Code=FIELD(Structure);
                 }
                 action("Authorization Information")
                 {
                     Caption = 'Authorization Information';
                     RunObject = Page "VAT Opening Detail";
-                    RunPageLink = Transcation Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.);
+                                    RunPageLink = Transcation Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.);
                 }
                 separator(Action173)
                 {
@@ -640,7 +639,7 @@ page 90012 "Sales AMC"
                 {
                     Caption = 'Whse. Shipment Lines';
                     RunObject = Page "Whse. Shipment Lines";
-                    RunPageLink = Source Type=CONST(37),Source Subtype=FIELD(Document Type),Source No.=FIELD(No.);
+                                    RunPageLink = Source Type=CONST(37),Source Subtype=FIELD(Document Type),Source No.=FIELD(No.);
                     RunPageView = SORTING(Source Type,Source Subtype,Source No.,Source Line No.);
                     Visible = false;
                 }
@@ -648,7 +647,7 @@ page 90012 "Sales AMC"
                 {
                     Caption = 'In&vt. Put-away/Pick Lines';
                     RunObject = Page "Warehouse Activity List";
-                    RunPageLink = Source Document=CONST(Sales Order),Source No.=FIELD(No.);
+                                    RunPageLink = Source Document=CONST(Sales Order),Source No.=FIELD(No.);
                     RunPageView = SORTING(Source Document,Source No.,Location Code);
                     Visible = false;
                 }
@@ -687,19 +686,19 @@ page 90012 "Sales AMC"
                 {
                     Caption = 'Check List';
                     RunObject = Page "Check List";
-                    RunPageLink = Document Type=CONST(Sales),Document No.=FIELD(No.);
+                                    RunPageLink = Document Type=CONST(Sales),Document No.=FIELD(No.);
                 }
                 action("&MSPT Order Details")
                 {
                     Caption = '&MSPT Order Details';
                     RunObject = Page "MSPT Order Details";
-                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),MSPT Header Code=FIELD(MSPT Code),Party No.=FIELD(Sell-to Customer No.);
+                                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),MSPT Header Code=FIELD(MSPT Code),Party No.=FIELD(Sell-to Customer No.);
                 }
                 action(Schedule)
                 {
                     Caption = 'Schedule';
                     RunObject = Page Schedule;
-                    RunPageLink = Document No.=FIELD(Tender No.),Document Type=CONST(Order);
+                                    RunPageLink = Document No.=FIELD(Tender No.),Document Type=CONST(Order);
                 }
             }
             group("&Line")
@@ -1257,15 +1256,15 @@ page 90012 "Sales AMC"
     var
         Text000 : Label 'Unable to execute this function while in view only mode.';
         CopySalesDoc : Report "Copy Sales Document";
-        MoveNegSalesLines : Report "Move Negative Sales Lines";
-        ReportPrint : Codeunit "Test Report-Print";
-        DocPrint : Codeunit "Document-Print";
-        ArchiveManagement : Codeunit ArchiveManagement;
-        SalesSetup : Record "Sales & Receivables Setup";
-        UserMgt : Codeunit "User Setup Management";
-        "-NAVIN-" : Integer;
-        SalesLine : Record "Sales Line";
-        Text001 : Label 'Do you want to convert the Order to an Export order?';
+                           MoveNegSalesLines : Report "Move Negative Sales Lines";
+                           ReportPrint : Codeunit "Test Report-Print";
+                           DocPrint : Codeunit "Document-Print";
+                           ArchiveManagement : Codeunit ArchiveManagement;
+                           SalesSetup : Record "Sales & Receivables Setup";
+                           UserMgt : Codeunit "User Setup Management";
+                           "-NAVIN-" : Integer;
+                           SalesLine : Record "Sales Line";
+                           Text001 : Label 'Do you want to convert the Order to an Export order?';
         Text002 : Label 'Order number %1 has been converted to Export order number %2.';
         Text13000 : Label 'No Setup exists for this Amount.';
         Text13001 : Label 'Do you want to send the order for Authorization?';

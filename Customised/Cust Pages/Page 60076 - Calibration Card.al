@@ -12,46 +12,46 @@ page 60076 "Calibration Card"
             group(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
                 }
-                field("Equipment Type";"Equipment Type")
+                field("Equipment Type"; "Equipment Type")
                 {
                 }
-                field(UOM;UOM)
+                field(UOM; UOM)
                 {
                 }
-                field("Calibration Next Due Date";"Calibration Next Due Date")
+                field("Calibration Next Due Date"; "Calibration Next Due Date")
                 {
                 }
-                field(Frequency;Frequency)
+                field(Frequency; Frequency)
                 {
                 }
-                field("Notice Period";"Notice Period")
+                field("Notice Period"; "Notice Period")
                 {
                 }
-                field("Usage Type";"Usage Type")
+                field("Usage Type"; "Usage Type")
                 {
                 }
-                field("Least Count";"Least Count")
+                field("Least Count"; "Least Count")
                 {
                 }
-                field("Current Status";"Current Status")
+                field("Current Status"; "Current Status")
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
-                field("Inspection Party";"Inspection Party")
+                field("Inspection Party"; "Inspection Party")
                 {
                 }
-                field(Agency;Agency)
+                field(Agency; Agency)
                 {
                 }
-                field("Purpose of Instrument";"Purpose of Instrument")
+                field("Purpose of Instrument"; "Purpose of Instrument")
                 {
                 }
             }
@@ -79,7 +79,7 @@ page 60076 "Calibration Card"
                 {
                     Caption = '&Comments';
                     RunObject = Page "Quality Comment Sheet";
-                    RunPageLink = Type=CONST(Calibration),No.=FIELD(No.);
+                    RunPageLink = Type = CONST(Calibration), No.=FIELD(No.);
                     Visible = false;
                 }
                 separator(Action1102152034)
@@ -106,7 +106,7 @@ page 60076 "Calibration Card"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Quality Comment Sheet";
-                RunPageLink = Type=CONST(Calibration),No.=FIELD(No.);
+                                RunPageLink = Type=CONST(Calibration),No.=FIELD(No.);
                 ToolTip = 'Comment';
             }
         }

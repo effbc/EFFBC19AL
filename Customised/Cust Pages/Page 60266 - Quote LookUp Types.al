@@ -13,13 +13,13 @@ page 60266 "Quote LookUp Types"
         {
             repeater(Group)
             {
-                field(ID;ID)
+                field(ID; ID)
                 {
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
             }

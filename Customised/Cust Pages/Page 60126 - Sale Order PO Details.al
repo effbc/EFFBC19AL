@@ -12,22 +12,22 @@ page 60126 "Sale Order PO Details"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field(Type;Type)
+                field(Type; Type)
                 {
                 }
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Due Date";"Due Date")
+                field("Due Date"; "Due Date")
                 {
                 }
             }
@@ -40,19 +40,19 @@ page 60126 "Sale Order PO Details"
 
     trigger OnAfterGetRecord();
     begin
-        SalesLine.SETRANGE("Document No.","Sales Order No.");
-        SalesLine.SETRANGE("Line No.","Sales Order Line No.");
+        SalesLine.SETRANGE("Document No.", "Sales Order No.");
+        SalesLine.SETRANGE("Line No.", "Sales Order Line No.");
         IF SalesLine.FINDFIRST THEN
-          "Sales Line Qty." := SalesLine.Quantity;
+            "Sales Line Qty." := SalesLine.Quantity;
     end;
 
     trigger OnOpenPage();
     begin
-        Type := Type :: " ";
+        Type := Type::" ";
         "No." := ' ';
     end;
 
     var
-        SalesLine : Record "Sales Line";
+        SalesLine: Record "Sales Line";
 }
 

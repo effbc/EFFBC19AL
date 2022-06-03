@@ -7,9 +7,9 @@ report 50239 "Store Stock1"
 
     dataset
     {
-        dataitem(Item;Item)
+        dataitem(Item; Item)
         {
-            CalcFields = Qty. on Purch. Order,Quantity Under Inspection,Stock At MCH Location;
+            CalcFields = Qty. on Purch. Order, Quantity Under Inspection, Stock At MCH Location;
             DataItemTableView = SORTING(No.) ORDER(Descending) WHERE(Product Group Code=FILTER(<>FPRODUCT&<>CPCB));
             RequestFilterFields = "No.";
             column(Item__No__;"No.")

@@ -14,44 +14,44 @@ report 33000910 "Service & Req. Excel"
 
     dataset
     {
-        dataitem("Service Header";"Service Header")
+        dataitem("Service Header"; "Service Header")
         {
             DataItemTableView = WHERE(Document Type=CONST(Order));
             RequestFilterFields = "Order Date";
-            column(Received_DateCaption;Received_DateCaptionLbl)
+            column(Received_DateCaption; Received_DateCaptionLbl)
             {
             }
-            column(Service_Item_Line__Document_No__Caption;"Service Item Line".FIELDCAPTION("Document No."))
+            column(Service_Item_Line__Document_No__Caption; "Service Item Line".FIELDCAPTION("Document No."))
             {
             }
-            column(Service_Item_Line__Item_No__Caption;"Service Item Line".FIELDCAPTION("Item No."))
+            column(Service_Item_Line__Item_No__Caption; "Service Item Line".FIELDCAPTION("Item No."))
             {
             }
-            column(Service_Item_Line_DescriptionCaption;"Service Item Line".FIELDCAPTION(Description))
+            column(Service_Item_Line_DescriptionCaption; "Service Item Line".FIELDCAPTION(Description))
             {
             }
-            column(Service_Item_Line__Serial_No__Caption;"Service Item Line".FIELDCAPTION("Serial No."))
+            column(Service_Item_Line__Serial_No__Caption; "Service Item Line".FIELDCAPTION("Serial No."))
             {
             }
-            column(LocationCaption;LocationCaptionLbl)
+            column(LocationCaption; LocationCaptionLbl)
             {
             }
-            column(Manfacturing_DateCaption;Manfacturing_DateCaptionLbl)
+            column(Manfacturing_DateCaption; Manfacturing_DateCaptionLbl)
             {
             }
-            column(StatusCaption;StatusCaptionLbl)
+            column(StatusCaption; StatusCaptionLbl)
             {
             }
-            column(Service_Item_Line__Response_Date_Caption;"Service Item Line".FIELDCAPTION("Response Date"))
+            column(Service_Item_Line__Response_Date_Caption; "Service Item Line".FIELDCAPTION("Response Date"))
             {
             }
-            column(Service_Header_Document_Type;"Document Type")
+            column(Service_Header_Document_Type; "Document Type")
             {
             }
-            column(Service_Header_No_;"No.")
+            column(Service_Header_No_; "No.")
             {
             }
-            dataitem("Service Item Line";"Service Item Line")
+            dataitem("Service Item Line"; "Service Item Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
                 DataItemTableView = WHERE(Document Type=CONST(Order),Item No.=FILTER(<>''),From Location=CONST(SERVICE));

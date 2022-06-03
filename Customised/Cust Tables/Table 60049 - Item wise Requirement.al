@@ -4,30 +4,36 @@ table 60049 "Item wise Requirement"
 
     Caption = 'Job Budget Line Archive';
     LookupPageID = "Job Budget line Archive List";
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"Item No.";Code[30])
+        field(1; "Item No."; Code[30])
         {
             TableRelation = Item;
+            DataClassification = CustomerContent;
         }
-        field(2;Description;Text[100])
+        field(2; Description; Text[100])
         {
+            DataClassification = CustomerContent;
         }
-        field(3;"Required Quantity";Decimal)
+        field(3; "Required Quantity"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(4;"Qty. In Material Issues";Decimal)
+        field(4; "Qty. In Material Issues"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
-        field(5;"Req Qty";Decimal)
+        field(5; "Req Qty"; Decimal)
         {
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(Key1;"Item No.")
+        key(Key1; "Item No.")
         {
         }
     }
@@ -37,23 +43,23 @@ table 60049 "Item wise Requirement"
     }
 
     var
-        Text000 : Label '"It is not allowed to rename %1. "';
-        Text001 : Label 'Delete this line and enter a new line.';
-        Res : Record Resource;
-        ResGr : Record "Resource Group";
-        ResCost : Record "Resource Cost";
-        ResPrice : Record "Resource Price";
-        Item : Record Item;
-        GLAcc : Record "G/L Account";
-        Job : Record Job;
-        ItemVariant : Record "Item Variant";
-        SalesPriceCalcMgt : Codeunit "Sales Price Calc. Mgt.";
-        PurchPriceCalcMgt : Codeunit "Purch. Price Calc. Mgt.";
-        LastBudgetEntryDate : Date;
-        NextStep : Integer;
-        "--B2B--" : Integer;
-        TotalTime : Decimal;
-        Temp : Decimal;
+        Text000: Label '"It is not allowed to rename %1. "';
+        Text001: Label 'Delete this line and enter a new line.';
+        Res: Record Resource;
+        ResGr: Record "Resource Group";
+        ResCost: Record "Resource Cost";
+        ResPrice: Record "Resource Price";
+        Item: Record Item;
+        GLAcc: Record "G/L Account";
+        Job: Record Job;
+        ItemVariant: Record "Item Variant";
+        SalesPriceCalcMgt: Codeunit "Sales Price Calc. Mgt.";
+        PurchPriceCalcMgt: Codeunit "Purch. Price Calc. Mgt.";
+        LastBudgetEntryDate: Date;
+        NextStep: Integer;
+        "--B2B--": Integer;
+        TotalTime: Decimal;
+        Temp: Decimal;
 
     [LineStart(2460)]
     local procedure UpdateJobBudgetEntry();
@@ -61,19 +67,19 @@ table 60049 "Item wise Requirement"
     end;
 
     [LineStart(2463)]
-    local procedure FindResUnitCost(CalledByFieldNo : Integer);
+    local procedure FindResUnitCost(CalledByFieldNo: Integer);
     begin
     end;
 
     [LineStart(2466)]
-    local procedure FindResPrice(CalledByFieldNo : Integer);
+    local procedure FindResPrice(CalledByFieldNo: Integer);
     begin
     end;
 
     [LineStart(2469)]
     procedure BudjetAttachments();
     var
-        BudjetAttach : Record Attachments;
+        BudjetAttach: Record Attachments;
     begin
     end;
 }

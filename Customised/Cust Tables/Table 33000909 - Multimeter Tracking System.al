@@ -1,11 +1,13 @@
 table 33000909 "Multimeter Tracking System"
 {
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"Multimeter No";Code[20])
+        field(1; "Multimeter No"; Code[20])
         {
-            TableRelation = Item.No. WHERE (Product Group Code=FILTER(MULTIMETER));
+            TableRelation = Item.No            DataClassification = CustomerContent;
+. WHERE (Product Group Code=FILTER(MULTIMETER));
         }
         field(2;"Serial No.";Code[20])
         {

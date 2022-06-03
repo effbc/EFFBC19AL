@@ -9,7 +9,7 @@ page 60099 "Tender Ledger Entries"
     {
         area(content)
         {
-            field(SelectionFilter;SelectionFilter)
+            field(SelectionFilter; SelectionFilter)
             {
 
                 trigger OnValidate();
@@ -21,29 +21,29 @@ page 60099 "Tender Ledger Entries"
             {
                 Editable = false;
                 ShowCaption = false;
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field(Type;Type)
+                field(Type; Type)
                 {
                 }
-                field("Transaction Type";"Transaction Type")
+                field("Transaction Type"; "Transaction Type")
                 {
                 }
-                field("Mode of Receipt / Payment";"Mode of Receipt / Payment")
+                field("Mode of Receipt / Payment"; "Mode of Receipt / Payment")
                 {
                 }
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Amount;Amount)
+                field(Amount; Amount)
                 {
                 }
             }
-            field(Control1102152002;'')
+            field(Control1102152002; '')
             {
                 CaptionClass = Text19012325;
                 ShowCaption = false;
@@ -64,7 +64,7 @@ page 60099 "Tender Ledger Entries"
 
                 trigger OnAction();
                 begin
-                    Navigate.SetDoc("Posting Date","Document No.");
+                    Navigate.SetDoc("Posting Date", "Document No.");
                     Navigate.RUN;
                 end;
             }
@@ -73,44 +73,44 @@ page 60099 "Tender Ledger Entries"
 
     trigger OnOpenPage();
     begin
-        SelectionFilter := SelectionFilter :: All;
+        SelectionFilter := SelectionFilter::All;
         CurrPage.UPDATE(FALSE);
     end;
 
     var
-        SelectionFilter : Option All,Payment,Receipt,Adjustment,"Write off";
-        TendLedgEntry : Record "Tender Ledger Entries";
-        Text19012325 : Label 'Seclection Filter';
-        Navigate : Page Navigate;
+        SelectionFilter: Option All,Payment,Receipt,Adjustment,"Write off";
+        TendLedgEntry: Record "Tender Ledger Entries";
+        Text19012325: Label 'Seclection Filter';
+        Navigate: Page Navigate;
 
     [LineStart(10943)]
-    procedure CurrentNo(SelectionFilter : Option All,Payment,Receipt,Adjustment,"Write off");
+    procedure CurrentNo(SelectionFilter: Option All,Payment,Receipt,Adjustment,"Write off");
     begin
         CASE SelectionFilter OF
-          SelectionFilter :: Payment:
-          BEGIN
-            SETRANGE("Transaction Type","Transaction Type"::Payment);
-            CurrPage.UPDATE(FALSE);
-          END;
-          SelectionFilter :: Receipt:
-          BEGIN
-            SETRANGE("Transaction Type","Transaction Type"::Receipt);
-            CurrPage.UPDATE(FALSE);
-          END;
-          SelectionFilter :: Adjustment:
-          BEGIN
-            SETRANGE("Transaction Type","Transaction Type"::Adjustment);
-            CurrPage.UPDATE(FALSE);
-          END;
-          SelectionFilter :: "Write off":
-          BEGIN
-            SETRANGE("Transaction Type","Transaction Type"::"Write off");
-            CurrPage.UPDATE(FALSE);
-          END;
-          SelectionFilter :: All:
-          BEGIN
-            CurrPage.UPDATE(FALSE);
-          END;
+            SelectionFilter::Payment:
+                BEGIN
+                    SETRANGE("Transaction Type", "Transaction Type"::Payment);
+                    CurrPage.UPDATE(FALSE);
+                END;
+            SelectionFilter::Receipt:
+                BEGIN
+                    SETRANGE("Transaction Type", "Transaction Type"::Receipt);
+                    CurrPage.UPDATE(FALSE);
+                END;
+            SelectionFilter::Adjustment:
+                BEGIN
+                    SETRANGE("Transaction Type", "Transaction Type"::Adjustment);
+                    CurrPage.UPDATE(FALSE);
+                END;
+            SelectionFilter::"Write off":
+                BEGIN
+                    SETRANGE("Transaction Type", "Transaction Type"::"Write off");
+                    CurrPage.UPDATE(FALSE);
+                END;
+            SelectionFilter::All:
+                BEGIN
+                    CurrPage.UPDATE(FALSE);
+                END;
 
         END;
     end;

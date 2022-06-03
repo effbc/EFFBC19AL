@@ -7,7 +7,7 @@ report 50221 "test-db"
 
     dataset
     {
-        dataitem("Posted Material Issues Header";"Posted Material Issues Header")
+        dataitem("Posted Material Issues Header"; "Posted Material Issues Header")
         {
             DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Transfer-from Code=FILTER(PRODSTR|STR),Transfer-to Code=FILTER(STR|PROD));
             dataitem("Posted Material Issues Line";"Posted Material Issues Line")

@@ -5,34 +5,34 @@ report 50176 qc
 
     dataset
     {
-        dataitem("Inspection Datasheet Header";"Inspection Datasheet Header")
+        dataitem("Inspection Datasheet Header"; "Inspection Datasheet Header")
         {
             RequestFilterFields = "Created Date";
-            column(Total_QuanityCaption;Total_QuanityCaptionLbl)
+            column(Total_QuanityCaption; Total_QuanityCaptionLbl)
             {
             }
-            column(Created_DateCaption;Created_DateCaptionLbl)
+            column(Created_DateCaption; Created_DateCaptionLbl)
             {
             }
-            column(Item_DescriptionCaption;Item_DescriptionCaptionLbl)
+            column(Item_DescriptionCaption; Item_DescriptionCaptionLbl)
             {
             }
-            column(Sno_Caption;Sno_CaptionLbl)
+            column(Sno_Caption; Sno_CaptionLbl)
             {
             }
-            column(Rem_QuantityCaption;Rem_QuantityCaptionLbl)
+            column(Rem_QuantityCaption; Rem_QuantityCaptionLbl)
             {
             }
-            column(Inspection_Datasheet_Header_No_;"No.")
+            column(Inspection_Datasheet_Header_No_; "No.")
             {
             }
-            column(Inspection_Datasheet_Header_Receipt_No_;"Receipt No.")
+            column(Inspection_Datasheet_Header_Receipt_No_; "Receipt No.")
             {
             }
-            column(Inspection_Datasheet_Header_Item_No_;"Item No.")
+            column(Inspection_Datasheet_Header_Item_No_; "Item No.")
             {
             }
-            dataitem("Purch. Rcpt. Line";"Purch. Rcpt. Line")
+            dataitem("Purch. Rcpt. Line"; "Purch. Rcpt. Line")
             {
                 DataItemLink = Document No.=FIELD(Receipt No.),No.=FIELD(Item No.);
                 DataItemTableView = WHERE(Quantity=FILTER(>0));

@@ -364,16 +364,16 @@ page 60227 "LED Sale Orders List"
     var
         Text000 : Label 'Unable to execute this function while in view only mode.';
         CopySalesDoc : Report "Copy Sales Document";
-        MoveNegSalesLines : Report "Move Negative Sales Lines";
-        ApprovalMgt : Codeunit Codeunit439;
-        ReportPrint : Codeunit "Test Report-Print";
-        DocPrint : Codeunit "Document-Print";
-        ArchiveManagement : Codeunit ArchiveManagement;
-        SalesInfoPaneMgt : Codeunit "Sales Info-Pane Management";
-        SalesSetup : Record "Sales & Receivables Setup";
-        UserMgt : Codeunit "User Setup Management";
-        Usage : Option "Order Confirmation","Work Order";
-        Text001 : Label 'There are non posted Prepayment Amounts on %1 %2.';
+                           MoveNegSalesLines : Report "Move Negative Sales Lines";
+                           ApprovalMgt : Codeunit Codeunit439;
+                           ReportPrint : Codeunit "Test Report-Print";
+                           DocPrint : Codeunit "Document-Print";
+                           ArchiveManagement : Codeunit ArchiveManagement;
+                           SalesInfoPaneMgt : Codeunit "Sales Info-Pane Management";
+                           SalesSetup : Record "Sales & Receivables Setup";
+                           UserMgt : Codeunit "User Setup Management";
+                           Usage : Option "Order Confirmation","Work Order";
+                           Text001 : Label 'There are non posted Prepayment Amounts on %1 %2.';
         Text002 : Label 'There are unpaid Prepayment Invoices related to %1 %2.';
         SalesLine : Record "Sales Line";
         Text16500 : Label 'You can not uncheck Re-Dispatch until Return Receipt No. is Blank.';
@@ -476,10 +476,10 @@ page 60227 "LED Sale Orders List"
         Text19070588 : Label 'Sell-to Customer';
         Text19069283 : Label 'Bill-to Customer';
         ChangeExchangeRate : Page "Change Exchange Rate";
-        "--Rev01" : Integer;
-        SQLConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
-        RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
-        TotalOrders : Label '"Total Orders: "';
+                                 "--Rev01" : Integer;
+                                 SQLConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
+                                 RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
+                                 TotalOrders : Label '"Total Orders: "';
 
     [LineStart(17037)]
     procedure UpdateAllowed() : Boolean;

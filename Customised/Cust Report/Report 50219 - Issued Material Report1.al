@@ -12,347 +12,345 @@ report 50219 "Issued Material Report1"
 
     dataset
     {
-        dataitem("<Production Order1>";"Production Order")
+        dataitem("<Production Order1>"; "Production Order")
         {
-            DataItemTableView = SORTING(Status,No.) ORDER(Ascending) WHERE(Status=FILTER(>=Released));
-            RequestFilterFields = "No.","Source No.";
-            column(Production_Order1__Status;Status)
+            DataItemTableView = SORTING(Status, No.) ORDER(Ascending) WHERE(Status = FILTER(>= Released));
+            RequestFilterFields = "No.", "Source No.";
+            column(Production_Order1__Status; Status)
             {
             }
-            column(Production_Order1__No_;"No.")
+            column(Production_Order1__No_; "No.")
             {
             }
-            dataitem("Posted Material Issues Header";"Posted Material Issues Header")
+            dataitem("Posted Material Issues Header"; "Posted Material Issues Header")
             {
                 DataItemLink = Prod. Order No.=FIELD(No.);
-                DataItemTableView = SORTING(Prod. Order No.,Prod. Order Line No.);
-                RequestFilterFields = "Material Issue No.","Posting Date","Resource Name","Reason Code","Transfer-to Code","Transfer-from Code","Prod. Order No.";
-                column(COMPANYNAME;COMPANYNAME)
+                DataItemTableView = SORTING(Prod. Order No., Prod. Order Line No.);
+                RequestFilterFields = "Material Issue No.", "Posting Date", "Resource Name", "Reason Code", "Transfer-to Code", "Transfer-from Code", "Prod. Order No.";
+                column(COMPANYNAME; COMPANYNAME)
                 {
                 }
-                column(USERID;USERID)
+                column(USERID; USERID)
                 {
                 }
-                column(TODAY;TODAY)
+                column(TODAY; TODAY)
                 {
                 }
-                column(COMPANYNAME_Control1102154003;COMPANYNAME)
+                column(COMPANYNAME_Control1102154003; COMPANYNAME)
                 {
                 }
-                column(USERID_Control1102154016;USERID)
+                column(USERID_Control1102154016; USERID)
                 {
                 }
-                column(TODAY_Control1102154017;TODAY)
+                column(TODAY_Control1102154017; TODAY)
                 {
                 }
-                column(Posted_Material_Issues_Header__Prod__Order_No__;"Prod. Order No.")
+                column(Posted_Material_Issues_Header__Prod__Order_No__; "Prod. Order No.")
                 {
                 }
-                column(Project_Desc;Project_Desc)
+                column(Project_Desc; Project_Desc)
                 {
                 }
-                column(Project_Total_;"Project Total")
+                column(Project_Total_; "Project Total")
                 {
                 }
-                column(R_D_total_;"R&D total")
+                column(R_D_total_; "R&D total")
                 {
                 }
-                column(Total;Total)
+                column(Total; Total)
                 {
                 }
-                column(Total_Qty;Total_Qty)
+                column(Total_Qty; Total_Qty)
                 {
                 }
-                column(Material_IssuesCaption;Material_IssuesCaptionLbl)
+                column(Material_IssuesCaption; Material_IssuesCaptionLbl)
                 {
                 }
-                column(Project_CodeCaption;Project_CodeCaptionLbl)
+                column(Project_CodeCaption; Project_CodeCaptionLbl)
                 {
                 }
-                column(Requisition_NoCaption;Requisition_NoCaptionLbl)
+                column(Requisition_NoCaption; Requisition_NoCaptionLbl)
                 {
                 }
-                column(Item_Caption;Item_CaptionLbl)
+                column(Item_Caption; Item_CaptionLbl)
                 {
                 }
-                column(UOMCaption;UOMCaptionLbl)
+                column(UOMCaption; UOMCaptionLbl)
                 {
                 }
-                column(Employee_NameCaption;Employee_NameCaptionLbl)
+                column(Employee_NameCaption; Employee_NameCaptionLbl)
                 {
                 }
-                column(Reqested_DateCaption;Reqested_DateCaptionLbl)
+                column(Reqested_DateCaption; Reqested_DateCaptionLbl)
                 {
                 }
-                column(DeptCaption;DeptCaptionLbl)
+                column(DeptCaption; DeptCaptionLbl)
                 {
                 }
-                column(Quantity_RequestedCaption;Quantity_RequestedCaptionLbl)
+                column(Quantity_RequestedCaption; Quantity_RequestedCaptionLbl)
                 {
                 }
-                column(Quantity_ReceivedCaption;Quantity_ReceivedCaptionLbl)
+                column(Quantity_ReceivedCaption; Quantity_ReceivedCaptionLbl)
                 {
                 }
-                column(Unit_costCaption;Unit_costCaptionLbl)
+                column(Unit_costCaption; Unit_costCaptionLbl)
                 {
                 }
-                column(LOT_No_Caption;LOT_No_CaptionLbl)
+                column(LOT_No_Caption; LOT_No_CaptionLbl)
                 {
                 }
-                column(Serial_No_Caption;Serial_No_CaptionLbl)
+                column(Serial_No_Caption; Serial_No_CaptionLbl)
                 {
                 }
-                column(Bench_MarkCaption;Bench_MarkCaptionLbl)
+                column(Bench_MarkCaption; Bench_MarkCaptionLbl)
                 {
                 }
-                column(Vendor_NameCaption;Vendor_NameCaptionLbl)
+                column(Vendor_NameCaption; Vendor_NameCaptionLbl)
                 {
                 }
-                column(Bill_No_Caption;Bill_No_CaptionLbl)
+                column(Bill_No_Caption; Bill_No_CaptionLbl)
                 {
                 }
-                column(Bill_DateCaption;Bill_DateCaptionLbl)
+                column(Bill_DateCaption; Bill_DateCaptionLbl)
                 {
                 }
-                column(Issued_Date_TimeCaption;Issued_Date_TimeCaptionLbl)
+                column(Issued_Date_TimeCaption; Issued_Date_TimeCaptionLbl)
                 {
                 }
-                column(Material_IssuesCaption_Control1102154002;Material_IssuesCaption_Control1102154002Lbl)
+                column(Material_IssuesCaption_Control1102154002; Material_IssuesCaption_Control1102154002Lbl)
                 {
                 }
-                column(Project_CodeCaption_Control1102154004;Project_CodeCaption_Control1102154004Lbl)
+                column(Project_CodeCaption_Control1102154004; Project_CodeCaption_Control1102154004Lbl)
                 {
                 }
-                column(ValueCaption;ValueCaptionLbl)
+                column(ValueCaption; ValueCaptionLbl)
                 {
                 }
-                column(Project_DescriptionCaption;Project_DescriptionCaptionLbl)
+                column(Project_DescriptionCaption; Project_DescriptionCaptionLbl)
                 {
                 }
-                column(Posted_Material_Issues_Header_No_;"No.")
+                column(Posted_Material_Issues_Header_No_; "No.")
                 {
                 }
-                dataitem("Posted Material Issues Line";"Posted Material Issues Line")
+                dataitem("Posted Material Issues Line"; "Posted Material Issues Line")
                 {
                     DataItemLink = Document No.=FIELD(No.);
-                    DataItemTableView = SORTING(Document No.,Item No.) WHERE(Quantity=FILTER(>0));
+                    DataItemTableView = SORTING(Document No., Item No.) WHERE(Quantity = FILTER(> 0));
                     RequestFilterFields = "Item No.";
-                    column(Posted_Material_Issues_Header___Reason_Code_;"Posted Material Issues Header"."Reason Code")
+                    column(Posted_Material_Issues_Header___Reason_Code_; "Posted Material Issues Header"."Reason Code")
                     {
                     }
-                    column(Posted_Material_Issues_Line__Material_Issue_No__;"Material Issue No.")
+                    column(Posted_Material_Issues_Line__Material_Issue_No__; "Material Issue No.")
                     {
                     }
-                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description;"Posted Material Issues Line".Description)
+                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description; "Posted Material Issues Line".Description)
                     {
                     }
-                    column(Posted_Material_Issues_Line__Unit_of_Measure_;"Unit of Measure")
+                    column(Posted_Material_Issues_Line__Unit_of_Measure_; "Unit of Measure")
                     {
                     }
-                    column(Posted_Material_Issues_Header___Resource_Name_;"Posted Material Issues Header"."Resource Name")
+                    column(Posted_Material_Issues_Header___Resource_Name_; "Posted Material Issues Header"."Resource Name")
                     {
                     }
-                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime_;"Posted Material Issues Line"."Issued DateTime")
+                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime_; "Posted Material Issues Line"."Issued DateTime")
                     {
                     }
-                    column(Posted_Material_Issues_Header___Transfer_from_Code_;"Posted Material Issues Header"."Transfer-from Code")
+                    column(Posted_Material_Issues_Header___Transfer_from_Code_; "Posted Material Issues Header"."Transfer-from Code")
                     {
                     }
-                    column(QTY;QTY)
+                    column(QTY; QTY)
                     {
                     }
-                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity;"Posted Material Issues Line".Quantity)
+                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity; "Posted Material Issues Line".Quantity)
                     {
                     }
-                    column(UC;UC)
+                    column(UC; UC)
                     {
                     }
-                    column(Posted_Material_Issues_Header___Released_Date_;"Posted Material Issues Header"."Released Date")
+                    column(Posted_Material_Issues_Header___Released_Date_; "Posted Material Issues Header"."Released Date")
                     {
                     }
-                    column(Lot;Lot)
+                    column(Lot; Lot)
                     {
                     }
-                    column(Serial_no_;"Serial no")
+                    column(Serial_no_; "Serial no")
                     {
                     }
-                    column(Bench_Mark_;"Bench-Mark")
+                    column(Bench_Mark_; "Bench-Mark")
                     {
                     }
-                    column(Reason;Reason)
+                    column(Reason; Reason)
                     {
                     }
-                    column(Posted_Material_Issues_Line__Material_Issue_No___Control1000000025;"Material Issue No.")
+                    column(Posted_Material_Issues_Line__Material_Issue_No___Control1000000025; "Material Issue No.")
                     {
                     }
-                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000026;"Posted Material Issues Line".Description)
+                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000026; "Posted Material Issues Line".Description)
                     {
                     }
-                    column(Posted_Material_Issues_Line__Unit_of_Measure__Control1000000027;"Unit of Measure")
+                    column(Posted_Material_Issues_Line__Unit_of_Measure__Control1000000027; "Unit of Measure")
                     {
                     }
-                    column(Posted_Material_Issues_Header___Resource_Name__Control1000000028;"Posted Material Issues Header"."Resource Name")
+                    column(Posted_Material_Issues_Header___Resource_Name__Control1000000028; "Posted Material Issues Header"."Resource Name")
                     {
                     }
-                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000029;"Posted Material Issues Line"."Issued DateTime")
+                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000029; "Posted Material Issues Line"."Issued DateTime")
                     {
                     }
-                    column(Posted_Material_Issues_Line__Transfer_to_Code_;"Transfer-to Code")
+                    column(Posted_Material_Issues_Line__Transfer_to_Code_; "Transfer-to Code")
                     {
                     }
-                    column(QTY_Control1000000031;QTY)
+                    column(QTY_Control1000000031; QTY)
                     {
                     }
-                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000032;"Posted Material Issues Line".Quantity)
+                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000032; "Posted Material Issues Line".Quantity)
                     {
                     }
-                    column(UC_Control1000000033;UC)
+                    column(UC_Control1000000033; UC)
                     {
                     }
-                    column(Posted_Material_Issues_Header___Released_Date__Control1000000036;"Posted Material Issues Header"."Released Date")
+                    column(Posted_Material_Issues_Header___Released_Date__Control1000000036; "Posted Material Issues Header"."Released Date")
                     {
                     }
-                    column(Lot_Control1000000041;Lot)
+                    column(Lot_Control1000000041; Lot)
                     {
                     }
-                    column(Serial_no__Control1000000042;"Serial no")
+                    column(Serial_no__Control1000000042; "Serial no")
                     {
                     }
-                    column(Bench_Mark__Control1102154010;"Bench-Mark")
+                    column(Bench_Mark__Control1102154010; "Bench-Mark")
                     {
                     }
-                    column(Reason_Control1000000054;Reason)
+                    column(Reason_Control1000000054; Reason)
                     {
                     }
-                    column(Posted_Material_Issues_Line__Material_Issue_No___Control1000000055;"Material Issue No.")
+                    column(Posted_Material_Issues_Line__Material_Issue_No___Control1000000055; "Material Issue No.")
                     {
                     }
-                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000056;"Posted Material Issues Line".Description)
+                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000056; "Posted Material Issues Line".Description)
                     {
                     }
-                    column(Posted_Material_Issues_Line__Unit_of_Measure__Control1000000057;"Unit of Measure")
+                    column(Posted_Material_Issues_Line__Unit_of_Measure__Control1000000057; "Unit of Measure")
                     {
                     }
-                    column(Posted_Material_Issues_Header___Resource_Name__Control1000000058;"Posted Material Issues Header"."Resource Name")
+                    column(Posted_Material_Issues_Header___Resource_Name__Control1000000058; "Posted Material Issues Header"."Resource Name")
                     {
                     }
-                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000059;"Posted Material Issues Line"."Issued DateTime")
+                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000059; "Posted Material Issues Line"."Issued DateTime")
                     {
                     }
-                    column(Posted_Material_Issues_Header___Transfer_from_Code__Control1000000060;"Posted Material Issues Header"."Transfer-from Code")
+                    column(Posted_Material_Issues_Header___Transfer_from_Code__Control1000000060; "Posted Material Issues Header"."Transfer-from Code")
                     {
                     }
-                    column(QTY_Control1000000061;QTY)
+                    column(QTY_Control1000000061; QTY)
                     {
                     }
-                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000062;"Posted Material Issues Line".Quantity)
+                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000062; "Posted Material Issues Line".Quantity)
                     {
                     }
-                    column(UC_Control1000000063;UC)
+                    column(UC_Control1000000063; UC)
                     {
                     }
-                    column(Posted_Material_Issues_Header___Released_Date__Control1000000037;"Posted Material Issues Header"."Released Date")
+                    column(Posted_Material_Issues_Header___Released_Date__Control1000000037; "Posted Material Issues Header"."Released Date")
                     {
                     }
-                    column(Lot_Control1000000045;Lot)
+                    column(Lot_Control1000000045; Lot)
                     {
                     }
-                    column(Serial_no__Control1000000046;"Serial no")
+                    column(Serial_no__Control1000000046; "Serial no")
                     {
                     }
-                    column(Bench_Mark__Control1102154012;"Bench-Mark")
+                    column(Bench_Mark__Control1102154012; "Bench-Mark")
                     {
                     }
-                    column(Posted_Material_Issues_Line__Material_Issue_No___Control1000000015;"Material Issue No.")
+                    column(Posted_Material_Issues_Line__Material_Issue_No___Control1000000015; "Material Issue No.")
                     {
                     }
-                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000013;"Posted Material Issues Line".Description)
+                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000013; "Posted Material Issues Line".Description)
                     {
                     }
-                    column(Posted_Material_Issues_Line__Unit_of_Measure__Control1000000012;"Unit of Measure")
+                    column(Posted_Material_Issues_Line__Unit_of_Measure__Control1000000012; "Unit of Measure")
                     {
                     }
-                    column(Posted_Material_Issues_Header___Resource_Name__Control1000000016;"Posted Material Issues Header"."Resource Name")
+                    column(Posted_Material_Issues_Header___Resource_Name__Control1000000016; "Posted Material Issues Header"."Resource Name")
                     {
                     }
-                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000017;"Posted Material Issues Line"."Issued DateTime")
+                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000017; "Posted Material Issues Line"."Issued DateTime")
                     {
                     }
-                    column(Posted_Material_Issues_Line__Transfer_to_Code__Control1000000011;"Transfer-to Code")
+                    column(Posted_Material_Issues_Line__Transfer_to_Code__Control1000000011; "Transfer-to Code")
                     {
                     }
-                    column(QTY_Control1000000018;QTY)
+                    column(QTY_Control1000000018; QTY)
                     {
                     }
-                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000010;"Posted Material Issues Line".Quantity)
+                    column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000010; "Posted Material Issues Line".Quantity)
                     {
                     }
-                    column(UC_Control1000000019;UC)
+                    column(UC_Control1000000019; UC)
                     {
                     }
-                    column(Posted_Material_Issues_Header___Released_Date__Control1000000038;"Posted Material Issues Header"."Released Date")
+                    column(Posted_Material_Issues_Header___Released_Date__Control1000000038; "Posted Material Issues Header"."Released Date")
                     {
                     }
-                    column(Lot_Control1000000047;Lot)
+                    column(Lot_Control1000000047; Lot)
                     {
                     }
-                    column(Serial_no__Control1000000048;"Serial no")
+                    column(Serial_no__Control1000000048; "Serial no")
                     {
                     }
-                    column(Posted_Material_Issues_Header___Prod__Order_No__;"Posted Material Issues Header"."Prod. Order No.")
+                    column(Posted_Material_Issues_Header___Prod__Order_No__; "Posted Material Issues Header"."Prod. Order No.")
                     {
                     }
-                    column(Bench_Mark__Control1102154015;"Bench-Mark")
+                    column(Bench_Mark__Control1102154015; "Bench-Mark")
                     {
                     }
-                    column(vendor;vendor)
+                    column(vendor; vendor)
                     {
                     }
-                    column(BILLNO__;"BILLNO.")
+                    column(BILLNO__; "BILLNO.")
                     {
                     }
-                    column(BillDate;BillDate)
+                    column(BillDate; BillDate)
                     {
                     }
-                    column(DaysCaption;DaysCaptionLbl)
+                    column(DaysCaption; DaysCaptionLbl)
                     {
                     }
-                    column(DaysCaption_Control1102154011;DaysCaption_Control1102154011Lbl)
+                    column(DaysCaption_Control1102154011; DaysCaption_Control1102154011Lbl)
                     {
                     }
-                    column(DaysCaption_Control1102154013;DaysCaption_Control1102154013Lbl)
+                    column(DaysCaption_Control1102154013; DaysCaption_Control1102154013Lbl)
                     {
                     }
-                    column(DaysCaption_Control1102154018;DaysCaption_Control1102154018Lbl)
+                    column(DaysCaption_Control1102154018; DaysCaption_Control1102154018Lbl)
                     {
                     }
-                    column(Posted_Material_Issues_Line_Document_No_;"Document No.")
+                    column(Posted_Material_Issues_Line_Document_No_; "Document No.")
                     {
                     }
-                    column(Posted_Material_Issues_Line_Line_No_;"Line No.")
+                    column(Posted_Material_Issues_Line_Line_No_; "Line No.")
                     {
                     }
-                    column(Posted_Material_Issues_Line_Item_No_;"Item No.")
+                    column(Posted_Material_Issues_Line_Item_No_; "Item No.")
                     {
                     }
 
                     trigger OnAfterGetRecord();
                     begin
-                         UC:=0;
-                        IF Choice1=Choice1::Damage THEN
-                        BEGIN
-                         IF NOT (("Posted Material Issues Header"."Reason Code"='Damage')
-                             OR ("Posted Material Issues Header"."Transfer-to Code"='DAMAGE') )THEN
-                         CurrReport.SKIP;
-                        END ELSE IF Choice1=Choice1::Normal THEN
-                        BEGIN
+                        UC := 0;
+                        IF Choice1 = Choice1::Damage THEN BEGIN
+                            IF NOT (("Posted Material Issues Header"."Reason Code" = 'Damage')
+                                OR ("Posted Material Issues Header"."Transfer-to Code" = 'DAMAGE')) THEN
+                                CurrReport.SKIP;
+                        END ELSE
+                            IF Choice1 = Choice1::Normal THEN BEGIN
 
-                         IF "Posted Material Issues Line"."Transfer-to Code"='DAMAGE' THEN
-                         BEGIN
-                           CurrReport.SKIP;
-                           MESSAGE("Posted Material Issues Line"."Item No.");
-                         END;
-                        END;
+                                IF "Posted Material Issues Line"."Transfer-to Code" = 'DAMAGE' THEN BEGIN
+                                    CurrReport.SKIP;
+                                    MESSAGE("Posted Material Issues Line"."Item No.");
+                                END;
+                            END;
                     end;
                 }
 
@@ -360,50 +358,47 @@ report 50219 "Issued Material Report1"
                 begin
                     //IF Choice3<>Choice3::Issue THEN
                     //  CurrReport.BREAK;
-                     IF Choice3=Choice3::Summary THEN
+                    IF Choice3 = Choice3::Summary THEN
                         CurrReport.BREAK;
 
 
-                    IF Choice3=Choice3::WRET THEN
-                    CurrReport.BREAK;
-                     IF Choice3=Choice3::Issue THEN
-                     BEGIN
-                       "Posted Material Issues Header".SETCURRENTKEY("Material Issue No.","Posting Date","Resource Name","Reason Code",
-                       "Prod. Order No.","Transfer-to Code","Transfer-from Code");
-                       IF Choice1=Choice1::Return THEN
-                       BEGIN
-                         "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Transfer-to Code",'STR|MCH|CS STR|''R&D STR''');
-                         "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Reason Code",'<>%1''DAMAGE');
-                       END ELSE IF Choice1=Choice1::Normal THEN
-                       BEGIN
-                         IF "Posted Material Issues Header".GETFILTER("Posted Material Issues Header"."Transfer-from Code")='' THEN
-                           "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Transfer-from Code",'STR|MCH|CS STR|''R&D STR''');
-                         IF "Posted Material Issues Header".GETFILTER("Posted Material Issues Header"."Transfer-to Code")='' THEN
-                           "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Transfer-to Code",'<>%1''DAMAGE');
-                       END ELSE IF Choice1=Choice1::Damage THEN
-                       BEGIN
-                          "Posted Material Issues Header".SETRANGE("Posted Material Issues Header"."Transfer-to Code",'DAMAGE');
-                       END;
-                     END ELSE
-                     BEGIN
-                        SETCURRENTKEY("Prod. Order No.","Prod. Order Line No.");
-                      END;
+                    IF Choice3 = Choice3::WRET THEN
+                        CurrReport.BREAK;
+                    IF Choice3 = Choice3::Issue THEN BEGIN
+                        "Posted Material Issues Header".SETCURRENTKEY("Material Issue No.", "Posting Date", "Resource Name", "Reason Code",
+                        "Prod. Order No.", "Transfer-to Code", "Transfer-from Code");
+                        IF Choice1 = Choice1::Return THEN BEGIN
+                            "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Transfer-to Code", 'STR|MCH|CS STR|''R&D STR''');
+                            "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Reason Code", '<>%1''DAMAGE');
+                        END ELSE
+                            IF Choice1 = Choice1::Normal THEN BEGIN
+                                IF "Posted Material Issues Header".GETFILTER("Posted Material Issues Header"."Transfer-from Code") = '' THEN
+                                    "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Transfer-from Code", 'STR|MCH|CS STR|''R&D STR''');
+                                IF "Posted Material Issues Header".GETFILTER("Posted Material Issues Header"."Transfer-to Code") = '' THEN
+                                    "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Transfer-to Code", '<>%1''DAMAGE');
+                            END ELSE
+                                IF Choice1 = Choice1::Damage THEN BEGIN
+                                    "Posted Material Issues Header".SETRANGE("Posted Material Issues Header"."Transfer-to Code", 'DAMAGE');
+                                END;
+                    END ELSE BEGIN
+                        SETCURRENTKEY("Prod. Order No.", "Prod. Order Line No.");
+                    END;
                 end;
             }
         }
-        dataitem("Production Order";"Production Order")
+        dataitem("Production Order"; "Production Order")
         {
-            DataItemTableView = SORTING(Status,No.) WHERE(Location Code=CONST(R&D));
-            column(Production_Order_Status;Status)
+            DataItemTableView = SORTING(Status, No.) WHERE(Location Code=CONST(R&D));
+            column(Production_Order_Status; Status)
             {
             }
-            column(Production_Order_No_;"No.")
+            column(Production_Order_No_; "No.")
             {
             }
-            dataitem("<Posted Material Issues Line1>";"Posted Material Issues Line")
+            dataitem("<Posted Material Issues Line1>"; "Posted Material Issues Line")
             {
                 DataItemLink = Prod. Order No.=FIELD(No.);
-                DataItemTableView = SORTING(Prod. Order No.,Item No.) ORDER(Ascending) WHERE(Transfer-from Code=FILTER(STR|'R&D STR'),Quantity=FILTER(>0));
+                DataItemTableView = SORTING(Prod. Order No., Item No.) ORDER(Ascending) WHERE(Transfer-from Code=FILTER(STR|'R&D STR'),Quantity=FILTER(>0));
                 ReqFilterHeading = 'Summerised Project wise Issues';
                 column(COMPANYNAME_Control1102154031;COMPANYNAME)
                 {
@@ -898,13 +893,13 @@ report 50219 "Issued Material Report1"
         MATERIAL_ISSUES_HEADER : Record "Material Issues Header";
         MATERIAL_ISSUES_LINE : Record "Material Issues Line";
         PO_FORM : Page "Released Production Order";
-        user : Record User;
-        REPLACE_ITEM_FILTER : Text[100];
-        TrackingSpecification : Record "Mat.Issue Track. Specification";
-        LineNo : Integer;
-        "Release MaterialIssue Document" : Codeunit "Release MaterialIssue Document";
-        Issue_Post : Codeunit "MaterialIssueOrde-Post Receipt";
-        Text002 : Label 'There is nothing to release for MaterialIssue order %1.';
+                      user : Record User;
+                      REPLACE_ITEM_FILTER : Text[100];
+                      TrackingSpecification : Record "Mat.Issue Track. Specification";
+                      LineNo : Integer;
+                      "Release MaterialIssue Document" : Codeunit "Release MaterialIssue Document";
+                      Issue_Post : Codeunit "MaterialIssueOrde-Post Receipt";
+                      Text002 : Label 'There is nothing to release for MaterialIssue order %1.';
         REQUESTED_QTY : Decimal;
         Sales_Order_No : Code[30];
         Item_No : Code[30];

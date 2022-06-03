@@ -14,7 +14,7 @@ page 60163 "Cal Proc Subform"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field(Comment;Comment)
+                field(Comment; Comment)
                 {
                 }
             }

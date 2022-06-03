@@ -14,13 +14,13 @@ page 60235 "Issue Track Detailed Desc."
         {
             repeater(Group)
             {
-                field("Detailed Descrption";"Detailed Descrption")
+                field("Detailed Descrption"; "Detailed Descrption")
                 {
                 }
-                field("Logged DateTime";"Logged DateTime")
+                field("Logged DateTime"; "Logged DateTime")
                 {
                 }
-                field("Logged By";"Logged By")
+                field("Logged By"; "Logged By")
                 {
                 }
             }

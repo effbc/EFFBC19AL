@@ -6,13 +6,13 @@ xmlport 80081 "Unit Of Measure"
     {
         textelement(UnitofMeasures)
         {
-            tableelement("<unitofmeasure>";"Unit of Measure")
+            tableelement("<unitofmeasure>"; "Unit of Measure")
             {
                 XmlName = 'UnitofMeasure';
-                fieldelement(Code;"<UnitofMeasure>".Code)
+                fieldelement(Code; "<UnitofMeasure>".Code)
                 {
                 }
-                fieldelement(Description;"<UnitofMeasure>".Description)
+                fieldelement(Description; "<UnitofMeasure>".Description)
                 {
                 }
             }

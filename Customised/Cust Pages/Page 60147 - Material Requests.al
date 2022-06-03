@@ -15,20 +15,20 @@ page 60147 "Material Requests"
                 Caption = 'General';
                 Editable = true;
                 Enabled = true;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Editable = false;
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field("Transfer-from Code";"Transfer-from Code")
+                field("Transfer-from Code"; "Transfer-from Code")
                 {
                 }
-                field("Transfer-to Code";"Transfer-to Code")
+                field("Transfer-to Code"; "Transfer-to Code")
                 {
 
                     trigger OnValidate();
@@ -38,158 +38,148 @@ page 60147 "Material Requests"
                         ELSE
                         CurrPage."Shortcut Dimension 2 Code".ENABLED:=TRUE;
                                                                               */
-                        IF  "Transfer-to Code"='DC' THEN
-                        ERROR('DC process has been changed.If any doubts Contact ERP Team');
-                        
+                        IF "Transfer-to Code" = 'DC' THEN
+                            ERROR('DC process has been changed.If any doubts Contact ERP Team');
+
                         // Added by vishnu Priya on 26-06-2020 for restricting the  stock transfer requests
-                        IF (Rec."Transfer-from Code" = 'STR') AND (Rec."Transfer-to Code" = 'MAGSTR') THEN
-                        BEGIN
-                          IF NOT (USERID IN ['EFFTRONICS\GRAVI','EFFTRONICS\TULASI']) THEN
-                            ERROR('You can not Raise a Stock Transfer Request!');
+                        IF (Rec."Transfer-from Code" = 'STR') AND (Rec."Transfer-to Code" = 'MAGSTR') THEN BEGIN
+                            IF NOT (USERID IN ['EFFTRONICS\GRAVI', 'EFFTRONICS\TULASI']) THEN
+                                ERROR('You can not Raise a Stock Transfer Request!');
                         END;
 
                     end;
                 }
-                field("Prod. Order No.";"Prod. Order No.")
+                field("Prod. Order No."; "Prod. Order No.")
                 {
 
                     trigger OnValidate();
                     var
-                        PMIH : Record "Posted Material Issues Header";
-                        PO : Record "Production Order";
+                        PMIH: Record "Posted Material Issues Header";
+                        PO: Record "Production Order";
                     begin
                         /*IF ("Transfer-to Code" IN ['RD1','RD2','RD3','RD4','RD5','RD6','RHW'])  OR
                            ("Transfer-From Code" IN ['RD1','RD2','RD3','RD4','RD5','RD6','RHW'])
                         BEGIN
                         */
-                        
-                        
-                        
-                           "Material Issues Line".SETRANGE("Material Issues Line"."Document No.","No.");
-                           IF "Material Issues Line".FINDSET THEN
-                           REPEAT
-                             "Material Issues Line"."Prod. Order No.":="Prod. Order No.";
-                             "Material Issues Line".MODIFY(TRUE);
-                           UNTIL "Material Issues Line".NEXT=0;
+
+
+
+                        "Material Issues Line".SETRANGE("Material Issues Line"."Document No.", "No.");
+                        IF "Material Issues Line".FINDSET THEN
+                            REPEAT
+                                "Material Issues Line"."Prod. Order No." := "Prod. Order No.";
+                                "Material Issues Line".MODIFY(TRUE);
+                            UNTIL "Material Issues Line".NEXT = 0;
                         // Added by sundar
-                           IF ("Transfer-from Code"='STR') AND ("Transfer-to Code"='PROD') THEN
-                           BEGIN
-                             PO.SETFILTER(PO."No.","Prod. Order No.");
-                             IF PO.FINDFIRST THEN
-                               "Sales Order No.":=PO."Sales Order No.";
-                               MODIFY;
-                           END;
-                           IF "Prod. Order No."='' THEN
-                           BEGIN
-                             "Prod. Order Line No.":=0;
-                             "Proj Description":='';
-                             MODIFY;
-                           END;
-                        IF (NOT (UPPERCASE(USERID) IN ['EFFTRONICS\SARDHAR', 'EFFTRONICS\VSNGEETHA', 'EFFTRONICS\GRAVI','EFFTRONICS\VIJAYA'])) THEN
-                        BEGIN
-                              PO.RESET;
-                              PO.SETFILTER("No.","Prod. Order No.");
-                              PO.SETFILTER("Sales Order No.",'<> %1', '');
-                              IF PO.FINDFIRST THEN
-                              BEGIN
-                                  PMIH.RESET;
-                                  PMIH.SETFILTER(PMIH."Prod. Order No.", "Prod. Order No.");
-                                  IF NOT PMIH.FINDFIRST THEN
-                                  BEGIN
-                                     ERROR('Auto Postings not Completed with This RPO');
-                                  END
-                              END;
+                        IF ("Transfer-from Code" = 'STR') AND ("Transfer-to Code" = 'PROD') THEN BEGIN
+                            PO.SETFILTER(PO."No.", "Prod. Order No.");
+                            IF PO.FINDFIRST THEN
+                                "Sales Order No." := PO."Sales Order No.";
+                            MODIFY;
+                        END;
+                        IF "Prod. Order No." = '' THEN BEGIN
+                            "Prod. Order Line No." := 0;
+                            "Proj Description" := '';
+                            MODIFY;
+                        END;
+                        IF (NOT (UPPERCASE(USERID) IN ['EFFTRONICS\SARDHAR', 'EFFTRONICS\VSNGEETHA', 'EFFTRONICS\GRAVI', 'EFFTRONICS\VIJAYA'])) THEN BEGIN
+                            PO.RESET;
+                            PO.SETFILTER("No.", "Prod. Order No.");
+                            PO.SETFILTER("Sales Order No.", '<> %1', '');
+                            IF PO.FINDFIRST THEN BEGIN
+                                PMIH.RESET;
+                                PMIH.SETFILTER(PMIH."Prod. Order No.", "Prod. Order No.");
+                                IF NOT PMIH.FINDFIRST THEN BEGIN
+                                    ERROR('Auto Postings not Completed with This RPO');
+                                END
+                            END;
                         END;
 
                     end;
                 }
-                field("Prod. Order Line No.";"Prod. Order Line No.")
+                field("Prod. Order Line No."; "Prod. Order Line No.")
                 {
                 }
-                field("Proj Description";"Proj Description")
+                field("Proj Description"; "Proj Description")
                 {
                 }
-                field("Production BOM No.";"Production BOM No.")
+                field("Production BOM No."; "Production BOM No.")
                 {
                 }
-                field("BOM Type";"BOM Type")
+                field("BOM Type"; "BOM Type")
                 {
                     OptionCaption = '" ,Mechanical,Wiring,Testing,Packing"';
                 }
-                field("Sales Order No.";"Sales Order No.")
+                field("Sales Order No."; "Sales Order No.")
                 {
 
-                    trigger OnLookup(Text : Text) : Boolean;
+                    trigger OnLookup(Text: Text): Boolean;
                     begin
-                          IF "Transfer-from Code" ='CS STR' THEN
-                          BEGIN
-                            IF PAGE.RUNMODAL(60219,SO) = ACTION::LookupOK THEN
-                            BEGIN
-                              "Sales Order No.":=SO."No.";
-                              MODIFY;
+                        IF "Transfer-from Code" = 'CS STR' THEN BEGIN
+                            IF PAGE.RUNMODAL(60219, SO) = ACTION::LookupOK THEN BEGIN
+                                "Sales Order No." := SO."No.";
+                                MODIFY;
                             END;
-                          END
-                          ELSE
-                          BEGIN
-                           // SH.SETFILTER(SH.Status,'Released'); commented on 24-03-18 in order to have all sale orderss visibility in material reqst
-                            IF PAGE.RUNMODAL(45,SH) = ACTION::LookupOK THEN
-                            BEGIN
-                              "Sales Order No.":=SH."No.";
-                              MODIFY;
+                        END
+                        ELSE BEGIN
+                            // SH.SETFILTER(SH.Status,'Released'); commented on 24-03-18 in order to have all sale orderss visibility in material reqst
+                            IF PAGE.RUNMODAL(45, SH) = ACTION::LookupOK THEN BEGIN
+                                "Sales Order No." := SH."No.";
+                                MODIFY;
                             END;
-                          END;
+                        END;
                     end;
                 }
-                field("Type of Solder";"Type of Solder")
+                field("Type of Solder"; "Type of Solder")
                 {
                 }
-                field(Status;Status)
-                {
-                    Editable = false;
-                }
-                field("Posting Date";"Posting Date")
-                {
-                }
-                field("Person Code";"Person Code")
-                {
-                }
-                field("Released Date";"Released Date")
+                field(Status; Status)
                 {
                     Editable = false;
                 }
-                field("Authorized Person";"Request for Authorization")
+                field("Posting Date"; "Posting Date")
+                {
+                }
+                field("Person Code"; "Person Code")
+                {
+                }
+                field("Released Date"; "Released Date")
+                {
+                    Editable = false;
+                }
+                field("Authorized Person"; "Request for Authorization")
                 {
                     Caption = 'Authorized Person';
                     Visible = true;
                 }
-                field("Vendor No.";"Vendor No.")
+                field("Vendor No."; "Vendor No.")
                 {
                     Visible = "Vendor No.Visible";
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
-                field("Released By";"Released By")
+                field("Released By"; "Released By")
                 {
                     Caption = 'Released by';
                     Editable = false;
                     Enabled = true;
                 }
-                field("Required Date";"Required Date")
+                field("Required Date"; "Required Date")
                 {
                     Editable = true;
                 }
-                field("Shortcut Dimension 2 Code";"Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
                 {
                 }
-                field("User ID";"User ID")
+                field("User ID"; "User ID")
                 {
                     Caption = 'Req.User ID';
                     Editable = UserIdEditable;
 
                     trigger OnValidate();
                     begin
-                        
+
                         /*User_rec.RESET;
                         User_rec.SETFILTER("User Name",Rec."User ID");
                         IF User_rec.FINDFIRST THEN
@@ -199,103 +189,98 @@ page 60147 "Material Requests"
 
                     end;
                 }
-                field("Resource Name";"Resource Name")
+                field("Resource Name"; "Resource Name")
                 {
                     Caption = 'Req. Person';
                 }
-                field("Released Time";"Released Time")
+                field("Released Time"; "Released Time")
                 {
                     Editable = false;
                 }
-                field("Reason Code";"Reason Code")
+                field("Reason Code"; "Reason Code")
                 {
 
                     trigger OnValidate();
                     begin
                         "Material Issues Line".RESET;
-                        "Material Issues Line".SETFILTER("Material Issues Line"."Document No.","No.");
-                        "Material Issues Line".SETFILTER("Material Issues Line"."Reason Code",' ');
-                        IF "Material Issues Line".FINDFIRST THEN
-                        BEGIN
-                          "Material Issues Line".MODIFYALL("Material Issues Line"."Reason Code","Reason Code");
+                        "Material Issues Line".SETFILTER("Material Issues Line"."Document No.", "No.");
+                        "Material Issues Line".SETFILTER("Material Issues Line"."Reason Code", ' ');
+                        IF "Material Issues Line".FINDFIRST THEN BEGIN
+                            "Material Issues Line".MODIFYALL("Material Issues Line"."Reason Code", "Reason Code");
                         END;
                     end;
                 }
-                field("Mode of Transport";"Mode of Transport")
+                field("Mode of Transport"; "Mode of Transport")
                 {
                 }
-                field("Creation DateTime";"Creation DateTime")
+                field("Creation DateTime"; "Creation DateTime")
                 {
                     Editable = false;
                     Enabled = true;
                 }
-                field("Service Order No.";"Service Order No.")
+                field("Service Order No."; "Service Order No.")
                 {
                 }
-                field("Service Item";"Service Item")
+                field("Service Item"; "Service Item")
                 {
 
-                    trigger OnLookup(Text : Text) : Boolean;
+                    trigger OnLookup(Text: Text): Boolean;
                     begin
-                         //  MESSAGE(FORMAT("Service Order No."));
-                           "Service Item Line".RESET;
-                           "Service Item Line".SETRANGE("Service Item Line"."Document No.","Service Order No.");
-                           "Service Item Line".SETFILTER("Service Item Line"."Finishing Date",'>=%1|%2',TODAY-6,0D);
-                           IF "Service Item Line".FINDFIRST THEN
-                           BEGIN
-                             IF  PAGE.RUNMODAL(0,"Service Item Line")=ACTION::LookupOK THEN
-                             BEGIN
-                               "Service Item":="Service Item Line"."Service Item No.";
-                               "Service Item Serial No.":="Service Item Line"."Serial No.";
-                               "Service Item Description":="Service Item Line".Description;
-                               MODIFY;
-                             END;
-                           END;
+                        //  MESSAGE(FORMAT("Service Order No."));
+                        "Service Item Line".RESET;
+                        "Service Item Line".SETRANGE("Service Item Line"."Document No.", "Service Order No.");
+                        "Service Item Line".SETFILTER("Service Item Line"."Finishing Date", '>=%1|%2', TODAY - 6, 0D);
+                        IF "Service Item Line".FINDFIRST THEN BEGIN
+                            IF PAGE.RUNMODAL(0, "Service Item Line") = ACTION::LookupOK THEN BEGIN
+                                "Service Item" := "Service Item Line"."Service Item No.";
+                                "Service Item Serial No." := "Service Item Line"."Serial No.";
+                                "Service Item Description" := "Service Item Line".Description;
+                                MODIFY;
+                            END;
+                        END;
                     end;
 
                     trigger OnValidate();
                     begin
                         // >>Added by Pranavi on 02-06-2017 for validating service item
-                        IF "Service Item" <> '' THEN
-                        BEGIN
-                          "Service Item Line".RESET;
-                          "Service Item Line".SETRANGE("Service Item Line"."Document No.","Service Order No.");
-                          "Service Item Line".SETRANGE("Service Item No.","Service Item");
-                          IF NOT "Service Item Line".FINDFIRST THEN
-                            ERROR('Service Item does not exist in Service Order : %1',"Service Order No.");
-                        END ELSE
-                        BEGIN
-                          "Service Item Serial No.":='';
-                          "Service Item Description":='';
+                        IF "Service Item" <> '' THEN BEGIN
+                            "Service Item Line".RESET;
+                            "Service Item Line".SETRANGE("Service Item Line"."Document No.", "Service Order No.");
+                            "Service Item Line".SETRANGE("Service Item No.", "Service Item");
+                            IF NOT "Service Item Line".FINDFIRST THEN
+                                ERROR('Service Item does not exist in Service Order : %1', "Service Order No.");
+                        END ELSE BEGIN
+                            "Service Item Serial No." := '';
+                            "Service Item Description" := '';
                         END;
                         // <<Added by Pranavi on 02-06-2017 for validating service item
                     end;
                 }
-                field("Service Item Description";"Service Item Description")
+                field("Service Item Description"; "Service Item Description")
                 {
                     Editable = false;
                 }
-                field("Service Item Serial No.";"Service Item Serial No.")
+                field("Service Item Serial No."; "Service Item Serial No.")
                 {
                     Editable = false;
                 }
-                field(Multiple;Multiple)
+                field(Multiple; Multiple)
                 {
                 }
-                field(Priority;Priority)
+                field(Priority; Priority)
                 {
                     Caption = 'Priority';
                 }
-                field("Transaction ID";"Transaction ID")
+                field("Transaction ID"; "Transaction ID")
                 {
                     Editable = false;
                 }
-                field("Customer No";"Customer No")
+                field("Customer No"; "Customer No")
                 {
                     Editable = true;
                 }
             }
-            part(MaterialIssueLine;"Material Issue Subform")
+            part(MaterialIssueLine; "Material Issue Subform")
             {
                 SubPageLink = Document No.=FIELD(No.);
             }
@@ -323,14 +308,14 @@ page 60147 "Material Requests"
                     Caption = 'Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Inventory Comment Sheet";
-                    RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
+                                    RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
                 }
                 action("Iss&ues")
                 {
                     Caption = 'Iss&ues';
                     Image = ErrorLog;
                     RunObject = Page "Posted Material Issue List";
-                    RunPageLink = Material Issue No.=FIELD(No.);
+                                    RunPageLink = Material Issue No.=FIELD(No.);
                 }
                 action(Dimensions)
                 {
@@ -2618,7 +2603,7 @@ page 60147 "Material Requests"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Inventory Comment Sheet";
-                RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
+                                RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
                 ToolTip = 'Comment';
             }
         }

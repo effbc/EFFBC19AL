@@ -3,31 +3,38 @@ table 60024 "Indent Header"
     // version B2B1.0,POAU,Rev01
 
     LookupPageID = "Indent List";
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"No.";Code[20])
+        field(1; "No."; Code[20])
         {
+            DataClassification = CustomerContent;
         }
-        field(2;Description;Text[50])
+        field(2; Description; Text[50])
         {
+            DataClassification = CustomerContent;
         }
-        field(5;"Document Date";Date)
+        field(5; "Document Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
-        field(6;Make;Code[50])
+        field(6; Make; Code[50])
         {
             //This property is currently not supported
             //TestTableRelation = false;
             ValidateTableRelation = false;
+            DataClassification = CustomerContent;
         }
-        field(7;"Due Date";Date)
+        field(7; "Due Date"; Date)
         {
             Caption = 'Due Date';
+            DataClassification = CustomerContent;
         }
-        field(8;"Delivery Location";Code[20])
+        field(8; "Delivery Location"; Code[20])
         {
-            TableRelation = IF (Delivery Place=CONST(Store)) Location WHERE (Code=FILTER(<>CS STR&<>'R&D STR')) ELSE IF (Delivery Place=CONST(Customer)) Customer;
+            TableRelation = IF (Delivery Place=CONST(Store)) Location WHERE (Code=            DataClassification = CustomerContent;
+FILTER(<>CS STR&<>'R&D STR')) ELSE IF (Delivery Place=CONST(Customer)) Customer;
         }
         field(9;Equipment;Code[50])
         {

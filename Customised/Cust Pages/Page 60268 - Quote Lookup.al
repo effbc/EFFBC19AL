@@ -9,154 +9,154 @@ page 60268 "Quote Lookup"
     {
         area(content)
         {
-            field("LookUp Type";TemplateNameGlobal)
+            field("LookUp Type"; TemplateNameGlobal)
             {
                 Caption = 'LookUp Type';
                 Editable = false;
                 Importance = Promoted;
 
-                trigger OnLookup(Text : Text) : Boolean;
+                trigger OnLookup(Text: Text): Boolean;
                 begin
-                    IF PAGE.RUNMODAL(0,LookUpType) = ACTION::LookupOK THEN BEGIN
-                      TemplateNumber := LookUpType.ID;
-                      TemplateNameGlobal := LookUpType.Name;
+                    IF PAGE.RUNMODAL(0, LookUpType) = ACTION::LookupOK THEN BEGIN
+                        TemplateNumber := LookUpType.ID;
+                        TemplateNameGlobal := LookUpType.Name;
                     END;
-                    
-                    
+
+
                     // For Taxes
                     IF TemplateNumber = 1 THEN BEGIN
-                      TaxesColumVisible := TRUE;
-                      NotesColumVisible := FALSE;
-                      SchedulesColumVisible := FALSE;
-                      TermsConditionsColumVisible := FALSE;
-                      SpecificationsColumVisible := FALSE;
+                        TaxesColumVisible := TRUE;
+                        NotesColumVisible := FALSE;
+                        SchedulesColumVisible := FALSE;
+                        TermsConditionsColumVisible := FALSE;
+                        SpecificationsColumVisible := FALSE;
                     END ELSE
-                       TaxesColumVisible := FALSE;
+                        TaxesColumVisible := FALSE;
                     //For Notes
                     IF TemplateNumber = 2 THEN BEGIN
-                      TaxesColumVisible := FALSE;
-                      NotesColumVisible := TRUE;
-                      SchedulesColumVisible := FALSE;
-                      TermsConditionsColumVisible := FALSE;
-                      SpecificationsColumVisible := FALSE;
+                        TaxesColumVisible := FALSE;
+                        NotesColumVisible := TRUE;
+                        SchedulesColumVisible := FALSE;
+                        TermsConditionsColumVisible := FALSE;
+                        SpecificationsColumVisible := FALSE;
                     END ELSE
-                       NotesColumVisible := FALSE;
-                    
+                        NotesColumVisible := FALSE;
+
                     //Terms & Conditions
                     IF TemplateNumber = 3 THEN BEGIN
-                      TaxesColumVisible := FALSE;
-                      NotesColumVisible := FALSE;
-                      SchedulesColumVisible := FALSE;
-                      TermsConditionsColumVisible := TRUE;
-                      SpecificationsColumVisible := FALSE;
+                        TaxesColumVisible := FALSE;
+                        NotesColumVisible := FALSE;
+                        SchedulesColumVisible := FALSE;
+                        TermsConditionsColumVisible := TRUE;
+                        SpecificationsColumVisible := FALSE;
                     END ELSE
-                       TermsConditionsColumVisible := FALSE;
-                    
+                        TermsConditionsColumVisible := FALSE;
+
                     //Specifications
                     IF TemplateNumber = 4 THEN BEGIN
-                      TaxesColumVisible := FALSE;
-                      NotesColumVisible := FALSE;
-                      SchedulesColumVisible := FALSE;
-                      TermsConditionsColumVisible := FALSE;
-                      SpecificationsColumVisible := TRUE;
+                        TaxesColumVisible := FALSE;
+                        NotesColumVisible := FALSE;
+                        SchedulesColumVisible := FALSE;
+                        TermsConditionsColumVisible := FALSE;
+                        SpecificationsColumVisible := TRUE;
                     END ELSE
-                       SpecificationsColumVisible := FALSE;
-                    
+                        SpecificationsColumVisible := FALSE;
+
                     //Schedules
-                    
+
                     IF TemplateNumber = 5 THEN BEGIN
-                      TaxesColumVisible := FALSE;
-                      NotesColumVisible := FALSE;
-                      SchedulesColumVisible := TRUE;
-                      TermsConditionsColumVisible := FALSE;
-                      SpecificationsColumVisible := FALSE;
+                        TaxesColumVisible := FALSE;
+                        NotesColumVisible := FALSE;
+                        SchedulesColumVisible := TRUE;
+                        TermsConditionsColumVisible := FALSE;
+                        SpecificationsColumVisible := FALSE;
                     END ELSE
-                       SchedulesColumVisible := FALSE;
-                    
+                        SchedulesColumVisible := FALSE;
+
                     // Frieght
                     IF TemplateNumber = 6 THEN BEGIN
-                      TaxesColumVisible := FALSE;
-                      NotesColumVisible := FALSE;
-                      FrieghtColumnsVisible := TRUE;
-                      SchedulesColumVisible := FALSE;
-                      TermsConditionsColumVisible := FALSE;
-                      SpecificationsColumVisible := FALSE;
+                        TaxesColumVisible := FALSE;
+                        NotesColumVisible := FALSE;
+                        FrieghtColumnsVisible := TRUE;
+                        SchedulesColumVisible := FALSE;
+                        TermsConditionsColumVisible := FALSE;
+                        SpecificationsColumVisible := FALSE;
                     END ELSE
-                       FrieghtColumnsVisible := FALSE;
-                    
+                        FrieghtColumnsVisible := FALSE;
+
                     // Transit Insurance
                     IF TemplateNumber = 7 THEN BEGIN
-                      TaxesColumVisible := FALSE;
-                      NotesColumVisible := FALSE;
-                      FrieghtColumnsVisible := FALSE;
-                      TransitInsurancevisible := TRUE;
-                      SchedulesColumVisible := FALSE;
-                      TermsConditionsColumVisible := FALSE;
-                      SpecificationsColumVisible := FALSE;
+                        TaxesColumVisible := FALSE;
+                        NotesColumVisible := FALSE;
+                        FrieghtColumnsVisible := FALSE;
+                        TransitInsurancevisible := TRUE;
+                        SchedulesColumVisible := FALSE;
+                        TermsConditionsColumVisible := FALSE;
+                        SpecificationsColumVisible := FALSE;
                     END ELSE
-                       TransitInsurancevisible := FALSE;
-                    
+                        TransitInsurancevisible := FALSE;
+
                     // delivery of material
-                    
+
                     // Transit Insurance
                     IF TemplateNumber = 8 THEN BEGIN
-                      TaxesColumVisible := FALSE;
-                      NotesColumVisible := FALSE;
-                      FrieghtColumnsVisible := FALSE;
-                      TransitInsurancevisible := FALSE;
-                      SchedulesColumVisible := FALSE;
-                      DeliveryMaterial := TRUE;
-                      TermsConditionsColumVisible := FALSE;
-                      SpecificationsColumVisible := FALSE;
+                        TaxesColumVisible := FALSE;
+                        NotesColumVisible := FALSE;
+                        FrieghtColumnsVisible := FALSE;
+                        TransitInsurancevisible := FALSE;
+                        SchedulesColumVisible := FALSE;
+                        DeliveryMaterial := TRUE;
+                        TermsConditionsColumVisible := FALSE;
+                        SpecificationsColumVisible := FALSE;
                     END ELSE
-                       DeliveryMaterial := FALSE;
-                    
+                        DeliveryMaterial := FALSE;
+
                     // OFFER VALIDITY
                     IF TemplateNumber = 9 THEN BEGIN
-                      TaxesColumVisible := FALSE;
-                      NotesColumVisible := FALSE;
-                      FrieghtColumnsVisible := FALSE;
-                      TransitInsurancevisible := FALSE;
-                      SchedulesColumVisible := FALSE;
-                      DeliveryMaterial := FALSE;
-                      OffervalidityVisibility := TRUE;
-                      TermsConditionsColumVisible := FALSE;
-                      SpecificationsColumVisible := FALSE;
+                        TaxesColumVisible := FALSE;
+                        NotesColumVisible := FALSE;
+                        FrieghtColumnsVisible := FALSE;
+                        TransitInsurancevisible := FALSE;
+                        SchedulesColumVisible := FALSE;
+                        DeliveryMaterial := FALSE;
+                        OffervalidityVisibility := TRUE;
+                        TermsConditionsColumVisible := FALSE;
+                        SpecificationsColumVisible := FALSE;
                     END ELSE
-                       OffervalidityVisibility := FALSE;
-                    
+                        OffervalidityVisibility := FALSE;
+
                     //Inspection charges
-                    
+
                     IF TemplateNumber = 10 THEN BEGIN
-                      TaxesColumVisible := FALSE;
-                      NotesColumVisible := FALSE;
-                      FrieghtColumnsVisible := FALSE;
-                      TransitInsurancevisible := FALSE;
-                      SchedulesColumVisible := FALSE;
-                      DeliveryMaterial := FALSE;
-                      OffervalidityVisibility := FALSE;
-                      InspChargesVisibility := TRUE;
-                      TermsConditionsColumVisible := FALSE;
-                      SpecificationsColumVisible := FALSE;
+                        TaxesColumVisible := FALSE;
+                        NotesColumVisible := FALSE;
+                        FrieghtColumnsVisible := FALSE;
+                        TransitInsurancevisible := FALSE;
+                        SchedulesColumVisible := FALSE;
+                        DeliveryMaterial := FALSE;
+                        OffervalidityVisibility := FALSE;
+                        InspChargesVisibility := TRUE;
+                        TermsConditionsColumVisible := FALSE;
+                        SpecificationsColumVisible := FALSE;
                     END ELSE
-                       InspChargesVisibility := FALSE;
-                    
+                        InspChargesVisibility := FALSE;
+
                     // Special Conditions
                     IF TemplateNumber = 11 THEN BEGIN
-                      TaxesColumVisible := FALSE;
-                      NotesColumVisible := FALSE;
-                      FrieghtColumnsVisible := FALSE;
-                      TransitInsurancevisible := FALSE;
-                      SchedulesColumVisible := FALSE;
-                      DeliveryMaterial := FALSE;
-                      OffervalidityVisibility := FALSE;
-                      InspChargesVisibility := FALSE;
-                      SpecialConditionsVisibility := TRUE;
-                      TermsConditionsColumVisible := FALSE;
-                      SpecificationsColumVisible := FALSE;
+                        TaxesColumVisible := FALSE;
+                        NotesColumVisible := FALSE;
+                        FrieghtColumnsVisible := FALSE;
+                        TransitInsurancevisible := FALSE;
+                        SchedulesColumVisible := FALSE;
+                        DeliveryMaterial := FALSE;
+                        OffervalidityVisibility := FALSE;
+                        InspChargesVisibility := FALSE;
+                        SpecialConditionsVisibility := TRUE;
+                        TermsConditionsColumVisible := FALSE;
+                        SpecificationsColumVisible := FALSE;
                     END ELSE
-                       SpecialConditionsVisibility := FALSE;
-                    
+                        SpecialConditionsVisibility := FALSE;
+
                     /*
                     //For ADDITIONS AND DEDUCTIONS
                     IF TemplateNumber = 16 THEN BEGIN
@@ -322,8 +322,8 @@ page 60268 "Quote Lookup"
                     END;
                     
                     */
-                    
-                    SETRANGE("Lookup Type ID",TemplateNumber);
+
+                    SETRANGE("Lookup Type ID", TemplateNumber);
                     CurrPage.UPDATE(FALSE);
 
                 end;
@@ -332,24 +332,24 @@ page 60268 "Quote Lookup"
             {
                 Caption = 'Taxes';
                 Visible = TaxesColumVisible;
-                field("Lookup Code";"Lookup Code")
+                field("Lookup Code"; "Lookup Code")
                 {
 
                     trigger OnValidate();
                     begin
-                        "Lookup Type ID":=TemplateNumber;
+                        "Lookup Type ID" := TemplateNumber;
                     end;
                 }
-                field("Lookup Type ID";"Lookup Type ID")
+                field("Lookup Type ID"; "Lookup Type ID")
                 {
                 }
-                field("Lookup Type Name";"Lookup Type Name")
+                field("Lookup Type Name"; "Lookup Type Name")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Select;Select)
+                field(Select; Select)
                 {
                 }
             }
@@ -357,30 +357,30 @@ page 60268 "Quote Lookup"
             {
                 Caption = 'Notes';
                 Visible = NotesColumVisible;
-                field("Notes Lookup Code";"Lookup Code")
+                field("Notes Lookup Code"; "Lookup Code")
                 {
                     Caption = 'Notes Lookup Code';
 
                     trigger OnValidate();
                     begin
-                        "Lookup Type ID":=TemplateNumber;
+                        "Lookup Type ID" := TemplateNumber;
                     end;
                 }
-                field("Notes Lookup Type ID";"Lookup Type ID")
+                field("Notes Lookup Type ID"; "Lookup Type ID")
                 {
                     Caption = 'Notes Lookup Type ID';
                     Visible = false;
                 }
-                field("Notes Lookup Type Name";"Lookup Type Name")
+                field("Notes Lookup Type Name"; "Lookup Type Name")
                 {
                     Caption = 'Notes Lookup Type Name';
                     Visible = false;
                 }
-                field("Notes Description";Description)
+                field("Notes Description"; Description)
                 {
                     Caption = 'Notes Description';
                 }
-                field("Notes Select";Select)
+                field("Notes Select"; Select)
                 {
                     Caption = 'Notes Select';
                 }
@@ -389,34 +389,34 @@ page 60268 "Quote Lookup"
             {
                 Caption = 'Terms & Conditions';
                 Visible = TermsConditionsColumVisible;
-                field("T&C Lookup Code";"Lookup Code")
+                field("T&C Lookup Code"; "Lookup Code")
                 {
                     Caption = 'T&C Lookup Code';
 
                     trigger OnValidate();
                     begin
-                        "Lookup Type ID":=TemplateNumber;
+                        "Lookup Type ID" := TemplateNumber;
                     end;
                 }
-                field("T&C Lookup Type ID";"Lookup Type ID")
+                field("T&C Lookup Type ID"; "Lookup Type ID")
                 {
                     Caption = '" T&C Lookup Type ID"';
                     Visible = false;
                 }
-                field("T&C Lookup Type Name";"Lookup Type Name")
+                field("T&C Lookup Type Name"; "Lookup Type Name")
                 {
                     Caption = 'T&C Lookup Type Name';
                     Visible = false;
                 }
-                field("T&C Description";Description)
+                field("T&C Description"; Description)
                 {
                     Caption = 'T&C Description';
                 }
-                field("T&C Select";Select)
+                field("T&C Select"; Select)
                 {
                     Caption = 'T&C Select';
                 }
-                field("Terms LookUp";"Terms LookUp")
+                field("Terms LookUp"; "Terms LookUp")
                 {
                 }
             }
@@ -424,30 +424,30 @@ page 60268 "Quote Lookup"
             {
                 Caption = 'Specifications';
                 Visible = SpecificationsColumVisible;
-                field("Spe Lookup Code";"Lookup Code")
+                field("Spe Lookup Code"; "Lookup Code")
                 {
                     Caption = 'Spe Lookup Code';
 
                     trigger OnValidate();
                     begin
-                        "Lookup Type ID":=TemplateNumber;
+                        "Lookup Type ID" := TemplateNumber;
                     end;
                 }
-                field("Spe Lookup Type ID";"Lookup Type ID")
+                field("Spe Lookup Type ID"; "Lookup Type ID")
                 {
                     Caption = 'Spe Lookup Type ID';
                     Visible = false;
                 }
-                field("Spe Lookup Type Name";"Lookup Type Name")
+                field("Spe Lookup Type Name"; "Lookup Type Name")
                 {
                     Caption = 'Spe Lookup Type Name';
                     Visible = false;
                 }
-                field("Spe Description";Description)
+                field("Spe Description"; Description)
                 {
                     Caption = 'Spe Description';
                 }
-                field("Spec Select";Select)
+                field("Spec Select"; Select)
                 {
                     Caption = 'Spec Select';
                 }
@@ -456,74 +456,74 @@ page 60268 "Quote Lookup"
             {
                 Caption = 'Schedules';
                 Visible = SchedulesColumVisible;
-                field("Schedule LookUp";"Schedule LookUp")
+                field("Schedule LookUp"; "Schedule LookUp")
                 {
                 }
-                field("Sch Lookup Code";"Lookup Code")
+                field("Sch Lookup Code"; "Lookup Code")
                 {
                     Caption = 'Sch Lookup Code';
                     Visible = false;
 
                     trigger OnValidate();
                     begin
-                        "Lookup Type ID":=TemplateNumber;
+                        "Lookup Type ID" := TemplateNumber;
                     end;
                 }
-                field("Sch Lookup Type ID";"Lookup Type ID")
+                field("Sch Lookup Type ID"; "Lookup Type ID")
                 {
                     Caption = 'Sch Lookup Type ID';
                     Visible = false;
                 }
-                field("Sch Lookup Type Name";"Lookup Type Name")
+                field("Sch Lookup Type Name"; "Lookup Type Name")
                 {
                     Caption = 'Sch Lookup Type Name';
                     Visible = false;
                 }
-                field("Sch Description";Description)
+                field("Sch Description"; Description)
                 {
                     Caption = 'Sch Description';
                 }
-                field("Sch Select";Select)
+                field("Sch Select"; Select)
                 {
                     Caption = 'Sch Select';
                 }
-                field(FieldNo1;FieldNo1)
+                field(FieldNo1; FieldNo1)
                 {
                     Caption = 'FieldNo1';
                 }
-                field(FieldNo2;FieldNo2)
+                field(FieldNo2; FieldNo2)
                 {
                     Caption = 'FieldNo2';
                 }
-                field(FieldNo3;FieldNo3)
+                field(FieldNo3; FieldNo3)
                 {
                     Caption = 'FieldNo3';
                 }
-                field(FieldNo4;FieldNo4)
+                field(FieldNo4; FieldNo4)
                 {
                     Caption = 'FieldNo4';
                 }
-                field(FieldNo5;FieldNo5)
+                field(FieldNo5; FieldNo5)
                 {
                     Caption = 'FieldNo5';
                 }
-                field(FieldNo6;FieldNo6)
+                field(FieldNo6; FieldNo6)
                 {
                     Caption = 'FieldNo6';
                 }
-                field(Qty;Qty)
+                field(Qty; Qty)
                 {
                     Caption = 'Qty';
                 }
-                field(Rate;Rate)
+                field(Rate; Rate)
                 {
                     Caption = 'Rate';
                 }
-                field(Amount;Amount)
+                field(Amount; Amount)
                 {
                     Caption = 'Amount';
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                     Caption = 'Remarks';
                 }
@@ -532,30 +532,30 @@ page 60268 "Quote Lookup"
             {
                 Caption = 'FREIGHT';
                 Visible = FrieghtColumnsVisible;
-                field("Frieght Lookup Code";"Lookup Code")
+                field("Frieght Lookup Code"; "Lookup Code")
                 {
                     Caption = 'Frieght Lookup Code';
 
                     trigger OnValidate();
                     begin
-                        "Lookup Type ID":=TemplateNumber;
+                        "Lookup Type ID" := TemplateNumber;
                     end;
                 }
-                field("Frieght Lookup Type ID";"Lookup Type ID")
+                field("Frieght Lookup Type ID"; "Lookup Type ID")
                 {
                     Caption = 'Frieght Lookup Type ID';
                     Visible = false;
                 }
-                field("Frieght Lookup Type Name";"Lookup Type Name")
+                field("Frieght Lookup Type Name"; "Lookup Type Name")
                 {
                     Caption = 'Frieght Lookup Type Name';
                     Visible = false;
                 }
-                field("Frieght Description";Description)
+                field("Frieght Description"; Description)
                 {
                     Caption = 'Frieght Description';
                 }
-                field("Frieght Select";Select)
+                field("Frieght Select"; Select)
                 {
                     Caption = 'Frieght Select';
                 }
@@ -564,30 +564,30 @@ page 60268 "Quote Lookup"
             {
                 Caption = 'Transit Insurance';
                 Visible = TransitInsurancevisible;
-                field("Transit Insurance  Lookup Code";"Lookup Code")
+                field("Transit Insurance  Lookup Code"; "Lookup Code")
                 {
                     Caption = 'Transit Insurance Lookup Code';
 
                     trigger OnValidate();
                     begin
-                        "Lookup Type ID":=TemplateNumber;
+                        "Lookup Type ID" := TemplateNumber;
                     end;
                 }
-                field("Transit Insurance Lookup Type ID";"Lookup Type ID")
+                field("Transit Insurance Lookup Type ID"; "Lookup Type ID")
                 {
                     Caption = 'Transit Insurance Lookup Type ID';
                     Visible = false;
                 }
-                field("Transit Insurance Type Name";"Lookup Type Name")
+                field("Transit Insurance Type Name"; "Lookup Type Name")
                 {
                     Caption = 'Transit Insurance Type Name';
                     Visible = false;
                 }
-                field("Transit Insurance  Description";Description)
+                field("Transit Insurance  Description"; Description)
                 {
                     Caption = 'Transit Insurance  Description';
                 }
-                field("Transit Insurance Select";Select)
+                field("Transit Insurance Select"; Select)
                 {
                     Caption = 'Transit Insurance Select';
                 }
@@ -596,30 +596,30 @@ page 60268 "Quote Lookup"
             {
                 Caption = 'DELIVERY OF MATERIAL';
                 Visible = DeliveryMaterial;
-                field("Delivery Material Lookup Code";"Lookup Code")
+                field("Delivery Material Lookup Code"; "Lookup Code")
                 {
                     Caption = 'Delivery Material Lookup Code';
 
                     trigger OnValidate();
                     begin
-                        "Lookup Type ID":=TemplateNumber;
+                        "Lookup Type ID" := TemplateNumber;
                     end;
                 }
-                field("Delivery Material Lookup Type ID";"Lookup Type ID")
+                field("Delivery Material Lookup Type ID"; "Lookup Type ID")
                 {
                     Caption = 'Delivery Material Lookup Type ID';
                     Visible = false;
                 }
-                field("Delivery Material Type Name";"Lookup Type Name")
+                field("Delivery Material Type Name"; "Lookup Type Name")
                 {
                     Caption = 'Delivery Material Type Name';
                     Visible = false;
                 }
-                field("Delivery Material Description";Description)
+                field("Delivery Material Description"; Description)
                 {
                     Caption = 'Delivery Material Description';
                 }
-                field("Delivery Material Select";Select)
+                field("Delivery Material Select"; Select)
                 {
                     Caption = 'Delivery Material Select';
                 }
@@ -628,30 +628,30 @@ page 60268 "Quote Lookup"
             {
                 Caption = 'OFFER VALIDITY';
                 Visible = OffervalidityVisibility;
-                field("Offer Validity Lookup Code";"Lookup Code")
+                field("Offer Validity Lookup Code"; "Lookup Code")
                 {
                     Caption = 'Offer Validity Lookup Code';
 
                     trigger OnValidate();
                     begin
-                        "Lookup Type ID":=TemplateNumber;
+                        "Lookup Type ID" := TemplateNumber;
                     end;
                 }
-                field("Offer Validity Lookup Type ID";"Lookup Type ID")
+                field("Offer Validity Lookup Type ID"; "Lookup Type ID")
                 {
                     Caption = 'Offer Validity Lookup Type ID';
                     Visible = false;
                 }
-                field("Offer Validity Type Name";"Lookup Type Name")
+                field("Offer Validity Type Name"; "Lookup Type Name")
                 {
                     Caption = 'Offer Validity Type Name';
                     Visible = false;
                 }
-                field("Offer Validity Description";Description)
+                field("Offer Validity Description"; Description)
                 {
                     Caption = 'Offer Validity Description';
                 }
-                field("Offer Validity Select";Select)
+                field("Offer Validity Select"; Select)
                 {
                     Caption = 'Offer Validity Select';
                 }
@@ -660,31 +660,31 @@ page 60268 "Quote Lookup"
             {
                 Caption = 'Inspection Charges';
                 Visible = InspChargesVisibility;
-                field("Inspection Charges Lookup Code";"Lookup Code")
+                field("Inspection Charges Lookup Code"; "Lookup Code")
                 {
                     Caption = 'Inspection Charges Lookup Code';
                     Visible = true;
 
                     trigger OnValidate();
                     begin
-                        "Lookup Type ID":=TemplateNumber;
+                        "Lookup Type ID" := TemplateNumber;
                     end;
                 }
-                field("Insp Chrages Lookup Type ID";"Lookup Type ID")
+                field("Insp Chrages Lookup Type ID"; "Lookup Type ID")
                 {
                     Caption = 'Insp Chrages Lookup Type ID';
                     Visible = false;
                 }
-                field("Insp Charges Type Name";"Lookup Type Name")
+                field("Insp Charges Type Name"; "Lookup Type Name")
                 {
                     Caption = 'Insp Charges Type Name';
                     Visible = false;
                 }
-                field("Insp Charges Description";Description)
+                field("Insp Charges Description"; Description)
                 {
                     Caption = 'Insp Charges Description';
                 }
-                field("Insp Charges  Select";Select)
+                field("Insp Charges  Select"; Select)
                 {
                     Caption = 'Insp Charges Select';
                 }
@@ -693,31 +693,31 @@ page 60268 "Quote Lookup"
             {
                 Caption = 'Special Conditions';
                 Visible = SpecialConditionsVisibility;
-                field("Special Condition Lookup Code";"Lookup Code")
+                field("Special Condition Lookup Code"; "Lookup Code")
                 {
                     Caption = 'Special Condition Lookup Code';
                     Visible = true;
 
                     trigger OnValidate();
                     begin
-                        "Lookup Type ID":=TemplateNumber;
+                        "Lookup Type ID" := TemplateNumber;
                     end;
                 }
-                field("Special Condition Lookup Type ID";"Lookup Type ID")
+                field("Special Condition Lookup Type ID"; "Lookup Type ID")
                 {
                     Caption = 'Special Condition Lookup Type ID';
                     Visible = false;
                 }
-                field("Special Condition Type Name";"Lookup Type Name")
+                field("Special Condition Type Name"; "Lookup Type Name")
                 {
                     Caption = 'Special Condition Type Name';
                     Visible = false;
                 }
-                field("Special Condition Description";Description)
+                field("Special Condition Description"; Description)
                 {
                     Caption = 'Special Condition Description';
                 }
-                field("Special Condition  Select";Select)
+                field("Special Condition  Select"; Select)
                 {
                     Caption = 'Special Condition  Select';
                 }
@@ -739,24 +739,24 @@ page 60268 "Quote Lookup"
                     PromotedCategory = Process;
                     PromotedIsBig = true;
                     RunObject = Page Page70003;
-                    RunPageLink = Field1=FIELD(Lookup Code);
+                    RunPageLink = Field1 = FIELD(Lookup Code);
                     Visible = SpecificationsColumVisible;
                 }
             }
         }
     }
 
-    trigger OnInsertRecord(BelowxRec : Boolean) : Boolean;
+    trigger OnInsertRecord(BelowxRec: Boolean): Boolean;
     begin
-        "Lookup Type ID":=TemplateNumber;
+        "Lookup Type ID" := TemplateNumber;
     end;
 
     trigger OnOpenPage();
     begin
         //Setting the Initial Values when the page is loaded to LookupTypes.
         TemplateNumber := 1;
-        TemplateNameGlobal:='Taxes';
-        SETRANGE("Lookup Type ID",1);
+        TemplateNameGlobal := 'Taxes';
+        SETRANGE("Lookup Type ID", 1);
         TaxesColumVisible := TRUE;
         NotesColumVisible := FALSE;
         SchedulesColumVisible := FALSE;
@@ -765,21 +765,21 @@ page 60268 "Quote Lookup"
     end;
 
     var
-        TemplateNameGlobal : Code[50];
-        TemplateNumber : Integer;
-        LookUpType : Record "Quote LookUp Type";
-        Lookup : Record "Quote Lookup";
-        TaxesColumVisible : Boolean;
-        NotesColumVisible : Boolean;
-        TermsConditionsColumVisible : Boolean;
-        SpecificationsColumVisible : Boolean;
-        SchedulesColumVisible : Boolean;
-        SchecVisible : Boolean;
-        FrieghtColumnsVisible : Boolean;
-        TransitInsurancevisible : Boolean;
-        DeliveryMaterial : Boolean;
-        OffervalidityVisibility : Boolean;
-        InspChargesVisibility : Boolean;
-        SpecialConditionsVisibility : Boolean;
+        TemplateNameGlobal: Code[50];
+        TemplateNumber: Integer;
+        LookUpType: Record "Quote LookUp Type";
+        Lookup: Record "Quote Lookup";
+        TaxesColumVisible: Boolean;
+        NotesColumVisible: Boolean;
+        TermsConditionsColumVisible: Boolean;
+        SpecificationsColumVisible: Boolean;
+        SchedulesColumVisible: Boolean;
+        SchecVisible: Boolean;
+        FrieghtColumnsVisible: Boolean;
+        TransitInsurancevisible: Boolean;
+        DeliveryMaterial: Boolean;
+        OffervalidityVisibility: Boolean;
+        InspChargesVisibility: Boolean;
+        SpecialConditionsVisibility: Boolean;
 }
 

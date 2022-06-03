@@ -6,22 +6,22 @@ xmlport 80101 "QC Assay Header"
     {
         textelement(AssayHeader)
         {
-            tableelement("<assayheader>";"Assay Header")
+            tableelement("<assayheader>"; "Assay Header")
             {
                 XmlName = 'AssayHeader';
-                fieldelement(No;"<AssayHeader>"."No.")
+                fieldelement(No; "<AssayHeader>"."No.")
                 {
                 }
-                fieldelement(Description;"<AssayHeader>".Description)
+                fieldelement(Description; "<AssayHeader>".Description)
                 {
                 }
-                fieldelement(SamplingPlanCode;"<AssayHeader>"."Sampling Plan Code")
+                fieldelement(SamplingPlanCode; "<AssayHeader>"."Sampling Plan Code")
                 {
                 }
-                fieldelement(InspectionGroupCode;"<AssayHeader>"."Inspection Group Code")
+                fieldelement(InspectionGroupCode; "<AssayHeader>"."Inspection Group Code")
                 {
                 }
-                fieldelement(Status;"<AssayHeader>".Status)
+                fieldelement(Status; "<AssayHeader>".Status)
                 {
                 }
             }

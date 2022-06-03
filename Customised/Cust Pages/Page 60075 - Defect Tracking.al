@@ -13,38 +13,38 @@ page 60075 "Defect Tracking"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Serial No.";"Serial No.")
+                field("Serial No."; "Serial No.")
                 {
                 }
-                field("Component No.";"Component No.")
+                field("Component No."; "Component No.")
                 {
                 }
-                field("Item Description";"Item Description")
+                field("Item Description"; "Item Description")
                 {
                 }
-                field(Position;Position)
+                field(Position; Position)
                 {
                 }
-                field("Position 2";"Position 2")
+                field("Position 2"; "Position 2")
                 {
                 }
-                field("Position 3";"Position 3")
+                field("Position 3"; "Position 3")
                 {
                 }
-                field("Defect Code";"Defect Code")
+                field("Defect Code"; "Defect Code")
                 {
                 }
-                field(Qty;Qty)
+                field(Qty; Qty)
                 {
                     Caption = 'Defect Quantity';
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
-                field("Disposition Actions";"Disposition Actions")
+                field("Disposition Actions"; "Disposition Actions")
                 {
                 }
             }

@@ -6,55 +6,55 @@ xmlport 90102 "ijl dp2"
     {
         textelement(IJLTable2)
         {
-            tableelement("<ijltable2>";"IJL Table2")
+            tableelement("<ijltable2>"; "IJL Table2")
             {
                 XmlName = 'IJLTable2';
-                fieldelement(EntryNo;"<IJLTable2>"."Entry No.")
+                fieldelement(EntryNo; "<IJLTable2>"."Entry No.")
                 {
                 }
-                fieldelement(No;"<IJLTable2>"."No.")
+                fieldelement(No; "<IJLTable2>"."No.")
                 {
                 }
-                fieldelement(Quantity;"<IJLTable2>".Quantity)
+                fieldelement(Quantity; "<IJLTable2>".Quantity)
                 {
                 }
-                fieldelement(Rate;"<IJLTable2>".Rate)
+                fieldelement(Rate; "<IJLTable2>".Rate)
                 {
                 }
-                fieldelement(DocumentNo;"<IJLTable2>"."Document No.")
+                fieldelement(DocumentNo; "<IJLTable2>"."Document No.")
                 {
                 }
-                fieldelement(DocumentDate;"<IJLTable2>"."Document Date")
+                fieldelement(DocumentDate; "<IJLTable2>"."Document Date")
                 {
                 }
-                fieldelement(LineNo;"<IJLTable2>"."Line No")
+                fieldelement(LineNo; "<IJLTable2>"."Line No")
                 {
                 }
-                fieldelement(Location;"<IJLTable2>".Location)
+                fieldelement(Location; "<IJLTable2>".Location)
                 {
                 }
-                fieldelement(amount;"<IJLTable2>".amount)
+                fieldelement(amount; "<IJLTable2>".amount)
                 {
                 }
-                fieldelement(total;"<IJLTable2>".total)
+                fieldelement(total; "<IJLTable2>".total)
                 {
                 }
-                fieldelement(JnlBatchName;"<IJLTable2>"."Jnl Batch Name")
+                fieldelement(JnlBatchName; "<IJLTable2>"."Jnl Batch Name")
                 {
                 }
-                fieldelement(JnlTemplate;"<IJLTable2>"."Jnl Template")
+                fieldelement(JnlTemplate; "<IJLTable2>"."Jnl Template")
                 {
                 }
-                fieldelement(IPG;"<IJLTable2>".IPG)
+                fieldelement(IPG; "<IJLTable2>".IPG)
                 {
                 }
-                fieldelement(GPPG;"<IJLTable2>".GPPG)
+                fieldelement(GPPG; "<IJLTable2>".GPPG)
                 {
                 }
-                fieldelement(UOM;"<IJLTable2>".UOM)
+                fieldelement(UOM; "<IJLTable2>".UOM)
                 {
                 }
-                fieldelement(Qtyper;"<IJLTable2>"."Qty per")
+                fieldelement(Qtyper; "<IJLTable2>"."Qty per")
                 {
                 }
             }

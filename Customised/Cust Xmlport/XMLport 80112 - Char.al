@@ -6,22 +6,22 @@ xmlport 80112 Char
     {
         textelement(Characteristics)
         {
-            tableelement(Characteristic;Characteristic)
+            tableelement(Characteristic; Characteristic)
             {
                 XmlName = 'Characteristic';
-                fieldelement(Code;Characteristic.Code)
+                fieldelement(Code; Characteristic.Code)
                 {
                 }
-                fieldelement(Description;Characteristic.Description)
+                fieldelement(Description; Characteristic.Description)
                 {
                 }
-                fieldelement(Qualitative;Characteristic.Qualitative)
+                fieldelement(Qualitative; Characteristic.Qualitative)
                 {
                 }
-                fieldelement(InspectionGroupCode;Characteristic."Inspection Group Code")
+                fieldelement(InspectionGroupCode; Characteristic."Inspection Group Code")
                 {
                 }
-                fieldelement(UnitOfMeasureCode;Characteristic."Unit Of Measure Code")
+                fieldelement(UnitOfMeasureCode; Characteristic."Unit Of Measure Code")
                 {
                 }
             }

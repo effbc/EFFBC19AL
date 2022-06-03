@@ -10,34 +10,34 @@ page 56777 "Test - Delete"
         {
             repeater(Group)
             {
-                field("User SID";"User SID")
+                field("User SID"; "User SID")
                 {
                 }
-                field("Server Instance ID";"Server Instance ID")
+                field("Server Instance ID"; "Server Instance ID")
                 {
                 }
-                field("Session ID";"Session ID")
+                field("Session ID"; "Session ID")
                 {
                 }
-                field("Server Instance Name";"Server Instance Name")
+                field("Server Instance Name"; "Server Instance Name")
                 {
                 }
-                field("Server Computer Name";"Server Computer Name")
+                field("Server Computer Name"; "Server Computer Name")
                 {
                 }
-                field("User ID";"User ID")
+                field("User ID"; "User ID")
                 {
                 }
-                field("Client Type";"Client Type")
+                field("Client Type"; "Client Type")
                 {
                 }
-                field("Client Computer Name";"Client Computer Name")
+                field("Client Computer Name"; "Client Computer Name")
                 {
                 }
-                field("Login Datetime";"Login Datetime")
+                field("Login Datetime"; "Login Datetime")
                 {
                 }
-                field("Database Name";"Database Name")
+                field("Database Name"; "Database Name")
                 {
                 }
             }
@@ -54,8 +54,8 @@ page 56777 "Test - Delete"
 
                 trigger OnAction();
                 begin
-                    IF CONFIRM ('Kill session') THEN
-                     STOPSESSION("Session ID")
+                    IF CONFIRM('Kill session') THEN
+                        STOPSESSION("Session ID")
                 end;
             }
         }

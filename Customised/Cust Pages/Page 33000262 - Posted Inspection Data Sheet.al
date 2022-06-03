@@ -14,338 +14,338 @@ page 33000262 "Posted Inspection Data Sheet"
             group(General)
             {
                 Caption = 'General';
-                field(comment;comment)
+                field(comment; comment)
                 {
                     Editable = false;
                 }
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field("Item Description";"Item Description")
+                field("Item Description"; "Item Description")
                 {
                 }
-                field("Unit Of Measure Code";"Unit Of Measure Code")
+                field("Unit Of Measure Code"; "Unit Of Measure Code")
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field("Spec ID";"Spec ID")
+                field("Spec ID"; "Spec ID")
                 {
                 }
-                field(Make;Make)
+                field(Make; Make)
                 {
                     Editable = true;
                 }
-                field("Lot No.";"Lot No.")
+                field("Lot No."; "Lot No.")
                 {
                 }
-                field(Location;Location)
+                field(Location; Location)
                 {
                 }
-                field("Inspection Group Code";"Inspection Group Code")
+                field("Inspection Group Code"; "Inspection Group Code")
                 {
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("Document Date";"Document Date")
+                field("Document Date"; "Document Date")
                 {
                 }
-                field("Rework Reference No.";"Rework Reference No.")
+                field("Rework Reference No."; "Rework Reference No.")
                 {
                 }
-                field("Source Type";"Source Type")
+                field("Source Type"; "Source Type")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                     OptionCaption = '<Open,Released,Calibration>';
                 }
-                field("Actual Time";"Actual Time")
+                field("Actual Time"; "Actual Time")
                 {
                 }
-                field("Time Taken";"Time Taken")
+                field("Time Taken"; "Time Taken")
                 {
                 }
-                field("Planning Date";"Planning Date")
+                field("Planning Date"; "Planning Date")
                 {
                 }
-                field("Assigned User";"Assigned User")
+                field("Assigned User"; "Assigned User")
                 {
                 }
-                field("Posted By Name";"Posted By Name")
+                field("Posted By Name"; "Posted By Name")
                 {
                     Caption = 'Posted By';
                     Editable = false;
                 }
             }
-            part(DataSheetLine;"PostedInspec DataSheet Subform")
+            part(DataSheetLine; "PostedInspec DataSheet Subform")
             {
                 SubPageLink = Document No.=FIELD(No.);
             }
             group(Receipt)
             {
                 Caption = 'Receipt';
-                field("Vendor No.";"Vendor No.")
+                field("Vendor No."; "Vendor No.")
                 {
                 }
-                field("Vendor Name";"Vendor Name")
+                field("Vendor Name"; "Vendor Name")
                 {
                 }
-                field("Vendor Name 2";"Vendor Name 2")
+                field("Vendor Name 2"; "Vendor Name 2")
                 {
                 }
-                field(Address;Address)
+                field(Address; Address)
                 {
                 }
-                field("Address 2";"Address 2")
+                field("Address 2"; "Address 2")
                 {
                 }
-                field("Contact Person";"Contact Person")
+                field("Contact Person"; "Contact Person")
                 {
                 }
-                field("Receipt No.";"Receipt No.")
+                field("Receipt No."; "Receipt No.")
                 {
                 }
-                field("Order No.";"Order No.")
+                field("Order No."; "Order No.")
                 {
                 }
-                field("Purch Line No";"Purch Line No")
+                field("Purch Line No"; "Purch Line No")
                 {
                 }
-                field("External Document No.";"External Document No.")
+                field("External Document No."; "External Document No.")
                 {
                 }
-                field("Purchase Consignment No.";"Purchase Consignment No.")
+                field("Purchase Consignment No."; "Purchase Consignment No.")
                 {
                 }
-                field("Inspection Receipt No.";"Inspection Receipt No.")
+                field("Inspection Receipt No."; "Inspection Receipt No.")
                 {
                 }
-                field("Quality Before Receipt";"Quality Before Receipt")
+                field("Quality Before Receipt"; "Quality Before Receipt")
                 {
                 }
-                field(Indented_Person;Indented_Person)
+                field(Indented_Person; Indented_Person)
                 {
                 }
             }
             group(Production)
             {
                 Caption = 'Production';
-                field("Prod. Order No.";"Prod. Order No.")
+                field("Prod. Order No."; "Prod. Order No.")
                 {
                 }
-                field("Prod. Order Line";"Prod. Order Line")
+                field("Prod. Order Line"; "Prod. Order Line")
                 {
                 }
-                field("Routing No.";"Routing No.")
+                field("Routing No."; "Routing No.")
                 {
                 }
-                field("Routing Reference No.";"Routing Reference No.")
+                field("Routing Reference No."; "Routing Reference No.")
                 {
                 }
-                field("Operation No.";"Operation No.")
+                field("Operation No."; "Operation No.")
                 {
                 }
-                field("Prod. Description";"Prod. Description")
+                field("Prod. Description"; "Prod. Description")
                 {
                 }
-                field("Operation Description";"Operation Description")
+                field("Operation Description"; "Operation Description")
                 {
                 }
-                field("Production Batch No.";"Production Batch No.")
+                field("Production Batch No."; "Production Batch No.")
                 {
                 }
-                field("Sub Assembly Code";"Sub Assembly Code")
+                field("Sub Assembly Code"; "Sub Assembly Code")
                 {
                 }
-                field("Sub Assembly Description";"Sub Assembly Description")
+                field("Sub Assembly Description"; "Sub Assembly Description")
                 {
                 }
-                field("Issues For Pending";"Issues For Pending")
+                field("Issues For Pending"; "Issues For Pending")
                 {
                 }
-                field("In Process";"In Process")
+                field("In Process"; "In Process")
                 {
                 }
-                field(Resource;Resource)
+                field(Resource; Resource)
                 {
                 }
-                field("OutPut Jr Serial No.";"OutPut Jr Serial No.")
+                field("OutPut Jr Serial No."; "OutPut Jr Serial No.")
                 {
                 }
-                field("Finished Product Sr No";"Finished Product Sr No")
+                field("Finished Product Sr No"; "Finished Product Sr No")
                 {
                 }
-                field("Rework User";"Rework User")
+                field("Rework User"; "Rework User")
                 {
                 }
             }
             group("Sales Cr.Memo")
             {
                 Caption = 'Sales Cr.Memo';
-                field("Sales Order No.";"Sales Order No.")
+                field("Sales Order No."; "Sales Order No.")
                 {
                 }
-                field("Posted Sales Order No.";"Posted Sales Order No.")
+                field("Posted Sales Order No."; "Posted Sales Order No.")
                 {
                 }
-                field("Sales Line No";"Sales Line No")
+                field("Sales Line No"; "Sales Line No")
                 {
                 }
-                field("Customer No.";"Customer No.")
+                field("Customer No."; "Customer No.")
                 {
                 }
-                field("Customer Name";"Customer Name")
+                field("Customer Name"; "Customer Name")
                 {
                 }
-                field("Customer Name 2";"Customer Name 2")
+                field("Customer Name 2"; "Customer Name 2")
                 {
                 }
-                field("Customer Address";"Customer Address")
+                field("Customer Address"; "Customer Address")
                 {
                 }
-                field("Customer Address2";"Customer Address2")
+                field("Customer Address2"; "Customer Address2")
                 {
                 }
             }
             group(Transfer)
             {
                 Caption = 'Transfer';
-                field("Trans. Order No.";"Trans. Order No.")
+                field("Trans. Order No."; "Trans. Order No.")
                 {
                 }
-                field("Trans. Order Line";"Trans. Order Line")
+                field("Trans. Order Line"; "Trans. Order Line")
                 {
                 }
-                field("Trans. Description";"Trans. Description")
+                field("Trans. Description"; "Trans. Description")
                 {
                 }
-                field("Transfer-from Code";"Transfer-from Code")
+                field("Transfer-from Code"; "Transfer-from Code")
                 {
                 }
-                field("Transfer-to Code";"Transfer-to Code")
+                field("Transfer-to Code"; "Transfer-to Code")
                 {
                 }
             }
             group(Calibration)
             {
                 Caption = 'Calibration';
-                field("<Vendor No.2>";"Vendor No.")
+                field("<Vendor No.2>"; "Vendor No.")
                 {
                 }
-                field("<Vendor Name2>";"Vendor Name")
+                field("<Vendor Name2>"; "Vendor Name")
                 {
                 }
-                field("<Address2>";Address)
+                field("<Address2>"; Address)
                 {
                 }
-                field("<Address 22>";"Address 2")
+                field("<Address 22>"; "Address 2")
                 {
                 }
-                field("<Contact Person2>";"Contact Person")
+                field("<Contact Person2>"; "Contact Person")
                 {
                 }
-                field("Calibration Party";"Calibration Party")
+                field("Calibration Party"; "Calibration Party")
                 {
                 }
-                field("<Resource2>";Resource)
+                field("<Resource2>"; Resource)
                 {
                 }
-                field("Eqpt. Serial No.";"Eqpt. Serial No.")
+                field("Eqpt. Serial No."; "Eqpt. Serial No.")
                 {
                 }
-                field(Department;Department)
+                field(Department; Department)
                 {
                 }
-                field("Std. Reference";"Std. Reference")
+                field("Std. Reference"; "Std. Reference")
                 {
                 }
-                field("Least Count";"Least Count")
+                field("Least Count"; "Least Count")
                 {
                 }
-                field("Measuring Range";"Measuring Range")
+                field("Measuring Range"; "Measuring Range")
                 {
                 }
-                field("Model No.";"Model No.")
+                field("Model No."; "Model No.")
                 {
                 }
             }
             group(Others)
             {
                 Caption = 'Others';
-                field("Item Category Code";"Item Category Code")
+                field("Item Category Code"; "Item Category Code")
                 {
                 }
-                field("Product Group Code";"Product Group Code")
+                field("Product Group Code"; "Product Group Code")
                 {
                 }
-                field("Item Sub Group Code";"Item Sub Group Code")
+                field("Item Sub Group Code"; "Item Sub Group Code")
                 {
                 }
-                field("Item Sub Sub Group Code";"Item Sub Sub Group Code")
+                field("Item Sub Sub Group Code"; "Item Sub Sub Group Code")
                 {
                 }
-                field("No. of Opportunities";"No. of Opportunities")
+                field("No. of Opportunities"; "No. of Opportunities")
                 {
                 }
-                field("No.of Fixing Holes";"No.of Fixing Holes")
+                field("No.of Fixing Holes"; "No.of Fixing Holes")
                 {
                 }
-                field("No. of Soldering Points";"No. of Soldering Points")
+                field("No. of Soldering Points"; "No. of Soldering Points")
                 {
                 }
-                field("No. of Pins";"No. of Pins")
+                field("No. of Pins"; "No. of Pins")
                 {
                 }
-                field("Reason for Pending";"Reason for Pending")
+                field("Reason for Pending"; "Reason for Pending")
                 {
                 }
             }
             group("LED Details")
             {
                 Caption = 'LED Details';
-                field("LED Part No.";"LED Part No.")
+                field("LED Part No."; "LED Part No.")
                 {
                 }
-                field(Color;Color)
+                field(Color; Color)
                 {
                 }
-                field("Intensity Code";"Intensity Code")
+                field("Intensity Code"; "Intensity Code")
                 {
                 }
-                field("Intensity Value";"Intensity Value")
+                field("Intensity Value"; "Intensity Value")
                 {
                 }
-                field("Color Code";"Color Code")
+                field("Color Code"; "Color Code")
                 {
                 }
-                field("Color Value";"Color Value")
+                field("Color Value"; "Color Value")
                 {
                 }
-                field("Voltage Code";"Voltage Code")
+                field("Voltage Code"; "Voltage Code")
                 {
                 }
-                field("Voltage Value";"Voltage Value")
+                field("Voltage Value"; "Voltage Value")
                 {
                 }
-                field("Ext Batch No";"Ext Batch No")
+                field("Ext Batch No"; "Ext Batch No")
                 {
                 }
-                field("Ext Lot No";"Ext Lot No")
+                field("Ext Lot No"; "Ext Lot No")
                 {
                 }
-                field("Date Code";"Date Code")
+                field("Date Code"; "Date Code")
                 {
                 }
-                field(Date;Date)
+                field(Date; Date)
                 {
                 }
             }
@@ -368,11 +368,11 @@ page 33000262 "Posted Inspection Data Sheet"
                     begin
 
                         attachment.RESET;
-                        attachment.SETRANGE("Table ID",DATABASE::"Posted Inspect DatasheetHeader");
-                        attachment.SETRANGE("Document No.","No.");
+                        attachment.SETRANGE("Table ID", DATABASE::"Posted Inspect DatasheetHeader");
+                        attachment.SETRANGE("Document No.", "No.");
                         //attachment.SETRANGE("Ids Reference No.","Ids Reference No.");
                         //Attachment.SETRANGE("Document Type","Document Type");
-                        PAGE.RUN(PAGE::"ESPL Attachments",attachment);
+                        PAGE.RUN(PAGE::"ESPL Attachments", attachment);
                     end;
                 }
             }
@@ -386,7 +386,7 @@ page 33000262 "Posted Inspection Data Sheet"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Quality Comment Sheet";
-                RunPageLink = Type=CONST(Posted Inspection Data Sheets),No.=FIELD(No.);
+                RunPageLink = Type = CONST(Posted Inspection Data Sheets),No.=FIELD(No.);
                 ToolTip = 'Comment';
             }
         }

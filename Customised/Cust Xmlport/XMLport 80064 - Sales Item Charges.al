@@ -6,25 +6,25 @@ xmlport 80064 "Sales Item Charges"
     {
         textelement(ItemCharges)
         {
-            tableelement("<itemcharge>";"Item Charge")
+            tableelement("<itemcharge>"; "Item Charge")
             {
                 XmlName = 'ItemCharge';
-                fieldelement(No;"<ItemCharge>"."No.")
+                fieldelement(No; "<ItemCharge>"."No.")
                 {
                 }
-                fieldelement(Description;"<ItemCharge>".Description)
+                fieldelement(Description; "<ItemCharge>".Description)
                 {
                 }
-                fieldelement(GenProdPostingGroup;"<ItemCharge>"."Gen. Prod. Posting Group")
+                fieldelement(GenProdPostingGroup; "<ItemCharge>"."Gen. Prod. Posting Group")
                 {
                 }
-                fieldelement(TaxGroupCode;"<ItemCharge>"."Tax Group Code")
+                fieldelement(TaxGroupCode; "<ItemCharge>"."Tax Group Code")
                 {
                 }
-                fieldelement(VATProdPostingGroup;"<ItemCharge>"."VAT Prod. Posting Group")
+                fieldelement(VATProdPostingGroup; "<ItemCharge>"."VAT Prod. Posting Group")
                 {
                 }
-                fieldelement(SearchDescription;"<ItemCharge>"."Search Description")
+                fieldelement(SearchDescription; "<ItemCharge>"."Search Description")
                 {
                 }
             }

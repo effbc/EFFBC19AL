@@ -10,7 +10,7 @@ page 50025 "Einvoice Sample2"
             group(General)
             {
                 Caption = 'General';
-                field(Data;Data)
+                field(Data; Data)
                 {
                 }
             }

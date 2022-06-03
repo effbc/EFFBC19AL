@@ -1,17 +1,18 @@
 table 33000937 "Sample Test Table2"
 {
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;Date;Date)
+        field(1; Date; Date)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(Key1;Date)
+        key(Key1; Date)
         {
         }
     }

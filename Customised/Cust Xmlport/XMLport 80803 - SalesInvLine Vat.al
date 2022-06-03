@@ -6,22 +6,22 @@ xmlport 80803 "SalesInvLine Vat"
     {
         textelement(SalesInvLineVats)
         {
-            tableelement("<salesinvlinevat>";"SalesInvLine Vat")
+            tableelement("<salesinvlinevat>"; "SalesInvLine Vat")
             {
                 XmlName = 'SalesInvLineVat';
-                fieldelement(DocumentNo;"<SalesInvLineVat>"."Document No.")
+                fieldelement(DocumentNo; "<SalesInvLineVat>"."Document No.")
                 {
                 }
-                fieldelement(LineNo;"<SalesInvLineVat>"."Line No.")
+                fieldelement(LineNo; "<SalesInvLineVat>"."Line No.")
                 {
                 }
-                fieldelement(VatPersge;"<SalesInvLineVat>"."Vat %age")
+                fieldelement(VatPersge; "<SalesInvLineVat>"."Vat %age")
                 {
                 }
-                fieldelement(VatBase;"<SalesInvLineVat>"."Vat Base")
+                fieldelement(VatBase; "<SalesInvLineVat>"."Vat Base")
                 {
                 }
-                fieldelement(VatAmount;"<SalesInvLineVat>"."Vat Amount")
+                fieldelement(VatAmount; "<SalesInvLineVat>"."Vat Amount")
                 {
                 }
             }

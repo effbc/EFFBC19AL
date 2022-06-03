@@ -2,18 +2,18 @@ page 60273 "Quote Contact List"
 {
     // version B2BQTO
 
-    CaptionML = ENU='Contact List',
-                ENN='Contact List';
+    CaptionML = ENU = 'Contact List',
+                ENN = 'Contact List';
     DataCaptionFields = "Company No.";
     PageType = List;
     SourceTable = Contact;
-    SourceTableView = SORTING(Company Name,Company No.,Type,Name);
+    SourceTableView = SORTING(Company Name, Company No., Type, Name);
 
     layout
     {
         area(content)
         {
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
                 Style = Strong;
                 StyleExpr = TRUE;
@@ -23,77 +23,77 @@ page 60273 "Quote Contact List"
                 IndentationColumn = NameIndent;
                 IndentationControls = Name;
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Style = Strong;
                     StyleExpr = StyleIsStrong;
                 }
-                field("Govt./Private";"Govt./Private")
+                field("Govt./Private"; "Govt./Private")
                 {
                 }
-                field("Domestic/Foreign";"Domestic/Foreign")
+                field("Domestic/Foreign"; "Domestic/Foreign")
                 {
                 }
-                field("Product Type";"Product Type")
+                field("Product Type"; "Product Type")
                 {
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
                     Style = Strong;
                     StyleExpr = StyleIsStrong;
                 }
-                field("Company Name";"Company Name")
+                field("Company Name"; "Company Name")
                 {
                     Visible = false;
                 }
-                field("Post Code";"Post Code")
+                field("Post Code"; "Post Code")
                 {
                     Visible = false;
                 }
-                field("Country/Region Code";"Country/Region Code")
+                field("Country/Region Code"; "Country/Region Code")
                 {
                     Visible = false;
                 }
-                field("Phone No.";"Phone No.")
+                field("Phone No."; "Phone No.")
                 {
                 }
-                field("Mobile Phone No.";"Mobile Phone No.")
-                {
-                    Visible = false;
-                }
-                field("Fax No.";"Fax No.")
+                field("Mobile Phone No."; "Mobile Phone No.")
                 {
                     Visible = false;
                 }
-                field("Salesperson Code";"Salesperson Code")
-                {
-                }
-                field("Territory Code";"Territory Code")
-                {
-                }
-                field("Currency Code";"Currency Code")
+                field("Fax No."; "Fax No.")
                 {
                     Visible = false;
                 }
-                field("Language Code";"Language Code")
+                field("Salesperson Code"; "Salesperson Code")
+                {
+                }
+                field("Territory Code"; "Territory Code")
+                {
+                }
+                field("Currency Code"; "Currency Code")
                 {
                     Visible = false;
                 }
-                field("Search Name";"Search Name")
+                field("Language Code"; "Language Code")
+                {
+                    Visible = false;
+                }
+                field("Search Name"; "Search Name")
                 {
                 }
-                field("Make A Quote";"Make A Quote")
+                field("Make A Quote"; "Make A Quote")
                 {
                 }
             }
         }
         area(factboxes)
         {
-            systempart(Control1900383207;Links)
+            systempart(Control1900383207; Links)
             {
                 Visible = true;
             }
-            systempart(Control1905767507;Notes)
+            systempart(Control1905767507; Notes)
             {
                 Visible = true;
             }
@@ -106,19 +106,19 @@ page 60273 "Quote Contact List"
         {
             group("C&ontact")
             {
-                CaptionML = ENU='C&ontact',
-                            ENN='C&ontact';
+                CaptionML = ENU = 'C&ontact',
+                            ENN = 'C&ontact';
                 Image = ContactPerson;
                 group("Comp&any")
                 {
-                    CaptionML = ENU='Comp&any',
-                                ENN='Comp&any';
+                    CaptionML = ENU = 'Comp&any',
+                                ENN = 'Comp&any';
                     Enabled = CompanyGroupEnabled;
                     Image = Company;
                     action("Business Relations")
                     {
-                        CaptionML = ENU='Business Relations',
-                                    ENN='Business Relations';
+                        CaptionML = ENU = 'Business Relations',
+                                    ENN = 'Business Relations';
                         Image = BusinessRelation;
                         RunObject = Page "Contact Business Relations";
                         RunPageLink = Contact No.=FIELD(Company No.);
@@ -129,7 +129,7 @@ page 60273 "Quote Contact List"
                                     ENN='Industry Groups';
                         Image = IndustryGroups;
                         RunObject = Page "Contact Industry Groups";
-                        RunPageLink = Contact No.=FIELD(Company No.);
+                                        RunPageLink = Contact No.=FIELD(Company No.);
                     }
                     action("Web Sources")
                     {
@@ -137,7 +137,7 @@ page 60273 "Quote Contact List"
                                     ENN='Web Sources';
                         Image = Web;
                         RunObject = Page "Contact Web Sources";
-                        RunPageLink = Contact No.=FIELD(Company No.);
+                                        RunPageLink = Contact No.=FIELD(Company No.);
                     }
                 }
                 group("P&erson")
@@ -181,7 +181,7 @@ page 60273 "Quote Contact List"
                                 ENN='&Picture';
                     Image = Picture;
                     RunObject = Page "Contact Picture";
-                    RunPageLink = No.=FIELD(No.);
+                                    RunPageLink = No.=FIELD(No.);
                 }
                 action("Co&mments")
                 {
@@ -189,7 +189,7 @@ page 60273 "Quote Contact List"
                                 ENN='Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Rlshp. Mgt. Comment Sheet";
-                    RunPageLink = Table Name=CONST(Contact),No.=FIELD(No.),Sub No.=CONST(0);
+                                    RunPageLink = Table Name=CONST(Contact),No.=FIELD(No.),Sub No.=CONST(0);
                 }
                 group("Alternati&ve Address")
                 {
@@ -202,7 +202,7 @@ page 60273 "Quote Contact List"
                                     ENN='Card';
                         Image = EditLines;
                         RunObject = Page "Contact Alt. Address List";
-                        RunPageLink = Contact No.=FIELD(No.);
+                                        RunPageLink = Contact No.=FIELD(No.);
                     }
                     action("Date Ranges")
                     {
@@ -210,7 +210,7 @@ page 60273 "Quote Contact List"
                                     ENN='Date Ranges';
                         Image = DateRange;
                         RunObject = Page "Contact Alt. Addr. Date Ranges";
-                        RunPageLink = Contact No.=FIELD(No.);
+                                        RunPageLink = Contact No.=FIELD(No.);
                     }
                 }
                 separator(Action48)
@@ -365,7 +365,7 @@ page 60273 "Quote Contact List"
                                 ENN='Relate&d Contacts';
                     Image = Users;
                     RunObject = Page "Contact List";
-                    RunPageLink = Company No.=FIELD(Company No.);
+                                    RunPageLink = Company No.=FIELD(Company No.);
                 }
                 action("Segmen&ts")
                 {
@@ -373,7 +373,7 @@ page 60273 "Quote Contact List"
                                 ENN='Segmen&ts';
                     Image = Segment;
                     RunObject = Page "Contact Segment List";
-                    RunPageLink = Contact Company No.=FIELD(Company No.),Contact No.=FILTER(<>''),Contact No.=FIELD(FILTER(Lookup Contact No.));
+                                    RunPageLink = Contact Company No.=FIELD(Company No.),Contact No.=FILTER(<>''),Contact No.=FIELD(FILTER(Lookup Contact No.));
                     RunPageView = SORTING(Contact No.,Segment No.);
                 }
                 action("Mailing &Groups")
@@ -382,7 +382,7 @@ page 60273 "Quote Contact List"
                                 ENN='Mailing &Groups';
                     Image = DistributionGroup;
                     RunObject = Page "Contact Mailing Groups";
-                    RunPageLink = Contact No.=FIELD(No.);
+                                    RunPageLink = Contact No.=FIELD(No.);
                 }
                 action("C&ustomer/Vendor/Bank Acc.")
                 {
@@ -407,7 +407,7 @@ page 60273 "Quote Contact List"
                                 ENN='T&o-dos';
                     Image = TaskList;
                     RunObject = Page "To-do List";
-                    RunPageLink = Contact Company No.=FIELD(Company No.),Contact No.=FIELD(FILTER(Lookup Contact No.)),System To-do Type=FILTER(Contact Attendee);
+                                    RunPageLink = Contact Company No.=FIELD(Company No.),Contact No.=FIELD(FILTER(Lookup Contact No.)),System To-do Type=FILTER(Contact Attendee);
                     RunPageView = SORTING(Contact Company No.,Contact No.);
                 }
                 action("Oppo&rtunities")
@@ -416,7 +416,7 @@ page 60273 "Quote Contact List"
                                 ENN='Oppo&rtunities';
                     Image = OpportunityList;
                     RunObject = Page "Opportunity List";
-                    RunPageLink = Contact Company No.=FIELD(Company No.),Contact No.=FILTER(<>''),Contact No.=FIELD(FILTER(Lookup Contact No.));
+                                    RunPageLink = Contact Company No.=FIELD(Company No.),Contact No.=FILTER(<>''),Contact No.=FIELD(FILTER(Lookup Contact No.));
                     RunPageView = SORTING(Contact Company No.,Contact No.);
                 }
                 separator(Action52)
@@ -436,7 +436,7 @@ page 60273 "Quote Contact List"
                                 ENN='Sales &Quotes';
                     Image = Quote;
                     RunObject = Page "Sales Quotes";
-                    RunPageLink = Sell-to Contact No.=FIELD(No.);
+                                    RunPageLink = Sell-to Contact No.=FIELD(No.);
                     RunPageView = SORTING(Document Type,Sell-to Contact No.);
                 }
                 separator(Action69)
@@ -454,7 +454,7 @@ page 60273 "Quote Contact List"
                                 ENN='Postponed &Interactions';
                     Image = PostponedInteractions;
                     RunObject = Page "Postponed Interactions";
-                    RunPageLink = Contact Company No.=FIELD(Company No.),Contact No.=FILTER(<>''),Contact No.=FIELD(FILTER(Lookup Contact No.));
+                                    RunPageLink = Contact Company No.=FIELD(Company No.),Contact No.=FILTER(<>''),Contact No.=FIELD(FILTER(Lookup Contact No.));
                     RunPageView = SORTING(Contact Company No.,Contact No.);
                 }
                 action("Interaction Log E&ntries")
@@ -463,7 +463,7 @@ page 60273 "Quote Contact List"
                                 ENN='Interaction Log E&ntries';
                     Image = InteractionLog;
                     RunObject = Page "Interaction Log Entries";
-                    RunPageLink = Contact Company No.=FIELD(Company No.),Contact No.=FILTER(<>''),Contact No.=FIELD(FILTER(Lookup Contact No.));
+                                    RunPageLink = Contact Company No.=FIELD(Company No.),Contact No.=FILTER(<>''),Contact No.=FIELD(FILTER(Lookup Contact No.));
                     RunPageView = SORTING(Contact Company No.,Contact No.);
                     ShortCutKey = 'Ctrl+F7';
                 }
@@ -475,7 +475,7 @@ page 60273 "Quote Contact List"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Contact Statistics";
-                    RunPageLink = No.=FIELD(No.);
+                                    RunPageLink = No.=FIELD(No.);
                     ShortCutKey = 'F7';
                 }
             }
@@ -636,7 +636,7 @@ page 60273 "Quote Contact List"
                 Promoted = true;
                 PromotedCategory = New;
                 RunObject = Page "Sales Quote";
-                RunPageLink = Sell-to Contact No.=FIELD(No.);
+                                RunPageLink = Sell-to Contact No.=FIELD(No.);
                 RunPageMode = Create;
             }
         }

@@ -16,13 +16,13 @@ page 60036 "Service Order Archive"
             group(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Customer No.";"Customer No.")
+                field("Customer No."; "Customer No.")
                 {
 
                     trigger OnValidate();
@@ -30,64 +30,64 @@ page 60036 "Service Order Archive"
                         CustomerNoOnAfterValidate;
                     end;
                 }
-                field("Contact No.";"Contact No.")
+                field("Contact No."; "Contact No.")
                 {
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
                 }
-                field(Address;Address)
+                field(Address; Address)
                 {
                 }
-                field("Address 2";"Address 2")
+                field("Address 2"; "Address 2")
                 {
                 }
-                field("Post Code";"Post Code")
+                field("Post Code"; "Post Code")
                 {
                     Caption = 'Post Code/City';
                 }
-                field("Contact Name";"Contact Name")
+                field("Contact Name"; "Contact Name")
                 {
                 }
-                field("Phone No.";"Phone No.")
+                field("Phone No."; "Phone No.")
                 {
                     Caption = 'Phone No./Phone No. 2';
                 }
-                field(City;City)
+                field(City; City)
                 {
                 }
-                field("Phone No. 2";"Phone No. 2")
+                field("Phone No. 2"; "Phone No. 2")
                 {
                 }
-                field("E-Mail";"E-Mail")
+                field("E-Mail"; "E-Mail")
                 {
                 }
-                field("Notify Customer";"Notify Customer")
+                field("Notify Customer"; "Notify Customer")
                 {
                 }
-                field("Service Order Type";"Service Order Type")
+                field("Service Order Type"; "Service Order Type")
                 {
                 }
-                field("Contract No.";"Contract No.")
+                field("Contract No."; "Contract No.")
                 {
                 }
-                field("Response Date";"Response Date")
+                field("Response Date"; "Response Date")
                 {
                 }
-                field("Response Time";"Response Time")
+                field("Response Time"; "Response Time")
                 {
                 }
-                field(Priority;Priority)
+                field(Priority; Priority)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Responsibility Center";"Responsibility Center")
+                field("Responsibility Center"; "Responsibility Center")
                 {
                 }
             }
-            part(ServItemLine;"Service Order Archive Subform")
+            part(ServItemLine; "Service Order Archive Subform")
             {
                 Editable = false;
                 SubPageLink = Document No.=FIELD(No.),Doc. No. Occurrence=FIELD(Doc. No. Occurrence),Version No.=FIELD(Version No.);
@@ -294,7 +294,7 @@ page 60036 "Service Order Archive"
         UserMgt : Codeunit "User Setup Management";
         CreateServiceOrder : Codeunit "Serv-Quote to Order (Yes/No)";
         ChangeExchangeRate : Page "Change Exchange Rate";
-        FaultResolutionRelation : Page "Fault/Resol. Cod. Relationship";
+                                 FaultResolutionRelation : Page "Fault/Resol. Cod. Relationship";
 
     [LineStart(5457)]
     local procedure CustomerNoOnAfterValidate();

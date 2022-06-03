@@ -16,39 +16,39 @@ page 60236 "Issue Track Document List"
             repeater(Control1102152001)
             {
                 ShowCaption = false;
-                field("Issue Id";"Issue Id")
+                field("Issue Id"; "Issue Id")
                 {
                 }
-                field("Issue Logged By";"Issue Logged By")
+                field("Issue Logged By"; "Issue Logged By")
                 {
                 }
-                field("Issued Logged Date";"Issued Logged Date")
+                field("Issued Logged Date"; "Issued Logged Date")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Handled By";"Handled By")
-                {
-                    Editable = MakeHandleEditable;
-                }
-                field(Status;Status)
-                {
-                }
-                field("Handled Date Time";"Handled Date Time")
+                field("Handled By"; "Handled By")
                 {
                     Editable = MakeHandleEditable;
                 }
-                field("EFF. Attachment";"EFF. Attachment")
+                field(Status; Status)
                 {
                 }
-                field("Reason for Reopen";"Reason for Reopen")
+                field("Handled Date Time"; "Handled Date Time")
+                {
+                    Editable = MakeHandleEditable;
+                }
+                field("EFF. Attachment"; "EFF. Attachment")
                 {
                 }
-                field(Remarks;Remarks)
+                field("Reason for Reopen"; "Reason for Reopen")
                 {
                 }
-                field(Project;Project)
+                field(Remarks; Remarks)
+                {
+                }
+                field(Project; Project)
                 {
                 }
             }
@@ -69,8 +69,8 @@ page 60236 "Issue Track Document List"
                     PromotedCategory = New;
                     PromotedIsBig = true;
                     RunObject = Page Page96001;
-                    RunPageLink = Field1=FIELD(Issue Id);
-                    RunPageView = SORTING(Field1,Field2) ORDER(Ascending);
+                    RunPageLink = Field1 = FIELD(Issue Id);
+                    RunPageView = SORTING(Field1, Field2) ORDER(Ascending);
                 }
             }
             action(Attachments)
@@ -83,9 +83,9 @@ page 60236 "Issue Track Document List"
                 trigger OnAction();
                 begin
                     attachments.RESET;
-                    attachments.SETRANGE("Table ID",DATABASE::Table96000);
-                    attachments.SETRANGE("Document No.",FORMAT("Issue Id"));
-                    PAGE.RUN(PAGE::"ESPL Attachments",attachments);
+                    attachments.SETRANGE("Table ID", DATABASE::Table96000);
+                    attachments.SETRANGE("Document No.", FORMAT("Issue Id"));
+                    PAGE.RUN(PAGE::"ESPL Attachments", attachments);
                 end;
             }
         }
@@ -152,52 +152,52 @@ page 60236 "Issue Track Document List"
     begin
 
         IF IsAdministrator THEN BEGIN
-          SetCompletedVisible := TRUE;
-          MakeHandleEditable := TRUE;
+            SetCompletedVisible := TRUE;
+            MakeHandleEditable := TRUE;
         END ELSE BEGIN
-          SetCompletedVisible := FALSE;
-          MakeHandleEditable := FALSE;
+            SetCompletedVisible := FALSE;
+            MakeHandleEditable := FALSE;
         END;
     end;
 
-    trigger OnNewRecord(BelowxRec : Boolean);
+    trigger OnNewRecord(BelowxRec: Boolean);
     begin
         IF IsAdministrator THEN BEGIN
-          SetCompletedVisible := TRUE;
-          MakeHandleEditable := TRUE;
+            SetCompletedVisible := TRUE;
+            MakeHandleEditable := TRUE;
         END ELSE BEGIN
-          SetCompletedVisible := FALSE;
-          MakeHandleEditable := FALSE;
+            SetCompletedVisible := FALSE;
+            MakeHandleEditable := FALSE;
         END;
 
         IssueTrackHeader.RESET;
         IF IssueTrackHeader.FINDLAST THEN BEGIN
-          "Issue Id" := INCSTR(IssueTrackHeader."Issue Id");
+            "Issue Id" := INCSTR(IssueTrackHeader."Issue Id");
         END ELSE
-          "Issue Id" := '000001';
+            "Issue Id" := '000001';
     end;
 
     trigger OnOpenPage();
     begin
         IF IsAdministrator THEN BEGIN
-          SetCompletedVisible := TRUE;
-          MakeHandleEditable := TRUE;
+            SetCompletedVisible := TRUE;
+            MakeHandleEditable := TRUE;
         END ELSE BEGIN
-          SetCompletedVisible := FALSE;
-          MakeHandleEditable := FALSE;
-          FILTERGROUP(2);
-          SETFILTER("Issue Logged By",USERID);
-          FILTERGROUP(0);
+            SetCompletedVisible := FALSE;
+            MakeHandleEditable := FALSE;
+            FILTERGROUP(2);
+            SETFILTER("Issue Logged By", USERID);
+            FILTERGROUP(0);
         END;
     end;
 
     var
         [InDataSet]
-        SetCompletedVisible : Boolean;
+        SetCompletedVisible: Boolean;
         [InDataSet]
-        MakeHandleEditable : Boolean;
-        attachments : Record Attachments;
-        IssueTrackHeader : Record "Issue Track Header";
-        IssueTrackerLine : Record "Issue Tracker Line";
+        MakeHandleEditable: Boolean;
+        attachments: Record Attachments;
+        IssueTrackHeader: Record "Issue Track Header";
+        IssueTrackerLine: Record "Issue Tracker Line";
 }
 

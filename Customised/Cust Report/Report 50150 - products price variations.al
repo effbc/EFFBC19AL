@@ -5,7 +5,7 @@ report 50150 "products price variations"
 
     dataset
     {
-        dataitem(Item;Item)
+        dataitem(Item; Item)
         {
             DataItemTableView = WHERE(Product Group Code=FILTER(FPRODUCT));
             column(Item_No_;"No.")

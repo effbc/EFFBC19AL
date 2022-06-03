@@ -1,6 +1,6 @@
 page 60070 "Alternate Items"
 {
-    DataCaptionFields = "Proudct Type","Item No.";
+    DataCaptionFields = "Proudct Type", "Item No.";
     PageType = Worksheet;
     SourceTable = "Alternate Items";
 
@@ -11,25 +11,25 @@ page 60070 "Alternate Items"
             repeater(Control1102154000)
             {
                 ShowCaption = false;
-                field("Proudct Type";"Proudct Type")
+                field("Proudct Type"; "Proudct Type")
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field("Item Description";"Item Description")
+                field("Item Description"; "Item Description")
                 {
                 }
-                field("Alternative Item No.";"Alternative Item No.")
+                field("Alternative Item No."; "Alternative Item No.")
                 {
                 }
-                field("Alternative Item Description";"Alternative Item Description")
+                field("Alternative Item Description"; "Alternative Item Description")
                 {
                 }
-                field(Make;Make)
+                field(Make; Make)
                 {
                 }
-                field("Priority Order";"Priority Order")
+                field("Priority Order"; "Priority Order")
                 {
                 }
             }

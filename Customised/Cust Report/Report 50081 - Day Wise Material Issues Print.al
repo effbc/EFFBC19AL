@@ -7,99 +7,99 @@ report 50081 "Day Wise Material Issues Print"
 
     dataset
     {
-        dataitem("Posted Material Issues Header";"Posted Material Issues Header")
+        dataitem("Posted Material Issues Header"; "Posted Material Issues Header")
         {
-            DataItemTableView = SORTING(Prod. Order No.,Prod. Order Line No.) ORDER(Ascending);
-            RequestFilterFields = "No.","Transfer-from Code","Transfer-to Code","Prod. Order No.","Prod. Order Line No.","Issued DateTime","Prod. BOM No.";
+            DataItemTableView = SORTING(Prod. Order No., Prod. Order Line No.) ORDER(Ascending);
+            RequestFilterFields = "No.", "Transfer-from Code", "Transfer-to Code", "Prod. Order No.", "Prod. Order Line No.", "Issued DateTime", "Prod. BOM No.";
             ReqFilterHeading = 'Material Issue';
-            column(PMIHeader_Choice;Choice)
+            column(PMIHeader_Choice; Choice)
             {
             }
-            column(CompanyAddr_1_;CompanyAddr[1])
+            column(CompanyAddr_1_; CompanyAddr[1])
             {
             }
-            column(CURRENTDATETIME;CURRENTDATETIME)
+            column(CURRENTDATETIME; CURRENTDATETIME)
             {
             }
-            column(SET_Header;SET_Header)
+            column(SET_Header; SET_Header)
             {
             }
-            column(CURRENTDATETIME_Control1102154038;CURRENTDATETIME)
+            column(CURRENTDATETIME_Control1102154038; CURRENTDATETIME)
             {
             }
-            column(CompanyAddr_1__Control1102154039;CompanyAddr[1])
+            column(CompanyAddr_1__Control1102154039; CompanyAddr[1])
             {
             }
-            column(Posted_Material_Issues_Header__No__;"No.")
+            column(Posted_Material_Issues_Header__No__; "No.")
             {
             }
-            column(Posted_Material_Issues_Header__Transfer_from_Code_;"Transfer-from Code")
+            column(Posted_Material_Issues_Header__Transfer_from_Code_; "Transfer-from Code")
             {
             }
-            column(Posted_Material_Issues_Header__Prod__Order_No__;"Prod. Order No.")
+            column(Posted_Material_Issues_Header__Prod__Order_No__; "Prod. Order No.")
             {
             }
-            column(Prod_codes;Prod_codes)
+            column(Prod_codes; Prod_codes)
             {
             }
-            column(Posted_Material_Issues_Header__Transfer_to_Code2_;"Posted Material Issues Header"."Transfer-to Code")
+            column(Posted_Material_Issues_Header__Transfer_to_Code2_; "Posted Material Issues Header"."Transfer-to Code")
             {
             }
-            column(Posted_Material_Issues_Header__Posted_Material_Issues_Header___Resource_Name_;"Posted Material Issues Header"."Resource Name")
+            column(Posted_Material_Issues_Header__Posted_Material_Issues_Header___Resource_Name_; "Posted Material Issues Header"."Resource Name")
             {
             }
-            column(Posted_Material_Issues_Header___Released_Date2_;"Posted Material Issues Header"."Released Date")
+            column(Posted_Material_Issues_Header___Released_Date2_; "Posted Material Issues Header"."Released Date")
             {
             }
-            column(Posted_Material_Issues_Header___Issued_DateTime2_;"Posted Material Issues Header"."Issued DateTime")
+            column(Posted_Material_Issues_Header___Issued_DateTime2_; "Posted Material Issues Header"."Issued DateTime")
             {
             }
-            column(COmpound_desc;COmpound_desc)
+            column(COmpound_desc; COmpound_desc)
             {
             }
-            column(Posted_Material_Issues_Header__Posted_Material_Issues_Header___Released_By_;"Posted Material Issues Header"."Released By")
+            column(Posted_Material_Issues_Header__Posted_Material_Issues_Header___Released_By_; "Posted Material Issues Header"."Released By")
             {
             }
-            column(Material_Request_FormCaption;Material_Request_FormCaptionLbl)
+            column(Material_Request_FormCaption; Material_Request_FormCaptionLbl)
             {
             }
-            column(Requested__By_Caption;Requested__By_CaptionLbl)
+            column(Requested__By_Caption; Requested__By_CaptionLbl)
             {
             }
-            column(Requisition_NoCaption;Requisition_NoCaptionLbl)
+            column(Requisition_NoCaption; Requisition_NoCaptionLbl)
             {
             }
-            column(Posted_Material_Issues_Header__Transfer_from_Code_Caption;FIELDCAPTION("Transfer-from Code"))
+            column(Posted_Material_Issues_Header__Transfer_from_Code_Caption; FIELDCAPTION("Transfer-from Code"))
             {
             }
-            column(Posted_Material_Issues_Header__Prod__Order_No__Caption;FIELDCAPTION("Prod. Order No."))
+            column(Posted_Material_Issues_Header__Prod__Order_No__Caption; FIELDCAPTION("Prod. Order No."))
             {
             }
-            column(Posted_Material_Issues_Header__Transfer_to_Code_Caption;FIELDCAPTION("Transfer-to Code"))
+            column(Posted_Material_Issues_Header__Transfer_to_Code_Caption; FIELDCAPTION("Transfer-to Code"))
             {
             }
-            column(CompoundCaption;CompoundCaptionLbl)
+            column(CompoundCaption; CompoundCaptionLbl)
             {
             }
-            column(EmptyStringCaption;EmptyStringCaptionLbl)
+            column(EmptyStringCaption; EmptyStringCaptionLbl)
             {
             }
-            column(EmptyStringCaption_Control1102154183;EmptyStringCaption_Control1102154183Lbl)
+            column(EmptyStringCaption_Control1102154183; EmptyStringCaption_Control1102154183Lbl)
             {
             }
-            column(Shortage_Item_Qty_Caption;Shortage_Item_Qty_Caption)
+            column(Shortage_Item_Qty_Caption; Shortage_Item_Qty_Caption)
             {
             }
-            column(Shortage_ItemCaption_Control1102154346Lbl;Shortage_ItemCaption_Control1102154346Lbl)
+            column(Shortage_ItemCaption_Control1102154346Lbl; Shortage_ItemCaption_Control1102154346Lbl)
             {
             }
-            column(UOMCaptionLbl_Global;UOMCaptionLbl)
+            column(UOMCaptionLbl_Global; UOMCaptionLbl)
             {
             }
-            dataitem("Posted Material Issues Line";"Posted Material Issues Line")
+            dataitem("Posted Material Issues Line"; "Posted Material Issues Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Document No.,Line No.) ORDER(Ascending) WHERE(Item No.=FILTER(<>''));
+                DataItemTableView = SORTING(Document No., Line No.) ORDER(Ascending) WHERE(Item No.=FILTER(<>''));
                 RequestFilterFields = "Material Requisition Date",Dept;
                 column(PMILineBody3;PMILineBody3)
                 {
@@ -2609,45 +2609,45 @@ report 50081 "Day Wise Material Issues Print"
         PMIH : Record "Posted Material Issues Header";
         com : Text[1000];
         PostMaterialQry : Query "Post Material issues";
-        Item_Test : Text;
-        Lot_Test : Code[20];
-        Serial_Test : Code[20];
-        Qty_test : Decimal;
-        Qty_set_test : Decimal;
-        Int1_Desc : Text;
-        Int1_Desc2 : Text;
-        Int1_body7 : Boolean;
-        Material_Required_Day : Integer;
-        Mech_i : Integer;
-        Resource : Code[100];
-        Resource_Details : Code[20];
-        Prod_codes : Text;
-        MWshortgCount : Integer;
-        flag : Boolean;
-        MRdatestr : Code[30];
-        deptcodestr : Code[30];
-        DeptTest : Code[10];
-        MaterialReqDateTest : Date;
-        ProdOrdrComp : Record "Prod. Order Component";
-        deptMechCode : Code[10];
-        MRdateMech : Date;
-        Pick : Boolean;
-        PMIL : Record "Posted Material Issues Line";
-        PCount : Decimal;
-        PCount1 : Decimal;
-        PCL : Record "Prod. Order Component";
-        PageGroupNo : Integer;
-        NextPageGroupNo : Integer;
-        prevdept : Code[10];
-        prevdate : Date;
-        temp11 : Code[50];
-        BINAddrsMech : Code[30];
-        BINAddrsSets : Code[50];
-        StockAddrsMech : Code[50];
-        StockAddrsSets : Code[50];
-        MIL : Record "Material Issues Line";
-        Item_Dummy : Record Item temporary;
-        Item_Dummy_Count : Integer;
-        Shortage_Item_Qty_Caption : Label 'Shortage Quantity';
+                              Item_Test : Text;
+                              Lot_Test : Code[20];
+                              Serial_Test : Code[20];
+                              Qty_test : Decimal;
+                              Qty_set_test : Decimal;
+                              Int1_Desc : Text;
+                              Int1_Desc2 : Text;
+                              Int1_body7 : Boolean;
+                              Material_Required_Day : Integer;
+                              Mech_i : Integer;
+                              Resource : Code[100];
+                              Resource_Details : Code[20];
+                              Prod_codes : Text;
+                              MWshortgCount : Integer;
+                              flag : Boolean;
+                              MRdatestr : Code[30];
+                              deptcodestr : Code[30];
+                              DeptTest : Code[10];
+                              MaterialReqDateTest : Date;
+                              ProdOrdrComp : Record "Prod. Order Component";
+                              deptMechCode : Code[10];
+                              MRdateMech : Date;
+                              Pick : Boolean;
+                              PMIL : Record "Posted Material Issues Line";
+                              PCount : Decimal;
+                              PCount1 : Decimal;
+                              PCL : Record "Prod. Order Component";
+                              PageGroupNo : Integer;
+                              NextPageGroupNo : Integer;
+                              prevdept : Code[10];
+                              prevdate : Date;
+                              temp11 : Code[50];
+                              BINAddrsMech : Code[30];
+                              BINAddrsSets : Code[50];
+                              StockAddrsMech : Code[50];
+                              StockAddrsSets : Code[50];
+                              MIL : Record "Material Issues Line";
+                              Item_Dummy : Record Item temporary;
+                              Item_Dummy_Count : Integer;
+                              Shortage_Item_Qty_Caption : Label 'Shortage Quantity';
 }
 

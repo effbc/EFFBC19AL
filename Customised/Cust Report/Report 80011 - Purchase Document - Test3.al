@@ -26,12 +26,12 @@ report 80011 "Purchase Document - Test3"
     DefaultLayout = RDLC;
     RDLCLayout = './Purchase Document - Test3.rdlc';
 
-    CaptionML = ENU='Purchase Document - Test',
-                ENN='Purchase Document - Test';
+    CaptionML = ENU = 'Purchase Document - Test',
+                ENN = 'Purchase Document - Test';
 
     dataset
     {
-        dataitem("Purchase Header";"Purchase Header")
+        dataitem("Purchase Header"; "Purchase Header")
         {
             DataItemTableView = WHERE(Document Type=FILTER(<>Quote));
             RequestFilterFields = "Document Type","No.";
@@ -3034,7 +3034,7 @@ report 80011 "Purchase Document - Test3"
         Tot_Amt_To_Vendor : Decimal;
         descri : array [2] of Text[250];
         check : Report Check;
-        TotIncTaxes : Label 'Grand Total';
+                    TotIncTaxes : Label 'Grand Total';
         LinesCount : Integer;
         Tariff_Heading_No__CaptionLbl : Label 'Tariff Heading No.:';
         C_E__RegN__No__AAACE4879QXM001__E_C_Code_No_AAACE_4879Q_XM001_Range_IV_divn_VijayaLbl : Label 'C.E. RegN. No. AAACE4879QXM001';

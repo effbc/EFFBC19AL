@@ -6,22 +6,22 @@ xmlport 80094 "CRP Routing Header"
     {
         textelement(RoutingHeader)
         {
-            tableelement("<routingheader>";"Routing Header")
+            tableelement("<routingheader>"; "Routing Header")
             {
                 XmlName = 'RoutingHeader';
-                fieldelement(No;"<RoutingHeader>"."No.")
+                fieldelement(No; "<RoutingHeader>"."No.")
                 {
                 }
-                fieldelement(Description;"<RoutingHeader>".Description)
+                fieldelement(Description; "<RoutingHeader>".Description)
                 {
                 }
-                fieldelement(SearchDescription;"<RoutingHeader>"."Search Description")
+                fieldelement(SearchDescription; "<RoutingHeader>"."Search Description")
                 {
                 }
-                fieldelement(Status;"<RoutingHeader>".Status)
+                fieldelement(Status; "<RoutingHeader>".Status)
                 {
                 }
-                fieldelement(Type;"<RoutingHeader>".Type)
+                fieldelement(Type; "<RoutingHeader>".Type)
                 {
                 }
             }

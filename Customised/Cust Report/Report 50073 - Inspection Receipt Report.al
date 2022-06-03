@@ -7,9 +7,9 @@ report 50073 "Inspection Receipt Report"
 
     dataset
     {
-        dataitem("Inspection Receipt Header";"Inspection Receipt Header")
+        dataitem("Inspection Receipt Header"; "Inspection Receipt Header")
         {
-            DataItemTableView = SORTING(Posted Date) ORDER(Ascending) WHERE(Status=FILTER(Yes),Source Type=FILTER(In Bound));
+            DataItemTableView = SORTING(Posted Date) ORDER(Ascending) WHERE(Status = FILTER(Yes), Source Type=FILTER(In Bound));
             RequestFilterFields = "Posting Date";
             column("filter";filter)
             {

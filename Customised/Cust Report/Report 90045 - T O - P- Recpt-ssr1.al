@@ -18,102 +18,102 @@ report 90045 "T O - P- Recpt-ssr1"
 
     dataset
     {
-        dataitem("Transfer Receipt Header";"Transfer Receipt Header")
+        dataitem("Transfer Receipt Header"; "Transfer Receipt Header")
         {
             DataItemTableView = SORTING(No.);
-            RequestFilterFields = "No.","Transfer-from Code","Transfer-to Code";
+            RequestFilterFields = "No.", "Transfer-from Code", "Transfer-to Code";
             ReqFilterHeading = 'Transfer Order';
-            column(Transfer_Receipt_Header_No_;"No.")
+            column(Transfer_Receipt_Header_No_; "No.")
             {
             }
-            dataitem(CopyLoop;"Integer")
+            dataitem(CopyLoop; "Integer")
             {
                 DataItemTableView = SORTING(Number);
-                dataitem(PageLoop;"Integer")
+                dataitem(PageLoop; "Integer")
                 {
-                    DataItemTableView = SORTING(Number) WHERE(Number=CONST(1));
-                    column(Transfer_Receipt_Header___Posting_Date_;"Transfer Receipt Header"."Posting Date")
+                    DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                    column(Transfer_Receipt_Header___Posting_Date_; "Transfer Receipt Header"."Posting Date")
                     {
                     }
-                    column(Transfer_Receipt_Header___No__;"Transfer Receipt Header"."No.")
+                    column(Transfer_Receipt_Header___No__; "Transfer Receipt Header"."No.")
                     {
                     }
-                    column(Transfer_Receipt_Header___Transfer_from_Code_;"Transfer Receipt Header"."Transfer-from Code")
+                    column(Transfer_Receipt_Header___Transfer_from_Code_; "Transfer Receipt Header"."Transfer-from Code")
                     {
                     }
-                    column(Transfer_Receipt_Header___Transfer_to_Code_;"Transfer Receipt Header"."Transfer-to Code")
+                    column(Transfer_Receipt_Header___Transfer_to_Code_; "Transfer Receipt Header"."Transfer-to Code")
                     {
                     }
-                    column(CurrReport_PAGENO;CurrReport.PAGENO)
+                    column(CurrReport_PAGENO; CurrReport.PAGENO)
                     {
                     }
-                    column(COMPANYNAME;COMPANYNAME)
+                    column(COMPANYNAME; COMPANYNAME)
                     {
                     }
-                    column(Transfer_Receipt_Header___Transfer_Order_No__;"Transfer Receipt Header"."Transfer Order No.")
+                    column(Transfer_Receipt_Header___Transfer_Order_No__; "Transfer Receipt Header"."Transfer Order No.")
                     {
                     }
-                    column(Transfer_Receipt_Header___Prod__Order_No__;"Transfer Receipt Header"."Prod. Order No.")
+                    column(Transfer_Receipt_Header___Prod__Order_No__; "Transfer Receipt Header"."Prod. Order No.")
                     {
                     }
-                    column(Transfer_Receipt_Header___Prod__Order_Line_No__;"Transfer Receipt Header"."Prod. Order Line No.")
+                    column(Transfer_Receipt_Header___Prod__Order_Line_No__; "Transfer Receipt Header"."Prod. Order Line No.")
                     {
                     }
-                    column(Transfer_Receipt_Header___No___Control1102152001;"Transfer Receipt Header"."No.")
+                    column(Transfer_Receipt_Header___No___Control1102152001; "Transfer Receipt Header"."No.")
                     {
                     }
-                    column(CurrReport_PAGENO_Control1102152005;CurrReport.PAGENO)
+                    column(CurrReport_PAGENO_Control1102152005; CurrReport.PAGENO)
                     {
                     }
-                    column(COMPANYNAME_Control1102152008;COMPANYNAME)
+                    column(COMPANYNAME_Control1102152008; COMPANYNAME)
                     {
                     }
-                    column(Posted_Transfer_Order_ReceiptCaption;Posted_Transfer_Order_ReceiptCaptionLbl)
+                    column(Posted_Transfer_Order_ReceiptCaption; Posted_Transfer_Order_ReceiptCaptionLbl)
                     {
                     }
-                    column(Posted_TO_Receipt_No_Caption;Posted_TO_Receipt_No_CaptionLbl)
+                    column(Posted_TO_Receipt_No_Caption; Posted_TO_Receipt_No_CaptionLbl)
                     {
                     }
-                    column(Transfer__from_codeCaption;Transfer__from_codeCaptionLbl)
+                    column(Transfer__from_codeCaption; Transfer__from_codeCaptionLbl)
                     {
                     }
-                    column(Transfer_to_codeCaption;Transfer_to_codeCaptionLbl)
+                    column(Transfer_to_codeCaption; Transfer_to_codeCaptionLbl)
                     {
                     }
-                    column(Prod_Order_No_Caption;Prod_Order_No_CaptionLbl)
+                    column(Prod_Order_No_Caption; Prod_Order_No_CaptionLbl)
                     {
                     }
-                    column(Prod_Order_Line_No_Caption;Prod_Order_Line_No_CaptionLbl)
+                    column(Prod_Order_Line_No_Caption; Prod_Order_Line_No_CaptionLbl)
                     {
                     }
-                    column(Posting_dateCaption;Posting_dateCaptionLbl)
+                    column(Posting_dateCaption; Posting_dateCaptionLbl)
                     {
                     }
-                    column(PageCaption;PageCaptionLbl)
+                    column(PageCaption; PageCaptionLbl)
                     {
                     }
-                    column(Transfer_Order_No_Caption;Transfer_Order_No_CaptionLbl)
+                    column(Transfer_Order_No_Caption; Transfer_Order_No_CaptionLbl)
                     {
                     }
-                    column(Transfer_Order_No_Caption_Control1102152000;Transfer_Order_No_Caption_Control1102152000Lbl)
+                    column(Transfer_Order_No_Caption_Control1102152000; Transfer_Order_No_Caption_Control1102152000Lbl)
                     {
                     }
-                    column(Prod_Order_No_Caption_Control1102152002;Prod_Order_No_Caption_Control1102152002Lbl)
+                    column(Prod_Order_No_Caption_Control1102152002; Prod_Order_No_Caption_Control1102152002Lbl)
                     {
                     }
-                    column(Transfer_OrderCaption;Transfer_OrderCaptionLbl)
+                    column(Transfer_OrderCaption; Transfer_OrderCaptionLbl)
                     {
                     }
-                    column(PageCaption_Control1102152006;PageCaption_Control1102152006Lbl)
+                    column(PageCaption_Control1102152006; PageCaption_Control1102152006Lbl)
                     {
                     }
-                    column(PageLoop_Number;Number)
+                    column(PageLoop_Number; Number)
                     {
                     }
-                    dataitem(DimensionLoop1;"Integer")
+                    dataitem(DimensionLoop1; "Integer")
                     {
                         DataItemLinkReference = "Transfer Receipt Header";
-                        DataItemTableView = SORTING(Number) WHERE(Number=FILTER(1..));
+                        DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
 
                         trigger OnAfterGetRecord();
                         begin
@@ -147,27 +147,27 @@ report 90045 "T O - P- Recpt-ssr1"
                             UNTIL (DocDim1.NEXT = 0);
                             */
                             IF Number = 1 THEN BEGIN
-                              IF NOT DimSetEntryGRec.FINDFIRST THEN
-                                CurrReport.BREAK;
+                                IF NOT DimSetEntryGRec.FINDFIRST THEN
+                                    CurrReport.BREAK;
                             END ELSE
-                              IF NOT Continue THEN
-                                CurrReport.BREAK;
-                            
+                                IF NOT Continue THEN
+                                    CurrReport.BREAK;
+
                             CLEAR(DimText);
                             Continue := FALSE;
                             REPEAT
-                              OldDimText := DimText;
-                              IF DimText = '' THEN
-                                DimText := STRSUBSTNO('%1 - %2',DimSetEntryGRec."Dimension Code",DimSetEntryGRec."Dimension Value Code")
-                              ELSE
-                                DimText :=
-                                  STRSUBSTNO(
-                                    '%1, %2 - %3',DimText,DimSetEntryGRec."Dimension Code",DimSetEntryGRec."Dimension Value Code");
-                              IF STRLEN(DimText) > MAXSTRLEN(OldDimText) THEN BEGIN
-                                DimText := OldDimText;
-                                Continue := TRUE;
-                                EXIT;
-                              END;
+                                OldDimText := DimText;
+                                IF DimText = '' THEN
+                                    DimText := STRSUBSTNO('%1 - %2', DimSetEntryGRec."Dimension Code", DimSetEntryGRec."Dimension Value Code")
+                                ELSE
+                                    DimText :=
+                                      STRSUBSTNO(
+                                        '%1, %2 - %3', DimText, DimSetEntryGRec."Dimension Code", DimSetEntryGRec."Dimension Value Code");
+                                IF STRLEN(DimText) > MAXSTRLEN(OldDimText) THEN BEGIN
+                                    DimText := OldDimText;
+                                    Continue := TRUE;
+                                    EXIT;
+                                END;
                             UNTIL DimSetEntryGRec.NEXT = 0;
                             //DIM1.0 End
 
@@ -176,119 +176,119 @@ report 90045 "T O - P- Recpt-ssr1"
                         trigger OnPreDataItem();
                         begin
                             IF NOT ShowInternalInfo THEN
-                              CurrReport.BREAK;
+                                CurrReport.BREAK;
                         end;
                     }
-                    dataitem("Transfer Receipt Line";"Transfer Receipt Line")
+                    dataitem("Transfer Receipt Line"; "Transfer Receipt Line")
                     {
                         DataItemLink = Document No.=FIELD(No.);
                         DataItemLinkReference = "Transfer Receipt Header";
-                        column(Transfer_Receipt_Line__Item_No__;"Item No.")
+                        column(Transfer_Receipt_Line__Item_No__; "Item No.")
                         {
                         }
-                        column(Description_______Description_2_;Description+'  '+"Description 2")
+                        column(Description_______Description_2_; Description + '  ' + "Description 2")
                         {
                         }
-                        column(Transfer_Receipt_Line__Unit_of_Measure_Code_;"Unit of Measure Code")
+                        column(Transfer_Receipt_Line__Unit_of_Measure_Code_; "Unit of Measure Code")
                         {
                         }
-                        column(SLNO;SLNO)
+                        column(SLNO; SLNO)
                         {
                         }
-                        column(Transfer_Receipt_Line_Quantity_;Quantity )
+                        column(Transfer_Receipt_Line_Quantity_; Quantity)
                         {
                         }
-                        column(Transfer_Receipt_Line_Quantity__Control1000000021;Quantity )
+                        column(Transfer_Receipt_Line_Quantity__Control1000000021; Quantity)
                         {
                         }
-                        column(Transfer_Receipt_Line_Quantity__Control1000000038;Quantity )
+                        column(Transfer_Receipt_Line_Quantity__Control1000000038; Quantity)
                         {
                         }
-                        column(Item_NoCaption;Item_NoCaptionLbl)
+                        column(Item_NoCaption; Item_NoCaptionLbl)
                         {
                         }
-                        column(DescriptionCaption;DescriptionCaptionLbl)
+                        column(DescriptionCaption; DescriptionCaptionLbl)
                         {
                         }
-                        column(QuantityCaption;QuantityCaptionLbl)
+                        column(QuantityCaption; QuantityCaptionLbl)
                         {
                         }
-                        column(UOMCaption;UOMCaptionLbl)
+                        column(UOMCaption; UOMCaptionLbl)
                         {
                         }
-                        column(Quantity_ShippedCaption;Quantity_ShippedCaptionLbl)
+                        column(Quantity_ShippedCaption; Quantity_ShippedCaptionLbl)
                         {
                         }
-                        column(Quantity_ReceivedCaption;Quantity_ReceivedCaptionLbl)
+                        column(Quantity_ReceivedCaption; Quantity_ReceivedCaptionLbl)
                         {
                         }
-                        column(SignatureCaption;SignatureCaptionLbl)
+                        column(SignatureCaption; SignatureCaptionLbl)
                         {
                         }
-                        column(S_No_Caption;S_No_CaptionLbl)
+                        column(S_No_Caption; S_No_CaptionLbl)
                         {
                         }
-                        column(Quantity_ReceivedCaption_Control1000000034;Quantity_ReceivedCaption_Control1000000034Lbl)
+                        column(Quantity_ReceivedCaption_Control1000000034; Quantity_ReceivedCaption_Control1000000034Lbl)
                         {
                         }
-                        column(Quantity_ShippedCaption_Control1000000037;Quantity_ShippedCaption_Control1000000037Lbl)
+                        column(Quantity_ShippedCaption_Control1000000037; Quantity_ShippedCaption_Control1000000037Lbl)
                         {
                         }
-                        column(QuantityCaption_Control1000000039;QuantityCaption_Control1000000039Lbl)
+                        column(QuantityCaption_Control1000000039; QuantityCaption_Control1000000039Lbl)
                         {
                         }
-                        column(SignatureCaption_Control1000000044;SignatureCaption_Control1000000044Lbl)
+                        column(SignatureCaption_Control1000000044; SignatureCaption_Control1000000044Lbl)
                         {
                         }
-                        column(UOMCaption_Control1000000045;UOMCaption_Control1000000045Lbl)
+                        column(UOMCaption_Control1000000045; UOMCaption_Control1000000045Lbl)
                         {
                         }
-                        column(DescriptionCaption_Control1000000046;DescriptionCaption_Control1000000046Lbl)
+                        column(DescriptionCaption_Control1000000046; DescriptionCaption_Control1000000046Lbl)
                         {
                         }
-                        column(Item_NoCaption_Control1000000047;Item_NoCaption_Control1000000047Lbl)
+                        column(Item_NoCaption_Control1000000047; Item_NoCaption_Control1000000047Lbl)
                         {
                         }
-                        column(S_No_Caption_Control1102152012;S_No_Caption_Control1102152012Lbl)
+                        column(S_No_Caption_Control1102152012; S_No_Caption_Control1102152012Lbl)
                         {
                         }
-                        column(Released_byCaption;Released_byCaptionLbl)
+                        column(Released_byCaption; Released_byCaptionLbl)
                         {
                         }
-                        column(DateCaption;DateCaptionLbl)
+                        column(DateCaption; DateCaptionLbl)
                         {
                         }
-                        column(Shipped_byCaption;Shipped_byCaptionLbl)
+                        column(Shipped_byCaption; Shipped_byCaptionLbl)
                         {
                         }
-                        column(DateCaption_Control1000000024;DateCaption_Control1000000024Lbl)
+                        column(DateCaption_Control1000000024; DateCaption_Control1000000024Lbl)
                         {
                         }
-                        column(Received_byCaption;Received_byCaptionLbl)
+                        column(Received_byCaption; Received_byCaptionLbl)
                         {
                         }
-                        column(DateCaption_Control1000000033;DateCaption_Control1000000033Lbl)
+                        column(DateCaption_Control1000000033; DateCaption_Control1000000033Lbl)
                         {
                         }
-                        column(Transfer_Receipt_Line_Document_No_;"Document No.")
+                        column(Transfer_Receipt_Line_Document_No_; "Document No.")
                         {
                         }
-                        column(Transfer_Receipt_Line_Line_No_;"Line No.")
+                        column(Transfer_Receipt_Line_Line_No_; "Line No.")
                         {
                         }
-                        dataitem(DimensionLoop2;"Integer")
+                        dataitem(DimensionLoop2; "Integer")
                         {
-                            DataItemTableView = SORTING(Number) WHERE(Number=FILTER(1..));
-                            column(DimText;DimText)
+                            DataItemTableView = SORTING(Number) WHERE(Number = FILTER(1 ..));
+                            column(DimText; DimText)
                             {
                             }
-                            column(DimText_Control89;DimText)
+                            column(DimText_Control89; DimText)
                             {
                             }
-                            column(Line_DimensionsCaption;Line_DimensionsCaptionLbl)
+                            column(Line_DimensionsCaption; Line_DimensionsCaptionLbl)
                             {
                             }
-                            column(DimensionLoop2_Number;Number)
+                            column(DimensionLoop2_Number; Number)
                             {
                             }
 
@@ -324,27 +324,27 @@ report 90045 "T O - P- Recpt-ssr1"
                                 UNTIL (DocDim2.NEXT = 0);
                                 */
                                 IF Number = 1 THEN BEGIN
-                                  IF NOT DimSetEntryGRec2.FINDFIRST THEN
-                                    CurrReport.BREAK;
+                                    IF NOT DimSetEntryGRec2.FINDFIRST THEN
+                                        CurrReport.BREAK;
                                 END ELSE
-                                  IF NOT Continue THEN
-                                    CurrReport.BREAK;
-                                
+                                    IF NOT Continue THEN
+                                        CurrReport.BREAK;
+
                                 CLEAR(DimText);
                                 Continue := FALSE;
                                 REPEAT
-                                  OldDimText := DimText;
-                                  IF DimText = '' THEN
-                                    DimText := STRSUBSTNO('%1 - %2',DimSetEntryGRec2."Dimension Code",DimSetEntryGRec2."Dimension Value Code")
-                                  ELSE
-                                    DimText :=
-                                      STRSUBSTNO(
-                                        '%1, %2 - %3',DimText,DimSetEntryGRec2."Dimension Code",DimSetEntryGRec2."Dimension Value Code");
-                                  IF STRLEN(DimText) > MAXSTRLEN(OldDimText) THEN BEGIN
-                                    DimText := OldDimText;
-                                    Continue := TRUE;
-                                    EXIT;
-                                  END;
+                                    OldDimText := DimText;
+                                    IF DimText = '' THEN
+                                        DimText := STRSUBSTNO('%1 - %2', DimSetEntryGRec2."Dimension Code", DimSetEntryGRec2."Dimension Value Code")
+                                    ELSE
+                                        DimText :=
+                                          STRSUBSTNO(
+                                            '%1, %2 - %3', DimText, DimSetEntryGRec2."Dimension Code", DimSetEntryGRec2."Dimension Value Code");
+                                    IF STRLEN(DimText) > MAXSTRLEN(OldDimText) THEN BEGIN
+                                        DimText := OldDimText;
+                                        Continue := TRUE;
+                                        EXIT;
+                                    END;
                                 UNTIL DimSetEntryGRec2.NEXT = 0;
                                 //DIM1.0 End
 
@@ -353,10 +353,10 @@ report 90045 "T O - P- Recpt-ssr1"
                             trigger OnPreDataItem();
                             begin
                                 IF NOT ShowInternalInfo THEN
-                                  CurrReport.BREAK;
+                                    CurrReport.BREAK;
                             end;
                         }
-                        dataitem("Reservation Entry";"Reservation Entry")
+                        dataitem("Reservation Entry"; "Reservation Entry")
                         {
                             DataItemLink = Item No.=FIELD(Item No.),Source Ref. No.=FIELD(Line No.),Source ID=FIELD(Document No.);
                             column(Reservation_Entry__Item_No__;"Item No.")

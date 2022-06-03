@@ -14,10 +14,10 @@ page 33000252 "Sampling Plan List"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
             }

@@ -22,24 +22,24 @@ page 60105 "MSPT Order Details"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("MSPT Code";"MSPT Code")
+                field("MSPT Code"; "MSPT Code")
                 {
                     Editable = false;
                 }
-                field(Percentage;Percentage)
+                field(Percentage; Percentage)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Calculation Period";"Calculation Period")
+                field("Calculation Period"; "Calculation Period")
                 {
                 }
-                field("Due Date";"Due Date")
+                field("Due Date"; "Due Date")
                 {
                     Editable = false;
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
             }

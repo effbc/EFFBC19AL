@@ -2,8 +2,8 @@ page 99000766 Routing
 {
     // version NAVW17.00,QC 1.0,QCB2B1.2
 
-    CaptionML = ENU='Routing',
-                ENN='Routing';
+    CaptionML = ENU = 'Routing',
+                ENN = 'Routing';
     PageType = ListPlus;
     SourceTable = "Routing Header";
 
@@ -13,72 +13,72 @@ page 99000766 Routing
         {
             group(General)
             {
-                CaptionML = ENU='General',
-                            ENN='General';
-                field("No.";"No.")
+                CaptionML = ENU = 'General',
+                            ENN = 'General';
+                field("No."; "No.")
                 {
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Description 2";"Description 2")
+                field("Description 2"; "Description 2")
                 {
                 }
-                field(Type;Type)
+                field(Type; Type)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
 
                     trigger OnValidate();
                     begin
                         //B2B 1.1
-                        IF Status = Status :: Certified THEN BEGIN
-                          RoutingLine.SETRANGE("Routing No.","No.");
-                          IF RoutingLine.FINDLAST THEN BEGIN
-                              RoutingLine."QC Enabled" := FALSE;
-                              RoutingLine.MODIFY;
-                          END;
+                        IF Status = Status::Certified THEN BEGIN
+                            RoutingLine.SETRANGE("Routing No.", "No.");
+                            IF RoutingLine.FINDLAST THEN BEGIN
+                                RoutingLine."QC Enabled" := FALSE;
+                                RoutingLine.MODIFY;
+                            END;
                         END;
                         //B2B 1.1
                     end;
                 }
-                field("Created User Id";"User Id")
+                field("Created User Id"; "User Id")
                 {
                     Caption = 'Created User Id';
                 }
-                field("Modifef User ID";"Modifef User ID")
+                field("Modifef User ID"; "Modifef User ID")
                 {
                 }
-                field("Search Description";"Search Description")
+                field("Search Description"; "Search Description")
                 {
                 }
-                field("Version Nos.";"Version Nos.")
+                field("Version Nos."; "Version Nos.")
                 {
                 }
-                field(ActiveVersionCode;ActiveVersionCode)
+                field(ActiveVersionCode; ActiveVersionCode)
                 {
-                    CaptionML = ENU='Active Version',
-                                ENN='Active Version';
+                    CaptionML = ENU = 'Active Version',
+                                ENN = 'Active Version';
                     Editable = false;
 
-                    trigger OnLookup(Text : Text) : Boolean;
+                    trigger OnLookup(Text: Text): Boolean;
                     var
-                        RtngVersion : Record "Routing Version";
+                        RtngVersion: Record "Routing Version";
                     begin
-                        RtngVersion.SETRANGE("Routing No.","No.");
-                        RtngVersion.SETRANGE("Version Code",ActiveVersionCode);
-                        PAGE.RUNMODAL(PAGE::"Routing Version",RtngVersion);
-                        ActiveVersionCode := VersionMgt.GetRtngVersion("No.",WORKDATE,TRUE);
+                        RtngVersion.SETRANGE("Routing No.", "No.");
+                        RtngVersion.SETRANGE("Version Code", ActiveVersionCode);
+                        PAGE.RUNMODAL(PAGE::"Routing Version", RtngVersion);
+                        ActiveVersionCode := VersionMgt.GetRtngVersion("No.", WORKDATE, TRUE);
                     end;
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("Last Date Modified"; "Last Date Modified")
                 {
 
                     trigger OnValidate();
@@ -86,17 +86,17 @@ page 99000766 Routing
                         LastDateModifiedOnAfterValidat;
                     end;
                 }
-                field("Man Cost";"Man Cost")
+                field("Man Cost"; "Man Cost")
                 {
                 }
-                field("Tot Man Cost/Hour";"Tot Man Cost/Hour")
+                field("Tot Man Cost/Hour"; "Tot Man Cost/Hour")
                 {
                 }
-                field("Bench Mark Time(In Hours)";"Bench Mark Time(In Hours)")
+                field("Bench Mark Time(In Hours)"; "Bench Mark Time(In Hours)")
                 {
                 }
             }
-            part(RoutingLine;"Routing Lines")
+            part(RoutingLine; "Routing Lines")
             {
                 SubPageLink = Routing No.=FIELD(No.),Version Code=CONST();
             }
@@ -129,7 +129,7 @@ page 99000766 Routing
                                 ENN='Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Manufacturing Comment Sheet";
-                    RunPageLink = Table Name=CONST(Routing Header),No.=FIELD(No.);
+                                    RunPageLink = Table Name=CONST(Routing Header),No.=FIELD(No.);
                 }
                 action("&Versions")
                 {
@@ -139,7 +139,7 @@ page 99000766 Routing
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Routing Version List";
-                    RunPageLink = Routing No.=FIELD(No.);
+                                    RunPageLink = Routing No.=FIELD(No.);
                 }
                 action("Where-used")
                 {
@@ -149,7 +149,7 @@ page 99000766 Routing
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Where-Used Item List";
-                    RunPageLink = Routing No.=FIELD(No.);
+                                    RunPageLink = Routing No.=FIELD(No.);
                     RunPageView = SORTING(Routing No.);
                 }
             }

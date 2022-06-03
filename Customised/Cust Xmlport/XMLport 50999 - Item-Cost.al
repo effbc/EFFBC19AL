@@ -6,22 +6,22 @@ xmlport 50999 "Item-Cost"
     {
         textelement(Items)
         {
-            tableelement(Item;Item)
+            tableelement(Item; Item)
             {
                 XmlName = 'Item';
-                fieldelement(No;Item."No.")
+                fieldelement(No; Item."No.")
                 {
                 }
-                fieldelement(Description;Item.Description)
+                fieldelement(Description; Item.Description)
                 {
                 }
-                fieldelement(UnitCost;Item."Unit Cost")
+                fieldelement(UnitCost; Item."Unit Cost")
                 {
                 }
-                fieldelement(AvgUnitCost;Item."Avg Unit Cost")
+                fieldelement(AvgUnitCost; Item."Avg Unit Cost")
                 {
                 }
-                fieldelement(DumAvgCot;Item.Dum_Avg_Cot)
+                fieldelement(DumAvgCot; Item.Dum_Avg_Cot)
                 {
                 }
             }

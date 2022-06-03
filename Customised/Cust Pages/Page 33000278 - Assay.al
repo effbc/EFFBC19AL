@@ -12,30 +12,30 @@ page 33000278 Assay
             group(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     AssistEdit = true;
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Sampling Plan Code";"Sampling Plan Code")
+                field("Sampling Plan Code"; "Sampling Plan Code")
                 {
                 }
-                field("Inspection Group Code";"Inspection Group Code")
+                field("Inspection Group Code"; "Inspection Group Code")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
             }
-            part(Control1000000010;"Assay Subform")
+            part(Control1000000010; "Assay Subform")
             {
                 SubPageLink = Assay No.=FIELD(No.);
             }
@@ -51,7 +51,7 @@ page 33000278 Assay
         OnAfterGetCurrRecord;
     end;
 
-    trigger OnNewRecord(BelowxRec : Boolean);
+    trigger OnNewRecord(BelowxRec: Boolean);
     begin
         OnAfterGetCurrRecord;
     end;

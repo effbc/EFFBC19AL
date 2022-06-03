@@ -1,13 +1,13 @@
 xmlport 50080 GSTCLAIMEDDUMP
 {
     Format = VariableText;
-    Permissions = TableData "Purch. Inv. Header"=rm;
+    Permissions = TableData "Purch. Inv. Header" = rm;
 
     schema
     {
         textelement(IJLTable9)
         {
-            tableelement("<integer>";Item)
+            tableelement("<integer>"; Item)
             {
                 AutoSave = false;
                 XmlName = 'Item';
@@ -110,20 +110,19 @@ xmlport 50080 GSTCLAIMEDDUMP
                     trigger OnAfterAssignVariable();
                     begin
                         PurIH.Reset;
-                        PurIH.SetFilter("No.",voucher_no);
+                        PurIH.SetFilter("No.", voucher_no);
                         //EXDate := 200596D;
                         daypart := 20;
-                        monthpart := Date2DMY(Today,2); // 1;
-                        YearPart := Date2DMY(Today,3);
-                        Claimdate := DMY2Date(daypart,monthpart,YearPart);
-                        if PurIH.FindFirst then
-                          begin
-                               PurIH."Excise Claimed Date" := Claimdate;
-                                PurIH.Modify;
+                        monthpart := Date2DMY(Today, 2); // 1;
+                        YearPart := Date2DMY(Today, 3);
+                        Claimdate := DMY2Date(daypart, monthpart, YearPart);
+                        if PurIH.FindFirst then begin
+                            PurIH."Excise Claimed Date" := Claimdate;
+                            PurIH.Modify;
                             // MESSAGE(FORMAT(Claimdate));
-                              InvoicesCnt := InvoicesCnt + 1;
+                            InvoicesCnt := InvoicesCnt + 1;
 
-                          end
+                        end
                     end;
                 }
                 textelement(Buy_from_Vendor_No_)
@@ -156,16 +155,16 @@ xmlport 50080 GSTCLAIMEDDUMP
 
     trigger OnPostXmlPort();
     begin
-        Message('Data Updation Completed!\Items Count: '+Format(InvoicesCnt));
+        Message('Data Updation Completed!\Items Count: ' + Format(InvoicesCnt));
     end;
 
     var
-        daypart : Integer;
-        monthpart : Integer;
-        YearPart : Integer;
-        Claimdate : Date;
-        EXDate : Date;
-        InvoicesCnt : Integer;
-        PurIH : Record "Purch. Inv. Header";
+        daypart: Integer;
+        monthpart: Integer;
+        YearPart: Integer;
+        Claimdate: Date;
+        EXDate: Date;
+        InvoicesCnt: Integer;
+        PurIH: Record "Purch. Inv. Header";
 }
 

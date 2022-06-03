@@ -5,38 +5,33 @@ codeunit 60023 itemsubgroupcode
 
     trigger OnRun();
     begin
-          productionorder.SETFILTER("Prod Start date",'>=%1',TODAY);
-          IF productionorder.FINDSET THEN
-          REPEAT
+        productionorder.SETFILTER("Prod Start date", '>=%1', TODAY);
+        IF productionorder.FINDSET THEN
+            REPEAT
                 "Prod. Order Component".SETCURRENTKEY("Prod. Order Component"."Prod. Order No.",
                                                       "Prod. Order Component"."Item No.",
                                                       "Prod. Order Component"."Material Required Day");
-        
-            "Prod. Order Component".SETRANGE("Prod. Order No.",productionorder."No.");
-            IF "Prod. Order Component".FINDSET THEN
-            BEGIN
-            REPEAT
-              IF productionorder."Prod Start date">0D THEN
-              BEGIN
-                IF "Prod. Order Component"."Material Required Day"<>99 THEN
-                BEGIN
-                  "Prod. Order Component"."Production Plan Date":=productionorder."Prod Start date";
-                  "Prod. Order Component".MODIFY;
-                END ELSE
-                BEGIN
-                  "Prod. Order Component"."Production Plan Date":=productionorder."Planned Dispatch Date";
-                  "Prod. Order Component".MODIFY;
+
+                "Prod. Order Component".SETRANGE("Prod. Order No.", productionorder."No.");
+                IF "Prod. Order Component".FINDSET THEN BEGIN
+                    REPEAT
+                        IF productionorder."Prod Start date" > 0D THEN BEGIN
+                            IF "Prod. Order Component"."Material Required Day" <> 99 THEN BEGIN
+                                "Prod. Order Component"."Production Plan Date" := productionorder."Prod Start date";
+                                "Prod. Order Component".MODIFY;
+                            END ELSE BEGIN
+                                "Prod. Order Component"."Production Plan Date" := productionorder."Planned Dispatch Date";
+                                "Prod. Order Component".MODIFY;
+                            END;
+                        END ELSE BEGIN
+                            "Prod. Order Component"."Production Plan Date" := 0D;
+                            "Prod. Order Component".MODIFY;
+                        END;
+                    UNTIL "Prod. Order Component".NEXT = 0;
                 END;
-              END ELSE
-              BEGIN
-                "Prod. Order Component"."Production Plan Date":=0D;
-                "Prod. Order Component".MODIFY;
-              END;
-            UNTIL "Prod. Order Component".NEXT=0;
-            END;
-        
-          UNTIL productionorder.NEXT=0;
-        
+
+            UNTIL productionorder.NEXT = 0;
+
         /*
         PBML.SETFILTER(PBML."Quantity per",'>%1',0);
         IF PBML.FINDSET THEN
@@ -119,7 +114,7 @@ codeunit 60023 itemsubgroupcode
         
         UNTIL PBMH.NEXT=0;
         */
-        
+
         /*
         WINDOW.OPEN(T1);
         PBMH.RESET;
@@ -139,8 +134,8 @@ codeunit 60023 itemsubgroupcode
         UNTIL item.NEXT=0;
         WINDOW.CLOSE;
          */
-        
-        
+
+
         /*
         TESTFILE.CREATE('\\eff-cpu-222\erp\Item_Detials.xml');
         TESTFILE.OPEN('\\eff-cpu-222\erp\Item_Detials.xml');
@@ -150,10 +145,10 @@ codeunit 60023 itemsubgroupcode
         XMLPORT.EXPORT(60001,ITEM_STREAM,item);
         TESTFILE.CLOSE;
          */
-        
-        
-        
-        
+
+
+
+
         //MESSAGE(FORMAT(Financial_Year));
         //MESSAGE(FORMAT(DMY2DATE(26,8,2010)));
         //MESSAGE(FORMAT(CLOSINGDATE(TODAY)));
@@ -224,7 +219,7 @@ codeunit 60023 itemsubgroupcode
         END;
         
         */
-        
+
         /*
         USER_SETUP.SETFILTER(USER_SETUP."Allow Posting To",'<>%1',0D);
         IF USER_SETUP.FINDSET THEN
@@ -249,13 +244,13 @@ codeunit 60023 itemsubgroupcode
           "Material Issues Header".MODIFY;
         UNTIL "Material Issues Header".NEXT=0;
         */
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         /*
         "Material Issues Line".SETFILTER("Material Issues Line"."Prod. Order No.",'%1','');
         IF "Material Issues Line".FINDSET THEN
@@ -291,7 +286,7 @@ codeunit 60023 itemsubgroupcode
             "Tracking Specification".DELETE;
           UNTIL "Tracking Specification".NEXT=0;
         UNTIL "Material Issues Header".NEXT=0;*/
-        
+
         /*
         IF item.FINDSET THEN
         REPEAT
@@ -301,7 +296,7 @@ codeunit 60023 itemsubgroupcode
           item."Used In PMU":=FALSE;
           item.MODIFY;
         UNTIL item.NEXT=0; */
-        
+
         /*
         IF "PRODUCT WISE ITEMS".FINDSET THEN
         REPEAT
@@ -397,42 +392,42 @@ codeunit 60023 itemsubgroupcode
     end;
 
     var
-        productionorder : Record "Production Order";
-        item : Record Item;
-        "Material Issues Header" : Record "Material Issues Header";
-        "Material Issues Line" : Record "Material Issues Line";
-        "Tracking Specification" : Record "Mat.Issue Track. Specification";
-        "PRODUCT WISE ITEMS" : Record "Product wise Items";
-        "Item Ledger Entry" : Record "Item Ledger Entry";
-        ILE : Record "Item Ledger Entry";
-        "Shortage Details" : Record "Item Lot Numbers";
-        i : Integer;
-        A : array [10] of Integer;
-        USER : Record User;
-        USER_SETUP : Record "User Setup";
-        PMIH : Record "Posted Material Issues Header";
-        IRH : Record "Inspection Receipt Header";
-        "Prod. Order Component" : Record "Prod. Order Component";
-        SH : Record "Sales Header";
-        SERVICE_ITEM : Record "Service Item";
-        DV : Record "Dimension Value";
-        "Item Wise Min. Req. Qty at Loc" : Record "Item Wise Min. Req. Qty at Loc";
-        TESTFILE : File;
-        ITEM_STREAM : OutStream;
-        PBMH : Record "Production BOM Header";
-        WINDOW : Dialog;
-        T1 : Label 'CERTIYING BOM''S  #1##############';
-        PBML : Record "Production BOM Line";
-        ITEM_LOT_NUMBERS : Record "Item Lot Numbers";
-        Plan_Change : Codeunit "Plan Change";
+        productionorder: Record "Production Order";
+        item: Record Item;
+        "Material Issues Header": Record "Material Issues Header";
+        "Material Issues Line": Record "Material Issues Line";
+        "Tracking Specification": Record "Mat.Issue Track. Specification";
+        "PRODUCT WISE ITEMS": Record "Product wise Items";
+        "Item Ledger Entry": Record "Item Ledger Entry";
+        ILE: Record "Item Ledger Entry";
+        "Shortage Details": Record "Item Lot Numbers";
+        i: Integer;
+        A: array[10] of Integer;
+        USER: Record User;
+        USER_SETUP: Record "User Setup";
+        PMIH: Record "Posted Material Issues Header";
+        IRH: Record "Inspection Receipt Header";
+        "Prod. Order Component": Record "Prod. Order Component";
+        SH: Record "Sales Header";
+        SERVICE_ITEM: Record "Service Item";
+        DV: Record "Dimension Value";
+        "Item Wise Min. Req. Qty at Loc": Record "Item Wise Min. Req. Qty at Loc";
+        TESTFILE: File;
+        ITEM_STREAM: OutStream;
+        PBMH: Record "Production BOM Header";
+        WINDOW: Dialog;
+        T1: Label 'CERTIYING BOM''S  #1##############';
+        PBML: Record "Production BOM Line";
+        ITEM_LOT_NUMBERS: Record "Item Lot Numbers";
+        Plan_Change: Codeunit "Plan Change";
 
     [LineStart(25723)]
-    procedure Financial_Year() Fin_Year : Integer;
+    procedure Financial_Year() Fin_Year: Integer;
     begin
-        IF DATE2DMY(WORKDATE,2)>3 THEN
-          Fin_Year:=DATE2DMY(WORKDATE,3)
+        IF DATE2DMY(WORKDATE, 2) > 3 THEN
+            Fin_Year := DATE2DMY(WORKDATE, 3)
         ELSE
-          Fin_Year:=DATE2DMY(WORKDATE,3)-1;
+            Fin_Year := DATE2DMY(WORKDATE, 3) - 1;
     end;
 }
 

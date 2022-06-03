@@ -2,13 +2,13 @@ xmlport 50178 test
 {
     Direction = Import;
     Format = VariableText;
-    Permissions = ;
+    Permissions =;
 
     schema
     {
         textelement(Employees)
         {
-            tableelement(Integer;Integer)
+            tableelement(Integer; Integer)
             {
                 AutoSave = false;
                 XmlName = 'Integer';

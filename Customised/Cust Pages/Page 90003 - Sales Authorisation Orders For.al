@@ -27,128 +27,128 @@ page 90003 "Sales Authorisation Orders For"
             group(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Editable = false;
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field("Sell-to Customer No.";"Sell-to Customer No.")
+                field("Sell-to Customer No."; "Sell-to Customer No.")
                 {
                     Editable = false;
 
                     trigger OnValidate();
                     begin
-                        CUS.SETRANGE(CUS."No.","Sell-to Customer No.");
+                        CUS.SETRANGE(CUS."No.", "Sell-to Customer No.");
                         IF CUS.FINDFIRST THEN
-                        Territory:=CUS."Territory Code";
-                          SelltoCustomerNoOnAfterValidat;
+                            Territory := CUS."Territory Code";
+                        SelltoCustomerNoOnAfterValidat;
                     end;
                 }
-                field("Customer Posting Group";"Customer Posting Group")
+                field("Customer Posting Group"; "Customer Posting Group")
                 {
                     Editable = false;
                 }
-                field("Sell-to Customer Name";"Sell-to Customer Name")
+                field("Sell-to Customer Name"; "Sell-to Customer Name")
                 {
                     Editable = false;
                 }
-                field("Sell-to Address";"Sell-to Address")
+                field("Sell-to Address"; "Sell-to Address")
                 {
                     Editable = false;
                 }
-                field("Sell-to Address 2";"Sell-to Address 2")
+                field("Sell-to Address 2"; "Sell-to Address 2")
                 {
                     Editable = false;
                 }
-                field("Sell-to Post Code";"Sell-to Post Code")
+                field("Sell-to Post Code"; "Sell-to Post Code")
                 {
                     Caption = 'Sell-to Post Code/City';
                     Editable = false;
                 }
-                field(State;State)
+                field(State; State)
                 {
                     Editable = false;
                 }
-                field("Sell-to City";"Sell-to City")
+                field("Sell-to City"; "Sell-to City")
                 {
                     Editable = false;
                 }
-                field(Control1280009;Structure)
+                field(Control1280009; Structure)
                 {
                     Editable = false;
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                     Editable = false;
                 }
-                field(Product;Product)
+                field(Product; Product)
                 {
                     Editable = false;
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                     Editable = false;
                 }
-                field("Order Date";"Order Date")
+                field("Order Date"; "Order Date")
                 {
                     Editable = false;
                 }
-                field("Shipment Date";"Shipment Date")
+                field("Shipment Date"; "Shipment Date")
                 {
                     Editable = false;
                 }
-                field("Requested Delivery Date";"Requested Delivery Date")
+                field("Requested Delivery Date"; "Requested Delivery Date")
                 {
                     Editable = false;
 
                     trigger OnValidate();
                     begin
-                          IF "Order Date">"Requested Delivery Date" THEN
-                             ERROR('Requested Delivery Date Must be Greater than Order Date');
+                        IF "Order Date" > "Requested Delivery Date" THEN
+                            ERROR('Requested Delivery Date Must be Greater than Order Date');
                     end;
                 }
-                field("Promised Delivery Date";"Promised Delivery Date")
+                field("Promised Delivery Date"; "Promised Delivery Date")
                 {
                     Editable = false;
                 }
-                field("External Document No.";"External Document No.")
+                field("External Document No."; "External Document No.")
                 {
                     Caption = 'Invoice Number';
                     Editable = false;
                 }
-                field("Salesperson Code";"Salesperson Code")
+                field("Salesperson Code"; "Salesperson Code")
                 {
                     Editable = false;
                 }
-                field("Project Completion Date";"Project Completion Date")
+                field("Project Completion Date"; "Project Completion Date")
                 {
                     Editable = false;
                 }
-                field("Sale Order Total Amount";"Sale Order Total Amount")
+                field("Sale Order Total Amount"; "Sale Order Total Amount")
                 {
                     Editable = false;
                 }
-                field("Customer OrderNo.";"Customer OrderNo.")
+                field("Customer OrderNo."; "Customer OrderNo.")
                 {
                     Editable = false;
                 }
-                field("Customer Order Date";"Customer Order Date")
+                field("Customer Order Date"; "Customer Order Date")
                 {
                     Editable = false;
                 }
-                field("Order Assurance";"Order Assurance")
+                field("Order Assurance"; "Order Assurance")
                 {
                     Editable = "Order AssuranceEditable";
                     Visible = false;
 
                     trigger OnValidate();
                     begin
-                        
+
                         /*IF (USERID='SUPER') OR (USERID='EFFTRONICS\ANULATHA') THEN BEGIN
                         Mail_Subject:='Order Assurance';
                         newline:=10;
@@ -184,64 +184,62 @@ page 90003 "Sales Authorisation Orders For"
                         //END
                         //ELSE
                         //ERROR('You Do not Have Permission to Assure');
-                        
-                        IF "Order Assurance"=TRUE AND (Status=Status::Open) THEN
-                        BEGIN
-                        "Order AssuranceEditable" := FALSE;
-                        "Assured Date":=TODAY;
+
+                        IF "Order Assurance" = TRUE AND (Status = Status::Open) THEN BEGIN
+                            "Order AssuranceEditable" := FALSE;
+                            "Assured Date" := TODAY;
                         END ELSE
-                        "Order AssuranceEditable" := TRUE;
+                            "Order AssuranceEditable" := TRUE;
 
                     end;
                 }
-                field("Payment Terms Code";"Payment Terms Code")
+                field("Payment Terms Code"; "Payment Terms Code")
                 {
                     Editable = false;
                 }
-                field(paymenttermdesc;paymenttermdesc)
+                field(paymenttermdesc; paymenttermdesc)
                 {
                     Editable = false;
                 }
-                field(Receivedamt;Receivedamt)
+                field(Receivedamt; Receivedamt)
                 {
                     Caption = 'Received Amount For This Order';
                     Editable = false;
                 }
-                field("Reason For Pending";"Reason For Pending")
+                field("Reason For Pending"; "Reason For Pending")
                 {
                     Caption = 'Sales Comments';
                     Editable = false;
                     MultiLine = true;
                 }
-                field(reject;reject)
+                field(reject; reject)
                 {
                     Caption = 'Reject';
 
                     trigger OnValidate();
                     begin
-                        IF Remarks='' THEN
-                        ERROR('Please Enter Comment')
+                        IF Remarks = '' THEN
+                            ERROR('Please Enter Comment')
                         ELSE
-                        RemarksEditable := FALSE;
+                            RemarksEditable := FALSE;
 
-                        IF ("No."<>'') AND ((USERID='EFFTRONICS\CEO@EFFTRONICS.COM#MD') OR (USERID='SUPER')) THEN
-                        BEGIN
-                        Mail_From:='sreenu@efftronics.com';
-                        Mail_To:='sreenu@efftronics.com,anilkumar@efftronics.com';
-                        Subject:='Authorisation Not Approved to do the invoice For the Order No:'+FORMAT("No.");
-                        Body:='Since this is the comment Given'+FORMAT(Remarks);
-                        Attachment:='';
-                        NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment);
+                        IF ("No." <> '') AND ((USERID = 'EFFTRONICS\CEO@EFFTRONICS.COM#MD') OR (USERID = 'SUPER')) THEN BEGIN
+                            Mail_From := 'sreenu@efftronics.com';
+                            Mail_To := 'sreenu@efftronics.com,anilkumar@efftronics.com';
+                            Subject := 'Authorisation Not Approved to do the invoice For the Order No:' + FORMAT("No.");
+                            Body := 'Since this is the comment Given' + FORMAT(Remarks);
+                            Attachment := '';
+                            NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment);
                         END ELSE
-                         ERROR('you Have No rights to Authorize');
+                            ERROR('you Have No rights to Authorize');
                     end;
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                     Editable = RemarksEditable;
                 }
             }
-            part(SalesLines;"Sales Authorisation Sub Form")
+            part(SalesLines; "Sales Authorisation Sub Form")
             {
                 SubPageLink = Document No.=FIELD(No.);
             }
@@ -264,10 +262,10 @@ page 90003 "Sales Authorisation Orders For"
                     begin
                         SalesSetup.GET;
                         IF SalesSetup."Calc. Inv. Discount" THEN BEGIN
-                          CurrPage.SalesLines.PAGE.CalcInvDisc;
-                          COMMIT
+                            CurrPage.SalesLines.PAGE.CalcInvDisc;
+                            COMMIT
                         END;
-                        PAGE.RUNMODAL(PAGE::"Sales Order Statistics",Rec);
+                        PAGE.RUNMODAL(PAGE::"Sales Order Statistics", Rec);
                     end;
                 }
                 action(Card)
@@ -281,20 +279,20 @@ page 90003 "Sales Authorisation Orders For"
                 {
                     Caption = 'Co&mments';
                     RunObject = Page "Sales Comment Sheet";
-                    RunPageLink = Document Type=FIELD(Document Type),No.=FIELD(No.);
+                                    RunPageLink = Document Type=FIELD(Document Type),No.=FIELD(No.);
                 }
                 action("S&hipments")
                 {
                     Caption = 'S&hipments';
                     RunObject = Page "Posted Sales Shipments";
-                    RunPageLink = Order No.=FIELD(No.);
+                                    RunPageLink = Order No.=FIELD(No.);
                     RunPageView = SORTING(Order No.);
                 }
                 action(Invoices)
                 {
                     Caption = 'Invoices';
                     RunObject = Page "Posted Sales Invoices";
-                    RunPageLink = Order No.=FIELD(No.);
+                                    RunPageLink = Order No.=FIELD(No.);
                     RunPageView = SORTING(Order No.);
                 }
                 separator(Action1280029)
@@ -304,19 +302,19 @@ page 90003 "Sales Authorisation Orders For"
                 {
                     Caption = 'Transit Documents';
                     RunObject = Page "Transit Document Order Details";
-                    RunPageLink = Type=CONST(Sale),PO / SO No.=FIELD(No.),Vendor / Customer Ref.=FIELD(Sell-to Customer No.);
+                                    RunPageLink = Type=CONST(Sale),PO / SO No.=FIELD(No.),Vendor / Customer Ref.=FIELD(Sell-to Customer No.);
                 }
                 action(Structure)
                 {
                     Caption = 'Structure';
                     RunObject = Page "Structure Order Details";
-                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),Structure Code=FIELD(Structure);
+                                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),Structure Code=FIELD(Structure);
                 }
                 action("Authorization Information")
                 {
                     Caption = 'Authorization Information';
                     RunObject = Page "VAT Opening Detail";
-                    RunPageLink = Transcation Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.);
+                                    RunPageLink = Transcation Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.);
                 }
                 separator(Action173)
                 {
@@ -325,7 +323,7 @@ page 90003 "Sales Authorisation Orders For"
                 {
                     Caption = 'Whse. Shipment Lines';
                     RunObject = Page "Whse. Shipment Lines";
-                    RunPageLink = Source Type=CONST(37),Source Subtype=FIELD(Document Type),Source No.=FIELD(No.);
+                                    RunPageLink = Source Type=CONST(37),Source Subtype=FIELD(Document Type),Source No.=FIELD(No.);
                     RunPageView = SORTING(Source Type,Source Subtype,Source No.,Source Line No.);
                     Visible = false;
                 }
@@ -333,7 +331,7 @@ page 90003 "Sales Authorisation Orders For"
                 {
                     Caption = 'In&vt. Put-away/Pick Lines';
                     RunObject = Page "Warehouse Activity List";
-                    RunPageLink = Source Document=CONST(Sales Order),Source No.=FIELD(No.);
+                                    RunPageLink = Source Document=CONST(Sales Order),Source No.=FIELD(No.);
                     RunPageView = SORTING(Source Document,Source No.,Location Code);
                     Visible = false;
                 }
@@ -372,19 +370,19 @@ page 90003 "Sales Authorisation Orders For"
                 {
                     Caption = 'Check List';
                     RunObject = Page "Check List";
-                    RunPageLink = Document Type=CONST(Sales),Document No.=FIELD(No.);
+                                    RunPageLink = Document Type=CONST(Sales),Document No.=FIELD(No.);
                 }
                 action("&MSPT Order Details")
                 {
                     Caption = '&MSPT Order Details';
                     RunObject = Page "MSPT Order Details";
-                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),MSPT Header Code=FIELD(MSPT Code),Party No.=FIELD(Sell-to Customer No.);
+                                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),MSPT Header Code=FIELD(MSPT Code),Party No.=FIELD(Sell-to Customer No.);
                 }
                 action(Schedule)
                 {
                     Caption = 'Schedule';
                     RunObject = Page Schedule;
-                    RunPageLink = Document No.=FIELD(Tender No.),Document Type=CONST(Order);
+                                    RunPageLink = Document No.=FIELD(Tender No.),Document Type=CONST(Order);
                 }
             }
             group("&Line")
@@ -991,15 +989,15 @@ page 90003 "Sales Authorisation Orders For"
     var
         Text000 : Label 'Unable to execute this function while in view only mode.';
         CopySalesDoc : Report "Copy Sales Document";
-        MoveNegSalesLines : Report "Move Negative Sales Lines";
-        ReportPrint : Codeunit "Test Report-Print";
-        DocPrint : Codeunit "Document-Print";
-        ArchiveManagement : Codeunit ArchiveManagement;
-        SalesSetup : Record "Sales & Receivables Setup";
-        UserMgt : Codeunit "User Setup Management";
-        "-NAVIN-" : Integer;
-        SalesLine : Record "Sales Line";
-        Text001 : Label 'Do you want to convert the Order to an Export order?';
+                           MoveNegSalesLines : Report "Move Negative Sales Lines";
+                           ReportPrint : Codeunit "Test Report-Print";
+                           DocPrint : Codeunit "Document-Print";
+                           ArchiveManagement : Codeunit ArchiveManagement;
+                           SalesSetup : Record "Sales & Receivables Setup";
+                           UserMgt : Codeunit "User Setup Management";
+                           "-NAVIN-" : Integer;
+                           SalesLine : Record "Sales Line";
+                           Text001 : Label 'Do you want to convert the Order to an Export order?';
         Text002 : Label 'Order number %1 has been converted to Export order number %2.';
         Text13000 : Label 'No Setup exists for this Amount.';
         Text13001 : Label 'Do you want to send the order for Authorization?';

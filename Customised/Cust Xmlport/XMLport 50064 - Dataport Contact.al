@@ -6,16 +6,16 @@ xmlport 50064 "Dataport Contact"
     {
         textelement(Makes)
         {
-            tableelement("<maket>";Make)
+            tableelement("<maket>"; Make)
             {
                 XmlName = 'MakeT';
-                fieldelement(Make;"<MakeT>".Make)
+                fieldelement(Make; "<MakeT>".Make)
                 {
                 }
-                fieldelement(CreatedBy;"<MakeT>"."Created By")
+                fieldelement(CreatedBy; "<MakeT>"."Created By")
                 {
                 }
-                fieldelement(EntryDateTime;"<MakeT>"."Entry Date Time")
+                fieldelement(EntryDateTime; "<MakeT>"."Entry Date Time")
                 {
                 }
             }

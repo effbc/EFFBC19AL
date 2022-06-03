@@ -5,79 +5,12 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
     fields
     {
 
-        //Unsupported feature: Change NotBlank on "Code(Field 1)". Please convert manually.
 
 
-        //Unsupported feature: Change Editable on ""Last Modified Date Time"(Field 8)". Please convert manually.
-
-
-        //Unsupported feature: CodeInsertion on "Code(Field 1)". Please convert manually.
-
-        //trigger OnValidate();
-        //Parameters and return type have not been exported.
-        //begin
-        /*
-        TestField("Update In Cashflow",false);
-        */
-        //end;
-
-
-        //Unsupported feature: CodeInsertion on ""Due Date Calculation"(Field 2)". Please convert manually.
-
-        //trigger OnValidate();
-        //Parameters and return type have not been exported.
-        //begin
-        /*
-        TestField("Update In Cashflow",false);
-        */
-        //end;
-
-
-        //Unsupported feature: CodeInsertion on ""Discount Date Calculation"(Field 3)". Please convert manually.
-
-        //trigger OnValidate();
-        //Parameters and return type have not been exported.
-        //begin
-        /*
-        TestField("Update In Cashflow",false);
-        */
-        //end;
-
-
-        //Unsupported feature: CodeInsertion on ""Discount %"(Field 4)". Please convert manually.
-
-        //trigger OnValidate();
-        //Parameters and return type have not been exported.
-        //begin
-        /*
-        TestField("Update In Cashflow",false);
-        */
-        //end;
-
-
-        //Unsupported feature: CodeInsertion on "Description(Field 5)". Please convert manually.
-
-        //trigger OnValidate();
-        //Parameters and return type have not been exported.
-        //begin
-        /*
-        TestField("Update In Cashflow",false);
-        */
-        //end;
-
-
-        //Unsupported feature: CodeInsertion on ""Calc. Pmt. Disc. on Cr. Memos"(Field 6)". Please convert manually.
-
-        //trigger OnValidate();
-        //Parameters and return type have not been exported.
-        //begin
-        /*
-        TestField("Update In Cashflow",false);
-        */
-        //end;
         field(60000; Rating; Decimal)
         {
             Description = 'POAU';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -86,14 +19,16 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         }
         field(60001; "Update In Cashflow"; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
-                UpdateInCashFlow(Rec);    // Added by Pranavi on 25-Jul-2015
+                // UpdateInCashFlow(Rec);    // Added by Pranavi on 25-Jul-2015
             end;
         }
         field(60002; "Percentage 1"; Integer)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -106,6 +41,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         }
         field(60003; "Percentage 2"; Integer)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -123,6 +59,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         field(60004; "Stage 1"; Option)
         {
             OptionMembers = " ",Advance,Delivery,Credit,Against_RDSO_IC,Before_Delivery;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -132,6 +69,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         field(60005; "Stage 2"; Option)
         {
             OptionMembers = " ",Advance,Delivery,Credit,Against_RDSO_IC,Before_Delivery;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -140,6 +78,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         }
         field(60006; Purchase; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -148,6 +87,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         }
         field(60007; Sales; Boolean)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -156,6 +96,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         }
         field(60008; "Percentage 3"; Integer)
         {
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -177,6 +118,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         field(60009; "Stage 3"; Option)
         {
             OptionMembers = " ",Advance,Delivery,Credit,Against_RDSO_IC,Before_Delivery;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -186,6 +128,7 @@ tableextension 70000 PaymentTermsExt extends "Payment Terms"
         field(60010; DueDays; Integer)
         {
             Description = 'Added by sujani on 24-04-2018';
+            DataClassification = CustomerContent;
         }
     }
     keys

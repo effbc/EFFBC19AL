@@ -6,31 +6,31 @@ xmlport 90203 "additional vendors"
     {
         textelement(Vendors)
         {
-            tableelement(Vendor;Vendor)
+            tableelement(Vendor; Vendor)
             {
                 XmlName = 'Vendor';
-                fieldelement(No;Vendor."No.")
+                fieldelement(No; Vendor."No.")
                 {
                 }
-                fieldelement(Name;Vendor.Name)
+                fieldelement(Name; Vendor.Name)
                 {
                 }
-                fieldelement(Name2;Vendor."Name 2")
+                fieldelement(Name2; Vendor."Name 2")
                 {
                 }
-                fieldelement(GenBusPostingGroup;Vendor."Gen. Bus. Posting Group")
+                fieldelement(GenBusPostingGroup; Vendor."Gen. Bus. Posting Group")
                 {
                 }
-                fieldelement(ExciseBusPostingGroup;Vendor."Excise Bus. Posting Group")
+                fieldelement(ExciseBusPostingGroup; Vendor."Excise Bus. Posting Group")
                 {
                 }
-                fieldelement(VendorPostingGroup;Vendor."Vendor Posting Group")
+                fieldelement(VendorPostingGroup; Vendor."Vendor Posting Group")
                 {
                 }
-                fieldelement(VATBusPostingGroup;Vendor."VAT Bus. Posting Group")
+                fieldelement(VATBusPostingGroup; Vendor."VAT Bus. Posting Group")
                 {
                 }
-                fieldelement(TaxLiable;Vendor."Tax Liable")
+                fieldelement(TaxLiable; Vendor."Tax Liable")
                 {
                 }
             }

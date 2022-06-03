@@ -6,12 +6,12 @@ report 50225 Cancellation_report
 
     dataset
     {
-        dataitem("Prod. Order Line";"Prod. Order Line")
+        dataitem("Prod. Order Line"; "Prod. Order Line")
         {
-            RequestFilterFields = "Prod. Order No.","Line No.";
-            dataitem("Reservation Entry";"Reservation Entry")
+            RequestFilterFields = "Prod. Order No.", "Line No.";
+            dataitem("Reservation Entry"; "Reservation Entry")
             {
-                DataItemTableView = SORTING(Source ID,Source Ref. No.,Source Type,Source Subtype,Source Batch Name,Source Prod. Order Line,Reservation Status,Shipment Date,Expected Receipt Date) WHERE(Reservation Status=FILTER(Reservation),Source Type=FILTER(5406));
+                DataItemTableView = SORTING(Source ID, Source Ref. No., Source Type, Source Subtype, Source Batch Name, Source Prod. Order Line, Reservation Status, Shipment Date, Expected Receipt Date) WHERE(Reservation Status=FILTER(Reservation),Source Type=FILTER(5406));
 
                 trigger OnAfterGetRecord();
                 begin

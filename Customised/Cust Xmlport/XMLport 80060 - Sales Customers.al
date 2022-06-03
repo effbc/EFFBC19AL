@@ -6,178 +6,178 @@ xmlport 80060 "Sales Customers"
     {
         textelement(Customers)
         {
-            tableelement(Customer;Customer)
+            tableelement(Customer; Customer)
             {
                 XmlName = 'Customer';
-                fieldelement(No;Customer."No.")
+                fieldelement(No; Customer."No.")
                 {
                 }
-                fieldelement(Name;Customer.Name)
+                fieldelement(Name; Customer.Name)
                 {
                 }
-                fieldelement(SearchName;Customer."Search Name")
+                fieldelement(SearchName; Customer."Search Name")
                 {
                 }
-                fieldelement(Name2;Customer."Name 2")
+                fieldelement(Name2; Customer."Name 2")
                 {
                 }
-                fieldelement(Address;Customer.Address)
+                fieldelement(Address; Customer.Address)
                 {
                 }
-                fieldelement(Address2;Customer."Address 2")
+                fieldelement(Address2; Customer."Address 2")
                 {
                 }
-                fieldelement(City;Customer.City)
+                fieldelement(City; Customer.City)
                 {
                 }
-                fieldelement(Contact;Customer.Contact)
+                fieldelement(Contact; Customer.Contact)
                 {
                 }
-                fieldelement(PhoneNo;Customer."Phone No.")
+                fieldelement(PhoneNo; Customer."Phone No.")
                 {
                 }
-                fieldelement(TelexNo;Customer."Telex No.")
+                fieldelement(TelexNo; Customer."Telex No.")
                 {
                 }
-                fieldelement(OurAccountNo;Customer."Our Account No.")
+                fieldelement(OurAccountNo; Customer."Our Account No.")
                 {
                 }
-                fieldelement(TerritoryCode;Customer."Territory Code")
+                fieldelement(TerritoryCode; Customer."Territory Code")
                 {
                 }
-                fieldelement(CreditLimitLCY;Customer."Credit Limit (LCY)")
+                fieldelement(CreditLimitLCY; Customer."Credit Limit (LCY)")
                 {
                 }
-                fieldelement(CustomerPostingGroup;Customer."Customer Posting Group")
+                fieldelement(CustomerPostingGroup; Customer."Customer Posting Group")
                 {
                 }
-                fieldelement(CurrencyCode;Customer."Currency Code")
+                fieldelement(CurrencyCode; Customer."Currency Code")
                 {
                 }
-                fieldelement(PaymentTermsCode;Customer."Payment Terms Code")
+                fieldelement(PaymentTermsCode; Customer."Payment Terms Code")
                 {
                 }
-                fieldelement(FinChargeTermsCode;Customer."Fin. Charge Terms Code")
+                fieldelement(FinChargeTermsCode; Customer."Fin. Charge Terms Code")
                 {
                 }
-                fieldelement(SalespersonCode;Customer."Salesperson Code")
+                fieldelement(SalespersonCode; Customer."Salesperson Code")
                 {
                 }
-                fieldelement(ShipmentMethodCode;Customer."Shipment Method Code")
+                fieldelement(ShipmentMethodCode; Customer."Shipment Method Code")
                 {
                 }
-                fieldelement(ShippingAgentCode;Customer."Shipping Agent Code")
+                fieldelement(ShippingAgentCode; Customer."Shipping Agent Code")
                 {
                 }
-                fieldelement(PlaceofExport;Customer."Place of Export")
+                fieldelement(PlaceofExport; Customer."Place of Export")
                 {
                 }
-                fieldelement(CustomerDiscGroup;Customer."Customer Disc. Group")
+                fieldelement(CustomerDiscGroup; Customer."Customer Disc. Group")
                 {
                 }
-                fieldelement(CountryRegionCode;Customer."Country/Region Code")
+                fieldelement(CountryRegionCode; Customer."Country/Region Code")
                 {
                 }
-                fieldelement(CollectionMethod;Customer."Collection Method")
+                fieldelement(CollectionMethod; Customer."Collection Method")
                 {
                 }
-                fieldelement(Blocked;Customer.Blocked)
+                fieldelement(Blocked; Customer.Blocked)
                 {
                 }
-                fieldelement(InvoiceCopies;Customer."Invoice Copies")
+                fieldelement(InvoiceCopies; Customer."Invoice Copies")
                 {
                 }
-                fieldelement(BiltoCustomerNo;Customer."Bill-to Customer No.")
+                fieldelement(BiltoCustomerNo; Customer."Bill-to Customer No.")
                 {
                 }
-                fieldelement(ApplicationMethod;Customer."Application Method")
+                fieldelement(ApplicationMethod; Customer."Application Method")
                 {
                 }
-                fieldelement(LocationCode;Customer."Location Code")
+                fieldelement(LocationCode; Customer."Location Code")
                 {
                 }
-                fieldelement(FaxNo;Customer."Fax No.")
+                fieldelement(FaxNo; Customer."Fax No.")
                 {
                 }
-                fieldelement(TelexAnswerBack;Customer."Telex Answer Back")
+                fieldelement(TelexAnswerBack; Customer."Telex Answer Back")
                 {
                 }
-                fieldelement(VATRegistrationNo;Customer."VAT Registration No.")
+                fieldelement(VATRegistrationNo; Customer."VAT Registration No.")
                 {
                 }
-                fieldelement(CombineShipments;Customer."Combine Shipments")
+                fieldelement(CombineShipments; Customer."Combine Shipments")
                 {
                 }
-                fieldelement(GenBusPostingGroup;Customer."Gen. Bus. Posting Group")
+                fieldelement(GenBusPostingGroup; Customer."Gen. Bus. Posting Group")
                 {
                 }
-                fieldelement(PostCode;Customer."Post Code")
+                fieldelement(PostCode; Customer."Post Code")
                 {
                 }
-                fieldelement(EMail;Customer."E-Mail")
+                fieldelement(EMail; Customer."E-Mail")
                 {
                 }
-                fieldelement(HomePage;Customer."Home Page")
+                fieldelement(HomePage; Customer."Home Page")
                 {
                 }
-                fieldelement(ReminderTermsCode;Customer."Reminder Terms Code")
+                fieldelement(ReminderTermsCode; Customer."Reminder Terms Code")
                 {
                 }
-                fieldelement(TaxAreaCode;Customer."Tax Area Code")
+                fieldelement(TaxAreaCode; Customer."Tax Area Code")
                 {
                 }
-                fieldelement(TaxLiable;Customer."Tax Liable")
+                fieldelement(TaxLiable; Customer."Tax Liable")
                 {
                 }
-                fieldelement(VATBusinessPostingGroup;Customer."VAT Bus. Posting Group")
+                fieldelement(VATBusinessPostingGroup; Customer."VAT Bus. Posting Group")
                 {
                 }
-                fieldelement(PrimaryContactNo;Customer."Primary Contact No.")
+                fieldelement(PrimaryContactNo; Customer."Primary Contact No.")
                 {
                 }
-                fieldelement(ShippingAdvice;Customer."Shipping Advice")
+                fieldelement(ShippingAdvice; Customer."Shipping Advice")
                 {
                 }
-                fieldelement(ShippingAgentServiceCode;Customer."Shipping Agent Service Code")
+                fieldelement(ShippingAgentServiceCode; Customer."Shipping Agent Service Code")
                 {
                 }
-                fieldelement(TINNo;Customer."T.I.N. No.")
+                fieldelement(TINNo; Customer."T.I.N. No.")
                 {
                 }
-                fieldelement(TaxExemptionNo;Customer."Tax Exemption No.")
+                fieldelement(TaxExemptionNo; Customer."Tax Exemption No.")
                 {
                 }
-                fieldelement(LSTNo;Customer."L.S.T. No.")
+                fieldelement(LSTNo; Customer."L.S.T. No.")
                 {
                 }
-                fieldelement(CSTNo;Customer."C.S.T. No.")
+                fieldelement(CSTNo; Customer."C.S.T. No.")
                 {
                 }
-                fieldelement(PANNo;Customer."P.A.N. No.")
+                fieldelement(PANNo; Customer."P.A.N. No.")
                 {
                 }
-                fieldelement(StateCode;Customer."State Code")
+                fieldelement(StateCode; Customer."State Code")
                 {
                 }
-                fieldelement(ECCNo;Customer."E.C.C. No.")
+                fieldelement(ECCNo; Customer."E.C.C. No.")
                 {
                 }
-                fieldelement(Range;Customer.Range)
+                fieldelement(Range; Customer.Range)
                 {
                 }
-                fieldelement(Collectorate;Customer.Collectorate)
+                fieldelement(Collectorate; Customer.Collectorate)
                 {
                 }
-                fieldelement(ExciseBusPostingGroup;Customer."Excise Bus. Posting Group")
+                fieldelement(ExciseBusPostingGroup; Customer."Excise Bus. Posting Group")
                 {
                 }
-                fieldelement(Structure;Customer.Structure)
+                fieldelement(Structure; Customer.Structure)
                 {
                 }
-                fieldelement(Reserve;Customer.Reserve)
+                fieldelement(Reserve; Customer.Reserve)
                 {
                 }
-                fieldelement(PaymentMethodCode;Customer."Payment Method Code")
+                fieldelement(PaymentMethodCode; Customer."Payment Method Code")
                 {
                 }
             }

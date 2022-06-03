@@ -21,17 +21,17 @@ page 60102 "Mile Stone Payments"
             group(General)
             {
                 Caption = 'General';
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
             }
-            part(Control1102152006;"MSPT Subform")
+            part(Control1102152006; "MSPT Subform")
             {
                 SubPageLink = MSPT Header Code=FIELD(Code);
             }

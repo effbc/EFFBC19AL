@@ -22,13 +22,13 @@ page 60116 "MSPT Vendor Purchase Lines"
             {
                 Editable = false;
                 ShowCaption = false;
-                field("Period Start";"Period Start")
+                field("Period Start"; "Period Start")
                 {
                 }
-                field("Period Name";"Period Name")
+                field("Period Name"; "Period Name")
                 {
                 }
-                field("Vend.""MSPT Balance Due""";Vend."MSPT Balance Due")
+                field("Vend.""MSPT Balance Due"""; Vend."MSPT Balance Due")
                 {
                     AutoFormatType = 1;
                     Caption = '"Balance Due "';
@@ -53,14 +53,14 @@ page 60116 "MSPT Vendor Purchase Lines"
         Vend.CALCFIELDS("MSPT Balance Due");
     end;
 
-    trigger OnFindRecord(Which : Text) : Boolean;
+    trigger OnFindRecord(Which: Text): Boolean;
     begin
-        EXIT(PeriodFormMgt.FindDate(Which,Rec,VendPeriodLength));
+        EXIT(PeriodFormMgt.FindDate(Which, Rec, VendPeriodLength));
     end;
 
-    trigger OnNextRecord(Steps : Integer) : Integer;
+    trigger OnNextRecord(Steps: Integer): Integer;
     begin
-        EXIT(PeriodFormMgt.NextDate(Steps,Rec,VendPeriodLength));
+        EXIT(PeriodFormMgt.NextDate(Steps, Rec, VendPeriodLength));
     end;
 
     trigger OnOpenPage();
@@ -69,14 +69,14 @@ page 60116 "MSPT Vendor Purchase Lines"
     end;
 
     var
-        Vend : Record Vendor;
-        MSPTVendLedgEntry : Record "MSPT Vendor Ledger Entry";
-        PeriodFormMgt : Codeunit PeriodFormManagement;
-        VendPeriodLength : Option Day,Week,Month,Quarter,Year,Period;
-        AmountType : Option "Net Change","Balance at Date";
+        Vend: Record Vendor;
+        MSPTVendLedgEntry: Record "MSPT Vendor Ledger Entry";
+        PeriodFormMgt: Codeunit PeriodFormManagement;
+        VendPeriodLength: Option Day,Week,Month,Quarter,Year,Period;
+        AmountType: Option "Net Change","Balance at Date";
 
     [LineStart(11243)]
-    procedure Set(var NewVend : Record Vendor;NewVendPeriodLength : Integer;NewAmountType : Option "Net Change","Balance at Date");
+    procedure Set(var NewVend: Record Vendor; NewVendPeriodLength: Integer; NewAmountType: Option "Net Change","Balance at Date");
     begin
         Vend.COPY(NewVend);
         VendPeriodLength := NewVendPeriodLength;
@@ -105,22 +105,22 @@ page 60116 "MSPT Vendor Purchase Lines"
         SetDateFilter;
         MSPTVendLedgEntry.RESET;
         //MSPTVendLedgEntry.SETCURRENTKEY("Vendor No.",Open,Positive,"Due Date");
-        MSPTVendLedgEntry.SETCURRENTKEY("Vendor No.",Open,"MSPT Due Date");
-        MSPTVendLedgEntry.SETRANGE("Vendor No.",Vend."No.");
-        MSPTVendLedgEntry.SETRANGE(Open,TRUE);
-        MSPTVendLedgEntry.SETFILTER("MSPT Due Date",Vend.GETFILTER("Date Filter"));
-        MSPTVendLedgEntry.SETFILTER("Global Dimension 1 Code",Vend.GETFILTER("Global Dimension 1 Filter"));
-        MSPTVendLedgEntry.SETFILTER("Global Dimension 2 Code",Vend.GETFILTER("Global Dimension 2 Filter"));
-        PAGE.RUN(0,MSPTVendLedgEntry);
+        MSPTVendLedgEntry.SETCURRENTKEY("Vendor No.", Open, "MSPT Due Date");
+        MSPTVendLedgEntry.SETRANGE("Vendor No.", Vend."No.");
+        MSPTVendLedgEntry.SETRANGE(Open, TRUE);
+        MSPTVendLedgEntry.SETFILTER("MSPT Due Date", Vend.GETFILTER("Date Filter"));
+        MSPTVendLedgEntry.SETFILTER("Global Dimension 1 Code", Vend.GETFILTER("Global Dimension 1 Filter"));
+        MSPTVendLedgEntry.SETFILTER("Global Dimension 2 Code", Vend.GETFILTER("Global Dimension 2 Filter"));
+        PAGE.RUN(0, MSPTVendLedgEntry);
     end;
 
     [LineStart(11272)]
     local procedure SetDateFilter();
     begin
         IF AmountType = AmountType::"Net Change" THEN
-          Vend.SETRANGE("Date Filter","Period Start","Period End")
+            Vend.SETRANGE("Date Filter", "Period Start", "Period End")
         ELSE
-          Vend.SETRANGE("Date Filter",0D,"Period End");
+            Vend.SETRANGE("Date Filter", 0D, "Period End");
     end;
 }
 

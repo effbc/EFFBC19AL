@@ -5,9 +5,9 @@ report 60005 "Indent To Quote"
 
     dataset
     {
-        dataitem("Indent Consolidation";"Indent Consolidation")
+        dataitem("Indent Consolidation"; "Indent Consolidation")
         {
-            DataItemTableView = SORTING(ICN No.,Vendor No.,Item No.);
+            DataItemTableView = SORTING(ICN No., Vendor No., Item No.);
         }
     }
 
@@ -28,10 +28,10 @@ report 60005 "Indent To Quote"
     }
 
     var
-        PurchaseHeader : Record "Purchase Header";
-        PurchaseLine : Record "Purchase Line";
-        PPSetup : Record "Purchases & Payables Setup";
-        NoSeriesMgt : Codeunit NoSeriesManagement;
-        IndentConsolidation : Record Products;
+        PurchaseHeader: Record "Purchase Header";
+        PurchaseLine: Record "Purchase Line";
+        PPSetup: Record "Purchases & Payables Setup";
+        NoSeriesMgt: Codeunit NoSeriesManagement;
+        IndentConsolidation: Record Products;
 }
 

@@ -12,15 +12,15 @@ report 60025 "Prod BOM Update"
 
     dataset
     {
-        dataitem("Production BOM Line";"Production BOM Line")
+        dataitem("Production BOM Line"; "Production BOM Line")
         {
-            DataItemTableView = SORTING(Production BOM No.,Version Code,Line No.) WHERE(Type=FILTER(Item));
+            DataItemTableView = SORTING(Production BOM No., Version Code, Line No.) WHERE(Type = FILTER(Item));
 
             trigger OnAfterGetRecord();
             begin
-                "Production BOM Line"."Material Reqired Day":=0;
-                "Production BOM Line".Status:=0;
-                "Production BOM Line"."No. of Opportunities":=0;
+                "Production BOM Line"."Material Reqired Day" := 0;
+                "Production BOM Line".Status := 0;
+                "Production BOM Line"."No. of Opportunities" := 0;
                 "Production BOM Line".MODIFY;
             end;
         }
@@ -43,6 +43,6 @@ report 60025 "Prod BOM Update"
     }
 
     var
-        Item : Record Item;
+        Item: Record Item;
 }
 

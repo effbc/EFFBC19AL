@@ -11,28 +11,28 @@ page 60275 "Customer/Contact Archive  List"
         {
             repeater(Group)
             {
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("Sales Quote No.";"Sales Quote No.")
+                field("Sales Quote No."; "Sales Quote No.")
                 {
                 }
-                field(Type;Type)
+                field(Type; Type)
                 {
                 }
-                field("Customer\Contact";"Customer\Contact")
+                field("Customer\Contact"; "Customer\Contact")
                 {
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
                 }
-                field("Email Id";"Email Id")
+                field("Email Id"; "Email Id")
                 {
                 }
-                field("Mail Send";"Mail Send")
+                field("Mail Send"; "Mail Send")
                 {
                 }
-                field("Version No.";"Version No.")
+                field("Version No."; "Version No.")
                 {
                 }
             }

@@ -12,22 +12,22 @@ page 60270 "Customer Specification"
         {
             repeater(Group)
             {
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("Lookup Code";"Lookup Code")
+                field("Lookup Code"; "Lookup Code")
                 {
                 }
-                field("Lookup Type ID";"Lookup Type ID")
+                field("Lookup Type ID"; "Lookup Type ID")
                 {
                 }
-                field("Lookup Type Name";"Lookup Type Name")
+                field("Lookup Type Name"; "Lookup Type Name")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Customer No.";"Customer No.")
+                field("Customer No."; "Customer No.")
                 {
                 }
             }
@@ -57,7 +57,7 @@ page 60270 "Customer Specification"
                         QuoteLookUpList.SETTABLEVIEW(LookUpType);
                         QuoteLookUpList.LOOKUPMODE(TRUE);
                         QuoteLookUpList.CarryCustomer(Rec."Customer No.");
-                        IF QuoteLookUpList.RUNMODAL = ACTION ::LookupOK THEN;
+                        IF QuoteLookUpList.RUNMODAL = ACTION::LookupOK THEN;
 
                     end;
                 }
@@ -66,7 +66,7 @@ page 60270 "Customer Specification"
     }
 
     var
-        LookUpType : Record "Quote Lookup";
-        QuoteLookUpList : Page "Quote LookUp List";
+        LookUpType: Record "Quote Lookup";
+        QuoteLookUpList: Page "Quote LookUp List";
 }
 

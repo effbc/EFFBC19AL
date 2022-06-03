@@ -1,254 +1,26 @@
 pageextension 70152 PurchaseOrderListExt extends "Purchase Order List"
 {
-    // version NAVW19.00.00.46621,NAVIN9.00.00.46621
+
 
     layout
     {
 
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
 
-        modify("Control 1")
+        modify("Control1")
         {
 
-            //Unsupported feature: Change Name on "Control 1". Please convert manually.
 
             ShowCaption = false;
         }
 
-        //Unsupported feature: Change Name on "Control 2". Please convert manually.
 
-
-        //Unsupported feature: Change ImplicitType on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 13". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 13". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 15". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 15". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 27". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 27". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 23". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 23". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 35". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 35". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 163". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 163". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 161". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 161". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 33". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 33". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 29". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 29". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 151". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 151". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 147". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 147". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 145". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 145". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 21". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 21". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 17". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 17". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 135". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 135". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 131". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 131". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 113". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 113". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 111". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 111". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 115". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 115". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 99". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 99". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 31". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 31". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 11". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 11". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1102601001". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1102601001". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1102601003". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1102601003". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1102601005". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1102601005". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1102601007". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1102601007". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1102601009". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1102601009". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1102601011". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1102601011". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1102601013". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1102601013". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1102601027". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1102601027". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 5". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 5". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1900000007". Please convert manually.
-
-
-        //Unsupported feature: Change PagePartID on "IncomingDocAttachFactBox(Control 14)". Please convert manually.
-
-
-        //Unsupported feature: Change ShowFilter on "IncomingDocAttachFactBox(Control 14)". Please convert manually.
-
-
-        //Unsupported feature: Change SubPageLink on "Control 1901138007". Please convert manually.
-
-
-        //Unsupported feature: Change PagePartID on "Control 1901138007". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1901138007". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1900383207". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1905767507". Please convert manually.
-
-        addafter("Control 4")
+        addafter("Buy-from Vendor No.")
         {
             field(Structure; Structure)
             {
             }
         }
-        addafter("Control 6")
+        addafter("Buy-from Vendor Name")
         {
             field("Amount to Vendor"; "Amount to Vendor")
             {
@@ -256,19 +28,19 @@ pageextension 70152 PurchaseOrderListExt extends "Purchase Order List"
                             ENN = 'Amount to Vendor';
             }
         }
-        addafter("Control 145")
+        addafter("Ship-to Name")
         {
             field("First Release DateTime"; "First Release DateTime")
             {
             }
         }
-        addafter("Control 17")
+        addafter("Ship-to Country/Region Code")
         {
             field("Sale Order No"; "Sale Order No")
             {
             }
         }
-        addafter("Control 5")
+        addafter("Job Queue Status")
         {
             field("Order Date"; "Order Date")
             {

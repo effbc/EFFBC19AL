@@ -12,28 +12,28 @@ page 60023 "Product Competitors Details"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field("Competitor's Name";"Competitor's Name")
+                field("Competitor's Name"; "Competitor's Name")
                 {
                 }
-                field("Tender No.";"Tender No.")
+                field("Tender No."; "Tender No.")
                 {
                 }
-                field(Specifications;Specifications)
+                field(Specifications; Specifications)
                 {
                 }
-                field("Position No.";"Position No.")
+                field("Position No."; "Position No.")
                 {
                 }
-                field(Price;Price)
+                field(Price; Price)
                 {
                 }
-                field("Service Details";"Service Details")
+                field("Service Details"; "Service Details")
                 {
                 }
-                field(Features;Features)
+                field(Features; Features)
                 {
                 }
             }

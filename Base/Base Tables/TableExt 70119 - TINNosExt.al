@@ -16,6 +16,7 @@ Tableextension 70119 TINNosExt extends "T.I.N. Nos."
             CaptionML = ENU = 'Code',
                         ENN = 'Code';
             NotBlank = true;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -27,12 +28,15 @@ Tableextension 70119 TINNosExt extends "T.I.N. Nos."
         {
             CaptionML = ENU = 'Description',
                         ENN = 'Description';
+            DataClassification = CustomerContent;
         }
         field(50000; "Effective Date"; Date)
         {
+            DataClassification = CustomerContent;
         }
         field(50001; Group; Code[10])
         {
+            DataClassification = CustomerContent;
         }
     }
 

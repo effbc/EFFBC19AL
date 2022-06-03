@@ -17,12 +17,12 @@ report 90050 "Sales Document - 2"
     DefaultLayout = RDLC;
     RDLCLayout = './Sales Document - 2.rdlc';
 
-    CaptionML = ENU='Sales Document - Test',
-                ENN='Sales Document - Test';
+    CaptionML = ENU = 'Sales Document - Test',
+                ENN = 'Sales Document - Test';
 
     dataset
     {
-        dataitem("Sales Header";"Sales Header")
+        dataitem("Sales Header"; "Sales Header")
         {
             DataItemTableView = WHERE(Document Type=FILTER(<>Quote));
             RequestFilterFields = "Document Type","No.";
@@ -2552,22 +2552,22 @@ report 90050 "Sales Document - 2"
         ContinuedCaption_Control223Lbl : TextConst ENU='Continued',ENN='Continued';
         StructureLineDetails : Record "Structure Order Line Details";
         check : Report Check;
-        s : Decimal;
-        DescriptionLine : array [2] of Text[132];
-        s1 : Text[30];
-        desc : Text[30];
-        s2 : Text[30];
-        n : Integer;
-        c : Integer;
-        tax : Decimal;
-        taxamt : Decimal;
-        advance : Decimal;
-        Dutycap : Text[30];
-        dutyper : Text[30];
-        taxcap : Text[30];
-        vatcap : Text[30];
-        descrienable : Boolean;
-        ConsigneeCaptionLbl : Label 'Consignee';
+                    s : Decimal;
+                    DescriptionLine : array [2] of Text[132];
+                    s1 : Text[30];
+                    desc : Text[30];
+                    s2 : Text[30];
+                    n : Integer;
+                    c : Integer;
+                    tax : Decimal;
+                    taxamt : Decimal;
+                    advance : Decimal;
+                    Dutycap : Text[30];
+                    dutyper : Text[30];
+                    taxcap : Text[30];
+                    vatcap : Text[30];
+                    descrienable : Boolean;
+                    ConsigneeCaptionLbl : Label 'Consignee';
         Sold_toCaptionLbl : Label 'Sold-to';
         With_Reference_to_the_above_purchase_order__we_here_by_inform_that_RDSO_inspection_is_completed__will_be_completed_in______daLbl : Label 'With Reference to the above purchase order ,we here by inform that RDSO inspection is completed/ will be completed in ____ days. Hence We request to kindly Release the payment at the earliest';
         Dear_Sir_CaptionLbl : Label 'Dear Sir,';

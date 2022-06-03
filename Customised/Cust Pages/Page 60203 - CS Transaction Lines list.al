@@ -9,12 +9,12 @@ page 60203 "CS Transaction Lines list"
         {
             repeater(Group)
             {
-                field("Line No.";"Line No.")
+                field("Line No."; "Line No.")
                 {
                     Enabled = false;
                     StyleExpr = ItemStyleExp;
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                     Editable = RecEditable;
                     StyleExpr = ItemStyleExp;
@@ -35,47 +35,45 @@ page 60203 "CS Transaction Lines list"
 
                     end;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Enabled = false;
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                     Editable = RecEditable;
                 }
-                field(UOM;UOM)
+                field(UOM; UOM)
                 {
                     Enabled = false;
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field(Reason;Reason)
+                field(Reason; Reason)
                 {
                 }
-                field(Station;Station)
+                field(Station; Station)
                 {
 
-                    trigger OnLookup(Text : Text) : Boolean;
+                    trigger OnLookup(Text: Text): Boolean;
                     begin
                         Header.RESET;
-                        Header.SETFILTER(Header."Transaction ID","Transaction ID");
-                        IF Header.FINDFIRST THEN
-                        BEGIN
-                          StationGRec.RESET;
-                          StationGRec.SETFILTER(StationGRec."Division code",Header."Transfer From Location");
-                          IF StationGRec.FINDFIRST THEN
-                          BEGIN
-                            IF PAGE.RUNMODAL(60206,StationGRec) =ACTION::LookupOK THEN
-                              Station:=StationGRec."Station Code";
-                          END;
+                        Header.SETFILTER(Header."Transaction ID", "Transaction ID");
+                        IF Header.FINDFIRST THEN BEGIN
+                            StationGRec.RESET;
+                            StationGRec.SETFILTER(StationGRec."Division code", Header."Transfer From Location");
+                            IF StationGRec.FINDFIRST THEN BEGIN
+                                IF PAGE.RUNMODAL(60206, StationGRec) = ACTION::LookupOK THEN
+                                    Station := StationGRec."Station Code";
+                            END;
                         END;
                     end;
                 }
-                field("Order No";"Order No")
+                field("Order No"; "Order No")
                 {
                 }
-                field("Qty to be Receive";"Qty to be Receive")
+                field("Qty to be Receive"; "Qty to be Receive")
                 {
                     Caption = 'Qty to Receive';
                     Editable = RcvVisible;
@@ -84,11 +82,11 @@ page 60203 "CS Transaction Lines list"
 
                     trigger OnValidate();
                     begin
-                        IF "Qty to be Receive"+"Qty Received"  > Quantity THEN    //Added by Pranavi on 27-10-2015
-                          ERROR('You can not receive more the quantity: '+FORMAT(Quantity - "Qty Received"));
+                        IF "Qty to be Receive" + "Qty Received" > Quantity THEN    //Added by Pranavi on 27-10-2015
+                            ERROR('You can not receive more the quantity: ' + FORMAT(Quantity - "Qty Received"));
                     end;
                 }
-                field("Qty Received";"Qty Received")
+                field("Qty Received"; "Qty Received")
                 {
                     Caption = 'Qty Received';
                     Editable = false;
@@ -105,47 +103,43 @@ page 60203 "CS Transaction Lines list"
     trigger OnAfterGetRecord();
     begin
         Ledger.RESET;
-        Ledger.SETFILTER(Ledger."Transaction ID","Transaction ID");
-        Ledger.SETFILTER(Ledger."Line No.",'%1',"Line No.");
-        Ledger.SETFILTER(Ledger."Item No","Item No.");
-        IF Ledger.FINDFIRST THEN
-        BEGIN
-          IF Ledger.NonReturnable THEN
-          BEGIN
-            ItemStyleExp := 'Ambiguous';
-          END
-          ELSE
-          BEGIN
-            ItemStyleExp := '';
-          END;
+        Ledger.SETFILTER(Ledger."Transaction ID", "Transaction ID");
+        Ledger.SETFILTER(Ledger."Line No.", '%1', "Line No.");
+        Ledger.SETFILTER(Ledger."Item No", "Item No.");
+        IF Ledger.FINDFIRST THEN BEGIN
+            IF Ledger.NonReturnable THEN BEGIN
+                ItemStyleExp := 'Ambiguous';
+            END
+            ELSE BEGIN
+                ItemStyleExp := '';
+            END;
         END;
         //Added by Pranavi on 27-10-2015 not to edit item and qty after posted
 
 
-         Header.RESET;
-         Header.GET("Transaction ID");
-         IF Header."Transaction Status" = Header."Transaction Status"::"In-Transit" THEN
-          RecEditable := FALSE
-         ELSE
-          RecEditable := TRUE;
+        Header.RESET;
+        Header.GET("Transaction ID");
+        IF Header."Transaction Status" = Header."Transaction Status"::"In-Transit" THEN
+            RecEditable := FALSE
+        ELSE
+            RecEditable := TRUE;
 
 
 
         //End by Pranavi
     end;
 
-    trigger OnDeleteRecord() : Boolean;
+    trigger OnDeleteRecord(): Boolean;
     begin
-         IF Header."Transfer To Location" <> 'SERVICE' THEN
-            IF NOT(USERID  IN ['EFFTRONICS\SUJANI','EFFTRONICS\VISHNUPRIYA']) THEN
-              BEGIN
+        IF Header."Transfer To Location" <> 'SERVICE' THEN
+            IF NOT (USERID IN ['EFFTRONICS\SUJANI', 'EFFTRONICS\VISHNUPRIYA']) THEN BEGIN
                 ERROR('You Can''t delete the Line. Contact ERP Administrator');
-              END;
+            END;
     end;
 
-    trigger OnInsertRecord(BelowxRec : Boolean) : Boolean;
+    trigger OnInsertRecord(BelowxRec: Boolean): Boolean;
     var
-        CsTransactionLine : Record "CS Transaction Line";
+        CsTransactionLine: Record "CS Transaction Line";
     begin
     end;
 
@@ -161,21 +155,21 @@ page 60203 "CS Transaction Lines list"
           RcvVisible:=FALSE;
         END;
         */
-         RcvVisible:=TRUE;
-         RecEditable := TRUE;    //pranavi
+        RcvVisible := TRUE;
+        RecEditable := TRUE;    //pranavi
 
     end;
 
     var
-        StationGRec : Record Station;
-        Header : Record "CS Transaction Header";
-        Item : Record Item;
-        cardCalc : Page "CS Transaction Card";
-        QtyToRcv : Integer;
-        QtyRcvd : Integer;
-        RcvVisible : Boolean;
-        ItemStyleExp : Text;
-        Ledger : Record "CS Stock Ledger";
-        RecEditable : Boolean;
+        StationGRec: Record Station;
+        Header: Record "CS Transaction Header";
+        Item: Record Item;
+        cardCalc: Page "CS Transaction Card";
+        QtyToRcv: Integer;
+        QtyRcvd: Integer;
+        RcvVisible: Boolean;
+        ItemStyleExp: Text;
+        Ledger: Record "CS Stock Ledger";
+        RecEditable: Boolean;
 }
 

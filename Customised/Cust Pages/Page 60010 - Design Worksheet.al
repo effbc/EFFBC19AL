@@ -12,38 +12,38 @@ page 60010 "Design Worksheet"
             group(General)
             {
                 Caption = 'General';
-                field("Document No.";"Document No.")
+                field("Document No."; "Document No.")
                 {
                 }
-                field("Document Type";"Document Type")
+                field("Document Type"; "Document Type")
                 {
                 }
-                field("Document Line No.";"Document Line No.")
+                field("Document Line No."; "Document Line No.")
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field("Unit of Measure";"Unit of Measure")
+                field("Unit of Measure"; "Unit of Measure")
                 {
                 }
-                field("Production Bom No.";"Production Bom No.")
+                field("Production Bom No."; "Production Bom No.")
                 {
                 }
-                field("Production Bom Version No.";"Production Bom Version No.")
+                field("Production Bom Version No."; "Production Bom Version No.")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
             }
-            part(DesignWorksheetLines;"Design Worksheet Subform")
+            part(DesignWorksheetLines; "Design Worksheet Subform")
             {
                 SubPageLink = Document No.=FIELD(Document No.),Document Type=FIELD(Document Type),Document Line No.=FIELD(Document Line No.);
             }
@@ -158,7 +158,7 @@ page 60010 "Design Worksheet"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Sales Comment Sheet";
-                RunPageLink = Document Type=FILTER(10),No.=FIELD(Document No.);
+                                RunPageLink = Document Type=FILTER(10),No.=FIELD(Document No.);
                 ToolTip = 'Comment';
             }
         }

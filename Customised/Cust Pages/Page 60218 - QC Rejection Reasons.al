@@ -10,7 +10,7 @@ page 60218 "QC Rejection Reasons"
             repeater(Control1102154001)
             {
                 ShowCaption = false;
-                field("Rejection Reason";"Rejection Reason")
+                field("Rejection Reason"; "Rejection Reason")
                 {
                 }
             }

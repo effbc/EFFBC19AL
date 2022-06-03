@@ -10,7 +10,7 @@ page 50023 "Sample Test Page3"
             repeater(Control1000000001)
             {
                 ShowCaption = false;
-                field(Number;Number)
+                field(Number; Number)
                 {
                 }
             }

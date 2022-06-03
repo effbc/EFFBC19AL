@@ -1,12 +1,12 @@
 tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
 {
-    // version NAVW19.00.00.51947,NAVIN9.00.00.51947,TFS225680,E-INV
+
 
     fields
     {
 
-        //Unsupported feature: Change NotBlank on ""Sell-to Customer No."(Field 2)". Please convert manually.
 
+<<<<<<< HEAD
 
         //Unsupported feature: Change NotBlank on ""Bill-to Customer No."(Field 4)". Please convert manually.
 
@@ -190,14 +190,14 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'Assessee Code',
                         ENN = 'Assessee Code';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "Assessee Code";
         }
         field(13706; "Excise Bus. Posting Group"; Code[10])
         {
             CaptionML = ENU = 'Excise Bus. Posting Group',
                         ENN = 'Excise Bus. Posting Group';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "Excise Bus. Posting Group";
         }
         field(13731; "Amount to Customer"; Decimal)
@@ -214,14 +214,14 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'Bill to Customer State',
                         ENN = 'Bill to Customer State';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = State;
         }
         field(13737; "Form Code"; Code[10])
         {
             CaptionML = ENU = 'Form Code',
                         ENN = 'Form Code';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "State Forms"."Form Code" WHERE(State = FIELD(State),
                                                              "Transit Document" = CONST(false));
         }
@@ -229,26 +229,26 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'Form No.',
                         ENN = 'Form No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(13751; "Transit Document"; Boolean)
         {
             CaptionML = ENU = 'Transit Document',
                         ENN = 'Transit Document';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(13752; State; Code[10])
         {
             CaptionML = ENU = 'State',
                         ENN = 'State';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = State;
         }
         field(13790; Structure; Code[10])
         {
             CaptionML = ENU = 'Structure',
                         ENN = 'Structure';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "Structure Header";
 
             trigger OnValidate();
@@ -264,25 +264,25 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'Trading',
                         ENN = 'Trading';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16502; "Transaction No. Serv. Tax"; Integer)
         {
             CaptionML = ENU = 'Transaction No. Serv. Tax',
                         ENN = 'Transaction No. Serv. Tax';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16503; "Re-Dispatch"; Boolean)
         {
             CaptionML = ENU = 'Re-Dispatch',
                         ENN = 'Re-Dispatch';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16504; "Return Re-Dispatch Rcpt. No."; Code[20])
         {
             CaptionML = ENU = 'Return Re-Dispatch Rcpt. No.',
                         ENN = 'Return Re-Dispatch Rcpt. No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "Return Receipt Line"."Document No." WHERE("Sell-to Customer No." = FIELD("Sell-to Customer No."));
         }
         field(16508; "Price Inclusive of Taxes"; Boolean)
@@ -296,26 +296,26 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'Calc. Inv. Discount (%)',
                         ENN = 'Calc. Inv. Discount (%)';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Editable = false;
         }
         field(16513; "Vehicle No."; Code[20])
         {
             CaptionML = ENU = 'Vehicle No.',
                         ENN = 'Vehicle No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16522; "Service Tax Rounding Precision"; Decimal)
         {
             CaptionML = ENU = 'Service Tax Rounding Precision',
                         ENN = 'Service Tax Rounding Precision';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16523; "Service Tax Rounding Type"; Option)
         {
             CaptionML = ENU = 'Service Tax Rounding Type',
                         ENN = 'Service Tax Rounding Type';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionCaptionML = ENU = 'Nearest,Up,Down',
                               ENN = 'Nearest,Up,Down';
             OptionMembers = Nearest,Up,Down;
@@ -324,7 +324,7 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'Sales Return Type',
                         ENN = 'Sales Return Type';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionCaptionML = ENU = ' ,Sales Cancellation',
                               ENN = ' ,Sales Cancellation';
             OptionMembers = " ","Sales Cancellation";
@@ -333,7 +333,7 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'Nature of Supply',
                         ENN = 'Nature of Supply';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionCaptionML = ENU = 'B2B,B2C',
                               ENN = 'B2B,B2C';
             OptionMembers = B2B,B2C;
@@ -342,7 +342,7 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'GST Customer Type',
                         ENN = 'GST Customer Type';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionCaptionML = ENU = ' ,Registered,Unregistered,Export,Deemed Export,Exempted,SEZ Development,SEZ Unit',
                               ENN = ' ,Registered,Unregistered,Export,Deemed Export,Exempted,SEZ Development,SEZ Unit';
             OptionMembers = " ",Registered,Unregistered,Export,"Deemed Export",Exempted,"SEZ Development","SEZ Unit";
@@ -351,13 +351,13 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'GST Without Payment of Duty',
                         ENN = 'GST Without Payment of Duty';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16605; "Invoice Type"; Option)
         {
             CaptionML = ENU = 'Invoice Type',
                         ENN = 'Invoice Type';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Editable = false;
             OptionCaptionML = ENU = ' ,Bill of Supply,Export,Supplementary,Debit Note,Non-GST,Taxable',
                               ENN = ' ,Bill of Supply,Export,Supplementary,Debit Note,Non-GST,Taxable';
@@ -367,33 +367,33 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'Bill Of Export No.',
                         ENN = 'Bill Of Export No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16607; "Bill Of Export Date"; Date)
         {
             CaptionML = ENU = 'Bill Of Export Date',
                         ENN = 'Bill Of Export Date';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16608; "e-Commerce Customer"; Code[20])
         {
             CaptionML = ENU = 'e-Commerce Customer',
                         ENN = 'e-Commerce Customer';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = Customer WHERE("e-Commerce Operator" = FILTER(true));
         }
         field(16609; "e-Commerce Merchant Id"; Code[30])
         {
             CaptionML = ENU = 'e-Commerce Merchant Id',
                         ENN = 'e-Commerce Merchant Id';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "e-Commerce Merchant Id"."Merchant Id";
         }
         field(16610; "GST Bill-to State Code"; Code[10])
         {
             CaptionML = ENU = 'GST Bill-to State Code',
                         ENN = 'GST Bill-to State Code';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Editable = false;
             TableRelation = State;
         }
@@ -401,7 +401,7 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'GST Ship-to State Code',
                         ENN = 'GST Ship-to State Code';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Editable = false;
             TableRelation = State;
         }
@@ -409,7 +409,7 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'Location State Code',
                         ENN = 'Location State Code';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Editable = false;
             TableRelation = State;
         }
@@ -417,14 +417,14 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'GST Inv. Rounding Precision',
                         ENN = 'GST Inv. Rounding Precision';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Editable = false;
         }
         field(16614; "GST Inv. Rounding Type"; Option)
         {
             CaptionML = ENU = 'GST Inv. Rounding Type',
                         ENN = 'GST Inv. Rounding Type';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Editable = false;
             OptionCaptionML = ENU = 'Nearest,Up,Down',
                               ENN = 'Nearest,Up,Down';
@@ -434,7 +434,7 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'GST Reason Type',
                         ENN = 'GST Reason Type';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionCaptionML = ENU = ' ,Sales Return,Post Sale Discount,Deficiency in Service,Correction in Invoice,Change in POS,Finalization of Provisional Assessment,Others',
                               ENN = ' ,Sales Return,Post Sale Discount,Deficiency in Service,Correction in Invoice,Change in POS,Finalization of Provisional Assessment,Others';
             OptionMembers = " ","Sales Return","Post Sale Discount","Deficiency in Service","Correction in Invoice","Change in POS","Finalization of Provisional Assessment",Others;
@@ -443,32 +443,32 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'Location GST Reg. No.',
                         ENN = 'Location GST Reg. No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             TableRelation = "GST Registration Nos.";
         }
         field(16617; "Customer GST Reg. No."; Code[15])
         {
             CaptionML = ENU = 'Customer GST Reg. No.',
                         ENN = 'Customer GST Reg. No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16618; "Ship-to GST Reg. No."; Code[15])
         {
             CaptionML = ENU = 'Ship-to GST Reg. No.',
                         ENN = 'Ship-to GST Reg. No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16619; "Distance (Km)"; Decimal)
         {
             CaptionML = ENU = 'Distance (Km)',
                         ENN = 'Distance (Km)';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16620; "Vehicle Type"; Option)
         {
             CaptionML = ENU = 'Vehicle Type',
                         ENN = 'Vehicle Type';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionCaptionML = ENU = ' ,Regular,ODC',
                               ENN = ' ,Regular,ODC';
             OptionMembers = " ",Regular,ODC;
@@ -477,19 +477,19 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'Reference Invoice No.',
                         ENN = 'Reference Invoice No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16622; "E-Way Bill No."; Text[50])
         {
             CaptionML = ENU = 'E-Way Bill No.',
                         ENN = 'E-Way Bill No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16623; "Supply Finish Date"; Option)
         {
             CaptionML = ENU = 'Supply Finish Date',
                         ENN = 'Supply Finish Date';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionCaptionML = ENU = ' ,Before Rate Change,After Rate Change',
                               ENN = ' ,Before Rate Change,After Rate Change';
             OptionMembers = " ","Before Rate Change","After Rate Change";
@@ -498,7 +498,7 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'Payment Date',
                         ENN = 'Payment Date';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionCaptionML = ENU = ',Before Rate Change,After Rate Change',
                               ENN = ',Before Rate Change,After Rate Change';
             OptionMembers = ,"Before Rate Change","After Rate Change";
@@ -507,26 +507,26 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'Rate Change Applicable',
                         ENN = 'Rate Change Applicable';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16626; "POS Out Of India"; Boolean)
         {
             CaptionML = ENU = 'POS Out Of India',
                         ENN = 'POS Out Of India';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Editable = false;
         }
         field(16627; "Acknowledgement No."; Text[30])
         {
             CaptionML = ENU = 'Acknowledgement No.',
                         ENN = 'Acknowledgement No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16628; "IRN Hash"; Text[64])
         {
             CaptionML = ENU = 'IRN Hash',
                         ENN = 'IRN Hash';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -540,21 +540,21 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'QR Code',
                         ENN = 'QR Code';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             SubType = Bitmap;
         }
         field(16630; "Ship-to Customer"; Code[20])
         {
             CaptionML = ENU = 'Ship-to Customer',
                         ENN = 'Ship-to Customer';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Editable = false;
         }
         field(16631; "Ship-to GST Customer Type"; Option)
         {
             CaptionML = ENU = 'Ship-to GST Customer Type',
                         ENN = 'Ship-to GST Customer Type';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Editable = false;
             OptionCaptionML = ENU = ' ,Registered,Unregistered,Export,Deemed Export,Exempted,SEZ Development,SEZ Unit',
                               ENN = ' ,Registered,Unregistered,Export,Deemed Export,Exempted,SEZ Development,SEZ Unit';
@@ -564,39 +564,43 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             CaptionML = ENU = 'Acknowledgement Date',
                         ENN = 'Acknowledgement Date';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16633; IsJSONImported; Boolean)
         {
             CaptionML = ENU = 'IsJSONImported',
                         ENN = 'IsJSONImported';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16634; "E-Inv. Cancelled Date"; DateTime)
         {
             CaptionML = ENU = 'E-Inv. Cancelled Date',
                         ENN = 'E-Inv. Cancelled Date';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(16635; "Cancel Reason"; Option)
         {
             CaptionML = ENU = 'Cancel Reason',
                         ENN = 'Cancel Reason';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             OptionCaptionML = ENU = ' ,Duplicate,Data Entry Mistake,Order Canceled,Other',
                               ENN = ' ,Duplicate,Data Entry Mistake,Order Canceled,Other';
             OptionMembers = " ",Duplicate,"Data Entry Mistake","Order Canceled",Other;
         }
+=======
+>>>>>>> 92e9343b97066cd41289b021406784be0d52ea8b
         field(80020; "Dimension Corrected"; Boolean)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
+            DataClassification = CustomerContent;
         }
         field(80021; "OLD Dim Set ID"; Integer)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
             TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -604,398 +608,7 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
             end;
         }
     }
-    keys
-    {
 
-        //Unsupported feature: Deletion on ""No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Pre-Assigned No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Return Order No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Sell-to Customer No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Prepayment Order No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Bill-to Customer No."(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Posting Date"(Key)". Please convert manually.
-
-
-        //Unsupported feature: Deletion on ""Document Exchange Status"(Key)". Please convert manually.
-
-        key(Key1; "No.")
-        {
-        }
-        key(Key2; "Pre-Assigned No.")
-        {
-        }
-        key(Key3; "Return Order No.")
-        {
-        }
-        key(Key4; "Sell-to Customer No.")
-        {
-        }
-        key(Key5; "Prepayment Order No.")
-        {
-        }
-        key(Key6; "Bill-to Customer No.")
-        {
-        }
-        key(Key7; "Posting Date")
-        {
-        }
-        key(Key8; "Document Exchange Status")
-        {
-        }
-    }
-
-
-    //Unsupported feature: CodeModification on "OnDelete". Please convert manually.
-
-    //trigger OnDelete();
-    //Parameters and return type have not been exported.
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    PostSalesDelete.IsDocumentDeletionAllowed("Posting Date");
-    TESTFIELD("No. Printed");
-    LOCKTABLE;
-    PostSalesDelete.DeleteSalesCrMemoLines(Rec);
-
-    SalesCommentLine.SETRANGE("Document Type",SalesCommentLine."Document Type"::"Posted Credit Memo");
-    SalesCommentLine.SETRANGE("No.","No.");
-    SalesCommentLine.DELETEALL;
-
-    ApprovalsMgmt.DeletePostedApprovalEntries(RECORDID);
-    PostedDeferralHeader.DeleteForDoc(DeferralUtilities.GetSalesDeferralDocType,'','',
-      SalesCommentLine."Document Type"::"Posted Credit Memo","No.");
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    PostSalesDelete.IsDocumentDeletionAllowed("Posting Date");
-    TestField("No. Printed");
-    LockTable;
-    PostSalesDelete.DeleteSalesCrMemoLines(Rec);
-
-    SalesCommentLine.SetRange("Document Type",SalesCommentLine."Document Type"::"Posted Credit Memo");
-    SalesCommentLine.SetRange("No.","No.");
-    SalesCommentLine.DeleteAll;
-
-    ApprovalsMgmt.DeletePostedApprovalEntries(RecordId);
-    PostedDeferralHeader.DeleteForDoc(DeferralUtilities.GetSalesDeferralDocType,'','',
-      SalesCommentLine."Document Type"::"Posted Credit Memo","No.");
-    */
-    //end;
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-
-    //Unsupported feature: PropertyModification on ""User ID"(Field 112).OnLookup.UserMgt(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //"User ID" : 418;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //"User ID" : "User Management";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "OnDelete.PostedDeferralHeader(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //OnDelete.PostedDeferralHeader : 1704;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //OnDelete.PostedDeferralHeader : "Posted Deferral Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "OnDelete.PostSalesDelete(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //OnDelete.PostSalesDelete : 363;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //OnDelete.PostSalesDelete : "PostSales-Delete";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "OnDelete.DeferralUtilities(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //OnDelete.DeferralUtilities : 1720;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //OnDelete.DeferralUtilities : "Deferral Utilities";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "SendRecords(PROCEDURE 12).DocumentSendingProfile(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //SendRecords : 60;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //SendRecords : "Document Sending Profile";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "SendRecords(PROCEDURE 12).DummyReportSelections(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //SendRecords : 77;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //SendRecords : "Report Selections";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "SendRecords(PROCEDURE 12).ReportDistributionMgt(Variable 1003)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //SendRecords : 452;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //SendRecords : "Report Distribution Management";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "SendProfile(PROCEDURE 6).DummyReportSelections(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //SendProfile : 77;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //SendProfile : "Report Selections";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "SendProfile(PROCEDURE 6).ReportDistributionMgt(Variable 1004)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //SendProfile : 452;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //SendProfile : "Report Distribution Management";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "PrintRecords(PROCEDURE 1).DocumentSendingProfile(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //PrintRecords : 60;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //PrintRecords : "Document Sending Profile";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "PrintRecords(PROCEDURE 1).DummyReportSelections(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //PrintRecords : 77;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //PrintRecords : "Report Selections";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "EmailRecords(PROCEDURE 17).DocumentSendingProfile(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //EmailRecords : 60;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //EmailRecords : "Document Sending Profile";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "EmailRecords(PROCEDURE 17).DummyReportSelections(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //EmailRecords : 77;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //EmailRecords : "Report Selections";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "EmailRecords(PROCEDURE 17).ReportDistributionMgt(Variable 1005)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //EmailRecords : 452;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //EmailRecords : "Report Distribution Management";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "Navigate(PROCEDURE 2).NavigateForm(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //Navigate : 344;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //Navigate : Navigate;
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "LookupAdjmtValueEntries(PROCEDURE 3).ValueEntry(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //LookupAdjmtValueEntries : 5802;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //LookupAdjmtValueEntries : "Value Entry";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "GetLegalStatement(PROCEDURE 60).SalesSetup(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //GetLegalStatement : 311;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //GetLegalStatement : "Sales & Receivables Setup";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ShowActivityLog(PROCEDURE 116).ActivityLog(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowActivityLog : 710;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowActivityLog : "Activity Log";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ShowCorrectiveInvoice(PROCEDURE 16).SalesInvHeader(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowCorrectiveInvoice : 112;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowCorrectiveInvoice : "Sales Invoice Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ShowCancelledInvoice(PROCEDURE 37).SalesInvHeader(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowCancelledInvoice : 112;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowCancelledInvoice : "Sales Invoice Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "GetWorkDescription(PROCEDURE 9).TempBlob(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //GetWorkDescription : 99008535;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //GetWorkDescription : TempBlob;
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "SalesCommentLine(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //SalesCommentLine : 44;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //SalesCommentLine : "Sales Comment Line";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "CustLedgEntry(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //CustLedgEntry : 21;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //CustLedgEntry : "Cust. Ledger Entry";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ApprovalsMgmt(Variable 1004)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ApprovalsMgmt : 1535;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ApprovalsMgmt : "Approvals Mgmt.";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "DimMgt(Variable 1005)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //DimMgt : 408;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //DimMgt : DimensionManagement;
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "UserSetupMgt(Variable 1006)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //UserSetupMgt : 5700;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //UserSetupMgt : "User Setup Management";
-    //Variable type has not been exported.
 
     var
         DuplicateIRNErr: Label 'Duplicate IRN.';

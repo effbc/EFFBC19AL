@@ -1,4 +1,4 @@
-pageextension 70075 InventoryPostingSetupExt extends "Inventory Posting Setup" 
+pageextension 70075 InventoryPostingSetupExt extends "Inventory Posting Setup"
 {
     // version NAVW17.00,NAVIN7.00
 

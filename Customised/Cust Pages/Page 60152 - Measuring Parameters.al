@@ -11,34 +11,34 @@ page 60152 "Measuring Parameters"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("UOM Code";"UOM Code")
+                field("UOM Code"; "UOM Code")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Lower Limit";"Lower Limit")
+                field("Lower Limit"; "Lower Limit")
                 {
                 }
-                field("Upper Limit";"Upper Limit")
+                field("Upper Limit"; "Upper Limit")
                 {
                 }
-                field("Least Count";"Least Count")
+                field("Least Count"; "Least Count")
                 {
                 }
-                field("Usage Subjective";"Usage Subjective")
+                field("Usage Subjective"; "Usage Subjective")
                 {
                 }
-                field("Actual Lower Limit";"Actual Lower Limit")
+                field("Actual Lower Limit"; "Actual Lower Limit")
                 {
                 }
-                field("Actual Upper Limit";"Actual Upper Limit")
+                field("Actual Upper Limit"; "Actual Upper Limit")
                 {
                 }
-                field("Standard Reference";"Standard Reference")
+                field("Standard Reference"; "Standard Reference")
                 {
                 }
-                field("Correction Value";"Correction Value")
+                field("Correction Value"; "Correction Value")
                 {
                 }
             }

@@ -13,25 +13,25 @@ page 60149 "Item DesignWorkSheet HeadeList"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field("Unit of Measure";"Unit of Measure")
+                field("Unit of Measure"; "Unit of Measure")
                 {
                 }
-                field("Components Cost";"Components Cost")
+                field("Components Cost"; "Components Cost")
                 {
                 }
-                field("Manufacturing Cost";"Manufacturing Cost")
+                field("Manufacturing Cost"; "Manufacturing Cost")
                 {
                 }
-                field("Total Cost (From Line)";"Total Cost (From Line)")
+                field("Total Cost (From Line)"; "Total Cost (From Line)")
                 {
                 }
             }

@@ -5,37 +5,37 @@ report 50202 "BG Expired Details"
 
     dataset
     {
-        dataitem("Bank Guarantee";"Bank Guarantee")
+        dataitem("Bank Guarantee"; "Bank Guarantee")
         {
-            DataItemTableView = SORTING(BG No.) ORDER(Ascending) WHERE(Status=CONST(Open));
-            column(Bank_Guarantee__BG_No__;"BG No.")
+            DataItemTableView = SORTING(BG No.) ORDER(Ascending) WHERE(Status = CONST(Open));
+            column(Bank_Guarantee__BG_No__; "BG No.")
             {
             }
-            column(Bank_Guarantee__Customer_Order_No__;"Customer Order No.")
+            column(Bank_Guarantee__Customer_Order_No__; "Customer Order No.")
             {
             }
-            column(Bank_Guarantee__BG_Value_;"BG Value")
+            column(Bank_Guarantee__BG_Value_; "BG Value")
             {
             }
-            column(Bank_Guarantee__Expiry_Date_;"Expiry Date")
+            column(Bank_Guarantee__Expiry_Date_; "Expiry Date")
             {
             }
-            column(Bank_Guarantee__Claim_Date_;"Claim Date")
+            column(Bank_Guarantee__Claim_Date_; "Claim Date")
             {
             }
-            column(Bank_Guarantee__BG_No__Caption;FIELDCAPTION("BG No."))
+            column(Bank_Guarantee__BG_No__Caption; FIELDCAPTION("BG No."))
             {
             }
-            column(Bank_Guarantee__Customer_Order_No__Caption;FIELDCAPTION("Customer Order No."))
+            column(Bank_Guarantee__Customer_Order_No__Caption; FIELDCAPTION("Customer Order No."))
             {
             }
-            column(Bank_Guarantee__BG_Value_Caption;FIELDCAPTION("BG Value"))
+            column(Bank_Guarantee__BG_Value_Caption; FIELDCAPTION("BG Value"))
             {
             }
-            column(Bank_Guarantee__Expiry_Date_Caption;FIELDCAPTION("Expiry Date"))
+            column(Bank_Guarantee__Expiry_Date_Caption; FIELDCAPTION("Expiry Date"))
             {
             }
-            column(Bank_Guarantee__Claim_Date_Caption;FIELDCAPTION("Claim Date"))
+            column(Bank_Guarantee__Claim_Date_Caption; FIELDCAPTION("Claim Date"))
             {
             }
 

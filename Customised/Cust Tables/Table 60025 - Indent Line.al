@@ -5,19 +5,23 @@ table 60025 "Indent Line"
     // 2.0      UPGREV                        Code Reviewed and Variant code Trigger Code changed.
 
     LookupPageID = "Indent Line";
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"Document No.";Code[20])
+        field(1; "Document No."; Code[20])
         {
             TableRelation = "Indent Header";
+            DataClassification = CustomerContent;
         }
-        field(2;"Line No.";Integer)
+        field(2; "Line No."; Integer)
         {
+            DataClassification = CustomerContent;
         }
-        field(3;"No.";Code[20])
+        field(3; "No."; Code[20])
         {
-            TableRelation = IF (Type=CONST(Item)) Item WHERE (Product Group Code=FILTER(<>FPRODUCT&<>CPCB),Blocked=CONST(No)) ELSE IF (Type=CONST(Miscellaneous)) Make ELSE IF (Type=CONST(G/L Account)) "G/L Account" ELSE IF (Type=CONST(Fixed Asset)) "Fixed Asset";
+            TableRelation = IF (Type = CONST(Item)) Item WHERE(Product Group Code=            DataClassification = CustomerContent;
+FILTER(<>FPRODUCT&<>CPCB),Blocked=CONST(No)) ELSE IF (Type=CONST(Miscellaneous)) Make ELSE IF (Type=CONST(G/L Account)) "G/L Account" ELSE IF (Type=CONST(Fixed Asset)) "Fixed Asset";
 
             trigger OnValidate();
             begin

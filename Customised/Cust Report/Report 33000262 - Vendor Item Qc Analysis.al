@@ -7,81 +7,81 @@ report 33000262 "Vendor Item Qc Analysis"
 
     dataset
     {
-        dataitem("Inspection Receipt Header";"Inspection Receipt Header")
+        dataitem("Inspection Receipt Header"; "Inspection Receipt Header")
         {
-            DataItemTableView = SORTING(Vendor No.,Item No.) WHERE(Status=FILTER(<>No));
+            DataItemTableView = SORTING(Vendor No., Item No.) WHERE(Status = FILTER(<> No));
             PrintOnlyIfDetail = false;
-            RequestFilterFields = "Item No.","Vendor No.";
-            column(Inspection_Receipt_Header__No__;"No.")
+            RequestFilterFields = "Item No.", "Vendor No.";
+            column(Inspection_Receipt_Header__No__; "No.")
             {
             }
-            column(VendorInfo_3_;VendorInfo[3])
+            column(VendorInfo_3_; VendorInfo[3])
             {
             }
-            column(VendorInfo_2_;VendorInfo[2])
+            column(VendorInfo_2_; VendorInfo[2])
             {
             }
-            column(VendorInfo_1_;VendorInfo[1])
+            column(VendorInfo_1_; VendorInfo[1])
             {
             }
-            column(Rej;Rej)
+            column(Rej; Rej)
             {
             }
-            column(Accpt;Accpt)
+            column(Accpt; Accpt)
             {
             }
-            column(RejQty;RejQty)
+            column(RejQty; RejQty)
             {
             }
-            column(AccptQty;AccptQty)
+            column(AccptQty; AccptQty)
             {
             }
-            column(TotalQty;TotalQty)
+            column(TotalQty; TotalQty)
             {
             }
-            column(Inspection_Receipt_Header__Item_Description_;"Item Description")
+            column(Inspection_Receipt_Header__Item_Description_; "Item Description")
             {
             }
-            column(Inspection_Receipt_Header__Item_No__;"Item No.")
+            column(Inspection_Receipt_Header__Item_No__; "Item No.")
             {
             }
-            column(Inspection_Receipt_Header__No__Caption;FIELDCAPTION("No."))
+            column(Inspection_Receipt_Header__No__Caption; FIELDCAPTION("No."))
             {
             }
-            column(Vendor___Item_Quality_AnalysisCaption;Vendor___Item_Quality_AnalysisCaptionLbl)
+            column(Vendor___Item_Quality_AnalysisCaption; Vendor___Item_Quality_AnalysisCaptionLbl)
             {
             }
-            column(Rej__Caption;Rej__CaptionLbl)
+            column(Rej__Caption; Rej__CaptionLbl)
             {
             }
-            column(Accepted__Caption;Accepted__CaptionLbl)
+            column(Accepted__Caption; Accepted__CaptionLbl)
             {
             }
-            column(Qty_RejectedCaption;Qty_RejectedCaptionLbl)
+            column(Qty_RejectedCaption; Qty_RejectedCaptionLbl)
             {
             }
-            column(Qty_AcceptedCaption;Qty_AcceptedCaptionLbl)
+            column(Qty_AcceptedCaption; Qty_AcceptedCaptionLbl)
             {
             }
-            column(Total_QtyCaption;Total_QtyCaptionLbl)
+            column(Total_QtyCaption; Total_QtyCaptionLbl)
             {
             }
-            column(Inspection_Receipt_Header__Item_Description_Caption;FIELDCAPTION("Item Description"))
+            column(Inspection_Receipt_Header__Item_Description_Caption; FIELDCAPTION("Item Description"))
             {
             }
-            column(Inspection_Receipt_Header__Item_No__Caption;FIELDCAPTION("Item No."))
+            column(Inspection_Receipt_Header__Item_No__Caption; FIELDCAPTION("Item No."))
             {
             }
-            column(AddressCaption;AddressCaptionLbl)
+            column(AddressCaption; AddressCaptionLbl)
             {
             }
-            column(Vendor_NameCaption;Vendor_NameCaptionLbl)
+            column(Vendor_NameCaption; Vendor_NameCaptionLbl)
             {
             }
-            column(Vendor_No_Caption;Vendor_No_CaptionLbl)
+            column(Vendor_No_Caption; Vendor_No_CaptionLbl)
             {
             }
-            column(Inspection_Receipt_Header_Vendor_No_;"Vendor No.")
+            column(Inspection_Receipt_Header_Vendor_No_; "Vendor No.")
             {
             }
 
@@ -94,14 +94,15 @@ report 33000262 "Vendor Item Qc Analysis"
                 COMPRESSARRAY(VendorInfo);
 
                 IF Status = Status::"0" THEN
-                  AccptQty := Quantity
-                ELSE IF Status = Status::"1" THEN
-                  RejQty := Quantity;
+                    AccptQty := Quantity
+                ELSE
+                    IF Status = Status::"1" THEN
+                        RejQty := Quantity;
                 TotalQty := AccptQty + RejQty;
                 IF TotalQty = 0 THEN
-                  EXIT;
-                Accpt :=  (AccptQty/TotalQty)*100;
-                Rej := (RejQty/TotalQty)*100;
+                    EXIT;
+                Accpt := (AccptQty / TotalQty) * 100;
+                Rej := (RejQty / TotalQty) * 100;
             end;
         }
     }
@@ -123,21 +124,21 @@ report 33000262 "Vendor Item Qc Analysis"
     }
 
     var
-        VendorInfo : array [4] of Text[50];
-        TotalQty : Integer;
-        AccptQty : Integer;
-        RejQty : Integer;
-        UnderProgs : Integer;
-        Accpt : Decimal;
-        Rej : Decimal;
-        Vendor___Item_Quality_AnalysisCaptionLbl : Label 'Vendor - Item Quality Analysis';
-        Rej__CaptionLbl : Label 'Rej %';
-        Accepted__CaptionLbl : Label 'Accepted %';
-        Qty_RejectedCaptionLbl : Label 'Qty Rejected';
-        Qty_AcceptedCaptionLbl : Label 'Qty Accepted';
-        Total_QtyCaptionLbl : Label 'Total Qty';
-        AddressCaptionLbl : Label 'Address';
-        Vendor_NameCaptionLbl : Label 'Vendor Name';
-        Vendor_No_CaptionLbl : Label 'Vendor No.';
+        VendorInfo: array[4] of Text[50];
+        TotalQty: Integer;
+        AccptQty: Integer;
+        RejQty: Integer;
+        UnderProgs: Integer;
+        Accpt: Decimal;
+        Rej: Decimal;
+        Vendor___Item_Quality_AnalysisCaptionLbl: Label 'Vendor - Item Quality Analysis';
+        Rej__CaptionLbl: Label 'Rej %';
+        Accepted__CaptionLbl: Label 'Accepted %';
+        Qty_RejectedCaptionLbl: Label 'Qty Rejected';
+        Qty_AcceptedCaptionLbl: Label 'Qty Accepted';
+        Total_QtyCaptionLbl: Label 'Total Qty';
+        AddressCaptionLbl: Label 'Address';
+        Vendor_NameCaptionLbl: Label 'Vendor Name';
+        Vendor_No_CaptionLbl: Label 'Vendor No.';
 }
 

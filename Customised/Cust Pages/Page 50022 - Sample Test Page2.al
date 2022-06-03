@@ -9,7 +9,7 @@ page 50022 "Sample Test Page2"
             group(General)
             {
                 Caption = 'General';
-                field(Date;Date)
+                field(Date; Date)
                 {
                 }
             }

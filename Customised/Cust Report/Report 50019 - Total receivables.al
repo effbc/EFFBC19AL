@@ -7,7 +7,7 @@ report 50019 "Total receivables"
 
     dataset
     {
-        dataitem("Cust. Ledger Entry";"Cust. Ledger Entry")
+        dataitem("Cust. Ledger Entry"; "Cust. Ledger Entry")
         {
             DataItemTableView = SORTING(Entry No.) ORDER(Ascending) WHERE(Amount (LCY)=FILTER(<0));
             RequestFilterFields = "Posting Date";

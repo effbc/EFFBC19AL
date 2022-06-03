@@ -8,12 +8,12 @@ page 60246 "Effe Hyd Excise Entries"
     // >Caption ML has been changed excise amount to amount.</change>
     // </changelog>
 
-    CaptionML = ENU='Excise Entries',
-                ENN='Excise Entries';
+    CaptionML = ENU = 'Excise Entries',
+                ENN = 'Excise Entries';
     DeleteAllowed = false;
     InsertAllowed = false;
     PageType = List;
-    Permissions = TableData "Excise Entry"=rimd;
+    Permissions = TableData "Excise Entry" = rimd;
     SourceTable = "Excise Entry";
     SourceTableView = WHERE(Document No.=FILTER(PTS*|TO*),Type=FILTER(Sale));
 

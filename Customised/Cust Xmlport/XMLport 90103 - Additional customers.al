@@ -6,31 +6,31 @@ xmlport 90103 "Additional customers"
     {
         textelement(Customers)
         {
-            tableelement(Customer;Customer)
+            tableelement(Customer; Customer)
             {
                 XmlName = 'Customer';
-                fieldelement(No;Customer."No.")
+                fieldelement(No; Customer."No.")
                 {
                 }
-                fieldelement(Name;Customer.Name)
+                fieldelement(Name; Customer.Name)
                 {
                 }
-                fieldelement(Name2;Customer."Name 2")
+                fieldelement(Name2; Customer."Name 2")
                 {
                 }
-                fieldelement(GenBusPostingGroup;Customer."Gen. Bus. Posting Group")
+                fieldelement(GenBusPostingGroup; Customer."Gen. Bus. Posting Group")
                 {
                 }
-                fieldelement(ExciseBusPostingGroup;Customer."Excise Bus. Posting Group")
+                fieldelement(ExciseBusPostingGroup; Customer."Excise Bus. Posting Group")
                 {
                 }
-                fieldelement(CustomerPostingGroup;Customer."Customer Posting Group")
+                fieldelement(CustomerPostingGroup; Customer."Customer Posting Group")
                 {
                 }
-                fieldelement(VATBusPostingGroup;Customer."VAT Bus. Posting Group")
+                fieldelement(VATBusPostingGroup; Customer."VAT Bus. Posting Group")
                 {
                 }
-                fieldelement(TaxLiable;Customer."Tax Liable")
+                fieldelement(TaxLiable; Customer."Tax Liable")
                 {
                 }
             }

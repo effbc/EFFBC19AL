@@ -6,13 +6,13 @@ xmlport 80185 "CRM Business Relation"
     {
         textelement(BusinessRelations)
         {
-            tableelement("<businessrelation>";"Business Relation")
+            tableelement("<businessrelation>"; "Business Relation")
             {
                 XmlName = 'BusinessRelation';
-                fieldelement(Code;"<BusinessRelation>".Code)
+                fieldelement(Code; "<BusinessRelation>".Code)
                 {
                 }
-                fieldelement(Description;"<BusinessRelation>".Description)
+                fieldelement(Description; "<BusinessRelation>".Description)
                 {
                 }
             }

@@ -6,22 +6,22 @@ xmlport 80083 "Inventory Posting Setup"
     {
         textelement(InventoryPostingSetup)
         {
-            tableelement("<inventorypostingsetup>";"Inventory Posting Setup")
+            tableelement("<inventorypostingsetup>"; "Inventory Posting Setup")
             {
                 XmlName = 'InventoryPostingSetup';
-                fieldelement(LocationCode;"<InventoryPostingSetup>"."Location Code")
+                fieldelement(LocationCode; "<InventoryPostingSetup>"."Location Code")
                 {
                 }
-                fieldelement(InvtPostingGroupCode;"<InventoryPostingSetup>"."Invt. Posting Group Code")
+                fieldelement(InvtPostingGroupCode; "<InventoryPostingSetup>"."Invt. Posting Group Code")
                 {
                 }
-                fieldelement(InventoryAccount;"<InventoryPostingSetup>"."Inventory Account")
+                fieldelement(InventoryAccount; "<InventoryPostingSetup>"."Inventory Account")
                 {
                 }
-                fieldelement(UnrealizedProfitAccount;"<InventoryPostingSetup>"."Unrealized Profit Account")
+                fieldelement(UnrealizedProfitAccount; "<InventoryPostingSetup>"."Unrealized Profit Account")
                 {
                 }
-                fieldelement(WIPAccount;"<InventoryPostingSetup>"."WIP Account")
+                fieldelement(WIPAccount; "<InventoryPostingSetup>"."WIP Account")
                 {
                 }
             }

@@ -1,18 +1,10 @@
 tableextension 70074 SalesCommentLineArchiveExt extends "Sales Comment Line Archive"
 {
-    // version NAVW17.00,B2BQTO
-
     fields
     {
-
-        //Unsupported feature: Change OptionString on ""Document Type"(Field 1)". Please convert manually.
-
-
-        //Unsupported feature: Change Data type on "Code(Field 5)". Please convert manually.
-
         field(60001; "User ID"; Code[40])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -23,7 +15,7 @@ tableextension 70074 SalesCommentLineArchiveExt extends "Sales Comment Line Arch
         }
         field(60002; "Responsible Person"; Code[40])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -32,24 +24,22 @@ tableextension 70074 SalesCommentLineArchiveExt extends "Sales Comment Line Arch
                     "Responsible Person" := User."User Name";
             end;
         }
-        field(60003; Status; Option)
+        field(60003; Status; Enum Status)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Editable = true;
-            OptionMembers = ,"Need to Start",Inprogress,Completed;
         }
         field(60004; "Exp Completion Date"; DateTime)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
-        field(60005; Priority; Option)
+        field(60005; Priority; Enum Priority)
         {
-            DataClassification = ToBeClassified;
-            OptionMembers = ,Low,Medium,High;
+            DataClassification = CustomerContent;
         }
         field(60006; Product; Code[50])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -60,68 +50,36 @@ tableextension 70074 SalesCommentLineArchiveExt extends "Sales Comment Line Arch
         }
         field(60007; "Customer Number"; Code[30])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
             TableRelation = Customer."No.";
         }
         field(60008; "Customer Name"; Text[60])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
         }
         field(60009; "Remainder Date"; Date)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
         }
-        field(60010; "Quote Status"; Option)
+        field(60010; "Quote Status"; Enum QuoteStatus)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
-            OptionCaption = '" ,Win,Loose,None"';
-            OptionMembers = " ",Win,Loose,"None";
         }
         field(60011; Convert; Boolean)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
         }
         field(60012; "Converted Order Number"; Code[20])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'Added by Vishnu Priya for the IREPS Purpose';
         }
     }
-    keys
-    {
-
-        //Unsupported feature: Deletion on ""Document Type,No.,Doc. No. Occurrence,Version No.,Document Line No.,Line No."(Key)". Please convert manually.
-
-        key(Key1; "Document Type", "No.", "Doc. No. Occurrence", "Version No.", "Document Line No.", "Line No.")
-        {
-        }
-    }
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-
-    //Unsupported feature: PropertyModification on "SetUpNewLine(PROCEDURE 1).SalesCommentLine(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //SetUpNewLine : 5126;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //SetUpNewLine : "Sales Comment Line Archive";
-    //Variable type has not been exported.
-
     var
         Itm: Record Item;
         ISGC: Record "Item Sub Group";

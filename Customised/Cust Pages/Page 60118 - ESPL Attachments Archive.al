@@ -2,7 +2,7 @@ page 60118 "ESPL Attachments Archive"
 {
     // version B2B1.0,Rev01
 
-    DataCaptionFields = "Document Type","Document No.";
+    DataCaptionFields = "Document Type", "Document No.";
     Editable = false;
     PageType = List;
     SourceTable = "Attachments Archive";
@@ -14,11 +14,11 @@ page 60118 "ESPL Attachments Archive"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field(Description;Description)
+                field(Description; Description)
                 {
                     NotBlank = false;
                 }
-                field("Attachment Status";"Attachment Status")
+                field("Attachment Status"; "Attachment Status")
                 {
                     Editable = false;
                 }
@@ -40,13 +40,13 @@ page 60118 "ESPL Attachments Archive"
 
                     trigger OnAction();
                     var
-                        AttachmentArchive : Record "Attachments Archive";
+                        AttachmentArchive: Record "Attachments Archive";
                     begin
                         TESTFIELD(Description);
                         IF "No." = 0 THEN
-                          EXIT;
-                        AttachmentArchive.GET("No.","Table ID","Document Type","Document No.","Document Line No.","Document Version No.");
-                        AttachmentArchive.OpenAttachment(Description,FALSE);
+                            EXIT;
+                        AttachmentArchive.GET("No.", "Table ID", "Document Type", "Document No.", "Document Line No.", "Document Version No.");
+                        AttachmentArchive.OpenAttachment(Description, FALSE);
                     end;
                 }
                 action("E&xport")
@@ -66,7 +66,7 @@ page 60118 "ESPL Attachments Archive"
     }
 
     var
-        CustAttachments : Record Attachments;
-        AttachNo : Integer;
+        CustAttachments: Record Attachments;
+        AttachNo: Integer;
 }
 

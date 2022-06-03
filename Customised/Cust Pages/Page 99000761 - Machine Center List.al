@@ -2,8 +2,8 @@ page 99000761 "Machine Center List"
 {
     // version NAVW17.00
 
-    CaptionML = ENU='Machine Center List',
-                ENN='Machine Center List';
+    CaptionML = ENU = 'Machine Center List',
+                ENN = 'Machine Center List';
     CardPageID = "Machine Center Card";
     Editable = false;
     PageType = List;
@@ -13,7 +13,7 @@ page 99000761 "Machine Center List"
     {
         area(content)
         {
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
                 Style = Strong;
                 StyleExpr = TRUE;
@@ -21,60 +21,60 @@ page 99000761 "Machine Center List"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
                 }
-                field("Work Center No.";"Work Center No.")
+                field("Work Center No."; "Work Center No.")
                 {
                 }
-                field(Blocked;Blocked)
+                field(Blocked; Blocked)
                 {
                 }
-                field(Capacity;Capacity)
+                field(Capacity; Capacity)
                 {
                 }
-                field(Efficiency;Efficiency)
+                field(Efficiency; Efficiency)
                 {
                 }
-                field("Minimum Efficiency";"Minimum Efficiency")
-                {
-                    Visible = false;
-                }
-                field("Maximum Efficiency";"Maximum Efficiency")
+                field("Minimum Efficiency"; "Minimum Efficiency")
                 {
                     Visible = false;
                 }
-                field("Concurrent Capacities";"Concurrent Capacities")
+                field("Maximum Efficiency"; "Maximum Efficiency")
                 {
                     Visible = false;
                 }
-                field("Search Name";"Search Name")
-                {
-                }
-                field("Direct Unit Cost";"Direct Unit Cost")
+                field("Concurrent Capacities"; "Concurrent Capacities")
                 {
                     Visible = false;
                 }
-                field("Indirect Cost %";"Indirect Cost %")
+                field("Search Name"; "Search Name")
+                {
+                }
+                field("Direct Unit Cost"; "Direct Unit Cost")
                 {
                     Visible = false;
                 }
-                field("Unit Cost";"Unit Cost")
+                field("Indirect Cost %"; "Indirect Cost %")
                 {
                     Visible = false;
                 }
-                field("Overhead Rate";"Overhead Rate")
+                field("Unit Cost"; "Unit Cost")
                 {
                     Visible = false;
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("Overhead Rate"; "Overhead Rate")
                 {
                     Visible = false;
                 }
-                field("Flushing Method";"Flushing Method")
+                field("Last Date Modified"; "Last Date Modified")
+                {
+                    Visible = false;
+                }
+                field("Flushing Method"; "Flushing Method")
                 {
                     Visible = false;
                 }
@@ -82,11 +82,11 @@ page 99000761 "Machine Center List"
         }
         area(factboxes)
         {
-            systempart(Control1900383207;Links)
+            systempart(Control1900383207; Links)
             {
                 Visible = false;
             }
-            systempart(Control1905767507;Notes)
+            systempart(Control1905767507; Notes)
             {
                 Visible = true;
             }
@@ -99,16 +99,16 @@ page 99000761 "Machine Center List"
         {
             group("&Mach. Ctr.")
             {
-                CaptionML = ENU='&Mach. Ctr.',
-                            ENN='&Mach. Ctr.';
+                CaptionML = ENU = '&Mach. Ctr.',
+                            ENN = '&Mach. Ctr.';
                 Image = MachineCenter;
                 action("Capacity Ledger E&ntries")
                 {
-                    CaptionML = ENU='Capacity Ledger E&ntries',
-                                ENN='Capacity Ledger E&ntries';
+                    CaptionML = ENU = 'Capacity Ledger E&ntries',
+                                ENN = 'Capacity Ledger E&ntries';
                     Image = CapacityLedger;
                     RunObject = Page "Capacity Ledger Entries";
-                    RunPageLink = Type=CONST(Machine Center),No.=FIELD(No.),Posting Date=FIELD(Date Filter);
+                    RunPageLink = Type = CONST(Machine Center),No.=FIELD(No.),Posting Date=FIELD(Date Filter);
                     RunPageView = SORTING(Type,No.,Work Shift Code,Item No.,Posting Date);
                     ShortCutKey = 'Ctrl+F7';
                 }
@@ -118,7 +118,7 @@ page 99000761 "Machine Center List"
                                 ENN='Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Manufacturing Comment Sheet";
-                    RunPageLink = Table Name=CONST(Machine Center),No.=FIELD(No.);
+                                    RunPageLink = Table Name=CONST(Machine Center),No.=FIELD(No.);
                 }
                 action("Lo&ad")
                 {
@@ -126,7 +126,7 @@ page 99000761 "Machine Center List"
                                 ENN='Lo&ad';
                     Image = WorkCenterLoad;
                     RunObject = Page "Machine Center Load";
-                    RunPageLink = No.=FIELD(No.);
+                                    RunPageLink = No.=FIELD(No.);
                     RunPageView = SORTING(No.);
                 }
                 separator(Action10)
@@ -140,7 +140,7 @@ page 99000761 "Machine Center List"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Machine Center Statistics";
-                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Work Shift Filter=FIELD(Work Shift Filter);
+                                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Work Shift Filter=FIELD(Work Shift Filter);
                     ShortCutKey = 'F7';
                 }
             }
@@ -166,7 +166,7 @@ page 99000761 "Machine Center List"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Capacity Absence";
-                    RunPageLink = Capacity Type=CONST(Machine Center),No.=FIELD(No.),Date=FIELD(Date Filter);
+                                    RunPageLink = Capacity Type=CONST(Machine Center),No.=FIELD(No.),Date=FIELD(Date Filter);
                 }
                 action("Ta&sk List")
                 {
@@ -176,7 +176,7 @@ page 99000761 "Machine Center List"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Machine Center Task List";
-                    RunPageLink = No.=FIELD(No.);
+                                    RunPageLink = No.=FIELD(No.);
                     RunPageView = SORTING(Type,No.) WHERE(Type=CONST(Machine Center),Status=FILTER(..Released),Routing Status=FILTER(<>Finished));
                 }
             }

@@ -6,22 +6,22 @@ xmlport 80104 "QC Acceptance Levels"
     {
         textelement(AcceptanceLevels)
         {
-            tableelement("<acceptancelevel>";"Acceptance Level")
+            tableelement("<acceptancelevel>"; "Acceptance Level")
             {
                 XmlName = 'AcceptanceLevel';
-                fieldelement(Code;"<AcceptanceLevel>".Code)
+                fieldelement(Code; "<AcceptanceLevel>".Code)
                 {
                 }
-                fieldelement(Description;"<AcceptanceLevel>".Description)
+                fieldelement(Description; "<AcceptanceLevel>".Description)
                 {
                 }
-                fieldelement(ReasonCode;"<AcceptanceLevel>"."Reason Code")
+                fieldelement(ReasonCode; "<AcceptanceLevel>"."Reason Code")
                 {
                 }
-                fieldelement(VendorRating;"<AcceptanceLevel>"."Vendor Rating")
+                fieldelement(VendorRating; "<AcceptanceLevel>"."Vendor Rating")
                 {
                 }
-                fieldelement(Type;"<AcceptanceLevel>".Type)
+                fieldelement(Type; "<AcceptanceLevel>".Type)
                 {
                 }
             }

@@ -20,53 +20,52 @@ report 50234 "Shortage excel_New"
 
     dataset
     {
-        dataitem("Production Order";"Production Order")
+        dataitem("Production Order"; "Production Order")
         {
 
             trigger OnAfterGetRecord();
             begin
-                  Row+=1;
-                  xlWorkSheet1.Range('A' + FORMAT(Row)).Value := "Production Order"."No.";
-                  xlWorkSheet1.Range('B' + FORMAT(Row)).Value := "Production Order"."Prod Start date";
-                  Item.RESET;
-                  Item.SETFILTER(Item."No.","Production Order"."Source No.");
-                  IF Item.FINDFIRST THEN
-                  BEGIN
+                Row += 1;
+                xlWorkSheet1.Range('A' + FORMAT(Row)).Value := "Production Order"."No.";
+                xlWorkSheet1.Range('B' + FORMAT(Row)).Value := "Production Order"."Prod Start date";
+                Item.RESET;
+                Item.SETFILTER(Item."No.", "Production Order"."Source No.");
+                IF Item.FINDFIRST THEN BEGIN
                     xlWorkSheet1.Range('C' + FORMAT(Row)).Value := Item."Item Sub Group Code";
-                    xlWorkSheet1.Range('D' + FORMAT(Row)).Value := Item."No.of Units"*"Production Order".Quantity;
-                  END;
+                    xlWorkSheet1.Range('D' + FORMAT(Row)).Value := Item."No.of Units" * "Production Order".Quantity;
+                END;
             end;
 
             trigger OnPreDataItem();
             begin
-                  CLEAR(xlApp);
-                  CLEAR(xlRange);
-                  CLEAR(xlWorkBooks);
-                  CLEAR(xlWorkBook);
-                  CLEAR(xlRange);
-                  CLEAR(xlSheets);
-                  CLEAR(xlWorkSheet);
+                CLEAR(xlApp);
+                CLEAR(xlRange);
+                CLEAR(xlWorkBooks);
+                CLEAR(xlWorkBook);
+                CLEAR(xlRange);
+                CLEAR(xlSheets);
+                CLEAR(xlWorkSheet);
 
-                  CREATE(xlApp,TRUE,TRUE);
-                  xlApp.SheetsInNewWorkbook := 1;
+                CREATE(xlApp, TRUE, TRUE);
+                xlApp.SheetsInNewWorkbook := 1;
 
-                  xlApp.Workbooks.Add();
+                xlApp.Workbooks.Add();
 
-                  xlWorkSheet1 := xlApp.ActiveSheet;
-                  xlWorkSheet1.Name := 'Production_Plan';
-                  xlSheetName:=xlWorkSheet1.Name;
-                  xlSheetName := CONVERTSTR(xlSheetName,' -+','___');
-                  xlWorkSheet1.Range('A1').Value := 'Production Order no.';
-                  xlWorkSheet1.Range('B1').Value := 'Production Start Date';
-                  xlWorkSheet1.Range('C1').Value := 'Product Type';
-                  xlWorkSheet1.Range('D1').Value := 'No.of Units';
-                  xlWorkSheet1.Range('E1').Value := 'Shortage';
-                  "Production Order".SETFILTER("Production Order"."Prod Start date",'>%1',TODAY);
+                xlWorkSheet1 := xlApp.ActiveSheet;
+                xlWorkSheet1.Name := 'Production_Plan';
+                xlSheetName := xlWorkSheet1.Name;
+                xlSheetName := CONVERTSTR(xlSheetName, ' -+', '___');
+                xlWorkSheet1.Range('A1').Value := 'Production Order no.';
+                xlWorkSheet1.Range('B1').Value := 'Production Start Date';
+                xlWorkSheet1.Range('C1').Value := 'Product Type';
+                xlWorkSheet1.Range('D1').Value := 'No.of Units';
+                xlWorkSheet1.Range('E1').Value := 'Shortage';
+                "Production Order".SETFILTER("Production Order"."Prod Start date", '>%1', TODAY);
             end;
         }
-        dataitem(ILN;"Item Lot Numbers")
+        dataitem(ILN; "Item Lot Numbers")
         {
-            DataItemTableView = SORTING(Production Order No.,Possible Production Plan Date) ORDER(Ascending) WHERE(Shortage=FILTER(>0),Sales Order No.=FILTER(<>''),Authorisation=FILTER(WAP|WFA));
+            DataItemTableView = SORTING(Production Order No., Possible Production Plan Date) ORDER(Ascending) WHERE(Shortage = FILTER(> 0), Sales Order No.=FILTER(<>''),Authorisation=FILTER(WAP|WFA));
 
             trigger OnAfterGetRecord();
             begin

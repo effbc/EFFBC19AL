@@ -16,16 +16,16 @@ page 33000293 "Quality Comment List"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field(Type;Type)
+                field(Type; Type)
                 {
                 }
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Date;Date)
+                field(Date; Date)
                 {
                 }
-                field(Comment;Comment)
+                field(Comment; Comment)
                 {
                 }
             }

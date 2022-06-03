@@ -6,13 +6,13 @@ xmlport 80041 "TDS T.A.N Numbers"
     {
         textelement(TANNos)
         {
-            tableelement("<tannos>";"T.A.N. Nos.")
+            tableelement("<tannos>"; "T.A.N. Nos.")
             {
                 XmlName = 'TANNos';
-                fieldelement(Code;"<TANNos>".Code)
+                fieldelement(Code; "<TANNos>".Code)
                 {
                 }
-                fieldelement(Description;"<TANNos>".Description)
+                fieldelement(Description; "<TANNos>".Description)
                 {
                 }
             }

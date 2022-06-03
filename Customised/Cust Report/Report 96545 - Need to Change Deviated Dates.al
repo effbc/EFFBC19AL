@@ -7,9 +7,9 @@ report 96545 "Need to Change Deviated Dates"
 
     dataset
     {
-        dataitem("Purchase Line";"Purchase Line")
+        dataitem("Purchase Line"; "Purchase Line")
         {
-            DataItemTableView = SORTING(Document Type,Document No.,Line No.) ORDER(Ascending) WHERE(Document Type=CONST(Order),Type=CONST(Item),Location Code=CONST(STR),Outstanding Quantity=FILTER(>0));
+            DataItemTableView = SORTING(Document Type, Document No., Line No.) ORDER(Ascending) WHERE(Document Type=CONST(Order),Type=CONST(Item),Location Code=CONST(STR),Outstanding Quantity=FILTER(>0));
 
             trigger OnAfterGetRecord();
             begin

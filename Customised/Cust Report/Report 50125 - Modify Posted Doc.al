@@ -1,11 +1,11 @@
 report 50125 "Modify Posted Doc"
 {
-    Permissions = TableData "Purch. Inv. Header"=rimd;
+    Permissions = TableData "Purch. Inv. Header" = rimd;
     ProcessingOnly = true;
 
     dataset
     {
-        dataitem("Integer";"Integer")
+        dataitem("Integer"; "Integer")
         {
             MaxIteration = 1;
 
@@ -60,15 +60,15 @@ report 50125 "Modify Posted Doc"
                     DetailedGSTLedgerEntry.MODIFY;
                   UNTIL DetailedGSTLedgerEntry.NEXT= 0;
                   */
-                
+
                 PurchInvHeader.RESET;
-                PurchInvHeader.SETRANGE("No.",DocNo);
+                PurchInvHeader.SETRANGE("No.", DocNo);
                 IF PurchInvHeader.FINDFIRST THEN BEGIN
-                  PurchInvHeader."Posting Date" := ModifyDate;
-                  PurchInvHeader.MODIFY;
+                    PurchInvHeader."Posting Date" := ModifyDate;
+                    PurchInvHeader.MODIFY;
                 END;
-                
-                MESSAGE('record modify for Document %1',DocNo);
+
+                MESSAGE('record modify for Document %1', DocNo);
 
             end;
         }
@@ -81,10 +81,10 @@ report 50125 "Modify Posted Doc"
         {
             area(content)
             {
-                field("Document No";DocNo)
+                field("Document No"; DocNo)
                 {
                 }
-                field(ModifyDate;ModifyDate)
+                field(ModifyDate; ModifyDate)
                 {
                     Caption = 'Modify Date';
                 }
@@ -101,14 +101,14 @@ report 50125 "Modify Posted Doc"
     }
 
     var
-        GLEntry : Record "G/L Entry";
-        VendorLedgerEntry : Record "Vendor Ledger Entry";
-        DetailedVendorLedgEntry : Record "Detailed Vendor Ledg. Entry";
-        ValueEntry : Record "Value Entry";
-        GSTLedgerEntry : Record "GST Ledger Entry";
-        DetailedGSTLedgerEntry : Record "Detailed GST Ledger Entry";
-        PurchInvHeader : Record "Purch. Inv. Header";
-        DocNo : Code[30];
-        ModifyDate : Date;
+        GLEntry: Record "G/L Entry";
+        VendorLedgerEntry: Record "Vendor Ledger Entry";
+        DetailedVendorLedgEntry: Record "Detailed Vendor Ledg. Entry";
+        ValueEntry: Record "Value Entry";
+        GSTLedgerEntry: Record "GST Ledger Entry";
+        DetailedGSTLedgerEntry: Record "Detailed GST Ledger Entry";
+        PurchInvHeader: Record "Purch. Inv. Header";
+        DocNo: Code[30];
+        ModifyDate: Date;
 }
 

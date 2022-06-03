@@ -6,13 +6,13 @@ xmlport 80812 "Temp Vend Ledg. Entry Desc"
     {
         textelement(TempVendLedgEntryDesc)
         {
-            tableelement("<tempvendledgentrydesc>";"Temp Vend Ledg. Entry Desc")
+            tableelement("<tempvendledgentrydesc>"; "Temp Vend Ledg. Entry Desc")
             {
                 XmlName = 'TempVendLedgEntryDesc';
-                fieldelement(EntryNo;"<TempVendLedgEntryDesc>"."Entry No.")
+                fieldelement(EntryNo; "<TempVendLedgEntryDesc>"."Entry No.")
                 {
                 }
-                fieldelement(Description;"<TempVendLedgEntryDesc>".Description)
+                fieldelement(Description; "<TempVendLedgEntryDesc>".Description)
                 {
                 }
             }

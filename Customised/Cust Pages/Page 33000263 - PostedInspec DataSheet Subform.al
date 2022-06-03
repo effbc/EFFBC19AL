@@ -15,78 +15,78 @@ page 33000263 "PostedInspec DataSheet Subform"
                 IndentationColumn = DescriptionIndent;
                 IndentationControls = Description;
                 ShowCaption = false;
-                field("Line No.";"Line No.")
+                field("Line No."; "Line No.")
                 {
                     Editable = false;
                 }
-                field("Character Code";"Character Code")
+                field("Character Code"; "Character Code")
                 {
                     Editable = false;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Editable = false;
                 }
-                field("Serial No.";"Serial No.")
+                field("Serial No."; "Serial No.")
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field("Sampling Plan Code";"Sampling Plan Code")
-                {
-                    Editable = false;
-                }
-                field("Unit Of Measure Code";"Unit Of Measure Code")
+                field("Sampling Plan Code"; "Sampling Plan Code")
                 {
                     Editable = false;
                 }
-                field("Normal Value (Num)";"Normal Value (Num)")
+                field("Unit Of Measure Code"; "Unit Of Measure Code")
                 {
                     Editable = false;
                 }
-                field("Actul Time(In Hours)";"Actul Time(In Hours)")
-                {
-                }
-                field("Time Taken(In Hours)";"Time Taken(In Hours)")
-                {
-                }
-                field("Reason Code";"Reason Code")
-                {
-                }
-                field(Remarks;Remarks)
-                {
-                }
-                field("Inspection Persons";"Inspection Persons")
-                {
-                }
-                field("Min. Value (Num)";"Min. Value (Num)")
+                field("Normal Value (Num)"; "Normal Value (Num)")
                 {
                     Editable = false;
                 }
-                field(Accept;Accept)
+                field("Actul Time(In Hours)"; "Actul Time(In Hours)")
                 {
                 }
-                field("Max. Value (Num)";"Max. Value (Num)")
-                {
-                    Editable = false;
-                }
-                field("Actual Value (Num)";"Actual Value (Num)")
+                field("Time Taken(In Hours)"; "Time Taken(In Hours)")
                 {
                 }
-                field("Normal Value (Text)";"Normal Value (Text)")
+                field("Reason Code"; "Reason Code")
                 {
-                    Editable = false;
                 }
-                field("Min. Value (Text)";"Min. Value (Text)")
+                field(Remarks; Remarks)
                 {
-                    Editable = false;
                 }
-                field("Max. Value (Text)";"Max. Value (Text)")
+                field("Inspection Persons"; "Inspection Persons")
+                {
+                }
+                field("Min. Value (Num)"; "Min. Value (Num)")
                 {
                     Editable = false;
                 }
-                field("Actual  Value (Text)";"Actual  Value (Text)")
+                field(Accept; Accept)
+                {
+                }
+                field("Max. Value (Num)"; "Max. Value (Num)")
+                {
+                    Editable = false;
+                }
+                field("Actual Value (Num)"; "Actual Value (Num)")
+                {
+                }
+                field("Normal Value (Text)"; "Normal Value (Text)")
+                {
+                    Editable = false;
+                }
+                field("Min. Value (Text)"; "Min. Value (Text)")
+                {
+                    Editable = false;
+                }
+                field("Max. Value (Text)"; "Max. Value (Text)")
+                {
+                    Editable = false;
+                }
+                field("Actual  Value (Text)"; "Actual  Value (Text)")
                 {
                 }
             }
@@ -124,20 +124,20 @@ page 33000263 "PostedInspec DataSheet Subform"
     end;
 
     var
-        DefectTracking : Record "Defect Tracking Details";
+        DefectTracking: Record "Defect Tracking Details";
         [InDataSet]
-        "Character CodeEmphasize" : Boolean;
+        "Character CodeEmphasize": Boolean;
         [InDataSet]
-        DescriptionEmphasize : Boolean;
+        DescriptionEmphasize: Boolean;
         [InDataSet]
-        DescriptionIndent : Integer;
+        DescriptionIndent: Integer;
 
     [LineStart(23055)]
     procedure ShowDefects();
     begin
-        DefectTracking.SETRANGE("IDS No.","Document No.");
-        DefectTracking.SETRANGE("IDS Line No.","Line No.");
-        PAGE.RUN(60075,DefectTracking);
+        DefectTracking.SETRANGE("IDS No.", "Document No.");
+        DefectTracking.SETRANGE("IDS Line No.", "Line No.");
+        PAGE.RUN(60075, DefectTracking);
     end;
 
     [LineStart(23060)]

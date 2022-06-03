@@ -10,13 +10,13 @@ page 60207 District
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field("Required Quantity";"Required Quantity")
+                field("Required Quantity"; "Required Quantity")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
             }

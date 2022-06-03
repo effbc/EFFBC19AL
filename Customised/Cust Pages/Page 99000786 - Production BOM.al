@@ -2,8 +2,8 @@ page 99000786 "Production BOM"
 {
     // version NAVW17.00,NAVIN7.00
 
-    CaptionML = ENU='Production BOM',
-                ENN='Production BOM';
+    CaptionML = ENU = 'Production BOM',
+                ENN = 'Production BOM';
     DeleteAllowed = false;
     PageType = ListPlus;
     SourceTable = "Production BOM Header";
@@ -14,159 +14,157 @@ page 99000786 "Production BOM"
         {
             group(General)
             {
-                CaptionML = ENU='General',
-                            ENN='General';
-                field("No.";"No.")
+                CaptionML = ENU = 'General',
+                            ENN = 'General';
+                field("No."; "No.")
                 {
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Description 2";"Description 2")
+                field("Description 2"; "Description 2")
                 {
                 }
-                field("Unit of Measure Code";"Unit of Measure Code")
+                field("Unit of Measure Code"; "Unit of Measure Code")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
 
                     trigger OnValidate();
                     begin
-                          IF (COPYSTR("No.",1,8)<>'ECMPBPCB') AND (Status=Status::Certified) AND NOT (USERID IN ['EFFTRONICS\JHANSI','EFFTRONICS\ANILKUMAR','EFFTRONICS\VISHNUPRIYA']) THEN
+                        IF (COPYSTR("No.", 1, 8) <> 'ECMPBPCB') AND (Status = Status::Certified) AND NOT (USERID IN ['EFFTRONICS\JHANSI', 'EFFTRONICS\ANILKUMAR', 'EFFTRONICS\VISHNUPRIYA']) THEN
                             ERROR('You dont have permissions to Certify the BOM');
 
-                          IF (COPYSTR("No.",1,8)='ECMPBPCB') AND NOT (USERID IN ['EFFTRONICS\JHANSI','EFFTRONICS\RSILPARANI','EFFTRONICS\RATNARAVALI','EFFTRONICS\UBEDULLA','EFFTRONICS\ANILKUMAR','EFFTRONICS\VISHNUPRIYA']) THEN
-                         ERROR('You dont have permissions to Certify the MASTER BOM');
+                        IF (COPYSTR("No.", 1, 8) = 'ECMPBPCB') AND NOT (USERID IN ['EFFTRONICS\JHANSI', 'EFFTRONICS\RSILPARANI', 'EFFTRONICS\RATNARAVALI', 'EFFTRONICS\UBEDULLA', 'EFFTRONICS\ANILKUMAR', 'EFFTRONICS\VISHNUPRIYA']) THEN
+                            ERROR('You dont have permissions to Certify the MASTER BOM');
 
                         //Added by Vishnu Priya to restrict the modifications to certified BOMs on 04-06-2020
-                          IF ((Status= Rec.Status::"Under Development") OR (Status= Rec.Status::New)) AND (xRec.Status = xRec.Status::Certified) AND NOT (USERID IN ['EFFTRONICS\VANIDEVI','EFFTRONICS\VISHNUPRIYA'])THEN
+                        IF ((Status = Rec.Status::"Under Development") OR (Status = Rec.Status::New)) AND (xRec.Status = xRec.Status::Certified) AND NOT (USERID IN ['EFFTRONICS\VANIDEVI', 'EFFTRONICS\VISHNUPRIYA']) THEN
                             ERROR('You dont have permissions to change the Certified BOM');
                     end;
                 }
-                field("Total Soldering Points SMD";"Total Soldering Points SMD")
+                field("Total Soldering Points SMD"; "Total Soldering Points SMD")
                 {
                     Editable = false;
                 }
-                field("Total Soldering Points DIP";"Total Soldering Points DIP")
+                field("Total Soldering Points DIP"; "Total Soldering Points DIP")
                 {
                     Editable = false;
                 }
-                field("Total Soldering Points";"Total Soldering Points")
+                field("Total Soldering Points"; "Total Soldering Points")
                 {
                     Editable = false;
                 }
-                field(vo;"BOM Cost")
+                field(vo; "BOM Cost")
                 {
                     Editable = false;
                 }
-                field("Stranded BOM";"Stranded BOM")
+                field("Stranded BOM"; "Stranded BOM")
                 {
                     Caption = 'Standard BOM';
                 }
-                field("Search Name";"Search Name")
+                field("Search Name"; "Search Name")
                 {
                 }
-                field("Version Nos.";"Version Nos.")
+                field("Version Nos."; "Version Nos.")
                 {
                 }
-                field(ActiveVersionCode;ActiveVersionCode)
+                field(ActiveVersionCode; ActiveVersionCode)
                 {
-                    CaptionML = ENU='Active Version',
-                                ENN='Active Version';
+                    CaptionML = ENU = 'Active Version',
+                                ENN = 'Active Version';
                     Editable = false;
 
-                    trigger OnLookup(Text : Text) : Boolean;
+                    trigger OnLookup(Text: Text): Boolean;
                     var
-                        ProdBOMVersion : Record "Production BOM Version";
+                        ProdBOMVersion: Record "Production BOM Version";
                     begin
                         ProdBOMVersion.RESET;
-                        ProdBOMVersion.SETRANGE("Production BOM No.","No.");
+                        ProdBOMVersion.SETRANGE("Production BOM No.", "No.");
                         //ProdBOMVersion.SETRANGE("Version Code",ActiveVersionCode);
-                        ProdBOMVersion.SETRANGE(ProdBOMVersion.Status,Status::Certified);
-                        IF ProdBOMVersion.FINDFIRST THEN
-                        BEGIN
-                          PAGE.RUNMODAL(PAGE::"Production BOM Version",ProdBOMVersion);
-                          ActiveVersionCode := VersionMgt.GetBOMVersion("No.",WORKDATE,TRUE);
+                        ProdBOMVersion.SETRANGE(ProdBOMVersion.Status, Status::Certified);
+                        IF ProdBOMVersion.FINDFIRST THEN BEGIN
+                            PAGE.RUNMODAL(PAGE::"Production BOM Version", ProdBOMVersion);
+                            ActiveVersionCode := VersionMgt.GetBOMVersion("No.", WORKDATE, TRUE);
                         END
-                        ELSE
-                        BEGIN
-                          ProdBOMVersion.RESET;
-                          ProdBOMVersion.SETRANGE("Production BOM No.","No.");
-                          IF ActiveVersionCode<>'' THEN
-                            ProdBOMVersion.SETRANGE("Version Code",ActiveVersionCode);
-                          //ProdBOMVersion.SETRANGE(ProdBOMVersion.Status,Status::Certified);
-                          PAGE.RUNMODAL(PAGE::"Production BOM Version",ProdBOMVersion);
-                          ActiveVersionCode := VersionMgt.GetBOMVersion("No.",WORKDATE,TRUE);
+                        ELSE BEGIN
+                            ProdBOMVersion.RESET;
+                            ProdBOMVersion.SETRANGE("Production BOM No.", "No.");
+                            IF ActiveVersionCode <> '' THEN
+                                ProdBOMVersion.SETRANGE("Version Code", ActiveVersionCode);
+                            //ProdBOMVersion.SETRANGE(ProdBOMVersion.Status,Status::Certified);
+                            PAGE.RUNMODAL(PAGE::"Production BOM Version", ProdBOMVersion);
+                            ActiveVersionCode := VersionMgt.GetBOMVersion("No.", WORKDATE, TRUE);
                         END;
                     end;
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("Last Date Modified"; "Last Date Modified")
                 {
                 }
-                field("Bench Mark Time(In Hours)";"Bench Mark Time(In Hours)")
+                field("Bench Mark Time(In Hours)"; "Bench Mark Time(In Hours)")
                 {
                 }
-                field("Total No. of Fixing Holes";"Total No. of Fixing Holes")
+                field("Total No. of Fixing Holes"; "Total No. of Fixing Holes")
                 {
                 }
-                field("User Id";"User Id")
-                {
-                    Editable = false;
-                }
-                field("BOM Type";"BOM Type")
-                {
-                }
-                field("Modified User ID";"Modified User ID")
+                field("User Id"; "User Id")
                 {
                     Editable = false;
                 }
-                field("Creation Date";"Creation Date")
+                field("BOM Type"; "BOM Type")
                 {
                 }
-                field("Total Qtyper SMD";"Total Qtyper SMD")
+                field("Modified User ID"; "Modified User ID")
+                {
+                    Editable = false;
+                }
+                field("Creation Date"; "Creation Date")
+                {
+                }
+                field("Total Qtyper SMD"; "Total Qtyper SMD")
                 {
                     Caption = 'Total SMD Qty per';
                 }
-                field("Total Qtyper DIP";"Total Qtyper DIP")
+                field("Total Qtyper DIP"; "Total Qtyper DIP")
                 {
                     Caption = 'Total DIP Qty per';
                 }
-                field("Total Qtyper";"Total Qtyper")
+                field("Total Qtyper"; "Total Qtyper")
                 {
                     Caption = 'Total Qty per';
                 }
-                field("Update in PRM";"Update in PRM")
+                field("Update in PRM"; "Update in PRM")
                 {
                     Editable = false;
                 }
-                field(Certify;Certify)
+                field(Certify; Certify)
                 {
                     Editable = EDIT;
                 }
-                field("BOM Running Status";"BOM Running Status")
+                field("BOM Running Status"; "BOM Running Status")
                 {
                 }
-                field("Inherited From";"Inherited From")
+                field("Inherited From"; "Inherited From")
                 {
                 }
-                field(Configuration;Configuration)
+                field(Configuration; Configuration)
                 {
                 }
-                field("Remarks/Reason";"Remarks/Reason")
+                field("Remarks/Reason"; "Remarks/Reason")
                 {
                 }
-                field("BOM Category";"BOM Category")
+                field("BOM Category"; "BOM Category")
                 {
                 }
             }
-            part(ProdBOMLine;"Production BOM Lines")
+            part(ProdBOMLine; "Production BOM Lines")
             {
                 SubPageLink = Production BOM No.=FIELD(No.),Version Code=CONST();
                 SubPageView = SORTING(Production BOM No.,Version Code,Line No.);
@@ -200,7 +198,7 @@ page 99000786 "Production BOM"
                                 ENN='Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Manufacturing Comment Sheet";
-                    RunPageLink = Table Name=CONST(Production BOM Header),No.=FIELD(No.);
+                                    RunPageLink = Table Name=CONST(Production BOM Header),No.=FIELD(No.);
                 }
                 action(Versions)
                 {
@@ -210,7 +208,7 @@ page 99000786 "Production BOM"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Prod. BOM Version List";
-                    RunPageLink = Production BOM No.=FIELD(No.);
+                                    RunPageLink = Production BOM No.=FIELD(No.);
                 }
                 action("Ma&trix per Version")
                 {
@@ -251,7 +249,7 @@ page 99000786 "Production BOM"
                                 ENN='Location';
                     Image = Warehouse;
                     RunObject = Page "BOM Locations";
-                    RunPageLink = Production BOM No.=FIELD(No.);
+                                    RunPageLink = Production BOM No.=FIELD(No.);
                 }
                 action(Boughtout)
                 {
@@ -568,49 +566,47 @@ page 99000786 "Production BOM"
     var
         ProdBOMHeader : Record "Production BOM Header";
         ProdBOMWhereUsed : Page "Prod. BOM Where-Used";
-        ProductionBOMCopy : Codeunit "Production BOM-Copy";
-        VersionMgt : Codeunit VersionManagement;
-        ActiveVersionCode : Code[20];
-        PordBOMLineRec : Record "Production BOM Line";
-        PADSoftware : XMLport "PAD Software Data Integration1";
-        Bout : Record "Bin Type";
-        ITEM : Record Item;
-        "Total Qtyper SMD" : Decimal;
-        "Total Qtyper DIP" : Decimal;
-        "Total Qtyper" : Decimal;
-        edit : Boolean;
-        ITM2 : Record Item;
-        sucs : Boolean;
+                               ProductionBOMCopy : Codeunit "Production BOM-Copy";
+                               VersionMgt : Codeunit VersionManagement;
+                               ActiveVersionCode : Code[20];
+                               PordBOMLineRec : Record "Production BOM Line";
+                               PADSoftware : XMLport "PAD Software Data Integration1";
+                               Bout : Record "Bin Type";
+                               ITEM : Record Item;
+                               "Total Qtyper SMD" : Decimal;
+                               "Total Qtyper DIP" : Decimal;
+                               "Total Qtyper" : Decimal;
+                               edit : Boolean;
+                               ITM2 : Record Item;
+                               sucs : Boolean;
 
     [LineStart(23896)]
-    local procedure DescriptionOnInputChange(var Text : Text[1024]);
+    local procedure DescriptionOnInputChange(var Text: Text[1024]);
     begin
-         IF (USERID<>'EFFTRONICS\JHANSI') AND (USERID<>'EFFTRONICS\ANILKUMAR') AND (USERID<>'EFFTRONICS\RSILPARANI') AND (USERID<>'EFFTRONICS\RATNARAVALI')  THEN
-         ERROR('YOU Have no rights to Change The Description');
+        IF (USERID <> 'EFFTRONICS\JHANSI') AND (USERID <> 'EFFTRONICS\ANILKUMAR') AND (USERID <> 'EFFTRONICS\RSILPARANI') AND (USERID <> 'EFFTRONICS\RATNARAVALI') THEN
+            ERROR('YOU Have no rights to Change The Description');
     end;
 
     [LineStart(23900)]
     local procedure NoOnFormat();
     begin
-          IF ITEM.GET("No.") THEN
-          BEGIN
-            IF ITEM."Product Group Code"='FPRODUCT' THEN
-            BEGIN
+        IF ITEM.GET("No.") THEN BEGIN
+            IF ITEM."Product Group Code" = 'FPRODUCT' THEN BEGIN
 
-            END ELSE IF ITEM."Product Group Code"='CPCB' THEN;
-          END;
+            END ELSE
+                IF ITEM."Product Group Code" = 'CPCB' THEN;
+        END;
     end;
 
     [LineStart(23909)]
     local procedure DescriptionOnFormat();
     begin
-          IF ITEM.GET("No.") THEN
-          BEGIN
-            IF ITEM."Product Group Code"='FPRODUCT' THEN
-            BEGIN
+        IF ITEM.GET("No.") THEN BEGIN
+            IF ITEM."Product Group Code" = 'FPRODUCT' THEN BEGIN
 
-            END ELSE IF ITEM."Product Group Code"='CPCB' THEN;
-          END;
+            END ELSE
+                IF ITEM."Product Group Code" = 'CPCB' THEN;
+        END;
     end;
 }
 

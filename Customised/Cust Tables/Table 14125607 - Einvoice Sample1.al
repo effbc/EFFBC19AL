@@ -1,17 +1,18 @@
 table 14125607 "Einvoice Sample1"
 {
+    DataClassification = CustomerContent;
 
     fields
     {
-        field(1;"Is Big";Boolean)
+        field(1; "Is Big"; Boolean)
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(Key1;"Is Big")
+        key(Key1; "Is Big")
         {
         }
     }

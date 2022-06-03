@@ -7,24 +7,24 @@ codeunit 33000892 "Single Instance CU Test"
     trigger OnRun();
     begin
         IF NOT StoreToTemp THEN BEGIN
-          StoreToTemp := TRUE;
+            StoreToTemp := TRUE;
         END ELSE
-          PAGE.RUNMODAL(0,TempGLEntry);
+            PAGE.RUNMODAL(0, TempGLEntry);
     end;
 
     var
-        TempGLEntry : Record "G/L Entry" temporary;
-        StoreToTemp : Boolean;
+        TempGLEntry: Record "G/L Entry" temporary;
+        StoreToTemp: Boolean;
 
     [LineStart(51327)]
-    procedure InsertGL(GLEntry : Record "G/L Entry");
+    procedure InsertGL(GLEntry: Record "G/L Entry");
     begin
         IF StoreToTemp THEN BEGIN
-          TempGLEntry := GLEntry;
-          IF NOT TempGLEntry.INSERT THEN BEGIN
-             TempGLEntry.DELETEALL;
-             TempGLEntry.INSERT;
-         END;
+            TempGLEntry := GLEntry;
+            IF NOT TempGLEntry.INSERT THEN BEGIN
+                TempGLEntry.DELETEALL;
+                TempGLEntry.INSERT;
+            END;
         END;
     end;
 }

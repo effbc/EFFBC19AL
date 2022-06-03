@@ -7,7 +7,7 @@ report 33000065 "Pay TDS Tax Processed Salary"
 
     dataset
     {
-        dataitem(Employee;Employee)
+        dataitem(Employee; Employee)
         {
             RequestFilterFields = "No.";
         }
@@ -40,11 +40,11 @@ report 33000065 "Pay TDS Tax Processed Salary"
     end;
 
     var
-        AYID : Integer;
-        AYStartDate : Date;
-        AYEndDate : Date;
-        PayYear : Record "Pay Year";
-        ImportingTaxElements : Codeunit "Importing Tax Elements";
-        Text000 : Label 'Required Assessment Year';
+        AYID: Integer;
+        AYStartDate: Date;
+        AYEndDate: Date;
+        PayYear: Record "Pay Year";
+        ImportingTaxElements: Codeunit "Importing Tax Elements";
+        Text000: Label 'Required Assessment Year';
 }
 

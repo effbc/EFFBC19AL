@@ -6,13 +6,13 @@ xmlport 80203 "Gen Product posting group"
     {
         textelement(GenProductPostingGroups)
         {
-            tableelement("<genproductpostinggroup>";"Gen. Product Posting Group")
+            tableelement("<genproductpostinggroup>"; "Gen. Product Posting Group")
             {
                 XmlName = 'GenProductPostingGroup';
-                fieldelement(Code;"<GenProductPostingGroup>".Code)
+                fieldelement(Code; "<GenProductPostingGroup>".Code)
                 {
                 }
-                fieldelement(Description;"<GenProductPostingGroup>".Description)
+                fieldelement(Description; "<GenProductPostingGroup>".Description)
                 {
                 }
             }

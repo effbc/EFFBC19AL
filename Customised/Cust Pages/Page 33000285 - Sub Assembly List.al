@@ -14,25 +14,25 @@ page 33000285 "Sub Assembly List"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field("Search Name";"Search Name")
+                field("Search Name"; "Search Name")
                 {
                 }
-                field("Spec Id";"Spec Id")
+                field("Spec Id"; "Spec Id")
                 {
                 }
-                field("QC Enabled";"QC Enabled")
+                field("QC Enabled"; "QC Enabled")
                 {
                 }
-                field("Unit Of Measure Code";"Unit Of Measure Code")
+                field("Unit Of Measure Code"; "Unit Of Measure Code")
                 {
                 }
-                field(Block;Block)
+                field(Block; Block)
                 {
                 }
             }

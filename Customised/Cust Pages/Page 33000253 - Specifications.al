@@ -33,19 +33,19 @@ page 33000253 Specifications
             group(General)
             {
                 Caption = 'General';
-                field("Spec ID";"Spec ID")
+                field("Spec ID"; "Spec ID")
                 {
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
 
                     trigger OnValidate();
@@ -53,29 +53,29 @@ page 33000253 Specifications
                         StatusOnAfterValidate;
                     end;
                 }
-                field("Version Nos.";"Version Nos.")
+                field("Version Nos."; "Version Nos.")
                 {
                 }
-                field(ActiveVersionCode;ActiveVersionCode)
+                field(ActiveVersionCode; ActiveVersionCode)
                 {
                     Caption = 'Active Version';
                     Editable = false;
 
-                    trigger OnLookup(Text : Text) : Boolean;
+                    trigger OnLookup(Text: Text): Boolean;
                     var
-                        SpecVersion : Record "Specification Version";
+                        SpecVersion: Record "Specification Version";
                     begin
-                        SpecVersion.SETRANGE("Specification No.","Spec ID");
-                        SpecVersion.SETRANGE("Version Code",ActiveVersionCode);
-                        PAGE.RUNMODAL(PAGE::"Specificatinn Version",SpecVersion);
-                        ActiveVersionCode := GetSpecVersion("Spec ID",WORKDATE,TRUE);
+                        SpecVersion.SETRANGE("Specification No.", "Spec ID");
+                        SpecVersion.SETRANGE("Version Code", ActiveVersionCode);
+                        PAGE.RUNMODAL(PAGE::"Specificatinn Version", SpecVersion);
+                        ActiveVersionCode := GetSpecVersion("Spec ID", WORKDATE, TRUE);
                     end;
                 }
-                field("Inspection Time(In Hours)";"Inspection Time(In Hours)")
+                field("Inspection Time(In Hours)"; "Inspection Time(In Hours)")
                 {
                 }
             }
-            part(Control1000000006;"Specification Subform")
+            part(Control1000000006; "Specification Subform")
             {
                 SubPageLink = Spec ID=FIELD(Spec ID),Version Code=CONST();
             }
@@ -95,14 +95,14 @@ page 33000253 Specifications
                     Caption = 'Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Comment Sheet";
-                    RunPageLink = Table Name=CONST(14),No.=FIELD(Spec ID);
+                                    RunPageLink = Table Name=CONST(14),No.=FIELD(Spec ID);
                 }
                 action("&Versions")
                 {
                     Caption = '&Versions';
                     Image = Versions;
                     RunObject = Page "Specificatinn Version";
-                    RunPageLink = Specification No.=FIELD(Spec ID);
+                                    RunPageLink = Specification No.=FIELD(Spec ID);
                 }
                 group("&Attachments")
                 {

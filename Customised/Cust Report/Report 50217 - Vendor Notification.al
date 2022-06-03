@@ -5,7 +5,7 @@ report 50217 "Vendor Notification"
 
     dataset
     {
-        dataitem("Purchase Line";"Purchase Line")
+        dataitem("Purchase Line"; "Purchase Line")
         {
             DataItemTableView = SORTING(Deviated Receipt Date) ORDER(Ascending) WHERE(Qty. to Receive=FILTER(>0),Document Type=CONST(Order));
             RequestFilterFields = "Buy-from Vendor No.";

@@ -6,22 +6,22 @@ xmlport 80046 "TDS Parties"
     {
         textelement(Parties)
         {
-            tableelement(Party;Party)
+            tableelement(Party; Party)
             {
                 XmlName = 'Party';
-                fieldelement(Code;Party.Code)
+                fieldelement(Code; Party.Code)
                 {
                 }
-                fieldelement(Name;Party.Name)
+                fieldelement(Name; Party.Name)
                 {
                 }
-                fieldelement(Address;Party.Address)
+                fieldelement(Address; Party.Address)
                 {
                 }
-                fieldelement(Address2;Party."Address 2")
+                fieldelement(Address2; Party."Address 2")
                 {
                 }
-                fieldelement(PANNo;Party."P.A.N. No.")
+                fieldelement(PANNo; Party."P.A.N. No.")
                 {
                 }
             }

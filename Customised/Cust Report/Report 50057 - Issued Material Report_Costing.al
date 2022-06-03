@@ -12,445 +12,445 @@ report 50057 "Issued Material Report_Costing"
 
     dataset
     {
-        dataitem("Posted Material Issues Header";"Posted Material Issues Header")
+        dataitem("Posted Material Issues Header"; "Posted Material Issues Header")
         {
-            DataItemTableView = SORTING(Prod. Order No.,Prod. Order Line No.);
-            RequestFilterFields = "Material Issue No.","Posting Date","Resource Name","Reason Code","Transfer-to Code","Transfer-from Code","Prod. Order No.";
-            column(COMPANYNAME;COMPANYNAME)
+            DataItemTableView = SORTING(Prod. Order No., Prod. Order Line No.);
+            RequestFilterFields = "Material Issue No.", "Posting Date", "Resource Name", "Reason Code", "Transfer-to Code", "Transfer-from Code", "Prod. Order No.";
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(USERID;USERID)
+            column(USERID; USERID)
             {
             }
-            column(TODAY;TODAY)
+            column(TODAY; TODAY)
             {
             }
-            column(COMPANYNAME_Control1102154003;COMPANYNAME)
+            column(COMPANYNAME_Control1102154003; COMPANYNAME)
             {
             }
-            column(USERID_Control1102154016;USERID)
+            column(USERID_Control1102154016; USERID)
             {
             }
-            column(TODAY_Control1102154017;TODAY)
+            column(TODAY_Control1102154017; TODAY)
             {
             }
-            column(Posted_Material_Issues_Header__Prod__Order_No__;"Prod. Order No.")
+            column(Posted_Material_Issues_Header__Prod__Order_No__; "Prod. Order No.")
             {
             }
-            column(Project_Desc;Project_Desc)
+            column(Project_Desc; Project_Desc)
             {
             }
-            column(Project_Total_;"Project Total")
+            column(Project_Total_; "Project Total")
             {
             }
-            column(R_D_total_;"R&D total")
+            column(R_D_total_; "R&D total")
             {
             }
-            column(Total;Total)
+            column(Total; Total)
             {
             }
-            column(Total_Qty;Total_Qty)
+            column(Total_Qty; Total_Qty)
             {
             }
-            column(Material_IssuesCaption;Material_IssuesCaptionLbl)
+            column(Material_IssuesCaption; Material_IssuesCaptionLbl)
             {
             }
-            column(Project_CodeCaption;Project_CodeCaptionLbl)
+            column(Project_CodeCaption; Project_CodeCaptionLbl)
             {
             }
-            column(Requisition_NoCaption;Requisition_NoCaptionLbl)
+            column(Requisition_NoCaption; Requisition_NoCaptionLbl)
             {
             }
-            column(Item_Caption;Item_CaptionLbl)
+            column(Item_Caption; Item_CaptionLbl)
             {
             }
-            column(UOMCaption;UOMCaptionLbl)
+            column(UOMCaption; UOMCaptionLbl)
             {
             }
-            column(Employee_NameCaption;Employee_NameCaptionLbl)
+            column(Employee_NameCaption; Employee_NameCaptionLbl)
             {
             }
-            column(Reqested_DateCaption;Reqested_DateCaptionLbl)
+            column(Reqested_DateCaption; Reqested_DateCaptionLbl)
             {
             }
-            column(DeptCaption;DeptCaptionLbl)
+            column(DeptCaption; DeptCaptionLbl)
             {
             }
-            column(Quantity_RequestedCaption;Quantity_RequestedCaptionLbl)
+            column(Quantity_RequestedCaption; Quantity_RequestedCaptionLbl)
             {
             }
-            column(Quantity_ReceivedCaption;Quantity_ReceivedCaptionLbl)
+            column(Quantity_ReceivedCaption; Quantity_ReceivedCaptionLbl)
             {
             }
-            column(Unit_costCaption;Unit_costCaptionLbl)
+            column(Unit_costCaption; Unit_costCaptionLbl)
             {
             }
-            column(LOT_No_Caption;LOT_No_CaptionLbl)
+            column(LOT_No_Caption; LOT_No_CaptionLbl)
             {
             }
-            column(Serial_No_Caption;Serial_No_CaptionLbl)
+            column(Serial_No_Caption; Serial_No_CaptionLbl)
             {
             }
-            column(Bench_MarkCaption;Bench_MarkCaptionLbl)
+            column(Bench_MarkCaption; Bench_MarkCaptionLbl)
             {
             }
-            column(Vendor_NameCaption;Vendor_NameCaptionLbl)
+            column(Vendor_NameCaption; Vendor_NameCaptionLbl)
             {
             }
-            column(Bill_No_Caption;Bill_No_CaptionLbl)
+            column(Bill_No_Caption; Bill_No_CaptionLbl)
             {
             }
-            column(Bill_DateCaption;Bill_DateCaptionLbl)
+            column(Bill_DateCaption; Bill_DateCaptionLbl)
             {
             }
-            column(Issued_Date_TimeCaption;Issued_Date_TimeCaptionLbl)
+            column(Issued_Date_TimeCaption; Issued_Date_TimeCaptionLbl)
             {
             }
-            column(Material_IssuesCaption_Control1102154002;Material_IssuesCaption_Control1102154002Lbl)
+            column(Material_IssuesCaption_Control1102154002; Material_IssuesCaption_Control1102154002Lbl)
             {
             }
-            column(Project_CodeCaption_Control1102154004;Project_CodeCaption_Control1102154004Lbl)
+            column(Project_CodeCaption_Control1102154004; Project_CodeCaption_Control1102154004Lbl)
             {
             }
-            column(ValueCaption;ValueCaptionLbl)
+            column(ValueCaption; ValueCaptionLbl)
             {
             }
-            column(Project_DescriptionCaption;Project_DescriptionCaptionLbl)
+            column(Project_DescriptionCaption; Project_DescriptionCaptionLbl)
             {
             }
-            column(Posted_Material_Issues_Header_No_;"No.")
+            column(Posted_Material_Issues_Header_No_; "No.")
             {
             }
-            column(Choice3;Choice3)
+            column(Choice3; Choice3)
             {
             }
-            dataitem("Posted Material Issues Line";"Posted Material Issues Line")
+            dataitem("Posted Material Issues Line"; "Posted Material Issues Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Document No.,Item No.) WHERE(Quantity=FILTER(>0));
+                DataItemTableView = SORTING(Document No., Item No.) WHERE(Quantity = FILTER(> 0));
                 RequestFilterFields = "Item No.";
-                column(Posted_Material_Issues_Header___Reason_Code_;"Posted Material Issues Header"."Reason Code")
+                column(Posted_Material_Issues_Header___Reason_Code_; "Posted Material Issues Header"."Reason Code")
                 {
                 }
-                column(Posted_Material_Issues_Line__Material_Issue_No__;"Material Issue No.")
+                column(Posted_Material_Issues_Line__Material_Issue_No__; "Material Issue No.")
                 {
                 }
-                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description;"Posted Material Issues Line".Description)
+                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description; "Posted Material Issues Line".Description)
                 {
                 }
-                column(Posted_Material_Issues_Line__Unit_of_Measure_;"Unit of Measure")
+                column(Posted_Material_Issues_Line__Unit_of_Measure_; "Unit of Measure")
                 {
                 }
-                column(Posted_Material_Issues_Header___Resource_Name_;"Posted Material Issues Header"."Resource Name")
+                column(Posted_Material_Issues_Header___Resource_Name_; "Posted Material Issues Header"."Resource Name")
                 {
                 }
-                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime_;"Posted Material Issues Line"."Issued DateTime")
+                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime_; "Posted Material Issues Line"."Issued DateTime")
                 {
                 }
-                column(Posted_Material_Issues_Header___Transfer_from_Code_;"Posted Material Issues Header"."Transfer-from Code")
+                column(Posted_Material_Issues_Header___Transfer_from_Code_; "Posted Material Issues Header"."Transfer-from Code")
                 {
                 }
-                column(QTY;QTY)
+                column(QTY; QTY)
                 {
                 }
-                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity;"Posted Material Issues Line".Quantity)
+                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity; "Posted Material Issues Line".Quantity)
                 {
                 }
-                column(UC;UC)
+                column(UC; UC)
                 {
                 }
-                column(Posted_Material_Issues_Header___Released_Date_;"Posted Material Issues Header"."Released Date")
+                column(Posted_Material_Issues_Header___Released_Date_; "Posted Material Issues Header"."Released Date")
                 {
                 }
-                column(Lot;Lot)
+                column(Lot; Lot)
                 {
                 }
-                column(Serial_no_;"Serial no")
+                column(Serial_no_; "Serial no")
                 {
                 }
-                column(Bench_Mark_;"Bench-Mark")
+                column(Bench_Mark_; "Bench-Mark")
                 {
                 }
-                column(Reason;Reason)
+                column(Reason; Reason)
                 {
                 }
-                column(Posted_Material_Issues_Line__Material_Issue_No___Control1000000025;"Material Issue No.")
+                column(Posted_Material_Issues_Line__Material_Issue_No___Control1000000025; "Material Issue No.")
                 {
                 }
-                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000026;"Posted Material Issues Line".Description)
+                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000026; "Posted Material Issues Line".Description)
                 {
                 }
-                column(Posted_Material_Issues_Line__Unit_of_Measure__Control1000000027;"Unit of Measure")
+                column(Posted_Material_Issues_Line__Unit_of_Measure__Control1000000027; "Unit of Measure")
                 {
                 }
-                column(Posted_Material_Issues_Header___Resource_Name__Control1000000028;"Posted Material Issues Header"."Resource Name")
+                column(Posted_Material_Issues_Header___Resource_Name__Control1000000028; "Posted Material Issues Header"."Resource Name")
                 {
                 }
-                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000029;"Posted Material Issues Line"."Issued DateTime")
+                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000029; "Posted Material Issues Line"."Issued DateTime")
                 {
                 }
-                column(Posted_Material_Issues_Line__Transfer_to_Code_;"Transfer-to Code")
+                column(Posted_Material_Issues_Line__Transfer_to_Code_; "Transfer-to Code")
                 {
                 }
-                column(QTY_Control1000000031;QTY)
+                column(QTY_Control1000000031; QTY)
                 {
                 }
-                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000032;"Posted Material Issues Line".Quantity)
+                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000032; "Posted Material Issues Line".Quantity)
                 {
                 }
-                column(UC_Control1000000033;UC)
+                column(UC_Control1000000033; UC)
                 {
                 }
-                column(Make;Make)
+                column(Make; Make)
                 {
                 }
-                column(Posted_Material_Issues_Header___Released_Date__Control1000000036;"Posted Material Issues Header"."Released Date")
+                column(Posted_Material_Issues_Header___Released_Date__Control1000000036; "Posted Material Issues Header"."Released Date")
                 {
                 }
-                column(Lot_Control1000000041;Lot)
+                column(Lot_Control1000000041; Lot)
                 {
                 }
-                column(Serial_no__Control1000000042;"Serial no")
+                column(Serial_no__Control1000000042; "Serial no")
                 {
                 }
-                column(Bench_Mark__Control1102154010;"Bench-Mark")
+                column(Bench_Mark__Control1102154010; "Bench-Mark")
                 {
                 }
-                column(Reason_Control1000000054;Reason)
+                column(Reason_Control1000000054; Reason)
                 {
                 }
-                column(Posted_Material_Issues_Line__Material_Issue_No___Control1000000055;"Material Issue No.")
+                column(Posted_Material_Issues_Line__Material_Issue_No___Control1000000055; "Material Issue No.")
                 {
                 }
-                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000056;"Posted Material Issues Line".Description)
+                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000056; "Posted Material Issues Line".Description)
                 {
                 }
-                column(Posted_Material_Issues_Line__Unit_of_Measure__Control1000000057;"Unit of Measure")
+                column(Posted_Material_Issues_Line__Unit_of_Measure__Control1000000057; "Unit of Measure")
                 {
                 }
-                column(Posted_Material_Issues_Header___Resource_Name__Control1000000058;"Posted Material Issues Header"."Resource Name")
+                column(Posted_Material_Issues_Header___Resource_Name__Control1000000058; "Posted Material Issues Header"."Resource Name")
                 {
                 }
-                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000059;"Posted Material Issues Line"."Issued DateTime")
+                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000059; "Posted Material Issues Line"."Issued DateTime")
                 {
                 }
-                column(Posted_Material_Issues_Header___Transfer_from_Code__Control1000000060;"Posted Material Issues Header"."Transfer-from Code")
+                column(Posted_Material_Issues_Header___Transfer_from_Code__Control1000000060; "Posted Material Issues Header"."Transfer-from Code")
                 {
                 }
-                column(QTY_Control1000000061;QTY)
+                column(QTY_Control1000000061; QTY)
                 {
                 }
-                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000062;"Posted Material Issues Line".Quantity)
+                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000062; "Posted Material Issues Line".Quantity)
                 {
                 }
-                column(UC_Control1000000063;UC)
+                column(UC_Control1000000063; UC)
                 {
                 }
-                column(Posted_Material_Issues_Header___Released_Date__Control1000000037;"Posted Material Issues Header"."Released Date")
+                column(Posted_Material_Issues_Header___Released_Date__Control1000000037; "Posted Material Issues Header"."Released Date")
                 {
                 }
-                column(Lot_Control1000000045;Lot)
+                column(Lot_Control1000000045; Lot)
                 {
                 }
-                column(Serial_no__Control1000000046;"Serial no")
+                column(Serial_no__Control1000000046; "Serial no")
                 {
                 }
-                column(Bench_Mark__Control1102154012;"Bench-Mark")
+                column(Bench_Mark__Control1102154012; "Bench-Mark")
                 {
                 }
-                column(Posted_Material_Issues_Line__Material_Issue_No___Control1000000015;"Material Issue No.")
+                column(Posted_Material_Issues_Line__Material_Issue_No___Control1000000015; "Material Issue No.")
                 {
                 }
-                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000013;"Posted Material Issues Line".Description)
+                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Description_Control1000000013; "Posted Material Issues Line".Description)
                 {
                 }
-                column(Posted_Material_Issues_Line__Unit_of_Measure__Control1000000012;"Unit of Measure")
+                column(Posted_Material_Issues_Line__Unit_of_Measure__Control1000000012; "Unit of Measure")
                 {
                 }
-                column(Posted_Material_Issues_Header___Resource_Name__Control1000000016;"Posted Material Issues Header"."Resource Name")
+                column(Posted_Material_Issues_Header___Resource_Name__Control1000000016; "Posted Material Issues Header"."Resource Name")
                 {
                 }
-                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000017;"Posted Material Issues Line"."Issued DateTime")
+                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line___Issued_DateTime__Control1000000017; "Posted Material Issues Line"."Issued DateTime")
                 {
                 }
-                column(Posted_Material_Issues_Line__Transfer_to_Code__Control1000000011;"Transfer-to Code")
+                column(Posted_Material_Issues_Line__Transfer_to_Code__Control1000000011; "Transfer-to Code")
                 {
                 }
-                column(QTY_Control1000000018;QTY)
+                column(QTY_Control1000000018; QTY)
                 {
                 }
-                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000010;"Posted Material Issues Line".Quantity)
+                column(Posted_Material_Issues_Line__Posted_Material_Issues_Line__Quantity_Control1000000010; "Posted Material Issues Line".Quantity)
                 {
                 }
-                column(UC_Control1000000019;UC)
+                column(UC_Control1000000019; UC)
                 {
                 }
-                column(Posted_Material_Issues_Header___Released_Date__Control1000000038;"Posted Material Issues Header"."Released Date")
+                column(Posted_Material_Issues_Header___Released_Date__Control1000000038; "Posted Material Issues Header"."Released Date")
                 {
                 }
-                column(Lot_Control1000000047;Lot)
+                column(Lot_Control1000000047; Lot)
                 {
                 }
-                column(Serial_no__Control1000000048;"Serial no")
+                column(Serial_no__Control1000000048; "Serial no")
                 {
                 }
-                column(Posted_Material_Issues_Header___Prod__Order_No__;"Posted Material Issues Header"."Prod. Order No.")
+                column(Posted_Material_Issues_Header___Prod__Order_No__; "Posted Material Issues Header"."Prod. Order No.")
                 {
                 }
-                column(Bench_Mark__Control1102154015;"Bench-Mark")
+                column(Bench_Mark__Control1102154015; "Bench-Mark")
                 {
                 }
-                column(vendor;vendor)
+                column(vendor; vendor)
                 {
                 }
-                column(BILLNO__;"BILLNO.")
+                column(BILLNO__; "BILLNO.")
                 {
                 }
-                column(BillDate;BillDate)
+                column(BillDate; BillDate)
                 {
                 }
-                column(DaysCaption;DaysCaptionLbl)
+                column(DaysCaption; DaysCaptionLbl)
                 {
                 }
-                column(DaysCaption_Control1102154011;DaysCaption_Control1102154011Lbl)
+                column(DaysCaption_Control1102154011; DaysCaption_Control1102154011Lbl)
                 {
                 }
-                column(DaysCaption_Control1102154013;DaysCaption_Control1102154013Lbl)
+                column(DaysCaption_Control1102154013; DaysCaption_Control1102154013Lbl)
                 {
                 }
-                column(DaysCaption_Control1102154018;DaysCaption_Control1102154018Lbl)
+                column(DaysCaption_Control1102154018; DaysCaption_Control1102154018Lbl)
                 {
                 }
-                column(Posted_Material_Issues_Line_Document_No_;"Document No.")
+                column(Posted_Material_Issues_Line_Document_No_; "Document No.")
                 {
                 }
-                column(Posted_Material_Issues_Line_Line_No_;"Line No.")
+                column(Posted_Material_Issues_Line_Line_No_; "Line No.")
                 {
                 }
-                column(Posted_Material_Issues_Line_Item_No_;"Item No.")
+                column(Posted_Material_Issues_Line_Item_No_; "Item No.")
                 {
                 }
-                column(Choice1;Choice1)
+                column(Choice1; Choice1)
                 {
                 }
-                column(GrpFVisible1;GrpFVisible1)
+                column(GrpFVisible1; GrpFVisible1)
                 {
                 }
-                column(GrpFVisible2;GrpFVisible2)
+                column(GrpFVisible2; GrpFVisible2)
                 {
                 }
-                column(GrpFVisible3;GrpFVisible3)
+                column(GrpFVisible3; GrpFVisible3)
                 {
                 }
-                column(GrpFVisible4;GrpFVisible4)
+                column(GrpFVisible4; GrpFVisible4)
                 {
                 }
-                column(GrpFVisible5;GrpFVisible5)
+                column(GrpFVisible5; GrpFVisible5)
                 {
                 }
-                column(UNIT_COST;UNIT_COST)
+                column(UNIT_COST; UNIT_COST)
                 {
                 }
-                column(ADD_DUTY;ADD_DUTY)
+                column(ADD_DUTY; ADD_DUTY)
                 {
                 }
-                column(BC;BC)
+                column(BC; BC)
                 {
                 }
-                column(CUSTOMS_DU;CUSTOMS_DU)
+                column(CUSTOMS_DU; CUSTOMS_DU)
                 {
                 }
-                column(E_CESS;E_CESS)
+                column(E_CESS; E_CESS)
                 {
                 }
-                column(E_CESS_1;E_CESS_1)
+                column(E_CESS_1; E_CESS_1)
                 {
                 }
-                column(E_CESS_2;E_CESS_2)
+                column(E_CESS_2; E_CESS_2)
                 {
                 }
-                column(E_CESS_3;E_CESS_3)
+                column(E_CESS_3; E_CESS_3)
                 {
                 }
-                column(E_CESS_4;E_CESS_4)
+                column(E_CESS_4; E_CESS_4)
                 {
                 }
-                column(E_CESS_5;E_CESS_5)
+                column(E_CESS_5; E_CESS_5)
                 {
                 }
-                column(FORWARDING;FORWARDING)
+                column(FORWARDING; FORWARDING)
                 {
                 }
-                column(FREIGHT_G;FREIGHT_G)
+                column(FREIGHT_G; FREIGHT_G)
                 {
                 }
-                column(FREIGHT_1;FREIGHT_1)
+                column(FREIGHT_1; FREIGHT_1)
                 {
                 }
-                column(FREIGHT_2;FREIGHT_2)
+                column(FREIGHT_2; FREIGHT_2)
                 {
                 }
-                column(HANDLING;HANDLING)
+                column(HANDLING; HANDLING)
                 {
                 }
-                column(INSTAL_CHA;INSTAL_CHA)
+                column(INSTAL_CHA; INSTAL_CHA)
                 {
                 }
-                column(INSURANCE;INSURANCE)
+                column(INSURANCE; INSURANCE)
                 {
                 }
-                column(PACKING;PACKING)
+                column(PACKING; PACKING)
                 {
                 }
-                column(ROUNDING_G;ROUNDING_G)
+                column(ROUNDING_G; ROUNDING_G)
                 {
                 }
-                column(SERV_TAX;SERV_TAX)
+                column(SERV_TAX; SERV_TAX)
                 {
                 }
-                column(SERVICETAX_G;SERVICETAX_G)
+                column(SERVICETAX_G; SERVICETAX_G)
                 {
                 }
-                column(EXCISE;EXCISE)
+                column(EXCISE; EXCISE)
                 {
                 }
-                column(FREIGHT_C1;FREIGHT_C1)
+                column(FREIGHT_C1; FREIGHT_C1)
                 {
                 }
-                column(ROUNDING_C;ROUNDING_C)
+                column(ROUNDING_C; ROUNDING_C)
                 {
                 }
-                column(SALES_TAX;SALES_TAX)
+                column(SALES_TAX; SALES_TAX)
                 {
                 }
-                column(SERVICE_TA;SERVICE_TA)
+                column(SERVICE_TA; SERVICE_TA)
                 {
                 }
-                column(SERVICETAX_C;SERVICETAX_C)
+                column(SERVICETAX_C; SERVICETAX_C)
                 {
                 }
-                column(ST;ST)
+                column(ST; ST)
                 {
                 }
-                column(VAT;VAT)
+                column(VAT; VAT)
                 {
                 }
-                column(taxStructure;taxStructure)
+                column(taxStructure; taxStructure)
                 {
                 }
-                column(PurchOrder;PurchOrder)
+                column(PurchOrder; PurchOrder)
                 {
                 }
-                column(invoice;invoice)
+                column(invoice; invoice)
                 {
                 }
-                column(unitCostwithTax;unitCostwithTax)
+                column(unitCostwithTax; unitCostwithTax)
                 {
                 }
-                column(unitCostwithoutexcise;unitCostwithoutexcise)
+                column(unitCostwithoutexcise; unitCostwithoutexcise)
                 {
                 }
-                column(TotalCost;TotalCost)
+                column(TotalCost; TotalCost)
                 {
                 }
 
@@ -461,573 +461,657 @@ report 50057 "Issued Material Report_Costing"
                     GrpFVisible3 := TRUE;
                     GrpFVisible4 := TRUE;
                     GrpFVisible5 := TRUE;
-                    
-                    UC:=0;
-                    IF Choice1=Choice1::Damage THEN
-                    BEGIN
-                    IF NOT (("Posted Material Issues Header"."Reason Code"='Damage') OR ("Posted Material Issues Header"."Transfer-to Code"='DAMAGE') )THEN
-                     CurrReport.SKIP;
-                    END ELSE IF Choice1=Choice1::Normal THEN
-                    BEGIN
-                     IF "Posted Material Issues Line"."Transfer-to Code"='DAMAGE' THEN
-                     BEGIN
-                       CurrReport.SKIP;
-                     //  MESSAGE("Posted Material Issues Line"."Item No.");
-                     END;
-                    END;
+
+                    UC := 0;
+                    IF Choice1 = Choice1::Damage THEN BEGIN
+                        IF NOT (("Posted Material Issues Header"."Reason Code" = 'Damage') OR ("Posted Material Issues Header"."Transfer-to Code" = 'DAMAGE')) THEN
+                            CurrReport.SKIP;
+                    END ELSE
+                        IF Choice1 = Choice1::Normal THEN BEGIN
+                            IF "Posted Material Issues Line"."Transfer-to Code" = 'DAMAGE' THEN BEGIN
+                                CurrReport.SKIP;
+                                //  MESSAGE("Posted Material Issues Line"."Item No.");
+                            END;
+                        END;
                     // copy code from Posted Material Issues Line, GroupHeader - OnPostSection() >>
                     IF PrevItemNo <> "Posted Material Issues Line"."Item No." THEN BEGIN
-                     "Bench-Mark":=0;
-                     PrevItemNo := "Posted Material Issues Line"."Item No.";
-                     QTY_Received:=0;
+                        "Bench-Mark" := 0;
+                        PrevItemNo := "Posted Material Issues Line"."Item No.";
+                        QTY_Received := 0;
                     END;
                     // copy code from // Posted Material Issues Line, GroupHeader - OnPostSection() <<
-                    
-                    
-                    
+
+
+
                     // copy code from // Posted Material Issues Line, Body (2) - OnPostSection() >>
                     ILE.RESET;//Rev01
-                    ILE.SETCURRENTKEY(ILE."Document No.",ILE."Item No.",ILE."Posting Date");
-                    ILE.SETRANGE(ILE."Document No.","Posted Material Issues Line"."Document No.");
-                    ILE.SETRANGE(ILE."Item No.","Posted Material Issues Line"."Item No.");
-                    ILE.SETRANGE(ILE."Entry Type",ILE."Entry Type"::Transfer);
+                    ILE.SETCURRENTKEY(ILE."Document No.", ILE."Item No.", ILE."Posting Date");
+                    ILE.SETRANGE(ILE."Document No.", "Posted Material Issues Line"."Document No.");
+                    ILE.SETRANGE(ILE."Item No.", "Posted Material Issues Line"."Item No.");
+                    ILE.SETRANGE(ILE."Entry Type", ILE."Entry Type"::Transfer);
                     IF ILE.FIND('-') THEN
-                     Lot:=ILE."Lot No."
-                     ELSE
-                     Lot:='no';
-                    QTY_Received+="Posted Material Issues Line".Quantity;
+                        Lot := ILE."Lot No."
+                    ELSE
+                        Lot := 'no';
+                    QTY_Received += "Posted Material Issues Line".Quantity;
                     // copy code from // Posted Material Issues Line, Body (2) - OnPostSection() <<
                     // copy code from // Posted Material Issues Line, GroupFooter - OnPostSection() >>
-                    IF Choice3=Choice3::Issue THEN
-                    BEGIN
-                      IF Choice1=Choice1::Damage THEN
-                      BEGIN
-                        IF Choice2=Choice2::Used THEN
-                        BEGIN
-                          "Serial no":='';
-                          "material issues line".RESET;//Rev01
-                          "material issues line".SETRANGE("material issues line"."Document No.","Posted Material Issues Line"."Material Issue No.");
-                          "material issues line".SETRANGE("material issues line"."Item No.","Posted Material Issues Line"."Item No.");
-                          IF "material issues line".FIND('-') THEN
-                            QTY:="material issues line".Quantity
-                          ELSE
-                            QTY:="Posted Material Issues Line".Quantity;
-                          IF "Posted Material Issues Header"."Reason Code" ='' THEN
-                            Reason:="Posted Material Issues Header"."Prod. Order No."
-                          ELSE
-                            Reason:="Posted Material Issues Header"."Reason Code";
-                          Item.RESET;//Rev01
-                          Item.SETRANGE(Item."No.","Posted Material Issues Line"."Item No.");
-                          IF Item.FIND('-') THEN
-                          BEGIN
-                            UC:=Item."Avg Unit Cost";
-                            //Make:= Item.Make;
-                          END;
-                          //UC:="Posted Material Issues Line"."Avg. unit cost";
-                          Total+="Posted Material Issues Line"."Quantity (Base)"*UC;
-                          Lot:='';
-                          "Issued Date":=DT2DATE("Posted Material Issues Header"."Issued DateTime");
-                          IF ("Posted Material Issues Header"."Released Date">0D) AND ("Issued Date">0D) THEN
-                          "Bench-Mark":="Issued Date"-"Posted Material Issues Header"."Released Date";
-                          ILE.RESET;//Rev01
-                          ILE.SETCURRENTKEY(ILE."Document No.",ILE."Item No.",ILE."Posting Date");
-                          ILE.SETFILTER(ILE."Location Code",'STR');
-                          ILE.SETRANGE(ILE."Document No.","Posted Material Issues Line"."Document No.");
-                          ILE.SETRANGE(ILE."Item No.","Posted Material Issues Line"."Item No.");
-                          IF ILE.FIND('-') THEN
-                          BEGIN
-                            Lot:=ILE."Lot No.";
-                            "Serial no":=ILE."Serial No.";
-                          END;
-                          GrpFVisible1:=TRUE; //Hack
-                          Total_Qty+="Posted Material Issues Line".Quantity;
-                        END ELSE
-                          GrpFVisible1:=FALSE;
-                      END ELSE
-                        GrpFVisible1:=FALSE;
-                    END ELSE
-                        GrpFVisible1:=FALSE;
-                    // copy code from // Posted Material Issues Line, GroupFooter - OnPostSection() <<
-                    
-                    // copy code from // Posted Material Issues Line, GroupFooter - OnPostSection() >>
-                    IF Choice3=Choice3::Issue THEN BEGIN
-                      IF Choice1=Choice1::Return THEN BEGIN
-                        "Posted Material Issues Header".SETRANGE("Posted Material Issues Header"."Transfer-to Code",'STR');//Hack
-                        "material issues line".RESET;//Rev01
-                        "material issues line".SETRANGE("material issues line"."Document No.","Posted Material Issues Line"."Material Issue No.");
-                        "material issues line".SETRANGE("material issues line"."Item No.","Posted Material Issues Line"."Item No.");
-                        IF "material issues line".FIND('-') THEN
-                          QTY:="material issues line".Quantity
-                        ELSE
-                          QTY:="Posted Material Issues Line".Quantity;
-                        IF "Posted Material Issues Header"."Reason Code" ='' THEN
-                          Reason:="Posted Material Issues Header"."Prod. Order No."
-                        ELSE
-                          Reason:="Posted Material Issues Header"."Reason Code";
-                        /*
-                        Item.SETRANGE(Item."No.","Posted Material Issues Line"."Item No.") ;
-                        IF Item.FIND('-') THEN
-                        UC:=Item."Avg Unit Cost";
-                        */
-                        UC:="Posted Material Issues Line"."Avg. unit cost";
-                        Lot:='';
-                        "Serial no":='';
-                        Total+="Posted Material Issues Line"."Quantity (Base)"*UC;
-                        ILE.RESET;//Rwev01
-                        ILE.SETCURRENTKEY(ILE."Document No.",ILE."Item No.",ILE."Posting Date");
-                        ILE.SETFILTER(ILE."Location Code",'STR');
-                        ILE.SETRANGE(ILE."Document No.","Posted Material Issues Line"."Document No.");
-                        ILE.SETRANGE(ILE."Item No.","Posted Material Issues Line"."Item No.");
-                        IF ILE.FIND('-') THEN
-                        BEGIN
-                         Lot:=ILE."Lot No.";
-                         "Serial no":=ILE."Serial No.";
-                        END;
-                        Total_Qty+="Posted Material Issues Line".Quantity;
-                        GrpFVisible2:=TRUE;
-                      END ELSE
-                        GrpFVisible2:=FALSE;
-                    END ELSE
-                        GrpFVisible2:=FALSE;
-                    // copy code from // Posted Material Issues Line, GroupFooter - OnPostSection() <<
-                    
-                    // copy code from // Posted Material Issues Line, GroupFooter - OnPostSection() >>
-                    IF Choice3=Choice3::Issue THEN BEGIN
-                      IF Choice1=Choice1::Damage THEN BEGIN
-                        IF Choice2=Choice2::NotUsed THEN BEGIN
-                          GrpFVisible3:=TRUE;
-                          "material issues line".RESET;//Rev01
-                          "material issues line".SETRANGE("material issues line"."Document No.","Posted Material Issues Line"."Material Issue No.");
-                          "material issues line".SETRANGE("material issues line"."Item No.","Posted Material Issues Line"."Item No.");
-                          IF "material issues line".FIND('-') THEN
-                          QTY:="material issues line".Quantity
-                          ELSE
-                          QTY:="Posted Material Issues Line".Quantity;
-                          IF "Posted Material Issues Header"."Reason Code" ='' THEN
-                            Reason:="Posted Material Issues Header"."Prod. Order No."
-                          ELSE
-                            Reason:="Posted Material Issues Header"."Reason Code";
-                    
-                          UC:="Posted Material Issues Line"."Avg. unit cost";
-                    
-                          IF UC=0 THEN
-                          BEGIN
-                            IF Item.GET("Posted Material Issues Line"."Item No.") THEN
-                            UC:=Item."Avg Unit Cost";
-                          END;
-                    
-                          Total+="Posted Material Issues Line"."Quantity (Base)"*UC;
-                          "Project Total"+="Posted Material Issues Line"."Quantity (Base)"*UC;
-                          Lot:='';
-                          "Serial no":='';
-                          ILE.RESET;//Rev01
-                          ILE.SETCURRENTKEY(ILE."Document No.",ILE."Item No.",ILE."Posting Date");
-                          ILE.SETFILTER(ILE."Location Code",'STR');
-                          ILE.SETRANGE(ILE."Document No.","Posted Material Issues Line"."Document No.");
-                          ILE.SETRANGE(ILE."Item No.","Posted Material Issues Line"."Item No.");
-                          IF ILE.FIND('-') THEN
-                          BEGIN
-                           Lot:=ILE."Lot No.";
-                           "Serial no":=ILE."Serial No.";
-                          END;
-                                Total_Qty+="Posted Material Issues Line".Quantity;
-                        END ELSE
-                          GrpFVisible3:=FALSE;
-                      END ELSE
-                        GrpFVisible3:=FALSE;
-                    END ELSE
-                        GrpFVisible3:=FALSE;
-                    // copy code from // Posted Material Issues Line, GroupFooter - OnPostSection() <<
-                    
-                    // copy code from // Posted Material Issues Line, GroupFooter - OnPostSection() <<
-                    IF Choice1=Choice1::Normal THEN BEGIN
-                      IF ("Posted Material Issues Header"."Transfer-to Code"='STR') OR ("Posted Material Issues Header"."Transfer-to Code"='DAMAGE') THEN BEGIN
-                        GrpFVisible4:=FALSE
-                      END  ELSE  BEGIN
-                        "material issues line".RESET;//Rev01
-                        "material issues line".SETRANGE("material issues line"."Document No.","Posted Material Issues Line"."Material Issue No.");
-                        "material issues line".SETRANGE("material issues line"."Item No.","Posted Material Issues Line"."Item No.");
-                        IF "material issues line".FIND('-') THEN
-                           QTY:="material issues line".Quantity
-                        ELSE
-                          QTY:="Posted Material Issues Line".Quantity;
-                    
-                    
-                        IF "Posted Material Issues Header"."Prod. Order No." ='' THEN
-                           Reason:="Posted Material Issues Header"."Prod. Order No."
-                        ELSE
-                            Reason:="Posted Material Issues Header"."Reason Code" ;
-                    
-                        Issued_Qty:=0;
-                        Ret_Qty:=0;
-                        Issued_Qty:="Posted Material Issues Line".Quantity;
-                        // Total+="Posted Material Issues Line"."Quantity (Base)"*UC;
-                        // ileref:='';
-                        Lot:='';
-                        "Serial no":='';
-                        "Prod. Order Description":='';
-                    
-                    
-                        PO.RESET;
-                        PO.SETRANGE(PO."No.","Posted Material Issues Line"."Prod. Order No.");
-                        IF PO.FINDFIRST THEN
-                          "Prod. Order Description":=PO.Description;
-                        ILE.RESET;//Rev01
-                        ILE.SETCURRENTKEY(ILE."Document No.",ILE."Item No.",ILE."Posting Date");
-                        ILE.SETFILTER(ILE."Entry Type",'Transfer');
-                        //ILE.SETFILTER(ILE."Location Code","Posted Material Issues Line"."Transfer-to Code");
-                        ILE.SETFILTER(ILE.Quantity,'>%1',0);
-                        ILE.SETFILTER(ILE."Document No.","Posted Material Issues Line"."Document No.");
-                        ILE.SETFILTER(ILE."Item No.","Posted Material Issues Line"."Item No.");
-                        IF ILE.FIND('-') THEN
-                        REPEAT
-                          Lot:=ILE."Lot No.";
-                          "Serial no":=ILE."Serial No.";
-                          IF Consider_Return THEN
-                          BEGIN
-                              Ret_Qty+=ILE.Quantity-ILE."Remaining Quantity";
-                          END;
-                        UNTIL ILE.NEXT=0;
-                        IF Consider_Return THEN
-                        BEGIN
-                          Issued_Qty:=Issued_Qty-Ret_Qty;
-                        END;
-                    
-                        UC:=0;
-                    
-                        IF UC=0 THEN
-                        BEGIN
-                          IF Item.GET("Posted Material Issues Line"."Item No.") THEN
-                             UC:=Item."Avg Unit Cost";
-                        END;     //cometed by anil
-                    
-                          amount:=0;
-                          vendor:='';
-                          "BILLNO.":='';
-                           BillDate:=0D;
-                          UC:=0;
-                          PurchOrder:='';
-                          invoice:='';
-                          ADD_DUTY:=0;
-                          BC:=0;
-                          CUSTOMS_DU:=0;
-                          E_CESS:=0;
-                          E_CESS_1:=0;
-                          E_CESS_2:=0;
-                          E_CESS_3:=0;
-                          E_CESS_4:=0;
-                          E_CESS_5:=0;
-                          FORWARDING:=0;
-                          FREIGHT_G:=0;
-                          FREIGHT_1:=0;
-                          FREIGHT_2:=0;
-                          HANDLING:=0;
-                          INSTAL_CHA:=0;
-                          INSURANCE:=0;
-                          PACKING:=0;
-                          ROUNDING_G:=0;
-                          SERV_TAX:=0;
-                          SERVICETAX_G:=0;
-                          EXCISE:=0;
-                          FREIGHT_C1:=0;
-                          ROUNDING_C:=0;
-                          SALES_TAX:=0;
-                          SERVICE_TA:=0;
-                          SERVICETAX_C:=0;
-                          ST:=0;
-                          VAT:=0;
-                          UNIT_COST:=0;
-                          unitCostwithTax:=0;
-                          unitCostwithoutexcise:=0;
-                          TotalCost:=0;
-                          taxStructure:='';
-                          vendor:='';
-                    
-                    
-                        Item_Batch.RESET;
-                        Item_Batch.SETFILTER(Item_Batch."Item No.","Posted Material Issues Line"."Item No.");
-                        Item_Batch.SETFILTER(Item_Batch."Lot No.",Lot);
-                        IF Item_Batch.FINDFIRST THEN BEGIN
-                          UC:=Item_Batch."Unit Cost";
-                        END ELSE
-                        BEGIN
-                          BillDate:=0D;
-                          ileref:='';
-                          TESTINV:=0;
-                          IF STRPOS(Lot,'\')>0 THEN
-                            lotL:=COPYSTR(Lot,1,STRPOS(Lot,'\')-1);
-                          ITEMLED.RESET;
-                          ITEMLED.SETCURRENTKEY(ITEMLED."Item No.", ITEMLED."Lot No.",ITEMLED."ITL Doc No.");
-                          ITEMLED.SETFILTER(ITEMLED."Entry Type",'Purchase');
-                          ITEMLED.SETRANGE(ITEMLED."Item No.","Posted Material Issues Line"."Item No.");
-                          //IF Lot <> '' THEN //Rev01
-                          ITEMLED.SETRANGE(ITEMLED."Lot No.",Lot);
-                          //IF "Serial no" <> '' THEN //Rev01
-                          ITEMLED.SETRANGE(ITEMLED."Serial No.","Serial no");
-                          IF ITEMLED.FINDLAST
-                           THEN BEGIN
-                            PRL.RESET;
-                            PRL.SETRANGE(PRL."Document No.",ITEMLED."Document No.");
-                            PRL.SETRANGE(PRL."No.",ITEMLED."Item No.");
-                            IF PRL.FINDLAST THEN BEGIN
-                              ileref:=ITEMLED."Document No.";//anil aded
-                         // IF "Posted Material Issues Line"."Item No."='BOIGENR00232' THEN
-                          //  MESSAGE(PRL."Document No.");
-                    
-                              PRH.RESET;//Rev01
-                              PRH.SETRANGE(PRH."No.",PRL."Document No.");
-                              IF PRH.FINDLAST THEN
-                              BEGIN
-                                vendor:=PRH."Buy-from Vendor Name";
-                                PurchOrder:=PRH."Order No.";
-                               // "BILLNO.":=PRH."Vendor Shipment No.";
-                               // BillDate:=PRH."Posting Date";
-                    
-                                PIL.RESET;
-                                PIL.SETCURRENTKEY(PIL.Type,PIL."No.",PIL."Variant Code");
-                                PIL.SETRANGE(PIL."No.",PRL."No.");
-                                PIL.SETRANGE(PIL."Receipt No.",PRL."Document No.");
-                                IF PIL.FINDLAST THEN
-                                BEGIN
-                                  UC:=PIL."Amount To Vendor"/PIL.Quantity;
-                                  IF PIL."Gen. Bus. Posting Group"='FOREIGN' THEN
-                                  UC:=PIL."Unit Cost (LCY)"; //WRITEN BY ANIL
-                    
-                                  TESTINV:=10;
-                                  IF "BILLNO."='' THEN
-                                    PIH.RESET;
-                    
-                    
-                                  PIH.SETFILTER(PIH."No.",PIL."Document No.");
-                                  IF PIH.FINDFIRST THEN
-                                  BEGIN
-                                    "BILLNO.":=PIH."Vendor Invoice No.";
-                                     BillDate:=PIH."Posting Date";
-                                    taxStructure:=PIH.Structure;
-                    
-                                    invoice:=PIH."No.";
-                                  END;
-                                  UNIT_COST:=PIL."Unit Cost (LCY)";
-                                  //mnraju for cost breakdown
-                                  StrDetails.RESET;
-                                  StrDetails.SETFILTER(StrDetails."Invoice No.",PIL."Document No.");
-                                  StrDetails.SETFILTER(StrDetails."Line No.",'%1',PIL."Line No.");
-                                  StrDetails.SETFILTER(StrDetails."Document Type",'%1',StrDetails."Document Type"::Invoice);
-                                   unitCostwithTax:= unitCostwithTax+UNIT_COST;
-                                  IF StrDetails.FINDSET THEN
-                                  REPEAT
-                                  amount:=StrDetails."Amount (LCY)"/PIL.Quantity;
-                                    CASE StrDetails."Tax/Charge Group" OF
-                    
-                                      'ADD.DUTY':
-                                                   BEGIN ADD_DUTY:=amount;
-                                                  unitCostwithTax:= unitCostwithTax+amount;
-                                                  END;
-                                      'BC': BEGIN BC:=amount;                  unitCostwithTax:= unitCostwithTax+amount;      END;
-                                      'CUSTOMS DU': BEGIN CUSTOMS_DU:=amount; unitCostwithTax:= unitCostwithTax+amount;         END;
-                                      'E.CESS':  BEGIN E_CESS:=amount;            unitCostwithTax:= unitCostwithTax+amount;      END;
-                                      'E.CESS 1':  BEGIN E_CESS_1:=amount;      unitCostwithTax:= unitCostwithTax+amount;         END;
-                                      'E.CESS 2':  BEGIN E_CESS_2:=amount;      unitCostwithTax:= unitCostwithTax+amount;         END;
-                                      'E.CESS 3': BEGIN  E_CESS_3:=amount;      unitCostwithTax:= unitCostwithTax+amount;         END;
-                                      'E.CESS 4':  BEGIN E_CESS_4:=amount;       unitCostwithTax:= unitCostwithTax+amount;         END;
-                                      'E.CESS 5':  BEGIN E_CESS_5:=amount;       unitCostwithTax:= unitCostwithTax+amount;          END;
-                                      'FORWARDING': BEGIN  FORWARDING:=amount;    unitCostwithTax:= unitCostwithTax+amount;         END;
-                                      'FREIGHT': BEGIN  FREIGHT_G:=amount;       unitCostwithTax:= unitCostwithTax+amount;         END;
-                                      'FREIGHT 1': BEGIN  FREIGHT_1:=amount;      unitCostwithTax:= unitCostwithTax+amount;        END;
-                                      'FREIGHT 2': BEGIN FREIGHT_2:=amount;      unitCostwithTax:= unitCostwithTax+amount;        END;
-                                      'HANDLING': BEGIN  HANDLING:=amount;        unitCostwithTax:= unitCostwithTax+amount;        END;
-                                      'INSTAL CHA': BEGIN  INSTAL_CHA:=amount;    unitCostwithTax:= unitCostwithTax+amount;        END;
-                                      'INSURANCE':  BEGIN INSURANCE:=amount;      unitCostwithTax:= unitCostwithTax+amount;         END;
-                                      'PACKING':  BEGIN PACKING:=amount;          unitCostwithTax:= unitCostwithTax+amount;         END;
-                                      'ROUNDING':  BEGIN ROUNDING_G:=amount;      unitCostwithTax:= unitCostwithTax+amount;         END;
-                                      'SERV TAX':  BEGIN SERV_TAX:=amount;       unitCostwithTax:= unitCostwithTax+amount;           END;
-                                      'SERVICETAX': BEGIN  SERVICETAX_G:=amount;   unitCostwithTax:= unitCostwithTax+amount;        END;
-                    
-                                    END;
-                    
-                                    CASE StrDetails."Tax/Charge Code" OF
-                    
-                                      'EXCISE': BEGIN  EXCISE:=amount;             unitCostwithTax:= unitCostwithTax+amount;     END;
-                                      'FREIGHT':  BEGIN FREIGHT_C1:=amount;        unitCostwithTax:= unitCostwithTax+amount;     END;
-                                      'ROUNDING': BEGIN  ROUNDING_C:=amount;       unitCostwithTax:= unitCostwithTax+amount;     END;
-                                      'SALES TAX': BEGIN  SALES_TAX:=amount;       unitCostwithTax:= unitCostwithTax+amount;      END;
-                                      'SERVICE TA': BEGIN  SERVICE_TA:=amount;     unitCostwithTax:= unitCostwithTax+amount;      END;
-                                      'SERVICETAX': BEGIN  SERVICETAX_C:=amount;  unitCostwithTax:= unitCostwithTax+amount;       END;
-                                      'ST':  BEGIN ST:=amount;                     unitCostwithTax:= unitCostwithTax+amount;      END;
-                                      'VAT': BEGIN  VAT:=amount;                   unitCostwithTax:= unitCostwithTax+amount;       END;
-                    
-                                    END;
-                    
-                                  UNTIL StrDetails.NEXT=0;
-                                   unitCostwithoutexcise:=unitCostwithTax-(EXCISE+E_CESS+E_CESS_1+E_CESS_2+E_CESS_3+E_CESS_4+E_CESS_5);
-                                   TotalCost:=unitCostwithoutexcise*"Posted Material Issues Line".Quantity;
+                    IF Choice3 = Choice3::Issue THEN BEGIN
+                        IF Choice1 = Choice1::Damage THEN BEGIN
+                            IF Choice2 = Choice2::Used THEN BEGIN
+                                "Serial no" := '';
+                                "material issues line".RESET;//Rev01
+                                "material issues line".SETRANGE("material issues line"."Document No.", "Posted Material Issues Line"."Material Issue No.");
+                                "material issues line".SETRANGE("material issues line"."Item No.", "Posted Material Issues Line"."Item No.");
+                                IF "material issues line".FIND('-') THEN
+                                    QTY := "material issues line".Quantity
+                                ELSE
+                                    QTY := "Posted Material Issues Line".Quantity;
+                                IF "Posted Material Issues Header"."Reason Code" = '' THEN
+                                    Reason := "Posted Material Issues Header"."Prod. Order No."
+                                ELSE
+                                    Reason := "Posted Material Issues Header"."Reason Code";
+                                Item.RESET;//Rev01
+                                Item.SETRANGE(Item."No.", "Posted Material Issues Line"."Item No.");
+                                IF Item.FIND('-') THEN BEGIN
+                                    UC := Item."Avg Unit Cost";
+                                    //Make:= Item.Make;
                                 END;
-                              END;
-                            END;
-                          END
-                          ELSE//sundar
-                          BEGIN
-                            ITEMLED.RESET;
-                            ITEMLED.SETCURRENTKEY(ITEMLED."Item No.", ITEMLED."Lot No.",ITEMLED."ITL Doc No.");
-                            ITEMLED.SETFILTER(ITEMLED."Entry Type",'Positive Adjmt.');
-                            ITEMLED.SETRANGE(ITEMLED."Item No.","Posted Material Issues Line"."Item No.");
-                            ITEMLED.SETRANGE(ITEMLED."Lot No.",Lot);
-                            ITEMLED.SETRANGE(ITEMLED."Serial No.","Serial no");
-                            IF ITEMLED.FIND('-') THEN
-                            BEGIN
-                              ileref:=ITEMLED."Document No.";
-                              PIL.RESET;
-                              PIL.SETRANGE(PIL."No.",ITEMLED."Item No.");
-                              PIL.SETFILTER(PIL."Posting Date",'<%1',ITEMLED."Posting Date");
-                              PIL.SETFILTER(PIL.Quantity,'>%1',0);
-                              IF PIL.FINDLAST THEN
-                              BEGIN
-                                UC:=PIL."Amount To Vendor"/PIL.Quantity;
-                                IF PIL."Gen. Bus. Posting Group"='FOREIGN' THEN
-                                   UC:=PIL."Unit Cost (LCY)";
-                    
-                              END;
-                            END;
-                            UC:=0.01;
-                          END;   //sundar
-                        END;
-                        "Issued Date":=DT2DATE("Posted Material Issues Header"."Issued DateTime");
-                        IF ("Posted Material Issues Header"."Released Date">0D) AND ("Issued Date">0D) THEN
-                          "Bench-Mark":="Issued Date"-"Posted Material Issues Header"."Released Date";
-                    
-                    
-                    
-                      // MESSAGE('%1',"Serial no");
-                        IF EXCEL AND (Issued_Qty>0) THEN
-                        BEGIN
-                         Row+=1;
-                          Entercell(Row,1,"Posted Material Issues Header"."Prod. Order No.",FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          Entercell(Row,2,"Prod. Order Description",FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          Entercell(Row,3,"Posted Material Issues Line"."Material Issue No.",FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          Entercell(Row,4,"Posted Material Issues Line"."Item No.",FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          Entercell(Row,5,"Posted Material Issues Line".Description,FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          Entercell(Row,6,"Posted Material Issues Line"."Unit of Measure Code",FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          Entercell(Row,7,"Posted Material Issues Header"."User ID",FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          Entercell(Row,8,FORMAT("Posted Material Issues Header"."Released Date"),FALSE,Tempexcelbuffer."Cell Type"::Date);
-                          Entercell(Row,9,FORMAT("Posted Material Issues Header"."Issued DateTime"),FALSE,Tempexcelbuffer."Cell Type"::Date);
-                          Entercell(Row,10,"Posted Material Issues Header"."Transfer-to Code",FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          Entercell(Row,11,FORMAT(QTY),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                          Entercell(Row,12,FORMAT(Issued_Qty),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                          Entercell(Row,13,FORMAT(UC),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                          Entercell(Row,14,FORMAT(UC*Issued_Qty),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                          Entercell(Row,15,Lot,FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          Entercell(Row,16,"Serial no",FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          Entercell(Row,17,FORMAT("Bench-Mark"),FALSE,Tempexcelbuffer."Cell Type"::Text);
-                         // Entercell(Row,40,FORMAT(TESTINV),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                          IF UC<>0 THEN BEGIN
-                          Entercell(Row,18,vendor,FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          Entercell(Row,19,FORMAT("BILLNO."),FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          Entercell(Row,20,FORMAT(BillDate),FALSE,Tempexcelbuffer."Cell Type"::Date);
-                          END;
-                      //  IF ITEMLED."Document No."<>'' THEN
-                        Entercell(Row,21, ileref,FALSE,Tempexcelbuffer."Cell Type"::Text);
-                       // Entercell(Row,20,ITEMLED."Document No.",FALSE);
-                          PRH.RESET;
-                          PRH.SETRANGE(PRH."No.", ileref);
-                          IF PRH.FIND('-') THEN
-                          BEGIN
-                         // Entercell(Row,21,PRH."Pay-to Name",FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          Entercell(Row,23,FORMAT(PRH."Posting Date"),FALSE,Tempexcelbuffer."Cell Type"::Date);
-                          Entercell(Row,24,FORMAT(PRH."Order No."),FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          Entercell(Row,25,FORMAT(PRH."Vendor Shipment No."),FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          END;
-                          IF ("Posted Material Issues Header"."Transfer-from Code"='CS STR') AND
-                             ("Posted Material Issues Header"."Transfer-to Code"='CST') THEN
-                          BEGIN
-                            Entercell(Row,29,FORMAT("Posted Material Issues Header"."Service Order No."),FALSE,Tempexcelbuffer."Cell Type"::Text);
-                            Entercell(Row,30,FORMAT("Posted Material Issues Header"."Service Item Description"),FALSE,Tempexcelbuffer."Cell Type"::Text);
-                            Entercell(Row,31,FORMAT("Posted Material Issues Header"."Service Item Serial No."),FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          END;
-                          IF ("Posted Material Issues Header"."Transfer-to Code" IN ['SITE','CST','CS']) THEN
-                          BEGIN
-                            DV.RESET;
-                            DV.SETFILTER(DV."Dimension Code",'LOCATIONS');
-                            DV.SETFILTER(DV.Code,"Posted Material Issues Header"."Shortcut Dimension 2 Code");
-                            IF DV.FINDFIRST THEN
-                               Entercell(Row,28,FORMAT(DV.Name),FALSE,Tempexcelbuffer."Cell Type"::Text);
-                          END;
-                         temp1:=FREIGHT_2+HANDLING+INSTAL_CHA+INSURANCE+PACKING+ROUNDING_G+SERV_TAX+SERVICETAX_G+SALES_TAX+SERVICE_TA+SERVICETAX_C+ST+VAT;
-                         UCinctax:=UC+ADD_DUTY+BC+CUSTOMS_DU+EXCISE+E_CESS+E_CESS_1+E_CESS_2+E_CESS_3+E_CESS_4+E_CESS_5+FORWARDING+FREIGHT_G+FREIGHT_1+temp1;
-                         UClesexcise:=UCinctax-(EXCISE+E_CESS+E_CESS_1+E_CESS_2+E_CESS_3+E_CESS_4+E_CESS_5);
-                    
-                         IF (taxStructure <> 'FORIEGN') AND (taxStructure <> '') THEN
-                         BEGIN
-                            strr:=COPYSTR(taxStructure,6,STRLEN(taxStructure)-1);
-                            strr1:=COPYSTR(taxStructure,1,4);
-                            strr2:=COPYSTR(taxStructure,STRLEN(taxStructure)-2,STRLEN(taxStructure)-1);
-                         END
-                         ELSE
-                         BEGIN
-                            strr1:=taxStructure;
-                            strr:='';
-                         END;
-                         IF  strr2 = 'VAT' THEN
-                            UClesExcsVat:=UClesexcise-SALES_TAX
-                         ELSE
-                            UClesExcsVat:=UClesexcise;
-                         IssdMatCst:=UClesExcsVat*Issued_Qty;
-                         //iled place
-                         Item.RESET;
-                         Item.SETFILTER(Item."No.","Posted Material Issues Line"."Item No.");
-                         IF Item.FIND('-') THEN
-                         Entercell(Row,26,Item."Item Category Code",FALSE,Tempexcelbuffer."Cell Type"::Text);
-                         Entercell(Row,27,FORMAT("Posted Material Issues Header"."Posting Date"),FALSE,Tempexcelbuffer."Cell Type"::Date);
-                         //by pranavi
-                         Entercell(Row,28,FORMAT(ROUND(ADD_DUTY,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,29,FORMAT(ROUND(BC,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,30,FORMAT(ROUND(CUSTOMS_DU,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,31,FORMAT(ROUND(EXCISE,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,32,FORMAT(ROUND(E_CESS,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,33,FORMAT(ROUND(E_CESS_1,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,34,FORMAT(ROUND(E_CESS_2,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,35,FORMAT(ROUND(E_CESS_3,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,36,FORMAT(ROUND(E_CESS_4,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,37,FORMAT(ROUND(E_CESS_5,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,38,FORMAT(ROUND(FORWARDING,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,39,FORMAT(ROUND(FREIGHT_G,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,40,FORMAT(ROUND(FREIGHT_1,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,41,FORMAT(ROUND(FREIGHT_2,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,42,FORMAT(ROUND(HANDLING,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,43,FORMAT(ROUND(INSTAL_CHA,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,44,FORMAT(ROUND(INSURANCE,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,45,FORMAT(ROUND(PACKING,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,46,FORMAT(ROUND(ROUNDING_G,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,47,FORMAT(ROUND(SERV_TAX,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,48,FORMAT(ROUND(SERVICETAX_G,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,49,FORMAT(ROUND(SALES_TAX,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,50,FORMAT(ROUND(SERVICE_TA,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,51,FORMAT(ROUND(SERVICETAX_C,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,52,FORMAT(ROUND(ST,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,53,FORMAT(ROUND(VAT,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         //Entercell(Row,54,FORMAT(ROUND(unitCostwithTax,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         //Entercell(Row,55,FORMAT(ROUND(unitCostwithoutexcise,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         //Entercell(Row,56,FORMAT(ROUND(TotalCost,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,22,taxStructure,FALSE,Tempexcelbuffer."Cell Type"::Text);
-                         Entercell(Row,54,FORMAT(ROUND(UCinctax,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,55,FORMAT(ROUND(UClesexcise,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,56,FORMAT(ROUND(UClesExcsVat,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,57,FORMAT(ROUND(IssdMatCst,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
-                         Entercell(Row,58,strr1,FALSE,Tempexcelbuffer."Cell Type"::Text);
-                         Entercell(Row,59,strr,FALSE,Tempexcelbuffer."Cell Type"::Text);
-                         Entercell(Row,60,Make,FALSE,Tempexcelbuffer."Cell Type"::Text);
-                    
-                    
-                         //end by pranavi
-                        END;
-                    
-                        "Project Total"+=Issued_Qty*UC ;
-                        Total_Qty+=Issued_Qty;
-                        Total+=Issued_Qty*UC;
-                      END;
-                    
+                                //UC:="Posted Material Issues Line"."Avg. unit cost";
+                                Total += "Posted Material Issues Line"."Quantity (Base)" * UC;
+                                Lot := '';
+                                "Issued Date" := DT2DATE("Posted Material Issues Header"."Issued DateTime");
+                                IF ("Posted Material Issues Header"."Released Date" > 0D) AND ("Issued Date" > 0D) THEN
+                                    "Bench-Mark" := "Issued Date" - "Posted Material Issues Header"."Released Date";
+                                ILE.RESET;//Rev01
+                                ILE.SETCURRENTKEY(ILE."Document No.", ILE."Item No.", ILE."Posting Date");
+                                ILE.SETFILTER(ILE."Location Code", 'STR');
+                                ILE.SETRANGE(ILE."Document No.", "Posted Material Issues Line"."Document No.");
+                                ILE.SETRANGE(ILE."Item No.", "Posted Material Issues Line"."Item No.");
+                                IF ILE.FIND('-') THEN BEGIN
+                                    Lot := ILE."Lot No.";
+                                    "Serial no" := ILE."Serial No.";
+                                END;
+                                GrpFVisible1 := TRUE; //Hack
+                                Total_Qty += "Posted Material Issues Line".Quantity;
+                            END ELSE
+                                GrpFVisible1 := FALSE;
+                        END ELSE
+                            GrpFVisible1 := FALSE;
                     END ELSE
-                     GrpFVisible4:=FALSE;
-                        GrpFVisible4 := ((Choice3=Choice3::Issue) AND (Choice1=Choice1::Normal) AND (Issued_Qty>0));
+                        GrpFVisible1 := FALSE;
+                    // copy code from // Posted Material Issues Line, GroupFooter - OnPostSection() <<
+
+                    // copy code from // Posted Material Issues Line, GroupFooter - OnPostSection() >>
+                    IF Choice3 = Choice3::Issue THEN BEGIN
+                        IF Choice1 = Choice1::Return THEN BEGIN
+                            "Posted Material Issues Header".SETRANGE("Posted Material Issues Header"."Transfer-to Code", 'STR');//Hack
+                            "material issues line".RESET;//Rev01
+                            "material issues line".SETRANGE("material issues line"."Document No.", "Posted Material Issues Line"."Material Issue No.");
+                            "material issues line".SETRANGE("material issues line"."Item No.", "Posted Material Issues Line"."Item No.");
+                            IF "material issues line".FIND('-') THEN
+                                QTY := "material issues line".Quantity
+                            ELSE
+                                QTY := "Posted Material Issues Line".Quantity;
+                            IF "Posted Material Issues Header"."Reason Code" = '' THEN
+                                Reason := "Posted Material Issues Header"."Prod. Order No."
+                            ELSE
+                                Reason := "Posted Material Issues Header"."Reason Code";
+                            /*
+                            Item.SETRANGE(Item."No.","Posted Material Issues Line"."Item No.") ;
+                            IF Item.FIND('-') THEN
+                            UC:=Item."Avg Unit Cost";
+                            */
+                            UC := "Posted Material Issues Line"."Avg. unit cost";
+                            Lot := '';
+                            "Serial no" := '';
+                            Total += "Posted Material Issues Line"."Quantity (Base)" * UC;
+                            ILE.RESET;//Rwev01
+                            ILE.SETCURRENTKEY(ILE."Document No.", ILE."Item No.", ILE."Posting Date");
+                            ILE.SETFILTER(ILE."Location Code", 'STR');
+                            ILE.SETRANGE(ILE."Document No.", "Posted Material Issues Line"."Document No.");
+                            ILE.SETRANGE(ILE."Item No.", "Posted Material Issues Line"."Item No.");
+                            IF ILE.FIND('-') THEN BEGIN
+                                Lot := ILE."Lot No.";
+                                "Serial no" := ILE."Serial No.";
+                            END;
+                            Total_Qty += "Posted Material Issues Line".Quantity;
+                            GrpFVisible2 := TRUE;
+                        END ELSE
+                            GrpFVisible2 := FALSE;
+                    END ELSE
+                        GrpFVisible2 := FALSE;
+                    // copy code from // Posted Material Issues Line, GroupFooter - OnPostSection() <<
+
+                    // copy code from // Posted Material Issues Line, GroupFooter - OnPostSection() >>
+                    IF Choice3 = Choice3::Issue THEN BEGIN
+                        IF Choice1 = Choice1::Damage THEN BEGIN
+                            IF Choice2 = Choice2::NotUsed THEN BEGIN
+                                GrpFVisible3 := TRUE;
+                                "material issues line".RESET;//Rev01
+                                "material issues line".SETRANGE("material issues line"."Document No.", "Posted Material Issues Line"."Material Issue No.");
+                                "material issues line".SETRANGE("material issues line"."Item No.", "Posted Material Issues Line"."Item No.");
+                                IF "material issues line".FIND('-') THEN
+                                    QTY := "material issues line".Quantity
+                                ELSE
+                                    QTY := "Posted Material Issues Line".Quantity;
+                                IF "Posted Material Issues Header"."Reason Code" = '' THEN
+                                    Reason := "Posted Material Issues Header"."Prod. Order No."
+                                ELSE
+                                    Reason := "Posted Material Issues Header"."Reason Code";
+
+                                UC := "Posted Material Issues Line"."Avg. unit cost";
+
+                                IF UC = 0 THEN BEGIN
+                                    IF Item.GET("Posted Material Issues Line"."Item No.") THEN
+                                        UC := Item."Avg Unit Cost";
+                                END;
+
+                                Total += "Posted Material Issues Line"."Quantity (Base)" * UC;
+                                "Project Total" += "Posted Material Issues Line"."Quantity (Base)" * UC;
+                                Lot := '';
+                                "Serial no" := '';
+                                ILE.RESET;//Rev01
+                                ILE.SETCURRENTKEY(ILE."Document No.", ILE."Item No.", ILE."Posting Date");
+                                ILE.SETFILTER(ILE."Location Code", 'STR');
+                                ILE.SETRANGE(ILE."Document No.", "Posted Material Issues Line"."Document No.");
+                                ILE.SETRANGE(ILE."Item No.", "Posted Material Issues Line"."Item No.");
+                                IF ILE.FIND('-') THEN BEGIN
+                                    Lot := ILE."Lot No.";
+                                    "Serial no" := ILE."Serial No.";
+                                END;
+                                Total_Qty += "Posted Material Issues Line".Quantity;
+                            END ELSE
+                                GrpFVisible3 := FALSE;
+                        END ELSE
+                            GrpFVisible3 := FALSE;
+                    END ELSE
+                        GrpFVisible3 := FALSE;
+                    // copy code from // Posted Material Issues Line, GroupFooter - OnPostSection() <<
+
+                    // copy code from // Posted Material Issues Line, GroupFooter - OnPostSection() <<
+                    IF Choice1 = Choice1::Normal THEN BEGIN
+                        IF ("Posted Material Issues Header"."Transfer-to Code" = 'STR') OR ("Posted Material Issues Header"."Transfer-to Code" = 'DAMAGE') THEN BEGIN
+                            GrpFVisible4 := FALSE
+                        END ELSE BEGIN
+                            "material issues line".RESET;//Rev01
+                            "material issues line".SETRANGE("material issues line"."Document No.", "Posted Material Issues Line"."Material Issue No.");
+                            "material issues line".SETRANGE("material issues line"."Item No.", "Posted Material Issues Line"."Item No.");
+                            IF "material issues line".FIND('-') THEN
+                                QTY := "material issues line".Quantity
+                            ELSE
+                                QTY := "Posted Material Issues Line".Quantity;
+
+
+                            IF "Posted Material Issues Header"."Prod. Order No." = '' THEN
+                                Reason := "Posted Material Issues Header"."Prod. Order No."
+                            ELSE
+                                Reason := "Posted Material Issues Header"."Reason Code";
+
+                            Issued_Qty := 0;
+                            Ret_Qty := 0;
+                            Issued_Qty := "Posted Material Issues Line".Quantity;
+                            // Total+="Posted Material Issues Line"."Quantity (Base)"*UC;
+                            // ileref:='';
+                            Lot := '';
+                            "Serial no" := '';
+                            "Prod. Order Description" := '';
+
+
+                            PO.RESET;
+                            PO.SETRANGE(PO."No.", "Posted Material Issues Line"."Prod. Order No.");
+                            IF PO.FINDFIRST THEN
+                                "Prod. Order Description" := PO.Description;
+                            ILE.RESET;//Rev01
+                            ILE.SETCURRENTKEY(ILE."Document No.", ILE."Item No.", ILE."Posting Date");
+                            ILE.SETFILTER(ILE."Entry Type", 'Transfer');
+                            //ILE.SETFILTER(ILE."Location Code","Posted Material Issues Line"."Transfer-to Code");
+                            ILE.SETFILTER(ILE.Quantity, '>%1', 0);
+                            ILE.SETFILTER(ILE."Document No.", "Posted Material Issues Line"."Document No.");
+                            ILE.SETFILTER(ILE."Item No.", "Posted Material Issues Line"."Item No.");
+                            IF ILE.FIND('-') THEN
+                                REPEAT
+                                    Lot := ILE."Lot No.";
+                                    "Serial no" := ILE."Serial No.";
+                                    IF Consider_Return THEN BEGIN
+                                        Ret_Qty += ILE.Quantity - ILE."Remaining Quantity";
+                                    END;
+                                UNTIL ILE.NEXT = 0;
+                            IF Consider_Return THEN BEGIN
+                                Issued_Qty := Issued_Qty - Ret_Qty;
+                            END;
+
+                            UC := 0;
+
+                            IF UC = 0 THEN BEGIN
+                                IF Item.GET("Posted Material Issues Line"."Item No.") THEN
+                                    UC := Item."Avg Unit Cost";
+                            END;     //cometed by anil
+
+                            amount := 0;
+                            vendor := '';
+                            "BILLNO." := '';
+                            BillDate := 0D;
+                            UC := 0;
+                            PurchOrder := '';
+                            invoice := '';
+                            ADD_DUTY := 0;
+                            BC := 0;
+                            CUSTOMS_DU := 0;
+                            E_CESS := 0;
+                            E_CESS_1 := 0;
+                            E_CESS_2 := 0;
+                            E_CESS_3 := 0;
+                            E_CESS_4 := 0;
+                            E_CESS_5 := 0;
+                            FORWARDING := 0;
+                            FREIGHT_G := 0;
+                            FREIGHT_1 := 0;
+                            FREIGHT_2 := 0;
+                            HANDLING := 0;
+                            INSTAL_CHA := 0;
+                            INSURANCE := 0;
+                            PACKING := 0;
+                            ROUNDING_G := 0;
+                            SERV_TAX := 0;
+                            SERVICETAX_G := 0;
+                            EXCISE := 0;
+                            FREIGHT_C1 := 0;
+                            ROUNDING_C := 0;
+                            SALES_TAX := 0;
+                            SERVICE_TA := 0;
+                            SERVICETAX_C := 0;
+                            ST := 0;
+                            VAT := 0;
+                            UNIT_COST := 0;
+                            unitCostwithTax := 0;
+                            unitCostwithoutexcise := 0;
+                            TotalCost := 0;
+                            taxStructure := '';
+                            vendor := '';
+
+
+                            Item_Batch.RESET;
+                            Item_Batch.SETFILTER(Item_Batch."Item No.", "Posted Material Issues Line"."Item No.");
+                            Item_Batch.SETFILTER(Item_Batch."Lot No.", Lot);
+                            IF Item_Batch.FINDFIRST THEN BEGIN
+                                UC := Item_Batch."Unit Cost";
+                            END ELSE BEGIN
+                                BillDate := 0D;
+                                ileref := '';
+                                TESTINV := 0;
+                                IF STRPOS(Lot, '\') > 0 THEN
+                                    lotL := COPYSTR(Lot, 1, STRPOS(Lot, '\') - 1);
+                                ITEMLED.RESET;
+                                ITEMLED.SETCURRENTKEY(ITEMLED."Item No.", ITEMLED."Lot No.", ITEMLED."ITL Doc No.");
+                                ITEMLED.SETFILTER(ITEMLED."Entry Type", 'Purchase');
+                                ITEMLED.SETRANGE(ITEMLED."Item No.", "Posted Material Issues Line"."Item No.");
+                                //IF Lot <> '' THEN //Rev01
+                                ITEMLED.SETRANGE(ITEMLED."Lot No.", Lot);
+                                //IF "Serial no" <> '' THEN //Rev01
+                                ITEMLED.SETRANGE(ITEMLED."Serial No.", "Serial no");
+                                IF ITEMLED.FINDLAST
+                                 THEN BEGIN
+                                    PRL.RESET;
+                                    PRL.SETRANGE(PRL."Document No.", ITEMLED."Document No.");
+                                    PRL.SETRANGE(PRL."No.", ITEMLED."Item No.");
+                                    IF PRL.FINDLAST THEN BEGIN
+                                        ileref := ITEMLED."Document No.";//anil aded
+                                                                         // IF "Posted Material Issues Line"."Item No."='BOIGENR00232' THEN
+                                                                         //  MESSAGE(PRL."Document No.");
+
+                                        PRH.RESET;//Rev01
+                                        PRH.SETRANGE(PRH."No.", PRL."Document No.");
+                                        IF PRH.FINDLAST THEN BEGIN
+                                            vendor := PRH."Buy-from Vendor Name";
+                                            PurchOrder := PRH."Order No.";
+                                            // "BILLNO.":=PRH."Vendor Shipment No.";
+                                            // BillDate:=PRH."Posting Date";
+
+                                            PIL.RESET;
+                                            PIL.SETCURRENTKEY(PIL.Type, PIL."No.", PIL."Variant Code");
+                                            PIL.SETRANGE(PIL."No.", PRL."No.");
+                                            PIL.SETRANGE(PIL."Receipt No.", PRL."Document No.");
+                                            IF PIL.FINDLAST THEN BEGIN
+                                                UC := PIL."Amount To Vendor" / PIL.Quantity;
+                                                IF PIL."Gen. Bus. Posting Group" = 'FOREIGN' THEN
+                                                    UC := PIL."Unit Cost (LCY)"; //WRITEN BY ANIL
+
+                                                TESTINV := 10;
+                                                IF "BILLNO." = '' THEN
+                                                    PIH.RESET;
+
+
+                                                PIH.SETFILTER(PIH."No.", PIL."Document No.");
+                                                IF PIH.FINDFIRST THEN BEGIN
+                                                    "BILLNO." := PIH."Vendor Invoice No.";
+                                                    BillDate := PIH."Posting Date";
+                                                    taxStructure := PIH.Structure;
+
+                                                    invoice := PIH."No.";
+                                                END;
+                                                UNIT_COST := PIL."Unit Cost (LCY)";
+                                                //mnraju for cost breakdown
+                                                StrDetails.RESET;
+                                                StrDetails.SETFILTER(StrDetails."Invoice No.", PIL."Document No.");
+                                                StrDetails.SETFILTER(StrDetails."Line No.", '%1', PIL."Line No.");
+                                                StrDetails.SETFILTER(StrDetails."Document Type", '%1', StrDetails."Document Type"::Invoice);
+                                                unitCostwithTax := unitCostwithTax + UNIT_COST;
+                                                IF StrDetails.FINDSET THEN
+                                                    REPEAT
+                                                        amount := StrDetails."Amount (LCY)" / PIL.Quantity;
+                                                        CASE StrDetails."Tax/Charge Group" OF
+
+                                                            'ADD.DUTY':
+                                                                BEGIN
+                                                                    ADD_DUTY := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'BC':
+                                                                BEGIN
+                                                                    BC := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'CUSTOMS DU':
+                                                                BEGIN
+                                                                    CUSTOMS_DU := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'E.CESS':
+                                                                BEGIN
+                                                                    E_CESS := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'E.CESS 1':
+                                                                BEGIN
+                                                                    E_CESS_1 := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'E.CESS 2':
+                                                                BEGIN
+                                                                    E_CESS_2 := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'E.CESS 3':
+                                                                BEGIN
+                                                                    E_CESS_3 := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'E.CESS 4':
+                                                                BEGIN
+                                                                    E_CESS_4 := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'E.CESS 5':
+                                                                BEGIN
+                                                                    E_CESS_5 := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'FORWARDING':
+                                                                BEGIN
+                                                                    FORWARDING := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'FREIGHT':
+                                                                BEGIN
+                                                                    FREIGHT_G := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'FREIGHT 1':
+                                                                BEGIN
+                                                                    FREIGHT_1 := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'FREIGHT 2':
+                                                                BEGIN
+                                                                    FREIGHT_2 := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'HANDLING':
+                                                                BEGIN
+                                                                    HANDLING := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'INSTAL CHA':
+                                                                BEGIN
+                                                                    INSTAL_CHA := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'INSURANCE':
+                                                                BEGIN
+                                                                    INSURANCE := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'PACKING':
+                                                                BEGIN
+                                                                    PACKING := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'ROUNDING':
+                                                                BEGIN
+                                                                    ROUNDING_G := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'SERV TAX':
+                                                                BEGIN
+                                                                    SERV_TAX := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'SERVICETAX':
+                                                                BEGIN
+                                                                    SERVICETAX_G := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+
+                                                        END;
+
+                                                        CASE StrDetails."Tax/Charge Code" OF
+
+                                                            'EXCISE':
+                                                                BEGIN
+                                                                    EXCISE := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'FREIGHT':
+                                                                BEGIN
+                                                                    FREIGHT_C1 := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'ROUNDING':
+                                                                BEGIN
+                                                                    ROUNDING_C := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'SALES TAX':
+                                                                BEGIN
+                                                                    SALES_TAX := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'SERVICE TA':
+                                                                BEGIN
+                                                                    SERVICE_TA := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'SERVICETAX':
+                                                                BEGIN
+                                                                    SERVICETAX_C := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'ST':
+                                                                BEGIN
+                                                                    ST := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+                                                            'VAT':
+                                                                BEGIN
+                                                                    VAT := amount;
+                                                                    unitCostwithTax := unitCostwithTax + amount;
+                                                                END;
+
+                                                        END;
+
+                                                    UNTIL StrDetails.NEXT = 0;
+                                                unitCostwithoutexcise := unitCostwithTax - (EXCISE + E_CESS + E_CESS_1 + E_CESS_2 + E_CESS_3 + E_CESS_4 + E_CESS_5);
+                                                TotalCost := unitCostwithoutexcise * "Posted Material Issues Line".Quantity;
+                                            END;
+                                        END;
+                                    END;
+                                END
+                                ELSE//sundar
+                                BEGIN
+                                    ITEMLED.RESET;
+                                    ITEMLED.SETCURRENTKEY(ITEMLED."Item No.", ITEMLED."Lot No.", ITEMLED."ITL Doc No.");
+                                    ITEMLED.SETFILTER(ITEMLED."Entry Type", 'Positive Adjmt.');
+                                    ITEMLED.SETRANGE(ITEMLED."Item No.", "Posted Material Issues Line"."Item No.");
+                                    ITEMLED.SETRANGE(ITEMLED."Lot No.", Lot);
+                                    ITEMLED.SETRANGE(ITEMLED."Serial No.", "Serial no");
+                                    IF ITEMLED.FIND('-') THEN BEGIN
+                                        ileref := ITEMLED."Document No.";
+                                        PIL.RESET;
+                                        PIL.SETRANGE(PIL."No.", ITEMLED."Item No.");
+                                        PIL.SETFILTER(PIL."Posting Date", '<%1', ITEMLED."Posting Date");
+                                        PIL.SETFILTER(PIL.Quantity, '>%1', 0);
+                                        IF PIL.FINDLAST THEN BEGIN
+                                            UC := PIL."Amount To Vendor" / PIL.Quantity;
+                                            IF PIL."Gen. Bus. Posting Group" = 'FOREIGN' THEN
+                                                UC := PIL."Unit Cost (LCY)";
+
+                                        END;
+                                    END;
+                                    UC := 0.01;
+                                END;   //sundar
+                            END;
+                            "Issued Date" := DT2DATE("Posted Material Issues Header"."Issued DateTime");
+                            IF ("Posted Material Issues Header"."Released Date" > 0D) AND ("Issued Date" > 0D) THEN
+                                "Bench-Mark" := "Issued Date" - "Posted Material Issues Header"."Released Date";
+
+
+
+                            // MESSAGE('%1',"Serial no");
+                            IF EXCEL AND (Issued_Qty > 0) THEN BEGIN
+                                Row += 1;
+                                Entercell(Row, 1, "Posted Material Issues Header"."Prod. Order No.", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(Row, 2, "Prod. Order Description", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(Row, 3, "Posted Material Issues Line"."Material Issue No.", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(Row, 4, "Posted Material Issues Line"."Item No.", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(Row, 5, "Posted Material Issues Line".Description, FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(Row, 6, "Posted Material Issues Line"."Unit of Measure Code", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(Row, 7, "Posted Material Issues Header"."User ID", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(Row, 8, FORMAT("Posted Material Issues Header"."Released Date"), FALSE, Tempexcelbuffer."Cell Type"::Date);
+                                Entercell(Row, 9, FORMAT("Posted Material Issues Header"."Issued DateTime"), FALSE, Tempexcelbuffer."Cell Type"::Date);
+                                Entercell(Row, 10, "Posted Material Issues Header"."Transfer-to Code", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(Row, 11, FORMAT(QTY), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 12, FORMAT(Issued_Qty), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 13, FORMAT(UC), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 14, FORMAT(UC * Issued_Qty), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 15, Lot, FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(Row, 16, "Serial no", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(Row, 17, FORMAT("Bench-Mark"), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                // Entercell(Row,40,FORMAT(TESTINV),FALSE,Tempexcelbuffer."Cell Type"::Number);
+                                IF UC <> 0 THEN BEGIN
+                                    Entercell(Row, 18, vendor, FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                    Entercell(Row, 19, FORMAT("BILLNO."), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                    Entercell(Row, 20, FORMAT(BillDate), FALSE, Tempexcelbuffer."Cell Type"::Date);
+                                END;
+                                //  IF ITEMLED."Document No."<>'' THEN
+                                Entercell(Row, 21, ileref, FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                // Entercell(Row,20,ITEMLED."Document No.",FALSE);
+                                PRH.RESET;
+                                PRH.SETRANGE(PRH."No.", ileref);
+                                IF PRH.FIND('-') THEN BEGIN
+                                    // Entercell(Row,21,PRH."Pay-to Name",FALSE,Tempexcelbuffer."Cell Type"::Text);
+                                    Entercell(Row, 23, FORMAT(PRH."Posting Date"), FALSE, Tempexcelbuffer."Cell Type"::Date);
+                                    Entercell(Row, 24, FORMAT(PRH."Order No."), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                    Entercell(Row, 25, FORMAT(PRH."Vendor Shipment No."), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                END;
+                                IF ("Posted Material Issues Header"."Transfer-from Code" = 'CS STR') AND
+                                   ("Posted Material Issues Header"."Transfer-to Code" = 'CST') THEN BEGIN
+                                    Entercell(Row, 29, FORMAT("Posted Material Issues Header"."Service Order No."), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                    Entercell(Row, 30, FORMAT("Posted Material Issues Header"."Service Item Description"), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                    Entercell(Row, 31, FORMAT("Posted Material Issues Header"."Service Item Serial No."), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                END;
+                                IF ("Posted Material Issues Header"."Transfer-to Code" IN ['SITE', 'CST', 'CS']) THEN BEGIN
+                                    DV.RESET;
+                                    DV.SETFILTER(DV."Dimension Code", 'LOCATIONS');
+                                    DV.SETFILTER(DV.Code, "Posted Material Issues Header"."Shortcut Dimension 2 Code");
+                                    IF DV.FINDFIRST THEN
+                                        Entercell(Row, 28, FORMAT(DV.Name), FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                END;
+                                temp1 := FREIGHT_2 + HANDLING + INSTAL_CHA + INSURANCE + PACKING + ROUNDING_G + SERV_TAX + SERVICETAX_G + SALES_TAX + SERVICE_TA + SERVICETAX_C + ST + VAT;
+                                UCinctax := UC + ADD_DUTY + BC + CUSTOMS_DU + EXCISE + E_CESS + E_CESS_1 + E_CESS_2 + E_CESS_3 + E_CESS_4 + E_CESS_5 + FORWARDING + FREIGHT_G + FREIGHT_1 + temp1;
+                                UClesexcise := UCinctax - (EXCISE + E_CESS + E_CESS_1 + E_CESS_2 + E_CESS_3 + E_CESS_4 + E_CESS_5);
+
+                                IF (taxStructure <> 'FORIEGN') AND (taxStructure <> '') THEN BEGIN
+                                    strr := COPYSTR(taxStructure, 6, STRLEN(taxStructure) - 1);
+                                    strr1 := COPYSTR(taxStructure, 1, 4);
+                                    strr2 := COPYSTR(taxStructure, STRLEN(taxStructure) - 2, STRLEN(taxStructure) - 1);
+                                END
+                                ELSE BEGIN
+                                    strr1 := taxStructure;
+                                    strr := '';
+                                END;
+                                IF strr2 = 'VAT' THEN
+                                    UClesExcsVat := UClesexcise - SALES_TAX
+                                ELSE
+                                    UClesExcsVat := UClesexcise;
+                                IssdMatCst := UClesExcsVat * Issued_Qty;
+                                //iled place
+                                Item.RESET;
+                                Item.SETFILTER(Item."No.", "Posted Material Issues Line"."Item No.");
+                                IF Item.FIND('-') THEN
+                                    Entercell(Row, 26, Item."Item Category Code", FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(Row, 27, FORMAT("Posted Material Issues Header"."Posting Date"), FALSE, Tempexcelbuffer."Cell Type"::Date);
+                                //by pranavi
+                                Entercell(Row, 28, FORMAT(ROUND(ADD_DUTY, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 29, FORMAT(ROUND(BC, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 30, FORMAT(ROUND(CUSTOMS_DU, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 31, FORMAT(ROUND(EXCISE, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 32, FORMAT(ROUND(E_CESS, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 33, FORMAT(ROUND(E_CESS_1, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 34, FORMAT(ROUND(E_CESS_2, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 35, FORMAT(ROUND(E_CESS_3, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 36, FORMAT(ROUND(E_CESS_4, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 37, FORMAT(ROUND(E_CESS_5, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 38, FORMAT(ROUND(FORWARDING, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 39, FORMAT(ROUND(FREIGHT_G, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 40, FORMAT(ROUND(FREIGHT_1, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 41, FORMAT(ROUND(FREIGHT_2, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 42, FORMAT(ROUND(HANDLING, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 43, FORMAT(ROUND(INSTAL_CHA, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 44, FORMAT(ROUND(INSURANCE, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 45, FORMAT(ROUND(PACKING, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 46, FORMAT(ROUND(ROUNDING_G, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 47, FORMAT(ROUND(SERV_TAX, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 48, FORMAT(ROUND(SERVICETAX_G, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 49, FORMAT(ROUND(SALES_TAX, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 50, FORMAT(ROUND(SERVICE_TA, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 51, FORMAT(ROUND(SERVICETAX_C, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 52, FORMAT(ROUND(ST, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 53, FORMAT(ROUND(VAT, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                //Entercell(Row,54,FORMAT(ROUND(unitCostwithTax,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
+                                //Entercell(Row,55,FORMAT(ROUND(unitCostwithoutexcise,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
+                                //Entercell(Row,56,FORMAT(ROUND(TotalCost,0.001)),FALSE,Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 22, taxStructure, FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(Row, 54, FORMAT(ROUND(UCinctax, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 55, FORMAT(ROUND(UClesexcise, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 56, FORMAT(ROUND(UClesExcsVat, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 57, FORMAT(ROUND(IssdMatCst, 0.001)), FALSE, Tempexcelbuffer."Cell Type"::Number);
+                                Entercell(Row, 58, strr1, FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(Row, 59, strr, FALSE, Tempexcelbuffer."Cell Type"::Text);
+                                Entercell(Row, 60, Make, FALSE, Tempexcelbuffer."Cell Type"::Text);
+
+
+                                //end by pranavi
+                            END;
+
+                            "Project Total" += Issued_Qty * UC;
+                            Total_Qty += Issued_Qty;
+                            Total += Issued_Qty * UC;
+                        END;
+
+                    END ELSE
+                        GrpFVisible4 := FALSE;
+                    GrpFVisible4 := ((Choice3 = Choice3::Issue) AND (Choice1 = Choice1::Normal) AND (Issued_Qty > 0));
                     // copy code from // Posted Material Issues Line, GroupFooter - OnPostSection() <<
 
                 end;
@@ -1042,8 +1126,8 @@ report 50057 "Issued Material Report_Costing"
             begin
                 // Copy code from //Posted Material Issues Header, GroupHead - OnPreSection() >>
                 IF PrevProdOrderNo <> "Posted Material Issues Header"."Prod. Order No." THEN BEGIN
-                  "Project Total":=0;
-                  PrevProdOrderNo := "Posted Material Issues Header"."Prod. Order No."
+                    "Project Total" := 0;
+                    PrevProdOrderNo := "Posted Material Issues Header"."Prod. Order No."
                 END;
                 // Copy code from //Posted Material Issues Header, GroupHead - OnPreSection() <<
             end;
@@ -1052,15 +1136,14 @@ report 50057 "Issued Material Report_Costing"
             begin
 
                 // copy code from // Posted Material Issues header, GroupFooter - OnPostSection() >>
-                IF Choice3=Choice3::Project THEN
-                BEGIN
-                  Project_Desc:='';
-                  PO.SETRANGE(PO."No.","Posted Material Issues Header"."Prod. Order No.");
-                  IF PO.FIND('-') THEN
-                  Project_Desc:=PO.Description;
-                  "R&D total"+="Project Total";
+                IF Choice3 = Choice3::Project THEN BEGIN
+                    Project_Desc := '';
+                    PO.SETRANGE(PO."No.", "Posted Material Issues Header"."Prod. Order No.");
+                    IF PO.FIND('-') THEN
+                        Project_Desc := PO.Description;
+                    "R&D total" += "Project Total";
                 END ELSE
-                  GrpFVisible5 :=FALSE;
+                    GrpFVisible5 := FALSE;
                 // copy code from // Posted Material Issues header, GroupFooter - OnPostSection() <<
             end;
 
@@ -1068,120 +1151,122 @@ report 50057 "Issued Material Report_Costing"
             begin
                 //IF Choice3<>Choice3::Issue THEN
                 //  CurrReport.BREAK;
-                IF (Choice3=Choice3::Summary) OR (Choice3=Choice3::WRET) THEN
-                  CurrReport.BREAK;
-                
-                IF Choice3=Choice3::Issue THEN BEGIN
-                  "Posted Material Issues Header".SETCURRENTKEY("Material Issue No.","Posting Date","Resource Name","Reason Code",
-                  "Prod. Order No.","Transfer-to Code","Transfer-from Code");
-                  IF Choice1=Choice1::Return THEN BEGIN
-                    "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Transfer-to Code",'STR|DAMAGE|MCH|CS STR|''R&D STR''');
-                   // "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Reason Code",'<>%1','DAMAGE');
-                  END ELSE IF Choice1=Choice1::Normal THEN BEGIN
-                    IF "Posted Material Issues Header".GETFILTER("Posted Material Issues Header"."Transfer-from Code")='' THEN
-                      "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Transfer-from Code",'STR|MCH|CS STR|''R&D STR''');
-                    IF "Posted Material Issues Header".GETFILTER("Posted Material Issues Header"."Transfer-to Code")='' THEN
-                      "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Transfer-to Code",'<>%1','DAMAGE');
-                  END ELSE IF Choice1=Choice1::Damage THEN BEGIN
-                     "Posted Material Issues Header".SETRANGE("Posted Material Issues Header"."Transfer-to Code",'DAMAGE');
-                  END;
+                IF (Choice3 = Choice3::Summary) OR (Choice3 = Choice3::WRET) THEN
+                    CurrReport.BREAK;
+
+                IF Choice3 = Choice3::Issue THEN BEGIN
+                    "Posted Material Issues Header".SETCURRENTKEY("Material Issue No.", "Posting Date", "Resource Name", "Reason Code",
+                    "Prod. Order No.", "Transfer-to Code", "Transfer-from Code");
+                    IF Choice1 = Choice1::Return THEN BEGIN
+                        "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Transfer-to Code", 'STR|DAMAGE|MCH|CS STR|''R&D STR''');
+                        // "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Reason Code",'<>%1','DAMAGE');
+                    END ELSE
+                        IF Choice1 = Choice1::Normal THEN BEGIN
+                            IF "Posted Material Issues Header".GETFILTER("Posted Material Issues Header"."Transfer-from Code") = '' THEN
+                                "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Transfer-from Code", 'STR|MCH|CS STR|''R&D STR''');
+                            IF "Posted Material Issues Header".GETFILTER("Posted Material Issues Header"."Transfer-to Code") = '' THEN
+                                "Posted Material Issues Header".SETFILTER("Posted Material Issues Header"."Transfer-to Code", '<>%1', 'DAMAGE');
+                        END ELSE
+                            IF Choice1 = Choice1::Damage THEN BEGIN
+                                "Posted Material Issues Header".SETRANGE("Posted Material Issues Header"."Transfer-to Code", 'DAMAGE');
+                            END;
                 END ELSE
-                  SETCURRENTKEY("Prod. Order No.","Prod. Order Line No.");
-                
+                    SETCURRENTKEY("Prod. Order No.", "Prod. Order Line No.");
+
                 // Copy code from // Posted Material Issues Header, Header (1 - OnPostSection() >>
                 //CurrReport.SHOWOUTPUT(Choice3=Choice3::Issue);
                 IF EXCEL THEN BEGIN
-                  Row+=1;
-                  EnterHeadings(Row,1,'Production Order',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,2,'Project',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,3,'Request No.',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,4,'Item No',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,5,'Item Desc',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,6,'Unit Of Measure',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,7,'Requested Employee',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,8,'Requested Date',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,9,'Issued Date',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,10,'Department',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,11,'Quantity Requested',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,12,'Quantity Received',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,13,'Basic Unit Cost',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,14,'Basic Total Amount.',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,15,'Lot No.',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,16,'Serial No.',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,17,'Bench Mark',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,18,'Vendor',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,19,'Bill No.',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,20,'Bill Date',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,21,'Reference No.',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,22,/*'Vendor Name'*/'Tax Structure',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,23,'Inward Date',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,24,'Purchase Order No.',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,25, 'Vendor Shipment No.',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,26, 'Item Category Code',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,27, 'Posting Date',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  //by pranavi on 11-04-2015
-                  EnterHeadings(Row,28, 'ADD DUTY',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,29, 'BC',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,30, 'CUSTOMS DU',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,31, 'Excise',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,32, 'ECESS',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,33, 'ECESS1',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,34, 'ECESS2',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,35, 'ECESS3',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,36, 'ECESS4',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,37, 'ECESS5',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,38, 'FORWARDING',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,39, 'FREIGHT',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,40, 'FREIGHT1',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,41, 'FREIGHT2',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,42, 'HANDLING',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,43, 'INSTAL CHARG',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,44, 'INSURANCE',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,45, 'PACKING',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,46, 'ROUNDING',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,47, 'SERV TAX',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,48, 'SERVICETAX G',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,49, 'SALES TAX',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,50, 'SERVICE TA',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,51, 'SERVICETAX C',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,52, 'ST',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,53, 'VAT',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  //EnterHeadings(Row,54, 'Final Unit Cost',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  //EnterHeadings(Row,55, 'Unit Cost without Tax',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  //EnterHeadings(Row,56, 'Total Cost',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,54, 'Unit Cost inc of all taxes',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,55, 'Unit Cost(Less excise)',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,56, 'Unit Cost(Less excise & VAT)',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,57, 'Issued Material Tot Cost',TRUE,Tempexcelbuffer."Cell Type"::Number);
-                  EnterHeadings(Row,58, 'Tax Break UP1',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  EnterHeadings(Row,59, 'Tax Break Up2',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                    EnterHeadings(Row,60, 'Make',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                
-                
-                
-                  //end by pranavi
-                 // EnterHeadings(Row,26, 'Posting Date',TRUE,Tempexcelbuffer."Cell Type"::Text);
-                  Row+=1;
+                    Row += 1;
+                    EnterHeadings(Row, 1, 'Production Order', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 2, 'Project', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 3, 'Request No.', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 4, 'Item No', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 5, 'Item Desc', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 6, 'Unit Of Measure', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 7, 'Requested Employee', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 8, 'Requested Date', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 9, 'Issued Date', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 10, 'Department', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 11, 'Quantity Requested', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 12, 'Quantity Received', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 13, 'Basic Unit Cost', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 14, 'Basic Total Amount.', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 15, 'Lot No.', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 16, 'Serial No.', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 17, 'Bench Mark', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 18, 'Vendor', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 19, 'Bill No.', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 20, 'Bill Date', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 21, 'Reference No.', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 22,/*'Vendor Name'*/'Tax Structure', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 23, 'Inward Date', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 24, 'Purchase Order No.', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 25, 'Vendor Shipment No.', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 26, 'Item Category Code', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 27, 'Posting Date', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    //by pranavi on 11-04-2015
+                    EnterHeadings(Row, 28, 'ADD DUTY', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 29, 'BC', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 30, 'CUSTOMS DU', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 31, 'Excise', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 32, 'ECESS', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 33, 'ECESS1', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 34, 'ECESS2', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 35, 'ECESS3', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 36, 'ECESS4', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 37, 'ECESS5', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 38, 'FORWARDING', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 39, 'FREIGHT', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 40, 'FREIGHT1', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 41, 'FREIGHT2', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 42, 'HANDLING', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 43, 'INSTAL CHARG', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 44, 'INSURANCE', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 45, 'PACKING', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 46, 'ROUNDING', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 47, 'SERV TAX', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 48, 'SERVICETAX G', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 49, 'SALES TAX', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 50, 'SERVICE TA', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 51, 'SERVICETAX C', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 52, 'ST', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 53, 'VAT', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    //EnterHeadings(Row,54, 'Final Unit Cost',TRUE,Tempexcelbuffer."Cell Type"::Number);
+                    //EnterHeadings(Row,55, 'Unit Cost without Tax',TRUE,Tempexcelbuffer."Cell Type"::Number);
+                    //EnterHeadings(Row,56, 'Total Cost',TRUE,Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 54, 'Unit Cost inc of all taxes', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 55, 'Unit Cost(Less excise)', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 56, 'Unit Cost(Less excise & VAT)', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 57, 'Issued Material Tot Cost', TRUE, Tempexcelbuffer."Cell Type"::Number);
+                    EnterHeadings(Row, 58, 'Tax Break UP1', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 59, 'Tax Break Up2', TRUE, Tempexcelbuffer."Cell Type"::Text);
+                    EnterHeadings(Row, 60, 'Make', TRUE, Tempexcelbuffer."Cell Type"::Text);
+
+
+
+                    //end by pranavi
+                    // EnterHeadings(Row,26, 'Posting Date',TRUE,Tempexcelbuffer."Cell Type"::Text);
+                    Row += 1;
                 END;
                 // Copy code from // Posted Material Issues Header, Header (1 - OnPostSection() <<
-                
+
                 PrevProdOrderNo := '';
 
             end;
         }
-        dataitem("Production Order";"Production Order")
+        dataitem("Production Order"; "Production Order")
         {
-            DataItemTableView = SORTING(Status,No.) WHERE(Location Code=CONST(R&D));
-            column(Production_Order_Status;Status)
+            DataItemTableView = SORTING(Status, No.) WHERE(Location Code=CONST(R&D));
+            column(Production_Order_Status; Status)
             {
             }
-            column(Production_Order_No_;"No.")
+            column(Production_Order_No_; "No.")
             {
             }
-            dataitem("<Posted Material Issues Line1>";"Posted Material Issues Line")
+            dataitem("<Posted Material Issues Line1>"; "Posted Material Issues Line")
             {
                 DataItemLink = Prod. Order No.=FIELD(No.);
-                DataItemTableView = SORTING(Prod. Order No.,Item No.) ORDER(Ascending) WHERE(Transfer-from Code=FILTER(STR|'R&D STR'),Quantity=FILTER(>0));
+                DataItemTableView = SORTING(Prod. Order No., Item No.) ORDER(Ascending) WHERE(Transfer-from Code=FILTER(STR|'R&D STR'),Quantity=FILTER(>0));
                 ReqFilterHeading = 'Summerised Project wise Issues';
                 column(COMPANYNAME_Control1102154031;COMPANYNAME)
                 {
@@ -1841,13 +1926,13 @@ report 50057 "Issued Material Report_Costing"
         MATERIAL_ISSUES_HEADER : Record "Material Issues Header";
         MATERIAL_ISSUES_LINE : Record "Material Issues Line";
         PO_FORM : Page "Released Production Order";
-        user : Record User;
-        REPLACE_ITEM_FILTER : Text[100];
-        TrackingSpecification : Record "Mat.Issue Track. Specification";
-        LineNo : Integer;
-        "Release MaterialIssue Document" : Codeunit "Release MaterialIssue Document";
-        Issue_Post : Codeunit "MaterialIssueOrde-Post Receipt";
-        Text002 : Label 'There is nothing to release for MaterialIssue order %1.';
+                      user : Record User;
+                      REPLACE_ITEM_FILTER : Text[100];
+                      TrackingSpecification : Record "Mat.Issue Track. Specification";
+                      LineNo : Integer;
+                      "Release MaterialIssue Document" : Codeunit "Release MaterialIssue Document";
+                      Issue_Post : Codeunit "MaterialIssueOrde-Post Receipt";
+                      Text002 : Label 'There is nothing to release for MaterialIssue order %1.';
         REQUESTED_QTY : Decimal;
         Sales_Order_No : Code[30];
         Item_No : Code[30];

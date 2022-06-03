@@ -8,76 +8,76 @@ report 50140 "GSTR2 Purchaset"
 
     dataset
     {
-        dataitem(General;"Integer")
+        dataitem(General; "Integer")
         {
-            DataItemTableView = WHERE(Number=CONST(1));
-            column(Number_General;General.Number)
+            DataItemTableView = WHERE(Number = CONST(1));
+            column(Number_General; General.Number)
             {
             }
-            column(LocationErr;LocationErr)
+            column(LocationErr; LocationErr)
             {
             }
-            column(GSTIN_Caption;GSTIN_CaptionLbl)
+            column(GSTIN_Caption; GSTIN_CaptionLbl)
             {
             }
-            column(NameofTax_Caption;NameofTax_CaptionLbl)
+            column(NameofTax_Caption; NameofTax_CaptionLbl)
             {
             }
-            column(Period_Caption;Period_CaptionLbl)
+            column(Period_Caption; Period_CaptionLbl)
             {
             }
-            column(One_Caption;One_CaptionLbl)
+            column(One_Caption; One_CaptionLbl)
             {
             }
-            column(Two_Caption;Two_CaptionLbl)
+            column(Two_Caption; Two_CaptionLbl)
             {
             }
-            column(Three_Caption;Three_CaptionLbl)
+            column(Three_Caption; Three_CaptionLbl)
             {
             }
-            column(INSTRUCTIONS_Caption;INSTRUCTIONS_CaptionLbl)
+            column(INSTRUCTIONS_Caption; INSTRUCTIONS_CaptionLbl)
             {
             }
-            column(Ex_Caption;Ex_CaptionLbl)
+            column(Ex_Caption; Ex_CaptionLbl)
             {
             }
-            column(Avoid_Cut_Caption;Avoid_Cut_CaptionLbl)
+            column(Avoid_Cut_Caption; Avoid_Cut_CaptionLbl)
             {
             }
-            column(To_Enter_Caption;To_Enter_CaptionLbl)
+            column(To_Enter_Caption; To_Enter_CaptionLbl)
             {
             }
-            column(While_Pasting_Caption;While_Pasting_CaptionLbl)
+            column(While_Pasting_Caption; While_Pasting_CaptionLbl)
             {
             }
-            column(Before_any_Caption;Before_any_CaptionLbl)
+            column(Before_any_Caption; Before_any_CaptionLbl)
             {
             }
-            column(Avoid_using_Caption;Avoid_using_CaptionLbl)
+            column(Avoid_using_Caption; Avoid_using_CaptionLbl)
             {
             }
-            column(If_mandatory_Caption;If_mandatory_CaptionLbl)
+            column(If_mandatory_Caption; If_mandatory_CaptionLbl)
             {
             }
-            column(Option_Field_Caption;Option_Field_CaptionLbl)
+            column(Option_Field_Caption; Option_Field_CaptionLbl)
             {
             }
-            column(Mandatory_Field_Caption;Mandatory_Field_CaptionLbl)
+            column(Mandatory_Field_Caption; Mandatory_Field_CaptionLbl)
             {
             }
-            column(GeneralVisibility;GeneralVisibility)
+            column(GeneralVisibility; GeneralVisibility)
             {
             }
-            column(GSTIN;GSTIN)
+            column(GSTIN; GSTIN)
             {
             }
-            column(TaxablePerson;TaxablePerson)
+            column(TaxablePerson; TaxablePerson)
             {
             }
-            column(Period;Period)
+            column(Period; Period)
             {
             }
-            column(GeneralDate;GeneralDate)
+            column(GeneralDate; GeneralDate)
             {
             }
 
@@ -88,223 +88,223 @@ report 50140 "GSTR2 Purchaset"
 
             trigger OnPreDataItem();
             begin
-                GeneralDate := DMY2DATE(1,Period,Year);
+                GeneralDate := DMY2DATE(1, Period, Year);
             end;
         }
-        dataitem(B2B;"Integer")
+        dataitem(B2B; "Integer")
         {
             DataItemTableView = SORTING(Number);
-            column(Number_B2B;B2B.Number)
+            column(Number_B2B; B2B.Number)
             {
             }
-            column(B2BVisibility;B2BVisibility)
+            column(B2BVisibility; B2BVisibility)
             {
             }
-            column(G1_Caption2;G1_CaptionLbl)
+            column(G1_Caption2; G1_CaptionLbl)
             {
             }
-            column(G2_Caption2;G2_CaptionLbl)
+            column(G2_Caption2; G2_CaptionLbl)
             {
             }
-            column(G3_Caption2;G3_CaptionLbl)
+            column(G3_Caption2; G3_CaptionLbl)
             {
             }
-            column(G4_Caption2;G4_CaptionLbl)
+            column(G4_Caption2; G4_CaptionLbl)
             {
             }
-            column(G5_Caption2;G5_CaptionLbl)
+            column(G5_Caption2; G5_CaptionLbl)
             {
             }
-            column(G6_Caption2;G6_CaptionLbl)
+            column(G6_Caption2; G6_CaptionLbl)
             {
             }
-            column(G7_Caption2;G7_CaptionLbl)
+            column(G7_Caption2; G7_CaptionLbl)
             {
             }
-            column(G8_Caption2;G8_CaptionLbl)
+            column(G8_Caption2; G8_CaptionLbl)
             {
             }
-            column(G9_Caption2;G9_CaptionLbl)
+            column(G9_Caption2; G9_CaptionLbl)
             {
             }
-            column(G10_Caption2;G10_CaptionLbl)
+            column(G10_Caption2; G10_CaptionLbl)
             {
             }
-            column(G11_Caption2;G11_CaptionLbl)
+            column(G11_Caption2; G11_CaptionLbl)
             {
             }
-            column(G12_Caption2;G12_CaptionLbl)
+            column(G12_Caption2; G12_CaptionLbl)
             {
             }
-            column(G13_Caption2;G13_CaptionLbl)
+            column(G13_Caption2; G13_CaptionLbl)
             {
             }
-            column(G14_Caption2;G14_CaptionLbl)
+            column(G14_Caption2; G14_CaptionLbl)
             {
             }
-            column(G15_Caption2;G15_CaptionLbl)
+            column(G15_Caption2; G15_CaptionLbl)
             {
             }
-            column(G16_Caption2;G16_CaptionLbl)
+            column(G16_Caption2; G16_CaptionLbl)
             {
             }
-            column(G17_Caption2;G17_CaptionLbl)
+            column(G17_Caption2; G17_CaptionLbl)
             {
             }
-            column(G18_Caption2;G18_CaptionLbl)
+            column(G18_Caption2; G18_CaptionLbl)
             {
             }
-            column(G19_Caption2;G19_CaptionLbl)
+            column(G19_Caption2; G19_CaptionLbl)
             {
             }
-            column(IftheSupply_Caption2;IftheSupply_CaptionLbl)
+            column(IftheSupply_Caption2; IftheSupply_CaptionLbl)
             {
             }
-            column(InwardSupplies_Caption2;InwardSupplies_CaptionLbl)
+            column(InwardSupplies_Caption2; InwardSupplies_CaptionLbl)
             {
             }
-            column(EligibilityITC_Caption2;EligibilityITC_CaptionLbl)
+            column(EligibilityITC_Caption2; EligibilityITC_CaptionLbl)
             {
             }
-            column(Notes_Caption2;Notes_CaptionLbl)
+            column(Notes_Caption2; Notes_CaptionLbl)
             {
             }
-            column(Taxable_Person_Caption2;Taxable_Person_CaptionLbl)
+            column(Taxable_Person_Caption2; Taxable_Person_CaptionLbl)
             {
             }
-            column(In_case_of_Caption2;In_case_of_CaptionLbl)
+            column(In_case_of_Caption2; In_case_of_CaptionLbl)
             {
             }
-            column(In_case_of_intra_Caption2;In_case_of_intra_CaptionLbl)
+            column(In_case_of_intra_Caption2; In_case_of_intra_CaptionLbl)
             {
             }
-            column(Taxable_outward_Caption2;Taxable_outward_CaptionLbl)
+            column(Taxable_outward_Caption2; Taxable_outward_CaptionLbl)
             {
             }
-            column(GSTIN_UID_Caption2;GSTIN_UID_CaptionLbl)
+            column(GSTIN_UID_Caption2; GSTIN_UID_CaptionLbl)
             {
             }
-            column(Party_Name_Caption2;Party_Name_CaptionLbl)
+            column(Party_Name_Caption2; Party_Name_CaptionLbl)
             {
             }
-            column(Invoice_Caption2;Invoice_CaptionLbl)
+            column(Invoice_Caption2; Invoice_CaptionLbl)
             {
             }
-            column(Number_Caption2;Number_CaptionLbl)
+            column(Number_Caption2; Number_CaptionLbl)
             {
             }
-            column(Date_Caption2;Date_CaptionLbl)
+            column(Date_Caption2; Date_CaptionLbl)
             {
             }
-            column(Value_Caption2;Value_CaptionLbl)
+            column(Value_Caption2; Value_CaptionLbl)
             {
             }
-            column(Taxable_Value_Caption2;Taxable_Value_CaptionLbl)
+            column(Taxable_Value_Caption2; Taxable_Value_CaptionLbl)
             {
             }
-            column(GST_Rate_Caption2;GST_Rate_CaptionLbl)
+            column(GST_Rate_Caption2; GST_Rate_CaptionLbl)
             {
             }
-            column(IGST_Caption2;IGST_CaptionLbl)
+            column(IGST_Caption2; IGST_CaptionLbl)
             {
             }
-            column(CGST_Caption2;CGST_CaptionLbl)
+            column(CGST_Caption2; CGST_CaptionLbl)
             {
             }
-            column(SGST_UTGST_Caption2;SGST_UTGST_CaptionLbl)
+            column(SGST_UTGST_Caption2; SGST_UTGST_CaptionLbl)
             {
             }
-            column(CESS_Caption2;CESS_CaptionLbl)
+            column(CESS_Caption2; CESS_CaptionLbl)
             {
             }
-            column(POS_only_if_Caption2;PlaceofSupply_CaptionLbl)
+            column(POS_only_if_Caption2; PlaceofSupply_CaptionLbl)
             {
             }
-            column(Reverse_Charge_Caption2;Reverse_Charge_CaptionLbl)
+            column(Reverse_Charge_Caption2; Reverse_Charge_CaptionLbl)
             {
             }
-            column(Indicate_supply_Caption2;Indicate_supply_CaptionLbl)
+            column(Indicate_supply_Caption2; Indicate_supply_CaptionLbl)
             {
             }
-            column(GSTIN_of_ecommerce_Caption2;GSTIN_of_ecommerce_CaptionLbl)
+            column(GSTIN_of_ecommerce_Caption2; GSTIN_of_ecommerce_CaptionLbl)
             {
             }
-            column(Original_Invoice_Caption2;Original_Invoice_CaptionLbl)
+            column(Original_Invoice_Caption2; Original_Invoice_CaptionLbl)
             {
             }
-            column(No_Caption2;No_CaptionLbl)
+            column(No_Caption2; No_CaptionLbl)
             {
             }
-            column(Amount_Caption2;Amount_CaptionLbl)
+            column(Amount_Caption2; Amount_CaptionLbl)
             {
             }
-            column(AmountITC_Caption2;AmountITC_CaptionLbl)
+            column(AmountITC_Caption2; AmountITC_CaptionLbl)
             {
             }
-            column(SGSTAmount2;SGSTAmount)
+            column(SGSTAmount2; SGSTAmount)
             {
             }
-            column(CGSTAmount2;CGSTAmount)
+            column(CGSTAmount2; CGSTAmount)
             {
             }
-            column(IGSTAmount2;IGSTAmount)
+            column(IGSTAmount2; IGSTAmount)
             {
             }
-            column(CGSTRate2;CGSTRate)
+            column(CGSTRate2; CGSTRate)
             {
             }
-            column(SGSTRate2;SGSTRate)
+            column(SGSTRate2; SGSTRate)
             {
             }
-            column(IGSTRate2;IGSTRate)
+            column(IGSTRate2; IGSTRate)
             {
             }
-            column(IGSTTotal2;IGSTTotal)
+            column(IGSTTotal2; IGSTTotal)
             {
             }
-            column(CGSTTotal2;CGSTTotal)
+            column(CGSTTotal2; CGSTTotal)
             {
             }
-            column(SGSTTotal2;SGSTTotal)
+            column(SGSTTotal2; SGSTTotal)
             {
             }
-            column(GSTPertg2;GSTPertg)
+            column(GSTPertg2; GSTPertg)
             {
             }
-            column(IsGSTApplicable2;IsGSTApplicable)
+            column(IsGSTApplicable2; IsGSTApplicable)
             {
             }
-            column(Vendor_No2;DetailedGSTLedgerEntry."Buyer/Seller Reg. No.")
+            column(Vendor_No2; DetailedGSTLedgerEntry."Buyer/Seller Reg. No.")
             {
             }
-            column(Document_No2;PurchInvHeaderB2B."No.")
+            column(Document_No2; PurchInvHeaderB2B."No.")
             {
             }
-            column(DocNo22;PurchInvLine."Document No.")
+            column(DocNo22; PurchInvLine."Document No.")
             {
             }
-            column(Lineno2;PurchInvLine."Line No.")
+            column(Lineno2; PurchInvLine."Line No.")
             {
             }
-            column(Vendor_Name2;PurchInvHeaderB2B."Buy-from Vendor Name")
+            column(Vendor_Name2; PurchInvHeaderB2B."Buy-from Vendor Name")
             {
             }
-            column(PostingDate2;PurchInvHeaderB2B."Document Date")
+            column(PostingDate2; PurchInvHeaderB2B."Document Date")
             {
             }
-            column(Amount_to_Vendor2;PurchInvLine."Amount To Vendor")
+            column(Amount_to_Vendor2; PurchInvLine."Amount To Vendor")
             {
             }
-            column(B2BHeaderVisibility2;B2BHeaderVisibility)
+            column(B2BHeaderVisibility2; B2BHeaderVisibility)
             {
             }
-            column(B2BFooterVisibility2;B2BFooterVisibility)
+            column(B2BFooterVisibility2; B2BFooterVisibility)
             {
             }
-            column(TaxableValueB2B2;TaxableValueB2B)
+            column(TaxableValueB2B2; TaxableValueB2B)
             {
             }
-            column(StateDescription2;StateDescription)
+            column(StateDescription2; StateDescription)
             {
             }
 
@@ -324,72 +324,72 @@ report 50140 "GSTR2 Purchaset"
                 CLEAR(StateDescription);
 
                 IF Number = 1 THEN
-                  B2BHeaderVisibility := TRUE
-                 ELSE
-                   B2BHeaderVisibility := FALSE;
+                    B2BHeaderVisibility := TRUE
+                ELSE
+                    B2BHeaderVisibility := FALSE;
                 B2BVisibility := FALSE;
                 IF Number = 1 THEN
-                  PurchInvHeaderB2B.FINDFIRST
+                    PurchInvHeaderB2B.FINDFIRST
                 ELSE
-                  PurchInvHeaderB2B.NEXT;
+                    PurchInvHeaderB2B.NEXT;
                 PurchInvHeaderB2B.CALCFIELDS("Amount to Vendor");
 
                 IsGSTApplicable := GSTManagement.IsGSTApplicable(PurchInvHeaderB2B.Structure);
                 IF VendorGRec.GET(PurchInvHeaderB2B."Buy-from Vendor No.") THEN;
 
                 PurchInvLine.RESET;
-                PurchInvLine.SETRANGE("Document No.",PurchInvHeaderB2B."No.");
-                PurchInvLine.SETFILTER("GST Group Code",'<>%1','');
+                PurchInvLine.SETRANGE("Document No.", PurchInvHeaderB2B."No.");
+                PurchInvLine.SETFILTER("GST Group Code", '<>%1', '');
                 IF PurchInvLine.FINDSET THEN
-                REPEAT
-                  IF IsGSTApplicable  THEN BEGIN
-                    GSTComponent.RESET;
-                    GSTComponent.SETRANGE("GST Jurisdiction Type",PurchInvLine."GST Jurisdiction Type");
-                    IF GSTComponent.FINDSET THEN
-                      REPEAT
-                        DetailedGSTLedgerEntry.RESET;
-                        DetailedGSTLedgerEntry.SETCURRENTKEY("Transaction Type","Document Type","Document No.","Document Line No.");
-                        DetailedGSTLedgerEntry.SETRANGE("Transaction Type",DetailedGSTLedgerEntry."Transaction Type"::Purchase);
-                        DetailedGSTLedgerEntry.SETRANGE("Document Type",DetailedGSTLedgerEntry."Document Type"::Invoice);
-                        DetailedGSTLedgerEntry.SETRANGE("Document No.",PurchInvLine."Document No.");
-                        DetailedGSTLedgerEntry.SETRANGE("Document Line No.",PurchInvLine."Line No.");
-                        DetailedGSTLedgerEntry.SETRANGE("Entry Type",DetailedGSTLedgerEntry."Entry Type"::"Initial Entry");
-                        DetailedGSTLedgerEntry.SETRANGE("GST Component Code",GSTComponent.Code);
-                        IF DetailedGSTLedgerEntry.FINDSET THEN BEGIN
-                          REPEAT
-                            CASE DetailedGSTLedgerEntry."GST Component Code" OF
-                              'IGST':
-                                BEGIN
-                                  IGSTRate := DetailedGSTLedgerEntry."GST %";
-                                  IGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
-                                  IGSTTotal += IGSTAmount;
-                                END;
-                              'CGST':
-                                BEGIN
-                                  CGSTRate := DetailedGSTLedgerEntry."GST %";
-                                  CGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
-                                  CGSTTotal += CGSTAmount;
-                                END;
-                              'SGST':
-                                BEGIN
-                                  SGSTRate := DetailedGSTLedgerEntry."GST %";
-                                  SGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
-                                  SGSTTotal += SGSTAmount;
-                                END;
-                            END;
-                          UNTIL DetailedGSTLedgerEntry.NEXT = 0;
+                    REPEAT
+                        IF IsGSTApplicable THEN BEGIN
+                            GSTComponent.RESET;
+                            GSTComponent.SETRANGE("GST Jurisdiction Type", PurchInvLine."GST Jurisdiction Type");
+                            IF GSTComponent.FINDSET THEN
+                                REPEAT
+                                    DetailedGSTLedgerEntry.RESET;
+                                    DetailedGSTLedgerEntry.SETCURRENTKEY("Transaction Type", "Document Type", "Document No.", "Document Line No.");
+                                    DetailedGSTLedgerEntry.SETRANGE("Transaction Type", DetailedGSTLedgerEntry."Transaction Type"::Purchase);
+                                    DetailedGSTLedgerEntry.SETRANGE("Document Type", DetailedGSTLedgerEntry."Document Type"::Invoice);
+                                    DetailedGSTLedgerEntry.SETRANGE("Document No.", PurchInvLine."Document No.");
+                                    DetailedGSTLedgerEntry.SETRANGE("Document Line No.", PurchInvLine."Line No.");
+                                    DetailedGSTLedgerEntry.SETRANGE("Entry Type", DetailedGSTLedgerEntry."Entry Type"::"Initial Entry");
+                                    DetailedGSTLedgerEntry.SETRANGE("GST Component Code", GSTComponent.Code);
+                                    IF DetailedGSTLedgerEntry.FINDSET THEN BEGIN
+                                        REPEAT
+                                            CASE DetailedGSTLedgerEntry."GST Component Code" OF
+                                                'IGST':
+                                                    BEGIN
+                                                        IGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                        IGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                        IGSTTotal += IGSTAmount;
+                                                    END;
+                                                'CGST':
+                                                    BEGIN
+                                                        CGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                        CGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                        CGSTTotal += CGSTAmount;
+                                                    END;
+                                                'SGST':
+                                                    BEGIN
+                                                        SGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                        SGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                        SGSTTotal += SGSTAmount;
+                                                    END;
+                                            END;
+                                        UNTIL DetailedGSTLedgerEntry.NEXT = 0;
+                                    END;
+                                UNTIL GSTComponent.NEXT = 0;
                         END;
-                      UNTIL GSTComponent.NEXT = 0;
-                   END;
-                  GSTPertg := IGSTRate + CGSTRate + SGSTRate;
-                  TaxableValueB2B := PurchInvLine."GST Base Amount";
-                  ValueTdsAmount := PurchInvLine."TDS Amount";
-                  IF LocationGRec.GET(PurchInvHeaderB2B."Location Code") THEN;
-                    StateGRec.RESET;
-                    StateGRec.SETRANGE(Code,LocationGRec."State Code");
-                    IF StateGRec.FINDFIRST THEN
-                      StateDescription := StateGRec.Description;
-                  UNTIL PurchInvLine.NEXT = 0;
+                        GSTPertg := IGSTRate + CGSTRate + SGSTRate;
+                        TaxableValueB2B := PurchInvLine."GST Base Amount";
+                        ValueTdsAmount := PurchInvLine."TDS Amount";
+                        IF LocationGRec.GET(PurchInvHeaderB2B."Location Code") THEN;
+                        StateGRec.RESET;
+                        StateGRec.SETRANGE(Code, LocationGRec."State Code");
+                        IF StateGRec.FINDFIRST THEN
+                            StateDescription := StateGRec.Description;
+                    UNTIL PurchInvLine.NEXT = 0;
             end;
 
             trigger OnPostDataItem();
@@ -401,299 +401,299 @@ report 50140 "GSTR2 Purchaset"
             begin
                 Exp := 'CM';
                 MonthGVar := Period;
-                FromDate := DMY2DATE(1,MonthGVar,Year);
-                ToDate := CALCDATE(Exp,FromDate);
+                FromDate := DMY2DATE(1, MonthGVar, Year);
+                ToDate := CALCDATE(Exp, FromDate);
 
                 PurchInvHeaderB2B.RESET;
-                PurchInvHeaderB2B.SETRANGE("Posting Date",FromDate,ToDate);
-                PurchInvHeaderB2B.SETRANGE("Location Code",LocationCode);
-                PurchInvHeaderB2B.SETRANGE("GST Vendor Type",PurchInvHeaderB2B."GST Vendor Type"::Registered);
+                PurchInvHeaderB2B.SETRANGE("Posting Date", FromDate, ToDate);
+                PurchInvHeaderB2B.SETRANGE("Location Code", LocationCode);
+                PurchInvHeaderB2B.SETRANGE("GST Vendor Type", PurchInvHeaderB2B."GST Vendor Type"::Registered);
                 IF PurchInvHeaderB2B.FINDFIRST THEN;
                 MESSAGE(FORMAT(PurchInvHeaderB2B.COUNT));
                 DetailedGSTLedgerEntry.RESET;
-                DetailedGSTLedgerEntry.SETRANGE("Reverse Charge",FALSE);
+                DetailedGSTLedgerEntry.SETRANGE("Reverse Charge", FALSE);
                 IF DetailedGSTLedgerEntry.FINDFIRST THEN
-                  B2BVisibility := FALSE;
-                SETRANGE(B2B.Number,1,PurchInvHeaderB2B.COUNT);
+                    B2BVisibility := FALSE;
+                SETRANGE(B2B.Number, 1, PurchInvHeaderB2B.COUNT);
             end;
         }
-        dataitem("Reverse Charge";"Integer")
+        dataitem("Reverse Charge"; "Integer")
         {
             DataItemTableView = SORTING(Number);
-            column(Reverse_Charge_Number;"Reverse Charge".Number)
+            column(Reverse_Charge_Number; "Reverse Charge".Number)
             {
             }
-            column(Reverse_TaxableValue;TaxableValueB2B)
+            column(Reverse_TaxableValue; TaxableValueB2B)
             {
             }
-            column(ReverseTaxbleValue;ReverseTaxbleValue)
+            column(ReverseTaxbleValue; ReverseTaxbleValue)
             {
             }
-            column(ReverseChargeHeaderVisibility;ReverseChargeHeaderVisibility)
+            column(ReverseChargeHeaderVisibility; ReverseChargeHeaderVisibility)
             {
             }
-            column(ReverseChargeVisibility;ReverseChargeVisibility)
+            column(ReverseChargeVisibility; ReverseChargeVisibility)
             {
             }
-            column(ReverseCharge_GSTNo;VendorReverseGRec."GST Registration No.")
+            column(ReverseCharge_GSTNo; VendorReverseGRec."GST Registration No.")
             {
             }
-            column(Reverse_Category;PurchInvHeaderB2B."GST Vendor Type")
+            column(Reverse_Category; PurchInvHeaderB2B."GST Vendor Type")
             {
             }
-            column(Reverse_Document_No;PurchInvHeaderB2B."Vendor Invoice No.")
+            column(Reverse_Document_No; PurchInvHeaderB2B."Vendor Invoice No.")
             {
             }
-            column(Reverse_Vendor_Name;PurchInvHeaderB2B."Buy-from Vendor Name")
+            column(Reverse_Vendor_Name; PurchInvHeaderB2B."Buy-from Vendor Name")
             {
             }
-            column(Reverse_PostingDate;PurchInvHeaderB2B."Document Date")
+            column(Reverse_PostingDate; PurchInvHeaderB2B."Document Date")
             {
             }
-            column(Reverse_Amount_to_Vendor;PurchInvHeaderB2B."Amount to Vendor")
+            column(Reverse_Amount_to_Vendor; PurchInvHeaderB2B."Amount to Vendor")
             {
             }
-            column(Reverse_InternalDocNo_Caption;InternalDocNo_CaptionLbl)
+            column(Reverse_InternalDocNo_Caption; InternalDocNo_CaptionLbl)
             {
             }
-            column(Reverse_InternalDocDate_Caption;InternalDocDate_CaptionLbl)
+            column(Reverse_InternalDocDate_Caption; InternalDocDate_CaptionLbl)
             {
             }
-            column(Reverse_InternalDocNo;PurchInvHeaderB2B."No.")
+            column(Reverse_InternalDocNo; PurchInvHeaderB2B."No.")
             {
             }
-            column(Reverse_InternalDocDate;PurchInvHeaderB2B."Posting Date")
+            column(Reverse_InternalDocDate; PurchInvHeaderB2B."Posting Date")
             {
             }
-            column(Reverse_StateDescription;StateDescription)
+            column(Reverse_StateDescription; StateDescription)
             {
             }
-            column(Reverse_GSTPertg;GSTPertg)
+            column(Reverse_GSTPertg; GSTPertg)
             {
             }
-            column(IftheSupplyReverse_Caption;IftheSupplyReverse_CaptionLbl)
+            column(IftheSupplyReverse_Caption; IftheSupplyReverse_CaptionLbl)
             {
             }
-            column(InwardsuppliesRev_Caption;InwardsuppliesRev_CaptionLbl)
+            column(InwardsuppliesRev_Caption; InwardsuppliesRev_CaptionLbl)
             {
             }
-            column(EligibilityITC_ReverseCaption;EligibilityITC_CaptionLbl)
+            column(EligibilityITC_ReverseCaption; EligibilityITC_CaptionLbl)
             {
             }
-            column(G1_Reverse_Caption;G1_CaptionLbl)
+            column(G1_Reverse_Caption; G1_CaptionLbl)
             {
             }
-            column(G2_Reverse_Caption;G2_CaptionLbl)
+            column(G2_Reverse_Caption; G2_CaptionLbl)
             {
             }
-            column(G3_Reverse_Caption;G3_CaptionLbl)
+            column(G3_Reverse_Caption; G3_CaptionLbl)
             {
             }
-            column(G4_Reverse_Caption;G4_CaptionLbl)
+            column(G4_Reverse_Caption; G4_CaptionLbl)
             {
             }
-            column(G5_Reverse_Caption;G5_CaptionLbl)
+            column(G5_Reverse_Caption; G5_CaptionLbl)
             {
             }
-            column(G6_Reverse_Caption;G6_CaptionLbl)
+            column(G6_Reverse_Caption; G6_CaptionLbl)
             {
             }
-            column(G7_Reverse_Caption;G7_CaptionLbl)
+            column(G7_Reverse_Caption; G7_CaptionLbl)
             {
             }
-            column(G8_Reverse_Caption;G8_CaptionLbl)
+            column(G8_Reverse_Caption; G8_CaptionLbl)
             {
             }
-            column(G9_Reverse_Caption;G9_CaptionLbl)
+            column(G9_Reverse_Caption; G9_CaptionLbl)
             {
             }
-            column(G10_Reverse_Caption;G10_CaptionLbl)
+            column(G10_Reverse_Caption; G10_CaptionLbl)
             {
             }
-            column(G11_Reverse_Caption;G11_CaptionLbl)
+            column(G11_Reverse_Caption; G11_CaptionLbl)
             {
             }
-            column(G12_Reverse_Caption;G12_CaptionLbl)
+            column(G12_Reverse_Caption; G12_CaptionLbl)
             {
             }
-            column(G13_Reverse_Caption;G13_CaptionLbl)
+            column(G13_Reverse_Caption; G13_CaptionLbl)
             {
             }
-            column(G14_Reverse_Caption;G14_CaptionLbl)
+            column(G14_Reverse_Caption; G14_CaptionLbl)
             {
             }
-            column(G15_Reverse_Caption;G15_CaptionLbl)
+            column(G15_Reverse_Caption; G15_CaptionLbl)
             {
             }
-            column(G16_Reverse_Caption;G16_CaptionLbl)
+            column(G16_Reverse_Caption; G16_CaptionLbl)
             {
             }
-            column(G17_Reverse_Caption;G17_CaptionLbl)
+            column(G17_Reverse_Caption; G17_CaptionLbl)
             {
             }
-            column(G18_Reverse_Caption;G18_CaptionLbl)
+            column(G18_Reverse_Caption; G18_CaptionLbl)
             {
             }
-            column(G19_Reverse_Caption;G19_CaptionLbl)
+            column(G19_Reverse_Caption; G19_CaptionLbl)
             {
             }
-            column(G20_Reverse_Caption;G20_CaptionLbl)
+            column(G20_Reverse_Caption; G20_CaptionLbl)
             {
             }
-            column(G21_Reverse_Caption;G21_CaptionLbl)
+            column(G21_Reverse_Caption; G21_CaptionLbl)
             {
             }
-            column(G22_Reverse_Caption;G22_CaptionLbl)
+            column(G22_Reverse_Caption; G22_CaptionLbl)
             {
             }
-            column(Notes_Reverse_Caption;Notes_CaptionLbl)
+            column(Notes_Reverse_Caption; Notes_CaptionLbl)
             {
             }
-            column(Taxable_Reverse_Person_Caption;Taxable_Person_CaptionLbl)
+            column(Taxable_Reverse_Person_Caption; Taxable_Person_CaptionLbl)
             {
             }
-            column(In_case_Reverse_of_Caption;In_case_of_CaptionLbl)
+            column(In_case_Reverse_of_Caption; In_case_of_CaptionLbl)
             {
             }
-            column(In_case_Reverse_of_intra_Caption;In_case_of_intra_CaptionLbl)
+            column(In_case_Reverse_of_intra_Caption; In_case_of_intra_CaptionLbl)
             {
             }
-            column(Taxable_Reverse_outward_Caption;Taxable_outward_CaptionLbl)
+            column(Taxable_Reverse_outward_Caption; Taxable_outward_CaptionLbl)
             {
             }
-            column(GSTIN_Reverse_Caption;GSTIN_UID_CaptionLbl)
+            column(GSTIN_Reverse_Caption; GSTIN_UID_CaptionLbl)
             {
             }
-            column(PartyName_Reverse_Caption;Party_Name_CaptionLbl)
+            column(PartyName_Reverse_Caption; Party_Name_CaptionLbl)
             {
             }
-            column(Invoice_Reverse_Caption;Invoice_CaptionLbl)
+            column(Invoice_Reverse_Caption; Invoice_CaptionLbl)
             {
             }
-            column(Number_Reverse_Caption;Number_CaptionLbl)
+            column(Number_Reverse_Caption; Number_CaptionLbl)
             {
             }
-            column(Date_Reverse_Caption;Date_CaptionLbl)
+            column(Date_Reverse_Caption; Date_CaptionLbl)
             {
             }
-            column(Value_Reverse_Caption;Value_CaptionLbl)
+            column(Value_Reverse_Caption; Value_CaptionLbl)
             {
             }
-            column(Taxable_Value_Reverse_Caption;Taxable_Value_CaptionLbl)
+            column(Taxable_Value_Reverse_Caption; Taxable_Value_CaptionLbl)
             {
             }
-            column(GST_Rate_Reverse_Caption;GST_Rate_CaptionLbl)
+            column(GST_Rate_Reverse_Caption; GST_Rate_CaptionLbl)
             {
             }
-            column(IGST_Reverse_Caption;IGST_CaptionLbl)
+            column(IGST_Reverse_Caption; IGST_CaptionLbl)
             {
             }
-            column(CGST_Reverse_Caption;CGST_CaptionLbl)
+            column(CGST_Reverse_Caption; CGST_CaptionLbl)
             {
             }
-            column(SGST_Reverse_Caption;SGST_UTGST_CaptionLbl)
+            column(SGST_Reverse_Caption; SGST_UTGST_CaptionLbl)
             {
             }
-            column(CESS_Reverse_Caption;CESS_CaptionLbl)
+            column(CESS_Reverse_Caption; CESS_CaptionLbl)
             {
             }
-            column(POS_only_if_Reverse_Caption;PlaceofSupply_CaptionLbl)
+            column(POS_only_if_Reverse_Caption; PlaceofSupply_CaptionLbl)
             {
             }
-            column(Reverse_Charge_Reverse_Caption;Reverse_Charge_CaptionLbl)
+            column(Reverse_Charge_Reverse_Caption; Reverse_Charge_CaptionLbl)
             {
             }
-            column(Indicate_supply_Reverse_Caption;Indicate_supply_CaptionLbl)
+            column(Indicate_supply_Reverse_Caption; Indicate_supply_CaptionLbl)
             {
             }
-            column(Original_Invoice_Reverse_Caption;Original_Invoice_CaptionLbl)
+            column(Original_Invoice_Reverse_Caption; Original_Invoice_CaptionLbl)
             {
             }
-            column(No_Reverse_Caption;No_CaptionLbl)
+            column(No_Reverse_Caption; No_CaptionLbl)
             {
             }
-            column(Amount_Reverse_Caption;Amount_CaptionLbl)
+            column(Amount_Reverse_Caption; Amount_CaptionLbl)
             {
             }
-            column(AmountITC_Reverse_Caption;AmountITC_CaptionLbl)
+            column(AmountITC_Reverse_Caption; AmountITC_CaptionLbl)
             {
             }
-            column(SGSTAmount_Reverse;SGSTAmount)
+            column(SGSTAmount_Reverse; SGSTAmount)
             {
             }
-            column(CGSTAmount_Reverse;CGSTAmount)
+            column(CGSTAmount_Reverse; CGSTAmount)
             {
             }
-            column(IGSTAmount_Reverse;IGSTAmount)
+            column(IGSTAmount_Reverse; IGSTAmount)
             {
             }
-            column(CGSTRate_Reverse;CGSTRate)
+            column(CGSTRate_Reverse; CGSTRate)
             {
             }
-            column(SGSTRate_Reverse;SGSTRate)
+            column(SGSTRate_Reverse; SGSTRate)
             {
             }
-            column(IGSTRate_Reverse;IGSTRate)
+            column(IGSTRate_Reverse; IGSTRate)
             {
             }
-            column(IGSTTotal_Reverse;IGSTTotal)
+            column(IGSTTotal_Reverse; IGSTTotal)
             {
             }
-            column(CGSTTotal_Reverse;CGSTTotal)
+            column(CGSTTotal_Reverse; CGSTTotal)
             {
             }
-            column(SGSTTotal_Reverse;SGSTTotal)
+            column(SGSTTotal_Reverse; SGSTTotal)
             {
             }
-            column(GSTPertg_Reverse;GSTPertg)
+            column(GSTPertg_Reverse; GSTPertg)
             {
             }
-            column(Category__Reverse_Caption;Category_CaptionLbl)
+            column(Category__Reverse_Caption; Category_CaptionLbl)
             {
             }
-            column(Cess_ReverseCharge;PurchInvLine."CESS Amount")
+            column(Cess_ReverseCharge; PurchInvLine."CESS Amount")
             {
             }
-            column(GST_Credit_ReverseCharge;PurchInvLine."GST Credit")
+            column(GST_Credit_ReverseCharge; PurchInvLine."GST Credit")
             {
             }
-            column(ITC_IGST;IGSTEligibility)
+            column(ITC_IGST; IGSTEligibility)
             {
             }
-            column(ITC_CGST;CGSTEligibility)
+            column(ITC_CGST; CGSTEligibility)
             {
             }
-            column(ITC_SGST;SGSTEligibility)
+            column(ITC_SGST; SGSTEligibility)
             {
             }
-            column(ReverseCharge;DetailedGSTLedgerEntry."Reverse Charge")
+            column(ReverseCharge; DetailedGSTLedgerEntry."Reverse Charge")
             {
             }
-            column(GstVendortype;DetailedGSTLedgerEntry."GST Vendor Type")
+            column(GstVendortype; DetailedGSTLedgerEntry."GST Vendor Type")
             {
             }
-            column(ReverseChargeEmpty;ReverseChargeEmpty)
+            column(ReverseChargeEmpty; ReverseChargeEmpty)
             {
             }
-            column(ReverseChargeFooter;ReverseChargeFooter)
+            column(ReverseChargeFooter; ReverseChargeFooter)
             {
             }
-            column(ReverseIGST;ReverseIGST)
+            column(ReverseIGST; ReverseIGST)
             {
             }
-            column(ReverseCGST;ReverseCGST)
+            column(ReverseCGST; ReverseCGST)
             {
             }
-            column(ReverseSGST;ReverseSGST)
+            column(ReverseSGST; ReverseSGST)
             {
             }
-            column(ReverseIGSTITC;ReverseIGSTITC)
+            column(ReverseIGSTITC; ReverseIGSTITC)
             {
             }
-            column(ReverseCGSTITC;ReverseCGSTITC)
+            column(ReverseCGSTITC; ReverseCGSTITC)
             {
             }
-            column(ReverseSGSTITC;ReverseSGSTITC)
+            column(ReverseSGSTITC; ReverseSGSTITC)
             {
             }
 
@@ -716,75 +716,75 @@ report 50140 "GSTR2 Purchaset"
                 CLEAR(StateDescription);
 
                 IF Number = 1 THEN
-                  ReverseChargeHeaderVisibility := TRUE
-                 ELSE
-                   ReverseChargeHeaderVisibility := FALSE;
+                    ReverseChargeHeaderVisibility := TRUE
+                ELSE
+                    ReverseChargeHeaderVisibility := FALSE;
                 ReverseChargeVisibility := TRUE;
 
                 IF Number = 1 THEN
-                  PurchInvHeaderB2B.FINDFIRST
+                    PurchInvHeaderB2B.FINDFIRST
                 ELSE
-                  PurchInvHeaderB2B.NEXT;
-                  PurchInvHeaderB2B.CALCFIELDS("Amount to Vendor");
+                    PurchInvHeaderB2B.NEXT;
+                PurchInvHeaderB2B.CALCFIELDS("Amount to Vendor");
 
                 IsGSTApplicable := GSTManagement.IsGSTApplicable(PurchInvHeaderB2B.Structure);
                 IF VendorReverseGRec.GET(PurchInvHeaderB2B."Buy-from Vendor No.") THEN;
 
                 PurchInvLine.RESET;
-                PurchInvLine.SETRANGE("Document No.",PurchInvHeaderB2B."No.");
+                PurchInvLine.SETRANGE("Document No.", PurchInvHeaderB2B."No.");
                 //PurchInvLine.SETRANGE("GST Credit",PurchInvLine."GST Credit"::Availment);
                 IF PurchInvLine.FINDSET THEN BEGIN
-                  REPEAT
-                    IF IsGSTApplicable THEN BEGIN
-                      GSTComponent.RESET;
-                      GSTComponent.SETRANGE("GST Jurisdiction Type",PurchInvLine."GST Jurisdiction Type");
-                      IF GSTComponent.FINDSET THEN
-                        REPEAT
-                          DetailedGSTLedgerEntry.RESET;
-                          DetailedGSTLedgerEntry.SETCURRENTKEY("Transaction Type","Document Type","Document No.","Document Line No.");
-                          DetailedGSTLedgerEntry.SETRANGE("Transaction Type",DetailedGSTLedgerEntry."Transaction Type"::Purchase);
-                          DetailedGSTLedgerEntry.SETRANGE("Document Type",DetailedGSTLedgerEntry."Document Type"::Invoice);
-                          DetailedGSTLedgerEntry.SETRANGE("Document No.",PurchInvLine."Document No.");
-                          DetailedGSTLedgerEntry.SETRANGE("Document Line No.",PurchInvLine."Line No.");
-                          DetailedGSTLedgerEntry.SETRANGE("Entry Type",DetailedGSTLedgerEntry."Entry Type"::"Initial Entry");
-                          DetailedGSTLedgerEntry.SETRANGE("GST Component Code",GSTComponent.Code);
-                          IF DetailedGSTLedgerEntry.FINDSET THEN BEGIN
-                            REPEAT
-                              CASE DetailedGSTLedgerEntry."GST Component Code" OF
-                                'IGST':
-                                  BEGIN
-                                    IGSTRate := DetailedGSTLedgerEntry."GST %";
-                                    IGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
-                                    IGSTTotal += IGSTAmount;
-                                  END;
-                                'CGST':
-                                  BEGIN
-                                    CGSTRate := DetailedGSTLedgerEntry."GST %";
-                                    CGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
-                                    CGSTTotal += CGSTAmount;
-                                  END;
-                                'SGST':
-                                  BEGIN
-                                    SGSTRate := DetailedGSTLedgerEntry."GST %";
-                                    SGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
-                                    SGSTTotal += SGSTAmount;
-                                  END;
-                              END;
-                            UNTIL DetailedGSTLedgerEntry.NEXT = 0;
-                          END;
-                        UNTIL GSTComponent.NEXT = 0;
-                     END;
+                    REPEAT
+                        IF IsGSTApplicable THEN BEGIN
+                            GSTComponent.RESET;
+                            GSTComponent.SETRANGE("GST Jurisdiction Type", PurchInvLine."GST Jurisdiction Type");
+                            IF GSTComponent.FINDSET THEN
+                                REPEAT
+                                    DetailedGSTLedgerEntry.RESET;
+                                    DetailedGSTLedgerEntry.SETCURRENTKEY("Transaction Type", "Document Type", "Document No.", "Document Line No.");
+                                    DetailedGSTLedgerEntry.SETRANGE("Transaction Type", DetailedGSTLedgerEntry."Transaction Type"::Purchase);
+                                    DetailedGSTLedgerEntry.SETRANGE("Document Type", DetailedGSTLedgerEntry."Document Type"::Invoice);
+                                    DetailedGSTLedgerEntry.SETRANGE("Document No.", PurchInvLine."Document No.");
+                                    DetailedGSTLedgerEntry.SETRANGE("Document Line No.", PurchInvLine."Line No.");
+                                    DetailedGSTLedgerEntry.SETRANGE("Entry Type", DetailedGSTLedgerEntry."Entry Type"::"Initial Entry");
+                                    DetailedGSTLedgerEntry.SETRANGE("GST Component Code", GSTComponent.Code);
+                                    IF DetailedGSTLedgerEntry.FINDSET THEN BEGIN
+                                        REPEAT
+                                            CASE DetailedGSTLedgerEntry."GST Component Code" OF
+                                                'IGST':
+                                                    BEGIN
+                                                        IGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                        IGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                        IGSTTotal += IGSTAmount;
+                                                    END;
+                                                'CGST':
+                                                    BEGIN
+                                                        CGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                        CGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                        CGSTTotal += CGSTAmount;
+                                                    END;
+                                                'SGST':
+                                                    BEGIN
+                                                        SGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                        SGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                        SGSTTotal += SGSTAmount;
+                                                    END;
+                                            END;
+                                        UNTIL DetailedGSTLedgerEntry.NEXT = 0;
+                                    END;
+                                UNTIL GSTComponent.NEXT = 0;
+                        END;
 
-                     GSTPertg := IGSTRate + CGSTRate + SGSTRate;
-                     TaxableValueB2B += PurchInvLine."GST Base Amount";//2711
+                        GSTPertg := IGSTRate + CGSTRate + SGSTRate;
+                        TaxableValueB2B += PurchInvLine."GST Base Amount";//2711
 
-                     IF LocationGRec.GET(PurchInvHeaderB2B."Location Code") THEN;
-                     StateGRec.RESET;
-                     StateGRec.SETRANGE(Code,LocationGRec."State Code");
-                     IF StateGRec.FINDFIRST THEN
-                       StateDescription := StateGRec.Description;
+                        IF LocationGRec.GET(PurchInvHeaderB2B."Location Code") THEN;
+                        StateGRec.RESET;
+                        StateGRec.SETRANGE(Code, LocationGRec."State Code");
+                        IF StateGRec.FINDFIRST THEN
+                            StateDescription := StateGRec.Description;
 
-                  UNTIL PurchInvLine.NEXT = 0;
+                    UNTIL PurchInvLine.NEXT = 0;
                 END;
                 // ELSE BEGIN
                 //CurrReport.SKIP;
@@ -792,44 +792,45 @@ report 50140 "GSTR2 Purchaset"
                 //GST Credit 111717
                 //B2B1.0>>
                 IF PurchInvLine."GST Credit" = PurchInvLine."GST Credit"::Availment THEN BEGIN
-                  IGSTEligibility := IGSTAmount;
-                  CGSTEligibility := CGSTAmount;
-                  SGSTEligibility := SGSTAmount;
-                END ELSE IF PurchInvLine."GST Credit" = PurchInvLine."GST Credit"::"Non-Availment" THEN BEGIN
-                  IGSTEligibility := 0;
-                  CGSTEligibility := 0;
-                  SGSTEligibility := 0;
-                END;
+                    IGSTEligibility := IGSTAmount;
+                    CGSTEligibility := CGSTAmount;
+                    SGSTEligibility := SGSTAmount;
+                END ELSE
+                    IF PurchInvLine."GST Credit" = PurchInvLine."GST Credit"::"Non-Availment" THEN BEGIN
+                        IGSTEligibility := 0;
+                        CGSTEligibility := 0;
+                        SGSTEligibility := 0;
+                    END;
                 //B2B1.0<<
                 //111717
 
                 //TEST
 
                 IF (DetailedGSTLedgerEntry."Reverse Charge" = TRUE) AND (ReverseChargeVisibility = TRUE) THEN BEGIN
-                  ReverseTaxbleValue += PurchInvLine."GST Base Amount";
-                  ReverseIGST += IGSTTotal;
-                  ReverseCGST += CGSTTotal;
-                  ReverseSGST += SGSTTotal;
-                  ReverseIGSTITC += IGSTEligibility;
-                  ReverseCGSTITC += CGSTEligibility;
-                  ReverseSGSTITC += SGSTEligibility;
+                    ReverseTaxbleValue += PurchInvLine."GST Base Amount";
+                    ReverseIGST += IGSTTotal;
+                    ReverseCGST += CGSTTotal;
+                    ReverseSGST += SGSTTotal;
+                    ReverseIGSTITC += IGSTEligibility;
+                    ReverseCGSTITC += CGSTEligibility;
+                    ReverseSGSTITC += SGSTEligibility;
                 END;
             end;
 
             trigger OnPreDataItem();
             begin
                 PurchInvHeaderB2B.RESET;
-                PurchInvHeaderB2B.SETRANGE("Posting Date",FromDate,ToDate);
-                PurchInvHeaderB2B.SETRANGE("Location Code",LocationCode);
-                PurchInvHeaderB2B.SETFILTER("GST Vendor Type",'%1|%2',PurchInvHeaderB2B."GST Vendor Type"::Registered,PurchInvHeaderB2B."GST Vendor Type"::Unregistered);
+                PurchInvHeaderB2B.SETRANGE("Posting Date", FromDate, ToDate);
+                PurchInvHeaderB2B.SETRANGE("Location Code", LocationCode);
+                PurchInvHeaderB2B.SETFILTER("GST Vendor Type", '%1|%2', PurchInvHeaderB2B."GST Vendor Type"::Registered, PurchInvHeaderB2B."GST Vendor Type"::Unregistered);
                 IF PurchInvHeaderB2B.FINDFIRST THEN BEGIN
-                  DetailedGSTLedgerEntry.RESET;
-                  DetailedGSTLedgerEntry.SETRANGE("Document No.",PurchInvHeaderB2B."No.");
-                  DetailedGSTLedgerEntry.SETFILTER("GST Vendor Type",'%1|%2',DetailedGSTLedgerEntry."GST Vendor Type"::Registered,DetailedGSTLedgerEntry."GST Vendor Type"::Unregistered);
-                  DetailedGSTLedgerEntry.SETRANGE("Reverse Charge",TRUE);
-                  SETRANGE("Reverse Charge".Number,1,PurchInvHeaderB2B.COUNT);
-                  IF DetailedGSTLedgerEntry.FINDFIRST THEN
-                    ReverseChargeVisibility := TRUE;
+                    DetailedGSTLedgerEntry.RESET;
+                    DetailedGSTLedgerEntry.SETRANGE("Document No.", PurchInvHeaderB2B."No.");
+                    DetailedGSTLedgerEntry.SETFILTER("GST Vendor Type", '%1|%2', DetailedGSTLedgerEntry."GST Vendor Type"::Registered, DetailedGSTLedgerEntry."GST Vendor Type"::Unregistered);
+                    DetailedGSTLedgerEntry.SETRANGE("Reverse Charge", TRUE);
+                    SETRANGE("Reverse Charge".Number, 1, PurchInvHeaderB2B.COUNT);
+                    IF DetailedGSTLedgerEntry.FINDFIRST THEN
+                        ReverseChargeVisibility := TRUE;
                 END;
                 CLEAR(ReverseTaxbleValue);
                 CLEAR(ReverseIGST);
@@ -837,226 +838,226 @@ report 50140 "GSTR2 Purchaset"
                 CLEAR(ReverseSGST);
             end;
         }
-        dataitem("Import Goods";"Integer")
+        dataitem("Import Goods"; "Integer")
         {
             DataItemTableView = SORTING(Number);
-            column(ImportGoods_Number;"Import Goods".Number)
+            column(ImportGoods_Number; "Import Goods".Number)
             {
             }
-            column(ImportGoodsHeaderVisibility;ImportGoodsHeaderVisibility)
+            column(ImportGoodsHeaderVisibility; ImportGoodsHeaderVisibility)
             {
             }
-            column(ImportGoodsVisibility;ImportGoodsVisibility)
+            column(ImportGoodsVisibility; ImportGoodsVisibility)
             {
             }
-            column(IftheSupplyImport_Caption;IftheSupplyImport_CaptionLbl)
+            column(IftheSupplyImport_Caption; IftheSupplyImport_CaptionLbl)
             {
             }
-            column(InputsImport_Caption;InputsImport_CaptionLbl)
+            column(InputsImport_Caption; InputsImport_CaptionLbl)
             {
             }
-            column(Notes_ImportGoods_Caption;Notes_CaptionLbl)
+            column(Notes_ImportGoods_Caption; Notes_CaptionLbl)
             {
             }
-            column(Category_ImportGoods_Caption;Category_CaptionLbl)
+            column(Category_ImportGoods_Caption; Category_CaptionLbl)
             {
             }
-            column(GSTIN_ImportGoods_Caption;GSTIN_UID_CaptionLbl)
+            column(GSTIN_ImportGoods_Caption; GSTIN_UID_CaptionLbl)
             {
             }
-            column(EligibilityITC_ImportGoods_Caption;EligibilityITC_CaptionLbl)
+            column(EligibilityITC_ImportGoods_Caption; EligibilityITC_CaptionLbl)
             {
             }
-            column(GST_Rate_ImportGoods_Caption;GST_Rate_CaptionLbl)
+            column(GST_Rate_ImportGoods_Caption; GST_Rate_CaptionLbl)
             {
             }
-            column(IGST_ImportGoods_Caption;IGST_CaptionLbl)
+            column(IGST_ImportGoods_Caption; IGST_CaptionLbl)
             {
             }
-            column(CGST_ImportGoods_Caption;CGST_CaptionLbl)
+            column(CGST_ImportGoods_Caption; CGST_CaptionLbl)
             {
             }
-            column(SGST_ImportGoods_Caption;SGST_UTGST_CaptionLbl)
+            column(SGST_ImportGoods_Caption; SGST_UTGST_CaptionLbl)
             {
             }
-            column(CESS_ImportGoods_Caption;CESS_CaptionLbl)
+            column(CESS_ImportGoods_Caption; CESS_CaptionLbl)
             {
             }
-            column(PartyName_ImportGoods_Caption;Party_Name_CaptionLbl)
+            column(PartyName_ImportGoods_Caption; Party_Name_CaptionLbl)
             {
             }
-            column(Invoice_ImportGoods_Caption;Invoice_CaptionLbl)
+            column(Invoice_ImportGoods_Caption; Invoice_CaptionLbl)
             {
             }
-            column(Number_ImportGoods_Caption;Number_CaptionLbl)
+            column(Number_ImportGoods_Caption; Number_CaptionLbl)
             {
             }
-            column(Date_ImportGoods_Caption;Date_CaptionLbl)
+            column(Date_ImportGoods_Caption; Date_CaptionLbl)
             {
             }
-            column(Value_ImportGoods_Caption;Value_CaptionLbl)
+            column(Value_ImportGoods_Caption; Value_CaptionLbl)
             {
             }
-            column(Taxable_Value_ImportGoods_Caption;Taxable_Value_CaptionLbl)
+            column(Taxable_Value_ImportGoods_Caption; Taxable_Value_CaptionLbl)
             {
             }
-            column(Original_Invoice_ImportGoods_Caption;Original_Invoice_CaptionLbl)
+            column(Original_Invoice_ImportGoods_Caption; Original_Invoice_CaptionLbl)
             {
             }
-            column(No_ImportGoods_Caption;No_CaptionLbl)
+            column(No_ImportGoods_Caption; No_CaptionLbl)
             {
             }
-            column(Amount_ImportGoods_Caption;Amount_CaptionLbl)
+            column(Amount_ImportGoods_Caption; Amount_CaptionLbl)
             {
             }
-            column(AmountITC_ImportGoods_Caption;AmountITC_CaptionLbl)
+            column(AmountITC_ImportGoods_Caption; AmountITC_CaptionLbl)
             {
             }
-            column(G1_ImportGoods_Caption;G1_CaptionLbl)
+            column(G1_ImportGoods_Caption; G1_CaptionLbl)
             {
             }
-            column(G2_ImportGoods_Caption;G2_CaptionLbl)
+            column(G2_ImportGoods_Caption; G2_CaptionLbl)
             {
             }
-            column(G3_ImportGoods_Caption;G3_CaptionLbl)
+            column(G3_ImportGoods_Caption; G3_CaptionLbl)
             {
             }
-            column(G4_ImportGoods_Caption;G4_CaptionLbl)
+            column(G4_ImportGoods_Caption; G4_CaptionLbl)
             {
             }
-            column(G5_ImportGoods_Caption;G5_CaptionLbl)
+            column(G5_ImportGoods_Caption; G5_CaptionLbl)
             {
             }
-            column(G6_ImportGoods_Caption;G6_CaptionLbl)
+            column(G6_ImportGoods_Caption; G6_CaptionLbl)
             {
             }
-            column(G7_ImportGoods_Caption;G7_CaptionLbl)
+            column(G7_ImportGoods_Caption; G7_CaptionLbl)
             {
             }
-            column(G8_ImportGoods_Caption;G8_CaptionLbl)
+            column(G8_ImportGoods_Caption; G8_CaptionLbl)
             {
             }
-            column(G9_ImportGoods_Caption;G9_CaptionLbl)
+            column(G9_ImportGoods_Caption; G9_CaptionLbl)
             {
             }
-            column(G10_ImportGoods_Caption;G10_CaptionLbl)
+            column(G10_ImportGoods_Caption; G10_CaptionLbl)
             {
             }
-            column(G11_ImportGoods_Caption;G11_CaptionLbl)
+            column(G11_ImportGoods_Caption; G11_CaptionLbl)
             {
             }
-            column(G12_ImportGoods_Caption;G12_CaptionLbl)
+            column(G12_ImportGoods_Caption; G12_CaptionLbl)
             {
             }
-            column(G13_ImportGoods_Caption;G13_CaptionLbl)
+            column(G13_ImportGoods_Caption; G13_CaptionLbl)
             {
             }
-            column(G14_ImportGoods_Caption;G14_CaptionLbl)
+            column(G14_ImportGoods_Caption; G14_CaptionLbl)
             {
             }
-            column(G15_ImportGoods_Caption;G15_CaptionLbl)
+            column(G15_ImportGoods_Caption; G15_CaptionLbl)
             {
             }
-            column(G16_ImportGoods_Caption;G16_CaptionLbl)
+            column(G16_ImportGoods_Caption; G16_CaptionLbl)
             {
             }
-            column(G17_ImportGoods_Caption;G17_CaptionLbl)
+            column(G17_ImportGoods_Caption; G17_CaptionLbl)
             {
             }
-            column(G18_ImportGoods_Caption;G18_CaptionLbl)
+            column(G18_ImportGoods_Caption; G18_CaptionLbl)
             {
             }
-            column(G19_ImportGoods_Caption;G19_CaptionLbl)
+            column(G19_ImportGoods_Caption; G19_CaptionLbl)
             {
             }
-            column(G20_ImportGoods_Caption;G20_CaptionLbl)
+            column(G20_ImportGoods_Caption; G20_CaptionLbl)
             {
             }
-            column(G21_ImportGoods_Caption;G21_CaptionLbl)
+            column(G21_ImportGoods_Caption; G21_CaptionLbl)
             {
             }
-            column(Cr_Caption;Cr22_CaptionLbl)
+            column(Cr_Caption; Cr22_CaptionLbl)
             {
             }
-            column(GSTIN_Import_Caption;GSTIN_Import_CaptionLbl)
+            column(GSTIN_Import_Caption; GSTIN_Import_CaptionLbl)
             {
             }
-            column(Bill_of_Entry_No_Caption;Bill_of_Entry_No_CaptionLbl)
+            column(Bill_of_Entry_No_Caption; Bill_of_Entry_No_CaptionLbl)
             {
             }
-            column(Bill_of_Entry_Date_Caption;Bill_of_Entry_Date_CaptionLbl)
+            column(Bill_of_Entry_Date_Caption; Bill_of_Entry_Date_CaptionLbl)
             {
             }
-            column(Bill_of_Entry_Value_Caption;Bill_of_Entry_Value_CaptionLbl)
+            column(Bill_of_Entry_Value_Caption; Bill_of_Entry_Value_CaptionLbl)
             {
             }
-            column(InternalDocNo_Caption;InternalDocNo_CaptionLbl)
+            column(InternalDocNo_Caption; InternalDocNo_CaptionLbl)
             {
             }
-            column(InternalDocDate_Caption;InternalDocDate_CaptionLbl)
+            column(InternalDocDate_Caption; InternalDocDate_CaptionLbl)
             {
             }
-            column(Port_Code_Import_Caption;Port_Code_CaptionLbl)
+            column(Port_Code_Import_Caption; Port_Code_CaptionLbl)
             {
             }
-            column(Import_Category;PurchInvHeaderB2B."GST Vendor Type")
+            column(Import_Category; PurchInvHeaderB2B."GST Vendor Type")
             {
             }
-            column(Bill_of_Entry_No;PurchInvHeaderB2B."Bill of Entry No.")
+            column(Bill_of_Entry_No; PurchInvHeaderB2B."Bill of Entry No.")
             {
             }
-            column(Bill_of_Entry_Date;PurchInvHeaderB2B."Bill of Entry Date")
+            column(Bill_of_Entry_Date; PurchInvHeaderB2B."Bill of Entry Date")
             {
             }
-            column(Bill_of_Entry_Value;PurchInvHeaderB2B."Bill of Entry Value")
+            column(Bill_of_Entry_Value; PurchInvHeaderB2B."Bill of Entry Value")
             {
             }
-            column(InternalDocNo;PurchInvHeaderB2B."No.")
+            column(InternalDocNo; PurchInvHeaderB2B."No.")
             {
             }
-            column(InternalDocDate;PurchInvHeaderB2B."Posting Date")
+            column(InternalDocDate; PurchInvHeaderB2B."Posting Date")
             {
             }
-            column(Import_Document_No;PurchInvHeaderB2B."Vendor Invoice No.")
+            column(Import_Document_No; PurchInvHeaderB2B."Vendor Invoice No.")
             {
             }
-            column(Import_Vendor_Name;PurchInvHeaderB2B."Buy-from Vendor Name")
+            column(Import_Vendor_Name; PurchInvHeaderB2B."Buy-from Vendor Name")
             {
             }
-            column(Import_PostingDate;PurchInvHeaderB2B."Document Date")
+            column(Import_PostingDate; PurchInvHeaderB2B."Document Date")
             {
             }
-            column(Import_Amount_to_Vendor;PurchInvHeaderB2B."Amount to Vendor")
+            column(Import_Amount_to_Vendor; PurchInvHeaderB2B."Amount to Vendor")
             {
             }
-            column(Import_TaxableValue;TaxableValueB2B)
+            column(Import_TaxableValue; TaxableValueB2B)
             {
             }
-            column(Import_IGSTAmount;IGSTAmount)
+            column(Import_IGSTAmount; IGSTAmount)
             {
             }
-            column(Import_IGSTRate;IGSTRate)
+            column(Import_IGSTRate; IGSTRate)
             {
             }
-            column(Import_IGSTTotal;IGSTTotal)
+            column(Import_IGSTTotal; IGSTTotal)
             {
             }
-            column(Import_GSTPertg;GSTPertg)
+            column(Import_GSTPertg; GSTPertg)
             {
             }
-            column(Cess_Import;PurchInvLine."CESS Amount")
+            column(Cess_Import; PurchInvLine."CESS Amount")
             {
             }
-            column(GST_Credit_Import;PurchInvLine."GST Credit")
+            column(GST_Credit_Import; PurchInvLine."GST Credit")
             {
             }
-            column(Import_IGST;IGSTEligibility)
+            column(Import_IGST; IGSTEligibility)
             {
             }
-            column(Import_CGST;CGSTEligibility)
+            column(Import_CGST; CGSTEligibility)
             {
             }
-            column(Import_SGST;SGSTEligibility)
+            column(Import_SGST; SGSTEligibility)
             {
             }
 
@@ -1070,72 +1071,72 @@ report 50140 "GSTR2 Purchaset"
                 CLEAR(CGSTEligibility);
                 CLEAR(SGSTEligibility);
                 CLEAR(TaxableValueB2B);
-                
+
                 IF Number = 1 THEN
-                  ImportGoodsHeaderVisibility := TRUE
-                 ELSE
-                  ImportGoodsHeaderVisibility := FALSE;
-                ImportGoodsVisibility := TRUE;
-                
-                IF Number = 1 THEN
-                  PurchInvHeaderB2B.FINDFIRST
+                    ImportGoodsHeaderVisibility := TRUE
                 ELSE
-                  PurchInvHeaderB2B.NEXT;
-                
+                    ImportGoodsHeaderVisibility := FALSE;
+                ImportGoodsVisibility := TRUE;
+
+                IF Number = 1 THEN
+                    PurchInvHeaderB2B.FINDFIRST
+                ELSE
+                    PurchInvHeaderB2B.NEXT;
+
                 PurchInvHeaderB2B.CALCFIELDS("Amount to Vendor");
                 IsGSTApplicable := GSTManagement.IsGSTApplicable(PurchInvHeaderB2B.Structure);
                 IF VendorReverseGRec.GET(PurchInvHeaderB2B."Buy-from Vendor No.") THEN;
-                
+
                 PurchInvLine.RESET;
-                PurchInvLine.SETRANGE("Document No.",PurchInvHeaderB2B."No.");
+                PurchInvLine.SETRANGE("Document No.", PurchInvHeaderB2B."No.");
                 //PurchInvLine.SETRANGE("GST Credit",PurchInvLine."GST Credit"::Availment);
                 IF PurchInvLine.FINDSET THEN BEGIN
-                  REPEAT
-                    IF IsGSTApplicable  THEN BEGIN
-                      GSTComponent.RESET;
-                      GSTComponent.SETRANGE("GST Jurisdiction Type",PurchInvLine."GST Jurisdiction Type");
-                      IF GSTComponent.FINDSET THEN
-                        REPEAT
-                          DetailedGSTLedgerEntry.RESET;
-                          DetailedGSTLedgerEntry.SETCURRENTKEY("Transaction Type","Document Type","Document No.","Document Line No.");
-                          DetailedGSTLedgerEntry.SETRANGE("Transaction Type",DetailedGSTLedgerEntry."Transaction Type"::Purchase);
-                          DetailedGSTLedgerEntry.SETRANGE("Document Type",DetailedGSTLedgerEntry."Document Type"::Invoice);
-                          DetailedGSTLedgerEntry.SETRANGE("Document No.",PurchInvLine."Document No.");
-                          DetailedGSTLedgerEntry.SETRANGE("Document Line No.",PurchInvLine."Line No.");
-                          DetailedGSTLedgerEntry.SETRANGE("Entry Type",DetailedGSTLedgerEntry."Entry Type"::"Initial Entry");
-                          DetailedGSTLedgerEntry.SETRANGE("GST Component Code",GSTComponent.Code);
-                          IF DetailedGSTLedgerEntry.FINDSET THEN BEGIN
-                            REPEAT
-                              CASE DetailedGSTLedgerEntry."GST Component Code" OF
-                                'IGST':
-                                  BEGIN
-                                    IGSTRate := DetailedGSTLedgerEntry."GST %";
-                                    IGSTAmount += ABS(DetailedGSTLedgerEntry."GST Amount");
-                                    IGSTTotal := IGSTAmount;
-                                  END;
-                              /* 'CGST':
-                                  BEGIN
-                                    CGSTRate := DetailedGSTLedgerEntry."GST %";
-                                    CGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
-                                    CGSTTotal += CGSTAmount;
-                                  END;
-                                'SGST':
-                                  BEGIN
-                                    SGSTRate := DetailedGSTLedgerEntry."GST %";
-                                    SGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
-                                    SGSTTotal += SGSTAmount;
-                                  END; */
-                              END;
-                            UNTIL DetailedGSTLedgerEntry.NEXT = 0;
-                          END;
-                        UNTIL GSTComponent.NEXT = 0;
-                      END;
-                      //GSTPertg := IGSTRate + CGSTRate + SGSTRate;
-                      TaxableValueB2B += PurchInvLine."GST Base Amount";
-                   UNTIL  PurchInvLine.NEXT = 0;
-                 END; //ELSE
-                 // CurrReport.SKIP;
-                
+                    REPEAT
+                        IF IsGSTApplicable THEN BEGIN
+                            GSTComponent.RESET;
+                            GSTComponent.SETRANGE("GST Jurisdiction Type", PurchInvLine."GST Jurisdiction Type");
+                            IF GSTComponent.FINDSET THEN
+                                REPEAT
+                                    DetailedGSTLedgerEntry.RESET;
+                                    DetailedGSTLedgerEntry.SETCURRENTKEY("Transaction Type", "Document Type", "Document No.", "Document Line No.");
+                                    DetailedGSTLedgerEntry.SETRANGE("Transaction Type", DetailedGSTLedgerEntry."Transaction Type"::Purchase);
+                                    DetailedGSTLedgerEntry.SETRANGE("Document Type", DetailedGSTLedgerEntry."Document Type"::Invoice);
+                                    DetailedGSTLedgerEntry.SETRANGE("Document No.", PurchInvLine."Document No.");
+                                    DetailedGSTLedgerEntry.SETRANGE("Document Line No.", PurchInvLine."Line No.");
+                                    DetailedGSTLedgerEntry.SETRANGE("Entry Type", DetailedGSTLedgerEntry."Entry Type"::"Initial Entry");
+                                    DetailedGSTLedgerEntry.SETRANGE("GST Component Code", GSTComponent.Code);
+                                    IF DetailedGSTLedgerEntry.FINDSET THEN BEGIN
+                                        REPEAT
+                                            CASE DetailedGSTLedgerEntry."GST Component Code" OF
+                                                'IGST':
+                                                    BEGIN
+                                                        IGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                        IGSTAmount += ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                        IGSTTotal := IGSTAmount;
+                                                    END;
+                                            /* 'CGST':
+                                                BEGIN
+                                                  CGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                  CGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                  CGSTTotal += CGSTAmount;
+                                                END;
+                                              'SGST':
+                                                BEGIN
+                                                  SGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                  SGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                  SGSTTotal += SGSTAmount;
+                                                END; */
+                                            END;
+                                        UNTIL DetailedGSTLedgerEntry.NEXT = 0;
+                                    END;
+                                UNTIL GSTComponent.NEXT = 0;
+                        END;
+                        //GSTPertg := IGSTRate + CGSTRate + SGSTRate;
+                        TaxableValueB2B += PurchInvLine."GST Base Amount";
+                    UNTIL PurchInvLine.NEXT = 0;
+                END; //ELSE
+                     // CurrReport.SKIP;
+
                 /*
                 //B2B1.0
                 IF PurchInvLine."GST Credit" = PurchInvLine."GST Credit"::"Non-Availment" THEN BEGIN
@@ -1145,17 +1146,18 @@ report 50140 "GSTR2 Purchaset"
                 END;
                 //B2B1.0
                 */
-                
+
                 //B2B1.0 171117
                 IF PurchInvLine."GST Credit" = PurchInvLine."GST Credit"::Availment THEN BEGIN
-                  IGSTEligibility := IGSTAmount;
-                  CGSTEligibility := CGSTAmount;
-                  SGSTEligibility := SGSTAmount;
-                END ELSE IF PurchInvLine."GST Credit" = PurchInvLine."GST Credit"::"Non-Availment" THEN BEGIN
-                  IGSTEligibility := 0;
-                  CGSTEligibility := 0;
-                  SGSTEligibility := 0;
-                END;
+                    IGSTEligibility := IGSTAmount;
+                    CGSTEligibility := CGSTAmount;
+                    SGSTEligibility := SGSTAmount;
+                END ELSE
+                    IF PurchInvLine."GST Credit" = PurchInvLine."GST Credit"::"Non-Availment" THEN BEGIN
+                        IGSTEligibility := 0;
+                        CGSTEligibility := 0;
+                        SGSTEligibility := 0;
+                    END;
                 //B2B1.0 171117
 
             end;
@@ -1163,100 +1165,100 @@ report 50140 "GSTR2 Purchaset"
             trigger OnPreDataItem();
             begin
                 PurchInvHeaderB2B.RESET;
-                PurchInvHeaderB2B.SETRANGE("Posting Date",FromDate,ToDate);
-                PurchInvHeaderB2B.SETRANGE("Location Code",LocationCode);
-                PurchInvHeaderB2B.SETRANGE("GST Vendor Type",PurchInvHeaderB2B."GST Vendor Type"::Import);
+                PurchInvHeaderB2B.SETRANGE("Posting Date", FromDate, ToDate);
+                PurchInvHeaderB2B.SETRANGE("Location Code", LocationCode);
+                PurchInvHeaderB2B.SETRANGE("GST Vendor Type", PurchInvHeaderB2B."GST Vendor Type"::Import);
                 IF PurchInvHeaderB2B.FINDFIRST THEN;
 
                 DetailedGSTLedgerEntry.RESET;
-                DetailedGSTLedgerEntry.SETRANGE("Reverse Charge",TRUE);
+                DetailedGSTLedgerEntry.SETRANGE("Reverse Charge", TRUE);
                 IF DetailedGSTLedgerEntry.FINDFIRST THEN
-                  ImportGoodsVisibility := TRUE;
-                SETRANGE("Import Goods".Number,1,PurchInvHeaderB2B.COUNT);
+                    ImportGoodsVisibility := TRUE;
+                SETRANGE("Import Goods".Number, 1, PurchInvHeaderB2B.COUNT);
             end;
         }
-        dataitem("Nil Rated";"Integer")
+        dataitem("Nil Rated"; "Integer")
         {
             DataItemTableView = SORTING(Number);
-            column(Number_NilRated;"Nil Rated".Number)
+            column(Number_NilRated; "Nil Rated".Number)
             {
             }
-            column(SuppliesNilRate_Caption;SuppliesNilRate_CaptionLbl)
+            column(SuppliesNilRate_Caption; SuppliesNilRate_CaptionLbl)
             {
             }
-            column(FiguresNilrated_Caption;FiguresNilrated_CaptionLbl)
+            column(FiguresNilrated_Caption; FiguresNilrated_CaptionLbl)
             {
             }
-            column(SupplyType_Caption;SupplyType_CaptionLbl)
+            column(SupplyType_Caption; SupplyType_CaptionLbl)
             {
             }
-            column(Compounding_Caption;Compounding_CaptionLbl)
+            column(Compounding_Caption; Compounding_CaptionLbl)
             {
             }
-            column(AnyExempt_Caption;AnyExempt_CaptionLbl)
+            column(AnyExempt_Caption; AnyExempt_CaptionLbl)
             {
             }
-            column(AnyNilRated_Caption;AnyNilRated_CaptionLbl)
+            column(AnyNilRated_Caption; AnyNilRated_CaptionLbl)
             {
             }
-            column(NonGSTSupply_Caption;NonGSTSupply_CaptionLbl)
+            column(NonGSTSupply_Caption; NonGSTSupply_CaptionLbl)
             {
             }
-            column(N1_Caption;G1_CaptionLbl)
+            column(N1_Caption; G1_CaptionLbl)
             {
             }
-            column(N2_Caption;G2_CaptionLbl)
+            column(N2_Caption; G2_CaptionLbl)
             {
             }
-            column(N3_Caption;G3_CaptionLbl)
+            column(N3_Caption; G3_CaptionLbl)
             {
             }
-            column(N4_Caption;G4_CaptionLbl)
+            column(N4_Caption; G4_CaptionLbl)
             {
             }
-            column(N5_Caption;G5_CaptionLbl)
+            column(N5_Caption; G5_CaptionLbl)
             {
             }
-            column(Nilrated_Exempted_Caption;Nilrated_Exempted_CaptionLbl)
+            column(Nilrated_Exempted_Caption; Nilrated_Exempted_CaptionLbl)
             {
             }
-            column(figures_in_Rs_Caption;figures_in_Rs_CaptionLbl)
+            column(figures_in_Rs_Caption; figures_in_Rs_CaptionLbl)
             {
             }
-            column(Description_Caption;Description_CaptionLbl)
+            column(Description_Caption; Description_CaptionLbl)
             {
             }
-            column(Nil_Rated_Amount_Caption;Nil_Rated_Amount_CaptionLbl)
+            column(Nil_Rated_Amount_Caption; Nil_Rated_Amount_CaptionLbl)
             {
             }
-            column(Exempted_Amount_Caption;Exempted_Amount_CaptionLbl)
+            column(Exempted_Amount_Caption; Exempted_Amount_CaptionLbl)
             {
             }
-            column(NonGSTsupplies_Caption;NonGSTsupplies_CaptionLbl)
+            column(NonGSTsupplies_Caption; NonGSTsupplies_CaptionLbl)
             {
             }
-            column(Interstate_registered_Caption;Interstate_registered_CaptionLbl)
+            column(Interstate_registered_Caption; Interstate_registered_CaptionLbl)
             {
             }
-            column(Intrastate_registered_Caption;Intrastate_registered_CaptionLbl)
+            column(Intrastate_registered_Caption; Intrastate_registered_CaptionLbl)
             {
             }
-            column(Interstate_unregistered_Caption;Interstate_unregistered_CaptionLbl)
+            column(Interstate_unregistered_Caption; Interstate_unregistered_CaptionLbl)
             {
             }
-            column(Intrastate_unregistered_Caption;Intrastate_unregistered_CaptionLbl)
+            column(Intrastate_unregistered_Caption; Intrastate_unregistered_CaptionLbl)
             {
             }
-            column(NilRatedHeaderVisibility;NilRatedHeaderVisibility)
+            column(NilRatedHeaderVisibility; NilRatedHeaderVisibility)
             {
             }
-            column(NilRatedVisibility;NilRatedVisibility)
+            column(NilRatedVisibility; NilRatedVisibility)
             {
             }
-            column(NilRatedBaseAmount;NilRatedBaseAmount)
+            column(NilRatedBaseAmount; NilRatedBaseAmount)
             {
             }
-            column(SupplyType;PurchInvLine."GST Jurisdiction Type")
+            column(SupplyType; PurchInvLine."GST Jurisdiction Type")
             {
             }
 
@@ -1265,262 +1267,262 @@ report 50140 "GSTR2 Purchaset"
                 CLEAR(NilRatedBaseAmount);
 
                 IF Number = 1 THEN
-                  NilRatedHeaderVisibility := TRUE
+                    NilRatedHeaderVisibility := TRUE
                 ELSE
-                  NilRatedHeaderVisibility := FALSE;
+                    NilRatedHeaderVisibility := FALSE;
                 NilRatedVisibility := TRUE;
 
                 IF Number = 1 THEN
-                  PurchInvHeaderNilRated.FINDFIRST
+                    PurchInvHeaderNilRated.FINDFIRST
                 ELSE
-                  PurchInvHeaderNilRated.NEXT;
+                    PurchInvHeaderNilRated.NEXT;
 
                 PurchInvLine.RESET;
-                PurchInvLine.SETRANGE("Document No.",PurchInvHeaderNilRated."No.");
+                PurchInvLine.SETRANGE("Document No.", PurchInvHeaderNilRated."No.");
                 IF PurchInvLine.FINDFIRST THEN
-                  NilRatedBaseAmount := PurchInvLine."GST Base Amount";
+                    NilRatedBaseAmount := PurchInvLine."GST Base Amount";
             end;
 
             trigger OnPreDataItem();
             begin
                 PurchInvHeaderNilRated.RESET;
-                PurchInvHeaderNilRated.SETRANGE("Posting Date",FromDate,ToDate);
-                PurchInvHeaderNilRated.SETRANGE("Location Code",LocationCode);
-                PurchInvHeaderNilRated.SETFILTER("GST Vendor Type",'%1|%2',PurchInvHeaderNilRated."GST Vendor Type"::Exempted,PurchInvHeaderNilRated."GST Vendor Type"::Composite);
+                PurchInvHeaderNilRated.SETRANGE("Posting Date", FromDate, ToDate);
+                PurchInvHeaderNilRated.SETRANGE("Location Code", LocationCode);
+                PurchInvHeaderNilRated.SETFILTER("GST Vendor Type", '%1|%2', PurchInvHeaderNilRated."GST Vendor Type"::Exempted, PurchInvHeaderNilRated."GST Vendor Type"::Composite);
                 IF PurchInvHeaderNilRated.FINDFIRST THEN
-                  NilRatedVisibility := TRUE;
-                SETRANGE("Nil Rated".Number,1,PurchInvHeaderNilRated.COUNT);
+                    NilRatedVisibility := TRUE;
+                SETRANGE("Nil Rated".Number, 1, PurchInvHeaderNilRated.COUNT);
             end;
         }
-        dataitem("Cr.Dr";"Integer")
+        dataitem("Cr.Dr"; "Integer")
         {
             DataItemTableView = SORTING(Number);
-            column(CrDr_GSTNo;VendorGRec."GST Registration No.")
+            column(CrDr_GSTNo; VendorGRec."GST Registration No.")
             {
             }
-            column(PurchCrMemoHdr_Vendor_Name;PurchCrMemoHdr."Buy-from Vendor Name")
+            column(PurchCrMemoHdr_Vendor_Name; PurchCrMemoHdr."Buy-from Vendor Name")
             {
             }
-            column(PurchCrMemoHdr_Posting_Date;PurchCrMemoHdr."Document Date")
+            column(PurchCrMemoHdr_Posting_Date; PurchCrMemoHdr."Document Date")
             {
             }
-            column(CrDr_DocumentNo;PurchCrMemoHdr."No.")
+            column(CrDr_DocumentNo; PurchCrMemoHdr."No.")
             {
             }
-            column(GST_Pertge_CrDr;DetailedGSTLedgerEntry."GST %")
+            column(GST_Pertge_CrDr; DetailedGSTLedgerEntry."GST %")
             {
             }
-            column(Number_CrDr;"Cr.Dr".Number)
+            column(Number_CrDr; "Cr.Dr".Number)
             {
             }
-            column(Note_Caption;Note_CaptionLbl)
+            column(Note_Caption; Note_CaptionLbl)
             {
             }
-            column(Information_about_Caption;Information_about_CaptionLbl)
+            column(Information_about_Caption; Information_about_CaptionLbl)
             {
             }
-            column(Details_of_Caption;Details_of_CaptionLbl)
+            column(Details_of_Caption; Details_of_CaptionLbl)
             {
             }
-            column(Typeofnote_Caption;Typeofnote_CaptionLbl)
+            column(Typeofnote_Caption; Typeofnote_CaptionLbl)
             {
             }
-            column(Credit_Note_Caption;Credit_Note_CaptionLbl)
+            column(Credit_Note_Caption; Credit_Note_CaptionLbl)
             {
             }
-            column(Reason_Caption;Reason_CaptionLbl)
+            column(Reason_Caption; Reason_CaptionLbl)
             {
             }
-            column(PreGST_Caption;PreGST_CaptionLbl)
+            column(PreGST_Caption; PreGST_CaptionLbl)
             {
             }
-            column(PlaceofSupply_Caption;PlaceofSupply_CaptionLbl)
+            column(PlaceofSupply_Caption; PlaceofSupply_CaptionLbl)
             {
             }
-            column(Supplier_InvoiceValue_Caption;Supplier_InvoiceValue_CaptionLbl)
+            column(Supplier_InvoiceValue_Caption; Supplier_InvoiceValue_CaptionLbl)
             {
             }
-            column(TaxAmount_Caption;TaxAmount_CaptionLbl)
+            column(TaxAmount_Caption; TaxAmount_CaptionLbl)
             {
             }
-            column(Original_Credit_Caption;Original_Credit_CaptionLbl)
+            column(Original_Credit_Caption; Original_Credit_CaptionLbl)
             {
             }
-            column(C1_Cr_Caption;G1_CaptionLbl)
+            column(C1_Cr_Caption; G1_CaptionLbl)
             {
             }
-            column(C2_Cr_Caption;G2_CaptionLbl)
+            column(C2_Cr_Caption; G2_CaptionLbl)
             {
             }
-            column(C3_Cr_Caption;G3_CaptionLbl)
+            column(C3_Cr_Caption; G3_CaptionLbl)
             {
             }
-            column(C4_Cr_Caption;G4_CaptionLbl)
+            column(C4_Cr_Caption; G4_CaptionLbl)
             {
             }
-            column(C5_Cr_Caption;G5_CaptionLbl)
+            column(C5_Cr_Caption; G5_CaptionLbl)
             {
             }
-            column(C6_Cr_Caption;G6_CaptionLbl)
+            column(C6_Cr_Caption; G6_CaptionLbl)
             {
             }
-            column(C7_Cr_Caption;G7_CaptionLbl)
+            column(C7_Cr_Caption; G7_CaptionLbl)
             {
             }
-            column(C8_Cr_Caption;G8_CaptionLbl)
+            column(C8_Cr_Caption; G8_CaptionLbl)
             {
             }
-            column(C9_Cr_Caption;G9_CaptionLbl)
+            column(C9_Cr_Caption; G9_CaptionLbl)
             {
             }
-            column(C10_Cr_Caption;G10_CaptionLbl)
+            column(C10_Cr_Caption; G10_CaptionLbl)
             {
             }
-            column(C11_Cr_Caption;G11_CaptionLbl)
+            column(C11_Cr_Caption; G11_CaptionLbl)
             {
             }
-            column(C12_Cr_Caption;G12_CaptionLbl)
+            column(C12_Cr_Caption; G12_CaptionLbl)
             {
             }
-            column(C13_Cr_Caption;G13_CaptionLbl)
+            column(C13_Cr_Caption; G13_CaptionLbl)
             {
             }
-            column(C14_Cr_Caption;G14_CaptionLbl)
+            column(C14_Cr_Caption; G14_CaptionLbl)
             {
             }
-            column(C15_Cr_Caption;G15_CaptionLbl)
+            column(C15_Cr_Caption; G15_CaptionLbl)
             {
             }
-            column(C16_Cr_Caption;G16_CaptionLbl)
+            column(C16_Cr_Caption; G16_CaptionLbl)
             {
             }
-            column(C17_Cr_Caption;C17_CaptionLbl)
+            column(C17_Cr_Caption; C17_CaptionLbl)
             {
             }
-            column(C18_Cr_Caption;C18_CaptionLbl)
+            column(C18_Cr_Caption; C18_CaptionLbl)
             {
             }
-            column(C19_Cr_Caption;C19_CaptionLbl)
+            column(C19_Cr_Caption; C19_CaptionLbl)
             {
             }
-            column(G20_Cr_Caption;G20_CaptionLbl)
+            column(G20_Cr_Caption; G20_CaptionLbl)
             {
             }
-            column(Cr21_Caption;Cr21_CaptionLbl)
+            column(Cr21_Caption; Cr21_CaptionLbl)
             {
             }
-            column(Cr22_Caption;Cr22_CaptionLbl)
+            column(Cr22_Caption; Cr22_CaptionLbl)
             {
             }
-            column(Cr23_Caption;Cr23_CaptionLbl)
+            column(Cr23_Caption; Cr23_CaptionLbl)
             {
             }
-            column(Cr24_Caption;Cr24_CaptionLbl)
+            column(Cr24_Caption; Cr24_CaptionLbl)
             {
             }
-            column(GSTIN_UID_Cr_Caption;GSTIN_UID_CaptionLbl)
+            column(GSTIN_UID_Cr_Caption; GSTIN_UID_CaptionLbl)
             {
             }
-            column(Party_Name_Cr_Caption;Party_Name_CaptionLbl)
+            column(Party_Name_Cr_Caption; Party_Name_CaptionLbl)
             {
             }
-            column(Number_CrCaption;Number_CaptionLbl)
+            column(Number_CrCaption; Number_CaptionLbl)
             {
             }
-            column(Date_Cr_Caption;Date_CaptionLbl)
+            column(Date_Cr_Caption; Date_CaptionLbl)
             {
             }
-            column(Value_Cr_Caption;Value_CaptionLbl)
+            column(Value_Cr_Caption; Value_CaptionLbl)
             {
             }
-            column(Taxable_Value_Cr_Caption;Taxable_Value_CaptionLbl)
+            column(Taxable_Value_Cr_Caption; Taxable_Value_CaptionLbl)
             {
             }
-            column(GST_Rate_Cr_Caption;GST_Rate_CaptionLbl)
+            column(GST_Rate_Cr_Caption; GST_Rate_CaptionLbl)
             {
             }
-            column(IGST_Cr_Caption;IGST_CaptionLbl)
+            column(IGST_Cr_Caption; IGST_CaptionLbl)
             {
             }
-            column(CGST_Cr_Caption;CGST_CaptionLbl)
+            column(CGST_Cr_Caption; CGST_CaptionLbl)
             {
             }
-            column(SGST_UTGST_Cr_Caption;SGST_UTGST_CaptionLbl)
+            column(SGST_UTGST_Cr_Caption; SGST_UTGST_CaptionLbl)
             {
             }
-            column(CESS_Cr_Caption;CESS_CaptionLbl)
+            column(CESS_Cr_Caption; CESS_CaptionLbl)
             {
             }
-            column(Original_Invoice_Cr_Caption;Original_Invoice_CrDr_CaptionLbl)
+            column(Original_Invoice_Cr_Caption; Original_Invoice_CrDr_CaptionLbl)
             {
             }
-            column(Amount_Cr_Caption;Amount_CaptionLbl)
+            column(Amount_Cr_Caption; Amount_CaptionLbl)
             {
             }
-            column(CrDrRegisterVisibility;CrDrRegisterVisibility)
+            column(CrDrRegisterVisibility; CrDrRegisterVisibility)
             {
             }
-            column(CrDrRegisterHeaderVisibility;CrDrRegisterHeaderVisibility)
+            column(CrDrRegisterHeaderVisibility; CrDrRegisterHeaderVisibility)
             {
             }
-            column(SGSTAmount_CrDr;ABS(SGSTAmount))
+            column(SGSTAmount_CrDr; ABS(SGSTAmount))
             {
             }
-            column(CGSTAmount_CrDr;ABS(CGSTAmount))
+            column(CGSTAmount_CrDr; ABS(CGSTAmount))
             {
             }
-            column(IGSTAmount_CrDr;ABS(IGSTAmount))
+            column(IGSTAmount_CrDr; ABS(IGSTAmount))
             {
             }
-            column(CGSTRate_CrDr;CGSTRate)
+            column(CGSTRate_CrDr; CGSTRate)
             {
             }
-            column(SGSTRate_CrDr;SGSTRate)
+            column(SGSTRate_CrDr; SGSTRate)
             {
             }
-            column(IGSTRate_CrDr;IGSTRate)
+            column(IGSTRate_CrDr; IGSTRate)
             {
             }
-            column(IGSTTotal_CrDr;IGSTTotal)
+            column(IGSTTotal_CrDr; IGSTTotal)
             {
             }
-            column(CGSTTotal_CrDr;CGSTTotal)
+            column(CGSTTotal_CrDr; CGSTTotal)
             {
             }
-            column(SGSTTotal_CrDr;SGSTTotal)
+            column(SGSTTotal_CrDr; SGSTTotal)
             {
             }
-            column(DetailsCrDr_Caption;DetailsCrDr_CaptionLbl)
+            column(DetailsCrDr_Caption; DetailsCrDr_CaptionLbl)
             {
             }
-            column(NoCrDr_Caption;NoCrDr_CaptionLbl)
+            column(NoCrDr_Caption; NoCrDr_CaptionLbl)
             {
             }
-            column(OriginalInvoiceCrDr_Caption;OriginalInvoiceCrDr_CaptionLbl)
+            column(OriginalInvoiceCrDr_Caption; OriginalInvoiceCrDr_CaptionLbl)
             {
             }
-            column(InvoiceValue_Caption;InvoiceValue_CaptionLbl)
+            column(InvoiceValue_Caption; InvoiceValue_CaptionLbl)
             {
             }
-            column(DifferentialCrDr_Caption;DifferentialCrDr_CaptionLbl)
+            column(DifferentialCrDr_Caption; DifferentialCrDr_CaptionLbl)
             {
             }
-            column(Differentialtax_Caption;Differentialtax_CaptionLbl)
+            column(Differentialtax_Caption; Differentialtax_CaptionLbl)
             {
             }
-            column(TotalTax_Caption;TotalTax_CaptionLbl)
+            column(TotalTax_Caption; TotalTax_CaptionLbl)
             {
             }
-            column(EligibilityITCCrDr_Caption;EligibilityITCCrDr_CaptionLbl)
+            column(EligibilityITCCrDr_Caption; EligibilityITCCrDr_CaptionLbl)
             {
             }
-            column(OriginalCrDr_Caption;OriginalCrDr_CaptionLbl)
+            column(OriginalCrDr_Caption; OriginalCrDr_CaptionLbl)
             {
             }
-            column(GST_Caption;GST_CaptionLbl)
+            column(GST_Caption; GST_CaptionLbl)
             {
             }
-            column(Rate_Caption;Rate_CaptionLbl)
+            column(Rate_Caption; Rate_CaptionLbl)
             {
             }
 
@@ -1537,586 +1539,586 @@ report 50140 "GSTR2 Purchaset"
                 CLEAR(IGSTAmount);
 
                 IF Number = 1 THEN
-                  CrDrRegisterHeaderVisibility := TRUE
+                    CrDrRegisterHeaderVisibility := TRUE
                 ELSE
-                  CrDrRegisterHeaderVisibility := FALSE;
+                    CrDrRegisterHeaderVisibility := FALSE;
                 CrDrRegisterVisibility := TRUE;
 
                 IF Number = 1 THEN
-                  PurchCrMemoHdr.FINDFIRST
+                    PurchCrMemoHdr.FINDFIRST
                 ELSE
-                  PurchCrMemoHdr.NEXT;
+                    PurchCrMemoHdr.NEXT;
 
                 IsGSTApplicableCrDr := GSTManagement.IsGSTApplicable(PurchCrMemoHdr.Structure);
                 IF VendorGRec.GET(PurchCrMemoHdr."Buy-from Vendor No.") THEN;
 
                 PurchCrMemoLine.RESET;
-                PurchCrMemoLine.SETRANGE("Document No.",PurchCrMemoHdr."No.");
+                PurchCrMemoLine.SETRANGE("Document No.", PurchCrMemoHdr."No.");
                 IF PurchCrMemoLine.FINDSET THEN
-                  REPEAT
-                    IF IsGSTApplicableCrDr  THEN BEGIN
-                      GSTComponent.RESET;
-                      IF GSTComponent.FINDSET THEN
-                        REPEAT
-                          DetailedGSTLedgerEntry.RESET;
-                          DetailedGSTLedgerEntry.SETCURRENTKEY("Transaction Type","Document Type","Document No.","Document Line No.");
-                          DetailedGSTLedgerEntry.SETRANGE("Transaction Type",DetailedGSTLedgerEntry."Transaction Type"::Purchase);
-                          DetailedGSTLedgerEntry.SETRANGE("Document Type",DetailedGSTLedgerEntry."Document Type"::"Credit Memo");
-                          DetailedGSTLedgerEntry.SETRANGE("Document No.",PurchCrMemoLine."Document No.");
-                          DetailedGSTLedgerEntry.SETRANGE("Document Line No.",PurchCrMemoLine."Line No.");
-                          DetailedGSTLedgerEntry.SETRANGE("GST Component Code",GSTComponent.Code);
-                          IF DetailedGSTLedgerEntry.FINDSET THEN BEGIN
-                            REPEAT
-                              CASE DetailedGSTLedgerEntry."GST Component Code" OF
-                                'IGST':
-                                  BEGIN
-                                    IGSTRate := DetailedGSTLedgerEntry."GST %";
-                                    IGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
-                                    IGSTTotal += IGSTAmount;
-                                  END;
-                                'CGST':
-                                  BEGIN
-                                    CGSTRate := DetailedGSTLedgerEntry."GST %";
-                                    CGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
-                                    CGSTTotal += CGSTAmount;
-                                  END;
-                                'SGST':
-                                  BEGIN
-                                    SGSTRate := DetailedGSTLedgerEntry."GST %";
-                                    SGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
-                                    SGSTTotal += SGSTAmount;
-                                  END;
-                              END;
-                            UNTIL DetailedGSTLedgerEntry.NEXT = 0;
-                          END;
-                        UNTIL GSTComponent.NEXT = 0;
-                      END;
+                    REPEAT
+                        IF IsGSTApplicableCrDr THEN BEGIN
+                            GSTComponent.RESET;
+                            IF GSTComponent.FINDSET THEN
+                                REPEAT
+                                    DetailedGSTLedgerEntry.RESET;
+                                    DetailedGSTLedgerEntry.SETCURRENTKEY("Transaction Type", "Document Type", "Document No.", "Document Line No.");
+                                    DetailedGSTLedgerEntry.SETRANGE("Transaction Type", DetailedGSTLedgerEntry."Transaction Type"::Purchase);
+                                    DetailedGSTLedgerEntry.SETRANGE("Document Type", DetailedGSTLedgerEntry."Document Type"::"Credit Memo");
+                                    DetailedGSTLedgerEntry.SETRANGE("Document No.", PurchCrMemoLine."Document No.");
+                                    DetailedGSTLedgerEntry.SETRANGE("Document Line No.", PurchCrMemoLine."Line No.");
+                                    DetailedGSTLedgerEntry.SETRANGE("GST Component Code", GSTComponent.Code);
+                                    IF DetailedGSTLedgerEntry.FINDSET THEN BEGIN
+                                        REPEAT
+                                            CASE DetailedGSTLedgerEntry."GST Component Code" OF
+                                                'IGST':
+                                                    BEGIN
+                                                        IGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                        IGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                        IGSTTotal += IGSTAmount;
+                                                    END;
+                                                'CGST':
+                                                    BEGIN
+                                                        CGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                        CGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                        CGSTTotal += CGSTAmount;
+                                                    END;
+                                                'SGST':
+                                                    BEGIN
+                                                        SGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                        SGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                        SGSTTotal += SGSTAmount;
+                                                    END;
+                                            END;
+                                        UNTIL DetailedGSTLedgerEntry.NEXT = 0;
+                                    END;
+                                UNTIL GSTComponent.NEXT = 0;
+                        END;
                     UNTIL PurchCrMemoLine.NEXT = 0;
             end;
 
             trigger OnPreDataItem();
             begin
                 PurchCrMemoHdr.RESET;
-                PurchCrMemoHdr.SETRANGE("Posting Date",FromDate,ToDate);
-                PurchCrMemoHdr.SETRANGE("Location Code",LocationCode);
+                PurchCrMemoHdr.SETRANGE("Posting Date", FromDate, ToDate);
+                PurchCrMemoHdr.SETRANGE("Location Code", LocationCode);
                 //PurchCrMemoHdr.SETRANGE("GST Vendor Type",PurchCrMemoHdr."GST Vendor Type"::Registered);
                 IF PurchCrMemoHdr.FINDFIRST THEN
-                  CrDrRegisterVisibility := TRUE;
-                SETRANGE("Cr.Dr".Number,1,PurchCrMemoHdr.COUNT);
+                    CrDrRegisterVisibility := TRUE;
+                SETRANGE("Cr.Dr".Number, 1, PurchCrMemoHdr.COUNT);
             end;
         }
-        dataitem("Advance Paid";"Integer")
+        dataitem("Advance Paid"; "Integer")
         {
             DataItemTableView = SORTING(Number);
-            column(AdvancePaid_Number;"Advance Paid".Number)
+            column(AdvancePaid_Number; "Advance Paid".Number)
             {
             }
-            column(AdvancePaidVisibility;AdvancePaidVisibility)
+            column(AdvancePaidVisibility; AdvancePaidVisibility)
             {
             }
-            column(AdvancePaidHeaderVisibility;AdvancePaidHeaderVisibility)
+            column(AdvancePaidHeaderVisibility; AdvancePaidHeaderVisibility)
             {
             }
-            column(StatementAdv_Caption;StatementAdv_CaptionLbl)
+            column(StatementAdv_Caption; StatementAdv_CaptionLbl)
             {
             }
-            column(TaxPaidAdv_Caption;TaxPaidAdv_CaptionLbl)
+            column(TaxPaidAdv_Caption; TaxPaidAdv_CaptionLbl)
             {
             }
-            column(FiguresAdv_Caption;FiguresAdv_CaptionLbl)
+            column(FiguresAdv_Caption; FiguresAdv_CaptionLbl)
             {
             }
-            column(Month_Caption;Month_CaptionLbl)
+            column(Month_Caption; Month_CaptionLbl)
             {
             }
-            column(Amount_Adv_Caption;Amount_CaptionLbl)
+            column(Amount_Adv_Caption; Amount_CaptionLbl)
             {
             }
-            column(Supply_Type_Caption;Supply_Type_CaptionLbl)
+            column(Supply_Type_Caption; Supply_Type_CaptionLbl)
             {
             }
-            column(Place_of_Supply_Adavance_Caption;Place_of_Supply_Adavance_CaptionLbl)
+            column(Place_of_Supply_Adavance_Caption; Place_of_Supply_Adavance_CaptionLbl)
             {
             }
-            column(Advance_Caption;Advance_CaptionLbl)
+            column(Advance_Caption; Advance_CaptionLbl)
             {
             }
-            column(GST_Rate_Adv_Caption;GST_Rate_Adv_CaptionLbl)
+            column(GST_Rate_Adv_Caption; GST_Rate_Adv_CaptionLbl)
             {
             }
-            column(OriginalDetails_Caption;OriginalDetails_CaptionLbl)
+            column(OriginalDetails_Caption; OriginalDetails_CaptionLbl)
             {
             }
-            column(IGST_Adv_Caption;IGST_Adv_CaptionLbl)
+            column(IGST_Adv_Caption; IGST_Adv_CaptionLbl)
             {
             }
-            column(CGST_Adv_Caption;CGST_Adv_CaptionLbl)
+            column(CGST_Adv_Caption; CGST_Adv_CaptionLbl)
             {
             }
-            column(SGST_Adv_UTGST_Caption;SGST_Adv_UTGST_CaptionLbl)
+            column(SGST_Adv_UTGST_Caption; SGST_Adv_UTGST_CaptionLbl)
             {
             }
-            column(CESS_Adv_Caption;CESS_Adv_CaptionLbl)
+            column(CESS_Adv_Caption; CESS_Adv_CaptionLbl)
             {
             }
-            column(G1_Adv_Caption;G1_Adv_CaptionLbl)
+            column(G1_Adv_Caption; G1_Adv_CaptionLbl)
             {
             }
-            column(G2_Adv_Caption;G2_Adv_CaptionLbl)
+            column(G2_Adv_Caption; G2_Adv_CaptionLbl)
             {
             }
-            column(G3_Adv_Caption;G3_Adv_CaptionLbl)
+            column(G3_Adv_Caption; G3_Adv_CaptionLbl)
             {
             }
-            column(G4_Adv_Caption;G4_Adv_CaptionLbl)
+            column(G4_Adv_Caption; G4_Adv_CaptionLbl)
             {
             }
-            column(G5_Adv_Caption;G5_Adv_CaptionLbl)
+            column(G5_Adv_Caption; G5_Adv_CaptionLbl)
             {
             }
-            column(G6_Adv_Caption;G6_Adv_CaptionLbl)
+            column(G6_Adv_Caption; G6_Adv_CaptionLbl)
             {
             }
-            column(G7_Adv_Caption;G7_Adv_CaptionLbl)
+            column(G7_Adv_Caption; G7_Adv_CaptionLbl)
             {
             }
-            column(G8_Adv_Caption;G8_Adv_CaptionLbl)
+            column(G8_Adv_Caption; G8_Adv_CaptionLbl)
             {
             }
-            column(G9_Adv_Caption;G9_Adv_CaptionLbl)
+            column(G9_Adv_Caption; G9_Adv_CaptionLbl)
             {
             }
 
             trigger OnAfterGetRecord();
             begin
-                 IF Number = 1 THEN
-                  AdvancePaidHeaderVisibility := TRUE
-                 ELSE
-                  AdvancePaidHeaderVisibility := FALSE;
+                IF Number = 1 THEN
+                    AdvancePaidHeaderVisibility := TRUE
+                ELSE
+                    AdvancePaidHeaderVisibility := FALSE;
                 AdvancePaidVisibility := TRUE;
 
                 IF Number = 1 THEN
-                  VendorLedgerEntry.FINDFIRST
+                    VendorLedgerEntry.FINDFIRST
                 ELSE
-                  VendorLedgerEntry.NEXT;
+                    VendorLedgerEntry.NEXT;
             end;
 
             trigger OnPreDataItem();
             begin
                 VendorLedgerEntry.RESET;
-                VendorLedgerEntry.SETRANGE("Posting Date",FromDate,ToDate);
+                VendorLedgerEntry.SETRANGE("Posting Date", FromDate, ToDate);
                 IF VendorLedgerEntry.FINDFIRST THEN
-                  AdvancePaidVisibility := TRUE;
-                SETRANGE("Advance Paid".Number,1,VendorLedgerEntry.COUNT);
+                    AdvancePaidVisibility := TRUE;
+                SETRANGE("Advance Paid".Number, 1, VendorLedgerEntry.COUNT);
             end;
         }
-        dataitem("Advance Adjusted";"Integer")
+        dataitem("Advance Adjusted"; "Integer")
         {
             DataItemTableView = SORTING(Number);
-            column(AdvanceAdjusted_Number;"Advance Adjusted".Number)
+            column(AdvanceAdjusted_Number; "Advance Adjusted".Number)
             {
             }
-            column(AdvanceAdjustedVisibility;AdvanceAdjustedVisibility)
+            column(AdvanceAdjustedVisibility; AdvanceAdjustedVisibility)
             {
             }
-            column(AdvanceAdjustedHeaderVisibility;AdvanceAdjustedHeaderVisibility)
+            column(AdvanceAdjustedHeaderVisibility; AdvanceAdjustedHeaderVisibility)
             {
             }
-            column(AdvanceAdj_Caption;AdvanceAdj_CaptionLbl)
+            column(AdvanceAdj_Caption; AdvanceAdj_CaptionLbl)
             {
             }
-            column(TaxPaidAdjusted_Caption;TaxPaidAdjusted_CaptionLbl)
+            column(TaxPaidAdjusted_Caption; TaxPaidAdjusted_CaptionLbl)
             {
             }
-            column(FiguresAdv_Adj_Caption;FiguresAdv_CaptionLbl)
+            column(FiguresAdv_Adj_Caption; FiguresAdv_CaptionLbl)
             {
             }
-            column(Supply_Type_Adj_Caption;Supply_Type_CaptionLbl)
+            column(Supply_Type_Adj_Caption; Supply_Type_CaptionLbl)
             {
             }
-            column(Place_of_Supply_Adavance_Adj_Caption;Place_of_Supply_Adavance_CaptionLbl)
+            column(Place_of_Supply_Adavance_Adj_Caption; Place_of_Supply_Adavance_CaptionLbl)
             {
             }
-            column(Advance_Adj_Caption;Advance_CaptionLbl)
+            column(Advance_Adj_Caption; Advance_CaptionLbl)
             {
             }
-            column(Amount_Adv_Adj_Caption;Amount_CaptionLbl)
+            column(Amount_Adv_Adj_Caption; Amount_CaptionLbl)
             {
             }
-            column(GST_Rate_Adv_Adj_Caption;GST_Rate_Adv_CaptionLbl)
+            column(GST_Rate_Adv_Adj_Caption; GST_Rate_Adv_CaptionLbl)
             {
             }
-            column(IGST_Adv_Adj_Caption;IGST_Adv_CaptionLbl)
+            column(IGST_Adv_Adj_Caption; IGST_Adv_CaptionLbl)
             {
             }
-            column(CGST_Adv_Adj_Caption;CGST_Adv_CaptionLbl)
+            column(CGST_Adv_Adj_Caption; CGST_Adv_CaptionLbl)
             {
             }
-            column(SGST_AdvAdj_Caption;SGST_Adv_UTGST_CaptionLbl)
+            column(SGST_AdvAdj_Caption; SGST_Adv_UTGST_CaptionLbl)
             {
             }
-            column(CESS_Adv_Adj_Caption;CESS_Adv_CaptionLbl)
+            column(CESS_Adv_Adj_Caption; CESS_Adv_CaptionLbl)
             {
             }
-            column(G1_Adv_Adj_Caption;G1_Adv_CaptionLbl)
+            column(G1_Adv_Adj_Caption; G1_Adv_CaptionLbl)
             {
             }
-            column(G2_Adv_Adj_Caption;G2_Adv_CaptionLbl)
+            column(G2_Adv_Adj_Caption; G2_Adv_CaptionLbl)
             {
             }
-            column(G3_Adv_Adj_Caption;G3_Adv_CaptionLbl)
+            column(G3_Adv_Adj_Caption; G3_Adv_CaptionLbl)
             {
             }
-            column(G4_Adv_Adj_Caption;G4_Adv_CaptionLbl)
+            column(G4_Adv_Adj_Caption; G4_Adv_CaptionLbl)
             {
             }
-            column(G5_Adv_Adj_Caption;G5_Adv_CaptionLbl)
+            column(G5_Adv_Adj_Caption; G5_Adv_CaptionLbl)
             {
             }
-            column(G6_Adv_Adj_Caption;G6_Adv_CaptionLbl)
+            column(G6_Adv_Adj_Caption; G6_Adv_CaptionLbl)
             {
             }
-            column(G7_Adv_Adj_Caption;G7_Adv_CaptionLbl)
+            column(G7_Adv_Adj_Caption; G7_Adv_CaptionLbl)
             {
             }
-            column(G8_Adv_Adj_Caption;G8_Adv_CaptionLbl)
+            column(G8_Adv_Adj_Caption; G8_Adv_CaptionLbl)
             {
             }
 
             trigger OnAfterGetRecord();
             begin
-                 IF Number = 1 THEN
-                  AdvanceAdjustedHeaderVisibility := TRUE
-                 ELSE
-                  AdvanceAdjustedHeaderVisibility := FALSE;
+                IF Number = 1 THEN
+                    AdvanceAdjustedHeaderVisibility := TRUE
+                ELSE
+                    AdvanceAdjustedHeaderVisibility := FALSE;
                 AdvanceAdjustedVisibility := TRUE;
 
                 IF Number = 1 THEN
-                  VendorLedgerEntry.FINDFIRST
+                    VendorLedgerEntry.FINDFIRST
                 ELSE
-                  VendorLedgerEntry.NEXT;
+                    VendorLedgerEntry.NEXT;
             end;
 
             trigger OnPreDataItem();
             begin
                 VendorLedgerEntry.RESET;
-                VendorLedgerEntry.SETRANGE("Posting Date",FromDate,ToDate);
+                VendorLedgerEntry.SETRANGE("Posting Date", FromDate, ToDate);
                 IF VendorLedgerEntry.FINDFIRST THEN
-                  AdvanceAdjustedVisibility := TRUE;
-                SETRANGE("Advance Adjusted".Number,1,VendorLedgerEntry.COUNT);
+                    AdvanceAdjustedVisibility := TRUE;
+                SETRANGE("Advance Adjusted".Number, 1, VendorLedgerEntry.COUNT);
             end;
         }
-        dataitem("ITC reversal";"Integer")
+        dataitem("ITC reversal"; "Integer")
         {
             DataItemTableView = SORTING(Number);
-            column(ITCreversal_Number;"ITC reversal".Number)
+            column(ITCreversal_Number; "ITC reversal".Number)
             {
             }
-            column(ITCreversalHeaderVisibility;ITCreversalHeaderVisibility)
+            column(ITCreversalHeaderVisibility; ITCreversalHeaderVisibility)
             {
             }
-            column(ITCreversalVisibility;ITCreversalVisibility)
+            column(ITCreversalVisibility; ITCreversalVisibility)
             {
             }
-            column(InputITC_Caption;InputITC_CaptionLbl)
+            column(InputITC_Caption; InputITC_CaptionLbl)
             {
             }
-            column(DescriptionITC_Caption;DescriptionITC_CaptionLbl)
+            column(DescriptionITC_Caption; DescriptionITC_CaptionLbl)
             {
             }
-            column(TobeITC_Caption;TobeITC_CaptionLbl)
+            column(TobeITC_Caption; TobeITC_CaptionLbl)
             {
             }
-            column(Amount_ITC_Caption;Amount_CaptionLbl)
+            column(Amount_ITC_Caption; Amount_CaptionLbl)
             {
             }
-            column(IGST_ITC_Caption;IGST_Adv_CaptionLbl)
+            column(IGST_ITC_Caption; IGST_Adv_CaptionLbl)
             {
             }
-            column(CGST_ITC_Caption;CGST_Adv_CaptionLbl)
+            column(CGST_ITC_Caption; CGST_Adv_CaptionLbl)
             {
             }
-            column(SGST_ITC_Caption;SGST_Adv_UTGST_CaptionLbl)
+            column(SGST_ITC_Caption; SGST_Adv_UTGST_CaptionLbl)
             {
             }
-            column(CESS_ITC_Caption;CESS_Adv_CaptionLbl)
+            column(CESS_ITC_Caption; CESS_Adv_CaptionLbl)
             {
             }
-            column(G1_ITC_Caption;G1_Adv_CaptionLbl)
+            column(G1_ITC_Caption; G1_Adv_CaptionLbl)
             {
             }
-            column(G2_ITC_Caption;G2_Adv_CaptionLbl)
+            column(G2_ITC_Caption; G2_Adv_CaptionLbl)
             {
             }
-            column(G3_ITC_Caption;G3_Adv_CaptionLbl)
+            column(G3_ITC_Caption; G3_Adv_CaptionLbl)
             {
             }
-            column(G4_ITC_Caption;G4_Adv_CaptionLbl)
+            column(G4_ITC_Caption; G4_Adv_CaptionLbl)
             {
             }
-            column(G5_ITC_Caption;G5_Adv_CaptionLbl)
+            column(G5_ITC_Caption; G5_Adv_CaptionLbl)
             {
             }
-            column(G6_ITC_Caption;G6_Adv_CaptionLbl)
+            column(G6_ITC_Caption; G6_Adv_CaptionLbl)
             {
             }
 
             trigger OnAfterGetRecord();
             begin
                 IF Number = 1 THEN
-                  ITCreversalHeaderVisibility := TRUE
-                 ELSE
-                   ITCreversalHeaderVisibility := FALSE;
-                ITCreversalVisibility  := TRUE;
+                    ITCreversalHeaderVisibility := TRUE
+                ELSE
+                    ITCreversalHeaderVisibility := FALSE;
+                ITCreversalVisibility := TRUE;
 
                 IF Number = 1 THEN
-                  PurchInvHeaderB2B.FINDFIRST
+                    PurchInvHeaderB2B.FINDFIRST
                 ELSE
-                  PurchInvHeaderB2B.NEXT;
+                    PurchInvHeaderB2B.NEXT;
             end;
 
             trigger OnPreDataItem();
             begin
                 PurchInvHeaderB2B.RESET;
-                PurchInvHeaderB2B.SETRANGE("Posting Date",FromDate,ToDate);
-                PurchInvHeaderB2B.SETRANGE("Location Code",LocationCode);
+                PurchInvHeaderB2B.SETRANGE("Posting Date", FromDate, ToDate);
+                PurchInvHeaderB2B.SETRANGE("Location Code", LocationCode);
                 IF PurchInvHeaderB2B.FINDFIRST THEN
-                  ITCreversalVisibility := TRUE;
-                SETRANGE("ITC reversal".Number,1,PurchInvHeaderB2B.COUNT);
+                    ITCreversalVisibility := TRUE;
+                SETRANGE("ITC reversal".Number, 1, PurchInvHeaderB2B.COUNT);
             end;
         }
-        dataitem("Addition Reduction";"Integer")
+        dataitem("Addition Reduction"; "Integer")
         {
             DataItemTableView = SORTING(Number);
-            column(AdditionReduction_Number;"Addition Reduction".Number)
+            column(AdditionReduction_Number; "Addition Reduction".Number)
             {
             }
-            column(AdditionReductionVisibility;AdditionReductionVisibility)
+            column(AdditionReductionVisibility; AdditionReductionVisibility)
             {
             }
-            column(AdditionReductionHeaderVisibility;AdditionReductionHeaderVisibility)
+            column(AdditionReductionHeaderVisibility; AdditionReductionHeaderVisibility)
             {
             }
-            column(Addition_Caption;Addition_CaptionLbl)
+            column(Addition_Caption; Addition_CaptionLbl)
             {
             }
-            column(DescriptionAddition_Caption;DescriptionAddition_CaptionLbl)
+            column(DescriptionAddition_Caption; DescriptionAddition_CaptionLbl)
             {
             }
-            column(Amount_Addition_Caption;Amount_CaptionLbl)
+            column(Amount_Addition_Caption; Amount_CaptionLbl)
             {
             }
-            column(IGST_Addition_Caption;IGST_Adv_CaptionLbl)
+            column(IGST_Addition_Caption; IGST_Adv_CaptionLbl)
             {
             }
-            column(CGST_Addition_Caption;CGST_Adv_CaptionLbl)
+            column(CGST_Addition_Caption; CGST_Adv_CaptionLbl)
             {
             }
-            column(SGST_Addition_Caption;SGST_Adv_UTGST_CaptionLbl)
+            column(SGST_Addition_Caption; SGST_Adv_UTGST_CaptionLbl)
             {
             }
-            column(CESS_Addition_Caption;CESS_Adv_CaptionLbl)
+            column(CESS_Addition_Caption; CESS_Adv_CaptionLbl)
             {
             }
-            column(G1_Addition_Caption;G1_Adv_CaptionLbl)
+            column(G1_Addition_Caption; G1_Adv_CaptionLbl)
             {
             }
-            column(G2_Addition_Caption;G2_Adv_CaptionLbl)
+            column(G2_Addition_Caption; G2_Adv_CaptionLbl)
             {
             }
-            column(G3_Addition_Caption;G3_Adv_CaptionLbl)
+            column(G3_Addition_Caption; G3_Adv_CaptionLbl)
             {
             }
-            column(G4_Addition_Caption;G4_Adv_CaptionLbl)
+            column(G4_Addition_Caption; G4_Adv_CaptionLbl)
             {
             }
-            column(G5_Addition_Caption;G5_Adv_CaptionLbl)
+            column(G5_Addition_Caption; G5_Adv_CaptionLbl)
             {
             }
 
             trigger OnAfterGetRecord();
             begin
                 IF Number = 1 THEN
-                  AdditionReductionHeaderVisibility := TRUE
-                 ELSE
-                   AdditionReductionHeaderVisibility := FALSE;
+                    AdditionReductionHeaderVisibility := TRUE
+                ELSE
+                    AdditionReductionHeaderVisibility := FALSE;
                 AdditionReductionVisibility := TRUE;
                 IF Number = 1 THEN
-                  PurchInvHeaderB2B.FINDFIRST
+                    PurchInvHeaderB2B.FINDFIRST
                 ELSE
-                  PurchInvHeaderB2B.NEXT;
+                    PurchInvHeaderB2B.NEXT;
             end;
 
             trigger OnPreDataItem();
             begin
                 PurchInvHeaderB2B.RESET;
-                PurchInvHeaderB2B.SETRANGE("Posting Date",FromDate,ToDate);
-                PurchInvHeaderB2B.SETRANGE("Location Code",LocationCode);
+                PurchInvHeaderB2B.SETRANGE("Posting Date", FromDate, ToDate);
+                PurchInvHeaderB2B.SETRANGE("Location Code", LocationCode);
                 IF PurchInvHeaderB2B.FINDFIRST THEN
-                  AdditionReductionVisibility := TRUE;
-                SETRANGE("Addition Reduction".Number,1,PurchInvHeaderB2B.COUNT);
+                    AdditionReductionVisibility := TRUE;
+                SETRANGE("Addition Reduction".Number, 1, PurchInvHeaderB2B.COUNT);
             end;
         }
-        dataitem("HSN Summary";"Integer")
+        dataitem("HSN Summary"; "Integer")
         {
             DataItemTableView = SORTING(Number);
-            column(Number_HSNSummary;"HSN Summary".Number)
+            column(Number_HSNSummary; "HSN Summary".Number)
             {
             }
-            column(PurchInvLine_GSTGroupType;PurchInvLine."GST Group Type")
+            column(PurchInvLine_GSTGroupType; PurchInvLine."GST Group Type")
             {
             }
-            column(PurchInvLine_HSN_SAC_Code;PurchInvLine."HSN/SAC Code")
+            column(PurchInvLine_HSN_SAC_Code; PurchInvLine."HSN/SAC Code")
             {
             }
-            column(PurchInvLine_Description;PurchInvLine.Description)
+            column(PurchInvLine_Description; PurchInvLine.Description)
             {
             }
-            column(PurchInvLine_Unit_of_Measure_Code;PurchInvLine."Unit of Measure Code")
+            column(PurchInvLine_Unit_of_Measure_Code; PurchInvLine."Unit of Measure Code")
             {
             }
-            column(PurchInvLin_CESS_Amount;PurchInvLine."CESS Amount")
+            column(PurchInvLin_CESS_Amount; PurchInvLine."CESS Amount")
             {
             }
-            column(SGSTAmount_HSN;SGSTAmount)
+            column(SGSTAmount_HSN; SGSTAmount)
             {
             }
-            column(CGSTAmount_HSN;CGSTAmount)
+            column(CGSTAmount_HSN; CGSTAmount)
             {
             }
-            column(IGSTAmount_HSN;IGSTAmount)
+            column(IGSTAmount_HSN; IGSTAmount)
             {
             }
-            column(IGSTTotal_HSN;IGSTTotal)
+            column(IGSTTotal_HSN; IGSTTotal)
             {
             }
-            column(CGSTTotal_HSN;CGSTTotal)
+            column(CGSTTotal_HSN; CGSTTotal)
             {
             }
-            column(SGSTTotal_HSN;SGSTTotal)
+            column(SGSTTotal_HSN; SGSTTotal)
             {
             }
-            column(HSNSummaryVisibility;HSNSummaryVisibility)
+            column(HSNSummaryVisibility; HSNSummaryVisibility)
             {
             }
-            column(HSNSummaryHeaderVisibility;HSNSummaryHeaderVisibility)
+            column(HSNSummaryHeaderVisibility; HSNSummaryHeaderVisibility)
             {
             }
-            column(HSNSumm_Caption;HSNSumm_CaptionLbl)
+            column(HSNSumm_Caption; HSNSumm_CaptionLbl)
             {
             }
-            column(Goods_Service_Caption;Goods_Service_CaptionLbl)
+            column(Goods_Service_Caption; Goods_Service_CaptionLbl)
             {
             }
-            column(HSN_SAC_Caption;HSN_SAC_CaptionLbl)
+            column(HSN_SAC_Caption; HSN_SAC_CaptionLbl)
             {
             }
-            column(Description_HSN_Caption;Description_HSN_CaptionLbl)
+            column(Description_HSN_Caption; Description_HSN_CaptionLbl)
             {
             }
-            column(UQC_Caption;UQC_CaptionLbl)
+            column(UQC_Caption; UQC_CaptionLbl)
             {
             }
-            column(Total_Quantity_Caption;Total_Quantity_CaptionLbl)
+            column(Total_Quantity_Caption; Total_Quantity_CaptionLbl)
             {
             }
-            column(Total_Value_Caption;Total_Value_CaptionLbl)
+            column(Total_Value_Caption; Total_Value_CaptionLbl)
             {
             }
-            column(Total_Taxable_Value_Caption;Total_Taxable_Value_CaptionLbl)
+            column(Total_Taxable_Value_Caption; Total_Taxable_Value_CaptionLbl)
             {
             }
-            column(IGST_HSN_Caption;IGST_CaptionLbl)
+            column(IGST_HSN_Caption; IGST_CaptionLbl)
             {
             }
-            column(CGST_HSN_Caption;CGST_CaptionLbl)
+            column(CGST_HSN_Caption; CGST_CaptionLbl)
             {
             }
-            column(SGST_UTGST_HSN_Caption;SGST_UTGST_CaptionLbl)
+            column(SGST_UTGST_HSN_Caption; SGST_UTGST_CaptionLbl)
             {
             }
-            column(CESS_HSN_Caption;CESS_CaptionLbl)
+            column(CESS_HSN_Caption; CESS_CaptionLbl)
             {
             }
-            column(Amount_HSN_Caption;Amount_CaptionLbl)
+            column(Amount_HSN_Caption; Amount_CaptionLbl)
             {
             }
-            column(C1_HSN_Caption;G1_CaptionLbl)
+            column(C1_HSN_Caption; G1_CaptionLbl)
             {
             }
-            column(C2_HSN_Caption;G2_CaptionLbl)
+            column(C2_HSN_Caption; G2_CaptionLbl)
             {
             }
-            column(C3_HSN_Caption;G3_CaptionLbl)
+            column(C3_HSN_Caption; G3_CaptionLbl)
             {
             }
-            column(C4_HSN_Caption;G4_CaptionLbl)
+            column(C4_HSN_Caption; G4_CaptionLbl)
             {
             }
-            column(C5_HSN_Caption;G5_CaptionLbl)
+            column(C5_HSN_Caption; G5_CaptionLbl)
             {
             }
-            column(C6_HSN_Caption;G6_CaptionLbl)
+            column(C6_HSN_Caption; G6_CaptionLbl)
             {
             }
-            column(C7_HSN_Caption;G7_CaptionLbl)
+            column(C7_HSN_Caption; G7_CaptionLbl)
             {
             }
-            column(C8_HSN_Caption;G8_CaptionLbl)
+            column(C8_HSN_Caption; G8_CaptionLbl)
             {
             }
-            column(C9_HSN_Caption;G9_CaptionLbl)
+            column(C9_HSN_Caption; G9_CaptionLbl)
             {
             }
-            column(C10_HSN_Caption;G10_CaptionLbl)
+            column(C10_HSN_Caption; G10_CaptionLbl)
             {
             }
-            column(C11_HSN_Caption;G11_CaptionLbl)
+            column(C11_HSN_Caption; G11_CaptionLbl)
             {
             }
-            column(C12_HSN_Caption;G12_CaptionLbl)
+            column(C12_HSN_Caption; G12_CaptionLbl)
             {
             }
-            column(C13_HSN_Caption;G13_CaptionLbl)
+            column(C13_HSN_Caption; G13_CaptionLbl)
             {
             }
-            column(Amount_HSNSummary_Caption;Amount_CaptionLbl)
+            column(Amount_HSNSummary_Caption; Amount_CaptionLbl)
             {
             }
-            column(HSN_InternalDocNo_Caption;InternalDocNo_CaptionLbl)
+            column(HSN_InternalDocNo_Caption; InternalDocNo_CaptionLbl)
             {
             }
-            column(HSN_InternalDocDate_Caption;InternalDocDate_CaptionLbl)
+            column(HSN_InternalDocDate_Caption; InternalDocDate_CaptionLbl)
             {
             }
-            column(HSN_InternalDocNo;PurchInvLine."Document No.")
+            column(HSN_InternalDocNo; PurchInvLine."Document No.")
             {
             }
-            column(HSN_InternalDocDate;PurchInvLine."Posting Date")
+            column(HSN_InternalDocDate; PurchInvLine."Posting Date")
             {
             }
-            column(HSNQuantity;PurchInvLine.Quantity)
+            column(HSNQuantity; PurchInvLine.Quantity)
             {
             }
-            column(HSNTotalValue;PurchInvLine."Amount To Vendor")
+            column(HSNTotalValue; PurchInvLine."Amount To Vendor")
             {
             }
-            column(HSNTotalTaxableValue;PurchInvLine."GST Base Amount")
+            column(HSNTotalTaxableValue; PurchInvLine."GST Base Amount")
             {
             }
-            column(HSNDescription;PurchInvLine.Description)
+            column(HSNDescription; PurchInvLine.Description)
             {
             }
-            column(UQC;PurchInvLine."Unit of Measure Code")
+            column(UQC; PurchInvLine."Unit of Measure Code")
             {
             }
-            column(HSNSAC;PurchInvLine."HSN/SAC Code")
+            column(HSNSAC; PurchInvLine."HSN/SAC Code")
             {
             }
-            column(HSNCESS;PurchInvLine."CESS Amount")
+            column(HSNCESS; PurchInvLine."CESS Amount")
             {
             }
-            column(HSNGSTGroupType;PurchInvLine."GST Group Type")
+            column(HSNGSTGroupType; PurchInvLine."GST Group Type")
             {
             }
 
@@ -2133,68 +2135,68 @@ report 50140 "GSTR2 Purchaset"
                 CLEAR(IGSTTotal);
 
                 IF Number = 1 THEN
-                  HSNSummaryHeaderVisibility := TRUE
+                    HSNSummaryHeaderVisibility := TRUE
                 ELSE
-                  HSNSummaryHeaderVisibility := FALSE;
+                    HSNSummaryHeaderVisibility := FALSE;
                 HSNSummaryVisibility := TRUE;
 
                 IF Number = 1 THEN
-                  PurchInvLine.FINDFIRST
+                    PurchInvLine.FINDFIRST
                 ELSE
-                  PurchInvLine.NEXT;
+                    PurchInvLine.NEXT;
 
                 IF IsGSTApplicable THEN BEGIN
-                  GSTComponent.RESET;
-                  GSTComponent.SETRANGE("GST Jurisdiction Type",PurchInvLine."GST Jurisdiction Type");
-                  IF GSTComponent.FINDSET THEN
-                    REPEAT
-                      DetailedGSTLedgerEntry.RESET;
-                      DetailedGSTLedgerEntry.SETCURRENTKEY("Transaction Type","Document Type","Document No.","Document Line No.");
-                      DetailedGSTLedgerEntry.SETRANGE("Transaction Type",DetailedGSTLedgerEntry."Transaction Type"::Purchase);
-                      DetailedGSTLedgerEntry.SETRANGE("Document Type",DetailedGSTLedgerEntry."Document Type"::Invoice);
-                      DetailedGSTLedgerEntry.SETRANGE("Document No.",PurchInvLine."Document No.");
-                      DetailedGSTLedgerEntry.SETRANGE("Document Line No.",PurchInvLine."Line No.");
-                      DetailedGSTLedgerEntry.SETRANGE("GST Component Code",GSTComponent.Code);
-                      IF DetailedGSTLedgerEntry.FINDSET THEN BEGIN
+                    GSTComponent.RESET;
+                    GSTComponent.SETRANGE("GST Jurisdiction Type", PurchInvLine."GST Jurisdiction Type");
+                    IF GSTComponent.FINDSET THEN
                         REPEAT
-                          CASE DetailedGSTLedgerEntry."GST Component Code" OF
-                            'IGST':
-                              BEGIN
-                                IGSTRate := DetailedGSTLedgerEntry."GST %";
-                                IGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
-                                IGSTTotal += IGSTAmount;
-                              END;
-                            'CGST':
-                              BEGIN
-                                CGSTRate := DetailedGSTLedgerEntry."GST %";
-                                CGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
-                                CGSTTotal += CGSTAmount;
-                              END;
-                            'SGST':
-                              BEGIN
-                                SGSTRate := DetailedGSTLedgerEntry."GST %";
-                                SGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
-                                SGSTTotal += SGSTAmount;
-                              END;
-                          END;
-                        UNTIL DetailedGSTLedgerEntry.NEXT = 0;
-                      END;
-                    UNTIL GSTComponent.NEXT = 0;
+                            DetailedGSTLedgerEntry.RESET;
+                            DetailedGSTLedgerEntry.SETCURRENTKEY("Transaction Type", "Document Type", "Document No.", "Document Line No.");
+                            DetailedGSTLedgerEntry.SETRANGE("Transaction Type", DetailedGSTLedgerEntry."Transaction Type"::Purchase);
+                            DetailedGSTLedgerEntry.SETRANGE("Document Type", DetailedGSTLedgerEntry."Document Type"::Invoice);
+                            DetailedGSTLedgerEntry.SETRANGE("Document No.", PurchInvLine."Document No.");
+                            DetailedGSTLedgerEntry.SETRANGE("Document Line No.", PurchInvLine."Line No.");
+                            DetailedGSTLedgerEntry.SETRANGE("GST Component Code", GSTComponent.Code);
+                            IF DetailedGSTLedgerEntry.FINDSET THEN BEGIN
+                                REPEAT
+                                    CASE DetailedGSTLedgerEntry."GST Component Code" OF
+                                        'IGST':
+                                            BEGIN
+                                                IGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                IGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                IGSTTotal += IGSTAmount;
+                                            END;
+                                        'CGST':
+                                            BEGIN
+                                                CGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                CGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                CGSTTotal += CGSTAmount;
+                                            END;
+                                        'SGST':
+                                            BEGIN
+                                                SGSTRate := DetailedGSTLedgerEntry."GST %";
+                                                SGSTAmount := ABS(DetailedGSTLedgerEntry."GST Amount");
+                                                SGSTTotal += SGSTAmount;
+                                            END;
+                                    END;
+                                UNTIL DetailedGSTLedgerEntry.NEXT = 0;
+                            END;
+                        UNTIL GSTComponent.NEXT = 0;
                 END;
             end;
 
             trigger OnPreDataItem();
             begin
                 PurchInvLine.RESET;
-                PurchInvLine.SETRANGE("Posting Date",FromDate,ToDate);
-                PurchInvLine.SETRANGE("Location Code",LocationCode);
-                PurchInvLine.SETFILTER("HSN/SAC Code",'<>%1','');
+                PurchInvLine.SETRANGE("Posting Date", FromDate, ToDate);
+                PurchInvLine.SETRANGE("Location Code", LocationCode);
+                PurchInvLine.SETFILTER("HSN/SAC Code", '<>%1', '');
                 IF PurchInvLine.FINDFIRST THEN
-                  HSNSummaryVisibility := TRUE;
-                SETRANGE("HSN Summary".Number,1,PurchInvLine.COUNT);
+                    HSNSummaryVisibility := TRUE;
+                SETRANGE("HSN Summary".Number, 1, PurchInvLine.COUNT);
             end;
         }
-        dataitem("Purch. Inv. Header";"Purch. Inv. Header")
+        dataitem("Purch. Inv. Header"; "Purch. Inv. Header")
         {
             DataItemTableView = SORTING(No.) WHERE(GST Vendor Type=FILTER(Registered));
             PrintOnlyIfDetail = true;

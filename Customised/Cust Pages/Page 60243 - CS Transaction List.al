@@ -9,54 +9,54 @@ page 60243 "CS Transaction List"
     {
         area(content)
         {
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
             }
             repeater(Group)
             {
-                field("Transaction ID";"Transaction ID")
+                field("Transaction ID"; "Transaction ID")
                 {
                 }
-                field("Transaction Type";"Transaction Type")
+                field("Transaction Type"; "Transaction Type")
                 {
                 }
-                field("Transfer From Location";"Transfer From Location")
+                field("Transfer From Location"; "Transfer From Location")
                 {
                 }
-                field("Transfer To Location";"Transfer To Location")
+                field("Transfer To Location"; "Transfer To Location")
                 {
                 }
-                field("Mode of Transport";"Mode of Transport")
+                field("Mode of Transport"; "Mode of Transport")
                 {
                 }
-                field("Courier Details";"Courier Details")
+                field("Courier Details"; "Courier Details")
                 {
                 }
-                field("Transaction Status";"Transaction Status")
+                field("Transaction Status"; "Transaction Status")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                 }
-                field("User ID";"User ID")
+                field("User ID"; "User ID")
                 {
                 }
-                field("Created Date";"Created Date")
+                field("Created Date"; "Created Date")
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
-                field("Customer No";"Customer No")
+                field("Customer No"; "Customer No")
                 {
                 }
-                field("Customer Name";"Customer Name")
+                field("Customer Name"; "Customer Name")
                 {
                 }
-                field("DC No";"DC No")
+                field("DC No"; "DC No")
                 {
                 }
             }

@@ -5,30 +5,30 @@ report 50120 "Customer List Test(Delete)"
 
     dataset
     {
-        dataitem(Customer;Customer)
+        dataitem(Customer; Customer)
         {
-            column(No_Customer;Customer."No.")
+            column(No_Customer; Customer."No.")
             {
             }
-            column(Name_Customer;Customer.Name)
+            column(Name_Customer; Customer.Name)
             {
             }
-            column(SearchName_Customer;Customer."Search Name")
+            column(SearchName_Customer; Customer."Search Name")
             {
             }
-            column(Name2_Customer;Customer."Name 2")
+            column(Name2_Customer; Customer."Name 2")
             {
             }
-            column(Address_Customer;Customer.Address)
+            column(Address_Customer; Customer.Address)
             {
             }
-            column(Address2_Customer;Customer."Address 2")
+            column(Address2_Customer; Customer."Address 2")
             {
             }
-            column(City_Customer;Customer.City)
+            column(City_Customer; Customer.City)
             {
             }
-            column(Contact_Customer;Customer.Contact)
+            column(Contact_Customer; Customer.Contact)
             {
             }
         }
@@ -44,7 +44,7 @@ report 50120 "Customer List Test(Delete)"
                 group(Control1102152002)
                 {
                     ShowCaption = false;
-                    field("Customer.""No.""";Customer."No.")
+                    field("Customer.""No."""; Customer."No.")
                     {
                         ShowCaption = false;
                     }

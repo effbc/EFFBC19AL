@@ -6,16 +6,16 @@ xmlport 80218 "Direct posting"
     {
         textelement(GLAccounts)
         {
-            tableelement("<glaccount>";"G/L Account")
+            tableelement("<glaccount>"; "G/L Account")
             {
                 XmlName = 'GLAccount';
-                fieldelement(No;"<GLAccount>"."No.")
+                fieldelement(No; "<GLAccount>"."No.")
                 {
                 }
-                fieldelement(Name;"<GLAccount>".Name)
+                fieldelement(Name; "<GLAccount>".Name)
                 {
                 }
-                fieldelement(DirectPosting;"<GLAccount>"."Direct Posting")
+                fieldelement(DirectPosting; "<GLAccount>"."Direct Posting")
                 {
                 }
             }

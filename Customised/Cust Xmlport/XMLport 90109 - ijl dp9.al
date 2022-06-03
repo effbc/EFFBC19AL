@@ -6,7 +6,7 @@ xmlport 90109 "ijl dp9"
     {
         textelement(IJLTable9)
         {
-            tableelement("<integer>";Item)
+            tableelement("<integer>"; Item)
             {
                 AutoSave = false;
                 XmlName = 'Item';
@@ -109,20 +109,19 @@ xmlport 90109 "ijl dp9"
                     trigger OnAfterAssignVariable();
                     begin
                         PurIH.Reset;
-                        PurIH.SetFilter("No.",voucher_no);
+                        PurIH.SetFilter("No.", voucher_no);
                         EXDate := 19960520D;
                         daypart := 20;
-                        monthpart := Date2DMY(Today,2) - 1;
-                        YearPart := Date2DMY(Today,3);
-                        Claimdate := DMY2Date(daypart,monthpart,YearPart);
-                        if PurIH.FindFirst then
-                          begin
-                               PurIH."Excise Claimed Date" := Claimdate;
-                                PurIH.Modify;
+                        monthpart := Date2DMY(Today, 2) - 1;
+                        YearPart := Date2DMY(Today, 3);
+                        Claimdate := DMY2Date(daypart, monthpart, YearPart);
+                        if PurIH.FindFirst then begin
+                            PurIH."Excise Claimed Date" := Claimdate;
+                            PurIH.Modify;
                             // MESSAGE(FORMAT(Claimdate));
-                              InvoicesCnt := InvoicesCnt + 1;
+                            InvoicesCnt := InvoicesCnt + 1;
 
-                          end
+                        end
                     end;
                 }
                 textelement(Buy_from_Vendor_No_)
@@ -152,16 +151,16 @@ xmlport 90109 "ijl dp9"
 
     trigger OnPostXmlPort();
     begin
-        Message('Data Updation Completed!\Invoices Count: '+Format(InvoicesCnt));
+        Message('Data Updation Completed!\Invoices Count: ' + Format(InvoicesCnt));
     end;
 
     var
-        daypart : Integer;
-        monthpart : Integer;
-        YearPart : Integer;
-        Claimdate : Date;
-        EXDate : Date;
-        InvoicesCnt : Integer;
-        PurIH : Record "Purch. Inv. Header";
+        daypart: Integer;
+        monthpart: Integer;
+        YearPart: Integer;
+        Claimdate: Date;
+        EXDate: Date;
+        InvoicesCnt: Integer;
+        PurIH: Record "Purch. Inv. Header";
 }
 

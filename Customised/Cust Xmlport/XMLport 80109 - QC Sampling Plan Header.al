@@ -6,31 +6,31 @@ xmlport 80109 "QC Sampling Plan Header"
     {
         textelement(SamplingPlanHeader)
         {
-            tableelement("<samplingplanheader>";"Sampling Plan Header")
+            tableelement("<samplingplanheader>"; "Sampling Plan Header")
             {
                 XmlName = 'SamplingPlanHeader';
-                fieldelement(Code;"<SamplingPlanHeader>".Code)
+                fieldelement(Code; "<SamplingPlanHeader>".Code)
                 {
                 }
-                fieldelement(Description;"<SamplingPlanHeader>".Description)
+                fieldelement(Description; "<SamplingPlanHeader>".Description)
                 {
                 }
-                fieldelement(StandardReference;"<SamplingPlanHeader>"."Standard Reference")
+                fieldelement(StandardReference; "<SamplingPlanHeader>"."Standard Reference")
                 {
                 }
-                fieldelement(AQLPercentage;"<SamplingPlanHeader>"."AQL Percentage")
+                fieldelement(AQLPercentage; "<SamplingPlanHeader>"."AQL Percentage")
                 {
                 }
-                fieldelement(Status;"<SamplingPlanHeader>".Status)
+                fieldelement(Status; "<SamplingPlanHeader>".Status)
                 {
                 }
-                fieldelement(FixedQuantity;"<SamplingPlanHeader>"."Fixed Quantity")
+                fieldelement(FixedQuantity; "<SamplingPlanHeader>"."Fixed Quantity")
                 {
                 }
-                fieldelement(LotPercentage;"<SamplingPlanHeader>"."Lot Percentage")
+                fieldelement(LotPercentage; "<SamplingPlanHeader>"."Lot Percentage")
                 {
                 }
-                fieldelement(SamplingType;"<SamplingPlanHeader>"."Sampling Type")
+                fieldelement(SamplingType; "<SamplingPlanHeader>"."Sampling Type")
                 {
                 }
             }

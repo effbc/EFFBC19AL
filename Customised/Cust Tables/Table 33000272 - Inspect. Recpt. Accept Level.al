@@ -1,23 +1,28 @@
 table 33000272 "Inspect. Recpt. Accept Level"
 {
+    DataClassification = CustomerContent;
     // version QC1.1
 
 
     fields
     {
-        field(1;"Inspection Receipt No.";Code[20])
+        field(1; "Inspection Receipt No."; Code[20])
         {
+            DataClassification = CustomerContent;
         }
-        field(2;"Line No.";Integer)
+        field(2; "Line No."; Integer)
         {
+            DataClassification = CustomerContent;
         }
-        field(3;"Quality Type";Option)
+        field(3; "Quality Type"; Option)
         {
             OptionMembers = Accepted,"Accepted Under Deviation",Rework,Rejected;
+            DataClassification = CustomerContent;
         }
-        field(4;"Acceptance Code";Code[20])
+        field(4; "Acceptance Code"; Code[20])
         {
-            TableRelation = "Acceptance Level".Code WHERE (Type=FIELD("Quality Type"));
+            TableRelation = "Acceptance Level".Code WHERE(Type = FIELD("Quality Type"));
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -25,53 +30,62 @@ table 33000272 "Inspect. Recpt. Accept Level"
                 "Reason Code" := AcptLevel."Reason Code";
             end;
         }
-        field(5;"Reason Code";Code[20])
+        field(5; "Reason Code"; Code[20])
         {
             TableRelation = "Quality Reason Code";
+            DataClassification = CustomerContent;
         }
-        field(6;Quantity;Decimal)
+        field(6; Quantity; Decimal)
         {
-            DecimalPlaces = 0:5;
+            DecimalPlaces = 0 : 5;
+            DataClassification = CustomerContent;
         }
-        field(7;Type;Option)
+        field(7; Type; Option)
         {
             OptionCaption = 'Accepted,Accepted Under Deviation,Rework,Rejected';
             OptionMembers = Accepted,"Accepted Under Deviation",Rework,Rejected;
+            DataClassification = CustomerContent;
         }
-        field(8;"Item No.";Code[20])
+        field(8; "Item No."; Code[20])
         {
             TableRelation = Item;
+            DataClassification = CustomerContent;
         }
-        field(9;"Source Type";Option)
+        field(9; "Source Type"; Option)
         {
             OptionMembers = "In Bound",WIP;
+            DataClassification = CustomerContent;
         }
-        field(10;"Vendor No.";Code[20])
+        field(10; "Vendor No."; Code[20])
         {
             TableRelation = Vendor;
+            DataClassification = CustomerContent;
         }
-        field(11;"Production Order No.";Code[20])
+        field(11; "Production Order No."; Code[20])
         {
-            TableRelation = "Production Order"."No." WHERE (Status=CONST(Released));
+            TableRelation = "Production Order"."No." WHERE(Status = CONST(Released));
+            DataClassification = CustomerContent;
         }
-        field(12;"Rework Level";Integer)
+        field(12; "Rework Level"; Integer)
         {
+            DataClassification = CustomerContent;
         }
-        field(13;Status;Boolean)
+        field(13; Status; Boolean)
         {
+            DataClassification = CustomerContent;
         }
     }
 
     keys
     {
-        key(Key1;"Inspection Receipt No.","Quality Type","Line No.")
+        key(Key1; "Inspection Receipt No.", "Quality Type", "Line No.")
         {
         }
-        key(Key2;"Quality Type",Quantity)
+        key(Key2; "Quality Type", Quantity)
         {
             SumIndexFields = Quantity;
         }
-        key(Key3;"Item No.","Vendor No.","Acceptance Code","Quality Type")
+        key(Key3; "Item No.", "Vendor No.", "Acceptance Code", "Quality Type")
         {
         }
     }
@@ -105,14 +119,14 @@ table 33000272 "Inspect. Recpt. Accept Level"
     end;
 
     var
-        InspectRcpt : Record "Inspection Receipt Header";
-        AcptLevel : Record "Acceptance Level";
+        InspectRcpt: Record "Inspection Receipt Header";
+        AcptLevel: Record "Acceptance Level";
 
     [LineStart(7912)]
     procedure TestStatus();
     begin
         InspectRcpt.Get("Inspection Receipt No.");
-        InspectRcpt.TestField(Status,false);
+        InspectRcpt.TestField(Status, false);
     end;
 }
 

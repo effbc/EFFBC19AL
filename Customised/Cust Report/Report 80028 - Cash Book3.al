@@ -4,12 +4,12 @@ report 80028 "Cash Book3"
 
     DefaultLayout = RDLC;
     RDLCLayout = './Cash Book3.rdlc';
-    CaptionML = ENU='Cash Book',
-                ENN='Cash Book';
+    CaptionML = ENU = 'Cash Book',
+                ENN = 'Cash Book';
 
     dataset
     {
-        dataitem("G/L Account";"G/L Account")
+        dataitem("G/L Account"; "G/L Account")
         {
             DataItemTableView = SORTING(No.) ORDER(Ascending) WHERE(Account Type=FILTER(Posting));
             RequestFilterFields = "No.","Date Filter","Global Dimension 1 Filter","Global Dimension 2 Filter";
@@ -432,80 +432,80 @@ report 80028 "Cash Book3"
         SourceCode : Record "Source Code";
         VoucherAccount : Record "Voucher Account";
         Daybook : Report "Day Book";
-        OpeningDRBal : Decimal;
-        OpeningCRBal : Decimal;
-        TransDebits : Decimal;
-        TransCredits : Decimal;
-        OneEntryRecord : Boolean;
-        FirstRecord : Boolean;
-        PrintDetail : Boolean;
-        PrintLineNarration : Boolean;
-        PrintVchNarration : Boolean;
-        DetailAmt : Decimal;
-        AccountName : Text[100];
-        SourceDesc : Text[50];
-        DrCrText : Text[2];
-        DrCrTextBalance : Text[2];
-        LocationCode : Code[10];
-        LocationFilter : Text[100];
-        Text16500 : TextConst ENU='As per Details',ENN='As per Details';
-        AccountChanged : Boolean;
-        AccountNo : Code[20];
-        DrCrTextBalance2 : Text[2];
-        GLAccNo : Code[20];
-        TotalDebitAmount : Decimal;
-        TotalCreditAmount : Decimal;
-        PageCaptionLbl : TextConst ENU='Page',ENN='Page';
-        PostingDateCaptionLbl : TextConst ENU='Posting Date',ENN='Posting Date';
-        DocumentNoCaptionLbl : TextConst ENU='Document No.',ENN='Document No.';
-        DebitAmountCaptionLbl : TextConst ENU='Debit Amount',ENN='Debit Amount';
-        CreditAmountCaptionLbl : TextConst ENU='Credit Amount',ENN='Credit Amount';
-        AccountNameCaptionLbl : TextConst ENU='Account Name',ENN='Account Name';
-        BalanceCaptionLbl : TextConst ENU='Balance',ENN='Balance';
-        VoucherTypeCaptionLbl : TextConst ENU='Voucher Type',ENN='Voucher Type';
-        LocationCodeCaptionLbl : TextConst ENU='Location Code',ENN='Location Code';
-        ClosingBalanceCaptionLbl : TextConst ENU='Closing Balance',ENN='Closing Balance';
-        GLAccnt : Record "G/L Account";
-        Header : Text[30];
-        FYear : Text[10];
-        Header1 : Text;
-        Cust : Record Customer;
-        Vendor : Record Vendor;
-        BankAccount : Record "Bank Account";
-        FixedAsset : Record "Fixed Asset";
-        Desc : Text;
-        DimSetEnt : Record "Dimension Set Entry";
-        Desc1 : Text;
-        DimVal : Record "Dimension Value";
-        Excel : Boolean;
-        TempExcelbuffer : Record "Excel Buffer" temporary;
-        Row : Integer;
-        DateWiseDebitTot : Decimal;
-        DateWiseCreditTot : Decimal;
-        PrevPostingDate : Date;
-        SerNo : Integer;
+                      OpeningDRBal : Decimal;
+                      OpeningCRBal : Decimal;
+                      TransDebits : Decimal;
+                      TransCredits : Decimal;
+                      OneEntryRecord : Boolean;
+                      FirstRecord : Boolean;
+                      PrintDetail : Boolean;
+                      PrintLineNarration : Boolean;
+                      PrintVchNarration : Boolean;
+                      DetailAmt : Decimal;
+                      AccountName : Text[100];
+                      SourceDesc : Text[50];
+                      DrCrText : Text[2];
+                      DrCrTextBalance : Text[2];
+                      LocationCode : Code[10];
+                      LocationFilter : Text[100];
+                      Text16500 : TextConst ENU='As per Details',ENN='As per Details';
+                      AccountChanged : Boolean;
+                      AccountNo : Code[20];
+                      DrCrTextBalance2 : Text[2];
+                      GLAccNo : Code[20];
+                      TotalDebitAmount : Decimal;
+                      TotalCreditAmount : Decimal;
+                      PageCaptionLbl : TextConst ENU='Page',ENN='Page';
+                      PostingDateCaptionLbl : TextConst ENU='Posting Date',ENN='Posting Date';
+                      DocumentNoCaptionLbl : TextConst ENU='Document No.',ENN='Document No.';
+                      DebitAmountCaptionLbl : TextConst ENU='Debit Amount',ENN='Debit Amount';
+                      CreditAmountCaptionLbl : TextConst ENU='Credit Amount',ENN='Credit Amount';
+                      AccountNameCaptionLbl : TextConst ENU='Account Name',ENN='Account Name';
+                      BalanceCaptionLbl : TextConst ENU='Balance',ENN='Balance';
+                      VoucherTypeCaptionLbl : TextConst ENU='Voucher Type',ENN='Voucher Type';
+                      LocationCodeCaptionLbl : TextConst ENU='Location Code',ENN='Location Code';
+                      ClosingBalanceCaptionLbl : TextConst ENU='Closing Balance',ENN='Closing Balance';
+                      GLAccnt : Record "G/L Account";
+                      Header : Text[30];
+                      FYear : Text[10];
+                      Header1 : Text;
+                      Cust : Record Customer;
+                      Vendor : Record Vendor;
+                      BankAccount : Record "Bank Account";
+                      FixedAsset : Record "Fixed Asset";
+                      Desc : Text;
+                      DimSetEnt : Record "Dimension Set Entry";
+                      Desc1 : Text;
+                      DimVal : Record "Dimension Value";
+                      Excel : Boolean;
+                      TempExcelbuffer : Record "Excel Buffer" temporary;
+                      Row : Integer;
+                      DateWiseDebitTot : Decimal;
+                      DateWiseCreditTot : Decimal;
+                      PrevPostingDate : Date;
+                      SerNo : Integer;
 
     [LineStart(17964)]
-    procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
+    procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean; CellType: Option);
     begin
 
         TempExcelbuffer.INIT;
-        TempExcelbuffer.VALIDATE("Row No.",RowNo);
-        TempExcelbuffer.VALIDATE("Column No.",ColumnNo);
+        TempExcelbuffer.VALIDATE("Row No.", RowNo);
+        TempExcelbuffer.VALIDATE("Column No.", ColumnNo);
         TempExcelbuffer."Cell Value as Text" := CellValue;
-        TempExcelbuffer.Bold:=bold ;
+        TempExcelbuffer.Bold := bold;
         TempExcelbuffer."Cell Type" := CellType;
         TempExcelbuffer.INSERT;
     end;
 
     [LineStart(17974)]
-    procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
+    procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean; CellType: Option);
     begin
         TempExcelbuffer.INIT;
-        TempExcelbuffer.VALIDATE("Row No.",RowNo);
-        TempExcelbuffer.VALIDATE("Column No.",ColumnNo);
+        TempExcelbuffer.VALIDATE("Row No.", RowNo);
+        TempExcelbuffer.VALIDATE("Column No.", ColumnNo);
         TempExcelbuffer."Cell Value as Text" := FORMAT(CellValue);
-        TempExcelbuffer.Bold:=Bold ;
+        TempExcelbuffer.Bold := Bold;
         TempExcelbuffer."Cell Type" := CellType;
         TempExcelbuffer.Formula := '';
         TempExcelbuffer.INSERT;

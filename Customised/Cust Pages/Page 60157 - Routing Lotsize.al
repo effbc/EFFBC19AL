@@ -10,27 +10,27 @@ page 60157 "Routing Lotsize"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Routing No.";"Routing No.")
+                field("Routing No."; "Routing No.")
                 {
                     Editable = false;
                 }
-                field("Operation No.";"Operation No.")
+                field("Operation No."; "Operation No.")
                 {
                     Editable = false;
                 }
-                field("Operation Description";"Operation Description")
+                field("Operation Description"; "Operation Description")
                 {
                     Editable = false;
                 }
-                field(Type;Type)
+                field(Type; Type)
                 {
                     Editable = false;
                 }
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Editable = false;
                 }
-                field("Lot Size";"Lot Size")
+                field("Lot Size"; "Lot Size")
                 {
                 }
             }
@@ -41,16 +41,16 @@ page 60157 "Routing Lotsize"
     {
     }
 
-    trigger OnQueryClosePage(CloseAction : Action) : Boolean;
+    trigger OnQueryClosePage(CloseAction: Action): Boolean;
     begin
-        RoutingHeader.SETRANGE("No.","Routing No.");
+        RoutingHeader.SETRANGE("No.", "Routing No.");
         IF RoutingHeader.FINDFIRST THEN BEGIN
-          RoutingHeader.Status := RoutingHeader.Status :: Certified;
-          RoutingHeader.MODIFY;
+            RoutingHeader.Status := RoutingHeader.Status::Certified;
+            RoutingHeader.MODIFY;
         END;
     end;
 
     var
-        RoutingHeader : Record "Routing Header";
+        RoutingHeader: Record "Routing Header";
 }
 

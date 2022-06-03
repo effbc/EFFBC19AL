@@ -7,169 +7,169 @@ report 50012 "Period Wise Order"
 
     dataset
     {
-        dataitem("Company Information";"Company Information")
+        dataitem("Company Information"; "Company Information")
         {
             DataItemTableView = SORTING(Primary Key);
         }
-        dataitem("Purchase Header";"Purchase Header")
+        dataitem("Purchase Header"; "Purchase Header")
         {
-            DataItemTableView = SORTING(Document Type,No.) ORDER(Ascending) WHERE(Document Type=CONST(Order),Status=CONST(Released));
-            RequestFilterFields = "Order Date","Location Code";
+            DataItemTableView = SORTING(Document Type, No.) ORDER(Ascending) WHERE(Document Type=CONST(Order),Status=CONST(Released));
+            RequestFilterFields = "Order Date", "Location Code";
             ReqFilterHeading = 'Orders';
-            column(Purchase_Header_ChoiceOrder;ChoiceOrder)
+            column(Purchase_Header_ChoiceOrder; ChoiceOrder)
             {
             }
-            column(Purchase_Header_Choice3Detail;Choice3Detail)
+            column(Purchase_Header_Choice3Detail; Choice3Detail)
             {
             }
-            column(Purchase_Header_Choice3Breif;Choice3Breif)
+            column(Purchase_Header_Choice3Breif; Choice3Breif)
             {
             }
-            column(Order_Filter_;"Order Filter")
+            column(Order_Filter_; "Order Filter")
             {
             }
-            column(COMPANYNAME;COMPANYNAME)
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(Toal_Purchases_;"Toal Purchases")
+            column(Toal_Purchases_; "Toal Purchases")
             {
             }
-            column(Orders_1_;Orders[1])
+            column(Orders_1_; Orders[1])
             {
             }
-            column(Order_Value_1_;Order_Value[1])
+            column(Order_Value_1_; Order_Value[1])
             {
             }
-            column(Orders_2_;Orders[2])
+            column(Orders_2_; Orders[2])
             {
             }
-            column(Order_Value_2_;Order_Value[2])
+            column(Order_Value_2_; Order_Value[2])
             {
             }
-            column(Orders_3_;Orders[3])
+            column(Orders_3_; Orders[3])
             {
             }
-            column(Order_Value_3_;Order_Value[3])
+            column(Order_Value_3_; Order_Value[3])
             {
             }
-            column(Orders_4_;Orders[4])
+            column(Orders_4_; Orders[4])
             {
             }
-            column(Order_Value_4_;Order_Value[4])
+            column(Order_Value_4_; Order_Value[4])
             {
             }
-            column(Orders_5_;Orders[5])
+            column(Orders_5_; Orders[5])
             {
             }
-            column(Order_Value_5_;Order_Value[5])
+            column(Order_Value_5_; Order_Value[5])
             {
             }
-            column(Orders_6_;Orders[6])
+            column(Orders_6_; Orders[6])
             {
             }
-            column(Order_Value_6_;Order_Value[6])
+            column(Order_Value_6_; Order_Value[6])
             {
             }
-            column(Orders_7_;Orders[7])
+            column(Orders_7_; Orders[7])
             {
             }
-            column(Order_Value_7_;Order_Value[7])
+            column(Order_Value_7_; Order_Value[7])
             {
             }
-            column(Order_Value_8_;Order_Value[8])
+            column(Order_Value_8_; Order_Value[8])
             {
             }
-            column(Orders_8_;Orders[8])
+            column(Orders_8_; Orders[8])
             {
             }
-            column(RECEIVED_vALUE_;"RECEIVED vALUE")
+            column(RECEIVED_vALUE_; "RECEIVED vALUE")
             {
             }
-            column(PENDING_VALUE_;"PENDING VALUE")
+            column(PENDING_VALUE_; "PENDING VALUE")
             {
             }
-            column(Order_Value_1__Control1000000114;Order_Value[1])
+            column(Order_Value_1__Control1000000114; Order_Value[1])
             {
             }
-            column(Period_Wise_OrdersCaption;Period_Wise_OrdersCaptionLbl)
+            column(Period_Wise_OrdersCaption; Period_Wise_OrdersCaptionLbl)
             {
             }
-            column(Order_ValueCaption;Order_ValueCaptionLbl)
+            column(Order_ValueCaption; Order_ValueCaptionLbl)
             {
             }
-            column(Order_NoCaption;Order_NoCaptionLbl)
+            column(Order_NoCaption; Order_NoCaptionLbl)
             {
             }
-            column(Vendor_No_Caption;Vendor_No_CaptionLbl)
+            column(Vendor_No_Caption; Vendor_No_CaptionLbl)
             {
             }
-            column(Vendor_NameCaption;Vendor_NameCaptionLbl)
+            column(Vendor_NameCaption; Vendor_NameCaptionLbl)
             {
             }
-            column(Inward_ValueCaption;Inward_ValueCaptionLbl)
+            column(Inward_ValueCaption; Inward_ValueCaptionLbl)
             {
             }
-            column(Expected_Reciept_DateCaption;Expected_Reciept_DateCaptionLbl)
+            column(Expected_Reciept_DateCaption; Expected_Reciept_DateCaptionLbl)
             {
             }
-            column(Total__OrdersCaption;Total__OrdersCaptionLbl)
+            column(Total__OrdersCaption; Total__OrdersCaptionLbl)
             {
             }
-            column(Completly_InwardedCaption;Completly_InwardedCaptionLbl)
+            column(Completly_InwardedCaption; Completly_InwardedCaptionLbl)
             {
             }
-            column(Partially_Inwarded_Caption;Partially_Inwarded_CaptionLbl)
+            column(Partially_Inwarded_Caption; Partially_Inwarded_CaptionLbl)
             {
             }
-            column(V1__7_DaysCaption;V1__7_DaysCaptionLbl)
+            column(V1__7_DaysCaption; V1__7_DaysCaptionLbl)
             {
             }
-            column(V8__15_DaysCaption;V8__15_DaysCaptionLbl)
+            column(V8__15_DaysCaption; V8__15_DaysCaptionLbl)
             {
             }
-            column(V16__25_DaysCaption;V16__25_DaysCaptionLbl)
+            column(V16__25_DaysCaption; V16__25_DaysCaptionLbl)
             {
             }
-            column(V25__DaysCaption;V25__DaysCaptionLbl)
+            column(V25__DaysCaption; V25__DaysCaptionLbl)
             {
             }
-            column(PendingCaption;PendingCaptionLbl)
+            column(PendingCaption; PendingCaptionLbl)
             {
             }
-            column(ReceivedCaption;ReceivedCaptionLbl)
+            column(ReceivedCaption; ReceivedCaptionLbl)
             {
             }
-            column(PendingCaption_Control1000000111;PendingCaption_Control1000000111Lbl)
+            column(PendingCaption_Control1000000111; PendingCaption_Control1000000111Lbl)
             {
             }
-            column(TOTAL_Caption;TOTAL_CaptionLbl)
+            column(TOTAL_Caption; TOTAL_CaptionLbl)
             {
             }
-            column(OrdersCaption;OrdersCaptionLbl)
+            column(OrdersCaption; OrdersCaptionLbl)
             {
             }
-            column(ValueCaption;ValueCaptionLbl)
+            column(ValueCaption; ValueCaptionLbl)
             {
             }
-            column(Received_ValueCaption;Received_ValueCaptionLbl)
+            column(Received_ValueCaption; Received_ValueCaptionLbl)
             {
             }
-            column(Pending_ValueCaption;Pending_ValueCaptionLbl)
+            column(Pending_ValueCaption; Pending_ValueCaptionLbl)
             {
             }
-            column(Total_Ordered_ValueCaption;Total_Ordered_ValueCaptionLbl)
+            column(Total_Ordered_ValueCaption; Total_Ordered_ValueCaptionLbl)
             {
             }
-            column(Purchase_Header_Document_Type;"Document Type")
+            column(Purchase_Header_Document_Type; "Document Type")
             {
             }
-            column(Purchase_Header_No_;"No.")
+            column(Purchase_Header_No_; "No.")
             {
             }
-            dataitem("Purchase Line";"Purchase Line")
+            dataitem("Purchase Line"; "Purchase Line")
             {
                 DataItemLink = Document No.=FIELD(No.);
-                DataItemTableView = SORTING(Document Type,Document No.,Line No.) WHERE(Document Type=CONST(Order),Quantity=FILTER(>0));
+                DataItemTableView = SORTING(Document Type, Document No., Line No.) WHERE(Document Type=CONST(Order),Quantity=FILTER(>0));
                 column(Purch_Line_ChoiceOrder;ChoiceOrder)
                 {
                 }

@@ -6,22 +6,22 @@ xmlport 80048 "TDS NOD Details"
     {
         textelement(NODNOCLines)
         {
-            tableelement("<nodnocline>";"NOD/NOC Lines")
+            tableelement("<nodnocline>"; "NOD/NOC Lines")
             {
                 XmlName = 'NODNOCLine';
-                fieldelement(Type;"<NODNOCLine>".Type)
+                fieldelement(Type; "<NODNOCLine>".Type)
                 {
                 }
-                fieldelement(No;"<NODNOCLine>"."No.")
+                fieldelement(No; "<NODNOCLine>"."No.")
                 {
                 }
-                fieldelement(NODNOC;"<NODNOCLine>"."NOD/NOC")
+                fieldelement(NODNOC; "<NODNOCLine>"."NOD/NOC")
                 {
                 }
-                fieldelement(ThresholdOverlook;"<NODNOCLine>"."Threshold Overlook")
+                fieldelement(ThresholdOverlook; "<NODNOCLine>"."Threshold Overlook")
                 {
                 }
-                fieldelement(TDSGroup;"<NODNOCLine>"."TDS Group")
+                fieldelement(TDSGroup; "<NODNOCLine>"."TDS Group")
                 {
                 }
             }

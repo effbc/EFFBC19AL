@@ -6,13 +6,13 @@ page 33000267 "Posted Inspect. Receipt List"
     DeleteAllowed = false;
     PageType = List;
     SourceTable = "Inspection Receipt Header";
-    SourceTableView = WHERE(Status=FILTER(<>No));
+    SourceTableView = WHERE(Status = FILTER(<> No));
 
     layout
     {
         area(content)
         {
-            field("No of IRs";xRec.COUNT)
+            field("No of IRs"; xRec.COUNT)
             {
                 Caption = 'No of IRs';
             }
@@ -20,108 +20,108 @@ page 33000267 "Posted Inspect. Receipt List"
             {
                 Editable = false;
                 ShowCaption = false;
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("Item Description";"Item Description")
+                field("Item Description"; "Item Description")
                 {
                 }
-                field("Receipt No.";"Receipt No.")
+                field("Receipt No."; "Receipt No.")
                 {
                 }
-                field("Vendor No.";"Vendor No.")
+                field("Vendor No."; "Vendor No.")
                 {
                 }
-                field("Vendor Name";"Vendor Name")
+                field("Vendor Name"; "Vendor Name")
                 {
                 }
-                field("Rework Reference No.";"Rework Reference No.")
+                field("Rework Reference No."; "Rework Reference No.")
                 {
                 }
-                field("Rework Inspect DS Created";"Rework Inspect DS Created")
+                field("Rework Inspect DS Created"; "Rework Inspect DS Created")
                 {
                 }
-                field("Last Rework Level";"Last Rework Level")
+                field("Last Rework Level"; "Last Rework Level")
                 {
                 }
-                field("Item Ledger Entry No.";"Item Ledger Entry No.")
+                field("Item Ledger Entry No."; "Item Ledger Entry No.")
                 {
                 }
-                field("Rework Level";"Rework Level")
+                field("Rework Level"; "Rework Level")
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field("Purch Line No";"Purch Line No")
+                field("Purch Line No"; "Purch Line No")
                 {
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                 }
-                field("Qty. Accepted";"Qty. Accepted")
+                field("Qty. Accepted"; "Qty. Accepted")
                 {
                 }
-                field("Qty. Rejected";"Qty. Rejected")
+                field("Qty. Rejected"; "Qty. Rejected")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field("Location Code";"Location Code")
+                field("Location Code"; "Location Code")
                 {
                 }
-                field("Stock Rcvd from QC";"Stock Rcvd from QC")
+                field("Stock Rcvd from QC"; "Stock Rcvd from QC")
                 {
                 }
-                field("Product Group Code";"Product Group Code")
+                field("Product Group Code"; "Product Group Code")
                 {
                 }
-                field("Nature Of Rejection";"Nature Of Rejection")
+                field("Nature Of Rejection"; "Nature Of Rejection")
                 {
                 }
-                field("IDS Posted By";"IDS Posted By")
+                field("IDS Posted By"; "IDS Posted By")
                 {
                 }
-                field("IDS creation Date";"IDS creation Date")
+                field("IDS creation Date"; "IDS creation Date")
                 {
                 }
-                field("Item Sub Group Code";"Item Sub Group Code")
+                field("Item Sub Group Code"; "Item Sub Group Code")
                 {
                 }
-                field("Lot No.";"Lot No.")
+                field("Lot No."; "Lot No.")
                 {
                 }
-                field("IR Posted By";"IR Posted By")
+                field("IR Posted By"; "IR Posted By")
                 {
                 }
-                field("Posted Date";"Posted Date")
+                field("Posted Date"; "Posted Date")
                 {
                 }
-                field("Posted By";"Posted By")
+                field("Posted By"; "Posted By")
                 {
                 }
-                field("Order No.";"Order No.")
+                field("Order No."; "Order No.")
                 {
                 }
-                field(Make;Make)
+                field(Make; Make)
                 {
                 }
-                field(BINAddress;BINAddress)
+                field(BINAddress; BINAddress)
                 {
                     Caption = 'BIN Address';
                 }
-                field(UnitCost;UnitCost)
+                field(UnitCost; UnitCost)
                 {
                     Caption = 'UnitCost';
                 }
-                field("Issues For Pending";"Issues For Pending")
+                field("Issues For Pending"; "Issues For Pending")
                 {
                 }
-                field("Qty. Accepted Under Deviation";"Qty. Accepted Under Deviation")
+                field("Qty. Accepted Under Deviation"; "Qty. Accepted Under Deviation")
                 {
                 }
-                field("Qty. Accepted UD Reason";"Qty. Accepted UD Reason")
+                field("Qty. Accepted UD Reason"; "Qty. Accepted UD Reason")
                 {
                 }
             }

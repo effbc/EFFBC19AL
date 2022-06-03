@@ -4,17 +4,17 @@ report 90004 "QC Problem"
 
     dataset
     {
-        dataitem("Quality Problem";"Quality Problem")
+        dataitem("Quality Problem"; "Quality Problem")
         {
 
             trigger OnAfterGetRecord();
             begin
-                "Purch.RcptLine".SETRANGE("Document No.","Purch.Rcpt No.");
-                "Purch.RcptLine".SETRANGE("Line No.","Quality Problem"."Line No.");
+                "Purch.RcptLine".SETRANGE("Document No.", "Purch.Rcpt No.");
+                "Purch.RcptLine".SETRANGE("Line No.", "Quality Problem"."Line No.");
                 IF "Purch.RcptLine".FIND('-') THEN BEGIN
-                  "Purch.RcptLine"."Quantity Accepted" := "Quality Problem"."Qty.Accepted";
-                  "Purch.RcptLine"."Quantity Rejected" := "Quality Problem"."Qty Rejected";
-                  "Purch.RcptLine".MODIFY;
+                    "Purch.RcptLine"."Quantity Accepted" := "Quality Problem"."Qty.Accepted";
+                    "Purch.RcptLine"."Quantity Rejected" := "Quality Problem"."Qty Rejected";
+                    "Purch.RcptLine".MODIFY;
                 END;
             end;
         }
@@ -37,6 +37,6 @@ report 90004 "QC Problem"
     }
 
     var
-        "Purch.RcptLine" : Record "Purch. Rcpt. Line";
+        "Purch.RcptLine": Record "Purch. Rcpt. Line";
 }
 

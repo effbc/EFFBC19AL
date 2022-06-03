@@ -25,12 +25,14 @@ table 50001 "Material Issues Header"
 
     DrillDownPageID = "Material Issue List(STR)";
     LookupPageID = "Material Issue List(STR)";
+    DataClassification = CustomerContent;
 
     fields
     {
         field(1; "No."; Code[20])
         {
             Caption = 'No.';
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
@@ -48,6 +50,10 @@ table 50001 "Material Issues Header"
         {
             Caption = 'Transfer-from Code';
             TableRelation = Location WHERE(Use As In-Transit=CONST(No),Subcontracting Location=CONST(No));
+<<<<<<< HEAD
+=======
+            DataClassification = CustomerContent;
+>>>>>>> 24c8df96f43f94e861d8cc264d569e5663568f30
 
             trigger OnValidate();
             var
@@ -109,18 +115,22 @@ table 50001 "Material Issues Header"
         field(3; "Transfer-from Name"; Text[50])
         {
             Caption = 'Transfer-from Name';
+            DataClassification = CustomerContent;
         }
         field(4; "Transfer-from Name 2"; Text[50])
         {
             Caption = 'Transfer-from Name 2';
+            DataClassification = CustomerContent;
         }
         field(5; "Transfer-from Address"; Text[50])
         {
             Caption = 'Transfer-from Address';
+            DataClassification = CustomerContent;
         }
         field(6; "Transfer-from Address 2"; Text[50])
         {
             Caption = 'Transfer-from Address 2';
+            DataClassification = CustomerContent;
         }
         field(7; "Transfer-from Post Code"; Code[20])
         {
@@ -129,6 +139,7 @@ table 50001 "Material Issues Header"
             //This property is currently not supported
             //TestTableRelation = false;
             ValidateTableRelation = false;
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -145,6 +156,7 @@ table 50001 "Material Issues Header"
         field(8; "Transfer-from City"; Text[30])
         {
             Caption = 'Transfer-from City';
+            DataClassification = CustomerContent;
 
             trigger OnLookup();
             begin
@@ -161,11 +173,13 @@ table 50001 "Material Issues Header"
         field(9; "Transfer-from County"; Text[30])
         {
             Caption = 'Transfer-from County';
+            DataClassification = CustomerContent;
         }
         field(10; "Transfer-from Country Code"; Code[10])
         {
             Caption = 'Transfer-from Country Code';
-            TableRelation = Country/Region;
+            TableRelation = Country            DataClassification = CustomerContent;
+/Region;
         }
         field(11;"Transfer-to Code";Code[10])
         {

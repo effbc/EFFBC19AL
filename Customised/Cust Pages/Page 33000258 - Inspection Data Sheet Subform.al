@@ -18,82 +18,82 @@ page 33000258 "Inspection Data Sheet Subform"
                 IndentationColumn = DescriptionIndent;
                 IndentationControls = Description;
                 ShowCaption = false;
-                field("Character Code";"Character Code")
+                field("Character Code"; "Character Code")
                 {
                     Editable = false;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Editable = false;
                 }
-                field("Serial No.";"Serial No.")
+                field("Serial No."; "Serial No.")
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field("Sampling Plan Code";"Sampling Plan Code")
-                {
-                    Editable = false;
-                }
-                field("Reason Code";"Reason Code")
-                {
-                }
-                field("Rework Reason Code";"Rework Reason Code")
-                {
-                }
-                field("Unit Of Measure Code";"Unit Of Measure Code")
+                field("Sampling Plan Code"; "Sampling Plan Code")
                 {
                     Editable = false;
                 }
-                field("Bench Mark Time(In Min.)";"Bench Mark Time(In Min.)")
+                field("Reason Code"; "Reason Code")
+                {
+                }
+                field("Rework Reason Code"; "Rework Reason Code")
+                {
+                }
+                field("Unit Of Measure Code"; "Unit Of Measure Code")
                 {
                     Editable = false;
                 }
-                field("Time Taken(In Min.)";"Time Taken(In Min.)")
-                {
-                }
-                field(Qualitative;Qualitative)
+                field("Bench Mark Time(In Min.)"; "Bench Mark Time(In Min.)")
                 {
                     Editable = false;
                 }
-                field("Normal Value (Num)";"Normal Value (Num)")
+                field("Time Taken(In Min.)"; "Time Taken(In Min.)")
+                {
+                }
+                field(Qualitative; Qualitative)
                 {
                     Editable = false;
                 }
-                field("Min. Value (Num)";"Min. Value (Num)")
+                field("Normal Value (Num)"; "Normal Value (Num)")
                 {
                     Editable = false;
                 }
-                field(Accept;Accept)
-                {
-                }
-                field("Max. Value (Num)";"Max. Value (Num)")
+                field("Min. Value (Num)"; "Min. Value (Num)")
                 {
                     Editable = false;
                 }
-                field("Actual Value (Num)";"Actual Value (Num)")
+                field(Accept; Accept)
                 {
                 }
-                field("Normal Value (Text)";"Normal Value (Text)")
-                {
-                    Editable = false;
-                }
-                field("Min. Value (Text)";"Min. Value (Text)")
+                field("Max. Value (Num)"; "Max. Value (Num)")
                 {
                     Editable = false;
                 }
-                field("Max. Value (Text)";"Max. Value (Text)")
+                field("Actual Value (Num)"; "Actual Value (Num)")
+                {
+                }
+                field("Normal Value (Text)"; "Normal Value (Text)")
                 {
                     Editable = false;
                 }
-                field(Remarks;Remarks)
+                field("Min. Value (Text)"; "Min. Value (Text)")
+                {
+                    Editable = false;
+                }
+                field("Max. Value (Text)"; "Max. Value (Text)")
+                {
+                    Editable = false;
+                }
+                field(Remarks; Remarks)
                 {
                 }
-                field("Inspection Persons";"Inspection Persons")
+                field("Inspection Persons"; "Inspection Persons")
                 {
                 }
-                field("Actual  Value (Text)";"Actual  Value (Text)")
+                field("Actual  Value (Text)"; "Actual  Value (Text)")
                 {
                 }
             }
@@ -131,23 +131,23 @@ page 33000258 "Inspection Data Sheet Subform"
     end;
 
     var
-        DefectTracking : Record "Defect Tracking Details";
-        InspectionDataSheets : Codeunit "Inspection Data Sheets";
-        InspectionDatasheetHeader : Record "Inspection Datasheet Header";
-        ProdOrdNo : Code[20];
+        DefectTracking: Record "Defect Tracking Details";
+        InspectionDataSheets: Codeunit "Inspection Data Sheets";
+        InspectionDatasheetHeader: Record "Inspection Datasheet Header";
+        ProdOrdNo: Code[20];
         [InDataSet]
-        "Character CodeEmphasize" : Boolean;
+        "Character CodeEmphasize": Boolean;
         [InDataSet]
-        DescriptionEmphasize : Boolean;
+        DescriptionEmphasize: Boolean;
         [InDataSet]
-        DescriptionIndent : Integer;
+        DescriptionIndent: Integer;
 
     [LineStart(23017)]
     procedure ShowDefects();
     begin
-        DefectTracking.SETRANGE("IDS No.","Document No.");
-        DefectTracking.SETRANGE("IDS Line No.","Line No.");
-        PAGE.RUN(60075,DefectTracking);
+        DefectTracking.SETRANGE("IDS No.", "Document No.");
+        DefectTracking.SETRANGE("IDS Line No.", "Line No.");
+        PAGE.RUN(60075, DefectTracking);
     end;
 
     [LineStart(23022)]

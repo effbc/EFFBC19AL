@@ -6,7 +6,7 @@ page 33000268 "Posted Inspection Receipt"
     InsertAllowed = false;
     PageType = Document;
     SourceTable = "Inspection Receipt Header";
-    SourceTableView = WHERE(Status=FILTER(Yes));
+    SourceTableView = WHERE(Status = FILTER(Yes));
 
     layout
     {
@@ -15,71 +15,71 @@ page 33000268 "Posted Inspection Receipt"
             group(General)
             {
                 Caption = 'General';
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                     Editable = false;
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                     Editable = false;
                 }
-                field("Item Description";"Item Description")
+                field("Item Description"; "Item Description")
                 {
                     Editable = false;
                 }
-                field("Unit Of Measure Code";"Unit Of Measure Code")
+                field("Unit Of Measure Code"; "Unit Of Measure Code")
                 {
                     Editable = false;
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                     Editable = EditableOrNot;
                 }
-                field("Spec ID";"Spec ID")
+                field("Spec ID"; "Spec ID")
                 {
                     Editable = false;
                 }
-                field("IDS Posted By";"IDS Posted By")
+                field("IDS Posted By"; "IDS Posted By")
                 {
                     Editable = false;
                 }
-                field("IR Posted By";"IR Posted By")
+                field("IR Posted By"; "IR Posted By")
                 {
                     Editable = true;
                 }
-                field("Posting Date";"Posting Date")
+                field("Posting Date"; "Posting Date")
                 {
                     Editable = false;
                 }
-                field("Document Date";"Document Date")
+                field("Document Date"; "Document Date")
                 {
                     Editable = false;
                 }
-                field("Rework Reference No.";"Rework Reference No.")
+                field("Rework Reference No."; "Rework Reference No.")
                 {
                     Editable = false;
                 }
-                field("Stock Rcvd from QC";"Stock Rcvd from QC")
+                field("Stock Rcvd from QC"; "Stock Rcvd from QC")
                 {
                 }
-                field("Source Type";"Source Type")
+                field("Source Type"; "Source Type")
                 {
                     Editable = false;
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                     Editable = EditableOrNot;
                 }
-                field(Make;Make)
+                field(Make; Make)
                 {
                     Editable = EditableOrNot;
                 }
-                field("Lot No.";"Lot No.")
+                field("Lot No."; "Lot No.")
                 {
                     Editable = false;
                 }
             }
-            part(InpectionReceiptLine;"Inpection Receipt Line")
+            part(InpectionReceiptLine; "Inpection Receipt Line")
             {
                 Editable = false;
                 SubPageLink = Document No.=FIELD(No.),Purch Line No.=FIELD(Purch Line No);
@@ -601,14 +601,14 @@ page 33000268 "Posted Inspection Receipt"
                     Caption = 'Posted &Inspect. DS Details';
                     Image = ViewDetails;
                     RunObject = Page "Posted Inspect. DS Details";
-                    RunPageLink = Inspection Receipt No.=FIELD(No.);
+                                    RunPageLink = Inspection Receipt No.=FIELD(No.);
                 }
                 action("&Rework Receipts")
                 {
                     Caption = '&Rework Receipts';
                     Image = ReturnReceipt;
                     RunObject = Page "Inspection Receipt List";
-                    RunPageLink = Rework Reference No.=FIELD(No.);
+                                    RunPageLink = Rework Reference No.=FIELD(No.);
                 }
                 separator("----")
                 {
@@ -619,7 +619,7 @@ page 33000268 "Posted Inspection Receipt"
                     Caption = '&Purchase Receipt';
                     Image = TransferReceipt;
                     RunObject = Page "Posted Purchase Receipt";
-                    RunPageLink = No.=FIELD(Receipt No.);
+                                    RunPageLink = No.=FIELD(Receipt No.);
                 }
                 separator(Action1102152012)
                 {
@@ -677,7 +677,7 @@ page 33000268 "Posted Inspection Receipt"
                     Caption = 'Quality LedgerEntries';
                     Image = LedgerEntries;
                     RunObject = Page "Quality Ledger Entries";
-                    RunPageLink = Document No.=FIELD(No.);
+                                    RunPageLink = Document No.=FIELD(No.);
                     ShortCutKey = 'Ctrl+F5';
                 }
                 action("Delivery/Receipt Entries")
@@ -685,7 +685,7 @@ page 33000268 "Posted Inspection Receipt"
                     Caption = 'Delivery/Receipt Entries';
                     Image = Entries;
                     RunObject = Page "Delivery/Receipt Entries";
-                    RunPageLink = Document No.=FIELD(No.);
+                                    RunPageLink = Document No.=FIELD(No.);
                 }
                 separator(Action1102152008)
                 {
@@ -706,7 +706,7 @@ page 33000268 "Posted Inspection Receipt"
                     Caption = 'Item &Tracking Lines2';
                     Image = ItemTrackingLines;
                     RunObject = Page "Quality Ledger Entries";
-                    RunPageLink = Document No.=FIELD(No.);
+                                    RunPageLink = Document No.=FIELD(No.);
                 }
             }
         }

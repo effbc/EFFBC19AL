@@ -12,19 +12,19 @@ page 33000282 "Acceptance Levels"
             repeater(Control1000000000)
             {
                 ShowCaption = false;
-                field("Code";Code)
+                field("Code"; Code)
                 {
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                 }
-                field(Type;Type)
+                field(Type; Type)
                 {
                 }
-                field("Reason Code";"Reason Code")
+                field("Reason Code"; "Reason Code")
                 {
                 }
-                field("Vendor Rating";"Vendor Rating")
+                field("Vendor Rating"; "Vendor Rating")
                 {
                 }
             }

@@ -7,25 +7,25 @@ report 33000904 productionstartdatechange
 
     dataset
     {
-        dataitem("Production Order";"Production Order")
+        dataitem("Production Order"; "Production Order")
         {
-            RequestFilterFields = Status,"Prod Start date";
-            column(Production_order_NoCaption;Production_order_NoCaptionLbl)
+            RequestFilterFields = Status, "Prod Start date";
+            column(Production_order_NoCaption; Production_order_NoCaptionLbl)
             {
             }
-            column(Production_start_dateCaption;Production_start_dateCaptionLbl)
+            column(Production_start_dateCaption; Production_start_dateCaptionLbl)
             {
             }
-            column(Sale_Order_NoCaption;Sale_Order_NoCaptionLbl)
+            column(Sale_Order_NoCaption; Sale_Order_NoCaptionLbl)
             {
             }
-            column(Production_Order_Status;Status)
+            column(Production_Order_Status; Status)
             {
             }
-            column(Production_Order_No_;"No.")
+            column(Production_Order_No_; "No.")
             {
             }
-            dataitem("Prod. Order Component";"Prod. Order Component")
+            dataitem("Prod. Order Component"; "Prod. Order Component")
             {
                 DataItemLink = Prod. Order No.=FIELD(No.),Status=FIELD(Status);
                 column(Production_Order___No__;"Production Order"."No.")

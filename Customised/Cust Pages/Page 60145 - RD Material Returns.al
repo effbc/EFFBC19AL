@@ -122,7 +122,7 @@ page 60145 "RD Material Returns"
                 {
                     Caption = 'Statistics';
                     RunObject = Page "Material Issue Statistics";
-                    RunPageLink = No.=FIELD(No.);
+                                    RunPageLink = No.=FIELD(No.);
                     ShortCutKey = 'F9';
                     Visible = false;
                 }
@@ -130,7 +130,7 @@ page 60145 "RD Material Returns"
                 {
                     Caption = 'Co&mments';
                     RunObject = Page "Inventory Comment Sheet";
-                    RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
+                                    RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
                     Visible = false;
                 }
                 action("Iss&ues")
@@ -138,7 +138,7 @@ page 60145 "RD Material Returns"
                     Caption = 'Iss&ues';
                     Image = Error;
                     RunObject = Page "Posted Material Issue List";
-                    RunPageLink = Material Issue No.=FIELD(No.);
+                                    RunPageLink = Material Issue No.=FIELD(No.);
                 }
             }
         }
@@ -428,7 +428,7 @@ page 60145 "RD Material Returns"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Inventory Comment Sheet";
-                RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
+                                RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
                 ToolTip = 'Comment';
             }
         }

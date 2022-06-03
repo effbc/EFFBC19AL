@@ -13,43 +13,43 @@ page 60090 "Tender Competitor's Details"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Competitor's Code";"Competitor's Code")
+                field("Competitor's Code"; "Competitor's Code")
                 {
                 }
-                field("Competitor's Name";"Competitor's Name")
+                field("Competitor's Name"; "Competitor's Name")
                 {
                 }
-                field("Item No.";"Item No.")
+                field("Item No."; "Item No.")
                 {
                 }
-                field("Item Description";"Item Description")
+                field("Item Description"; "Item Description")
                 {
                 }
-                field("Technical Details";"Technical Details")
+                field("Technical Details"; "Technical Details")
                 {
                 }
-                field(Percentage;Percentage)
+                field(Percentage; Percentage)
                 {
                 }
-                field("Schedule A Percentage";"Schedule A Percentage")
+                field("Schedule A Percentage"; "Schedule A Percentage")
                 {
                 }
-                field("Schedule B Percentage";"Schedule B Percentage")
+                field("Schedule B Percentage"; "Schedule B Percentage")
                 {
                 }
-                field("Schedule C Percentage";"Schedule C Percentage")
+                field("Schedule C Percentage"; "Schedule C Percentage")
                 {
                 }
-                field(structure;structure)
+                field(structure; structure)
                 {
                 }
-                field("Other Details";"Other Details")
+                field("Other Details"; "Other Details")
                 {
                 }
-                field(Price;Price)
+                field(Price; Price)
                 {
                 }
-                field("BID Status";"BID Status")
+                field("BID Status"; "BID Status")
                 {
                 }
             }
@@ -61,6 +61,6 @@ page 60090 "Tender Competitor's Details"
     }
 
     var
-        TC : Record "Tender Competitor's Details";
+        TC: Record "Tender Competitor's Details";
 }
 

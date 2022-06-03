@@ -5,9 +5,9 @@ report 50045 "Schedule Plan Change"
 
     dataset
     {
-        dataitem("Production Order";"Production Order")
+        dataitem("Production Order"; "Production Order")
         {
-            DataItemTableView = SORTING(Sales Order No.,Source No.,Prod Start date) ORDER(Ascending) WHERE(Prod Start date=FILTER(<>''),Source No.=CONST(99/2006DL512D32A001));
+            DataItemTableView = SORTING(Sales Order No., Source No., Prod Start date) ORDER(Ascending) WHERE(Prod Start date=FILTER(<>''),Source No.=CONST(99/2006DL512D32A001));
             RequestFilterFields = "Sales Order No.","Source No.","Prod Start date";
             column(Schedule_Items_Don_t_Have_PlanCaption;Schedule_Items_Don_t_Have_PlanCaptionLbl)
             {

@@ -2,8 +2,8 @@ page 99000760 "Machine Center Card"
 {
     // version NAVW17.00
 
-    CaptionML = ENU='Machine Center Card',
-                ENN='Machine Center Card';
+    CaptionML = ENU = 'Machine Center Card',
+                ENN = 'Machine Center Card';
     PageType = Card;
     SourceTable = "Machine Center";
 
@@ -13,23 +13,23 @@ page 99000760 "Machine Center Card"
         {
             group(General)
             {
-                CaptionML = ENU='General',
-                            ENN='General';
-                field("No.";"No.")
+                CaptionML = ENU = 'General',
+                            ENN = 'General';
+                field("No."; "No.")
                 {
                     Importance = Promoted;
 
                     trigger OnAssistEdit();
                     begin
                         IF AssistEdit(xRec) THEN
-                          CurrPage.UPDATE;
+                            CurrPage.UPDATE;
                     end;
                 }
-                field(Name;Name)
+                field(Name; Name)
                 {
                     Importance = Promoted;
                 }
-                field("Work Center No.";"Work Center No.")
+                field("Work Center No."; "Work Center No.")
                 {
                     Importance = Promoted;
 
@@ -38,103 +38,103 @@ page 99000760 "Machine Center Card"
                         UpdateEnabled;
                     end;
                 }
-                field("User Id";"User Id")
+                field("User Id"; "User Id")
                 {
                 }
-                field("Search Name";"Search Name")
+                field("Search Name"; "Search Name")
                 {
                 }
-                field(Blocked;Blocked)
+                field(Blocked; Blocked)
                 {
                 }
-                field("Last Date Modified";"Last Date Modified")
+                field("Last Date Modified"; "Last Date Modified")
                 {
                 }
             }
             group(Posting)
             {
-                CaptionML = ENU='Posting',
-                            ENN='Posting';
-                field("Direct Unit Cost";"Direct Unit Cost")
+                CaptionML = ENU = 'Posting',
+                            ENN = 'Posting';
+                field("Direct Unit Cost"; "Direct Unit Cost")
                 {
                     Importance = Promoted;
                 }
-                field("Indirect Cost %";"Indirect Cost %")
+                field("Indirect Cost %"; "Indirect Cost %")
                 {
                 }
-                field("Overhead Rate";"Overhead Rate")
+                field("Overhead Rate"; "Overhead Rate")
                 {
                 }
-                field("Unit Cost";"Unit Cost")
+                field("Unit Cost"; "Unit Cost")
                 {
                 }
-                field("Flushing Method";"Flushing Method")
+                field("Flushing Method"; "Flushing Method")
                 {
                     Importance = Promoted;
                 }
-                field("Gen. Prod. Posting Group";"Gen. Prod. Posting Group")
+                field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
                 {
                     Importance = Promoted;
                 }
             }
             group(Scheduling)
             {
-                CaptionML = ENU='Scheduling',
-                            ENN='Scheduling';
-                field(Capacity;Capacity)
+                CaptionML = ENU = 'Scheduling',
+                            ENN = 'Scheduling';
+                field(Capacity; Capacity)
                 {
                     Importance = Promoted;
                 }
-                field(Efficiency;Efficiency)
+                field(Efficiency; Efficiency)
                 {
                 }
-                field("Queue Time";"Queue Time")
+                field("Queue Time"; "Queue Time")
                 {
                 }
-                field("Queue Time Unit of Meas. Code";"Queue Time Unit of Meas. Code")
+                field("Queue Time Unit of Meas. Code"; "Queue Time Unit of Meas. Code")
                 {
                 }
             }
             group("Routing Setup")
             {
-                CaptionML = ENU='Routing Setup',
-                            ENN='Routing Setup';
-                field("Setup Time";"Setup Time")
+                CaptionML = ENU = 'Routing Setup',
+                            ENN = 'Routing Setup';
+                field("Setup Time"; "Setup Time")
                 {
                     Importance = Promoted;
                 }
-                field("Wait Time";"Wait Time")
+                field("Wait Time"; "Wait Time")
                 {
                     Importance = Promoted;
                 }
-                field("Move Time";"Move Time")
+                field("Move Time"; "Move Time")
                 {
                     Importance = Promoted;
                 }
-                field("Fixed Scrap Quantity";"Fixed Scrap Quantity")
+                field("Fixed Scrap Quantity"; "Fixed Scrap Quantity")
                 {
                 }
-                field("Scrap %";"Scrap %")
+                field("Scrap %"; "Scrap %")
                 {
                 }
-                field("Send-Ahead Quantity";"Send-Ahead Quantity")
+                field("Send-Ahead Quantity"; "Send-Ahead Quantity")
                 {
                 }
-                field("Minimum Process Time";"Minimum Process Time")
+                field("Minimum Process Time"; "Minimum Process Time")
                 {
                 }
-                field("Maximum Process Time";"Maximum Process Time")
+                field("Maximum Process Time"; "Maximum Process Time")
                 {
                 }
-                field("Concurrent Capacities";"Concurrent Capacities")
+                field("Concurrent Capacities"; "Concurrent Capacities")
                 {
                 }
             }
             group(Warehouse)
             {
-                CaptionML = ENU='Warehouse',
-                            ENN='Warehouse';
-                field("Location Code";"Location Code")
+                CaptionML = ENU = 'Warehouse',
+                            ENN = 'Warehouse';
+                field("Location Code"; "Location Code")
                 {
 
                     trigger OnValidate();
@@ -142,15 +142,15 @@ page 99000760 "Machine Center Card"
                         UpdateEnabled;
                     end;
                 }
-                field("Open Shop Floor Bin Code";"Open Shop Floor Bin Code")
+                field("Open Shop Floor Bin Code"; "Open Shop Floor Bin Code")
                 {
                     Enabled = OpenShopFloorBinCodeEnable;
                 }
-                field("To-Production Bin Code";"To-Production Bin Code")
+                field("To-Production Bin Code"; "To-Production Bin Code")
                 {
                     Enabled = ToProductionBinCodeEnable;
                 }
-                field("From-Production Bin Code";"From-Production Bin Code")
+                field("From-Production Bin Code"; "From-Production Bin Code")
                 {
                     Enabled = FromProductionBinCodeEnable;
                 }
@@ -158,11 +158,11 @@ page 99000760 "Machine Center Card"
         }
         area(factboxes)
         {
-            systempart(Control1900383207;Links)
+            systempart(Control1900383207; Links)
             {
                 Visible = false;
             }
-            systempart(Control1905767507;Notes)
+            systempart(Control1905767507; Notes)
             {
                 Visible = true;
             }
@@ -175,16 +175,16 @@ page 99000760 "Machine Center Card"
         {
             group("&Mach. Ctr.")
             {
-                CaptionML = ENU='&Mach. Ctr.',
-                            ENN='&Mach. Ctr.';
+                CaptionML = ENU = '&Mach. Ctr.',
+                            ENN = '&Mach. Ctr.';
                 Image = MachineCenter;
                 action("Capacity Ledger E&ntries")
                 {
-                    CaptionML = ENU='Capacity Ledger E&ntries',
-                                ENN='Capacity Ledger E&ntries';
+                    CaptionML = ENU = 'Capacity Ledger E&ntries',
+                                ENN = 'Capacity Ledger E&ntries';
                     Image = CapacityLedger;
                     RunObject = Page "Capacity Ledger Entries";
-                    RunPageLink = Type=CONST(Machine Center),No.=FIELD(No.),Posting Date=FIELD(Date Filter);
+                    RunPageLink = Type = CONST(Machine Center),No.=FIELD(No.),Posting Date=FIELD(Date Filter);
                     RunPageView = SORTING(Type,No.,Work Shift Code,Item No.,Posting Date);
                     ShortCutKey = 'Ctrl+F7';
                 }
@@ -194,8 +194,9 @@ page 99000760 "Machine Center Card"
                                 ENN='Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Manufacturing Comment Sheet";
-                    RunPageLink = No.=FIELD(No.);
-                    RunPageView = WHERE(Table Name=CONST(Machine Center));
+                                    RunPageLink = No.=FIELD(No.);
+                    RunPageView = WHERE(Table Name    DataClassification = CustomerContent;
+=CONST(Machine Center));
                 }
                 action("Lo&ad")
                 {
@@ -205,7 +206,7 @@ page 99000760 "Machine Center Card"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Machine Center Load";
-                    RunPageLink = No.=FIELD(No.),Work Shift Filter=FIELD(Work Shift Filter);
+                                    RunPageLink = No.=FIELD(No.),Work Shift Filter=FIELD(Work Shift Filter);
                 }
                 separator(Action18)
                 {
@@ -218,7 +219,7 @@ page 99000760 "Machine Center Card"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Machine Center Statistics";
-                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Work Shift Filter=FIELD(Work Shift Filter);
+                                    RunPageLink = No.=FIELD(No.),Date Filter=FIELD(Date Filter),Work Shift Filter=FIELD(Work Shift Filter);
                     ShortCutKey = 'F7';
                 }
             }
@@ -244,7 +245,7 @@ page 99000760 "Machine Center Card"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Capacity Absence";
-                    RunPageLink = Capacity Type=CONST(Machine Center),No.=FIELD(No.),Date=FIELD(Date Filter);
+                                    RunPageLink = Capacity Type=CONST(Machine Center),No.=FIELD(No.),Date=FIELD(Date Filter);
                 }
                 action("Ta&sk List")
                 {
@@ -252,7 +253,7 @@ page 99000760 "Machine Center Card"
                                 ENN='Ta&sk List';
                     Image = TaskList;
                     RunObject = Page "Machine Center Task List";
-                    RunPageLink = No.=FIELD(No.);
+                                    RunPageLink = No.=FIELD(No.);
                     RunPageView = SORTING(Type,No.) WHERE(Type=CONST(Machine Center),Status=FILTER(..Released),Routing Status=FILTER(<>Finished));
                 }
             }

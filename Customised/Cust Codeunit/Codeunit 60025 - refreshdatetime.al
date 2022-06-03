@@ -5,15 +5,15 @@ codeunit 60025 refreshdatetime
     begin
         ContinuosSupportWithEfftronics;
         //SurveyWithEfftronics;
-        
-         //prodorder."No.":=FORMAT('APV08AMC01');
+
+        //prodorder."No.":=FORMAT('APV08AMC01');
         // refresh(prodorder."No.");
-        
+
         //B2B  Vendor  mail for gst filling
         //VendorGstFillling;
-        
+
         //VendorIntimationMessage;
-        
+
         //VendorCarona;
         /*
         Vendor.RESET;
@@ -25,31 +25,31 @@ codeunit 60025 refreshdatetime
         MESSAGE('completed');
         */
         //TestMail
-        
+
         //SurveyWithEfftronics;
 
     end;
 
     var
-        prodorder : Record "Production Order";
-        date : Date;
-        datetime : DateTime;
-        time : Time;
-        item : Record Item;
-        prodline : Record "Prod. Order Line";
-        "-----b2b-----" : Integer;
-        Vendor : Record Vendor;
-        ToMail : Text[250];
-        FromMail : Text[250];
-        SMTPMail : Codeunit "SMTP Mail";
-        Subject : Text[250];
-        MonthGvar : Text;
-        YearGVar : Integer;
-        totVendor : Integer;
-        PurchaseHeader : Record "Purchase Header";
+        prodorder: Record "Production Order";
+        date: Date;
+        datetime: DateTime;
+        time: Time;
+        item: Record Item;
+        prodline: Record "Prod. Order Line";
+        "-----b2b-----": Integer;
+        Vendor: Record Vendor;
+        ToMail: Text[250];
+        FromMail: Text[250];
+        SMTPMail: Codeunit "SMTP Mail";
+        Subject: Text[250];
+        MonthGvar: Text;
+        YearGVar: Integer;
+        totVendor: Integer;
+        PurchaseHeader: Record "Purchase Header";
 
     [LineStart(25770)]
-    procedure refresh(var prodno : Code[20]);
+    procedure refresh(var prodno: Code[20]);
     begin
         /*
             prodorder.SETRANGE(prodorder."No.",prodno);
@@ -305,74 +305,74 @@ codeunit 60025 refreshdatetime
     local procedure SurveyWithEfftronics();
     begin
 
-        YearGVar := DATE2DMY(WORKDATE,3);
-        MonthGvar := FORMAT(WORKDATE,0,'<Month text,3>');
+        YearGVar := DATE2DMY(WORKDATE, 3);
+        MonthGvar := FORMAT(WORKDATE, 0, '<Month text,3>');
 
         FromMail := 'purchase@efftronics.com';
         Subject := 'Reg: Survey with Efftronics Systems Pvt ltd Suppliers -COVID-19 Period-Supply Chain Challenges';
 
         Vendor.RESET;
-        Vendor.SETRANGE("GST Vendor Type",Vendor."GST Vendor Type"::Registered);
-        Vendor.SETFILTER("No Of POs",'>%1',0);
-        Vendor.SETFILTER("E-Mail",'<>%1',''); //added by vishnu
-        Vendor.SETRANGE(Maintenacecommonmail,FALSE);
+        Vendor.SETRANGE("GST Vendor Type", Vendor."GST Vendor Type"::Registered);
+        Vendor.SETFILTER("No Of POs", '>%1', 0);
+        Vendor.SETFILTER("E-Mail", '<>%1', ''); //added by vishnu
+        Vendor.SETRANGE(Maintenacecommonmail, FALSE);
         IF Vendor.FINDSET THEN BEGIN
-          REPEAT
-            PurchaseHeader.RESET;
-            PurchaseHeader.SETRANGE("Document Type",PurchaseHeader."Document Type"::Order);
-            PurchaseHeader.SETFILTER("Order Date",'>=%1',040119D);
-            PurchaseHeader.SETRANGE("Buy-from Vendor No.",Vendor."No.");
-            IF PurchaseHeader.FINDFIRST THEN BEGIN
-            CLEAR(ToMail);
-            IF Vendor."E-Mail" <> '' THEN
-              ToMail := Vendor."E-Mail";
-             IF (ToMail <>'') AND (FromMail<>'')  THEN BEGIN
-               SMTPMail.CreateMessage('ERP',FromMail,ToMail,Subject,'',TRUE);
-               SMTPMail.AddBCC('purchaseaccounts@efftronics.com');
-               //SMTP_MAIL.AddBCC('vishnupriya@efftronics.com');
-               SMTPMail.AppendBody('Respected Sir/Madam,');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('Hope you all are fine ..your family & Staff  members also in safe position');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('As we all are know in this COVID-19 period , we need to face the all challenges(Raw material procurement and logistics) to sustain our business.');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('In this position , we are doing survey with our Suppliers. So please co-operate with us and fill this document and it is very helpful to plan our production');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('link');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Website :<a href="http://app.efftronics.org/vendorsurvey/App/Login"><b>app.efftronics.org/vendorsurvey/App/Login</b></a>');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Click this above link');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('login with Your Company GST number');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('Thanking You.');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('Regards,');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Renuka.Ch');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Manager|ControlRoom (Planning & Purchase)');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('EfftronicsSystems Pvt. Ltd.,');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('40-15-9,Brundavan Colony,');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Vijayawada - 520010,');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Andhra Pradesh, India.');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Ph No : +91 866 2466699; Cell No : +91 7036666132');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Website :<a href="https://www.efftronics.com/"><b>www.efftronics.com</b></a>');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.Send;
-             END;
-             Vendor.Maintenacecommonmail := TRUE;
-             Vendor.MODIFY;
-             END;
-          UNTIL Vendor.NEXT = 0;
-        MESSAGE('completed');
+            REPEAT
+                PurchaseHeader.RESET;
+                PurchaseHeader.SETRANGE("Document Type", PurchaseHeader."Document Type"::Order);
+                PurchaseHeader.SETFILTER("Order Date", '>=%1', 040119D);
+                PurchaseHeader.SETRANGE("Buy-from Vendor No.", Vendor."No.");
+                IF PurchaseHeader.FINDFIRST THEN BEGIN
+                    CLEAR(ToMail);
+                    IF Vendor."E-Mail" <> '' THEN
+                        ToMail := Vendor."E-Mail";
+                    IF (ToMail <> '') AND (FromMail <> '') THEN BEGIN
+                        SMTPMail.CreateMessage('ERP', FromMail, ToMail, Subject, '', TRUE);
+                        SMTPMail.AddBCC('purchaseaccounts@efftronics.com');
+                        //SMTP_MAIL.AddBCC('vishnupriya@efftronics.com');
+                        SMTPMail.AppendBody('Respected Sir/Madam,');
+                        SMTPMail.AppendBody('<BR><BR>');
+                        SMTPMail.AppendBody('Hope you all are fine ..your family & Staff  members also in safe position');
+                        SMTPMail.AppendBody('<BR><BR>');
+                        SMTPMail.AppendBody('As we all are know in this COVID-19 period , we need to face the all challenges(Raw material procurement and logistics) to sustain our business.');
+                        SMTPMail.AppendBody('<BR><BR>');
+                        SMTPMail.AppendBody('In this position , we are doing survey with our Suppliers. So please co-operate with us and fill this document and it is very helpful to plan our production');
+                        SMTPMail.AppendBody('<BR><BR>');
+                        SMTPMail.AppendBody('link');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Website :<a href="http://app.efftronics.org/vendorsurvey/App/Login"><b>app.efftronics.org/vendorsurvey/App/Login</b></a>');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Click this above link');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('login with Your Company GST number');
+                        SMTPMail.AppendBody('<BR><BR>');
+                        SMTPMail.AppendBody('Thanking You.');
+                        SMTPMail.AppendBody('<BR><BR>');
+                        SMTPMail.AppendBody('Regards,');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Renuka.Ch');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Manager|ControlRoom (Planning & Purchase)');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('EfftronicsSystems Pvt. Ltd.,');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('40-15-9,Brundavan Colony,');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Vijayawada - 520010,');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Andhra Pradesh, India.');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Ph No : +91 866 2466699; Cell No : +91 7036666132');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Website :<a href="https://www.efftronics.com/"><b>www.efftronics.com</b></a>');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.Send;
+                    END;
+                    Vendor.Maintenacecommonmail := TRUE;
+                    Vendor.MODIFY;
+                END;
+            UNTIL Vendor.NEXT = 0;
+            MESSAGE('completed');
         END;
     end;
 
@@ -383,48 +383,48 @@ codeunit 60025 refreshdatetime
         Subject := 'Reg: Efftronics Vendor Updates';
         ToMail := 'jagadeeshm@b2bsoftech.com';
 
-        IF (ToMail <>'') AND (FromMail<>'')  THEN BEGIN
-          SMTPMail.CreateMessage('ERP',FromMail,ToMail,Subject,'',TRUE);
+        IF (ToMail <> '') AND (FromMail <> '') THEN BEGIN
+            SMTPMail.CreateMessage('ERP', FromMail, ToMail, Subject, '', TRUE);
 
-               SMTPMail.AppendBody('Dear Vendor,');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('Greetings of the day. Thanks a lot for your continued support. We are concluding the financial statements for FY19-20.');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('As per our books, all the payments to the vendors for FY19-20 are cleared. There are no pending payments related to the invoices raised in FY 19-20.');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Please send us statement of accounts for reconciliation. We also request your continuous support for the coming years.We also request you to upload the GST returns in timely manner.');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('We also request you to inform us any challenges you are facing related to the pandemic or other external issues.Any  issues related');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('to change in lead times,availability of raw material,obsolescence please inform us well in advance.');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('Thanks a lot for your continuous Support.');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('Regards,');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Anvesh Dasari');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Vice President');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Cell No :+919849051177');
-                SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('EfftronicsSystems Pvt. Ltd.,');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('40-15-9,Brundavan Colony,');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Vijayawada - 520010,');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Andhra Pradesh, India.');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Ph No : 0866-2483375');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Website :<a href="http://www.effe.in/"><b>www.effe.in,</b></a><a href="https://www.efftronics.com/"><b>www.efftronics.com</b></a>');
-               SMTPMail.AppendBody('<BR>');
-          SMTPMail.Send;
-          MESSAGE('completed');
+            SMTPMail.AppendBody('Dear Vendor,');
+            SMTPMail.AppendBody('<BR><BR>');
+            SMTPMail.AppendBody('<BR><BR>');
+            SMTPMail.AppendBody('Greetings of the day. Thanks a lot for your continued support. We are concluding the financial statements for FY19-20.');
+            SMTPMail.AppendBody('<BR>');
+            SMTPMail.AppendBody('As per our books, all the payments to the vendors for FY19-20 are cleared. There are no pending payments related to the invoices raised in FY 19-20.');
+            SMTPMail.AppendBody('<BR>');
+            SMTPMail.AppendBody('Please send us statement of accounts for reconciliation. We also request your continuous support for the coming years.We also request you to upload the GST returns in timely manner.');
+            SMTPMail.AppendBody('<BR>');
+            SMTPMail.AppendBody('We also request you to inform us any challenges you are facing related to the pandemic or other external issues.Any  issues related');
+            SMTPMail.AppendBody('<BR>');
+            SMTPMail.AppendBody('to change in lead times,availability of raw material,obsolescence please inform us well in advance.');
+            SMTPMail.AppendBody('<BR><BR>');
+            SMTPMail.AppendBody('<BR><BR>');
+            SMTPMail.AppendBody('Thanks a lot for your continuous Support.');
+            SMTPMail.AppendBody('<BR><BR>');
+            SMTPMail.AppendBody('<BR><BR>');
+            SMTPMail.AppendBody('Regards,');
+            SMTPMail.AppendBody('<BR>');
+            SMTPMail.AppendBody('Anvesh Dasari');
+            SMTPMail.AppendBody('<BR>');
+            SMTPMail.AppendBody('Vice President');
+            SMTPMail.AppendBody('<BR>');
+            SMTPMail.AppendBody('Cell No :+919849051177');
+            SMTPMail.AppendBody('<BR>');
+            SMTPMail.AppendBody('EfftronicsSystems Pvt. Ltd.,');
+            SMTPMail.AppendBody('<BR>');
+            SMTPMail.AppendBody('40-15-9,Brundavan Colony,');
+            SMTPMail.AppendBody('<BR>');
+            SMTPMail.AppendBody('Vijayawada - 520010,');
+            SMTPMail.AppendBody('<BR>');
+            SMTPMail.AppendBody('Andhra Pradesh, India.');
+            SMTPMail.AppendBody('<BR>');
+            SMTPMail.AppendBody('Ph No : 0866-2483375');
+            SMTPMail.AppendBody('<BR>');
+            SMTPMail.AppendBody('Website :<a href="http://www.effe.in/"><b>www.effe.in,</b></a><a href="https://www.efftronics.com/"><b>www.efftronics.com</b></a>');
+            SMTPMail.AppendBody('<BR>');
+            SMTPMail.Send;
+            MESSAGE('completed');
         END;
     end;
 
@@ -435,66 +435,66 @@ codeunit 60025 refreshdatetime
         Subject := 'Reg: Efftronics Vendor Updates';
 
         Vendor.RESET;
-        Vendor.SETRANGE("GST Vendor Type",Vendor."GST Vendor Type"::Registered);
-        Vendor.SETFILTER("No Of POs",'>%1',0);
-        Vendor.SETRANGE(Maintenacecommonmail,FALSE);
+        Vendor.SETRANGE("GST Vendor Type", Vendor."GST Vendor Type"::Registered);
+        Vendor.SETFILTER("No Of POs", '>%1', 0);
+        Vendor.SETRANGE(Maintenacecommonmail, FALSE);
         IF Vendor.FINDSET THEN BEGIN
-          REPEAT
-            PurchaseHeader.RESET;
-            PurchaseHeader.SETRANGE("Document Type",PurchaseHeader."Document Type"::Order);
-            PurchaseHeader.SETFILTER("Order Date",'>=%1',040119D);
-            PurchaseHeader.SETRANGE("Buy-from Vendor No.",Vendor."No.");
-            IF PurchaseHeader.FINDFIRST THEN BEGIN
-            CLEAR(ToMail);
-            IF Vendor."E-Mail" <> '' THEN
-              ToMail := Vendor."E-Mail";
-             IF (ToMail <>'') AND (FromMail<>'')  THEN BEGIN
-               SMTPMail.CreateMessage('ERP',FromMail,ToMail,Subject,'',TRUE);
-               SMTPMail.AddBCC('purchaseaccounts@efftronics.com');
-               SMTPMail.AppendBody('Dear Vendor,');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('Greetings of the day. Thanks a lot for your continued support. We are concluding the financial statements for FY19-20.');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('As per our books, all the payments to the vendors for FY19-20 are cleared. There are no pending payments related to the invoices raised in FY 19-20.');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Please send us statement of accounts for reconciliation. We also request your continuous support for the coming years.We also request you to upload the GST returns in timely manner.');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('We also request you to inform us any challenges you are facing related to the pandemic or other external issues.Any  issues related to change in lead times,');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('availability of raw material,obsolescence please inform us well in advance.');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('Thanks a lot for your continuous Support.');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('<BR><BR>');
-               SMTPMail.AppendBody('Regards,');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Anvesh Dasari');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Vice President');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Cell No :+919849051177');
-                SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('EfftronicsSystems Pvt. Ltd.,');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('40-15-9,Brundavan Colony,');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Vijayawada - 520010,');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Andhra Pradesh, India.');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Ph No : 0866-2483375');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.AppendBody('Website :<a href="http://www.effe.in/"><b>www.effe.in,</b></a><a href="https://www.efftronics.com/"><b>www.efftronics.com</b></a>');
-               SMTPMail.AppendBody('<BR>');
-               SMTPMail.Send;
-             END;
-             Vendor.Maintenacecommonmail := TRUE;
-             Vendor.MODIFY;
-             END;
-          UNTIL Vendor.NEXT = 0;
-        MESSAGE('completed');
+            REPEAT
+                PurchaseHeader.RESET;
+                PurchaseHeader.SETRANGE("Document Type", PurchaseHeader."Document Type"::Order);
+                PurchaseHeader.SETFILTER("Order Date", '>=%1', 040119D);
+                PurchaseHeader.SETRANGE("Buy-from Vendor No.", Vendor."No.");
+                IF PurchaseHeader.FINDFIRST THEN BEGIN
+                    CLEAR(ToMail);
+                    IF Vendor."E-Mail" <> '' THEN
+                        ToMail := Vendor."E-Mail";
+                    IF (ToMail <> '') AND (FromMail <> '') THEN BEGIN
+                        SMTPMail.CreateMessage('ERP', FromMail, ToMail, Subject, '', TRUE);
+                        SMTPMail.AddBCC('purchaseaccounts@efftronics.com');
+                        SMTPMail.AppendBody('Dear Vendor,');
+                        SMTPMail.AppendBody('<BR><BR>');
+                        SMTPMail.AppendBody('<BR><BR>');
+                        SMTPMail.AppendBody('Greetings of the day. Thanks a lot for your continued support. We are concluding the financial statements for FY19-20.');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('As per our books, all the payments to the vendors for FY19-20 are cleared. There are no pending payments related to the invoices raised in FY 19-20.');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Please send us statement of accounts for reconciliation. We also request your continuous support for the coming years.We also request you to upload the GST returns in timely manner.');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('We also request you to inform us any challenges you are facing related to the pandemic or other external issues.Any  issues related to change in lead times,');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('availability of raw material,obsolescence please inform us well in advance.');
+                        SMTPMail.AppendBody('<BR><BR>');
+                        SMTPMail.AppendBody('<BR><BR>');
+                        SMTPMail.AppendBody('Thanks a lot for your continuous Support.');
+                        SMTPMail.AppendBody('<BR><BR>');
+                        SMTPMail.AppendBody('<BR><BR>');
+                        SMTPMail.AppendBody('Regards,');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Anvesh Dasari');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Vice President');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Cell No :+919849051177');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('EfftronicsSystems Pvt. Ltd.,');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('40-15-9,Brundavan Colony,');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Vijayawada - 520010,');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Andhra Pradesh, India.');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Ph No : 0866-2483375');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.AppendBody('Website :<a href="http://www.effe.in/"><b>www.effe.in,</b></a><a href="https://www.efftronics.com/"><b>www.efftronics.com</b></a>');
+                        SMTPMail.AppendBody('<BR>');
+                        SMTPMail.Send;
+                    END;
+                    Vendor.Maintenacecommonmail := TRUE;
+                    Vendor.MODIFY;
+                END;
+            UNTIL Vendor.NEXT = 0;
+            MESSAGE('completed');
         END;
     end;
 }

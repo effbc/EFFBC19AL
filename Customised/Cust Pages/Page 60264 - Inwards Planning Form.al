@@ -16,58 +16,58 @@ page 60264 "Inwards Planning Form"
         {
             repeater(Group)
             {
-                field("Created Date";"Created Date")
+                field("Created Date"; "Created Date")
                 {
                 }
-                field("Vendor Name";"Vendor Name")
-                {
-                    Editable = false;
-                }
-                field("Item Description";"Item Description")
+                field("Vendor Name"; "Vendor Name")
                 {
                     Editable = false;
                 }
-                field(Priority;Priority)
+                field("Item Description"; "Item Description")
+                {
+                    Editable = false;
+                }
+                field(Priority; Priority)
                 {
                     Editable = false;
                     Style = Favorable;
                     StyleExpr = TRUE;
                 }
-                field(Quantity;Quantity)
+                field(Quantity; Quantity)
                 {
                     Editable = false;
                 }
-                field("Product Group Code";"Product Group Code")
+                field("Product Group Code"; "Product Group Code")
                 {
                 }
-                field("Data Entered By";"Data Entered By")
+                field("Data Entered By"; "Data Entered By")
                 {
                     Caption = 'Work Started By';
                     Editable = false;
                 }
-                field("Lot No.";"Lot No.")
+                field("Lot No."; "Lot No.")
                 {
                 }
-                field("Serial No.";"Serial No.")
-                {
-                    Editable = false;
-                }
-                field("Estimated Time";"Estimated Time")
+                field("Serial No."; "Serial No.")
                 {
                     Editable = false;
                 }
-                field("Assigned User";"Assigned User")
+                field("Estimated Time"; "Estimated Time")
+                {
+                    Editable = false;
+                }
+                field("Assigned User"; "Assigned User")
                 {
                     Caption = 'Plan to Employee';
                     Editable = Page_Edit;
                 }
-                field("Planning Date";"Planning Date")
+                field("Planning Date"; "Planning Date")
                 {
                     Caption = 'Plan on:';
                     Editable = Page_Edit;
                 }
             }
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
                 Caption = 'Total Inwards';
                 Editable = false;
@@ -84,81 +84,83 @@ page 60264 "Inwards Planning Form"
     trigger OnAfterGetRecord();
     begin
         //Written AND commented by Vishnu Priya on 24-06-2020
-          Rec.CALCFIELDS("Revised Sampling Count","Revised Sampling Percentage","Revised Sampling Time Mins","Visual Sampling Count","Visual Sampling Percentage","Visual Sampling Time Mins","Dimensions Sampling Count","Dimensions Sampling Percentage");
-          Rec.CALCFIELDS("Dimensions Sampling Time Mins","Basic Func Sampling Time -Mins","Basic Functional Sampling Cnt","Basic Functional Sampling Per");
-          Rec.CALCFIELDS("Sample Cnt","Sample Percent",Benchmark,"Documentation Time");
-          Estimated_time := 0;
+        Rec.CALCFIELDS("Revised Sampling Count", "Revised Sampling Percentage", "Revised Sampling Time Mins", "Visual Sampling Count", "Visual Sampling Percentage", "Visual Sampling Time Mins", "Dimensions Sampling Count", "Dimensions Sampling Percentage");
+        Rec.CALCFIELDS("Dimensions Sampling Time Mins", "Basic Func Sampling Time -Mins", "Basic Functional Sampling Cnt", "Basic Functional Sampling Per");
+        Rec.CALCFIELDS("Sample Cnt", "Sample Percent", Benchmark, "Documentation Time");
+        Estimated_time := 0;
 
-          //Rec.SETFILTER("Item Description",'887 VER1.1 PCB');
-          IF (Rec."Revised Sampling Count" >0 ) AND (Rec."Revised Sampling Percentage"=0) THEN
+        //Rec.SETFILTER("Item Description",'887 VER1.1 PCB');
+        IF (Rec."Revised Sampling Count" > 0) AND (Rec."Revised Sampling Percentage" = 0) THEN
             Estimated_time := Rec."Revised Sampling Time Mins" * Rec."Revised Sampling Count"
-          ELSE IF (Rec."Revised Sampling Percentage" >0)  AND (Rec."Revised Sampling Count" =0) THEN
-            Estimated_time := (Rec."Revised Sampling Time Mins")* (ROUND(Rec."Revised Sampling Percentage" *0.01 * Rec.Quantity));
+        ELSE
+            IF (Rec."Revised Sampling Percentage" > 0) AND (Rec."Revised Sampling Count" = 0) THEN
+                Estimated_time := (Rec."Revised Sampling Time Mins") * (ROUND(Rec."Revised Sampling Percentage" * 0.01 * Rec.Quantity));
 
-          IF (Rec."Visual Sampling Count" >0 ) AND (Rec."Visual Sampling Percentage" =0) THEN
+        IF (Rec."Visual Sampling Count" > 0) AND (Rec."Visual Sampling Percentage" = 0) THEN
             Estimated_time := Estimated_time + (Rec."Visual Sampling Time Mins" * Rec."Visual Sampling Count")
-          ELSE IF (Rec."Visual Sampling Count" = 0 ) AND (Rec."Visual Sampling Percentage" > 0) THEN
-            Estimated_time := Estimated_time + (ROUND(Rec."Visual Sampling Percentage"*0.01 * Rec.Quantity)*Rec."Visual Sampling Time Mins");
+        ELSE
+            IF (Rec."Visual Sampling Count" = 0) AND (Rec."Visual Sampling Percentage" > 0) THEN
+                Estimated_time := Estimated_time + (ROUND(Rec."Visual Sampling Percentage" * 0.01 * Rec.Quantity) * Rec."Visual Sampling Time Mins");
 
-          IF (Rec."Dimensions Sampling Count" >0 ) AND (Rec."Dimensions Sampling Percentage" =0) THEN
+        IF (Rec."Dimensions Sampling Count" > 0) AND (Rec."Dimensions Sampling Percentage" = 0) THEN
             Estimated_time := Estimated_time + (Rec."Dimensions Sampling Time Mins" * Rec."Dimensions Sampling Count")
-          ELSE IF (Rec."Dimensions Sampling Count" = 0 ) AND (Rec."Dimensions Sampling Percentage" > 0) THEN
-            Estimated_time := Estimated_time + (ROUND(Rec."Dimensions Sampling Percentage"*0.01 * Rec.Quantity)*(Rec."Dimensions Sampling Time Mins"));
+        ELSE
+            IF (Rec."Dimensions Sampling Count" = 0) AND (Rec."Dimensions Sampling Percentage" > 0) THEN
+                Estimated_time := Estimated_time + (ROUND(Rec."Dimensions Sampling Percentage" * 0.01 * Rec.Quantity) * (Rec."Dimensions Sampling Time Mins"));
 
-          IF (Rec."Basic Functional Sampling Cnt" >0 ) AND (Rec."Basic Functional Sampling Per" =0) THEN
+        IF (Rec."Basic Functional Sampling Cnt" > 0) AND (Rec."Basic Functional Sampling Per" = 0) THEN
             Estimated_time := Estimated_time + (Rec."Basic Func Sampling Time -Mins" * Rec."Basic Functional Sampling Cnt")
-          ELSE IF (Rec."Basic Functional Sampling Cnt" = 0 ) AND (Rec."Basic Functional Sampling Per" > 0) THEN
-            Estimated_time := Estimated_time + (ROUND(Rec."Basic Functional Sampling Per"*0.01* Rec.Quantity)*(Rec."Basic Func Sampling Time -Mins"));
+        ELSE
+            IF (Rec."Basic Functional Sampling Cnt" = 0) AND (Rec."Basic Functional Sampling Per" > 0) THEN
+                Estimated_time := Estimated_time + (ROUND(Rec."Basic Functional Sampling Per" * 0.01 * Rec.Quantity) * (Rec."Basic Func Sampling Time -Mins"));
 
-          IF (Rec."Sample Cnt" >0 ) AND (Rec."Sample Percent" =  0) THEN
+        IF (Rec."Sample Cnt" > 0) AND (Rec."Sample Percent" = 0) THEN
             Estimated_time := Estimated_time + (Rec.Benchmark * Rec."Sample Cnt")
-          ELSE IF (Rec."Sample Cnt"= 0) AND (Rec."Sample Percent" >0) THEN
-            Estimated_time := Estimated_time + (ROUND(Rec."Sample Percent"*0.01*Rec.Quantity) * Rec.Benchmark);
+        ELSE
+            IF (Rec."Sample Cnt" = 0) AND (Rec."Sample Percent" > 0) THEN
+                Estimated_time := Estimated_time + (ROUND(Rec."Sample Percent" * 0.01 * Rec.Quantity) * Rec.Benchmark);
 
 
-          Rec."Estimated Time" := Estimated_time+Rec."Documentation Time";
+        Rec."Estimated Time" := Estimated_time + Rec."Documentation Time";
         // Priorities Setting
-         // Priority 1 starts
-          MIL.RESET;
-          MIL.SETFILTER("Transfer-from Code",'%1|%2','STR','MCH');
-          MIL.SETRANGE("Transfer-to Code",'PROD');
-          MIL.SETRANGE("Item No.",Rec."Item No.");
-          MIL.SETFILTER("Outstanding Quantity",'>%1',0);
-            IF MIL.FINDFIRST THEN
-                Rec.Priority := 'Shortage'
-            ELSE
-             BEGIN
-              POC.RESET;
-              POC.SETCURRENTKEY("Item No.");
-              POC.SETFILTER("Production Plan Date",'>=%1 & <=%2',TODAY,TODAY+1);
-              POC.SETFILTER("Item No.",Rec."Item No.");
-              IF POC.FINDFIRST THEN
-                  Rec.Priority := 'Today and Tomorrow plan'
-              ELSE
-                BEGIN
-                 IDH.RESET;
-                 IDH.SETCURRENTKEY("Created Date","Item No.","Source Type");
-                 IDH.SETFILTER("Source Type",FORMAT(0));
-                 IDH.SETFILTER("Created Date" ,'<=%1',TODAY-10);
-                 IDH.SETFILTER("Item No.",Rec."Item No.");
-                 IF IDH.FINDFIRST THEN
-                  Priority:= 'More than 10 Days'
-                  ELSE
-                  BEGIN
+        // Priority 1 starts
+        MIL.RESET;
+        MIL.SETFILTER("Transfer-from Code", '%1|%2', 'STR', 'MCH');
+        MIL.SETRANGE("Transfer-to Code", 'PROD');
+        MIL.SETRANGE("Item No.", Rec."Item No.");
+        MIL.SETFILTER("Outstanding Quantity", '>%1', 0);
+        IF MIL.FINDFIRST THEN
+            Rec.Priority := 'Shortage'
+        ELSE BEGIN
+            POC.RESET;
+            POC.SETCURRENTKEY("Item No.");
+            POC.SETFILTER("Production Plan Date", '>=%1 & <=%2', TODAY, TODAY + 1);
+            POC.SETFILTER("Item No.", Rec."Item No.");
+            IF POC.FINDFIRST THEN
+                Rec.Priority := 'Today and Tomorrow plan'
+            ELSE BEGIN
+                IDH.RESET;
+                IDH.SETCURRENTKEY("Created Date", "Item No.", "Source Type");
+                IDH.SETFILTER("Source Type", FORMAT(0));
+                IDH.SETFILTER("Created Date", '<=%1', TODAY - 10);
+                IDH.SETFILTER("Item No.", Rec."Item No.");
+                IF IDH.FINDFIRST THEN
+                    Priority := 'More than 10 Days'
+                ELSE BEGIN
                     IDH.RESET;
-                    IDH.SETCURRENTKEY("Created Date","Item No.","Source Type");
-                    IDH.SETFILTER("Source Type",FORMAT(0));
-                    IDH.SETFILTER("Created Date" ,'>%1',TODAY-10);
-                    IDH.SETFILTER("Item No.",Rec."Item No.");
+                    IDH.SETCURRENTKEY("Created Date", "Item No.", "Source Type");
+                    IDH.SETFILTER("Source Type", FORMAT(0));
+                    IDH.SETFILTER("Created Date", '>%1', TODAY - 10);
+                    IDH.SETFILTER("Item No.", Rec."Item No.");
                     IF IDH.FINDFIRST THEN
-                      Priority:= 'less than 10 Days'
+                        Priority := 'less than 10 Days'
                     ELSE
-                      Rec.Priority := 'Others';
-                  END;
+                        Rec.Priority := 'Others';
                 END;
-             END;
+            END;
+        END;
 
-         Rec.MODIFY;
+        Rec.MODIFY;
 
 
     end;
@@ -166,24 +168,24 @@ page 60264 "Inwards Planning Form"
     trigger OnOpenPage();
     begin
         // Restricting the users for modifications
-        IF  SMTP_MAIL.Permission_Checking(USERID,'INWARDS-PLANNING') THEN
-         Page_Edit := TRUE
+        IF SMTP_MAIL.Permission_Checking(USERID, 'INWARDS-PLANNING') THEN
+            Page_Edit := TRUE
         ELSE
-          Page_Edit := FALSE;
+            Page_Edit := FALSE;
     end;
 
     var
-        Itemmaster : Record Item;
-        samplecnt : Integer;
-        sample_percent : Decimal;
-        Estimated_time : Decimal;
-        MIL : Record "Material Issues Line";
-        POC : Record "Prod. Order Component";
-        Todate : Date;
-        MIH : Record "Material Issues Header";
-        MIL1 : Record "Material Issues Line";
-        IDH : Record "Inspection Datasheet Header";
-        Page_Edit : Boolean;
-        SMTP_MAIL : Codeunit "SMTP Mail";
+        Itemmaster: Record Item;
+        samplecnt: Integer;
+        sample_percent: Decimal;
+        Estimated_time: Decimal;
+        MIL: Record "Material Issues Line";
+        POC: Record "Prod. Order Component";
+        Todate: Date;
+        MIH: Record "Material Issues Header";
+        MIL1: Record "Material Issues Line";
+        IDH: Record "Inspection Datasheet Header";
+        Page_Edit: Boolean;
+        SMTP_MAIL: Codeunit "SMTP Mail";
 }
 

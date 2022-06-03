@@ -6,16 +6,16 @@ xmlport 80210 "vendor tax liable"
     {
         textelement(Vendors)
         {
-            tableelement(Vendor;Vendor)
+            tableelement(Vendor; Vendor)
             {
                 XmlName = 'Vendor';
-                fieldelement(No;Vendor."No.")
+                fieldelement(No; Vendor."No.")
                 {
                 }
-                fieldelement(Name;Vendor.Name)
+                fieldelement(Name; Vendor.Name)
                 {
                 }
-                fieldelement(TaxLiable;Vendor."Tax Liable")
+                fieldelement(TaxLiable; Vendor."Tax Liable")
                 {
                 }
             }

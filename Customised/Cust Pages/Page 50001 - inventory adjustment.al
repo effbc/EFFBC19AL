@@ -1,8 +1,8 @@
 page 50001 "inventory adjustment"
 {
-    Permissions = TableData "Inventory Adjmt. Entry (Order)"=rimd;
+    Permissions = TableData "Inventory Adjmt. Entry (Order)" = rimd;
     SourceTable = "Inventory Adjmt. Entry (Order)";
-    SourceTableView = SORTING(Order Type,Order No.,Order Line No.) ORDER(Descending) WHERE(Order No.=FILTER(TTB13MOD*));
+    SourceTableView = SORTING(Order Type, Order No., Order Line No.) ORDER(Descending) WHERE(Order No.=FILTER(TTB13MOD*));
 
     layout
     {

@@ -6,19 +6,19 @@ xmlport 80054 "Service Tax Setup"
     {
         textelement(ServiceTaxSetup)
         {
-            tableelement("<servicetaxsetup>";"Service Tax Setup")
+            tableelement("<servicetaxsetup>"; "Service Tax Setup")
             {
                 XmlName = 'ServiceTaxSetup';
-                fieldelement(Code;"<ServiceTaxSetup>".Code)
+                fieldelement(Code; "<ServiceTaxSetup>".Code)
                 {
                 }
-                fieldelement(FromDate;"<ServiceTaxSetup>"."From Date")
+                fieldelement(FromDate; "<ServiceTaxSetup>"."From Date")
                 {
                 }
-                fieldelement(ServiceTaxPer;"<ServiceTaxSetup>"."Service Tax %")
+                fieldelement(ServiceTaxPer; "<ServiceTaxSetup>"."Service Tax %")
                 {
                 }
-                fieldelement(eCessPer;"<ServiceTaxSetup>"."eCess %")
+                fieldelement(eCessPer; "<ServiceTaxSetup>"."eCess %")
                 {
                 }
             }

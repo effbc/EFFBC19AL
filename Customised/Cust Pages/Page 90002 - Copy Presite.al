@@ -10,23 +10,23 @@ page 90002 "Copy Presite"
             repeater(Control1102152000)
             {
                 ShowCaption = false;
-                field("Sales Order No.";"Sales Order No.")
+                field("Sales Order No."; "Sales Order No.")
                 {
                     Editable = false;
                 }
-                field("Pre Site Parameter";"Pre Site Parameter")
+                field("Pre Site Parameter"; "Pre Site Parameter")
                 {
                     Editable = false;
                 }
-                field(Description;Description)
+                field(Description; Description)
                 {
                     Editable = false;
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                     Editable = false;
                 }
-                field("Set Selection";"Set Selection")
+                field("Set Selection"; "Set Selection")
                 {
                 }
             }

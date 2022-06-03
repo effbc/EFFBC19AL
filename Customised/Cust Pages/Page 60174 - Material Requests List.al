@@ -12,60 +12,60 @@ page 60174 "Material Requests List"
     {
         area(content)
         {
-            field("xRec.COUNT";xRec.COUNT)
+            field("xRec.COUNT"; xRec.COUNT)
             {
             }
             repeater(Group)
             {
-                field("No.";"No.")
+                field("No."; "No.")
                 {
                 }
-                field("Transfer-from Code";"Transfer-from Code")
+                field("Transfer-from Code"; "Transfer-from Code")
                 {
                 }
-                field("Transfer-from Name";"Transfer-from Name")
+                field("Transfer-from Name"; "Transfer-from Name")
                 {
                 }
-                field("Transfer-to Code";"Transfer-to Code")
+                field("Transfer-to Code"; "Transfer-to Code")
                 {
                 }
-                field("Transfer-to Name";"Transfer-to Name")
+                field("Transfer-to Name"; "Transfer-to Name")
                 {
                 }
-                field("Creation DateTime";"Creation DateTime")
+                field("Creation DateTime"; "Creation DateTime")
                 {
                 }
-                field("User ID";"User ID")
+                field("User ID"; "User ID")
                 {
                 }
-                field("Prod. Order No.";"Prod. Order No.")
+                field("Prod. Order No."; "Prod. Order No.")
                 {
                 }
-                field("Proj Description";"Proj Description")
+                field("Proj Description"; "Proj Description")
                 {
                 }
-                field("Prod. Order Line No.";"Prod. Order Line No.")
+                field("Prod. Order Line No."; "Prod. Order Line No.")
                 {
                 }
-                field("Prod. BOM No.";"Prod. BOM No.")
+                field("Prod. BOM No."; "Prod. BOM No.")
                 {
                 }
-                field(Status;Status)
+                field(Status; Status)
                 {
                 }
-                field(Remarks;Remarks)
+                field(Remarks; Remarks)
                 {
                 }
-                field("Transaction ID";"Transaction ID")
+                field("Transaction ID"; "Transaction ID")
                 {
                 }
-                field("Customer No";"Customer No")
+                field("Customer No"; "Customer No")
                 {
                 }
-                field("Released By";"Released By")
+                field("Released By"; "Released By")
                 {
                 }
-                field("Authorised By";"Authorised By")
+                field("Authorised By"; "Authorised By")
                 {
                 }
             }
@@ -93,14 +93,14 @@ page 60174 "Material Requests List"
                     Caption = 'Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Inventory Comment Sheet";
-                    RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
+                                    RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
                 }
                 action("Iss&ues")
                 {
                     Caption = 'Iss&ues';
                     Image = ErrorLog;
                     RunObject = Page "Posted Material Issue List";
-                    RunPageLink = Material Issue No.=FIELD(No.);
+                                    RunPageLink = Material Issue No.=FIELD(No.);
                 }
                 action(Dimensions)
                 {
@@ -1854,7 +1854,7 @@ page 60174 "Material Requests List"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Inventory Comment Sheet";
-                RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
+                                RunPageLink = Document Type=CONST(Material Issues),No.=FIELD(No.);
                 ToolTip = 'Comment';
             }
             action("Pending Requests AutoPosting")
@@ -2011,36 +2011,36 @@ page 60174 "Material Requests List"
         "Vendor No.Visible" : Boolean;
         username : Text;
         "Mail alert" : Query "Mail Alert";
-        puserid : Text;
-        next : Text;
-        DateAndTime : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.DateAndTime";
-        DayofWeekInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstDayOfWeek";
-        WeekofYearInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstWeekOfYear";
+                           puserid : Text;
+                           next : Text;
+                           DateAndTime : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.DateAndTime";
+                           DayofWeekInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstDayOfWeek";
+                           WeekofYearInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstWeekOfYear";
 
     [LineStart(13814)]
-    local procedure TransferfromCodeOnInputChange(var Text : Text[1024]);
+    local procedure TransferfromCodeOnInputChange(var Text: Text[1024]);
     begin
-          TESTFIELD(Status,Status::Open);
+        TESTFIELD(Status, Status::Open);
     end;
 
     [LineStart(13817)]
-    local procedure TransfertoCodeOnInputChange(var Text : Text[1024]);
+    local procedure TransfertoCodeOnInputChange(var Text: Text[1024]);
     begin
-         TESTFIELD(Status,Status::Open);
-        IF  "Transfer-to Code"='DC' THEN
-        ERROR('DC process has been changed.If any doubts Contact ERP Team');
+        TESTFIELD(Status, Status::Open);
+        IF "Transfer-to Code" = 'DC' THEN
+            ERROR('DC process has been changed.If any doubts Contact ERP Team');
     end;
 
     [LineStart(13822)]
-    local procedure ProdOrderNoOnInputChange(var Text : Text[1024]);
+    local procedure ProdOrderNoOnInputChange(var Text: Text[1024]);
     begin
-         TESTFIELD(Status,Status::Open);
+        TESTFIELD(Status, Status::Open);
     end;
 
     [LineStart(13825)]
-    local procedure ProdOrderLineNoOnInputChange(var Text : Text[1024]);
+    local procedure ProdOrderLineNoOnInputChange(var Text: Text[1024]);
     begin
-         TESTFIELD(Status,Status::Open);
+        TESTFIELD(Status, Status::Open);
     end;
 
     //event LRecordSet(cFields : Integer;"Fields" : Variant;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");

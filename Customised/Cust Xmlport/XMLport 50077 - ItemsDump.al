@@ -2,23 +2,23 @@ xmlport 50077 ItemsDump
 {
     Direction = Import;
     Format = VariableText;
-    Permissions = TableData "G/L Entry"=rim,
-                  TableData Vendor=rim,
-                  TableData "Vendor Ledger Entry"=rim,
-                  TableData "Item Ledger Entry"=rimd,
-                  TableData "Purch. Inv. Header"=rim,
-                  TableData "Purch. Inv. Line"=rim,
-                  TableData "Detailed Vendor Ledg. Entry"=rimd,
-                  TableData "TDS Entry"=rim,
-                  TableData "GST Ledger Entry"=rimd,
-                  TableData "Detailed GST Ledger Entry"=rimd,
-                  TableData "Quality Item Ledger Entry"=rimd;
+    Permissions = TableData "G/L Entry" = rim,
+                  TableData Vendor = rim,
+                  TableData "Vendor Ledger Entry" = rim,
+                  TableData "Item Ledger Entry" = rimd,
+                  TableData "Purch. Inv. Header" = rim,
+                  TableData "Purch. Inv. Line" = rim,
+                  TableData "Detailed Vendor Ledg. Entry" = rimd,
+                  TableData "TDS Entry" = rim,
+                  TableData "GST Ledger Entry" = rimd,
+                  TableData "Detailed GST Ledger Entry" = rimd,
+                  TableData "Quality Item Ledger Entry" = rimd;
 
     schema
     {
         textelement(Reservation_Entries)
         {
-            tableelement(Integer;Integer)
+            tableelement(Integer; Integer)
             {
                 AutoSave = false;
                 XmlName = 'Integer';
@@ -140,8 +140,8 @@ xmlport 50077 ItemsDump
                           END;
                         
                         */
-                        
-                        
+
+
                         /*gle.RESET;
                         gle.SETCURRENTKEY("Document No.","System Date");
                         gle.SETRANGE("Document No.",No);
@@ -203,7 +203,7 @@ xmlport 50077 ItemsDump
                                 ItemsCount := ItemsCount+1;
                             END;*/
                         //MESSAGE(FORMAT(gle.COUNT));
-                        
+
                         /*Us.RESET;
                         Us.SETFILTER("User Name",No);
                         IF Us.FINDFIRST THEN
@@ -214,7 +214,7 @@ xmlport 50077 ItemsDump
                           END
                         
                         */
-                        
+
                         /*GLA.RESET;
                         GLA.SETFILTER("No.",FORMAT(No));
                         IF GLA.FINDSET THEN
@@ -231,9 +231,9 @@ xmlport 50077 ItemsDump
                         //  UNTIL GLA.NEXT =0;
                           ItemsCount := ItemsCount+1;
                           */
-                        
+
                         // for updating the material picked status in both header and lines
-                        
+
                         /*
                         FOR int_i := 1 TO 95 DO
                         BEGIN
@@ -246,7 +246,7 @@ xmlport 50077 ItemsDump
                         COMMIT;
                         int_i := int_i +1;
                         END;*/
-                        
+
                         /*PMIH.RESET;
                         PMIH.SETFILTER("No.",No);
                         IF PMIH.FINDFIRST THEN
@@ -269,10 +269,10 @@ xmlport 50077 ItemsDump
                          // MESSAGE('Picked Status Updated');
                          END;
                          */
-                        
-                        
-                        
-                        
+
+
+
+
                         // for modifing the PIH Cklaimed Date
                         /*PIH.RESET;
                         PIH.SETFILTER("No.",No);
@@ -283,7 +283,7 @@ xmlport 50077 ItemsDump
                             ItemsCount := ItemsCount+1;
                            END
                            */
-                        
+
                         /*
                         //Item BIN Address modifications
                           ITEM.RESET;
@@ -295,15 +295,15 @@ xmlport 50077 ItemsDump
                             ItemsCount := ItemsCount+1;
                             END;
                             */
-                        
-                        
-                            /* BEGIN
-                            //MESSAGE(BINAddress);
-                            ITEM.ROHS := TRUE;
-                            ITEM.MODIFY;
-                            ItemsCount := ItemsCount+1;
-                          END;
-                          */
+
+
+                        /* BEGIN
+                        //MESSAGE(BINAddress);
+                        ITEM.ROHS := TRUE;
+                        ITEM.MODIFY;
+                        ItemsCount := ItemsCount+1;
+                      END;
+                      */
 
                     end;
                 }
@@ -323,18 +323,18 @@ xmlport 50077 ItemsDump
                             ItemsCount +=1;
                           END;
                           */
-                          /*
-                        ITEM.RESET;
-                        ITEM.SETFILTER(MSL,'<>%1',0);
-                        ITEM.SETFILTER("Operating Temperature",OWNERNAME);
-                        IF ITEM.FINDSET THEN
-                        REPEAT
-                        BEGIN
-                          ITEM."Operating Temperature" := Contact;
-                          ITEM.MODIFY;
-                          ItemsCount+=1;
-                          END
-                        UNTIL ITEM.NEXT= 0;*/
+                        /*
+                      ITEM.RESET;
+                      ITEM.SETFILTER(MSL,'<>%1',0);
+                      ITEM.SETFILTER("Operating Temperature",OWNERNAME);
+                      IF ITEM.FINDSET THEN
+                      REPEAT
+                      BEGIN
+                        ITEM."Operating Temperature" := Contact;
+                        ITEM.MODIFY;
+                        ItemsCount+=1;
+                        END
+                      UNTIL ITEM.NEXT= 0;*/
 
                     end;
                 }
@@ -440,7 +440,7 @@ xmlport 50077 ItemsDump
                                 UNTIL DGSTLE.NEXT =0;
                                 MESSAGE('Detailed GST updated '+FORMAT(ItemsCount));
                                 END;*/
-                        
+
                         /*SL.RESET;
                         SL.SETCURRENTKEY("Document No.","Line No.","Document Type");
                         SL.SETFILTER("Document No.",No);
@@ -469,8 +469,8 @@ xmlport 50077 ItemsDump
                           ItemsCount := ItemsCount+1;
                         END;
                         */
-                        
-                        
+
+
                         /*
                         Us.RESET;
                         Us.INIT;
@@ -595,7 +595,7 @@ xmlport 50077 ItemsDump
                         
                         
                         */
-                        
+
                         /*
                         ITEM.RESET;
                         ITEM.SETFILTER("No.",No);
@@ -623,7 +623,7 @@ xmlport 50077 ItemsDump
 
                     trigger OnAfterAssignVariable();
                     begin
-                        
+
                         /*SL.RESET;
                         SL.SETFILTER("Document No.",No);
                         IF EVALUATE(EntryNo,BinAddress) THEN
@@ -638,9 +638,9 @@ xmlport 50077 ItemsDump
                             ItemsCount := ItemsCount+1;
                           END;
                           */
-                          //EntryNo := FORMAT(BinAddress);
-                        
-                        
+                        //EntryNo := FORMAT(BinAddress);
+
+
                         /*
                           Vendor.INIT;
                           LastNumner := NoSeriesMgt.GetNextNo('VEND',TODAY,FALSE);
@@ -806,47 +806,47 @@ xmlport 50077 ItemsDump
                     trigger OnAfterAssignVariable();
                     begin
                         ITEM.Reset;
-                        ITEM.SetFilter("Product Group Code",itemnumber);
-                        ITEM.SetFilter("Item Sub Group Code",sourcenumber);
-                        if ITEM.FindSet  then
-                          repeat
-                          begin
-                            if Evaluate(RevSmpCntInt,document_number) then
-                              ITEM."Revised Sampling Count" := RevSmpCntInt;
-                            if Evaluate(RevSmpPerInt,location_code) then
-                              ITEM."Revised Sampling Percentage" := RevSmpPerInt;
-                            if Evaluate(RevSmpTimeInt,Quantity) then
-                              ITEM."Revised Sampling Time Mins" := RevSmpTimeInt;
-                            if Evaluate(VisualSmpCntInt,SERIAL_NUMBER) then
-                              ITEM."Visual Sampling Count" := VisualSmpCntInt;
-                            if Evaluate(VisualSmpPerInt,Lotnumber) then
-                              ITEM."Visual Sampling Percentage" := VisualSmpPerInt;
-                            if Evaluate(VisualSmpTimeInt,Visual_Sampling_Time) then
-                              ITEM."Visual Sampling Time Mins" := VisualSmpTimeInt;
-                            if Evaluate(DimSmpCntInt,Dim_Sampling_Count) then
-                              ITEM."Dimensions Sampling Count" := DimSmpCntInt;
-                            if Evaluate(DimSmpPerInt,Dim_Sampling_Per) then
-                              ITEM."Dimensions Sampling Percentage" := DimSmpPerInt;
-                            if Evaluate(DimSmpTimeInt,Dim_Sampling_Time) then
-                              ITEM."Dimensions Sampling Time Mins" := DimSmpTimeInt;
-                            if Evaluate(BasicFunSmpCntInt,Basic_Fun_Sampling_Count) then
-                              ITEM."Basic Functional Sampling Cnt" := BasicFunSmpCntInt;
-                            if Evaluate(BasicFunSmpPerInt,Basic_Fun_Sampling_Per) then
-                              ITEM."Basic Functional Sampling Per" := BasicFunSmpPerInt;
-                            if Evaluate(BasicFunSmpTimeInt,Basic_Fun_Sampling_Time) then
-                              ITEM."Basic Func Sampling Time -Mins" := BasicFunSmpTimeInt;
-                            if Evaluate(FullFunSmpCntInt,Full_Fun_Sampling_Count) then
-                              ITEM."Sampling Count" := FullFunSmpCntInt;
-                            if Evaluate(FullFunSmpPerInt,Full_Fun_Sampling_Per) then
-                              ITEM."Sampling %" := FullFunSmpPerInt;
-                            if Evaluate(FullFunSmpTimeInt,Full_Fun_Sampling_Time) then
-                              ITEM."Inspection Bench Mark(In Min)" := FullFunSmpTimeInt;
-                            if Evaluate(DocTimeInt,Documentation_Time) then
-                              ITEM."Documentation Time" := DocTimeInt;
-                            ITEM.Modify;
-                            ItemsCount +=1;
-                           end
-                           until ITEM.Next =0;
+                        ITEM.SetFilter("Product Group Code", itemnumber);
+                        ITEM.SetFilter("Item Sub Group Code", sourcenumber);
+                        if ITEM.FindSet then
+                            repeat
+                            begin
+                                if Evaluate(RevSmpCntInt, document_number) then
+                                    ITEM."Revised Sampling Count" := RevSmpCntInt;
+                                if Evaluate(RevSmpPerInt, location_code) then
+                                    ITEM."Revised Sampling Percentage" := RevSmpPerInt;
+                                if Evaluate(RevSmpTimeInt, Quantity) then
+                                    ITEM."Revised Sampling Time Mins" := RevSmpTimeInt;
+                                if Evaluate(VisualSmpCntInt, SERIAL_NUMBER) then
+                                    ITEM."Visual Sampling Count" := VisualSmpCntInt;
+                                if Evaluate(VisualSmpPerInt, Lotnumber) then
+                                    ITEM."Visual Sampling Percentage" := VisualSmpPerInt;
+                                if Evaluate(VisualSmpTimeInt, Visual_Sampling_Time) then
+                                    ITEM."Visual Sampling Time Mins" := VisualSmpTimeInt;
+                                if Evaluate(DimSmpCntInt, Dim_Sampling_Count) then
+                                    ITEM."Dimensions Sampling Count" := DimSmpCntInt;
+                                if Evaluate(DimSmpPerInt, Dim_Sampling_Per) then
+                                    ITEM."Dimensions Sampling Percentage" := DimSmpPerInt;
+                                if Evaluate(DimSmpTimeInt, Dim_Sampling_Time) then
+                                    ITEM."Dimensions Sampling Time Mins" := DimSmpTimeInt;
+                                if Evaluate(BasicFunSmpCntInt, Basic_Fun_Sampling_Count) then
+                                    ITEM."Basic Functional Sampling Cnt" := BasicFunSmpCntInt;
+                                if Evaluate(BasicFunSmpPerInt, Basic_Fun_Sampling_Per) then
+                                    ITEM."Basic Functional Sampling Per" := BasicFunSmpPerInt;
+                                if Evaluate(BasicFunSmpTimeInt, Basic_Fun_Sampling_Time) then
+                                    ITEM."Basic Func Sampling Time -Mins" := BasicFunSmpTimeInt;
+                                if Evaluate(FullFunSmpCntInt, Full_Fun_Sampling_Count) then
+                                    ITEM."Sampling Count" := FullFunSmpCntInt;
+                                if Evaluate(FullFunSmpPerInt, Full_Fun_Sampling_Per) then
+                                    ITEM."Sampling %" := FullFunSmpPerInt;
+                                if Evaluate(FullFunSmpTimeInt, Full_Fun_Sampling_Time) then
+                                    ITEM."Inspection Bench Mark(In Min)" := FullFunSmpTimeInt;
+                                if Evaluate(DocTimeInt, Documentation_Time) then
+                                    ITEM."Documentation Time" := DocTimeInt;
+                                ITEM.Modify;
+                                ItemsCount += 1;
+                            end
+                            until ITEM.Next = 0;
                     end;
                 }
             }
@@ -867,104 +867,104 @@ xmlport 50077 ItemsDump
 
     trigger OnPostXmlPort();
     begin
-        Message('Data Updation Completed!\Items Count: '+Format(ItemsCount));
+        Message('Data Updation Completed!\Items Count: ' + Format(ItemsCount));
         //MESSAGE(FORMAT(ITEM."Next Counting Start Date"));
     end;
 
     trigger OnPreXmlPort();
     begin
-          /*
-            reservationEntry.RESET;
-          IF reservationEntry.FINDLAST THEN
-            EntryNo := reservationEntry."Entry No." + 1
-          ELSE
-            EntryNo := 1;
-          */
+        /*
+          reservationEntry.RESET;
+        IF reservationEntry.FINDLAST THEN
+          EntryNo := reservationEntry."Entry No." + 1
+        ELSE
+          EntryNo := 1;
+        */
 
     end;
 
     var
-        reservationEntry : Record "Reservation Entry";
-        EntryNo : Integer;
-        ItemJnlLine : Record "Item Journal Line";
-        ITEM : Record Item;
-        SStock : Decimal;
-        NoOfUnits : Decimal;
-        SZ : Record "Service Zone";
-        Emp : Record Employee;
-        ItemsCount : Integer;
-        GLA : Record "G/L Account";
-        LeadTm : DateFormula;
-        PCBGRec : Record PCB;
-        Customer : Record Customer;
-        Vendor : Record Vendor;
-        PBL : Record "Production BOM Line";
-        SH : Record "Sales Header";
-        user : Record User;
-        Station : Record Station;
-        St : Record Station;
-        PIH : Record "Purch. Inv. Header";
-        IMS : Record "Item Wise Min. Req. Qty at Loc";
-        Quaty : Integer;
-        PMIH : Record "Posted Material Issues Header";
-        CUSTLE : Record "Cust. Ledger Entry";
-        DGSTLE1 : Record "Detailed GST Ledger Entry";
-        SL : Record "Sales Line";
-        Leadtime : DateFormula;
-        Us : Record User;
-        Sales_Line : Record "Sales Line";
-        PMIL : Record "Posted Material Issues Line";
-        ILE : Record "Item Ledger Entry";
-        VLE2 : Record "Value Entry";
-        config : Record "Product Configurations Master";
-        int_i : Integer;
-        Error_str : Text;
-        UserSetup : Record "User Setup";
-        EmployeeGRec : Record Employee;
-        ResourceGRec : Record Resource;
-        ResourceUOM : Record "Resource Unit of Measure";
-        DimValue : Record "Dimension Value";
-        DimValue2 : Record "Dimension Value";
-        QILE : Record "Quality Item Ledger Entry";
-        PRod_BOM_Line : Record "Production BOM Line";
-        gle : Record "G/L Entry";
-        venle1 : Record "Vendor Ledger Entry";
-        dvle1 : Record "Detailed Vendor Ledg. Entry";
-        gstled : Record "GST Ledger Entry";
-        dgstled1 : Record "Detailed GST Ledger Entry";
-        pinvh : Record "Purch. Inv. Header";
-        QualityItemLedgerEntry : Record "Quality Item Ledger Entry";
-        numint : Integer;
-        LastNumner : Text;
-        NoSeriesMgt : Codeunit NoSeriesManagement;
-        ItmLedgEnt : Record "Item Ledger Entry";
-        QtyInt : Integer;
-        serialnumbertext : Text;
-        PIH1 : Record "Purch. Inv. Header";
-        PIL1 : Record "Purch. Inv. Line";
-        DGSTLE : Record "Detailed GST Ledger Entry";
-        gstledent : Record "GST Ledger Entry";
-        DVLE : Record "Detailed Vendor Ledg. Entry";
-        VLE : Record "Vendor Ledger Entry";
-        TDSENTRY : Record "TDS Entry";
-        glent : Record "G/L Entry";
-        VWAM : Record "Vendor Wise Available Makes";
-        VendorsMaster : Record Vendor;
-        RevSmpCntInt : Integer;
-        RevSmpPerInt : Integer;
-        RevSmpTimeInt : Decimal;
-        VisualSmpCntInt : Integer;
-        VisualSmpPerInt : Integer;
-        VisualSmpTimeInt : Decimal;
-        DimSmpCntInt : Integer;
-        DimSmpPerInt : Integer;
-        DimSmpTimeInt : Decimal;
-        BasicFunSmpCntInt : Integer;
-        BasicFunSmpPerInt : Integer;
-        BasicFunSmpTimeInt : Decimal;
-        FullFunSmpCntInt : Integer;
-        FullFunSmpPerInt : Integer;
-        FullFunSmpTimeInt : Decimal;
-        DocTimeInt : Decimal;
+        reservationEntry: Record "Reservation Entry";
+        EntryNo: Integer;
+        ItemJnlLine: Record "Item Journal Line";
+        ITEM: Record Item;
+        SStock: Decimal;
+        NoOfUnits: Decimal;
+        SZ: Record "Service Zone";
+        Emp: Record Employee;
+        ItemsCount: Integer;
+        GLA: Record "G/L Account";
+        LeadTm: DateFormula;
+        PCBGRec: Record PCB;
+        Customer: Record Customer;
+        Vendor: Record Vendor;
+        PBL: Record "Production BOM Line";
+        SH: Record "Sales Header";
+        user: Record User;
+        Station: Record Station;
+        St: Record Station;
+        PIH: Record "Purch. Inv. Header";
+        IMS: Record "Item Wise Min. Req. Qty at Loc";
+        Quaty: Integer;
+        PMIH: Record "Posted Material Issues Header";
+        CUSTLE: Record "Cust. Ledger Entry";
+        DGSTLE1: Record "Detailed GST Ledger Entry";
+        SL: Record "Sales Line";
+        Leadtime: DateFormula;
+        Us: Record User;
+        Sales_Line: Record "Sales Line";
+        PMIL: Record "Posted Material Issues Line";
+        ILE: Record "Item Ledger Entry";
+        VLE2: Record "Value Entry";
+        config: Record "Product Configurations Master";
+        int_i: Integer;
+        Error_str: Text;
+        UserSetup: Record "User Setup";
+        EmployeeGRec: Record Employee;
+        ResourceGRec: Record Resource;
+        ResourceUOM: Record "Resource Unit of Measure";
+        DimValue: Record "Dimension Value";
+        DimValue2: Record "Dimension Value";
+        QILE: Record "Quality Item Ledger Entry";
+        PRod_BOM_Line: Record "Production BOM Line";
+        gle: Record "G/L Entry";
+        venle1: Record "Vendor Ledger Entry";
+        dvle1: Record "Detailed Vendor Ledg. Entry";
+        gstled: Record "GST Ledger Entry";
+        dgstled1: Record "Detailed GST Ledger Entry";
+        pinvh: Record "Purch. Inv. Header";
+        QualityItemLedgerEntry: Record "Quality Item Ledger Entry";
+        numint: Integer;
+        LastNumner: Text;
+        NoSeriesMgt: Codeunit NoSeriesManagement;
+        ItmLedgEnt: Record "Item Ledger Entry";
+        QtyInt: Integer;
+        serialnumbertext: Text;
+        PIH1: Record "Purch. Inv. Header";
+        PIL1: Record "Purch. Inv. Line";
+        DGSTLE: Record "Detailed GST Ledger Entry";
+        gstledent: Record "GST Ledger Entry";
+        DVLE: Record "Detailed Vendor Ledg. Entry";
+        VLE: Record "Vendor Ledger Entry";
+        TDSENTRY: Record "TDS Entry";
+        glent: Record "G/L Entry";
+        VWAM: Record "Vendor Wise Available Makes";
+        VendorsMaster: Record Vendor;
+        RevSmpCntInt: Integer;
+        RevSmpPerInt: Integer;
+        RevSmpTimeInt: Decimal;
+        VisualSmpCntInt: Integer;
+        VisualSmpPerInt: Integer;
+        VisualSmpTimeInt: Decimal;
+        DimSmpCntInt: Integer;
+        DimSmpPerInt: Integer;
+        DimSmpTimeInt: Decimal;
+        BasicFunSmpCntInt: Integer;
+        BasicFunSmpPerInt: Integer;
+        BasicFunSmpTimeInt: Decimal;
+        FullFunSmpCntInt: Integer;
+        FullFunSmpPerInt: Integer;
+        FullFunSmpTimeInt: Decimal;
+        DocTimeInt: Decimal;
 }
 

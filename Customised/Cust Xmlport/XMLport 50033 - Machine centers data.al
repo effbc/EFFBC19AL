@@ -5,16 +5,16 @@ xmlport 50033 "Machine centers data"
     {
         textelement(Resources)
         {
-            tableelement(Resource;Resource)
+            tableelement(Resource; Resource)
             {
                 XmlName = 'Resource';
-                fieldelement(No;Resource."No.")
+                fieldelement(No; Resource."No.")
                 {
                 }
-                fieldelement(Name;Resource.Name)
+                fieldelement(Name; Resource.Name)
                 {
                 }
-                fieldelement(Department;Resource.Department)
+                fieldelement(Department; Resource.Department)
                 {
                 }
             }

@@ -7,7 +7,7 @@ report 50169 "Inspection Results wip"
 
     dataset
     {
-        dataitem("Purchase Line";"Purchase Line")
+        dataitem("Purchase Line"; "Purchase Line")
         {
             DataItemTableView = SORTING(Deviated Receipt Date) ORDER(Ascending) WHERE(Document Type=CONST(Order),No.=FILTER(<>''),Qty. to Receive=FILTER(>0));
             RequestFilterFields = "Location Code";
