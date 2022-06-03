@@ -563,7 +563,7 @@ pageextension 70092 JobJournalExt extends "Job Journal"
         ReservePurchLine: Codeunit "Purch. Line-Reserve";
         Text19053959: Label 'Job Description';
 
-    [LineStart(14641)]
+
     procedure CopyJobBudgetLine();
     begin
         /*

@@ -632,12 +632,12 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
     */
     //end;
 
-    [LineStart(14319)]
+
     procedure "---Quality control---"();
     begin
     end;
 
-    [LineStart(14322)]
+
     procedure ShowDataSheet();
     begin
         InspectDataSheet.SETRANGE("Receipt No.", "Document No.");
@@ -647,7 +647,7 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
         PAGE.RUN(PAGE::"Inspection Data Sheet List", InspectDataSheet);
     end;
 
-    [LineStart(14329)]
+
     procedure ShowPostedDataSheet();
     begin
         PostedInspectDataSheet.SETRANGE("Receipt No.", "Document No.");
@@ -657,7 +657,7 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
         PAGE.RUN(PAGE::"Posted Inspect Data Sheet List", PostedInspectDataSheet);
     end;
 
-    [LineStart(14336)]
+
     procedure ShowInspectReport(Status: Boolean);
     begin
         InspectReportHeader.SETRANGE("Receipt No.", "Document No.");
@@ -668,7 +668,7 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
         InspectReportHeader.RESET;
     end;
 
-    [LineStart(14344)]
+
     procedure ShowInspectLots();
     var
         PostPurchHead: Record "Purch. Rcpt. Header";
@@ -683,7 +683,7 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
         END;
     end;
 
-    [LineStart(14354)]
+
     procedure CreateInpDataSheets();
     begin
         IF Type = Type::Item THEN BEGIN
@@ -703,7 +703,7 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
         END;
     end;
 
-    [LineStart(14371)]
+
     procedure QcOverRide();
     begin
         IF NOT "QC Enabled" THEN BEGIN
@@ -714,7 +714,7 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
             MESSAGE('Quantity Accepted/Rejected can''t be override when QC is enabled');
     end;
 
-    [LineStart(14379)]
+
     procedure QcOverRideDisabled();
     begin
         "Quantity AcceptedEditable" := FALSE;
@@ -722,7 +722,7 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
         "Quantity ReworkEditable" := FALSE;
     end;
 
-    [LineStart(14384)]
+
     procedure _SampleLotInspection();
     var
         SampleLotInspection: Record "Sample Lot Inspection";
@@ -733,7 +733,7 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
         PAGE.RUN(60072, SampleLotInspection);
     end;
 
-    [LineStart(14390)]
+
     procedure SampleLotInspection();
     var
         SampleLotInspection: Record "Sample Lot Inspection";

@@ -1543,13 +1543,13 @@ pageextension 70086 ItemTrackingLinesExt extends "Item Tracking Lines"
     */
     //end;
 
-    [LineStart(29857)]
+
     procedure CloseForm();
     begin
         CurrPage.CLOSE;
     end;
 
-    [LineStart(29860)]
+
     procedure AssignSerialNos(TrackingSpecification: Record "Tracking Specification");
     var
         TempTrackingSpecifications: Record "Tracking Specification";
@@ -1592,12 +1592,12 @@ pageextension 70086 ItemTrackingLinesExt extends "Item Tracking Lines"
         TempTrackingSpecifications.INSERT;
     end;
 
-    [LineStart(29897)]
+
     procedure "--B2B---------"();
     begin
     end;
 
-    [LineStart(29900)]
+
     procedure CreateLotNumber(): Code[20];
     var
         ItemLotNumbers: Record "Item Lot Numbers1";
@@ -1687,7 +1687,7 @@ pageextension 70086 ItemTrackingLinesExt extends "Item Tracking Lines"
 
     end;
 
-    [LineStart(29982)]
+
     procedure AssignEffLotNo();
     var
         QtyToCreate: Decimal;
@@ -1783,7 +1783,7 @@ pageextension 70086 ItemTrackingLinesExt extends "Item Tracking Lines"
 
     end;
 
-    [LineStart(30072)]
+
     procedure ManualSerialNo();
     var
         QtyToCreate: Decimal;
@@ -1968,7 +1968,7 @@ pageextension 70086 ItemTrackingLinesExt extends "Item Tracking Lines"
 
     end;
 
-    [LineStart(30372)]
+
     procedure TestRPOStatus();
     var
         SLn: Record "Sales Line";
@@ -2002,12 +2002,11 @@ pageextension 70086 ItemTrackingLinesExt extends "Item Tracking Lines"
         //End by Pranavi
     end;
 
-    [LineStart(30401)]
+
     procedure "----B2BSP---"();
     begin
     end;
 
-    [LineStart(30404)]
     local procedure CollectPostedMTEntries(TrackingSpecification: Record "Tracking Specification"; var TempTrackingSpecification: Record "Tracking Specification" temporary);
     var
         ItemEntryRelation: Record "Item Entry Relation";

@@ -128,7 +128,7 @@ table 50008 "Mat.Issue Track. Spec2"
         Text003 : Label '%1 must be -1, 0 or 1 when %2 is stated.';
         Item : Record Item;
 
-    [LineStart(818)]
+    
     procedure CheckSerialNoQty();
     begin
         if "Serial No." <> '' then
@@ -136,7 +136,6 @@ table 50008 "Mat.Issue Track. Spec2"
             Error(Text003,FieldCaption(Quantity),FieldCaption("Serial No."));
     end;
 
-    [LineStart(823)]
     procedure CalcQty(BaseQty : Decimal) : Decimal;
     begin
         if "Qty. per Unit of Measure" = 0 then

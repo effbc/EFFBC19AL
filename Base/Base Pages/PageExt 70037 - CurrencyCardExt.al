@@ -5,8 +5,6 @@ pageextension 70037 CurrencyCardExt extends "Currency Card"
     layout
     {
 
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
-
 
         //Unsupported feature: Change Name on "Control 1". Please convert manually.
 

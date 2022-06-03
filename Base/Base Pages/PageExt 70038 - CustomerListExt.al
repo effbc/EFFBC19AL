@@ -1359,7 +1359,7 @@ pageextension 70038 CustomerListExt extends "Customer List"
     */
     //end;
 
-    [LineStart(830)]
+
     procedure GSTMails();
     var
         Type: Code[2];
@@ -1460,7 +1460,7 @@ pageextension 70038 CustomerListExt extends "Customer List"
             MESSAGE('Mail Has been send to ' + COPYSTR(TempText, 1, STRLEN(TempText) - 1) + ' - ' + Name + 'at ' + Mail_To);
     end;
 
-    [LineStart(923)]
+
     procedure GSTUpdated();
     var
         Type: Code[2];
