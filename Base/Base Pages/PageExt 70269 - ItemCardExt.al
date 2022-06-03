@@ -1086,7 +1086,7 @@ IF TotVendorAmt <> 0 THEN
 
     var
         "Inventory at STR": Decimal;
-        "--B2B--"@: Integer;
+        "--B2B--": Integer;
         PurchaseInvLine: Record "Purch. Inv. Line";
         TotVendorAmt: Decimal;
         TotQty: Decimal;
