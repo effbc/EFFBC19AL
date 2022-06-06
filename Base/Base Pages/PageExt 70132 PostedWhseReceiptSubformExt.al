@@ -1,164 +1,27 @@
 pageextension 70132 PostedWhseReceiptSubformExt extends "Posted Whse. Receipt Subform"
 {
-    // version NAVW19.00.00.45778
+
 
     layout
     {
 
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
 
-        modify("Control 1")
-        {
 
-            //Unsupported feature: Change Name on "Control 1". Please convert manually.
+        /* modify(Control1)
+         {
 
-            ShowCaption = false;
-        }
 
-        //Unsupported feature: Change Name on "Control 2". Please convert manually.
 
+             ShowCaption = false;
+         }*/
 
-        //Unsupported feature: Change ImplicitType on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 62". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 62". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 26". Please convert manually.
 
     }
     actions
     {
 
-        //Unsupported feature: Change Name on "Action 1900000004". Please convert manually.
 
-
-        //Unsupported feature: Change Name on "Action 1907935204". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1900206304". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1901742304". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1903867004". Please convert manually.
-
-        addafter("Action 1903867004")
+        addafter("Bin Contents List")
         {
             group(Inspection)
             {
@@ -216,48 +79,6 @@ pageextension 70132 PostedWhseReceiptSubformExt extends "Posted Whse. Receipt Su
     }
 
 
-    //Unsupported feature: PropertyModification on "ShowBinContents(PROCEDURE 7301).BinContent(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowBinContents : 7302;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowBinContents : "Bin Content";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "PutAwayCreate(PROCEDURE 2).PostedWhseRcptHdr(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //PutAwayCreate : 7318;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //PutAwayCreate : "Posted Whse. Receipt Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "PutAwayCreate(PROCEDURE 2).PostedWhseRcptLine(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //PutAwayCreate : 7319;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //PutAwayCreate : "Posted Whse. Receipt Line";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "WMSMgt(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //WMSMgt : 7302;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //WMSMgt : "WMS Management";
-    //Variable type has not been exported.
 
     var
         "QC--": Integer;
@@ -265,76 +86,60 @@ pageextension 70132 PostedWhseReceiptSubformExt extends "Posted Whse. Receipt Su
         PostedInspectDataSheet: Record "Posted Inspect DatasheetHeader";
         InspectReportHeader: Record "Inspection Receipt Header";
 
-    [LineStart(31008)]
+
     procedure "--QC--"();
     begin
     end;
 
-    [LineStart(31011)]
+
     procedure ShowDataSheet();
     begin
-        TESTFIELD("Source Document", "Source Document"::"Purchase Order");
-        InspectDataSheet.SETRANGE("Receipt No.", "Posted Source No.");
-        InspectDataSheet.SETRANGE("Item No.", "Item No.");
-        InspectDataSheet.SETRANGE("Purch Line No", "Source Line No.");
+        TESTFIELD("Source Document", Rec."Source Document"::"Purchase Order");
+        InspectDataSheet.SETRANGE("Receipt No.", REc."Posted Source No.");
+        InspectDataSheet.SETRANGE("Item No.", Rec."Item No.");
+        InspectDataSheet.SETRANGE("Purch Line No", Rec."Source Line No.");
         PAGE.RUN(PAGE::"Inspection Data Sheet List", InspectDataSheet);
     end;
 
-    [LineStart(31018)]
+
     procedure ShowPostedDataSheet();
     begin
-        TESTFIELD("Source Document", "Source Document"::"Purchase Order");
-        PostedInspectDataSheet.SETRANGE("Receipt No.", "Posted Source No.");
-        PostedInspectDataSheet.SETRANGE("Item No.", "Item No.");
-        PostedInspectDataSheet.SETRANGE("Purch Line No", "Source Line No.");
+        TESTFIELD("Source Document", Rec."Source Document"::"Purchase Order");
+        PostedInspectDataSheet.SETRANGE("Receipt No.", Rec."Posted Source No.");
+        PostedInspectDataSheet.SETRANGE("Item No.", Rec."Item No.");
+        PostedInspectDataSheet.SETRANGE("Purch Line No", Rec."Source Line No.");
         PAGE.RUN(PAGE::"Posted Inspect Data Sheet List", PostedInspectDataSheet);
     end;
 
-    [LineStart(31025)]
+
     procedure ShowInspectReceipt();
     begin
         /*InspectReportHeader.SETRANGE("Receipt No.","Document No.");
         InspectReportHeader.SETRANGE("Purch Line No","Line No.");
         Page.RUN(Page::"Inspection Report  List",InspectReportHeader);
         */
-        TESTFIELD("Source Document", "Source Document"::"Purchase Order");
-        InspectReportHeader.SETRANGE("Receipt No.", "Posted Source No.");
-        InspectReportHeader.SETRANGE("Item No.", "Item No.");
-        InspectReportHeader.SETRANGE("Purch Line No", "Source Line No.");
+        TESTFIELD("Source Document", Rec."Source Document"::"Purchase Order");
+        InspectReportHeader.SETRANGE("Receipt No.", Rec."Posted Source No.");
+        InspectReportHeader.SETRANGE("Item No.", Rec."Item No.");
+        InspectReportHeader.SETRANGE("Purch Line No", Rec."Source Line No.");
         InspectReportHeader.SETRANGE(Status, FALSE);
         PAGE.RUN(PAGE::"Inspection Receipt List", InspectReportHeader);
         InspectReportHeader.RESET;
 
     end;
 
-    [LineStart(31038)]
+
     procedure ShowPostedInspectReceipt();
     begin
-        TESTFIELD("Source Document", "Source Document"::"Purchase Order");
-        InspectReportHeader.SETRANGE("Receipt No.", "Posted Source No.");
-        InspectReportHeader.SETRANGE("Item No.", "Item No.");
-        InspectReportHeader.SETRANGE("Purch Line No", "Source Line No.");
+        TESTFIELD("Source Document", Rec."Source Document"::"Purchase Order");
+        InspectReportHeader.SETRANGE("Receipt No.", Rec."Posted Source No.");
+        InspectReportHeader.SETRANGE("Item No.", Rec."Item No.");
+        InspectReportHeader.SETRANGE("Purch Line No", Rec."Source Line No.");
         InspectReportHeader.SETRANGE(Status, TRUE);
         PAGE.RUN(PAGE::"Inspection Receipt List", InspectReportHeader);
         InspectReportHeader.RESET;
     end;
 
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
 
 }
 
