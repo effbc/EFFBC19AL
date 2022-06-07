@@ -1,7 +1,5 @@
 tableextension 70013 PurhaseheaderExt extends "Purchase Header"
 {
-
-
     fields
     {
         modify("Document Type")

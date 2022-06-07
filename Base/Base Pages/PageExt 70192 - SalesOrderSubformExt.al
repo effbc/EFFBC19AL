@@ -2,10 +2,10 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 {
     layout
     {
-        modify(Control1)
+        /* modify(Control1)
         {
             ShowCaption = false;
-        }
+        } */
         modify(Type)
         {
             Editable = editableflag;
@@ -79,14 +79,14 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         {
             Editable = editableflag;
         }
-        modify("Control 45")
+        /* modify(Control45)
         {
             ShowCaption = false;
         }
-        modify("Control 28")
+        modify(Control28)
         {
             ShowCaption = false;
-        }
+        } */
         modify(Control50)
         {
             Editable = editableflag;
@@ -190,15 +190,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         {
             ShowCaption = false;
         }
-        modify("VAT Prod. Posting Group")
-        {
-            Visible = false;
-        }
         modify("Return Reason Code")
-        {
-            Visible = false;
-        }
-        modify("TCS Nature of Collection")
         {
             Visible = false;
         }
@@ -206,27 +198,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         {
             Visible = false;
         }
-        modify("Unit Price")
-        {
-            Visible = false;
-        }
-        modify("Shipment Date")
-        {
-            Visible = false;
-        }
-        modify("Blanket Order No.")
-        {
-            Visible = false;
-        }
-        modify("Blanket Order Line No.")
-        {
-            Visible = false;
-        }
-        modify("Line No.")
-        {
-            Visible = false;
-        }
-        modify("Control 51")
+        modify(Control51)
         {
             Visible = false;
         }
@@ -236,18 +208,6 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             {
                 Editable = editableflag;
                 Visible = false;
-            }
-            field("Line No."; "Line No.")
-            {
-                Editable = editableflag;
-            }
-            field("Shipment Date"; "Shipment Date")
-            {
-                Editable = editableflag;
-            }
-            field("Unit Price"; "Unit Price")
-            {
-                Editable = editableflag;
             }
             field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
             {
@@ -260,19 +220,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             field("Unit Cost"; "Unit Cost")
             {
             }
-            field("Blanket Order No."; "Blanket Order No.")
-            {
-                Editable = editableflag;
-            }
-            field("Blanket Order Line No."; "Blanket Order Line No.")
-            {
-                Editable = editableflag;
-            }
             field("Schedule No"; "Schedule No")
-            {
-                Editable = editableflag;
-            }
-            field("Tax Liable"; "Tax Liable")
             {
                 Editable = editableflag;
             }
@@ -287,10 +235,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             {
                 Editable = editableflag;
             }
-            field("VAT Prod. Posting Group"; "VAT Prod. Posting Group")
-            {
-                Editable = editableflag;
-            }
+
         }
         addafter("No.")
         {
@@ -318,10 +263,6 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         {
             field("Qty. Shipped Not Invoiced"; "Qty. Shipped Not Invoiced")
             {
-            }
-            field("Tax Area Code"; "Tax Area Code")
-            {
-                Editable = editableflag;
             }
             field("Outstanding Quantity"; "Outstanding Quantity")
             {
@@ -405,20 +346,12 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             {
                 Editable = editableflag;
             }
-            field("Description 2"; "Description 2")
-            {
-                Editable = editableflag;
-            }
             field("Service Tax Amount"; "Service Tax Amount")
             {
                 Editable = editableflag;
             }
             field("Outstanding Amount"; "Outstanding Amount")
             {
-            }
-            field("Tax Group Code"; "Tax Group Code")
-            {
-                Editable = editableflag;
             }
             field("Excise Bus. Posting Group"; "Excise Bus. Posting Group")
             {
@@ -919,16 +852,15 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         ProdMakeQty: Integer;
         editableflag: Boolean;
         Schedule: Record Schedule2;
+        TypeChosen: Boolean;
+        "BOI StatusVisible": Boolean;
 
 
 
-
-    [LineStart(4171)]
     procedure "---B2B--"();
     begin
     end;
 
-    [LineStart(4174)]
     procedure CustAttachments();
     var
         CustAttach: Record Attachments;
@@ -941,7 +873,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", CustAttach);
     end;
 
-    [LineStart(4182)]
+
     procedure _Presite();
     var
         PreSiteCheckList: Record "Inst. PreSite Check List";
@@ -952,7 +884,6 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"Inst. PreSite Check List", PreSiteCheckList);
     end;
 
-    [LineStart(4188)]
     procedure Presite();
     var
         PreSiteCheckList: Record "Inst. PreSite Check List";
@@ -963,7 +894,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"Inst. PreSite Check List", PreSiteCheckList);
     end;
 
-    [LineStart(4194)]
+
     procedure ShowPackingDetails();
     var
         PackingDetails: Record "Shortage Management Audit Data";
@@ -977,7 +908,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
-    [LineStart(4202)]
+
     procedure SalesLineAttachments();
     var
         CustAttach: Record Attachments;
@@ -991,7 +922,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", CustAttach);
     end;
 
-    [LineStart(4211)]
+
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";
@@ -1050,7 +981,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
-    [LineStart(4260)]
+
     procedure ShowDeliveryChallan();
     var
         DeliveryChallan: Record "DC Header";
@@ -1061,7 +992,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUNMODAL(PAGE::"DC Header", DeliveryChallan);
     end;
 
-    [LineStart(4266)]
+
     procedure ShowSchedule2();
     var
         Schedule: Record Schedule2;
@@ -1089,7 +1020,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         END;
     end;
 
-    [LineStart(4289)]
+
     procedure ShowPODetails();
     var
         SOPodetails: Record "SO Prod.Order Details";
@@ -1099,7 +1030,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUNMODAL(60126, SOPodetails);
     end;
 
-    [LineStart(4294)]
+
     procedure MakeLines(var SalesLineparam: Record "Sales Line"): Decimal;
     var
         SalesLine: Record "Sales Line";
@@ -1194,7 +1125,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
-    [LineStart(4378)]
+
     procedure ValidateProdOrder();
     begin
         CALCFIELDS("Prod. Order Quantity");
@@ -1202,7 +1133,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             ERROR(Text001);
     end;
 
-    [LineStart(4383)]
+
     procedure ShowSchedule();
     var
         Schedule: Record Schedule2;
@@ -1306,7 +1237,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             END;
     end;
 
-    [LineStart(4621)]
+
     procedure CreateOrders(Qtyparam: Decimal) OrdersCreated: Boolean;
     var
         Item: Record Item;
@@ -1336,7 +1267,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
-    [LineStart(4644)]
+
     local procedure UpdateItemNo();
     var
         UpdateSalesItem: Report "Update Sales/ Schedule Item11";
@@ -1353,7 +1284,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         //<<UPG1.3 06Feb2019
     end;
 
-    [LineStart(4656)]
+
     procedure MakeLinesSingle(var SalesLineparam: Record "Sales Line"): Decimal;
     var
         SalesLine: Record "Sales Line";
@@ -1445,7 +1376,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
-    [LineStart(4737)]
+
     procedure ValidateProdOrderSingle(SalesLineLRec: Record "Sales Line");
     begin
         SalesLineLRec.CALCFIELDS("Prod. Order Quantity");
@@ -1453,7 +1384,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             ERROR(Text001);
     end;
 
-    [LineStart(4742)]
+
     procedure MakeLinesSingleQuantity(var SalesLineparam: Record "Sales Line"): Decimal;
     var
         SalesLine: Record "Sales Line";
