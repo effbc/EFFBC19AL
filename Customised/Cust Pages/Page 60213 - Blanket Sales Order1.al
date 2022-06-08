@@ -841,13 +841,13 @@ page 60213 "Blanket Sales Order1"
         forwordomsVisible : Boolean;
         SHA : Record "Sales Header Archive";
 
-    [LineStart(16308)]
+    (16308)]
     local procedure ApproveCalcInvDisc();
     begin
         CurrPage.SalesLines.PAGE.ApproveCalcInvDisc;
     end;
 
-    [LineStart(16311)]
+    (16311)]
     procedure CreateOrders(Qtyparam : Decimal) OrdersCreated : Boolean;
     var
         Item : Record Item;
@@ -907,37 +907,37 @@ page 60213 "Blanket Sales Order1"
 
     end;
 
-    [LineStart(16363)]
+    (16363)]
     local procedure SelltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(16366)]
+    (16366)]
     local procedure SalespersonCodeOnAfterValidate();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(16369)]
+    (16369)]
     local procedure BilltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(16372)]
+    (16372)]
     local procedure ShortcutDimension1CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(16375)]
+    (16375)]
     local procedure ShortcutDimension2CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(16378)]
+    (16378)]
     local procedure CurrencyCodeOnAfterValidate();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);

@@ -217,7 +217,7 @@ table 33000044 "Pay Employee Loan Detail"
         TempDate: Date;
         Text001: Label 'Requested Deduction Amount not more than Installment Amount';
 
-    [LineStart(6553)]
+    (6553)]
     procedure InstallmentCreationOnPayment();
     var
         FirstPaydate: Date;
@@ -288,7 +288,7 @@ table 33000044 "Pay Employee Loan Detail"
         end;
     end;
 
-    [LineStart(6622)]
+
     procedure CalculateInstallments();
     begin
 
@@ -305,7 +305,7 @@ table 33000044 "Pay Employee Loan Detail"
         InsertingRecords
     end;
 
-    [LineStart(6636)]
+
     procedure InsertingRecords();
     begin
 

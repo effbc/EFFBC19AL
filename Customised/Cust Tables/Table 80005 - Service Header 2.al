@@ -898,12 +898,12 @@ table 80005 "Service Header 2"
         Text042: Label 'The service period for contract %1 has not yet started.';
         Text043: Label 'The service period for contract %1 has expired.';
 
-    [LineStart(5371)]
+
     procedure AssistEdit(OldServHeader: Record "Service Header"): Boolean;
     begin
     end;
 
-    [LineStart(5374)]
+
     procedure CreateDim(Type1: Integer; No1: Code[20]; Type2: Integer; No2: Code[20]; Type3: Integer; No3: Code[20]; Type4: Integer; No4: Code[20]);
     var
         SourceCodeSetup: Record "Source Code Setup";
@@ -912,22 +912,22 @@ table 80005 "Service Header 2"
     begin
     end;
 
-    [LineStart(5377)]
+
     procedure ValidateShortcutDimCode(FieldNumber: Integer; var ShortcutDimCode: Code[20]);
     begin
     end;
 
-    [LineStart(5380)]
+
     procedure LookupShortcutDimCode(FieldNumber: Integer; var ShortcutDimCode: Code[20]);
     begin
     end;
 
-    [LineStart(5383)]
+
     local procedure UpdateCurrencyFactor();
     begin
     end;
 
-    [LineStart(5386)]
+
     procedure RecreateServInvLines(ChangedFieldName: Text[100]);
     var
         ServInvLine: Record "Service Line";
@@ -935,86 +935,86 @@ table 80005 "Service Header 2"
     begin
     end;
 
-    [LineStart(5389)]
+
     local procedure ConfirmUpdateCurrencyFactor();
     begin
     end;
 
-    [LineStart(5392)]
+
     procedure UpdateServInvLines(ChangedFieldName: Text[100]; AskQuestion: Boolean);
     begin
     end;
 
-    [LineStart(5395)]
+
     procedure TestMandatoryFields();
     begin
     end;
 
-    [LineStart(5398)]
+
     procedure UpdateResponseDateTime();
     begin
     end;
 
-    [LineStart(5401)]
+
     procedure UpdateStartingDateTime();
     begin
     end;
 
-    [LineStart(5404)]
+
     procedure UpdateFinishingDateTime();
     begin
     end;
 
-    [LineStart(5407)]
+
     procedure PriceMsgIfServInvLinesExist(ChangedFieldName: Text[100]);
     begin
     end;
 
-    [LineStart(5410)]
+
     procedure ServItemLineExists(): Boolean;
     var
         ServItemLine: Record "Service Item Line";
     begin
     end;
 
-    [LineStart(5413)]
+
     procedure ServInvLineExists(): Boolean;
     var
         ServInvLine: Record "Service Line";
     begin
     end;
 
-    [LineStart(5416)]
+
     procedure MessageIfServInvLinesExist(ChangedFieldName: Text[100]);
     begin
     end;
 
-    [LineStart(5419)]
+
     procedure ValidateServPriceGrOnServItem();
     begin
     end;
 
-    [LineStart(5422)]
+
     procedure SetHideValidationDialog(NewHideValidationDialog: Boolean);
     begin
     end;
 
-    [LineStart(5425)]
+
     procedure SetValidatingFromLines(NewValidatingFromLines: Boolean);
     begin
     end;
 
-    [LineStart(5428)]
+
     local procedure TestNoSeries(): Boolean;
     begin
     end;
 
-    [LineStart(5431)]
+
     local procedure GetNoSeriesCode(): Code[10];
     begin
     end;
 
-    [LineStart(5434)]
+
     procedure UpdateCont(CustomerNo: Code[20]);
     var
         ContBusRel: Record "Contact Business Relation";
@@ -1023,7 +1023,7 @@ table 80005 "Service Header 2"
     begin
     end;
 
-    [LineStart(5437)]
+
     procedure UpdateBillToCont(CustomerNo: Code[20]);
     var
         ContBusRel: Record "Contact Business Relation";
@@ -1032,7 +1032,7 @@ table 80005 "Service Header 2"
     begin
     end;
 
-    [LineStart(5440)]
+
     procedure UpdateCust(ContactNo: Code[20]);
     var
         ContBusinessRelation: Record "Contact Business Relation";
@@ -1043,7 +1043,7 @@ table 80005 "Service Header 2"
     begin
     end;
 
-    [LineStart(5443)]
+
     procedure UpdateBillToCust(ContactNo: Code[20]);
     var
         ContBusinessRelation: Record "Contact Business Relation";
@@ -1054,7 +1054,7 @@ table 80005 "Service Header 2"
     begin
     end;
 
-    [LineStart(5446)]
+
     procedure CheckCreditMaxBeforeInsert();
     var
         ServiceHeader: Record "Service Header";

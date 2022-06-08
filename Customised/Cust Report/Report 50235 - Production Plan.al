@@ -184,7 +184,7 @@ report 50235 "Production Plan"
         cell_value: Decimal;
         j: Char;
 
-    [LineStart(10590)]
+    (10590)]
     procedure OpenExistingXlsWorkbook(Fname: Text[250]; SheetNr: Integer);
     var
         WorksheetAlreadyOpen: Boolean;

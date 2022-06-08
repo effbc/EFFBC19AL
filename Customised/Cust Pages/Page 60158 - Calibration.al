@@ -801,7 +801,7 @@ page 60158 Calibration
         Mail_to : Text;
         Users : Record User;
 
-    [LineStart(13246)]
+    (13246)]
     procedure RGPHeader(Calibration : Record Calibration);
     begin
         InventorySetup.GET;
@@ -842,7 +842,7 @@ page 60158 Calibration
         END;
     end;
 
-    [LineStart(13284)]
+    (13284)]
     procedure RGPINOne(Calibration : Record Calibration);
     begin
         IDS.SETRANGE("Source Type",IDS."Source Type"::Calibration);
@@ -914,7 +914,7 @@ page 60158 Calibration
         END;
     end;
 
-    [LineStart(13353)]
+    (13353)]
     procedure RGPIN(Calibration : Record Calibration);
     begin
         IDS.SETRANGE("Source Type",IDS."Source Type"::Calibration);
@@ -979,13 +979,13 @@ page 60158 Calibration
         END;
     end;
 
-    [LineStart(13415)]
+    (13415)]
     local procedure OnHyperlink(URL : Text[1024]);
     begin
         RGPHeader(Rec);
     end;
 
-    [LineStart(13418)]
+    (13418)]
     procedure Attachments_cal();
     begin
         Attachments.RESET;
@@ -994,7 +994,7 @@ page 60158 Calibration
         PAGE.RUN(PAGE::"ESPL Attachments",Attachments);
     end;
 
-    [LineStart(13424)]
+    (13424)]
     procedure Attachments_invoice_cpy();
     begin
 
@@ -1008,7 +1008,7 @@ page 60158 Calibration
         PAGE.RUN(PAGE::"ESPL Attachments",Attachments);
     end;
 
-    [LineStart(13435)]
+    (13435)]
     procedure Attachments_spec();
     begin
         Attachments.RESET;
@@ -1018,7 +1018,7 @@ page 60158 Calibration
         PAGE.RUN(PAGE::"ESPL Attachments",Attachments);
     end;
 
-    [LineStart(13442)]
+    (13442)]
     procedure Attachments_warranty_certficate();
     begin
         Attachments.RESET;
@@ -1028,7 +1028,7 @@ page 60158 Calibration
         PAGE.RUN(PAGE::"ESPL Attachments",Attachments);
     end;
 
-    [LineStart(13449)]
+    (13449)]
     procedure Attachments_user_manual();
     begin
         Attachments.RESET;
@@ -1039,7 +1039,7 @@ page 60158 Calibration
         PAGE.RUN(PAGE::"ESPL Attachments",Attachments);
     end;
 
-    [LineStart(13457)]
+    (13457)]
     local procedure CalibrationMailtoOwners(CalibrationTab : Record Calibration);
     begin
         CalibrationTab.RESET;

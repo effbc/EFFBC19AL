@@ -241,7 +241,7 @@ report 80022 "Invt. Valuation - Stk on Date3"
         Item_NoCaptionLbl : Label 'Item No';
         TotalCostCaptionLbl : Label 'Total';
 
-    [LineStart(17745)]
+    (17745)]
     procedure CalcRemainingQty();
     var
         ItemApplnEntry : Record "Item Application Entry";
@@ -282,7 +282,7 @@ report 80022 "Invt. Valuation - Stk on Date3"
           PosQty := RemainingQty;
     end;
 
-    [LineStart(17781)]
+    (17781)]
     procedure SumQty(var RemainingQty : Decimal;var PosQty : Decimal;EntryNo : Integer;AppliedQty : Decimal) : Decimal;
     var
         ItemLedgEntry : Record "Item Ledger Entry";
@@ -298,7 +298,7 @@ report 80022 "Invt. Valuation - Stk on Date3"
           PosQty := PosQty + AppliedQty;
     end;
 
-    [LineStart(17792)]
+    (17792)]
     procedure CalcUnitCost();
     begin
         ValueEntry.SETRANGE("Item Ledger Entry No.","Item Ledger Entry"."Entry No.");
@@ -335,13 +335,13 @@ report 80022 "Invt. Valuation - Stk on Date3"
         END;
     end;
 
-    [LineStart(17826)]
+    (17826)]
     procedure SumUnitCost(var UnitCost : Decimal;CostAmount : Decimal;Quantity : Decimal);
     begin
         UnitCost := UnitCost + CostAmount / ABS(Quantity);
     end;
 
-    [LineStart(17829)]
+    (17829)]
     procedure ReDistribCost();
     var
         CostShare : Decimal;
@@ -358,7 +358,7 @@ report 80022 "Invt. Valuation - Stk on Date3"
           END;
     end;
 
-    [LineStart(17841)]
+    (17841)]
     procedure CalcAvgCost();
     begin
         AvgCost := 0;
@@ -371,7 +371,7 @@ report 80022 "Invt. Valuation - Stk on Date3"
         END;
     end;
 
-    [LineStart(17851)]
+    (17851)]
     procedure GetSign() : Boolean;
     var
         ItemLedgEntry : Record "Item Ledger Entry";

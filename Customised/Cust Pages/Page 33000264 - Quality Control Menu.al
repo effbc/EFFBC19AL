@@ -302,7 +302,7 @@ page 33000264 "Quality Control Menu"
         Text50002 : Label 'OLD';
         Text19044430 : Label 'Quality Control';
 
-    [LineStart(23067)]
+    (23067)]
     procedure CommaRemoval(Base : Text[100]) Converted : Text[100];
     var
         i : Integer;

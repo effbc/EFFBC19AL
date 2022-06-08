@@ -186,7 +186,7 @@ table 60097 "Item Tracking Assignament"
         field(5402; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code';
-            TableRelation = "Item Variant".Make WHERE("Item No." = FIELD("Item No."));
+            TableRelation = "Item Variant".Code WHERE("Item No." = FIELD("Item No."));
             DataClassification = CustomerContent;
         }
         field(5404; "Qty. per Unit of Measure"; Decimal)
@@ -220,7 +220,7 @@ table 60097 "Item Tracking Assignament"
         field(5702; "Originally Ordered Var. Code"; Code[10])
         {
             Caption = 'Originally Ordered Var. Code';
-            TableRelation = "Item Variant".Make WHERE("Item No." = FIELD("Originally Ordered No."));
+            TableRelation = "Item Variant".Code WHERE("Item No." = FIELD("Originally Ordered No."));
             DataClassification = CustomerContent;
         }
         field(5703; "Out-of-Stock Substitution"; Boolean)

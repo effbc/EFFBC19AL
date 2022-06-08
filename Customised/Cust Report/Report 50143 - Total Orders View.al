@@ -439,7 +439,7 @@ report 50143 "Total Orders View"
         PAID_BY_FINAL_BILLCaptionLbl : Label 'PAID BY FINAL BILL';
         TO_BE_BILLEDCaptionLbl : Label 'TO BE BILLED';
 
-    [LineStart(7419)]
+    (7419)]
     procedure sqlconnection1();
     begin
         /*
@@ -461,7 +461,7 @@ report 50143 "Total Orders View"
 
     end;
 
-    [LineStart(7437)]
+    (7437)]
     procedure commaeli(Base : Text[30]) converted : Text[30];
     var
         i : Integer;

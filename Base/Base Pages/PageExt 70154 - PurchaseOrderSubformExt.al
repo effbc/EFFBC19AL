@@ -2109,13 +2109,13 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
     */
     //end;
 
-    [LineStart(6431)]
+    (6431)]
     procedure CreateInspectionDataSheets();
     begin
         CreateInspectionDataSheets;
     end;
 
-    [LineStart(6434)]
+    (6434)]
     procedure _ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -2123,7 +2123,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowDataSheets;
     end;
 
-    [LineStart(6437)]
+    (6437)]
     procedure ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -2131,7 +2131,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowDataSheets;
     end;
 
-    [LineStart(6440)]
+    (6440)]
     procedure _ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -2139,7 +2139,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowPostDataSheets;
     end;
 
-    [LineStart(6443)]
+    (6443)]
     procedure ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -2147,7 +2147,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowPostDataSheets;
     end;
 
-    [LineStart(6446)]
+    (6446)]
     procedure _ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -2155,7 +2155,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowInspectReceipt;
     end;
 
-    [LineStart(6449)]
+    (6449)]
     procedure ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -2163,7 +2163,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowInspectReceipt;
     end;
 
-    [LineStart(6452)]
+    (6452)]
     procedure _ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -2171,12 +2171,12 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowPostInspectReceipt;
     end;
 
-    [LineStart(6455)]
+    (6455)]
     procedure "---B2B---"();
     begin
     end;
 
-    [LineStart(6458)]
+    (6458)]
     procedure ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -2184,7 +2184,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowPostInspectReceipt;
     end;
 
-    [LineStart(6461)]
+    (6461)]
     procedure OpenAttachments();
     var
         Attachment: Record Attachments;
@@ -2197,7 +2197,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", Attachment);
     end;
 
-    [LineStart(6469)]
+    (6469)]
     procedure CancelInspection1(var QualityStatus: Text[50]);
     begin
         TESTFIELD("No.");
@@ -2205,7 +2205,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         CancelInspection(QualityStatus);
     end;
 
-    [LineStart(6474)]
+    (6474)]
     procedure CloseInspection1(var QualityStatus: Text[50]);
     begin
         TESTFIELD("No.");
@@ -2213,7 +2213,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         CloseInspection(QualityStatus);
     end;
 
-    [LineStart(6479)]
+    (6479)]
     procedure _SampleLotInspection();
     var
         SampleLotInspection: Record "Sample Lot Inspection";
@@ -2227,7 +2227,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUN(60072, SampleLotInspection);
     end;
 
-    [LineStart(6488)]
+    (6488)]
     procedure SampleLotInspection();
     var
         SampleLotInspection: Record "Sample Lot Inspection";
@@ -2241,13 +2241,13 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUN(60072, SampleLotInspection);
     end;
 
-    [LineStart(6497)]
+    (6497)]
     procedure QCOverride();
     begin
         QCOverride;
     end;
 
-    [LineStart(6500)]
+    (6500)]
     procedure Getperiod(perioddate: Date) periodnumber: Integer;
     var
         periodNo1: Integer;
@@ -2296,7 +2296,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         periodnumber := (acctYearMonth * 4) - 4 + periodNo1;
     end;
 
-    [LineStart(6533)]
+    (6533)]
     procedure "Show Deviations & Reasons"();
     begin
         "Excepted Rcpt.Date Tracking".SETRANGE("Excepted Rcpt.Date Tracking"."Document No.", "Document No.");
@@ -2304,7 +2304,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUNMODAL(60048, "Excepted Rcpt.Date Tracking");
     end;
 
-    [LineStart(6538)]
+    (6538)]
     procedure Show_Custom_Charges(show: Boolean);
     begin
 
@@ -2319,7 +2319,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         END;
     end;
 
-    [LineStart(6552)]
+    (6552)]
     procedure Split_Qty();
     var
         Base_Qty: Decimal;
@@ -2510,7 +2510,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
 
     end;
 
-    [LineStart(6747)]
+    (6747)]
     local procedure TypeOnAfterValidate();
     begin
         IF Type = Type::Item THEN
@@ -2519,7 +2519,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             DescriptionEditable := TRUE;
     end;
 
-    [LineStart(6753)]
+    (6753)]
     local procedure OnAfterGetCurrRecordCust();
     begin
         xRec := Rec;
@@ -2529,7 +2529,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             DescriptionEditable := TRUE;
     end;
 
-    [LineStart(6760)]
+    (6760)]
     local procedure DeviatedReceiptDateOnAfterInpu(var Text: Text[1024]);
     begin
 
@@ -2537,7 +2537,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             ERROR('You Dont Have to Delete the Deviated Date');
     end;
 
-    [LineStart(6765)]
+    (6765)]
     local procedure DeviatedReceiptDateOnInputChan(var Text: Text[1024]);
     begin
 
@@ -2561,7 +2561,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         END;
     end;
 
-    [LineStart(6786)]
+    (6786)]
     local procedure NoOnFormat();
     begin
         IF ("Document Type" = 2) AND ("No." <> '') THEN
@@ -2573,7 +2573,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         END;
     end;
 
-    [LineStart(6797)]
+    (6797)]
     procedure ActPeriodActYearCalc(Req_Date: Date);
     var
         cDay: Integer;
@@ -2636,7 +2636,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         // MESSAGE('Act Period: '+FORMAT(PeriodNum)+' Act Year: '+FORMAT(AccountYear));
     end;
 
-    [LineStart(6849)]
+    (6849)]
     local procedure CashFlowUpdation();
     var
         "Packing Value": Decimal;
@@ -2772,7 +2772,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             UNTIL PurchLine.NEXT = 0;
     end;
 
-    [LineStart(6964)]
+    (6964)]
     procedure CommaRemoval(Base: Text[30]) Converted: Text[30];
     var
         i: Integer;
@@ -2784,7 +2784,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         EXIT(Converted);
     end;
 
-    [LineStart(6972)]
+    (6972)]
     procedure ten_percent_item_Cost_high_chk();
     begin
         Pur_line.RESET;

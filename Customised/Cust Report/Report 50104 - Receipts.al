@@ -138,7 +138,7 @@ report 50104 Receipts
         TotalCaptionLbl: Label 'Total';
         Grand_TotalCaptionLbl: Label 'Grand Total';
 
-    [LineStart(6763)]
+    (6763)]
     procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -149,7 +149,7 @@ report 50104 Receipts
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(6771)]
+    (6771)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;

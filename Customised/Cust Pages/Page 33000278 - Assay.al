@@ -56,7 +56,7 @@ page 33000278 Assay
         OnAfterGetCurrRecord;
     end;
 
-    [LineStart(23618)]
+    (23618)]
     local procedure OnAfterGetCurrRecord();
     begin
         xRec := Rec;

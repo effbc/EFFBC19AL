@@ -144,7 +144,7 @@ table 60057 "TO Material Issue Line"
         field(30; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code';
-            TableRelation = "Item Variant".Make WHERE("Item No." = FIELD("Item No."));
+            TableRelation = "Item Variant".Code WHERE("Item No." = FIELD("Item No."));
             DataClassification = CustomerContent;
 
             trigger OnValidate();
@@ -301,7 +301,7 @@ table 60057 "TO Material Issue Line"
         Item: Record Item;
         TransHeader: Record "Transfer Header";
 
-    [LineStart(2882)]
+
     local procedure GetTransHeader();
     begin
         TestField("Document No.");

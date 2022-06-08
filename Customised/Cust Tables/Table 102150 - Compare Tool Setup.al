@@ -90,7 +90,7 @@ table 102150 "Compare Tool Setup"
     var
         FileSetup: Record "Compare Tool Setup";
 
-    [LineStart(5845)]
+
     procedure MakeRecord();
     begin
         if not Get(UserId) then

@@ -62,7 +62,7 @@ page 60202 "Tender Subform(fin)2"
     {
     }
 
-    [LineStart(15975)]
+    (15975)]
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";

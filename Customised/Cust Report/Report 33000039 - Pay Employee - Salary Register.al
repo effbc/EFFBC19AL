@@ -272,7 +272,7 @@ report 33000039 "Pay Employee - Salary Register"
         EmptyStringCaption_Control1102151051Lbl: Label '<';
         EmptyStringCaption_Control1102151052Lbl: Label '>';
 
-    [LineStart(20480)]
+    (20480)]
     procedure CALCULATELASTDATEOFMONTH(Month: Integer; Year: Integer) PayDate: Date;
     begin
         PayDate := DMY2DATE(1, Month, Year);

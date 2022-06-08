@@ -261,7 +261,7 @@ pageextension 70193 SalesQuoteArchiveSubformExt extends "Sales Quote Archive Sub
     */
     //end;
 
-    [LineStart(25441)]
+    (25441)]
     procedure ShowSalesOrderWorkSheet();
     var
         ArchivedDesignWorksheetHeader: Record "Archived DesignWorksheet";

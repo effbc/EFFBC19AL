@@ -59,7 +59,7 @@ table 60020 "Inst. PreSite Check List"
     {
     }
 
-    [LineStart(1455)]
+
     procedure Attachments();
     var
         PresiteAttach: Record Attachments;
@@ -71,7 +71,7 @@ table 60020 "Inst. PreSite Check List"
         PAGE.Run(PAGE::"ESPL Attachments", PresiteAttach);
     end;
 
-    [LineStart(1462)]
+
     procedure CopyPresite(Rec: Record "Inst. PreSite Check List");
     var
         Selection: Integer;

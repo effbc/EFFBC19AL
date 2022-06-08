@@ -507,12 +507,12 @@ pageextension 70215 ServiceQuoteSubformExt extends "Service Quote Subform"
         */
     //end;
 
-    [LineStart(27937)]
+    (27937)]
     procedure "---B2B--"();
     begin
     end;
 
-    [LineStart(27940)]
+    (27940)]
     procedure OpenAttachments();
     var
         Attachments : Record Attachments;

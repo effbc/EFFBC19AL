@@ -473,7 +473,7 @@ page 60130 "New RGP Out"
         DocumentNo: Code[20];
         RGPRelease: Codeunit "RGP Release";
 
-    [LineStart(11689)]
+    (11689)]
     procedure CheckRGPOutStatus(var RGPEntryNo: Integer);
     begin
         chkStatus := TRUE;
@@ -500,7 +500,7 @@ page 60130 "New RGP Out"
         END;
     end;
 
-    [LineStart(11713)]
+    (11713)]
     local procedure ConsigneeNoOnAfterValidate();
     begin
         CurrPage.UPDATE;

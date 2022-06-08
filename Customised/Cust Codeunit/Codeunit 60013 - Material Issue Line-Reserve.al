@@ -21,7 +21,7 @@ codeunit 60013 "Material Issue Line-Reserve"
         QLE: Record "Quality Item Ledger Entry";
         Item: Record Item;
 
-    [LineStart(6383)]
+    (6383)]
     procedure AssistEditLotSerialNo(var TrackingSpecification: Record "Mat.Issue Track. Specification"; LookupMode: Option "Serial No.","Lot No."; MaxQuantity: Decimal; "IssueNo.": Code[20]): Boolean;
     var
         ItemLedgEntry: Record "Item Ledger Entry";

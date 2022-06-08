@@ -721,7 +721,7 @@ report 50201 totalorderDetails
         BALANCE_NEED_TO_RECEIVECaptionLbl : Label 'BALANCE NEED TO RECEIVE';
         Total_Order_AmountCaptionLbl : Label 'Total Order Amount';
 
-    [LineStart(8556)]
+    (8556)]
     procedure EnterCell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[500];Bold : Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -732,7 +732,7 @@ report 50201 totalorderDetails
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(8564)]
+    (8564)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean);
     begin
         TempExcelBuffer.INIT;

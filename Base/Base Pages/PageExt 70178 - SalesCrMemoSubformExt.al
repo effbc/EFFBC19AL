@@ -949,12 +949,12 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
     */
     //end;
 
-    [LineStart(8030)]
+    (8030)]
     procedure "---QC---"();
     begin
     end;
 
-    [LineStart(8033)]
+    (8033)]
     procedure ShowDataSheetsForm();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -962,7 +962,7 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
         ShowDataSheets;
     end;
 
-    [LineStart(8036)]
+    (8036)]
     procedure ShowPostDataSheetsForm();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -970,7 +970,7 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
         ShowPostDataSheets;
     end;
 
-    [LineStart(8039)]
+    (8039)]
     procedure ShowInspectReceiptForm();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -978,7 +978,7 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
         ShowInspectReceipt;
     end;
 
-    [LineStart(8042)]
+    (8042)]
     procedure ShowPostInspectReceiptForm();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -986,13 +986,13 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
         ShowPostInspectReceipt;
     end;
 
-    [LineStart(8045)]
+    (8045)]
     procedure CreateInspectionDataSheetForm();
     begin
         CreateInspectionDataSheets;
     end;
 
-    [LineStart(8048)]
+    (8048)]
     procedure CancelInspection(var QualityStatus: Text[50]);
     begin
         TESTFIELD("No.");
@@ -1000,7 +1000,7 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
         CancelInspection(QualityStatus);
     end;
 
-    [LineStart(8053)]
+    (8053)]
     procedure CloseInspection(var QualityStatus: Text[50]);
     begin
         TESTFIELD("No.");

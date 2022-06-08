@@ -1952,7 +1952,7 @@ page 60181 "Item Card (manu)"
                                   t3 : Text;
                                   PBH1 : Record "Production BOM Header";
 
-    [LineStart(14409)]
+    (14409)]
     procedure EnablePlanningControls();
     var
         PlanningGetParam: Codeunit "Planning-Get Parameters";
@@ -2005,20 +2005,20 @@ page 60181 "Item Card (manu)"
 
     end;
 
-    [LineStart(14441)]
+    (14441)]
     local procedure DispatchMaterialOnActivate();
     begin
         IF NOT (UPPERCASE(USERID) IN ['SUPER', 'EFFTRONICS\JHANSI', 'EFFTRONICS\PRANAVI', 'EFFTRONICS\SUJANI']) THEN
             ERROR('You dont have Permissions');
     end;
 
-    [LineStart(14445)]
+    (14445)]
     local procedure AverageCostLCYOnActivate();
     begin
         ItemCostMgt.CalculateAverageCost(Rec, AverageCostLCY, AverageCostACY);
     end;
 
-    [LineStart(14448)]
+    (14448)]
     local procedure OnActivateForm();
     begin
         //Rev01 As directed by anil
@@ -2032,7 +2032,7 @@ page 60181 "Item Card (manu)"
         //Rev01 As directed by anil
     end;
 
-    [LineStart(14460)]
+    (14460)]
     local procedure ProductGroupCodeOnBeforeInput();
     begin
         IF NOT (USERID IN ['SUPER', 'EFFTRONICS\JHANSI', 'EFFTRONICS\PARVATHI', 'EFFTRONICS\VANIDEVI', 'EFFTRONICS\ANANDA', 'EFFTRONICS\RATNARAVALI', 'EFFTRONICS\RSILPARANI', 'EFFTRONICS\RAMALAKSHMI',
@@ -2041,7 +2041,7 @@ page 60181 "Item Card (manu)"
             ERROR('You have No Rights to Change the Item Groups');
     end;
 
-    [LineStart(14466)]
+    (14466)]
     local procedure ItemCategoryCodeOnBeforeInput();
     begin
         IF NOT (USERID IN ['SUPER', 'EFFTRONICS\JHANSI', 'EFFTRONICS\PARVATHI', 'EFFTRONICS\VANIDEVI', 'EFFTRONICS\ANANDA', 'EFFTRONICS\RATNARAVALI', 'EFFTRONICS\RSILPARANI', 'EFFTRONICS\RAMALAKSHMI',
@@ -2050,7 +2050,7 @@ page 60181 "Item Card (manu)"
             ERROR('You have No Rights to Change the Item Groups');
     end;
 
-    [LineStart(14472)]
+    (14472)]
     local procedure ItemSubGroupCodeOnBeforeInput();
     begin
         IF NOT (USERID IN ['SUPER', 'EFFTRONICS\JHANSI', 'EFFTRONICS\PARVATHI', 'EFFTRONICS\VANIDEVI', 'EFFTRONICS\ANANDA', 'EFFTRONICS\RATNARAVALI', 'EFFTRONICS\RSILPARANI',
@@ -2059,7 +2059,7 @@ page 60181 "Item Card (manu)"
             ERROR('You have No Rights to Change the Item Groups');
     end;
 
-    [LineStart(14478)]
+    (14478)]
     local procedure ItemSubSubGroupCodeOnBeforeInp();
     begin
         IF NOT (USERID IN ['SUPER', 'EFFTRONICS\JHANSI', 'EFFTRONICS\PARVATHI', 'EFFTRONICS\VANIDEVI', 'EFFTRONICS\ANANDA', 'EFFTRONICS\RATNARAVALI', 'EFFTRONICS\RSILPARANI',
@@ -2068,7 +2068,7 @@ page 60181 "Item Card (manu)"
             ERROR('You have No Rights to Change the Item Groups');
     end;
 
-    [LineStart(14484)]
+    (14484)]
     local procedure NoOnFormat();
     begin
         IF "Product Group Code" = 'FPRODUCT' THEN BEGIN
@@ -2084,7 +2084,7 @@ page 60181 "Item Card (manu)"
                 END;
     end;
 
-    [LineStart(14499)]
+    (14499)]
     local procedure DescriptionOnFormat();
     begin
         IF "Product Group Code" = 'FPRODUCT' THEN BEGIN
@@ -2101,7 +2101,7 @@ page 60181 "Item Card (manu)"
                 END;
     end;
 
-    [LineStart(14515)]
+    (14515)]
     local procedure CheckinPurchaseOrders_and_SaleOrders(ItemNumber: Code[20]) Existedornot: Boolean;
     var
         SL: Record "Sales Line";

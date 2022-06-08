@@ -136,7 +136,7 @@ table 33000075 "Employee Posting Group"
     {
     }
 
-    [LineStart(6767)]
+
     local procedure CheckGLAcc(AccNo: Code[20]; CheckProdPostingGroup: Boolean; CheckDirectPosting: Boolean);
     var
         GLAcc: Record "G/L Account";

@@ -153,7 +153,7 @@ table 33000026 "Pay Employee Time Sheet Sub"
         Text004: Label 'Required Project Dimension code in setup.';
         Text005: Label 'Required Department Dimension code in setup.';
 
-    [LineStart(5968)]
+
     procedure CalHour();
     begin
         if ("Time From" <> 0T) and ("Time To" <> 0T) then begin
@@ -171,7 +171,7 @@ table 33000026 "Pay Employee Time Sheet Sub"
             "Total Hours" := 0;
     end;
 
-    [LineStart(5985)]
+
     procedure TimeFromCheck() TimeCheckFrom: Boolean;
     begin
         TimeSheetSub.Reset;
@@ -187,7 +187,7 @@ table 33000026 "Pay Employee Time Sheet Sub"
         exit(TimeCheckFrom);
     end;
 
-    [LineStart(5999)]
+
     procedure TimeToCheck() CheckTimeTo: Boolean;
     begin
         if "Time From" <> 0T then

@@ -42,7 +42,7 @@ report 50099 "Copy Pord. Order"
         TemplateName: Code[20];
         BatchName: Code[20];
 
-    [LineStart(6695)]
+    (6695)]
     procedure InsertJournals(TemplateName: Code[20]; BatchName: Code[20]);
     begin
         ItemJnlBatch.GET(TemplateName, BatchName);

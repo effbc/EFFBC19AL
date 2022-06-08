@@ -58,7 +58,7 @@ codeunit 99000774 "Calculate Routing Line"
         CurrentTimeFactor: Decimal;
         CurrentRounding: Decimal;
 
-    [LineStart(52856)]
+    (52856)]
     local procedure TestForError(DirectionTxt: Text[30]; BefAfterTxt: Text[30]; Date: Date);
     begin
         IF RemainNeedQty <> 0 THEN
@@ -71,7 +71,7 @@ codeunit 99000774 "Calculate Routing Line"
               ProdOrderRoutingLine."No.");
     end;
 
-    [LineStart(52866)]
+    (52866)]
     local procedure CreateCapNeed(NeedDate: Date; StartingTime: Time; EndingTime: Time; NeedQty: Decimal; TimeType: Option "Setup Time","Run Time"; Direction: Option Forward,Backward);
     begin
         ProdOrderCapNeed.INIT;
@@ -131,7 +131,7 @@ codeunit 99000774 "Calculate Routing Line"
         NextCapNeedLineNo := NextCapNeedLineNo + 1;
     end;
 
-    [LineStart(52923)]
+    (52923)]
     local procedure CreateLoadBack(TimeType: Option "Setup Time","Run Time","Wait Time","Move Time","Queue Time"; Write: Boolean);
     var
         OldCalendarEntry: Record "Calendar Entry";
@@ -210,7 +210,7 @@ codeunit 99000774 "Calculate Routing Line"
         END;
     end;
 
-    [LineStart(52991)]
+    (52991)]
     local procedure CreateLoadForward(TimeType: Option "Setup Time","Run Time","Wait Time","Move Time","Queue Time"; Write: Boolean; LoadFactor: Decimal);
     var
         OldCalendarEntry: Record "Calendar Entry";
@@ -307,7 +307,7 @@ codeunit 99000774 "Calculate Routing Line"
         END;
     end;
 
-    [LineStart(53077)]
+    (53077)]
     local procedure AvailableCapacity(CapType: Option "Work Center","Machine Center"; CapNo: Code[20]; StartingDateTime: DateTime; EndingDateTime: DateTime) AvQty: Decimal;
     var
         CalendarEntry2: Record "Calendar Entry";
@@ -345,7 +345,7 @@ codeunit 99000774 "Calculate Routing Line"
         EXIT(AvQty);
     end;
 
-    [LineStart(53107)]
+    (53107)]
     local procedure LoadCapBack(CapType: Option "Work Center","Machine Center"; CapNo: Code[20]; TimeType: Option "Setup Time","Run Time","Wait Time","Move Time","Queue Time"; Write: Boolean);
     begin
         ProdOrderRoutingLine."Starting Date" := ProdEndingDate;
@@ -366,7 +366,7 @@ codeunit 99000774 "Calculate Routing Line"
         TestForError(Text001, Text002, ProdOrderRoutingLine."Starting Date");
     end;
 
-    [LineStart(53125)]
+    (53125)]
     local procedure LoadCapForward(CapType: Option "Work Center","Machine Center"; CapNo: Code[20]; TimeType: Option "Setup Time","Run Time","Wait Time","Move Time","Queue Time"; Write: Boolean);
     var
         TotalAvailCapacity: Decimal;
@@ -410,7 +410,7 @@ codeunit 99000774 "Calculate Routing Line"
         //TestForError(Text003,Text004,ProdOrderRoutingLine."Ending Date");
     end;
 
-    [LineStart(53163)]
+    (53163)]
     local procedure CalcMoveAndWaitBack();
     begin
         UpdateDates := TRUE;
@@ -432,7 +432,7 @@ codeunit 99000774 "Calculate Routing Line"
         LoadCapBack(ProdOrderRoutingLine.Type, ProdOrderRoutingLine."No.", 2, FALSE);
     end;
 
-    [LineStart(53182)]
+    (53182)]
     local procedure GetSendAheadStartingTime(ProdOrderRoutingLine2: Record "Prod. Order Routing Line"; FirstLine: Boolean; var SendAheadLotSize: Decimal; var DeltaTotal: BigInteger): Boolean;
     var
         ProdOrderCapNeed3: Record "Prod. Order Capacity Need";
@@ -524,7 +524,7 @@ codeunit 99000774 "Calculate Routing Line"
         EXIT(FALSE);
     end;
 
-    [LineStart(53266)]
+    (53266)]
     local procedure CalcRoutingLineBack(CalculateEndDate: Boolean);
     var
         ProdOrderRoutingLine2: Record "Prod. Order Routing Line";
@@ -700,7 +700,7 @@ codeunit 99000774 "Calculate Routing Line"
         END;
     end;
 
-    [LineStart(53426)]
+    (53426)]
     local procedure GetSendAheadEndingTime(ProdOrderRoutingLine2: Record "Prod. Order Routing Line"; FirstLine: Boolean; var SendAheadLotSize: Decimal): Boolean;
     var
         ExpectedTime: Decimal;
@@ -811,7 +811,7 @@ codeunit 99000774 "Calculate Routing Line"
         EXIT(FALSE);
     end;
 
-    [LineStart(53529)]
+    (53529)]
     local procedure CalcRoutingLineForward(CalculateStartDate: Boolean);
     var
         ProdOrderRoutingLine2: Record "Prod. Order Routing Line";
@@ -984,7 +984,7 @@ codeunit 99000774 "Calculate Routing Line"
         END;
     end;
 
-    [LineStart(53688)]
+    (53688)]
     local procedure CalculateRoutingLineFixed();
     var
         FixedProdOrderRoutingLine: Record "Prod. Order Routing Line";
@@ -1010,7 +1010,7 @@ codeunit 99000774 "Calculate Routing Line"
         ProdOrderRoutingLine.MODIFY;
     end;
 
-    [LineStart(53709)]
+    (53709)]
     procedure CalculateRoutingLine(var ProdOrderRoutingLine2: Record "Prod. Order Routing Line"; Direction: Option Forward,Backward; CalcStartEndDate: Boolean);
     var
         ProdOrderCapNeed: Record "Prod. Order Capacity Need";
@@ -1131,7 +1131,7 @@ codeunit 99000774 "Calculate Routing Line"
         ProdOrderRoutingLine2 := ProdOrderRoutingLine;
     end;
 
-    [LineStart(53819)]
+    (53819)]
     local procedure FinitelyLoadCapBack(TimeType: Option "Setup Time","Run Time"; ConstrainedCapacity: Record "Capacity Constrained Resource"; ResourceIsConstrained: Boolean; ParentWorkCenter: Record "Capacity Constrained Resource"; ParentIsConstrained: Boolean);
     var
         LastProdOrderCapNeed: Record "Prod. Order Capacity Need";
@@ -1265,7 +1265,7 @@ codeunit 99000774 "Calculate Routing Line"
             UNTIL FALSE;
     end;
 
-    [LineStart(53938)]
+    (53938)]
     local procedure FinitelyLoadCapForward(TimeType: Option "Setup Time","Run Time"; ConstrainedCapacity: Record "Capacity Constrained Resource"; ResourceIsConstrained: Boolean; ParentWorkCenter: Record "Capacity Constrained Resource"; ParentIsConstrained: Boolean);
     var
         NextProdOrderCapNeed: Record "Prod. Order Capacity Need";
@@ -1398,7 +1398,7 @@ codeunit 99000774 "Calculate Routing Line"
             UNTIL FALSE;
     end;
 
-    [LineStart(54056)]
+    (54056)]
     local procedure CalculateDailyLoad(var AvailCap: Decimal; var DampTime: Decimal; ConstrainedCapacity: Record "Capacity Constrained Resource"; IsResourceConstrained: Boolean; ParentWorkCenter: Record "Capacity Constrained Resource"; IsParentConstrained: Boolean);
     var
         CurrentLoadBase: Decimal;
@@ -1438,7 +1438,7 @@ codeunit 99000774 "Calculate Routing Line"
         END;
     end;
 
-    [LineStart(54088)]
+    (54088)]
     local procedure UpdateTimesBack(var AvailTime: Decimal; var AvailCap: Decimal; var TimetoProgram: Decimal; var StartTime: Time; EndTime: Time);
     var
         RoundedTimetoProgram: Decimal;
@@ -1457,7 +1457,7 @@ codeunit 99000774 "Calculate Routing Line"
             AvailCap := AvailCap - RoundedTimetoProgram;
     end;
 
-    [LineStart(54102)]
+    (54102)]
     local procedure UpdateTimesForward(var AvailTime: Decimal; var AvailCap: Decimal; var TimetoProgram: Decimal; StartTime: Time; var EndTime: Time);
     var
         RoundedTimetoProgram: Decimal;
@@ -1476,7 +1476,7 @@ codeunit 99000774 "Calculate Routing Line"
             AvailCap := AvailCap - RoundedTimetoProgram;
     end;
 
-    [LineStart(54116)]
+    (54116)]
     local procedure "Min"(Number1: Decimal; Number2: Decimal): Decimal;
     begin
         IF Number1 <= Number2 THEN
@@ -1485,7 +1485,7 @@ codeunit 99000774 "Calculate Routing Line"
         EXIT(Number2);
     end;
 
-    [LineStart(54122)]
+    (54122)]
     local procedure "Max"(Number1: Decimal; Number2: Decimal): Decimal;
     begin
         IF Number1 >= Number2 THEN
@@ -1494,7 +1494,7 @@ codeunit 99000774 "Calculate Routing Line"
         EXIT(Number2);
     end;
 
-    [LineStart(54128)]
+    (54128)]
     local procedure CalcExpectedCost(var ProdOrderRoutingLine: Record "Prod. Order Routing Line"; TotalQtyPerOperation: Decimal; TotalCapacityPerOperation: Decimal);
     begin
         IF ProdOrderRoutingLine."Unit Cost Calculation" = ProdOrderRoutingLine."Unit Cost Calculation"::Time THEN BEGIN
@@ -1514,7 +1514,7 @@ codeunit 99000774 "Calculate Routing Line"
         END;
     end;
 
-    [LineStart(54145)]
+    (54145)]
     local procedure CalcDuration(DateTime1: DateTime; DateTime2: DateTime) TotalDuration: Decimal;
     begin
         TotalDuration :=
@@ -1525,7 +1525,7 @@ codeunit 99000774 "Calculate Routing Line"
         EXIT(TotalDuration);
     end;
 
-    [LineStart(54153)]
+    (54153)]
     local procedure FindSendAheadEndingTime(var TmpProdOrderRtngLine: Record "Prod. Order Routing Line"; var TmpProdOrderCapNeed: Record "Prod. Order Capacity Need"; var SendAheadLotSize: Decimal): Boolean;
     var
         Result: Boolean;
@@ -1567,7 +1567,7 @@ codeunit 99000774 "Calculate Routing Line"
         EXIT(Result);
     end;
 
-    [LineStart(54187)]
+    (54187)]
     local procedure FindSendAheadStartingTime(var TmpProdOrderRtngLine: Record "Prod. Order Routing Line"; var TmpProdOrderCapNeed: Record "Prod. Order Capacity Need"; var SendAheadLotSize: Decimal; var DeltaTotal: BigInteger): Boolean;
     var
         Result: Boolean;
@@ -1610,7 +1610,7 @@ codeunit 99000774 "Calculate Routing Line"
         EXIT(Result);
     end;
 
-    [LineStart(54222)]
+    (54222)]
     procedure ReturnNextCalendarEntry(var CalendarEntry2: Record "Calendar Entry"; OldCalendarEntry: Record "Calendar Entry"; Direction: Option Backward,Forward);
     begin
         CalendarEntry2 := OldCalendarEntry;
@@ -1639,7 +1639,7 @@ codeunit 99000774 "Calculate Routing Line"
         END;
     end;
 
-    [LineStart(54248)]
+    (54248)]
     local procedure CreateCalendarEntry(var CalendarEntry2: Record "Calendar Entry");
     begin
         WITH CalendarEntry2 DO BEGIN
@@ -1656,7 +1656,7 @@ codeunit 99000774 "Calculate Routing Line"
         END;
     end;
 
-    [LineStart(54262)]
+    (54262)]
     local procedure GetCurrentWorkCenterTimeFactorAndRounding(WorkCenterNo: Code[20]);
     var
         WorkCenter: Record "Work Center";
@@ -1669,7 +1669,7 @@ codeunit 99000774 "Calculate Routing Line"
         CurrentRounding := WorkCenter."Calendar Rounding Precision";
     end;
 
-    [LineStart(54270)]
+    (54270)]
     local procedure CalcCapConResWorkCenterLoadBase(CapacityConstrainedResource: Record "Capacity Constrained Resource"; DateFilter: Date; var CapEffectiveBase: Decimal; var LoadBase: Decimal);
     begin
         CapEffectiveBase := 0;
@@ -1685,7 +1685,7 @@ codeunit 99000774 "Calculate Routing Line"
         END;
     end;
 
-    [LineStart(54283)]
+    (54283)]
     local procedure CalcCapConResProdOrderNeedBase(CapacityConstrainedResource: Record "Capacity Constrained Resource"; DateFilter: Date; var CapEffectiveBase: Decimal; var LoadBase: Decimal);
     begin
         CapEffectiveBase := 0;
@@ -1701,7 +1701,7 @@ codeunit 99000774 "Calculate Routing Line"
         END;
     end;
 
-    [LineStart(54296)]
+    (54296)]
     procedure CalcAvailCapBaseAndDampTime(CapacityConstrainedResource: Record "Capacity Constrained Resource"; var AvailCap: Decimal; var DampTime: Decimal; CapEffectiveBase: Decimal; LoadBase: Decimal; TimeFactor: Decimal; Rounding: Decimal);
     var
         AvailCapBase: Decimal;
@@ -1728,7 +1728,7 @@ codeunit 99000774 "Calculate Routing Line"
         DampTime := ROUND(Max(0, DampTime), 1);
     end;
 
-    [LineStart(54314)]
+    (54314)]
     procedure CalcAvailQtyBase(var CalendarEntry: Record "Calendar Entry"; ProdStartDate: Date; ProdStartTime: Time; TimeType: Option "Setup Time","Run Time","Wait Time","Move Time","Queue Time"; ConCurrCap: Decimal; IsForward: Boolean; TimeFactor: Decimal; Rounding: Decimal) AvQtyBase: Decimal;
     var
         CalendarStartTime: Time;
@@ -1807,7 +1807,7 @@ codeunit 99000774 "Calculate Routing Line"
                 CalendarEntry."Ending Time" := ProdStartTime;
     end;
 
-    [LineStart(54385)]
+    (54385)]
     local procedure CalcAvailQtyBaseForWaitTime(ProdStartTime: Time; ProdStartDate: Date; CalendarEntryDate: Date; CalcFactor: Integer; IsForward: Boolean): Decimal;
     begin
         IF (ProdStartTime = 000000T) AND ((CalendarEntryDate <> ProdStartDate) OR IsForward) THEN
@@ -1815,7 +1815,7 @@ codeunit 99000774 "Calculate Routing Line"
         EXIT((86400000 + (ProdStartTime - 000000T) * CalcFactor) MOD 86400000);
     end;
 
-    [LineStart(54390)]
+    (54390)]
     local procedure SetMaxDateTime(var ResultingDate: Date; var ResultingTime: Time; DateToCompare: Date; TimeToCompare: Time);
     begin
         IF ((ResultingDate = DateToCompare) AND (ResultingTime >= TimeToCompare)) OR
@@ -1826,7 +1826,7 @@ codeunit 99000774 "Calculate Routing Line"
         ResultingTime := TimeToCompare;
     end;
 
-    [LineStart(54398)]
+    (54398)]
     local procedure SetMinDateTime(var ResultingDate: Date; var ResultingTime: Time; DateToCompare: Date; TimeToCompare: Time);
     begin
         IF ((ResultingDate = DateToCompare) AND (ResultingTime <= TimeToCompare)) OR

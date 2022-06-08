@@ -580,14 +580,14 @@ page 99000786 "Production BOM"
                                ITM2 : Record Item;
                                sucs : Boolean;
 
-    [LineStart(23896)]
+    (23896)]
     local procedure DescriptionOnInputChange(var Text: Text[1024]);
     begin
         IF (USERID <> 'EFFTRONICS\JHANSI') AND (USERID <> 'EFFTRONICS\ANILKUMAR') AND (USERID <> 'EFFTRONICS\RSILPARANI') AND (USERID <> 'EFFTRONICS\RATNARAVALI') THEN
             ERROR('YOU Have no rights to Change The Description');
     end;
 
-    [LineStart(23900)]
+    (23900)]
     local procedure NoOnFormat();
     begin
         IF ITEM.GET("No.") THEN BEGIN
@@ -598,7 +598,7 @@ page 99000786 "Production BOM"
         END;
     end;
 
-    [LineStart(23909)]
+    (23909)]
     local procedure DescriptionOnFormat();
     begin
         IF ITEM.GET("No.") THEN BEGIN

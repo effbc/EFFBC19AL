@@ -167,7 +167,7 @@ report 50158 "Product Prices after Dispatch"
         Total_Unit_Price_Without_TaxesCaptionLbl: Label 'Total Unit Price Without Taxes';
         Total_Unit_Price_With_TaxesCaptionLbl: Label 'Total Unit Price With Taxes';
 
-    [LineStart(8242)]
+    (8242)]
     procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[500]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -178,7 +178,7 @@ report 50158 "Product Prices after Dispatch"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(8250)]
+    (8250)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;

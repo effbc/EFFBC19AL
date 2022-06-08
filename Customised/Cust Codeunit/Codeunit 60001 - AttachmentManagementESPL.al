@@ -15,7 +15,7 @@ codeunit 60001 AttachmentManagementESPL
         Text007: Label 'You need to have Microsoft Word 2000 or later installed on your system to run this feature.';
         Text008: TextConst ENU = 'You must select an interaction template with an attachment.', ENN = 'You must select an interaction template with an attachment.';
 
-    [LineStart(560)]
+    (560)]
     procedure InsertAttachment(AttachmentNo: Integer; TableID: Integer; DocType: Option; DocNo: Code[20]): Integer;
     var
         Attachment3: Record Attachments;
@@ -66,7 +66,7 @@ codeunit 60001 AttachmentManagementESPL
 
     end;
 
-    [LineStart(603)]
+    (603)]
     procedure Send(var DeliverySorter: Record "Delivery Sorter");
     var
         Attachment: Record Attachments;
@@ -210,7 +210,7 @@ codeunit 60001 AttachmentManagementESPL
 
     end;
 
-    [LineStart(729)]
+    (729)]
     local procedure TransferAttachment(FromAttachment: Record Attachments; var ToAttachment: Record Attachments);
     var
         GLSetup: Record "General Ledger Setup";
@@ -300,7 +300,7 @@ codeunit 60001 AttachmentManagementESPL
 
     end;
 
-    [LineStart(811)]
+    (811)]
     procedure InteractionEMail(var InteractLogEntry: Record "Interaction Log Entry"): Text[80];
     var
         Cont: Record Contact;
@@ -337,7 +337,7 @@ codeunit 60001 AttachmentManagementESPL
 
     end;
 
-    [LineStart(841)]
+    (841)]
     procedure InteractionFax(var InteractLogEntry: Record "Interaction Log Entry"): Text[30];
     var
         Cont: Record Contact;
@@ -373,7 +373,7 @@ codeunit 60001 AttachmentManagementESPL
 
     end;
 
-    [LineStart(870)]
+    (870)]
     procedure "FileExtensionold-NoUse"(FileName: Text[260]) Extension: Text[260];
     var
         I: Integer;
@@ -389,7 +389,7 @@ codeunit 60001 AttachmentManagementESPL
 
     end;
 
-    [LineStart(880)]
+    (880)]
     procedure "UseComServerold-NoUse"(FileExtension: Text[250]; RequireAutomation: Boolean): Boolean;
     var
         AutomationServers: Record "Automation Server";

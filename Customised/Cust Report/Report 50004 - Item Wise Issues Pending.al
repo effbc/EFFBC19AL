@@ -555,7 +555,7 @@ report 50004 "Item Wise Issues Pending"
         Quantity_to_receive : Decimal;
         cost : Decimal;
 
-    [LineStart(145)]
+    (145)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -568,7 +568,7 @@ report 50004 "Item Wise Issues Pending"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(155)]
+    (155)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -582,7 +582,7 @@ report 50004 "Item Wise Issues Pending"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(166)]
+    (166)]
     procedure "Entercell New"();
     begin
     end;

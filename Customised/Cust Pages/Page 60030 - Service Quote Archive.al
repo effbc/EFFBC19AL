@@ -296,25 +296,25 @@ page 60030 "Service Quote Archive"
         ChangeExchangeRate : Page "Change Exchange Rate";
                                  FaultResolutionRelation : Page "Fault/Resol. Cod. Relationship";
 
-    [LineStart(5420)]
+    (5420)]
     local procedure CustomerNoOnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(5423)]
+    (5423)]
     local procedure BilltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(5426)]
+    (5426)]
     local procedure ShiptoCodeOnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(5429)]
+    (5429)]
     local procedure FinishingTimeOnAfterValidate();
     begin
         CurrPage.UPDATE(TRUE);

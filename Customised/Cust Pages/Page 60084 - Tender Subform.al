@@ -163,7 +163,7 @@ page 60084 "Tender Subform"
         MiscUser: Codeunit "Misc.User";
         User: Record User;
 
-    [LineStart(10503)]
+    (10503)]
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";
@@ -215,7 +215,7 @@ page 60084 "Tender Subform"
 
     end;
 
-    [LineStart(10545)]
+    (10545)]
     procedure ShowSchedule2();
     var
         Schedule: Record Schedule2;
@@ -231,7 +231,7 @@ page 60084 "Tender Subform"
         Schedule.FILTERGROUP(0);
     end;
 
-    [LineStart(10556)]
+    (10556)]
     procedure ShowSchedule3();
     var
         Schedule: Record Schedule2;
@@ -289,7 +289,7 @@ page 60084 "Tender Subform"
 
     end;
 
-    [LineStart(10607)]
+    (10607)]
     procedure ShowSchedule();
     var
         Schedule: Record Schedule2;

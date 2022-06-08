@@ -1531,7 +1531,7 @@ report 50005 "QCinspection details"
         ItemGrec: Record Item;
         PO: Record "Purchase Header";
 
-    [LineStart(187)]
+    (187)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean; CellType: Option);
     begin
 
@@ -1544,7 +1544,7 @@ report 50005 "QCinspection details"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(197)]
+    (197)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean; CellType: Option);
     begin
         Tempexcelbuffer.INIT;
@@ -1557,7 +1557,7 @@ report 50005 "QCinspection details"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(207)]
+    (207)]
     procedure "Entercell New"();
     begin
     end;

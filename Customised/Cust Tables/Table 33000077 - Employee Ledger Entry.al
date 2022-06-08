@@ -453,7 +453,7 @@ table 33000077 "Employee Ledger Entry"
     {
     }
 
-    [LineStart(7107)]
+    (7107)]
     procedure DrillDownOnEntries(var RecDtldEmpLedgEntry: Record "Detailed Employee Ledg. Entry");
     var
         EmpLedgerEntryLocal: Record "Employee Ledger Entry";
@@ -467,7 +467,7 @@ table 33000077 "Employee Ledger Entry"
         PAGE.Run(0, EmpLedgerEntryLocal);
     end;
 
-    [LineStart(7116)]
+    (7116)]
     procedure DrillDownOnOverdueEntries(var RecDtldEmpLedgEntry: Record "Detailed Employee Ledg. Entry");
     var
         EmpLedgerEntryLocal: Record "Employee Ledger Entry";

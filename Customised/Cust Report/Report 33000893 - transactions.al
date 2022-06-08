@@ -420,7 +420,7 @@ report 33000893 transactions
         Acount_No : Integer;
         Sales_Excel : Record "Excel Buffer";
 
-    [LineStart(21565)]
+    (21565)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
 
@@ -433,7 +433,7 @@ report 33000893 transactions
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(21575)]
+    (21575)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -446,7 +446,7 @@ report 33000893 transactions
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(21585)]
+    (21585)]
     procedure ExcelHeading(Excel : Record "Excel Buffer");
     begin
           EnterHeadings(Row,1,'Entry Type',TRUE,Excel."Cell Type"::Text);

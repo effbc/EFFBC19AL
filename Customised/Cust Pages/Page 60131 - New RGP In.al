@@ -353,13 +353,13 @@ page 60131 "New RGP In"
         Calibration: Record Calibration;
         RGPRelease: Codeunit "RGP Release";
 
-    [LineStart(11738)]
+    (11738)]
     local procedure ConsigneeOnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(11741)]
+    (11741)]
     local procedure ConsigneeNoOnAfterValidate();
     begin
         CurrPage.UPDATE;

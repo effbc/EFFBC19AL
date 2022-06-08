@@ -436,25 +436,25 @@ page 90004 "Sales Authorisation Sub Form"
         Text001 : Label 'Prod. Order is already created against the Sales Order.';
         item : Record Item;
 
-    [LineStart(22250)]
+    (22250)]
     procedure ApproveCalcInvDisc();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Disc. (Yes/No)",Rec);
     end;
 
-    [LineStart(22253)]
+    (22253)]
     procedure CalcInvDisc();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Calc. Discount",Rec);
     end;
 
-    [LineStart(22256)]
+    (22256)]
     procedure ExplodeBOM();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Explode BOM",Rec);
     end;
 
-    [LineStart(22259)]
+    (22259)]
     procedure OpenPurchOrderForm();
     var
         PurchHeader : Record "Purchase Header";
@@ -466,7 +466,7 @@ page 90004 "Sales Authorisation Sub Form"
         PurchOrder.RUN;
     end;
 
-    [LineStart(22265)]
+    (22265)]
     procedure OpenSpecialPurchOrderForm();
     var
         PurchHeader : Record "Purchase Header";
@@ -478,7 +478,7 @@ page 90004 "Sales Authorisation Sub Form"
         PurchOrder.RUN;
     end;
 
-    [LineStart(22271)]
+    (22271)]
     procedure _InsertExtendedText(Unconditionally : Boolean);
     begin
         IF TransferExtendedText.SalesCheckIfAnyExtText(Rec,Unconditionally) THEN BEGIN
@@ -489,7 +489,7 @@ page 90004 "Sales Authorisation Sub Form"
           UpdateForm(TRUE);
     end;
 
-    [LineStart(22279)]
+    (22279)]
     procedure InsertExtendedText(Unconditionally : Boolean);
     begin
         IF TransferExtendedText.SalesCheckIfAnyExtText(Rec,Unconditionally) THEN BEGIN
@@ -500,87 +500,87 @@ page 90004 "Sales Authorisation Sub Form"
           UpdateForm(TRUE);
     end;
 
-    [LineStart(22287)]
+    (22287)]
     procedure _ShowReservation();
     begin
         FIND;
         Rec.ShowReservation;
     end;
 
-    [LineStart(22291)]
+    (22291)]
     procedure ShowReservation();
     begin
         FIND;
         Rec.ShowReservation;
     end;
 
-    [LineStart(22295)]
+    (22295)]
     procedure _ItemAvailability(AvailabilityType : Option Date,Variant,Location,Bin);
     begin
         //Rec.ItemAvailability(AvailabilityType); //B2b1.0
     end;
 
-    [LineStart(22298)]
+    (22298)]
     procedure ItemAvailability(AvailabilityType : Option Date,Variant,Location,Bin);
     begin
         //Rec.ItemAvailability(AvailabilityType);//B2b1.0
     end;
 
-    [LineStart(22301)]
+    (22301)]
     procedure _ShowReservationEntries();
     begin
         Rec.ShowReservationEntries(TRUE);
     end;
 
-    [LineStart(22304)]
+    (22304)]
     procedure ShowReservationEntries();
     begin
         Rec.ShowReservationEntries(TRUE);
     end;
 
-    [LineStart(22307)]
+    (22307)]
     procedure _ShowDimensions();
     begin
         Rec.ShowDimensions;
     end;
 
-    [LineStart(22310)]
+    (22310)]
     procedure ShowDimensions();
     begin
         Rec.ShowDimensions;
     end;
 
-    [LineStart(22313)]
+    (22313)]
     procedure _ShowItemSub();
     begin
         Rec.ShowItemSub;
     end;
 
-    [LineStart(22316)]
+    (22316)]
     procedure ShowItemSub();
     begin
         Rec.ShowItemSub;
     end;
 
-    [LineStart(22319)]
+    (22319)]
     procedure ShowNonstockItems();
     begin
         Rec.ShowNonstock;
     end;
 
-    [LineStart(22322)]
+    (22322)]
     procedure _OpenItemTrackingLines();
     begin
         Rec.OpenItemTrackingLines;
     end;
 
-    [LineStart(22325)]
+    (22325)]
     procedure OpenItemTrackingLines();
     begin
         Rec.OpenItemTrackingLines;
     end;
 
-    [LineStart(22328)]
+    (22328)]
     procedure ShowTracking();
     var
         TrackingForm : Page "Order Tracking";
@@ -589,38 +589,38 @@ page 90004 "Sales Authorisation Sub Form"
         TrackingForm.RUNMODAL;
     end;
 
-    [LineStart(22332)]
+    (22332)]
     procedure ItemChargeAssgnt();
     begin
         Rec.ShowItemChargeAssgnt;
     end;
 
-    [LineStart(22335)]
+    (22335)]
     procedure UpdateForm(SetSaveRecord : Boolean);
     begin
         CurrPage.UPDATE(SetSaveRecord);
     end;
 
-    [LineStart(22338)]
+    (22338)]
     procedure ShowPrices();
     begin
         SalesHeader.GET("Document Type","Document No.");
         SalesPriceCalcMgt.GetSalesLinePrice(SalesHeader,Rec);
     end;
 
-    [LineStart(22342)]
+    (22342)]
     procedure ShowLineDisc();
     begin
         SalesHeader.GET("Document Type","Document No.");
         SalesPriceCalcMgt.GetSalesLineLineDisc(SalesHeader,Rec);
     end;
 
-    [LineStart(22346)]
+    (22346)]
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(22349)]
+    (22349)]
     procedure ShowStrDetailsForm();
     var
         StrOrderLineDetails : Record "Structure Order Line Details";
@@ -636,12 +636,12 @@ page 90004 "Sales Authorisation Sub Form"
         StrOrderLineDetailsForm.RUNMODAL;
     end;
 
-    [LineStart(22359)]
+    (22359)]
     procedure "---B2B--"();
     begin
     end;
 
-    [LineStart(22362)]
+    (22362)]
     procedure CustAttachments();
     var
         CustAttach : Record Attachments;
@@ -654,7 +654,7 @@ page 90004 "Sales Authorisation Sub Form"
         PAGE.RUN(PAGE::"ESPL Attachments",CustAttach);
     end;
 
-    [LineStart(22370)]
+    (22370)]
     procedure _Presite();
     var
         PreSiteCheckList : Record "Inst. PreSite Check List";
@@ -665,7 +665,7 @@ page 90004 "Sales Authorisation Sub Form"
         PAGE.RUN(PAGE::"Inst. PreSite Check List",PreSiteCheckList);
     end;
 
-    [LineStart(22376)]
+    (22376)]
     procedure Presite();
     var
         PreSiteCheckList : Record "Inst. PreSite Check List";
@@ -676,7 +676,7 @@ page 90004 "Sales Authorisation Sub Form"
         PAGE.RUN(PAGE::"Inst. PreSite Check List",PreSiteCheckList);
     end;
 
-    [LineStart(22382)]
+    (22382)]
     procedure ShowPackingDetails();
     var
         PackingDetails : Record "Shortage Management Audit Data";
@@ -687,7 +687,7 @@ page 90004 "Sales Authorisation Sub Form"
         PAGE.RUNMODAL(PAGE :: "Shortage Mng Audit Data",PackingDetails);
     end;
 
-    [LineStart(22388)]
+    (22388)]
     procedure SalesLineAttachments();
     var
         CustAttach : Record Attachments;
@@ -701,7 +701,7 @@ page 90004 "Sales Authorisation Sub Form"
         PAGE.RUN(PAGE::"ESPL Attachments",CustAttach);
     end;
 
-    [LineStart(22397)]
+    (22397)]
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader : Record "Design Worksheet Header";
@@ -760,7 +760,7 @@ page 90004 "Sales Authorisation Sub Form"
 
     end;
 
-    [LineStart(22446)]
+    (22446)]
     procedure ShowDeliveryChallan();
     var
         DeliveryChallan : Record "DC Header";
@@ -771,7 +771,7 @@ page 90004 "Sales Authorisation Sub Form"
         PAGE.RUNMODAL(PAGE :: "DC Header",DeliveryChallan);
     end;
 
-    [LineStart(22452)]
+    (22452)]
     procedure ShowSchedule2();
     var
         Schedule : Record Schedule2;
@@ -799,7 +799,7 @@ page 90004 "Sales Authorisation Sub Form"
         END;
     end;
 
-    [LineStart(22475)]
+    (22475)]
     procedure ShowPODetails();
     var
         SOPodetails : Record "SO Prod.Order Details";
@@ -809,7 +809,7 @@ page 90004 "Sales Authorisation Sub Form"
         PAGE.RUNMODAL(60126,SOPodetails);
     end;
 
-    [LineStart(22480)]
+    (22480)]
     procedure MakeLines(var SalesLineparam : Record "Sales Line") : Decimal;
     var
         SalesLine : Record "Sales Line";
@@ -899,7 +899,7 @@ page 90004 "Sales Authorisation Sub Form"
 
     end;
 
-    [LineStart(22560)]
+    (22560)]
     procedure ValidateProdOrder();
     begin
         CALCFIELDS("Prod. Order Quantity");
@@ -907,7 +907,7 @@ page 90004 "Sales Authorisation Sub Form"
           ERROR(Text001);
     end;
 
-    [LineStart(22565)]
+    (22565)]
     procedure ShowSchedule();
     var
         Schedule : Record Schedule2;
@@ -997,7 +997,7 @@ page 90004 "Sales Authorisation Sub Form"
         END;
     end;
 
-    [LineStart(22649)]
+    (22649)]
     local procedure NoOnAfterValidate();
     begin
         InsertExtendedText(FALSE);
@@ -1007,7 +1007,7 @@ page 90004 "Sales Authorisation Sub Form"
           CurrPage.SAVERECORD;
     end;
 
-    [LineStart(22656)]
+    (22656)]
     local procedure QuantityOnAfterValidate();
     begin
         IF Reserve = Reserve::Always THEN BEGIN

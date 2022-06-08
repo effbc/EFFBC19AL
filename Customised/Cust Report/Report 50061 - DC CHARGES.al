@@ -340,7 +340,7 @@ report 50061 "DC CHARGES"
         There_is_no_Charges_for_the_DC_S_which_are_Sent__By_Hand___CaptionLbl : Label '( There is no Charges for the DC''S which are Sent "By Hand" )';
         CompanyInfo : Record "Company Information";
 
-    [LineStart(3888)]
+    (3888)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -353,7 +353,7 @@ report 50061 "DC CHARGES"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(3898)]
+    (3898)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;

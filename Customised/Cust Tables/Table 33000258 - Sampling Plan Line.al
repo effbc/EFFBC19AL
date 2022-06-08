@@ -190,7 +190,7 @@ table 33000258 "Sampling Plan Line"
         Text000: Label 'Lot Max size should not be less than Previous Line Max size';
         Text001: Label 'Lot Max size is should not be greater than next Line Max size';
 
-    [LineStart(7650)]
+    (7650)]
     procedure check();
     begin
         CheckNextRec := false;
@@ -227,7 +227,7 @@ table 33000258 "Sampling Plan Line"
         "Lot Size - Min" := TempSamplePlanline1."Lot Size - Max" + 1;
     end;
 
-    [LineStart(7684)]
+    (7684)]
     procedure TestStatus();
     var
         SamplePlanHeader: Record "Sampling Plan Header";

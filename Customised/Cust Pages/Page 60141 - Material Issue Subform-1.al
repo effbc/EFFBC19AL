@@ -86,19 +86,19 @@ page 60141 "Material Issue Subform-1"
         MatIssuesLine: Record "Material Issues Line";
         TrackingSpecification: Record "Mat.Issue Track. Specification";
 
-    [LineStart(12466)]
+    (12466)]
     procedure ItemAvailability(AvailabilityType: Option Date,Variant,Location);
     begin
         ItemAvailability(AvailabilityType);
     end;
 
-    [LineStart(12469)]
+    (12469)]
     procedure ShowDimensions();
     begin
         Rec.ShowDimensions;
     end;
 
-    [LineStart(12472)]
+    (12472)]
     procedure OpenItemTrackingLines();
     var
         Item: Record Item;

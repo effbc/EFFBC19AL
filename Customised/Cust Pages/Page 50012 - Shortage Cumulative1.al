@@ -2387,7 +2387,7 @@ page 50012 "Shortage Cumulative1"
         NoOfRecords: Integer;
         Last_Direct_Unit_Cost: Decimal;
 
-    [LineStart(1146)]
+    (1146)]
     procedure getStockValues(Item: Code[50]);
     begin
         // Added by Rakesh to get the stock in stores, RD, CS and MCH on 15-Sep-14
@@ -2468,7 +2468,7 @@ page 50012 "Shortage Cumulative1"
             Last_Direct_Unit_Cost := ITEM1."Last Direct Cost";
     end;
 
-    [LineStart(1226)]
+    (1226)]
     procedure GetStock(Item: Code[30]);
     begin
         IF ITEM1.GET(Item) THEN BEGIN
@@ -2541,7 +2541,7 @@ page 50012 "Shortage Cumulative1"
         // end by Rakesh
     end;
 
-    [LineStart(1298)]
+    (1298)]
     procedure GetNextNo() NumberValue: Code[20];
     var
         DateValue: Text[30];
@@ -2584,7 +2584,7 @@ page 50012 "Shortage Cumulative1"
         NumberValue := INCSTR(LastNumber);
     end;
 
-    [LineStart(1329)]
+    (1329)]
     procedure VerifyRequest();
     begin
         // Added by Rakesh to verify request already created for Item on 17-Sep-14
@@ -2649,7 +2649,7 @@ page 50012 "Shortage Cumulative1"
         // End by Rakesh
     end;
 
-    [LineStart(1399)]
+    (1399)]
     procedure AuthMail();
     begin
         //MESSAGE(MaterialIssueHeader."No.");
@@ -2746,7 +2746,7 @@ page 50012 "Shortage Cumulative1"
         //end by rakesh
     end;
 
-    [LineStart(1494)]
+    (1494)]
     procedure FieldsVisible();
     var
         GrecProdOrderShrtg: Record "Production Order Shortage Item";
@@ -2839,7 +2839,7 @@ page 50012 "Shortage Cumulative1"
         END;
     end;
 
-    [LineStart(1585)]
+    (1585)]
     procedure SetValues(DayCount: Integer);
     begin
         IF DayCount = 0 THEN
@@ -2848,7 +2848,7 @@ page 50012 "Shortage Cumulative1"
             NoOfDays := DayCount;
     end;
 
-    [LineStart(1591)]
+    (1591)]
     procedure Include_Stock();
     begin
         RESET;
@@ -2890,7 +2890,7 @@ page 50012 "Shortage Cumulative1"
 
     end;
 
-    [LineStart(1629)]
+    (1629)]
     procedure Calc_Shortage_items_Count();
     begin
         // Added by Pranavi on 16=Jan-2016 for
@@ -2903,7 +2903,7 @@ page 50012 "Shortage Cumulative1"
         // End by Pranavi
     end;
 
-    [LineStart(1639)]
+    (1639)]
     procedure Show_Only_Shortg_Itms();
     begin
         // Added by Pranavi on 16=Jan-2016 for
@@ -2925,7 +2925,7 @@ page 50012 "Shortage Cumulative1"
         // End by Pranavi
     end;
 
-    [LineStart(1659)]
+    (1659)]
     procedure Include_Stock_For_Record(Item_No: Code[50]);
     begin
         getStockValues(Rec.Item);
@@ -2952,7 +2952,7 @@ page 50012 "Shortage Cumulative1"
         MODIFY;
     end;
 
-    [LineStart(1683)]
+    (1683)]
     procedure Show_Only_Critical_Itms();
     begin
         // Added by Pranavi on 16=Jan-2016 for
@@ -2982,7 +2982,7 @@ page 50012 "Shortage Cumulative1"
         // End by Pranavi
     end;
 
-    [LineStart(1714)]
+    (1714)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean; CellType: Option; FontColor: Integer);
     begin
 
@@ -2997,7 +2997,7 @@ page 50012 "Shortage Cumulative1"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(1726)]
+    (1726)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean; CellType: Option);
     begin
         TempExcelbuffer.INIT;
@@ -3011,7 +3011,7 @@ page 50012 "Shortage Cumulative1"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(1737)]
+    (1737)]
     procedure Get_Alt_Stock(Item: Code[30]);
     begin
         IF ITEM1.GET(Item) THEN BEGIN
@@ -3084,7 +3084,7 @@ page 50012 "Shortage Cumulative1"
         // end by Rakesh
     end;
 
-    [LineStart(1809)]
+    (1809)]
     local procedure ExporttoExcel();
     begin
         CLEAR(NoOfRecords);

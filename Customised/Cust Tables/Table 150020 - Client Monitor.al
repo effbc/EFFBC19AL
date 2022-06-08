@@ -266,7 +266,7 @@ table 150020 "Client Monitor"
     var
         Session1: Record Session;
 
-    [LineStart(5864)]
+
     procedure SetConditionalConnectionFilter();
     var
         ClientMonitor: Record "Client Monitor";
@@ -285,7 +285,7 @@ table 150020 "Client Monitor"
         end;
     end;
 
-    [LineStart(5878)]
+
     procedure SetConnectionFilter();
     var
         ClientMonitor2: Record "Client Monitor";

@@ -1058,7 +1058,7 @@ page 90003 "Sales Authorisation Orders For"
         [InDataSet]
         RemarksEditable : Boolean;
 
-    [LineStart(21985)]
+    (21985)]
     procedure UpdateAllowed() : Boolean;
     begin
         IF CurrPage.EDITABLE = FALSE THEN
@@ -1066,12 +1066,12 @@ page 90003 "Sales Authorisation Orders For"
         EXIT(TRUE);
     end;
 
-    [LineStart(21990)]
+    (21990)]
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(21993)]
+    (21993)]
     procedure ConvertOrdertoExportOrder(var Rec : Record "Sales Header");
     var
         OldSalesCommentLine : Record "Sales Comment Line";
@@ -1240,12 +1240,12 @@ page 90003 "Sales Authorisation Orders For"
 
     end;
 
-    [LineStart(22150)]
+    (22150)]
     procedure "---B2B---"();
     begin
     end;
 
-    [LineStart(22153)]
+    (22153)]
     procedure DocumentPosition();
     begin
         /*
@@ -1257,7 +1257,7 @@ page 90003 "Sales Authorisation Orders For"
 
     end;
 
-    [LineStart(22161)]
+    (22161)]
     procedure CreateOrders(Qtyparam : Decimal) OrdersCreated : Boolean;
     var
         Item : Record Item;
@@ -1289,7 +1289,7 @@ page 90003 "Sales Authorisation Orders For"
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
-    [LineStart(22186)]
+    (22186)]
     procedure calcamt();
     begin
         "Sale Order Total Amount":=0;
@@ -1301,7 +1301,7 @@ page 90003 "Sales Authorisation Orders For"
          MODIFY;
     end;
 
-    [LineStart(22195)]
+    (22195)]
     procedure NewCDOMessage("From Name" : Text[100];"To Name" : Text[1000];Subject : Text[1000];Body : Text[1000];AttachFileName : Text[250]);
     begin
         /*
@@ -1348,13 +1348,13 @@ page 90003 "Sales Authorisation Orders For"
 
     end;
 
-    [LineStart(22238)]
+    (22238)]
     local procedure SelltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(22241)]
+    (22241)]
     local procedure OnAfterGetCurrRecord();
     begin
         xRec := Rec;

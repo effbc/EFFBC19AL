@@ -365,7 +365,7 @@ pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subfor
     */
     //end;
 
-    [LineStart(13620)]
+    (13620)]
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";
@@ -384,7 +384,7 @@ pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subfor
         DesignWorksheetHeader.FILTERGROUP(0);
     end;
 
-    [LineStart(13633)]
+    (13633)]
     procedure ShowSchedule();
     var
         Schedule: Record Schedule2;

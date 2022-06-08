@@ -34,7 +34,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         OverruleItemTracking: Boolean;
         DeleteItemTracking: Boolean;
 
-    [LineStart(57110)]
+    (57110)]
     procedure CreateReservation(var PurchLine: Record "Purchase Line"; Description: Text[50]; ExpectedReceiptDate: Date; Quantity: Decimal; QuantityBase: Decimal; ForSerialNo: Code[20]; ForLotNo: Code[20]);
     var
         ShipmentDate: Date;
@@ -84,7 +84,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         SetFromType := 0;
     end;
 
-    [LineStart(57154)]
+    (57154)]
     procedure CreateReservationSetFrom(TrackingSpecificationFrom: Record "Tracking Specification");
     begin
         WITH TrackingSpecificationFrom DO BEGIN
@@ -102,7 +102,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         END;
     end;
 
-    [LineStart(57169)]
+    (57169)]
     procedure FilterReservFor(var FilterReservEntry: Record "Reservation Entry"; PurchLine: Record "Purchase Line");
     begin
         FilterReservEntry.SETRANGE("Source Type", DATABASE::"Purchase Line");
@@ -113,7 +113,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         FilterReservEntry.SETRANGE("Source Ref. No.", PurchLine."Line No.");
     end;
 
-    [LineStart(57177)]
+    (57177)]
     procedure ReservQuantity(PurchLine: Record "Purchase Line") QtyToReserve: Decimal;
     begin
         CASE PurchLine."Document Type" OF
@@ -128,14 +128,14 @@ codeunit 99000834 "Purch. Line-Reserve"
         END;
     end;
 
-    [LineStart(57189)]
+    (57189)]
     procedure Caption(PurchLine: Record "Purchase Line") CaptionText: Text[80];
     begin
         CaptionText :=
           STRSUBSTNO('%1 %2 %3', PurchLine."Document Type", PurchLine."Document No.", PurchLine."No.");
     end;
 
-    [LineStart(57193)]
+    (57193)]
     procedure FindReservEntry(PurchLine: Record "Purchase Line"; var ReservEntry: Record "Reservation Entry"): Boolean;
     begin
         ReservEngineMgt.InitFilterAndSortingLookupFor(ReservEntry, FALSE);
@@ -143,7 +143,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         EXIT(ReservEntry.FINDLAST);
     end;
 
-    [LineStart(57198)]
+    (57198)]
     procedure ReservEntryExist(PurchLine: Record "Purchase Line"): Boolean;
     var
         ReservEntry: Record "Reservation Entry";
@@ -153,7 +153,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         EXIT(NOT ReservEntry.ISEMPTY);
     end;
 
-    [LineStart(57203)]
+    (57203)]
     procedure VerifyChange(var NewPurchLine: Record "Purchase Line"; var OldPurchLine: Record "Purchase Line");
     var
         PurchLine: Record "Purchase Line";
@@ -244,7 +244,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         END;
     end;
 
-    [LineStart(57286)]
+    (57286)]
     procedure VerifyQuantity(var NewPurchLine: Record "Purchase Line"; var OldPurchLine: Record "Purchase Line");
     var
         PurchLine: Record "Purchase Line";
@@ -278,7 +278,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         END;
     end;
 
-    [LineStart(57315)]
+    (57315)]
     procedure UpdatePlanningFlexibility(var PurchLine: Record "Purchase Line");
     var
         ReservEntry: Record "Reservation Entry";
@@ -287,7 +287,7 @@ codeunit 99000834 "Purch. Line-Reserve"
             ReservEntry.MODIFYALL("Planning Flexibility", PurchLine."Planning Flexibility");
     end;
 
-    [LineStart(57319)]
+    (57319)]
     procedure TransferPurchLineToItemJnlLine(var PurchLine: Record "Purchase Line"; var ItemJnlLine: Record "Item Journal Line"; TransferQty: Decimal; var CheckApplToItemEntry: Boolean): Decimal;
     var
         OldReservEntry: Record "Reservation Entry";
@@ -356,7 +356,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         EXIT(TransferQty);
     end;
 
-    [LineStart(57381)]
+    (57381)]
     procedure TransferPurchLineToPurchLine(var OldPurchLine: Record "Purchase Line"; var NewPurchLine: Record "Purchase Line"; TransferQty: Decimal);
     var
         OldReservEntry: Record "Reservation Entry";
@@ -390,7 +390,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         END; // DO
     end;
 
-    [LineStart(57409)]
+    (57409)]
     local procedure RenameLine(var NewPurchLine: Record "Purchase Line"; var OldPurchLine: Record "Purchase Line");
     begin
         ReservEngineMgt.RenamePointer(DATABASE::"Purchase Line",
@@ -406,7 +406,7 @@ codeunit 99000834 "Purch. Line-Reserve"
           NewPurchLine."Line No.");
     end;
 
-    [LineStart(57422)]
+    (57422)]
     procedure DeleteLineConfirm(var PurchLine: Record "Purchase Line"): Boolean;
     begin
         WITH PurchLine DO BEGIN
@@ -421,7 +421,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         EXIT(DeleteItemTracking);
     end;
 
-    [LineStart(57434)]
+    (57434)]
     procedure DeleteLine(var PurchLine: Record "Purchase Line");
     begin
         IF Blocked THEN
@@ -439,7 +439,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         END;
     end;
 
-    [LineStart(57449)]
+    (57449)]
     local procedure AssignForPlanning(var PurchLine: Record "Purchase Line");
     var
         PlanningAssignment: Record "Planning Assignment";
@@ -454,13 +454,13 @@ codeunit 99000834 "Purch. Line-Reserve"
         END;
     end;
 
-    [LineStart(57459)]
+    (57459)]
     procedure Block(SetBlocked: Boolean);
     begin
         Blocked := SetBlocked;
     end;
 
-    [LineStart(57462)]
+    (57462)]
     procedure CallItemTracking(var PurchLine: Record "Purchase Line");
     var
         TrackingSpecification: Record "Tracking Specification";
@@ -484,7 +484,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         ItemTrackingForm.RUNMODAL;
     end;
 
-    [LineStart(57480)]
+    (57480)]
     procedure CallItemTracking2(var PurchLine: Record "Purchase Line"; SecondSourceQuantityArray: array[3] of Decimal);
     var
         TrackingSpecification: Record "Tracking Specification";
@@ -496,7 +496,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         ItemTrackingForm.RUNMODAL;
     end;
 
-    [LineStart(57486)]
+    (57486)]
     procedure InitTrackingSpecification(var PurchLine: Record "Purchase Line"; var TrackingSpecification: Record "Tracking Specification");
     begin
         TrackingSpecification.INIT;
@@ -530,7 +530,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         END;
     end;
 
-    [LineStart(57517)]
+    (57517)]
     procedure RetrieveInvoiceSpecification(var PurchLine: Record "Purchase Line"; var TempInvoicingSpecification: Record "Tracking Specification" temporary) OK: Boolean;
     var
         SourceSpecification: Record "Tracking Specification";
@@ -551,7 +551,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         END;
     end;
 
-    [LineStart(57533)]
+    (57533)]
     local procedure RetrieveInvoiceSpecification2(var PurchLine: Record "Purchase Line"; var TempInvoicingSpecification: Record "Tracking Specification" temporary) OK: Boolean;
     var
         TrackingSpecification: Record "Tracking Specification";
@@ -580,7 +580,7 @@ codeunit 99000834 "Purch. Line-Reserve"
         OK := TempInvoicingSpecification.FINDFIRST;
     end;
 
-    [LineStart(57556)]
+    (57556)]
     procedure DeleteInvoiceSpecFromHeader(var PurchHeader: Record "Purchase Header");
     var
         TrackingSpecification: Record "Tracking Specification";
@@ -598,7 +598,7 @@ codeunit 99000834 "Purch. Line-Reserve"
             UNTIL TrackingSpecification.NEXT = 0;
     end;
 
-    [LineStart(57569)]
+    (57569)]
     local procedure DeleteInvoiceSpecFromLine(PurchLine: Record "Purchase Line");
     var
         TrackingSpecification: Record "Tracking Specification";
@@ -617,7 +617,7 @@ codeunit 99000834 "Purch. Line-Reserve"
             UNTIL TrackingSpecification.NEXT = 0;
     end;
 
-    [LineStart(57583)]
+    (57583)]
     procedure UpdateItemTrackingAfterPosting(PurchHeader: Record "Purchase Header");
     var
         ReservEntry: Record "Reservation Entry";
@@ -633,19 +633,19 @@ codeunit 99000834 "Purch. Line-Reserve"
         CreateReservEntry.UpdateItemTrackingAfterPosting(ReservEntry);
     end;
 
-    [LineStart(57593)]
+    (57593)]
     procedure SetApplySpecificItemTracking(ApplySpecific: Boolean);
     begin
         ApplySpecificItemTracking := ApplySpecific;
     end;
 
-    [LineStart(57596)]
+    (57596)]
     procedure SetOverruleItemTracking(Overrule: Boolean);
     begin
         OverruleItemTracking := Overrule;
     end;
 
-    [LineStart(57599)]
+    (57599)]
     local procedure VerifyPurchLine(var NewPurchLine: Record "Purchase Line"; var OldPurchLine: Record "Purchase Line"; var HasError: Boolean);
     begin
         IF (NewPurchLine.Type = NewPurchLine.Type::Item) AND (OldPurchLine.Type = OldPurchLine.Type::Item) THEN

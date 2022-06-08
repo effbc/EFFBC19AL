@@ -123,7 +123,7 @@ report 90056 test
         Product_NameCaptionLbl: Label 'Product Name';
         Customer_NameCaptionLbl: Label 'Customer Name';
 
-    [LineStart(18873)]
+    (18873)]
     procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -134,7 +134,7 @@ report 90056 test
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(18881)]
+    (18881)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;

@@ -676,7 +676,7 @@ report 50039 "QC Inwards"
         R_D_STR_CaptionLbl : Label 'R&D STR:';
         CS_STR_CaptionLbl : Label 'CS STR:';
 
-    [LineStart(3168)]
+    (3168)]
     procedure EnterCell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -687,7 +687,7 @@ report 50039 "QC Inwards"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(3176)]
+    (3176)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean);
     begin
         TempExcelBuffer.INIT;

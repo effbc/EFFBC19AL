@@ -22,13 +22,13 @@ codeunit 33000254 QualityAttachmentManagement
         Text014: Label 'Only Microsoft Word documents can be faxed.';
         VendorItemApproval: Record "Vendor Item Quality Approval";
 
-    [LineStart(50972)]
+    (50972)]
     procedure SetVendorItemApproval(VendorItemApproval2: Record "Vendor Item Quality Approval");
     begin
         VendorItemApproval := VendorItemApproval2;
     end;
 
-    [LineStart(50975)]
+    (50975)]
     procedure ImportAttchment(): Boolean;
     var
         AttachmentManagement: Codeunit AttachmentManagement;
@@ -46,7 +46,7 @@ codeunit 33000254 QualityAttachmentManagement
             EXIT(FALSE);
     end;
 
-    [LineStart(50987)]
+    (50987)]
     procedure ExportAttachment(ExportToFile: Text[260]): Boolean;
     var
         FileName: Text[260];
@@ -71,7 +71,7 @@ codeunit 33000254 QualityAttachmentManagement
             EXIT(FALSE)
     end;
 
-    [LineStart(51006)]
+    (51006)]
     procedure OpenAttachment();
     var
         WordManagement: Codeunit WordManagement;
@@ -91,7 +91,7 @@ codeunit 33000254 QualityAttachmentManagement
         DeleteFile(FileName);
     end;
 
-    [LineStart(51019)]
+    (51019)]
     procedure ConstFilename() FileName: Text[260];
     var
         I: Integer;
@@ -108,7 +108,7 @@ codeunit 33000254 QualityAttachmentManagement
         MESSAGE('%1', FileName);
     end;
 
-    [LineStart(51030)]
+    (51030)]
     procedure DeleteFile(FileName: Text[260]): Boolean;
     var
         I: Integer;
@@ -126,7 +126,7 @@ codeunit 33000254 QualityAttachmentManagement
         EXIT(NOT EXISTS(FileName));
     end;
 
-    [LineStart(51043)]
+    (51043)]
     procedure RemoveAttachment(Prompt: Boolean) DeleteOK: Boolean;
     var
         DeleteYesNo: Boolean;

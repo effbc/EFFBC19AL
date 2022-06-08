@@ -226,7 +226,7 @@ page 60226 "Blanket Sales Orders List"
                                  Text01 : Label 'Do You want to Send the Document to Design?';
         SMTP_MAIL : Codeunit "SMTP Mail";
 
-    [LineStart(16926)]
+    (16926)]
     procedure CreateOrders(Qtyparam : Decimal) OrdersCreated : Boolean;
     var
         Item : Record Item;

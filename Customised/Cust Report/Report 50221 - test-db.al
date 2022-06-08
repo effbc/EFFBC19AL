@@ -61,7 +61,7 @@ report 50221 "test-db"
         row : Integer;
         Tempexcelbuffer : Record "Excel Buffer";
 
-    [LineStart(9719)]
+    (9719)]
     procedure EnterCell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean);
     begin
         Tempexcelbuffer.INIT;
@@ -72,7 +72,7 @@ report 50221 "test-db"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(9727)]
+    (9727)]
     procedure "Enter Headings"(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean);
     begin
         Tempexcelbuffer.INIT;

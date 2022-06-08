@@ -292,7 +292,7 @@ report 99000758 "Compare List"
         Qty_DifferenceCaptionLbl: Label 'Qty Difference';
         Total_Cost_DifferenceCaptionLbl: Label 'Total Cost Difference';
 
-    [LineStart(22909)]
+    (22909)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -304,7 +304,7 @@ report 99000758 "Compare List"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(22918)]
+    (22918)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -317,12 +317,12 @@ report 99000758 "Compare List"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(22928)]
+    (22928)]
     procedure "Entercell New"();
     begin
     end;
 
-    [LineStart(22931)]
+    (22931)]
     procedure InitializeRequest(NewItem1: Code[20]; NewItem2: Code[20]; NewCalculateDate: Date);
     begin
         Item[1]."No." := NewItem1;

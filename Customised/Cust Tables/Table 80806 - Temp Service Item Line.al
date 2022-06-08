@@ -286,7 +286,7 @@ table 80806 "Temp Service Item Line"
         field(40; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code';
-            TableRelation = "Item Variant".Make WHERE("Item No." = FIELD("Item No."));
+            TableRelation = "Item Variant".Code WHERE("Item No." = FIELD("Item No."));
             DataClassification = CustomerContent;
         }
         field(41; "Service Item Loaner Comment"; Boolean)

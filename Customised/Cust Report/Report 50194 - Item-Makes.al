@@ -118,7 +118,7 @@ report 50194 "Item-Makes"
         "No Make": Boolean;
         k: Integer;
 
-    [LineStart(8528)]
+    (8528)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean);
     begin
 
@@ -131,7 +131,7 @@ report 50194 "Item-Makes"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(8538)]
+    (8538)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean);
     begin
         Tempexcelbuffer.INIT;

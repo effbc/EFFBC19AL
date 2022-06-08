@@ -101,7 +101,7 @@ table 33000281 "Specification Version"
         NoSeriesMgt: Codeunit NoSeriesManagement;
         SpecIndent: Codeunit "Spec Line-Indent";
 
-    [LineStart(8120)]
+    (8120)]
     procedure AssistEdit(OldSpecVersion: Record "Specification Version"): Boolean;
     begin
         with SpecVersion do begin
@@ -116,7 +116,7 @@ table 33000281 "Specification Version"
         end;
     end;
 
-    [LineStart(8132)]
+    (8132)]
     procedure TestStatus();
     var
         SpecLine2: Record "Specification Line";

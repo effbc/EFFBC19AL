@@ -151,7 +151,7 @@ xmlport 50001 "PAD Software Data Integration1"
         LineNo: Integer;
         BOMLine: Record "Production BOM Line";
 
-    [LineStart(11)]
+    (11)]
     procedure Initilize(var BOMNo: Code[20]);
     begin
         ProductionBomNo := BOMNo;

@@ -448,7 +448,7 @@ pageextension 70152 PurchaseOrderListExt extends "Purchase Order List"
         StructureOrderLineDetails: Record "Structure Order Line Details";
         CashFlowConnection: Codeunit "Cash Flow Connection";
 
-    [LineStart(31130)]
+    (31130)]
     procedure Testing();
     var
         ReleasePurchDoc: Codeunit "Release Purchase Document";
@@ -756,7 +756,7 @@ pageextension 70152 PurchaseOrderListExt extends "Purchase Order List"
 
     end;
 
-    [LineStart(31448)]
+    (31448)]
     procedure Mails();
     var
         Lpurchase: Record "Purchase Header";

@@ -574,35 +574,35 @@ page 60125 "SO Schedule"
         AssignDateGVar: Boolean;
         Window: Dialog;
 
-    [LineStart(11456)]
+    (11456)]
     local procedure TobeShippedQtyOnAfterInput(var Text: Text[1024]);
     begin
         IF (USERID <> 'EFFTRONICS\PADMAJA') AND (USERID <> '07TE024') AND (USERID <> 'EFFTRONICS\VSNGEETHA') THEN
             ERROR('You dont have rights to chage');
     end;
 
-    [LineStart(11460)]
+    (11460)]
     local procedure MaterialRequiredDateOnAfterInp(var Text: Text[1024]);
     begin
         IF (USERID <> 'EFFTRONICS\PADMAJA') AND (USERID <> 'SUPER') AND (USERID <> 'EFFTRONICS\VSNGEETHA') THEN
             ERROR('You dont have rights to chage');
     end;
 
-    [LineStart(11464)]
+    (11464)]
     local procedure PlanShiftingDateOnAfterInput(var Text: Text[1024]);
     begin
         IF (USERID <> 'EFFTRONICS\PADMAJA') AND (USERID <> '07TE024') THEN
             ERROR('You dont have rights to chage');
     end;
 
-    [LineStart(11468)]
+    (11468)]
     local procedure ChangeToSpecifiedPlanDatOnPush();
     begin
         IF (USERID <> 'EFFTRONICS\PADMAJA') AND (USERID <> '07TE024') THEN
             ERROR('You dont have rights to chage');
     end;
 
-    [LineStart(11472)]
+    (11472)]
     procedure InitTrackingSpecification(var TrackingSpecification: Record "Schedule Tracking Specificatio");
     begin
         TrackingSpecification.INIT;
@@ -611,12 +611,12 @@ page 60125 "SO Schedule"
         TrackingSpecification."Quantity (Base)" := Quantity;
     end;
 
-    [LineStart(11478)]
+    (11478)]
     procedure "--B2BSP--"();
     begin
     end;
 
-    [LineStart(11481)]
+    (11481)]
     procedure OpenItemTrackingLines();
     var
         Item: Record Item;
@@ -629,7 +629,7 @@ page 60125 "SO Schedule"
         ReserveScheduleComp.CallItemTracking(Rec);
     end;
 
-    [LineStart(11487)]
+    (11487)]
     procedure TestDocStatus();
     var
         SH: Record "Sales Header";
@@ -642,7 +642,7 @@ page 60125 "SO Schedule"
         // Pranavi
     end;
 
-    [LineStart(11495)]
+    (11495)]
     procedure MakeLines(var ScheduleLineparam: Record Schedule2): Decimal;
     var
         SalesLine: Record "Sales Line";
@@ -683,7 +683,7 @@ page 60125 "SO Schedule"
         END;
     end;
 
-    [LineStart(11527)]
+    (11527)]
     procedure ValidateProdOrder();
     begin
         CALCFIELDS("Prod. Order Quantity");
@@ -691,7 +691,7 @@ page 60125 "SO Schedule"
             ERROR(Text001);
     end;
 
-    [LineStart(11532)]
+    (11532)]
     procedure CreateOrders(Qtyparam: Decimal) OrdersCreated: Boolean;
     var
         Item: Record Item;
@@ -727,7 +727,7 @@ page 60125 "SO Schedule"
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
-    [LineStart(11561)]
+    (11561)]
     local procedure UpdateItemNo();
     var
         UpdateScheduleItem: Report "Update Sales/ Schedule Item11";
@@ -743,7 +743,7 @@ page 60125 "SO Schedule"
         //<<UPG1.3 06Feb2019
     end;
 
-    [LineStart(11572)]
+    (11572)]
     procedure MakeLinesForSchedules(var ScheduleLineparam: Record Schedule2): Decimal;
     var
         SalesLine: Record "Sales Line";
@@ -784,7 +784,7 @@ page 60125 "SO Schedule"
         END;
     end;
 
-    [LineStart(11604)]
+    (11604)]
     procedure ValidateProdOrderForSchedules(var ScheduleLineLPar: Record Schedule2);
     begin
         ScheduleLineLPar.CALCFIELDS("Prod. Order Quantity");
@@ -792,7 +792,7 @@ page 60125 "SO Schedule"
             ERROR(Text001);
     end;
 
-    [LineStart(11609)]
+    (11609)]
     procedure CreateOrdersForSchedules(Qtyparam: Decimal) OrdersCreated: Boolean;
     var
         Item: Record Item;
@@ -826,13 +826,13 @@ page 60125 "SO Schedule"
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
-    [LineStart(11636)]
+    (11636)]
     local procedure AssignDate(AssignProdDateLpar: Boolean);
     begin
         AssignDateGVar := AssignProdDateLpar;
     end;
 
-    [LineStart(11639)]
+    (11639)]
     procedure MakeLinesForAll(var ScheduleLineparam: Record Schedule2): Decimal;
     var
         SalesLine: Record "Sales Line";
@@ -871,7 +871,7 @@ page 60125 "SO Schedule"
         END;
     end;
 
-    [LineStart(11669)]
+    (11669)]
     procedure ValidateProdOrderForAll(var Schedule2LPar: Record Schedule2);
     begin
         Schedule2LPar.CALCFIELDS("Prod. Order Quantity");

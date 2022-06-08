@@ -454,7 +454,7 @@ report 50015 "Week Wise Rejections"
         EmptyStringCaption_Control1102154010Lbl : Label '%';
         CompanyInfo : Record "Company Information";
 
-    [LineStart(534)]
+    (534)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
 
@@ -467,7 +467,7 @@ report 50015 "Week Wise Rejections"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(544)]
+    (544)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         Tempexcelbuffer.INIT;

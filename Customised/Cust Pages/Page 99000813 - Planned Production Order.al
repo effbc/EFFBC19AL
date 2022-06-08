@@ -406,13 +406,13 @@ page 99000813 "Planned Production Order"
         RunTime : Decimal;
         SetupTime : Decimal;
 
-    [LineStart(24080)]
+    (24080)]
     local procedure ShortcutDimension1CodeOnAfterV();
     begin
         CurrPage.ProdOrderLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(24083)]
+    (24083)]
     local procedure ShortcutDimension2CodeOnAfterV();
     begin
         CurrPage.ProdOrderLines.PAGE.UpdateForm(TRUE);

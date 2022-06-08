@@ -267,12 +267,12 @@ report 80004 "Finance Charge Memo Nos.3"
         DeviationCaptionLbl: Label 'Deviation';
         Bill_DateCaptionLbl: Label 'Bill Date';
 
-    [LineStart(12135)]
+    (12135)]
     local procedure AddError(Text: Text[250]);
     begin
     end;
 
-    [LineStart(12138)]
+    (12138)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -284,7 +284,7 @@ report 80004 "Finance Charge Memo Nos.3"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(12147)]
+    (12147)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -297,7 +297,7 @@ report 80004 "Finance Charge Memo Nos.3"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(12157)]
+    (12157)]
     procedure "Entercell New"();
     begin
     end;

@@ -202,7 +202,7 @@ page 60010 "Design Worksheet"
         ManufacturingSetup : Record "Manufacturing Setup";
         TenderLine : Record "Tender Line";
 
-    [LineStart(4215)]
+    (4215)]
     procedure CalculateTotalCost();
     begin
         VALIDATE("Item No.");
@@ -213,7 +213,7 @@ page 60010 "Design Worksheet"
         MODIFY;
     end;
 
-    [LineStart(4223)]
+    (4223)]
     local procedure OnActivateForm();
     begin
         ManufacturingSetup.GET;

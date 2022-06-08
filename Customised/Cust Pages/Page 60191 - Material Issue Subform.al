@@ -386,31 +386,31 @@ page 60191 "Material Issue Subform"
         ColorCode: Code[30];
         MSLColor: Label 'MSL Component';
 
-    [LineStart(15567)]
+    (15567)]
     procedure _ItemAvailability(AvailabilityType: Option Date,Variant,Location);
     begin
         ItemAvailability(AvailabilityType);
     end;
 
-    [LineStart(15570)]
+    (15570)]
     procedure ItemAvailability(AvailabilityType: Option Date,Variant,Location);
     begin
         ItemAvailability(AvailabilityType);
     end;
 
-    [LineStart(15573)]
+    (15573)]
     procedure _ShowDimensions();
     begin
         Rec.ShowDimensions;
     end;
 
-    [LineStart(15576)]
+    (15576)]
     procedure ShowDimensions();
     begin
         Rec.ShowDimensions;
     end;
 
-    [LineStart(15579)]
+    (15579)]
     procedure OpenItemTrackingLinesPage();
     var
         Item: Record Item;
@@ -427,7 +427,7 @@ page 60191 "Material Issue Subform"
             MESSAGE(Text001, "Item No.");
     end;
 
-    [LineStart(15589)]
+    (15589)]
     local procedure RemarksOnInputChange(var Text: Text[1024]);
     begin
         TESTFIELD(Status, Status::Open);

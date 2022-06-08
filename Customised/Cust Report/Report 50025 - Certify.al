@@ -782,7 +782,7 @@ report 50025 Certify
         vh8: Boolean;
         Enabled_or_not: Boolean;
 
-    [LineStart(845)]
+    (845)]
     procedure Mails();
     begin
 
@@ -998,7 +998,7 @@ report 50025 Certify
 
     end;
 
-    [LineStart(1060)]
+    (1060)]
     procedure Single_Approval_Mail();
     begin
         user.SETFILTER(user."User Name", USERID);

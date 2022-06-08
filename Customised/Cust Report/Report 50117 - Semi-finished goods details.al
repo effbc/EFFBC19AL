@@ -171,7 +171,7 @@ report 50117 "Semi-finished goods details"
         Name_of_The_ItemsCaptionLbl: Label 'Name of The Items';
         TotalsCaptionLbl: Label 'Totals';
 
-    [LineStart(6962)]
+    (6962)]
     procedure detail();
     begin
         REPEAT
@@ -219,7 +219,7 @@ report 50117 "Semi-finished goods details"
             s2 := s2 + (TEMP * 0.85);
     end;
 
-    [LineStart(7008)]
+    (7008)]
     procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -230,7 +230,7 @@ report 50117 "Semi-finished goods details"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(7016)]
+    (7016)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;

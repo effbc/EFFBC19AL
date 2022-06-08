@@ -93,7 +93,7 @@ table 33000259 "Inspection Lot"
         PostPurchLine: Record "Purch. Rcpt. Line";
         Text000: Label 'Quantity can not be changed as Inspection Data sheets already Exists for this lot.';
 
-    [LineStart(7699)]
+    (7699)]
     procedure CopyItemTrackingLots();
     var
         ItemEntryRelation: Record "Item Entry Relation";
@@ -138,7 +138,7 @@ table 33000259 "Inspection Lot"
         end;
     end;
 
-    [LineStart(7733)]
+    (7733)]
     procedure AddTempRecordSet(var TempItemLedgEntry: Record "Item Ledger Entry");
     var
         TempItemLedgEntry2: Record "Item Ledger Entry";
@@ -155,7 +155,7 @@ table 33000259 "Inspection Lot"
         TempItemLedgEntry.Reset;
     end;
 
-    [LineStart(7745)]
+    (7745)]
     procedure CheckItemLotTracking();
     var
         ItemEntryRelation: Record "Item Entry Relation";

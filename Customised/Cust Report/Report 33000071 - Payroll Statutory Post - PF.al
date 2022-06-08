@@ -139,14 +139,14 @@ report 33000071 "Payroll Statutory Post - PF"
         BankGlAccount: Code[10];
         TransactionNo: Integer;
 
-    [LineStart(20683)]
+    (20683)]
     procedure SetTemplateValues(Template: Code[10]; Batch: Code[10]);
     begin
         GlobalTemplate := Template;
         GlobalBatch := Batch;
     end;
 
-    [LineStart(20687)]
+    (20687)]
     procedure Calculate();
     begin
         //Calculate
@@ -228,7 +228,7 @@ report 33000071 "Payroll Statutory Post - PF"
             PFAdminInsPaid := 0;
     end;
 
-    [LineStart(20756)]
+    (20756)]
     procedure PostedTrue(Month1: Option January,February,March,April,May,June,July,August,September,October,November,December; Year1: Integer);
     begin
 
@@ -268,7 +268,7 @@ report 33000071 "Payroll Statutory Post - PF"
             PayEmployeePayDetails.MODIFYALL(PayEmployeePayDetails.PostedToGL, TRUE);
     end;
 
-    [LineStart(20781)]
+    (20781)]
     procedure AlreadyPosted(Month1: Option January,February,March,April,May,June,July,August,September,October,November,December; Year1: Integer) AlreadyPostedTrue: Boolean;
     begin
 

@@ -57,7 +57,7 @@ table 33000909 "Multimeter Tracking System"
     {
     }
 
-    [LineStart(8190)]
+    (8190)]
     procedure Validate();
     var
         IleLRec : Record "Item Ledger Entry";

@@ -518,7 +518,7 @@ table 60095 Schedule2
         {
             CaptionML = ENU = 'Variant Code',
                         ENN = 'Variant Code';
-            TableRelation = IF (Type = CONST(Item)) "Item Variant".Make WHERE("Item No." = FIELD("No."));
+            TableRelation = IF (Type = CONST(Item)) "Item Variant".Code WHERE("Item No." = FIELD("No."));
             DataClassification = CustomerContent;
 
             trigger OnValidate();
@@ -790,7 +790,7 @@ table 60095 Schedule2
         IUOM: Record "Item Unit of Measure";
         SkipOrderVerification: Boolean;
 
-    [LineStart(3982)]
+
     procedure CopySchedule(var Rec: Record Schedule2);
     var
         Schedule: Record Schedule2;
@@ -833,12 +833,12 @@ table 60095 Schedule2
         end;
     end;
 
-    [LineStart(4017)]
+
     procedure "--B2BSP--"();
     begin
     end;
 
-    [LineStart(4020)]
+
     procedure InitTrackingSpecification(var ScheduleComp: Record Schedule2; var TrackingSpecification: Record "Tracking Specification");
     begin
         TrackingSpecification.Init;
@@ -857,7 +857,7 @@ table 60095 Schedule2
         end;
     end;
 
-    [LineStart(4036)]
+
     procedure CallTracking(var Schedule: Record "Posted Material Issues Header");
     var
         TrackingSpecification: Record "Tracking Specification";
@@ -869,7 +869,7 @@ table 60095 Schedule2
         ItemTrackingForm.RunModal;
     end;
 
-    [LineStart(4042)]
+
     procedure IsInbound(): Boolean;
     begin
         case "Document Type" of
@@ -880,7 +880,7 @@ table 60095 Schedule2
         exit(false);
     end;
 
-    [LineStart(4050)]
+
     procedure RowID1(): Text[250];
     var
         ItemTrackingMgt: Codeunit "Item Tracking Management";
@@ -889,7 +889,7 @@ table 60095 Schedule2
             "Document No.", '', "Document Line No.", "Line No."));
     end;
 
-    [LineStart(4054)]
+
     procedure SetSkipOrderVerification();
     begin
         //UPG1.3 19Feb2019 //New function

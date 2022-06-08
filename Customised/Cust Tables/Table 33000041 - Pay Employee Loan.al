@@ -335,7 +335,6 @@ table 33000041 "Pay Employee Loan"
         Text001: Label 'Action Cancelled. Installments already paid against the Loan.';
         Text002: Label 'The Employee %1 has left.';
 
-    [LineStart(6433)]
     procedure CalculateInstallments();
     begin
         if (Amount = 0) or ("Start Date" = 0D) or ("Installment Amount" = 0) then exit;
@@ -421,7 +420,7 @@ table 33000041 "Pay Employee Loan"
         "No. of Months" := PayLoanDetails.Count;
     end;
 
-    [LineStart(6518)]
+
     procedure DeleteAllCheck(): Boolean;
     var
         PrincipalRepaymentSum: Decimal;

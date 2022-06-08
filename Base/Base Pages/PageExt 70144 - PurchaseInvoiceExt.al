@@ -2055,12 +2055,12 @@ pageextension 70144 PurchaseInvoiceExt extends "Purchase Invoice"
         */
     //end;
 
-    [LineStart(6000)]
+    (6000)]
     local procedure ReceiptTesting();
     begin
     end;
 
-    [LineStart(6003)]
+    (6003)]
     local procedure Non_Availment_chk();
     begin
         PL.RESET;
@@ -2094,7 +2094,7 @@ pageextension 70144 PurchaseInvoiceExt extends "Purchase Invoice"
         END;
     end;
 
-    [LineStart(6034)]
+    (6034)]
     local procedure RCM_CHECKING();
     begin
           //commented by Vishnu
@@ -2121,7 +2121,7 @@ pageextension 70144 PurchaseInvoiceExt extends "Purchase Invoice"
              //Commented by Vishnu
     end;
 
-    [LineStart(6058)]
+    (6058)]
     local procedure CONSTRUCTION_HEAD_CHECKING();
     begin
         //added by Vishnu Priya on 02-02-2019
@@ -2136,7 +2136,7 @@ pageextension 70144 PurchaseInvoiceExt extends "Purchase Invoice"
           END;
     end;
 
-    [LineStart(6070)]
+    (6070)]
     procedure Narration_Check();
     begin
         IF ("Posting No. Series" IN['JV','JV_INV_CF']) THEN
@@ -2159,7 +2159,7 @@ pageextension 70144 PurchaseInvoiceExt extends "Purchase Invoice"
             END;
     end;
 
-    [LineStart(6090)]
+    (6090)]
     local procedure ForeignBills_LCY_CHECKING(InvoiceNumber : Code[25]);
     begin
         IF Rec.Structure = 'PUR_FR_GST' THEN
@@ -2176,7 +2176,7 @@ pageextension 70144 PurchaseInvoiceExt extends "Purchase Invoice"
           END;
     end;
 
-    [LineStart(6104)]
+    (6104)]
     local procedure NewlyAdded_Lines_Details_Checking();
     begin
         PL.RESET;
@@ -2210,7 +2210,7 @@ pageextension 70144 PurchaseInvoiceExt extends "Purchase Invoice"
           UNTIL PL.NEXT = 0;
     end;
 
-    [LineStart(6135)]
+    (6135)]
     local procedure FirstPurchaseOrderNumber() PONUMBER : Text[30];
     begin
         Purchline2.RESET;
@@ -2221,7 +2221,7 @@ pageextension 70144 PurchaseInvoiceExt extends "Purchase Invoice"
           PONUMBER := Purchline2."Purchase_Order No.";
     end;
 
-    [LineStart(6143)]
+    (6143)]
     procedure Location_Mismatch_Not();
     begin
         // Added by Vishnu Priya on 03-12-2020
@@ -2236,7 +2236,7 @@ pageextension 70144 PurchaseInvoiceExt extends "Purchase Invoice"
         // Added by Vishnu Priya on 03-12-2020
     end;
 
-    [LineStart(6155)]
+    (6155)]
     procedure GSTROUNDINGPRECISION();
     begin
         //added by Vishnu priya on 22-12-2020

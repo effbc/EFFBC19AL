@@ -246,7 +246,7 @@ table 60007 "Design Worksheet Line"
         RoutingHeader: Record "Routing Header";
         DesignWorkSheetHeader: Record "Design Worksheet Header";
 
-    [LineStart(1238)]
+
     procedure CopyBomComponents();
     var
         DesignWorksheetLine: Record "Design Worksheet Line";
@@ -270,7 +270,7 @@ table 60007 "Design Worksheet Line"
         end;
     end;
 
-    [LineStart(1255)]
+
     procedure CheckType(var ProductionBOMLine: Record "Production BOM Line");
     var
         ProductionBOMLine1: Record "Production BOM Line";
@@ -293,7 +293,7 @@ table 60007 "Design Worksheet Line"
         end;
     end;
 
-    [LineStart(1273)]
+
     procedure InsertItems(var ProductionBOMLine: Record "Production BOM Line");
     var
         DesignWorksheet: Record "Design Worksheet Line";

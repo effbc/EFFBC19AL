@@ -92,7 +92,7 @@ page 60114 "MSPTReceivables-Payables Lines"
         EntrdPeriodLength: Option Day,Week,Month,Quarter,Year,Period;
         AmountType: Option "Net Change","Balance at Date";
 
-    [LineStart(11144)]
+    (11144)]
     procedure Set(var NewGLSetup: Record "General Ledger Setup"; NewEntrdPeriodLength: Integer; NewAmountType: Option "Net Change","Balance at Date");
     begin
         GLSetup.COPY(NewGLSetup);
@@ -101,7 +101,7 @@ page 60114 "MSPTReceivables-Payables Lines"
         CurrPage.UPDATE(FALSE);
     end;
 
-    [LineStart(11150)]
+    (11150)]
     local procedure ShowCustEntriesDue();
     begin
         SetDateFilter;
@@ -114,7 +114,7 @@ page 60114 "MSPTReceivables-Payables Lines"
         PAGE.RUN(0, MSPTCustLedgEntry)
     end;
 
-    [LineStart(11160)]
+    (11160)]
     local procedure ShowVendEntriesDue();
     begin
         SetDateFilter;
@@ -127,7 +127,7 @@ page 60114 "MSPTReceivables-Payables Lines"
         PAGE.RUN(0, MSPTVendLedgEntry);
     end;
 
-    [LineStart(11170)]
+    (11170)]
     local procedure SetDateFilter();
     begin
         IF AmountType = AmountType::"Net Change" THEN

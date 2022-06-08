@@ -34,7 +34,7 @@ codeunit 33000894 "Schedule Line Reserve1"
         Text004: Label 'must not be changed when a quantity is reserved';
         Text005: Label 'Codeunit is not initialized correctly.';
 
-    [LineStart(51514)]
+    (51514)]
     procedure VerifyChange(var NewScheduleComp: Record Schedule2; var OldScheduleComp: Record Schedule2);
     var
         ScheduleComp: Record Schedule2;
@@ -79,7 +79,7 @@ codeunit 33000894 "Schedule Line Reserve1"
             END;
     end;
 
-    [LineStart(51551)]
+    (51551)]
     procedure FilterReservFor(var FilterReservEntry: Record "Reservation Entry"; ScheduleComp: Record Schedule2);
     begin
         FilterReservEntry.SETRANGE("Source Type", DATABASE::Schedule2);
@@ -90,7 +90,7 @@ codeunit 33000894 "Schedule Line Reserve1"
         FilterReservEntry.SETRANGE("Source Ref. No.", ScheduleComp."Line No.");
     end;
 
-    [LineStart(51559)]
+    (51559)]
     procedure FindReservEntry(ScheduleComp: Record Schedule2; var ReservEntry: Record "Reservation Entry"): Boolean;
     begin
         ReservEngineMgt.InitFilterAndSortingLookupFor(ReservEntry, FALSE);
@@ -98,7 +98,7 @@ codeunit 33000894 "Schedule Line Reserve1"
         EXIT(ReservEntry.FINDLAST);
     end;
 
-    [LineStart(51564)]
+    (51564)]
     procedure ReservEntryExist(ScheduleComp: Record Schedule2): Boolean;
     var
         ReservEntry: Record "Reservation Entry";
@@ -108,7 +108,7 @@ codeunit 33000894 "Schedule Line Reserve1"
         EXIT(NOT ReservEntry.ISEMPTY);
     end;
 
-    [LineStart(51569)]
+    (51569)]
     procedure TransferDelLineToItemJnlLine(var ScheduleComp: Record Schedule2; var ItemJnlLine: Record "Item Journal Line"; TransferQty: Decimal; var CheckApplFromItemEntry: Boolean): Decimal;
     var
         OldReservEntry: Record "Reservation Entry";
@@ -168,7 +168,7 @@ codeunit 33000894 "Schedule Line Reserve1"
         EXIT(TransferQty);
     end;
 
-    [LineStart(51623)]
+    (51623)]
     procedure CallItemTracking(var ScheduleComp: Record Schedule2);
     var
         TrackingSpecification: Record "Tracking Specification";
@@ -179,7 +179,7 @@ codeunit 33000894 "Schedule Line Reserve1"
         ItemTrackingForm.RUNMODAL;
     end;
 
-    [LineStart(51628)]
+    (51628)]
     procedure InitTrackingSpecification(var ScheduleComp: Record Schedule2; var TrackingSpecification: Record "Tracking Specification");
     var
         DelChallanHeadLRec: Record "Sales Header";
@@ -208,7 +208,7 @@ codeunit 33000894 "Schedule Line Reserve1"
         END;
     end;
 
-    [LineStart(51651)]
+    (51651)]
     procedure RenameLine(var NewSalesLine: Record "Sales Line"; var OldSalesLine: Record "Sales Line");
     begin
         ReservEngineMgt.RenamePointer(DATABASE::"Sales Line",
@@ -224,7 +224,7 @@ codeunit 33000894 "Schedule Line Reserve1"
           NewSalesLine."Line No.");
     end;
 
-    [LineStart(51664)]
+    (51664)]
     procedure DeleteLineConfirm(var ScheduleComp: Record Schedule2): Boolean;
     begin
         WITH ScheduleComp DO BEGIN
@@ -239,7 +239,7 @@ codeunit 33000894 "Schedule Line Reserve1"
         EXIT(DeleteItemTracking);
     end;
 
-    [LineStart(51676)]
+    (51676)]
     procedure DeleteLine(var ScheduleComp: Record Schedule2);
     begin
         WITH ScheduleComp DO BEGIN
@@ -251,7 +251,7 @@ codeunit 33000894 "Schedule Line Reserve1"
         END;
     end;
 
-    [LineStart(51685)]
+    (51685)]
     procedure VerifyQuantity(var NewScheduleComp: Record Schedule2; var OldScheduleComp: Record Schedule2);
     var
         ScheduleComp: Record Schedule2;

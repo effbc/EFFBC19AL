@@ -2130,7 +2130,7 @@ report 50065 "For subgroups"
                          incharge_no : Text[30];
                          incharge_id_no : Text[7];
 
-    [LineStart(4135)]
+    (4135)]
     procedure Cards_Calc(Item: Code[20]; Status: Option Working,"Non Working") res: Decimal;
     var
         CsLedgerLRec: Record "CS Stock Ledger";
@@ -2163,7 +2163,7 @@ report 50065 "For subgroups"
         res := totCardsGVar;
     end;
 
-    [LineStart(4163)]
+    (4163)]
     procedure CstransEntry();
     var
         CSLGE: Record "CS Stock Ledger";

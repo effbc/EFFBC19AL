@@ -32,7 +32,7 @@ codeunit 33000252 "Inspection Jnl.-Check Line"
         ILE: Record "Item Ledger Entry";
         LOCATION: Code[20];
 
-    [LineStart(48628)]
+    (48628)]
     procedure RunCheck(var InspectReceipt: Record "Inspection Receipt Header");
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -133,7 +133,7 @@ codeunit 33000252 "Inspection Jnl.-Check Line"
             InspectReceipt.TESTFIELD(InspectReceipt."Qty. Accepted UD Reason");
     end;
 
-    [LineStart(48729)]
+    (48729)]
     procedure CheckQualityAcceptanceLevels(InspectRcpt: Record "Inspection Receipt Header");
     var
         InspectAcptLevel: Record "Inspect. Recpt. Accept Level";
@@ -162,12 +162,12 @@ codeunit 33000252 "Inspection Jnl.-Check Line"
             ERROR(Text003, InspectRcpt.FIELDCAPTION("Qty. Rejected"));
     end;
 
-    [LineStart(48753)]
+    (48753)]
     procedure "--B2B-ESPL--"();
     begin
     end;
 
-    [LineStart(48756)]
+    (48756)]
     procedure TransferOrderRunCheck(var InspectReceipt: Record "Inspection Receipt Header");
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -195,7 +195,7 @@ codeunit 33000252 "Inspection Jnl.-Check Line"
             InspectReceipt.TESTFIELD(InspectReceipt."Qty. Accepted UD Reason");
     end;
 
-    [LineStart(48779)]
+    (48779)]
     procedure Item_Positive_Adjustment("Item No.": Code[20]; "Serial No.": Code[20]; "Location Code": Code[10]);
     var
         "Item Journal Line": Record "Item Journal Line";
@@ -280,7 +280,7 @@ codeunit 33000252 "Inspection Jnl.-Check Line"
 
     end;
 
-    [LineStart(48855)]
+    (48855)]
     procedure ICNNO(DT: Date) ICN: Code[10];
     var
         Dat: Text[30];

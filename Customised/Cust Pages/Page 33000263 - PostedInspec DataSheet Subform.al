@@ -132,7 +132,7 @@ page 33000263 "PostedInspec DataSheet Subform"
         [InDataSet]
         DescriptionIndent: Integer;
 
-    [LineStart(23055)]
+    (23055)]
     procedure ShowDefects();
     begin
         DefectTracking.SETRANGE("IDS No.", "Document No.");
@@ -140,13 +140,13 @@ page 33000263 "PostedInspec DataSheet Subform"
         PAGE.RUN(60075, DefectTracking);
     end;
 
-    [LineStart(23060)]
+    (23060)]
     local procedure CharacterCodeOnFormat();
     begin
         "Character CodeEmphasize" := "Character Type" <> "Character Type"::Standard;
     end;
 
-    [LineStart(23063)]
+    (23063)]
     local procedure DescriptionOnFormat();
     begin
         DescriptionEmphasize := "Character Type" <> "Character Type"::Standard;

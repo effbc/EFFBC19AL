@@ -156,7 +156,7 @@ report 50160 "BG Details"
         BG_Details_ConsolidatedCaptionLbl: Label 'BG Details Consolidated';
         Total_Expired_Date_BG_AmountsCaptionLbl: Label 'Total Expired Date BG Amounts';
 
-    [LineStart(8267)]
+    (8267)]
     procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -167,7 +167,7 @@ report 50160 "BG Details"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(8275)]
+    (8275)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;

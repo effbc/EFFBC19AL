@@ -266,7 +266,7 @@ report 80023 "Service Items3"
         S_NoCaptionLbl: Label 'S No';
         Request_No_CaptionLbl: Label 'Request No.';
 
-    [LineStart(17896)]
+    (17896)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean; CellType: Option);
     begin
         TempExcelbuffer.INIT;
@@ -279,7 +279,7 @@ report 80023 "Service Items3"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(17906)]
+    (17906)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean; CellType: Option);
     begin
         TempExcelbuffer.INIT;
@@ -293,7 +293,7 @@ report 80023 "Service Items3"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(17917)]
+    (17917)]
     procedure "Entercell New"();
     begin
     end;

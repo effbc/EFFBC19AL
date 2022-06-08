@@ -266,7 +266,7 @@ report 60000 "Generate HTML Help"
         MakeObjTxt: Boolean;
         MakeTOC: Boolean;
 
-    [LineStart(11448)]
+    (11448)]
     procedure UpdateWindow(LineNo: Integer; Total: Integer; Process: Integer);
     begin
         IF TIME - LastTime > 500 THEN BEGIN
@@ -275,7 +275,7 @@ report 60000 "Generate HTML Help"
         END;
     end;
 
-    [LineStart(11454)]
+    (11454)]
     procedure TOCHeader(var TocFile: File);
     begin
         TocFile.WRITE('<html>');
@@ -287,7 +287,7 @@ report 60000 "Generate HTML Help"
         TocFile.WRITE('</object>');
     end;
 
-    [LineStart(11463)]
+    (11463)]
     procedure TOCGroupHeader(var TocFile: File; TextLine: Text[250]);
     begin
         TocFile.WRITE('<li><object type="text/sitemap">');
@@ -295,7 +295,7 @@ report 60000 "Generate HTML Help"
         TocFile.WRITE('</object>');
     end;
 
-    [LineStart(11468)]
+    (11468)]
     procedure TOCEntry(var TocFile: File; "Object": Record "Object");
     begin
         TocFile.WRITE('<li><object type="text/sitemap">');
@@ -304,13 +304,13 @@ report 60000 "Generate HTML Help"
         TocFile.WRITE('</object>');
     end;
 
-    [LineStart(11474)]
+    (11474)]
     procedure TOCFooter(var TocFile: File);
     begin
         TocFile.WRITE('</html>');
     end;
 
-    [LineStart(11477)]
+    (11477)]
     procedure CreateTableTopic("Object": Record "Object"; Parameter: Integer; Path: Text[250]);
     var
         f: File;
@@ -335,7 +335,7 @@ report 60000 "Generate HTML Help"
         f.CLOSE;
     end;
 
-    [LineStart(11496)]
+    (11496)]
     procedure CreateFormTopic("Object": Record "Object"; Parameter: Integer; Path: Text[250]);
     var
         f: File;
@@ -381,7 +381,7 @@ report 60000 "Generate HTML Help"
         f.CLOSE;
     end;
 
-    [LineStart(11536)]
+    (11536)]
     procedure CreateFileName("Object": Record "Object"; Parameter: Integer): Text[100];
     begin
         IF Parameter <> 0 THEN
@@ -390,7 +390,7 @@ report 60000 "Generate HTML Help"
             EXIT(STRSUBSTNO('%1_%2.htm', GetObjectLetter(Object), Object.ID));
     end;
 
-    [LineStart(11542)]
+    (11542)]
     procedure CreateContextString("Object": Record "Object"; Parameter: Integer): Text[100];
     var
         Field2: Record "Field";
@@ -403,7 +403,7 @@ report 60000 "Generate HTML Help"
             EXIT(STRSUBSTNO('($ %1_%2 %3 $)', GetObjectLetter(Object), Object.ID, GetCurrLangObjName(Object)));
     end;
 
-    [LineStart(11550)]
+    (11550)]
     procedure GetCurrLangObjName(Obj: Record "Object"): Text[30];
     var
         ObjTrans: Record "Object Translation";
@@ -417,7 +417,7 @@ report 60000 "Generate HTML Help"
             EXIT(Obj.Name);
     end;
 
-    [LineStart(11559)]
+    (11559)]
     procedure GetObjectLetter(Obj: Record "Object"): Text[1];
     begin
         IF Obj.Type = Obj.Type::Report THEN
@@ -429,7 +429,7 @@ report 60000 "Generate HTML Help"
             EXIT(COPYSTR(FORMAT(Obj.Type), 1, 1));
     end;
 
-    [LineStart(11568)]
+    (11568)]
     procedure IsABatchJob(Obj: Record "Object"): Boolean;
     var
         ObjStream: InStream;
@@ -454,21 +454,21 @@ report 60000 "Generate HTML Help"
         END;
     end;
 
-    [LineStart(11585)]
+    (11585)]
     procedure Ansi2Ascii(_Text : Text[250]) : Text[250];
     begin
         IF NOT Created THEN MakeVars;
         EXIT(CONVERTSTR(_Text,AnsiStr,AsciiStr));
     end;
 
-    [LineStart(11589)]
+    (11589)]
     procedure Ascii2Ansi(_Text : Text[250]) : Text[250];
     begin
         IF NOT Created THEN MakeVars;
         EXIT(CONVERTSTR(_Text,AsciiStr,AnsiStr));
     end;
 
-    [LineStart(11593)]
+    (11593)]
     procedure MakeVars();
     begin
         AsciiStr[1] := 128;

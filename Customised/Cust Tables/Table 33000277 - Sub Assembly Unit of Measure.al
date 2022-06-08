@@ -84,12 +84,12 @@ table 33000277 "Sub Assembly Unit of Measure"
         Text000: Label 'must be greater than 0';
         Item: Record Item;
 
-    [LineStart(7931)]
+    (7931)]
     procedure CalcCubage();
     begin
     end;
 
-    [LineStart(7934)]
+    (7934)]
     procedure CalcWeight();
     begin
     end;

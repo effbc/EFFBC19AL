@@ -1141,7 +1141,7 @@ report 50000 "summary sales"
         Total_OrdersCaptionLbl : Label 'Total Orders';
         Old_Orders_PendingCaptionLbl : Label 'Old Orders Pending';
 
-    [LineStart(0)]
+    (0)]
     procedure oldpending(SH : Record "Sales Header";str : Boolean) : Decimal;
     var
         OLDPENDINGAMOUNT : Decimal;

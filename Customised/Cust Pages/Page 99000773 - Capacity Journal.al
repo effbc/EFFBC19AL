@@ -439,7 +439,7 @@ page 99000773 "Capacity Journal"
         CurrentJnlBatchName : Code[10];
         ShortcutDimCode : array [8] of Code[20];
 
-    [LineStart(23830)]
+    (23830)]
     local procedure CurrentJnlBatchNameOnAfterVali();
     begin
         CurrPage.SAVERECORD;

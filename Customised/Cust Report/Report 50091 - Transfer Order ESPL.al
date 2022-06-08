@@ -623,7 +623,7 @@ report 50091 "Transfer Order ESPL"
         Comp_State_Code: Code[2];
         HSN: Code[8];
 
-    [LineStart(5208)]
+    (5208)]
     procedure entercell(rowno: Integer; columnno: Integer; cellvalue: Text[250]; bold: Boolean);
     begin
         /*TempExcelBuffer.INIT;
@@ -636,7 +636,7 @@ report 50091 "Transfer Order ESPL"
 
     end;
 
-    [LineStart(5217)]
+    (5217)]
     procedure enterheadings(rowno: Integer; columnno: Integer; cellvalue: Code[50]; bold: Boolean);
     begin
         /*TempExcelBuffer.INIT;

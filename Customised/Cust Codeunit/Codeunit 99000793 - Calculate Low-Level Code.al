@@ -25,7 +25,7 @@ codeunit 99000793 "Calculate Low-Level Code"
         Item: Record Item;
         ActualProdBOM: Record "Production BOM Header";
 
-    [LineStart(55566)]
+    (55566)]
     procedure CalcLevels(Type: Option " ",Item,"Production BOM",Assembly; No: Code[20]; Level: Integer; LevelDepth: Integer): Integer;
     var
         Item2: Record Item;
@@ -101,7 +101,7 @@ codeunit 99000793 "Calculate Low-Level Code"
         EXIT(TotalLevels);
     end;
 
-    [LineStart(55630)]
+    (55630)]
     procedure RecalcLowerLevels(ProdBOMNo: Code[20]; LowLevelCode: Integer; IgnoreMissingItemsOrBOMs: Boolean);
     var
         CompItem: Record Item;
@@ -152,7 +152,7 @@ codeunit 99000793 "Calculate Low-Level Code"
 
     end;
 
-    [LineStart(55670)]
+    (55670)]
     procedure RecalcAsmLowerLevels(ParentItemNo: Code[20]; LowLevelCode: Integer; IgnoreMissingItemsOrBOMs: Boolean);
     var
         CompItem: Record Item;
@@ -173,7 +173,7 @@ codeunit 99000793 "Calculate Low-Level Code"
             UNTIL BOMComp.NEXT = 0;
     end;
 
-    [LineStart(55684)]
+    (55684)]
     procedure SetRecursiveLevelsOnItem(var CompItem: Record Item; LowLevelCode: Integer; IgnoreMissingItemsOrBOMs: Boolean);
     var
         CompBOM: Record "Production BOM Header";
@@ -197,7 +197,7 @@ codeunit 99000793 "Calculate Low-Level Code"
         END;
     end;
 
-    [LineStart(55701)]
+    (55701)]
     local procedure SetRecursiveLevelsOnBOM(var CompBOM: Record "Production BOM Header"; LowLevelCode: Integer; IgnoreMissingItemsOrBOMs: Boolean);
     var
         xLowLevelCode: Integer;
@@ -213,7 +213,7 @@ codeunit 99000793 "Calculate Low-Level Code"
         END;
     end;
 
-    [LineStart(55712)]
+    (55712)]
     local procedure GetMax(Level1: Integer; Level2: Integer) Result: Integer;
     begin
         IF Level1 > Level2 THEN
@@ -222,7 +222,7 @@ codeunit 99000793 "Calculate Low-Level Code"
             Result := Level2;
     end;
 
-    [LineStart(55718)]
+    (55718)]
     procedure SetActualProdBOM(ActualProdBOM2: Record "Production BOM Header");
     begin
         ActualProdBOM := ActualProdBOM2;

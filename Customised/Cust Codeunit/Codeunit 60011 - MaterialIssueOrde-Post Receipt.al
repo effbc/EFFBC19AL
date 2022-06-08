@@ -510,7 +510,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
         FromCode: Code[20];
         BulkPosting: Boolean;
 
-    [LineStart(5141)]
+    (5141)]
     local procedure PostItemJnlLine(var MaterialIssueLine3: Record "Material Issues Line"; PostedMaterialIssuesHeader2: Record "Posted Material Issues Header"; PostedMaterialIssuesLine2: Record "Posted Material Issues Line");
     var
         ReservationEntry: Record "Reservation Entry";
@@ -594,7 +594,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
 
     end;
 
-    [LineStart(5216)]
+    (5216)]
     local procedure CopyCommentLines(FromDocumentType: Integer; ToDocumentType: Integer; FromNumber: Code[20]; ToNumber: Code[20]);
     var
         InvtCommentLine: Record "Inventory Comment Line";
@@ -611,7 +611,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
             UNTIL InvtCommentLine.NEXT = 0;
     end;
 
-    [LineStart(5227)]
+    (5227)]
     local procedure CopyAndCheckDocDimToTempDocDim();
     var
         CurrLineNo: Integer;
@@ -644,7 +644,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
 
     end;
 
-    [LineStart(5254)]
+    (5254)]
     local procedure CheckDimComb(LineNo: Integer);
     begin
         //DIM1.0 Start
@@ -661,7 +661,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
                   MaterialIssueHeader."No.", LineNo, DimMgt.GetDimCombErr);
     end;
 
-    [LineStart(5268)]
+    (5268)]
     local procedure CheckDimValuePosting(LineNo: Integer);
     var
         TheTransLine: Record "Transfer Line";
@@ -694,13 +694,13 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
 
     end;
 
-    [LineStart(5293)]
+    (5293)]
     procedure SetHideValidationDialog(NewHideValidationDialog: Boolean);
     begin
         HideValidationDialog := NewHideValidationDialog;
     end;
 
-    [LineStart(5296)]
+    (5296)]
     local procedure InsertRcptEntryRelation(var PostedMaterialIssuesLine: Record "Posted Material Issues Line"): Integer;
     var
         ItemEntryRelation: Record "Item Entry Relation";
@@ -724,7 +724,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
             EXIT(ItemJnlLine."Item Shpt. Entry No.");
     end;
 
-    [LineStart(5314)]
+    (5314)]
     local procedure GetLocation(LocationCode: Code[10]);
     begin
         IF LocationCode = '' THEN
@@ -734,7 +734,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
                 Location.GET(LocationCode);
     end;
 
-    [LineStart(5321)]
+    (5321)]
     procedure "UpdateRes.Entry"(var ItemJournalLine: Record "Item Journal Line"; var MatrialIssueLine: Record "Material Issues Line");
     var
         ReservationEntry: Record "Reservation Entry";
@@ -780,7 +780,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
             UNTIL MatIssueTrackSpec.NEXT = 0
     end;
 
-    [LineStart(5359)]
+    (5359)]
     procedure Issues_Post(REc: Record "Material Issues Header");
     begin
         MaterialIssueHeader := REc;
@@ -1079,7 +1079,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
 
     end;
 
-    [LineStart(5657)]
+    (5657)]
     procedure DeleteOrder_Local(var MaterialIssuesHeader2: Record "Material Issues Header"; var MaterialIssuesLine2: Record "Material Issues Line"): Boolean;
     var
         InvtCommentLine: Record "Inventory Comment Line";
@@ -1125,12 +1125,12 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
 
     end;
 
-    [LineStart(5694)]
+    (5694)]
     procedure "---Rev01---"();
     begin
     end;
 
-    [LineStart(5697)]
+    (5697)]
     local procedure PostItemJnlLine2013(var MaterialIssueLine3: Record "Material Issues Line"; PostedMaterialIssuesHeader2: Record "Posted Material Issues Header"; PostedMaterialIssuesLine2: Record "Posted Material Issues Line");
     var
         ReservationEntry: Record "Reservation Entry";
@@ -1286,7 +1286,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
         END;
     end;
 
-    [LineStart(5839)]
+    (5839)]
     procedure UpdateResEntry2013(var ItemJournalLine: Record "Item Journal Line"; var MatrialIssueLine: Record "Material Issues Line"; var MatIssueTrackSpecRecPar: Record "Mat.Issue Track. Specification");
     var
         ReservationEntry: Record "Reservation Entry";
@@ -1349,7 +1349,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
             UNTIL MatIssueTrackSpec.NEXT = 0;
     end;
 
-    [LineStart(5894)]
+    (5894)]
     procedure Issues_Post_Auto_Scheduled(REc: Record "Material Issues Header");
     begin
         MaterialIssueHeader := REc;
@@ -1643,7 +1643,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
 
     end;
 
-    [LineStart(6187)]
+    (6187)]
     local procedure UpdateMBBOpenCloseTimes(MITS: Record "Mat.Issue Track. Specification"; MILine: Record "Material Issues Line"; Returned: Boolean);
     var
         Itm: Record Item;
@@ -1715,7 +1715,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
         END;
     end;
 
-    [LineStart(6258)]
+    (6258)]
     procedure DataDumptoPicking(IssuesLine: Record "Posted Material Issues Line"; IssuesHeader: Record "Posted Material Issues Header");
     var
         "Count": Integer;
@@ -1783,7 +1783,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
 
     end;
 
-    [LineStart(6303)]
+    (6303)]
     local procedure CommaRemoval(Base: Text[30]) Converted: Text;
     var
         i: Integer;
@@ -1805,7 +1805,7 @@ codeunit 60011 "MaterialIssueOrde-Post Receipt"
 
     end;
 
-    [LineStart(6319)]
+    (6319)]
     procedure BulkPostingStatusUpdate();
     begin
         BulkPosting := TRUE;

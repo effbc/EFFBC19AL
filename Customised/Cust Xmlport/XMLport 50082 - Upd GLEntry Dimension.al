@@ -100,7 +100,7 @@ xmlport 50082 "Upd GLEntry Dimension"
         Text0001: Label 'Updating Dimension Values Entry No. #1########';
         Text0002: Label 'Do you want process to update ?';
 
-    [LineStart(96)]
+    (96)]
     local procedure DimensionSetIDGen(PrevDimSetID: Integer): Integer;
     var
         DimensionMgt: Codeunit DimensionManagement;

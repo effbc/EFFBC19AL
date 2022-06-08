@@ -147,12 +147,12 @@ table 60099 "Attachments Archive"
         Text020: TextConst ENU = 'An Outlook dialog box is open. Close it and try again.', ENN = 'An Outlook dialog box is open. Close it and try again.';
         Text021: TextConst Comment = 'Default.', ENU = 'Default.', ENN = 'Default.';
 
-    [LineStart(4687)]
+
     procedure "--Rev01--------------------"();
     begin
     end;
 
-    [LineStart(4690)]
+
     procedure OpenAttachment(Caption: Text[260]; IsTemporary: Boolean);
     var
         WordManagement: Codeunit WordManagementESPL;
@@ -211,7 +211,7 @@ table 60099 "Attachments Archive"
 
     end;
 
-    [LineStart(4742)]
+
     procedure ImportAttachment(ImportFromFile: Text; IsTemporary: Boolean; IsInherited: Boolean): Boolean;
     var
         FileName: Text[260];
@@ -408,7 +408,7 @@ table 60099 "Attachments Archive"
 
     end;
 
-    [LineStart(4929)]
+
     procedure ExportAttachment(var ExportToFile: Text): Boolean;
     var
         FileName: Text[260];
@@ -505,7 +505,7 @@ table 60099 "Attachments Archive"
 
     end;
 
-    [LineStart(5018)]
+
     procedure DeleteFile(FileName: Text): Boolean;
     var
         I: Integer;
@@ -540,7 +540,7 @@ table 60099 "Attachments Archive"
 
     end;
 
-    [LineStart(5047)]
+ 
     procedure RemoveAttachment(Prompt: Boolean) DeleteOk: Boolean;
     var
         DeleteYesNo: Boolean;
@@ -585,7 +585,7 @@ table 60099 "Attachments Archive"
 
     end;
 
-    [LineStart(5086)]
+
     procedure ConstFileName() FileName: Text[260];
     var
         I: Integer;
@@ -607,7 +607,7 @@ table 60099 "Attachments Archive"
 
     end;
 
-    [LineStart(5101)]
+
     procedure ConstDiskFileName() DiskFileName: Text[260];
     begin
         DiskFileName := "Storage Pointer" + '\' + Format("No.") + '.';
@@ -619,7 +619,7 @@ table 60099 "Attachments Archive"
 
     end;
 
-    [LineStart(5109)]
+
     procedure CreateAttachment();
     var
         Attachment: Record Attachments;
@@ -656,12 +656,12 @@ table 60099 "Attachments Archive"
 
     end;
 
-    [LineStart(5137)]
+
     procedure "--Rev01"();
     begin
     end;
 
-    [LineStart(5140)]
+
     procedure CheckCorrespondenceType(CorrespondenceType: Option " ","Hard Copy","E-Mail",Fax) ErrorText: Text[80];
     begin
         case CorrespondenceType of

@@ -1173,7 +1173,7 @@ page 60180 "Item Card (fin)"
         "Include InventoryEnable" : Boolean;
         SkilledResourceList : Page "Skilled Resource List";
 
-    [LineStart(14290)]
+    (14290)]
     procedure EnablePlanningControls();
     var
         PlanningGetParam: Codeunit "Planning-Get Parameters";
@@ -1219,7 +1219,7 @@ page 60180 "Item Card (fin)"
 
     end;
 
-    [LineStart(14315)]
+    (14315)]
     local procedure AverageCostLCYOnActivate();
     begin
         ItemCostMgt.CalculateAverageCost(Rec, AverageCostLCY, AverageCostACY);

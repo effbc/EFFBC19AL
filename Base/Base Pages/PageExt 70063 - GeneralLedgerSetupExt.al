@@ -3103,7 +3103,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
     */
     //end;
 
-    [LineStart(8328)]
+    (8328)]
     procedure MG();
     begin
         Subject := 'ERP- Alert for AMC Bill  ' + Sh."No.";
@@ -3140,7 +3140,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
     end;
 
-    [LineStart(8364)]
+    (8364)]
     procedure Shortage_Status(Search_String: Code[20]) status: Boolean;
     begin
 
@@ -3222,7 +3222,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
                         END;
     end;
 
-    [LineStart(8451)]
+    (8451)]
     procedure INDIAN_FORMAT(GIVEN_DATE: Date) INDIAN_DATE: Text[30];
     var
         MONTH: Code[10];
@@ -3293,7 +3293,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         INDIAN_DATE := FORMAT(DATE2DMY(GIVEN_DATE, 1)) + '-' + MONTH + '-' + COPYSTR(FORMAT(DATE2DMY(GIVEN_DATE, 3)), 3, 2);
     end;
 
-    [LineStart(8505)]
+    (8505)]
     procedure Shortage_Status_Present(Search_String: Code[20]; From_Date: Date; To_Date: Date) status: Boolean;
     begin
         IF Search_String = 'OPEN' THEN BEGIN
@@ -3374,14 +3374,14 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
                         END;
     end;
 
-    [LineStart(8591)]
+    (8591)]
     local procedure ActiveERPCFConnectionOnPush();
     begin
         IF NOT (UPPERCASE(USERID) IN ['EFFTRONICS\ANILKUMAR', 'EFFTRONICS\SUJANI', 'EFFTRONICS\VISHNUPRIYA']) THEN
             ERROR('You dont have rights');
     end;
 
-    [LineStart(8595)]
+    (8595)]
     procedure Shortage_Delay();
     begin
         // Added by Rakesh on 24-Nov-14 for automail when Shoratge is not run for more than 1 week
@@ -3419,7 +3419,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // End by Rakesh
     end;
 
-    [LineStart(8632)]
+    (8632)]
     procedure Pending_PO();
     begin
         // Added by Rakesh for automail for Pending Purchase Orders on 12-Dec-14
@@ -3469,7 +3469,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // end by Rakesh
     end;
 
-    [LineStart(8681)]
+    (8681)]
     procedure Pending_QA();
     begin
         // Added by Rakesh to mail the pending QA items along on 26-Dec-2014
@@ -3513,7 +3513,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // End by Rakesh
     end;
 
-    [LineStart(8720)]
+    (8720)]
     procedure stockstatementmail();
     begin
         //added by pranavi on 27-02-2015 to mail the stock statement
@@ -3538,7 +3538,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //end by pranavi
     end;
 
-    [LineStart(8742)]
+    (8742)]
     procedure To_Be_Received_Bills_Mail();
     var
         PurchRcptHeader: Record "Purch. Rcpt. Header";
@@ -3583,7 +3583,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //End by Pranavi on 12-08-2015
     end;
 
-    [LineStart(8782)]
+    (8782)]
     procedure MD_Sir_Mails();
     var
         Mail_count: Integer;
@@ -4370,7 +4370,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
-    [LineStart(9525)]
+    (9525)]
     procedure SalesChangesAlert();
     var
         CHLG: Record "Change Log Entry";
@@ -5453,7 +5453,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
-    [LineStart(10675)]
+    (10675)]
     procedure ToBeShippedAMCAlert();
     var
         SH: Record "Sales Header";
@@ -5509,7 +5509,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             SMTP_MAIL.Send;
     end;
 
-    [LineStart(10719)]
+    (10719)]
     procedure DispatchAssuranceMail1();
     var
         SIH: Record "Sales Invoice Header";
@@ -5624,7 +5624,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
-    [LineStart(10818)]
+    (10818)]
     procedure SDStatusUpdation();
     var
         SIH: Record "Sales Invoice Header";
@@ -5872,7 +5872,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // End by Pranavi
     end;
 
-    [LineStart(11069)]
+    (11069)]
     procedure DCTrackingStatusUpdate();
     var
         CSH: Record "CS Transaction Header";
@@ -5937,7 +5937,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         SQLConnection.Close;
     end;
 
-    [LineStart(11124)]
+    (11124)]
     procedure PurchaseDCStatusUpdate();
     var
         DCH: Record "DC Header";
@@ -5989,7 +5989,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         SQLConnection.Close;
     end;
 
-    [LineStart(11166)]
+    (11166)]
     procedure ToBePlannedBOIAlert();
     var
         SH: Record "Sales Header";
@@ -6104,7 +6104,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             SMTP_MAIL.Send;
     end;
 
-    [LineStart(11266)]
+    (11266)]
     procedure PendingQA_Auth_PO_Alert();
     var
         PH: Record "Purchase Header";
@@ -6174,7 +6174,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             SMTP_MAIL.Send;
     end;
 
-    [LineStart(11323)]
+    (11323)]
     procedure CS_Adjustment_Alert();
     var
         CSLG: Record "CS Stock Ledger";
@@ -6245,7 +6245,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END;
     end;
 
-    [LineStart(11380)]
+    (11380)]
     procedure MSL_Alert();
     var
         ILE: Record "Item Ledger Entry";
@@ -6394,7 +6394,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         ConnectionOpen := 0;
     end;
 
-    [LineStart(11517)]
+    (11517)]
     procedure GetStockOfLot(Item: Code[30]; Lot: Code[30]);
     var
         ITEM1: Record Item;
@@ -6459,7 +6459,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END;
     end;
 
-    [LineStart(11578)]
+    (11578)]
     local procedure MaterialShortage();
     var
         "Count": Integer;
@@ -6563,7 +6563,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
-    [LineStart(11677)]
+    (11677)]
     local procedure RD_Material_Alerts();
     begin
         MIH.RESET;
@@ -6716,7 +6716,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END;
     end;
 
-    [LineStart(11839)]
+    (11839)]
     procedure Stock_Alert_On_Threshold();
     begin
         Item.RESET;
@@ -6758,7 +6758,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         SMTP_MAIL.Send;
     end;
 
-    [LineStart(11879)]
+    (11879)]
     local procedure Posting_date_changes();
     begin
 
@@ -6880,7 +6880,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
-    [LineStart(11998)]
+    (11998)]
     procedure Open_Orders_Allert();
     begin
         // created by Vishnu Priya for the Verified Orders That are still in the Open State on 01-10-2018
@@ -6928,7 +6928,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         SMTP_MAIL.Send;
     end;
 
-    [LineStart(12043)]
+    (12043)]
     procedure RD_Mail_for_SalesOrders();
     begin
         //Added by Vishnu Priya for the R&D managers pending orders reasons alerts
@@ -7043,7 +7043,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END
     end;
 
-    [LineStart(12159)]
+    (12159)]
     local procedure SALESACTUALSDUMPING();
     begin
         // written by vishnu priya
@@ -7213,7 +7213,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //****************************************************************************************************************************************
     end;
 
-    [LineStart(12335)]
+    (12335)]
     procedure IREPS_Tenders();
     begin
         //written by Vishnu Priya on March 1st 2019 for IREPS Tenders Alerts
@@ -7504,7 +7504,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
-    [LineStart(12632)]
+    (12632)]
     local procedure CalibrationAlerts();
     begin
         //********************************** Owners Mails ******************************************************
@@ -7643,7 +7643,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
-    [LineStart(12773)]
+    (12773)]
     procedure "BGS Expire mails"();
     begin
         bg.RESET;
@@ -7674,7 +7674,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END;
     end;
 
-    [LineStart(12805)]
+    (12805)]
     local procedure Stk_Rearr();
     var
         loopingVari: Integer;
@@ -7727,7 +7727,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         MESSAGE(FORMAT(Datevariable1));
     end;
 
-    [LineStart(12851)]
+    (12851)]
     local procedure TAMS_BASED_USERS_BLOCKING();
     begin
         // added by vishnu Priya on 23-07-2019 for Blocking the Users in TAMS to ERP
@@ -7827,7 +7827,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         MESSAGE('Tams Dept Updated Employees : ' + FORMAT(Updated_Cnt));
     end;
 
-    [LineStart(12958)]
+    (12958)]
     local procedure TAMS_DEPT_UPDATION();
     begin
         Updated_Cnt := 0;
@@ -7879,7 +7879,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         MESSAGE('Tams Dept Updated Employees : ' + FORMAT(Updated_Cnt));
     end;
 
-    [LineStart(13012)]
+    (13012)]
     local procedure Stock_Analysis();
     begin
         IF ISCLEAR(SQLConnection) THEN
@@ -7974,7 +7974,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // SQLConnection.CommitTrans;
     end;
 
-    [LineStart(13109)]
+    (13109)]
     procedure CSIGCS_MAIL();
     begin
         //Added  by Vishnu Priya on 30-10-2019
@@ -8036,7 +8036,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //End  by Vishnu Priya on 30-10-2019
     end;
 
-    [LineStart(13171)]
+    (13171)]
     local procedure QAFLAG();
     begin
         //added by vishnu priya on 29-11-2019
@@ -8131,7 +8131,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //ended by vishnu priya on 29-11-2019
     end;
 
-    [LineStart(13267)]
+    (13267)]
     procedure BG_TEST_MAILS();
     begin
         bg.RESET;

@@ -160,31 +160,31 @@ page 60134 "Purchase Enquiry Subform"
         ShortcutDimCode : array [8] of Code[20];
         PoAutomation : Codeunit "PO Automation";
 
-    [LineStart(11760)]
+    (11760)]
     procedure ApproveCalcInvDisc();
     begin
         CODEUNIT.RUN(CODEUNIT::"Purch.-Disc. (Yes/No)",Rec);
     end;
 
-    [LineStart(11763)]
+    (11763)]
     procedure CalcInvDisc();
     begin
         CODEUNIT.RUN(CODEUNIT::"Purch.-Calc.Discount",Rec);
     end;
 
-    [LineStart(11766)]
+    (11766)]
     procedure ExplodeBOM();
     begin
         CODEUNIT.RUN(CODEUNIT::"Purch.-Explode BOM",Rec);
     end;
 
-    [LineStart(11769)]
+    (11769)]
     procedure GetPhaseTaskStep();
     begin
         CODEUNIT.RUN(CODEUNIT::Codeunit75,Rec);
     end;
 
-    [LineStart(11772)]
+    (11772)]
     procedure _InsertExtendedText(Unconditionally : Boolean);
     begin
         IF TransferExtendedText.PurchCheckIfAnyExtText(Rec,Unconditionally) THEN BEGIN
@@ -195,7 +195,7 @@ page 60134 "Purchase Enquiry Subform"
           UpdateForm(TRUE);
     end;
 
-    [LineStart(11780)]
+    (11780)]
     procedure InsertExtendedText(Unconditionally : Boolean);
     begin
         IF TransferExtendedText.PurchCheckIfAnyExtText(Rec,Unconditionally) THEN BEGIN
@@ -206,48 +206,48 @@ page 60134 "Purchase Enquiry Subform"
           UpdateForm(TRUE);
     end;
 
-    [LineStart(11788)]
+    (11788)]
     procedure _ItemAvailability(AvailabilityType : Option Date,Variant,Location,Bin);
     begin
         //Rec.InitType(AvailabilityType); //B2b1.0
     end;
 
-    [LineStart(11791)]
+    (11791)]
     procedure ItemAvailability(AvailabilityType : Option Date,Variant,Location,Bin);
     begin
         //Rec.InitType(AvailabilityType); //B2b1.0
     end;
 
-    [LineStart(11794)]
+    (11794)]
     procedure ShowDimensions();
     begin
         Rec.ShowDimensions;
     end;
 
-    [LineStart(11797)]
+    (11797)]
     procedure ItemChargeAssgnt();
     begin
         Rec.ShowItemChargeAssgnt;
     end;
 
-    [LineStart(11800)]
+    (11800)]
     procedure OpenItemTrackingLines();
     begin
         Rec.OpenItemTrackingLines;
     end;
 
-    [LineStart(11803)]
+    (11803)]
     procedure UpdateForm(SetSaveRecord : Boolean);
     begin
         CurrPage.UPDATE(SetSaveRecord);
     end;
 
-    [LineStart(11806)]
+    (11806)]
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(11809)]
+    (11809)]
     procedure ShowStrDetailsForm();
     var
         StrOrderLineDetails : Record "Structure Order Line Details";
@@ -263,12 +263,12 @@ page 60134 "Purchase Enquiry Subform"
         StrOrderLineDetailsForm.RUNMODAL;
     end;
 
-    [LineStart(11819)]
+    (11819)]
     procedure "---B2B---"();
     begin
     end;
 
-    [LineStart(11822)]
+    (11822)]
     procedure OpenAttachments();
     begin
         /*Attachment.RESET;
@@ -281,7 +281,7 @@ page 60134 "Purchase Enquiry Subform"
 
     end;
 
-    [LineStart(11831)]
+    (11831)]
     local procedure NoOnAfterValidate();
     begin
         InsertExtendedText(FALSE);

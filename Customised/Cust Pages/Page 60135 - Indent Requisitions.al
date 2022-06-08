@@ -781,7 +781,7 @@ page 60135 "Indent Requisitions"
         TypeNumber: Integer;
         itemrec: Record Item;
 
-    [LineStart(11871)]
+    (11871)]
     procedure CreateOrders();
     begin
         /*

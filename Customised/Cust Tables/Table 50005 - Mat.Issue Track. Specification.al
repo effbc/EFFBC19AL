@@ -180,7 +180,7 @@ table 50005 "Mat.Issue Track. Specification"
         Item: Record Item;
         "Material Issues Header": Record "Material Issues Header";
 
-    [LineStart(804)]
+    (804)]
     procedure CheckSerialNoQty();
     begin
         if "Serial No." <> '' then
@@ -191,7 +191,7 @@ table 50005 "Mat.Issue Track. Specification"
             end;
     end;
 
-    [LineStart(813)]
+    (813)]
     procedure CalcQty(BaseQty: Decimal): Decimal;
     begin
         if "Qty. per Unit of Measure" = 0 then

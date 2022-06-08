@@ -6,7 +6,7 @@ page 50003 "CAN Blanket Sales Order"
     PageType = Document;
     RefreshOnActivate = true;
     SourceTable = "Sales Header";
-    SourceTableView = WHERE(Document Type=FILTER(Blanket Order));
+    SourceTableView = WHERE("Document Type"=FILTER("Blanket Order"));
 
     layout
     {
@@ -82,7 +82,7 @@ page 50003 "CAN Blanket Sales Order"
             }
             part(SalesLines;"CANBlanket Sales Order Subform")
             {
-                SubPageLink = Document No.=FIELD(No.);
+                SubPageLink = "Document No."=FIELD("No.");
             }
             group(Invoicing)
             {
@@ -265,7 +265,7 @@ page 50003 "CAN Blanket Sales Order"
                     Caption = 'Card';
                     Image = Card;
                     RunObject = Page "Customer Card";
-                                    RunPageLink = No.=FIELD(Sell-to Customer No.);
+                                    RunPageLink = "No."=FIELD("Sell-to Customer No.");
                     ShortCutKey = 'Shift+F5';
                 }
                 action("Co&mments")
@@ -280,7 +280,7 @@ page 50003 "CAN Blanket Sales Order"
                     Caption = 'Structure';
                     Image = CheckList;
                     RunObject = Page "Structure Order Details";
-                                    RunPageLink = Type=CONST(Sale),Document Type=FIELD(Document Type),Document No.=FIELD(No.),Structure Code=FIELD(Structure);
+                                    RunPageLink = Type=CONST(Sale),"Document Type"=FIELD("Document Type"),"Document No."=FIELD("No."),"Structure Code"=FIELD(Structure);
                 }
             }
             group("&Line")
@@ -588,7 +588,7 @@ page 50003 "CAN Blanket Sales Order"
                            SMTPSETUP : Record "Product Customer's List";
                            ChangeExchangeRate : Page "Change Exchange Rate";
 
-    [LineStart(17)]
+    (17)]
     procedure CreateOrders(Qtyparam: Decimal) OrdersCreated: Boolean;
     var
         Item: Record Item;
@@ -619,25 +619,25 @@ page 50003 "CAN Blanket Sales Order"
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
-    [LineStart(41)]
+    (41)]
     local procedure SelltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(44)]
+    (44)]
     local procedure BilltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(47)]
+    (47)]
     local procedure ShortcutDimension1CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(50)]
+    (50)]
     local procedure ShortcutDimension2CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);

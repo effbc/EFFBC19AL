@@ -6346,7 +6346,7 @@ report 80019 "Material Availability (OLD)3"
         Int12Body3: Boolean;
         Int13Body3: Boolean;
 
-    [LineStart(15235)]
+    (15235)]
     procedure "Enter Cell"(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -6357,7 +6357,7 @@ report 80019 "Material Availability (OLD)3"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(15243)]
+    (15243)]
     procedure "Enter Headings"(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -6369,7 +6369,7 @@ report 80019 "Material Availability (OLD)3"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(15252)]
+    (15252)]
     procedure Product_Requirement("Product_No.": Integer; "Item_No.": Code[50]; Prod_QTY: Integer; "BOM_QTY(Compound)": Decimal; "BOM_QTY(Line)": Decimal; BOM_QTY: Decimal);
     var
         TOT: Decimal;
@@ -6409,7 +6409,7 @@ report 80019 "Material Availability (OLD)3"
         END;
     end;
 
-    [LineStart(15290)]
+    (15290)]
     procedure Overall_Requirement("Item_No.": Code[50]; Prod_QTY: Integer; "BOM_QTY(Compound)": Decimal; "BOM_QTY(Line)": Decimal; BOM_QTY: Decimal);
     var
         TOT: Decimal;
@@ -6507,7 +6507,7 @@ report 80019 "Material Availability (OLD)3"
         END;
     end;
 
-    [LineStart(15390)]
+    (15390)]
     procedure Caliculate_Product_Shortage("Product No.": Integer);
     begin
         BOM_DUM["Product No."].SETFILTER(BOM_DUM["Product No."]."Budget Quantity", '>%1', 0);
@@ -6534,7 +6534,7 @@ report 80019 "Material Availability (OLD)3"
         END;
     end;
 
-    [LineStart(15418)]
+    (15418)]
     procedure DUplicate("Item_No.": Code[50]; Prod_QTY: Integer; "BOM_QTY(Compound)": Decimal; "BOM_QTY(Line)": Decimal; BOM_QTY: Decimal);
     var
         TOT: Decimal;

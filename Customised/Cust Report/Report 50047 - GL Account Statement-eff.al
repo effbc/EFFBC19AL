@@ -298,7 +298,7 @@ report 50047 "G/L Account Statement-eff"
         BalanceCaption_Control1500095Lbl : Label 'Balance';
         Closing_BalanceCaptionLbl : Label 'Closing Balance';
 
-    [LineStart(3417)]
+    (3417)]
     procedure FindControlAccount("Source Type" : Option " ",Customer,Vendor,"Bank Account","Fixed Asset";"Entry No." : Integer;"Source No." : Code[20];"G/L Account No." : Code[20]) : Boolean;
     var
         VendLedgEntry : Record "Vendor Ledger Entry";

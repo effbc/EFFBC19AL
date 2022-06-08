@@ -1203,7 +1203,7 @@ page 60186 "Material Issue (CS STR)"
         RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
         AssingBatchManual : Codeunit "Assign Batch No's";
 
-    [LineStart(15002)]
+    (15002)]
     procedure ICNNO(DT : Date) ICN : Code[10];
     begin
         IF DATE2DMY(DT,1) < 10 THEN

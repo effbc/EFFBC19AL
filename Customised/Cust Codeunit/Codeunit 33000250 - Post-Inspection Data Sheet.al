@@ -190,7 +190,7 @@ codeunit 33000250 "Post-Inspection Data Sheet"
         Text001: Label 'Posting date must be Greater than or equal to %1';
         SMTP_mail: Codeunit "SMTP Mail";
 
-    [LineStart(46559)]
+    (46559)]
     procedure InsertInspectionReportHeader(InspectHeader: Record "Posted Inspect DatasheetHeader"): Code[20];
     var
         PurchRcptHeader: Record "Purch. Rcpt. Header";
@@ -538,7 +538,7 @@ codeunit 33000250 "Post-Inspection Data Sheet"
         //Base PIDSQC1.0<<
     end;
 
-    [LineStart(46896)]
+    (46896)]
     procedure TransferOrderPostIDS(var Rec: Record "Inspection Datasheet Header");
     begin
         QualitySetup.GET;
@@ -592,7 +592,7 @@ codeunit 33000250 "Post-Inspection Data Sheet"
         Rec.DELETE(TRUE);
     end;
 
-    [LineStart(46947)]
+    (46947)]
     procedure TransferOrderInserIR(InspectHeader: Record "Posted Inspect DatasheetHeader"): Code[20];
     begin
         IF InspectHeader."Source Type" = InspectHeader."Source Type"::Transfer THEN BEGIN
@@ -693,12 +693,12 @@ codeunit 33000250 "Post-Inspection Data Sheet"
         EXIT(InspectReportHeader."No.");
     end;
 
-    [LineStart(47044)]
+    (47044)]
     procedure "----------B2B-----------"();
     begin
     end;
 
-    [LineStart(47047)]
+    (47047)]
     procedure PostedAttachments(InspDataSheet: Record "Inspection Datasheet Header"; PostedIDS: Record "Posted Inspect DatasheetHeader");
     var
         Attach: Record Attachments;
@@ -717,7 +717,7 @@ codeunit 33000250 "Post-Inspection Data Sheet"
             UNTIL Attach.NEXT = 0;
     end;
 
-    [LineStart(47060)]
+    (47060)]
     procedure PostedComments(InspDataSheet: Record "Inspection Datasheet Header"; PostedIDS: Record "Posted Inspect DatasheetHeader");
     var
         QcComments: Record "Quality Comment Line";
@@ -735,7 +735,7 @@ codeunit 33000250 "Post-Inspection Data Sheet"
             UNTIL QcComments.NEXT = 0;
     end;
 
-    [LineStart(47072)]
+    (47072)]
     procedure IRComments(PostedIDS: Record "Posted Inspect DatasheetHeader"; IR: Record "Inspection Receipt Header");
     var
         QcComments: Record "Quality Comment Line";
@@ -770,7 +770,7 @@ codeunit 33000250 "Post-Inspection Data Sheet"
 
     end;
 
-    [LineStart(47100)]
+    (47100)]
     procedure IRAttachments(PostedIDS: Record "Posted Inspect DatasheetHeader"; IR: Record "Inspection Receipt Header");
     var
         Attach: Record Attachments;

@@ -3857,7 +3857,7 @@ pageextension 70155 PurchaseOrderExt extends "Purchase Order"
     */
     //end;
 
-    [LineStart(5149)]
+    (5149)]
     procedure CommaRemoval(Base: Text[30]) Converted: Text[30];
     var
         i: Integer;
@@ -3869,7 +3869,7 @@ pageextension 70155 PurchaseOrderExt extends "Purchase Order"
         EXIT(Converted);
     end;
 
-    [LineStart(5157)]
+    (5157)]
     procedure Order_Value("Order_No.": Code[20]) Value: Decimal;
     begin
         PL.SETRANGE(PL."Document No.", "Order_No.");
@@ -3891,7 +3891,7 @@ pageextension 70155 PurchaseOrderExt extends "Purchase Order"
             UNTIL PL.NEXT = 0;
     end;
 
-    [LineStart(5176)]
+    (5176)]
     procedure Mails();
     var
         Lpurchase: Record "Purchase Header";
@@ -3994,12 +3994,12 @@ pageextension 70155 PurchaseOrderExt extends "Purchase Order"
 
     end;
 
-    [LineStart(5320)]
+    (5320)]
     procedure "...........Rev01............."();
     begin
     end;
 
-    [LineStart(5323)]
+    (5323)]
     procedure Testing(Purchase_Order_No: Text);
     var
         "Count": Integer;
@@ -4014,7 +4014,7 @@ pageextension 70155 PurchaseOrderExt extends "Purchase Order"
         RESET;
     end;
 
-    [LineStart(5333)]
+    (5333)]
     procedure Testing1(PurchHdrGRec: Record "Purchase Header");
     begin
         MESSAGE('Testing Calc Structure!');
@@ -4032,7 +4032,7 @@ pageextension 70155 PurchaseOrderExt extends "Purchase Order"
         PurchLine.UpdatePurchLines(PurchHdrGRec);
     end;
 
-    [LineStart(5349)]
+    (5349)]
     procedure StructureDetails(PurchaseHeader: Record "Purchase Header"; Is_Release: Boolean);
     begin
         "G\L".GET;
@@ -4051,7 +4051,7 @@ pageextension 70155 PurchaseOrderExt extends "Purchase Order"
             Releasing(PurchaseHeader);
     end;
 
-    [LineStart(5366)]
+    (5366)]
     procedure Releasing(PurchaseHeader: Record "Purchase Header");
     var
         ReleasePurchDoc: Codeunit "Release Purchase Document";
@@ -4369,7 +4369,7 @@ pageextension 70155 PurchaseOrderExt extends "Purchase Order"
 
     end;
 
-    [LineStart(5694)]
+    (5694)]
     local procedure UpdateInfoPanel();
     var
         DifferBuyFromPayTo: Boolean;
@@ -4386,7 +4386,7 @@ pageextension 70155 PurchaseOrderExt extends "Purchase Order"
 
     end;
 
-    [LineStart(5705)]
+    (5705)]
     local procedure checkminimumordervalue();
     begin
         //added by Vishnu Priya for Vendor minimum order value checking on 18-12-2018
@@ -4409,7 +4409,7 @@ pageextension 70155 PurchaseOrderExt extends "Purchase Order"
         END;
     end;
 
-    [LineStart(5726)]
+    (5726)]
     procedure ten_percent_item_Cost_high_chk() CNTNUE: Boolean;
     begin
         LoopVar := 1;
@@ -4467,7 +4467,7 @@ pageextension 70155 PurchaseOrderExt extends "Purchase Order"
         EXIT(TRUE);
     end;
 
-    [LineStart(5785)]
+    (5785)]
     local procedure IndentExistedOrnot();
     begin
         //ADDED BY VISHNU PRIYA ON 06-07-2019
@@ -4488,7 +4488,7 @@ pageextension 70155 PurchaseOrderExt extends "Purchase Order"
         END;
     end;
 
-    [LineStart(5802)]
+    (5802)]
     local procedure UpdationtoIndentLines();
     begin
         //ADDED BY VISHNU PRIYA ON 06-07-2019
@@ -4509,7 +4509,7 @@ pageextension 70155 PurchaseOrderExt extends "Purchase Order"
             UNTIL PL.NEXT = 0;
     end;
 
-    [LineStart(5820)]
+    (5820)]
     procedure Vendor_approved_or_Not();
     begin
         PurchHead.RESET;
@@ -4523,7 +4523,7 @@ pageextension 70155 PurchaseOrderExt extends "Purchase Order"
         END;
     end;
 
-    [LineStart(5833)]
+    (5833)]
     procedure Location_Mismatch_Not();
     begin
         // Added by Vishnu Priya on 03-12-2020

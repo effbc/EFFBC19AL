@@ -999,7 +999,7 @@ pageextension 70204 ServiceContractExt extends "Service Contract"
     */
     //end;
 
-    [LineStart(28115)]
+    (28115)]
     local procedure NextInvoicePeriodOnFormat(Text: Text[1024]);
     begin
         Text := NextInvoicePeriod;

@@ -69,7 +69,7 @@ codeunit 33000013 "Payroll Jnl.-Check Line"
         DimMgrAccountType: Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset",Employee," ";
         DimMgrBalAccountType: Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset",Employee," ";
 
-    [LineStart(45152)]
+    (45152)]
     procedure RunCheck(var RecPayrollJournalLine: Record "Payroll Journal Line");
     var
         PaymentTerms: Record "Payment Terms";
@@ -242,7 +242,7 @@ codeunit 33000013 "Payroll Jnl.-Check Line"
 
     end;
 
-    [LineStart(45316)]
+    (45316)]
     procedure DateNotAllowed(PostingDate: Date): Boolean;
     begin
         IF (AllowPostingFrom = 0D) AND (AllowPostingTo = 0D) THEN BEGIN
@@ -265,21 +265,21 @@ codeunit 33000013 "Payroll Jnl.-Check Line"
         EXIT((PostingDate < AllowPostingFrom) OR (PostingDate > AllowPostingTo));
     end;
 
-    [LineStart(45339)]
+    (45339)]
     procedure ErrorIfPositiveAmt(RecPayrollJournalLine: Record "Payroll Journal Line");
     begin
         IF RecPayrollJournalLine.Amount > 0 THEN
             RecPayrollJournalLine.FIELDERROR(Amount, Text008);
     end;
 
-    [LineStart(45343)]
+    (45343)]
     procedure ErrorIfNegativeAmt(RecPayrollJournalLine: Record "Payroll Journal Line");
     begin
         IF RecPayrollJournalLine.Amount < 0 THEN
             RecPayrollJournalLine.FIELDERROR(Amount, Text007);
     end;
 
-    [LineStart(45347)]
+    (45347)]
     procedure DimMgrTableTypeLocal(RecPayrollJournalLine: Record "Payroll Journal Line");
     begin
         WITH RecPayrollJournalLine DO BEGIN

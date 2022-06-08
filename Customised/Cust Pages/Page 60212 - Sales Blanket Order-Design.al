@@ -488,7 +488,7 @@ page 60212 "Sales Blanket Order-Design"
         Subject : Text[1000];
         user : Record User;
 
-    [LineStart(16107)]
+    (16107)]
     procedure UpdateAllowed() : Boolean;
     begin
         IF CurrPage.EDITABLE = FALSE THEN
@@ -496,12 +496,12 @@ page 60212 "Sales Blanket Order-Design"
         EXIT(TRUE);
     end;
 
-    [LineStart(16112)]
+    (16112)]
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(16115)]
+    (16115)]
     procedure ConvertOrdertoExportOrder(var Rec : Record "Sales Header");
     var
         OldSalesCommentLine : Record "Sales Comment Line";
@@ -667,25 +667,25 @@ page 60212 "Sales Blanket Order-Design"
 
     end;
 
-    [LineStart(16269)]
+    (16269)]
     local procedure SelltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(16272)]
+    (16272)]
     local procedure BilltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(16275)]
+    (16275)]
     local procedure ShortcutDimension1CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(16278)]
+    (16278)]
     local procedure ShortcutDimension2CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);

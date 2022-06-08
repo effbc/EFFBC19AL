@@ -75,7 +75,7 @@ page 60112 "MSPT Customer Sales Lines"
         CustPeriodLength: Option Day,Week,Month,Quarter,Year,Period;
         AmountType: Option "Net Change","Balance at Date";
 
-    [LineStart(11042)]
+    (11042)]
     procedure Set(var NewCust: Record Customer; NewCustPeriodLength: Integer; NewAmountType: Option "Net Change","Balance at Date");
     begin
         Cust.COPY(NewCust);
@@ -84,7 +84,7 @@ page 60112 "MSPT Customer Sales Lines"
         CurrPage.UPDATE(FALSE);
     end;
 
-    [LineStart(11048)]
+    (11048)]
     local procedure ShowCustEntries();
     begin
         /*SetDateFilter;
@@ -99,7 +99,7 @@ page 60112 "MSPT Customer Sales Lines"
 
     end;
 
-    [LineStart(11059)]
+    (11059)]
     local procedure ShowCustEntriesDue();
     begin
         SetDateFilter;
@@ -114,7 +114,7 @@ page 60112 "MSPT Customer Sales Lines"
         PAGE.RUN(0, MSPTCustLedgEntry)
     end;
 
-    [LineStart(11071)]
+    (11071)]
     local procedure SetDateFilter();
     begin
         IF AmountType = AmountType::"Net Change" THEN

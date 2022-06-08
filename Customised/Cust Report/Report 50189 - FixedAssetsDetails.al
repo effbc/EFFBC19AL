@@ -244,7 +244,7 @@ report 50189 FixedAssetsDetails
         "-DIM1.0-": Integer;
         DimSetEntryGRec: Record "Dimension Set Entry";
 
-    [LineStart(8493)]
+    (8493)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean);
     begin
 
@@ -257,7 +257,7 @@ report 50189 FixedAssetsDetails
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(8503)]
+    (8503)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean);
     begin
         TempExcelbuffer.INIT;

@@ -103,7 +103,7 @@ report 80810 "Prod. Order Cons. Post"
         Window: Dialog;
         NoofLines: Integer;
 
-    [LineStart(18016)]
+    (18016)]
     procedure UpdateItemJnlLine(ItemLedgEntryPar: Record "Item Ledger Entry"; ProdOrderLinePar: Record "Prod. Order Line");
     var
         ItemEntryRelation: Record "Item Entry Relation";
@@ -141,7 +141,7 @@ report 80810 "Prod. Order Cons. Post"
         ItemjnlPosted := TRUE;
     end;
 
-    [LineStart(18049)]
+    (18049)]
     procedure UdateReservationeEntry(ItemJnlPar: Record "Item Journal Line"; ItemLedgEntry2: Record "Item Ledger Entry");
     var
         TempReservEntry: Record "Reservation Entry";

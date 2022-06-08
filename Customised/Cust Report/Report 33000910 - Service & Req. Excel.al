@@ -924,7 +924,7 @@ report 33000910 "Service & Req. Excel"
         PrdMdls : Record "Product Model";
         SIL1 : Record "Service Item Line";
 
-    [LineStart(22878)]
+    (22878)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
 
@@ -939,7 +939,7 @@ report 33000910 "Service & Req. Excel"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(22890)]
+    (22890)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         Tempexcelbuffer.INIT;

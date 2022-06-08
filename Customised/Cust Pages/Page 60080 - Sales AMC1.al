@@ -1907,7 +1907,7 @@ page 60080 "Sales AMC1"
         SalesHeader : Record "Sales Header";
         CashFlowSDIntegration : Codeunit SQLIntegration;
 
-    [LineStart(8366)]
+    (8366)]
     procedure UpdateAllowed() : Boolean;
     begin
         IF CurrPage.EDITABLE = FALSE THEN
@@ -1915,12 +1915,12 @@ page 60080 "Sales AMC1"
         EXIT(TRUE);
     end;
 
-    [LineStart(8371)]
+    (8371)]
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(8374)]
+    (8374)]
     procedure ConvertOrdertoExportOrder(var Rec : Record "Sales Header");
     var
         OldSalesCommentLine : Record "Sales Comment Line";
@@ -2088,12 +2088,12 @@ page 60080 "Sales AMC1"
 
     end;
 
-    [LineStart(8528)]
+    (8528)]
     procedure "---B2B---"();
     begin
     end;
 
-    [LineStart(8531)]
+    (8531)]
     procedure DocumentPosition();
     begin
         /*
@@ -2105,7 +2105,7 @@ page 60080 "Sales AMC1"
 
     end;
 
-    [LineStart(8539)]
+    (8539)]
     procedure CreateOrders(Qtyparam : Decimal) OrdersCreated : Boolean;
     var
         Item : Record Item;
@@ -2137,7 +2137,7 @@ page 60080 "Sales AMC1"
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
-    [LineStart(8564)]
+    (8564)]
     procedure calcamt();
     begin
         "Sale Order Total Amount":=0;
@@ -2150,38 +2150,38 @@ page 60080 "Sales AMC1"
          MODIFY;
     end;
 
-    [LineStart(8574)]
+    (8574)]
     local procedure SelltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(8577)]
+    (8577)]
     local procedure BilltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(8580)]
+    (8580)]
     local procedure ShortcutDimension1CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(8583)]
+    (8583)]
     local procedure ShortcutDimension2CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(8586)]
+    (8586)]
     local procedure OnAfterGetCurrRecord();
     begin
         xRec := Rec;
         DocumentPosition;
     end;
 
-    [LineStart(8590)]
+    (8590)]
     local procedure PostingfromWhseRefOnActivate();
     begin
           IF "Posting from Whse. Ref." >0 THEN
@@ -2190,7 +2190,7 @@ page 60080 "Sales AMC1"
             PostingfromWhseRefEditable :=TRUE;
     end;
 
-    [LineStart(8596)]
+    (8596)]
     local procedure ShowPreview();
     var
         SalesPostYesNo : Codeunit "Sales-Post (Yes/No)";
@@ -2198,7 +2198,7 @@ page 60080 "Sales AMC1"
         SalesPostYesNo.Preview(Rec);
     end;
 
-    [LineStart(8599)]
+    (8599)]
     procedure ChooseInvoice();
     var
         temp : Integer;
@@ -2360,7 +2360,7 @@ page 60080 "Sales AMC1"
 
     end;
 
-    [LineStart(8755)]
+    (8755)]
     procedure "CashFlow AMC On Hand Integraton"();
     var
         SQLConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
@@ -2679,7 +2679,7 @@ page 60080 "Sales AMC1"
 
     end;
 
-    [LineStart(9017)]
+    (9017)]
     procedure "CashFlow AMC On Hand Integraton_On_Close"();
     var
         SQLConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
@@ -2988,7 +2988,7 @@ page 60080 "Sales AMC1"
 
     end;
 
-    [LineStart(9271)]
+    (9271)]
     procedure "CashFlow AMC On Hand Integraton_On_Post"();
     var
         SQLConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";

@@ -1578,13 +1578,13 @@ page 33000269 "Inspection Receipt"
                           PIDSH : Record "Posted Inspect DatasheetHeader";
                           PARENT_IDS_QTY : Decimal;
 
-    [LineStart(23175)]
+    (23175)]
     procedure CalculateUndefinedQty();
     begin
         UndefinedQty := Quantity - "Qty. Accepted" - "Qty. Rejected" - "Qty. Rework" - "Qty. Accepted Under Deviation";
     end;
 
-    [LineStart(23178)]
+    (23178)]
     procedure CancelReservation(var InspectionReceipt: Record "Inspection Receipt Header");
     var
         ReservationEntry: Record "Reservation Entry";
@@ -1605,7 +1605,7 @@ page 33000269 "Inspection Receipt"
         END;
     end;
 
-    [LineStart(23192)]
+    (23192)]
     procedure UpdateQCCheck(InspecRcpt: Record "Inspection Receipt Header");
     begin
         IF InspecRcpt."Item Ledger Entry No." <> 0 THEN BEGIN
@@ -1625,7 +1625,7 @@ page 33000269 "Inspection Receipt"
         END;
     end;
 
-    [LineStart(23209)]
+    (23209)]
     local procedure ReworkTimeInMinutesOnBeforeInp();
     begin
         IF "Rework Reference No." = '' THEN
@@ -1634,7 +1634,7 @@ page 33000269 "Inspection Receipt"
             ReworkTimeInMinutesEditable := TRUE;
     end;
 
-    [LineStart(23215)]
+    (23215)]
     procedure CreateIndent();
     var
         Indent_No: Code[20];
@@ -1740,7 +1740,7 @@ page 33000269 "Inspection Receipt"
         // End by pranavi
     end;
 
-    [LineStart(23303)]
+    (23303)]
     procedure ICNNO(DT: Date) ICN: Code[10];
     var
         Dat: Code[10];
@@ -1763,12 +1763,12 @@ page 33000269 "Inspection Receipt"
         EXIT(ICN);
     end;
 
-    [LineStart(23317)]
+    (23317)]
     local procedure "Rejection Note"();
     begin
     end;
 
-    [LineStart(23320)]
+    (23320)]
     local procedure Trasfer_To_calibration_module();
     begin
         IF Rec."Equp Model" = '' THEN
@@ -1823,7 +1823,7 @@ page 33000269 "Inspection Receipt"
         END;
     end;
 
-    [LineStart(23375)]
+    (23375)]
     local procedure UnderDeviationMails();
     begin
         "total price" := 0;

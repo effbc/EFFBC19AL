@@ -742,7 +742,7 @@ page 50016 "MSL Items List"
         "Floor Life Expired Items": Boolean;
         "Floor Life To Be Expired Items": Boolean;
 
-    [LineStart(2783)]
+    (2783)]
     procedure GetStock(Item: Code[30]);
     var
         ITEM1: Record Item;
@@ -800,7 +800,7 @@ page 50016 "MSL Items List"
         END;
     end;
 
-    [LineStart(2839)]
+    (2839)]
     local procedure InsertRows();
     begin
         // >>Variable Initialization
@@ -887,7 +887,7 @@ page 50016 "MSL Items List"
         RESET;
     end;
 
-    [LineStart(2927)]
+    (2927)]
     procedure GetStockOfLot(Item: Code[30]; Lot: Code[30]);
     var
         ITEM1: Record Item;
@@ -950,7 +950,7 @@ page 50016 "MSL Items List"
         END;
     end;
 
-    [LineStart(2988)]
+    (2988)]
     procedure GetNextNo() NumberValue: Code[20];
     var
         DateValue: Text[30];
@@ -993,7 +993,7 @@ page 50016 "MSL Items List"
         NumberValue := INCSTR(LastNumber);
     end;
 
-    [LineStart(3019)]
+    (3019)]
     local procedure AssignTrackingSpec(MILin: Record "Material Issues Line"; Lot: Code[30]);
     var
         TrackingSpecification: Record "Mat.Issue Track. Specification";
@@ -1044,7 +1044,7 @@ page 50016 "MSL Items List"
         END;
     end;
 
-    [LineStart(3066)]
+    (3066)]
     local procedure Track(ILE: Record "Item Ledger Entry"; MILin: Record "Material Issues Line");
     var
         TrackingSpecification: Record "Mat.Issue Track. Specification";
@@ -1076,7 +1076,7 @@ page 50016 "MSL Items List"
         TrackingSpecification.INSERT;
     end;
 
-    [LineStart(3092)]
+    (3092)]
     local procedure FilterData();
     var
         FilterCodes: Text[55];

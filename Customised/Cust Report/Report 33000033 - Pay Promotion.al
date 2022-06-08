@@ -74,7 +74,7 @@ report 33000033 "Pay Promotion"
         Text004: Label 'Grade of %1 has been Upgraded';
         Text005: TextConst ENU = 'Salary Already Posted For %1 = %2';
 
-    [LineStart(20402)]
+    (20402)]
     procedure ModifyingElements();
     var
         Payemployeeelements: Record "Pay Employee Elements";
@@ -115,7 +115,7 @@ report 33000033 "Pay Promotion"
         END;
     end;
 
-    [LineStart(20439)]
+    (20439)]
     procedure GetTemplateBatchDoc(Template: Code[10]; Batch: Code[10]; DocNo: Code[10]);
     begin
         TemplateName := Template;

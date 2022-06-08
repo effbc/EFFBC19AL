@@ -120,13 +120,13 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         DimMgrAccountType: Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset",Employee," ";
         DimMgrBalAccountType: Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset",Employee," ";
 
-    [LineStart(43164)]
+    (43164)]
     procedure GetGLReg(var NewGLReg: Record "G/L Register");
     begin
         NewGLReg := GLReg;
     end;
 
-    [LineStart(43167)]
+    (43167)]
     procedure RunWithCheck(var PayrollJournalLine2: Record "Payroll Journal Line");
     begin
         PayrollJournalLine.COPY(PayrollJournalLine2);
@@ -143,7 +143,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(43180)]
+    (43180)]
     procedure RunWithoutCheck(var PayrollJournalLine2: Record "Payroll Journal Line");
     begin
         PayrollJournalLine.COPY(PayrollJournalLine2);
@@ -160,7 +160,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(43193)]
+    (43193)]
     local procedure "Code"(CheckLine: Boolean);
     begin
         WITH PayrollJournalLine DO BEGIN
@@ -247,7 +247,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(43279)]
+    (43279)]
     local procedure PostGLAcc();
     begin
         WITH PayrollJournalLine DO BEGIN
@@ -275,7 +275,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(43304)]
+    (43304)]
     local procedure PostEmployee();
     var
         EmpLedgerEntryLocal: Record "Employee Ledger Entry";
@@ -417,7 +417,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(43438)]
+    (43438)]
     local procedure PostBankAcc();
     begin
         WITH PayrollJournalLine DO BEGIN
@@ -589,7 +589,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(43610)]
+    (43610)]
     local procedure InitCodeUnit();
     begin
         WITH PayrollJournalLine DO BEGIN
@@ -660,7 +660,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(43682)]
+    (43682)]
     local procedure FinishCodeunit();
     begin
         WITH PayrollJournalLine DO BEGIN
@@ -697,7 +697,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(43719)]
+    (43719)]
     local procedure InitGLEntry(GLAccNo: Code[20]; Amount: Decimal; AmountAddCurr: Decimal; UseAmountAddCurr: Boolean; SystemCreatedEntry: Boolean);
     var
         TableID: array[10] of Integer;
@@ -812,7 +812,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(43830)]
+    (43830)]
     local procedure InsertGLEntry(CalcAddCurrResiduals: Boolean);
     begin
         /*
@@ -922,7 +922,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(43946)]
+    (43946)]
     local procedure CalcCurrencyApplnRounding(var RecNewEmpLdgrEntryBuf: Record "Emp Ledger Entry Buffer"; var RecOldEmpLdgrEntryBuf: Record "Emp Ledger Entry Buffer"; var RecDtldEmpLedgEntryBuf: Record "Dtld Emp Ledg. Entry Buffer"; RecPayrollJournalLine: Record "Payroll Journal Line"; TransactionNo: Integer; ApplnRoundingPrecision: Decimal);
     var
         ApplnRounding: Decimal;
@@ -949,7 +949,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         InsertDtldCELedgEntry(RecDtldEmpLedgEntryBuf, RecNewEmpLdgrEntryBuf);
     end;
 
-    [LineStart(43967)]
+    (43967)]
     procedure FindAmtForAppln(var RecNewEmpLdgrEntryBuf: Record "Emp Ledger Entry Buffer"; var RecOldEmpLdgrEntryBuf: Record "Emp Ledger Entry Buffer"; RecOldEmpLdgrEntryBuf2: Record "Emp Ledger Entry Buffer"; var AppliedAmount: Decimal; var AppliedAmountLCY: Decimal; var OldAppliedAmount: Decimal);
     begin
         IF RecOldEmpLdgrEntryBuf2.GETFILTER(Positive) <> '' THEN
@@ -985,7 +985,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(44002)]
+    (44002)]
     local procedure CalcCurrencyUnrealizedGainLoss(var RecEmpLdgrEntryBuf: Record "Emp Ledger Entry Buffer"; var RecDtldEmpLedgEntryBuf: Record "Dtld Emp Ledg. Entry Buffer"; RecPayrollJournalLine: Record "Payroll Journal Line"; AppliedAmount: Decimal; AppliedAmountLCY: Decimal; RemainingAmountBeforeAppln: Decimal);
     var
         UnRealizedGainLossLCY: Decimal;
@@ -1028,7 +1028,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(44038)]
+    (44038)]
     procedure CalcCurrencyRealizedGainLoss(var RecEmpLedgEntryBuf: Record "Emp Ledger Entry Buffer"; var RecNewEmpLdgrEntryBuf: Record "Emp Ledger Entry Buffer"; var RecDtldEmpLedgEntryBuf: Record "Dtld Emp Ledg. Entry Buffer"; RecPayrollJournalLine: Record "Payroll Journal Line"; AppliedAmount: Decimal; AppliedAmountLCY: Decimal);
     var
         RealizedGainLossLCY: Decimal;
@@ -1060,7 +1060,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(44064)]
+    (44064)]
     local procedure CalcApplication(var RecNewEmpLdgrEntryBuf: Record "Emp Ledger Entry Buffer"; var RecOldEmpLdgrEntryBuf: Record "Emp Ledger Entry Buffer"; var RecDtldEmpLedgEntryBuf: Record "Dtld Emp Ledg. Entry Buffer"; RecPayrollJournalLine: Record "Payroll Journal Line"; AppliedAmount: Decimal; AppliedAmountLCY: Decimal; OldAppliedAmount: Decimal);
     begin
         IF AppliedAmount = 0 THEN
@@ -1104,7 +1104,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(44107)]
+    (44107)]
     local procedure CalcAmtLCYAdjustment(var RecEmpLedgerEntryBuf: Record "Emp Ledger Entry Buffer"; var RecNewEmpLdgrEntryBuf: Record "Emp Ledger Entry Buffer"; var RecDtldEmpLedgEntryBuf: Record "Dtld Emp Ledg. Entry Buffer"; RecPayrollJournalLine: Record "Payroll Journal Line"; TransactionNo: Decimal);
     var
         AdjustedAmountLCY: Decimal;
@@ -1123,7 +1123,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(44122)]
+    (44122)]
     procedure InitNewCELedgEntry(var RecInitDtldEmpLedgEntryBuf: Record "Dtld Emp Ledg. Entry Buffer"; RecPayrollJournalLine: Record "Payroll Journal Line");
     begin
         RecInitDtldEmpLedgEntryBuf.INIT;
@@ -1133,7 +1133,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         RecInitDtldEmpLedgEntryBuf."User ID" := USERID;
     end;
 
-    [LineStart(44129)]
+    (44129)]
     procedure InitOldCELedgEntry(var RecInitDtldEmpLedgEntryBuf: Record "Dtld Emp Ledg. Entry Buffer"; RecOldEmpLedgerEntryBuf: Record "Emp Ledger Entry Buffer");
     begin
         RecInitDtldEmpLedgEntryBuf."Employee Ledger Entry No." := RecOldEmpLedgerEntryBuf."Entry No.";
@@ -1145,7 +1145,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         RecInitDtldEmpLedgEntryBuf."Initial Document Type" := RecOldEmpLedgerEntryBuf."Document Type";
     end;
 
-    [LineStart(44138)]
+    (44138)]
     local procedure InsertDtldCELedgEntry(var RecDtldEmpLedgEntryBuf: Record "Dtld Emp Ledg. Entry Buffer"; var RecEmpLedgerEntryBuf: Record "Emp Ledger Entry Buffer");
     var
         NextDtldBufferEntryNo: Integer;
@@ -1207,7 +1207,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         RecDtldEmpLedgEntryBuf.RESET;
     end;
 
-    [LineStart(44198)]
+    (44198)]
     local procedure ApplyEmpLedgEntry(var RecNewEmpLedgrEntryBuf: Record "Emp Ledger Entry Buffer"; var RecDtldEmpLedgEntryBuf: Record "Dtld Emp Ledg. Entry Buffer"; RecPayrollJournalLine: Record "Payroll Journal Line"; TransactionNo: Integer; ApplnRoundingPrecision: Decimal);
     var
         OldEmpLedgerEntryBufLocal: Record "Emp Ledger Entry Buffer";
@@ -1454,7 +1454,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(44437)]
+    (44437)]
     procedure EmpPostApplyEmpLedgEntry(var RecPayrollJournalLineApply: Record "Payroll Journal Line"; var RecEmpLedgerEntryApply: Record "Employee Ledger Entry");
     var
         DtldEmpLedgEntryBufLocal: Record "Dtld Emp Ledg. Entry Buffer";
@@ -1517,7 +1517,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(44494)]
+    (44494)]
     procedure TransferEmpLedgEntry(var RecEmpLdgrEntryBuf: Record "Emp Ledger Entry Buffer"; var RecEmpLedgerEntry: Record "Employee Ledger Entry"; EmpToCV: Boolean);
     begin
         IF EmpToCV THEN BEGIN
@@ -1643,7 +1643,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(44619)]
+    (44619)]
     procedure PostDtldEmpLedgEntries(RecPayrollJournalLine: Record "Payroll Journal Line"; var RecDtldEmpLedgEntryBuf: Record "Dtld Emp Ledg. Entry Buffer"; RecEmployeePostingGroup: Record "Employee Posting Group"; NextTransactionNo: Integer; EmpLedgEntryInserted: Boolean);
     var
         DtldEmpLedgEntryLocal: Record "Detailed Employee Ledg. Entry";
@@ -1857,7 +1857,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(44826)]
+    (44826)]
     local procedure EmpUpdateDebitCredit(Correction: Boolean; var RecDtldEmpLedgEntry: Record "Detailed Employee Ledg. Entry");
     begin
         WITH RecDtldEmpLedgEntry DO BEGIN
@@ -1879,7 +1879,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(44848)]
+    (44848)]
     local procedure UpdateCalcInterest(var RecEmpLdgrEntryBuf: Record "Emp Ledger Entry Buffer");
     var
         EmpLdgrEntryBufLocal2: Record "Emp Ledger Entry Buffer";
@@ -1901,7 +1901,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(44866)]
+    (44866)]
     local procedure UpdateCalcInterest2(var RecEmpLdgrEntryBuf: Record "Emp Ledger Entry Buffer"; var RecEmpLdgrEntryBuf2: Record "Emp Ledger Entry Buffer");
     begin
         /*C
@@ -1912,7 +1912,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(44873)]
+    (44873)]
     procedure GLCalcAddCurrency(AddCurrAmount: Decimal; UseAddCurrAmount: Boolean);
     begin
         /*C
@@ -1929,7 +1929,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(44886)]
+    (44886)]
     procedure HandleAddCurrResidualGLEntry();
     var
         TableID: array[10] of Integer;
@@ -2007,7 +2007,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(44957)]
+    (44957)]
     local procedure CalcLCYToAddCurr(AmountLCY: Decimal): Decimal;
     begin
         IF GLSetup."Additional Reporting Currency" = '' THEN
@@ -2016,7 +2016,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         EXIT(ExchangeAmtLCYToFCY2(AmountLCY));
     end;
 
-    [LineStart(44963)]
+    (44963)]
     procedure CalcAddCurrFactor(Numerator: Decimal; Denominator: Decimal): Decimal;
     begin
         IF Denominator = 0 THEN
@@ -2031,7 +2031,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
                 EXIT(0);
     end;
 
-    [LineStart(44975)]
+    (44975)]
     procedure GetCurrencyExchRate();
     var
         NewCurrencyDate: Date;
@@ -2057,7 +2057,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(44999)]
+    (44999)]
     procedure ExchAmount(Amount: Decimal; FromCurrencyCode: Code[10]; ToCurrencyCode: Code[10]; UsePostingDate: Date): Decimal;
     var
         ToCurrency: Record Currency;
@@ -2077,7 +2077,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         EXIT(Amount);
     end;
 
-    [LineStart(45015)]
+    (45015)]
     local procedure ExchangeAmtLCYToFCY2(Amount: Decimal): Decimal;
     begin
         IF UseCurrFactorOnly THEN
@@ -2088,7 +2088,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
                    AddCurrency."Amount Rounding Precision"));
     end;
 
-    [LineStart(45023)]
+    (45023)]
     local procedure InsertFAAllocDim(EntryNo: Integer): Boolean;
     begin
         IF FAGLPostBuf.GET(EntryNo) THEN BEGIN
@@ -2118,14 +2118,14 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
 
     end;
 
-    [LineStart(45050)]
+    (45050)]
     local procedure CheckNonAddCurrCodeOccurred(CurrencyCode: Code[10]): Boolean;
     begin
         NonAddCurrCodeOccured := NonAddCurrCodeOccured OR (GLSetup."Additional Reporting Currency" <> CurrencyCode);
         EXIT(NonAddCurrCodeOccured);
     end;
 
-    [LineStart(45054)]
+    (45054)]
     procedure CheckCalcPmtDiscCEEmp(var RecNewEmpLdgrEntryBuf: Record "Emp Ledger Entry Buffer"; var RecOldEmpLedgerEntry2: Record "Employee Ledger Entry"; ApplnRoundingPrecision: Decimal; CheckFilter: Boolean; CheckAmount: Boolean): Boolean;
     var
         OldEmpLedgerEntryBufLocal2: Record "Emp Ledger Entry Buffer";
@@ -2136,7 +2136,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         //                        ApplnRoundingPrecision,CheckFilter,CheckAmount));
     end;
 
-    [LineStart(45060)]
+    (45060)]
     procedure CheckCalcPmtDiscEmp(var RecNewEmpLedgerEntry: Record "Employee Ledger Entry"; var RecOldEmpLedgerEntry2: Record "Employee Ledger Entry"; ApplnRoundingPrecision: Decimal; CheckFilter: Boolean; CheckAmount: Boolean): Boolean;
     var
         NewEmpLdgrEntryBufLocal: Record "Emp Ledger Entry Buffer";
@@ -2148,7 +2148,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         EXIT(CheckCalcPmtDisc(NewEmpLdgrEntryBufLocal, OldEmpLdgrEntryBufLocal2, ApplnRoundingPrecision, CheckFilter, CheckAmount));
     end;
 
-    [LineStart(45066)]
+    (45066)]
     procedure CheckCalcPmtDiscGenJnlEmp(RecPayrollJournalLine: Record "Payroll Journal Line"; RecOldEmpLedgerEntry2: Record "Employee Ledger Entry"; ApplnRoundingPrecision: Decimal; CheckAmount: Boolean): Boolean;
     var
         NewEmpLdgrEntryBufLocal: Record "Emp Ledger Entry Buffer";
@@ -2161,7 +2161,7 @@ codeunit 33000012 "Payroll Jnl.-Post Line"
         EXIT(CheckCalcPmtDisc(NewEmpLdgrEntryBufLocal, OldEmpLdgrEntryBufLocal2, ApplnRoundingPrecision, FALSE, CheckAmount));
     end;
 
-    [LineStart(45073)]
+    (45073)]
     procedure CheckCalcPmtDisc(var RecNewEmpLdgrEntryBuf: Record "Emp Ledger Entry Buffer"; var RecOldEmpLdgrEntryBuf2: Record "Emp Ledger Entry Buffer"; ApplnRoundingPrecision: Decimal; CheckFilter: Boolean; CheckAmount: Boolean): Boolean;
     begin
         /*C

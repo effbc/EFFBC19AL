@@ -361,7 +361,7 @@ report 50106 "Ta Pending"
         Amount_Taken_DateCaptionLbl: Label 'Amount Taken Date';
         Travelling_Dues_ReportCaptionLbl: Label 'Travelling Dues Report';
 
-    [LineStart(6783)]
+    (6783)]
     procedure "sum"(var i: Decimal; var j: Decimal) k1: Decimal;
     begin
         k1 := i + j;

@@ -254,7 +254,7 @@ report 80005 "Customer - Trial Balance3"
         Net_ChangeCaption_Control54Lbl: Label 'Net Change';
         Total_in_LCYCaptionLbl: Label 'Total in LCY';
 
-    [LineStart(12185)]
+    (12185)]
     local procedure CalcAmounts(DateFrom: Date; DateTo: Date; var BeginBalance: Decimal; var DebitAmt: Decimal; var CreditAmt: Decimal; var TotalBalance: Decimal);
     var
         DtlCustLedgEntry: Record "Detailed Cust. Ledg. Entry";
@@ -284,7 +284,7 @@ report 80005 "Customer - Trial Balance3"
         END;
     end;
 
-    [LineStart(12210)]
+    (12210)]
     procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -295,7 +295,7 @@ report 80005 "Customer - Trial Balance3"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(12218)]
+    (12218)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;

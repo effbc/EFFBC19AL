@@ -1430,7 +1430,7 @@ pageextension 70214 ServiceOrderExt extends "Service Order"
     //GSTManagement : "GST Management";
     //Variable type has not been exported.
 
-    [LineStart(26988)]
+    (26988)]
     local procedure OrderTimeC1000000005OnAfterVal();
     begin
         UpdateResponseDateTime;

@@ -481,7 +481,7 @@ page 60227 "LED Sale Orders List"
                                  RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
                                  TotalOrders : Label '"Total Orders: "';
 
-    [LineStart(17037)]
+    (17037)]
     procedure UpdateAllowed() : Boolean;
     begin
         IF CurrPage.EDITABLE = FALSE THEN
@@ -489,7 +489,7 @@ page 60227 "LED Sale Orders List"
         EXIT(TRUE);
     end;
 
-    [LineStart(17042)]
+    (17042)]
     local procedure UpdateInfoPanel();
     var
         DifferSellToBillTo : Boolean;
@@ -503,12 +503,12 @@ page 60227 "LED Sale Orders List"
           SalesHistoryBtnVisible := SalesInfoPaneMgt.DocExist(Rec,"Bill-to Customer No.")
     end;
 
-    [LineStart(17051)]
+    (17051)]
     procedure "---B2B---"();
     begin
     end;
 
-    [LineStart(17054)]
+    (17054)]
     procedure DocumentPosition();
     begin
         /*
@@ -520,7 +520,7 @@ page 60227 "LED Sale Orders List"
 
     end;
 
-    [LineStart(17062)]
+    (17062)]
     procedure CreateOrders(Qtyparam : Decimal) OrdersCreated : Boolean;
     var
         Item : Record Item;
@@ -550,7 +550,7 @@ page 60227 "LED Sale Orders List"
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
-    [LineStart(17085)]
+    (17085)]
     procedure calcamt();
     begin
         "Sale Order Total Amount":=0;
@@ -562,7 +562,7 @@ page 60227 "LED Sale Orders List"
          MODIFY;
     end;
 
-    [LineStart(17094)]
+    (17094)]
     procedure ChooseInvoice();
     var
         temp : Integer;

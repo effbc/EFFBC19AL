@@ -1620,7 +1620,7 @@ report 50055 "Issued Material Report"
         ItmLedEnt : Record "Item Ledger Entry";
         RemainingQty : Decimal;
 
-    [LineStart(3569)]
+    (3569)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
 
@@ -1633,7 +1633,7 @@ report 50055 "Issued Material Report"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(3579)]
+    (3579)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         Tempexcelbuffer.INIT;
@@ -1646,12 +1646,12 @@ report 50055 "Issued Material Report"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(3589)]
+    (3589)]
     procedure "Entercell New"();
     begin
     end;
 
-    [LineStart(3592)]
+    (3592)]
     procedure GetNextNo() NumberValue : Code[20];
     var
         DateValue : Text[30];

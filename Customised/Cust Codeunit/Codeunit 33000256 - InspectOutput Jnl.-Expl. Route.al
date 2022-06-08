@@ -106,7 +106,7 @@ codeunit 33000256 "InspectOutput Jnl.-Expl. Route"
         Text001: Label 'There is nothing to explode.';
         LastItemJnlLine: Record "Item Journal Line";
 
-    [LineStart(51205)]
+    (51205)]
     procedure InsertOutputJnlLine(ItemJnlLine: Record "Item Journal Line"; var NextLineNo: Integer; var LineSpacing: Integer; ProdOrderLineNo: Integer; ItemNo: Code[20]; VariantCode: Code[10]; LocationCode: Code[10]; BinCode: Code[20]; RoutingNo: Code[20]; RoutingRefNo: Integer; OperationNo: Code[10]; UnitOfMeasureCode: Code[10]; QtyToPost: Decimal; InspectReceiptNo: Code[20]);
     var
         InspectionReceiptHeader: Record "Inspection Receipt Header";

@@ -111,7 +111,7 @@ page 60043 "Indent Subform"
         [InDataSet]
         "Indent StatusEnable": Boolean;
 
-    [LineStart(5511)]
+    (5511)]
     local procedure IndentStatusOnInputChange(var Text: Text[1024]);
     begin
         IF FORMAT("Indent Status") = 'Cancel' THEN
@@ -123,7 +123,7 @@ page 60043 "Indent Subform"
         END;
     end;
 
-    [LineStart(5521)]
+    (5521)]
     local procedure IndentStatusOnFormat();
     begin
         IF ((USERID <> 'EFFTRONICS\RENUKACH') AND (USERID <> 'EFFTRONICS\ANANDA') AND (USERID <> 'EFFTRONICS\BRAHMAIAH') AND (USERID <> 'EFFTRONICS\PADMASRI') AND

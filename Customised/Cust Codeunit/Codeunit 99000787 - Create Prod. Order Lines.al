@@ -41,7 +41,7 @@ codeunit 99000787 "Create Prod. Order Lines"
         Item: Record Item;
         Alternate_PCB_Replace: Boolean;
 
-    [LineStart(54408)]
+    (54408)]
     procedure CheckStructure(Status: Option; ProdOrderNo: Code[20]; Direction: Option Forward,Backward; MultiLevel: Boolean; LetDueDateDecrease: Boolean);
     begin
         ProdOrder.GET(Status, ProdOrderNo);
@@ -55,7 +55,7 @@ codeunit 99000787 "Create Prod. Order Lines"
         CheckMultiLevelStructure(Direction, MultiLevel, LetDueDateDecrease);
     end;
 
-    [LineStart(54419)]
+    (54419)]
     procedure Copy(ProdOrder2: Record "Production Order"; Direction: Option Forward,Backward; VariantCode: Code[10]; LetDueDateDecrease: Boolean; AlternatePCBReplace: Boolean): Boolean;
     var
         ErrorOccured: Boolean;
@@ -116,7 +116,7 @@ codeunit 99000787 "Create Prod. Order Lines"
         EXIT(NOT ErrorOccured);
     end;
 
-    [LineStart(54475)]
+    (54475)]
     local procedure CopyFromFamily(): Boolean;
     var
         Family: Record Family;
@@ -145,7 +145,7 @@ codeunit 99000787 "Create Prod. Order Lines"
         EXIT(NOT ErrorOccured);
     end;
 
-    [LineStart(54498)]
+    (54498)]
     local procedure CopyFromSalesOrder(): Boolean;
     var
         SalesPlanLine: Record "Sales Planning Line" temporary;
@@ -228,7 +228,7 @@ codeunit 99000787 "Create Prod. Order Lines"
         EXIT(NOT ErrorOccured);
     end;
 
-    [LineStart(54570)]
+    (54570)]
     local procedure InitProdOrderLine(ItemNo: Code[20]; VariantCode: Code[10]; LocationCode: Code[10]);
     var
         Item: Record Item;
@@ -278,7 +278,7 @@ codeunit 99000787 "Create Prod. Order Lines"
 
     end;
 
-    [LineStart(54613)]
+    (54613)]
     local procedure InsertProdOrderLine(): Boolean;
     var
         ProdOrderLine3: Record "Prod. Order Line";
@@ -309,7 +309,7 @@ codeunit 99000787 "Create Prod. Order Lines"
         EXIT(TRUE);
     end;
 
-    [LineStart(54639)]
+    (54639)]
     local procedure ProcessProdOrderLines(Direction: Option Forward,Backward; LetDueDateDecrease: Boolean): Boolean;
     var
         ErrorOccured: Boolean;
@@ -331,7 +331,7 @@ codeunit 99000787 "Create Prod. Order Lines"
         EXIT(NOT ErrorOccured);
     end;
 
-    [LineStart(54656)]
+    (54656)]
     local procedure CheckMultiLevelStructure(Direction: Option Forward,Backward; MultiLevel: Boolean; LetDueDateDecrease: Boolean);
     var
         Item: Record Item;
@@ -359,7 +359,7 @@ codeunit 99000787 "Create Prod. Order Lines"
             ReserveMultiLevelStructure(ProdOrderComp);
     end;
 
-    [LineStart(54678)]
+    (54678)]
     local procedure CheckMakeOrderLine(var ProdOrderComp: Record "Prod. Order Component"; var ProdOrderLine: Record "Prod. Order Line"; Direction: Option Forward,Backward; MultiLevel: Boolean; LetDueDateDecrease: Boolean): Boolean;
     var
         Item: Record Item;
@@ -446,7 +446,7 @@ codeunit 99000787 "Create Prod. Order Lines"
 
     end;
 
-    [LineStart(54752)]
+    (54752)]
     local procedure ReserveMultiLevelStructure(var ProdOrderComp2: Record "Prod. Order Component");
     var
         ProdOrderComp3: Record "Prod. Order Component";
@@ -476,7 +476,7 @@ codeunit 99000787 "Create Prod. Order Lines"
             UNTIL ProdOrderComp3.NEXT(-1) = 0;
     end;
 
-    [LineStart(54776)]
+    (54776)]
     procedure CopyDimFromSalesLine(SalesLine: Record "Sales Line"; var ProdOrderLine: Record "Prod. Order Line");
     begin
         ProdOrderLine."Shortcut Dimension 1 Code" := SalesLine."Shortcut Dimension 1 Code";
@@ -484,14 +484,14 @@ codeunit 99000787 "Create Prod. Order Lines"
         ProdOrderLine."Dimension Set ID" := SalesLine."Dimension Set ID";
     end;
 
-    [LineStart(54781)]
+    (54781)]
     procedure SetSalesLine(SalesLine2: Record "Sales Line");
     begin
         SalesLine := SalesLine2;
         SalesLineIsSet := TRUE;
     end;
 
-    [LineStart(54785)]
+    (54785)]
     local procedure AdjustDateAndTime(var ProdOrderLine3: Record "Prod. Order Line"; DueDate: Date; EndingDate: Date; EndingTime: Time);
     begin
         IF ProdOrderLine3."Due Date" > DueDate THEN
@@ -508,7 +508,7 @@ codeunit 99000787 "Create Prod. Order Lines"
         ProdOrderLine3.UpdateDatetime;
     end;
 
-    [LineStart(54799)]
+    (54799)]
     local procedure UpdateCompPlanningLevel(ProdOrderLine3: Record "Prod. Order Line");
     var
         ProdOrderComp3: Record "Prod. Order Component";
@@ -525,7 +525,7 @@ codeunit 99000787 "Create Prod. Order Lines"
             UNTIL ProdOrderComp3.NEXT = 0;
     end;
 
-    [LineStart(54811)]
+    (54811)]
     local procedure UpdateProdOrderLine(var ProdOrderLine: Record "Prod. Order Line"; Direction: Option Forward,Backward; LetDueDateDecrease: Boolean);
     var
         ProdOrderLine3: Record "Prod. Order Line";
@@ -557,7 +557,7 @@ codeunit 99000787 "Create Prod. Order Lines"
         TempOldProdOrderComp.DELETEALL;
     end;
 
-    [LineStart(54837)]
+    (54837)]
     local procedure CopyProdOrderCompToTemp(ProdOrderLine3: Record "Prod. Order Line");
     var
         ProdOrderComp2: Record "Prod. Order Component";
@@ -573,7 +573,7 @@ codeunit 99000787 "Create Prod. Order Lines"
             UNTIL ProdOrderComp2.NEXT = 0;
     end;
 
-    [LineStart(54848)]
+    (54848)]
     local procedure IsReplSystemProdOrder(ItemNo: Code[20]; VariantCode: Code[10]; LocationCode: Code[10]): Boolean;
     var
         SKU: Record "Stockkeeping Unit";
@@ -586,14 +586,14 @@ codeunit 99000787 "Create Prod. Order Lines"
         EXIT(Item."Replenishment System" = Item."Replenishment System"::"Prod. Order");
     end;
 
-    [LineStart(54855)]
+    (54855)]
     procedure SetScheduleLine(ScheduleLine2: Record Schedule2);
     begin
         ScheduleLine := ScheduleLine2;
         ScheduleLineIsSet := TRUE;
     end;
 
-    [LineStart(54859)]
+    (54859)]
     procedure CopySchdl(ProdOrder2: Record "Production Order"; Direction: Option Forward,Backward; VariantCode: Code[10]; LetDueDateDecrease: Boolean): Boolean;
     var
         ErrorOccured: Boolean;
@@ -655,7 +655,7 @@ codeunit 99000787 "Create Prod. Order Lines"
         EXIT(NOT ErrorOccured);
     end;
 
-    [LineStart(54916)]
+    (54916)]
     procedure CopyDimFromScheduleLine(ScheduleLine: Record Schedule2; var ProdOrderLine: Record "Prod. Order Line");
     var
         SalesLine: Record "Sales Line";
@@ -667,7 +667,7 @@ codeunit 99000787 "Create Prod. Order Lines"
         END;
     end;
 
-    [LineStart(54924)]
+    (54924)]
     local procedure CopyFromSchdlOrder(): Boolean;
     var
         SalesPlanLine: Record "Sales Planning Line" temporary;

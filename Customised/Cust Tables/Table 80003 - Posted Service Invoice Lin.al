@@ -101,7 +101,7 @@ table 80003 "Posted Service Invoice Lin"
         field(13; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code';
-            TableRelation = IF (Type = CONST(Item)) "Item Variant".Make WHERE("Item No." = FIELD("No."));
+            TableRelation = IF (Type = CONST(Item)) "Item Variant".Code WHERE("Item No." = FIELD("No."));
             DataClassification = CustomerContent;
         }
         field(14; "Bin Code"; Code[20])
@@ -630,7 +630,7 @@ table 80003 "Posted Service Invoice Lin"
     var
         DimMgt: Codeunit DimensionManagement;
 
-    [LineStart(5364)]
+
     procedure ShowItemTrackingLines();
     var
         ItemTrackingMgt: Codeunit "Item Tracking Management";
@@ -638,7 +638,7 @@ table 80003 "Posted Service Invoice Lin"
         //ItemTrackingMgt.CallPostedItemTrackingForm(DATABASE::Table5932,0,"Order No.",'',0,"Line No.");//EFFUPG
     end;
 
-    [LineStart(5367)]
+
     procedure RowID1(): Text[250];
     var
         ItemTrackingMgt: Codeunit "Item Tracking Management";

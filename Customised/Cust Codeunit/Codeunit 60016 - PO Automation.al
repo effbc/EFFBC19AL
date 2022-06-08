@@ -26,7 +26,7 @@ codeunit 60016 "PO Automation"
         PaymentTerms: Record "Payment Terms";
         ItemVar: Record Item;
 
-    [LineStart(7305)]
+    (7305)]
     procedure CreateIndents(TemplateName: Code[20]; "Jnl.BatchName": Code[20]);
     var
         IndentHeader: Record "Indent Header";
@@ -70,7 +70,7 @@ codeunit 60016 "PO Automation"
         ReqLine.DELETEALL;
     end;
 
-    [LineStart(7340)]
+    (7340)]
     procedure GetIndentLines();
     var
         CreateIndents: Record "Create Indents";
@@ -179,7 +179,7 @@ codeunit 60016 "PO Automation"
 
     end;
 
-    [LineStart(7445)]
+    (7445)]
     procedure CreateEnquiries();
     var
         IndentVendorItems: Record "Indent Vendor Items";
@@ -267,7 +267,7 @@ codeunit 60016 "PO Automation"
 
     end;
 
-    [LineStart(7515)]
+    (7515)]
     procedure InsertIndentItemvendor();
     var
         IndentVendorItems: Record "Indent Vendor Items";
@@ -302,7 +302,7 @@ codeunit 60016 "PO Automation"
             UNTIL CreateIndents.NEXT = 0;
     end;
 
-    [LineStart(7543)]
+    (7543)]
     procedure CreateQuotes();
     var
         IndentVendorItems: Record "Indent Vendor Items";
@@ -385,7 +385,7 @@ codeunit 60016 "PO Automation"
 
     end;
 
-    [LineStart(7612)]
+    (7612)]
     procedure InsertQuotationLines(var RFQNumber: Code[20]);
     var
         PurchaseHeader: Record "Purchase Header";
@@ -716,7 +716,7 @@ codeunit 60016 "PO Automation"
 
     end;
 
-    [LineStart(7920)]
+    (7920)]
     procedure CalculateDelivery("VendorNo.": Code[20]; "ItemNo.": Code[20]; RFQNo: Code[20]) Delvery: Decimal;
     var
         PPSetup: Record "Purchases & Payables Setup";
@@ -823,7 +823,7 @@ codeunit 60016 "PO Automation"
 
     end;
 
-    [LineStart(8015)]
+    (8015)]
     procedure CalculateQuality("VendorNo.": Code[20]; "ItemNo.": Code[20]; RFQNo: Code[20]) Quality: Decimal;
     var
         PPSetup: Record "Purchases & Payables Setup";
@@ -926,7 +926,7 @@ codeunit 60016 "PO Automation"
 
     end;
 
-    [LineStart(8106)]
+    (8106)]
     procedure ConvertEnquirytoQuote(var Rec: Record "Purchase Header");
     var
         PurchaseHeader: Record "Purchase Header";
@@ -1018,7 +1018,7 @@ codeunit 60016 "PO Automation"
         Rec.DELETE;
     end;
 
-    [LineStart(8185)]
+    (8185)]
     procedure CreateSubEnquiries(RequisitionLine: Record "Requisition Line");
     var
         IndentVendorItems: Record "Indent Vendor Items";
@@ -1089,7 +1089,7 @@ codeunit 60016 "PO Automation"
             UNTIL IndentVendorItems.NEXT = 0;
     end;
 
-    [LineStart(8243)]
+    (8243)]
     procedure InsertSubIndentItemvendor(ReqLine: Record "Requisition Line");
     var
         IndentVendorItems: Record "Indent Vendor Items";
@@ -1122,12 +1122,12 @@ codeunit 60016 "PO Automation"
         END;
     end;
 
-    [LineStart(8268)]
+    (8268)]
     procedure "--PO1.0---"();
     begin
     end;
 
-    [LineStart(8271)]
+    (8271)]
     procedure InsertOrderItemvendor(var Vendor: Record Vendor; var CreateIndentsLocal: Record "Create Indents");
     var
         IndentVendorItems: Record "Indent Vendor Items";
@@ -1189,7 +1189,7 @@ codeunit 60016 "PO Automation"
             UNTIL CreateIndents.NEXT = 0;
     end;
 
-    [LineStart(8328)]
+    (8328)]
     procedure CreateOrder(var Vendor: Record Vendor; var CreateIndentsLocal: Record "Create Indents");
     var
         IndentVendorItems: Record "Indent Vendor Items";
@@ -1328,7 +1328,7 @@ codeunit 60016 "PO Automation"
 
     end;
 
-    [LineStart(8450)]
+    (8450)]
     procedure Get_BOI_Lines();
     var
         SH: Record "Sales Header";

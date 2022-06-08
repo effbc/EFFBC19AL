@@ -50,7 +50,7 @@ report 60007 "Assign Form No's"
         "Cust/VendorNo.": Code[20];
         "SalesFormNo.": Code[20];
 
-    [LineStart(11798)]
+    (11798)]
     procedure PurchaseForm();
     begin
         //Vendor.TESTFIELD(Vendor."No.");
@@ -137,7 +137,7 @@ report 60007 "Assign Form No's"
 
     end;
 
-    [LineStart(11879)]
+    (11879)]
     procedure SalesForm();
     var
         Text001: Label 'You have not specified Sales Form No. Please Specify the Sales Form No.';

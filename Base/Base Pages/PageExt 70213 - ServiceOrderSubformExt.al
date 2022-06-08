@@ -676,12 +676,12 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         */
     //end;
 
-    [LineStart(27197)]
+    (27197)]
     procedure "---B2B--"();
     begin
     end;
 
-    [LineStart(27200)]
+    (27200)]
     procedure _Attachments();
     var
         Attach : Record Attachments;
@@ -694,7 +694,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments",Attach);
     end;
 
-    [LineStart(27208)]
+    (27208)]
     procedure Attachments();
     var
         Attach : Record Attachments;
@@ -707,7 +707,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments",Attach);
     end;
 
-    [LineStart(27216)]
+    (27216)]
     procedure _Presite();
     var
         PreSiteCheckList : Record "Inst. PreSite Check List";
@@ -718,7 +718,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         PAGE.RUN(PAGE::"Inst. PreSite Check List",PreSiteCheckList);
     end;
 
-    [LineStart(27222)]
+    (27222)]
     procedure Presite();
     var
         PreSiteCheckList : Record "Inst. PreSite Check List";
@@ -729,7 +729,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         PAGE.RUN(PAGE::"Inst. PreSite Check List",PreSiteCheckList);
     end;
 
-    [LineStart(27228)]
+    (27228)]
     procedure TroubleShottingforSerItem();
     var
         TroubleshottingSetup : Record "Troubleshooting Setup";
@@ -753,7 +753,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         PAGE.RUN(PAGE::"Troubleshooting Setup",TroubleshottingSetup);
     end;
 
-    [LineStart(27247)]
+    (27247)]
     local procedure FromLocationOnAfterValidate();
     begin
         IF "To Location"<>'' THEN
@@ -775,7 +775,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         END;
     end;
 
-    [LineStart(27266)]
+    (27266)]
     local procedure ToLocationOnAfterValidate();
     begin
         IF "From Location"<>'' THEN
@@ -797,7 +797,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         END;
     end;
 
-    [LineStart(27285)]
+    (27285)]
     local procedure AccountOnPush();
     begin
         

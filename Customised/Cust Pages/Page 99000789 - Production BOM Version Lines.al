@@ -150,7 +150,7 @@ page 99000789 "Production BOM Version Lines"
         }
     }
 
-    [LineStart(24007)]
+    (24007)]
     local procedure ShowComment();
     var
         ProdOrderCompComment: Record "Production BOM Comment Line";
@@ -162,7 +162,7 @@ page 99000789 "Production BOM Version Lines"
         PAGE.RUN(PAGE::"Prod. Order BOM Cmt. Sheet", ProdOrderCompComment);
     end;
 
-    [LineStart(24014)]
+    (24014)]
     local procedure ShowWhereUsed();
     var
         Item: Record Item;

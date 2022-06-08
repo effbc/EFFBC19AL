@@ -155,7 +155,7 @@ page 60194 "Posted Material Issue Subform"
         DimMgt: Codeunit DimensionManagement;
         Visibility: Boolean;
 
-    [LineStart(15639)]
+    (15639)]
     procedure ShowItemTrackingLines();
     var
         ItemTrackingDocMgt: Codeunit "Item Tracking Doc. Management";
@@ -163,7 +163,7 @@ page 60194 "Posted Material Issue Subform"
         ItemTrackingDocMgt.ShowItemTrackingForShptRcptLine(DATABASE::"Posted Material Issues Line", 0, "Document No.", '', 0, "Line No.");
     end;
 
-    [LineStart(15642)]
+    (15642)]
     procedure ShowDimensions();
     begin
         TESTFIELD("Document No.");

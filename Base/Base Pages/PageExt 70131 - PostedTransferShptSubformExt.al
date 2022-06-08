@@ -324,12 +324,12 @@ pageextension 70131 PostedTransferShptSubformExt extends "Posted Transfer Shpt. 
     */
     //end;
 
-    [LineStart(26370)]
+    (26370)]
     procedure "----B2B---"();
     begin
     end;
 
-    [LineStart(26373)]
+    (26373)]
     procedure ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -340,7 +340,7 @@ pageextension 70131 PostedTransferShptSubformExt extends "Posted Transfer Shpt. 
         PAGE.RUN(PAGE::"Inspection Data Sheet List", InspectDataSheet);
     end;
 
-    [LineStart(26379)]
+    (26379)]
     procedure ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -351,7 +351,7 @@ pageextension 70131 PostedTransferShptSubformExt extends "Posted Transfer Shpt. 
         PAGE.RUN(PAGE::"Posted Inspect Data Sheet List", PostInspectDataSheet);
     end;
 
-    [LineStart(26385)]
+    (26385)]
     procedure ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -363,7 +363,7 @@ pageextension 70131 PostedTransferShptSubformExt extends "Posted Transfer Shpt. 
         PAGE.RUN(PAGE::"Inspection Receipt List", InspectionReceipt);
     end;
 
-    [LineStart(26392)]
+    (26392)]
     procedure ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";

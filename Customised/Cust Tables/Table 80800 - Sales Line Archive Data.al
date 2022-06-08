@@ -709,7 +709,7 @@ table 80800 "Sales Line Archive Data"
         field(5402; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code';
-            TableRelation = IF (Type = CONST(Item)) "Item Variant".Make WHERE("Item No." = FIELD("No."));
+            TableRelation = IF (Type = CONST(Item)) "Item Variant".Code WHERE("Item No." = FIELD("No."));
             DataClassification = CustomerContent;
         }
         field(5403; "Bin Code"; Code[20])
@@ -836,7 +836,7 @@ table 80800 "Sales Line Archive Data"
         field(5704; "Originally Ordered Var. Code"; Code[10])
         {
             Caption = 'Originally Ordered Var. Code';
-            TableRelation = IF (Type = CONST(Item)) "Item Variant".Make WHERE("Item No." = FIELD("Originally Ordered No."));
+            TableRelation = IF (Type = CONST(Item)) "Item Variant".Code WHERE("Item No." = FIELD("Originally Ordered No."));
             DataClassification = CustomerContent;
         }
         field(5705; "Cross-Reference No."; Code[20])
@@ -1663,7 +1663,7 @@ table 80800 "Sales Line Archive Data"
             SalesCommentLinearch.DeleteAll;
     end;
 
-    [LineStart(5582)]
+
     local procedure GetCaptionClass(FieldNumber: Integer): Text[80];
     var
         SalesHeaderArchive: Record "Sales Header Archive";
@@ -1678,7 +1678,7 @@ table 80800 "Sales Line Archive Data"
             exit('2,0,' + GetFieldCaption(FieldNumber));
     end;
 
-    [LineStart(5592)]
+
     local procedure GetFieldCaption(FieldNumber: Integer): Text[100];
     var
         "Field": Record "Field";
@@ -1687,7 +1687,7 @@ table 80800 "Sales Line Archive Data"
         exit(Field."Field Caption");
     end;
 
-    [LineStart(5596)]
+
     procedure ShowDimensions();
     var
         DimMgt: Codeunit DimensionManagement;
@@ -1712,7 +1712,7 @@ table 80800 "Sales Line Archive Data"
 
     end;
 
-    [LineStart(5615)]
+
     procedure ShowLineComments();
     var
         SalesCommentLineArch: Record "Sales Comment Line Archive";

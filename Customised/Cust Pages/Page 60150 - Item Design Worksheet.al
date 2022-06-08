@@ -57,7 +57,7 @@ page 60150 "Item Design Worksheet"
     {
     }
 
-    [LineStart(13200)]
+    (13200)]
     procedure CopyBOmComponents();
     begin
         CopyBomComponents2;

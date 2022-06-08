@@ -68,7 +68,7 @@ report 50175 "Qc Accept"
         TempExcelbuffer : Record "Excel Buffer";
         Row : Integer;
 
-    [LineStart(8429)]
+    (8429)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -80,7 +80,7 @@ report 50175 "Qc Accept"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(8438)]
+    (8438)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -93,7 +93,7 @@ report 50175 "Qc Accept"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(8448)]
+    (8448)]
     procedure "Entercell New"();
     begin
     end;

@@ -167,7 +167,7 @@ report 50216 "Customer Statement-EFF"
         CS_BalanceCaptionLbl : Label 'CS Balance';
         BalanceCaptionLbl : Label 'Balance';
 
-    [LineStart(9622)]
+    (9622)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -179,7 +179,7 @@ report 50216 "Customer Statement-EFF"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(9631)]
+    (9631)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         TempExcelbuffer.INIT;

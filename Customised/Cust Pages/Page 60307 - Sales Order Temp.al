@@ -26,7 +26,7 @@ page 60307 "Sales Order Temp"
     {
     }
 
-    [LineStart(21876)]
+    (21876)]
     procedure SetSelection(var SalesOrdersTemp: Record "Sales Orders Temp");
     begin
         CurrPage.SETSELECTIONFILTER(SalesOrdersTemp);

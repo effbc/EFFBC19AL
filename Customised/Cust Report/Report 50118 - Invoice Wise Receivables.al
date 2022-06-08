@@ -502,7 +502,7 @@ report 50118 "Invoice Wise Receivables"
         Railway_Orders_08_09CaptionLbl: Label 'Railway Orders-08-09';
         Total_DeductionsCaption_Control1102154150Lbl: Label 'Total Deductions';
 
-    [LineStart(7048)]
+    (7048)]
     procedure entercell(rowno: Integer; columnno: Integer; cellvalue: Text[250]; bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -513,7 +513,7 @@ report 50118 "Invoice Wise Receivables"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(7056)]
+    (7056)]
     procedure enterheadings(rowno: Integer; columnno: Integer; cellvalue: Code[50]; bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -525,7 +525,7 @@ report 50118 "Invoice Wise Receivables"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(7065)]
+    (7065)]
     procedure sqlconnection1();
     begin
         /*IF ISCLEAR(SQLConnection) THEN
@@ -546,7 +546,7 @@ report 50118 "Invoice Wise Receivables"
 
     end;
 
-    [LineStart(7082)]
+    (7082)]
     procedure commaeli(Base: Text[30]) converted: Text[30];
     var
         i: Integer;

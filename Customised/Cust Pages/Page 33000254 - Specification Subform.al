@@ -85,13 +85,13 @@ page 33000254 "Specification Subform"
         [InDataSet]
         DescriptionIndent: Integer;
 
-    [LineStart(22947)]
+    (22947)]
     local procedure CharacterCodeOnFormat();
     begin
         "Character CodeEmphasize" := "Character Type" <> "Character Type"::Standard;
     end;
 
-    [LineStart(22950)]
+    (22950)]
     local procedure DescriptionOnFormat();
     begin
         DescriptionEmphasize := "Character Type" <> "Character Type"::Standard;

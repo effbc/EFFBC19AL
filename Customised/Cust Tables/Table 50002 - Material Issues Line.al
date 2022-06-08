@@ -338,7 +338,7 @@ table 50002 "Material Issues Line"
         field(30; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code';
-            TableRelation = "Item Variant".Make WHERE("Item No." = FIELD("Item No."));
+            TableRelation = "Item Variant".Code WHERE("Item No." = FIELD("Item No."));
             DataClassification = CustomerContent;
 
             trigger OnValidate();
@@ -739,7 +739,7 @@ table 50002 "Material Issues Line"
         QualityItemLedgEntry: Record "Quality Item Ledger Entry";
         StationGRec: Record Station;
 
-    [LineStart(578)]
+
     local procedure TestStatusOpen();
     begin
         TestField("Document No.");
@@ -748,7 +748,7 @@ table 50002 "Material Issues Line"
         MaterialIssueHeader.TestField(Status, MaterialIssueHeader.Status::Open);  // anil
     end;
 
-    [LineStart(584)]
+
     local procedure GetMaterialIssueHeader();
     begin
         TestField("Document No.");
@@ -765,7 +765,7 @@ table 50002 "Material Issues Line"
         "Dimension Set ID" := MaterialIssueHeader."Dimension Set ID" //Hack
     end;
 
-    [LineStart(598)]
+
     local procedure GetItem();
     begin
         TestField("Item No.");
@@ -773,7 +773,7 @@ table 50002 "Material Issues Line"
             Item.Get("Item No.");
     end;
 
-    [LineStart(603)]
+
     procedure CreateDim(Type1: Integer; No1: Code[20]);
     var
         SourceCodeSetup: Record "Source Code Setup";
@@ -812,7 +812,7 @@ table 50002 "Material Issues Line"
 
     end;
 
-    [LineStart(634)]
+
     local procedure CheckItemAvailable(CalledByFieldNo: Integer);
     var
         ItemCheckAvail: Codeunit "Item-Check Avail.";
@@ -828,7 +828,7 @@ table 50002 "Material Issues Line"
 
     end;
 
-    [LineStart(644)]
+
     procedure ItemAvailability(AvailabilityType: Option Date,Variant,Location);
     var
         ItemAvailByDate: Page "Item Availability by Periods";
@@ -891,14 +891,14 @@ table 50002 "Material Issues Line"
         end;
     end;
 
-    [LineStart(700)]
+
     local procedure CalcBaseQty(Qty: Decimal): Decimal;
     begin
         TestField("Qty. per Unit of Measure");
         exit(Round(Qty * "Qty. per Unit of Measure", 0.00001));
     end;
 
-    [LineStart(704)]
+
     local procedure InitOutstandingQty();
     begin
         "Outstanding Quantity" := Quantity - "Quantity Received";
@@ -906,14 +906,14 @@ table 50002 "Material Issues Line"
         "Completely Received" := (Quantity <> 0) and ("Outstanding Quantity" = 0);
     end;
 
-    [LineStart(709)]
+
     local procedure InitQtyToReceive();
     begin
         "Qty. to Receive" := Quantity - "Quantity Received";
         "Qty. to Receive (Base)" := "Quantity (Base)" - "Qty. Received (Base)";
     end;
 
-    [LineStart(713)]
+
     procedure ValidateShortcutDimCode(FieldNumber: Integer; var ShortcutDimCode: Code[20]);
     begin
         //DIM 1.0 Start
@@ -936,7 +936,7 @@ table 50002 "Material Issues Line"
 
     end;
 
-    [LineStart(732)]
+
     procedure ShowDimensions();
     begin
         //DIM1.0 Start
@@ -959,7 +959,6 @@ table 50002 "Material Issues Line"
 
     end;
 
-    [LineStart(751)]
     procedure OpenItemTrackingLines();
     var
         IsReclass: Boolean;
@@ -971,7 +970,7 @@ table 50002 "Material Issues Line"
         //MISITCform.RUNMODAL;
     end;
 
-    [LineStart(758)]
+
     procedure Item_Stock("Item No.": Code[20]; "Location Code": Code[10]) Stokc: Decimal;
     var
         ItemLedgEntry: Record "Item Ledger Entry";

@@ -13,7 +13,7 @@ codeunit 60012 "RGP Release"
         RGPOutHeaderRelease: Record "RGP Out Header";
         RGPInHeaderRelease: Record "RGP In Header";
 
-    [LineStart(6323)]
+    (6323)]
     procedure RGPOutRelease(Rec: Record "RGP Out Header");
     begin
         IF NOT CONFIRM(Text001, FALSE) THEN
@@ -31,7 +31,7 @@ codeunit 60012 "RGP Release"
         RGPOutHeaderRelease.MODIFY;
     end;
 
-    [LineStart(6338)]
+    (6338)]
     procedure RGPOutReopen(Rec: Record "RGP Out Header");
     begin
         IF NOT CONFIRM(Text002, FALSE) THEN
@@ -48,7 +48,7 @@ codeunit 60012 "RGP Release"
         RGPOutHeaderRelease.MODIFY;
     end;
 
-    [LineStart(6352)]
+    (6352)]
     procedure RGPInRelease(Rec: Record "RGP In Header");
     begin
         IF NOT CONFIRM(Text001, FALSE) THEN
@@ -66,7 +66,7 @@ codeunit 60012 "RGP Release"
         RGPInHeaderRelease.MODIFY;
     end;
 
-    [LineStart(6367)]
+    (6367)]
     procedure RGPInReopen(Rec: Record "RGP In Header");
     begin
         IF NOT CONFIRM(Text002, FALSE) THEN

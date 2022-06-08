@@ -13,7 +13,7 @@ codeunit 60003 "Specification-Copy"
         Text001: Label '%1 on %2 %3 must not be %4';
         Text002: Label '%1 on %2 %3 %4 must not be %5';
 
-    [LineStart(946)]
+    (946)]
     procedure CopySpec(SpecHeaderNo: Code[20]; FromVersionCode: Code[10]; CurrentSpecHeader: Record "Specification Header"; ToVersionCode: Code[10]);
     var
         FromSpecLine: Record "Specification Line";
@@ -62,7 +62,7 @@ codeunit 60003 "Specification-Copy"
             UNTIL FromSpecLine.NEXT = 0;
     end;
 
-    [LineStart(988)]
+    (988)]
     procedure CopyFromVersion(var SpecVersionList2: Record "Specification Version");
     var
         SpecHeader: Record "Specification Header";

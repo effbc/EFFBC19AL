@@ -485,7 +485,7 @@ report 80028 "Cash Book3"
                       PrevPostingDate : Date;
                       SerNo : Integer;
 
-    [LineStart(17964)]
+    (17964)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean; CellType: Option);
     begin
 
@@ -498,7 +498,7 @@ report 80028 "Cash Book3"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(17974)]
+    (17974)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean; CellType: Option);
     begin
         TempExcelbuffer.INIT;

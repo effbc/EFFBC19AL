@@ -2267,12 +2267,12 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
     */
     //end;
 
-    [LineStart(4171)]
+    (4171)]
     procedure "---B2B--"();
     begin
     end;
 
-    [LineStart(4174)]
+    (4174)]
     procedure CustAttachments();
     var
         CustAttach: Record Attachments;
@@ -2285,7 +2285,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", CustAttach);
     end;
 
-    [LineStart(4182)]
+    (4182)]
     procedure _Presite();
     var
         PreSiteCheckList: Record "Inst. PreSite Check List";
@@ -2296,7 +2296,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"Inst. PreSite Check List", PreSiteCheckList);
     end;
 
-    [LineStart(4188)]
+    (4188)]
     procedure Presite();
     var
         PreSiteCheckList: Record "Inst. PreSite Check List";
@@ -2307,7 +2307,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"Inst. PreSite Check List", PreSiteCheckList);
     end;
 
-    [LineStart(4194)]
+    (4194)]
     procedure ShowPackingDetails();
     var
         PackingDetails: Record "Shortage Management Audit Data";
@@ -2321,7 +2321,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
-    [LineStart(4202)]
+    (4202)]
     procedure SalesLineAttachments();
     var
         CustAttach: Record Attachments;
@@ -2335,7 +2335,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", CustAttach);
     end;
 
-    [LineStart(4211)]
+    (4211)]
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";
@@ -2394,7 +2394,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
-    [LineStart(4260)]
+    (4260)]
     procedure ShowDeliveryChallan();
     var
         DeliveryChallan: Record "DC Header";
@@ -2405,7 +2405,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUNMODAL(PAGE::"DC Header", DeliveryChallan);
     end;
 
-    [LineStart(4266)]
+    (4266)]
     procedure ShowSchedule2();
     var
         Schedule: Record Schedule2;
@@ -2433,7 +2433,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         END;
     end;
 
-    [LineStart(4289)]
+    (4289)]
     procedure ShowPODetails();
     var
         SOPodetails: Record "SO Prod.Order Details";
@@ -2443,7 +2443,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUNMODAL(60126, SOPodetails);
     end;
 
-    [LineStart(4294)]
+    (4294)]
     procedure MakeLines(var SalesLineparam: Record "Sales Line"): Decimal;
     var
         SalesLine: Record "Sales Line";
@@ -2538,7 +2538,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
-    [LineStart(4378)]
+    (4378)]
     procedure ValidateProdOrder();
     begin
         CALCFIELDS("Prod. Order Quantity");
@@ -2546,7 +2546,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             ERROR(Text001);
     end;
 
-    [LineStart(4383)]
+    (4383)]
     procedure ShowSchedule();
     var
         Schedule: Record Schedule2;
@@ -2650,7 +2650,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             END;
     end;
 
-    [LineStart(4621)]
+    (4621)]
     procedure CreateOrders(Qtyparam: Decimal) OrdersCreated: Boolean;
     var
         Item: Record Item;
@@ -2680,7 +2680,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
-    [LineStart(4644)]
+    (4644)]
     local procedure UpdateItemNo();
     var
         UpdateSalesItem: Report "Update Sales/ Schedule Item11";
@@ -2697,7 +2697,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         //<<UPG1.3 06Feb2019
     end;
 
-    [LineStart(4656)]
+    (4656)]
     procedure MakeLinesSingle(var SalesLineparam: Record "Sales Line"): Decimal;
     var
         SalesLine: Record "Sales Line";
@@ -2789,7 +2789,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
-    [LineStart(4737)]
+    (4737)]
     procedure ValidateProdOrderSingle(SalesLineLRec: Record "Sales Line");
     begin
         SalesLineLRec.CALCFIELDS("Prod. Order Quantity");
@@ -2797,7 +2797,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             ERROR(Text001);
     end;
 
-    [LineStart(4742)]
+    (4742)]
     procedure MakeLinesSingleQuantity(var SalesLineparam: Record "Sales Line"): Decimal;
     var
         SalesLine: Record "Sales Line";

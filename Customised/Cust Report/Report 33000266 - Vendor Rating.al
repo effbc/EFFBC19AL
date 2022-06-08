@@ -3004,7 +3004,7 @@ report 33000266 "Vendor Rating"
         MOQ : Decimal;
         payment_terms : Record "Payment Terms";
 
-    [LineStart(21124)]
+    (21124)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
         Tempexcelbuffer.INIT;
@@ -3016,7 +3016,7 @@ report 33000266 "Vendor Rating"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(21133)]
+    (21133)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         Tempexcelbuffer.INIT;
@@ -3029,7 +3029,7 @@ report 33000266 "Vendor Rating"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(21143)]
+    (21143)]
     procedure "Entercell New"();
     begin
     end;

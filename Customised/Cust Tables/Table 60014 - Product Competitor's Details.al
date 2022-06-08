@@ -74,7 +74,7 @@ table 60014 "Product Competitor's Details"
     {
     }
 
-    [LineStart(1392)]
+
     procedure Attachments();
     var
         Attachment: Record Attachments;

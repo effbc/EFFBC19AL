@@ -161,7 +161,7 @@ table 150011 "Session Information"
     {
     }
 
-    [LineStart(5853)]
+
     procedure UpdateRatios();
     begin
         if "Records Scanned" <> 0 then

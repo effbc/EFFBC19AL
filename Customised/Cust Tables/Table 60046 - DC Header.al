@@ -66,82 +66,83 @@ table 60046 "DC Header"
         }
         field(6; "Sales Order No."; Code[20])
         {
-            TableRelation = "Sales Header".No            DataClassification = CustomerContent;
-. WHERE (Document Type=CONST(Order),Sell-to Customer No.=FIELD(Customer No.));
+            TableRelation = "Sales Header"."No." WHERE("Document Type" = CONST(Order), "Sell-to Customer No." = FIELD("Customer No."));
+
+            DataClassification = CustomerContent;
 
             trigger OnValidate();
             begin
-                IF SalesHeader.GET(SalesHeader."Document Type" :: Order,"Sales Order No.") THEN BEGIN
-                  "Sell-to Customer Name" := SalesHeader."Sell-to Customer Name";
-                  "Sell-to Customer Name 2":= SalesHeader."Sell-to Customer Name 2";
-                  "Sell-to Address" := SalesHeader."Sell-to Address";
-                  "Sell-to Address 2" := SalesHeader."Sell-to Address 2";
-                  "Sell-to City" := SalesHeader."Sell-to City";
-                  "Sell-to Contact" := SalesHeader."Sell-to Contact";
-                  "Sell-to Post Code" := SalesHeader."Sell-to Post Code";
-                  "Sell-to Country Code" := SalesHeader."Sell-to Country/Region Code";
-                  "Ship-to Code" := SalesHeader."Ship-to Code";
-                  "Ship-to Name" := SalesHeader."Ship-to Name";
-                  "Ship-to Name 2" := SalesHeader."Ship-to Name 2";
-                  "Ship-to Address" := SalesHeader."Ship-to Address";
-                  "Ship-to Address 2" := SalesHeader."Ship-to Address 2";
-                  "Ship-to City" := SalesHeader."Ship-to City";
-                  "Ship-to Contact" := SalesHeader."Ship-to Contact";
-                  "Ship-to Post Code" := SalesHeader."Ship-to Post Code";
-                  "Ship-to Country Code" := SalesHeader."Ship-to Country/Region Code";
+                IF SalesHeader.GET(SalesHeader."Document Type"::Order, "Sales Order No.") THEN BEGIN
+                    "Sell-to Customer Name" := SalesHeader."Sell-to Customer Name";
+                    "Sell-to Customer Name 2" := SalesHeader."Sell-to Customer Name 2";
+                    "Sell-to Address" := SalesHeader."Sell-to Address";
+                    "Sell-to Address 2" := SalesHeader."Sell-to Address 2";
+                    "Sell-to City" := SalesHeader."Sell-to City";
+                    "Sell-to Contact" := SalesHeader."Sell-to Contact";
+                    "Sell-to Post Code" := SalesHeader."Sell-to Post Code";
+                    "Sell-to Country Code" := SalesHeader."Sell-to Country/Region Code";
+                    "Ship-to Code" := SalesHeader."Ship-to Code";
+                    "Ship-to Name" := SalesHeader."Ship-to Name";
+                    "Ship-to Name 2" := SalesHeader."Ship-to Name 2";
+                    "Ship-to Address" := SalesHeader."Ship-to Address";
+                    "Ship-to Address 2" := SalesHeader."Ship-to Address 2";
+                    "Ship-to City" := SalesHeader."Ship-to City";
+                    "Ship-to Contact" := SalesHeader."Ship-to Contact";
+                    "Ship-to Post Code" := SalesHeader."Ship-to Post Code";
+                    "Ship-to Country Code" := SalesHeader."Ship-to Country/Region Code";
                 END;
             end;
         }
-        field(7;"L.R Number";Code[20])
+        field(7; "L.R Number"; Code[20])
         {
         }
-        field(8;"Vehicle Number";Code[20])
+        field(8; "Vehicle Number"; Code[20])
         {
         }
-        field(9;"User Id";Code[50])
+        field(9; "User Id"; Code[50])
         {
             Description = 'Rev01';
             TableRelation = User;
         }
-        field(10;"Created Date";Date)
+        field(10; "Created Date"; Date)
         {
             Editable = false;
         }
-        field(11;Remarks;Text[250])
+        field(11; Remarks; Text[250])
         {
         }
-        field(15;Status;Option)
+        field(15; Status; Option)
         {
             Editable = true;
             OptionMembers = Open,Released;
         }
-        field(16;"Posted Shipment No.";Code[20])
+        field(16; "Posted Shipment No."; Code[20])
         {
-            TableRelation = "Sales Shipment Header" WHERE (Sell-to Customer No.=FIELD(Customer No.));
+            TableRelation = "Sales Shipment Header" WHERE("Sell-to Customer No." = FIELD("Customer No."));
         }
-        field(17;"Received By";Text[30])
-        {
-        }
-        field(18;"Checked By";Text[30])
+        field(17; "Received By"; Text[30])
         {
         }
-        field(19;"Prepared By";Code[50])
+        field(18; "Checked By"; Text[30])
+        {
+        }
+        field(19; "Prepared By"; Code[50])
         {
             Description = 'Rev01';
             Editable = false;
             TableRelation = User."User Name";
         }
-        field(20;"No. Series";Code[10])
+        field(20; "No. Series"; Code[10])
         {
             TableRelation = "No. Series";
         }
-        field(21;"Last Date Modified";Date)
+        field(21; "Last Date Modified"; Date)
         {
         }
-        field(24;"Ship-to Code";Code[10])
+        field(24; "Ship-to Code"; Code[10])
         {
             Caption = 'Ship-to Code';
-            TableRelation = "Ship-to Address".Code WHERE (Customer No.=FIELD(Customer No.));
+            TableRelation = "Ship-to Address".Code WHERE("Customer No."=FIELD("Customer No."));
 
             trigger OnValidate();
             begin
@@ -256,7 +257,7 @@ table 60046 "DC Header"
         field(90;"Sell-to Country Code";Code[10])
         {
             Caption = 'Sell-to Country Code';
-            TableRelation = Country/Region;
+            TableRelation = "Country/Region";
 
             trigger OnValidate();
             begin
@@ -285,7 +286,7 @@ table 60046 "DC Header"
         field(93;"Ship-to Country Code";Code[10])
         {
             Caption = 'Ship-to Country Code';
-            TableRelation = Country/Region;
+            TableRelation = "Country/Region";
         }
         field(95;"No.of Packages";Code[10])
         {
@@ -711,7 +712,7 @@ table 60046 "DC Header"
         InvtSetup : Record "Inventory Setup";
         SalesHeader : Record "Sales Header";
         ShipToAddr : Record "Ship-to Address";
-        NoSeriesMgt : Codeunit NoSeriesManagement;
+        NoSeriesMgt : Codeunit 396;
         HasInvtSetup : Boolean;
         PostCode : Record "Post Code";
         ServiceHeader : Record "Service Header";
@@ -731,7 +732,7 @@ table 60046 "DC Header"
         CustmrGRec : Record Customer;
         DCL1 : Record "DC Line";
 
-    [LineStart(2422)]
+
     procedure AssistEdit() : Boolean;
     begin
         GetInvtSetup;
@@ -742,7 +743,7 @@ table 60046 "DC Header"
         END;
     end;
 
-    [LineStart(2430)]
+
     procedure GetInvtSetup();
     begin
         IF NOT HasInvtSetup THEN BEGIN
@@ -751,13 +752,13 @@ table 60046 "DC Header"
         END;
     end;
 
-    [LineStart(2436)]
+
     procedure TestNoSeries();
     begin
           InvtSetup.GET;
     end;
 
-    [LineStart(2439)]
+
     procedure GetNoSeriesCode() : Code[10];
     begin
           InvtSetup.GET;

@@ -384,7 +384,7 @@ report 50229 "CSM Reports"
         Manfacturing_DateCaptionLbl : Label 'Manfacturing Date';
         StatusCaptionLbl : Label 'Status';
 
-    [LineStart(9800)]
+    (9800)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
 
@@ -397,7 +397,7 @@ report 50229 "CSM Reports"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(9810)]
+    (9810)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         Tempexcelbuffer.INIT;

@@ -64,7 +64,7 @@ page 60162 "Calibration Procedure"
         CaptionCode : Code[20];
         CaptionDescription : Text[30];
 
-    [LineStart(13498)]
+    (13498)]
     procedure SetCaption(CaptionCode2 : Code[20];CaptionDescription2 : Text[30]);
     begin
         CaptionCode := CaptionCode2;

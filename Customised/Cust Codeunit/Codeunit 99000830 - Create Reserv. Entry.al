@@ -22,7 +22,7 @@ codeunit 99000830 "Create Reserv. Entry"
         QtyToHandleAndInvoiceIsSet: Boolean;
         LastProcessedSourceID: Text;
 
-    [LineStart(55723)]
+    (55723)]
     procedure CreateEntry(ItemNo: Code[20]; VariantCode: Code[10]; LocationCode: Code[10]; Description: Text[50]; ExpectedReceiptDate: Date; ShipmentDate: Date; TransferredFromEntryNo: Integer; Status: Option Reservation,Tracking,Surplus,Prospect);
     var
         ReservEntry: Record "Reservation Entry";
@@ -133,14 +133,14 @@ codeunit 99000830 "Create Reserv. Entry"
         CLEAR(QtyToHandleAndInvoiceIsSet);
     end;
 
-    [LineStart(55825)]
+    (55825)]
     procedure CreateReservEntry(ItemNo: Code[20]; VariantCode: Code[10]; LocationCode: Code[10]; Description: Text[50]; ExpectedReceiptDate: Date; ShipmentDate: Date);
     begin
         CreateEntry(ItemNo, VariantCode, LocationCode, Description,
           ExpectedReceiptDate, ShipmentDate, 0, 0);
     end;
 
-    [LineStart(55829)]
+    (55829)]
     procedure CreateReservEntryFor(ForType: Option; ForSubtype: Integer; ForID: Code[20]; ForBatchName: Code[10]; ForProdOrderLine: Integer; ForRefNo: Integer; ForQtyPerUOM: Decimal; Quantity: Decimal; QuantityBase: Decimal; ForSerialNo: Code[20]; ForLotNo: Code[20]);
     var
         sign: Integer;
@@ -161,7 +161,7 @@ codeunit 99000830 "Create Reserv. Entry"
         InsertReservEntry.TESTFIELD("Qty. per Unit of Measure");
     end;
 
-    [LineStart(55845)]
+    (55845)]
     procedure CreateReservEntryFrom(FromType: Option; FromSubtype: Integer; FromID: Code[20]; FromBatchName: Code[10]; FromProdOrderLine: Integer; FromRefNo: Integer; FromQtyPerUOM: Decimal; FromSerialNo: Code[20]; FromLotNo: Code[20]);
     begin
         InsertReservEntry2."Source Type" := FromType;
@@ -177,28 +177,28 @@ codeunit 99000830 "Create Reserv. Entry"
         InsertReservEntry2.TESTFIELD("Qty. per Unit of Measure");
     end;
 
-    [LineStart(55858)]
+    (55858)]
     procedure SetBinding(Binding: Option " ","Order-to-Order");
     begin
         InsertReservEntry.Binding := Binding;
         InsertReservEntry2.Binding := Binding;
     end;
 
-    [LineStart(55862)]
+    (55862)]
     procedure SetPlanningFlexibility(Flexibility: Option Unlimited,"None");
     begin
         InsertReservEntry."Planning Flexibility" := Flexibility;
         InsertReservEntry2."Planning Flexibility" := Flexibility;
     end;
 
-    [LineStart(55866)]
+    (55866)]
     procedure SetDates(WarrantyDate: Date; ExpirationDate: Date);
     begin
         InsertReservEntry."Warranty Date" := WarrantyDate;
         InsertReservEntry."Expiration Date" := ExpirationDate;
     end;
 
-    [LineStart(55870)]
+    (55870)]
     procedure SetQtyToHandleAndInvoice(QtyToHandleBase: Decimal; QtyToInvoiceBase: Decimal);
     begin
         InsertReservEntry."Qty. to Handle (Base)" := QtyToHandleBase;
@@ -206,26 +206,26 @@ codeunit 99000830 "Create Reserv. Entry"
         QtyToHandleAndInvoiceIsSet := TRUE;
     end;
 
-    [LineStart(55875)]
+    (55875)]
     procedure SetNewSerialLotNo(NewSerialNo: Code[20]; NewLotNo: Code[20]);
     begin
         InsertReservEntry."New Serial No." := NewSerialNo;
         InsertReservEntry."New Lot No." := NewLotNo;
     end;
 
-    [LineStart(55879)]
+    (55879)]
     procedure SetNewExpirationDate(NewExpirationDate: Date);
     begin
         InsertReservEntry."New Expiration Date" := NewExpirationDate;
     end;
 
-    [LineStart(55882)]
+    (55882)]
     procedure SetDisallowCancellation(NewDisallowCancellation: Boolean);
     begin
         InsertReservEntry."Disallow Cancellation" := NewDisallowCancellation;
     end;
 
-    [LineStart(55885)]
+    (55885)]
     procedure CreateRemainingReservEntry(var OldReservEntry: Record "Reservation Entry"; RemainingQuantity: Decimal; RemainingQuantityBase: Decimal);
     var
         OldReservEntry2: Record "Reservation Entry";
@@ -256,7 +256,7 @@ codeunit 99000830 "Create Reserv. Entry"
           OldReservEntry."Entry No.", OldReservEntry."Reservation Status");
     end;
 
-    [LineStart(55911)]
+    (55911)]
     procedure TransferReservEntry(NewType: Option; NewSubtype: Integer; NewID: Code[20]; NewBatchName: Code[10]; NewProdOrderLine: Integer; NewRefNo: Integer; QtyPerUOM: Decimal; OldReservEntry: Record "Reservation Entry"; TransferQty: Decimal): Decimal;
     var
         NewReservEntry: Record "Reservation Entry";
@@ -428,7 +428,7 @@ codeunit 99000830 "Create Reserv. Entry"
         EXIT(xTransferQty * CurrSignFactor);
     end;
 
-    [LineStart(56065)]
+    (56065)]
     procedure SignFactor(var ReservEntry: Record "Reservation Entry"): Integer;
     begin
         // Demand is regarded as negative, supply is regarded as positive.
@@ -496,7 +496,7 @@ codeunit 99000830 "Create Reserv. Entry"
         END;
     end;
 
-    [LineStart(56130)]
+    (56130)]
     local procedure CheckValidity(var ReservEntry: Record "Reservation Entry");
     var
         IsError: Boolean;
@@ -533,13 +533,13 @@ codeunit 99000830 "Create Reserv. Entry"
             ERROR(Text000);
     end;
 
-    [LineStart(56162)]
+    (56162)]
     procedure GetLastEntry(var ReservEntry: Record "Reservation Entry");
     begin
         ReservEntry := LastReservEntry;
     end;
 
-    [LineStart(56165)]
+    (56165)]
     procedure HasSamePointer(var ReservEntry: Record "Reservation Entry"; var Reserventry2: Record "Reservation Entry"): Boolean;
     begin
         EXIT
@@ -551,7 +551,7 @@ codeunit 99000830 "Create Reserv. Entry"
           (ReservEntry."Source Ref. No." = Reserventry2."Source Ref. No."));
     end;
 
-    [LineStart(56174)]
+    (56174)]
     local procedure AdjustDateIfItemLedgerEntry(var ReservEntry: Record "Reservation Entry");
     begin
         IF ReservEntry."Source Type" = DATABASE::"Item Ledger Entry" THEN
@@ -561,7 +561,7 @@ codeunit 99000830 "Create Reserv. Entry"
                 ReservEntry."Shipment Date" := 12319999D;
     end;
 
-    [LineStart(56181)]
+    (56181)]
     local procedure SetupSplitReservEntry(var ReservEntry: Record "Reservation Entry"; var ReservEntry2: Record "Reservation Entry");
     var
         NonReleasedQty: Decimal;
@@ -613,7 +613,7 @@ codeunit 99000830 "Create Reserv. Entry"
         BalanceLists;
     end;
 
-    [LineStart(56228)]
+    (56228)]
     local procedure BalanceLists();
     var
         TempTrkgSpec3: Record "Tracking Specification" temporary;
@@ -744,7 +744,7 @@ codeunit 99000830 "Create Reserv. Entry"
             UNTIL TempTrkgSpec4.NEXT = 0;
     end;
 
-    [LineStart(56351)]
+    (56351)]
     local procedure SplitReservEntry(var ReservEntry: Record "Reservation Entry"; var ReservEntry2: Record "Reservation Entry"; TrackingSpecificationExists: Boolean; var FirstSplit: Boolean): Boolean;
     var
         SalesSetup: Record "Sales & Receivables Setup";
@@ -791,7 +791,7 @@ codeunit 99000830 "Create Reserv. Entry"
         EXIT(TRUE);
     end;
 
-    [LineStart(56392)]
+    (56392)]
     local procedure CreateWhseItemTrkgLines(ReservEntry: Record "Reservation Entry");
     var
         WhseShipmentLine: Record "Warehouse Shipment Line";
@@ -815,43 +815,43 @@ codeunit 99000830 "Create Reserv. Entry"
         END;
     end;
 
-    [LineStart(56409)]
+    (56409)]
     procedure SetItemLedgEntryNo(EntryNo: Integer);
     begin
         InsertReservEntry."Item Ledger Entry No." := EntryNo;
     end;
 
-    [LineStart(56412)]
+    (56412)]
     procedure SetApplyToEntryNo(EntryNo: Integer);
     begin
         InsertReservEntry."Appl.-to Item Entry" := EntryNo;
     end;
 
-    [LineStart(56415)]
+    (56415)]
     procedure SetApplyFromEntryNo(EntryNo: Integer);
     begin
         InsertReservEntry."Appl.-from Item Entry" := EntryNo;
     end;
 
-    [LineStart(56418)]
+    (56418)]
     procedure SetOverruleItemTracking(Overrule: Boolean);
     begin
         OverruleItemTracking := Overrule;
     end;
 
-    [LineStart(56421)]
+    (56421)]
     procedure SetInbound(NewInbound: Boolean);
     begin
         Inbound := NewInbound;
     end;
 
-    [LineStart(56424)]
+    (56424)]
     procedure SetUseQtyToInvoice(UseQtyToInvoice2: Boolean);
     begin
         UseQtyToInvoice := UseQtyToInvoice2;
     end;
 
-    [LineStart(56427)]
+    (56427)]
     procedure UpdateItemTrackingAfterPosting(var ReservEntry: Record "Reservation Entry");
     var
         CurrSourceRefNo: Integer;
@@ -873,7 +873,7 @@ codeunit 99000830 "Create Reserv. Entry"
         UNTIL ReservEntry."Source Ref. No." = CurrSourceRefNo;
     end;
 
-    [LineStart(56443)]
+    (56443)]
     procedure UpdReservEntryAfterPostingPick(TransHeader: Record "Transfer Header");
     var
         ReservEntry: Record "Reservation Entry";
@@ -914,7 +914,7 @@ codeunit 99000830 "Create Reserv. Entry"
             UNTIL ReservEntryFrom.NEXT = 0;
     end;
 
-    [LineStart(56476)]
+    (56476)]
     local procedure SynchronizeTransferOutboundToInboundItemTracking(ReservationEntryNo: Integer);
     var
         FromReservationEntry: Record "Reservation Entry";
@@ -933,7 +933,7 @@ codeunit 99000830 "Create Reserv. Entry"
             END;
     end;
 
-    [LineStart(56488)]
+    (56488)]
     local procedure NeedSynchronizeItemTrackingToOutboundTransfer(ReservationEntry: Record "Reservation Entry"): Boolean;
     var
         ItemTrackingMgt: Codeunit "Item Tracking Management";

@@ -72,7 +72,7 @@ report 33000032 "Pay confirmation of date"
         Text004: Label 'Insert Grade in Employee Card for the Employee';
         Text005: TextConst ENU = 'Salary Already Posted For %1 = %2';
 
-    [LineStart(20311)]
+    (20311)]
     procedure InsertFreshPayElements();
     begin
         PayLine.RESET;
@@ -88,7 +88,7 @@ report 33000032 "Pay confirmation of date"
         PayLine.DELETEALL;
     end;
 
-    [LineStart(20324)]
+    (20324)]
     procedure InsertElements();
     begin
         PayGradeLine.RESET;
@@ -136,7 +136,7 @@ report 33000032 "Pay confirmation of date"
             ERROR(Text004);
     end;
 
-    [LineStart(20370)]
+    (20370)]
     procedure GetTemplateBatchDocument(Template: Code[10]; Batch: Code[10]; DocNo: Code[10]);
     begin
         TemplateName := Template;

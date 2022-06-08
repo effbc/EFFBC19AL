@@ -134,7 +134,7 @@ codeunit 60020 "item stock at stores1"
         "Purch. Inv. header": Record "Purch. Inv. Header";
         "Posted Material Issue Header": Record "Posted Material Issues Header";
 
-    [LineStart(9631)]
+    (9631)]
     procedure ITEM_STOCK(ITEM_CODE: Code[20]) STOCK: Decimal;
     begin
         STOCK := 0;

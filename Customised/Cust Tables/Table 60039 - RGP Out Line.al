@@ -291,7 +291,7 @@ table 60039 "RGP Out Line"
         InspectRcpt: Record "Inspection Receipt Header";
         RGPOutHeaderRelease: Record "RGP Out Header";
 
-    [LineStart(2170)]
+
     local procedure TestStatusOpen();
     begin
         RGPOutHeaderRelease.SetRange("RGP Out No.", "Document No.");

@@ -149,7 +149,7 @@ page 60167 "Eqpt Due for Calibration"
         NoSeriesMgt: Codeunit NoSeriesManagement;
         Text004: Label 'Inspection Data Sheets Created Successfully.';
 
-    [LineStart(13523)]
+    (13523)]
     procedure RGPIN(Calibration: Record Calibration);
     begin
         IDS.SETRANGE("Source Type", IDS."Source Type"::Calibration);
@@ -222,7 +222,7 @@ page 60167 "Eqpt Due for Calibration"
             ERROR(Text002);
     end;
 
-    [LineStart(13593)]
+    (13593)]
     procedure CreateIDS(CalibrationLocal: Record Calibration);
     var
         InspectDataSheets: Codeunit "Inspection Data Sheets";
@@ -268,7 +268,7 @@ page 60167 "Eqpt Due for Calibration"
 
     end;
 
-    [LineStart(13624)]
+    (13624)]
     procedure CreateRGPOUT(Calibration: Record Calibration);
     var
         Calibration2: Record Calibration;

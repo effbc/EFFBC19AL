@@ -542,7 +542,7 @@ page 60097 "Tender Posting Lines"
         TenderJnlPostTest: Codeunit "Tender Jnl Test";
         "G/L Account": Record "G/L Account";
 
-    [LineStart(10936)]
+    (10936)]
     local procedure ModeofReceiptPaymentOnInputCha(var Text: Text[1024]);
     begin
         "Account No." := '';

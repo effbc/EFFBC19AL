@@ -1164,7 +1164,7 @@ page 60192 "Material Issue List(STR)"
         SMTP_MAIL : Codeunit "SMTP Mail";
         Text001 : Label 'Updating Virtual Purchase Dates #1#########\';
 
-    [LineStart(15592)]
+    (15592)]
     procedure ICNNO(DT : Date) ICN : Code[10];
     begin
         IF DATE2DMY(DT,1) < 10 THEN

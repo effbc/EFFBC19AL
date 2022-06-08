@@ -162,7 +162,7 @@ report 50242 Pur_invoices_Tally
         PIL : Record "Purch. Inv. Line";
         Vendor_NameCaptionLbl : Label 'Vendor Name';
 
-    [LineStart(11361)]
+    (11361)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
 
@@ -175,7 +175,7 @@ report 50242 Pur_invoices_Tally
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(11371)]
+    (11371)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         Tempexcelbuffer.INIT;

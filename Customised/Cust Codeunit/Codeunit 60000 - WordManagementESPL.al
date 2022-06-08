@@ -38,7 +38,7 @@ codeunit 60000 WordManagementESPL
         WordHelper: DotNet "'Microsoft.Dynamics.Nav.Integration.Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.Microsoft.Dynamics.Nav.Integration.Office.Word.WordHelper" RUNONCLIENT;
         AttachmentLanguageCode: Code[10];
 
-    [LineStart(5)]
+    (5)]
     procedure CreateWordAttachment(WordCaption: Text[260]) NewAttachNo: Integer;
     var
         AttachmentVoith: Record Attachments;
@@ -121,7 +121,7 @@ codeunit 60000 WordManagementESPL
 
     end;
 
-    [LineStart(73)]
+    (73)]
     procedure OpenWordAttachment(var AttachmentVoith: Record Attachments; FileName: Text[260]; Caption: Text[260]; IsTemporary: Boolean);
     var
         ParamFalse: Boolean;
@@ -205,7 +205,7 @@ codeunit 60000 WordManagementESPL
 
     end;
 
-    [LineStart(145)]
+    (145)]
     procedure WordHandler(var WordDocument: DotNet "'Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c'.Microsoft.Office.Interop.Word.Document"; var Attachment: Record Attachments; Caption: Text[260]; IsTemporary: Boolean; FileName: Text; IsInherited: Boolean) DocImported: Boolean;
     var
         Attachment2: Record Attachments;
@@ -281,7 +281,7 @@ codeunit 60000 WordManagementESPL
 
     end;
 
-    [LineStart(213)]
+    (213)]
     procedure DeleteFile(FileName: Text[1024]) DeleteOk: Boolean;
     var
         I: Integer;
@@ -319,7 +319,7 @@ codeunit 60000 WordManagementESPL
 
     end;
 
-    [LineStart(245)]
+    (245)]
     procedure ConstDocFilenameOldNoUse() FileName: Text[260];
     var
         I: Integer;
@@ -341,7 +341,7 @@ codeunit 60000 WordManagementESPL
 
     end;
 
-    [LineStart(260)]
+    (260)]
     procedure ConstMergeSourceFileName() FileName: Text[260];
     var
         DocNo: Text[30];
@@ -362,7 +362,7 @@ codeunit 60000 WordManagementESPL
 
     end;
 
-    [LineStart(274)]
+    (274)]
     procedure OpenWordAttachmentArchive(var AttachmentVoithArchive: Record "Attachments Archive"; FileName: Text[260]; Caption: Text[260]; IsTemporary: Boolean);
     var
         ParamFalse: Boolean;
@@ -445,7 +445,7 @@ codeunit 60000 WordManagementESPL
 
     end;
 
-    [LineStart(345)]
+    (345)]
     procedure WordHandlerArchive(var WordDocument: DotNet "'Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c'.Microsoft.Office.Interop.Word.Document"; var AttachmentGetArchive: Record "Attachments Archive"; Caption: Text[260]; IsTemporary: Boolean; FileName: Text[260]; IsInherited: Boolean) DocImported: Boolean;
     var
         Attachment2: Record "Attachments Archive";
@@ -522,12 +522,12 @@ codeunit 60000 WordManagementESPL
 
     end;
 
-    [LineStart(413)]
+    (413)]
     procedure "--Rev01NewFunctions--"();
     begin
     end;
 
-    [LineStart(416)]
+    (416)]
     procedure IsWordDocumentExtension(FileExtension: Text): Boolean;
     begin
         //Rev01 Chaitanya Commented old Code
@@ -546,7 +546,7 @@ codeunit 60000 WordManagementESPL
 
     end;
 
-    [LineStart(431)]
+    (431)]
     procedure CreateHeader(var WordMergefile: DotNet "'Microsoft.Dynamics.Nav.Integration.Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.Microsoft.Dynamics.Nav.Integration.Office.Word.MergeHandler" RUNONCLIENT; MergeFieldsOnly: Boolean; MergeFileName: Text);
     var
         Salesperson: Record "Salesperson/Purchaser";
@@ -636,7 +636,7 @@ codeunit 60000 WordManagementESPL
         END;
     end;
 
-    [LineStart(506)]
+    (506)]
     procedure GetWordDocumentExtension(VersionTxt: Text[30]): Code[4];
     var
         Version: Decimal;
@@ -660,7 +660,7 @@ codeunit 60000 WordManagementESPL
         EXIT(DefaultStr);
     end;
 
-    [LineStart(521)]
+    (521)]
     local procedure DocumentContainMergefields(var Attachment: Record Attachments) MergeFields: Boolean;
     var
         WordApplication: DotNet "'Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c'.Microsoft.Office.Interop.Word.ApplicationClass" RUNONCLIENT;
@@ -687,7 +687,7 @@ codeunit 60000 WordManagementESPL
         CLEAR(WordApplication);
     end;
 
-    [LineStart(540)]
+    (540)]
     local procedure DocumentContainMergefieldsArchive(var Attachment: Record "Attachments Archive") MergeFields: Boolean;
     var
         WordApplication: DotNet "'Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c'.Microsoft.Office.Interop.Word.ApplicationClass" RUNONCLIENT;

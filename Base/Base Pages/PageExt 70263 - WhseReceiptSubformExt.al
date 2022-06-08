@@ -439,24 +439,24 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
     //ItemAvailFormsMgt : "Item Availability Forms Mgt";
     //Variable type has not been exported.
 
-    [LineStart(26487)]
+    (26487)]
     procedure "--QC"();
     begin
     end;
 
-    [LineStart(26490)]
+    (26490)]
     procedure _CreateInspectionDataSheets();
     begin
         CreateInspectionDataSheets;
     end;
 
-    [LineStart(26493)]
+    (26493)]
     procedure CreateInspectionDataSheets();
     begin
         CreateInspectionDataSheets;
     end;
 
-    [LineStart(26496)]
+    (26496)]
     procedure _ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -464,7 +464,7 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowDataSheets;
     end;
 
-    [LineStart(26499)]
+    (26499)]
     procedure ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -472,7 +472,7 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowDataSheets;
     end;
 
-    [LineStart(26502)]
+    (26502)]
     procedure _ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -480,7 +480,7 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowPostDataSheets;
     end;
 
-    [LineStart(26505)]
+    (26505)]
     procedure ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -488,7 +488,7 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowPostDataSheets;
     end;
 
-    [LineStart(26508)]
+    (26508)]
     procedure _ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -496,7 +496,7 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowInspectReceipt;
     end;
 
-    [LineStart(26511)]
+    (26511)]
     procedure ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -504,7 +504,7 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowInspectReceipt;
     end;
 
-    [LineStart(26514)]
+    (26514)]
     procedure _ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -512,7 +512,7 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowPostInspectReceipt;
     end;
 
-    [LineStart(26517)]
+    (26517)]
     procedure ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";

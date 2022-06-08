@@ -702,7 +702,7 @@ report 50079 "MSPT  Aged Accounts Receivable"
         Original_Amount_Control24CaptionLbl: Label 'Balance';
         Total__LCY_CaptionLbl: Label 'Total (LCY)';
 
-    [LineStart(4945)]
+    (4945)]
     local procedure CalcDates();
     var
         i: Integer;
@@ -727,7 +727,7 @@ report 50079 "MSPT  Aged Accounts Receivable"
                 ERROR(Text010, PeriodLength);
     end;
 
-    [LineStart(4964)]
+    (4964)]
     local procedure CreateHeadings();
     var
         i: Integer;
@@ -751,7 +751,7 @@ report 50079 "MSPT  Aged Accounts Receivable"
             HeaderText[i] := STRSUBSTNO('%1 \%2 %3', Text003, EndingDate - PeriodStartDate[i - 1] + 1, Text002);
     end;
 
-    [LineStart(4983)]
+    (4983)]
     local procedure InsertTemp(var CustLedgEntry: Record "MSPT Customer Ledger Entry");
     var
         Currency: Record Currency;
@@ -780,7 +780,7 @@ report 50079 "MSPT  Aged Accounts Receivable"
         END;
     end;
 
-    [LineStart(5007)]
+    (5007)]
     local procedure GetPeriodIndex(Date: Date): Integer;
     var
         i: Integer;
@@ -790,14 +790,14 @@ report 50079 "MSPT  Aged Accounts Receivable"
                 EXIT(i);
     end;
 
-    [LineStart(5012)]
+    (5012)]
     local procedure Pct(a: Decimal; b: Decimal): Text[30];
     begin
         IF b <> 0 THEN
             EXIT(FORMAT(ROUND(100 * a / b, 0.1), 0, '<Sign><Integer><Decimals,2>') + '%');
     end;
 
-    [LineStart(5016)]
+    (5016)]
     local procedure UpdateCurrencyTotals();
     var
         i: Integer;

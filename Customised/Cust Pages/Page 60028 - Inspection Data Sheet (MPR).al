@@ -793,7 +793,7 @@ page 60028 "Inspection Data Sheet (MPR)"
         [InDataSet]
         "Qty in IDSEditable" : Boolean;
 
-    [LineStart(5411)]
+    (5411)]
     local procedure OnAfterGetCurrRecord();
     begin
         xRec := Rec;

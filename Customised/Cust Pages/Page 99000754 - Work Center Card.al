@@ -306,7 +306,7 @@ page 99000754 "Work Center Card"
         [InDataSet]
         FromProductionBinCodeEnable : Boolean;
 
-    [LineStart(23659)]
+    (23659)]
     local procedure UpdateEnabled();
     var
         Location : Record Location;
@@ -319,7 +319,7 @@ page 99000754 "Work Center Card"
         FromProductionBinCodeEnable := Location."Bin Mandatory";
     end;
 
-    [LineStart(23667)]
+    (23667)]
     local procedure OnActivateForm();
     begin
         UpdateEnabled;

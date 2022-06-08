@@ -915,7 +915,7 @@ report 33000907 "Voucher Print1"
         NarrationText: Text[1000];
         narrationrec: Record "Purch. Comment Line";
 
-    [LineStart(22685)]
+    (22685)]
     procedure FormatNoText(var NoText: array[2] of Text[80]; No: Decimal; CurrencyCode: Code[10]);
     var
         PrintExponent: Boolean;
@@ -1002,7 +1002,7 @@ report 33000907 "Voucher Print1"
         //  AddToNoText(NoText,NoTextIndex,PrintExponent,CurrencyCode);
     end;
 
-    [LineStart(22761)]
+    (22761)]
     procedure InitTextVariable();
     begin
         OnesText[1] := Text032;
@@ -1041,7 +1041,7 @@ report 33000907 "Voucher Print1"
         ExponentText[4] := Text061;
     end;
 
-    [LineStart(22797)]
+    (22797)]
     local procedure AddToNoText(var NoText: array[2] of Text[80]; var NoTextIndex: Integer; var PrintExponent: Boolean; AddText: Text[30]);
     begin
         PrintExponent := TRUE;

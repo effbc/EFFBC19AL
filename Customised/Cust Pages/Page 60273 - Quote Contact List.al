@@ -759,14 +759,14 @@ page 60273 "Quote Contact List"
         CRMIsCoupledToRecord : Boolean;
         QuoteNoGVar : Code[20];
 
-    [LineStart(21587)]
+    (21587)]
     local procedure EnableFields();
     begin
         CompanyGroupEnabled := Type = Type::Company;
         PersonGroupEnabled := Type = Type::Person;
     end;
 
-    [LineStart(21591)]
+    (21591)]
     procedure SendQuoteNo(QuoLpar : Code[20]);
     begin
         QuoteNoGVar := QuoLpar;

@@ -154,7 +154,7 @@ report 50073 "Inspection Receipt Report"
         IDS_Creation_DateCaptionLbl : Label 'IDS Creation Date';
         Period_Wise_QC_Passes_List_CaptionLbl : Label '"Period Wise QC Passes List "';
 
-    [LineStart(4893)]
+    (4893)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
 
@@ -167,7 +167,7 @@ report 50073 "Inspection Receipt Report"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(4903)]
+    (4903)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         Tempexcelbuffer.INIT;
@@ -180,7 +180,7 @@ report 50073 "Inspection Receipt Report"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(4913)]
+    (4913)]
     procedure "Entercell New"();
     begin
     end;

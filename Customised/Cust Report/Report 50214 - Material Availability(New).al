@@ -5490,7 +5490,7 @@ report 50214 "Material Availability(New)"
         Qty__At_StoresCaptionLbl : Label 'Qty. At Stores';
         Expected_DateCaptionLbl : Label 'Expected Date';
 
-    [LineStart(8846)]
+    (8846)]
     procedure "Enter Cell"(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -5501,7 +5501,7 @@ report 50214 "Material Availability(New)"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(8854)]
+    (8854)]
     procedure "Enter Headings"(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -5513,7 +5513,7 @@ report 50214 "Material Availability(New)"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(8863)]
+    (8863)]
     procedure Product_Requirement("Product_No." : Integer;"Item_No." : Code[50];Prod_QTY : Integer;"BOM_QTY(Compound)" : Decimal;"BOM_QTY(Line)" : Decimal;BOM_QTY : Decimal);
     var
         TOT : Decimal;
@@ -5527,7 +5527,7 @@ report 50214 "Material Availability(New)"
             END;
     end;
 
-    [LineStart(8872)]
+    (8872)]
     procedure Overall_Requirement("Item_No." : Code[50];Prod_QTY : Integer;"BOM_QTY(Compound)" : Decimal;"BOM_QTY(Line)" : Decimal;BOM_QTY : Decimal);
     var
         TOT : Decimal;
@@ -5622,7 +5622,7 @@ report 50214 "Material Availability(New)"
               END;
     end;
 
-    [LineStart(8962)]
+    (8962)]
     procedure Caliculate_Product_Shortage("Product No." : Integer);
     begin
         BOM_DUM["Product No."].SETFILTER(BOM_DUM["Product No."]."Budget Quantity",'>%1',0);
@@ -5653,7 +5653,7 @@ report 50214 "Material Availability(New)"
         END;
     end;
 
-    [LineStart(8990)]
+    (8990)]
     procedure DUplicate("Item_No." : Code[50];Prod_QTY : Integer;"BOM_QTY(Compound)" : Decimal;"BOM_QTY(Line)" : Decimal;BOM_QTY : Decimal);
     var
         TOT : Decimal;

@@ -422,7 +422,7 @@ table 33000027 "Pay Employee Perks"
         PayYear: Record "Pay Year";
         Text011: Label '%1 %2 should be in between FY %3 - %4.';
 
-    [LineStart(6013)]
+
     procedure PerkCodeValidate();
     begin
         //Validate whether Perk Code already transfered, if yes then cann't allocate.
@@ -433,7 +433,7 @@ table 33000027 "Pay Employee Perks"
             Error(Text002, "Perk Code");
     end;
 
-    [LineStart(6021)]
+
     procedure PerkCodeFind(): Boolean;
     begin
         //PerkCodeFind
@@ -471,7 +471,7 @@ table 33000027 "Pay Employee Perks"
         end;
     end;
 
-    [LineStart(6059)]
+
     procedure TransferClosed();
     begin
         //Transferclosed
@@ -487,7 +487,7 @@ table 33000027 "Pay Employee Perks"
                     Error(Text005);
     end;
 
-    [LineStart(6072)]
+
     procedure FromDateCheck();
     begin
         //FromDateCheck
@@ -502,7 +502,7 @@ table 33000027 "Pay Employee Perks"
         end;
     end;
 
-    [LineStart(6085)]
+
     procedure GetAYID();
     var
         AsstYearID: Integer;
@@ -528,7 +528,7 @@ table 33000027 "Pay Employee Perks"
         end;
     end;
 
-    [LineStart(6107)]
+
     procedure ToDateCheck();
     begin
         //ToDateCheck

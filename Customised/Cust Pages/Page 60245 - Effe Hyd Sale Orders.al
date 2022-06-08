@@ -2967,7 +2967,7 @@ page 60245 "Effe Hyd Sale Orders"
                                  OpenApprovalEntriesExist : Boolean;
                                  OpenApprovalEntriesExistForCurrUser : Boolean;
 
-    [LineStart(19790)]
+    (19790)]
     local procedure Post(PostingCodeunitID: Integer);
     begin
         SendToPosting(PostingCodeunitID);
@@ -2976,7 +2976,7 @@ page 60245 "Effe Hyd Sale Orders"
         CurrPage.UPDATE(FALSE);
     end;
 
-    [LineStart(19796)]
+    (19796)]
     procedure UpdateAllowed(): Boolean;
     begin
         IF CurrPage.EDITABLE = FALSE THEN
@@ -2984,7 +2984,7 @@ page 60245 "Effe Hyd Sale Orders"
         EXIT(TRUE);
     end;
 
-    [LineStart(19801)]
+    (19801)]
     local procedure UpdateInfoPanel();
     var
         DifferSellToBillTo: Boolean;
@@ -2998,13 +2998,13 @@ page 60245 "Effe Hyd Sale Orders"
             SalesHistoryBtnVisible := SalesInfoPaneMgt.DocExist(Rec, "Bill-to Customer No.")
     end;
 
-    [LineStart(19810)]
+    (19810)]
     local procedure ApproveCalcInvDisc();
     begin
         CurrPage.SalesLines.PAGE.ApproveCalcInvDisc;
     end;
 
-    [LineStart(19813)]
+    (19813)]
     local procedure SetControlVisibility();
     var
         ApprovalsMgmt: Codeunit "Approvals Mgmt.";
@@ -3017,12 +3017,12 @@ page 60245 "Effe Hyd Sale Orders"
         OpenApprovalEntriesExist := ApprovalsMgmt.HasOpenApprovalEntries(RECORDID);
     end;
 
-    [LineStart(19821)]
+    (19821)]
     procedure "---B2B---"();
     begin
     end;
 
-    [LineStart(19824)]
+    (19824)]
     procedure DocumentPosition();
     begin
         /*
@@ -3034,7 +3034,7 @@ page 60245 "Effe Hyd Sale Orders"
 
     end;
 
-    [LineStart(19832)]
+    (19832)]
     procedure CreateOrders(Qtyparam: Decimal) OrdersCreated: Boolean;
     var
         Item: Record Item;
@@ -3064,7 +3064,7 @@ page 60245 "Effe Hyd Sale Orders"
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
-    [LineStart(19855)]
+    (19855)]
     procedure calcamt();
     begin
         "Sale Order Total Amount" := 0;
@@ -3076,7 +3076,7 @@ page 60245 "Effe Hyd Sale Orders"
         MODIFY;
     end;
 
-    [LineStart(19864)]
+    (19864)]
     procedure ChooseInvoice();
     var
         temp: Integer;
@@ -3251,55 +3251,55 @@ page 60245 "Effe Hyd Sale Orders"
 
     end;
 
-    [LineStart(20037)]
+    (20037)]
     local procedure SelltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(20040)]
+    (20040)]
     local procedure SalespersonCodeOnAfterValidate();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(20043)]
+    (20043)]
     local procedure BilltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(20046)]
+    (20046)]
     local procedure ShortcutDimension1CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(20049)]
+    (20049)]
     local procedure ShortcutDimension2CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(20052)]
+    (20052)]
     local procedure PricesIncludingVATOnAfterValid();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(20055)]
+    (20055)]
     local procedure CurrencyCodeC111OnAfterValidat();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(20058)]
+    (20058)]
     local procedure Prepayment37OnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(20061)]
+    (20061)]
     local procedure SelltoCityOnInputChange(var Text: Text[1024]);
     begin
         IF "Sell-to City" <> '' THEN BEGIN
@@ -3313,7 +3313,7 @@ page 60245 "Effe Hyd Sale Orders"
         END;
     end;
 
-    [LineStart(20074)]
+    (20074)]
     local procedure SelltoPostCodeOnInputChange(var Text: Text[1024]);
     begin
         IF "Sell-to Post Code" <> '' THEN BEGIN
@@ -3327,7 +3327,7 @@ page 60245 "Effe Hyd Sale Orders"
         END;
     end;
 
-    [LineStart(20087)]
+    (20087)]
     local procedure ReDispatchOnPush();
     begin
         IF "Re-Dispatch" THEN
@@ -3336,38 +3336,38 @@ page 60245 "Effe Hyd Sale Orders"
             CurrPage.SalesLines.PAGE.MakeInvisibleLineControl;
     end;
 
-    [LineStart(20093)]
+    (20093)]
     local procedure ServiceInvInvoiceNosOnPush();
     begin
         //ChooseInvoice;
     end;
 
-    [LineStart(20096)]
+    (20096)]
     local procedure TradingInvInvoiceNosOnPush();
     begin
         //ChooseInvoice;
     end;
 
-    [LineStart(20099)]
+    (20099)]
     local procedure InstInvInvoiceNosOnPush();
     begin
         //ChooseInvoice;
     end;
 
-    [LineStart(20102)]
+    (20102)]
     local procedure ExciseInvInvoiceNosOnPush();
     begin
         //ChooseInvoice;
     end;
 
-    [LineStart(20105)]
+    (20105)]
     local procedure InvoiceNosOnPush();
     begin
         "External Document No." := '';
         MODIFY;
     end;
 
-    [LineStart(20109)]
+    (20109)]
     local procedure NoOnFormat();
     begin
         IF "SalOrd Des Approval" = TRUE THEN BEGIN
@@ -3378,37 +3378,37 @@ page 60245 "Effe Hyd Sale Orders"
         END;
     end;
 
-    [LineStart(20119)]
+    (20119)]
     local procedure InvoiceNosOnValidate();
     begin
         InvoiceNosOnPush;
     end;
 
-    [LineStart(20122)]
+    (20122)]
     local procedure ExciseInvInvoiceNosOnValidate();
     begin
         ExciseInvInvoiceNosOnPush;
     end;
 
-    [LineStart(20125)]
+    (20125)]
     local procedure ServiceInvInvoiceNosOnValidate();
     begin
         ServiceInvInvoiceNosOnPush;
     end;
 
-    [LineStart(20128)]
+    (20128)]
     local procedure TradingInvInvoiceNosOnValidate();
     begin
         TradingInvInvoiceNosOnPush;
     end;
 
-    [LineStart(20131)]
+    (20131)]
     local procedure InstInvInvoiceNosOnValidate();
     begin
         InstInvInvoiceNosOnPush;
     end;
 
-    [LineStart(20134)]
+    (20134)]
     procedure CustAttachments();
     var
         CustAttach: Record Attachments;
@@ -3421,7 +3421,7 @@ page 60245 "Effe Hyd Sale Orders"
         PAGE.RUN(PAGE::"ESPL Attachments", CustAttach);
     end;
 
-    [LineStart(20142)]
+    (20142)]
     procedure TestRPOStatus();
     var
         SLn: Record "Sales Line";
@@ -3464,7 +3464,7 @@ page 60245 "Effe Hyd Sale Orders"
         //End by Pranavi
     end;
 
-    [LineStart(20177)]
+    (20177)]
     procedure SendForAuth(TypeFlag: Code[10]);
     var
         Body: Text;

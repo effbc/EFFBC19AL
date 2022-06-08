@@ -290,7 +290,7 @@ page 99000760 "Machine Center Card"
         [InDataSet]
         FromProductionBinCodeEnable : Boolean;
 
-    [LineStart(23684)]
+    (23684)]
     local procedure UpdateEnabled();
     var
         Location : Record Location;
@@ -305,7 +305,7 @@ page 99000760 "Machine Center Card"
         FromProductionBinCodeEnable := EditEnabled;
     end;
 
-    [LineStart(23693)]
+    (23693)]
     local procedure OnActivateForm();
     begin
         UpdateEnabled;

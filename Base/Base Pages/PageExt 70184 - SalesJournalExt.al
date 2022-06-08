@@ -1445,7 +1445,7 @@ pageextension 70184 SalesJournalExt extends "Sales Journal"
     */
     //end;
 
-    [LineStart(16763)]
+    (16763)]
     local procedure AmountPercentageOnAfterValidat();
     begin
         "Credit Amount" := ("Credit Amount" * "Amount Percentage") / 100;
@@ -1458,7 +1458,7 @@ pageextension 70184 SalesJournalExt extends "Sales Journal"
         "Bal. VAT Base Amount (LCY)" := "Credit Amount";
     end;
 
-    [LineStart(16803)]
+    (16803)]
     procedure SDStatusUpdate(SaleOrderNo: Code[20]; PostingDateVar: Date);
     var
         SIH: Record "Sales Invoice Header";

@@ -356,7 +356,6 @@ table 33000032 "Pay Daily Attendence Detail"
         PayCompanyPolicy: Record "Pay Company Policy";
         Text014: Label 'Employee No. %1 has left.';
 
-    [LineStart(6128)]
     procedure TimeCalculate();
     var
         AttendanceProcedures: Codeunit "Pay Attendance/Leave Module Fn";

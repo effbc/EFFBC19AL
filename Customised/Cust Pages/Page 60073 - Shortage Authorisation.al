@@ -2988,7 +2988,7 @@ page 60073 "Shortage Authorisation"
         total_cost: Decimal;
         ord_qty2: Decimal;
 
-    [LineStart(6625)]
+    (6625)]
     procedure "Show Shortage"();
     begin
         // DELETING TOTAL INFORMATION IN SHORTAGE TEMP (TABLE)
@@ -4149,7 +4149,7 @@ page 60073 "Shortage Authorisation"
 
     end;
 
-    [LineStart(7874)]
+    (7874)]
     procedure "Calculate Date Filter"();
     begin
 
@@ -4188,7 +4188,7 @@ page 60073 "Shortage Authorisation"
             DateFilter := Purchase_Date_Filter;
     end;
 
-    [LineStart(7911)]
+    (7911)]
     procedure FormShow();
     begin
         IF (Choice = Choice::Shortage) THEN BEGIN
@@ -4256,7 +4256,7 @@ page 60073 "Shortage Authorisation"
 
     end;
 
-    [LineStart(7977)]
+    (7977)]
     procedure GetNextNo() NumberValue: Code[20];
     var
         DateValue: Text[30];
@@ -4297,7 +4297,7 @@ page 60073 "Shortage Authorisation"
         NumberValue := INCSTR(LastNumber);
     end;
 
-    [LineStart(8006)]
+    (8006)]
     procedure Form_Status() Stat: Text[30];
     begin
 
@@ -4305,7 +4305,7 @@ page 60073 "Shortage Authorisation"
         EXIT(Stat);
     end;
 
-    [LineStart(8011)]
+    (8011)]
     procedure OpenExistingXlsWorkbook(Fname: Text[250]; SheetNr: Integer);
     var
         WorksheetAlreadyOpen: Boolean;
@@ -4325,7 +4325,7 @@ page 60073 "Shortage Authorisation"
 
     end;
 
-    [LineStart(8025)]
+    (8025)]
     procedure TEMCMail(IndentHeader: Record "Indent Header");
     var
         TCount: Decimal;
@@ -4401,7 +4401,7 @@ page 60073 "Shortage Authorisation"
         //end by pranavi
     end;
 
-    [LineStart(8090)]
+    (8090)]
     procedure ItmStockAtStores(ItmNo: Code[50]);
     var
         Item1: Record Item;
@@ -4459,7 +4459,7 @@ page 60073 "Shortage Authorisation"
         END;
     end;
 
-    [LineStart(8144)]
+    (8144)]
     local procedure ShortageAuthorizedMaterialCreation(ShortageDetails: Record "Item Lot Numbers");
     begin
         Item_table.RESET;
@@ -4515,7 +4515,7 @@ page 60073 "Shortage Authorisation"
         ShortageAuthorizedMaterial.INSERT;
     end;
 
-    [LineStart(8198)]
+    (8198)]
     procedure Shortage_Mail_Cost() "TOTAL COST": Decimal;
     begin
         Order_Qty := 0;

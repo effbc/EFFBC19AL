@@ -827,7 +827,7 @@ table 60062 "Tender Header"
         PostCode: Record "Post Code";
         Country: Record "Country/Region";
         SalesSetup: Record "Sales & Receivables Setup";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit 396;
         Test: Boolean;
         TenderCompetitorDetails: Record "Tender Competitor's Details";
         TenderChecklist: Record "Check List";
@@ -847,12 +847,12 @@ table 60062 "Tender Header"
         County: Text[30];
         SP: Record "Salesperson/Purchaser";
 
-    [LineStart(3048)]
+
     procedure AssistEdit(TenderHeader: Record "Tender Header"): Boolean;
     var
         Tender: Record "Tender Header";
         SalesReceivables: Record "Sales & Receivables Setup";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit 396;
     begin
         with Tender do begin
             Tender := Rec;
@@ -866,7 +866,7 @@ table 60062 "Tender Header"
         end;
     end;
 
-    [LineStart(3060)]
+
     procedure TenderAttachments();
     var
         Attachments: Record Attachments;

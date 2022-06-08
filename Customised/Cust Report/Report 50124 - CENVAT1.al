@@ -819,7 +819,7 @@ report 50124 CENVAT1
         DesignationCaptionLbl: Label 'Designation';
         ABSTRACTCaptionLbl: Label 'ABSTRACT';
 
-    [LineStart(7203)]
+    (7203)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean);
     begin
 
@@ -832,7 +832,7 @@ report 50124 CENVAT1
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(7213)]
+    (7213)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean);
     begin
         TempExcelbuffer.INIT;

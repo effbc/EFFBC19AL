@@ -603,7 +603,7 @@ page 60065 "DC Header"
         User1: Record User;
         DCL1: Record "DC Line";
 
-    [LineStart(5902)]
+    (5902)]
     procedure CONVERT(No: Code[20]) NEW_NO: Code[20];
     var
         i: Integer;
@@ -617,7 +617,7 @@ page 60065 "DC Header"
         END;
     end;
 
-    [LineStart(5912)]
+    (5912)]
     local procedure sendmailOnPush();
     begin
 

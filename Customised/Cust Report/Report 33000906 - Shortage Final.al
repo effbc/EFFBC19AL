@@ -2397,7 +2397,7 @@ report 33000906 "Shortage Final"
         ItemLotNumbers9 : Record "Item Lot Numbers";
         "Break" : Boolean;
 
-    [LineStart(22418)]
+    (22418)]
     procedure "Funds Allocation"("Payment Date" : Date;Value : Decimal);
     begin
 
@@ -2423,7 +2423,7 @@ report 33000906 "Shortage Final"
               END;
     end;
 
-    [LineStart(22441)]
+    (22441)]
     procedure CommaRemoval(Base : Text[100]) Converted : Text[100];
     var
         i : Integer;

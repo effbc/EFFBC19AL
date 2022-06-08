@@ -92,7 +92,7 @@ table 150022 "Code Coverage Line"
     var
         Session1: Record Session;
 
-    [LineStart(5889)]
+
     procedure SetConditionalConnectionFilter();
     var
         CodeCoverage: Record "Code Coverage Line";
@@ -108,7 +108,7 @@ table 150022 "Code Coverage Line"
             end;
     end;
 
-    [LineStart(5900)]
+
     procedure SetConnectionFilter();
     var
         ClientMonitor2: Record "Client Monitor";

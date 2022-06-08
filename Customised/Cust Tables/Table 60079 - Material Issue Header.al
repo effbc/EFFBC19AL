@@ -322,6 +322,6 @@ table 60079 "Material Issue Header"
 
     var
         InventroySetup: Record "Inventory Setup";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit 396;
 }
 

@@ -197,7 +197,7 @@ report 32000003 "Update Sales/Schedule -All_"
         EntryNo: Integer;
         SaleScheduleItemChangeLog: Record "Sale/ Schedule Item Change Log";
 
-    [LineStart(20017)]
+    (20017)]
     local procedure CheckIfMaterialIssueExist(OrderNoP: Code[20]; OrderLineNoP: Integer; ScheduleLineNoP: Integer): Boolean;
     var
         ProductionOrder: Record "Production Order";
@@ -226,7 +226,7 @@ report 32000003 "Update Sales/Schedule -All_"
         EXIT(FALSE);
     end;
 
-    [LineStart(20039)]
+    (20039)]
     local procedure UpdateProdOrder(OrderNoP: Code[20]; OrderLineNoP: Integer; ScheduleLineNoP: Integer; NewItemNoP: Code[20]);
     var
         ProductionOrder: Record "Production Order";
@@ -277,7 +277,7 @@ report 32000003 "Update Sales/Schedule -All_"
 
     end;
 
-    [LineStart(20083)]
+    (20083)]
     local procedure UpdateChangeLog(OrderNoP: Code[20]; OrderLineNoP: Integer; ScheduleLineNoP: Integer; ProdOrderNo: Code[20]; OldItemNoP: Code[20]; NewItemNoP: Code[20]);
     var
         SaleScheduleItemChangeLog: Record "Sale/ Schedule Item Change Log";
@@ -294,7 +294,7 @@ report 32000003 "Update Sales/Schedule -All_"
         END;
     end;
 
-    [LineStart(20095)]
+    (20095)]
     local procedure CheckIfPostedMaterialIssueExist(OrderNoP: Code[20]; OrderLineNoP: Integer; ScheduleLineNoP: Integer): Boolean;
     var
         ProductionOrder: Record "Production Order";

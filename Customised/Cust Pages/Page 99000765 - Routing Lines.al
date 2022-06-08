@@ -226,7 +226,7 @@ page 99000765 "Routing Lines"
     var
         RtngComment: Record "Routing Comment Line";
 
-    [LineStart(23730)]
+    (23730)]
     local procedure ShowComment();
     begin
         RtngComment.SETRANGE("Routing No.", "Routing No.");
@@ -236,7 +236,7 @@ page 99000765 "Routing Lines"
         PAGE.RUN(PAGE::"Routing Comment Sheet", RtngComment);
     end;
 
-    [LineStart(23737)]
+    (23737)]
     local procedure ShowTools();
     var
         RtngTool: Record "Routing Tool";
@@ -248,7 +248,7 @@ page 99000765 "Routing Lines"
         PAGE.RUN(PAGE::"Routing Tools", RtngTool);
     end;
 
-    [LineStart(23744)]
+    (23744)]
     local procedure ShowPersonnel();
     var
         RtngPersonnel: Record "Routing Personnel";
@@ -260,7 +260,7 @@ page 99000765 "Routing Lines"
         PAGE.RUN(PAGE::"Routing Personnel", RtngPersonnel);
     end;
 
-    [LineStart(23751)]
+    (23751)]
     local procedure ShowQualityMeasures();
     var
         RtngQltyMeasure: Record "Routing Quality Measure";

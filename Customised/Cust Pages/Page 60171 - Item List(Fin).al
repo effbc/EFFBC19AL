@@ -1643,7 +1643,7 @@ page 60171 "Item List(Fin)"
         [InDataSet]
         DescriptionEmphasize : Boolean;
 
-    [LineStart(13685)]
+    (13685)]
     procedure GetSelectionFilter() : Text;
     var
         Item : Record Item;
@@ -1653,13 +1653,13 @@ page 60171 "Item List(Fin)"
         EXIT(SelectionFilterManagement.GetSelectionFilterForItem(Item));
     end;
 
-    [LineStart(13689)]
+    (13689)]
     procedure SetSelection(var Item : Record Item);
     begin
         CurrPage.SETSELECTIONFILTER(Item);
     end;
 
-    [LineStart(13692)]
+    (13692)]
     local procedure NoOnFormat();
     begin
          /*
@@ -1684,7 +1684,7 @@ page 60171 "Item List(Fin)"
 
     end;
 
-    [LineStart(13713)]
+    (13713)]
     local procedure DescriptionOnFormat();
     begin
          IF FORMAT("Item Status")='Obsolute' THEN

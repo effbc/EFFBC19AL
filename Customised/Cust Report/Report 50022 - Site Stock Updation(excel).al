@@ -244,7 +244,7 @@ report 50022 "Site Stock Updation(excel)"
         Text028: TextConst ENU = 'Importing from Excel worksheet', ENN = 'Importing from Excel worksheet';
         Text029: TextConst ENU = 'You must enter a file name.', ENN = 'You must enter a file name.';
 
-    [LineStart(634)]
+    (634)]
     local procedure AnalyzeData();
     var
         TempExcelBuffer: Record "Excel Buffer" temporary;
@@ -371,13 +371,13 @@ report 50022 "Site Stock Updation(excel)"
             ERROR(Text026);
     end;
 
-    [LineStart(749)]
+    (749)]
     procedure SetGLBudgetName(NewToCostBudgetName: Code[10]);
     begin
         ToCostBudgetName := NewToCostBudgetName;
     end;
 
-    [LineStart(752)]
+    (752)]
     procedure RequestFile();
     begin
         IF FileName <> '' THEN
@@ -389,7 +389,7 @@ report 50022 "Site Stock Updation(excel)"
         FileName := FileMgt.GetFileName(ServerFileName);
     end;
 
-    [LineStart(761)]
+    (761)]
     procedure IsLineTypeCostType(CostTypeNo: Code[20]): Boolean;
     var
         CostType: Record "Cost Type";
@@ -399,13 +399,13 @@ report 50022 "Site Stock Updation(excel)"
         EXIT(CostType.Type = CostType.Type::"Cost Type");
     end;
 
-    [LineStart(766)]
+    (766)]
     local procedure FileNameOnAfterValidate();
     begin
         RequestFile;
     end;
 
-    [LineStart(769)]
+    (769)]
     procedure InsertTempExcelBuffer(var ExcelBuffer: Record "Excel Buffer"; var TempExcelBuffer: Record "Excel Buffer" temporary; Text: Text[250]);
     begin
         TempExcelBuffer := ExcelBuffer;
@@ -413,7 +413,7 @@ report 50022 "Site Stock Updation(excel)"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(774)]
+    (774)]
     local procedure ValidateServerFileName();
     begin
         IF ServerFileName = '' THEN BEGIN

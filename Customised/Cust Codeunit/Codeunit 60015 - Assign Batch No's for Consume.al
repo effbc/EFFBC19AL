@@ -23,7 +23,7 @@ codeunit 60015 "Assign Batch No's for Consume"
         QtytoReceive: Decimal;
         ConsumptionJournalLine: Record "Item Journal Line";
 
-    [LineStart(7130)]
+    (7130)]
     procedure ConsumptionItemTracking(var TemplateName: Code[20]; var BatchName: Code[20]);
     var
         TrackingAssignment: Record "Item Tracking Assignament";
@@ -46,7 +46,7 @@ codeunit 60015 "Assign Batch No's for Consume"
             TrackingAssignment.DELETEALL;
     end;
 
-    [LineStart(7148)]
+    (7148)]
     procedure CheckSerialndBatchNo(var "ItemNo.": Code[20]): Boolean;
     var
         Item: Record Item;
@@ -58,7 +58,7 @@ codeunit 60015 "Assign Batch No's for Consume"
             EXIT(FALSE);
     end;
 
-    [LineStart(7155)]
+    (7155)]
     procedure DeleteTrackingSpecifications(var ItemJournalLine: Record "Item Journal Line");
     var
         ResEntry: Record "Reservation Entry";
@@ -72,7 +72,7 @@ codeunit 60015 "Assign Batch No's for Consume"
             ResEntry.DELETEALL;
     end;
 
-    [LineStart(7164)]
+    (7164)]
     procedure CheckInventory(var ItemJournalLine: Record "Item Journal Line");
     var
         QualityItemLedgerEntry: Record "Quality Item Ledger Entry";
@@ -105,7 +105,7 @@ codeunit 60015 "Assign Batch No's for Consume"
                 ItemJournalLine.DELETE;
     end;
 
-    [LineStart(7189)]
+    (7189)]
     procedure AssignTrackingSpecifications(var ItemJournalLine: Record "Item Journal Line");
     var
         ReservationEntry: Record "Reservation Entry";

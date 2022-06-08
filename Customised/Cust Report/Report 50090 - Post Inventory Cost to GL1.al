@@ -470,7 +470,7 @@ report 50090 "Post Inventory Cost to G/L1"
         TotalCaptionLbl: Label 'Total';
         InvtPostBuf_AmountCaptionLbl: Label 'Amount';
 
-    [LineStart(5172)]
+    (5172)]
     procedure InitializeRequest(NewPostMethod: Option; NewPostDate: Date; NewDocNo: Code[20]; NewPost: Boolean);
     begin
         PostMethod := NewPostMethod;
@@ -479,7 +479,7 @@ report 50090 "Post Inventory Cost to G/L1"
         Post := NewPost;
     end;
 
-    [LineStart(5178)]
+    (5178)]
     procedure GetDimText();
     var
         Continue: Boolean;

@@ -458,7 +458,7 @@ page 60244 "Effe Hyd Sale Orders List"
                                  RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
                                  TotalOrders : Label '"Total Orders: "';
 
-    [LineStart(19388)]
+    (19388)]
     procedure UpdateAllowed() : Boolean;
     begin
         IF CurrPage.EDITABLE = FALSE THEN
@@ -466,7 +466,7 @@ page 60244 "Effe Hyd Sale Orders List"
         EXIT(TRUE);
     end;
 
-    [LineStart(19393)]
+    (19393)]
     local procedure UpdateInfoPanel();
     var
         DifferSellToBillTo : Boolean;
@@ -480,12 +480,12 @@ page 60244 "Effe Hyd Sale Orders List"
           SalesHistoryBtnVisible := SalesInfoPaneMgt.DocExist(Rec,"Bill-to Customer No.")
     end;
 
-    [LineStart(19402)]
+    (19402)]
     procedure "---B2B---"();
     begin
     end;
 
-    [LineStart(19405)]
+    (19405)]
     procedure DocumentPosition();
     begin
         /*
@@ -497,7 +497,7 @@ page 60244 "Effe Hyd Sale Orders List"
 
     end;
 
-    [LineStart(19413)]
+    (19413)]
     procedure CreateOrders(Qtyparam : Decimal) OrdersCreated : Boolean;
     var
         Item : Record Item;
@@ -527,7 +527,7 @@ page 60244 "Effe Hyd Sale Orders List"
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
-    [LineStart(19436)]
+    (19436)]
     procedure calcamt();
     begin
         "Sale Order Total Amount":=0;
@@ -539,7 +539,7 @@ page 60244 "Effe Hyd Sale Orders List"
          MODIFY;
     end;
 
-    [LineStart(19445)]
+    (19445)]
     procedure ChooseInvoice();
     var
         temp : Integer;

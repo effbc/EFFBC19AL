@@ -134,7 +134,7 @@ table 33000253 "Specification Header"
         Text013: Label 'Only Microsoft Word documents can be printed.';
         Text014: Label 'Only Microsoft Word documents can be faxed.';
 
-    [LineStart(7276)]
+    (7276)]
     procedure AssistEdit(OldSpec: Record "Specification Header"): Boolean;
     begin
         with Spec do begin
@@ -151,7 +151,7 @@ table 33000253 "Specification Header"
         end;
     end;
 
-    [LineStart(7290)]
+    (7290)]
     procedure TestStatus();
     var
         SpecLine2: Record "Specification Line";
@@ -195,7 +195,7 @@ table 33000253 "Specification Header"
             Error('No specification lines exists');
     end;
 
-    [LineStart(7324)]
+    (7324)]
     procedure ImportAttchment(): Boolean;
     var
         AttachmentManagement: Codeunit AttachmentManagement;
@@ -216,7 +216,7 @@ table 33000253 "Specification Header"
             exit(false);
     end;
 
-    [LineStart(7339)]
+    (7339)]
     procedure ExportAttachment(ExportToFile: Text[260]): Boolean;
     var
         FileName: Text[260];
@@ -242,7 +242,7 @@ table 33000253 "Specification Header"
             exit(false)
     end;
 
-    [LineStart(7359)]
+    (7359)]
     procedure OpenAttachment();
     var
         WordManagement: Codeunit WordManagement;
@@ -274,7 +274,7 @@ table 33000253 "Specification Header"
 
     end;
 
-    [LineStart(7383)]
+    (7383)]
     procedure ConstFilename() FileName: Text[260];
     var
         I: Integer;
@@ -291,7 +291,7 @@ table 33000253 "Specification Header"
         Message('%1', FileName);
     end;
 
-    [LineStart(7394)]
+    (7394)]
     procedure DeleteFile(FileName: Text[260]): Boolean;
     var
         I: Integer;
@@ -309,7 +309,7 @@ table 33000253 "Specification Header"
         exit(not Exists(FileName));
     end;
 
-    [LineStart(7407)]
+    (7407)]
     procedure RemoveAttachment(Prompt: Boolean) DeleteOK: Boolean;
     var
         DeleteYesNo: Boolean;
@@ -328,7 +328,7 @@ table 33000253 "Specification Header"
         end;
     end;
 
-    [LineStart(7421)]
+    (7421)]
     procedure CopyAssay();
     var
         AssayHeader: Record "Assay Header";
@@ -385,7 +385,7 @@ table 33000253 "Specification Header"
         end;
     end;
 
-    [LineStart(7470)]
+    (7470)]
     procedure GetSpecVersion(SpecHeaderNo: Code[20]; Date: Date; OnlyCertified: Boolean): Code[10];
     var
         SpecVersion: Record "Specification Version";

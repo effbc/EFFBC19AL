@@ -356,7 +356,7 @@ report 80029 "Bank Book3"
         TempExcelbuffer: Record "Excel Buffer" temporary;
         Row: Integer;
 
-    [LineStart(17996)]
+    (17996)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean; CellType: Option);
     begin
 
@@ -369,7 +369,7 @@ report 80029 "Bank Book3"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(18006)]
+    (18006)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean; CellType: Option);
     begin
         TempExcelbuffer.INIT;

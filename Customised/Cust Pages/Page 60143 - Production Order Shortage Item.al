@@ -844,7 +844,7 @@ page 60143 "Production Order Shortage Item"
         Req_stock: Decimal;
         Req_count: Decimal;
 
-    [LineStart(12525)]
+    (12525)]
     procedure getStockValues();
     begin
         // Added by Rakesh to get the stock in stores, RD, CS and MCH on 15-Sep-14
@@ -918,7 +918,7 @@ page 60143 "Production Order Shortage Item"
         // end by Rakesh
     end;
 
-    [LineStart(12598)]
+    (12598)]
     procedure GetStock(Item: Code[30]);
     begin
         IF ITEM1.GET(Item) THEN BEGIN
@@ -991,7 +991,7 @@ page 60143 "Production Order Shortage Item"
         // end by Rakesh
     end;
 
-    [LineStart(12670)]
+    (12670)]
     procedure GetNextNo() NumberValue: Code[20];
     var
         DateValue: Text[30];
@@ -1034,7 +1034,7 @@ page 60143 "Production Order Shortage Item"
         NumberValue := INCSTR(LastNumber);
     end;
 
-    [LineStart(12701)]
+    (12701)]
     procedure VerifyRequest();
     begin
         // Added by Rakesh to verify request already created for Item on 17-Sep-14
@@ -1097,7 +1097,7 @@ page 60143 "Production Order Shortage Item"
         // End by Rakesh
     end;
 
-    [LineStart(12768)]
+    (12768)]
     procedure AuthMail();
     begin
         //MESSAGE(MaterialIssueHeader."No.");

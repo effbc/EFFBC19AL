@@ -411,7 +411,7 @@ report 59000 Cashflow
         Vend: Record Vendor;
         PRH: Record "Purch. Rcpt. Header";
 
-    [LineStart(11390)]
+    (11390)]
     procedure CommaRemoval(Base: Text[30]) Converted: Text[30];
     var
         i: Integer;

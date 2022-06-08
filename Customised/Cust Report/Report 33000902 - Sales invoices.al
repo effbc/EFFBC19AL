@@ -1358,7 +1358,7 @@ report 33000902 "Sales invoices"
         TCS_Amount: Decimal;
         TCS_Rate: Decimal;
 
-    [LineStart(21993)]
+    (21993)]
     procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean; CellType: Option);
     begin
         IF Excel THEN BEGIN
@@ -1372,7 +1372,7 @@ report 33000902 "Sales invoices"
         END;
     end;
 
-    [LineStart(22005)]
+    (22005)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean; CellType: Option);
     begin
         IF Excel THEN BEGIN

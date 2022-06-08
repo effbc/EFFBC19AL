@@ -132,7 +132,7 @@ codeunit 33000028 "Adjust Payroll Journal Balance"
         TempCurrTotalBuffer: Record "Currency Total Buffer" temporary;
         DimMgt: Codeunit DimensionManagement;
 
-    [LineStart(46331)]
+    (46331)]
     procedure CheckCurrBalance(): Boolean;
     var
         InBalance: Boolean;
@@ -145,7 +145,7 @@ codeunit 33000028 "Adjust Payroll Journal Balance"
         EXIT(InBalance);
     end;
 
-    [LineStart(46339)]
+    (46339)]
     local procedure InsertCorrectionLines(var PayJnlLine2: Record "Payroll Journal Line"; var PrevPayJnlLine2: Record "Payroll Journal Line");
     var
         Currency: Record Currency;

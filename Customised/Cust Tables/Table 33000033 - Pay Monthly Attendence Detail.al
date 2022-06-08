@@ -207,7 +207,7 @@ table 33000033 "Pay Monthly Attendence Detail"
         PayDailyAttendance: Record "Pay Daily Attendence Detail";
         PaidDays: Decimal;
 
-    [LineStart(6260)]
+
     procedure TotalDayInMonth() TotalMonthdays: Integer;
     var
         TotalDays: Integer;
@@ -221,7 +221,7 @@ table 33000033 "Pay Monthly Attendence Detail"
         exit(TotalMonthdays);
     end;
 
-    [LineStart(6269)]
+
     procedure "Calculate PaidDays"();
     begin
         UpdateBranchCodes();
@@ -256,7 +256,7 @@ table 33000033 "Pay Monthly Attendence Detail"
 
     end;
 
-    [LineStart(6300)]
+
     procedure "Total Days Ded (LC)"(BranchCode: Code[20]) "Total Days to be deducted": Decimal;
     var
         "No. of LC": Integer;
@@ -293,7 +293,7 @@ table 33000033 "Pay Monthly Attendence Detail"
         exit("Total Days to be deducted");
     end;
 
-    [LineStart(6329)]
+
     procedure InsertIntoPaidDays(BranchCode: Code[20]; StateCode: Code[20]);
     begin
         StartDate := DMY2Date(1, Month, Year);
@@ -370,7 +370,7 @@ table 33000033 "Pay Monthly Attendence Detail"
         end;
     end;
 
-    [LineStart(6403)]
+
     procedure UpdateBranchCodes();
     begin
         StartDate := DMY2Date(1, Month, Year);

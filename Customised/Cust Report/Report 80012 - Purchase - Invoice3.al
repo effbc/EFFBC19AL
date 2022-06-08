@@ -613,7 +613,7 @@ report 80012 "Purchase - Invoice3"
         KKCessAmtCaptionLbl: Label 'KK Cess Amount';
         KKCessAmtAppliedCaptionLbl: Label 'KK Cess Amt (Applied)';
 
-    [LineStart(13972)]
+    (13972)]
     local procedure DocumentCaption(): Text[250];
     begin
         IF "Purch. Inv. Header"."Prepayment Invoice" THEN
@@ -621,7 +621,7 @@ report 80012 "Purchase - Invoice3"
         EXIT(Text004);
     end;
 
-    [LineStart(13977)]
+    (13977)]
     procedure InitializeRequest(NewNoOfCopies: Integer; NewShowInternalInfo: Boolean; NewLogInteraction: Boolean);
     begin
         NoOfCopies := NewNoOfCopies;

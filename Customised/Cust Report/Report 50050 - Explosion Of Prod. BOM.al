@@ -2527,7 +2527,7 @@ report 50050 "Explosion Of Prod. BOM"
         PRINT5 : Boolean;
         With_Cost : Boolean;
 
-    [LineStart(3510)]
+    (3510)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
         Tempexcelbuffer.INIT;
@@ -2540,7 +2540,7 @@ report 50050 "Explosion Of Prod. BOM"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(3520)]
+    (3520)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean;CellType : Option);
     begin
         Tempexcelbuffer.INIT;
@@ -2554,12 +2554,12 @@ report 50050 "Explosion Of Prod. BOM"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(3531)]
+    (3531)]
     procedure "Entercell New"();
     begin
     end;
 
-    [LineStart(3534)]
+    (3534)]
     procedure PRODUCTION_BOM_COST(BOM : Code[20]) BOM_VALUE : Decimal;
     var
         Item : Record Item;

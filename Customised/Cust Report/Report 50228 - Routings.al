@@ -93,7 +93,7 @@ report 50228 Routings
         I: Integer;
         POL: Record "Prod. Order Line";
 
-    [LineStart(9759)]
+    (9759)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean);
     begin
         Tempexcelbuffer.INIT;
@@ -105,7 +105,7 @@ report 50228 Routings
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(9768)]
+    (9768)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean);
     begin
         Tempexcelbuffer.INIT;

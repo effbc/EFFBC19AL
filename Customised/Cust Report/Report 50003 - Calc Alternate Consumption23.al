@@ -90,7 +90,7 @@ report 50003 "Calc Alternate Consumption23"
         BatchName: Code[20];
         DocumentNo: Code[20];
 
-    [LineStart(112)]
+    (112)]
     procedure SetTemplateAndBatchName(ProdOrderNum: Code[20]; ProdOrderLineNum: Integer; TemplateNameVar: Code[20]; BatchNameVar: Code[20]; DocumentNoVar: Code[20]);
     begin
         "ProdOrderNo." := ProdOrderNum;

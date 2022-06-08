@@ -166,7 +166,7 @@ report 50174 "AMC Pending Bills"
         Pending_PeriodCaptionLbl : Label 'Pending Period';
         AMC_PENDING_BILLS_DETAILSCaptionLbl : Label 'AMC PENDING BILLS DETAILS';
 
-    [LineStart(8418)]
+    (8418)]
     procedure MG();
     begin
     end;

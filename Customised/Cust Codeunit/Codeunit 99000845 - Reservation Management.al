@@ -90,13 +90,13 @@ codeunit 99000845 "Reservation Management"
         ForAppDelChEntry: Record "Applied Delivery Challan Entry";
         ForDelChallanLine: Record Schedule2;
 
-    [LineStart(57985)]
+    (57985)]
     procedure IsPositive(): Boolean;
     begin
         EXIT(Positive);
     end;
 
-    [LineStart(57988)]
+    (57988)]
     procedure FormatQty(Quantity: Decimal): Decimal;
     begin
         IF Positive THEN
@@ -105,7 +105,7 @@ codeunit 99000845 "Reservation Management"
         EXIT(-Quantity);
     end;
 
-    [LineStart(57994)]
+    (57994)]
     procedure SetCalcReservEntry(TrackingSpecification: Record "Tracking Specification"; var ReservEntry: Record "Reservation Entry");
     begin
         // Late Binding
@@ -117,7 +117,7 @@ codeunit 99000845 "Reservation Management"
         HandleItemTracking := TRUE;
     end;
 
-    [LineStart(58003)]
+    (58003)]
     procedure SetSalesLine(NewSalesLine: Record "Sales Line");
     begin
         CLEARALL;
@@ -152,7 +152,7 @@ codeunit 99000845 "Reservation Management"
         CallCalcReservedQtyOnPick;
     end;
 
-    [LineStart(58035)]
+    (58035)]
     procedure SetReqLine(NewReqLine: Record "Requisition Line");
     begin
         CLEARALL;
@@ -188,7 +188,7 @@ codeunit 99000845 "Reservation Management"
         CallCalcReservedQtyOnPick;
     end;
 
-    [LineStart(58068)]
+    (58068)]
     procedure SetPurchLine(NewPurchLine: Record "Purchase Line");
     begin
         CLEARALL;
@@ -225,7 +225,7 @@ codeunit 99000845 "Reservation Management"
         CallCalcReservedQtyOnPick;
     end;
 
-    [LineStart(58102)]
+    (58102)]
     procedure SetItemJnlLine(NewItemJnlLine: Record "Item Journal Line");
     begin
         CLEARALL;
@@ -261,7 +261,7 @@ codeunit 99000845 "Reservation Management"
         CallCalcReservedQtyOnPick;
     end;
 
-    [LineStart(58135)]
+    (58135)]
     procedure SetProdOrderLine(NewProdOrderLine: Record "Prod. Order Line");
     begin
         CLEARALL;
@@ -296,7 +296,7 @@ codeunit 99000845 "Reservation Management"
         CallCalcReservedQtyOnPick;
     end;
 
-    [LineStart(58167)]
+    (58167)]
     procedure SetProdOrderComponent(NewProdOrderComp: Record "Prod. Order Component");
     begin
         CLEARALL;
@@ -331,7 +331,7 @@ codeunit 99000845 "Reservation Management"
         CallCalcReservedQtyOnPick;
     end;
 
-    [LineStart(58199)]
+    (58199)]
     procedure SetAssemblyHeader(NewAssemblyHeader: Record "Assembly Header");
     begin
         CLEARALL;
@@ -365,7 +365,7 @@ codeunit 99000845 "Reservation Management"
         CallCalcReservedQtyOnPick;
     end;
 
-    [LineStart(58230)]
+    (58230)]
     procedure SetAssemblyLine(NewAssemblyLine: Record "Assembly Line");
     begin
         CLEARALL;
@@ -401,7 +401,7 @@ codeunit 99000845 "Reservation Management"
         CallCalcReservedQtyOnPick;
     end;
 
-    [LineStart(58263)]
+    (58263)]
     procedure SetPlanningComponent(NewPlanningComponent: Record "Planning Component");
     begin
         CLEARALL;
@@ -436,7 +436,7 @@ codeunit 99000845 "Reservation Management"
         CallCalcReservedQtyOnPick;
     end;
 
-    [LineStart(58295)]
+    (58295)]
     procedure SetItemLedgEntry(NewItemLedgEntry: Record "Item Ledger Entry");
     begin
         CLEARALL;
@@ -473,7 +473,7 @@ codeunit 99000845 "Reservation Management"
         CallCalcReservedQtyOnPick;
     end;
 
-    [LineStart(58329)]
+    (58329)]
     procedure SetTransferLine(NewTransLine: Record "Transfer Line"; Direction: Option Outbound,Inbound);
     begin
         CLEARALL;
@@ -519,7 +519,7 @@ codeunit 99000845 "Reservation Management"
         CallCalcReservedQtyOnPick;
     end;
 
-    [LineStart(58372)]
+    (58372)]
     procedure SetServLine(NewServiceLine: Record "Service Line");
     begin
         CLEARALL;
@@ -555,7 +555,7 @@ codeunit 99000845 "Reservation Management"
         CallCalcReservedQtyOnPick;
     end;
 
-    [LineStart(58405)]
+    (58405)]
     procedure SetJobJnlLine(NewJobJnlLine: Record "Job Journal Line");
     begin
         CLEARALL;
@@ -589,7 +589,7 @@ codeunit 99000845 "Reservation Management"
         CallCalcReservedQtyOnPick;
     end;
 
-    [LineStart(58436)]
+    (58436)]
     procedure SetJobPlanningLine(NewJobPlanningLine: Record "Job Planning Line");
     begin
         CLEARALL;
@@ -624,7 +624,7 @@ codeunit 99000845 "Reservation Management"
         CallCalcReservedQtyOnPick;
     end;
 
-    [LineStart(58468)]
+    (58468)]
     procedure SalesLineUpdateValues(var CurrentSalesLine: Record "Sales Line"; var QtyToReserve: Decimal; var QtyToReserveBase: Decimal; var QtyReservedThisLine: Decimal; var QtyReservedThisLineBase: Decimal);
     begin
         WITH CurrentSalesLine DO BEGIN
@@ -640,7 +640,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58481)]
+    (58481)]
     procedure ReqLineUpdateValues(var CurrentReqLine: Record "Requisition Line"; var QtyToReserve: Decimal; var QtyToReserveBase: Decimal; var QtyReservedThisLine: Decimal; var QtyReservedThisLineBase: Decimal);
     begin
         WITH CurrentReqLine DO BEGIN
@@ -652,7 +652,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58490)]
+    (58490)]
     procedure PurchLineUpdateValues(var CurrentPurchLine: Record "Purchase Line"; var QtyToReserve: Decimal; var QtyToReserveBase: Decimal; var QtyReservedThisLine: Decimal; var QtyReservedThisLineBase: Decimal);
     begin
         WITH CurrentPurchLine DO BEGIN
@@ -668,7 +668,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58503)]
+    (58503)]
     procedure ProdOrderLineUpdateValues(var CurrentProdOrderLine: Record "Prod. Order Line"; var QtyToReserve: Decimal; var QtyToReserveBase: Decimal; var QtyReservedThisLine: Decimal; var QtyReservedThisLineBase: Decimal);
     begin
         WITH CurrentProdOrderLine DO BEGIN
@@ -680,7 +680,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58512)]
+    (58512)]
     procedure ProdOrderCompUpdateValues(var CurrentProdOrderComp: Record "Prod. Order Component"; var QtyToReserve: Decimal; var QtyToReserveBase: Decimal; var QtyReservedThisLine: Decimal; var QtyReservedThisLineBase: Decimal);
     begin
         WITH CurrentProdOrderComp DO BEGIN
@@ -692,7 +692,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58521)]
+    (58521)]
     procedure AssemblyHeaderUpdateValues(var CurrentAssemblyHeader: Record "Assembly Header"; var QtyToReserve: Decimal; var QtyToReserveBase: Decimal; var QtyReservedThisLine: Decimal; var QtyReservedThisLineBase: Decimal);
     begin
         WITH CurrentAssemblyHeader DO BEGIN
@@ -704,7 +704,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58530)]
+    (58530)]
     procedure AssemblyLineUpdateValues(var CurrentAssemblyLine: Record "Assembly Line"; var QtyToReserve: Decimal; var QtyToReserveBase: Decimal; var QtyReservedThisLine: Decimal; var QtyReservedThisLineBase: Decimal);
     begin
         WITH CurrentAssemblyLine DO BEGIN
@@ -716,7 +716,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58539)]
+    (58539)]
     procedure PlanningComponentUpdateValues(var CurrentPlanningComponent: Record "Planning Component"; var QtyToReserve: Decimal; var QtyToReserveBase: Decimal; var QtyReservedThisLine: Decimal; var QtyReservedThisLineBase: Decimal);
     begin
         WITH CurrentPlanningComponent DO BEGIN
@@ -728,7 +728,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58548)]
+    (58548)]
     procedure ItemLedgEntryUpdateValues(var CurrentItemLedgEntry: Record "Item Ledger Entry"; var QtyToReserve: Decimal; var QtyReservedThisLine: Decimal);
     begin
         WITH CurrentItemLedgEntry DO BEGIN
@@ -738,7 +738,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58555)]
+    (58555)]
     procedure ServiceInvLineUpdateValues(var CurrentServiceInvLine: Record "Service Line"; var QtyToReserve: Decimal; var QtyToReserveBase: Decimal; var QtyReservedThisLine: Decimal; var QtyReservedThisLineBase: Decimal);
     begin
         WITH CurrentServiceInvLine DO BEGIN
@@ -750,7 +750,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58564)]
+    (58564)]
     procedure TransferLineUpdateValues(var CurrentTransLine: Record "Transfer Line"; var QtyToReserve: Decimal; var QtyToReserveBase: Decimal; var QtyReservedThisLine: Decimal; var QtyReservedThisLineBase: Decimal; Direction: Option Outbound,Inbound);
     begin
         WITH CurrentTransLine DO
@@ -774,7 +774,7 @@ codeunit 99000845 "Reservation Management"
             END;
     end;
 
-    [LineStart(58585)]
+    (58585)]
     procedure JobPlanningLineUpdateValues(var CurrentJobPlanningLine: Record "Job Planning Line"; var QtyToReserve: Decimal; var QtyToReserveBase: Decimal; var QtyReservedThisLine: Decimal; var QtyReservedThisLineBase: Decimal);
     begin
         WITH CurrentJobPlanningLine DO BEGIN
@@ -786,7 +786,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58594)]
+    (58594)]
     procedure UpdateStatistics(var ReservSummEntry: Record "Entry Summary"; AvailabilityDate: Date; HandleItemTracking2: Boolean);
     var
         i: Integer;
@@ -837,7 +837,7 @@ codeunit 99000845 "Reservation Management"
         IF NOT ReservSummEntry.GET(CurrentEntryNo) THEN;
     end;
 
-    [LineStart(58637)]
+    (58637)]
     local procedure UpdateItemLedgEntryStats(var ReservEntrySummary: Record "Entry Summary"; AvailabilityDate: Date; i: Integer; var CalcSumValue: Decimal; HandleItemTracking2: Boolean);
     var
         ReservForm: Page Reservation;
@@ -904,7 +904,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58697)]
+    (58697)]
     local procedure UpdatePurchLineStats(var ReservEntrySummary: Record "Entry Summary"; AvailabilityDate: Date; i: Integer; var CalcSumValue: Decimal);
     begin
         IF CalcPurchLine.READPERMISSION THEN BEGIN
@@ -939,7 +939,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58729)]
+    (58729)]
     local procedure UpdateSalesLineStats(var ReservEntrySummary: Record "Entry Summary"; AvailabilityDate: Date; i: Integer; var CalcSumValue: Decimal);
     begin
         IF CalcSalesLine.READPERMISSION THEN BEGIN
@@ -972,7 +972,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58759)]
+    (58759)]
     local procedure UpdateProdOrderLineStats(var ReservEntrySummary: Record "Entry Summary"; AvailabilityDate: Date; i: Integer; var CalcSumValue: Decimal);
     begin
         IF CalcProdOrderLine.READPERMISSION THEN BEGIN
@@ -1000,7 +1000,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58784)]
+    (58784)]
     local procedure UpdateAssemblyHeaderStats(var ReservEntrySummary: Record "Entry Summary"; AvailabilityDate: Date; i: Integer; var CalcSumValue: Decimal);
     begin
         IF CalcAssemblyHeader.READPERMISSION THEN BEGIN
@@ -1028,7 +1028,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58809)]
+    (58809)]
     local procedure UpdateAssemblyLineStats(var ReservEntrySummary: Record "Entry Summary"; AvailabilityDate: Date; i: Integer; var CalcSumValue: Decimal);
     begin
         IF CalcAssemblyLine.READPERMISSION THEN BEGIN
@@ -1056,7 +1056,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58834)]
+    (58834)]
     local procedure UpdateProdOrderCompStats(var ReservEntrySummary: Record "Entry Summary"; AvailabilityDate: Date; i: Integer; var CalcSumValue: Decimal);
     begin
         IF CalcProdOrderComp.READPERMISSION THEN BEGIN
@@ -1086,7 +1086,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58861)]
+    (58861)]
     local procedure UpdateTransLineStats(var ReservEntrySummary: Record "Entry Summary"; AvailabilityDate: Date; i: Integer; var CalcSumValue: Decimal);
     begin
         IF CalcTransLine.READPERMISSION THEN BEGIN
@@ -1125,7 +1125,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58897)]
+    (58897)]
     local procedure UpdateServLineStats(var ReservEntrySummary: Record "Entry Summary"; AvailabilityDate: Date; i: Integer; var CalcSumValue: Decimal);
     begin
         IF CalcServiceLine.READPERMISSION THEN BEGIN
@@ -1151,7 +1151,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58920)]
+    (58920)]
     local procedure UpdateJobPlanningLineStats(var ReservEntrySummary: Record "Entry Summary"; AvailabilityDate: Date; i: Integer; var CalcSumValue: Decimal);
     begin
         IF CalcJobPlanningLine.READPERMISSION THEN BEGIN
@@ -1179,7 +1179,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(58945)]
+    (58945)]
     local procedure UpdateItemTrackingLineStats(var ReservEntrySummary: Record "Entry Summary"; AvailabilityDate: Date);
     var
         ReservEntry: Record "Reservation Entry";
@@ -1230,7 +1230,7 @@ codeunit 99000845 "Reservation Management"
             UNTIL ReservEntry.NEXT = 0;
     end;
 
-    [LineStart(58991)]
+    (58991)]
     procedure AutoReserve(var FullAutoReservation: Boolean; Description: Text[50]; AvailabilityDate: Date; MaxQtyToReserve: Decimal; MaxQtyToReserveBase: Decimal);
     var
         RemainingQtyToReserve: Decimal;
@@ -1287,7 +1287,7 @@ codeunit 99000845 "Reservation Management"
         FullAutoReservation := (RemainingQtyToReserveBase = 0);
     end;
 
-    [LineStart(59040)]
+    (59040)]
     procedure AutoReserveOneLine(ReservSummEntryNo: Integer; var RemainingQtyToReserve: Decimal; var RemainingQtyToReserveBase: Decimal; Description: Text[50]; AvailabilityDate: Date);
     var
         Item: Record Item;
@@ -1368,7 +1368,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(59114)]
+    (59114)]
     local procedure AutoReserveItemLedgEntry(ReservSummEntryNo: Integer; var RemainingQtyToReserve: Decimal; var RemainingQtyToReserveBase: Decimal; Description: Text[50]; AvailabilityDate: Date);
     var
         Location: Record Location;
@@ -1447,7 +1447,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(59184)]
+    (59184)]
     local procedure AutoReservePurchLine(ReservSummEntryNo: Integer; var RemainingQtyToReserve: Decimal; var RemainingQtyToReserveBase: Decimal; Description: Text[50]; AvailabilityDate: Date; Search: Text[1]; NextStep: Integer);
     var
         QtyThisLine: Decimal;
@@ -1485,13 +1485,13 @@ codeunit 99000845 "Reservation Management"
             UNTIL (CalcPurchLine.NEXT(NextStep) = 0) OR (RemainingQtyToReserveBase = 0);
     end;
 
-    [LineStart(59215)]
+    (59215)]
     local procedure AutoReserveReqLine(ReservSummEntryNo: Integer; AvailabilityDate: Date);
     begin
         InitFilter(ReservSummEntryNo, AvailabilityDate);
     end;
 
-    [LineStart(59218)]
+    (59218)]
     local procedure AutoReserveSalesLine(ReservSummEntryNo: Integer; var RemainingQtyToReserve: Decimal; var RemainingQtyToReserveBase: Decimal; Description: Text[50]; AvailabilityDate: Date; Search: Text[1]; NextStep: Integer);
     var
         QtyThisLine: Decimal;
@@ -1526,7 +1526,7 @@ codeunit 99000845 "Reservation Management"
             UNTIL (CalcSalesLine.NEXT(NextStep) = 0) OR (RemainingQtyToReserveBase = 0);
     end;
 
-    [LineStart(59246)]
+    (59246)]
     local procedure AutoReserveProdOrderLine(ReservSummEntryNo: Integer; var RemainingQtyToReserve: Decimal; var RemainingQtyToReserveBase: Decimal; Description: Text[50]; AvailabilityDate: Date; Search: Text[1]; NextStep: Integer);
     var
         QtyThisLine: Decimal;
@@ -1556,7 +1556,7 @@ codeunit 99000845 "Reservation Management"
             UNTIL (CalcProdOrderLine.NEXT(NextStep) = 0) OR (RemainingQtyToReserveBase = 0);
     end;
 
-    [LineStart(59269)]
+    (59269)]
     local procedure AutoReserveProdOrderComp(ReservSummEntryNo: Integer; var RemainingQtyToReserve: Decimal; var RemainingQtyToReserveBase: Decimal; Description: Text[50]; AvailabilityDate: Date; Search: Text[1]; NextStep: Integer);
     var
         QtyThisLine: Decimal;
@@ -1587,7 +1587,7 @@ codeunit 99000845 "Reservation Management"
             UNTIL (CalcProdOrderComp.NEXT(NextStep) = 0) OR (RemainingQtyToReserveBase = 0);
     end;
 
-    [LineStart(59293)]
+    (59293)]
     local procedure AutoReserveAssemblyHeader(ReservSummEntryNo: Integer; var RemainingQtyToReserve: Decimal; var RemainingQtyToReserveBase: Decimal; Description: Text[50]; AvailabilityDate: Date; Search: Text[1]; NextStep: Integer);
     var
         QtyThisLine: Decimal;
@@ -1617,7 +1617,7 @@ codeunit 99000845 "Reservation Management"
             UNTIL (CalcAssemblyHeader.NEXT(NextStep) = 0) OR (RemainingQtyToReserveBase = 0);
     end;
 
-    [LineStart(59316)]
+    (59316)]
     local procedure AutoReserveAssemblyLine(ReservSummEntryNo: Integer; var RemainingQtyToReserve: Decimal; var RemainingQtyToReserveBase: Decimal; Description: Text[50]; AvailabilityDate: Date; Search: Text[1]; NextStep: Integer);
     var
         QtyThisLine: Decimal;
@@ -1647,13 +1647,13 @@ codeunit 99000845 "Reservation Management"
             UNTIL (CalcAssemblyLine.NEXT(NextStep) = 0) OR (RemainingQtyToReserveBase = 0);
     end;
 
-    [LineStart(59339)]
+    (59339)]
     local procedure AutoReservePlanningComp(ReservSummEntryNo: Integer; AvailabilityDate: Date);
     begin
         InitFilter(ReservSummEntryNo, AvailabilityDate);
     end;
 
-    [LineStart(59342)]
+    (59342)]
     local procedure AutoReserveTransLine(ReservSummEntryNo: Integer; var RemainingQtyToReserve: Decimal; var RemainingQtyToReserveBase: Decimal; Description: Text[50]; AvailabilityDate: Date; Search: Text[1]; NextStep: Integer);
     var
         QtyThisLine: Decimal;
@@ -1706,7 +1706,7 @@ codeunit 99000845 "Reservation Management"
             UNTIL (CalcTransLine.NEXT(NextStep) = 0) OR (RemainingQtyToReserveBase = 0);
     end;
 
-    [LineStart(59386)]
+    (59386)]
     local procedure AutoReserveServLine(ReservSummEntryNo: Integer; var RemainingQtyToReserve: Decimal; var RemainingQtyToReserveBase: Decimal; Description: Text[50]; AvailabilityDate: Date; Search: Text[1]; NextStep: Integer);
     var
         QtyThisLine: Decimal;
@@ -1736,7 +1736,7 @@ codeunit 99000845 "Reservation Management"
             UNTIL (CalcServiceLine.NEXT(NextStep) = 0) OR (RemainingQtyToReserveBase = 0);
     end;
 
-    [LineStart(59409)]
+    (59409)]
     local procedure AutoReserveJobPlanningLine(ReservSummEntryNo: Integer; var RemainingQtyToReserve: Decimal; var RemainingQtyToReserveBase: Decimal; Description: Text[50]; AvailabilityDate: Date; Search: Text[1]; NextStep: Integer);
     var
         QtyThisLine: Decimal;
@@ -1767,7 +1767,7 @@ codeunit 99000845 "Reservation Management"
             UNTIL (CalcJobPlanningLine.NEXT(NextStep) = 0) OR (RemainingQtyToReserveBase = 0);
     end;
 
-    [LineStart(59433)]
+    (59433)]
     local procedure CallCreateReservation(var RemainingQtyToReserve: Decimal; var RemainingQtyToReserveBase: Decimal; ReservQty: Decimal; Description: Text[50]; ExpectedDate: Date; QtyThisLine: Decimal; QtyThisLineBase: Decimal; TrackingSpecification: Record "Tracking Specification") ReservationCreated: Boolean;
     begin
         IF QtyThisLineBase = 0 THEN
@@ -1789,7 +1789,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(59452)]
+    (59452)]
     procedure CreateReservation(Description: Text[50]; ExpectedDate: Date; Quantity: Decimal; QuantityBase: Decimal; TrackingSpecification: Record "Tracking Specification");
     begin
         CalcReservEntry.TESTFIELD("Source Type");
@@ -1896,7 +1896,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(59556)]
+    (59556)]
     procedure DeleteReservEntries(DeleteAll: Boolean; DownToQuantity: Decimal);
     var
         TrackingMgt: Codeunit OrderTrackingManagement;
@@ -1945,7 +1945,7 @@ codeunit 99000845 "Reservation Management"
             END;
     end;
 
-    [LineStart(59596)]
+    (59596)]
     procedure DeleteReservEntries2(DeleteAll: Boolean; DownToQuantity: Decimal; var ReservEntry: Record "Reservation Entry");
     var
         CalcReservEntry4: Record "Reservation Entry";
@@ -2126,7 +2126,7 @@ codeunit 99000845 "Reservation Management"
             UNTIL ActionMessageEntry.NEXT = 0;
     end;
 
-    [LineStart(59756)]
+    (59756)]
     procedure CalculateRemainingQty(var RemainingQty: Decimal; var RemainingQtyBase: Decimal);
     begin
         CalcReservEntry.TESTFIELD("Source Type");
@@ -2212,13 +2212,13 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(59839)]
+    (59839)]
     local procedure FieldFilterNeeded(var ReservEntry: Record "Reservation Entry"; "Field": Option "Lot No.","Serial No."): Boolean;
     begin
         EXIT(FieldFilterNeeded2(ReservEntry, Positive, Field));
     end;
 
-    [LineStart(59842)]
+    (59842)]
     procedure FieldFilterNeeded2(var ReservEntry: Record "Reservation Entry"; SearchForSupply: Boolean; "Field": Option "Lot No.","Serial No."): Boolean;
     var
         ReservEntry2: Record "Reservation Entry";
@@ -2262,7 +2262,7 @@ codeunit 99000845 "Reservation Management"
         EXIT(TRUE);
     end;
 
-    [LineStart(59880)]
+    (59880)]
     local procedure FilterPlanningComponent(AvailabilityDate: Date);
     begin
         WITH CalcPlanningComponent DO BEGIN
@@ -2279,19 +2279,19 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(59894)]
+    (59894)]
     procedure GetFieldFilter(): Text[80];
     begin
         EXIT(FieldFilter);
     end;
 
-    [LineStart(59897)]
+    (59897)]
     procedure GetAvailabilityFilter(AvailabilityDate: Date): Text[80];
     begin
         EXIT(GetAvailabilityFilter2(AvailabilityDate, Positive));
     end;
 
-    [LineStart(59900)]
+    (59900)]
     local procedure GetAvailabilityFilter2(AvailabilityDate: Date; SearchForSupply: Boolean): Text[80];
     var
         ReservEntry2: Record "Reservation Entry";
@@ -2304,14 +2304,14 @@ codeunit 99000845 "Reservation Management"
         EXIT(ReservEntry2.GETFILTER("Expected Receipt Date"));
     end;
 
-    [LineStart(59908)]
+    (59908)]
     procedure CopySign(FromValue: Decimal; var ToValue: Decimal);
     begin
         IF FromValue * ToValue < 0 THEN
             ToValue := -ToValue;
     end;
 
-    [LineStart(59912)]
+    (59912)]
     local procedure InitFilter(EntryID: Integer; AvailabilityDate: Date);
     begin
         CASE EntryID OF
@@ -2508,7 +2508,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60106)]
+    (60106)]
     local procedure SetValueArray(EntryStatus: Option Reservation,Tracking,Simulation): Integer;
     begin
         CLEAR(ValueArray);
@@ -2570,7 +2570,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60165)]
+    (60165)]
     procedure SetPointerFilter(var ReservEntry: Record "Reservation Entry");
     begin
         ReservEntry.SETCURRENTKEY(
@@ -2585,7 +2585,7 @@ codeunit 99000845 "Reservation Management"
         ReservEntry.SETRANGE("Source Prod. Order Line", ReservEntry."Source Prod. Order Line");
     end;
 
-    [LineStart(60177)]
+    (60177)]
     procedure ClearSurplus();
     var
         ReservEntry2: Record "Reservation Entry";
@@ -2624,7 +2624,7 @@ codeunit 99000845 "Reservation Management"
             UNTIL ReservEntry2.NEXT = 0;
     end;
 
-    [LineStart(60211)]
+    (60211)]
     local procedure QuantityTracked(var ReservEntry: Record "Reservation Entry"): Decimal;
     var
         ReservEntry2: Record "Reservation Entry";
@@ -2642,7 +2642,7 @@ codeunit 99000845 "Reservation Management"
         EXIT(QtyTracked);
     end;
 
-    [LineStart(60223)]
+    (60223)]
     local procedure QuantityTracked2(var ReservEntry: Record "Reservation Entry"): Decimal;
     var
         ReservEntry2: Record "Reservation Entry";
@@ -2661,7 +2661,7 @@ codeunit 99000845 "Reservation Management"
         EXIT(QtyTracked);
     end;
 
-    [LineStart(60236)]
+    (60236)]
     procedure AutoTrack(TotalQty: Decimal);
     var
         SurplusEntry: Record "Reservation Entry";
@@ -2711,7 +2711,7 @@ codeunit 99000845 "Reservation Management"
             UpdateDating;
     end;
 
-    [LineStart(60278)]
+    (60278)]
     procedure MatchSurplus(var ReservEntry: Record "Reservation Entry"; var SurplusEntry: Record "Reservation Entry"; QtyToTrack: Decimal; SearchForSupply: Boolean; var AvailabilityDate: Date; TrackingPolicy: Option "None","Tracking Only","Tracking & Action Msg."): Decimal;
     var
         Search: Text[1];
@@ -2772,7 +2772,7 @@ codeunit 99000845 "Reservation Management"
         EXIT(QtyToTrack);
     end;
 
-    [LineStart(60331)]
+    (60331)]
     local procedure MakeConnection(var FromReservEntry: Record "Reservation Entry"; var ToReservEntry: Record "Reservation Entry"; Quantity: Decimal; ReservationStatus: Option Reservation,Tracking,Surplus; AvailabilityDate: Date; Binding: Option "Order-to-Order");
     var
         sign: Integer;
@@ -2805,13 +2805,13 @@ codeunit 99000845 "Reservation Management"
           FromReservEntry.Description, ToReservEntry."Expected Receipt Date", ToReservEntry."Shipment Date", 0, ReservationStatus);
     end;
 
-    [LineStart(60359)]
+    (60359)]
     procedure ModifyUnitOfMeasure();
     begin
         ReservEngineMgt.ModifyUnitOfMeasure(CalcReservEntry, CalcReservEntry."Qty. per Unit of Measure");
     end;
 
-    [LineStart(60362)]
+    (60362)]
     procedure MakeRoomForReservation(var ReservEntry: Record "Reservation Entry"): Decimal;
     var
         ReservEntry2: Record "Reservation Entry";
@@ -2825,7 +2825,7 @@ codeunit 99000845 "Reservation Management"
           ReservEntry2);
     end;
 
-    [LineStart(60370)]
+    (60370)]
     local procedure SaveTrackingSpecification(var ReservEntry: Record "Reservation Entry"; QtyReleased: Decimal);
     begin
         // Used when creating reservations.
@@ -2847,7 +2847,7 @@ codeunit 99000845 "Reservation Management"
         TempTrackingSpecification.RESET;
     end;
 
-    [LineStart(60389)]
+    (60389)]
     procedure CollectTrackingSpecification(var TargetTrackingSpecification: Record "Tracking Specification" temporary): Boolean;
     begin
         // Used when creating reservations.
@@ -2867,13 +2867,13 @@ codeunit 99000845 "Reservation Management"
         EXIT(TRUE);
     end;
 
-    [LineStart(60406)]
+    (60406)]
     procedure SourceQuantity(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean): Decimal;
     begin
         EXIT(GetSourceRecordValue(ReservEntry, SetAsCurrent, 0));
     end;
 
-    [LineStart(60409)]
+    (60409)]
     procedure GetSourceRecordValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     begin
         WITH ReservEntry DO
@@ -2909,7 +2909,7 @@ codeunit 99000845 "Reservation Management"
             END;
     end;
 
-    [LineStart(60442)]
+    (60442)]
     local procedure GetSourceItemLedgEntryValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     var
         ItemLedgEntry: Record "Item Ledger Entry";
@@ -2925,7 +2925,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60453)]
+    (60453)]
     local procedure GetSourceSalesLineValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     var
         SalesLine: Record "Sales Line";
@@ -2941,7 +2941,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60464)]
+    (60464)]
     local procedure GetSourceReqLineValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     var
         ReqLine: Record "Requisition Line";
@@ -2957,7 +2957,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60475)]
+    (60475)]
     local procedure GetSourcePurchLineValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     var
         PurchLine: Record "Purchase Line";
@@ -2973,7 +2973,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60486)]
+    (60486)]
     local procedure GetSourceItemJnlLineValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     var
         ItemJnlLine: Record "Item Journal Line";
@@ -2989,7 +2989,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60497)]
+    (60497)]
     local procedure GetSourceJobJnlLineValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     var
         JobJnlLine: Record "Job Journal Line";
@@ -3005,7 +3005,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60508)]
+    (60508)]
     local procedure GetSourceProdOrderLineValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     var
         ProdOrderLine: Record "Prod. Order Line";
@@ -3021,7 +3021,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60519)]
+    (60519)]
     local procedure GetSourceProdOrderCompValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     var
         ProdOrderComp: Record "Prod. Order Component";
@@ -3041,7 +3041,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60534)]
+    (60534)]
     local procedure GetSourceAsmHeaderValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     var
         AssemblyHeader: Record "Assembly Header";
@@ -3057,7 +3057,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60545)]
+    (60545)]
     local procedure GetSourceAsmLineValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     var
         AssemblyLine: Record "Assembly Line";
@@ -3073,7 +3073,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60556)]
+    (60556)]
     local procedure GetSourcePlanningCompValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     var
         PlanningComponent: Record "Planning Component";
@@ -3091,7 +3091,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60569)]
+    (60569)]
     local procedure GetSourceTransLineValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     var
         TransLine: Record "Transfer Line";
@@ -3107,7 +3107,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60580)]
+    (60580)]
     local procedure GetSourceServLineValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     var
         ServLine: Record "Service Line";
@@ -3123,7 +3123,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60591)]
+    (60591)]
     local procedure GetSourceJobPlanningLineValue(var ReservEntry: Record "Reservation Entry"; SetAsCurrent: Boolean; ReturnOption: Option "Net Qty. (Base)","Gross Qty. (Base)"): Decimal;
     var
         JobPlanningLine: Record "Job Planning Line";
@@ -3141,7 +3141,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60604)]
+    (60604)]
     local procedure GetItemSetup(var ReservEntry: Record "Reservation Entry");
     begin
         IF ReservEntry."Item No." <> Item."No." THEN BEGIN
@@ -3156,7 +3156,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60616)]
+    (60616)]
     procedure MarkReservConnection(var ReservEntry: Record "Reservation Entry"; TargetReservEntry: Record "Reservation Entry") ReservedQuantity: Decimal;
     var
         ReservEntry2: Record "Reservation Entry";
@@ -3182,7 +3182,7 @@ codeunit 99000845 "Reservation Management"
         ReservEntry.MARKEDONLY(TRUE);
     end;
 
-    [LineStart(60636)]
+    (60636)]
     local procedure IsSpecialOrder(PurchasingCode: Code[10]): Boolean;
     var
         Purchasing: Record Purchasing;
@@ -3194,7 +3194,7 @@ codeunit 99000845 "Reservation Management"
         EXIT(FALSE);
     end;
 
-    [LineStart(60643)]
+    (60643)]
     procedure IssueActionMessage(var SurplusEntry: Record "Reservation Entry"; UseGlobalSettings: Boolean; AllDeletedEntry: Record "Reservation Entry");
     var
         ReservEntry: Record "Reservation Entry";
@@ -3370,7 +3370,7 @@ codeunit 99000845 "Reservation Management"
             ActionMessageEntry."Entry No." += 1;
     end;
 
-    [LineStart(60805)]
+    (60805)]
     procedure ModifyActionMessage(RelatedToEntryNo: Integer; Quantity: Decimal; Delete: Boolean);
     begin
         ActionMessageEntry.RESET;
@@ -3392,7 +3392,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60824)]
+    (60824)]
     procedure FindDate(var ReservEntry: Record "Reservation Entry"; Which: Option "Earliest Shipment","Latest Receipt"; ReturnRecord: Boolean): Date;
     var
         ReservEntry2: Record "Reservation Entry";
@@ -3430,7 +3430,7 @@ codeunit 99000845 "Reservation Management"
         EXIT(LastDate);
     end;
 
-    [LineStart(60856)]
+    (60856)]
     local procedure UpdateDating();
     var
         FilterReservEntry: Record "Reservation Entry";
@@ -3469,7 +3469,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(60889)]
+    (60889)]
     procedure ClearActionMessageReferences();
     var
         ActionMessageEntry2: Record "Action Message Entry";
@@ -3493,13 +3493,13 @@ codeunit 99000845 "Reservation Management"
             UNTIL ActionMessageEntry.NEXT = 0;
     end;
 
-    [LineStart(60908)]
+    (60908)]
     procedure SetItemTrackingHandling(Mode: Option "None","Allow deletion",Match);
     begin
         ItemTrackingHandling := Mode;
     end;
 
-    [LineStart(60911)]
+    (60911)]
     procedure DeleteItemTrackingConfirm(): Boolean;
     begin
         IF NOT ItemTrackingExist(CalcReservEntry2) THEN
@@ -3511,7 +3511,7 @@ codeunit 99000845 "Reservation Management"
         EXIT(FALSE);
     end;
 
-    [LineStart(60920)]
+    (60920)]
     local procedure ItemTrackingExist(var ReservEntry: Record "Reservation Entry"): Boolean;
     var
         ReservEntry2: Record "Reservation Entry";
@@ -3521,14 +3521,14 @@ codeunit 99000845 "Reservation Management"
         EXIT(NOT ReservEntry2.ISEMPTY);
     end;
 
-    [LineStart(60925)]
+    (60925)]
     procedure SetSerialLotNo(SerialNo: Code[20]; LotNo: Code[20]);
     begin
         CalcReservEntry."Serial No." := SerialNo;
         CalcReservEntry."Lot No." := LotNo;
     end;
 
-    [LineStart(60929)]
+    (60929)]
     procedure SetMatchFilter(var ReservEntry: Record "Reservation Entry"; var FilterReservEntry: Record "Reservation Entry"; SearchForSupply: Boolean; AvailabilityDate: Date);
     begin
         FilterReservEntry.RESET;
@@ -3551,7 +3551,7 @@ codeunit 99000845 "Reservation Management"
         FilterReservEntry.SETRANGE(Positive, SearchForSupply);
     end;
 
-    [LineStart(60949)]
+    (60949)]
     procedure LookupLine(SourceType: Integer; SourceSubtype: Integer; SourceID: Code[20]; SourceBatchName: Code[10]; SourceProdOrderLine: Integer; SourceRefNo: Integer);
     var
         ItemLedgEntry: Record "Item Ledger Entry";
@@ -3666,7 +3666,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(61048)]
+    (61048)]
     procedure LookupDocument(SourceType: Integer; SourceSubtype: Integer; SourceID: Code[20]; SourceBatchName: Code[10]; SourceProdOrderLine: Integer; SourceRefNo: Integer);
     var
         SalesHeader: Record "Sales Header";
@@ -3805,7 +3805,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(61173)]
+    (61173)]
     local procedure CallCalcReservedQtyOnPick();
     begin
         IF Positive AND
@@ -3816,7 +3816,7 @@ codeunit 99000845 "Reservation Management"
             CalcReservedQtyOnPick(TotalAvailQty, QtyAllocInWhse);
     end;
 
-    [LineStart(61181)]
+    (61181)]
     local procedure CalcReservedQtyOnPick(var AvailQty: Decimal; var AllocQty: Decimal);
     var
         WhseActivLine: Record "Warehouse Activity Line";
@@ -3883,7 +3883,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(61237)]
+    (61237)]
     local procedure JobJnlLineUpdateValues(var CurrentJobJnlLine: Record "Job Journal Line"; var QtyToReserve: Decimal; var QtyReservedThisLine: Decimal);
     begin
         WITH CurrentJobJnlLine DO BEGIN
@@ -3893,7 +3893,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(61244)]
+    (61244)]
     local procedure SaveItemTrackingAsSurplus(var ReservEntry: Record "Reservation Entry"; NewQty: Decimal; NewQtyBase: Decimal) QuantityIsValidated: Boolean;
     var
         SurplusEntry: Record "Reservation Entry";
@@ -3951,7 +3951,7 @@ codeunit 99000845 "Reservation Management"
         CreateReservEntry2.CreateRemainingReservEntry(SurplusEntry, QtyToSave, QtyToSaveBase);
     end;
 
-    [LineStart(61291)]
+    (61291)]
     procedure CalcIsAvailTrackedQtyInBin(ItemNo: Code[20]; BinCode: Code[20]; LocationCode: Code[10]; VariantCode: Code[10]; SourceType: Integer; SourceSubtype: Integer; SourceID: Code[20]; SourceBatchName: Code[10]; SourceProdOrderLine: Integer; SourceRefNo: Integer): Boolean;
     var
         ReservationEntry: Record "Reservation Entry";
@@ -3992,7 +3992,7 @@ codeunit 99000845 "Reservation Management"
         EXIT(TRUE);
     end;
 
-    [LineStart(61323)]
+    (61323)]
     local procedure CalcQtyOnInvtMovement(var WarehouseActivityLine: Record "Warehouse Activity Line"): Decimal;
     var
         xWarehouseActivityLine: Record "Warehouse Activity Line";
@@ -4011,7 +4011,7 @@ codeunit 99000845 "Reservation Management"
         EXIT(OutstandingQty);
     end;
 
-    [LineStart(61336)]
+    (61336)]
     procedure SetAppliedDeliveryChallanEntry(NewAppDelChEntry: Record "Applied Delivery Challan Entry");
     var
         DeliveryChallanLn: Record "Delivery Challan Line";
@@ -4045,14 +4045,14 @@ codeunit 99000845 "Reservation Management"
         SetPointerFilter(CalcReservEntry2);
     end;
 
-    [LineStart(61364)]
+    (61364)]
     local procedure ProdJnlLineEntry(ReservationEntry: Record "Reservation Entry"): Boolean;
     begin
         WITH ReservationEntry DO
             EXIT(("Source Type" = DATABASE::"Item Journal Line") AND ("Source Subtype" = 6));
     end;
 
-    [LineStart(61368)]
+    (61368)]
     local procedure CalcDownToQtySyncingToAssembly(ReservEntry: Record "Reservation Entry"): Decimal;
     var
         SynchronizingSalesLine: Record "Sales Line";
@@ -4068,7 +4068,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(61379)]
+    (61379)]
     procedure CreateTrackingSpecification(var TrackingSpecification: Record "Tracking Specification"; FromType: Option " ",Sales,"Requisition Line",Purchase,"Item Journal","BOM Journal"; FromSubtype: Integer; FromID: Code[20]; FromBatchName: Code[10]; FromProdOrderLine: Integer; FromRefNo: Integer; FromVariantCode: Code[10]; FromLocationCode: Code[10]; FromSerialNo: Code[20]; FromLotNo: Code[20]; FromQtyPerUOM: Decimal);
     begin
         WITH TrackingSpecification DO BEGIN
@@ -4086,7 +4086,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(61394)]
+    (61394)]
     local procedure CalcCurrLineReservQtyOnPicksShips(SourceType: Integer; SourceSubtype: Option; SourceID: Code[20]; SourceRefNo: Integer; SourceProdOrderLine: Integer): Decimal;
     var
         ReservEntry: Record "Reservation Entry";
@@ -4110,7 +4110,7 @@ codeunit 99000845 "Reservation Management"
         END;
     end;
 
-    [LineStart(61411)]
+    (61411)]
     local procedure CheckQuantityIsCompletelyReleased(QtyToRelease: Decimal; DeleteAll: Boolean; CurrentSerialNo: Code[20]; CurrentLotNo: Code[20]; ReservEntry: Record "Reservation Entry");
     begin
         IF QtyToRelease = 0 THEN
@@ -4127,7 +4127,7 @@ codeunit 99000845 "Reservation Management"
             ERROR(Text009, CurrentSerialNo, CurrentLotNo, ABS(QtyToRelease));
     end;
 
-    [LineStart(61425)]
+    (61425)]
     local procedure ReservEntryPositiveTypeIsItemLedgerEntry(ReservationEntryNo: Integer): Boolean;
     var
         ReservationEntryPositive: Record "Reservation Entry";
@@ -4138,12 +4138,12 @@ codeunit 99000845 "Reservation Management"
         EXIT(TRUE);
     end;
 
-    [LineStart(61431)]
+    (61431)]
     procedure "--B2BSP--"();
     begin
     end;
 
-    [LineStart(61434)]
+    (61434)]
     procedure SetDelChallanLine(NewScheduleComp: Record Schedule2);
     var
         DelChallanHeadLRec: Record "Sales Header";

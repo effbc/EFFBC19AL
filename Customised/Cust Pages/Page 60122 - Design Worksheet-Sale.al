@@ -91,7 +91,7 @@ page 60122 "Design Worksheet-Sale"
         ManufacturingSetup : Record "Manufacturing Setup";
         TenderLine : Record "Tender Line";
 
-    [LineStart(11347)]
+    (11347)]
     procedure CalculateTotalCost();
     begin
     end;

@@ -3053,14 +3053,14 @@ report 80011 "Purchase Document - Test3"
         Vendor_TIN_No : Code[100];
         Vendor_CST_No : Code[100];
 
-    [LineStart(13125)]
+    (13125)]
     local procedure AddError(Text : Text[250]);
     begin
         ErrorCounter := ErrorCounter + 1;
         ErrorText[ErrorCounter] := Text;
     end;
 
-    [LineStart(13129)]
+    (13129)]
     local procedure CheckRcptLines(PurchLine2 : Record "Purchase Line");
     var
         TempPostedDimSetEntry : Record "Dimension Set Entry" temporary;
@@ -3152,7 +3152,7 @@ report 80011 "Purchase Document - Test3"
         END;
     end;
 
-    [LineStart(13216)]
+    (13216)]
     local procedure CheckShptLines(PurchLine2 : Record "Purchase Line");
     var
         TempPostedDimSetEntry : Record "Dimension Set Entry" temporary;
@@ -3244,7 +3244,7 @@ report 80011 "Purchase Document - Test3"
         END;
     end;
 
-    [LineStart(13303)]
+    (13303)]
     procedure INCLUDE_ITEMS_HEAD_INFO(HEAD_NO : Code[10];VALUE : Decimal);
     begin
 
@@ -3288,7 +3288,7 @@ report 80011 "Purchase Document - Test3"
         //<<Added by Pranavi on 01-04-2017
     end;
 
-    [LineStart(13344)]
+    (13344)]
     procedure TestJobFields(var PurchLine : Record "Purchase Line");
     var
         Job : Record Job;
@@ -3369,7 +3369,7 @@ report 80011 "Purchase Document - Test3"
         END;
     end;
 
-    [LineStart(13416)]
+    (13416)]
     local procedure IsInvtPosting() : Boolean;
     var
         PurchLine : Record "Purchase Line";
@@ -3398,7 +3398,7 @@ report 80011 "Purchase Document - Test3"
         END;
     end;
 
-    [LineStart(13440)]
+    (13440)]
     procedure AddDimToTempLine(PurchLine : Record "Purchase Line");
     var
         SourceCodesetup : Record "Source Code Setup";
@@ -3424,7 +3424,7 @@ report 80011 "Purchase Document - Test3"
         END;
     end;
 
-    [LineStart(13459)]
+    (13459)]
     procedure CheckExciseRefund(PurchaseLine : Record "Purchase Line");
     begin
         // IN0063.begin
@@ -3440,7 +3440,7 @@ report 80011 "Purchase Document - Test3"
         END;
     end;
 
-    [LineStart(13472)]
+    (13472)]
     procedure FilterAppliedEntries();
     var
         OldVendLedgEntry : Record "Vendor Ledger Entry";
@@ -3769,7 +3769,7 @@ report 80011 "Purchase Document - Test3"
              AppliedServiceTaxECessAmt + AppliedServiceTaxSHECessAmt + AppliedServiceTaxSBCAmt + AppliedKKCessAmt;
     end;
 
-    [LineStart(13780)]
+    (13780)]
     local procedure FindAmtForAppln(OldVendLedgEntry : Record "Vendor Ledger Entry";var AppliedAmount : Decimal;var AppliedAmountLCY : Decimal;OldRemainingAmtBeforeAppln : Decimal;ApplnRoundingPrecision : Decimal;AmountforAppl : Decimal);
     var
         GenJnlPostLine2 : Codeunit "Gen. Jnl.-Post Line";
@@ -3826,7 +3826,7 @@ report 80011 "Purchase Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(13831)]
+    (13831)]
     local procedure CheckCalcPmtDisc(var OldVendLedgEntry : Record "Vendor Ledger Entry";ApplnRoundingPrecision : Decimal;CheckFilter : Boolean;CheckAmount : Boolean;AmountforAppl : Decimal) : Boolean;
     begin
         // PS39773.begin
@@ -3866,7 +3866,7 @@ report 80011 "Purchase Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(13868)]
+    (13868)]
     procedure RoundServiceTaxPrecision(ServiceTaxAmount : Decimal) : Decimal;
     var
         ServiceTaxEntry : Record "Service Tax Entry";
@@ -3876,7 +3876,7 @@ report 80011 "Purchase Document - Test3"
         EXIT(ServiceTaxEntry.RoundAmount(ServiceTaxAmount));
     end;
 
-    [LineStart(13873)]
+    (13873)]
     procedure CheckAppliedInvHasServTax(OldVendLedgEntry : Record "Vendor Ledger Entry");
     var
         SvcTaxEntry : Record "Service Tax Entry";
@@ -3914,7 +3914,7 @@ report 80011 "Purchase Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(13905)]
+    (13905)]
     procedure CheckInputServiceDistOnline(OldVendLedgEntry : Record "Vendor Ledger Entry");
     begin
         // PS39773.begin
@@ -3927,7 +3927,7 @@ report 80011 "Purchase Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(13915)]
+    (13915)]
     procedure CheckRefundApplicationOnline(OldVendLedgEntry : Record "Vendor Ledger Entry");
     begin
         // PS39773.begin
@@ -3938,7 +3938,7 @@ report 80011 "Purchase Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(13923)]
+    (13923)]
     procedure CheckRoundingParameters(OldVendLedgEntry : Record "Vendor Ledger Entry");
     var
         SvcTaxEntry : Record "Service Tax Entry";
@@ -3959,7 +3959,7 @@ report 80011 "Purchase Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(13939)]
+    (13939)]
     procedure CheckAppliedVendPayment(OldVendLedgEntry : Record "Vendor Ledger Entry";AmountToBeApplied : Decimal;AmountToBeComparedWith : Decimal);
     var
         SvcTaxEntry : Record "Service Tax Entry";
@@ -3989,7 +3989,7 @@ report 80011 "Purchase Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(13963)]
+    (13963)]
     procedure InitializeRequest(NewReceiveShipOnNextPostReq : Boolean;NewInvOnNextPostReq : Boolean;NewShowDim : Boolean;NewShowItemChargeAssgnt : Boolean);
     begin
         ReceiveShipOnNextPostReq := NewReceiveShipOnNextPostReq;

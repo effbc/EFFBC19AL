@@ -61,22 +61,22 @@ table 60049 "Item wise Requirement"
         TotalTime: Decimal;
         Temp: Decimal;
 
-    [LineStart(2460)]
+
     local procedure UpdateJobBudgetEntry();
     begin
     end;
 
-    [LineStart(2463)]
+
     local procedure FindResUnitCost(CalledByFieldNo: Integer);
     begin
     end;
 
-    [LineStart(2466)]
+
     local procedure FindResPrice(CalledByFieldNo: Integer);
     begin
     end;
 
-    [LineStart(2469)]
+
     procedure BudjetAttachments();
     var
         BudjetAttach: Record Attachments;

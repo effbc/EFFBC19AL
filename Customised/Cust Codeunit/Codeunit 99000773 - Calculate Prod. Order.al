@@ -46,7 +46,7 @@ codeunit 99000773 "Calculate Prod. Order"
         Planned_day: Date;
         RPO: Record "Production Order";
 
-    [LineStart(52113)]
+    (52113)]
     local procedure TransferRouting();
     var
         RtngHeader: Record "Routing Header";
@@ -172,7 +172,7 @@ codeunit 99000773 "Calculate Prod. Order"
             UNTIL RtngLine.NEXT = 0;
     end;
 
-    [LineStart(52230)]
+    (52230)]
     procedure TransferTaskInfo(var FromProdOrderRtngLine: Record "Prod. Order Routing Line"; VersionCode: Code[20]);
     var
         RtngLineTool: Record "Routing Tool";
@@ -233,7 +233,7 @@ codeunit 99000773 "Calculate Prod. Order"
             UNTIL RtngComment.NEXT = 0;
     end;
 
-    [LineStart(52279)]
+    (52279)]
     local procedure TransferBOM(ProdBOMNo: Code[20]; Level: Integer; LineQtyPerUOM: Decimal; ItemQtyPerUOM: Decimal): Boolean;
     var
         BOMHeader: Record "Production BOM Header";
@@ -317,7 +317,7 @@ codeunit 99000773 "Calculate Prod. Order"
         EXIT(NOT ErrorOccured);
     end;
 
-    [LineStart(52352)]
+    (52352)]
     procedure CalculateComponents();
     var
         ProdOrderComp: Record "Prod. Order Component";
@@ -334,7 +334,7 @@ codeunit 99000773 "Calculate Prod. Order"
             UNTIL ProdOrderComp.NEXT = 0;
     end;
 
-    [LineStart(52364)]
+    (52364)]
     procedure CalculateRoutingFromActual(ProdOrderRtngLine: Record "Prod. Order Routing Line"; Direction: Option Forward,Backward; CalcStartEndDate: Boolean);
     var
         CalcProdOrderRtngLine: Codeunit "Calculate Routing Line";
@@ -388,7 +388,7 @@ codeunit 99000773 "Calculate Prod. Order"
         UNTIL ProdOrderRtngLine.NEXT = 0;
     end;
 
-    [LineStart(52413)]
+    (52413)]
     local procedure CalculateRouting(Direction: Option Forward,Backward; LetDueDateDecrease: Boolean);
     var
         ProdOrderRtngLine: Record "Prod. Order Routing Line";
@@ -460,7 +460,7 @@ codeunit 99000773 "Calculate Prod. Order"
         CalculateProdOrderDates(ProdOrderLine, LetDueDateDecrease);
     end;
 
-    [LineStart(52479)]
+    (52479)]
     procedure CalculateProdOrderDates(var ProdOrderLine: Record "Prod. Order Line"; LetDueDateDecrease: Boolean);
     var
         ProdOrderRtngLine: Record "Prod. Order Routing Line";
@@ -516,7 +516,7 @@ codeunit 99000773 "Calculate Prod. Order"
         END;
     end;
 
-    [LineStart(52529)]
+    (52529)]
     procedure Calculate(ProdOrderLine2: Record "Prod. Order Line"; Direction: Option Forward,Backward; CalcRouting: Boolean; CalcComponents: Boolean; DeleteRelations: Boolean; LetDueDateDecrease: Boolean): Boolean;
     var
         CapLedgEntry: Record "Capacity Ledger Entry";
@@ -619,7 +619,7 @@ codeunit 99000773 "Calculate Prod. Order"
         EXIT(NOT ErrorOccured);
     end;
 
-    [LineStart(52621)]
+    (52621)]
     procedure Recalculate(var ProdOrderLine2: Record "Prod. Order Line"; Direction: Option Forward,Backward; LetDueDateDecrease: Boolean);
     begin
         ProdOrderLine := ProdOrderLine2;
@@ -630,19 +630,19 @@ codeunit 99000773 "Calculate Prod. Order"
         ProdOrderLine2 := ProdOrderLine;
     end;
 
-    [LineStart(52629)]
+    (52629)]
     procedure BlockDynamicTracking(SetBlock: Boolean);
     begin
         Blocked := SetBlock;
     end;
 
-    [LineStart(52632)]
+    (52632)]
     procedure SetParameter(NewProdOrderModify: Boolean);
     begin
         ProdOrderModify := NewProdOrderModify;
     end;
 
-    [LineStart(52635)]
+    (52635)]
     local procedure GetDefaultBin() BinCode: Code[20];
     var
         WMSMgt: Codeunit "WMS Management";
@@ -656,7 +656,7 @@ codeunit 99000773 "Calculate Prod. Order"
             END;
     end;
 
-    [LineStart(52644)]
+    (52644)]
     procedure SetProdOrderLineBinCodeFromRoute(var ProdOrderLine: Record "Prod. Order Line"; ParentLocationCode: Code[10]; RoutingNo: Code[20]);
     var
         RouteBinCode: Code[20];
@@ -671,7 +671,7 @@ codeunit 99000773 "Calculate Prod. Order"
         SetProdOrderLineBinCode(ProdOrderLine, RouteBinCode, ParentLocationCode);
     end;
 
-    [LineStart(52654)]
+    (52654)]
     procedure SetProdOrderLineBinCodeFromProdRtngLines(var ProdOrderLine: Record "Prod. Order Line");
     var
         ProdOrderRtngLinesBinCode: Code[20];
@@ -689,7 +689,7 @@ codeunit 99000773 "Calculate Prod. Order"
         SetProdOrderLineBinCode(ProdOrderLine, ProdOrderRtngLinesBinCode, ProdOrderLine."Location Code");
     end;
 
-    [LineStart(52667)]
+    (52667)]
     procedure SetProdOrderLineBinCodeFromPlanningRtngLines(var ProdOrderLine: Record "Prod. Order Line"; ReqLine: Record "Requisition Line");
     var
         PlanningLinesBinCode: Code[20];
@@ -706,7 +706,7 @@ codeunit 99000773 "Calculate Prod. Order"
         SetProdOrderLineBinCode(ProdOrderLine, PlanningLinesBinCode, ReqLine."Location Code");
     end;
 
-    [LineStart(52679)]
+    (52679)]
     local procedure SetProdOrderLineBinCode(var ProdOrderLine: Record "Prod. Order Line"; ParentBinCode: Code[20]; ParentLocationCode: Code[10]);
     var
         Location: Record Location;
@@ -725,7 +725,7 @@ codeunit 99000773 "Calculate Prod. Order"
         END;
     end;
 
-    [LineStart(52692)]
+    (52692)]
     procedure FindAndSetProdOrderLineBinCodeFromProdRtngLines(ProdOrderStatus: Option; ProdOrderNo: Code[20]; ProdOrderLineNo: Integer);
     begin
         IF ProdOrderLine.GET(ProdOrderStatus, ProdOrderNo, ProdOrderLineNo) THEN BEGIN
@@ -734,7 +734,7 @@ codeunit 99000773 "Calculate Prod. Order"
         END;
     end;
 
-    [LineStart(52698)]
+    (52698)]
     procedure AssignProdOrderLineBinCodeFromProdRtngLineMachineCenter(var ProdOrderRtngLine: Record "Prod. Order Routing Line");
     var
         MachineCenter: Record "Machine Center";
@@ -751,7 +751,7 @@ codeunit 99000773 "Calculate Prod. Order"
             END;
     end;
 
-    [LineStart(52710)]
+    (52710)]
     local procedure TransferBOMProcessItem(Level: Integer; LineQtyPerUOM: Decimal; ItemQtyPerUOM: Decimal; var ErrorOccured: Boolean);
     var
         Item: Record Item;
@@ -894,7 +894,7 @@ codeunit 99000773 "Calculate Prod. Order"
             UNTIL ProdBOMCompComment.NEXT = 0;
     end;
 
-    [LineStart(52851)]
+    (52851)]
     procedure ALternateBOMReplace(Alternate_BOM: Boolean);
     begin
         AlternatePCB_BOM := Alternate_BOM;

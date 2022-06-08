@@ -80,7 +80,7 @@ report 33000074 "Month End Process"
     var
         PayCompanyPolicyGlobal: Record "Pay Company Policy";
 
-    [LineStart(20965)]
+    (20965)]
     procedure MonthEndProcess();
     var
         nextDate: Date;

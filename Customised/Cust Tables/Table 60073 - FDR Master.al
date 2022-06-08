@@ -186,7 +186,7 @@ table 60073 "FDR Master"
     var
         SalesHeader: Record "Sales Header";
 
-    [LineStart(3563)]
+ 
     procedure FDRAttachments();
     var
         Attachments: Record Attachments;

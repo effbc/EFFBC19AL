@@ -479,7 +479,7 @@ report 50148 "Group of Vouchers print"
         "-DIM1.0-": Integer;
         DimSetEntryGRec: Record "Dimension Set Entry";
 
-    [LineStart(8050)]
+    (8050)]
     procedure FormatNoText(var NoText: array[2] of Text[80]; No: Decimal; CurrencyCode: Code[10]);
     var
         PrintExponent: Boolean;
@@ -566,7 +566,7 @@ report 50148 "Group of Vouchers print"
         //  AddToNoText(NoText,NoTextIndex,PrintExponent,CurrencyCode);
     end;
 
-    [LineStart(8126)]
+    (8126)]
     procedure InitTextVariable();
     begin
         OnesText[1] := Text032;
@@ -605,7 +605,7 @@ report 50148 "Group of Vouchers print"
         ExponentText[4] := Text061;
     end;
 
-    [LineStart(8162)]
+    (8162)]
     local procedure AddToNoText(var NoText: array[2] of Text[80]; var NoTextIndex: Integer; var PrintExponent: Boolean; AddText: Text[30]);
     begin
         PrintExponent := TRUE;

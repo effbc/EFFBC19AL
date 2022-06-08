@@ -877,7 +877,7 @@ page 60082 "Bank Guarntee"
         RecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
         SDId: Integer;
 
-    [LineStart(9464)]
+    (9464)]
     procedure InitGenJnlLine(var Rec: Record "Bank Guarantee"; "AccountNo.": Code[20]; "BalAccountNo.": Code[20]; AccountType: Option "G/L Account","Bank Account"; BalAccountType: Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset"; Amount: Decimal);
     var
         DimMgt: Codeunit DimensionManagement;
@@ -911,7 +911,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9490)]
+    (9490)]
     local procedure BGNoOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -927,7 +927,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9502)]
+    (9502)]
     local procedure DescriptionOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -943,7 +943,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9514)]
+    (9514)]
     local procedure IssuingBankOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -959,7 +959,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9526)]
+    (9526)]
     local procedure BranchOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -975,7 +975,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9538)]
+    (9538)]
     local procedure AddressOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -991,7 +991,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9550)]
+    (9550)]
     local procedure Address2OnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -1007,7 +1007,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9562)]
+    (9562)]
     local procedure PostCodeOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -1023,7 +1023,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9574)]
+    (9574)]
     local procedure CityOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -1039,7 +1039,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9586)]
+    (9586)]
     local procedure StateOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -1054,7 +1054,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9597)]
+    (9597)]
     local procedure TransactionTypeOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -1070,7 +1070,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9609)]
+    (9609)]
     local procedure IssuedtoReceivedfromOnBeforeIn();
     begin
         IF Status = Status::Released THEN
@@ -1086,7 +1086,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9621)]
+    (9621)]
     local procedure DocNoOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -1102,7 +1102,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9633)]
+    (9633)]
     local procedure DateofIssueOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -1118,7 +1118,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9645)]
+    (9645)]
     local procedure ClaimDateOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -1133,7 +1133,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9656)]
+    (9656)]
     local procedure TypeofBGOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -1149,7 +1149,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9668)]
+    (9668)]
     local procedure Description2OnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -1165,7 +1165,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9680)]
+    (9680)]
     local procedure BGValueOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -1181,7 +1181,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9692)]
+    (9692)]
     local procedure BGMarginAmountOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -1197,7 +1197,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9704)]
+    (9704)]
     local procedure AccountNoOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -1213,7 +1213,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9716)]
+    (9716)]
     local procedure PostingAccountNoOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -1229,7 +1229,7 @@ page 60082 "Bank Guarntee"
 
     end;
 
-    [LineStart(9728)]
+    (9728)]
     local procedure ExtendedOnBeforeInput();
     begin
         IF Status = Status::Released THEN

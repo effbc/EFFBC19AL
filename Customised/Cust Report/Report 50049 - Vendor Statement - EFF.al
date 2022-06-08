@@ -153,7 +153,7 @@ report 50049 "Vendor Statement - EFF"
         Debit_Amount__LCY_CaptionLbl : Label 'Debit Amount (LCY)';
         Credit_Amount__LCY_CaptionLbl : Label 'Credit Amount (LCY)';
 
-    [LineStart(3472)]
+    (3472)]
     procedure EnterCell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -164,7 +164,7 @@ report 50049 "Vendor Statement - EFF"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(3480)]
+    (3480)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean);
     begin
         TempExcelBuffer.INIT;

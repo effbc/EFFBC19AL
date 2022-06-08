@@ -169,7 +169,7 @@ FILTER(No));
         UserGRec : Record User;
         CustGRec : Record Customer;
 
-    [LineStart(8539)]
+    (8539)]
     procedure checkStatus();
     begin
         IF Status<>Status::Open THEN

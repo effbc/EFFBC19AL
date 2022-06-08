@@ -420,7 +420,7 @@ page 99000817 "Prod. Order Routing"
         [InDataSet]
         "Prod. Order No.Visible" : Boolean;
 
-    [LineStart(24138)]
+    (24138)]
     local procedure ExpCapacityNeed() : Decimal;
     var
         WorkCenter : Record "Work Center";
@@ -432,25 +432,25 @@ page 99000817 "Prod. Order Routing"
         EXIT(CalendarMgt.TimeFactor(WorkCenter."Unit of Measure Code"));
     end;
 
-    [LineStart(24144)]
+    (24144)]
     local procedure StartingTimeOnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(24147)]
+    (24147)]
     local procedure StartingDateOnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(24150)]
+    (24150)]
     local procedure EndingTimeOnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(24153)]
+    (24153)]
     local procedure EndingDateOnAfterValidate();
     begin
         CurrPage.UPDATE;

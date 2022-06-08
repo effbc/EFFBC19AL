@@ -298,7 +298,7 @@ page 60184 "Negative Adjustments"
                             NegAdjItemJnlLine : Record "Item Journal Line";
                             item : Record Item;
 
-    [LineStart(14939)]
+    (14939)]
     local procedure CurrentJnlBatchNameOnAfterVali();
     begin
         CurrPage.SAVERECORD;
@@ -306,7 +306,7 @@ page 60184 "Negative Adjustments"
         CurrPage.UPDATE(FALSE);
     end;
 
-    [LineStart(14944)]
+    (14944)]
     local procedure OnAfterGetCurrRecord();
     begin
         xRec := Rec;

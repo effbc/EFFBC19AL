@@ -1305,7 +1305,7 @@ page 90012 "Sales AMC"
         "Order AssuranceEditable" : Boolean;
         Text19007218 : Label 'Commerce Portal';
 
-    [LineStart(22713)]
+    (22713)]
     procedure UpdateAllowed() : Boolean;
     begin
         IF CurrPage.EDITABLE = FALSE THEN
@@ -1313,12 +1313,12 @@ page 90012 "Sales AMC"
         EXIT(TRUE);
     end;
 
-    [LineStart(22718)]
+    (22718)]
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(22721)]
+    (22721)]
     procedure ConvertOrdertoExportOrder(var Rec : Record "Sales Header");
     var
         OldSalesCommentLine : Record "Sales Comment Line";
@@ -1481,12 +1481,12 @@ page 90012 "Sales AMC"
 
     end;
 
-    [LineStart(22872)]
+    (22872)]
     procedure "---B2B---"();
     begin
     end;
 
-    [LineStart(22875)]
+    (22875)]
     procedure DocumentPosition();
     begin
         /*
@@ -1498,7 +1498,7 @@ page 90012 "Sales AMC"
 
     end;
 
-    [LineStart(22883)]
+    (22883)]
     procedure CreateOrders(Qtyparam : Decimal) OrdersCreated : Boolean;
     var
         Item : Record Item;
@@ -1530,7 +1530,7 @@ page 90012 "Sales AMC"
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
-    [LineStart(22908)]
+    (22908)]
     procedure calcamt();
     begin
         "Sale Order Total Amount":=0;
@@ -1542,31 +1542,31 @@ page 90012 "Sales AMC"
          MODIFY;
     end;
 
-    [LineStart(22917)]
+    (22917)]
     local procedure SelltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(22920)]
+    (22920)]
     local procedure BilltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(22923)]
+    (22923)]
     local procedure ShortcutDimension1CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(22926)]
+    (22926)]
     local procedure ShortcutDimension2CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(22929)]
+    (22929)]
     local procedure OnAfterGetCurrRecord();
     begin
         xRec := Rec;

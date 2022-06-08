@@ -13,7 +13,7 @@ codeunit 99000768 "Production BOM-Copy"
         Text001: TextConst ENU = '%1 on %2 %3 must not be %4', ENN = '%1 on %2 %3 must not be %4';
         Text002: TextConst ENU = '%1 on %2 %3 %4 must not be %5', ENN = '%1 on %2 %3 %4 must not be %5';
 
-    [LineStart(51762)]
+    (51762)]
     procedure CopyBOM(BOMHeaderNo: Code[20]; FromVersionCode: Code[20]; CurrentBOMHeader: Record "Production BOM Header"; ToVersionCode: Code[20]);
     var
         FromProdBOMComponent: Record "Production BOM Line";
@@ -98,7 +98,7 @@ codeunit 99000768 "Production BOM-Copy"
             UNTIL FromProdBOMCompComment.NEXT = 0;
     end;
 
-    [LineStart(51836)]
+    (51836)]
     procedure CopyFromVersion(var ProdBOMVersionList2: Record "Production BOM Version");
     var
         BOMHeader: Record "Production BOM Header";
@@ -122,12 +122,12 @@ codeunit 99000768 "Production BOM-Copy"
         ProdBOMVersionList2 := OldProdBOMVersionList;
     end;
 
-    [LineStart(51854)]
+    (51854)]
     procedure "---B2B---"();
     begin
     end;
 
-    [LineStart(51857)]
+    (51857)]
     procedure CopyBomVersion(BOMHeaderNo: Code[20]; FromVersionCode: Code[10]; CurrentBOMHeader: Record "Production BOM Version"; ToVersionCode: Code[10]);
     var
         FromProdBOMComponent: Record "Production BOM Line";

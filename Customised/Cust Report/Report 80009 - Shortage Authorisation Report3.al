@@ -2779,7 +2779,7 @@ report 80009 "Shortage Authorisation Report3"
         ItemLot3GrpFoter6 : Boolean;
         ItemLot3GrpFoter7 : Boolean;
 
-    [LineStart(13043)]
+    (13043)]
     procedure "Funds Allocation"("Payment Date" : Date;Value : Decimal);
     begin
 
@@ -2805,7 +2805,7 @@ report 80009 "Shortage Authorisation Report3"
               END;
     end;
 
-    [LineStart(13066)]
+    (13066)]
     procedure CommaRemoval(Base : Text[100]) Converted : Text[100];
     var
         i : Integer;

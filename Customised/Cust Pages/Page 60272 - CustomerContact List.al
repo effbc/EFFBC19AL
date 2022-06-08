@@ -72,7 +72,7 @@ page 60272 "Customer/Contact List"
         QuoteNoGVar: Code[20];
         PageVar: Page "Sales Quote";
 
-    [LineStart(21550)]
+    (21550)]
     procedure SendQuoteNo(QuoLpar: Code[20]);
     begin
         QuoteNoGVar := QuoLpar;

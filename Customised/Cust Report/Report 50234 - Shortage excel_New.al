@@ -583,7 +583,7 @@ report 50234 "Shortage excel_New"
         MOQ_VALUE : Decimal;
         ST : Record "Shortage Temp";
 
-    [LineStart(10139)]
+    (10139)]
     procedure OpenExistingXlsWorkbook(Fname : Text[250];SheetNr : Integer);
     var
         WorksheetAlreadyOpen : Boolean;

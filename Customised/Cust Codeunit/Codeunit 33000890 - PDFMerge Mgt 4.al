@@ -14,7 +14,7 @@ codeunit 33000890 "PDFMerge Mgt 4"
         Text50000_gCtx: Label 'Purchase Order %1 Must be Authorized to Print.';
         Text000: TextConst ENU = '%1\PdfMerge output=%2 input=%3,%4';
 
-    [LineStart(51239)]
+    (51239)]
     procedure MergePDFFile_gFnc(CMDCmd_iTxt: Text);
     var
         CMDCmd_lTxt: Text;
@@ -30,12 +30,12 @@ codeunit 33000890 "PDFMerge Mgt 4"
         CLEAR(WShell_gAut);
     end;
 
-    [LineStart(51247)]
+    (51247)]
     procedure "------- Merge PDF Document -------------"();
     begin
     end;
 
-    [LineStart(51250)]
+    (51250)]
     procedure POandTermsPrint_gFnc();
     var
         PH_lRec: Record "Purchase Header";
@@ -68,14 +68,14 @@ codeunit 33000890 "PDFMerge Mgt 4"
         SLEEP(3000);
     end;
 
-    [LineStart(51260)]
+    (51260)]
     procedure UpdatePath_gFnc(var Path_vTxt: Text[250]);
     begin
         IF COPYSTR(Path_vTxt, STRLEN(Path_vTxt), 1) <> '\' THEN
             Path_vTxt := Path_vTxt + '\';
     end;
 
-    [LineStart(51264)]
+    (51264)]
     procedure ExportAttToClientFile_gFnc(var ExportToFile: Text; ImportFileName_iTxt: Text[250]): Boolean;
     var
         FileMgmt_lCdu: Codeunit "File Management";
@@ -88,12 +88,12 @@ codeunit 33000890 "PDFMerge Mgt 4"
         DOWNLOAD(ExportToFile, Text024_gTxt, '', FileFilter_lTxt, ImportFileName_iTxt);
     end;
 
-    [LineStart(51269)]
+    (51269)]
     local procedure "---Using Dotnet Variable----"();
     begin
     end;
 
-    [LineStart(51272)]
+    (51272)]
     procedure MergePDFFiles(PDFFile1: Text; PDFFile2: Text; PDFFile3: Text; PDFFile4: Text; PDFFile5: Text; NewPDFFile: Text);
     var
         PDFDocOut: DotNet "'PdfSharp, Version=1.0.898.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb'.PdfSharp.Pdf.PdfDocument";
@@ -119,7 +119,7 @@ codeunit 33000890 "PDFMerge Mgt 4"
         PDFDocOut.Dispose;
     end;
 
-    [LineStart(51293)]
+    (51293)]
     local procedure AddPages(PDFFileName: Text; var DestPDF: DotNet "'PdfSharp, Version=1.0.898.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb'.PdfSharp.Pdf.PdfDocument");
     var
         FromPDF: DotNet "'PdfSharp, Version=1.0.898.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb'.PdfSharp.Pdf.PdfDocument";
@@ -136,7 +136,7 @@ codeunit 33000890 "PDFMerge Mgt 4"
         FromPDF.Dispose;
     end;
 
-    [LineStart(51302)]
+    (51302)]
     procedure MergePDFFilesForAttachment(PDFFile1: Text; PDFFile2: Text; PDFFile3: Text; PDFFile4: Text; PDFFile5: Text; NewPDFFile: Text);
     var
         PDFDocOut: DotNet "'PdfSharp, Version=1.0.898.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb'.PdfSharp.Pdf.PdfDocument";

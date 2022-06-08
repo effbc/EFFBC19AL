@@ -198,7 +198,7 @@ report 50210 "Customer Pending Apply Entries"
         Total_CS_Pending_AmountCaptionLbl : Label 'Total CS Pending Amount';
         Total___Pending_Apply_EntriesCaptionLbl : Label 'Total   Pending Apply Entries';
 
-    [LineStart(8709)]
+    (8709)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -210,7 +210,7 @@ report 50210 "Customer Pending Apply Entries"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(8718)]
+    (8718)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         TempExcelbuffer.INIT;

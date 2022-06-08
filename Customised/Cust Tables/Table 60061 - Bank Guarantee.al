@@ -267,7 +267,7 @@ table 60061 "Bank Guarantee"
             trigger OnValidate();
             begin
                 TestRelease;
-                if (not (UserId in ['EFFTRONICS\RAJANI', 'EFFTRONICS\YESU'])) then begin
+                if (not (userid in ['EFFTRONICS\RAJANI', 'EFFTRONICS\YESU'])) then begin
                     Error('You do not have a permision to Close BG');
                 end;
             end;
@@ -608,12 +608,12 @@ table 60061 "Bank Guarantee"
         Text016: Label 'Clain-Date must be greater than the From-Date.';
         SalesHeader: Record "Sales Header";
         salesinvoiceheader: Record "Sales Invoice Header";
-        userid: Record User;
+        //userid: Record User;
         CountryCode: Code[10];
         County: Text[30];
         SIH: Record "Sales Invoice Header";
 
-    [LineStart(2906)]
+
     procedure OpenAttachment(): Boolean;
     var
         WordManagement: Codeunit WordManagement;
@@ -636,7 +636,7 @@ table 60061 "Bank Guarantee"
 
     end;
 
-    [LineStart(2921)]
+
     procedure ImportAttachment(): Boolean;
     var
         AttachmentManagement: Codeunit AttachmentManagement;
@@ -655,7 +655,7 @@ table 60061 "Bank Guarantee"
 
     end;
 
-    [LineStart(2933)]
+
     procedure ExportAttachment(ExportToFile: Text[260]): Boolean;
     var
         FileName: Text[260];
@@ -681,8 +681,7 @@ table 60061 "Bank Guarantee"
 
     end;
 
-    [LineStart(2952)]
-    procedure RemoveAttachment(Prompt: Boolean) DeleteOk: Boolean;
+   procedure RemoveAttachment(Prompt: Boolean) DeleteOk: Boolean;
     var
         DeleteYesNo: Boolean;
     begin
@@ -706,7 +705,7 @@ table 60061 "Bank Guarantee"
 
     end;
 
-    [LineStart(2971)]
+
     procedure ConstFileName() Filename: Text[260];
     var
         I: Integer;
@@ -726,7 +725,7 @@ table 60061 "Bank Guarantee"
 
     end;
 
-    [LineStart(2984)]
+
     procedure DeleteFile(Filename: Text[260]): Boolean;
     var
         I: Integer;
@@ -747,7 +746,7 @@ table 60061 "Bank Guarantee"
 
     end;
 
-    [LineStart(2999)]
+
     procedure TestRelease();
     begin
         TestField(Status, Status::Open);

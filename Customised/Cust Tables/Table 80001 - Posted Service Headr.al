@@ -787,7 +787,7 @@ table 80001 "Posted Service Headr"
         DimMgt: Codeunit DimensionManagement;
         ItemTrackingMgt: Codeunit "Item Tracking Management";
 
-    [LineStart(5330)]
+
     procedure Navigate();
     var
         Navigate: Page Navigate;

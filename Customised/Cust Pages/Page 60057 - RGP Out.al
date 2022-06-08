@@ -184,7 +184,7 @@ page 60057 "RGP Out"
         RGPOutHead: Record "RGP Out Header";
         RGPRelease: Codeunit "RGP Release";
 
-    [LineStart(5754)]
+    (5754)]
     local procedure ConsigneeNoOnAfterValidate();
     begin
         CurrPage.UPDATE;

@@ -1228,7 +1228,7 @@ table 33000076 "Payroll Journal Line"
         DimMgrAccountType: Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset",Employee," ";
         DimMgrBalAccountType: Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset",Employee," ";
 
-    [LineStart(6817)]
+    (6817)]
     procedure CreateDim(Type1: Integer; No1: Code[20]; Type2: Integer; No2: Code[20]);
     var
         TableID: array[10] of Integer;
@@ -1255,7 +1255,7 @@ table 33000076 "Payroll Journal Line"
 
     end;
 
-    [LineStart(6837)]
+    (6837)]
     procedure SetUpNewLine(RecLastPayrollJnlLine: Record "Payroll Journal Line"; Balance: Decimal; BottomLine: Boolean);
     begin
         PayJournalTemplate.Get("Pay Journal Template");
@@ -1295,7 +1295,7 @@ table 33000076 "Payroll Journal Line"
         Description := '';
     end;
 
-    [LineStart(6877)]
+    (6877)]
     procedure UpdateSource();
     var
         SourceExists1: Boolean;
@@ -1331,7 +1331,7 @@ table 33000076 "Payroll Journal Line"
         end;
     end;
 
-    [LineStart(6908)]
+    (6908)]
     local procedure CheckGLAcc();
     begin
         GLAcc.CheckGLAcc;
@@ -1343,7 +1343,7 @@ table 33000076 "Payroll Journal Line"
         GLAcc.TestField("Direct Posting", true);
     end;
 
-    [LineStart(6917)]
+    (6917)]
     local procedure SetCurrencyCode(AccType2: Option Employee,"G/L Account","Bank Account"; AccNo2: Code[20]): Boolean;
     begin
         "Currency Code" := '';
@@ -1363,7 +1363,7 @@ table 33000076 "Payroll Journal Line"
 
     end;
 
-    [LineStart(6932)]
+    (6932)]
     procedure UpdateLineBalance();
     begin
         if ((Amount > 0) and (not Correction)) or
@@ -1392,7 +1392,7 @@ table 33000076 "Payroll Journal Line"
         //GenJnlAlloc.UpdateAllocations(Rec);
     end;
 
-    [LineStart(6960)]
+    (6960)]
     procedure ValidateShortcutDimCode(FieldNumber: Integer; var ShortcutDimCode: Code[20]);
     begin
 
@@ -1412,7 +1412,7 @@ table 33000076 "Payroll Journal Line"
 
     end;
 
-    [LineStart(6976)]
+    (6976)]
     procedure LookupShortcutDimCode(FieldNumber: Integer; var ShortcutDimCode: Code[20]);
     begin
         DimMgt.LookupDimValueCode(FieldNumber, ShortcutDimCode);
@@ -1427,7 +1427,7 @@ table 33000076 "Payroll Journal Line"
 
     end;
 
-    [LineStart(6987)]
+    (6987)]
     procedure ShowShortcutDimCode(var ShortcutDimCode: array[8] of Code[20]);
     begin
         //B2b1.0>> Function doesn't exist in Nav 2013
@@ -1440,7 +1440,7 @@ table 33000076 "Payroll Journal Line"
 
     end;
 
-    [LineStart(6996)]
+    (6996)]
     local procedure GetCurrency();
     begin
         /*
@@ -1468,7 +1468,7 @@ table 33000076 "Payroll Journal Line"
 
     end;
 
-    [LineStart(7020)]
+    (7020)]
     procedure CheckFixedCurrency(): Boolean;
     var
         CurrExchRate: Record "Currency Exchange Rate";
@@ -1498,14 +1498,14 @@ table 33000076 "Payroll Journal Line"
         exit(false);
     end;
 
-    [LineStart(7045)]
+    (7045)]
     procedure EmptyLine(): Boolean;
     begin
         exit(("Account No." = '') and (Amount = 0) and
              (("Bal. Account No." = '') or not "System-Created Entry"));
     end;
 
-    [LineStart(7049)]
+    (7049)]
     procedure ClearEmpApplID();
     begin
         if Rec."Bal. Account Type" in ["Bal. Account Type"::Employee] then begin
@@ -1530,7 +1530,7 @@ table 33000076 "Payroll Journal Line"
         end;
     end;
 
-    [LineStart(7074)]
+    (7074)]
     procedure GetShowCurrencyCode(CurrencyCode: Code[10]): Code[10];
     begin
         if CurrencyCode <> '' then
@@ -1539,7 +1539,7 @@ table 33000076 "Payroll Journal Line"
             exit(Text009);
     end;
 
-    [LineStart(7080)]
+    (7080)]
     procedure DimMgrTableType();
     begin
         DimMgrAccountType := DimMgrAccountType::" ";
@@ -1563,7 +1563,7 @@ table 33000076 "Payroll Journal Line"
         end;
     end;
 
-    [LineStart(7101)]
+    (7101)]
     procedure ShowDimensions();
     begin
         "Dimension Set ID" :=

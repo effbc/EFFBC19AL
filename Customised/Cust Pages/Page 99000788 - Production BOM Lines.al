@@ -279,7 +279,7 @@ page 99000788 "Production BOM Lines"
         "Type of SolderVisible": Boolean;
         ProductionBOMHeader: Record "Production BOM Header";
 
-    [LineStart(23966)]
+    (23966)]
     local procedure ShowComment();
     var
         ProdOrderCompComment: Record "Production BOM Comment Line";
@@ -291,7 +291,7 @@ page 99000788 "Production BOM Lines"
         PAGE.RUN(PAGE::"Prod. Order BOM Cmt. Sheet", ProdOrderCompComment);
     end;
 
-    [LineStart(23973)]
+    (23973)]
     local procedure ShowWhereUsed();
     var
         Item: Record Item;
@@ -317,7 +317,7 @@ page 99000788 "Production BOM Lines"
         CLEAR(ProdBOMWhereUsed);
     end;
 
-    [LineStart(23992)]
+    (23992)]
     procedure Showform(Show: Boolean);
     begin
         IF Show THEN BEGIN

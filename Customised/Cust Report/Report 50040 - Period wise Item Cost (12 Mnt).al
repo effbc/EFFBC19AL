@@ -775,7 +775,7 @@ report 50040 "Period wise Item Cost (12 Mnt)"
         QTYCaptionLbl: Label 'QTY';
         Total_CostCaptionLbl: Label 'Total Cost';
 
-    [LineStart(3203)]
+    (3203)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -787,7 +787,7 @@ report 50040 "Period wise Item Cost (12 Mnt)"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(3212)]
+    (3212)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -800,7 +800,7 @@ report 50040 "Period wise Item Cost (12 Mnt)"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(3222)]
+    (3222)]
     procedure "Entercell New"();
     begin
     end;

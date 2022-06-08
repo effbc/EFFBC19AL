@@ -1269,7 +1269,7 @@ report 50010 "Material Requisition Print"
         BINAddressTracking : Code[30];
         BINAddressSets : Code[30];
 
-    [LineStart(226)]
+    (226)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -1281,7 +1281,7 @@ report 50010 "Material Requisition Print"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(235)]
+    (235)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -1294,7 +1294,7 @@ report 50010 "Material Requisition Print"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(245)]
+    (245)]
     procedure "Entercell New"();
     begin
     end;

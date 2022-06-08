@@ -2968,7 +2968,7 @@ report 50093 "Explosion Of Routings"
         InactiveBOMs: Boolean;
         Valuechecking: Decimal;
 
-    [LineStart(5261)]
+    (5261)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean; CellType: Option);
     begin
         TempExcelbuffer.INIT;
@@ -2981,7 +2981,7 @@ report 50093 "Explosion Of Routings"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(5271)]
+    (5271)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean; CellType: Option);
     begin
         TempExcelbuffer.INIT;
@@ -2995,7 +2995,7 @@ report 50093 "Explosion Of Routings"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(5282)]
+    (5282)]
     procedure BRF_Data();
     begin
 
@@ -4114,7 +4114,7 @@ report 50093 "Explosion Of Routings"
 
     end;
 
-    [LineStart(6462)]
+    (6462)]
     procedure Dept_Hourt_Cost();
     begin
 
@@ -4321,7 +4321,7 @@ report 50093 "Explosion Of Routings"
         // Production BOM Header, GroupFooter (5) - OnPreSection() <<
     end;
 
-    [LineStart(6666)]
+    (6666)]
     procedure ModifyCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean; CellType: Option);
     begin
         // Pranavi

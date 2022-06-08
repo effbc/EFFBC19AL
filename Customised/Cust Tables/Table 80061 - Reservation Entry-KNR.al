@@ -258,7 +258,7 @@ table 80061 "Reservation Entry-KNR"
         field(5401; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code';
-            TableRelation = "Item Variant".Make WHERE("Item No." = FIELD("Item No."));
+            TableRelation = "Item Variant".Code WHERE("Item No." = FIELD("Item No."));
             DataClassification = CustomerContent;
         }
         field(5817; Correction; Boolean)
@@ -295,7 +295,7 @@ table 80061 "Reservation Entry-KNR"
     var
         Text001: Label 'Line';
 
-    [LineStart(5450)]
+
     procedure TextCaption(): Text[30];
     var
         ItemLedgEntry: Record "Item Ledger Entry";
@@ -332,7 +332,7 @@ table 80061 "Reservation Entry-KNR"
         end;
     end;
 
-    [LineStart(5474)]
+
     procedure SummEntryNo(): Integer;
     var
         ItemLedgEntry: Record "Item Ledger Entry";
@@ -369,7 +369,7 @@ table 80061 "Reservation Entry-KNR"
         end;
     end;
 
-    [LineStart(5498)]
+
     procedure SetPointer(RowID: Text[100]);
     var
         ItemTrackingMgt: Codeunit "Item Tracking Management";
@@ -384,7 +384,7 @@ table 80061 "Reservation Entry-KNR"
         Evaluate("Source Ref. No.", StrArray[6]);
     end;
 
-    [LineStart(5507)]
+
     procedure Lock();
     var
         Rec2: Record "Reservation Entry";

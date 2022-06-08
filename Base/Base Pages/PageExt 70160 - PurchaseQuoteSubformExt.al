@@ -521,12 +521,12 @@ pageextension 70160 PurchaseQuoteSubformExt extends "Purchase Quote Subform"
     */
     //end;
 
-    [LineStart(8139)]
+    (8139)]
     procedure "---B2B---"();
     begin
     end;
 
-    [LineStart(8142)]
+    (8142)]
     procedure OpenAttachments();
     var
         Attachment: Record Attachments;

@@ -243,7 +243,7 @@ table 60047 "DC Line"
         DCL: Record "DC Line";
         FixedAsset: Record "Fixed Asset";
 
-    [LineStart(2454)]
+
     local procedure TestStatusOpen();
     begin
         TestField("Document No.");

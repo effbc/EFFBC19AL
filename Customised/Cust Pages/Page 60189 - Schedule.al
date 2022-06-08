@@ -184,7 +184,7 @@ page 60189 Schedule
         TotAmt: Decimal;
         Schedule: Record Schedule2;
 
-    [LineStart(15423)]
+    (15423)]
     procedure CopyScheduleItems();
     var
         Schedule: Record Schedule2;
@@ -226,7 +226,7 @@ page 60189 Schedule
             UNTIL Schedule.NEXT = 0;
     end;
 
-    [LineStart(15456)]
+    (15456)]
     local procedure OnAfterGetCurrRecord();
     begin
         xRec := Rec;

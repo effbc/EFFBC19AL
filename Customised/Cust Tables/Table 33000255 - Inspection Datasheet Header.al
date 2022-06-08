@@ -18,454 +18,458 @@ table 33000255 "Inspection Datasheet Header"
         }
         field(3; "Receipt No."; Code[20])
         {
-            TableRelation = "Purch. Rcpt. Header".No            DataClassification = CustomerContent;
-.;
+            TableRelation = "Purch. Rcpt. Header"."No.";
+            DataClassification = CustomerContent;
         }
-        field(4;"Order No.";Code[20])
+        field(4; "Order No."; Code[20])
         {
         }
-        field(5;"Posting Date";Date)
+        field(5; "Posting Date"; Date)
         {
         }
-        field(6;"Document Date";Date)
+        field(6; "Document Date"; Date)
         {
         }
-        field(7;"Vendor No.";Code[20])
+        field(7; "Vendor No."; Code[20])
         {
-            TableRelation = Vendor.No.;
+            TableRelation = Vendor."No.";
         }
-        field(8;"Vendor Name";Text[50])
-        {
-        }
-        field(9;"Vendor Name 2";Text[50])
+        field(8; "Vendor Name"; Text[50])
         {
         }
-        field(10;"Vendor Address";Text[50])
+        field(9; "Vendor Name 2"; Text[50])
         {
         }
-        field(11;"Vendot Address 2";Text[50])
+        field(10; "Vendor Address"; Text[50])
         {
         }
-        field(12;"Contact Person";Text[50])
+        field(11; "Vendot Address 2"; Text[50])
         {
         }
-        field(13;"Item No.";Code[20])
+        field(12; "Contact Person"; Text[50])
+        {
+        }
+        field(13; "Item No."; Code[20])
         {
             TableRelation = Item;
         }
-        field(14;"Item Description";Text[50])
+        field(14; "Item Description"; Text[50])
         {
         }
-        field(15;Quantity;Decimal)
+        field(15; Quantity; Decimal)
         {
-            DecimalPlaces = 0:5;
+            DecimalPlaces = 0 : 5;
         }
-        field(16;"Spec ID";Code[20])
+        field(16; "Spec ID"; Code[20])
         {
             TableRelation = "Specification Header"."Spec ID";
         }
-        field(17;"No. Series";Code[20])
+        field(17; "No. Series"; Code[20])
         {
         }
-        field(18;"Inspection Group Code";Code[20])
+        field(18; "Inspection Group Code"; Code[20])
         {
             TableRelation = "Inspection Group";
         }
-        field(19;Status;Option)
+        field(19; Status; Option)
         {
             OptionCaption = 'Open,Released';
             OptionMembers = Open,Released;
         }
-        field(20;"Purch Line No";Integer)
+        field(20; "Purch Line No"; Integer)
         {
         }
-        field(21;"Lot No.";Code[20])
+        field(21; "Lot No."; Code[20])
         {
         }
-        field(22;"Created By";Code[50])
-        {
-            Description = 'Rev01';
-            TableRelation = User."User Name";
-        }
-        field(23;"Created Date";Date)
-        {
-        }
-        field(24;"Created Time";Time)
-        {
-        }
-        field(25;"Posted Date";Date)
-        {
-        }
-        field(26;"Posted Time";Time)
-        {
-        }
-        field(27;"Posted By";Code[50])
+        field(22; "Created By"; Code[50])
         {
             Description = 'Rev01';
             TableRelation = User."User Name";
         }
-        field(28;"Data Entered By";Code[50])
+        field(23; "Created Date"; Date)
+        {
+        }
+        field(24; "Created Time"; Time)
+        {
+        }
+        field(25; "Posted Date"; Date)
+        {
+        }
+        field(26; "Posted Time"; Time)
+        {
+        }
+        field(27; "Posted By"; Code[50])
         {
             Description = 'Rev01';
             TableRelation = User."User Name";
         }
-        field(29;"Inspection Receipt No.";Code[20])
+        field(28; "Data Entered By"; Code[50])
         {
-            TableRelation = "Inspection Receipt Header".No.;
+            Description = 'Rev01';
+            TableRelation = User."User Name";
         }
-        field(30;Location;Code[20])
+        field(29; "Inspection Receipt No."; Code[20])
+        {
+            TableRelation = "Inspection Receipt Header"."No.";
+        }
+        field(30; Location; Code[20])
         {
             TableRelation = Location.Code;
         }
-        field(31;"New Location";Code[20])
+        field(31; "New Location"; Code[20])
         {
             TableRelation = Location;
         }
-        field(32;"Rework Level";Integer)
+        field(32; "Rework Level"; Integer)
         {
         }
-        field(33;"Rework Reference No.";Code[20])
+        field(33; "Rework Reference No."; Code[20])
         {
-            TableRelation = "Inspection Receipt Header".No.;
+            TableRelation = "Inspection Receipt Header"."No.";
         }
-        field(34;"Item Ledger Entry No.";Integer)
+        field(34; "Item Ledger Entry No."; Integer)
         {
             TableRelation = "Item Ledger Entry";
         }
-        field(35;"Item Tracking Exists";Boolean)
+        field(35; "Item Tracking Exists"; Boolean)
         {
         }
-        field(36;"Source Type";Option)
+        field(36; "Source Type"; Option)
         {
             OptionMembers = "In Bound",WIP,Transfer,"Sales Returns","Periodic Inspection",Calibration;
         }
-        field(37;"Quality Before Receipt";Boolean)
+        field(37; "Quality Before Receipt"; Boolean)
         {
             Editable = false;
         }
-        field(38;"Purchase Consignment No.";Code[20])
+        field(38; "Purchase Consignment No."; Code[20])
         {
             Editable = false;
         }
-        field(39;"External Document No.";Code[20])
+        field(39; "External Document No."; Code[20])
         {
         }
-        field(40;comment;Boolean)
+        field(40; comment; Boolean)
         {
-            CalcFormula = Exist("Quality Comment Line" WHERE (Type=CONST(Inspection Data Sheets),No.=FIELD(No.)));
             FieldClass = FlowField;
+            CalcFormula = Exist("Quality Comment Line" WHERE(Type = CONST("Inspection Data Sheets"), "No." = FIELD("No.")));
+
         }
-        field(41;"Unit Of Measure Code";Code[10])
+        field(41; "Unit Of Measure Code"; Code[10])
         {
             TableRelation = "Unit of Measure";
         }
-        field(42;"Spec Version";Code[20])
+        field(42; "Spec Version"; Code[20])
         {
-            TableRelation = "Specification Version"."Version Code" WHERE (Specification No.=FIELD(Spec ID));
+            TableRelation = "Specification Version"."Version Code" WHERE("Specification No." = FIELD("Spec ID"));
         }
-        field(43;"Qty. per Unit of Measure";Decimal)
-        {
-        }
-        field(50;"Prod. Order No.";Code[20])
-        {
-            TableRelation = "Production Order".No. WHERE (Status=FILTER(Released));
-        }
-        field(51;"Prod. Order Line";Integer)
+        field(43; "Qty. per Unit of Measure"; Decimal)
         {
         }
-        field(52;"Routing No.";Code[20])
+        field(50; "Prod. Order No."; Code[20])
+        {
+            TableRelation = "Production Order"."No." WHERE(Status = FILTER(Released));
+        }
+        field(51; "Prod. Order Line"; Integer)
         {
         }
-        field(53;"Routing Reference No.";Integer)
+        field(52; "Routing No."; Code[20])
         {
         }
-        field(54;"Operation No.";Code[20])
+        field(53; "Routing Reference No."; Integer)
         {
         }
-        field(55;"Prod. Description";Text[50])
+        field(54; "Operation No."; Code[20])
         {
         }
-        field(56;"Operation Description";Text[50])
+        field(55; "Prod. Description"; Text[50])
         {
         }
-        field(57;"Production Batch No.";Code[20])
+        field(56; "Operation Description"; Text[50])
         {
         }
-        field(58;"Sub Assembly Code";Code[20])
+        field(57; "Production Batch No."; Code[20])
+        {
+        }
+        field(58; "Sub Assembly Code"; Code[20])
         {
             TableRelation = "Sub Assembly";
         }
-        field(59;"Sub Assembly Description";Text[30])
+        field(59; "Sub Assembly Description"; Text[30])
         {
         }
-        field(60;"In Process";Boolean)
+        field(60; "In Process"; Boolean)
         {
         }
-        field(61;"Base Unit Of Measure";Code[10])
+        field(61; "Base Unit Of Measure"; Code[10])
         {
             TableRelation = "Unit of Measure";
         }
-        field(62;"Quantity(Base)";Decimal)
+        field(62; "Quantity(Base)"; Decimal)
         {
-            DecimalPlaces = 0:5;
+            DecimalPlaces = 0 : 5;
         }
-        field(63;"Serial No.";Code[20])
-        {
-            Description = 'QCB2B1.2';
-        }
-        field(64;"DC Inbound Ledger Entry";Integer)
+        field(63; "Serial No."; Code[20])
         {
             Description = 'QCB2B1.2';
         }
-        field(81;"Customer No.";Code[20])
+        field(64; "DC Inbound Ledger Entry"; Integer)
+        {
+            Description = 'QCB2B1.2';
+        }
+        field(81; "Customer No."; Code[20])
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
-            TableRelation = Customer.No.;
+            TableRelation = Customer."No.";
         }
-        field(82;"Customer Name";Text[30])
-        {
-            Description = 'B2B1.0-ESPLQC';
-            Editable = false;
-        }
-        field(83;"Customer Name 2";Text[30])
-        {
-            Description = 'B2B1.0-ESPLQC';
-            Editable = false;
-        }
-        field(84;"Customer Address";Text[30])
+        field(82; "Customer Name"; Text[30])
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
         }
-        field(85;"Customer Address2";Text[30])
+        field(83; "Customer Name 2"; Text[30])
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
         }
-        field(86;"Sales Line No";Integer)
+        field(84; "Customer Address"; Text[30])
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
         }
-        field(87;"Sales Order No.";Code[20])
+        field(85; "Customer Address2"; Text[30])
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
         }
-        field(88;"Posted Sales Order No.";Code[20])
+        field(86; "Sales Line No"; Integer)
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
         }
-        field(89;"Sample Inspection Line No.";Integer)
+        field(87; "Sales Order No."; Code[20])
+        {
+            Description = 'B2B1.0-ESPLQC';
+            Editable = false;
+        }
+        field(88; "Posted Sales Order No."; Code[20])
+        {
+            Description = 'B2B1.0-ESPLQC';
+            Editable = false;
+        }
+        field(89; "Sample Inspection Line No."; Integer)
         {
             Description = 'B2B1.0-ESPLQC';
         }
-        field(100;"Quality Status";Option)
+        field(100; "Quality Status"; Option)
         {
             Description = 'QCB2B1.2';
             Editable = false;
             OptionMembers = Open,Cancel;
         }
-        field(201;"Trans. Order No.";Code[20])
+        field(201; "Trans. Order No."; Code[20])
         {
             Description = 'B2B1.0-ESPLQC';
         }
-        field(202;"Trans. Order Line";Integer)
+        field(202; "Trans. Order Line"; Integer)
         {
             Description = 'B2B1.0-ESPLQC';
         }
-        field(203;"Trans. Description";Text[50])
+        field(203; "Trans. Description"; Text[50])
         {
             Description = 'B2B1.0-ESPLQC';
         }
-        field(204;"Transfer-from Code";Code[20])
+        field(204; "Transfer-from Code"; Code[20])
         {
             Description = 'B2B1.0-ESPLQC';
         }
-        field(205;"Transfer-to Code";Code[20])
+        field(205; "Transfer-to Code"; Code[20])
         {
             Description = 'B2B1.0-ESPLQC';
         }
-        field(60001;"Actual Time";Decimal)
+        field(60001; "Actual Time"; Decimal)
         {
-            CalcFormula = Sum("Inspection Datasheet Line"."Bench Mark Time(In Min.)" WHERE (Document No.=FIELD(No.)));
-            Description = 'B2B1.0-ESPLQC';
-            FieldClass = FlowField;
-        }
-        field(60002;"Time Taken";Decimal)
-        {
-            CalcFormula = Sum("Inspection Datasheet Line"."Time Taken(In Min.)" WHERE (Document No.=FIELD(No.)));
+            CalcFormula = Sum("Inspection Datasheet Line"."Bench Mark Time(In Min.)" WHERE("Document No." = FIELD("No.")));
             Description = 'B2B1.0-ESPLQC';
             FieldClass = FlowField;
         }
-        field(60003;"Document Type";Option)
+        field(60002; "Time Taken"; Decimal)
+        {
+            FieldClass = FlowField;
+            CalcFormula = Sum("Inspection Datasheet Line"."Time Taken(In Min.)" WHERE("Document No." = FIELD("No.")));
+            Description = 'B2B1.0-ESPLQC';
+
+        }
+        field(60003; "Document Type"; Option)
         {
             Description = 'B2B1.0-ESPLQC';
             OptionMembers = Receipt,Production,Transfer,"Item Inspection","Return Orders",Rework,"Sample Lot";
         }
-        field(60004;Resource;Code[20])
+        field(60004; Resource; Code[20])
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
-            TableRelation = "Machine Center".No.;
+            TableRelation = "Machine Center"."No.";
         }
-        field(60005;"Sample Inspection";Boolean)
+        field(60005; "Sample Inspection"; Boolean)
         {
             Description = 'B2B1.0-ESPLQC';
         }
-        field(60007;"Measuring Range";Text[30])
+        field(60007; "Measuring Range"; Text[30])
         {
             Description = 'B2B-Cal';
         }
-        field(60008;"Model No.";Text[30])
+        field(60008; "Model No."; Text[30])
         {
             Description = 'B2B-Cal';
         }
-        field(60009;"Eqpt. Serial No.";Text[30])
+        field(60009; "Eqpt. Serial No."; Text[30])
         {
             Description = 'B2B-Cal';
         }
-        field(60011;Department;Code[20])
+        field(60011; Department; Code[20])
         {
             Description = 'B2B-Cal';
         }
-        field(60013;"Std. Reference";Code[20])
+        field(60013; "Std. Reference"; Code[20])
         {
             Description = 'B2B-Cal';
-            TableRelation = IF (Usage Type=FILTER(<>Master)) Calibration WHERE (Usage Type=CONST(Master));
+            TableRelation = IF ("Usage Type" = FILTER(<> Master)) Calibration WHERE("Usage Type" = CONST(Master));
         }
-        field(60014;"Calibration Party";Option)
+        field(60014; "Calibration Party"; Option)
         {
             Description = 'B2B-Cal';
             OptionMembers = Internal,External;
         }
-        field(60015;"Usage Type";Option)
+        field(60015; "Usage Type"; Option)
         {
             Description = 'B2B-Cal';
             OptionCaption = 'Instrument,Master';
             OptionMembers = Instrument,Master;
         }
-        field(60016;Manufacturer;Text[30])
+        field(60016; Manufacturer; Text[30])
         {
             Description = 'B2B-Cal';
         }
-        field(60017;"MFG. Serial No.";Text[30])
+        field(60017; "MFG. Serial No."; Text[30])
         {
             Description = 'B2B-Cal';
         }
-        field(60020;"Least Count";Decimal)
+        field(60020; "Least Count"; Decimal)
         {
             Description = 'B2B-Cal';
         }
-        field(60026;"Item Category Code";Code[10])
+        field(60026; "Item Category Code"; Code[10])
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
         }
-        field(60027;"Product Group Code";Code[10])
+        field(60027; "Product Group Code"; Code[10])
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
         }
-        field(60028;"Item Sub Group Code";Code[20])
+        field(60028; "Item Sub Group Code"; Code[20])
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
         }
-        field(60029;"Item Sub Sub Group Code";Code[20])
+        field(60029; "Item Sub Sub Group Code"; Code[20])
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
         }
-        field(60030;"No. of Soldering Points";Integer)
+        field(60030; "No. of Soldering Points"; Integer)
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
         }
-        field(60031;"No. of Pins";Integer)
+        field(60031; "No. of Pins"; Integer)
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
         }
-        field(60032;"No. of Opportunities";Integer)
+        field(60032; "No. of Opportunities"; Integer)
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
         }
-        field(60033;"No.of Fixing Holes";Integer)
+        field(60033; "No.of Fixing Holes"; Integer)
         {
             Description = 'B2B1.0-ESPLQC';
             Editable = false;
         }
-        field(60034;"Reason for Pending";Text[50])
+        field(60034; "Reason for Pending"; Text[50])
         {
             Description = 'B2B1.0-ESPLQC';
         }
-        field(60036;"QAS/MPR";Option)
+        field(60036; "QAS/MPR"; Option)
         {
             Description = 'B2B';
             OptionCaption = '" ,QAS,MPR"';
             OptionMembers = " ",QAS,MPR;
         }
-        field(60037;"Inprocess Serial No.";Code[20])
+        field(60037; "Inprocess Serial No."; Code[20])
         {
         }
-        field(60038;"OutPut Jr Serial No.";Code[20])
+        field(60038; "OutPut Jr Serial No."; Code[20])
         {
             Editable = true;
         }
-        field(60039;"Rework Posted";Boolean)
+        field(60039; "Rework Posted"; Boolean)
         {
             Description = 'RQC1.0';
         }
-        field(60040;"Rework User";Code[20])
+        field(60040; "Rework User"; Code[20])
         {
             Description = 'RQC1.0';
         }
-        field(60041;"Finished Product Sr No";Code[20])
+        field(60041; "Finished Product Sr No"; Code[20])
         {
             Description = 'RQC1.0';
         }
-        field(60042;"Item Bench Mark";Decimal)
+        field(60042; "Item Bench Mark"; Decimal)
         {
-            CalcFormula = Lookup(Item."Inspection Bench Mark(In Min)" WHERE (No.=FIELD(Item No.)));
             FieldClass = FlowField;
+            CalcFormula = Lookup(Item."Inspection Bench Mark(In Min)" WHERE("No." = FIELD("Item No.")));
+
         }
-        field(60060;"OLD IDS";Boolean)
+        field(60060; "OLD IDS"; Boolean)
         {
         }
-        field(60061;"Creation DateTime";DateTime)
+        field(60061; "Creation DateTime"; DateTime)
         {
             Editable = false;
         }
-        field(60065;"Parent IDS No";Code[20])
+        field(60065; "Parent IDS No"; Code[20])
         {
             Description = 'PIDSQC1.0';
             Editable = false;
         }
-        field(60066;"Partial Inspection";Boolean)
+        field(60066; "Partial Inspection"; Boolean)
         {
             Description = 'PIDSQC1.0';
         }
-        field(60067;"Qty in IDS";Decimal)
+        field(60067; "Qty in IDS"; Decimal)
         {
             Description = 'PIDSQC1.0';
         }
-        field(60068;"Reclass Entry";Boolean)
+        field(60068; "Reclass Entry"; Boolean)
         {
             Description = 'PIDSQC1.0';
         }
-        field(60069;"Total Qty in IDS";Decimal)
+        field(60069; "Total Qty in IDS"; Decimal)
         {
-            CalcFormula = Sum("Inspection Datasheet Header".Quantity WHERE (Parent IDS No=FIELD(No.),Partial Inspection=FILTER(No)));
-            Description = 'PIDSQC1.0';
             FieldClass = FlowField;
+            CalcFormula = Sum("Inspection Datasheet Header".Quantity WHERE("Parent IDS No" = FIELD("No."), "Partial Inspection" = FILTER(false)));
+            Description = 'PIDSQC1.0';
+
         }
-        field(60070;"Total Qty in IR";Decimal)
+        field(60070; "Total Qty in IR"; Decimal)
         {
-            CalcFormula = Sum("Inspection Receipt Header".Quantity WHERE (Parent IDS=FIELD(No.),Status=FILTER(No)));
+            CalcFormula = Sum("Inspection Receipt Header".Quantity WHERE(Parent IDS=FIELD(No.),Status=FILTER(No)));
             FieldClass = FlowField;
         }
         field(60071;"Total Qty in PIR";Decimal)
@@ -744,19 +748,19 @@ table 33000255 "Inspection Datasheet Header"
     end;
 
     var
-        NoSeriesMgt : Codeunit NoSeriesManagement;
+        NoSeriesMgt : Codeunit 396;
         QualitySetup : Record "Quality Control Setup";
         InspectDataLine : Record "Inspection Datasheet Line";
         Item : Record Item;
         InspDataSheet : Codeunit "Inspection Data Sheets";
 
-    [LineStart(7528)]
+
     procedure CreatePartialIDS();
     begin
         InspDataSheet.InsertPartInspectionDataHeader(Rec);
     end;
 
-    [LineStart(7531)]
+
     procedure CreateReclass();
     begin
         InspDataSheet.InsertPartInspectionDataHead2(Rec);

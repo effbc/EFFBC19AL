@@ -168,7 +168,7 @@ report 99001046 "Calculate Work Center Calendar"
         EndingDate: Date;
         LastTime: Time;
 
-    [LineStart(23137)]
+    (23137)]
     procedure InitializeRequest(NewStartingDate: Date; NewEndingDate: Date);
     begin
         StartingDate := NewStartingDate;

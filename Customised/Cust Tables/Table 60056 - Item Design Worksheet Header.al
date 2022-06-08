@@ -197,7 +197,7 @@ table 60056 "Item Design Worksheet Header"
         ItemDesignWorkSheetLine: Record "Item Design Worksheet Line";
         RoutingHeader: Record "Routing Header";
 
-    [LineStart(2683)]
+
     procedure CopyBomComponents();
     var
         DesignWorksheetLine: Record "Design Worksheet Line";
@@ -226,7 +226,7 @@ table 60056 "Item Design Worksheet Header"
         end;
     end;
 
-    [LineStart(2705)]
+
     procedure DesignWorkSheetAttachments();
     var
         Attachments: Record Attachments;
@@ -237,7 +237,7 @@ table 60056 "Item Design Worksheet Header"
         PAGE.Run(PAGE::"ESPL Attachments", Attachments);
     end;
 
-    [LineStart(2711)]
+
     procedure CheckType(var ProductionBOMLine: Record "Production BOM Line");
     var
         ProductionBOMLine1: Record "Production BOM Line";
@@ -260,7 +260,7 @@ table 60056 "Item Design Worksheet Header"
         end;
     end;
 
-    [LineStart(2729)]
+
     procedure InsertItems(var ProductionBOMLine: Record "Production BOM Line");
     var
         DesignWorksheetLine: Record "Design Worksheet Line";
@@ -355,7 +355,7 @@ table 60056 "Item Design Worksheet Header"
 
     end;
 
-    [LineStart(2809)]
+
     procedure CopyItemDesignWorkSheet();
     var
         DesignWorksheetLine: Record "Design Worksheet Line";

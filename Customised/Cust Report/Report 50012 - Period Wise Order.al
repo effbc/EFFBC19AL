@@ -3769,7 +3769,7 @@ report 50012 "Period Wise Order"
         Prev_OrderNo : Code[20];
         Prev_DocNo : Code[20];
 
-    [LineStart(276)]
+    (276)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
         Tempexcelbuffer.INIT;
@@ -3781,7 +3781,7 @@ report 50012 "Period Wise Order"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(285)]
+    (285)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         Tempexcelbuffer.INIT;
@@ -3795,7 +3795,7 @@ report 50012 "Period Wise Order"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(296)]
+    (296)]
     procedure "Entercell New"();
     begin
     end;

@@ -879,7 +879,7 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
     */
     //end;
 
-    [LineStart(13429)]
+    (13429)]
     procedure Item_Positive_Adjustment("Item No.": Code[20]; "Serial No.": Code[20]; "Location Code": Code[10]);
     var
         "Item Journal Line": Record "Item Journal Line";
@@ -956,7 +956,7 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
 
     end;
 
-    [LineStart(13497)]
+    (13497)]
     procedure ICNNO(DT: Date) ICN: Code[10];
     var
         Dat: Text[30];
@@ -979,7 +979,7 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
         EXIT(ICN);
     end;
 
-    [LineStart(13511)]
+    (13511)]
     procedure Item_Positive_Adjustment1("Item No.": Code[20]; "Serial No.": Text; "Location Code": Code[10]; DocumentNo: Code[30]; ItmQty: Decimal);
     var
         "Item Journal Line": Record "Item Journal Line";

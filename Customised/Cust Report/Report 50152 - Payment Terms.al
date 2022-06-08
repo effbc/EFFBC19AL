@@ -68,7 +68,7 @@ report 50152 "Payment Terms"
         PT : Record "Payment Terms";
         PTcode : Text[30];
 
-    [LineStart(8198)]
+    (8198)]
     procedure commaeli(Base : Text[30]) converted : Text[30];
     var
         i : Integer;
@@ -81,7 +81,7 @@ report 50152 "Payment Terms"
          EXIT(converted);
     end;
 
-    [LineStart(8206)]
+    (8206)]
     procedure sqlconnection2();
     begin
         /*IF ISCLEAR(SQLConnection) THEN

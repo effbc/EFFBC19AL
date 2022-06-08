@@ -645,12 +645,12 @@ page 60179 "Purchase Order-Inventory List"
         Text33000260 : Label 'Do you want to Cancel Quality Inspection?';
         Text33000261 : Label 'Do you want to Close Quality Inspection?';
 
-    [LineStart(14107)]
+    (14107)]
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(14110)]
+    (14110)]
     procedure ConvertOrdertoImportOrder(var Rec : Record "Purchase Header");
     var
         OldPurchCommentLine : Record "Purch. Comment Line";
@@ -816,13 +816,13 @@ page 60179 "Purchase Order-Inventory List"
 
     end;
 
-    [LineStart(14264)]
+    (14264)]
     local procedure BuyfromVendorNoOnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(14267)]
+    (14267)]
     local procedure PaytoVendorNoOnAfterValidate();
     begin
         CurrPage.UPDATE;

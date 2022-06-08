@@ -360,7 +360,7 @@ report 50062 "Site wise AMC Stock Status"
         TOTAL_DEFICIET_VALUE__Caption_Control1102154026Lbl: Label 'TOTAL DEFICIET VALUE :';
         NET_VALUE__Caption_Control1102154027Lbl: Label 'NET VALUE :';
 
-    [LineStart(3929)]
+    (3929)]
     procedure UPDATE_ITEM_WISE_REQUIREMENT();
     begin
         ITEM_LEDGER_ENTRY.SETCURRENTKEY(ITEM_LEDGER_ENTRY."Location Code",
@@ -392,7 +392,7 @@ report 50062 "Site wise AMC Stock Status"
             UNTIL ITEM_LEDGER_ENTRY.NEXT = 0;
     end;
 
-    [LineStart(3959)]
+    (3959)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -404,7 +404,7 @@ report 50062 "Site wise AMC Stock Status"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(3968)]
+    (3968)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean);
     begin
         TempExcelbuffer.INIT;

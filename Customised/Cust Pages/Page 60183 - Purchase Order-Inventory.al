@@ -1033,12 +1033,12 @@ page 60183 "Purchase Order-Inventory"
         Mail_From : Text[1000];
         SMTP_MAIL : Codeunit "SMTP Mail";
 
-    [LineStart(14754)]
+    (14754)]
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(14757)]
+    (14757)]
     procedure ConvertOrdertoImportOrder(var Rec : Record "Purchase Header");
     var
         OldPurchCommentLine : Record "Purch. Comment Line";
@@ -1204,25 +1204,25 @@ page 60183 "Purchase Order-Inventory"
 
     end;
 
-    [LineStart(14911)]
+    (14911)]
     local procedure BuyfromVendorNoOnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(14914)]
+    (14914)]
     local procedure PaytoVendorNoOnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(14917)]
+    (14917)]
     local procedure ShortcutDimension1CodeOnAfterV();
     begin
         CurrPage.PurchLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(14920)]
+    (14920)]
     local procedure ShortcutDimension2CodeOnAfterV();
     begin
         CurrPage.PurchLines.PAGE.UpdateForm(TRUE);

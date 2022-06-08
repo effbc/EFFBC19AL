@@ -56,7 +56,7 @@ codeunit 60014 "Assign Batch No's"
         Manual: Boolean;
         Location: Code[20];
 
-    [LineStart(6606)]
+    (6606)]
     procedure CheckSerialndBatchNo(var "ItemNo.": Code[20]): Boolean;
     var
         Item: Record Item;
@@ -68,7 +68,7 @@ codeunit 60014 "Assign Batch No's"
             EXIT(FALSE);
     end;
 
-    [LineStart(6613)]
+    (6613)]
     procedure DeleteTrackingSpecifications(var MaterialIssuesLine: Record "Material Issues Line");
     begin
         TrackingSpecification.RESET;
@@ -80,7 +80,7 @@ codeunit 60014 "Assign Batch No's"
             TrackingSpecification.DELETEALL;
     end;
 
-    [LineStart(6622)]
+    (6622)]
     procedure CheckInventory(var MaterialIssuesLine: Record "Material Issues Line");
     var
         QualityItemLedgerEntry: Record "Quality Item Ledger Entry";
@@ -198,7 +198,7 @@ codeunit 60014 "Assign Batch No's"
         //Lot wise item availability  //mnraju  06-JUN-2014
     end;
 
-    [LineStart(6743)]
+    (6743)]
     procedure UpdateBatchndSerialNos(var MaterialIssuesLine: Record "Material Issues Line");
     var
         BatchndSerialNosRec: Record "Batch and Serial No's";
@@ -382,7 +382,7 @@ codeunit 60014 "Assign Batch No's"
 
     end;
 
-    [LineStart(6929)]
+    (6929)]
     procedure AssignTrackingSpecifications(var MaterialIssuesLine: Record "Material Issues Line");
     var
         UndifinedQty: Decimal;
@@ -472,7 +472,7 @@ codeunit 60014 "Assign Batch No's"
         END;
     end;
 
-    [LineStart(7014)]
+    (7014)]
     procedure "Assgin Qunatity"("Reqest No.": Code[10]);
     var
         "Material Issues Line": Record "Material Issues Line";
@@ -485,7 +485,7 @@ codeunit 60014 "Assign Batch No's"
             UNTIL "Material Issues Line".NEXT = 0;
     end;
 
-    [LineStart(7022)]
+    (7022)]
     procedure AUTHORIZED_SHORTAGE_ITEM(ITEM: Code[20]) AUTHORIZED: Boolean;
     begin
         AUTHORIZED := FALSE;
@@ -499,7 +499,7 @@ codeunit 60014 "Assign Batch No's"
         EXIT(AUTHORIZED);
     end;
 
-    [LineStart(7034)]
+    (7034)]
     procedure AssignBatchManual(var Rec: Record "Material Issues Header");
     begin
         /*
@@ -537,7 +537,7 @@ codeunit 60014 "Assign Batch No's"
 
     end;
 
-    [LineStart(7068)]
+    (7068)]
     procedure MSLItemExpiryDate(ILE: Record "Item Ledger Entry") Expired: Boolean;
     var
         MSL_ILE: Record "Item Ledger Entry";
@@ -583,13 +583,13 @@ codeunit 60014 "Assign Batch No's"
         EXIT(IsExpired);
     end;
 
-    [LineStart(7108)]
+    (7108)]
     procedure ManualFieldSetting(BooleanValue: Boolean);
     begin
         Manual := BooleanValue;
     end;
 
-    [LineStart(7111)]
+    (7111)]
     procedure BulckAssignmnet(MIL: Record "Material Issues Line");
     begin
         Manual := TRUE;

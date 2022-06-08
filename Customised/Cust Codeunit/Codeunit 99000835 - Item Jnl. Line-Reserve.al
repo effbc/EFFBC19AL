@@ -32,7 +32,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
         Text006: TextConst ENU = 'You cannot define item tracking on %1 %2', ENN = 'You cannot define item tracking on %1 %2';
         DeleteItemTracking: Boolean;
 
-    [LineStart(57617)]
+    (57617)]
     procedure CreateReservation(var ItemJnlLine: Record "Item Journal Line"; Description: Text[50]; ExpectedReceiptDate: Date; Quantity: Decimal; QuantityBase: Decimal; ForSerialNo: Code[20]; ForLotNo: Code[20]);
     var
         ShipmentDate: Date;
@@ -75,7 +75,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
         SetFromType := 0;
     end;
 
-    [LineStart(57655)]
+    (57655)]
     procedure CreateReservationSetFrom(TrackingSpecificationFrom: Record "Tracking Specification");
     begin
         WITH TrackingSpecificationFrom DO BEGIN
@@ -93,7 +93,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
         END;
     end;
 
-    [LineStart(57670)]
+    (57670)]
     procedure FilterReservFor(var FilterReservEntry: Record "Reservation Entry"; ItemJnlLine: Record "Item Journal Line");
     begin
         FilterReservEntry.SETRANGE("Source Type", DATABASE::"Item Journal Line");
@@ -107,7 +107,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
         FilterReservEntry.SETRANGE("Lot No.", ItemJnlLine."Lot No.");
     end;
 
-    [LineStart(57681)]
+    (57681)]
     procedure Caption(ItemJnlLine: Record "Item Journal Line") CaptionText: Text[80];
     begin
         CaptionText :=
@@ -116,7 +116,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
             ItemJnlLine."Item No.");
     end;
 
-    [LineStart(57687)]
+    (57687)]
     procedure FindReservEntry(ItemJnlLine: Record "Item Journal Line"; var ReservEntry: Record "Reservation Entry"): Boolean;
     begin
         ReservEngineMgt.InitFilterAndSortingLookupFor(ReservEntry, FALSE);
@@ -125,7 +125,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
         EXIT(ReservEntry.FINDLAST);
     end;
 
-    [LineStart(57693)]
+    (57693)]
     procedure ReservEntryExist(ItemJnlLine: Record "Item Journal Line"): Boolean;
     var
         ReservEntry: Record "Reservation Entry";
@@ -138,7 +138,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
         EXIT(NOT ReservEntry.ISEMPTY);
     end;
 
-    [LineStart(57701)]
+    (57701)]
     procedure VerifyChange(var NewItemJnlLine: Record "Item Journal Line"; var OldItemJnlLine: Record "Item Journal Line");
     var
         ItemJnlLine: Record "Item Journal Line";
@@ -255,7 +255,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
         END;
     end;
 
-    [LineStart(57806)]
+    (57806)]
     procedure VerifyQuantity(var NewItemJnlLine: Record "Item Journal Line"; var OldItemJnlLine: Record "Item Journal Line");
     var
         ItemJnlLine: Record "Item Journal Line";
@@ -280,7 +280,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
         END;
     end;
 
-    [LineStart(57826)]
+    (57826)]
     procedure TransferItemJnlToItemLedgEntry(var ItemJnlLine: Record "Item Journal Line"; var ItemLedgEntry: Record "Item Ledger Entry"; TransferQty: Decimal; SkipInventory: Boolean);
     var
         OldReservEntry: Record "Reservation Entry";
@@ -340,7 +340,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
         END; // DO
     end;
 
-    [LineStart(57878)]
+    (57878)]
     procedure RenameLine(var NewItemJnlLine: Record "Item Journal Line"; var OldItemJnlLine: Record "Item Journal Line");
     begin
         ReservEngineMgt.RenamePointer(DATABASE::"Item Journal Line",
@@ -356,7 +356,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
           NewItemJnlLine."Line No.");
     end;
 
-    [LineStart(57891)]
+    (57891)]
     procedure DeleteLineConfirm(var ItemJnlLine: Record "Item Journal Line"): Boolean;
     begin
         WITH ItemJnlLine DO BEGIN
@@ -371,7 +371,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
         EXIT(DeleteItemTracking);
     end;
 
-    [LineStart(57903)]
+    (57903)]
     procedure DeleteLine(var ItemJnlLine: Record "Item Journal Line");
     begin
         IF Blocked THEN
@@ -386,7 +386,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
         END;
     end;
 
-    [LineStart(57915)]
+    (57915)]
     procedure AssignForPlanning(var ItemJnlLine: Record "Item Journal Line");
     var
         PlanningAssignment: Record "Planning Assignment";
@@ -399,13 +399,13 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
             END;
     end;
 
-    [LineStart(57923)]
+    (57923)]
     procedure Block(SetBlocked: Boolean);
     begin
         Blocked := SetBlocked;
     end;
 
-    [LineStart(57926)]
+    (57926)]
     procedure CallItemTracking(var ItemJnlLine: Record "Item Journal Line"; IsReclass: Boolean);
     var
         TrackingSpecification: Record "Tracking Specification";
@@ -435,7 +435,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
         ItemTrackingForm.RUNMODAL;
     end;
 
-    [LineStart(57949)]
+    (57949)]
     procedure InitTrackingSpecification(var ItemJnlLine: Record "Item Journal Line"; var TrackingSpecification: Record "Tracking Specification");
     begin
         TrackingSpecification.INIT;
@@ -462,7 +462,7 @@ codeunit 99000835 "Item Jnl. Line-Reserve"
         END;
     end;
 
-    [LineStart(57973)]
+    (57973)]
     procedure RegisterBinContentItemTracking(var ItemJournalLine: Record "Item Journal Line"; var TempTrackingSpecification: Record "Tracking Specification" temporary);
     var
         SourceTrackingSpecification: Record "Tracking Specification";

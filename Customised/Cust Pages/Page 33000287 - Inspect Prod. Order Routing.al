@@ -136,25 +136,25 @@ page 33000287 "Inspect Prod. Order Routing"
     {
     }
 
-    [LineStart(23625)]
+    (23625)]
     local procedure StartingTimeOnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(23628)]
+    (23628)]
     local procedure StartingDateOnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(23631)]
+    (23631)]
     local procedure EndingTimeOnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(23634)]
+    (23634)]
     local procedure EndingDateOnAfterValidate();
     begin
         CurrPage.UPDATE;

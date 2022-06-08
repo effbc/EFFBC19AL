@@ -331,7 +331,7 @@ page 50009 "Purchase Automail VendorsList"
         PRH: Record "Purch. Rcpt. Header";
         PRL: Record "Purch. Rcpt. Line";
 
-    [LineStart(885)]
+    (885)]
     procedure MailPusposeAssignment(Mailreason: Text[10]);
     begin
         //Added by vijaya on 24-May-2016 for Differentiate Material Receive and Bill Receive
