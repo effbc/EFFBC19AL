@@ -1,4 +1,4 @@
-pageextension 70263 WhseWMSRoleCenterExt extends "Whse. WMS Role Center"
+pageextension 70264 WhseWMSRoleCenterExt extends "Whse. WMS Role Center"
 {
     // version NAVW19.00.00.45778,NAVIN9.00.00.45778
 

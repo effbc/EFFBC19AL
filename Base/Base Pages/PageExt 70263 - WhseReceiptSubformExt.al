@@ -1,178 +1,35 @@
 pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
 {
-    // version NAVW19.00.00.51552,NAVIN9.00.00.51552,QC1.0
+
 
     layout
     {
 
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
 
         modify("Control 1")
         {
 
-            //Unsupported feature: Change Name on "Control 1". Please convert manually.
+
 
             ShowCaption = false;
         }
 
-        //Unsupported feature: Change Name on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 42". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 42". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 46". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 46". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 44". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 44". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 48". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 48". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 24". Please convert manually.
 
         addafter("Control 30")
         {
-            field("Quantity Accepted"; "Quantity Accepted")
+            field("Quantity Accepted"; Rec."Quantity Accepted")
             {
             }
-            field("Quantity Rework"; "Quantity Rework")
+            field("Quantity Rework"; Rec."Quantity Rework")
             {
             }
-            field("Quantity Rejected"; "Quantity Rejected")
+            field("Quantity Rejected"; Rec."Quantity Rejected")
             {
             }
-            field("Qty. Sending To Quality"; "Qty. Sending To Quality")
+            field("Qty. Sending To Quality"; Rec."Qty. Sending To Quality")
             {
             }
-            field("Qty. Sent To Quality"; "Qty. Sent To Quality")
+            field("Qty. Sent To Quality"; Rec."Qty. Sent To Quality")
             {
             }
         }
@@ -180,49 +37,6 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
     actions
     {
 
-        //Unsupported feature: Change Name on "Action 1900000004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1907935204". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1900724404". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Action 1901313204". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1901313204". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1903867104". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 3". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1901313504". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1900295904". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Action 1901742304". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1901742304". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1906587504". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1901073304". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1901564204". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1905408804". Please convert manually.
 
         addafter(ItemTrackingLines)
         {
@@ -297,17 +111,9 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
     }
 
 
-    //Unsupported feature: PropertyModification on "ShowSourceLine(PROCEDURE 1).WMSMgt(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowSourceLine : 7302;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowSourceLine : "WMS Management";
-    //Variable type has not been exported.
 
 
+<<<<<<< HEAD
     //Unsupported feature: PropertyModification on "ShowBinContents(PROCEDURE 6).BinContent(Variable 1000)". Please convert manually.
 
     //var
@@ -440,23 +246,37 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
     //Variable type has not been exported.
 
     (26487)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure "--QC"();
     begin
     end;
 
+<<<<<<< HEAD
     (26490)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _CreateInspectionDataSheets();
     begin
         CreateInspectionDataSheets;
     end;
 
+<<<<<<< HEAD
     (26493)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure CreateInspectionDataSheets();
     begin
         CreateInspectionDataSheets;
     end;
 
+<<<<<<< HEAD
     (26496)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -464,7 +284,11 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowDataSheets;
     end;
 
+<<<<<<< HEAD
     (26499)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -472,7 +296,11 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowDataSheets;
     end;
 
+<<<<<<< HEAD
     (26502)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -480,7 +308,11 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowPostDataSheets;
     end;
 
+<<<<<<< HEAD
     (26505)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -488,7 +320,11 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowPostDataSheets;
     end;
 
+<<<<<<< HEAD
     (26508)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -496,7 +332,11 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowInspectReceipt;
     end;
 
+<<<<<<< HEAD
     (26511)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -504,7 +344,11 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowInspectReceipt;
     end;
 
+<<<<<<< HEAD
     (26514)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -512,7 +356,11 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowPostInspectReceipt;
     end;
 
+<<<<<<< HEAD
     (26517)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -520,25 +368,6 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         ShowPostInspectReceipt;
     end;
 
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
 
 }
 

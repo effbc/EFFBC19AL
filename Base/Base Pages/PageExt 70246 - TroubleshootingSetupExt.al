@@ -1,73 +1,39 @@
-pageextension 70246 TroubleshootingSetupExt extends "Troubleshooting Setup"
+pageextension 70246 TroubleshootingSetupExt extends 5993
 {
-    // version NAVW19.00.00.48067
+
 
     layout
     {
 
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
 
-        modify("Control 1")
+
+        /*modify("Control1")
         {
 
-            //Unsupported feature: Change Name on "Control 1". Please convert manually.
+         
 
             ShowCaption = false;
-        }
-
-        //Unsupported feature: Change Name on "Control 11". Please convert manually.
+        }*/
 
 
-        //Unsupported feature: Change ImplicitType on "Control 11". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change DrillDown on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1900000007". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1900383207". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1905767507". Please convert manually.
-
-        addafter("Control 11")
+        addafter(Type)
         {
-            field("Service Order No"; "Service Order No")
+            field("Service Order No"; Rec."Service Order No")
             {
             }
         }
-        addafter("Control 2")
+        addafter("Service Order No")
         {
-            field(Date; Date)
+            field(Date; Rec.Date)
             {
             }
         }
-        addafter("Control 6")
+        addafter("Troubleshooting Description")
         {
-            field(Comment; Comment)
+            field(Comment; Rec.Comment)
             {
             }
-            field("Line No."; "Line No.")
+            field("Line No."; Rec."Line No.")
             {
             }
         }
@@ -75,15 +41,8 @@ pageextension 70246 TroubleshootingSetupExt extends "Troubleshooting Setup"
     actions
     {
 
-        //Unsupported feature: Change Name on "Action 1900000003". Please convert manually.
 
-
-        //Unsupported feature: Change Name on "Action 13". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 14". Please convert manually.
-
-        addafter("Action 14")
+        addafter(Card)
         {
             action("Copy Comments")
             {
@@ -91,18 +50,18 @@ pageextension 70246 TroubleshootingSetupExt extends "Troubleshooting Setup"
 
                 trigger OnAction();
                 begin
-                    Date := WORKDATE;
-                    TroubleshootingLine.SETRANGE("No.", "Troubleshooting No.");
+                    Rec.Date := WORKDATE;
+                    TroubleshootingLine.SETRANGE("No.", Rec."Troubleshooting No.");
                     IF TroubleshootingLine.FINDSET THEN
                         REPEAT
-                            "Line No." := TroubleshootingLine."Line No.";
-                            Comment := TroubleshootingLine.Comment;
-                            "Troubleshooting No." := "Troubleshooting No.";
-                            Type := Type;
-                            INSERT;
+                            Rec."Line No." := TroubleshootingLine."Line No.";
+                            Rec.Comment := TroubleshootingLine.Comment;
+                            Rec."Troubleshooting No." := Rec."Troubleshooting No.";
+                            Rec.Type := Rec.Type;
+                            Rec.INSERT;
                         UNTIL TroubleshootingLine.NEXT = 0;
                     MESSAGE('Records Inserted');
-                    TroubleshootingLine.SETRANGE("No.", "Troubleshooting No.");
+                    TroubleshootingLine.SETRANGE("No.", Rec."Troubleshooting No.");
                     TroubleShootingSetUp.RESET;
                     TroubleShootingSetUp.SETFILTER("Line No.", '=0');
                     IF TroubleShootingSetUp.FINDFIRST THEN
@@ -113,36 +72,14 @@ pageextension 70246 TroubleshootingSetupExt extends "Troubleshooting Setup"
     }
 
 
-    //Unsupported feature: PropertyModification on "TblshtgHeader(Variable 1000)". Please convert manually.
 
-    //var
-    //>>>> ORIGINAL VALUE:
-    //TblshtgHeader : 5943;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //TblshtgHeader : "Troubleshooting Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "Tblshtg(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //Tblshtg : 5990;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //Tblshtg : Troubleshooting;
-    //Variable type has not been exported.
 
     var
         "---b2b EFF---": Integer;
         TroubleshootingLine: Record "Troubleshooting Line";
         TroubleShootingSetUp: Record "Troubleshooting Setup";
 
-    //Unsupported feature: PropertyChange. Please convert manually.
 
-
-    //Unsupported feature: PropertyChange. Please convert manually.
 
 }
 
