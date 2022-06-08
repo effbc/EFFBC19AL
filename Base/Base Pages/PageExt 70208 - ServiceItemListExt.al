@@ -1,4 +1,4 @@
-pageextension 70209 ServiceItemListExt extends "Service Item List"
+pageextension 70208 ServiceItemListExt extends "Service Item List"
 {
     // version NAVW19.00.00.45778
 
