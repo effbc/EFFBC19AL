@@ -100,7 +100,7 @@ codeunit 33000021 "Payroll Jnl.-Post Batch"
         Text13702: Label 'Purchase %1 %2 already exists.';
         Text13703: Label 'Sales %1 %2 already exists.';
 
-    [LineStart(45376)]
+    (45376)]
     local procedure "Code"();
     var
         UpdateAnalysisView: Codeunit "Update Analysis View";
@@ -512,7 +512,7 @@ codeunit 33000021 "Payroll Jnl.-Post Batch"
 
     end;
 
-    [LineStart(45796)]
+    (45796)]
     local procedure CheckBalance();
     begin
         WITH PayrollJnlLine DO BEGIN
@@ -549,7 +549,7 @@ codeunit 33000021 "Payroll Jnl.-Post Batch"
 
     end;
 
-    [LineStart(45833)]
+    (45833)]
     procedure CheckAddExchRateBalance();
     begin
         /*
@@ -560,7 +560,7 @@ codeunit 33000021 "Payroll Jnl.-Post Batch"
 
     end;
 
-    [LineStart(45840)]
+    (45840)]
     local procedure CheckRecurringLine(var RecPayJournalLine2: Record "Payroll Journal Line");
     begin
         WITH RecPayJournalLine2 DO BEGIN
@@ -588,7 +588,7 @@ codeunit 33000021 "Payroll Jnl.-Post Batch"
 
     end;
 
-    [LineStart(45867)]
+    (45867)]
     local procedure UpdateRecurringAmt(var RecPayJournalLine2: Record "Payroll Journal Line");
     begin
         WITH RecPayJournalLine2 DO BEGIN
@@ -628,7 +628,7 @@ codeunit 33000021 "Payroll Jnl.-Post Batch"
 
     end;
 
-    [LineStart(45904)]
+    (45904)]
     local procedure CheckAllocations(var RecPayJournalLine2: Record "Payroll Journal Line");
     begin
         /*C
@@ -664,7 +664,7 @@ codeunit 33000021 "Payroll Jnl.-Post Batch"
 
     end;
 
-    [LineStart(45936)]
+    (45936)]
     local procedure MakeRecurringTexts(var RecPayJournalLine2: Record "Payroll Journal Line");
     begin
         /*C
@@ -690,7 +690,7 @@ codeunit 33000021 "Payroll Jnl.-Post Batch"
 
     end;
 
-    [LineStart(45958)]
+    (45958)]
     local procedure PostAllocations(var AllocatePayJournalLine: Record "Payroll Journal Line"; Reversing: Boolean);
     begin
         WITH AllocatePayJournalLine DO BEGIN
@@ -795,7 +795,7 @@ codeunit 33000021 "Payroll Jnl.-Post Batch"
 
     end;
 
-    [LineStart(46064)]
+    (46064)]
     local procedure MultiplyAmounts(var RecPayJournalLine2: Record "Payroll Journal Line"; Factor: Decimal);
     begin
         WITH RecPayJournalLine2 DO BEGIN
@@ -810,7 +810,7 @@ codeunit 33000021 "Payroll Jnl.-Post Batch"
         END;
     end;
 
-    [LineStart(46078)]
+    (46078)]
     procedure CheckDocumentNo(var RecPayJournalLine2: Record "Payroll Journal Line");
     begin
         WITH RecPayJournalLine2 DO BEGIN
@@ -841,7 +841,7 @@ codeunit 33000021 "Payroll Jnl.-Post Batch"
         END;
     end;
 
-    [LineStart(46109)]
+    (46109)]
     procedure PreparePayrollJnlLineAddCurr(var PayrollJnlLine: Record "Payroll Journal Line");
     begin
         /*C
@@ -863,7 +863,7 @@ codeunit 33000021 "Payroll Jnl.-Post Batch"
 
     end;
 
-    [LineStart(46127)]
+    (46127)]
     procedure CopyFields();
     var
         PayrollJnlLine4: Record "Payroll Journal Line";

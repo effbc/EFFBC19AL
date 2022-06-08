@@ -116,7 +116,7 @@ page 60250 "_Items by Dimension"
         MATRIX_PKFirstRecInCurrSet: Text[100];
         MATRIX_CurrSetLength: Integer;
 
-    [LineStart(20426)]
+    (20426)]
     procedure SetColumns(SetWanted: Option Initial,Previous,Same,Next);
     var
         MatrixMgt: Codeunit "Matrix Management";
@@ -150,13 +150,13 @@ page 60250 "_Items by Dimension"
         END;
     end;
 
-    [LineStart(20453)]
+    (20453)]
     local procedure ShowColumnNameOnAfterValidate();
     begin
         SetColumns(MATRIX_SetWanted::Same);
     end;
 
-    [LineStart(20456)]
+    (20456)]
     local procedure ShowInTransitOnAfterValidate();
     begin
         SetColumns(MATRIX_SetWanted::Initial);

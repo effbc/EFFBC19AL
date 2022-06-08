@@ -7,7 +7,7 @@ codeunit 99000756 VersionManagement
     begin
     end;
 
-    [LineStart(51721)]
+    (51721)]
     procedure GetBOMVersion(BOMHeaderNo: Code[20]; Date: Date; OnlyCertified: Boolean): Code[20];
     var
         ProdBOMVersion: Record "Production BOM Version";
@@ -25,7 +25,7 @@ codeunit 99000756 VersionManagement
         EXIT(ProdBOMVersion."Version Code");
     end;
 
-    [LineStart(51734)]
+    (51734)]
     procedure GetBOMUnitOfMeasure(BOMHeaderNo: Code[20]; VersionCode: Code[20]): Code[10];
     var
         ProdBOMHeader: Record "Production BOM Header";
@@ -43,7 +43,7 @@ codeunit 99000756 VersionManagement
         EXIT(ProdBOMVersion."Unit of Measure Code");
     end;
 
-    [LineStart(51746)]
+    (51746)]
     procedure GetRtngVersion(RoutingNo: Code[20]; Date: Date; OnlyCertified: Boolean): Code[20];
     var
         RtngVersion: Record "Routing Version";

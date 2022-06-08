@@ -240,7 +240,7 @@ table 60040 "RGP In Header"
 
     var
         InvSetup: Record "Inventory Setup";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit 396;
         RGPInLine: Record "RGP In Line";
         RGPInHeader: Record "RGP In Header";
         Text003: Label 'You cannot rename a %1.';
@@ -248,7 +248,7 @@ table 60040 "RGP In Header"
         Text002: Label 'Do You Want to Reopen?';
         RGPInHeaderRelease: Record "RGP In Header";
 
-    [LineStart(2193)]
+
     procedure AssistEdit(OldRGPInHeader: Record "RGP In Header"): Boolean;
     begin
         with RGPInHeader do begin
@@ -265,12 +265,12 @@ table 60040 "RGP In Header"
         end;
     end;
 
-    [LineStart(2207)]
+
     procedure "--B2BKPK----"();
     begin
     end;
 
-    [LineStart(2210)]
+
     procedure PostNewRGP();
     var
         RGPLedEntries: Record "RGP Ledger Entries";
@@ -340,7 +340,7 @@ table 60040 "RGP In Header"
 
     end;
 
-    [LineStart(2271)]
+
     local procedure TestStatusOpen();
     begin
         RGPInHeaderRelease.TestField("Release Status", "Release Status"::Open);

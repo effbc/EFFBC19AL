@@ -538,19 +538,19 @@ page 60261 "Pending Material Issues"
         StockStatus : Code[30];
         StockAvailability : Text;
 
-    [LineStart(21206)]
+    (21206)]
     procedure _ItemAvailability(AvailabilityType : Option Date,Variant,Location);
     begin
         ItemAvailability(AvailabilityType);
     end;
 
-    [LineStart(21209)]
+    (21209)]
     procedure ItemAvailability(AvailabilityType : Option Date,Variant,Location);
     begin
         ItemAvailability(AvailabilityType);
     end;
 
-    [LineStart(21212)]
+    (21212)]
     procedure _ShowDimensions();
     var
         AssingBatchManual : Codeunit "Assign Batch No's";
@@ -558,13 +558,13 @@ page 60261 "Pending Material Issues"
         Rec.ShowDimensions;
     end;
 
-    [LineStart(21215)]
+    (21215)]
     procedure ShowDimensions();
     begin
         Rec.ShowDimensions;
     end;
 
-    [LineStart(21218)]
+    (21218)]
     procedure OpenItemTrackingLinesPage();
     var
         Item : Record Item;
@@ -580,13 +580,13 @@ page 60261 "Pending Material Issues"
         END ELSE MESSAGE(Text001,"Item No.");
     end;
 
-    [LineStart(21228)]
+    (21228)]
     local procedure RemarksOnInputChange(var Text : Text[1024]);
     begin
         TESTFIELD(Status,Status::Open);
     end;
 
-    [LineStart(21231)]
+    (21231)]
     procedure TEMC_MSLMail(ItemNo : Code[30]);
     var
         Body : Text;

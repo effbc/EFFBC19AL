@@ -2230,13 +2230,13 @@ report 33000900 "Sales - Invoice_GST_Test"
         UserName: Code[50];
         LinesCount: Integer;
 
-    [LineStart(21699)]
+    (21699)]
     procedure InitLogInteraction();
     begin
         LogInteraction := SegManagement.FindInteractTmplCode(4) <> '';
     end;
 
-    [LineStart(21702)]
+    (21702)]
     procedure FindPostedShipmentDate(): Date;
     var
         SalesShipmentHeader: Record "Sales Shipment Header";
@@ -2280,7 +2280,7 @@ report 33000900 "Sales - Invoice_GST_Test"
             EXIT("Sales Invoice Header"."Posting Date");
     end;
 
-    [LineStart(21740)]
+    (21740)]
     procedure GenerateBufferFromValueEntry(SalesInvoiceLine2: Record "Sales Invoice Line");
     var
         ValueEntry: Record "Value Entry";
@@ -2311,7 +2311,7 @@ report 33000900 "Sales - Invoice_GST_Test"
             UNTIL (ValueEntry.NEXT = 0) OR (TotalQuantity = 0);
     end;
 
-    [LineStart(21763)]
+    (21763)]
     procedure GenerateBufferFromShipment(SalesInvoiceLine: Record "Sales Invoice Line");
     var
         SalesInvoiceHeader: Record "Sales Invoice Header";
@@ -2371,7 +2371,7 @@ report 33000900 "Sales - Invoice_GST_Test"
             UNTIL (SalesShipmentLine.NEXT = 0) OR (TotalQuantity = 0);
     end;
 
-    [LineStart(21813)]
+    (21813)]
     procedure CorrectShipment(var SalesShipmentLine: Record "Sales Shipment Line");
     var
         SalesInvoiceLine: Record "Sales Invoice Line";
@@ -2385,7 +2385,7 @@ report 33000900 "Sales - Invoice_GST_Test"
             UNTIL SalesInvoiceLine.NEXT = 0;
     end;
 
-    [LineStart(21822)]
+    (21822)]
     procedure AddBufferEntry(SalesInvoiceLine: Record "Sales Invoice Line"; QtyOnShipment: Decimal; PostingDate: Date);
     begin
         SalesShipmentBuffer.SETRANGE("Document No.", SalesInvoiceLine."Document No.");
@@ -2410,7 +2410,7 @@ report 33000900 "Sales - Invoice_GST_Test"
         END;
     end;
 
-    [LineStart(21844)]
+    (21844)]
     local procedure DocumentCaption(): Text[250];
     begin
         IF "Sales Invoice Header"."Prepayment Invoice" THEN
@@ -2418,7 +2418,7 @@ report 33000900 "Sales - Invoice_GST_Test"
         EXIT(Text004);
     end;
 
-    [LineStart(21849)]
+    (21849)]
     procedure InitializeRequest(NewNoOfCopies: Integer; NewShowInternalInfo: Boolean; NewLogInteraction: Boolean; DisplayAsmInfo: Boolean);
     begin
         NoOfCopies := NewNoOfCopies;
@@ -2427,7 +2427,7 @@ report 33000900 "Sales - Invoice_GST_Test"
         DisplayAssemblyInformation := DisplayAsmInfo;
     end;
 
-    [LineStart(21855)]
+    (21855)]
     procedure CollectAsmInformation();
     var
         ValueEntry: Record "Value Entry";
@@ -2463,7 +2463,7 @@ report 33000900 "Sales - Invoice_GST_Test"
         UNTIL ValueEntry.NEXT = 0;
     end;
 
-    [LineStart(21882)]
+    (21882)]
     procedure TreatAsmLineBuffer(PostedAsmLine: Record "Posted Assembly Line");
     begin
         CLEAR(TempPostedAsmLine);
@@ -2482,7 +2482,7 @@ report 33000900 "Sales - Invoice_GST_Test"
         END;
     end;
 
-    [LineStart(21898)]
+    (21898)]
     procedure GetUOMText(UOMCode: Code[10]): Text[10];
     var
         UnitOfMeasure: Record "Unit of Measure";
@@ -2492,13 +2492,13 @@ report 33000900 "Sales - Invoice_GST_Test"
         EXIT(UnitOfMeasure.Description);
     end;
 
-    [LineStart(21903)]
+    (21903)]
     procedure BlanksForIndent(): Text[10];
     begin
         EXIT(PADSTR('', 2, ' '));
     end;
 
-    [LineStart(21906)]
+    (21906)]
     local procedure GetLineFeeNoteOnReportHist(SalesInvoiceHeaderNo: Code[20]);
     var
         LineFeeNoteOnReportHist: Record "Line Fee Note on Report Hist.";

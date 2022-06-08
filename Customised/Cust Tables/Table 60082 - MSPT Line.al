@@ -143,7 +143,7 @@ table 60082 "MSPT Line"
         MSPTLine: Record "MSPT Line";
         Text001: Label 'Percentage Must Be Positive Value';
 
-    [LineStart(3618)]
+
     procedure MSPTTestField();
     begin
         MSPTHeader.SetRange(Code, "MSPT Header Code");

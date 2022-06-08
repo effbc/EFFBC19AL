@@ -455,7 +455,7 @@ page 60018 "Sales Order-Design"
         user : Record User;
         ChangeExchangeRate : Page "Change Exchange Rate";
 
-    [LineStart(4303)]
+    (4303)]
     procedure UpdateAllowed(): Boolean;
     begin
         IF CurrPage.EDITABLE = FALSE THEN
@@ -463,12 +463,12 @@ page 60018 "Sales Order-Design"
         EXIT(TRUE);
     end;
 
-    [LineStart(4308)]
+    (4308)]
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(4311)]
+    (4311)]
     procedure ConvertOrdertoExportOrder(var Rec: Record "Sales Header");
     var
         OldSalesCommentLine: Record "Sales Comment Line";
@@ -631,7 +631,7 @@ page 60018 "Sales Order-Design"
 
     end;
 
-    [LineStart(4460)]
+    (4460)]
     procedure MaketoOrder();
     var
         Text000: Label 'Do you want to convert the Tender to Order?';
@@ -905,7 +905,7 @@ page 60018 "Sales Order-Design"
 
     end;
 
-    [LineStart(4719)]
+    (4719)]
     procedure MakeToBlanketOrder();
     var
         Text005: Label 'Do you want to convert the Tender to Blanket Order?';
@@ -1149,31 +1149,31 @@ page 60018 "Sales Order-Design"
 
     end;
 
-    [LineStart(4948)]
+    (4948)]
     local procedure SelltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(4951)]
+    (4951)]
     local procedure BilltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(4954)]
+    (4954)]
     local procedure ShortcutDimension1CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(4957)]
+    (4957)]
     local procedure ShortcutDimension2CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(4960)]
+    (4960)]
     local procedure SalOrdDesApprovalOnPush();
     begin
         MaketoOrder;

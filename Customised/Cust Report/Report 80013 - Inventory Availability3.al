@@ -243,7 +243,7 @@ report 80013 "Inventory Availability3"
         ProdOrderCmpnt : Record "Prod. Order Component";
         ProdOrder : Record "Production Order";
 
-    [LineStart(13982)]
+    (13982)]
     procedure Include_Item(item1 : Code[20];Verify : Boolean);
     var
         "Material Issues Line" : Record "Material Issues Line";
@@ -523,7 +523,7 @@ report 80013 "Inventory Availability3"
 
     end;
 
-    [LineStart(14254)]
+    (14254)]
     procedure "Verify Alternate"(Item1 : Code[20];Req_Qty : Decimal;"Prod. Order" : Code[20]) SHORTAGE : Boolean;
     begin
         SHORTAGE:=TRUE;
@@ -673,7 +673,7 @@ report 80013 "Inventory Availability3"
         EXIT(SHORTAGE);
     end;
 
-    [LineStart(14401)]
+    (14401)]
     procedure "Reserve Running Order Material"();
     begin
         /*
@@ -818,7 +818,7 @@ report 80013 "Inventory Availability3"
 
     end;
 
-    [LineStart(14542)]
+    (14542)]
     procedure Change_Alternate_Item(Actual_Item : Code[20];Replaced_Item : Code[20];Prod_Order : Code[20]);
     begin
               POCOMPONENT1.RESET;
@@ -835,7 +835,7 @@ report 80013 "Inventory Availability3"
               UNTIL POCOMPONENT1.NEXT=0;
     end;
 
-    [LineStart(14556)]
+    (14556)]
     procedure VERIFY_WITH_STR_QTY(ITEM : Code[20];REQUIRED_QTY : Decimal;PROD_ORDER : Code[20]) SHORTAGE : Boolean;
     var
         SHORT : Boolean;
@@ -974,7 +974,7 @@ report 80013 "Inventory Availability3"
 
     end;
 
-    [LineStart(14689)]
+    (14689)]
     procedure VERIFY_WITH_MCH_QTY(ITEM : Code[20];REQUIRED_QTY : Decimal;PROD_ORDER : Code[20]) SHORTAGE : Boolean;
     var
         SHORT : Boolean;
@@ -1110,7 +1110,7 @@ report 80013 "Inventory Availability3"
 
     end;
 
-    [LineStart(14819)]
+    (14819)]
     procedure STENCIL_PCB(PCB_BOM : Code[20]) STENCIL_PCB : Boolean;
     begin
         /*
@@ -1169,7 +1169,7 @@ report 80013 "Inventory Availability3"
 
     end;
 
-    [LineStart(14874)]
+    (14874)]
     procedure VERIFY_MCH_ALTERNATE(Item1 : Code[20];Req_Qty : Decimal;"Prod. Order" : Code[20]) SHORTAGE : Boolean;
     begin
         SHORTAGE:=TRUE;
@@ -1318,7 +1318,7 @@ report 80013 "Inventory Availability3"
         EXIT(SHORTAGE);
     end;
 
-    [LineStart(15020)]
+    (15020)]
     procedure VERIFY_WITH_PRDSTR_QTY(ITEM : Code[20];REQUIRED_QTY : Decimal;PROD_ORDER : Code[20]) SHORTAGE : Boolean;
     begin
         //sundar
@@ -1352,13 +1352,13 @@ report 80013 "Inventory Availability3"
         EXIT(SHORTAGE);
     end;
 
-    [LineStart(15051)]
+    (15051)]
     procedure SetCalcType(CalcTyp : Boolean);
     begin
         ForPlanning := CalcTyp;
     end;
 
-    [LineStart(15054)]
+    (15054)]
     procedure Include_Purchase_Qty("Plan Date" : Date);
     var
         "Purchase line" : Record "Purchase Line";
@@ -1425,7 +1425,7 @@ report 80013 "Inventory Availability3"
 
     end;
 
-    [LineStart(15115)]
+    (15115)]
     procedure Include_Qc_Qty();
     var
         QILE : Record "Quality Item Ledger Entry";

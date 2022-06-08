@@ -6,7 +6,7 @@ page 50006 "Purchase To Be Received Items"
     PageType = List;
     SaveValues = false;
     SourceTable = "Purchase Line";
-    SourceTableView = SORTING(No., Buy-from Vendor No.) ORDER(Ascending) WHERE(Qty. to Receive=FILTER(>0),Document Type=CONST(Order));
+    SourceTableView = SORTING("No.", "Buy-from Vendor No.") ORDER(Ascending) WHERE("Qty. to Receive"=FILTER(>0),"Document Type"=CONST(Order));
 
     layout
     {

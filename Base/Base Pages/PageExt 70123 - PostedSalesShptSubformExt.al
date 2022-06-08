@@ -81,7 +81,42 @@ pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subfor
     end;
 
 
+<<<<<<< HEAD
    
+=======
+    //Unsupported feature: CodeModification on "ShowTracking(PROCEDURE 1)". Please convert manually.
+
+    //procedure ShowTracking();
+    //Parameters and return type have not been exported.
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    TESTFIELD(Type,Type::Item);
+    IF "Item Shpt. Entry No." <> 0 THEN BEGIN
+      ItemLedgEntry.GET("Item Shpt. Entry No.");
+      TrackingForm.SetItemLedgEntry(ItemLedgEntry);
+    END ELSE
+      TrackingForm.SetMultipleItemLedgEntries(TempItemLedgEntry,
+        DATABASE::"Sales Shipment Line",0,"Document No.",'',0,"Line No.");
+
+    TrackingForm.RUNMODAL;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    #1..3
+      TrackingPage.SetItemLedgEntry(ItemLedgEntry);
+    END ELSE
+      TrackingPage.SetMultipleItemLedgEntries(TempItemLedgEntry,
+        DATABASE::"Sales Shipment Line",0,"Document No.",'',0,"Line No.");
+
+    TrackingPage.RUNMODAL;
+    */
+    //end;
+
+    (13620)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";
@@ -100,6 +135,10 @@ pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subfor
         DesignWorksheetHeader.FILTERGROUP(0);
     end;
 
+<<<<<<< HEAD
+=======
+    (13633)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowSchedule();
     var
         Schedule: Record Schedule2;

@@ -809,7 +809,7 @@ pageextension 70206 ServiceItemCardExt extends "Service Item Card"
         */
     //end;
 
-    [LineStart(27983)]
+    (27983)]
     local procedure ItemNoOnFormat();
     begin
 

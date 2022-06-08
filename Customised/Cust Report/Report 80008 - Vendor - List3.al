@@ -407,7 +407,7 @@ report 80008 "Vendor - List3"
         Vendor_NameCaptionLbl : Label 'Vendor Name';
         ShowOutPutGVar : Boolean;
 
-    [LineStart(13012)]
+    (13012)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -419,7 +419,7 @@ report 80008 "Vendor - List3"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(13021)]
+    (13021)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -432,7 +432,7 @@ report 80008 "Vendor - List3"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(13031)]
+    (13031)]
     procedure "Entercell New"();
     begin
     end;

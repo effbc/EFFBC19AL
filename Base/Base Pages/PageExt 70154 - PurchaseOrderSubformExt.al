@@ -809,11 +809,392 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         IDH: Record "Inspection Datasheet Header";
         PIDH: Record "Posted Inspect DatasheetHeader";
 
+<<<<<<< HEAD
+
+    //Unsupported feature: CodeModification on "OnAfterGetCurrRecord". Please convert manually.
+
+    //trigger OnAfterGetCurrRecord();
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    IF PurchHeader.GET("Document Type","Document No.") THEN;
+
+    DocumentTotals.PurchaseUpdateTotalsControls(
+      Rec,TotalPurchaseHeader,TotalPurchaseLine,RefreshMessageEnabled,
+      TotalAmountStyle,RefreshMessageText,InvDiscAmountEditable,VATAmount);
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    itm_clr_flg := FALSE;
+    ten_percent_item_Cost_high_chk;
+    #1..5
+    */
+    //end;
+
+
+    //Unsupported feature: CodeModification on "OnAfterGetRecord". Please convert manually.
+
+    //trigger OnAfterGetRecord();
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    ShowShortcutDimCode(ShortcutDimCode);
+    TypeChosen := HasTypeToFillMandatotyFields;
+    CLEAR(DocumentTotals);
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    itm_clr_flg := FALSE;
+    ten_percent_item_Cost_high_chk;
+    #1..3
+    OnAfterGetCurrRecordCust;//EFFUPG
+    NoOnFormat;
+      DescriptionEditable := TRUE;
+
+    //added by Vishnu on 09-07-2020
+    {
+    PH.RESET;
+    PH.SETFILTER("No.",Rec."Document No.");
+    IF PH.FINDFIRST THEN
+      BEGIN
+        IF  (PH.Mail_count >0) AND (Rec.Make <> '') THEN
+          Make_edit := FALSE
+        ELSE
+          Make_edit := TRUE;
+      END
+
+    } //Old Code for make modifications
+    //end by Vishnu Priya
+
+    //Added by Vishnu Priya on 12-09-2020
+    FindCnt :=0;
+    PRH.RESET;
+    PRH.SETCURRENTKEY("Order No.");
+    PRH.SETFILTER("Order No.",Rec."Document No.");
+    IF PRH.FINDSET THEN
+    REPEAT
+      BEGIN
+        PRL.RESET;
+        PRL.SETFILTER("Document No.",PRH."No.");
+        PRL.SETRANGE("Line No.",Rec."Line No.");
+        PRL.SETRANGE(Correction,FALSE); // to eliminate the Undo Receipts of the inward
+        PRL.SETFILTER(Quantity,'>%1',0);
+        IF PRL.FINDFIRST THEN
+          FindCnt := FindCnt+1;
+      END
+    UNTIL PRH.NEXT =0;
+
+    IF FindCnt >1 THEN
+      Make_edit := FALSE
+    ELSE
+      Make_edit := TRUE;
+
+    //ended by Vishnu Priya on 12-09-2020
+    */
+    //end;
+
+
+    //Unsupported feature: CodeInsertion on "OnInit". Please convert manually.
+
+    //trigger OnInit();
+    //Parameters and return type have not been exported.
+    //begin
+    /*
+    "Customs Duty ValueVisible" := TRUE;
+    "Customs To be Paid onVisible" := TRUE;
+    "Customs Duty Paid toVisible" := TRUE;
+    DescriptionEditable := TRUE;
+    */
+    //end;
+
+
+    //Unsupported feature: CodeModification on "OnNewRecord". Please convert manually.
+
+    //trigger OnNewRecord(BelowxRec : Boolean);
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    InitType;
+    CLEAR(ShortcutDimCode);
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    InitType;
+    CLEAR(ShortcutDimCode);
+    OnAfterGetCurrRecordCust;//EFFUPG
+    */
+    //end;
+
+
+    //Unsupported feature: CodeInsertion on "OnOpenPage". Please convert manually.
+
+    //trigger OnOpenPage();
+    //begin
+    /*
+       DescriptionEditable := TRUE;
+    */
+    //end;
+
+    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(TransactionLevel : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(var Source : Text;CursorType : Integer;LockType : Integer;var Options : Integer;adStatus : Integer;pCommand : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{B08400BD-F9D1-4D02-B856-71D5DBA123E9}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Command";pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset";pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(RecordsAffected : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pCommand : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{B08400BD-F9D1-4D02-B856-71D5DBA123E9}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Command";pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset";pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(var ConnectionString : Text;var UserID : Text;var Password : Text;var Options : Integer;adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(cFields : Integer;"Fields" : Variant;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(cFields : Integer;"Fields" : Variant;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;cRecords : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;cRecords : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(var fMoreData : Boolean;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(Progress : Integer;MaxProgress : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(cFields : Integer;"Fields" : Variant;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(cFields : Integer;"Fields" : Variant;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;cRecords : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;cRecords : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(var fMoreData : Boolean;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(Progress : Integer;MaxProgress : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    procedure TrackingPage();
+    begin
+    end;
+
+
+    //Unsupported feature: CodeModification on "ShowTracking(PROCEDURE 10)". Please convert manually.
+
+    //procedure ShowTracking();
+    //Parameters and return type have not been exported.
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    TrackingForm.SetPurchLine(Rec);
+    TrackingForm.RUNMODAL;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    TrackingPage.SetPurchLine(Rec);
+    TrackingPage.RUNMODAL;
+    */
+    //end;
+
+    procedure StrOrderLineDetailsPage();
+    begin
+    end;
+
+
+    //Unsupported feature: CodeModification on "ShowStrDetailsForm(PROCEDURE 1280000)". Please convert manually.
+
+    //procedure ShowStrDetailsForm();
+    //Parameters and return type have not been exported.
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    StrOrderLineDetails.RESET;
+    StrOrderLineDetails.SETCURRENTKEY("Document Type","Document No.",Type);
+    StrOrderLineDetails.SETRANGE("Document Type","Document Type");
+    StrOrderLineDetails.SETRANGE("Document No.","Document No.");
+    StrOrderLineDetails.SETRANGE(Type,StrOrderLineDetails.Type::Purchase);
+    StrOrderLineDetails.SETRANGE("Item No.","No.");
+    StrOrderLineDetails.SETRANGE("Line No.","Line No.");
+    StrOrderLineDetailsForm.SETTABLEVIEW(StrOrderLineDetails);
+    StrOrderLineDetailsForm.RUNMODAL;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    #1..7
+    StrOrderLineDetailsPage.SETTABLEVIEW(StrOrderLineDetails);
+    StrOrderLineDetailsPage.RUNMODAL;
+    */
+    //end;
+
+    (6431)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure CreateInspectionDataSheets();
     begin
         CreateInspectionDataSheets;
     end;
 
+<<<<<<< HEAD
+    (6434)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -821,6 +1202,10 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowDataSheets;
     end;
 
+<<<<<<< HEAD
+    (6437)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -828,6 +1213,10 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowDataSheets;
     end;
 
+<<<<<<< HEAD
+    (6440)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -835,7 +1224,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowPostDataSheets;
     end;
 
+<<<<<<< HEAD
+    (6443)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -843,7 +1236,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowPostDataSheets;
     end;
 
+<<<<<<< HEAD
+    (6446)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -851,7 +1248,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowInspectReceipt;
     end;
 
+<<<<<<< HEAD
+    (6449)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -859,7 +1260,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowInspectReceipt;
     end;
 
+<<<<<<< HEAD
+    (6452)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -867,11 +1272,19 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowPostInspectReceipt;
     end;
 
+<<<<<<< HEAD
+    (6455)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure "---B2B---"();
     begin
     end;
 
+<<<<<<< HEAD
+    (6458)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -879,6 +1292,10 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowPostInspectReceipt;
     end;
 
+<<<<<<< HEAD
+    (6461)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure OpenAttachments();
     var
         Attachment: Record Attachments;
@@ -891,6 +1308,10 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", Attachment);
     end;
 
+<<<<<<< HEAD
+    (6469)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure CancelInspection1(var QualityStatus: Text[50]);
     begin
         TESTFIELD("No.");
@@ -898,7 +1319,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         CancelInspection(QualityStatus);
     end;
 
+<<<<<<< HEAD
+    (6474)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure CloseInspection1(var QualityStatus: Text[50]);
     begin
         TESTFIELD("No.");
@@ -906,7 +1331,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         CloseInspection(QualityStatus);
     end;
 
+<<<<<<< HEAD
+    (6479)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _SampleLotInspection();
     var
         SampleLotInspection: Record "Sample Lot Inspection";
@@ -920,7 +1349,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUN(60072, SampleLotInspection);
     end;
 
+<<<<<<< HEAD
+    (6488)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure SampleLotInspection();
     var
         SampleLotInspection: Record "Sample Lot Inspection";
@@ -934,11 +1367,19 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUN(60072, SampleLotInspection);
     end;
 
+<<<<<<< HEAD
+    (6497)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure QCOverride();
     begin
         QCOverride;
     end;
 
+<<<<<<< HEAD
+    (6500)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Getperiod(perioddate: Date) periodnumber: Integer;
     var
         periodNo1: Integer;
@@ -987,7 +1428,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         periodnumber := (acctYearMonth * 4) - 4 + periodNo1;
     end;
 
+<<<<<<< HEAD
+    (6533)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure "Show Deviations & Reasons"();
     begin
         "Excepted Rcpt.Date Tracking".SETRANGE("Excepted Rcpt.Date Tracking"."Document No.", "Document No.");
@@ -995,6 +1440,10 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUNMODAL(60048, "Excepted Rcpt.Date Tracking");
     end;
 
+<<<<<<< HEAD
+    (6538)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Show_Custom_Charges(show: Boolean);
     begin
 
@@ -1009,7 +1458,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         END;
     end;
 
+<<<<<<< HEAD
+    (6552)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Split_Qty();
     var
         Base_Qty: Decimal;
@@ -1200,7 +1653,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
 
     end;
 
+<<<<<<< HEAD
+    (6747)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure TypeOnAfterValidate();
     begin
         IF Type = Type::Item THEN
@@ -1209,7 +1666,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             DescriptionEditable := TRUE;
     end;
 
+<<<<<<< HEAD
+    (6753)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure OnAfterGetCurrRecordCust();
     begin
         xRec := Rec;
@@ -1219,7 +1680,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             DescriptionEditable := TRUE;
     end;
 
+<<<<<<< HEAD
+    (6760)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure DeviatedReceiptDateOnAfterInpu(var Text: Text[1024]);
     begin
 
@@ -1227,7 +1692,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             ERROR('You Dont Have to Delete the Deviated Date');
     end;
 
+<<<<<<< HEAD
+    (6765)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure DeviatedReceiptDateOnInputChan(var Text: Text[1024]);
     begin
 
@@ -1251,7 +1720,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         END;
     end;
 
+<<<<<<< HEAD
+    (6786)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure NoOnFormat();
     begin
         IF ("Document Type" = 2) AND ("No." <> '') THEN
@@ -1263,7 +1736,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         END;
     end;
 
+<<<<<<< HEAD
+    (6797)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ActPeriodActYearCalc(Req_Date: Date);
     var
         cDay: Integer;
@@ -1326,7 +1803,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         // MESSAGE('Act Period: '+FORMAT(PeriodNum)+' Act Year: '+FORMAT(AccountYear));
     end;
 
+<<<<<<< HEAD
+    (6849)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure CashFlowUpdation();
     var
         "Packing Value": Decimal;
@@ -1462,7 +1943,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             UNTIL PurchLine.NEXT = 0;
     end;
 
+<<<<<<< HEAD
+    (6964)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure CommaRemoval(Base: Text[30]) Converted: Text[30];
     var
         i: Integer;
@@ -1474,7 +1959,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         EXIT(Converted);
     end;
 
+<<<<<<< HEAD
+    (6972)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ten_percent_item_Cost_high_chk();
     begin
         Pur_line.RESET;

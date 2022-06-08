@@ -159,7 +159,7 @@ page 60066 "DC Subform"
         ReturnedVisible: Boolean;
         DCL: Record "DC Line";
 
-    [LineStart(6015)]
+    (6015)]
     procedure OpenItemTrackingLines();
     var
         Item: Record Item;

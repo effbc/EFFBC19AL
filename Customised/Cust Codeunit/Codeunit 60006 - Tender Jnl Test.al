@@ -41,7 +41,7 @@ codeunit 60006 "Tender Jnl Test"
         dev: Integer;
         cust: Record Customer;
 
-    [LineStart(1377)]
+    (1377)]
     procedure RunWithCheck(var TenderPostingLine: Record "Tender Posting Lines");
     var
         "AccountNo.": Code[20];
@@ -135,7 +135,7 @@ codeunit 60006 "Tender Jnl Test"
 
     end;
 
-    [LineStart(1467)]
+    (1467)]
     procedure CostPosting(var TenderPostingLine: Record "Tender Posting Lines");
     var
         TenderPostingGroup: Record "Tender Posting Groups";
@@ -182,7 +182,7 @@ codeunit 60006 "Tender Jnl Test"
         InsertLedgerEntries(TenderPostingLine);
     end;
 
-    [LineStart(1509)]
+    (1509)]
     procedure EMDPosting(var TenderPostingLine: Record "Tender Posting Lines");
     var
         TenderPostingGroup: Record "Tender Posting Groups";
@@ -310,7 +310,7 @@ codeunit 60006 "Tender Jnl Test"
         InsertLedgerEntries(TenderPostingLine);
     end;
 
-    [LineStart(1631)]
+    (1631)]
     procedure SDPosting(var TenderPostingLine: Record "Tender Posting Lines");
     var
         TenderPostingGroup: Record "Tender Posting Groups";
@@ -431,7 +431,7 @@ codeunit 60006 "Tender Jnl Test"
         InsertLedgerEntries(TenderPostingLine);
     end;
 
-    [LineStart(1739)]
+    (1739)]
     procedure InitGenJnlLine(var TenderPostingLine: Record "Tender Posting Lines"; "AccountNo.": Code[20]; "BalAccountNo.": Code[20]; AccountType: Option "G/L Account","Bank Account"; BalAccountType: Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset"; Amount: Decimal);
     var
         DimMgt: Codeunit DimensionManagement;
@@ -495,7 +495,7 @@ codeunit 60006 "Tender Jnl Test"
 
     end;
 
-    [LineStart(1795)]
+    (1795)]
     procedure EMDFDRPayment(var TenderPostingLine: Record "Tender Posting Lines");
     var
         TenderPostingGroup: Record "Tender Posting Groups";
@@ -543,7 +543,7 @@ codeunit 60006 "Tender Jnl Test"
         FDRMaster.MODIFY;
     end;
 
-    [LineStart(1836)]
+    (1836)]
     procedure EMDFDRReceipt(var TenderPostingLine: Record "Tender Posting Lines");
     var
         TenderPostingGroup: Record "Tender Posting Groups";
@@ -590,7 +590,7 @@ codeunit 60006 "Tender Jnl Test"
         FDRMaster.MODIFY;
     end;
 
-    [LineStart(1876)]
+    (1876)]
     procedure SDFDRPayment(var TenderPostingLine: Record "Tender Posting Lines");
     var
         TenderPostingGroup: Record "Tender Posting Groups";
@@ -638,7 +638,7 @@ codeunit 60006 "Tender Jnl Test"
         FDRMaster.MODIFY;
     end;
 
-    [LineStart(1917)]
+    (1917)]
     procedure SDFDRReceipt(var TenderPostingLine: Record "Tender Posting Lines");
     var
         TenderPostingGroup: Record "Tender Posting Groups";
@@ -685,7 +685,7 @@ codeunit 60006 "Tender Jnl Test"
         FDRMaster.MODIFY;
     end;
 
-    [LineStart(1957)]
+    (1957)]
     procedure SDBGPayment(var TenderPostingLine: Record "Tender Posting Lines");
     var
         TenderPostingGroup: Record "Tender Posting Groups";
@@ -712,7 +712,7 @@ codeunit 60006 "Tender Jnl Test"
         BankGuarntee.MODIFY;
     end;
 
-    [LineStart(1978)]
+    (1978)]
     procedure SDBGReceipt(var TenderPostingLine: Record "Tender Posting Lines");
     var
         TenderPostingGroup: Record "Tender Posting Groups";
@@ -739,7 +739,7 @@ codeunit 60006 "Tender Jnl Test"
         BankGuarntee.MODIFY;
     end;
 
-    [LineStart(1999)]
+    (1999)]
     procedure InsertLedgerEntries(var TenderPostingLines: Record "Tender Posting Lines");
     var
         "EntryNo.": Integer;
@@ -775,7 +775,7 @@ codeunit 60006 "Tender Jnl Test"
         TenderPostingLines.DELETE;
     end;
 
-    [LineStart(2029)]
+    (2029)]
     procedure ModifyStatus(var TenderPostingLines: Record "Tender Posting Lines");
     var
         TenderHeader: Record "Tender Header";
@@ -810,7 +810,7 @@ codeunit 60006 "Tender Jnl Test"
         END;
     end;
 
-    [LineStart(2060)]
+    (2060)]
     procedure UpdateTenderDocuments(var TenderPostingLines: Record "Tender Posting Lines");
     begin
         CASE TenderPostingLines.Type OF
@@ -1010,7 +1010,7 @@ codeunit 60006 "Tender Jnl Test"
 
     end;
 
-    [LineStart(2260)]
+    (2260)]
     procedure PostCust(var TenderPostingLine: Record "Tender Posting Lines");
     var
         TenderHeader: Record "Tender Header";
@@ -1069,7 +1069,7 @@ codeunit 60006 "Tender Jnl Test"
         "Cust.LedgerEntry".INSERT;
     end;
 
-    [LineStart(2309)]
+    (2309)]
     procedure CheckCashAccBalance(var GenJnlLine2: Record "Gen. Journal Line");
     var
         GLAcc: Record "G/L Account";

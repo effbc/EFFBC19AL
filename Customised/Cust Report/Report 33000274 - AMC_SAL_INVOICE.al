@@ -2264,13 +2264,13 @@ report 33000274 AMC_SAL_INVOICE
         Amount_type_symbol: Code[50];
         CLE: Record "Cust. Ledger Entry";
 
-    [LineStart(21154)]
+    (21154)]
     procedure InitLogInteraction();
     begin
         LogInteraction := SegManagement.FindInteractTmplCode(4) <> '';
     end;
 
-    [LineStart(21157)]
+    (21157)]
     procedure FindPostedShipmentDate(): Date;
     var
         SalesShipmentHeader: Record "Sales Shipment Header";
@@ -2314,7 +2314,7 @@ report 33000274 AMC_SAL_INVOICE
             EXIT("Sales Invoice Header"."Posting Date");
     end;
 
-    [LineStart(21195)]
+    (21195)]
     procedure GenerateBufferFromValueEntry(SalesInvoiceLine2: Record "Sales Invoice Line");
     var
         ValueEntry: Record "Value Entry";
@@ -2345,7 +2345,7 @@ report 33000274 AMC_SAL_INVOICE
             UNTIL (ValueEntry.NEXT = 0) OR (TotalQuantity = 0);
     end;
 
-    [LineStart(21218)]
+    (21218)]
     procedure GenerateBufferFromShipment(SalesInvoiceLine: Record "Sales Invoice Line");
     var
         SalesInvoiceHeader: Record "Sales Invoice Header";
@@ -2405,7 +2405,7 @@ report 33000274 AMC_SAL_INVOICE
             UNTIL (SalesShipmentLine.NEXT = 0) OR (TotalQuantity = 0);
     end;
 
-    [LineStart(21268)]
+    (21268)]
     procedure CorrectShipment(var SalesShipmentLine: Record "Sales Shipment Line");
     var
         SalesInvoiceLine: Record "Sales Invoice Line";
@@ -2419,7 +2419,7 @@ report 33000274 AMC_SAL_INVOICE
             UNTIL SalesInvoiceLine.NEXT = 0;
     end;
 
-    [LineStart(21277)]
+    (21277)]
     procedure AddBufferEntry(SalesInvoiceLine: Record "Sales Invoice Line"; QtyOnShipment: Decimal; PostingDate: Date);
     begin
         SalesShipmentBuffer.SETRANGE("Document No.", SalesInvoiceLine."Document No.");
@@ -2444,7 +2444,7 @@ report 33000274 AMC_SAL_INVOICE
         END;
     end;
 
-    [LineStart(21299)]
+    (21299)]
     local procedure DocumentCaption(): Text[250];
     begin
         IF "Sales Invoice Header"."Prepayment Invoice" THEN
@@ -2452,7 +2452,7 @@ report 33000274 AMC_SAL_INVOICE
         EXIT(Text004);
     end;
 
-    [LineStart(21304)]
+    (21304)]
     procedure InitializeRequest(NewNoOfCopies: Integer; NewShowInternalInfo: Boolean; NewLogInteraction: Boolean; DisplayAsmInfo: Boolean);
     begin
         NoOfCopies := NewNoOfCopies;
@@ -2461,7 +2461,7 @@ report 33000274 AMC_SAL_INVOICE
         DisplayAssemblyInformation := DisplayAsmInfo;
     end;
 
-    [LineStart(21310)]
+    (21310)]
     procedure CollectAsmInformation();
     var
         ValueEntry: Record "Value Entry";
@@ -2497,7 +2497,7 @@ report 33000274 AMC_SAL_INVOICE
         UNTIL ValueEntry.NEXT = 0;
     end;
 
-    [LineStart(21337)]
+    (21337)]
     procedure TreatAsmLineBuffer(PostedAsmLine: Record "Posted Assembly Line");
     begin
         CLEAR(TempPostedAsmLine);
@@ -2516,7 +2516,7 @@ report 33000274 AMC_SAL_INVOICE
         END;
     end;
 
-    [LineStart(21353)]
+    (21353)]
     procedure GetUOMText(UOMCode: Code[10]): Text[10];
     var
         UnitOfMeasure: Record "Unit of Measure";
@@ -2526,13 +2526,13 @@ report 33000274 AMC_SAL_INVOICE
         EXIT(UnitOfMeasure.Description);
     end;
 
-    [LineStart(21358)]
+    (21358)]
     procedure BlanksForIndent(): Text[10];
     begin
         EXIT(PADSTR('', 2, ' '));
     end;
 
-    [LineStart(21361)]
+    (21361)]
     local procedure GetLineFeeNoteOnReportHist(SalesInvoiceHeaderNo: Code[20]);
     var
         LineFeeNoteOnReportHist: Record "Line Fee Note on Report Hist.";

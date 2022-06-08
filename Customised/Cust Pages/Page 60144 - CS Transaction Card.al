@@ -765,7 +765,7 @@ page 60144 "CS Transaction Card"
         custEnable: Boolean;
         Salesperson: Record "Salesperson/Purchaser";
 
-    [LineStart(12900)]
+    (12900)]
     procedure Cards_Calc(Item: Code[20]; Status: Option Working,"Non Working") res: Decimal;
     var
         CsLedgerLRec: Record "CS Stock Ledger";
@@ -797,7 +797,7 @@ page 60144 "CS Transaction Card"
         res := totCards;
     end;
 
-    [LineStart(12927)]
+    (12927)]
     procedure getLines(StatusL: Option Working,"Non Working");
     var
         Header: Record "CS Transaction Header";
@@ -854,7 +854,7 @@ page 60144 "CS Transaction Card"
             UNTIL CsStockLedger.NEXT = 0;
     end;
 
-    [LineStart(12981)]
+    (12981)]
     procedure SendMail();
     begin
         Mail_Body := '<html><body><b>Transaction ID: <b>' + FORMAT("Transaction ID") + '<br/>';

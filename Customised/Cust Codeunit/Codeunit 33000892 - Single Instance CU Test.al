@@ -16,7 +16,7 @@ codeunit 33000892 "Single Instance CU Test"
         TempGLEntry: Record "G/L Entry" temporary;
         StoreToTemp: Boolean;
 
-    [LineStart(51327)]
+    (51327)]
     procedure InsertGL(GLEntry: Record "G/L Entry");
     begin
         IF StoreToTemp THEN BEGIN

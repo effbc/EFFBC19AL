@@ -34,14 +34,14 @@ report 33000080 ReimbursementPaymentForMonth
         PayEmployeeElements: Record "Pay Employee Elements";
         PaymentForTheMonth: Decimal;
 
-    [LineStart(21009)]
+    (21009)]
     procedure InitializationRecord(var Rec: Record "Pay Employee Elements");
     begin
         PayEmployeeElements.COPY(Rec);
         PaymentForTheMonth := PayEmployeeElements."Payment for Month";
     end;
 
-    [LineStart(21013)]
+    (21013)]
     procedure Modification();
     begin
         //Modification

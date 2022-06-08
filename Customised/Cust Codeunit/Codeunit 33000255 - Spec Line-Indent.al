@@ -35,7 +35,7 @@ codeunit 33000255 "Spec Line-Indent"
         i: Integer;
         AutoIndent: Boolean;
 
-    [LineStart(51074)]
+    (51074)]
     procedure Indent();
     var
         NoOfChars: Integer;
@@ -70,13 +70,13 @@ codeunit 33000255 "Spec Line-Indent"
         Window.CLOSE;
     end;
 
-    [LineStart(51103)]
+    (51103)]
     procedure ChangeStatus();
     begin
         AutoIndent := TRUE;
     end;
 
-    [LineStart(51106)]
+    (51106)]
     procedure IndentSpecVersion(SpecVersion: Record "Specification Version");
     begin
         IF NOT AutoIndent THEN

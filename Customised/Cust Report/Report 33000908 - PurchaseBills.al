@@ -900,7 +900,7 @@ report 33000908 PurchaseBills
         TDSAmount : Decimal;
         glentry : Record "G/L Entry";
 
-    [LineStart(22834)]
+    (22834)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
 
@@ -913,7 +913,7 @@ report 33000908 PurchaseBills
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(22844)]
+    (22844)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;

@@ -652,7 +652,7 @@ report 33000905 "Day Wise Issues New1"
         input : Text;
         MatReqDateFilter : Date;
 
-    [LineStart(22041)]
+    (22041)]
     procedure SentForAuthorizarion();
     var
         Subject : Text;

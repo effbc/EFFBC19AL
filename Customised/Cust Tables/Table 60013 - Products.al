@@ -73,12 +73,12 @@ table 60013 Products
     {
     }
 
-    [LineStart(1368)]
+
     procedure AssistEdit(OldProduct: Record Products): Boolean;
     var
         "RM Setup": Record "Marketing Setup";
         Products: Record Products;
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit 396;
     begin
         /*
         WITH Products DO BEGIN
@@ -97,7 +97,7 @@ table 60013 Products
 
     end;
 
-    [LineStart(1384)]
+
     procedure OpenAttachments();
     var
         Attachment: Record Attachments;

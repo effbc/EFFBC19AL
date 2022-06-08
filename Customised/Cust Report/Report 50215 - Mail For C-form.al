@@ -101,7 +101,7 @@ report 50215 "Mail For C-form"
         Invoice_No_CaptionLbl : Label 'Invoice No.';
         EFFTRONICS_Order_No_CaptionLbl : Label 'EFFTRONICS Order No.';
 
-    [LineStart(9584)]
+    (9584)]
     procedure ChangeCurrencyFormat(Amt : Decimal) AmountText : Text[30];
     var
         I : Integer;

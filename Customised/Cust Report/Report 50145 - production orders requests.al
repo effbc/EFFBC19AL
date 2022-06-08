@@ -72,7 +72,7 @@ report 50145 "production orders requests"
         MATERIAL_ISSUES_HEAER: Record "Material Issues Header";
         "Release MaterialIssue Document": Codeunit "Release MaterialIssue Document";
 
-    [LineStart(7529)]
+    (7529)]
     procedure CreateALLMaterialIssues();
     var
         LineNo: Integer;
@@ -512,7 +512,7 @@ report 50145 "production orders requests"
 
     end;
 
-    [LineStart(7973)]
+    (7973)]
     procedure GetNextNo() NumberValue: Code[20];
     var
         DateValue: Text[30];

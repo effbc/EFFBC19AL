@@ -755,7 +755,7 @@ report 50034 "Indent Status"
         ShowOutGVar : Boolean;
         CreatePreviousItem : Code[20];
 
-    [LineStart(1579)]
+    (1579)]
     procedure entercell(rowno : Integer;columnno : Integer;cellvalue : Text[250];bold : Boolean;CellType : Option);
     begin
         TempExcelBuffer.INIT;
@@ -767,7 +767,7 @@ report 50034 "Indent Status"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(1588)]
+    (1588)]
     procedure enterheadings(rowno : Integer;columnno : Integer;cellvalue : Code[50];bold : Boolean;CellType : Option);
     begin
         TempExcelBuffer.INIT;

@@ -367,7 +367,7 @@ report 33000275 General_Ledger_MIPL
         TelCaptionLbl : Label 'TEL :';
         FaxCaptionLbl : Label 'FAX :';
 
-    [LineStart(21397)]
+    (21397)]
     procedure FindGLAccName("Source Type" : Option " ",Customer,Vendor,"Bank Account","Fixed Asset";"Entry No." : Integer;"Source No." : Code[20];"G/L Account No." : Code[20]) : Text[50];
     var
         AccName : Text[50];
@@ -418,7 +418,7 @@ report 33000275 General_Ledger_MIPL
         EXIT(AccName);
     end;
 
-    [LineStart(21434)]
+    (21434)]
     procedure GetDescription(DocumentNoPar : Code[20];GlAccNoPar : Code[20]) : Text;
     var
         GLEntryLrec : Record "G/L Entry";

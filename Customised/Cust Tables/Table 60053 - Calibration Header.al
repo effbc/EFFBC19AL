@@ -85,7 +85,7 @@ table 60053 "Calibration Header"
     var
         FixedAsset: Record "Fixed Asset";
 
-    [LineStart(2471)]
+
     procedure TenderAttachments();
     var
         Attachments: Record Attachments;

@@ -644,7 +644,7 @@ table 33000278 "Ins Prod. Order Routing Line"
         Text006: Label 'A %1 %2 can not be inserted, modified, or deleted.';
         SubAssembly: Record "Sub Assembly";
 
-    [LineStart(7976)]
+    (7976)]
     procedure Caption(): Text[100];
     var
         ProdOrder: Record "Production Order";
@@ -660,7 +660,7 @@ table 33000278 "Ins Prod. Order Routing Line"
             "Prod. Order No.", ProdOrder.Description, "Routing No."));
     end;
 
-    [LineStart(7987)]
+    (7987)]
     procedure GetLine();
     begin
         ProdOrderLine.SetRange(Status, Status);
@@ -670,7 +670,7 @@ table 33000278 "Ins Prod. Order Routing Line"
         ProdOrderLine.Find('-');
     end;
 
-    [LineStart(7994)]
+    (7994)]
     procedure WorkCenterTransferfields();
     begin
         "Work Center No." := WorkCenter."No.";
@@ -688,7 +688,7 @@ table 33000278 "Ins Prod. Order Routing Line"
         "Unit Cost Calculation" := WorkCenter."Unit Cost Calculation";
     end;
 
-    [LineStart(8009)]
+    (8009)]
     procedure MachineCtrTransferfields();
     begin
         WorkCenter.Get(MachineCenter."Work Center No.");
@@ -714,7 +714,7 @@ table 33000278 "Ins Prod. Order Routing Line"
         "Overhead Rate" := MachineCenter."Overhead Rate";
     end;
 
-    [LineStart(8032)]
+    (8032)]
     procedure SetNextOperations(var RtngLine: Record "Ins Prod. Order Routing Line");
     var
         RtngLine2: Record "Ins Prod. Order Routing Line";
@@ -737,7 +737,7 @@ table 33000278 "Ins Prod. Order Routing Line"
         end;
     end;
 
-    [LineStart(8050)]
+    (8050)]
     procedure CheckReworkStatus();
     var
         InspectReceipt: Record "Inspection Receipt Header";

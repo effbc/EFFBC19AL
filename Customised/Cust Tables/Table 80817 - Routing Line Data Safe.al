@@ -504,7 +504,7 @@ table 80817 "Routing Line Data Safe"
         "--QC--": Integer;
         Subassembly: Record "Sub Assembly";
 
-    [LineStart(5664)]
+
     procedure TestStatus();
     var
         RtngHeader: Record "Routing Header";
@@ -521,7 +521,7 @@ table 80817 "Routing Line Data Safe"
         end;
     end;
 
-    [LineStart(5675)]
+
     procedure DeleteRelations();
     begin
         RtngTool.SetRange("Routing No.", "Routing No.");
@@ -545,7 +545,7 @@ table 80817 "Routing Line Data Safe"
         RtngComment.DeleteAll;
     end;
 
-    [LineStart(5696)]
+
     procedure WorkCenterTransferfields();
     begin
         "Work Center No." := WorkCenter."No.";
@@ -564,7 +564,7 @@ table 80817 "Routing Line Data Safe"
         //Cost1.0
     end;
 
-    [LineStart(5712)]
+
     procedure MachineCtrTransferfields();
     begin
         WorkCenter.Get(MachineCenter."Work Center No.");
@@ -591,13 +591,13 @@ table 80817 "Routing Line Data Safe"
         //Cost1.0
     end;
 
-    [LineStart(5736)]
+
     procedure SetRecalcStatus();
     begin
         Recalculate := true;
     end;
 
-    [LineStart(5739)]
+
     procedure RunTimePer(): Decimal;
     begin
         if "Lot Size" = 0 then

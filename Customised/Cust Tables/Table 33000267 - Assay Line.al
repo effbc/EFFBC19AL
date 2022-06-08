@@ -150,7 +150,7 @@ table 33000267 "Assay Line"
         Characterstic: Record Characteristic;
         AssayHeader: Record "Assay Header";
 
-    [LineStart(7810)]
+    (7810)]
     procedure TestStatus();
     begin
 

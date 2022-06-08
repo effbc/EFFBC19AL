@@ -21,7 +21,7 @@ codeunit 80811 "Transfer Service Data to Main"
         ServiceLine: Record "Service Line";
         Window: Dialog;
 
-    [LineStart(41399)]
+    (41399)]
     procedure UpdateServHeader();
     begin
         Window.UPDATE(1, 'Service Header');
@@ -124,7 +124,7 @@ codeunit 80811 "Transfer Service Data to Main"
             UNTIL TempServiceHead.NEXT = 0;
     end;
 
-    [LineStart(41499)]
+    (41499)]
     procedure UpdateServItemLine();
     begin
         Window.UPDATE(1, 'Service Item Line');
@@ -139,7 +139,7 @@ codeunit 80811 "Transfer Service Data to Main"
             UNTIL TempServiceItemLine.NEXT = 0;
     end;
 
-    [LineStart(41511)]
+    (41511)]
     procedure UpdateServLine();
     begin
         Window.UPDATE(1, 'Service Line');

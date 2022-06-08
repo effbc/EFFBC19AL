@@ -1342,7 +1342,7 @@ report 99998 "Sales - Invoice 2"
         Prepared_byCaptionLbl: Label 'Prepared by';
         Checked_byCaptionLbl: Label 'Checked by';
 
-    [LineStart(18901)]
+    (18901)]
     procedure InitLogInteraction();
     begin
         LogInteraction := SegManagement.FindInteractTmplCode(4) <> '';

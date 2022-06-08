@@ -295,7 +295,7 @@ page 60136 "Quotation Comparision"
         DescriptionEmphasize: Boolean;
         Text19068734: Label 'RFQ No.';
 
-    [LineStart(11966)]
+    (11966)]
     local procedure IsExpanded(ActualReqLine: Record "Quotation Comparision"): Boolean;
     begin
         TempReqLine := ActualReqLine;
@@ -304,7 +304,7 @@ page 60136 "Quotation Comparision"
         EXIT(TempReqLine.Level > ActualReqLine.Level);
     end;
 
-    [LineStart(11972)]
+    (11972)]
     local procedure ToggleExpandCollapse();
     var
         ReqLine: Record "Quotation Comparision";
@@ -328,7 +328,7 @@ page 60136 "Quotation Comparision"
         CurrPage.UPDATE;
     end;
 
-    [LineStart(11991)]
+    (11991)]
     procedure SetExpansionStatus();
     begin
         CASE TRUE OF
@@ -341,7 +341,7 @@ page 60136 "Quotation Comparision"
         END;
     end;
 
-    [LineStart(12001)]
+    (12001)]
     procedure InitTempTable();
     begin
         ReqLine.RESET;
@@ -356,7 +356,7 @@ page 60136 "Quotation Comparision"
             UNTIL ReqLine.NEXT = 0;
     end;
 
-    [LineStart(12013)]
+    (12013)]
     local procedure ExpandAll();
     var
         ReqLine: Record "Quotation Comparision";
@@ -372,7 +372,7 @@ page 60136 "Quotation Comparision"
             UNTIL ReqLine.NEXT = 0;
     end;
 
-    [LineStart(12024)]
+    (12024)]
     procedure SetRecFilters();
     begin
         RESET;
@@ -382,20 +382,20 @@ page 60136 "Quotation Comparision"
         CurrPage.UPDATE(FALSE);
     end;
 
-    [LineStart(12031)]
+    (12031)]
     local procedure SelectCurrentRFQNo();
     begin
         SETRANGE("RFQ No.", RFQNumber);
         CurrPage.UPDATE(FALSE);
     end;
 
-    [LineStart(12035)]
+    (12035)]
     local procedure RFQNumberOnAfterValidate();
     begin
         SelectCurrentRFQNo;
     end;
 
-    [LineStart(12038)]
+    (12038)]
     local procedure OnAfterGetCurrRecord();
     begin
         xRec := Rec;
@@ -408,13 +408,13 @@ page 60136 "Quotation Comparision"
                 TempReqLine.DELETE;
     end;
 
-    [LineStart(12048)]
+    (12048)]
     local procedure ActualExpansionStatusOnPush();
     begin
         ToggleExpandCollapse;
     end;
 
-    [LineStart(12051)]
+    (12051)]
     local procedure QuoteNoOnFormat();
     begin
         IF Level = 0 THEN
@@ -423,7 +423,7 @@ page 60136 "Quotation Comparision"
             "Quote No.Emphasize" := FALSE;
     end;
 
-    [LineStart(12057)]
+    (12057)]
     local procedure LocationCodeOnFormat();
     begin
         IF Level = 0 THEN
@@ -432,7 +432,7 @@ page 60136 "Quotation Comparision"
             "Location CodeEmphasize" := FALSE;
     end;
 
-    [LineStart(12063)]
+    (12063)]
     local procedure VendorNoOnFormat();
     begin
         IF Level = 0 THEN
@@ -441,7 +441,7 @@ page 60136 "Quotation Comparision"
             "Vendor No.Emphasize" := FALSE;
     end;
 
-    [LineStart(12069)]
+    (12069)]
     local procedure TotalAmountOnFormat();
     begin
         IF Level = 0 THEN
@@ -450,7 +450,7 @@ page 60136 "Quotation Comparision"
             "Total AmountEmphasize" := FALSE;
     end;
 
-    [LineStart(12075)]
+    (12075)]
     local procedure DescriptionOnFormat();
     begin
         IF Level = 0 THEN

@@ -709,7 +709,7 @@ page 60088 "To Be Released Indents"
         user_dept: Text[500];
         IndentHeader: Record "Indent Header";
 
-    [LineStart(10677)]
+    (10677)]
     procedure Manual_indent_release_rights(IndentNo: Code[20]) Authorized: Boolean;
     begin
         IF USERID IN ['EFFTRONICS\ANVESH', 'EFFTRONICS\ANILKUMAR', 'EFFTRONICS\VISHNUPRIYA'] THEN

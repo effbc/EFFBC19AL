@@ -2033,7 +2033,7 @@ report 50038 "Material Availability"
         ProdOrdrTemp : Record "Production Order";
         tempdate : Date;
 
-    [LineStart(1756)]
+    (1756)]
     procedure Include_Purchase_Qty("Plan Date" : Date);
     begin
         /* //previous code commenting by pranavi on 23-11-2015 for considering all purchase qty
@@ -2101,7 +2101,7 @@ report 50038 "Material Availability"
 
     end;
 
-    [LineStart(1820)]
+    (1820)]
     procedure Include_Purchase_Qty_min(NO : Code[30]);
     begin
 
@@ -2127,7 +2127,7 @@ report 50038 "Material Availability"
              UNTIL "Purchase line".NEXT=0;
     end;
 
-    [LineStart(1843)]
+    (1843)]
     procedure Include_Qc_Qty();
     begin
         // FILTERING THE QC PENDING INWARDS & UPDATE THOSE INFORMATION INTO VIRTUAL STOCK
@@ -2157,7 +2157,7 @@ report 50038 "Material Availability"
         UNTIL QILE.NEXT=0;
     end;
 
-    [LineStart(1870)]
+    (1870)]
     procedure Include_Qc_Qty_min(NO : Code[30]);
     begin
         // FILTERING THE QC PENDING INWARDS & UPDATE THOSE INFORMATION INTO VIRTUAL STOCK
@@ -2187,7 +2187,7 @@ report 50038 "Material Availability"
         UNTIL QILE.NEXT=0;
     end;
 
-    [LineStart(1897)]
+    (1897)]
     procedure "Reserve Running Order Material"();
     begin
         // FILTERING THE PENDING  MATERIAL REQUETS BASED ON FOLLOWING CONDITIONS
@@ -2386,7 +2386,7 @@ report 50038 "Material Availability"
 
     end;
 
-    [LineStart(2092)]
+    (2092)]
     procedure "Verify Alternate"(Item1 : Code[20];Req_Qty : Decimal;"Prod. Order" : Code[20]);
     begin
         AVB:=FALSE;
@@ -2479,7 +2479,7 @@ report 50038 "Material Availability"
         END;
     end;
 
-    [LineStart(2182)]
+    (2182)]
     procedure Verify_BOUT_Alternate(Item1 : Code[20];Req_Qty : Decimal);
     begin
         AVB:=FALSE;
@@ -2553,7 +2553,7 @@ report 50038 "Material Availability"
         UNTIL "Alternative Items".NEXT=0;
     end;
 
-    [LineStart(2253)]
+    (2253)]
     procedure Include_Item(item1 : Code[20];Verify : Boolean);
     begin
         //IF item1 = 'ECDIOPN00120' THEN
@@ -2657,7 +2657,7 @@ report 50038 "Material Availability"
 
     end;
 
-    [LineStart(2353)]
+    (2353)]
     procedure Calculate_Sale_Order_Shortage(REQ_DATE : Date);
     var
         PMIH : Record "Posted Material Issues Header";
@@ -3003,7 +3003,7 @@ report 50038 "Material Availability"
 
     end;
 
-    [LineStart(2692)]
+    (2692)]
     procedure Calculate_Sale_Schedule_Shorta(REQ_DATE : Date);
     begin
         // THIS PROCESS ALSO SAME AS THE "SHORTAGE CALCULATON" PROCESS OF SALES ITEM
@@ -3350,7 +3350,7 @@ report 50038 "Material Availability"
 
     end;
 
-    [LineStart(3035)]
+    (3035)]
     procedure Include_Saftey_Stock_Quantity(Shortage_Item : Code[20];Shortage_Quantity : Decimal);
     begin
                   IF Item.GET(Shortage_Item) THEN
@@ -3384,7 +3384,7 @@ report 50038 "Material Availability"
                   END;
     end;
 
-    [LineStart(3066)]
+    (3066)]
     procedure PO_QTY(Item_Code : Code[20]) PO_Quantity : Decimal;
     begin
              "Purchase line".SETCURRENTKEY("Purchase line"."No.","Purchase line"."Buy-from Vendor No.");
@@ -3400,7 +3400,7 @@ report 50038 "Material Availability"
              EXIT(PO_Quantity);
     end;
 
-    [LineStart(3079)]
+    (3079)]
     procedure Include_Saftey_Stock_Quantity1(Shortage_Item : Code[20];Shortage_Quantity : Decimal);
     begin
                   IF Item.GET(Shortage_Item) THEN
@@ -3434,7 +3434,7 @@ report 50038 "Material Availability"
                   END;
     end;
 
-    [LineStart(3110)]
+    (3110)]
     procedure MSLItemExpiryDate(ILE : Record "Item Ledger Entry";ForPlan : Boolean) Expired : Boolean;
     var
         MSL_ILE : Record "Item Ledger Entry";

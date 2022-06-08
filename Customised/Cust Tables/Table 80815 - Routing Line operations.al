@@ -75,7 +75,7 @@ table 80815 "Routing Line operations"
         "--QC--": Integer;
         Subassembly: Record "Sub Assembly";
 
-    [LineStart(5624)]
+
     procedure TestStatus();
     var
         RtngHeader: Record "Routing Header";
@@ -83,27 +83,27 @@ table 80815 "Routing Line operations"
     begin
     end;
 
-    [LineStart(5627)]
+
     procedure DeleteRelations();
     begin
     end;
 
-    [LineStart(5630)]
+
     procedure WorkCenterTransferfields();
     begin
     end;
 
-    [LineStart(5633)]
+
     procedure MachineCtrTransferfields();
     begin
     end;
 
-    [LineStart(5636)]
+
     procedure SetRecalcStatus();
     begin
     end;
 
-    [LineStart(5639)]
+
     procedure RunTimePer(): Decimal;
     begin
     end;

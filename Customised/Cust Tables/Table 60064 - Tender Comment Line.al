@@ -39,7 +39,7 @@ table 60064 "Tender Comment Line"
     {
     }
 
-    [LineStart(3106)]
+
     procedure SetUpNewLine();
     var
         TenderCommentLine: Record "Tender Comment Line";

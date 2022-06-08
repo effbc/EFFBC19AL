@@ -1120,7 +1120,7 @@ pageextension 70115 PostedPurchaseInvoiceExt extends "Posted Purchase Invoice"
         */
     //end;
 
-    [LineStart(14469)]
+    (14469)]
     procedure CommaRemoval(Base : Text[30]) Converted : Text[30];
     var
         i : Integer;

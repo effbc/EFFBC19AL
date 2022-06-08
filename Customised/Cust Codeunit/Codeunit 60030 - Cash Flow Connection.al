@@ -39,7 +39,7 @@ codeunit 60030 "Cash Flow Connection"
         RecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
         Working: Option Working,"Non-Working";
 
-    [LineStart(29043)]
+    (29043)]
     procedure ExecInOracle(Qry: Text);
     begin
 
@@ -70,7 +70,7 @@ codeunit 60030 "Cash Flow Connection"
         SQLConnection.Close;//B2B
     end;
 
-    [LineStart(29071)]
+    (29071)]
     procedure CommaRemoval(Base: Text[30]) Converted: Text[30];
     var
         i: Integer;
@@ -82,7 +82,7 @@ codeunit 60030 "Cash Flow Connection"
         EXIT(Converted);
     end;
 
-    [LineStart(29079)]
+    (29079)]
     procedure Apos_Removal(Base: Text[30]) Converted: Text[30];
     begin
         FOR i := 1 TO STRLEN(Base) DO BEGIN
@@ -92,7 +92,7 @@ codeunit 60030 "Cash Flow Connection"
         EXIT(Converted);
     end;
 
-    [LineStart(29087)]
+    (29087)]
     procedure Item_Availability("Item No.": Code[20]; "Serial No.": Code[20]; "Location Code": Code[10]; "Working Status": Option WORKING,"NON-WORKING");
     var
         "Item Ledger Entry": Record "Item Ledger Entry";
@@ -178,7 +178,7 @@ codeunit 60030 "Cash Flow Connection"
 
     end;
 
-    [LineStart(29171)]
+    (29171)]
     procedure Material_Transfer("Item No.": Code[20]; "Serial No.": Code[20]; From_Location: Code[10]; To_Location: Code[10]; Temp: Code[10]);
     var
         "Tracking Specification": Record "Mat.Issue Track. Specification";
@@ -265,7 +265,7 @@ codeunit 60030 "Cash Flow Connection"
         "MaterialIssueOrde-Post Receipt".Issues_Post("Material Issues Header");
     end;
 
-    [LineStart(29245)]
+    (29245)]
     procedure "Create (Or) Update Serv_Item"("Item No.": Code[20]; "Serial No.": Code[20]; "Present Location": Code[10]; "Working Status": Option WORKING,"NON-WORKING");
     var
         "Service_ Item": Record "Service Item";
@@ -330,7 +330,7 @@ codeunit 60030 "Cash Flow Connection"
         END;
     end;
 
-    [LineStart(29306)]
+    (29306)]
     procedure Item_Positive_Adjustment("Item No.": Code[20]; "Serial No.": Code[20]; "Location Code": Code[10]);
     var
         "Item Journal Line": Record "Item Journal Line";
@@ -410,7 +410,7 @@ codeunit 60030 "Cash Flow Connection"
 
     end;
 
-    [LineStart(29377)]
+    (29377)]
     procedure GetNextNo() NumberValue: Code[20];
     var
         DateValue: Text[30];
@@ -451,14 +451,14 @@ codeunit 60030 "Cash Flow Connection"
         NumberValue := INCSTR(LastNumber);
     end;
 
-    [LineStart(29406)]
+    (29406)]
     procedure Move_Item_To_Old_Stock("Item No.": Code[20]; "Serial No.": Code[20]; Location: Code[10]; "Working Status": Option WORKING,"NON-WORKING");
     begin
         Material_Transfer("Item No.", "Serial No.", 'SITE', 'OLD STOCK', Location);
         "Create (Or) Update Serv_Item"("Item No.", "Serial No.", Location, "Working Status");
     end;
 
-    [LineStart(29410)]
+    (29410)]
     procedure Update_SMS_Data();
     var
         "Working Status": Option WORKING,"NON-WORKING";
@@ -560,7 +560,7 @@ codeunit 60030 "Cash Flow Connection"
 
     end;
 
-    [LineStart(29506)]
+    (29506)]
     procedure ICNNO(DT: Date) ICN: Code[10];
     var
         Dat: Text[30];
@@ -583,7 +583,7 @@ codeunit 60030 "Cash Flow Connection"
         EXIT(ICN);
     end;
 
-    [LineStart(29520)]
+    (29520)]
     procedure DEPT_DATA_UPDATION();
     begin
         /*
@@ -706,7 +706,7 @@ codeunit 60030 "Cash Flow Connection"
 
     end;
 
-    [LineStart(29639)]
+    (29639)]
     procedure Item_Removal("Item No.": Code[20]; "Serial No.": Code[20]; "Location Code": Code[10]; "Working Status": Option WORKING,"NON-WORKING");
     var
         "Item Ledger Entry": Record "Item Ledger Entry";
@@ -727,7 +727,7 @@ codeunit 60030 "Cash Flow Connection"
             ERROR('The Item is not in Given Location');
     end;
 
-    [LineStart(29655)]
+    (29655)]
     procedure Move_Item_To_Site_OR_Old_Stock("Item No.": Code[20]; Site: Code[10]; "Old Serial No.": Code[20]; "New Serial No.": Code[20]);
     var
         "Item Ledger Entry": Record "Item Ledger Entry";
@@ -767,7 +767,7 @@ codeunit 60030 "Cash Flow Connection"
         END;
     end;
 
-    [LineStart(29690)]
+    (29690)]
     procedure Item_Positive_Adjust_OldStock("Item No.": Code[20]; "Serial No.": Code[20]; "Location Code": Code[10]);
     var
         "Item Journal Line": Record "Item Journal Line";

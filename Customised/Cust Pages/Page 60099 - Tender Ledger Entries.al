@@ -83,7 +83,7 @@ page 60099 "Tender Ledger Entries"
         Text19012325: Label 'Seclection Filter';
         Navigate: Page Navigate;
 
-    [LineStart(10943)]
+    (10943)]
     procedure CurrentNo(SelectionFilter: Option All,Payment,Receipt,Adjustment,"Write off");
     begin
         CASE SelectionFilter OF
@@ -115,7 +115,7 @@ page 60099 "Tender Ledger Entries"
         END;
     end;
 
-    [LineStart(10972)]
+    (10972)]
     local procedure SelectionFilterOnAfterValidate();
     begin
         CurrentNo(SelectionFilter);

@@ -414,7 +414,7 @@ page 60067 "DC List"
         Courier: Code[30];
         DIMENSIONS: Record "Dimension Value";
 
-    [LineStart(6030)]
+    (6030)]
     procedure CONVERT(No: Code[20]) NEW_NO: Code[20];
     var
         i: Integer;
@@ -428,7 +428,7 @@ page 60067 "DC List"
         END;
     end;
 
-    [LineStart(6040)]
+    (6040)]
     local procedure sendmailOnPush();
     begin
         IF sendmail THEN BEGIN
@@ -469,7 +469,7 @@ page 60067 "DC List"
         END;
     end;
 
-    [LineStart(6082)]
+    (6082)]
     procedure MailDC();
     var
         Custmr: Record Customer;
@@ -624,7 +624,7 @@ page 60067 "DC List"
 
     end;
 
-    [LineStart(6237)]
+    (6237)]
     procedure MailDC_NEW();
     var
         Custmr: Record Customer;

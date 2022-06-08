@@ -164,57 +164,57 @@ page 60037 "Service Order Archive Subform"
         ServHeader: Record "Service Header";
         ServLoanerMgt: Codeunit ServLoanerManagement;
 
-    [LineStart(5469)]
+    (5469)]
     procedure ShowComments(Type: Option General,Fault,Resolution,Accessory,Internal,"Service Item Loaner");
     begin
     end;
 
-    [LineStart(5472)]
+    (5472)]
     procedure RegisterServInvLines();
     var
         ServInvLine: Record "Service Line";
     begin
     end;
 
-    [LineStart(5475)]
+    (5475)]
     procedure ShowServOrderWorksheet();
     var
         ServItemLine: Record "Service Item Line";
     begin
     end;
 
-    [LineStart(5478)]
+    (5478)]
     procedure AllocateResource();
     var
         ServOrderAlloc: Record "Service Order Allocation";
     begin
     end;
 
-    [LineStart(5481)]
+    (5481)]
     procedure ReceiveLoaner();
     begin
     end;
 
-    [LineStart(5484)]
+    (5484)]
     procedure ShowServItemEventLog();
     var
         ServItemLog: Record "Service Item Log";
     begin
     end;
 
-    [LineStart(5487)]
+    (5487)]
     procedure ShowChecklist();
     var
         TblshtgHeader: Record "Troubleshooting Header";
     begin
     end;
 
-    [LineStart(5490)]
+    (5490)]
     procedure "---B2B--"();
     begin
     end;
 
-    [LineStart(5493)]
+    (5493)]
     procedure OpenAttachments();
     var
         Attachments: Record Attachments;

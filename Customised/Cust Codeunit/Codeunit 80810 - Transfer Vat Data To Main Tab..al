@@ -18,7 +18,7 @@ codeunit 80810 "Transfer Vat Data To Main Tab."
     var
         Window: Dialog;
 
-    [LineStart(41293)]
+    (41293)]
     procedure UpdateSalesLine();
     var
         SalesLineVat: Record "Sales Line Vat";
@@ -42,7 +42,7 @@ codeunit 80810 "Transfer Vat Data To Main Tab."
             UNTIL SalesLineVat.NEXT = 0;
     end;
 
-    [LineStart(41311)]
+    (41311)]
     procedure UpdatePurchLine();
     var
         PurchLineVat: Record "Purch Line Vat";
@@ -66,7 +66,7 @@ codeunit 80810 "Transfer Vat Data To Main Tab."
             UNTIL PurchLineVat.NEXT = 0;
     end;
 
-    [LineStart(41329)]
+    (41329)]
     procedure UpdatePurchInvLine();
     var
         PurchInvLineVat: Record "PurchInvLine Vat";
@@ -88,7 +88,7 @@ codeunit 80810 "Transfer Vat Data To Main Tab."
             UNTIL PurchInvLineVat.NEXT = 0;
     end;
 
-    [LineStart(41345)]
+    (41345)]
     procedure UpdateSalesInvLine();
     var
         SalesInvLineVat: Record "SalesInvLine Vat";
@@ -110,7 +110,7 @@ codeunit 80810 "Transfer Vat Data To Main Tab."
             UNTIL SalesInvLineVat.NEXT = 0;
     end;
 
-    [LineStart(41361)]
+    (41361)]
     procedure UpdatePurchCredmLine();
     var
         PurchCredmLineVat: Record "PurchCredmLine Vat";
@@ -132,7 +132,7 @@ codeunit 80810 "Transfer Vat Data To Main Tab."
             UNTIL PurchCredmLineVat.NEXT = 0;
     end;
 
-    [LineStart(41377)]
+    (41377)]
     procedure UpdateSalesCredmLine();
     var
         SalesCredmLineVat: Record "SalesCredmLine Vat";

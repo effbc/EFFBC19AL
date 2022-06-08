@@ -159,7 +159,7 @@ table 33000927 "Dimension Set Entry Backup2"
         OldDimValName: Text;
         NewDimValName: Text;
 
-    [LineStart(8702)]
+    (8702)]
     procedure GetDimensionSetID(var DimSetEntry: Record "Dimension Set Entry"): Integer;
     var
         DimSetEntry2: Record "Dimension Set Entry";
@@ -210,7 +210,7 @@ table 33000927 "Dimension Set Entry Backup2"
         exit(DimSetTreeNode."Dimension Set ID");
     end;
 
-    [LineStart(8746)]
+    (8746)]
     local procedure InsertDimSetEntries(var DimSetEntry: Record "Dimension Set Entry"; NewID: Integer);
     var
         DimSetEntry2: Record "Dimension Set Entry";

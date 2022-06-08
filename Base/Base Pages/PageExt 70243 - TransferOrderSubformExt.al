@@ -624,24 +624,24 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
     */
     //end;
 
-    [LineStart(26291)]
+    (26291)]
     procedure "--B2B--"();
     begin
     end;
 
-    [LineStart(26294)]
+    (26294)]
     procedure _CreateInspectionDataSheets();
     begin
         CreateInspectionDataSheets;
     end;
 
-    [LineStart(26297)]
+    (26297)]
     procedure CreateInspectionDataSheets();
     begin
         CreateInspectionDataSheets;
     end;
 
-    [LineStart(26300)]
+    (26300)]
     procedure _ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -649,7 +649,7 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
         ShowDataSheets;
     end;
 
-    [LineStart(26303)]
+    (26303)]
     procedure ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -657,7 +657,7 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
         ShowDataSheets;
     end;
 
-    [LineStart(26306)]
+    (26306)]
     procedure _ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -665,7 +665,7 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
         ShowPostDataSheets;
     end;
 
-    [LineStart(26309)]
+    (26309)]
     procedure ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -673,7 +673,7 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
         ShowPostDataSheets;
     end;
 
-    [LineStart(26312)]
+    (26312)]
     procedure _ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -681,7 +681,7 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
         ShowInspectReceipt;
     end;
 
-    [LineStart(26315)]
+    (26315)]
     procedure ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -689,7 +689,7 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
         ShowInspectReceipt;
     end;
 
-    [LineStart(26318)]
+    (26318)]
     procedure _ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -697,7 +697,7 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
         ShowPostInspectReceipt;
     end;
 
-    [LineStart(26321)]
+    (26321)]
     procedure ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -705,33 +705,33 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
         ShowPostInspectReceipt;
     end;
 
-    [LineStart(26324)]
+    (26324)]
     procedure CancelInspection(var QualityStatus: Text[50]);
     begin
         TESTFIELD("QC Enabled");
         "Cancel Inspection"(QualityStatus);
     end;
 
-    [LineStart(26328)]
+    (26328)]
     procedure CloseInspection(var QualityStatus: Text[50]);
     begin
         TESTFIELD("QC Enabled");
         "Close Inspection"(QualityStatus);
     end;
 
-    [LineStart(26332)]
+    (26332)]
     procedure "AssignSerialNo."();
     begin
         AssignSerialNo;
     end;
 
-    [LineStart(26335)]
+    (26335)]
     procedure QCOverride();
     begin
         QCOverride;
     end;
 
-    [LineStart(26338)]
+    (26338)]
     procedure AllowExcessQty();
     begin
         IF USERID = 'SUPER' THEN
@@ -741,7 +741,7 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
             END;
     end;
 
-    [LineStart(26345)]
+    (26345)]
     local procedure StatusOnAfterValidate();
     begin
         IF "Status." = "Status."::ToBePlanned THEN BEGIN
@@ -749,14 +749,14 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
         END;
     end;
 
-    [LineStart(26351)]
+    (26351)]
     local procedure PromisedReceiptDateOnInputChan(var Text: Text[1024]);
     begin
         IF "Promised Receipt Date" > 0D THEN
             TESTFIELD(Remarks);
     end;
 
-    [LineStart(26355)]
+    (26355)]
     local procedure ReasonOnInputChange(var Text: Text[1024]);
     begin
         ERROR('Please Enter the Reason In "Required Reason Field"');

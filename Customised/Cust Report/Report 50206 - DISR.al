@@ -112,7 +112,7 @@ report 50206 DISR
         Row : Integer;
         Tempexcelbuffer : Record "Excel Buffer";
 
-    [LineStart(8605)]
+    (8605)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
 
@@ -125,7 +125,7 @@ report 50206 DISR
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(8615)]
+    (8615)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         Tempexcelbuffer.INIT;
@@ -138,7 +138,7 @@ report 50206 DISR
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(8625)]
+    (8625)]
     procedure "Entercell New"();
     begin
     end;

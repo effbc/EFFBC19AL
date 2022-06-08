@@ -248,7 +248,7 @@ table 80002 "Posted Service Item Lin"
         field(40; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code';
-            TableRelation = "Item Variant".Make WHERE("Item No." = FIELD("Item No."));
+            TableRelation = "Item Variant".Code WHERE("Item No." = FIELD("Item No."));
             DataClassification = CustomerContent;
         }
         field(42; "Actual Response Time (Hours)"; Decimal)
@@ -444,7 +444,7 @@ table 80002 "Posted Service Item Lin"
     {
     }
 
-    [LineStart(5334)]
+
     procedure ShowComments(Type: Option General,Fault,Resolution,Accessory,Internal,"Service Item Loaner");
     var
         ServCommentLine: Record "Service Comment Line";

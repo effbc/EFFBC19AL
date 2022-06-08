@@ -2040,7 +2040,7 @@ report 50057 "Issued Material Report_Costing"
         strr1 : Text;
         strr2 : Text;
 
-    [LineStart(3797)]
+    (3797)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
 
@@ -2053,7 +2053,7 @@ report 50057 "Issued Material Report_Costing"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(3807)]
+    (3807)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         Tempexcelbuffer.INIT;
@@ -2066,12 +2066,12 @@ report 50057 "Issued Material Report_Costing"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(3817)]
+    (3817)]
     procedure "Entercell New"();
     begin
     end;
 
-    [LineStart(3820)]
+    (3820)]
     procedure GetNextNo() NumberValue : Code[20];
     var
         DateValue : Text[30];

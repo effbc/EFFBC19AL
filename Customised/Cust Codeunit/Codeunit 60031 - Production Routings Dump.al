@@ -96,7 +96,7 @@ codeunit 60031 "Production Routings Dump"
         Text50002: Label 'OLD';
         LRecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
 
-    [LineStart(29873)]
+    (29873)]
     procedure CommaRemoval(Base: Text[100]) Converted: Text[100];
     var
         i: Integer;

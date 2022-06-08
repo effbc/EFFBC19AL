@@ -814,7 +814,7 @@ page 60225 "QC Item List"
                                   Page_Edit : Boolean;
                                   SMTP_MAIL : Codeunit "SMTP Mail";
 
-    [LineStart(16882)]
+    (16882)]
     procedure GetSelectionFilter(): Code[80];
     var
         Item: Record Item;

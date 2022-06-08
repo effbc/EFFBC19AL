@@ -17,7 +17,7 @@ codeunit 99000792 "Create Prod. Order from Sale"
         DisProductionStartDate: Boolean;
         Items: Record Item;
 
-    [LineStart(55005)]
+    (55005)]
     procedure CreateProdOrder(SalesLine: Record "Sales Line"; ProdOrderStatus: Option Simulated,Planned,"Firm Planned",Released,Finished; OrderType: Option ItemOrder,ProjectOrder);
     var
         ReservEntry: Record "Reservation Entry";
@@ -143,13 +143,13 @@ codeunit 99000792 "Create Prod. Order from Sale"
         END;
     end;
 
-    [LineStart(55114)]
+    (55114)]
     procedure SetHideValidationDialog(NewHideValidationDialog: Boolean);
     begin
         HideValidationDialog := NewHideValidationDialog;
     end;
 
-    [LineStart(55117)]
+    (55117)]
     procedure CreateProdOrder2(SalesLine: Record "Sales Line"; ProdOrderStatus: Option Quote,Planned,"Firm Planned",Released; OrderType: Option ItemOrder,ProjectOrder; QtyParam: Decimal);
     var
         ReservEntry: Record "Reservation Entry";
@@ -316,7 +316,7 @@ codeunit 99000792 "Create Prod. Order from Sale"
 
     end;
 
-    [LineStart(55269)]
+    (55269)]
     procedure CreateProdOrderForSchedule(ScheduleLine: Record Schedule2; ProdOrderStatus: Option Quote,Planned,"Firm Planned",Released; OrderType: Option ItemOrder,ProjectOrder);
     var
         ReservEntry: Record "Reservation Entry";
@@ -449,7 +449,7 @@ codeunit 99000792 "Create Prod. Order from Sale"
 
     end;
 
-    [LineStart(55383)]
+    (55383)]
     procedure CreateProdOrder2ForSchedule(ScheduleLine: Record Schedule2; ProdOrderStatus: Option Quote,Planned,"Firm Planned",Released; OrderType: Option ItemOrder,ProjectOrder; QtyParam: Decimal);
     var
         ReservEntry: Record "Reservation Entry";
@@ -636,7 +636,7 @@ codeunit 99000792 "Create Prod. Order from Sale"
 
     end;
 
-    [LineStart(55554)]
+    (55554)]
     procedure ProdStartDate(DisplayDate: Boolean);
     begin
         DisProductionStartDate := DisplayDate;

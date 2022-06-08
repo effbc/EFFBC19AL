@@ -52,7 +52,7 @@ page 60303 Sessions2
     {
     }
 
-    [LineStart(21830)]
+    (21830)]
     procedure RefreshSessions();
     begin
         CurrPage.UPDATE(FALSE);

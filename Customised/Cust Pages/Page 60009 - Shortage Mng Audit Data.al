@@ -1366,7 +1366,7 @@ page 60009 "Shortage Mng Audit Data"
         Text19047485: Label 'With Out  Buffer No Problem';
         Text19056231: Label 'No Problem';
 
-    [LineStart(3808)]
+    (3808)]
     procedure Indian_Date("Foriegn Date": Date) "Indian Date": Text[30];
     begin
         CASE DATE2DMY("Foriegn Date", 2) OF
@@ -1435,7 +1435,7 @@ page 60009 "Shortage Mng Audit Data"
         "Indian Date" := FORMAT(DATE2DMY("Foriegn Date", 1)) + '/' + Month + '/' + COPYSTR(FORMAT(DATE2DMY("Foriegn Date", 3)), 3, 2);
     end;
 
-    [LineStart(3862)]
+    (3862)]
     procedure CalculateWeekPlan();
     begin
         FOR I := 1 TO 10 DO BEGIN
@@ -1494,7 +1494,7 @@ page 60009 "Shortage Mng Audit Data"
         END;
     end;
 
-    [LineStart(3919)]
+    (3919)]
     procedure Form_SHow();
     begin
         IF Choice = Choice::Purchase THEN BEGIN
@@ -1542,31 +1542,31 @@ page 60009 "Shortage Mng Audit Data"
         END;
     end;
 
-    [LineStart(3966)]
+    (3966)]
     local procedure PurchaseChoiceOnPush();
     begin
         Form_SHow;
     end;
 
-    [LineStart(3969)]
+    (3969)]
     local procedure ShortageChoiceOnPush();
     begin
         Form_SHow;
     end;
 
-    [LineStart(3972)]
+    (3972)]
     local procedure WeekPlan1OnFormat();
     begin
         IF WeekPlan[1] > 42 THEN;
     end;
 
-    [LineStart(3975)]
+    (3975)]
     local procedure WeekPurchaseValue1OnFormat();
     begin
         IF WeekPlan[1] > 42 THEN;
     end;
 
-    [LineStart(3978)]
+    (3978)]
     local procedure SaleOrderOnFormat();
     begin
         IF Choice = Choice::Purchase THEN BEGIN
@@ -1726,7 +1726,7 @@ page 60009 "Shortage Mng Audit Data"
         END;
     end;
 
-    [LineStart(4161)]
+    (4161)]
     local procedure DaysSOnFormat();
     begin
 
@@ -1746,13 +1746,13 @@ page 60009 "Shortage Mng Audit Data"
                 END;
     end;
 
-    [LineStart(4180)]
+    (4180)]
     local procedure PurchaseChoiceOnValidate();
     begin
         PurchaseChoiceOnPush;
     end;
 
-    [LineStart(4183)]
+    (4183)]
     local procedure ShortageChoiceOnValidate();
     begin
         ShortageChoiceOnPush;

@@ -145,7 +145,7 @@ page 60253 "Sales Tracking Card"
         BG: Record "Bank Guarantee";
         Attachment: Record Attachments;
 
-    [LineStart(20597)]
+    (20597)]
     procedure CustAttachments();
     var
         CustAttach: Record Attachments;

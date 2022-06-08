@@ -2022,7 +2022,7 @@ report 50230 "Actual VS Consumed(New1)"
         Rs__Per_HourCaption_Control1102154286Lbl : Label 'Rs. Per Hour';
         Rs__Per_HourCaption_Control1102154287Lbl : Label 'Rs. Per Hour';
 
-    [LineStart(9866)]
+    (9866)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -2034,7 +2034,7 @@ report 50230 "Actual VS Consumed(New1)"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(9875)]
+    (9875)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -2047,7 +2047,7 @@ report 50230 "Actual VS Consumed(New1)"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(9885)]
+    (9885)]
     procedure "Entercell New"();
     begin
     end;

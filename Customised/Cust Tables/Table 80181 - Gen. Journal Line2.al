@@ -1703,37 +1703,36 @@ table 80181 "Gen. Journal Line2"
         Text16351: Label 'Bal. Account Type must be G/L Account or Bank Account.';
         Text16352: Label '%1 Type must be G/L Account';
 
-    [LineStart(5523)]
+
     procedure EmptyLine(): Boolean;
     begin
     end;
 
-    [LineStart(5526)]
+
     procedure UpdateLineBalance();
     begin
     end;
 
-    [LineStart(5529)]
     procedure SetUpNewLine(LastGenJnlLine: Record "Gen. Journal Line"; Balance: Decimal; BottomLine: Boolean);
     begin
     end;
 
-    [LineStart(5532)]
+
     local procedure CheckVATInAlloc();
     begin
     end;
 
-    [LineStart(5535)]
+
     local procedure SetCurrencyCode(AccType2: Option "G/L Account",Customer,Vendor,"Bank Account"; AccNo2: Code[20]): Boolean;
     begin
     end;
 
-    [LineStart(5538)]
+
     local procedure GetCurrency();
     begin
     end;
 
-    [LineStart(5541)]
+
     procedure UpdateSource();
     var
         SourceExists1: Boolean;
@@ -1741,12 +1740,12 @@ table 80181 "Gen. Journal Line2"
     begin
     end;
 
-    [LineStart(5544)]
+
     local procedure CheckGLAcc();
     begin
     end;
 
-    [LineStart(5547)]
+
     procedure GetFAAddCurrExchRate();
     var
         DeprBook: Record "Depreciation Book";
@@ -1755,24 +1754,24 @@ table 80181 "Gen. Journal Line2"
     begin
     end;
 
-    [LineStart(5550)]
+
     procedure GetShowCurrencyCode(CurrencyCode: Code[10]): Code[10];
     begin
     end;
 
-    [LineStart(5553)]
+
     procedure ClearCustVendApplID();
     begin
     end;
 
-    [LineStart(5556)]
+
     procedure CheckFixedCurrency(): Boolean;
     var
         CurrExchRate: Record "Currency Exchange Rate";
     begin
     end;
 
-    [LineStart(5559)]
+
     procedure CreateDim(Type1: Integer; No1: Code[20]; Type2: Integer; No2: Code[20]; Type3: Integer; No3: Code[20]; Type4: Integer; No4: Code[20]; Type5: Integer; No5: Code[20]);
     var
         TableID: array[10] of Integer;
@@ -1780,22 +1779,21 @@ table 80181 "Gen. Journal Line2"
     begin
     end;
 
-    [LineStart(5562)]
+
     procedure ValidateShortcutDimCode(FieldNumber: Integer; var ShortcutDimCode: Code[20]);
     begin
     end;
 
-    [LineStart(5565)]
     procedure LookupShortcutDimCode(FieldNumber: Integer; var ShortcutDimCode: Code[20]);
     begin
     end;
 
-    [LineStart(5568)]
+
     procedure ShowShortcutDimCode(var ShortcutDimCode: array[8] of Code[20]);
     begin
     end;
 
-    [LineStart(5571)]
+
     procedure GetFAVATSetup();
     var
         LocalGlAcc: Record "G/L Account";
@@ -1804,12 +1802,12 @@ table 80181 "Gen. Journal Line2"
     begin
     end;
 
-    [LineStart(5574)]
+
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(5577)]
+
     procedure CalculateTDS();
     var
         TDSEntry: Record "TDS Entry";
@@ -1835,7 +1833,7 @@ table 80181 "Gen. Journal Line2"
     begin
     end;
 
-    [LineStart(5580)]
+
     procedure RoundTDSAmount(TDSAmount: Decimal): Decimal;
     var
         TDSRoundingDirection: Text[1];
@@ -1843,27 +1841,25 @@ table 80181 "Gen. Journal Line2"
     begin
     end;
 
-    [LineStart(5583)]
+
     procedure InsertTDSBuf(TDSEntry: Record "TDS Entry"; PostingDate: Date; CalculateSurcharge: Boolean; CalculateTDS: Boolean);
     begin
     end;
 
-    [LineStart(5586)]
+
     procedure UpdTDSBuffer();
     begin
     end;
 
-    [LineStart(5589)]
     procedure InsertGenTDSBuf(Applied: Boolean);
     begin
     end;
 
-    [LineStart(5592)]
+
     procedure RemoveVATAssociation();
     begin
     end;
 
-    [LineStart(5595)]
     procedure CalculateServiceTax();
     var
         ServiceTaxSetup: Record "Service Tax Setup";

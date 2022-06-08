@@ -220,7 +220,7 @@ report 50162 "Dumping per 3 days"
         datadump: Boolean;
         SQLQuery1: Text[1000];
 
-    [LineStart(8326)]
+    (8326)]
     procedure sqlconnection1();
     begin
         /*IF ISCLEAR(SQLConnection) THEN
@@ -241,7 +241,7 @@ report 50162 "Dumping per 3 days"
 
     end;
 
-    [LineStart(8343)]
+    (8343)]
     procedure commaeli(Base: Text[30]) converted: Text[30];
     var
         i: Integer;
@@ -253,7 +253,7 @@ report 50162 "Dumping per 3 days"
         EXIT(converted);
     end;
 
-    [LineStart(8351)]
+    (8351)]
     procedure sqlconnection2();
     begin
         /*

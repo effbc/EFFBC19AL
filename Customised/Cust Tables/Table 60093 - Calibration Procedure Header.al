@@ -64,11 +64,11 @@ table 60093 "Calibration Procedure Header"
         CalProcHeader: Record "Calibration Procedure Header";
         CalProSetup: Record "Calibration Setup";
         CalProcHeader2: Record "Calibration Procedure Header";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit 396;
         Text002: Label 'Calibration Procedure not found';
         CalProc: Page "Calibration Procedure";
 
-    [LineStart(3814)]
+
     procedure AssistEdit(OldCalProcHeader: Record "Calibration Procedure Header"): Boolean;
     begin
         with CalProcHeader do begin
@@ -83,7 +83,7 @@ table 60093 "Calibration Procedure Header"
         end;
     end;
 
-    [LineStart(3826)]
+
     procedure ShowCalProc(Calibration: Record Calibration);
     var
         CalProFound: Boolean;
@@ -110,7 +110,7 @@ table 60093 "Calibration Procedure Header"
             Message(Text001, CalProSetup.TableCaption, Calibration.FieldCaption("Equipment No"), Calibration."Equipment No");
     end;
 
-    [LineStart(3848)]
+
     procedure MarkCalProHeader(CalProSetup2: Record "Calibration Setup");
     begin
         CalProSetup2.Find('-');
@@ -120,7 +120,7 @@ table 60093 "Calibration Procedure Header"
         until CalProSetup2.Next = 0;
     end;
 
-    [LineStart(3855)]
+
     procedure ShowCalProcForIDs(IDS: Record "Inspection Datasheet Header");
     var
         CalProFound: Boolean;

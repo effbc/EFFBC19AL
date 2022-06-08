@@ -575,12 +575,12 @@ page 60251 "Items by Dimension Matrix"
         [InDataSet]
         Field32Visible : Boolean;
 
-    [LineStart(20504)]
+    (20504)]
     local procedure InventoryDrillDown();
     begin
     end;
 
-    [LineStart(20507)]
+    (20507)]
     local procedure MATRIX_OnAfterGetRecord(ColumnID : Integer);
     var
         Item : Record Item;
@@ -592,7 +592,7 @@ page 60251 "Items by Dimension Matrix"
         SetVisible;
     end;
 
-    [LineStart(20514)]
+    (20514)]
     procedure Load(MatrixColumns1 : array [32] of Text[1024];var MatrixRecords1 : array [32] of Record "Dimension Value";var MatrixRecord1 : Record "Dimension Value");
     begin
         COPYARRAY(MATRIX_ColumnCaption,MatrixColumns1,1);
@@ -600,7 +600,7 @@ page 60251 "Items by Dimension Matrix"
         MatrixRecord.COPY(MatrixRecord1);
     end;
 
-    [LineStart(20519)]
+    (20519)]
     procedure MatrixOnDrillDown(ColumnID : Integer);
     begin
         ItemLedgerEntry.SETCURRENTKEY(
@@ -611,7 +611,7 @@ page 60251 "Items by Dimension Matrix"
         PAGE.RUN(0,ItemLedgerEntry);
     end;
 
-    [LineStart(20527)]
+    (20527)]
     procedure SetVisible();
     begin
         Field1Visible := MATRIX_ColumnCaption[1] <> '';

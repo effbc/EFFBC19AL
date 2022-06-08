@@ -1042,7 +1042,7 @@ page 50014 "Bought Out Items Planning"
         TotalItems: Label '"Total : "';
         SHowBattNChargr: Boolean;
 
-    [LineStart(2522)]
+    (2522)]
     procedure Calc_Order_Qty(ItemNo: Code[30]; Quantity: Decimal) Order_Qty: Decimal;
     var
         ITEM: Record Item;

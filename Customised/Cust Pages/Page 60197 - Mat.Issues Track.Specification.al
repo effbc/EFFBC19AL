@@ -218,7 +218,7 @@ page 60197 "Mat.Issues Track.Specification"
         Text19014083: Label 'Actual Qty.';
         Text19007887: Label 'Undefined';
 
-    [LineStart(15714)]
+    (15714)]
     local procedure UpdateUndefinedQty() QtyIsValid: Boolean;
     var
         TrackingSpecification: Record "Mat.Issue Track. Specification";
@@ -260,7 +260,7 @@ page 60197 "Mat.Issues Track.Specification"
 
     end;
 
-    [LineStart(15750)]
+    (15750)]
     local procedure GetItem(ItemNo: Code[20]);
     begin
         //MESSAGE('%1,%2',Item."No.",ItemNo);// ERROR
@@ -277,7 +277,7 @@ page 60197 "Mat.Issues Track.Specification"
         END;
     end;
 
-    [LineStart(15765)]
+    (15765)]
     local procedure CheckLine(TrackingLine: Record "Mat.Issue Track. Specification"): Boolean;
     begin
         IF TrackingLine.Quantity * SourceQuantityArray[1] < 0 THEN
@@ -287,7 +287,7 @@ page 60197 "Mat.Issues Track.Specification"
                 ERROR(Text002, Text004);
     end;
 
-    [LineStart(15772)]
+    (15772)]
     procedure AssistedditLotSerialNo(var TrackingSpecification: Record "Mat.Issue Track. Specification"; LookupMode: Option "Serial No.","Lot No."; MaxQuantity: Decimal; "IssueNo.": Code[20]): Boolean;
     var
         ItemLedgEntry: Record "Item Ledger Entry";
@@ -475,7 +475,7 @@ page 60197 "Mat.Issues Track.Specification"
 
     end;
 
-    [LineStart(15950)]
+    (15950)]
     local procedure UndefinedQtyOnFormat();
     begin
         Quantity3Emphasize := ColorOfQuantityArray > 0;

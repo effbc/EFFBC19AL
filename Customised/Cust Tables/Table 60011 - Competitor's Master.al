@@ -151,16 +151,16 @@ table 60011 "Competitor's Master"
     end;
 
     var
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit 396;
         RMSetup: Record "Marketing Setup";
         PostCode: Record "Post Code";
         CountryCode: Record "Country/Region";
         Text003: Label 'You cannot rename a %1.';
 
-    [LineStart(1346)]
+
     procedure AssistEdit(OldProductCompetitor: Record "Competitor's Master"): Boolean;
     var
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit 396;
         ProductCompetitor: Record "Competitor's Master";
         "RM Setup": Record "Marketing Setup";
     begin
@@ -178,7 +178,7 @@ table 60011 "Competitor's Master"
         end;
     end;
 
-    [LineStart(1360)]
+
     procedure OpenAttachments();
     var
         Attachment: Record Attachments;

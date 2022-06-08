@@ -131,7 +131,7 @@ table 60054 "Sample Lot Inspection"
         Text002: Label '"You can not Modify the Quantity "';
         PurchaseHeader: Record "Purchase Header";
 
-    [LineStart(2505)]
+
     procedure UpdateQualityPurchLines();
     var
         SpecHeader: Record "Specification Header";
@@ -155,7 +155,7 @@ table 60054 "Sample Lot Inspection"
 
     end;
 
-    [LineStart(2522)]
+
     procedure CreateInspectionDataSheets();
     var
         InspectDataSheets: Codeunit "Inspection Data Sheets";
@@ -180,7 +180,7 @@ table 60054 "Sample Lot Inspection"
 
     end;
 
-    [LineStart(2539)]
+
     procedure ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -194,7 +194,7 @@ table 60054 "Sample Lot Inspection"
 
     end;
 
-    [LineStart(2547)]
+
     procedure ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -208,7 +208,7 @@ table 60054 "Sample Lot Inspection"
 
     end;
 
-    [LineStart(2555)]
+
     procedure ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -223,7 +223,7 @@ table 60054 "Sample Lot Inspection"
 
     end;
 
-    [LineStart(2564)]
+
     procedure ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -238,7 +238,7 @@ table 60054 "Sample Lot Inspection"
 
     end;
 
-    [LineStart(2573)]
+
     procedure GetQCSetup();
     begin
         /*
@@ -249,7 +249,7 @@ table 60054 "Sample Lot Inspection"
 
     end;
 
-    [LineStart(2580)]
+
     procedure VendorQualityApprovalSpecId(): Code[20];
     var
         VendorItemQA: Record "Vendor Item Quality Approval";
@@ -271,7 +271,7 @@ table 60054 "Sample Lot Inspection"
 
     end;
 
-    [LineStart(2594)]
+
     procedure CancelInspection(var QualityStatus: Text[50]);
     var
         IDS: Record "Inspection Datasheet Header";
@@ -340,7 +340,7 @@ table 60054 "Sample Lot Inspection"
 
     end;
 
-    [LineStart(2653)]
+
     procedure CloseInspection(var QualityStatus: Text[50]);
     var
         IR: Record "Inspection Receipt Header";

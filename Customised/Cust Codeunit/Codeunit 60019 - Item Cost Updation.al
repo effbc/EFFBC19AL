@@ -195,7 +195,7 @@ codeunit 60019 "Item Cost Updation"
         Window: Dialog;
         T0002: Label 'Verifying BOM #2#############';
 
-    [LineStart(9196)]
+    (9196)]
     procedure UpdateBOMCost2();
     var
         ProdBOMHeader: Record "Production BOM Header";
@@ -253,7 +253,7 @@ codeunit 60019 "Item Cost Updation"
             UNTIL ProdBOMHeader.NEXT = 0;
     end;
 
-    [LineStart(9244)]
+    (9244)]
     procedure RoutingCostUpdation();
     var
         TotMin: Decimal;
@@ -309,7 +309,7 @@ codeunit 60019 "Item Cost Updation"
             UNTIL RoutingHeader.NEXT = 0;
     end;
 
-    [LineStart(9285)]
+    (9285)]
     procedure UpdateBOMCost();
     var
         ProdBOMHeader: Record "Production BOM Header";
@@ -367,7 +367,7 @@ codeunit 60019 "Item Cost Updation"
             UNTIL ProdBOMHeader.NEXT = 0;
     end;
 
-    [LineStart(9333)]
+    (9333)]
     procedure UpdateBOM();
     var
         PBML: Record "Production BOM Line";
@@ -526,7 +526,7 @@ codeunit 60019 "Item Cost Updation"
 
     end;
 
-    [LineStart(9490)]
+    (9490)]
     procedure CALC_SOLDERING_POINTS("BOM NO.": Code[20]);
     var
         BOM_LINE: Record "Production BOM Line";

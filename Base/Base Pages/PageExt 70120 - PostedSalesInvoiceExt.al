@@ -2183,61 +2183,61 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
         */
     //end;
 
-    [LineStart(13844)]
+    (13844)]
     local procedure HandOveredPersonOthersOnAfterV();
     begin
           "Hand Overed Person(Others)":=UPPERCASE("Hand Overed Person(Others)");
     end;
 
-    [LineStart(13847)]
+    (13847)]
     local procedure DateSentC104OnAfterInput(var Text : Text[1024]);
     begin
                 "Date SentEditable" := FALSE;
     end;
 
-    [LineStart(13850)]
+    (13850)]
     local procedure ExtendedDateC1102154023OnAfter(var Text : Text[1024]);
     begin
                "Extended DateEditable" := FALSE;
     end;
 
-    [LineStart(13853)]
+    (13853)]
     local procedure ContactInfoOthersOnAfterInput(var Text : Text[1024]);
     begin
              "Contact Info(Others)Editable" := FALSE;
     end;
 
-    [LineStart(13856)]
+    (13856)]
     local procedure HandOveredPersonOthersOnAfterI(var Text : Text[1024]);
     begin
                        HandOveredPersonOthersEditable := FALSE;
     end;
 
-    [LineStart(13859)]
+    (13859)]
     local procedure ExpectedReachedDateOnAfterInpu(var Text : Text[1024]);
     begin
               "Expected Reached DateEditable" := FALSE;
     end;
 
-    [LineStart(13862)]
+    (13862)]
     local procedure HandOveredPersonOnAfterInput(var Text : Text[1024]);
     begin
             "Hand Overed PersonEditable" := FALSE;
     end;
 
-    [LineStart(13865)]
+    (13865)]
     local procedure TransportMethodOnAfterInput(var Text : Text[1024]);
     begin
               "Transport MethodEditable" := FALSE;
     end;
 
-    [LineStart(13868)]
+    (13868)]
     local procedure DispatchedLocationOnAfterInput(var Text : Text[1024]);
     begin
              "Dispatched LocationEditable" := FALSE;
     end;
 
-    [LineStart(13871)]
+    (13871)]
     procedure Item_Positive_Adjustment("Item No." : Code[20];"Serial No." : Code[20];"Location Code" : Code[10]);
     var
         "Item Journal Line" : Record "Item Journal Line";
@@ -2315,7 +2315,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
 
     end;
 
-    [LineStart(13939)]
+    (13939)]
     procedure ICNNO(DT : Date) ICN : Code[10];
     var
         Dat : Text[30];
@@ -2336,7 +2336,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
         EXIT(ICN);
     end;
 
-    [LineStart(13953)]
+    (13953)]
     procedure Item_Positive_Adjustment1("Item No." : Code[20];"Serial No." : Text;"Location Code" : Code[10];DocumentNo : Code[30];ItmQty : Decimal);
     var
         "Item Journal Line" : Record "Item Journal Line";

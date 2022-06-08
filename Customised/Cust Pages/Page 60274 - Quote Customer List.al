@@ -1234,7 +1234,7 @@ page 60274 "Quote Customer List"
         id : Integer;
         QuoteNoGVar : Code[20];
 
-    [LineStart(21627)]
+    (21627)]
     procedure GetSelectionFilter() : Text;
     var
         Cust : Record Customer;
@@ -1244,13 +1244,13 @@ page 60274 "Quote Customer List"
         EXIT(SelectionFilterManagement.GetSelectionFilterForCustomer(Cust));
     end;
 
-    [LineStart(21631)]
+    (21631)]
     procedure SetSelection(var Cust : Record Customer);
     begin
         CurrPage.SETSELECTIONFILTER(Cust);
     end;
 
-    [LineStart(21634)]
+    (21634)]
     local procedure SetSocialListeningFactboxVisibility();
     var
         SocialListeningMgt : Codeunit "Social Listening Management";
@@ -1258,7 +1258,7 @@ page 60274 "Quote Customer List"
         SocialListeningMgt.GetCustFactboxVisibility(Rec,SocialListeningSetupVisible,SocialListeningVisible);
     end;
 
-    [LineStart(21637)]
+    (21637)]
     procedure GSTMails();
     var
         Type : Code[2];
@@ -1365,7 +1365,7 @@ page 60274 "Quote Customer List"
           MESSAGE('Mail Has been send to '+COPYSTR(TempText,1,STRLEN(TempText)-1)+' - '+Name+'at '+Mail_To);
     end;
 
-    [LineStart(21730)]
+    (21730)]
     procedure GSTUpdated();
     var
         Type : Code[2];
@@ -1395,7 +1395,7 @@ page 60274 "Quote Customer List"
         //SQLConnection.CommitTrans;
     end;
 
-    [LineStart(21746)]
+    (21746)]
     procedure SendQuoteNo(QuoLpar : Code[20]);
     begin
         QuoteNoGVar := QuoLpar;

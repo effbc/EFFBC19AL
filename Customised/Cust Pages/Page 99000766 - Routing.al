@@ -213,7 +213,7 @@ page 99000766 Routing
         ActiveVersionCode : Code[20];
         RoutingLine : Record "Routing Line";
 
-    [LineStart(23765)]
+    (23765)]
     local procedure LastDateModifiedOnAfterValidat();
     begin
         CurrPage.UPDATE;

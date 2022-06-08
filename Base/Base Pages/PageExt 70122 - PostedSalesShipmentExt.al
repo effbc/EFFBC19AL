@@ -254,6 +254,30 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
 
 
 
+<<<<<<< HEAD
+=======
+    //trigger OnOpenPage();
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    SetSecurityFilterOnRespCenter;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    //SetSecurityFilterOnRespCenter;
+
+    //Added by Vishnu Priya
+    IF SMTP_MAIL.Permission_Checking(USERID,'ERP-ADMIN') THEN
+      CurrPage.EDITABLE(TRUE)
+    ELSE CurrPage.EDITABLE(FALSE);
+    // ended by Vishnu Priya on 04-June-18.
+    */
+    //end;
+
+    (13429)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Item_Positive_Adjustment("Item No.": Code[20]; "Serial No.": Code[20]; "Location Code": Code[10]);
     var
         "Item Journal Line": Record "Item Journal Line";
@@ -330,7 +354,11 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
 
     end;
 
+<<<<<<< HEAD
 
+=======
+    (13497)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ICNNO(DT: Date) ICN: Code[10];
     var
         Dat: Text[30];
@@ -353,7 +381,11 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
         EXIT(ICN);
     end;
 
+<<<<<<< HEAD
 
+=======
+    (13511)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Item_Positive_Adjustment1("Item No.": Code[20]; "Serial No.": Text; "Location Code": Code[10]; DocumentNo: Code[30]; ItmQty: Decimal);
     var
         "Item Journal Line": Record "Item Journal Line";

@@ -972,7 +972,7 @@ report 50013 "Item Tracking"
         InsertPrevItemNo : Code[20];
         InsertPrevLotNo : Code[20];
 
-    [LineStart(325)]
+    (325)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -984,7 +984,7 @@ report 50013 "Item Tracking"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(334)]
+    (334)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;

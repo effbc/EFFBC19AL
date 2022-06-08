@@ -82,7 +82,7 @@ table 33000251 Characteristic
         Characteristi: Record Characteristic;
         assayline: Record "Assay Line";
 
-    [LineStart(7139)]
+    (7139)]
     procedure ImportAttchment(): Boolean;
     var
         AttachmentManagement: Codeunit AttachmentManagement;
@@ -103,7 +103,7 @@ table 33000251 Characteristic
             exit(false);
     end;
 
-    [LineStart(7154)]
+    (7154)]
     procedure ExportAttachment(ExportToFile: Text[260]): Boolean;
     var
         FileName: Text[260];
@@ -129,7 +129,7 @@ table 33000251 Characteristic
             exit(false)
     end;
 
-    [LineStart(7174)]
+    (7174)]
     procedure OpenAttachment();
     var
         WordManagement: Codeunit WordManagement;
@@ -161,7 +161,7 @@ table 33000251 Characteristic
 
     end;
 
-    [LineStart(7198)]
+    (7198)]
     procedure ConstFilename() FileName: Text[260];
     var
         I: Integer;
@@ -178,7 +178,7 @@ table 33000251 Characteristic
         Message('%1', FileName);
     end;
 
-    [LineStart(7209)]
+    (7209)]
     procedure DeleteFile(FileName: Text[260]): Boolean;
     var
         I: Integer;
@@ -196,7 +196,7 @@ table 33000251 Characteristic
         exit(not Exists(FileName));
     end;
 
-    [LineStart(7222)]
+    (7222)]
     procedure RemoveAttachment(Prompt: Boolean) DeleteOK: Boolean;
     var
         DeleteYesNo: Boolean;

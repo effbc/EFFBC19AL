@@ -316,7 +316,7 @@ report 50172 "Customer -aging as per bank"
         Control30CaptionLbl: Label 'Label30';
         TotalCaptionLbl: Label 'Total';
 
-    [LineStart(8401)]
+    (8401)]
     procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -327,7 +327,7 @@ report 50172 "Customer -aging as per bank"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(8409)]
+    (8409)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;

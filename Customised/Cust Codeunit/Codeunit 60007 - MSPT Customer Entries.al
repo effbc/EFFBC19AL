@@ -21,7 +21,7 @@ codeunit 60007 "MSPT Customer Entries"
         CheckAmount: Decimal;
         Checkamount1: Decimal;
 
-    [LineStart(2331)]
+    (2331)]
     procedure PostMSPTCustLedgerEntries(CustLedgEntry: Record "Cust. Ledger Entry");
     var
         MSPTCustLedgEntry: Record "MSPT Customer Ledger Entry";
@@ -138,7 +138,7 @@ codeunit 60007 "MSPT Customer Entries"
         END;
     end;
 
-    [LineStart(2438)]
+    (2438)]
     procedure CheckStatus(DtldMSPTCustLedgEntry: Record "MSPT Dtld. Cust. Ledg. Entry"; MSPTCustLedgEntry: Record "MSPT Customer Ledger Entry");
     var
         Value: Decimal;
@@ -157,7 +157,7 @@ codeunit 60007 "MSPT Customer Entries"
         END;
     end;
 
-    [LineStart(2452)]
+    (2452)]
     procedure PostMSPTDtldCustLedgEntries(DtldCustLedgEntry: Record "Detailed Cust. Ledg. Entry");
     var
         DtldMSPTCustLedgEntry: Record "MSPT Dtld. Cust. Ledg. Entry";
@@ -514,7 +514,7 @@ codeunit 60007 "MSPT Customer Entries"
         END;
     end;
 
-    [LineStart(2790)]
+    (2790)]
     procedure PostMSPTExchangeAdjEntries(DtldCustLedgEntry: Record "Detailed Cust. Ledg. Entry");
     var
         DtldMSPTCustLedgEntry: Record "MSPT Dtld. Cust. Ledg. Entry";
@@ -596,7 +596,7 @@ codeunit 60007 "MSPT Customer Entries"
         END;
     end;
 
-    [LineStart(2863)]
+    (2863)]
     procedure UnrealizedLossEntry(DtldCustLedgEntry: Record "Detailed Cust. Ledg. Entry"; MSPTCustLedgEntry: Record "MSPT Customer Ledger Entry");
     var
         DtldMSPTCustLedgEntry: Record "MSPT Dtld. Cust. Ledg. Entry";
@@ -692,7 +692,7 @@ codeunit 60007 "MSPT Customer Entries"
         END;
     end;
 
-    [LineStart(2949)]
+    (2949)]
     procedure UnrealizedGainEntry(DtldCustLedgEntry: Record "Detailed Cust. Ledg. Entry"; MSPTCustLedgEntry: Record "MSPT Customer Ledger Entry");
     var
         DtldMSPTCustLedgEntry: Record "MSPT Dtld. Cust. Ledg. Entry";

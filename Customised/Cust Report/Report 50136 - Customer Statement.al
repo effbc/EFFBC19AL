@@ -715,7 +715,7 @@ report 50136 "Customer Statement"
         beforeCaptionLbl: Label '..before';
         LogInteractionEnable: Boolean;
 
-    [LineStart(7335)]
+    (7335)]
     local procedure GetDate(PostingDate: Date; DueDate: Date): Date;
     begin
         IF DateChoice = DateChoice::"Posting Date" THEN
@@ -724,7 +724,7 @@ report 50136 "Customer Statement"
             EXIT(DueDate);
     end;
 
-    [LineStart(7341)]
+    (7341)]
     local procedure CalcAgingBandDates();
     begin
         IF NOT IncludeAgingBand THEN
@@ -743,7 +743,7 @@ report 50136 "Customer Statement"
             ERROR(Text012);
     end;
 
-    [LineStart(7357)]
+    (7357)]
     local procedure UpdateBuffer(CurrencyCode: Code[10]; Date: Date; Amount: Decimal);
     var
         I: Integer;

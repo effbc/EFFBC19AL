@@ -19,7 +19,7 @@ codeunit 80812 "Transfer Service Data to Temp"
         ServItemLine: Record "Service Item Line";
         ServLine: Record "Service Line";
 
-    [LineStart(41628)]
+    (41628)]
     procedure UpdateTempServHead();
     begin
         ServHead.RESET;
@@ -31,7 +31,7 @@ codeunit 80812 "Transfer Service Data to Temp"
             UNTIL ServHead.NEXT = 0;
     end;
 
-    [LineStart(41637)]
+    (41637)]
     procedure UpdateTempServItemLine();
     begin
         ServItemLine.RESET;
@@ -43,7 +43,7 @@ codeunit 80812 "Transfer Service Data to Temp"
             UNTIL ServItemLine.NEXT = 0;
     end;
 
-    [LineStart(41646)]
+    (41646)]
     procedure UpdateTempServLine();
     begin
         ServLine.RESET;

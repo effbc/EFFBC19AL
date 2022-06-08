@@ -679,7 +679,7 @@ table 33000279 "Prod. Order Inspect Component"
         Text99000007: Label 'You cannot change %1 to %2 because a pick has already been created for %3 %4.';
         Text99000008: Label 'You cannot change %1 to %2 because %3 %4 has already been picked.';
 
-    [LineStart(8075)]
+    (8075)]
     procedure Caption(): Text[100];
     var
         ProdOrder: Record "Production Order";
@@ -696,14 +696,14 @@ table 33000279 "Prod. Order Inspect Component"
             "Prod. Order No.", ProdOrder.Description, ProdOrderLine."Item No."));
     end;
 
-    [LineStart(8086)]
+    (8086)]
     local procedure CalcBaseQty(Qty: Decimal): Decimal;
     begin
         TestField("Qty. per Unit of Measure");
         exit(Round(Qty * "Qty. per Unit of Measure", 0.00001));
     end;
 
-    [LineStart(8090)]
+    (8090)]
     local procedure GetGLSetup();
     begin
         if not GLSetupRead then
@@ -711,7 +711,7 @@ table 33000279 "Prod. Order Inspect Component"
         GLSetupRead := true;
     end;
 
-    [LineStart(8095)]
+    (8095)]
     local procedure GetLocation(LocationCode: Code[10]);
     begin
         if LocationCode = '' then
@@ -721,7 +721,7 @@ table 33000279 "Prod. Order Inspect Component"
                 Location.Get(LocationCode);
     end;
 
-    [LineStart(8102)]
+    (8102)]
     procedure CheckReworkStatus();
     var
         InspectReceipt: Record "Inspection Receipt Header";

@@ -4981,7 +4981,7 @@ report 80021 "Material Availability for MCH3"
         Qty__At_StoresCaptionLbl: Label 'Qty. At Stores';
         Expected_DateCaptionLbl: Label 'Expected Date';
 
-    [LineStart(16920)]
+    (16920)]
     procedure "Enter Cell"(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -4992,7 +4992,7 @@ report 80021 "Material Availability for MCH3"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(16928)]
+    (16928)]
     procedure "Enter Headings"(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -5004,7 +5004,7 @@ report 80021 "Material Availability for MCH3"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(16937)]
+    (16937)]
     procedure Product_Requirement("Product_No.": Integer; "Item_No.": Code[50]; Prod_QTY: Integer; "BOM_QTY(Compound)": Decimal; "BOM_QTY(Line)": Decimal; BOM_QTY: Decimal);
     var
         TOT: Decimal;
@@ -5035,7 +5035,7 @@ report 80021 "Material Availability for MCH3"
         END;
     end;
 
-    [LineStart(16966)]
+    (16966)]
     procedure Overall_Requirement("Item_No.": Code[50]; Prod_QTY: Integer; "BOM_QTY(Compound)": Decimal; "BOM_QTY(Line)": Decimal; BOM_QTY: Decimal);
     var
         TOT: Decimal;
@@ -5106,7 +5106,7 @@ report 80021 "Material Availability for MCH3"
         END;
     end;
 
-    [LineStart(17039)]
+    (17039)]
     procedure Caliculate_Product_Shortage("Product No.": Integer);
     begin
         BOM_DUM["Product No."].SETFILTER(BOM_DUM["Product No."]."Budget Quantity", '>%1', 0);
@@ -5133,7 +5133,7 @@ report 80021 "Material Availability for MCH3"
         END;
     end;
 
-    [LineStart(17067)]
+    (17067)]
     procedure DUplicate("Item_No.": Code[50]; Prod_QTY: Integer; "BOM_QTY(Compound)": Decimal; "BOM_QTY(Line)": Decimal; BOM_QTY: Decimal);
     var
         TOT: Decimal;
@@ -5161,7 +5161,7 @@ report 80021 "Material Availability for MCH3"
         END;
     end;
 
-    [LineStart(17094)]
+    (17094)]
     procedure ICNNO(DT: Date) ICN: Code[10];
     begin
         IF DATE2DMY(DT, 1) < 10 THEN

@@ -102,14 +102,14 @@ report 33000265 "Calc.Inspect Consumption"
         ToBatchName: Code[10];
         NextConsumpJnlLineNo: Integer;
 
-    [LineStart(21049)]
+    (21049)]
     procedure InitializeRequest(NewPostingDate: Date; NewCalcBasedOn: Option);
     begin
         PostingDate := NewPostingDate;
         CalcBasedOn := NewCalcBasedOn;
     end;
 
-    [LineStart(21053)]
+    (21053)]
     local procedure CreateConsumpJnlLine(LocationCode: Code[10]; BinCode: Code[20]; QtyToPost: Decimal);
     var
         ItemTrackingMgt: Codeunit "Item Tracking Management";
@@ -159,7 +159,7 @@ report 33000265 "Calc.Inspect Consumption"
         NextConsumpJnlLineNo := NextConsumpJnlLineNo + 10000;
     end;
 
-    [LineStart(21098)]
+    (21098)]
     procedure SetTemplateAndBatchName(TemplateName: Code[10]; BatchName: Code[10]);
     begin
         ToTemplateName := TemplateName;

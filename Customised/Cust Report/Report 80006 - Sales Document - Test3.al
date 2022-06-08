@@ -2609,14 +2609,14 @@ report 80006 "Sales Document - Test3"
         STS : Record "Service Tax Setup";
         SL : Record "Sales Line";
 
-    [LineStart(12233)]
+    (12233)]
     local procedure AddError(Text : Text[250]);
     begin
         ErrorCounter := ErrorCounter + 1;
         ErrorText[ErrorCounter] := Text;
     end;
 
-    [LineStart(12237)]
+    (12237)]
     local procedure CheckShptLines(SalesLine2 : Record "Sales Line");
     var
         TempPostedDimSetEntry : Record "Dimension Set Entry" temporary;
@@ -2778,7 +2778,7 @@ report 80006 "Sales Document - Test3"
         taxamt:=tax;
     end;
 
-    [LineStart(12394)]
+    (12394)]
     local procedure CheckRcptLines(SalesLine2 : Record "Sales Line");
     var
         TempPostedDimSetEntry : Record "Dimension Set Entry" temporary;
@@ -2873,7 +2873,7 @@ report 80006 "Sales Document - Test3"
         END;
     end;
 
-    [LineStart(12484)]
+    (12484)]
     local procedure IsInvtPosting() : Boolean;
     var
         SalesLine : Record "Sales Line";
@@ -2902,7 +2902,7 @@ report 80006 "Sales Document - Test3"
         END;
     end;
 
-    [LineStart(12508)]
+    (12508)]
     procedure AddDimToTempLine(SalesLine : Record "Sales Line");
     var
         SourceCodeSetup : Record "Source Code Setup";
@@ -2927,7 +2927,7 @@ report 80006 "Sales Document - Test3"
         END;
     end;
 
-    [LineStart(12526)]
+    (12526)]
     procedure CheckTotalExciseAmount();
     var
         ExciseCenvatClaim : Record "Excise Cenvat Claim";
@@ -2955,7 +2955,7 @@ report 80006 "Sales Document - Test3"
         END;
     end;
 
-    [LineStart(12549)]
+    (12549)]
     procedure FilterAppliedEntries();
     var
         OldCustLedgEntry : Record "Cust. Ledger Entry";
@@ -3224,7 +3224,7 @@ report 80006 "Sales Document - Test3"
           KKCessAmt := 0;
     end;
 
-    [LineStart(12797)]
+    (12797)]
     local procedure FindAmtForAppln(OldCustLedgEntry : Record "Cust. Ledger Entry";var AppliedAmount : Decimal;var AppliedAmountLCY : Decimal;OldRemainingAmtBeforeAppln : Decimal;ApplnRoundingPrecision : Decimal;AmountforAppl : Decimal);
     var
         GenJnlPostLine2 : Codeunit "Gen. Jnl.-Post Line";
@@ -3281,7 +3281,7 @@ report 80006 "Sales Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(12848)]
+    (12848)]
     local procedure CheckCalcPmtDisc(var OldCustLedgEntry : Record "Cust. Ledger Entry";ApplnRoundingPrecision : Decimal;CheckFilter : Boolean;CheckAmount : Boolean;AmountforAppl : Decimal) : Boolean;
     begin
         // PS39773.begin
@@ -3321,7 +3321,7 @@ report 80006 "Sales Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(12885)]
+    (12885)]
     procedure RoundServiceTaxPrecision(ServiceTaxAmount : Decimal) : Decimal;
     var
         ServiceTaxRoundingDirection : Text[1];
@@ -3344,7 +3344,7 @@ report 80006 "Sales Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(12902)]
+    (12902)]
     procedure CheckAppliedInvHasServTax(OldCustLedgEntry : Record "Cust. Ledger Entry");
     var
         SvcTaxEntry : Record "Service Tax Entry";
@@ -3381,7 +3381,7 @@ report 80006 "Sales Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(12933)]
+    (12933)]
     procedure CheckRefundApplicationOnline(OldCustLedgEntry : Record "Cust. Ledger Entry");
     begin
         // PS39773.begin
@@ -3392,7 +3392,7 @@ report 80006 "Sales Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(12941)]
+    (12941)]
     procedure CheckRoundingParameters(OldCustLedgEntry : Record "Cust. Ledger Entry");
     var
         SvcTaxEntry : Record "Service Tax Entry";
@@ -3414,7 +3414,7 @@ report 80006 "Sales Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(12958)]
+    (12958)]
     procedure CheckAppliedCustPayment(OldCustLedgEntry : Record "Cust. Ledger Entry";AmountToBeApplied : Decimal;AmountToBeComparedWith : Decimal);
     var
         SvcTaxEntry : Record "Service Tax Entry";
@@ -3444,7 +3444,7 @@ report 80006 "Sales Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(12982)]
+    (12982)]
     procedure CheckApplofSTpureAgntOnline(OldCustLedgEntry : Record "Cust. Ledger Entry");
     var
         ServTaxEntry : Record "Service Tax Entry";
@@ -3462,7 +3462,7 @@ report 80006 "Sales Document - Test3"
         // PS39773.end
     end;
 
-    [LineStart(12995)]
+    (12995)]
     procedure InitializeRequest(NewShipReceiveOnNextPostReq : Boolean;NewInvOnNextPostReq : Boolean;NewShowDim : Boolean;NewShowCostAssignment : Boolean);
     begin
         ShipReceiveOnNextPostReq := NewShipReceiveOnNextPostReq;

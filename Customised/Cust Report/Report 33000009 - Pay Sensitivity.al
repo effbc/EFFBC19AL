@@ -147,7 +147,7 @@ report 33000009 "Pay Sensitivity"
         Net_ImpactCaptionLbl: Label 'Net Impact';
         Net_Diff__In___CaptionLbl: Label 'Net Diff( In %)';
 
-    [LineStart(20166)]
+    (20166)]
     procedure UpdateCompanyCost();
     begin
         CompProjectedCost := 0;

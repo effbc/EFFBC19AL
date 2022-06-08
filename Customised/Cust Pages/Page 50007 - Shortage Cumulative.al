@@ -31,7 +31,7 @@ page 50007 "Shortage Cumulative"
                 {
                     Editable = false;
 
-                    trigger OnLookup(Text: Text): Boolean;
+                    trigger OnLookup(Var Text: Text): Boolean;
                     begin
                         "Purchase Line".RESET;
                         "Purchase Line".SETFILTER("Purchase Line"."Document Type", 'Order');
@@ -49,7 +49,7 @@ page 50007 "Shortage Cumulative"
                 {
                     Editable = false;
 
-                    trigger OnLookup(Text: Text): Boolean;
+                    trigger OnLookup(Var Text: Text): Boolean;
                     begin
                         QILE.RESET;
                         QILE.SETCURRENTKEY(QILE."Posting Date", QILE."Item No.");
@@ -889,7 +889,7 @@ page 50007 "Shortage Cumulative"
         Req_stock: Decimal;
         Req_count: Decimal;
 
-    [LineStart(525)]
+
     procedure getStockValues();
     begin
         // Added by Rakesh to get the stock in stores, RD, CS and MCH on 15-Sep-14
@@ -968,7 +968,7 @@ page 50007 "Shortage Cumulative"
         // end by Rakesh
     end;
 
-    [LineStart(603)]
+
     procedure GetStock(Item: Code[30]);
     begin
         IF ITEM1.GET(Item) THEN BEGIN
@@ -1045,7 +1045,7 @@ page 50007 "Shortage Cumulative"
         // end by Rakesh
     end;
 
-    [LineStart(679)]
+
     procedure GetNextNo() NumberValue: Code[20];
     var
         DateValue: Text[30];
@@ -1088,7 +1088,7 @@ page 50007 "Shortage Cumulative"
         NumberValue := INCSTR(LastNumber);
     end;
 
-    [LineStart(710)]
+
     procedure VerifyRequest();
     begin
         // Added by Rakesh to verify request already created for Item on 17-Sep-14
@@ -1156,7 +1156,7 @@ page 50007 "Shortage Cumulative"
         // End by Rakesh
     end;
 
-    [LineStart(783)]
+
     procedure AuthMail();
     begin
         //MESSAGE(MaterialIssueHeader."No.");

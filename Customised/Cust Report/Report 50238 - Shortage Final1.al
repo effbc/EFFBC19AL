@@ -2330,7 +2330,7 @@ report 50238 "Shortage Final1"
         LotGroupFooter8 : Boolean;
         ShortTempFooter5 : Boolean;
 
-    [LineStart(11032)]
+    (11032)]
     procedure "Funds Allocation"("Payment Date" : Date;Value : Decimal);
     begin
 
@@ -2356,7 +2356,7 @@ report 50238 "Shortage Final1"
               END;
     end;
 
-    [LineStart(11055)]
+    (11055)]
     procedure CommaRemoval(Base : Text[100]) Converted : Text[100];
     var
         i : Integer;

@@ -1128,7 +1128,7 @@ page 60049 "PRD-ITEMS"
         "Include InventoryEnable" : Boolean;
         SkilledResourceList : Page "Skilled Resource List";
 
-    [LineStart(5652)]
+    (5652)]
     procedure EnablePlanningControls();
     var
         PlanningGetParam: Codeunit "Planning-Get Parameters";
@@ -1173,7 +1173,7 @@ page 60049 "PRD-ITEMS"
 
     end;
 
-    [LineStart(5676)]
+    (5676)]
     local procedure AverageCostLCYOnActivate();
     begin
         ItemCostMgt.CalculateAverageCost(Rec, AverageCostLCY, AverageCostACY);

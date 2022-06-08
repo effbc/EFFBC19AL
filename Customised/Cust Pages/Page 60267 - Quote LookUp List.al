@@ -199,13 +199,13 @@ page 60267 "Quote LookUp List"
         SalesQuoteSpecification2: Record "Sales Quote Specification";
         NumGVar: Integer;
 
-    [LineStart(21492)]
+    (21492)]
     procedure CarryCustomer(CustLPar: Code[20]);
     begin
         CustNoGVar := CustLPar;
     end;
 
-    [LineStart(21495)]
+    (21495)]
     procedure CarrySalesQuoteNo(LSalQuote: Code[20]);
     begin
         SalesQuoteGVar := LSalQuote;

@@ -298,7 +298,7 @@ report 99000788 "Prod. Order - Shortage List"
         QtyonPurchOrderCaptionLbl : TextConst ENU='Qty. on Purch. Order',ENN='Qty. on Purch. Order';
         QtyonSalesOrderCaptionLbl : TextConst ENU='Qty. on Sales Order',ENN='Qty. on Sales Order';
 
-    [LineStart(22935)]
+    (22935)]
     local procedure CalcProdOrderLineFields(var ProdOrderLineFields : Record "Prod. Order Line");
     var
         ProdOrderLine : Record "Prod. Order Line";
@@ -318,7 +318,7 @@ report 99000788 "Prod. Order - Shortage List"
         ProdOrderLineFields."Reserved Qty. (Base)" := ReservedQtyBase;
     end;
 
-    [LineStart(22948)]
+    (22948)]
     local procedure CalcProdOrderCompFields(var ProdOrderCompFields : Record "Prod. Order Component");
     var
         ProdOrderComp : Record "Prod. Order Component";

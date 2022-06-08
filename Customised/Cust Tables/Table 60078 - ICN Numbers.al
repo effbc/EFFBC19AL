@@ -73,6 +73,6 @@ table 60078 "ICN Numbers"
 
     var
         PurchaseSetup: Record "Purchases & Payables Setup";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit 396;
 }
 

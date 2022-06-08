@@ -305,7 +305,7 @@ report 50144 "total Orders View1"
         SQLConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
         RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
 
-    [LineStart(7445)]
+    (7445)]
     procedure sqlconnection1();
     begin
 
@@ -326,7 +326,7 @@ report 50144 "total Orders View1"
         END;
     end;
 
-    [LineStart(7463)]
+    (7463)]
     procedure commaeli(Base : Text[30]) converted : Text[30];
     var
         i : Integer;
@@ -339,7 +339,7 @@ report 50144 "total Orders View1"
          EXIT(converted);
     end;
 
-    [LineStart(7471)]
+    (7471)]
     procedure sqlconnection2();
     begin
         /*

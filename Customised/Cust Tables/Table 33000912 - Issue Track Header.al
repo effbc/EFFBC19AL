@@ -166,13 +166,13 @@ table 33000912 "Issue Track Header"
         Text008: Label 'Please enter the Reason for Re-Open.';
         UserGRec: Record User;
 
-    [LineStart(8396)]
+    (8396)]
     procedure TeststatusOpen();
     begin
         TestField(Status, Status::Open);
     end;
 
-    [LineStart(8399)]
+    (8399)]
     procedure IsAdministrator(): Boolean;
     var
         IssueAdminGRec: Record "Issue Tracker Administrators";
@@ -185,7 +185,7 @@ table 33000912 "Issue Track Header"
             exit(false);
     end;
 
-    [LineStart(8407)]
+    (8407)]
     procedure ReleaseIssue();
     var
         IssueTrackLRec: Record "Issue Track Header";
@@ -203,7 +203,7 @@ table 33000912 "Issue Track Header"
         end;
     end;
 
-    [LineStart(8420)]
+    (8420)]
     procedure CompleteIssue();
     var
         IssueTrackLRec: Record "Issue Track Header";
@@ -222,7 +222,7 @@ table 33000912 "Issue Track Header"
         end;
     end;
 
-    [LineStart(8434)]
+    (8434)]
     procedure CloseIssue();
     var
         IssueTrackLRec: Record "Issue Track Header";
@@ -243,7 +243,7 @@ table 33000912 "Issue Track Header"
         end;
     end;
 
-    [LineStart(8450)]
+    (8450)]
     procedure ReOpenIssue();
     var
         IssueTrackLRec: Record "Issue Track Header";

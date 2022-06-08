@@ -104,7 +104,7 @@ page 60016 "Archived Design Worksheet"
         ManufacturingSetup : Record "Manufacturing Setup";
         TenderLine : Record "Tender Line";
 
-    [LineStart(4281)]
+    (4281)]
     procedure CalculateTotalCost();
     begin
     end;

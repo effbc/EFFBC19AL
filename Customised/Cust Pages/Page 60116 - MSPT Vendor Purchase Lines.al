@@ -75,7 +75,7 @@ page 60116 "MSPT Vendor Purchase Lines"
         VendPeriodLength: Option Day,Week,Month,Quarter,Year,Period;
         AmountType: Option "Net Change","Balance at Date";
 
-    [LineStart(11243)]
+    (11243)]
     procedure Set(var NewVend: Record Vendor; NewVendPeriodLength: Integer; NewAmountType: Option "Net Change","Balance at Date");
     begin
         Vend.COPY(NewVend);
@@ -84,7 +84,7 @@ page 60116 "MSPT Vendor Purchase Lines"
         CurrPage.UPDATE(FALSE);
     end;
 
-    [LineStart(11249)]
+    (11249)]
     local procedure ShowVendEntries();
     begin
         /*SetDateFilter;
@@ -99,7 +99,7 @@ page 60116 "MSPT Vendor Purchase Lines"
 
     end;
 
-    [LineStart(11260)]
+    (11260)]
     local procedure ShowVendEntriesDue();
     begin
         SetDateFilter;
@@ -114,7 +114,7 @@ page 60116 "MSPT Vendor Purchase Lines"
         PAGE.RUN(0, MSPTVendLedgEntry);
     end;
 
-    [LineStart(11272)]
+    (11272)]
     local procedure SetDateFilter();
     begin
         IF AmountType = AmountType::"Net Change" THEN

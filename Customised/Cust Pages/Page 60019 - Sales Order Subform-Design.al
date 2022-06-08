@@ -160,25 +160,25 @@ page 60019 "Sales Order Subform-Design"
         "-NAVIN-" : Integer;
         Check : Boolean;
 
-    [LineStart(4969)]
+    (4969)]
     procedure ApproveCalcInvDisc();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Disc. (Yes/No)",Rec);
     end;
 
-    [LineStart(4972)]
+    (4972)]
     procedure CalcInvDisc();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Calc. Discount",Rec);
     end;
 
-    [LineStart(4975)]
+    (4975)]
     procedure ExplodeBOM();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Explode BOM",Rec);
     end;
 
-    [LineStart(4978)]
+    (4978)]
     procedure OpenPurchOrderForm();
     var
         PurchHeader : Record "Purchase Header";
@@ -190,7 +190,7 @@ page 60019 "Sales Order Subform-Design"
         PurchOrder.RUN;
     end;
 
-    [LineStart(4984)]
+    (4984)]
     procedure OpenSpecialPurchOrderForm();
     var
         PurchHeader : Record "Purchase Header";
@@ -202,7 +202,7 @@ page 60019 "Sales Order Subform-Design"
         PurchOrder.RUN;
     end;
 
-    [LineStart(4990)]
+    (4990)]
     procedure InsertExtendedText(Unconditionally : Boolean);
     begin
         IF TransferExtendedText.SalesCheckIfAnyExtText(Rec,Unconditionally) THEN BEGIN
@@ -213,50 +213,50 @@ page 60019 "Sales Order Subform-Design"
           UpdateForm(TRUE);
     end;
 
-    [LineStart(4998)]
+    (4998)]
     procedure ShowReservation();
     begin
         FIND;
         Rec.ShowReservation;
     end;
 
-    [LineStart(5002)]
+    (5002)]
     procedure ItemAvailability(AvailabilityType : Option Date,Variant,Location,Bin);
     begin
         //Rec.ItemAvailability(AvailabilityType); //B2b1.0
     end;
 
-    [LineStart(5005)]
+    (5005)]
     procedure ShowReservationEntries();
     begin
         Rec.ShowReservationEntries(TRUE);
     end;
 
-    [LineStart(5008)]
+    (5008)]
     procedure ShowDimensions();
     begin
         Rec.ShowDimensions;
     end;
 
-    [LineStart(5011)]
+    (5011)]
     procedure ShowItemSub();
     begin
         Rec.ShowItemSub;
     end;
 
-    [LineStart(5014)]
+    (5014)]
     procedure ShowNonstockItems();
     begin
         Rec.ShowNonstock;
     end;
 
-    [LineStart(5017)]
+    (5017)]
     procedure OpenItemTrackingLines();
     begin
         Rec.OpenItemTrackingLines;
     end;
 
-    [LineStart(5020)]
+    (5020)]
     procedure ShowTracking();
     var
         TrackingForm : Page "Order Tracking";
@@ -265,38 +265,38 @@ page 60019 "Sales Order Subform-Design"
         TrackingForm.RUNMODAL;
     end;
 
-    [LineStart(5024)]
+    (5024)]
     procedure ItemChargeAssgnt();
     begin
         Rec.ShowItemChargeAssgnt;
     end;
 
-    [LineStart(5027)]
+    (5027)]
     procedure UpdateForm(SetSaveRecord : Boolean);
     begin
         CurrPage.UPDATE(SetSaveRecord);
     end;
 
-    [LineStart(5030)]
+    (5030)]
     procedure ShowPrices();
     begin
         SalesHeader.GET("Document Type","Document No.");
         SalesPriceCalcMgt.GetSalesLinePrice(SalesHeader,Rec);
     end;
 
-    [LineStart(5034)]
+    (5034)]
     procedure ShowLineDisc();
     begin
         SalesHeader.GET("Document Type","Document No.");
         SalesPriceCalcMgt.GetSalesLineLineDisc(SalesHeader,Rec);
     end;
 
-    [LineStart(5038)]
+    (5038)]
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(5041)]
+    (5041)]
     procedure ShowStrDetailsForm();
     var
         StrOrderLineDetails : Record "Structure Order Line Details";
@@ -312,12 +312,12 @@ page 60019 "Sales Order Subform-Design"
         StrOrderLineDetailsForm.RUNMODAL;
     end;
 
-    [LineStart(5051)]
+    (5051)]
     procedure "---B2B--"();
     begin
     end;
 
-    [LineStart(5054)]
+    (5054)]
     procedure CustAttachments();
     var
         CustAttach : Record Attachments;
@@ -330,7 +330,7 @@ page 60019 "Sales Order Subform-Design"
         PAGE.RUN(PAGE::"ESPL Attachments",CustAttach);
     end;
 
-    [LineStart(5062)]
+    (5062)]
     procedure Presite();
     var
         PreSiteCheckList : Record "Inst. PreSite Check List";
@@ -341,7 +341,7 @@ page 60019 "Sales Order Subform-Design"
         PAGE.RUN(PAGE::"Inst. PreSite Check List",PreSiteCheckList);
     end;
 
-    [LineStart(5068)]
+    (5068)]
     procedure ShowPackingDetails();
     var
         PackingDetails : Record "Shortage Management Audit Data";
@@ -352,7 +352,7 @@ page 60019 "Sales Order Subform-Design"
         PAGE.RUNMODAL(PAGE :: "Shortage Mng Audit Data",PackingDetails);
     end;
 
-    [LineStart(5074)]
+    (5074)]
     procedure SalesLineAttachments();
     var
         CustAttach : Record Attachments;
@@ -366,7 +366,7 @@ page 60019 "Sales Order Subform-Design"
         PAGE.RUN(PAGE::"ESPL Attachments",CustAttach);
     end;
 
-    [LineStart(5083)]
+    (5083)]
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader : Record "Design Worksheet Header";
@@ -422,7 +422,7 @@ page 60019 "Sales Order Subform-Design"
 
     end;
 
-    [LineStart(5129)]
+    (5129)]
     procedure ShowDeliveryChallan();
     var
         DeliveryChallan : Record "DC Header";
@@ -433,7 +433,7 @@ page 60019 "Sales Order Subform-Design"
         PAGE.RUNMODAL(PAGE :: "DC Header",DeliveryChallan);
     end;
 
-    [LineStart(5135)]
+    (5135)]
     procedure ShowSchedule2();
     var
         Schedule : Record Schedule2;
@@ -444,7 +444,7 @@ page 60019 "Sales Order Subform-Design"
         PAGE.RUNMODAL(60125,Schedule);
     end;
 
-    [LineStart(5141)]
+    (5141)]
     procedure ShowPODetails();
     var
         SOPodetails : Record "SO Prod.Order Details";
@@ -454,7 +454,7 @@ page 60019 "Sales Order Subform-Design"
         PAGE.RUNMODAL(60126,SOPodetails);
     end;
 
-    [LineStart(5146)]
+    (5146)]
     procedure ShowSchedule();
     var
         Schedule : Record Schedule2;
@@ -465,7 +465,7 @@ page 60019 "Sales Order Subform-Design"
         PAGE.RUNMODAL(60129,Schedule);
     end;
 
-    [LineStart(5152)]
+    (5152)]
     local procedure NoOnAfterValidate();
     begin
         InsertExtendedText(FALSE);
@@ -475,7 +475,7 @@ page 60019 "Sales Order Subform-Design"
           CurrPage.SAVERECORD;
     end;
 
-    [LineStart(5159)]
+    (5159)]
     local procedure QuantityOnAfterValidate();
     begin
         IF Reserve = Reserve::Always THEN BEGIN
@@ -485,7 +485,7 @@ page 60019 "Sales Order Subform-Design"
         END;
     end;
 
-    [LineStart(5166)]
+    (5166)]
     local procedure UnitofMeasureCodeOnAfterValida();
     begin
         IF Reserve = Reserve::Always THEN BEGIN

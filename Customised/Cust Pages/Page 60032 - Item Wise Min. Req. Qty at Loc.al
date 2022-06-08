@@ -80,14 +80,14 @@ page 60032 "Item Wise Min. Req. Qty at Loc"
     {
     }
 
-    [LineStart(5450)]
+    (5450)]
     local procedure MinimumStockQuantityOnBeforeIn();
     begin
         IF (USERID <> 'EFFTRONICS\RAMADEVI') AND (USERID <> '07CS019') THEN
             ERROR('You have No Rights to Change Minimum Stock');
     end;
 
-    [LineStart(5454)]
+    (5454)]
     local procedure MinimumStockQuantityOnInputCha(var Text: Text[1024]);
     begin
         "Old Stock" := "Minimum Stock Quantity";

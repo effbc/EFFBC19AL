@@ -573,7 +573,7 @@ page 50013 "Purchase FollowUp"
         Modify_boolean: Boolean;
         ColorText_Shortage: Label 'Having More Cost w.r.t Last Purchase';
 
-    [LineStart(2312)]
+    (2312)]
     procedure PagePurpose(Purpose: Text);
     begin
         Page_Purpose := Purpose;
@@ -588,7 +588,7 @@ page 50013 "Purchase FollowUp"
             END;
     end;
 
-    [LineStart(2325)]
+    (2325)]
     procedure Releasing_Conditions(PurchaseHeader: Record "Purchase Header"): Boolean;
     var
         ReleasePurchDoc: Codeunit "Release Purchase Document";

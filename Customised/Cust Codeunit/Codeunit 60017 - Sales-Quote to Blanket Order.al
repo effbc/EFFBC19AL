@@ -347,19 +347,19 @@ codeunit 60017 "Sales-Quote to Blanket Order"
         Attach: Record Attachments;
         PostAttach: Record Attachments;
 
-    [LineStart(8967)]
+    (8967)]
     procedure GetSalesOrderHeader(var SalesHeader2: Record "Sales Header");
     begin
         SalesHeader2 := SalesOrderHeader;
     end;
 
-    [LineStart(8970)]
+    (8970)]
     procedure SetHideValidationDialog(NewHideValidationDialog: Boolean);
     begin
         HideValidationDialog := NewHideValidationDialog;
     end;
 
-    [LineStart(8973)]
+    (8973)]
     procedure SalesDesignQuotetoOrder(var Rec: Record "Sales Header");
     var
         SalesLineDesign: Record "Sales Line";

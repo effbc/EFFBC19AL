@@ -1099,7 +1099,7 @@ report 50240 "Sales - Invoice new"
         DimSetEntryGRec: Record "Dimension Set Entry";
         DimSetEntryGRec2: Record "Dimension Set Entry";
 
-    [LineStart(11342)]
+    (11342)]
     procedure InitLogInteraction();
     begin
         LogInteraction := SegManagement.FindInteractTmplCode(4) <> '';

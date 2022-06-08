@@ -217,7 +217,7 @@ report 50023 "AMC Order Dump"
         RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
         SHA : Record "Sales Header Archive";
 
-    [LineStart(781)]
+    (781)]
     procedure sqlconnection1();
     begin
         IF ISCLEAR(SQLConnection) THEN
@@ -236,7 +236,7 @@ report 50023 "AMC Order Dump"
         END;
     end;
 
-    [LineStart(797)]
+    (797)]
     procedure commaeli(Base : Text[30]) converted : Text[30];
     var
         i : Integer;

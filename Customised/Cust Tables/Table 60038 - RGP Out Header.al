@@ -247,7 +247,7 @@ table 60038 "RGP Out Header"
 
     var
         InvSetup: Record "Inventory Setup";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit 396;
         RGPOutLine: Record "RGP Out Line";
         Text003: Label 'You cannot rename a %1.';
         Calibration: Record Calibration;
@@ -256,7 +256,7 @@ table 60038 "RGP Out Header"
         Text002: Label 'Do You Want to Reopen?';
         RGPOutHeaderRelease: Record "RGP Out Header";
 
-    [LineStart(2006)]
+
     procedure PostRGP();
     var
         RGPLedEntries: Record "RGP Ledger Entries";
@@ -376,7 +376,7 @@ table 60038 "RGP Out Header"
 
     end;
 
-    [LineStart(2118)]
+
     procedure AssistEdit(OldRGPOutHeader: Record "RGP Out Header"): Boolean;
     var
         RGPOutHeader: Record "RGP Out Header";
@@ -395,7 +395,7 @@ table 60038 "RGP Out Header"
         end;
     end;
 
-    [LineStart(2132)]
+  
     procedure CopyIndent();
     var
         IndentHeader: Record "Indent Header";
@@ -433,7 +433,7 @@ table 60038 "RGP Out Header"
         end;
     end;
 
-    [LineStart(2162)]
+
     local procedure TestStatusOpen();
     begin
         RGPOutHeaderRelease.TestField("Release Status", "Release Status"::Open);

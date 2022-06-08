@@ -321,12 +321,12 @@ report 80026 "Contract Price Update - Test3"
         RemarksCaptionLbl: Label 'Remarks';
         Proj_CaptionLbl: Label 'Proj Description';
 
-    [LineStart(17936)]
+    (17936)]
     procedure InitVariables(LocakPriceUpdPct: Decimal; LocalUpdateToDate: Date);
     begin
     end;
 
-    [LineStart(17939)]
+    (17939)]
     procedure entercell(rowno: Integer; columnno: Integer; cellvalue: Text[250]; bold: Boolean; CellType: Option);
     begin
         TempExcelBuffer.INIT;
@@ -337,7 +337,7 @@ report 80026 "Contract Price Update - Test3"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(17947)]
+    (17947)]
     procedure enterheadings(rowno: Integer; columnno: Integer; cellvalue: Code[50]; bold: Boolean; CellType: Option);
     begin
         TempExcelBuffer.INIT;

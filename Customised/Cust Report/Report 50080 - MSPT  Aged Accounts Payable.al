@@ -702,7 +702,7 @@ report 50080 "MSPT  Aged Accounts Payable"
         Original_Amount_Control24CaptionLbl: Label 'Balance';
         Total__LCY_CaptionLbl: Label 'Total (LCY)';
 
-    [LineStart(5054)]
+    (5054)]
     local procedure CalcDates();
     var
         i: Integer;
@@ -727,7 +727,7 @@ report 50080 "MSPT  Aged Accounts Payable"
                 ERROR(Text010, PeriodLength);
     end;
 
-    [LineStart(5073)]
+    (5073)]
     local procedure CreateHeadings();
     var
         i: Integer;
@@ -751,7 +751,7 @@ report 50080 "MSPT  Aged Accounts Payable"
             HeaderText[i] := STRSUBSTNO('%1 \%2 %3', Text003, EndingDate - PeriodStartDate[i - 1] + 1, Text002);
     end;
 
-    [LineStart(5092)]
+    (5092)]
     local procedure InsertTemp(var MSPTVendorLedgEntry: Record "MSPT Vendor Ledger Entry");
     var
         Currency: Record Currency;
@@ -780,7 +780,7 @@ report 50080 "MSPT  Aged Accounts Payable"
         END;
     end;
 
-    [LineStart(5116)]
+    (5116)]
     local procedure GetPeriodIndex(Date: Date): Integer;
     var
         i: Integer;
@@ -790,14 +790,14 @@ report 50080 "MSPT  Aged Accounts Payable"
                 EXIT(i);
     end;
 
-    [LineStart(5121)]
+    (5121)]
     local procedure Pct(a: Decimal; b: Decimal): Text[30];
     begin
         IF b <> 0 THEN
             EXIT(FORMAT(ROUND(100 * a / b, 0.1), 0, '<Sign><Integer><Decimals,2>') + '%');
     end;
 
-    [LineStart(5125)]
+    (5125)]
     local procedure UpdateCurrencyTotals();
     var
         i: Integer;

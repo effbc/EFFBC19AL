@@ -1338,7 +1338,7 @@ page 60047 "Site Issues"
         MIL : Record "Material Issues Line";
         SMTP_MAil : Codeunit "SMTP Mail";
 
-    [LineStart(5589)]
+    (5589)]
     procedure ICNNO(DT : Date) ICN : Code[10];
     begin
         IF DATE2DMY(DT,1) < 10 THEN

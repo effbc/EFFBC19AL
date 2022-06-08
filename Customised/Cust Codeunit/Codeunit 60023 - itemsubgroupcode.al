@@ -421,7 +421,7 @@ codeunit 60023 itemsubgroupcode
         ITEM_LOT_NUMBERS: Record "Item Lot Numbers";
         Plan_Change: Codeunit "Plan Change";
 
-    [LineStart(25723)]
+    (25723)]
     procedure Financial_Year() Fin_Year: Integer;
     begin
         IF DATE2DMY(WORKDATE, 2) > 3 THEN

@@ -492,7 +492,7 @@ page 60224 "Issued Material Report Actions"
         Item_Batch: Record Old_Pur_Invoices;
         Location: Option STR,MCH;
 
-    [LineStart(16831)]
+    (16831)]
     procedure GetNextNo() NumberValue: Code[20];
     var
         DateValue: Text[30];

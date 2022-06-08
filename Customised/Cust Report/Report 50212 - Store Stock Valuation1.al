@@ -834,7 +834,7 @@ report 50212 "Store Stock Valuation1"
         Stock_ValueCaptionLbl : Label 'Stock Value';
         No__Of_ItemsCaptionLbl : Label 'No. Of Items';
 
-    [LineStart(8753)]
+    (8753)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -846,7 +846,7 @@ report 50212 "Store Stock Valuation1"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(8762)]
+    (8762)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -859,12 +859,12 @@ report 50212 "Store Stock Valuation1"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(8772)]
+    (8772)]
     procedure "Entercell New"();
     begin
     end;
 
-    [LineStart(8775)]
+    (8775)]
     procedure MONTH(MNT : Integer) MONTH : Text[30];
     var
         Days_Of_Month : Integer;

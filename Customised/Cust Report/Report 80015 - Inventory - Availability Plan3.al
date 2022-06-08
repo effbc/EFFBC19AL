@@ -100,7 +100,7 @@ report 80015 "Inventory - Availability Plan3"
         MaterialIssuesLine: Record "Material Issues Line";
         AssingBatchManual: Codeunit "Assign Batch No's";
 
-    [LineStart(15142)]
+    (15142)]
     procedure Change_Alternate_Items("Material Issue No.": Code[20]; "Prod_Order_No.": Code[20]);
     begin
         Production_Order.SETRANGE(Production_Order."No.", "Prod_Order_No.");
@@ -146,7 +146,7 @@ report 80015 "Inventory - Availability Plan3"
             UNTIL Mat_Issue_sLine.NEXT = 0;
     end;
 
-    [LineStart(15189)]
+    (15189)]
     procedure Net_Stock("Item No.": Code[20]; lOCATION: Code[20]) "Stock Value": Decimal;
     begin
         "Stock Value" := 0;

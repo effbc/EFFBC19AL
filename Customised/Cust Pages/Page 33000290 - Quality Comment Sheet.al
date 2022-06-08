@@ -43,7 +43,7 @@ page 33000290 "Quality Comment Sheet"
         Text000: Label 'untitled';
         Text001: Label 'Fin. Charge Memo';
 
-    [LineStart(23640)]
+    (23640)]
     procedure Caption(FinChrgCommentLine: Record "Fin. Charge Comment Line"): Text[110];
     begin
         IF FinChrgCommentLine."No." = '' THEN

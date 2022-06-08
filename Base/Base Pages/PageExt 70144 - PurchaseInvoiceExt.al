@@ -645,11 +645,19 @@ IF "Vehicle Number" = '' THEN
 
 
 
+<<<<<<< HEAD
+    (6000)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure ReceiptTesting();
     begin
     end;
 
+<<<<<<< HEAD
+    (6003)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure Non_Availment_chk();
     begin
         PL.RESET;
@@ -680,7 +688,11 @@ IF "Vehicle Number" = '' THEN
         END;
     end;
 
+<<<<<<< HEAD
+    (6034)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure RCM_CHECKING();
     begin
         //commented by Vishnu
@@ -704,7 +716,11 @@ IF "Vehicle Number" = '' THEN
         //Commented by Vishnu
     end;
 
+<<<<<<< HEAD
+    (6058)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure CONSTRUCTION_HEAD_CHECKING();
     begin
         //added by Vishnu Priya on 02-02-2019
@@ -718,6 +734,10 @@ IF "Vehicle Number" = '' THEN
         END;
     end;
 
+<<<<<<< HEAD
+    (6070)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Narration_Check();
     begin
         IF ("Posting No. Series" IN ['JV', 'JV_INV_CF']) THEN BEGIN
@@ -738,7 +758,12 @@ IF "Vehicle Number" = '' THEN
         END;
     end;
 
+<<<<<<< HEAD
+    (6090)]
+    local procedure ForeignBills_LCY_CHECKING(InvoiceNumber : Code[25]);
+=======
     local procedure ForeignBills_LCY_CHECKING(InvoiceNumber: Code[25]);
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     begin
         IF Rec.Structure = 'PUR_FR_GST' THEN BEGIN
             Structurehead.RESET;
@@ -752,7 +777,11 @@ IF "Vehicle Number" = '' THEN
         END;
     end;
 
+<<<<<<< HEAD
+    (6104)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure NewlyAdded_Lines_Details_Checking();
     begin
         PL.RESET;
@@ -789,8 +818,13 @@ IF "Vehicle Number" = '' THEN
             UNTIL PL.NEXT = 0;
     end;
 
+<<<<<<< HEAD
+    (6135)]
+    local procedure FirstPurchaseOrderNumber() PONUMBER : Text[30];
+=======
 
     local procedure FirstPurchaseOrderNumber() PONUMBER: Text[30];
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     begin
         Purchline2.RESET;
         Purchline2.SETFILTER("Document No.", Rec."No.");
@@ -800,7 +834,11 @@ IF "Vehicle Number" = '' THEN
             PONUMBER := Purchline2."Purchase_Order No.";
     end;
 
+<<<<<<< HEAD
+    (6143)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Location_Mismatch_Not();
     begin
         // Added by Vishnu Priya on 03-12-2020
@@ -815,7 +853,11 @@ IF "Vehicle Number" = '' THEN
         // Added by Vishnu Priya on 03-12-2020
     end;
 
+<<<<<<< HEAD
+    (6155)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure GSTROUNDINGPRECISION();
     begin
         //added by Vishnu priya on 22-12-2020

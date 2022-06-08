@@ -114,7 +114,7 @@ report 50185 "Day wise Prod.Requests"
         Production_order_noCaptionLbl : Label 'Production order no';
         product_nameCaptionLbl : Label 'product name';
 
-    [LineStart(8468)]
+    (8468)]
     procedure EnterCell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -125,7 +125,7 @@ report 50185 "Day wise Prod.Requests"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(8476)]
+    (8476)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean);
     begin
         TempExcelBuffer.INIT;

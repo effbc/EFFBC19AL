@@ -20,7 +20,7 @@ codeunit 60008 "MSPT Vendor Entries"
         CheckAmount1: Decimal;
         RemainAmount1: Decimal;
 
-    [LineStart(3037)]
+    (3037)]
     procedure PostMSPTVendorLedgerEntries(VendLedgEntry: Record "Vendor Ledger Entry");
     var
         MSPTVendLedgEntry: Record "MSPT Vendor Ledger Entry";
@@ -138,7 +138,7 @@ codeunit 60008 "MSPT Vendor Entries"
 
     end;
 
-    [LineStart(3144)]
+    (3144)]
     procedure CheckStatus(DtldMSPTVendLedgEntry: Record "MSPT Dtld. Vendor Ledg. Entry"; MSPTVendLedgEntry: Record "MSPT Vendor Ledger Entry");
     var
         Value: Decimal;
@@ -157,7 +157,7 @@ codeunit 60008 "MSPT Vendor Entries"
         END;
     end;
 
-    [LineStart(3158)]
+    (3158)]
     procedure PostMSPTDtldVendLedgEntries(DtldVendLedgEntry: Record "Detailed Vendor Ledg. Entry");
     var
         DtldMSPTVendLedgEntry: Record "MSPT Dtld. Vendor Ledg. Entry";
@@ -516,7 +516,7 @@ codeunit 60008 "MSPT Vendor Entries"
         END;
     end;
 
-    [LineStart(3495)]
+    (3495)]
     procedure PostMSPTExchangeAdjEntries(DtldVendLedgEntry: Record "Detailed Vendor Ledg. Entry");
     var
         DtldMSPTVendLedgEntry: Record "MSPT Dtld. Vendor Ledg. Entry";
@@ -595,7 +595,7 @@ codeunit 60008 "MSPT Vendor Entries"
         END;
     end;
 
-    [LineStart(3566)]
+    (3566)]
     procedure UnrealizedLossEntry(DtldVendLedgEntry: Record "Detailed Vendor Ledg. Entry"; MSPTVendLedgEntry: Record "MSPT Vendor Ledger Entry");
     var
         DtldMSPTVendLedgEntry: Record "MSPT Dtld. Vendor Ledg. Entry";
@@ -691,7 +691,7 @@ codeunit 60008 "MSPT Vendor Entries"
         END;
     end;
 
-    [LineStart(3652)]
+    (3652)]
     procedure UnrealizedGainEntry(DtldVendLedgEntry: Record "Detailed Vendor Ledg. Entry"; MSPTVendLedgEntry: Record "MSPT Vendor Ledger Entry");
     var
         DtldMSPTVendLedgEntry: Record "MSPT Dtld. Vendor Ledg. Entry";

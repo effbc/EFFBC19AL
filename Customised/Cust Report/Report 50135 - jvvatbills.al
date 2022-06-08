@@ -234,7 +234,7 @@ report 50135 jvvatbills
         Posting_DateCaptionLbl : Label 'Posting Date';
         PercentageCaptionLbl : Label 'Percentage';
 
-    [LineStart(7312)]
+    (7312)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
 
@@ -247,7 +247,7 @@ report 50135 jvvatbills
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(7322)]
+    (7322)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         TempExcelbuffer.INIT;

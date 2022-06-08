@@ -129,7 +129,7 @@ page 60063 "RGP In Lines"
         RGPLedgerEntry: Record "RGP Ledger Entries";
         TempLedgerEntry: Record "Temp. RGP Ledger Entry";
 
-    [LineStart(5822)]
+    (5822)]
     procedure RGPEntries(var RGPInHeader: Record "RGP In Header"; var RGPInLine: Record "RGP In Line");
     var
         TempLedgerEntry: Record "Temp. RGP Ledger Entry";
@@ -155,7 +155,7 @@ page 60063 "RGP In Lines"
         //COMMIT;
     end;
 
-    [LineStart(5843)]
+    (5843)]
     procedure showEntries(var RGPHeader: Record "RGP In Header");
     var
         RGPLedgerEntry: Record "RGP Ledger Entries";
@@ -179,7 +179,7 @@ page 60063 "RGP In Lines"
         RGPLedgerEntryForm.RUNMODAL;
     end;
 
-    [LineStart(5860)]
+    (5860)]
     local procedure TypeOnAfterValidate();
     begin
         CurrPage.UPDATE;

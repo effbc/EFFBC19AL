@@ -482,7 +482,7 @@ page 60062 "RGP In"
         Calibration: Record Calibration;
         RGPRelease: Codeunit "RGP Release";
 
-    [LineStart(5776)]
+    (5776)]
     procedure TempLedgerEntrySave(var RGPInHeader: Record "RGP In Header"; var RGPInLine: Record "RGP In Line");
     begin
         /*TempLedgerEntry.SETRANGE("Line No.",1);
@@ -502,7 +502,7 @@ page 60062 "RGP In"
 
     end;
 
-    [LineStart(5792)]
+    (5792)]
     procedure CheckRGPOutStatus(var RGPEntryNo: Integer);
     begin
         chkStatus := TRUE;
@@ -529,13 +529,13 @@ page 60062 "RGP In"
         END;
     end;
 
-    [LineStart(5816)]
+    (5816)]
     local procedure ConsigneeOnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(5819)]
+    (5819)]
     local procedure ConsigneeNoOnAfterValidate();
     begin
         CurrPage.UPDATE;

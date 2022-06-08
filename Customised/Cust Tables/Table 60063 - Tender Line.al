@@ -329,7 +329,7 @@ table 60063 "Tender Line"
         ArchieveTenderLine: Record "Tender Line Archive";
         TH: Record "Tender Header";
 
-    [LineStart(3101)]
+
     procedure TestStatusOpen();
     var
         TenderHeader: Record "Tender Header";

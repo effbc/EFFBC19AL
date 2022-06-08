@@ -75,7 +75,7 @@ report 60097 "BOM Wise Vendors"
         TempExcelbuffer : Record "Excel Buffer";
         Row : Integer;
 
-    [LineStart(12100)]
+    (12100)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -87,7 +87,7 @@ report 60097 "BOM Wise Vendors"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(12109)]
+    (12109)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -100,7 +100,7 @@ report 60097 "BOM Wise Vendors"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(12119)]
+    (12119)]
     procedure "Entercell New"();
     begin
     end;

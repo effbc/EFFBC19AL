@@ -474,7 +474,7 @@ table 50003 "Posted Material Issues Header"
         Subject: Text[250];
         PMIL: Record "Posted Material Issues Line";
 
-    [LineStart(788)]
+
     procedure Navigate();
     var
         NavigatePage: Page Navigate;

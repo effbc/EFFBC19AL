@@ -378,17 +378,17 @@ table 90050 "Calibration Lines-with data"
         Text001: Label '%1 and %2 cannot be the same in %3 %4.';
         Text002: Label 'Do you want to change %1?';
         Text003: Label 'The transfer order %1 has been deleted.';
-        "--NAVIN--": ;
+
         Text13000: Label 'Structure code cannot be changed';
         InvSetup: Record "Inventory Setup";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit 396;
         User: Record User;
         TOMaterialIssueLine: Record "TO Material Issue Line";
         ItemJnlLine: Record "Item Journal Line";
         "Prod.Order": Record "Production Order";
         "Prod.OrderLine": Record "Prod. Order Line";
 
-    [LineStart(5771)]
+
     procedure AssistEdit(OLDMIH: Record "Item Design Worksheet Header"): Boolean;
     var
         ToMaterialIssueHeader: Record "Item Design Worksheet Header";
@@ -410,7 +410,7 @@ table 90050 "Calibration Lines-with data"
 
     end;
 
-    [LineStart(5787)]
+
     procedure "CopyProd.OrderComponents"();
     var
         ProdOrderLines: Record "Prod. Order Line";

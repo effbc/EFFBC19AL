@@ -657,7 +657,7 @@ report 50041 "consolidated tax report"
         SILTaxAmount: Decimal;
         SILExciseAmount: Decimal;
 
-    [LineStart(3258)]
+    (3258)]
     procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean; CellType: Option);
     begin
         TempExcelBuffer.INIT;
@@ -669,7 +669,7 @@ report 50041 "consolidated tax report"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(3267)]
+    (3267)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean; CellType: Option);
     begin
         TempExcelBuffer.INIT;
@@ -682,17 +682,17 @@ report 50041 "consolidated tax report"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(3277)]
+    (3277)]
     procedure UpdateRequestForm();
     begin
     end;
 
-    [LineStart(3280)]
+    (3280)]
     procedure "--Rev01--"();
     begin
     end;
 
-    [LineStart(3283)]
+    (3283)]
     procedure RequestFile();
     begin
         IF FileName <> '' THEN
@@ -704,7 +704,7 @@ report 50041 "consolidated tax report"
         FileName := FileMgt.GetFileName(ServerFileName);
     end;
 
-    [LineStart(3292)]
+    (3292)]
     local procedure ValidateServerFileName();
     begin
         IF ServerFileName = '' THEN BEGIN

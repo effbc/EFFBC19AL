@@ -10,7 +10,7 @@ codeunit 60002 "Cancel Reservation Entries"
         ReservationEntry: Record "Reservation Entry";
 
     [EventSubscriber(ObjectType::Table, 32, 'OnAfterInsertEvent', '', false, false)]
-    [LineStart(906)]
+    (906)]
     procedure DeleteProdReservationEntries(var Rec: Record "Item Ledger Entry"; RunTrigger: Boolean);
     var
         ILE: Record "Item Ledger Entry";

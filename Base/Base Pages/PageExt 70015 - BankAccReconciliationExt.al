@@ -348,7 +348,7 @@ pageextension 70015 BankAccReconciliationExt extends "Bank Acc. Reconciliation"
         StandardMatchErr: Label 'Reverse Match was used already, you cann''t use Match Manually here.';
         ReverseMatchErr: Label 'Match Manually was used already, you cann''t use Reverse Match here.';
 
-    [LineStart(19396)]
+    (19396)]
     local procedure IsStandardMatchAllowed(): Boolean;
     var
         BankAccReconLine: Record "Bank Acc. Reconciliation Line";
@@ -361,7 +361,7 @@ pageextension 70015 BankAccReconciliationExt extends "Bank Acc. Reconciliation"
         EXIT(BankAccReconLine.ISEMPTY);
     end;
 
-    [LineStart(19404)]
+    (19404)]
     local procedure IsMatchReverseAllowed(): Boolean;
     var
         BankAccLedgEntry: Record "Bank Account Ledger Entry";

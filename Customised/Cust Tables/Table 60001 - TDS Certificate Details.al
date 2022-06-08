@@ -108,7 +108,7 @@ table 60001 "TDS Certificate Details"
         Error('You cannot delete TDS Certificate Detials');
     end;
 
-    [LineStart(1034)]
+
     procedure TestStatus();
     begin
         TestField(Status, Status::Open);

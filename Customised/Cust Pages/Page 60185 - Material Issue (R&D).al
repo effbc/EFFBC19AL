@@ -1219,7 +1219,7 @@ page 60185 "Material Issue (R&D)"
         CURefresh : Codeunit "Release MaterialIssue Document";
         AssingBatchManual : Codeunit "Assign Batch No's";
 
-    [LineStart(14948)]
+    (14948)]
     procedure ICNNO(DT : Date) ICN : Code[10];
     begin
         IF DATE2DMY(DT,1) < 10 THEN

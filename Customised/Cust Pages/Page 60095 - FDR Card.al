@@ -342,7 +342,7 @@ page 60095 "FDR Card"
         [InDataSet]
         ReceiptAccNoHidevalue: Boolean;
 
-    [LineStart(10725)]
+    (10725)]
     procedure InitGenJnlLine(var Rec: Record "FDR Master"; "AccountNo.": Code[20]; "BalAccountNo.": Code[20]; AccountType: Option "G/L Account","Bank Account"; BalAccountType: Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset"; Amount: Decimal);
     var
         DimMgt: Codeunit DimensionManagement;
@@ -384,7 +384,7 @@ page 60095 "FDR Card"
 
     end;
 
-    [LineStart(10759)]
+    (10759)]
     local procedure NoOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -400,7 +400,7 @@ page 60095 "FDR Card"
 
     end;
 
-    [LineStart(10771)]
+    (10771)]
     local procedure FDRDocumentNoOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -416,7 +416,7 @@ page 60095 "FDR Card"
 
     end;
 
-    [LineStart(10783)]
+    (10783)]
     local procedure ModeofPaymentOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -432,7 +432,7 @@ page 60095 "FDR Card"
 
     end;
 
-    [LineStart(10795)]
+    (10795)]
     local procedure DescriptionOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -448,7 +448,7 @@ page 60095 "FDR Card"
 
     end;
 
-    [LineStart(10807)]
+    (10807)]
     local procedure IssuingBankOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -464,7 +464,7 @@ page 60095 "FDR Card"
 
     end;
 
-    [LineStart(10819)]
+    (10819)]
     local procedure DateofIssueOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -480,7 +480,7 @@ page 60095 "FDR Card"
 
     end;
 
-    [LineStart(10831)]
+    (10831)]
     local procedure ExpiryDateOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -496,7 +496,7 @@ page 60095 "FDR Card"
 
     end;
 
-    [LineStart(10843)]
+    (10843)]
     local procedure FDRValueOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -512,7 +512,7 @@ page 60095 "FDR Card"
 
     end;
 
-    [LineStart(10855)]
+    (10855)]
     local procedure RemarksOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -528,7 +528,7 @@ page 60095 "FDR Card"
 
     end;
 
-    [LineStart(10867)]
+    (10867)]
     local procedure ExtendedOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -544,7 +544,7 @@ page 60095 "FDR Card"
 
     end;
 
-    [LineStart(10879)]
+    (10879)]
     local procedure PaymentAccountNoOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -560,7 +560,7 @@ page 60095 "FDR Card"
 
     end;
 
-    [LineStart(10891)]
+    (10891)]
     local procedure PostingAccountNoOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -576,7 +576,7 @@ page 60095 "FDR Card"
 
     end;
 
-    [LineStart(10903)]
+    (10903)]
     local procedure ModeofReceiptOnBeforeInput();
     begin
         IF Status = Status::Released THEN
@@ -592,7 +592,7 @@ page 60095 "FDR Card"
 
     end;
 
-    [LineStart(10915)]
+    (10915)]
     local procedure ReceiptAccountNoOnBeforeInput();
     begin
         IF Status = Status::Released THEN

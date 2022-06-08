@@ -397,19 +397,19 @@ page 60133 "Purchase Enquiry"
         PurchHeader : Record "Purchase Header";
         POAutomation : Codeunit "PO Automation";
 
-    [LineStart(11744)]
+    (11744)]
     local procedure PaytoVendorNoOnAfterValidate();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(11747)]
+    (11747)]
     local procedure ShortcutDimension1CodeOnAfterV();
     begin
         CurrPage.PurchLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(11750)]
+    (11750)]
     local procedure ShortcutDimension2CodeOnAfterV();
     begin
         CurrPage.PurchLines.PAGE.UpdateForm(TRUE);

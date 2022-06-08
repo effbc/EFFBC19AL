@@ -1728,7 +1728,7 @@ report 80007 "Sales - Invoice3"
         Discount_Percnt: Code[10];
         Itm: Record Item;
 
-    [LineStart(13009)]
+    (13009)]
     procedure InitLogInteraction();
     begin
         LogInteraction := SegManagement.FindInteractTmplCode(4) <> '';

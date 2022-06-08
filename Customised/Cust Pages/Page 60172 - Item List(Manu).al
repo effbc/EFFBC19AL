@@ -1773,7 +1773,7 @@ page 60172 "Item List(Manu)"
         bom_status_old : Text;
         PBH : Record "Production BOM Header";
 
-    [LineStart(13735)]
+    (13735)]
     procedure GetSelectionFilter() : Text;
     var
         Item : Record Item;
@@ -1783,13 +1783,13 @@ page 60172 "Item List(Manu)"
         EXIT(SelectionFilterManagement.GetSelectionFilterForItem(Item));
     end;
 
-    [LineStart(13739)]
+    (13739)]
     procedure SetSelection(var Item : Record Item);
     begin
         CurrPage.SETSELECTIONFILTER(Item);
     end;
 
-    [LineStart(13742)]
+    (13742)]
     local procedure NoOnFormat();
     begin
            //Rev01 Begin
@@ -1840,7 +1840,7 @@ page 60172 "Item List(Manu)"
 
     end;
 
-    [LineStart(13790)]
+    (13790)]
     local procedure DescriptionOnFormat();
     begin
          IF FORMAT("Item Status")='Obsolete' THEN

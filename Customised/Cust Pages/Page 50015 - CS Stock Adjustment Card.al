@@ -317,7 +317,7 @@ page 50015 "CS Stock Adjustment Card"
         CSLG_L: Record "CS Stock Ledger";
         SP: Record "Salesperson/Purchaser";
 
-    [LineStart(2603)]
+    (2603)]
     local procedure Find_Card();
     var
         CSLG: Record "CS Stock Ledger";
@@ -446,7 +446,7 @@ page 50015 "CS Stock Adjustment Card"
             UNTIL CSLG.NEXT = 0;
     end;
 
-    [LineStart(2726)]
+    (2726)]
     local procedure Clear_Values();
     begin
         Quantity := 0;

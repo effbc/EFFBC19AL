@@ -234,7 +234,7 @@ table 33000254 "Specification Line"
         Characterstic: Record Characteristic;
         SpecHeader: Record "Specification Header";
 
-    [LineStart(7494)]
+    (7494)]
     procedure TestStatus();
     var
         SpecVersion: Record "Specification Version";

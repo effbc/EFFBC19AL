@@ -83,7 +83,7 @@ xmlport 50061 "Reservation Entry"
         ReservationEntry: Record "Reservation Entry-KNR";
         ItemJournalLine: Record "Item Journal Line";
 
-    [LineStart(14)]
+    (14)]
     procedure IJLItemTracking(var ReservationEntryKNR: Record "Reservation Entry-KNR");
     var
         ReservationEntry: Record "Reservation Entry";

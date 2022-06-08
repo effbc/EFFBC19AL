@@ -125,25 +125,25 @@ page 60021 "Sales Quote Subform-Design"
         SalesPriceCalcMgt : Codeunit "Sales Price Calc. Mgt.";
         ShortcutDimCode : array [8] of Code[20];
 
-    [LineStart(5250)]
+    (5250)]
     procedure ApproveCalcInvDisc();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Disc. (Yes/No)",Rec);
     end;
 
-    [LineStart(5253)]
+    (5253)]
     procedure CalcInvDisc();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Calc. Discount",Rec);
     end;
 
-    [LineStart(5256)]
+    (5256)]
     procedure ExplodeBOM();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Explode BOM",Rec);
     end;
 
-    [LineStart(5259)]
+    (5259)]
     procedure InsertExtendedText(Unconditionally : Boolean);
     begin
         IF TransferExtendedText.SalesCheckIfAnyExtText(Rec,Unconditionally) THEN BEGIN
@@ -154,68 +154,68 @@ page 60021 "Sales Quote Subform-Design"
           UpdateForm(TRUE);
     end;
 
-    [LineStart(5267)]
+    (5267)]
     procedure ItemAvailability(AvailabilityType : Option Date,Variant,Location,Bin);
     begin
         //Rec.ItemAvailability(AvailabilityType); //B2b1.0
     end;
 
-    [LineStart(5270)]
+    (5270)]
     procedure ShowDimensions();
     begin
         Rec.ShowDimensions;
     end;
 
-    [LineStart(5273)]
+    (5273)]
     procedure OpenItemTrackingLines();
     begin
         Rec.OpenItemTrackingLines;
     end;
 
-    [LineStart(5276)]
+    (5276)]
     procedure ShowItemSub();
     begin
         Rec.ShowItemSub;
     end;
 
-    [LineStart(5279)]
+    (5279)]
     procedure ShowNonstockItems();
     begin
         Rec.ShowNonstock;
     end;
 
-    [LineStart(5282)]
+    (5282)]
     procedure ItemChargeAssgnt();
     begin
         Rec.ShowItemChargeAssgnt;
     end;
 
-    [LineStart(5285)]
+    (5285)]
     procedure UpdateForm(SetSaveRecord : Boolean);
     begin
         CurrPage.UPDATE(SetSaveRecord);
     end;
 
-    [LineStart(5288)]
+    (5288)]
     procedure ShowPrices();
     begin
         SalesHeader.GET("Document Type","Document No.");
         SalesPriceCalcMgt.GetSalesLinePrice(SalesHeader,Rec);
     end;
 
-    [LineStart(5292)]
+    (5292)]
     procedure ShowLineDisc();
     begin
         SalesHeader.GET("Document Type","Document No.");
         SalesPriceCalcMgt.GetSalesLineLineDisc(SalesHeader,Rec);
     end;
 
-    [LineStart(5296)]
+    (5296)]
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(5299)]
+    (5299)]
     procedure ShowStrDetailsForm();
     var
         StrOrderLineDetails : Record "Structure Order Line Details";
@@ -231,12 +231,12 @@ page 60021 "Sales Quote Subform-Design"
         StrOrderLineDetailsForm.RUNMODAL;
     end;
 
-    [LineStart(5309)]
+    (5309)]
     procedure "---B2B---"();
     begin
     end;
 
-    [LineStart(5312)]
+    (5312)]
     procedure CustAttachments();
     var
         CustAttach : Record Attachments;
@@ -249,7 +249,7 @@ page 60021 "Sales Quote Subform-Design"
         PAGE.RUN(PAGE::"ESPL Attachments",CustAttach);
     end;
 
-    [LineStart(5320)]
+    (5320)]
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader : Record "Design Worksheet Header";
@@ -305,7 +305,7 @@ page 60021 "Sales Quote Subform-Design"
 
     end;
 
-    [LineStart(5366)]
+    (5366)]
     procedure ShowSchedule2();
     var
         schedule : Record Schedule2;
@@ -316,7 +316,7 @@ page 60021 "Sales Quote Subform-Design"
         PAGE.RUNMODAL(60125,schedule);
     end;
 
-    [LineStart(5372)]
+    (5372)]
     procedure ShowSchedule();
     var
         schedule : Record Schedule2;
@@ -327,7 +327,7 @@ page 60021 "Sales Quote Subform-Design"
         PAGE.RUNMODAL(60129,schedule);
     end;
 
-    [LineStart(5378)]
+    (5378)]
     local procedure NoOnAfterValidate();
     begin
         InsertExtendedText(FALSE);
@@ -337,7 +337,7 @@ page 60021 "Sales Quote Subform-Design"
           CurrPage.SAVERECORD;
     end;
 
-    [LineStart(5385)]
+    (5385)]
     local procedure QuantityOnAfterValidate();
     begin
         IF Reserve = Reserve::Always THEN BEGIN
@@ -346,7 +346,7 @@ page 60021 "Sales Quote Subform-Design"
         END;
     end;
 
-    [LineStart(5391)]
+    (5391)]
     local procedure UnitofMeasureCodeOnAfterValida();
     begin
         IF Reserve = Reserve::Always THEN BEGIN

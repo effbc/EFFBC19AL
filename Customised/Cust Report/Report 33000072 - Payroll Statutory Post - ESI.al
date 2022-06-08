@@ -134,14 +134,14 @@ report 33000072 "Payroll Statutory Post - ESI"
         Text012: Label 'Do you want to Re - Suggest payment lines ?';
         Text013: Label 'Posted';
 
-    [LineStart(20870)]
+    (20870)]
     procedure SetTemplateValues(Template: Code[10]; Batch: Code[10]);
     begin
         GlobalTemplate := Template;
         GlobalBatch := Batch;
     end;
 
-    [LineStart(20874)]
+    (20874)]
     procedure Calculate();
     begin
         //Calculate
@@ -186,7 +186,7 @@ report 33000072 "Payroll Statutory Post - ESI"
         END;
     end;
 
-    [LineStart(20905)]
+    (20905)]
     procedure PostedTrue(Month1: Option January,February,March,April,May,June,July,August,September,October,November,December; Year1: Integer);
     begin
 
@@ -226,7 +226,7 @@ report 33000072 "Payroll Statutory Post - ESI"
             PayEmployeePayDetails.MODIFYALL(PayEmployeePayDetails.PostedToGL, TRUE);
     end;
 
-    [LineStart(20930)]
+    (20930)]
     procedure AlreadyPosted(Month1: Option January,February,March,April,May,June,July,August,September,October,November,December; Year1: Integer) AlreadyPostedTrue: Boolean;
     begin
 

@@ -136,11 +136,19 @@ pageextension 70196 SalesQuoteSubformExt extends "Sales Quote Subform"
         SalesHeader: Record "Sales Header";
 
 
+<<<<<<< HEAD
+=======
+    (7650)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure "---B2B---"();
     begin
     end;
 
+<<<<<<< HEAD
 
+=======
+    (7653)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure CustAttachments();
     var
         CustAttach: Record Attachments;
@@ -153,7 +161,11 @@ pageextension 70196 SalesQuoteSubformExt extends "Sales Quote Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", CustAttach);
     end;
 
+<<<<<<< HEAD
 
+=======
+    (7661)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";
@@ -212,7 +224,11 @@ pageextension 70196 SalesQuoteSubformExt extends "Sales Quote Subform"
 
     end;
 
+<<<<<<< HEAD
 
+=======
+    (7710)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowSchedule2();
     var
         Schedule: Record Schedule2;
@@ -223,7 +239,11 @@ pageextension 70196 SalesQuoteSubformExt extends "Sales Quote Subform"
         PAGE.RUNMODAL(60125, Schedule);
     end;
 
+<<<<<<< HEAD
 
+=======
+    (7716)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowSchedule();
     var
         Schedule: Record Schedule2;
@@ -314,7 +334,11 @@ pageextension 70196 SalesQuoteSubformExt extends "Sales Quote Subform"
 
     end;
 
+<<<<<<< HEAD
 
+=======
+    (7799)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure Show_schedules();
     begin
         IF Type = Type::Item THEN BEGIN
@@ -415,7 +439,11 @@ pageextension 70196 SalesQuoteSubformExt extends "Sales Quote Subform"
             END;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (7895)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure QuotevalueCalulcation() TTLAMT: Decimal;
     begin
         TTLAMT := 0;

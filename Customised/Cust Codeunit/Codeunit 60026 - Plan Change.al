@@ -48,7 +48,7 @@ codeunit 60026 "Plan Change"
         itemlotnums: Record "Item Lot Numbers";
         temprec: Record "Item Lot Numbers";
 
-    [LineStart(26221)]
+    (26221)]
     procedure Sales_Plan_Change(Sale_Order: Code[30]; Line_No: Integer);
     var
         Sales_Line: Record "Sales Line";
@@ -66,7 +66,7 @@ codeunit 60026 "Plan Change"
         END;
     end;
 
-    [LineStart(26235)]
+    (26235)]
     procedure "Schedule_Plan Change"(Sale_Order: Code[30]; Sales_Line: Integer; Schedule_line: Integer);
     var
         schedule: Record Schedule2;
@@ -85,7 +85,7 @@ codeunit 60026 "Plan Change"
             UNTIL schedule.NEXT = 0;
     end;
 
-    [LineStart(26249)]
+    (26249)]
     procedure Change_Alternate_Items(Actual_Item: Code[20]; Alternate_Item: Code[20]);
     var
         Shortage_Det2: Record "Item Lot Numbers";
@@ -249,7 +249,7 @@ codeunit 60026 "Plan Change"
 
     end;
 
-    [LineStart(26412)]
+    (26412)]
     procedure Change_Shortage_Date();
     begin
         "G|L".GET;
@@ -257,7 +257,7 @@ codeunit 60026 "Plan Change"
         "G|L".MODIFY;
     end;
 
-    [LineStart(26417)]
+    (26417)]
     procedure Shortage(Week: Integer; Sale_Order: Code[20]; Product: Code[20]);
     var
         Shortage_Details: Record "Item Lot Numbers";
@@ -552,7 +552,7 @@ codeunit 60026 "Plan Change"
         END;
     end;
 
-    [LineStart(26721)]
+    (26721)]
     procedure Item_Plan_Change(Shortage_Det: Record "Item Lot Numbers");
     var
         Shortage_Det2: Record "Item Lot Numbers";
@@ -571,7 +571,7 @@ codeunit 60026 "Plan Change"
         END;
     end;
 
-    [LineStart(26735)]
+    (26735)]
     procedure Update_Sale_Order_Info();
     var
         Shortage_Details: Record "Item Lot Numbers";
@@ -602,7 +602,7 @@ codeunit 60026 "Plan Change"
 
     end;
 
-    [LineStart(26758)]
+    (26758)]
     procedure FillSaleOrdrNum_ItmLotNums();
     begin
         //added by pranavi to fill the empty sales order numbers in item lot numbers on 06-01-2015

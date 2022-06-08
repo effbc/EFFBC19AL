@@ -86,12 +86,20 @@ pageextension 70132 PostedWhseReceiptSubformExt extends "Posted Whse. Receipt Su
         PostedInspectDataSheet: Record "Posted Inspect DatasheetHeader";
         InspectReportHeader: Record "Inspection Receipt Header";
 
+<<<<<<< HEAD
+    (31008)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure "--QC--"();
     begin
     end;
 
+<<<<<<< HEAD
+    (31011)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowDataSheet();
     begin
         TESTFIELD("Source Document", Rec."Source Document"::"Purchase Order");
@@ -101,7 +109,11 @@ pageextension 70132 PostedWhseReceiptSubformExt extends "Posted Whse. Receipt Su
         PAGE.RUN(PAGE::"Inspection Data Sheet List", InspectDataSheet);
     end;
 
+<<<<<<< HEAD
+    (31018)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowPostedDataSheet();
     begin
         TESTFIELD("Source Document", Rec."Source Document"::"Purchase Order");
@@ -111,7 +123,11 @@ pageextension 70132 PostedWhseReceiptSubformExt extends "Posted Whse. Receipt Su
         PAGE.RUN(PAGE::"Posted Inspect Data Sheet List", PostedInspectDataSheet);
     end;
 
+<<<<<<< HEAD
+    (31025)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowInspectReceipt();
     begin
         /*InspectReportHeader.SETRANGE("Receipt No.","Document No.");
@@ -128,7 +144,11 @@ pageextension 70132 PostedWhseReceiptSubformExt extends "Posted Whse. Receipt Su
 
     end;
 
+<<<<<<< HEAD
+    (31038)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowPostedInspectReceipt();
     begin
         TESTFIELD("Source Document", Rec."Source Document"::"Purchase Order");

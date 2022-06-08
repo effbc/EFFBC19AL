@@ -238,7 +238,7 @@ table 60041 "RGP In Line"
     var
         RGPInHeaderRelease: Record "RGP In Header";
 
-    [LineStart(2276)]
+
     local procedure TestStatusOpen();
     begin
         RGPInHeaderRelease.SetRange("RGP In No.", "Document No.");

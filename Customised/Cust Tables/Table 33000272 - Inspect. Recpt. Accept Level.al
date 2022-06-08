@@ -122,7 +122,7 @@ table 33000272 "Inspect. Recpt. Accept Level"
         InspectRcpt: Record "Inspection Receipt Header";
         AcptLevel: Record "Acceptance Level";
 
-    [LineStart(7912)]
+    (7912)]
     procedure TestStatus();
     begin
         InspectRcpt.Get("Inspection Receipt No.");

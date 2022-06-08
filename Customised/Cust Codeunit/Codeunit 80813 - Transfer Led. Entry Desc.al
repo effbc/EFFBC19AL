@@ -22,7 +22,7 @@ codeunit 80813 "Transfer Led. Entry Desc"
         BankAccLedgEntry: Record "Bank Account Ledger Entry";
         Window: Dialog;
 
-    [LineStart(41663)]
+    (41663)]
     procedure UpdateGLEntry();
     begin
         Window.UPDATE(1, 'G/L Entry');
@@ -38,7 +38,7 @@ codeunit 80813 "Transfer Led. Entry Desc"
         END;
     end;
 
-    [LineStart(41676)]
+    (41676)]
     procedure UpdateCustLedgEntry();
     begin
         Window.UPDATE(1, 'Cust. Ledger Entry');
@@ -54,7 +54,7 @@ codeunit 80813 "Transfer Led. Entry Desc"
         END;
     end;
 
-    [LineStart(41689)]
+    (41689)]
     procedure UpdateVendLedgEntry();
     begin
         Window.UPDATE(1, 'Vend. Ledg Entry');
@@ -70,7 +70,7 @@ codeunit 80813 "Transfer Led. Entry Desc"
         END;
     end;
 
-    [LineStart(41702)]
+    (41702)]
     procedure UpdateBankLedgEntry();
     begin
         Window.UPDATE(1, 'Bank A Entry');

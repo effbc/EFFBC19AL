@@ -109,7 +109,7 @@ codeunit 60021 SQLIntegration
         reurn_due_days: Integer;
         payment_Realization_Date: Date;
 
-    [LineStart(9685)]
+    (9685)]
     procedure SaleOrderCreationinOMS(SaleHeader: Record "Sales Header") Success: Boolean;
     var
         CreationQuery: Text;
@@ -2584,7 +2584,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(12189)]
+    (12189)]
     procedure ItemCreationinOMS(No: Text[60]; Description: Text[60]; Description2: Text[60]; Type: Text[30]);
     var
         CreationQuery: Text[1000];
@@ -2657,7 +2657,7 @@ codeunit 60021 SQLIntegration
         END;
     end;
 
-    [LineStart(12255)]
+    (12255)]
     procedure CustomerCreationinOMS(CustomerNumber: Text[30]);
     var
         CreationQuery: Text[1000];
@@ -2697,7 +2697,7 @@ codeunit 60021 SQLIntegration
         END;
     end;
 
-    [LineStart(12286)]
+    (12286)]
     procedure BlankettoOrder(SaleHeader: Record "Sales Header"; BlanketHeader: Record "Sales Header"; PartialorFull: Integer);
     var
         CreationQuery: Text[1000];
@@ -3002,7 +3002,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(12572)]
+    (12572)]
     procedure AdditemtoOrder(SalesLineNo: Text[60]; OrderId: Text[30]; Quantity: Decimal; Inspection: Boolean; ERPLineNO: Text[30]; SCHEDULELINENO: Text[30]; ItemType: Text[30]);
     var
         CreationQuery: Text[1000];
@@ -3118,7 +3118,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(12693)]
+    (12693)]
     procedure PPOdeletions(SaleOrderNO: Text[50]; ItemNO: Text[60]);
     var
         RPOExisted: Integer;
@@ -3166,7 +3166,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(12735)]
+    (12735)]
     procedure TenderCreationOMS(TenderHeader: Record "Tender Header");
     var
         CreationQuery: Text[1000];
@@ -4142,7 +4142,7 @@ codeunit 60021 SQLIntegration
         ConnectionOpen := 0;
     end;
 
-    [LineStart(13593)]
+    (13593)]
     procedure TendertoBlanketorOrder(No: Text[60]; BlanketOrdorSaleOrder: Integer; TenderNo: Text[60]; PartialorFull: Integer);
     var
         Orderid: Text[30];
@@ -4402,7 +4402,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(13834)]
+    (13834)]
     procedure RPOUpdationinOMS(Rec: Record "Production Order");
     begin
 
@@ -4435,7 +4435,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(13863)]
+    (13863)]
     procedure OrderShipmentinOMS(No: Text[60]; ExportNo: Text[60]);
     var
         ExportOrdHeader: Record "Sales Shipment Header";
@@ -4601,7 +4601,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(14013)]
+    (14013)]
     procedure PRMRefresh();
     var
         lDate: Date;
@@ -4950,7 +4950,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(14352)]
+    (14352)]
     procedure ProdBOMHeadertoPRM(Rec: Record "Production BOM Header");
     var
         WeekStart: Text[1000];
@@ -5067,7 +5067,7 @@ codeunit 60021 SQLIntegration
         ConnectionOpen := 0;
     end;
 
-    [LineStart(14458)]
+    (14458)]
     procedure ProdOrdRefresh(RecNo: Text[120]);
     var
         ProdOrder: Record "Production Order";
@@ -5135,7 +5135,7 @@ codeunit 60021 SQLIntegration
         SQLConnection.Close;
     end;
 
-    [LineStart(14520)]
+    (14520)]
     procedure ItemDeletioninOMS(SalesLineNo: Text[60]; OrderId: Text[30]; Quantity: Text[60]; SaleOrderNo: Text[60]);
     var
         WeekStart: Text[500];
@@ -5172,7 +5172,7 @@ codeunit 60021 SQLIntegration
         SQLConnection.Execute(UpdateWebHead);
     end;
 
-    [LineStart(14554)]
+    (14554)]
     procedure DumProductsOMS();
     var
         SaleHeader: Record "Sales Header";
@@ -5457,7 +5457,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(14831)]
+    (14831)]
     procedure SendPurInvToCF(PurInvHead: Record "Purch. Inv. Header");
     var
         Structure_Amount: Decimal;
@@ -5712,7 +5712,7 @@ codeunit 60021 SQLIntegration
         SQLConnection.Close;
     end;
 
-    [LineStart(15075)]
+    (15075)]
     procedure CashflowAuthMail();
     var
         Mail_count: Integer;
@@ -5969,7 +5969,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(15272)]
+    (15272)]
     procedure SalesLinesInsertion(SaleHeader: Record "Sales Header");
     var
         OrderId: Code[20];
@@ -6090,7 +6090,7 @@ codeunit 60021 SQLIntegration
         RowCount := 0;
     end;
 
-    [LineStart(15397)]
+    (15397)]
     procedure EMDCreationInCF(Tender: Record "Tender Header");
     var
         TenderHeader: Record "Tender Header";
@@ -6199,7 +6199,7 @@ codeunit 60021 SQLIntegration
         ConnectionOpen := 0;
     end;
 
-    [LineStart(15498)]
+    (15498)]
     procedure TenderCreationInCF(Tender: Record "Tender Header");
     var
         TenderHeader: Record "Tender Header";
@@ -6281,7 +6281,7 @@ codeunit 60021 SQLIntegration
         ConnectionOpen := 0;
     end;
 
-    [LineStart(15575)]
+    (15575)]
     procedure CustomerCheckInCF(ERPCustNo: Code[12]);
     var
         CF_Cust_Id: Integer;
@@ -6351,7 +6351,7 @@ codeunit 60021 SQLIntegration
         END;
     end;
 
-    [LineStart(15632)]
+    (15632)]
     procedure ActPeriodActYearCalc(Req_Date: Date);
     var
         cDay: Integer;
@@ -6414,7 +6414,7 @@ codeunit 60021 SQLIntegration
         // MESSAGE('Act Period: '+FORMAT(PeriodNum)+' Act Year: '+FORMAT(AccountYear));
     end;
 
-    [LineStart(15684)]
+    (15684)]
     procedure SaleOrderCreationinCashFlow(SalesHeader: Record "Sales Header");
     var
         CustId: Integer;
@@ -6670,7 +6670,7 @@ codeunit 60021 SQLIntegration
         ConnectionOpen := 0;
     end;
 
-    [LineStart(15934)]
+    (15934)]
     procedure SecDepostitCreationInCashFLow(CFSalOrdrID: Integer; SalesHeader: Record "Sales Header"; CFCustId: Integer);
     var
         SDAmt: BigInteger;
@@ -6815,7 +6815,7 @@ codeunit 60021 SQLIntegration
         ConnectionOpen1 := 0;
     end;
 
-    [LineStart(16068)]
+    (16068)]
     procedure EMDSDPaymentsEntryInCashFlow(GenJrnlLine: Record "Gen. Journal Line");
     var
         EMDID: Integer;
@@ -7642,7 +7642,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(16899)]
+    (16899)]
     procedure PrivateSaleOrdrCreationInCashFlow(SalesHeader: Record "Sales Header");
     var
         CustId: Integer;
@@ -9019,7 +9019,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(18240)]
+    (18240)]
     procedure PvtSaleOrdrInvoiceCreationinCF(OrderNo: Code[20]; PostingDate: Date; ExtDocNo: Code[10]);
     var
         SIH: Record "Sales Invoice Header";
@@ -9721,7 +9721,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(18916)]
+    (18916)]
     procedure testconnection();
     begin
         MESSAGE('test connection!');
@@ -9746,7 +9746,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(18938)]
+    (18938)]
     procedure PvtAdvOrderPaymentinCF(GenJernlLine: Record "Gen. Journal Line");
     var
         AR_Paymnt_Id: Integer;
@@ -9971,7 +9971,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(19141)]
+    (19141)]
     procedure PvtAdvOrderPaymentinCF_1(GenJernlLine: Record "Gen. Journal Line");
     var
         AR_Paymnt_Id: Integer;
@@ -10303,7 +10303,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(19453)]
+    (19453)]
     procedure PvtOrderInvoicePaymentInCF(CLE: Record "Cust. Ledger Entry"; Amount: Decimal);
     var
         SIH: Record "Sales Invoice Header";
@@ -11492,7 +11492,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(20635)]
+    (20635)]
     procedure AMC_Bill_Date_Update(SIH: Record "Sales Invoice Header"; Prev_Date: Date);
     var
         SaleOrderId: Integer;
@@ -11547,7 +11547,7 @@ codeunit 60021 SQLIntegration
         // End by Pranavi
     end;
 
-    [LineStart(20689)]
+    (20689)]
     procedure Pvt_Remaining_Adv_OrderPaymentinCF(GenJernlLine: Record "Gen. Journal Line");
     var
         AR_Paymnt_Id: Integer;
@@ -11797,7 +11797,7 @@ codeunit 60021 SQLIntegration
         END;  // end of if <>Advance
     end;
 
-    [LineStart(20915)]
+    (20915)]
     procedure PvtOrderInvoicePaymentInCF_1(CLE: Record "Cust. Ledger Entry"; Amount: Decimal);
     var
         SIH: Record "Sales Invoice Header";
@@ -13000,7 +13000,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(22110)]
+    (22110)]
     procedure PvtOrderInvoicePaymentInCF_2(CLE: Record "Cust. Ledger Entry"; Amount: Decimal);
     var
         SIH: Record "Sales Invoice Header";
@@ -13950,7 +13950,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(23035)]
+    (23035)]
     procedure PvtOrderInvoicePaymentInCF_3(CLE: Record "Cust. Ledger Entry"; Amount: Decimal);
     var
         SIH: Record "Sales Invoice Header";
@@ -15140,7 +15140,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(24202)]
+    (24202)]
     procedure Pvt_Remaining_Adv_OrderPaymentinCF_1(GenJernlLine: Record "Gen. Journal Line");
     var
         AR_Paymnt_Id: Integer;
@@ -15492,7 +15492,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(24532)]
+    (24532)]
     procedure Purch_Invoice_in_CF(PurchInvHeader: Record "Purch. Inv. Header");
     var
         "G|l": Record "General Ledger Setup";
@@ -15783,7 +15783,7 @@ codeunit 60021 SQLIntegration
         END;
     end;
 
-    [LineStart(24812)]
+    (24812)]
     procedure CommaRemoval(Base: Text[30]) Converted: Text[30];
     var
         i: Integer;
@@ -15795,7 +15795,7 @@ codeunit 60021 SQLIntegration
         EXIT(Converted);
     end;
 
-    [LineStart(24820)]
+    (24820)]
     procedure Purch_Receipt_in_CF(PurchRcptHeader: Record "Purch. Rcpt. Header");
     var
         "G|l": Record "General Ledger Setup";
@@ -15857,7 +15857,7 @@ codeunit 60021 SQLIntegration
             ERROR('Cashflow Connection is not Active!');
     end;
 
-    [LineStart(24877)]
+    (24877)]
     procedure Stenicil_Alerts(pcb_number: Text; Issue_Type: Integer);
     begin
         //Item_no:= 'ECPCBDS00485';
@@ -15973,7 +15973,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(24992)]
+    (24992)]
     local procedure Machine_Stencil_Check(pcb_no: Text) Mch_cnfgrd: Text[50];
     begin
         IF ISCLEAR(SQLConnection) THEN
@@ -16012,7 +16012,7 @@ codeunit 60021 SQLIntegration
         //SQLConnection.Close;
     end;
 
-    [LineStart(25030)]
+    (25030)]
     local procedure Stencil_Mail_Alerts(configured_no: Text);
     begin
         Subject := 'Stencil Configuration Details';
@@ -16043,7 +16043,7 @@ codeunit 60021 SQLIntegration
 
     end;
 
-    [LineStart(25057)]
+    (25057)]
     procedure payment_terms_based_amount_to_cfl(orderno: Code[40]; externaldocno: Code[10]; postingdate: Date) duedays: Integer;
     var
         SIH: Record "Sales Invoice Header";

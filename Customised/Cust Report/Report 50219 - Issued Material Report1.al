@@ -949,7 +949,7 @@ report 50219 "Issued Material Report1"
         LOTCaptionLbl : Label 'LOT';
         EmptyStringCaptionLbl : Label '-';
 
-    [LineStart(9656)]
+    (9656)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
 
@@ -962,7 +962,7 @@ report 50219 "Issued Material Report1"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(9666)]
+    (9666)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         Tempexcelbuffer.INIT;
@@ -975,12 +975,12 @@ report 50219 "Issued Material Report1"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(9676)]
+    (9676)]
     procedure "Entercell New"();
     begin
     end;
 
-    [LineStart(9679)]
+    (9679)]
     procedure GetNextNo() NumberValue : Code[20];
     var
         DateValue : Text[30];

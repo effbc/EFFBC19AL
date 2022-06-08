@@ -785,7 +785,7 @@ report 33000901 "CENVAT1(Based on Invoices)"
         PO : Record "Purchase Header";
         Testing : Text;
 
-    [LineStart(21955)]
+    (21955)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -797,7 +797,7 @@ report 33000901 "CENVAT1(Based on Invoices)"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(21964)]
+    (21964)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;

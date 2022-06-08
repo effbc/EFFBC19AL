@@ -72,103 +72,103 @@ page 60113 "MSPT Receivables-Payables"
         PeriodType: Option Day,Week,Month,Quarter,Year,Period;
         AmountType: Option "Net Change","Balance at Date";
 
-    [LineStart(11080)]
+    (11080)]
     procedure UpdateSubForm();
     begin
         CurrPage.MSPTReceivPayablesLines.PAGE.Set(Rec, PeriodType, AmountType);
     end;
 
-    [LineStart(11083)]
+    (11083)]
     local procedure DayPeriodTypeOnPush();
     begin
         UpdateSubForm;
     end;
 
-    [LineStart(11086)]
+    (11086)]
     local procedure WeekPeriodTypeOnPush();
     begin
         UpdateSubForm;
     end;
 
-    [LineStart(11089)]
+    (11089)]
     local procedure MonthPeriodTypeOnPush();
     begin
         UpdateSubForm;
     end;
 
-    [LineStart(11092)]
+    (11092)]
     local procedure QuarterPeriodTypeOnPush();
     begin
         UpdateSubForm;
     end;
 
-    [LineStart(11095)]
+    (11095)]
     local procedure YearPeriodTypeOnPush();
     begin
         UpdateSubForm;
     end;
 
-    [LineStart(11098)]
+    (11098)]
     local procedure PeriodPeriodTypeOnPush();
     begin
         UpdateSubForm;
     end;
 
-    [LineStart(11101)]
+    (11101)]
     local procedure NetChangeAmountTypeOnPush();
     begin
         UpdateSubForm;
     end;
 
-    [LineStart(11104)]
+    (11104)]
     local procedure BalanceatDateAmountTypeOnPush();
     begin
         UpdateSubForm;
     end;
 
-    [LineStart(11107)]
+    (11107)]
     local procedure DayPeriodTypeOnValidate();
     begin
         DayPeriodTypeOnPush;
     end;
 
-    [LineStart(11110)]
+    (11110)]
     local procedure WeekPeriodTypeOnValidate();
     begin
         WeekPeriodTypeOnPush;
     end;
 
-    [LineStart(11113)]
+    (11113)]
     local procedure MonthPeriodTypeOnValidate();
     begin
         MonthPeriodTypeOnPush;
     end;
 
-    [LineStart(11116)]
+    (11116)]
     local procedure QuarterPeriodTypeOnValidate();
     begin
         QuarterPeriodTypeOnPush;
     end;
 
-    [LineStart(11119)]
+    (11119)]
     local procedure YearPeriodTypeOnValidate();
     begin
         YearPeriodTypeOnPush;
     end;
 
-    [LineStart(11122)]
+    (11122)]
     local procedure PeriodPeriodTypeOnValidate();
     begin
         PeriodPeriodTypeOnPush;
     end;
 
-    [LineStart(11125)]
+    (11125)]
     local procedure NetChangeAmountTypeOnValidate();
     begin
         NetChangeAmountTypeOnPush;
     end;
 
-    [LineStart(11128)]
+    (11128)]
     local procedure BalanceatDateAmountTypeOnValid();
     begin
         BalanceatDateAmountTypeOnPush;

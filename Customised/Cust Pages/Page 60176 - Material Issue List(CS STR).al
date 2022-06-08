@@ -1156,7 +1156,7 @@ page 60176 "Material Issue List(CS STR)"
         RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
         Text001 : Label 'Updating Virtual Purchase Dates #1#########\';
 
-    [LineStart(13926)]
+    (13926)]
     procedure ICNNO(DT : Date) ICN : Code[10];
     begin
         IF DATE2DMY(DT,1) < 10 THEN

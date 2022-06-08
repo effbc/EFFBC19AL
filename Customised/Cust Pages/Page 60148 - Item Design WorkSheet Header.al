@@ -113,7 +113,7 @@ page 60148 "Item Design WorkSheet Header"
         }
     }
 
-    [LineStart(13192)]
+    (13192)]
     procedure CalculateTotalCost();
     begin
         VALIDATE("Item No.");

@@ -895,7 +895,7 @@ report 50114 "sale-invoice preview"
         For_Efftronics_Systems__P__Ltd_______________________________________________________________________________________________Lbl: Label '"For Efftronics Systems (P) Ltd.,                                                                                                                                                                               "';
         Authorised_SignatoryCaptionLbl: Label 'Authorised Signatory';
 
-    [LineStart(6919)]
+    (6919)]
     procedure InitLogInteraction();
     begin
     end;

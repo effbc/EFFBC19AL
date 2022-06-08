@@ -427,7 +427,7 @@ report 50035 "purchase order status"
         PurchRcptLine: Record "Purch. Rcpt. Line";
         InwardDate: Date;
 
-    [LineStart(1617)]
+    (1617)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean; CellType: Option Number,Text,Date,Time);
     begin
         TempExcelbuffer.INIT;
@@ -439,7 +439,7 @@ report 50035 "purchase order status"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(1626)]
+    (1626)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean; CellType: Option Number,Text,Date,Time);
     begin
         TempExcelbuffer.INIT;

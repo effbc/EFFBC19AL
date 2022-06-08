@@ -625,7 +625,7 @@ page 60210 "CS Others"
         [InDataSet]
         "Document No.Enable" : Boolean;
 
-    [LineStart(16076)]
+    (16076)]
     local procedure CurrentJnlBatchNameOnAfterVali();
     begin
 
@@ -635,7 +635,7 @@ page 60210 "CS Others"
         CurrPage.UPDATE(FALSE);
     end;
 
-    [LineStart(16083)]
+    (16083)]
     local procedure OnAfterGetCurrRecord();
     begin
         xRec := Rec;

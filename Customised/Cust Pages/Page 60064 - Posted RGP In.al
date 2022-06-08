@@ -159,7 +159,7 @@ page 60064 "Posted RGP In"
         RGPInHead: Record "RGP In Header";
         RGPLedgerEntryForm: Page "RGP Type Ledger Entries";
 
-    [LineStart(5867)]
+    (5867)]
     procedure TempLedgerEntrySave(var RGPInHeader: Record "RGP In Header"; var RGPInLine: Record "RGP In Line");
     begin
         TempLedgerEntry.SETRANGE("Line No.", 1);
@@ -178,7 +178,7 @@ page 60064 "Posted RGP In"
         END;
     end;
 
-    [LineStart(5883)]
+    (5883)]
     local procedure ConsigneeOnAfterValidate();
     begin
         CurrPage.UPDATE;

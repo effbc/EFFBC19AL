@@ -200,7 +200,7 @@ report 50115 "Summary Aging of Customers"
         Total_BalanceCaptionLbl: Label 'Total Balance';
         TotalsCaptionLbl: Label 'Totals';
 
-    [LineStart(6937)]
+    (6937)]
     procedure EnterCell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -211,7 +211,7 @@ report 50115 "Summary Aging of Customers"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(6945)]
+    (6945)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[250]; Bold: Boolean);
     begin
         TempExcelBuffer.INIT;

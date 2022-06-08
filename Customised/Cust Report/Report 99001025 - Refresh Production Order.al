@@ -344,7 +344,7 @@ report 99001025 "Refresh Production Order"
         CalMngmt: Codeunit "Calendar Management";
         AlternatePCBReplace: Boolean;
 
-    [LineStart(22964)]
+    (22964)]
     local procedure CheckReservationExist();
     var
         ProdOrderLine2: Record "Prod. Order Line";
@@ -388,7 +388,7 @@ report 99001025 "Refresh Production Order"
             UNTIL ProdOrderLine2.NEXT = 0;
     end;
 
-    [LineStart(23002)]
+    (23002)]
     local procedure ShouldCheckReservedQty(ProdOrderNo: Code[20]; LineNo: Integer; SourceType: Integer; Status: Option; ProdOrderLineNo: Integer; SourceType2: Integer): Boolean;
     var
         ReservEntry: Record "Reservation Entry";
@@ -414,7 +414,7 @@ report 99001025 "Refresh Production Order"
         EXIT(FALSE);
     end;
 
-    [LineStart(23023)]
+    (23023)]
     local procedure CheckProductionBOMStatus(ProdBOMNo: Code[20]; ProdBOMVersionNo: Code[20]);
     var
         ProductionBOMHeader: Record "Production BOM Header";
@@ -432,7 +432,7 @@ report 99001025 "Refresh Production Order"
         END;
     end;
 
-    [LineStart(23035)]
+    (23035)]
     local procedure CheckRoutingStatus(RoutingNo: Code[20]; RoutingVersionNo: Code[20]);
     var
         RoutingHeader: Record "Routing Header";
@@ -450,7 +450,7 @@ report 99001025 "Refresh Production Order"
         END;
     end;
 
-    [LineStart(23047)]
+    (23047)]
     procedure InitializeRequest(Direction2: Option Forward,Backward; CalcLines2: Boolean; CalcRoutings2: Boolean; CalcComponents2: Boolean; CreateInbRqst2: Boolean);
     begin
         Direction := Direction2;
@@ -460,7 +460,7 @@ report 99001025 "Refresh Production Order"
         CreateInbRqst := CreateInbRqst2;
     end;
 
-    [LineStart(23054)]
+    (23054)]
     local procedure IsComponentPicked(ProdOrder: Record "Production Order"): Boolean;
     var
         ProdOrderComp: Record "Prod. Order Component";

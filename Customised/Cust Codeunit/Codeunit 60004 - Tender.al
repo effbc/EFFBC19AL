@@ -276,7 +276,7 @@ codeunit 60004 Tender
         sperson: Record "Salesperson/Purchaser";
         User: Record User;
 
-    [LineStart(1248)]
+    (1248)]
     procedure ReopenTender(TenderHeader: Record "Tender Header");
     var
         Text001: Label 'Do you want to Reopen the Tender?';
@@ -292,7 +292,7 @@ codeunit 60004 Tender
         END;
     end;
 
-    [LineStart(1259)]
+    (1259)]
     procedure "ArichiveTender Document"(var TenderHeader: Record "Tender Header");
     begin
         //IF CONFIRM(Text001,TRUE,TenderHeader."Tender No.")
@@ -302,7 +302,7 @@ codeunit 60004 Tender
         //END;
     end;
 
-    [LineStart(1266)]
+    (1266)]
     procedure "Store Tender Document"(var TenderHeader: Record "Tender Header"; InteractionExist: Boolean);
     var
         TenderHeader1: Record "Tender Header";
@@ -354,7 +354,7 @@ codeunit 60004 Tender
         END;
     end;
 
-    [LineStart(1307)]
+    (1307)]
     procedure "Store Design Document"(DesignWorksheetHeader: Record "Design Worksheet Header"; "VersionNo.": Integer);
     var
         DWSHeader: Record "Design Worksheet Header";
@@ -395,7 +395,7 @@ codeunit 60004 Tender
         END;
     end;
 
-    [LineStart(1340)]
+    (1340)]
     procedure "Store Tender Attachments"(var TenderHeader: Record "Tender Header"; TableID: Option);
     var
         ESPLAttachment: Record Attachments;
@@ -417,7 +417,7 @@ codeunit 60004 Tender
         END;
     end;
 
-    [LineStart(1354)]
+    (1354)]
     procedure GetNextVersionNo(DocNo: Code[20]): Integer;
     begin
         ArchiveTenderHeader.SETRANGE("Tender No.", DocNo);

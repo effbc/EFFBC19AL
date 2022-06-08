@@ -560,7 +560,7 @@ report 50014 "Lead Time"
         V2CaptionLbl : Label '2';
         V4CaptionLbl : Label '4';
 
-    [LineStart(387)]
+    (387)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -572,7 +572,7 @@ report 50014 "Lead Time"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(396)]
+    (396)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         TempExcelbuffer.INIT;

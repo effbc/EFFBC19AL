@@ -26,7 +26,7 @@ codeunit 99000769 "Production BOM-Check"
         NoOfItems: Integer;
         ItemCounter: Integer;
 
-    [LineStart(51922)]
+    (51922)]
     procedure "Code"(var ProdBOMHeader: Record "Production BOM Header"; VersionCode: Code[20]);
     begin
         ProdBOMHeader.TESTFIELD("Unit of Measure Code");
@@ -63,7 +63,7 @@ codeunit 99000769 "Production BOM-Check"
         END;
     end;
 
-    [LineStart(51956)]
+    (51956)]
     local procedure CheckBOMStructure(BOMHeaderNo: Code[20]; VersionCode: Code[20]; Level: Integer);
     var
         ProdBOMHeader: Record "Production BOM Header";
@@ -107,7 +107,7 @@ codeunit 99000769 "Production BOM-Check"
             UNTIL ProdBOMComponent.NEXT = 0;
     end;
 
-    [LineStart(51994)]
+    (51994)]
     procedure ProdBOMLineCheck(ProdBOMNo: Code[20]; VersionCode: Code[20]);
     var
         ProdBOMLine: Record "Production BOM Line";

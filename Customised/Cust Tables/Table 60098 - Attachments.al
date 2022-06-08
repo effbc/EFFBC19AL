@@ -214,7 +214,7 @@ table 60098 Attachments
         AttachmentMgt: Codeunit AttachmentManagementESPL;
         Text022: Label 'MECH_ITEM.';
 
-    [LineStart(4101)]
+
     procedure OpenAttachment(Caption: Text[260]; IsTemporary: Boolean);
     var
         WordManagement: Codeunit WordManagementESPL;
@@ -273,7 +273,7 @@ table 60098 Attachments
 
     end;
 
-    [LineStart(4153)]
+
     procedure ImportAttachment(ImportFromFile: Text; IsTemporary: Boolean; IsInherited: Boolean): Boolean;
     var
         FileName: Text[260];
@@ -478,7 +478,7 @@ table 60098 Attachments
 
     end;
 
-    [LineStart(4348)]
+
     procedure ExportAttachment(var ExportToFile: Text): Boolean;
     var
         FileName: Text[260];
@@ -575,7 +575,6 @@ table 60098 Attachments
 
     end;
 
-    [LineStart(4437)]
     procedure DeleteFile(FileName: Text): Boolean;
     var
         I: Integer;
@@ -610,7 +609,7 @@ table 60098 Attachments
 
     end;
 
-    [LineStart(4466)]
+
     procedure RemoveAttachment(Prompt: Boolean) DeleteOk: Boolean;
     var
         DeleteYesNo: Boolean;
@@ -655,7 +654,7 @@ table 60098 Attachments
 
     end;
 
-    [LineStart(4505)]
+
     procedure ConstFileName() FileName: Text[260];
     var
         I: Integer;
@@ -677,7 +676,7 @@ table 60098 Attachments
 
     end;
 
-    [LineStart(4520)]
+
     procedure ConstDiskFileName() DiskFileName: Text[260];
     begin
         DiskFileName := "Storage Pointer" + '\' + Format("No.") + '.';
@@ -689,7 +688,7 @@ table 60098 Attachments
 
     end;
 
-    [LineStart(4528)]
+
     procedure CreateAttachment();
     var
         Attachment: Record Attachments;
@@ -726,12 +725,10 @@ table 60098 Attachments
 
     end;
 
-    [LineStart(4556)]
     procedure "--Rev01"();
     begin
     end;
 
-    [LineStart(4559)]
     procedure CheckCorrespondenceType(CorrespondenceType: Option " ","Hard Copy","E-Mail",Fax) ErrorText: Text[80];
     begin
         case CorrespondenceType of
@@ -744,7 +741,7 @@ table 60098 Attachments
         end;
     end;
 
-    [LineStart(4569)]
+
     procedure ImportAttachment2(ImportFromFile: Text; IsTemporary: Boolean; IsInherited: Boolean; FileN: Text): Boolean;
     var
         FileName: Text[260];
@@ -836,7 +833,7 @@ table 60098 Attachments
 
     end;
 
-    [LineStart(4651)]
+
     procedure ReadFilePath(var ExportToFile: Text): Boolean;
     var
         FileName: Text[260];
@@ -872,7 +869,7 @@ table 60098 Attachments
         end;
     end;
 
-    [LineStart(4679)]
+
     procedure ModifiyDocument();
     var
         InspectionReceiptHeader: Record "Inspection Receipt Header";

@@ -101,7 +101,7 @@ table 50008 "Mat.Issue Track. Spec2"
         field(62; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code';
-            TableRelation = "Item Variant".Make WHERE("Item No." = FIELD("Item No."));
+            TableRelation = "Item Variant".Code WHERE("Item No." = FIELD("Item No."));
             DataClassification = CustomerContent;
         }
         field(63; Correction; Boolean)
@@ -149,7 +149,7 @@ table 50008 "Mat.Issue Track. Spec2"
         Text003: Label '%1 must be -1, 0 or 1 when %2 is stated.';
         Item: Record Item;
 
-    
+
     procedure CheckSerialNoQty();
     begin
         if "Serial No." <> '' then
@@ -157,16 +157,14 @@ table 50008 "Mat.Issue Track. Spec2"
                 Error(Text003, FieldCaption(Quantity), FieldCaption("Serial No."));
     end;
 
-<<<<<<< HEAD
-    procedure CalcQty(BaseQty : Decimal) : Decimal;
-=======
-    [LineStart(823)]
+
     procedure CalcQty(BaseQty: Decimal): Decimal;
->>>>>>> 24c8df96f43f94e861d8cc264d569e5663568f30
     begin
         if "Qty. per Unit of Measure" = 0 then
             "Qty. per Unit of Measure" := 1;
         exit(Round(BaseQty / "Qty. per Unit of Measure", 0.00001));
     end;
+
+
 }
 

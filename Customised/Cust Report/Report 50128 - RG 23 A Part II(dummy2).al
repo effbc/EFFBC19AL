@@ -804,7 +804,7 @@ report 50128 "RG 23 A Part II(dummy2)"
         ED__CESSCaptionLbl: Label 'ED. CESS';
         V4bCaptionLbl: Label '4b';
 
-    [LineStart(7237)]
+    (7237)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean);
     begin
 
@@ -817,7 +817,7 @@ report 50128 "RG 23 A Part II(dummy2)"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(7247)]
+    (7247)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean);
     begin
         TempExcelbuffer.INIT;

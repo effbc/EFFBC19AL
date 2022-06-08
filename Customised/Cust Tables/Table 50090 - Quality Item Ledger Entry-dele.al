@@ -201,7 +201,7 @@ table 50090 "Quality Item Ledger Entry-dele"
         field(5402; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code';
-            TableRelation = "Item Variant".Make WHERE("Item No." = FIELD("Item No."));
+            TableRelation = "Item Variant".Code WHERE("Item No." = FIELD("Item No."));
             DataClassification = CustomerContent;
         }
         field(5404; "Qty. per Unit of Measure"; Decimal)
@@ -235,7 +235,7 @@ table 50090 "Quality Item Ledger Entry-dele"
         field(5702; "Originally Ordered Var. Code"; Code[10])
         {
             Caption = 'Originally Ordered Var. Code';
-            TableRelation = "Item Variant".Make WHERE("Item No." = FIELD("Originally Ordered No."));
+            TableRelation = "Item Variant".Code WHERE("Item No." = FIELD("Originally Ordered No."));
             DataClassification = CustomerContent;
         }
         field(5703; "Out-of-Stock Substitution"; Boolean)
@@ -521,7 +521,7 @@ table 50090 "Quality Item Ledger Entry-dele"
     var
         GLSetup: Record "General Ledger Setup";
         ReservEntry: Record "Reservation Entry";
-        ReservEngineMgt: Codeunit "Reservation Engine Mgt.";
+        
         ReserveItemLedgEntry: Codeunit "Item Ledger Entry-Reserve";
         ItemTrackingMgt: Codeunit "Item Tracking Management";
         GLSetupRead: Boolean;

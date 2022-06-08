@@ -90,7 +90,7 @@ table 33000274 "Sub Assembly"
         QualitySetup: Record "Quality Control Setup";
         SubAssembly: Record "Sub Assembly";
 
-    [LineStart(7923)]
+    (7923)]
     procedure AssistEdit(): Boolean;
     begin
         QualitySetup.Get;

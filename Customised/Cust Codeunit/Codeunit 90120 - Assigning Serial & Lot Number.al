@@ -15,12 +15,12 @@ codeunit 90120 "Assigning Serial & Lot Number"
         "ILEQty.": Decimal;
         ReclassJournalLine: Record "Item Journal Line";
 
-    [LineStart(42428)]
+    (42428)]
     procedure "----For Transfer Orders---"();
     begin
     end;
 
-    [LineStart(42431)]
+    (42431)]
     procedure AssignTracking(var TransferHeader: Record "Transfer Header");
     var
         TransferLine: Record "Transfer Line";
@@ -41,7 +41,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
             TrackingAssignment.DELETEALL;
     end;
 
-    [LineStart(42446)]
+    (42446)]
     procedure DeleteResevations(var TransLine: Record "Transfer Line");
     var
         ResEntry: Record "Reservation Entry";
@@ -54,7 +54,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
             ResEntry.DELETEALL;
     end;
 
-    [LineStart(42454)]
+    (42454)]
     procedure CheckInventory(var TransferLine: Record "Transfer Line");
     var
         ItemLedgerEntry: Record "Item Ledger Entry";
@@ -78,7 +78,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
         END;
     end;
 
-    [LineStart(42472)]
+    (42472)]
     procedure CheckforSerialandLotNumber("ItemNo.": Code[20]): Boolean;
     var
         Item: Record Item;
@@ -90,7 +90,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
             EXIT(FALSE);
     end;
 
-    [LineStart(42479)]
+    (42479)]
     procedure "AssignSerial&Lotnos"(var TransferLine: Record "Transfer Line");
     var
         ReservationEntry: Record "Reservation Entry";
@@ -216,12 +216,12 @@ codeunit 90120 "Assigning Serial & Lot Number"
             UNTIL TrackingAssignment.NEXT = 0;
     end;
 
-    [LineStart(42589)]
+    (42589)]
     procedure "---For Item Reclass Journal---"();
     begin
     end;
 
-    [LineStart(42592)]
+    (42592)]
     procedure AssignTrackingRCJ(var TemplateName: Code[20]; var BatchName: Code[20]; var DocumentNo: Code[20]);
     var
         TrackingAssignment: Record "Item Tracking Assignament";
@@ -246,7 +246,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
             TrackingAssignment.DELETEALL;
     end;
 
-    [LineStart(42612)]
+    (42612)]
     procedure DeleteResevationsRCJ(var ItemJournalLine: Record "Item Journal Line");
     var
         ResEntry: Record "Reservation Entry";
@@ -260,7 +260,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
             ResEntry.DELETEALL;
     end;
 
-    [LineStart(42621)]
+    (42621)]
     procedure CheckInventoryRCJ(var ItemJournalLine: Record "Item Journal Line");
     var
         ItemLedgerEntry: Record "Item Ledger Entry";
@@ -286,7 +286,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
                 ItemJournalLine.DELETE;
     end;
 
-    [LineStart(42640)]
+    (42640)]
     procedure "AssignSerial&LotnosRCJ"(var ItemJournalLine: Record "Item Journal Line");
     var
         ReservationEntry: Record "Reservation Entry";
@@ -412,7 +412,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
             UNTIL TrackingAssignment.NEXT = 0;
     end;
 
-    [LineStart(42750)]
+    (42750)]
     procedure CheckforSerialandLotNumberRCJ(var "ItemNo.": Code[20]): Boolean;
     var
         Item: Record Item;
@@ -424,12 +424,12 @@ codeunit 90120 "Assigning Serial & Lot Number"
             EXIT(FALSE);
     end;
 
-    [LineStart(42757)]
+    (42757)]
     procedure "---For Consumption Journal---"();
     begin
     end;
 
-    [LineStart(42760)]
+    (42760)]
     procedure ConsumptionItemTracking(var TemplateName: Code[20]; var BatchName: Code[20]);
     var
         TrackingAssignment: Record "Item Tracking Assignament";
@@ -452,7 +452,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
             TrackingAssignment.DELETEALL;
     end;
 
-    [LineStart(42778)]
+    (42778)]
     procedure "DeleteCons.ItemTrackingLines"(var ItemJournalLine: Record "Item Journal Line");
     var
         ResEntry: Record "Reservation Entry";
@@ -466,7 +466,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
             ResEntry.DELETEALL;
     end;
 
-    [LineStart(42787)]
+    (42787)]
     procedure CheckConsumptionInventory(var ItemJournalLine: Record "Item Journal Line");
     var
         ItemLedgerEntry: Record "Item Ledger Entry";
@@ -492,7 +492,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
                 ItemJournalLine.DELETE;
     end;
 
-    [LineStart(42806)]
+    (42806)]
     procedure CheckforSerialandLotNumberCon(var "ItemNo.": Code[20]): Boolean;
     var
         Item: Record Item;
@@ -504,7 +504,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
             EXIT(FALSE);
     end;
 
-    [LineStart(42813)]
+    (42813)]
     procedure "AssignSerial&LotnosCon"(var ItemJournalLine: Record "Item Journal Line");
     var
         ReservationEntry: Record "Reservation Entry";
@@ -633,12 +633,12 @@ codeunit 90120 "Assigning Serial & Lot Number"
             UNTIL TrackingAssignment.NEXT = 0;
     end;
 
-    [LineStart(42926)]
+    (42926)]
     procedure "---For Purchase Orders---"();
     begin
     end;
 
-    [LineStart(42929)]
+    (42929)]
     procedure AssignPurchaseTrackingLines(var Rec: Record "Purchase Header");
     var
         PurchaseLine: Record "Purchase Line";
@@ -664,7 +664,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
         MESSAGE('Item Tracking Lines are Assigned');
     end;
 
-    [LineStart(42946)]
+    (42946)]
     procedure DeletePurchaseLines(var PurchaseLine: Record "Purchase Line");
     var
         ResEntry: Record "Reservation Entry";
@@ -677,7 +677,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
             ResEntry.DELETEALL;
     end;
 
-    [LineStart(42954)]
+    (42954)]
     procedure PurchaseTrackingLines(var PurchaseLine: Record "Purchase Line"; var SerialNos: Code[10]; var LotNos: Code[10]);
     var
         ItemLedgerEntry: Record "Item Ledger Entry";
@@ -750,7 +750,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
         COMMIT;
     end;
 
-    [LineStart(43013)]
+    (43013)]
     procedure "CheckforSerialorLotNo."(var PurchaseLine: Record "Purchase Line"; var LotNo: Code[10]);
     var
         Item: Record Item;
@@ -780,7 +780,7 @@ codeunit 90120 "Assigning Serial & Lot Number"
             END;
     end;
 
-    [LineStart(43032)]
+    (43032)]
     procedure CheckforSerialandLotNumberPur(var "ItemNo.": Code[20]; var LocationCode: Code[20]): Boolean;
     var
         ItemLedgerEntry: Record "Item Ledger Entry";

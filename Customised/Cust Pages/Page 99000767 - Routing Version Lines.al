@@ -158,7 +158,7 @@ page 99000767 "Routing Version Lines"
         RtngComment: Record "Routing Comment Line";
         Text001: TextConst ENU = 'Operation No. must be filled in. Enter a value.', ENN = 'Operation No. must be filled in. Enter a value.';
 
-    [LineStart(23768)]
+    (23768)]
     local procedure ShowComment();
     begin
         IF "Operation No." = '' THEN
@@ -171,7 +171,7 @@ page 99000767 "Routing Version Lines"
         PAGE.RUN(PAGE::"Routing Comment Sheet", RtngComment);
     end;
 
-    [LineStart(23778)]
+    (23778)]
     local procedure ShowTools();
     var
         RtngTool: Record "Routing Tool";
@@ -183,7 +183,7 @@ page 99000767 "Routing Version Lines"
         PAGE.RUN(PAGE::"Routing Tools", RtngTool);
     end;
 
-    [LineStart(23785)]
+    (23785)]
     local procedure ShowPersonnel();
     var
         RtngPersonnel: Record "Routing Personnel";
@@ -195,7 +195,7 @@ page 99000767 "Routing Version Lines"
         PAGE.RUN(PAGE::"Routing Personnel", RtngPersonnel);
     end;
 
-    [LineStart(23792)]
+    (23792)]
     local procedure ShowQualityMeasures();
     var
         RtngQltyMeasure: Record "Routing Quality Measure";

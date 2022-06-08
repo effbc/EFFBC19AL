@@ -1328,7 +1328,7 @@ page 60083 Tender
         SalHdr : Record "Sales Header";
         Editable_Bool : Boolean;
 
-    [LineStart(9790)]
+    (9790)]
     procedure MaketoOrder();
     var
         Text000 : Label 'Do you want to convert the Tender to Order?';
@@ -1651,7 +1651,7 @@ page 60083 Tender
 
     end;
 
-    [LineStart(10098)]
+    (10098)]
     procedure MakeToBlanketOrder();
     var
         Text005 : Label 'Do you want to convert the Tender to Blanket Order?';
@@ -1918,7 +1918,7 @@ page 60083 Tender
 
     end;
 
-    [LineStart(10350)]
+    (10350)]
     procedure EMDStatusUpdate();
     var
         EMD_ID : Code[10];
@@ -1990,7 +1990,7 @@ page 60083 Tender
         // End by Pranavi
     end;
 
-    [LineStart(10409)]
+    (10409)]
     procedure CheckEMDStatus() PaymentId : Code[10];
     var
         RowCount : Integer;

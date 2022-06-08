@@ -1560,7 +1560,7 @@ report 33000903 "Sale-Invoice for VMC"
         DimSetEntry1: Record "Dimension Set Entry";
         DimSetEntry2: Record "Dimension Set Entry";
 
-    [LineStart(22026)]
+    (22026)]
     procedure InitLogInteraction();
     begin
         LogInteraction := SegManagement.FindInteractTmplCode(4) <> '';

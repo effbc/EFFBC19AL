@@ -240,13 +240,13 @@ page 60164 "Calibration Inspection Receipt"
         QualityType : Option Accepted,"Accepted Under Deviation",Rework,Rejected;
         UndefinedQty : Decimal;
 
-    [LineStart(13507)]
+    (13507)]
     procedure CalculateUndefinedQty();
     begin
         UndefinedQty := Quantity - "Qty. Accepted" - "Qty. Rejected" - "Qty. Rework" -"Qty. Accepted Under Deviation";
     end;
 
-    [LineStart(13510)]
+    (13510)]
     procedure CancelReservation(var InspectionReceipt : Record "Inspection Receipt Header");
     var
         ReservationEntry : Record "Reservation Entry";

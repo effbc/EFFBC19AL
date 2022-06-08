@@ -1016,7 +1016,7 @@ table 33000269 "Inspection Receipt Header"
         Attachment: Text[1000];
         Fname: Text[1000];
 
-    [LineStart(7816)]
+    (7816)]
     procedure ShowItemTrackingLines();
     var
         PurchLine: Record "Purchase Line";
@@ -1057,7 +1057,7 @@ table 33000269 "Inspection Receipt Header"
         //Hot Fix 1.0
     end;
 
-    [LineStart(7849)]
+    (7849)]
     procedure QualityAcceptanceLevels(QualityType: Option Accepted,"Accepted Under Deviation",Rework,Rejected);
     var
         InspectRcptAcptLevels: Record "Inspect. Recpt. Accept Level";

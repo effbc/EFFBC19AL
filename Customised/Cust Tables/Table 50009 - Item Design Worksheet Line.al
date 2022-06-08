@@ -223,7 +223,7 @@ table 50009 "Item Design Worksheet Line"
         ManufacturingSetup: Record "Manufacturing Setup";
         RoutingHeader: Record "Routing Header";
 
-    [LineStart(828)]
+
     procedure CopyBomComponents2();
     var
         DesignWorksheetLine: Record "Design Worksheet Line";
@@ -241,8 +241,7 @@ table 50009 "Item Design Worksheet Line"
                 until ProductionBOMLine.Next = 0;
         end;
     end;
-
-    [LineStart(840)]
+    
     procedure CheckType2(var ProductionBOMLine: Record "Production BOM Line");
     var
         ProductionBOMLine1: Record "Production BOM Line";
@@ -265,7 +264,7 @@ table 50009 "Item Design Worksheet Line"
         end;
     end;
 
-    [LineStart(858)]
+
     procedure InsertItems2(var ProductionBOMLine: Record "Production BOM Line");
     var
         DesignWorksheet: Record "Item Design Worksheet Line";
@@ -365,7 +364,7 @@ table 50009 "Item Design Worksheet Line"
 
     end;
 
-    [LineStart(941)]
+
     procedure CopyBomComponents();
     var
         DesignWorksheetLine: Record "Design Worksheet Line";
@@ -384,7 +383,7 @@ table 50009 "Item Design Worksheet Line"
         end;
     end;
 
-    [LineStart(953)]
+
     procedure CheckType(var ProductionBOMLine: Record "Production BOM Line");
     var
         ProductionBOMLine1: Record "Production BOM Line";
@@ -407,7 +406,7 @@ table 50009 "Item Design Worksheet Line"
         end;
     end;
 
-    [LineStart(971)]
+
     procedure InsertItems(var ProductionBOMLine: Record "Production BOM Line");
     var
         DesignWorksheet: Record "Item Design Worksheet Line";

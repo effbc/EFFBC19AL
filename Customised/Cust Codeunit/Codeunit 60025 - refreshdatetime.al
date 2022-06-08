@@ -48,7 +48,7 @@ codeunit 60025 refreshdatetime
         totVendor: Integer;
         PurchaseHeader: Record "Purchase Header";
 
-    [LineStart(25770)]
+    (25770)]
     procedure refresh(var prodno: Code[20]);
     begin
         /*
@@ -76,7 +76,7 @@ codeunit 60025 refreshdatetime
 
     end;
 
-    [LineStart(25794)]
+    (25794)]
     local procedure VendorGstFillling();
     begin
         /*
@@ -145,7 +145,7 @@ codeunit 60025 refreshdatetime
 
     end;
 
-    [LineStart(25859)]
+    (25859)]
     local procedure VendorIntimationMessage();
     begin
         /*
@@ -207,7 +207,7 @@ codeunit 60025 refreshdatetime
 
     end;
 
-    [LineStart(25917)]
+    (25917)]
     local procedure VendorCarona();
     begin
         /*
@@ -301,7 +301,7 @@ codeunit 60025 refreshdatetime
 
     end;
 
-    [LineStart(26007)]
+    (26007)]
     local procedure SurveyWithEfftronics();
     begin
 
@@ -376,7 +376,7 @@ codeunit 60025 refreshdatetime
         END;
     end;
 
-    [LineStart(26079)]
+    (26079)]
     local procedure TestMail();
     begin
         FromMail := 'purchase@efftronics.com';
@@ -428,7 +428,7 @@ codeunit 60025 refreshdatetime
         END;
     end;
 
-    [LineStart(26128)]
+    (26128)]
     local procedure ContinuosSupportWithEfftronics();
     begin
         FromMail := 'purchase@efftronics.com';

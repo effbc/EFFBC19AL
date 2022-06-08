@@ -522,7 +522,7 @@ page 99000815 "Production Order List"
         [InDataSet]
         "No.Emphasize" : Boolean;
 
-    [LineStart(24106)]
+    (24106)]
     procedure Planned_Units(Prod_Date : Date) "Units Planned" : Decimal;
     begin
         Prod_Order.SETCURRENTKEY(Prod_Order."Prod Start date");
@@ -537,7 +537,7 @@ page 99000815 "Production Order List"
         EXIT("Units Planned");
     end;
 
-    [LineStart(24118)]
+    (24118)]
     local procedure NoC2OnFormat();
     begin
         PMIH.RESET;

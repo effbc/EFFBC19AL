@@ -90,7 +90,7 @@ pageextension 70177 SalesArchiveCommentSheetExt extends "Sales Archive Comment S
         Editable: Boolean;
         SalesComment: Record "Sales Comment Line";
 
-    [LineStart(25482)]
+    (25482)]
     procedure MakeToBlanketOrder();
     var
         Text005: Label 'Do you want to convert the Tender to Blanket Order?';
@@ -184,7 +184,7 @@ pageextension 70177 SalesArchiveCommentSheetExt extends "Sales Archive Comment S
         //OMS integration
     end;
 
-    [LineStart(25565)]
+    (25565)]
     procedure CheckAlreadyconverted_Order();
     var
         SalesCmt: Record "Sales Comment Line";

@@ -62,7 +62,7 @@ report 50150 "products price variations"
         connectionopen : Integer;
         deletequery : Text[1000];
 
-    [LineStart(8173)]
+    (8173)]
     procedure sqlconnection1();
     begin
         /*IF ISCLEAR(SQLConnection) THEN
@@ -83,7 +83,7 @@ report 50150 "products price variations"
 
     end;
 
-    [LineStart(8190)]
+    (8190)]
     procedure commaeli(Base : Text[30]) converted : Text[30];
     var
         i : Integer;

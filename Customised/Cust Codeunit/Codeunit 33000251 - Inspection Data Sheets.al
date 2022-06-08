@@ -108,7 +108,7 @@ codeunit 33000251 "Inspection Data Sheets"
         vend: Record Vendor;
         "Mail-Id": Record User;
 
-    [LineStart(47130)]
+    (47130)]
     procedure "CreatePur.LineInspectDataSheet"(PurchRcptHeader2: Record "Purch. Rcpt. Header"; PurchRcptLine2: Record "Purch. Rcpt. Line");
     begin
         PurchRcptHeader.COPY(PurchRcptHeader2);
@@ -163,7 +163,7 @@ codeunit 33000251 "Inspection Data Sheets"
 
     end;
 
-    [LineStart(47181)]
+    (47181)]
     procedure CreatePurLineInspectDataSheet(PurchHeader2: Record "Purchase Header"; var PurchLine2: Record "Purchase Line");
     begin
         PurchHeader.COPY(PurchHeader2);
@@ -175,7 +175,7 @@ codeunit 33000251 "Inspection Data Sheets"
         MESSAGE(Text000);
     end;
 
-    [LineStart(47190)]
+    (47190)]
     procedure CreateLotTrackInspectDataSheet(PurchRcptLine2: Record "Purch. Rcpt. Line");
     var
         InspectLot: Record "Inspection Lot";
@@ -197,7 +197,7 @@ codeunit 33000251 "Inspection Data Sheets"
             UNTIL InspectLot.NEXT = 0;
     end;
 
-    [LineStart(47207)]
+    (47207)]
     procedure CreateReworkInspectDataSheets(var InspectReceipt: Record "Inspection Receipt Header");
     begin
         InspectReceipt.TESTFIELD("Qty. To Receive(Rework)");
@@ -230,7 +230,7 @@ codeunit 33000251 "Inspection Data Sheets"
         MESSAGE(Text000);
     end;
 
-    [LineStart(47237)]
+    (47237)]
     procedure CreateProdLineInspectDataSheet(var ProdOrderLine2: Record "Prod. Order Line");
     begin
         ProdOrderLine2.TESTFIELD("WIP QC Enabled", TRUE);
@@ -244,7 +244,7 @@ codeunit 33000251 "Inspection Data Sheets"
         MESSAGE(Text000);
     end;
 
-    [LineStart(47248)]
+    (47248)]
     procedure CreateInprocInspectDataSheet(var ProdOrderRoutingLine2: Record "Prod. Order Routing Line");
     var
         ILE: Record "Item Ledger Entry";
@@ -310,7 +310,7 @@ codeunit 33000251 "Inspection Data Sheets"
         MESSAGE(Text000);
     end;
 
-    [LineStart(47306)]
+    (47306)]
     procedure InitInspectionHeader(InspectionType: Option Purchase,"Purchase Lot",Rework,"Production Order","Purchase Before Inspection",TransferOrder,SalesCrMemo,ReturnOrder,"Repeated Inspection",Calibration);
     var
         ItemLedgerEntry: Record "Item Ledger Entry";
@@ -705,7 +705,7 @@ codeunit 33000251 "Inspection Data Sheets"
 
     end;
 
-    [LineStart(47684)]
+    (47684)]
     procedure InsertInspectionDataHeader();
     var
         InspectGroup: Code[20];
@@ -820,7 +820,7 @@ codeunit 33000251 "Inspection Data Sheets"
         END;
     end;
 
-    [LineStart(47787)]
+    (47787)]
     procedure InsertInspectionDataLine(InspectCode: Code[20]; "IdsRefNo.": Code[20]);
     var
         SpecLine1: Record "Specification Line";
@@ -1029,7 +1029,7 @@ codeunit 33000251 "Inspection Data Sheets"
 
     end;
 
-    [LineStart(47987)]
+    (47987)]
     procedure CheckVendorQualityApproval(PurchRcptLine: Record "Purch. Rcpt. Line"; LotNo: Boolean): Boolean;
     var
         VendorItemQA: Record "Vendor Item Quality Approval";
@@ -1052,7 +1052,7 @@ codeunit 33000251 "Inspection Data Sheets"
         EXIT(TRUE);
     end;
 
-    [LineStart(48003)]
+    (48003)]
     procedure FindSamplingSize(InspectDSHeader: Record "Inspection Datasheet Header"; SpecLine3: Record "Specification Line"): Decimal;
     var
         SampPlanHeader: Record "Sampling Plan Header";
@@ -1129,7 +1129,7 @@ codeunit 33000251 "Inspection Data Sheets"
 
     end;
 
-    [LineStart(48071)]
+    (48071)]
     procedure CopyItemTrackingLots(PurchRcptLine: Record "Purch. Rcpt. Line");
     var
         ItemEntryRelation: Record "Item Entry Relation";
@@ -1182,7 +1182,7 @@ codeunit 33000251 "Inspection Data Sheets"
         END;
     end;
 
-    [LineStart(48114)]
+    (48114)]
     procedure AddTempRecordSet(var TempItemLedgEntry: Record "Item Ledger Entry");
     var
         TempItemLedgEntry2: Record "Item Ledger Entry";
@@ -1199,7 +1199,7 @@ codeunit 33000251 "Inspection Data Sheets"
         TempItemLedgEntry.RESET;
     end;
 
-    [LineStart(48126)]
+    (48126)]
     procedure CheckSpecCertified(Spec: Code[20]);
     var
         SpecHeader: Record "Specification Header";
@@ -1208,7 +1208,7 @@ codeunit 33000251 "Inspection Data Sheets"
         SpecHeader.TESTFIELD(Status, SpecHeader.Status::Certified);
     end;
 
-    [LineStart(48130)]
+    (48130)]
     procedure QCSetup();
     begin
         IF NOT QCSetupRead THEN
@@ -1216,7 +1216,7 @@ codeunit 33000251 "Inspection Data Sheets"
         QCSetupRead := TRUE;
     end;
 
-    [LineStart(48135)]
+    (48135)]
     procedure CreatePurchOrderInspectDS(PurchHeader2: Record "Purchase Header");
     var
         PurchLine2: Record "Purchase Line";
@@ -1247,12 +1247,12 @@ codeunit 33000251 "Inspection Data Sheets"
             MESSAGE(Text004, NoOfInspectDS);
     end;
 
-    [LineStart(48160)]
+    (48160)]
     procedure "---B2B-ESPL-Quality--"();
     begin
     end;
 
-    [LineStart(48163)]
+    (48163)]
     procedure CreateSalesCrMemoIDS(SalesCrMemoHeader2: Record "Sales Cr.Memo Header"; SalesCrMemoLine2: Record "Sales Cr.Memo Line");
     begin
         SalesCrMemoHeader.COPY(SalesCrMemoHeader2);
@@ -1270,7 +1270,7 @@ codeunit 33000251 "Inspection Data Sheets"
         MESSAGE(Text000);
     end;
 
-    [LineStart(48178)]
+    (48178)]
     procedure CreateSalesCrMemoIDS1(SalesHeader2: Record "Sales Header"; SalesLine2: Record "Sales Line");
     begin
         SalesHeader.COPY(SalesHeader2);
@@ -1281,7 +1281,7 @@ codeunit 33000251 "Inspection Data Sheets"
         MESSAGE(Text000);
     end;
 
-    [LineStart(48186)]
+    (48186)]
     procedure CreateTransferInspectDataSheet(TransferHeader2: Record "Transfer Header"; TransferLine2: Record "Transfer Line");
     var
         TransferHeader: Record "Transfer Header";
@@ -1321,7 +1321,7 @@ codeunit 33000251 "Inspection Data Sheets"
         MESSAGE(Text000);
     end;
 
-    [LineStart(48220)]
+    (48220)]
     procedure CreateReturnOrderIDS(ReturnReceiptHeader2: Record "Return Receipt Header"; ReturnReceiptLine2: Record "Return Receipt Line");
     begin
         ReturnReceiptHeader.COPY(ReturnReceiptHeader2);
@@ -1336,7 +1336,7 @@ codeunit 33000251 "Inspection Data Sheets"
         MESSAGE(Text000);
     end;
 
-    [LineStart(48232)]
+    (48232)]
     procedure CreateInprecessInspectionIDS(Item: Record Item);
     var
         QualityItemLedgEntry: Record "Quality Item Ledger Entry";
@@ -1359,7 +1359,7 @@ codeunit 33000251 "Inspection Data Sheets"
         MESSAGE(Text000);
     end;
 
-    [LineStart(48249)]
+    (48249)]
     procedure InitInprecessInspectionIDS(EntryNo: Integer; Quantity: Decimal);
     begin
         QCSetup;
@@ -1383,7 +1383,7 @@ codeunit 33000251 "Inspection Data Sheets"
         InsertInspectionDataHeader;
     end;
 
-    [LineStart(48270)]
+    (48270)]
     procedure CreateSampleLotIDS(Rec: Record "Sample Lot Inspection");
     var
         PurchaseLine: Record "Purchase Line";
@@ -1438,12 +1438,12 @@ codeunit 33000251 "Inspection Data Sheets"
         MESSAGE(Text000);
     end;
 
-    [LineStart(48320)]
+    (48320)]
     procedure "-----------B2B-----------"();
     begin
     end;
 
-    [LineStart(48323)]
+    (48323)]
     procedure CreateCalibrationIDS(Calibration2: Record Calibration);
     begin
         Calibration.COPY(Calibration2);
@@ -1452,7 +1452,7 @@ codeunit 33000251 "Inspection Data Sheets"
         MESSAGE(Text000);
     end;
 
-    [LineStart(48329)]
+    (48329)]
     procedure CreateCalibrationIDS2(Calibration2: Record Calibration);
     begin
         Calibration.COPY(Calibration2);
@@ -1460,14 +1460,14 @@ codeunit 33000251 "Inspection Data Sheets"
         InsertInspectionDataHeader;
     end;
 
-    [LineStart(48334)]
+    (48334)]
     procedure AssignInprocessSerialNo(InprocessSerialNo: Code[20]);
     begin
         //NSS 030907
         SerialNo := InprocessSerialNo;
     end;
 
-    [LineStart(48338)]
+    (48338)]
     procedure CreateInprocInspectDataSheet2(var ProdOrderRoutingLine2: Record "Prod. Order Routing Line"; var ItemJournalLine: Record "Item Journal Line");
     var
         ILE: Record "Item Ledger Entry";
@@ -1539,7 +1539,7 @@ codeunit 33000251 "Inspection Data Sheets"
         MESSAGE(Text000);
     end;
 
-    [LineStart(48402)]
+    (48402)]
     procedure GetSerialNum(ProdOrderNum: Code[20]; ItemNum: Code[20]): Text[250];
     begin
         ItemLedgEntry.SETCURRENTKEY("Item No.", "Order No.", "Entry Type");
@@ -1558,12 +1558,12 @@ codeunit 33000251 "Inspection Data Sheets"
         END;
     end;
 
-    [LineStart(48418)]
+    (48418)]
     procedure "---B2BKPK PartialIDSCreatio---"();
     begin
     end;
 
-    [LineStart(48421)]
+    (48421)]
     procedure InsertPartInspectionDataHeader(InspDataHeaderParam: Record "Inspection Datasheet Header");
     var
         NoSeriesMgt: Codeunit NoSeriesManagement;
@@ -1660,7 +1660,7 @@ codeunit 33000251 "Inspection Data Sheets"
 
     end;
 
-    [LineStart(48499)]
+    (48499)]
     procedure UpdateItemLedgerEntry(ItemTrackingExists: Boolean; IDSParam: Record "Inspection Datasheet Header");
     var
         ItemApplnEntry: Record "Item Application Entry";
@@ -1717,7 +1717,7 @@ codeunit 33000251 "Inspection Data Sheets"
 
     end;
 
-    [LineStart(48546)]
+    (48546)]
     procedure UpdateQILE(ILEEntryNo: Integer);
     var
         QualityItemLedgerEntry: Record "Quality Item Ledger Entry";
@@ -1739,7 +1739,7 @@ codeunit 33000251 "Inspection Data Sheets"
         //PIDSQC1.0>>
     end;
 
-    [LineStart(48560)]
+    (48560)]
     procedure "UpdateRes.Entry"(var ItemJournalLine: Record "Item Journal Line"; IDSParamLoc: Record "Inspection Datasheet Header");
     var
         ReservationEntry: Record "Reservation Entry";
@@ -1795,7 +1795,7 @@ codeunit 33000251 "Inspection Data Sheets"
         //PIDSQC1.0>>
     end;
 
-    [LineStart(48606)]
+    (48606)]
     procedure ItemReclassLineNo(): Integer;
     var
         ItemJnlLine2: Record "Item Journal Line";
@@ -1810,7 +1810,7 @@ codeunit 33000251 "Inspection Data Sheets"
         //PIDSQC1.0>>
     end;
 
-    [LineStart(48616)]
+    (48616)]
     procedure InsertPartInspectionDataHead2(InspDataHeaderParam: Record "Inspection Datasheet Header");
     var
         NoSeriesMgt: Codeunit NoSeriesManagement;

@@ -155,7 +155,7 @@ report 33000258 "Period Wise Supplier Details"
         Total_Rejected_QtyCaptionLbl : Label 'Total Rejected Qty';
         Total_QtyCaptionLbl : Label 'Total Qty';
 
-    [LineStart(21027)]
+    (21027)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
 
@@ -168,7 +168,7 @@ report 33000258 "Period Wise Supplier Details"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(21037)]
+    (21037)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         Tempexcelbuffer.INIT;
@@ -181,7 +181,7 @@ report 33000258 "Period Wise Supplier Details"
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(21047)]
+    (21047)]
     procedure "Entercell New"();
     begin
     end;

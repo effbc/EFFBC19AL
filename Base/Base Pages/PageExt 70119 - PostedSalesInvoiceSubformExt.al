@@ -701,7 +701,7 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
     */
     //end;
 
-    [LineStart(14083)]
+    (14083)]
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";
@@ -722,7 +722,7 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
 
     end;
 
-    [LineStart(14097)]
+    (14097)]
     procedure ShowSchedule();
     var
         Schedule: Record Schedule2;
@@ -737,7 +737,7 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
         PAGE.RUN(60189, Schedule);
     end;
 
-    [LineStart(14105)]
+    (14105)]
     procedure CustAttachments();
     var
         CustAttach: Record Attachments;

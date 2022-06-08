@@ -917,7 +917,7 @@ page 60188 "Sales AMC List"
         [InDataSet]
         PostingfromWhseRefEditable : Boolean;
 
-    [LineStart(15176)]
+    (15176)]
     procedure UpdateAllowed() : Boolean;
     begin
         IF CurrPage.EDITABLE = FALSE THEN
@@ -925,12 +925,12 @@ page 60188 "Sales AMC List"
         EXIT(TRUE);
     end;
 
-    [LineStart(15181)]
+    (15181)]
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(15184)]
+    (15184)]
     procedure ConvertOrdertoExportOrder(var Rec : Record "Sales Header");
     var
         OldSalesCommentLine : Record "Sales Comment Line";
@@ -1098,12 +1098,12 @@ page 60188 "Sales AMC List"
 
     end;
 
-    [LineStart(15338)]
+    (15338)]
     procedure "---B2B---"();
     begin
     end;
 
-    [LineStart(15341)]
+    (15341)]
     procedure DocumentPosition();
     begin
         /*
@@ -1115,7 +1115,7 @@ page 60188 "Sales AMC List"
 
     end;
 
-    [LineStart(15349)]
+    (15349)]
     procedure CreateOrders(Qtyparam : Decimal) OrdersCreated : Boolean;
     var
         Item : Record Item;
@@ -1147,7 +1147,7 @@ page 60188 "Sales AMC List"
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
-    [LineStart(15374)]
+    (15374)]
     procedure calcamt();
     begin
         "Sale Order Total Amount":=0;
@@ -1160,19 +1160,19 @@ page 60188 "Sales AMC List"
          MODIFY;
     end;
 
-    [LineStart(15384)]
+    (15384)]
     local procedure SelltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(15387)]
+    (15387)]
     local procedure BilltoCustomerNoOnAfterValidat();
     begin
         CurrPage.UPDATE;
     end;
 
-    [LineStart(15390)]
+    (15390)]
     local procedure PostingfromWhseRefOnActivate();
     begin
           IF "Posting from Whse. Ref." >0 THEN

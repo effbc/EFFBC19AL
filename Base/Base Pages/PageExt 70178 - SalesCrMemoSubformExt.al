@@ -153,11 +153,19 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
 
 
 
+<<<<<<< HEAD
+=======
+    (8030)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure "---QC---"();
     begin
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8033)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowDataSheetsForm();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -165,7 +173,11 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
         ShowDataSheets;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8036)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowPostDataSheetsForm();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -173,7 +185,11 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
         ShowPostDataSheets;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8039)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowInspectReceiptForm();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -181,7 +197,11 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
         ShowInspectReceipt;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8042)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowPostInspectReceiptForm();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -189,13 +209,21 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
         ShowPostInspectReceipt;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8045)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure CreateInspectionDataSheetForm();
     begin
         CreateInspectionDataSheets;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8048)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure CancelInspection(var QualityStatus: Text[50]);
     begin
         TESTFIELD("No.");
@@ -203,7 +231,11 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
         CancelInspection(QualityStatus);
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8053)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure CloseInspection(var QualityStatus: Text[50]);
     begin
         TESTFIELD("No.");

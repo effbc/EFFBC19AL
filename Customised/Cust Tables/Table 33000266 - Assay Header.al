@@ -92,7 +92,7 @@ table 33000266 "Assay Header"
         NoSeriesMgt: Codeunit NoSeriesManagement;
         AssayLine: Record "Assay Line";
 
-    [LineStart(7785)]
+    (7785)]
     procedure AssistEdit(oldAssayNo: Record "Assay Header"): Boolean;
     begin
         with AssayHeader do begin

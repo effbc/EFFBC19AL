@@ -7,99 +7,99 @@ report 50044 "Prod. Order Wise Serial No's"
 
     dataset
     {
-        dataitem("Production Order";"Production Order")
+        dataitem("Production Order"; "Production Order")
         {
-            DataItemTableView = SORTING(Status,No.) ORDER(Ascending) WHERE(Status=CONST(Released));
+            DataItemTableView = SORTING(Status, No.) ORDER(Ascending) WHERE(Status = CONST(Released));
             RequestFilterFields = "No.";
             ReqFilterHeading = 'Production Order Wise Serial No''s( As Per BOM)';
-            column(PO_Choice;choice)
+            column(PO_Choice; choice)
             {
             }
-            column(PO_Choice2;Choice2)
+            column(PO_Choice2; Choice2)
             {
             }
-            column(PO_Print_Type;Print_Type)
+            column(PO_Print_Type; Print_Type)
             {
             }
-            column(USERID;USERID)
+            column(USERID; USERID)
             {
             }
-            column(TODAY;TODAY)
+            column(TODAY; TODAY)
             {
             }
-            column(COMPANYNAME;COMPANYNAME)
+            column(COMPANYNAME; COMPANYNAME)
             {
             }
-            column(Production_Order__GETFILTER__Production_Order___No___;"Production Order".GETFILTER("Production Order"."No."))
+            column(Production_Order__GETFILTER__Production_Order___No___; "Production Order".GETFILTER("Production Order"."No."))
             {
             }
-            column(COMPANYNAME_Control1102156005;COMPANYNAME)
+            column(COMPANYNAME_Control1102156005; COMPANYNAME)
             {
             }
-            column(USERID_Control1102156010;USERID)
+            column(USERID_Control1102156010; USERID)
             {
             }
-            column(TODAY_Control1102156012;TODAY)
+            column(TODAY_Control1102156012; TODAY)
             {
             }
-            column(USERID_Control1000000070;USERID)
+            column(USERID_Control1000000070; USERID)
             {
             }
-            column(TODAY_Control1000000071;TODAY)
+            column(TODAY_Control1000000071; TODAY)
             {
             }
-            column(COMPANYNAME_Control1000000072;COMPANYNAME)
+            column(COMPANYNAME_Control1000000072; COMPANYNAME)
             {
             }
-            column(Production_Order__Production_Order___No__;"Production Order"."No.")
+            column(Production_Order__Production_Order___No__; "Production Order"."No.")
             {
             }
-            column(Production_Order__Production_Order___No___Control1102154022;"Production Order"."No.")
+            column(Production_Order__Production_Order___No___Control1102154022; "Production Order"."No.")
             {
             }
-            column(Production_Order_Wise_Issued_Serial_No_sCaption;Production_Order_Wise_Issued_Serial_No_sCaptionLbl)
+            column(Production_Order_Wise_Issued_Serial_No_sCaption; Production_Order_Wise_Issued_Serial_No_sCaptionLbl)
             {
             }
-            column(Item_Wise_Issued_Serial_No_s__For_Production_Order_sCaption;Item_Wise_Issued_Serial_No_s__For_Production_Order_sCaptionLbl)
+            column(Item_Wise_Issued_Serial_No_s__For_Production_Order_sCaption; Item_Wise_Issued_Serial_No_s__For_Production_Order_sCaptionLbl)
             {
             }
-            column(Production_Order_Wise_Issued_Serial_No_sCaption_Control1000000068;Production_Order_Wise_Issued_Serial_No_sCaption_Control1000000068Lbl)
+            column(Production_Order_Wise_Issued_Serial_No_sCaption_Control1000000068; Production_Order_Wise_Issued_Serial_No_sCaption_Control1000000068Lbl)
             {
             }
-            column(Prod__Order_No_Caption;Prod__Order_No_CaptionLbl)
+            column(Prod__Order_No_Caption; Prod__Order_No_CaptionLbl)
             {
             }
-            column(Prod__Order_No_Caption_Control1102154023;Prod__Order_No_Caption_Control1102154023Lbl)
+            column(Prod__Order_No_Caption_Control1102154023; Prod__Order_No_Caption_Control1102154023Lbl)
             {
             }
-            column(Serial_No_Caption;Serial_No_CaptionLbl)
+            column(Serial_No_Caption; Serial_No_CaptionLbl)
             {
             }
-            column(Lot_No_Caption;Lot_No_CaptionLbl)
+            column(Lot_No_Caption; Lot_No_CaptionLbl)
             {
             }
-            column(Item_DescriptionCaption;Item_DescriptionCaptionLbl)
+            column(Item_DescriptionCaption; Item_DescriptionCaptionLbl)
             {
             }
-            column(Item_No_Caption;Item_No_CaptionLbl)
+            column(Item_No_Caption; Item_No_CaptionLbl)
             {
             }
-            column(Compound_DescriptionCaption;Compound_DescriptionCaptionLbl)
+            column(Compound_DescriptionCaption; Compound_DescriptionCaptionLbl)
             {
             }
-            column(Production_Order_Status;Status)
+            column(Production_Order_Status; Status)
             {
             }
-            column(Prod__Order_Line___Production_BOM_No__;"Prod. Order Line"."Production BOM No.")
+            column(Prod__Order_Line___Production_BOM_No__; "Prod. Order Line"."Production BOM No.")
             {
             }
-            column(ProductionBOM_Caption;ProductionBOM_CaptionLbl)
+            column(ProductionBOM_Caption; ProductionBOM_CaptionLbl)
             {
             }
-            dataitem("<Item Ledger Entry3>";"Item Ledger Entry")
+            dataitem("<Item Ledger Entry3>"; "Item Ledger Entry")
             {
                 DataItemLink = ITL Doc No.=FIELD(No.);
-                DataItemTableView = SORTING(Item No.,Lot No.,ITL Doc No.) ORDER(Ascending) WHERE(Entry Type=CONST(Transfer),Product Group Code=CONST(PCB),Location Code=FILTER(<>STR),Remaining Quantity=FILTER(>0));
+                DataItemTableView = SORTING(Item No., Lot No., ITL Doc No.) ORDER(Ascending) WHERE(Entry Type=CONST(Transfer),Product Group Code=CONST(PCB),Location Code=FILTER(<>STR),Remaining Quantity=FILTER(>0));
                 RequestFilterFields = "ITL Doc Line No.";
                 column(ILE3_Choice2;Choice2)
                 {
@@ -1242,7 +1242,7 @@ report 50044 "Prod. Order Wise Serial No's"
         BINAddress : Code[20];
         sno_cnt : Integer;
 
-    [LineStart(3385)]
+    (3385)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -1255,7 +1255,7 @@ report 50044 "Prod. Order Wise Serial No's"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(3395)]
+    (3395)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -1269,7 +1269,7 @@ report 50044 "Prod. Order Wise Serial No's"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(3406)]
+    (3406)]
     procedure "Entercell New"();
     begin
     end;

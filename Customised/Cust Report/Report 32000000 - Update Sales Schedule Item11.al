@@ -122,7 +122,7 @@ report 32000000 "Update Sales/ Schedule Item11"
         OldItemNo: Code[20];
         SalesHeader: Record "Sales Header";
 
-    [LineStart(19787)]
+    (19787)]
     procedure SetValues(OrderNoP: Code[20]; OrderLineNoP: Integer; ScheduleLineNoP: Integer);
     begin
         OrderNo := OrderNoP;
@@ -130,7 +130,7 @@ report 32000000 "Update Sales/ Schedule Item11"
         ScheduleLineNo := ScheduleLineNoP;
     end;
 
-    [LineStart(19792)]
+    (19792)]
     local procedure CheckIfMaterialIssueExist(OrderNoP: Code[20]; OrderLineNoP: Integer; ScheduleLineNoP: Integer): Boolean;
     var
         ProductionOrder: Record "Production Order";
@@ -159,7 +159,7 @@ report 32000000 "Update Sales/ Schedule Item11"
         EXIT(FALSE);
     end;
 
-    [LineStart(19814)]
+    (19814)]
     local procedure UpdateProdOrder(OrderNoP: Code[20]; OrderLineNoP: Integer; ScheduleLineNoP: Integer; NewItemNoP: Code[20]);
     var
         ProductionOrder: Record "Production Order";
@@ -200,7 +200,7 @@ report 32000000 "Update Sales/ Schedule Item11"
         COMMIT;
     end;
 
-    [LineStart(19849)]
+    (19849)]
     local procedure UpdateChangeLog(OrderNoP: Code[20]; OrderLineNoP: Integer; ScheduleLineNoP: Integer; ProdOrderNo: Code[20]; OldItemNoP: Code[20]; NewItemNoP: Code[20]);
     var
         SaleScheduleItemChangeLog: Record "Sale/ Schedule Item Change Log";

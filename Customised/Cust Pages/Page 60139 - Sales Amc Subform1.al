@@ -224,25 +224,25 @@ page 60139 "Sales Amc Subform1"
         Text001 : Label 'Prod. Order is already created against the Sales Order.';
         item : Record Item;
 
-    [LineStart(12088)]
+    (12088)]
     procedure ApproveCalcInvDisc();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Disc. (Yes/No)",Rec);
     end;
 
-    [LineStart(12091)]
+    (12091)]
     procedure CalcInvDisc();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Calc. Discount",Rec);
     end;
 
-    [LineStart(12094)]
+    (12094)]
     procedure ExplodeBOM();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Explode BOM",Rec);
     end;
 
-    [LineStart(12097)]
+    (12097)]
     procedure OpenPurchOrderForm();
     var
         PurchHeader : Record "Purchase Header";
@@ -254,7 +254,7 @@ page 60139 "Sales Amc Subform1"
         PurchOrder.RUN;
     end;
 
-    [LineStart(12103)]
+    (12103)]
     procedure OpenSpecialPurchOrderForm();
     var
         PurchHeader : Record "Purchase Header";
@@ -266,7 +266,7 @@ page 60139 "Sales Amc Subform1"
         PurchOrder.RUN;
     end;
 
-    [LineStart(12109)]
+    (12109)]
     procedure InsertExtendedText(Unconditionally : Boolean);
     begin
         IF TransferExtendedText.SalesCheckIfAnyExtText(Rec,Unconditionally) THEN BEGIN
@@ -277,50 +277,50 @@ page 60139 "Sales Amc Subform1"
           UpdateForm(TRUE);
     end;
 
-    [LineStart(12117)]
+    (12117)]
     procedure ShowReservation();
     begin
         FIND;
         Rec.ShowReservation;
     end;
 
-    [LineStart(12121)]
+    (12121)]
     procedure ItemAvailability(AvailabilityType : Option Date,Variant,Location,Bin);
     begin
         //Rec.ItemAvailability(AvailabilityType);//B2b1.0
     end;
 
-    [LineStart(12124)]
+    (12124)]
     procedure ShowReservationEntries();
     begin
         Rec.ShowReservationEntries(TRUE);
     end;
 
-    [LineStart(12127)]
+    (12127)]
     procedure ShowDimensions();
     begin
         Rec.ShowDimensions;
     end;
 
-    [LineStart(12130)]
+    (12130)]
     procedure ShowItemSub();
     begin
         Rec.ShowItemSub;
     end;
 
-    [LineStart(12133)]
+    (12133)]
     procedure ShowNonstockItems();
     begin
         Rec.ShowNonstock;
     end;
 
-    [LineStart(12136)]
+    (12136)]
     procedure OpenItemTrackingLines();
     begin
         Rec.OpenItemTrackingLines;
     end;
 
-    [LineStart(12139)]
+    (12139)]
     procedure ShowTracking();
     var
         TrackingForm : Page "Order Tracking";
@@ -329,38 +329,38 @@ page 60139 "Sales Amc Subform1"
         TrackingForm.RUNMODAL;
     end;
 
-    [LineStart(12143)]
+    (12143)]
     procedure ItemChargeAssgnt();
     begin
         Rec.ShowItemChargeAssgnt;
     end;
 
-    [LineStart(12146)]
+    (12146)]
     procedure UpdateForm(SetSaveRecord : Boolean);
     begin
         CurrPage.UPDATE(SetSaveRecord);
     end;
 
-    [LineStart(12149)]
+    (12149)]
     procedure ShowPrices();
     begin
         SalesHeader.GET("Document Type","Document No.");
         SalesPriceCalcMgt.GetSalesLinePrice(SalesHeader,Rec);
     end;
 
-    [LineStart(12153)]
+    (12153)]
     procedure ShowLineDisc();
     begin
         SalesHeader.GET("Document Type","Document No.");
         SalesPriceCalcMgt.GetSalesLineLineDisc(SalesHeader,Rec);
     end;
 
-    [LineStart(12157)]
+    (12157)]
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(12160)]
+    (12160)]
     procedure ShowStrDetailsForm();
     var
         StrOrderLineDetails : Record "Structure Order Line Details";
@@ -376,12 +376,12 @@ page 60139 "Sales Amc Subform1"
         StrOrderLineDetailsForm.RUNMODAL;
     end;
 
-    [LineStart(12170)]
+    (12170)]
     procedure "---B2B--"();
     begin
     end;
 
-    [LineStart(12173)]
+    (12173)]
     procedure CustAttachments();
     var
         CustAttach : Record Attachments;
@@ -394,7 +394,7 @@ page 60139 "Sales Amc Subform1"
         PAGE.RUN(PAGE::"ESPL Attachments",CustAttach);
     end;
 
-    [LineStart(12181)]
+    (12181)]
     procedure Presite();
     var
         PreSiteCheckList : Record "Inst. PreSite Check List";
@@ -405,7 +405,7 @@ page 60139 "Sales Amc Subform1"
         PAGE.RUN(PAGE::"Inst. PreSite Check List",PreSiteCheckList);
     end;
 
-    [LineStart(12187)]
+    (12187)]
     procedure ShowPackingDetails();
     var
         PackingDetails : Record "Shortage Management Audit Data";
@@ -416,7 +416,7 @@ page 60139 "Sales Amc Subform1"
         PAGE.RUNMODAL(PAGE :: "Shortage Mng Audit Data",PackingDetails);
     end;
 
-    [LineStart(12193)]
+    (12193)]
     procedure SalesLineAttachments();
     var
         CustAttach : Record Attachments;
@@ -430,7 +430,7 @@ page 60139 "Sales Amc Subform1"
         PAGE.RUN(PAGE::"ESPL Attachments",CustAttach);
     end;
 
-    [LineStart(12202)]
+    (12202)]
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader : Record "Design Worksheet Header";
@@ -489,7 +489,7 @@ page 60139 "Sales Amc Subform1"
 
     end;
 
-    [LineStart(12251)]
+    (12251)]
     procedure ShowDeliveryChallan();
     var
         DeliveryChallan : Record "DC Header";
@@ -500,7 +500,7 @@ page 60139 "Sales Amc Subform1"
         PAGE.RUNMODAL(PAGE :: "DC Header",DeliveryChallan);
     end;
 
-    [LineStart(12257)]
+    (12257)]
     procedure ShowSchedule2();
     var
         Schedule : Record Schedule2;
@@ -528,7 +528,7 @@ page 60139 "Sales Amc Subform1"
         END;
     end;
 
-    [LineStart(12280)]
+    (12280)]
     procedure ShowPODetails();
     var
         SOPodetails : Record "SO Prod.Order Details";
@@ -538,7 +538,7 @@ page 60139 "Sales Amc Subform1"
         PAGE.RUNMODAL(60126,SOPodetails);
     end;
 
-    [LineStart(12285)]
+    (12285)]
     procedure MakeLines(var SalesLineparam : Record "Sales Line") : Decimal;
     var
         SalesLine : Record "Sales Line";
@@ -628,7 +628,7 @@ page 60139 "Sales Amc Subform1"
 
     end;
 
-    [LineStart(12365)]
+    (12365)]
     procedure ValidateProdOrder();
     begin
         CALCFIELDS("Prod. Order Quantity");
@@ -636,7 +636,7 @@ page 60139 "Sales Amc Subform1"
           ERROR(Text001);
     end;
 
-    [LineStart(12370)]
+    (12370)]
     procedure ShowSchedule();
     var
         Schedule : Record Schedule2;
@@ -726,7 +726,7 @@ page 60139 "Sales Amc Subform1"
         END;
     end;
 
-    [LineStart(12454)]
+    (12454)]
     local procedure NoOnAfterValidate();
     begin
         InsertExtendedText(FALSE);
@@ -736,7 +736,7 @@ page 60139 "Sales Amc Subform1"
           CurrPage.SAVERECORD;
     end;
 
-    [LineStart(12461)]
+    (12461)]
     local procedure QuantityOnAfterValidate();
     begin
         IF Reserve = Reserve::Always THEN BEGIN

@@ -70,13 +70,13 @@ page 60011 "Design Worksheet Subform"
         }
     }
 
-    [LineStart(4270)]
+    (4270)]
     procedure _CopyBOMComponents();
     begin
         CopyBomComponents;
     end;
 
-    [LineStart(4273)]
+    (4273)]
     procedure CopyBOMComponents();
     begin
         CopyBomComponents;

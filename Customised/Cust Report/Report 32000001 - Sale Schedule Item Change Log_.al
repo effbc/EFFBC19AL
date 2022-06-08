@@ -60,7 +60,7 @@ report 32000001 "Sale Schedule Item Change Log_"
         SalesHeader: Record "Sales Header";
         ProductionOrder: Record "Production Order";
 
-    [LineStart(19867)]
+    (19867)]
     local procedure ExcelHeader();
     begin
         ExcelBuffer.NewRow;
@@ -76,7 +76,7 @@ report 32000001 "Sale Schedule Item Change Log_"
 
     end;
 
-    [LineStart(19880)]
+    (19880)]
     local procedure ExcelBody();
     begin
         ExcelBuffer.NewRow;

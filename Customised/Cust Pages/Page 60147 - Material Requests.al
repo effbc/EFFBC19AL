@@ -2705,13 +2705,13 @@ page 60147 "Material Requests"
         MATlINE : Record "Material Issues Line";
         User_rec : Record User;
 
-    [LineStart(13055)]
+    (13055)]
     local procedure TransferfromCodeOnInputChange(var Text : Text[1024]);
     begin
           TESTFIELD(Status,Status::Open);
     end;
 
-    [LineStart(13058)]
+    (13058)]
     local procedure TransfertoCodeOnInputChange(var Text : Text[1024]);
     begin
          TESTFIELD(Status,Status::Open);
@@ -2719,19 +2719,19 @@ page 60147 "Material Requests"
         ERROR('DC process has been changed.If any doubts Contact ERP Team');
     end;
 
-    [LineStart(13063)]
+    (13063)]
     local procedure ProdOrderNoOnInputChange(var Text : Text[1024]);
     begin
          TESTFIELD(Status,Status::Open);
     end;
 
-    [LineStart(13066)]
+    (13066)]
     local procedure ProdOrderLineNoOnInputChange(var Text : Text[1024]);
     begin
          TESTFIELD(Status,Status::Open);
     end;
 
-    [LineStart(13069)]
+    (13069)]
     procedure ICNNO(DT : Date) ICN : Code[10];
     begin
         IF DATE2DMY(DT,1) < 10 THEN
@@ -2748,7 +2748,7 @@ page 60147 "Material Requests"
         EXIT(ICN);
     end;
 
-    [LineStart(13083)]
+    (13083)]
     procedure TEMC_MSLMail(ItemNo : Code[30]);
     var
         Body : Text;
@@ -2785,7 +2785,7 @@ page 60147 "Material Requests"
         END;
     end;
 
-    [LineStart(13109)]
+    (13109)]
     procedure StationaryMaterialTesting() : Boolean;
     var
         MIL : Record "Material Issues Line";
@@ -2826,7 +2826,7 @@ page 60147 "Material Requests"
         END;
     end;
 
-    [LineStart(13141)]
+    (13141)]
     local procedure checking_LocationsCode();
     begin
         //Written by Vishnu Priya on 03-30-2020

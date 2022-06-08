@@ -889,7 +889,7 @@ page 50104 "QC Item Card"
         "Alternate Item" : Record "Alternate Items";
         SkilledResourceList : Page "Skilled Resource List";
 
-    [LineStart(3420)]
+    (3420)]
     procedure EnablePlanningControls();
     var
         PlanningGetParam: Codeunit "Planning-Get Parameters";

@@ -91,7 +91,7 @@ page 60121 "Tender Subform - Design"
     var
         TransferExtendedText: Codeunit "Transfer Extended Text";
 
-    [LineStart(11278)]
+    (11278)]
     procedure ShowSalesOrderWorkSheet2();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";
@@ -110,7 +110,7 @@ page 60121 "Tender Subform - Design"
         DesignWorksheetHeader.FILTERGROUP(0);
     end;
 
-    [LineStart(11291)]
+    (11291)]
     procedure InsertExtendedText(Unconditionally: Boolean);
     begin
         IF TransferExtendedText.TenderCheckIfAnyExtText(Rec, Unconditionally) THEN BEGIN
@@ -121,7 +121,7 @@ page 60121 "Tender Subform - Design"
             CurrPage.UPDATE(TRUE);
     end;
 
-    [LineStart(11299)]
+    (11299)]
     procedure ShowSchedule2();
     var
         Schedule: Record Schedule2;
@@ -132,7 +132,7 @@ page 60121 "Tender Subform - Design"
         PAGE.RUNMODAL(60125, Schedule);
     end;
 
-    [LineStart(11305)]
+    (11305)]
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";
@@ -176,7 +176,7 @@ page 60121 "Tender Subform - Design"
         DesignWorksheetHeader.FILTERGROUP(0);
     end;
 
-    [LineStart(11340)]
+    (11340)]
     procedure ShowSchedule();
     var
         Schedule: Record Schedule2;

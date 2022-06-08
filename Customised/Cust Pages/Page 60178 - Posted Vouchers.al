@@ -195,7 +195,7 @@ page 60178 "Posted Vouchers"
         RunOnTempRec: Boolean;
         ReportPrint: Codeunit "Test Report-Print";
 
-    [LineStart(14081)]
+    (14081)]
     procedure SetAnalysisViewEntry(var NewAnalysisViewEntry: Record "Analysis View Entry");
     var
         AnalysisViewEntryToGLEntries: Codeunit AnalysisViewEntryToGLEntries;
@@ -205,7 +205,7 @@ page 60178 "Posted Vouchers"
         AnalysisViewEntryToGLEntries.GetGLEntries(AnalysisViewEntry, TempGLEntry);
     end;
 
-    [LineStart(14086)]
+    (14086)]
     local procedure GetCaption(): Text[250];
     begin
         IF GLAcc."No." <> "G/L Account No." THEN

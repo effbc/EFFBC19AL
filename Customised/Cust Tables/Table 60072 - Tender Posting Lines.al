@@ -238,13 +238,13 @@ table 60072 "Tender Posting Lines"
         BankAccount: Record "Bank Account";
         BankGuarntee: Record "Bank Guarantee";
         "Sales&ReceivablesSetup": Record "Sales & Receivables Setup";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit 396;
         TenderLedgerEntry: Record "Tender Ledger Entries";
         Text001: Label 'Application Cost is Already posted';
         "-B2B1.1-": Integer;
         DimMgt: Codeunit DimensionManagement;
 
-    [LineStart(3122)]
+
     procedure InsertApplicationAmount(var Rec: Record "Tender Posting Lines");
     var
         TenderHeader: Record "Tender Header";
@@ -278,7 +278,7 @@ table 60072 "Tender Posting Lines"
         TenderHeader.Modify;
     end;
 
-    [LineStart(3149)]
+
     procedure EmptyLine(): Boolean;
     begin
         exit(
@@ -286,7 +286,6 @@ table 60072 "Tender Posting Lines"
           ("Tender Posting Group" = ''));
     end;
 
-    [LineStart(3154)]
     procedure InsertEMD(var Rec: Record "Tender Posting Lines");
     var
         TenderHeader: Record "Tender Header";
@@ -329,7 +328,7 @@ table 60072 "Tender Posting Lines"
         end;
     end;
 
-    [LineStart(3188)]
+
     procedure InsertEMDWriteoffAmount(var Rec: Record "Tender Posting Lines");
     var
         TenderHeader: Record "Tender Header";
@@ -378,7 +377,7 @@ table 60072 "Tender Posting Lines"
         end;
     end;
 
-    [LineStart(3228)]
+
     procedure CheckAmount();
     var
         TenderLedgerEntries: Record "Tender Ledger Entries";
@@ -591,7 +590,7 @@ table 60072 "Tender Posting Lines"
         end;
     end;
 
-    [LineStart(3428)]
+
     procedure InsertSDAmount(var Rec: Record "Tender Posting Lines");
     var
         TenderHeader: Record "Tender Header";
@@ -638,7 +637,7 @@ table 60072 "Tender Posting Lines"
         end;
     end;
 
-    [LineStart(3465)]
+
     procedure InsertEMDReceiptAmount(var Rec: Record "Tender Posting Lines");
     var
         TenderHeader: Record "Tender Header";
@@ -681,7 +680,7 @@ table 60072 "Tender Posting Lines"
         end;
     end;
 
-    [LineStart(3499)]
+
     procedure InsertSDReceiptAmount(var Rec: Record "Tender Posting Lines");
     var
         TenderHeader: Record "Tender Header";
@@ -728,7 +727,7 @@ table 60072 "Tender Posting Lines"
         end;
     end;
 
-    [LineStart(3536)]
+
     procedure ShowDimensions();
     begin
         //DIM1.0 Start

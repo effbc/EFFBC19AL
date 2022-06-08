@@ -588,31 +588,31 @@ page 60182 "Purchase Order Subfom-Inventry"
         Text33000260 : Label 'Do you want to Cancel Quality Inspection?';
         Text33000261 : Label 'Do you want to Close Quality Inspection?';
 
-    [LineStart(14555)]
+    (14555)]
     procedure ApproveCalcInvDisc();
     begin
         CODEUNIT.RUN(CODEUNIT::"Purch.-Disc. (Yes/No)",Rec);
     end;
 
-    [LineStart(14558)]
+    (14558)]
     procedure CalcInvDisc();
     begin
         CODEUNIT.RUN(CODEUNIT::"Purch.-Calc.Discount",Rec);
     end;
 
-    [LineStart(14561)]
+    (14561)]
     procedure ExplodeBOM();
     begin
         CODEUNIT.RUN(CODEUNIT::"Purch.-Explode BOM",Rec);
     end;
 
-    [LineStart(14564)]
+    (14564)]
     procedure GetPhaseTaskStep();
     begin
         CODEUNIT.RUN(CODEUNIT::Codeunit75,Rec);
     end;
 
-    [LineStart(14567)]
+    (14567)]
     procedure OpenSalesOrderForm();
     var
         SalesHeader : Record "Sales Header";
@@ -624,7 +624,7 @@ page 60182 "Purchase Order Subfom-Inventry"
         SalesOrder.RUN;
     end;
 
-    [LineStart(14573)]
+    (14573)]
     procedure _InsertExtendedText(Unconditionally : Boolean);
     begin
         IF TransferExtendedText.PurchCheckIfAnyExtText(Rec,Unconditionally) THEN BEGIN
@@ -635,7 +635,7 @@ page 60182 "Purchase Order Subfom-Inventry"
           UpdateForm(TRUE);
     end;
 
-    [LineStart(14581)]
+    (14581)]
     procedure InsertExtendedText(Unconditionally : Boolean);
     begin
         IF TransferExtendedText.PurchCheckIfAnyExtText(Rec,Unconditionally) THEN BEGIN
@@ -646,45 +646,45 @@ page 60182 "Purchase Order Subfom-Inventry"
           UpdateForm(TRUE);
     end;
 
-    [LineStart(14589)]
+    (14589)]
     procedure _ShowReservation();
     begin
         FIND;
         Rec.ShowReservation;
     end;
 
-    [LineStart(14593)]
+    (14593)]
     procedure ShowReservation();
     begin
         FIND;
         Rec.ShowReservation;
     end;
 
-    [LineStart(14597)]
+    (14597)]
     procedure _ItemAvailability(AvailabilityType : Option Date,Variant,Location,Bin);
     begin
         //Rec.InitType(AvailabilityType); //B2b1.0
     end;
 
-    [LineStart(14600)]
+    (14600)]
     procedure ItemAvailability(AvailabilityType : Option Date,Variant,Location,Bin);
     begin
         //Rec.InitType(AvailabilityType); //B2b1.0
     end;
 
-    [LineStart(14603)]
+    (14603)]
     procedure _ShowReservationEntries();
     begin
         Rec.ShowReservationEntries(TRUE);
     end;
 
-    [LineStart(14606)]
+    (14606)]
     procedure ShowReservationEntries();
     begin
         Rec.ShowReservationEntries(TRUE);
     end;
 
-    [LineStart(14609)]
+    (14609)]
     procedure ShowTracking();
     var
         TrackingForm : Page "Order Tracking";
@@ -693,37 +693,37 @@ page 60182 "Purchase Order Subfom-Inventry"
         TrackingForm.RUNMODAL;
     end;
 
-    [LineStart(14613)]
+    (14613)]
     procedure _ShowDimensions();
     begin
         Rec.ShowDimensions;
     end;
 
-    [LineStart(14616)]
+    (14616)]
     procedure ShowDimensions();
     begin
         Rec.ShowDimensions;
     end;
 
-    [LineStart(14619)]
+    (14619)]
     procedure ItemChargeAssgnt();
     begin
         Rec.ShowItemChargeAssgnt;
     end;
 
-    [LineStart(14622)]
+    (14622)]
     procedure _OpenItemTrackingLines();
     begin
         Rec.OpenItemTrackingLines;
     end;
 
-    [LineStart(14625)]
+    (14625)]
     procedure OpenItemTrackingLines();
     begin
         Rec.OpenItemTrackingLines;
     end;
 
-    [LineStart(14628)]
+    (14628)]
     procedure OpenSpecOrderSalesOrderForm();
     var
         SalesHeader : Record "Sales Header";
@@ -735,18 +735,18 @@ page 60182 "Purchase Order Subfom-Inventry"
         SalesOrder.RUN;
     end;
 
-    [LineStart(14634)]
+    (14634)]
     procedure UpdateForm(SetSaveRecord : Boolean);
     begin
         CurrPage.UPDATE(SetSaveRecord);
     end;
 
-    [LineStart(14637)]
+    (14637)]
     procedure "---NAVIN---"();
     begin
     end;
 
-    [LineStart(14640)]
+    (14640)]
     procedure ShowStrDetailsForm();
     var
         StrOrderLineDetails : Record "Structure Order Line Details";
@@ -762,12 +762,12 @@ page 60182 "Purchase Order Subfom-Inventry"
         StrOrderLineDetailsForm.RUNMODAL;
     end;
 
-    [LineStart(14650)]
+    (14650)]
     procedure "--SubCon--"();
     begin
     end;
 
-    [LineStart(14653)]
+    (14653)]
     procedure ShowSubOrderDetailsForm();
     var
         PurchaseLine : Record "Purchase Line";
@@ -782,24 +782,24 @@ page 60182 "Purchase Order Subfom-Inventry"
         SubOrderDetails.RUNMODAL;
     end;
 
-    [LineStart(14662)]
+    (14662)]
     procedure "--QC--"();
     begin
     end;
 
-    [LineStart(14665)]
+    (14665)]
     procedure _CreateInspectionDataSheets();
     begin
         CreateInspectionDataSheets;
     end;
 
-    [LineStart(14668)]
+    (14668)]
     procedure CreateInspectionDataSheets();
     begin
         CreateInspectionDataSheets;
     end;
 
-    [LineStart(14671)]
+    (14671)]
     procedure _ShowDataSheets();
     var
         InspectDataSheet : Record "Inspection Datasheet Header";
@@ -807,7 +807,7 @@ page 60182 "Purchase Order Subfom-Inventry"
         ShowDataSheets;
     end;
 
-    [LineStart(14674)]
+    (14674)]
     procedure ShowDataSheets();
     var
         InspectDataSheet : Record "Inspection Datasheet Header";
@@ -815,7 +815,7 @@ page 60182 "Purchase Order Subfom-Inventry"
         ShowDataSheets;
     end;
 
-    [LineStart(14677)]
+    (14677)]
     procedure _ShowPostDataSheets();
     var
         PostInspectDataSheet : Record "Posted Inspect DatasheetHeader";
@@ -823,7 +823,7 @@ page 60182 "Purchase Order Subfom-Inventry"
         ShowPostDataSheets;
     end;
 
-    [LineStart(14680)]
+    (14680)]
     procedure ShowPostDataSheets();
     var
         PostInspectDataSheet : Record "Posted Inspect DatasheetHeader";
@@ -831,7 +831,7 @@ page 60182 "Purchase Order Subfom-Inventry"
         ShowPostDataSheets;
     end;
 
-    [LineStart(14683)]
+    (14683)]
     procedure _ShowInspectReceipt();
     var
         InspectionReceipt : Record "Inspection Receipt Header";
@@ -839,7 +839,7 @@ page 60182 "Purchase Order Subfom-Inventry"
         ShowInspectReceipt;
     end;
 
-    [LineStart(14686)]
+    (14686)]
     procedure ShowInspectReceipt();
     var
         InspectionReceipt : Record "Inspection Receipt Header";
@@ -847,7 +847,7 @@ page 60182 "Purchase Order Subfom-Inventry"
         ShowInspectReceipt;
     end;
 
-    [LineStart(14689)]
+    (14689)]
     procedure _ShowPostInspectReceipt();
     var
         InspectionReceipt : Record "Inspection Receipt Header";
@@ -855,7 +855,7 @@ page 60182 "Purchase Order Subfom-Inventry"
         ShowPostInspectReceipt;
     end;
 
-    [LineStart(14692)]
+    (14692)]
     procedure ShowPostInspectReceipt();
     var
         InspectionReceipt : Record "Inspection Receipt Header";
@@ -863,12 +863,12 @@ page 60182 "Purchase Order Subfom-Inventry"
         ShowPostInspectReceipt;
     end;
 
-    [LineStart(14695)]
+    (14695)]
     procedure "---B2B---"();
     begin
     end;
 
-    [LineStart(14698)]
+    (14698)]
     procedure OpenAttachments();
     var
         Attachment : Record Attachments;
@@ -881,7 +881,7 @@ page 60182 "Purchase Order Subfom-Inventry"
         PAGE.RUN(PAGE::"ESPL Attachments",Attachment);
     end;
 
-    [LineStart(14706)]
+    (14706)]
     procedure _CancelInspection1(var QualityStatus : Text[50]);
     begin
         TESTFIELD("No.");
@@ -889,7 +889,7 @@ page 60182 "Purchase Order Subfom-Inventry"
         CancelInspection(QualityStatus);
     end;
 
-    [LineStart(14711)]
+    (14711)]
     procedure _CloseInspection1(var QualityStatus : Text[50]);
     begin
         TESTFIELD("No.");
@@ -897,7 +897,7 @@ page 60182 "Purchase Order Subfom-Inventry"
         CloseInspection(QualityStatus);
     end;
 
-    [LineStart(14716)]
+    (14716)]
     procedure _SampleLotInspection();
     var
         SampleLotInspection : Record "Sample Lot Inspection";
@@ -911,7 +911,7 @@ page 60182 "Purchase Order Subfom-Inventry"
         PAGE.RUN(60072,SampleLotInspection);
     end;
 
-    [LineStart(14725)]
+    (14725)]
     procedure SampleLotInspection();
     var
         SampleLotInspection : Record "Sample Lot Inspection";
@@ -925,13 +925,13 @@ page 60182 "Purchase Order Subfom-Inventry"
         PAGE.RUN(60072,SampleLotInspection);
     end;
 
-    [LineStart(14734)]
+    (14734)]
     procedure _QCOverride();
     begin
         QCOverride;
     end;
 
-    [LineStart(14737)]
+    (14737)]
     local procedure NoOnAfterValidate();
     begin
         InsertExtendedText(FALSE);

@@ -186,7 +186,7 @@ codeunit 60010 "Release MaterialIssue Document"
         LRecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
         Release_time: Time;
 
-    [LineStart(4536)]
+    (4536)]
     procedure Reopen(var MaterialIssueHeader: Record "Material Issues Header");
     begin
         IF USERID IN ['EFFTRONICS\ANILKUMAR', 'EFFTRONICS\MARY', 'EFFTRONICS\ANANDA', 'EFFTRONICS\RATNA', 'EFFTRONICS\DMADHAVI', 'EFFTRONICS\PADMASRI',
@@ -205,7 +205,7 @@ codeunit 60010 "Release MaterialIssue Document"
             ERROR('YOU dont have rights to reopen');
     end;
 
-    [LineStart(4553)]
+    (4553)]
     procedure Release_Request("Material Issues Header": Record "Material Issues Header");
     begin
         user.SETRANGE(user."User Name", USERID);
@@ -266,7 +266,7 @@ codeunit 60010 "Release MaterialIssue Document"
 
     end;
 
-    [LineStart(4612)]
+    (4612)]
     procedure Refresh(MIH: Record "Material Issues Header");
     begin
         IF MIH.Status <> MIH.Status::Released THEN BEGIN

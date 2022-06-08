@@ -142,7 +142,7 @@ page 33000270 "Inpection Receipt Line"
         [InDataSet]
         DescriptionIndent: Integer;
 
-    [LineStart(23580)]
+    (23580)]
     procedure ShowDefectsPage();
     begin
         DefectTracking.SETRANGE("IDS No.", "IDS No.");
@@ -150,13 +150,13 @@ page 33000270 "Inpection Receipt Line"
         PAGE.RUN(60075, DefectTracking);
     end;
 
-    [LineStart(23585)]
+    (23585)]
     local procedure CharacterCodeOnFormat();
     begin
         "Character CodeEmphasize" := "Character Type" <> "Character Type"::Standard;
     end;
 
-    [LineStart(23588)]
+    (23588)]
     local procedure DescriptionOnFormat();
     begin
         DescriptionEmphasize := "Character Type" <> "Character Type"::Standard;

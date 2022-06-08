@@ -13,7 +13,7 @@ codeunit 60005 "Designwork Sheet"
         MODIFY;
     end;
 
-    [LineStart(1368)]
+    (1368)]
     procedure Reopen(DesignWorksheetHeader: Record "Design Worksheet Header");
     var
         Text001: Label 'Do you want to Reopen the DesignWork Sheet?';

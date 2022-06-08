@@ -76,7 +76,7 @@ table 60074 "Tender Documents"
     {
     }
 
-    [LineStart(3570)]
+
     procedure TestStatusOpen();
     var
         TenderHeader: Record "Tender Header";

@@ -211,7 +211,7 @@ report 50239 "Store Stock1"
         Test : Boolean;
         Qty : Decimal;
 
-    [LineStart(11315)]
+    (11315)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
         TempExcelbuffer.INIT;
@@ -223,7 +223,7 @@ report 50239 "Store Stock1"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(11324)]
+    (11324)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         TempExcelbuffer.INIT;

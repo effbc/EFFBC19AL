@@ -231,7 +231,7 @@ report 50205 issuedreportpercost
         Tempexcelbuffer : Record "Excel Buffer";
         itemcost : Decimal;
 
-    [LineStart(8578)]
+    (8578)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean);
     begin
 
@@ -244,7 +244,7 @@ report 50205 issuedreportpercost
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(8588)]
+    (8588)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean);
     begin
         Tempexcelbuffer.INIT;
@@ -257,7 +257,7 @@ report 50205 issuedreportpercost
         Tempexcelbuffer.INSERT;
     end;
 
-    [LineStart(8598)]
+    (8598)]
     procedure "Entercell New"();
     begin
     end;

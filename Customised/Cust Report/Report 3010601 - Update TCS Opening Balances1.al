@@ -112,7 +112,7 @@ report 3010601 "Update TCS Opening Balances1"
         TCSEntryExists : Record "TCS Entry";
         NonNODCustoemer : Boolean;
 
-    [LineStart(19757)]
+    (19757)]
     local procedure InsertTCSEntry(CustomerCode : Code[20];OpeningBal : Decimal);
     var
         InitTCSEntry : Record "TCS Entry";

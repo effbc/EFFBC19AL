@@ -298,14 +298,14 @@ report 99001026 "Replan Production Order"
         CalcMethod : Option "No Levels","One level","All levels";
         First : Boolean;
 
-    [LineStart(23066)]
+    (23066)]
     procedure InitializeRequest(NewDirection : Option;NewCalcMethod : Option);
     begin
         Direction := NewDirection;
         CalcMethod := NewCalcMethod;
     end;
 
-    [LineStart(23070)]
+    (23070)]
     local procedure DeleteProdOrders(ProdOrder : Record "Production Order";LowLevelCode : Integer;AllLevels : Boolean);
     var
         ProdOrderComponent : Record "Prod. Order Component";
@@ -331,7 +331,7 @@ report 99001026 "Replan Production Order"
           UNTIL ProdOrderComponent.NEXT = 0;
     end;
 
-    [LineStart(23091)]
+    (23091)]
     local procedure DeleteUnreservedLowLevelProdOrderLines(ProdOrder : Record "Production Order");
     var
         ProdOrderLine : Record "Prod. Order Line";
@@ -360,7 +360,7 @@ report 99001026 "Replan Production Order"
         END;
     end;
 
-    [LineStart(23114)]
+    (23114)]
     local procedure CalcQtyReservedFromExternalDemand(ProdOrderLine : Record "Prod. Order Line";SourceType : Integer) ReservedQtyBase : Decimal;
     var
         ReservEntry : Record "Reservation Entry";

@@ -624,7 +624,7 @@ page 60173 "To Be Released Indents List"
         SMTP_MAIL: Codeunit "SMTP Mail";
         Text000: Label 'Do U want Convert to Quote?';
 
-    [LineStart(13800)]
+    (13800)]
     procedure ICNNO(DT: Date) ICN: Code[10];
     var
         Dat: Code[10];

@@ -1349,7 +1349,7 @@ report 99999 "Sales - Invoice 1"
         Prepared_byCaptionLbl: Label 'Prepared by';
         Checked_byCaptionLbl: Label 'Checked by';
 
-    [LineStart(18912)]
+    (18912)]
     procedure InitLogInteraction();
     begin
         LogInteraction := SegManagement.FindInteractTmplCode(4) <> '';

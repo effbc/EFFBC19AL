@@ -378,7 +378,7 @@ page 60020 "Sales Quote-Design"
         "Bill-to Customer No.Enable" : Boolean;
         ChangeExchangeRate : Page "Change Exchange Rate";
 
-    [LineStart(5204)]
+    (5204)]
     procedure UpdateAllowed(): Boolean;
     begin
         IF CurrPage.EDITABLE = FALSE THEN BEGIN
@@ -388,7 +388,7 @@ page 60020 "Sales Quote-Design"
             EXIT(TRUE);
     end;
 
-    [LineStart(5211)]
+    (5211)]
     procedure ActivateFields();
     begin
         BilltoCustomerTemplateCodeEnab := "Bill-to Customer No." = '';
@@ -397,47 +397,47 @@ page 60020 "Sales Quote-Design"
         "Bill-to Customer No.Enable" := "Bill-to Customer Template Code" = '';
     end;
 
-    [LineStart(5217)]
+    (5217)]
     local procedure SelltoCustomerNoOnAfterValidat();
     begin
         ActivateFields;
         CurrPage.UPDATE;
     end;
 
-    [LineStart(5221)]
+    (5221)]
     local procedure SelltoCustomerTemplateCodeOnAf();
     begin
         ActivateFields;
         CurrPage.UPDATE;
     end;
 
-    [LineStart(5225)]
+    (5225)]
     local procedure BilltoCustomerNoOnAfterValidat();
     begin
         ActivateFields;
         CurrPage.UPDATE;
     end;
 
-    [LineStart(5229)]
+    (5229)]
     local procedure ShortcutDimension1CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(5232)]
+    (5232)]
     local procedure ShortcutDimension2CodeOnAfterV();
     begin
         CurrPage.SalesLines.PAGE.UpdateForm(TRUE);
     end;
 
-    [LineStart(5235)]
+    (5235)]
     local procedure BilltoCustomerTemplateCodeOnAf();
     begin
         ActivateFields;
         CurrPage.UPDATE;
     end;
 
-    [LineStart(5239)]
+    (5239)]
     local procedure OnAfterGetCurrRecord();
     begin
         xRec := Rec;

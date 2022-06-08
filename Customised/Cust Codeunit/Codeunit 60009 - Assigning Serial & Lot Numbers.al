@@ -17,12 +17,12 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
         "ILEQty.": Decimal;
         ReclassJournalLine: Record "Item Journal Line";
 
-    [LineStart(3741)]
+    (3741)]
     procedure "----For Transfer Orders---"();
     begin
     end;
 
-    [LineStart(3744)]
+    (3744)]
     procedure AssignTracking(var TransferHeader: Record "Transfer Header");
     var
         TransferLine: Record "Transfer Line";
@@ -43,7 +43,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
             TrackingAssignment.DELETEALL;
     end;
 
-    [LineStart(3759)]
+    (3759)]
     procedure DeleteResevations(var TransLine: Record "Transfer Line");
     var
         ResEntry: Record "Reservation Entry";
@@ -56,7 +56,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
             ResEntry.DELETEALL;
     end;
 
-    [LineStart(3767)]
+    (3767)]
     procedure CheckInventory(var TransferLine: Record "Transfer Line");
     var
         ItemLedgerEntry: Record "Item Ledger Entry";
@@ -83,7 +83,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
         END;
     end;
 
-    [LineStart(3787)]
+    (3787)]
     procedure CheckforSerialandLotNumber("ItemNo.": Code[20]): Boolean;
     var
         Item: Record Item;
@@ -95,7 +95,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
             EXIT(FALSE);
     end;
 
-    [LineStart(3794)]
+    (3794)]
     procedure "AssignSerial&Lotnos"(var TransferLine: Record "Transfer Line");
     var
         ReservationEntry: Record "Reservation Entry";
@@ -221,12 +221,12 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
             UNTIL TrackingAssignment.NEXT = 0;
     end;
 
-    [LineStart(3904)]
+    (3904)]
     procedure "---For Item Reclass Journal---"();
     begin
     end;
 
-    [LineStart(3907)]
+    (3907)]
     procedure AssignTrackingRCJ(var TemplateName: Code[20]; var BatchName: Code[20]; var DocumentNo: Code[20]);
     var
         TrackingAssignment: Record "Item Tracking Assignament";
@@ -252,7 +252,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
             TrackingAssignment.DELETEALL;
     end;
 
-    [LineStart(3928)]
+    (3928)]
     procedure DeleteResevationsRCJ(var ItemJournalLine: Record "Item Journal Line");
     var
         ResEntry: Record "Reservation Entry";
@@ -266,7 +266,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
             ResEntry.DELETEALL;
     end;
 
-    [LineStart(3937)]
+    (3937)]
     procedure CheckInventoryRCJ(var ItemJournalLine: Record "Item Journal Line");
     var
         ItemLedgerEntry: Record "Item Ledger Entry";
@@ -298,7 +298,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
             END;
     end;
 
-    [LineStart(3961)]
+    (3961)]
     procedure "AssignSerial&LotnosRCJ"(var ItemJournalLine: Record "Item Journal Line");
     var
         ReservationEntry: Record "Reservation Entry";
@@ -429,7 +429,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
             UNTIL TrackingAssignment.NEXT = 0;
     end;
 
-    [LineStart(4075)]
+    (4075)]
     procedure CheckforSerialandLotNumberRCJ(var "ItemNo.": Code[20]): Boolean;
     var
         Item: Record Item;
@@ -441,12 +441,12 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
             EXIT(FALSE);
     end;
 
-    [LineStart(4082)]
+    (4082)]
     procedure "---For Consumption Journal---"();
     begin
     end;
 
-    [LineStart(4085)]
+    (4085)]
     procedure ConsumptionItemTracking(var TemplateName: Code[20]; var BatchName: Code[20]);
     var
         TrackingAssignment: Record "Item Tracking Assignament";
@@ -469,7 +469,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
             TrackingAssignment.DELETEALL;
     end;
 
-    [LineStart(4103)]
+    (4103)]
     procedure "DeleteCons.ItemTrackingLines"(var ItemJournalLine: Record "Item Journal Line");
     var
         ResEntry: Record "Reservation Entry";
@@ -483,7 +483,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
             ResEntry.DELETEALL;
     end;
 
-    [LineStart(4112)]
+    (4112)]
     procedure CheckConsumptionInventory(var ItemJournalLine: Record "Item Journal Line");
     var
         ItemLedgerEntry: Record "Item Ledger Entry";
@@ -512,7 +512,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
                 ItemJournalLine.DELETE;
     end;
 
-    [LineStart(4134)]
+    (4134)]
     procedure CheckforSerialandLotNumberCon(var "ItemNo.": Code[20]): Boolean;
     var
         Item: Record Item;
@@ -524,7 +524,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
             EXIT(FALSE);
     end;
 
-    [LineStart(4141)]
+    (4141)]
     procedure "AssignSerial&LotnosCon"(var ItemJournalLine: Record "Item Journal Line");
     var
         ReservationEntry: Record "Reservation Entry";
@@ -680,12 +680,12 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
 
     end;
 
-    [LineStart(4280)]
+    (4280)]
     procedure "---For Purchase Orders---"();
     begin
     end;
 
-    [LineStart(4283)]
+    (4283)]
     procedure AssignPurchaseTrackingLines(var Rec: Record "Purchase Header");
     var
         PurchaseLine: Record "Purchase Line";
@@ -711,7 +711,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
         MESSAGE('Item Tracking Lines are Assigned');
     end;
 
-    [LineStart(4300)]
+    (4300)]
     procedure DeletePurchaseLines(var PurchaseLine: Record "Purchase Line");
     var
         ResEntry: Record "Reservation Entry";
@@ -724,7 +724,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
             ResEntry.DELETEALL;
     end;
 
-    [LineStart(4308)]
+    (4308)]
     procedure PurchaseTrackingLines(var PurchaseLine: Record "Purchase Line"; var SerialNos: Code[10]; var LotNos: Code[10]);
     var
         ItemLedgerEntry: Record "Item Ledger Entry";
@@ -797,7 +797,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
         COMMIT;
     end;
 
-    [LineStart(4367)]
+    (4367)]
     procedure "CheckforSerialorLotNo."(var PurchaseLine: Record "Purchase Line"; var LotNo: Code[10]);
     var
         Item: Record Item;
@@ -827,7 +827,7 @@ codeunit 60009 "Assigning Serial & Lot Numbers"
             END;
     end;
 
-    [LineStart(4386)]
+    (4386)]
     procedure CheckforSerialandLotNumberPur(var "ItemNo.": Code[20]; var LocationCode: Code[20]): Boolean;
     var
         ItemLedgerEntry: Record "Item Ledger Entry";

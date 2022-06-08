@@ -32,7 +32,7 @@ table 60069 "Tender Line Archive"
             trigger OnValidate();
             var
                 ProductionBOMHeader: Record "Production BOM Header";
-                VersionMgt: Codeunit VersionManagement;
+                VersionMgt: Codeunit 99000756;
             begin
             end;
         }

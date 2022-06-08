@@ -2272,7 +2272,7 @@ report 50068 "Store Stock Valuation"
         ItemBodyVisi : Boolean;
         StockBodyVisi : Boolean;
 
-    [LineStart(4774)]
+    (4774)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -2284,7 +2284,7 @@ report 50068 "Store Stock Valuation"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(4783)]
+    (4783)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -2297,12 +2297,12 @@ report 50068 "Store Stock Valuation"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(4793)]
+    (4793)]
     procedure "Entercell New"();
     begin
     end;
 
-    [LineStart(4796)]
+    (4796)]
     procedure MONTH(MNT : Integer) MONTH : Text[30];
     var
         Days_Of_Month : Integer;

@@ -460,7 +460,7 @@ report 50103 "To Be Billed Orders"
         Deviated_DaysCaptionLbl : Label 'Deviated Days';
         Total_Order_AmountCaptionLbl : Label 'Total Order Amount';
 
-    [LineStart(6738)]
+    (6738)]
     procedure EnterCell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean);
     begin
         TempExcelBuffer.INIT;
@@ -471,7 +471,7 @@ report 50103 "To Be Billed Orders"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(6746)]
+    (6746)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean);
     begin
         TempExcelBuffer.INIT;

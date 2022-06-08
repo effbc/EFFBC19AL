@@ -102,7 +102,7 @@ table 80807 "Temp Service Line"
         field(13; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code';
-            TableRelation = IF (Type = CONST(Item)) "Item Variant".Make WHERE("Item No." = FIELD("No."));
+            TableRelation = IF (Type = CONST(Item)) "Item Variant".Code WHERE("Item No." = FIELD("No."));
             DataClassification = CustomerContent;
         }
         field(14; "Bin Code"; Code[20])

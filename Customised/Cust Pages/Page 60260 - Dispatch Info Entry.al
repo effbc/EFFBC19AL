@@ -464,7 +464,7 @@ page 60260 "Dispatch Info Entry"
         "LOCATION NAME" : Text[50];
         LOCKA : Text[50];
 
-    [LineStart(21047)]
+    (21047)]
     procedure Entercell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[1000];bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -476,7 +476,7 @@ page 60260 "Dispatch Info Entry"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(21056)]
+    (21056)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[100];Bold : Boolean;CellType : Option);
     begin
         TempExcelbuffer.INIT;
@@ -489,7 +489,7 @@ page 60260 "Dispatch Info Entry"
         TempExcelbuffer.INSERT;
     end;
 
-    [LineStart(21066)]
+    (21066)]
     procedure ExcelDump();
     begin
         TempExcelbuffer.DELETEALL;
@@ -572,13 +572,13 @@ page 60260 "Dispatch Info Entry"
 
     end;
 
-    [LineStart(21145)]
+    (21145)]
     local procedure HandOveredPersonOthersOnAfterV();
     begin
           "Hand Overed Person(Others)":=UPPERCASE("Hand Overed Person(Others)");
     end;
 
-    [LineStart(21148)]
+    (21148)]
     local procedure NoOnFormat();
     begin
          IF Rec."GST Customer Type" IN[Rec."GST Customer Type"::Export,Rec."GST Customer Type"::"Deemed Export",Rec."GST Customer Type"::"SEZ Development",Rec."GST Customer Type"::"SEZ Unit"]

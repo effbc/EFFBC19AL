@@ -805,7 +805,7 @@ page 60042 Indent
         indent_req_person: Text[500];
         user_dept: Text[500];
 
-    [LineStart(5498)]
+    (5498)]
     procedure Manual_indent_release_rights(IndentNo: Code[20]) Authorized: Boolean;
     begin
         IF USERID IN ['EFFTRONICS\ANVESH', 'EFFTRONICS\ANILKUMAR', 'EFFTRONICS\VISHNUPRIYA'] THEN

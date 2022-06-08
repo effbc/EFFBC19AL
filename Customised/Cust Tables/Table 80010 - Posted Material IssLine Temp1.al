@@ -123,7 +123,7 @@ table 80010 "Posted Material IssLine Temp1"
         field(30; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code';
-            TableRelation = "Item Variant".Make WHERE("Item No." = FIELD("Item No."));
+            TableRelation = "Item Variant".Code WHERE("Item No." = FIELD("Item No."));
             DataClassification = CustomerContent;
 
             trigger OnValidate();

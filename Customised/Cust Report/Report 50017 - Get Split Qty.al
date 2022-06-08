@@ -42,7 +42,7 @@ report 50017 "Get Split Qty"
     var
         InputQty: Decimal;
 
-    [LineStart(602)]
+    (602)]
     procedure SetQTY(var ReqQty: Decimal);
     begin
         ReqQty := InputQty;

@@ -71,7 +71,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
                         ELSE
                             //11Sep08<<
                             InsertQCItemTrackingLedger(DATABASE::"Purch. Rcpt. Line", 0, "Receipt No.", '', 0, "Purch Line No", Rec) //BASE
-                                                                                                                             //commented on 010108 InsertSerialTrackingQLE(Rec)
+                                                                                                                                     //commented on 010108 InsertSerialTrackingQLE(Rec)
                     END ELSE
                         IF (ItemTrackingCode."Lot Specific Tracking") OR (ItemTrackingCode."Lot Purchase Inbound Tracking") OR
                        (ItemTrackingCode."Lot Purchase Outbound Tracking")
@@ -145,7 +145,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         Inspection_No: Text;
         c: Integer;
 
-    [LineStart(48971)]
+    (48971)]
     procedure InsertQualityLedgerEntry(InspectReceipt: Record "Inspection Receipt Header");
     begin
         IF InspectReceipt."Qty. Accepted" <> 0 THEN BEGIN
@@ -215,7 +215,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(49038)]
+    (49038)]
     procedure InitQualityLedger(var InspectReceipt: Record "Inspection Receipt Header");
     begin
         QualityLedgerEntry.INIT;
@@ -244,7 +244,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         QualityLedgerEntry."Qty. per Unit of Measure" := InspectReceipt."Qty. per Unit of Measure";
     end;
 
-    [LineStart(49064)]
+    (49064)]
     procedure UpdateItemLedgerEntry(QualityLedgEntry2: Record "Quality Ledger Entry"; ItemTrackingExists: Boolean);
     var
         ItemApplnEntry: Record "Item Application Entry";
@@ -377,7 +377,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
 
     end;
 
-    [LineStart(49189)]
+    (49189)]
     procedure UpdateParentInspectionReceipt(InspectReceipt: Record "Inspection Receipt Header");
     var
         ParentInspectionReceipt: Record "Inspection Receipt Header";
@@ -434,7 +434,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(49238)]
+    (49238)]
     procedure UpdateParentQualityLedgEntry(RoutingReferenceNo: Code[20]);
     var
         QualityLedgEntry2: Record "Quality Ledger Entry";
@@ -448,12 +448,12 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(49247)]
+    (49247)]
     procedure UpdateInspectRoutingComponents();
     begin
     end;
 
-    [LineStart(49250)]
+    (49250)]
     procedure UpdateQualityItemLedgEntry();
     var
         QualityItemLedgEntry: Record "Quality Item Ledger Entry";
@@ -492,7 +492,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(49282)]
+    (49282)]
     procedure UpdateWhseReceipts(InspectReceipt2: Record "Inspection Receipt Header");
     var
         WhseReceiptLine: Record "Warehouse Receipt Line";
@@ -516,7 +516,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(49301)]
+    (49301)]
     procedure UpdatePurchRcptLine(InspectReceipt2: Record "Inspection Receipt Header");
     var
         PurchRcptLine: Record "Purch. Rcpt. Line";
@@ -533,7 +533,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         UpdateQCPassed(InspectReceipt2); // added by sujani (20Dec18)  for qc passed
     end;
 
-    [LineStart(49313)]
+    (49313)]
     procedure UpdatePostedWhseReceipts(InspectReceipt2: Record "Inspection Receipt Header");
     var
         PostWReceiptLine: Record "Posted Whse. Receipt Line";
@@ -551,7 +551,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(49326)]
+    (49326)]
     procedure UpdateWhsePutaway(PostWReceiptLine2: Record "Posted Whse. Receipt Line");
     var
         WhseActivityLIne: Record "Warehouse Activity Line";
@@ -602,7 +602,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(49370)]
+    (49370)]
     procedure CallPostedItemTrackingForm(Type: Integer; Subtype: Integer; ID: Code[20]; BatchName: Code[10]; ProdOrderLine: Integer; RefNo: Integer; var InspectReceipt2: Record "Inspection Receipt Header") OK: Boolean;
     var
         ItemEntryRelation: Record "Item Entry Relation";
@@ -713,7 +713,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
             EXIT(FALSE);
     end;
 
-    [LineStart(49473)]
+    (49473)]
     procedure UpdateInspectAcptLevels(InspectRcpt: Record "Inspection Receipt Header");
     var
         InspectRcptLevel: Record "Inspect. Recpt. Accept Level";
@@ -722,7 +722,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         InspectRcptLevel.MODIFYALL(Status, TRUE);
     end;
 
-    [LineStart(49477)]
+    (49477)]
     procedure InsertQCItemTrackingLedger(Type: Integer; Subtype: Integer; ID: Code[20]; BatchName: Code[10]; ProdOrderLine: Integer; RefNo: Integer; var InspectReceipt2: Record "Inspection Receipt Header");
     var
         ItemEntryRelation: Record "Item Entry Relation";
@@ -966,7 +966,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
 
     end;
 
-    [LineStart(49713)]
+    (49713)]
     local procedure AddTempRecordToSet(var TempItemLedgEntry: Record "Item Ledger Entry" temporary; SignFactor: Integer);
     var
         TempItemLedgEntry2: Record "Item Ledger Entry" temporary;
@@ -994,7 +994,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         TempItemLedgEntry.RESET;
     end;
 
-    [LineStart(49736)]
+    (49736)]
     local procedure TableSignFactor(TableNo: Integer): Integer;
     begin
         IF TableNo IN [
@@ -1013,7 +1013,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
             EXIT(1);
     end;
 
-    [LineStart(49752)]
+    (49752)]
     procedure CreateReturnOrder(PurchHeader: Record "Purchase Header"; DocumentType: Option Quote,"Order",Invoice,"Credit Memo","Blanket Order","Return Order");
     var
         PurchLine: Record "Purchase Line";
@@ -1049,7 +1049,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(49780)]
+    (49780)]
     procedure CreateCreditMemo(PurchHeader: Record "Purchase Header"; DocumentType: Option Quote,"Order",Invoice,"Credit Memo","Blanket Order","Return Order");
     var
         PurchLine: Record "Purchase Line";
@@ -1129,7 +1129,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
 
     end;
 
-    [LineStart(49851)]
+    (49851)]
     procedure CheckPostProdOrderOutput(ItemJnlLine: Record "Item Journal Line");
     var
         QualityLedgEntry2: Record "Quality Ledger Entry";
@@ -1178,7 +1178,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
             UNTIL QualityLedgEntry2.NEXT = 0;
     end;
 
-    [LineStart(49892)]
+    (49892)]
     procedure InsertItemVendorRating(InspectReceipt: Record "Inspection Receipt Header");
     var
         ItemVendorRating: Record "Vendor Rating";
@@ -1194,7 +1194,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(49903)]
+    (49903)]
     procedure FillReworkItemJnlLineAndPost(var InspectRcpt: Record "Inspection Receipt Header");
     var
         ItemJnlLine: Record "Item Journal Line";
@@ -1363,7 +1363,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
 
     end;
 
-    [LineStart(50055)]
+    (50055)]
     procedure ReceiveReworkAndPost(var InspectRcpt: Record "Inspection Receipt Header");
     var
         ItemJnlLine: Record "Item Journal Line";
@@ -1421,7 +1421,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(50101)]
+    (50101)]
     procedure ReceiptRework(InspectRcpt: Record "Inspection Receipt Header");
     var
         ItemLedgEntry: Record "Item Ledger Entry";
@@ -1486,7 +1486,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
             END;
     end;
 
-    [LineStart(50159)]
+    (50159)]
     procedure ItemReclassLineNo(): Integer;
     var
         ItemJnlLine2: Record "Item Journal Line";
@@ -1499,7 +1499,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
             EXIT(10000);
     end;
 
-    [LineStart(50167)]
+    (50167)]
     procedure UpdateSentBackToVendor(var InspectRcptHeader: Record "Inspection Receipt Header");
     var
         QualityItemLedgerEntry: Record "Quality Item Ledger Entry";
@@ -1568,7 +1568,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(50225)]
+    (50225)]
     procedure UpdateReceiveRework(var InspectRcptHeader: Record "Inspection Receipt Header");
     var
         QualityItemLedgerEntry: Record "Quality Item Ledger Entry";
@@ -1627,12 +1627,12 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(50273)]
+    (50273)]
     procedure "---B2B ESPL---"();
     begin
     end;
 
-    [LineStart(50276)]
+    (50276)]
     procedure TransferOrderIRPost(var Rec: Record "Inspection Receipt Header");
     begin
         InspectReceiptCheckLine.TransferOrderRunCheck(Rec);
@@ -1655,7 +1655,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         Rec.MODIFY;
     end;
 
-    [LineStart(50296)]
+    (50296)]
     procedure InitQualityLedgerTransfer(var InspectReceipt: Record "Inspection Receipt Header");
     begin
         QualityLedgerEntry.INIT;
@@ -1679,7 +1679,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         //QualityLedgerEntry."Qty. per Unit of Measure" := InspectReceipt."Qty. per Unit of Measure";
     end;
 
-    [LineStart(50317)]
+    (50317)]
     procedure InsertQLETransfer(InspectReceipt: Record "Inspection Receipt Header");
     begin
         IF InspectReceipt."Qty. Accepted" <> 0 THEN BEGIN
@@ -1713,12 +1713,12 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(50348)]
+    (50348)]
     procedure "--QCP1.0--"();
     begin
     end;
 
-    [LineStart(50351)]
+    (50351)]
     procedure InseertLOTItemTrackingQLE(InspectReceipt: Record "Inspection Receipt Header");
     begin
         IF InspectReceipt."Qty. Accepted" <> 0 THEN BEGIN
@@ -1814,7 +1814,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         END;
     end;
 
-    [LineStart(50444)]
+    (50444)]
     procedure "UpdateRes.Entry"(var ItemJournalLine: Record "Item Journal Line"; var QualityLedgEntry2: Record "Quality Ledger Entry");
     var
         ReservationEntry: Record "Reservation Entry";
@@ -1852,7 +1852,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
         ReservationEntry.INSERT;
     end;
 
-    [LineStart(50475)]
+    (50475)]
     procedure UpdateItemLedgerEntryForSerial(QualityLedgEntry2: Record "Quality Ledger Entry"; ItemTrackingExists: Boolean);
     var
         "-Rev01-": Integer;
@@ -1983,12 +1983,12 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
 
     end;
 
-    [LineStart(50599)]
+    (50599)]
     procedure "-----PIDSQC1.0----"();
     begin
     end;
 
-    [LineStart(50602)]
+    (50602)]
     procedure CallPostedItemTrackingForm2(Type: Integer; Subtype: Integer; ID: Code[20]; BatchName: Code[10]; ProdOrderLine: Integer; RefNo: Integer; var InspectReceipt2: Record "Inspection Receipt Header"; ChildIDSRefNo: Code[20]) OK: Boolean;
     var
         ItemEntryRelation: Record "Item Entry Relation";
@@ -2109,12 +2109,12 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
             EXIT(FALSE);
     end;
 
-    [LineStart(50715)]
+    (50715)]
     procedure "--Test by phani Not Using----"();
     begin
     end;
 
-    [LineStart(50718)]
+    (50718)]
     procedure InsertQCItemTrackingLedger2(Type: Integer; Subtype: Integer; ID: Code[20]; BatchName: Code[10]; ProdOrderLine: Integer; RefNo: Integer; var InspectReceipt2: Record "Inspection Receipt Header");
     var
         ItemEntryRelation: Record "Item Entry Relation";
@@ -2362,7 +2362,7 @@ codeunit 33000253 "Inspection Jnl.-Post Line"
 
     end;
 
-    [LineStart(50958)]
+    (50958)]
     local procedure UpdateQCPassed(var InspecRcpt: Record "Inspection Receipt Header");
     var
         PRL: Record "Purch. Rcpt. Line";

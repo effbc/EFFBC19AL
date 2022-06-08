@@ -1130,7 +1130,7 @@ page 33000257 "Inspection Data Sheet"
                           WeekofYearInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstWeekOfYear";
                           Makeedit : Boolean;
 
-    [LineStart(22990)]
+    (22990)]
     local procedure OnAfterGetCurrRecord();
     begin
         xRec := Rec;

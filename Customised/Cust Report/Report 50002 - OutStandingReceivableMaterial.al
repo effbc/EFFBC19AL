@@ -1409,7 +1409,7 @@ report 50002 "OutStanding/ReceivableMaterial"
         NextDocLineNoGVar : Integer;
         ExceptRcptDate1ShowOuptputGroupFooter4 : Boolean;
 
-    [LineStart(93)]
+    (93)]
     procedure EnterCell(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean;CellType : Option);
     begin
         TempExcelBuffer.INIT;
@@ -1421,7 +1421,7 @@ report 50002 "OutStanding/ReceivableMaterial"
         TempExcelBuffer.INSERT;
     end;
 
-    [LineStart(102)]
+    (102)]
     procedure EnterHeadings(RowNo : Integer;ColumnNo : Integer;CellValue : Text[250];Bold : Boolean;CellType : Option);
     begin
         TempExcelBuffer.INIT;

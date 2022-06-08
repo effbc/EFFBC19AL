@@ -23,12 +23,12 @@ page 60170 "Items by Dimension"
         DimValue: Record "Dimension Value";
         ItemNo: Code[20];
 
-    [LineStart(13677)]
+    (13677)]
     local procedure InventoryDrillDown();
     begin
     end;
 
-    [LineStart(13680)]
+    (13680)]
     local procedure UpdateMatrix();
     begin
     end;

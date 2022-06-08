@@ -239,7 +239,7 @@ table 33000256 "Inspection Datasheet Line"
     var
         InspectDatasheetHeader: Record "Inspection Datasheet Header";
 
-    [LineStart(7538)]
+    (7538)]
     procedure TestStatusOpen();
     begin
         InspectDatasheetHeader.SetRange("No.", "Document No.");

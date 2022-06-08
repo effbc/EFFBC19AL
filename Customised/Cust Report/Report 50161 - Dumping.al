@@ -171,7 +171,7 @@ report 50161 Dumping
         "min": Integer;
         "max": Integer;
 
-    [LineStart(8284)]
+    (8284)]
     procedure sqlconnection1();
     begin
         /*IF ISCLEAR(SQLConnection) THEN
@@ -192,7 +192,7 @@ report 50161 Dumping
 
     end;
 
-    [LineStart(8301)]
+    (8301)]
     procedure commaeli(Base: Text[30]) converted: Text[30];
     var
         i: Integer;
@@ -204,7 +204,7 @@ report 50161 Dumping
         EXIT(converted);
     end;
 
-    [LineStart(8309)]
+    (8309)]
     procedure sqlconnection2();
     begin
         /*IF ISCLEAR(SQLConnection) THEN

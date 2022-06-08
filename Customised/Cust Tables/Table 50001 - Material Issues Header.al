@@ -49,12 +49,8 @@ table 50001 "Material Issues Header"
         field(2; "Transfer-from Code"; Code[10])
         {
             Caption = 'Transfer-from Code';
-            TableRelation = Location WHERE(Use As In-Transit=CONST(No),Subcontracting Location=CONST(No));
-<<<<<<< HEAD
-=======
+            //TableRelation = Location WHERE("Use As In-Transit"=CONST(false),"Subcontracting Location"=CONST(false));
             DataClassification = CustomerContent;
->>>>>>> 24c8df96f43f94e861d8cc264d569e5663568f30
-
             trigger OnValidate();
             var
                 Location: Record Location;
@@ -178,75 +174,75 @@ table 50001 "Material Issues Header"
         field(10; "Transfer-from Country Code"; Code[10])
         {
             Caption = 'Transfer-from Country Code';
-            TableRelation = Country            DataClassification = CustomerContent;
-/Region;
+            TableRelation = "Country/Region";
+            DataClassification = CustomerContent;
         }
-        field(11;"Transfer-to Code";Code[10])
+        field(11; "Transfer-to Code"; Code[10])
         {
             Caption = 'Transfer-to Code';
-            TableRelation = Location WHERE (Use As In-Transit=CONST(No),Subcontracting Location=CONST(No));
+            TableRelation = Location WHERE("Use As In-Transit" = CONST(No), "Subcontracting Location" = CONST(false));
 
             trigger OnValidate();
             var
-                Location : Record Location;
-                Confirmed : Boolean;
+                Location: Record Location;
+                Confirmed: Boolean;
             begin
-                IF (NOT(USERID IN ['EFFTRONICS\ANANDA','EFFTRONICS\RRAHUL'])) AND ("Transfer-to Code" IN ['CS STR', 'R&D STR']) THEN
+                IF (NOT (USERID IN ['EFFTRONICS\ANANDA', 'EFFTRONICS\RRAHUL'])) AND ("Transfer-to Code" IN ['CS STR', 'R&D STR']) THEN
                     ERROR('PLEASE SELECT STR');
 
                 TestStatusOpen;
                 IF ("Transfer-from Code" = "Transfer-to Code") AND
                    ("Transfer-to Code" <> '')
                 THEN
-                  ERROR(
-                    Text001,
-                    FIELDCAPTION("Transfer-from Code"),FIELDCAPTION("Transfer-to Code"),
-                    TABLECAPTION,"No.");
+                    ERROR(
+                      Text001,
+                      FIELDCAPTION("Transfer-from Code"), FIELDCAPTION("Transfer-to Code"),
+                      TABLECAPTION, "No.");
                 IF (xRec."Transfer-to Code" <> "Transfer-to Code") THEN BEGIN
-                  IF HideValidationDialog OR
-                    (xRec."Transfer-to Code" = '')
-                  THEN
-                    Confirmed := TRUE
-                  ELSE
-                    Confirmed := CONFIRM(Text002,FALSE,FIELDCAPTION("Transfer-to Code"));
-                  IF Confirmed THEN BEGIN
-                    IF Location.GET("Transfer-to Code") THEN BEGIN
-                      "Transfer-to Name" := Location.Name;
-                      "Transfer-to Name 2" := Location."Name 2";
-                      "Transfer-to Address" := Location.Address;
-                      "Transfer-to Address 2" := Location."Address 2";
-                      "Transfer-to Post Code" := Location."Post Code";
-                      "Transfer-to City" := Location.City;
-                      "Transfer-to County" := Location.County;
-                      "Transfer-to Country Code" := Location."Country/Region Code";
-                      "Transfer-to Contact" := Location.Contact;
-                      MODIFY;
+                    IF HideValidationDialog OR
+                      (xRec."Transfer-to Code" = '')
+                    THEN
+                        Confirmed := TRUE
+                    ELSE
+                        Confirmed := CONFIRM(Text002, FALSE, FIELDCAPTION("Transfer-to Code"));
+                    IF Confirmed THEN BEGIN
+                        IF Location.GET("Transfer-to Code") THEN BEGIN
+                            "Transfer-to Name" := Location.Name;
+                            "Transfer-to Name 2" := Location."Name 2";
+                            "Transfer-to Address" := Location.Address;
+                            "Transfer-to Address 2" := Location."Address 2";
+                            "Transfer-to Post Code" := Location."Post Code";
+                            "Transfer-to City" := Location.City;
+                            "Transfer-to County" := Location.County;
+                            "Transfer-to Country Code" := Location."Country/Region Code";
+                            "Transfer-to Contact" := Location.Contact;
+                            MODIFY;
+                        END;
+                        UpdateTransLines(FIELDNO("Transfer-to Code"));
+                    END ELSE BEGIN
+                        "Transfer-to Code" := xRec."Transfer-to Code";
+                        EXIT;
                     END;
-                      UpdateTransLines(FIELDNO("Transfer-to Code"));
-                  END ELSE BEGIN
-                    "Transfer-to Code" := xRec."Transfer-to Code";
-                    EXIT;
-                  END;
                 END;
             end;
         }
-        field(12;"Transfer-to Name";Text[50])
+        field(12; "Transfer-to Name"; Text[50])
         {
             Caption = 'Transfer-to Name';
         }
-        field(13;"Transfer-to Name 2";Text[50])
+        field(13; "Transfer-to Name 2"; Text[50])
         {
             Caption = 'Transfer-to Name 2';
         }
-        field(14;"Transfer-to Address";Text[50])
+        field(14; "Transfer-to Address"; Text[50])
         {
             Caption = 'Transfer-to Address';
         }
-        field(15;"Transfer-to Address 2";Text[50])
+        field(15; "Transfer-to Address 2"; Text[50])
         {
             Caption = 'Transfer-to Address 2';
         }
-        field(16;"Transfer-to Post Code";Code[20])
+        field(16; "Transfer-to Post Code"; Code[20])
         {
             Caption = 'Transfer-to Post Code';
             TableRelation = "Post Code";
@@ -263,10 +259,10 @@ table 50001 "Material Issues Header"
 
             trigger OnValidate();
             begin
-                PostCode.ValidatePostCode("Transfer-to City","Transfer-to Post Code","Transfer-to County","Transfer-to Country Code",TRUE);//B2B
+                PostCode.ValidatePostCode("Transfer-to City", "Transfer-to Post Code", "Transfer-to County", "Transfer-to Country Code", TRUE);//B2B
             end;
         }
-        field(17;"Transfer-to City";Text[30])
+        field(17; "Transfer-to City"; Text[30])
         {
             Caption = 'Transfer-to City';
 
@@ -279,23 +275,23 @@ table 50001 "Material Issues Header"
 
             trigger OnValidate();
             begin
-                PostCode.ValidateCity("Transfer-to City","Transfer-to Post Code","Transfer-to County","Transfer-to Country Code",TRUE);//B2B
+                PostCode.ValidateCity("Transfer-to City", "Transfer-to Post Code", "Transfer-to County", "Transfer-to Country Code", TRUE);//B2B
             end;
         }
-        field(18;"Transfer-to County";Text[30])
+        field(18; "Transfer-to County"; Text[30])
         {
             Caption = 'Transfer-to County';
         }
-        field(19;"Transfer-to Country Code";Code[10])
+        field(19; "Transfer-to Country Code"; Code[10])
         {
             Caption = 'Transfer-to Country Code';
-            TableRelation = Country/Region;
+            TableRelation = "Country/Region";
         }
-        field(20;"Posting Date";Date)
+        field(20; "Posting Date"; Date)
         {
             Caption = 'Posting Date';
         }
-        field(21;"Receipt Date";Date)
+        field(21; "Receipt Date"; Date)
         {
             Caption = 'Receipt Date';
 
@@ -305,7 +301,7 @@ table 50001 "Material Issues Header"
                 UpdateTransLines(FIELDNO("Receipt Date"));
             end;
         }
-        field(22;Status;Option)
+        field(22; Status; Option)
         {
             Caption = 'Status';
             Editable = true;
@@ -317,22 +313,22 @@ table 50001 "Material Issues Header"
                 UpdateTransLines(FIELDNO(Status));
             end;
         }
-        field(23;"Shortcut Dimension 1 Code";Code[20])
+        field(23; "Shortcut Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code';
-            TableRelation = "Dimension Value".Code WHERE (Global Dimension No.=CONST(1));
+            TableRelation = "Dimension Value".Code WHERE(Global Dimension No.=CONST(1));
 
             trigger OnValidate();
             begin
-                ValidateShortcutDimCode(1,"Shortcut Dimension 1 Code");
+                ValidateShortcutDimCode(1, "Shortcut Dimension 1 Code");
             end;
         }
-        field(24;"Shortcut Dimension 2 Code";Code[20])
+        field(24; "Shortcut Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code';
-            TableRelation = "Dimension Value".Code WHERE (Global Dimension No.=CONST(2),Blocked=FILTER(No));
+            TableRelation = "Dimension Value".Code WHERE(Global Dimension No.=CONST(2),Blocked=FILTER(No));
 
             trigger OnValidate();
             begin
@@ -465,7 +461,7 @@ table 50001 "Material Issues Header"
         }
         field(40;"Sales Order No.";Code[20])
         {
-            TableRelation = IF (Transfer-from Code=CONST(CS STR),Reason Code=CONST(INSTALLA)) "Sales Header".No. WHERE (Document Type=CONST(Order),Status=CONST(Released)) ELSE IF (Transfer-from Code=CONST(CS STR),Reason Code=CONST(AMC)) "Sales Header".No. WHERE (Document Type=CONST(Amc),Status=CONST(Released)) ELSE IF (Transfer-from Code=FILTER(<>CS STR),Reason Code=CONST(AMC)) "Sales Header".No. WHERE (Document Type=CONST(Order),Status=CONST(Released)) ELSE "Sales Header".No. WHERE (Status=CONST(Released));
+            TableRelation = IF ("Transfer-from Code"=CONST(CS STR),"Reason Code"=CONST(INSTALLA)) "Sales Header"."No." WHERE ("Document Type"=CONST(Order),Status=CONST(Released)) ELSE IF ("Transfer-from Code"=CONST(CS STR),Reason Code=CONST(AMC)) "Sales Header"."No." WHERE (Document Type=CONST(Amc),Status=CONST(Released)) ELSE IF ("Transfer-from Code"=FILTER(<>CS STR),"Reason Code"=CONST(AMC)) "Sales Header"."No." WHERE ("Document Type"=CONST(Order),Status=CONST(Released)) ELSE "Sales Header"."No." WHERE (Status=CONST(Released));
         }
         field(41;"Resource Name";Text[50])
         {
@@ -841,14 +837,14 @@ table 50001 "Material Issues Header"
     var
         PostCode : Record "Post Code";
         InvtSetup : Record "Inventory Setup";
-        NoSeriesMgt : Codeunit NoSeriesManagement;
+        NoSeriesMgt : Codeunit 396;
         Text000 : Label 'You cannot rename a %1.';
         Text001 : Label '%1 and %2 cannot be the same in %3 %4.';
         Text002 : Label 'Do you want to change %1?';
         Text003 : Label 'The Material Issues %1 has been deleted.';
         HideValidationDialog : Boolean;
         MaterialIssueHeader : Record "Material Issues Header";
-        DimMgt : Codeunit DimensionManagement;
+        DimMgt : Codeunit 408;
         ProdOrderLine : Record "Prod. Order Line";
         MaterialIssueLine : Record "Material Issues Line";
         InvtCommentLine : Record "Inventory Comment Line";
@@ -867,7 +863,7 @@ table 50001 "Material Issues Header"
         Text051 : TextConst ENU='You may have changed a dimension.\\Do you want to update the lines?',ENN='You may have changed a dimension.\\Do you want to update the lines?';
         TrackingSpecifications : Record "Mat.Issue Track. Specification";
 
-    [LineStart(81)]
+
     procedure InitRecord();
     var
         "Material Issues Line" : Record "Material Issues Line";
@@ -879,19 +875,19 @@ table 50001 "Material Issues Header"
 
     end;
 
-    [LineStart(87)]
+
     local procedure TestStatusOpen();
     begin
         TESTFIELD(Status,Status::Open);
     end;
 
-    [LineStart(90)]
+
     procedure SetHideValidationDialog(NewHideValidationDialog : Boolean);
     begin
         HideValidationDialog := NewHideValidationDialog;
     end;
 
-    [LineStart(93)]
+
     local procedure UpdateTransLines(FieldRef : Integer);
     var
         MaterialIssueLine : Record "Material Issues Line";
@@ -918,7 +914,7 @@ table 50001 "Material Issues Header"
         END;
     end;
 
-    [LineStart(115)]
+
     procedure AssistEdit(OldMaterialIssueHeader : Record "Material Issues Header") : Boolean;
     begin
         WITH MaterialIssueHeader DO BEGIN
@@ -933,7 +929,7 @@ table 50001 "Material Issues Header"
         END;
     end;
 
-    [LineStart(127)]
+
     procedure ValidateShortcutDimCode(FieldNumber : Integer;var ShortcutDimCode : Code[20]);
     var
         OldDimSetID : Integer;
@@ -966,7 +962,7 @@ table 50001 "Material Issues Header"
 
     end;
 
-    [LineStart(154)]
+
     procedure CopyRequisition();
     var
         IndentHeader : Record "Indent Header";
@@ -995,7 +991,7 @@ table 50001 "Material Issues Header"
         END;
     end;
 
-    [LineStart(176)]
+
     procedure CopyProductionOrder();
     var
         ProdOrderLines : Record "Prod. Order Line";
@@ -1074,7 +1070,7 @@ table 50001 "Material Issues Header"
         END;
     end;
 
-    [LineStart(243)]
+
     procedure CopySalesOrder();
     var
         SalesHeader : Record "Sales Header";
@@ -1108,7 +1104,7 @@ table 50001 "Material Issues Header"
               UNTIL SalesLine.NEXT = 0;
     end;
 
-    [LineStart(269)]
+
     procedure DeleteOrder(var MaterialIssuesHeader2 : Record "Material Issues Header";var MaterialIssuesLine2 : Record "Material Issues Line") : Boolean;
     var
         InvtCommentLine : Record "Inventory Comment Line";
@@ -1155,7 +1151,7 @@ table 50001 "Material Issues Header"
         EXIT(FALSE);
     end;
 
-    [LineStart(308)]
+
     procedure CopyProductionBOM();
     var
         ProductionBOMHeader : Record "Production BOM Header";
@@ -1295,12 +1291,11 @@ table 50001 "Material Issues Header"
 
     end;
 
-    [LineStart(439)]
+
     procedure "*-*-"();
     begin
     end;
 
-    [LineStart(442)]
     procedure GetNextNo() NumberValue : Code[20];
     var
         DateValue : Text[30];
@@ -1341,7 +1336,7 @@ table 50001 "Material Issues Header"
         NumberValue := INCSTR(LastNumber);
     end;
 
-    [LineStart(473)]
+
     procedure CopyFromSalesSchedule();
     var
         MaterialIssueLine : Record "Material Issues Line";
@@ -1370,7 +1365,7 @@ table 50001 "Material Issues Header"
           UNTIL SalesSchedule.NEXT=0;
     end;
 
-    [LineStart(495)]
+
     procedure UpdateItemsInventory();
     var
         MaterialIssuesLine : Record "Material Issues Line";
@@ -1384,12 +1379,12 @@ table 50001 "Material Issues Header"
         UNTIL MaterialIssuesLine.NEXT=0;
     end;
 
-    [LineStart(503)]
+
     procedure "---DIM1.0---"();
     begin
     end;
 
-    [LineStart(506)]
+
     procedure ShowDocDim();
     var
         OldDimSetID : Integer;
@@ -1409,7 +1404,7 @@ table 50001 "Material Issues Header"
         //DIM 1.0  End
     end;
 
-    [LineStart(521)]
+
     procedure MatIssueLinesExist() : Boolean;
     begin
         //DIM 1.0 Start
@@ -1420,7 +1415,7 @@ table 50001 "Material Issues Header"
         //DIM 1.0 End
     end;
 
-    [LineStart(529)]
+
     local procedure UpdateAllLineDim(NewParentDimSetID : Integer;OldParentDimSetID : Integer);
     var
         NewDimSetID : Integer;

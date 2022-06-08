@@ -36,7 +36,7 @@ codeunit 99000832 "Sales Line-Reserve"
         DeleteItemTracking: Boolean;
         ItemTrkgAlreadyOverruled: Boolean;
 
-    [LineStart(56502)]
+    (56502)]
     procedure CreateReservation(var SalesLine: Record "Sales Line"; Description: Text[50]; ExpectedReceiptDate: Date; Quantity: Decimal; QuantityBase: Decimal; ForSerialNo: Code[20]; ForLotNo: Code[20]);
     var
         ShipmentDate: Date;
@@ -83,7 +83,7 @@ codeunit 99000832 "Sales Line-Reserve"
         SetFromType := 0;
     end;
 
-    [LineStart(56543)]
+    (56543)]
     procedure CreateReservationSetFrom(TrackingSpecificationFrom: Record "Tracking Specification");
     begin
         WITH TrackingSpecificationFrom DO BEGIN
@@ -101,19 +101,19 @@ codeunit 99000832 "Sales Line-Reserve"
         END;
     end;
 
-    [LineStart(56558)]
+    (56558)]
     procedure SetBinding(Binding: Option " ","Order-to-Order");
     begin
         CreateReservEntry.SetBinding(Binding);
     end;
 
-    [LineStart(56561)]
+    (56561)]
     procedure SetDisallowCancellation(DisallowCancellation: Boolean);
     begin
         CreateReservEntry.SetDisallowCancellation(DisallowCancellation);
     end;
 
-    [LineStart(56564)]
+    (56564)]
     procedure FilterReservFor(var FilterReservEntry: Record "Reservation Entry"; SalesLine: Record "Sales Line");
     begin
         FilterReservEntry.SETRANGE("Source Type", DATABASE::"Sales Line");
@@ -124,7 +124,7 @@ codeunit 99000832 "Sales Line-Reserve"
         FilterReservEntry.SETRANGE("Source Ref. No.", SalesLine."Line No.");
     end;
 
-    [LineStart(56572)]
+    (56572)]
     procedure ReservQuantity(SalesLine: Record "Sales Line"; var QtyToReserve: Decimal; var QtyToReserveBase: Decimal);
     begin
         CASE SalesLine."Document Type" OF
@@ -145,14 +145,14 @@ codeunit 99000832 "Sales Line-Reserve"
         END;
     end;
 
-    [LineStart(56590)]
+    (56590)]
     procedure Caption(SalesLine: Record "Sales Line") CaptionText: Text[80];
     begin
         CaptionText :=
           STRSUBSTNO('%1 %2 %3', SalesLine."Document Type", SalesLine."Document No.", SalesLine."No.");
     end;
 
-    [LineStart(56594)]
+    (56594)]
     procedure FindReservEntry(SalesLine: Record "Sales Line"; var ReservEntry: Record "Reservation Entry"): Boolean;
     begin
         ReservEngineMgt.InitFilterAndSortingLookupFor(ReservEntry, FALSE);
@@ -160,7 +160,7 @@ codeunit 99000832 "Sales Line-Reserve"
         EXIT(ReservEntry.FINDLAST);
     end;
 
-    [LineStart(56599)]
+    (56599)]
     procedure ReservEntryExist(SalesLine: Record "Sales Line"): Boolean;
     var
         ReservEntry: Record "Reservation Entry";
@@ -170,7 +170,7 @@ codeunit 99000832 "Sales Line-Reserve"
         EXIT(NOT ReservEntry.ISEMPTY);
     end;
 
-    [LineStart(56604)]
+    (56604)]
     procedure VerifyChange(var NewSalesLine: Record "Sales Line"; var OldSalesLine: Record "Sales Line");
     var
         SalesLine: Record "Sales Line";
@@ -206,7 +206,7 @@ codeunit 99000832 "Sales Line-Reserve"
         END;
     end;
 
-    [LineStart(56633)]
+    (56633)]
     procedure VerifyQuantity(var NewSalesLine: Record "Sales Line"; var OldSalesLine: Record "Sales Line");
     var
         SalesLine: Record "Sales Line";
@@ -240,7 +240,7 @@ codeunit 99000832 "Sales Line-Reserve"
         END;
     end;
 
-    [LineStart(56662)]
+    (56662)]
     procedure TransferSalesLineToItemJnlLine(var SalesLine: Record "Sales Line"; var ItemJnlLine: Record "Item Journal Line"; TransferQty: Decimal; var CheckApplFromItemEntry: Boolean; OnlyILEReservations: Boolean): Decimal;
     var
         OldReservEntry: Record "Reservation Entry";
@@ -323,7 +323,7 @@ codeunit 99000832 "Sales Line-Reserve"
         EXIT(TransferQty);
     end;
 
-    [LineStart(56738)]
+    (56738)]
     procedure TransferSaleLineToSalesLine(var OldSalesLine: Record "Sales Line"; var NewSalesLine: Record "Sales Line"; TransferQty: Decimal);
     var
         OldReservEntry: Record "Reservation Entry";
@@ -362,7 +362,7 @@ codeunit 99000832 "Sales Line-Reserve"
         END;
     end;
 
-    [LineStart(56771)]
+    (56771)]
     local procedure RenameLine(var NewSalesLine: Record "Sales Line"; var OldSalesLine: Record "Sales Line");
     begin
         ReservEngineMgt.RenamePointer(DATABASE::"Sales Line",
@@ -378,7 +378,7 @@ codeunit 99000832 "Sales Line-Reserve"
           NewSalesLine."Line No.");
     end;
 
-    [LineStart(56784)]
+    (56784)]
     procedure DeleteLineConfirm(var SalesLine: Record "Sales Line"): Boolean;
     begin
         WITH SalesLine DO BEGIN
@@ -393,7 +393,7 @@ codeunit 99000832 "Sales Line-Reserve"
         EXIT(DeleteItemTracking);
     end;
 
-    [LineStart(56796)]
+    (56796)]
     procedure DeleteLine(var SalesLine: Record "Sales Line");
     begin
         WITH SalesLine DO BEGIN
@@ -407,7 +407,7 @@ codeunit 99000832 "Sales Line-Reserve"
         END;
     end;
 
-    [LineStart(56807)]
+    (56807)]
     procedure AssignForPlanning(var SalesLine: Record "Sales Line");
     var
         PlanningAssignment: Record "Planning Assignment";
@@ -422,7 +422,7 @@ codeunit 99000832 "Sales Line-Reserve"
         END;
     end;
 
-    [LineStart(56817)]
+    (56817)]
     procedure CallItemTracking(var SalesLine: Record "Sales Line");
     var
         TrackingSpecification: Record "Tracking Specification";
@@ -446,13 +446,13 @@ codeunit 99000832 "Sales Line-Reserve"
         ItemTrackingForm.RUNMODAL;
     end;
 
-    [LineStart(56835)]
+    (56835)]
     procedure CallItemTracking2(var SalesLine: Record "Sales Line"; SecondSourceQuantityArray: array[3] of Decimal);
     begin
         CallItemTrackingSecondSource(SalesLine, SecondSourceQuantityArray, FALSE);
     end;
 
-    [LineStart(56838)]
+    (56838)]
     procedure CallItemTrackingSecondSource(var SalesLine: Record "Sales Line"; SecondSourceQuantityArray: array[3] of Decimal; AsmToOrder: Boolean);
     var
         TrackingSpecification: Record "Tracking Specification";
@@ -467,7 +467,7 @@ codeunit 99000832 "Sales Line-Reserve"
         ItemTrackingLines.RUNMODAL;
     end;
 
-    [LineStart(56847)]
+    (56847)]
     procedure InitTrackingSpecification(var SalesLine: Record "Sales Line"; var TrackingSpecification: Record "Tracking Specification");
     begin
         TrackingSpecification.INIT;
@@ -501,7 +501,7 @@ codeunit 99000832 "Sales Line-Reserve"
         END;
     end;
 
-    [LineStart(56878)]
+    (56878)]
     procedure RetrieveInvoiceSpecification(var SalesLine: Record "Sales Line"; var TempInvoicingSpecification: Record "Tracking Specification" temporary) OK: Boolean;
     var
         SourceSpecification: Record "Tracking Specification";
@@ -522,7 +522,7 @@ codeunit 99000832 "Sales Line-Reserve"
         END;
     end;
 
-    [LineStart(56894)]
+    (56894)]
     local procedure RetrieveInvoiceSpecification2(var SalesLine: Record "Sales Line"; var TempInvoicingSpecification: Record "Tracking Specification" temporary) OK: Boolean;
     var
         TrackingSpecification: Record "Tracking Specification";
@@ -551,7 +551,7 @@ codeunit 99000832 "Sales Line-Reserve"
         OK := TempInvoicingSpecification.FINDFIRST;
     end;
 
-    [LineStart(56917)]
+    (56917)]
     procedure DeleteInvoiceSpecFromHeader(var SalesHeader: Record "Sales Header");
     var
         TrackingSpecification: Record "Tracking Specification";
@@ -569,7 +569,7 @@ codeunit 99000832 "Sales Line-Reserve"
             UNTIL TrackingSpecification.NEXT = 0;
     end;
 
-    [LineStart(56930)]
+    (56930)]
     local procedure DeleteInvoiceSpecFromLine(SalesLine: Record "Sales Line");
     var
         TrackingSpecification: Record "Tracking Specification";
@@ -588,7 +588,7 @@ codeunit 99000832 "Sales Line-Reserve"
             UNTIL TrackingSpecification.NEXT = 0;
     end;
 
-    [LineStart(56944)]
+    (56944)]
     procedure UpdateItemTrackingAfterPosting(SalesHeader: Record "Sales Header");
     var
         ReservEntry: Record "Reservation Entry";
@@ -604,31 +604,31 @@ codeunit 99000832 "Sales Line-Reserve"
         CreateReservEntry.UpdateItemTrackingAfterPosting(ReservEntry);
     end;
 
-    [LineStart(56954)]
+    (56954)]
     procedure SetApplySpecificItemTracking(ApplySpecific: Boolean);
     begin
         ApplySpecificItemTracking := ApplySpecific;
     end;
 
-    [LineStart(56957)]
+    (56957)]
     procedure SetOverruleItemTracking(Overrule: Boolean);
     begin
         OverruleItemTracking := Overrule;
     end;
 
-    [LineStart(56960)]
+    (56960)]
     procedure Block(SetBlocked: Boolean);
     begin
         Blocked := SetBlocked;
     end;
 
-    [LineStart(56963)]
+    (56963)]
     procedure SetItemTrkgAlreadyOverruled(HasBeenOverruled: Boolean);
     begin
         ItemTrkgAlreadyOverruled := HasBeenOverruled;
     end;
 
-    [LineStart(56966)]
+    (56966)]
     local procedure VerifyPickedQtyReservToInventory(OldReservEntry: Record "Reservation Entry"; SalesLine: Record "Sales Line"; TransferQty: Decimal): Boolean;
     var
         WhseShptLine: Record "Warehouse Shipment Line";
@@ -647,7 +647,7 @@ codeunit 99000832 "Sales Line-Reserve"
         END;
     end;
 
-    [LineStart(56979)]
+    (56979)]
     local procedure ClearReservation(OldSalesLine: Record "Sales Line"; NewSalesLine: Record "Sales Line");
     var
         DummyReservEntry: Record "Reservation Entry";
@@ -665,7 +665,7 @@ codeunit 99000832 "Sales Line-Reserve"
         END;
     end;
 
-    [LineStart(56992)]
+    (56992)]
     local procedure TestSalesLineModification(OldSalesLine: Record "Sales Line"; NewSalesLine: Record "Sales Line"; ThrowError: Boolean) HasError: Boolean;
     begin
         IF (NewSalesLine."Shipment Date" = 0D) AND (OldSalesLine."Shipment Date" <> 0D) THEN BEGIN
@@ -742,7 +742,7 @@ codeunit 99000832 "Sales Line-Reserve"
             HasError := TRUE;
     end;
 
-    [LineStart(57066)]
+    (57066)]
     procedure CreateReservationSchedule(var ScheduleLine: Record Schedule2; Description: Text[50]; ExpectedReceiptDate: Date; Quantity: Decimal; QuantityBase: Decimal; ForSerialNo: Code[20]; ForLotNo: Code[20]);
     var
         ShipmentDate: Date;

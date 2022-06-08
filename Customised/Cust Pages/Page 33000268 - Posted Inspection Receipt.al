@@ -880,7 +880,7 @@ page 33000268 "Posted Inspection Receipt"
         FieldValueEdit : Boolean;
         IRH : Record "Inspection Receipt Header";
 
-    [LineStart(23132)]
+    (23132)]
     procedure UpdateQCCheck(InspRcpt : Record "Inspection Receipt Header");
     begin
         IF InspRcpt."Item Ledger Entry No." <> 0 THEN BEGIN

@@ -427,7 +427,7 @@ pageextension 70187 SalesOrderArchiveSubformExt extends "Sales Order Archive Sub
     */
     //end;
 
-    [LineStart(25415)]
+    (25415)]
     procedure ShowSalesOrderWorkSheet();
     var
         ArchivedDesignWorksheetHeader: Record "Archived DesignWorksheet";

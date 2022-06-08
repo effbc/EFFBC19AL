@@ -101,7 +101,7 @@ codeunit 33000893 OMSDumping
         items: Code[100];
         contn: Boolean;
 
-    [LineStart(51415)]
+    (51415)]
     procedure ItemReclass();
     var
         IJL: Record "Item Journal Line";

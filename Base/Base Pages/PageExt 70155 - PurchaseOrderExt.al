@@ -1489,6 +1489,16 @@ pageextension 70155 PurchaseOrderExt extends 50
 
 
 
+<<<<<<< HEAD
+    //event SQLConnection(adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    (5149)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure CommaRemoval(Base: Text[30]) Converted: Text[30];
     var
         i: Integer;
@@ -1500,7 +1510,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         EXIT(Converted);
     end;
 
+<<<<<<< HEAD
+    (5157)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Order_Value("Order_No.": Code[20]) Value: Decimal;
     begin
         PL.SETRANGE(PL."Document No.", "Order_No.");
@@ -1522,7 +1536,11 @@ pageextension 70155 PurchaseOrderExt extends 50
             UNTIL PL.NEXT = 0;
     end;
 
+<<<<<<< HEAD
+    (5176)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Mails();
     var
         Lpurchase: Record "Purchase Header";
@@ -1625,12 +1643,20 @@ pageextension 70155 PurchaseOrderExt extends 50
 
     end;
 
+<<<<<<< HEAD
+    (5320)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure "...........Rev01............."();
     begin
     end;
 
+<<<<<<< HEAD
+    (5323)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Testing(Purchase_Order_No: Text);
     var
         "Count": Integer;
@@ -1645,7 +1671,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         RESET;
     end;
 
+<<<<<<< HEAD
+    (5333)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Testing1(PurchHdrGRec: Record "Purchase Header");
     begin
         MESSAGE('Testing Calc Structure!');
@@ -1663,7 +1693,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         PurchLine.UpdatePurchLines(PurchHdrGRec);
     end;
 
+<<<<<<< HEAD
+    (5349)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure StructureDetails(PurchaseHeader: Record "Purchase Header"; Is_Release: Boolean);
     begin
         "G\L".GET;
@@ -1682,7 +1716,11 @@ pageextension 70155 PurchaseOrderExt extends 50
             Releasing(PurchaseHeader);
     end;
 
+<<<<<<< HEAD
+    (5366)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Releasing(PurchaseHeader: Record "Purchase Header");
     var
         ReleasePurchDoc: Codeunit "Release Purchase Document";
@@ -2000,7 +2038,11 @@ pageextension 70155 PurchaseOrderExt extends 50
 
     end;
 
+<<<<<<< HEAD
+    (5694)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure UpdateInfoPanel();
     var
         DifferBuyFromPayTo: Boolean;
@@ -2017,7 +2059,11 @@ pageextension 70155 PurchaseOrderExt extends 50
 
     end;
 
+<<<<<<< HEAD
+    (5705)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure checkminimumordervalue();
     begin
         //added by Vishnu Priya for Vendor minimum order value checking on 18-12-2018
@@ -2040,7 +2086,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         END;
     end;
 
+<<<<<<< HEAD
+    (5726)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ten_percent_item_Cost_high_chk() CNTNUE: Boolean;
     begin
         LoopVar := 1;
@@ -2098,7 +2148,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         EXIT(TRUE);
     end;
 
+<<<<<<< HEAD
+    (5785)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure IndentExistedOrnot();
     begin
         //ADDED BY VISHNU PRIYA ON 06-07-2019
@@ -2119,7 +2173,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         END;
     end;
 
+<<<<<<< HEAD
+    (5802)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure UpdationtoIndentLines();
     begin
         //ADDED BY VISHNU PRIYA ON 06-07-2019
@@ -2140,7 +2198,11 @@ pageextension 70155 PurchaseOrderExt extends 50
             UNTIL PL.NEXT = 0;
     end;
 
+<<<<<<< HEAD
+    (5820)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Vendor_approved_or_Not();
     begin
         PurchHead.RESET;
@@ -2154,7 +2216,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         END;
     end;
 
+<<<<<<< HEAD
+    (5833)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Location_Mismatch_Not();
     begin
         // Added by Vishnu Priya on 03-12-2020

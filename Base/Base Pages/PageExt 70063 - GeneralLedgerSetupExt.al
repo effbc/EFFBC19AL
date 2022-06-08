@@ -2150,6 +2150,282 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
 
 
+<<<<<<< HEAD
+=======
+    //trigger OnOpenPage();
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    RESET;
+    IF NOT GET THEN BEGIN
+      INIT;
+      INSERT;
+    END;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    #1..5
+    IF NOT (USERID IN['EFFTRONICS\ANILKUMAR','EFFTRONICS\ANVESH','EFFTRONICS\20TE099','EFFTRONICS\20TE128','EFFTRONICS\VISHNUPRIYA','EFFTRONICS\B2BOTS']) THEN
+      ERROR('You Do not have rights to open GL Setup!');
+    */
+    //end;
+
+    //event RecordSet(cFields : Integer;"Fields" : Variant;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(cFields : Integer;"Fields" : Variant;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;cRecords : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;cRecords : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(var fMoreData : Boolean;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(Progress : Integer;MaxProgress : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(TransactionLevel : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(var Source : Text;CursorType : Integer;LockType : Integer;var Options : Integer;adStatus : Integer;pCommand : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{B08400BD-F9D1-4D02-B856-71D5DBA123E9}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Command";pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset";pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(RecordsAffected : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pCommand : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{B08400BD-F9D1-4D02-B856-71D5DBA123E9}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Command";pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset";pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(var ConnectionString : Text;var UserID : Text;var Password : Text;var Options : Integer;adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(cFields : Integer;"Fields" : Variant;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(cFields : Integer;"Fields" : Variant;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;cRecords : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;cRecords : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(var fMoreData : Boolean;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(Progress : Integer;MaxProgress : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet2(cFields : Integer;"Fields" : Variant;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet2(cFields : Integer;"Fields" : Variant;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet2(adReason : Integer;cRecords : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet2(adReason : Integer;cRecords : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet2(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet2(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet2(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet2(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet2(var fMoreData : Boolean;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet2(Progress : Integer;MaxProgress : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet2(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    (8328)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure MG();
     begin
         Subject := 'ERP- Alert for AMC Bill  ' + Sh."No.";
@@ -2186,7 +2462,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8364)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Shortage_Status(Search_String: Code[20]) status: Boolean;
     begin
 
@@ -2268,7 +2548,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
                         END;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8451)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure INDIAN_FORMAT(GIVEN_DATE: Date) INDIAN_DATE: Text[30];
     var
         MONTH: Code[10];
@@ -2339,7 +2623,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         INDIAN_DATE := FORMAT(DATE2DMY(GIVEN_DATE, 1)) + '-' + MONTH + '-' + COPYSTR(FORMAT(DATE2DMY(GIVEN_DATE, 3)), 3, 2);
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8505)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Shortage_Status_Present(Search_String: Code[20]; From_Date: Date; To_Date: Date) status: Boolean;
     begin
         IF Search_String = 'OPEN' THEN BEGIN
@@ -2420,14 +2708,22 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
                         END;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8591)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure ActiveERPCFConnectionOnPush();
     begin
         IF NOT (UPPERCASE(USERID) IN ['EFFTRONICS\ANILKUMAR', 'EFFTRONICS\SUJANI', 'EFFTRONICS\VISHNUPRIYA']) THEN
             ERROR('You dont have rights');
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8595)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Shortage_Delay();
     begin
         // Added by Rakesh on 24-Nov-14 for automail when Shoratge is not run for more than 1 week
@@ -2465,7 +2761,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // End by Rakesh
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8632)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Pending_PO();
     begin
         // Added by Rakesh for automail for Pending Purchase Orders on 12-Dec-14
@@ -2515,7 +2815,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // end by Rakesh
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8681)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Pending_QA();
     begin
         // Added by Rakesh to mail the pending QA items along on 26-Dec-2014
@@ -2559,7 +2863,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // End by Rakesh
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8720)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure stockstatementmail();
     begin
         //added by pranavi on 27-02-2015 to mail the stock statement
@@ -2584,7 +2892,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //end by pranavi
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8742)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure To_Be_Received_Bills_Mail();
     var
         PurchRcptHeader: Record "Purch. Rcpt. Header";
@@ -2629,7 +2941,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //End by Pranavi on 12-08-2015
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8782)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure MD_Sir_Mails();
     var
         Mail_count: Integer;
@@ -3416,7 +3732,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
+<<<<<<< HEAD
 
+=======
+    (9525)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure SalesChangesAlert();
     var
         CHLG: Record "Change Log Entry";
@@ -4499,7 +4819,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
+<<<<<<< HEAD
 
+=======
+    (10675)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ToBeShippedAMCAlert();
     var
         SH: Record "Sales Header";
@@ -4555,7 +4879,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             SMTP_MAIL.Send;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (10719)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure DispatchAssuranceMail1();
     var
         SIH: Record "Sales Invoice Header";
@@ -4670,7 +4998,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
+<<<<<<< HEAD
 
+=======
+    (10818)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure SDStatusUpdation();
     var
         SIH: Record "Sales Invoice Header";
@@ -4918,7 +5250,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // End by Pranavi
     end;
 
+<<<<<<< HEAD
 
+=======
+    (11069)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure DCTrackingStatusUpdate();
     var
         CSH: Record "CS Transaction Header";
@@ -4983,7 +5319,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         SQLConnection.Close;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (11124)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure PurchaseDCStatusUpdate();
     var
         DCH: Record "DC Header";
@@ -5035,7 +5375,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         SQLConnection.Close;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (11166)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ToBePlannedBOIAlert();
     var
         SH: Record "Sales Header";
@@ -5150,7 +5494,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             SMTP_MAIL.Send;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (11266)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure PendingQA_Auth_PO_Alert();
     var
         PH: Record "Purchase Header";
@@ -5220,7 +5568,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             SMTP_MAIL.Send;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (11323)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure CS_Adjustment_Alert();
     var
         CSLG: Record "CS Stock Ledger";
@@ -5291,7 +5643,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (11380)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure MSL_Alert();
     var
         ILE: Record "Item Ledger Entry";
@@ -5440,7 +5796,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         ConnectionOpen := 0;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (11517)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure GetStockOfLot(Item: Code[30]; Lot: Code[30]);
     var
         ITEM1: Record Item;
@@ -5505,7 +5865,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (11578)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure MaterialShortage();
     var
         "Count": Integer;
@@ -5609,7 +5973,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
+<<<<<<< HEAD
 
+=======
+    (11677)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure RD_Material_Alerts();
     begin
         MIH.RESET;
@@ -5762,7 +6130,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (11839)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Stock_Alert_On_Threshold();
     begin
         Item.RESET;
@@ -5804,7 +6176,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         SMTP_MAIL.Send;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (11879)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure Posting_date_changes();
     begin
 
@@ -5926,7 +6302,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
+<<<<<<< HEAD
 
+=======
+    (11998)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Open_Orders_Allert();
     begin
         // created by Vishnu Priya for the Verified Orders That are still in the Open State on 01-10-2018
@@ -5974,7 +6354,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         SMTP_MAIL.Send;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (12043)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure RD_Mail_for_SalesOrders();
     begin
         //Added by Vishnu Priya for the R&D managers pending orders reasons alerts
@@ -6089,7 +6473,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END
     end;
 
+<<<<<<< HEAD
 
+=======
+    (12159)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure SALESACTUALSDUMPING();
     begin
         // written by vishnu priya
@@ -6259,7 +6647,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //****************************************************************************************************************************************
     end;
 
+<<<<<<< HEAD
 
+=======
+    (12335)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure IREPS_Tenders();
     begin
         //written by Vishnu Priya on March 1st 2019 for IREPS Tenders Alerts
@@ -6550,7 +6942,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
+<<<<<<< HEAD
 
+=======
+    (12632)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure CalibrationAlerts();
     begin
         //********************************** Owners Mails ******************************************************
@@ -6689,7 +7085,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
+<<<<<<< HEAD
 
+=======
+    (12773)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure "BGS Expire mails"();
     begin
         bg.RESET;
@@ -6720,7 +7120,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (12805)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure Stk_Rearr();
     var
         loopingVari: Integer;
@@ -6773,7 +7177,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         MESSAGE(FORMAT(Datevariable1));
     end;
 
-    [LineStart(12851)]
+    (12851)]
     local procedure TAMS_BASED_USERS_BLOCKING();
     begin
         // added by vishnu Priya on 23-07-2019 for Blocking the Users in TAMS to ERP
@@ -6873,7 +7277,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         MESSAGE('Tams Dept Updated Employees : ' + FORMAT(Updated_Cnt));
     end;
 
+<<<<<<< HEAD
 
+=======
+    (12958)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure TAMS_DEPT_UPDATION();
     begin
         Updated_Cnt := 0;
@@ -6925,7 +7333,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         MESSAGE('Tams Dept Updated Employees : ' + FORMAT(Updated_Cnt));
     end;
 
+<<<<<<< HEAD
 
+=======
+    (13012)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure Stock_Analysis();
     begin
         IF ISCLEAR(SQLConnection) THEN
@@ -7020,7 +7432,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // SQLConnection.CommitTrans;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (13109)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure CSIGCS_MAIL();
     begin
         //Added  by Vishnu Priya on 30-10-2019
@@ -7082,7 +7498,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //End  by Vishnu Priya on 30-10-2019
     end;
 
+<<<<<<< HEAD
 
+=======
+    (13171)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure QAFLAG();
     begin
         //added by vishnu priya on 29-11-2019
@@ -7177,7 +7597,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //ended by vishnu priya on 29-11-2019
     end;
 
+<<<<<<< HEAD
 
+=======
+    (13267)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure BG_TEST_MAILS();
     begin
         bg.RESET;

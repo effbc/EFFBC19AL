@@ -219,7 +219,7 @@ page 33000253 Specifications
         ActiveVersionCode : Code[20];
         SpecCopy : Codeunit "Specification-Copy";
 
-    [LineStart(22939)]
+    (22939)]
     local procedure StatusOnAfterValidate();
     begin
         CurrPage.UPDATE;

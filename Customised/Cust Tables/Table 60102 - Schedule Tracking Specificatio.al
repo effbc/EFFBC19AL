@@ -425,7 +425,7 @@ table 60102 "Schedule Tracking Specificatio"
         {
             CaptionML = ENU = 'Variant Code',
                         ENN = 'Variant Code';
-            TableRelation = "Item Variant".Make WHERE("Item No." = FIELD("Item No."));
+            TableRelation = "Item Variant".Code WHERE("Item No." = FIELD("Item No."));
             DataClassification = CustomerContent;
         }
         field(5402; "Bin Code"; Code[20])
@@ -594,7 +594,7 @@ table 60102 "Schedule Tracking Specificatio"
         RemainingQtyErr: TextConst ENU = 'The %1 in item ledger entry %2 is too low to cover %3.', ENN = 'The %1 in item ledger entry %2 is too low to cover %3.';
         ILE: Record "Item Ledger Entry";
 
-    [LineStart(5157)]
+
     procedure InitQtyToShip();
     begin
         "Qty. to Handle (Base)" := "Quantity (Base)" - "Quantity Handled (Base)";
@@ -603,14 +603,14 @@ table 60102 "Schedule Tracking Specificatio"
         InitQtyToInvoice;
     end;
 
-    [LineStart(5163)]
+
     procedure InitQtyToInvoice();
     begin
         "Qty. to Invoice (Base)" := "Quantity Handled (Base)" + "Qty. to Handle (Base)" - "Quantity Invoiced (Base)";
         "Qty. to Invoice" := CalcQty("Qty. to Invoice (Base)");
     end;
 
-    [LineStart(5167)]
+
     procedure CheckSerialNoQty();
     begin
         if "Serial No." = '' then
@@ -623,7 +623,7 @@ table 60102 "Schedule Tracking Specificatio"
             Error(Text003, FieldCaption("Qty. to Invoice (Base)"), FieldCaption("Serial No."));
     end;
 
-    [LineStart(5177)]
+
     procedure CopyPointerFilters(var ReservEntry: Record "Reservation Entry");
     begin
         ReservEntry.CopyFilter("Source Type", "Source Type");
@@ -634,7 +634,7 @@ table 60102 "Schedule Tracking Specificatio"
         ReservEntry.CopyFilter("Source Ref. No.", "Source Ref. No.");
     end;
 
-    [LineStart(5185)]
+
     procedure CalcQty(BaseQty: Decimal): Decimal;
     begin
         if "Qty. per Unit of Measure" = 0 then
@@ -642,7 +642,7 @@ table 60102 "Schedule Tracking Specificatio"
         exit(Round(BaseQty / "Qty. per Unit of Measure", 0.00001));
     end;
 
-    [LineStart(5190)]
+
     procedure InitExpirationDate();
     var
         ItemTrackingMgt: Codeunit "Item Tracking Management";
@@ -667,13 +667,12 @@ table 60102 "Schedule Tracking Specificatio"
         end;
     end;
 
-    [LineStart(5208)]
+
     procedure IsReclass(): Boolean;
     begin
         exit(("Source Type" = DATABASE::"Item Journal Line") and ("Source Subtype" = 4));
     end;
 
-    [LineStart(5211)]
     procedure TestFieldError(FieldCaptionText: Text[80]; CurrFieldValue: Decimal; CompareValue: Decimal);
     begin
         //IF CurrFieldValue = CompareValue THEN
@@ -693,13 +692,13 @@ table 60102 "Schedule Tracking Specificatio"
           Abs(CompareValue));
     end;
 
-    [LineStart(5228)]
+
     procedure SetSkipSerialNoQtyValidation(NewVal: Boolean);
     begin
         SkipSerialNoQtyValidation := NewVal;
     end;
 
-    [LineStart(5231)]
+
     procedure CheckItemTrackingQuantity(TableNo: Integer; DocumentType: Option; DocumentNo: Code[20]; LineNo: Integer; QtyToHandleBase: Decimal; QtyToInvoiceBase: Decimal; Handle: Boolean; Invoice: Boolean);
     var
         ReservationEntry: Record "Reservation Entry";
@@ -723,7 +722,6 @@ table 60102 "Schedule Tracking Specificatio"
         CheckItemTrackingByType(ReservationEntry, QtyToHandleBase, QtyToInvoiceBase, true, Handle, Invoice);
     end;
 
-    [LineStart(5250)]
     local procedure CheckItemTrackingByType(var ReservationEntry: Record "Reservation Entry"; QtyToHandleBase: Decimal; QtyToInvoiceBase: Decimal; OnlyLot: Boolean; Handle: Boolean; Invoice: Boolean);
     var
         TrackingSpecification: Record "Tracking Specification";
@@ -754,7 +752,7 @@ table 60102 "Schedule Tracking Specificatio"
                 TrackingSpecification.TestFieldError(FieldCaption("Qty. to Invoice (Base)"), InvoiceQtyBase, QtyToInvoiceBase);
     end;
 
-    [LineStart(5272)]
+
     local procedure GetUndefinedLots(var ReservationEntry: Record "Reservation Entry"; Handle: Boolean; Invoice: Boolean; var LotsToHandleUndefined: Boolean; var LotsToInvoiceUndefined: Boolean);
     var
         HandleLot: Code[20];
@@ -781,7 +779,7 @@ table 60102 "Schedule Tracking Specificatio"
         until StopLoop or (ReservationEntry.Next = 0);
     end;
 
-    [LineStart(5292)]
+
     local procedure CheckLot(ReservQty: Decimal; ReservLot: Code[20]; var Lot: Code[20]; var Undefined: Boolean);
     begin
         Undefined := false;

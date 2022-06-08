@@ -66,7 +66,7 @@ table 33000910 "Safety stock"
         Row: Integer;
         SheetName: Text[250];
 
-    [LineStart(8192)]
+    (8192)]
     procedure "Calc Safety Stock"();
     var
         SS: Record "Safety stock";
@@ -189,7 +189,7 @@ table 33000910 "Safety stock"
 
     end;
 
-    [LineStart(8319)]
+    (8319)]
     procedure Overall_Requirement("Item_No.": Code[50]; Prod_QTY: Integer; "BOM_QTY(1st Level)": Decimal; "BOM_QTY(2nd Level)": Decimal; "BOM_QTY(3rd Level)": Decimal; "BOM_QTY(4th Level)": Decimal; "BOM_QTY(5th Level)": Decimal; "BOM_QTY(6th Level)": Decimal);
     var
         TOT: Decimal;
@@ -216,7 +216,7 @@ table 33000910 "Safety stock"
         end;
     end;
 
-    [LineStart(8345)]
+    (8345)]
     procedure Entercell(RowNo: Integer; ColumnNo: Integer; CellValue: Text[1000]; bold: Boolean);
     begin
 
@@ -229,7 +229,7 @@ table 33000910 "Safety stock"
         TempExcelBuffer.Insert;
     end;
 
-    [LineStart(8355)]
+    (8355)]
     procedure EnterHeadings(RowNo: Integer; ColumnNo: Integer; CellValue: Text[100]; Bold: Boolean);
     begin
         TempExcelBuffer.Init;

@@ -682,7 +682,7 @@ pageextension 70188 SalesOrderArchiveExt extends "Sales Order Archive"
     //DocPrint : "Document-Print";
     //Variable type has not been exported.
 
-    [LineStart(25393)]
+    (25393)]
     procedure CustAttachments();
     var
         CustAttach: Record Attachments;

@@ -482,7 +482,7 @@ codeunit 60029 "OMS Dump"
         SQLConnection: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
         RecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
 
-    [LineStart(28963)]
+    (28963)]
     procedure CommaRemoval(Base: Text[250]) Converted: Text[250];
     var
         i: Integer;
@@ -494,7 +494,7 @@ codeunit 60029 "OMS Dump"
         EXIT(Converted);
     end;
 
-    [LineStart(28971)]
+    (28971)]
     procedure ReplaceString(String: Text; FindWhat: Text; ReplaceWith: Text) NewString: Text;
     begin
         // Added by Pranavi on 17-Jan-2017

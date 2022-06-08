@@ -1207,7 +1207,7 @@ page 60190 "Material Issue"
         RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
         AssingBatchManual : Codeunit "Assign Batch No's";
 
-    [LineStart(15460)]
+    (15460)]
     procedure ICNNO(DT : Date) ICN : Code[10];
     begin
         IF DATE2DMY(DT,1) < 10 THEN

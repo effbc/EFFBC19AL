@@ -56,7 +56,7 @@ report 50122 "updating of receipt date"
         cDay4: Integer;
         cDay5: Integer;
 
-    [LineStart(7152)]
+    (7152)]
     procedure Getperiod(var perioddate: Date) periodnumber: Integer;
     var
         periodNo1: Integer;

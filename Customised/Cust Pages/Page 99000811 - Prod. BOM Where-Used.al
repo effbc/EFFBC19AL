@@ -114,21 +114,21 @@ page 99000811 "Prod. BOM Where-Used"
         [InDataSet]
         DescriptionIndent: Integer;
 
-    [LineStart(24047)]
+    (24047)]
     procedure SetProdBOM(NewProdBOM: Record "Production BOM Header"; NewCalcDate: Date);
     begin
         ProdBOM := NewProdBOM;
         CalculateDate := NewCalcDate;
     end;
 
-    [LineStart(24051)]
+    (24051)]
     procedure SetItem(NewItem: Record Item; NewCalcDate: Date);
     begin
         Item := NewItem;
         CalculateDate := NewCalcDate;
     end;
 
-    [LineStart(24055)]
+    (24055)]
     local procedure BuildForm();
     begin
         IF ProdBOM."No." <> '' THEN
@@ -137,7 +137,7 @@ page 99000811 "Prod. BOM Where-Used"
             WhereUsedMgt.WhereUsedFromItem(Item, CalculateDate, ShowLevel = ShowLevel::Multi);
     end;
 
-    [LineStart(24061)]
+    (24061)]
     procedure SetCaption(): Text[80];
     begin
         IF ProdBOM."No." <> '' THEN
@@ -148,21 +148,21 @@ page 99000811 "Prod. BOM Where-Used"
         EXIT(Item."No." + ' ' + Item.Description);
     end;
 
-    [LineStart(24069)]
+    (24069)]
     local procedure CalculateDateOnAfterValidate();
     begin
         BuildForm;
         CurrPage.UPDATE(FALSE);
     end;
 
-    [LineStart(24073)]
+    (24073)]
     local procedure ShowLevelOnAfterValidate();
     begin
         BuildForm;
         CurrPage.UPDATE(FALSE);
     end;
 
-    [LineStart(24077)]
+    (24077)]
     local procedure DescriptionOnFormat();
     begin
         DescriptionIndent := "Level Code" - 1;

@@ -140,7 +140,7 @@ table 33000920 "CS Transaction Line"
         ItemGRec: Record Item;
         Skip_Status: Decimal;
 
-    [LineStart(8564)]
+    (8564)]
     procedure checkStatus();
     begin
         if not (UpperCase(UserId) in ['EFFTRONICS\SUJANI', 'EFFTRONICS\VISHNUPRIYA']) then begin

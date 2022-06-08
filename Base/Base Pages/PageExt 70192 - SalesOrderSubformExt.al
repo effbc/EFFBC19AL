@@ -857,10 +857,285 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
 
 
+<<<<<<< HEAD
+    //trigger OnAfterGetRecord();
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    ShowShortcutDimCode(ShortcutDimCode);
+    CLEAR(DocumentTotals);
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    ShowShortcutDimCode(ShortcutDimCode);
+    CLEAR(DocumentTotals);
+
+    IF (Type=Type::Item) AND (ProductGroup ='') THEN
+      BEGIN
+          item.RESET;
+          item.SETFILTER("No.",Rec."No.");
+          IF item.FINDSET THEN
+            BEGIN
+            ProductGroup := item."Item Sub Group Code";
+            //Rec.MODIFY;
+            END;
+       END;
+       IF MainCategory = MainCategory::"  " THEN
+         BEGIN
+            MainCategory := MainCategory::"Need to Specify";
+           // Rec.MODIFY;
+        END;
+    */
+    //end;
+
+
+    //Unsupported feature: CodeModification on "OnDeleteRecord". Please convert manually.
+
+    //trigger OnDeleteRecord() : Boolean;
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    IF (Quantity <> 0) AND ItemExists("No.") THEN BEGIN
+      COMMIT;
+      IF NOT ReserveSalesLine.DeleteLineConfirm(Rec) THEN
+        EXIT(FALSE);
+      ReserveSalesLine.DeleteLine(Rec);
+    END;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    //Added By Pranavi On 23-09-2015 to restrict sales line modify/delete except sales & ERP
+    User.RESET;
+    IF "Document Type" <> "Document Type"::Amc THEN
+    BEGIN
+      IF NOT (USERID IN ['EFFTRONICS\VISHNUPRIYA','EFFTRONICS\GRAVI','EFFTRONICS\ANILKUMAR','EFFTRONICS\BHAVANIP','EFFTRONICS\SRIVALLI','EFFTRONICS\SPURTHI','EFFTRONICS\ANVESH','EFFTRONICS\VIJAYA']) THEN
+      BEGIN
+        User.SETFILTER(User."User Name",USERID);
+        IF User.FINDFIRST THEN
+        BEGIN
+          IF NOT (User.Dept IN ['SAL','MAR']) THEN
+            ERROR('You Do Not Right to Delete!');
+        END;
+      END;
+    END;
+    //End By Pranavi
+    // Added by pranavi on 12-09-2016 for not allowing to delete if outstanding qty > 0 after partially billed
+    IF (Quantity <> "Quantity Shipped") AND ("Quantity Shipped" > 0) THEN
+      ERROR('You cannot delete the line as there is outstanding qty!');
+    // end by pranavi
+    #1..6
+    */
+    //end;
+
+
+    //Unsupported feature: CodeModification on "OnInit". Please convert manually.
+
+    //trigger OnInit();
+    //Parameters and return type have not been exported.
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    "Process Carried OutVisible" := TRUE;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    "Process Carried OutVisible" := TRUE;
+    "BOI StatusVisible" := TRUE;
+    ItemPanelVisible := TRUE;
+    */
+    //end;
+
+
+    //Unsupported feature: CodeInsertion on "OnInsertRecord". Please convert manually.
+
+    //trigger OnInsertRecord(BelowxRec : Boolean) : Boolean;
+    //begin
+    /*
+    // added by pranavi on 01-sep-2016 for payment terms
+    IF "Document Type" = "Document Type"::Order THEN
+    BEGIN
+      SalesHeader.RESET;
+      SalesHeader.SETRANGE(SalesHeader."No.","Document No.");
+      IF SalesHeader.FINDFIRST THEN
+        IF SalesHeader."Customer Posting Group" IN['PRIVATE','OTHERS'] THEN
+          IF Type = Type::Item THEN
+          BEGIN
+            "Supply Portion" := 100;
+            "Retention Portion" := 0;
+          END ELSE BEGIN
+            "Supply Portion" := 0;
+            "Retention Portion" := 100;
+          END;
+    END;
+    // end by pranavi
+    */
+    //end;
+
+
+    //Unsupported feature: CodeInsertion on "OnModifyRecord". Please convert manually.
+
+    //trigger OnModifyRecord() : Boolean;
+    //begin
+    /*
+    //Added By Pranavi On 23-09-2015 to restrict sales line modify/delete except sales & ERP
+    {
+    User.RESET;
+    IF "Document Type" <> "Document Type"::Amc THEN
+    BEGIN
+      IF NOT (USERID IN ['EFFTRONICS\PRANAVI','EFFTRONICS\GRAVI','EFFTRONICS\ANILKUMAR','EFFTRONICS\NAGALAKSHMI','EFFTRONICS\SRIVALLI','EFFTRONICS\SPURTHI','EFFTRONICS\ANVESH']) THEN
+      BEGIN
+        User.SETFILTER(User."User Name",USERID);
+        IF User.FINDFIRST THEN
+        BEGIN
+          IF NOT (User.Dept IN ['SAL','MAR']) THEN
+            editableflag := FALSE
+          ELSE editableflag := TRUE;
+            //IF ("Product Group Code" <> 'B OUT') AND (User.Dept <> '') THEN
+              //ERROR('You Do Not Right to Modify!');
+        END;
+      END
+      ELSE editableflag := TRUE;
+    END;
+
+    Saleshdr.RESET;
+    Saleshdr.SETRANGE(Saleshdr."No.","Document No.");
+    IF Saleshdr.FINDFIRST THEN
+      IF (Saleshdr.Order_After_CF_Integration = TRUE) AND NOT (SalesHeader."Sell-to Customer No." IN['CUST00536','CUST01164']) THEN
+        IF "Retention Portion"+"Supply Portion" <> 100 THEN
+          ERROR('Total Supply & Retention Portions should be 100 %');
+    }
+    //End By Pranavi
+    */
+    //end;
+
+
+    //Unsupported feature: CodeInsertion on "OnOpenPage". Please convert manually.
+
+    //trigger OnOpenPage();
+    //begin
+    /*
+    IF NOT (UPPERCASE(USERID) IN ['SUPER','10RD010','11RD010','06PD033']) THEN
+    "BOI StatusVisible" :=FALSE;
+    User.RESET;
+    IF "Document Type" <> "Document Type"::Amc THEN
+    BEGIN
+      IF NOT (USERID IN ['EFFTRONICS\SUJANI','EFFTRONICS\NAGALAKSHMI','EFFTRONICS\SRIVALLI','EFFTRONICS\GRAVI','EFFTRONICS\BHAVANIP',
+                         'EFFTRONICS\ANILKUMAR','EFFTRONICS\SPURTHI','EFFTRONICS\ANVESH','EFFTRONICS\BSATISH','EFFTRONICS\VISHNUPRIYA','EFFTRONICS\GURULAKSHMI','EFFTRONICS\B2BOTS']) THEN
+      BEGIN
+        User.SETFILTER(User."User Name",USERID);
+        IF User.FINDFIRST THEN
+        BEGIN
+          IF NOT (User.Dept IN ['SAL','MAR']) THEN
+            editableflag := FALSE
+          ELSE editableflag := TRUE;
+        END;
+      END
+      ELSE editableflag := TRUE;
+    END
+    ELSE editableflag := TRUE;
+    */
+    //end;
+
+    procedure TrackingPage();
+    begin
+    end;
+
+
+    //Unsupported feature: CodeModification on "ShowTracking(PROCEDURE 13)". Please convert manually.
+
+    //procedure ShowTracking();
+    //Parameters and return type have not been exported.
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    TrackingForm.SetSalesLine(Rec);
+    TrackingForm.RUNMODAL;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    TrackingPage.SetSalesLine(Rec);
+    TrackingPage.RUNMODAL;
+    */
+    //end;
+
+
+    //Unsupported feature: CodeModification on "LocationCodeOnAfterValidate(PROCEDURE 19034787)". Please convert manually.
+
+    //procedure LocationCodeOnAfterValidate();
+    //Parameters and return type have not been exported.
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    SaveAndAutoAsmToOrder;
+
+    IF (Reserve = Reserve::Always) AND
+       ("Outstanding Qty. (Base)" <> 0) AND
+       ("Location Code" <> xRec."Location Code")
+    THEN BEGIN
+      CurrPage.SAVERECORD;
+      AutoReserve;
+      CurrPage.UPDATE(FALSE);
+    END;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    #3..10
+    */
+    //end;
+
+    procedure StrOrderLineDetailsPage();
+    begin
+    end;
+
+
+    //Unsupported feature: CodeModification on "ShowStrDetailsForm(PROCEDURE 1280001)". Please convert manually.
+
+    //procedure ShowStrDetailsForm();
+    //Parameters and return type have not been exported.
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    StrOrderLineDetails.RESET;
+    StrOrderLineDetails.SETCURRENTKEY("Document Type","Document No.",Type);
+    StrOrderLineDetails.SETRANGE("Document Type","Document Type");
+    StrOrderLineDetails.SETRANGE("Document No.","Document No.");
+    StrOrderLineDetails.SETRANGE(Type,StrOrderLineDetails.Type::Sale);
+    StrOrderLineDetails.SETRANGE("Item No.","No.");
+    StrOrderLineDetails.SETRANGE("Line No.","Line No.");
+    StrOrderLineDetailsForm.SETTABLEVIEW(StrOrderLineDetails);
+    StrOrderLineDetailsForm.RUNMODAL;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    #1..7
+    StrOrderLineDetailsPage.SETTABLEVIEW(StrOrderLineDetails);
+    StrOrderLineDetailsPage.RUNMODAL;
+    */
+    //end;
+
+    (4171)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure "---B2B--"();
     begin
     end;
 
+<<<<<<< HEAD
+    (4174)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure CustAttachments();
     var
         CustAttach: Record Attachments;
@@ -873,7 +1148,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", CustAttach);
     end;
 
+<<<<<<< HEAD
+    (4182)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _Presite();
     var
         PreSiteCheckList: Record "Inst. PreSite Check List";
@@ -884,6 +1163,10 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"Inst. PreSite Check List", PreSiteCheckList);
     end;
 
+<<<<<<< HEAD
+    (4188)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Presite();
     var
         PreSiteCheckList: Record "Inst. PreSite Check List";
@@ -894,7 +1177,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"Inst. PreSite Check List", PreSiteCheckList);
     end;
 
+<<<<<<< HEAD
+    (4194)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowPackingDetails();
     var
         PackingDetails: Record "Shortage Management Audit Data";
@@ -908,7 +1195,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
+<<<<<<< HEAD
+    (4202)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure SalesLineAttachments();
     var
         CustAttach: Record Attachments;
@@ -922,7 +1213,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", CustAttach);
     end;
 
+<<<<<<< HEAD
+    (4211)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";
@@ -981,7 +1276,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
+<<<<<<< HEAD
+    (4260)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowDeliveryChallan();
     var
         DeliveryChallan: Record "DC Header";
@@ -992,7 +1291,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUNMODAL(PAGE::"DC Header", DeliveryChallan);
     end;
 
+<<<<<<< HEAD
+    (4266)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowSchedule2();
     var
         Schedule: Record Schedule2;
@@ -1020,7 +1323,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         END;
     end;
 
+<<<<<<< HEAD
+    (4289)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowPODetails();
     var
         SOPodetails: Record "SO Prod.Order Details";
@@ -1030,7 +1337,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUNMODAL(60126, SOPodetails);
     end;
 
+<<<<<<< HEAD
+    (4294)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure MakeLines(var SalesLineparam: Record "Sales Line"): Decimal;
     var
         SalesLine: Record "Sales Line";
@@ -1125,7 +1436,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
+<<<<<<< HEAD
+    (4378)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ValidateProdOrder();
     begin
         CALCFIELDS("Prod. Order Quantity");
@@ -1133,7 +1448,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             ERROR(Text001);
     end;
 
+<<<<<<< HEAD
+    (4383)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowSchedule();
     var
         Schedule: Record Schedule2;
@@ -1237,7 +1556,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             END;
     end;
 
+<<<<<<< HEAD
+    (4621)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure CreateOrders(Qtyparam: Decimal) OrdersCreated: Boolean;
     var
         Item: Record Item;
@@ -1267,7 +1590,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
+<<<<<<< HEAD
+    (4644)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure UpdateItemNo();
     var
         UpdateSalesItem: Report "Update Sales/ Schedule Item11";
@@ -1284,7 +1611,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         //<<UPG1.3 06Feb2019
     end;
 
+<<<<<<< HEAD
+    (4656)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure MakeLinesSingle(var SalesLineparam: Record "Sales Line"): Decimal;
     var
         SalesLine: Record "Sales Line";
@@ -1376,7 +1707,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
+<<<<<<< HEAD
+    (4737)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ValidateProdOrderSingle(SalesLineLRec: Record "Sales Line");
     begin
         SalesLineLRec.CALCFIELDS("Prod. Order Quantity");
@@ -1384,7 +1719,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             ERROR(Text001);
     end;
 
+<<<<<<< HEAD
+    (4742)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure MakeLinesSingleQuantity(var SalesLineparam: Record "Sales Line"): Decimal;
     var
         SalesLine: Record "Sales Line";

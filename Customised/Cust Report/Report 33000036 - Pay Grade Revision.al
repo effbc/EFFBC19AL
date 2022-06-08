@@ -134,7 +134,7 @@ report 33000036 "Pay Grade Revision"
         Revised_Absolute_Non_DependableCaptionLbl: Label 'Revised Absolute Non Dependable';
         Revised_Percentage_DependableCaptionLbl: Label 'Revised Percentage Dependable';
 
-    [LineStart(20444)]
+    (20444)]
     procedure TakeGradeCode(GradeCode: Code[10]; StructureDate: Date; EffectiveDate: Date);
     begin
         MGradeCode := GradeCode;

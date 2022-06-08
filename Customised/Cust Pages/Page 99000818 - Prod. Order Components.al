@@ -577,7 +577,7 @@ page 99000818 "Prod. Order Components"
         ShortcutDimCode : array [8] of Code[20];
         "Prod.OrderLine" : Record "Prod. Order Line";
 
-    [LineStart(24178)]
+    (24178)]
     local procedure ReserveComp();
     var
         Item : Record Item;
@@ -594,61 +594,61 @@ page 99000818 "Prod. Order Components"
             END;
     end;
 
-    [LineStart(24190)]
+    (24190)]
     local procedure ItemNoOnAfterValidate();
     begin
         ReserveComp;
     end;
 
-    [LineStart(24193)]
+    (24193)]
     local procedure Scrap37OnAfterValidate();
     begin
         ReserveComp;
     end;
 
-    [LineStart(24196)]
+    (24196)]
     local procedure CalculationFormulaOnAfterValid();
     begin
         ReserveComp;
     end;
 
-    [LineStart(24199)]
+    (24199)]
     local procedure LengthOnAfterValidate();
     begin
         ReserveComp;
     end;
 
-    [LineStart(24202)]
+    (24202)]
     local procedure WidthOnAfterValidate();
     begin
         ReserveComp;
     end;
 
-    [LineStart(24205)]
+    (24205)]
     local procedure WeightOnAfterValidate();
     begin
         ReserveComp;
     end;
 
-    [LineStart(24208)]
+    (24208)]
     local procedure DepthOnAfterValidate();
     begin
         ReserveComp;
     end;
 
-    [LineStart(24211)]
+    (24211)]
     local procedure QuantityperOnAfterValidate();
     begin
         ReserveComp;
     end;
 
-    [LineStart(24214)]
+    (24214)]
     local procedure UnitofMeasureCodeOnAfterValida();
     begin
         ReserveComp;
     end;
 
-    [LineStart(24217)]
+    (24217)]
     local procedure LocationCodeOnAfterValidate();
     begin
         ReserveComp;

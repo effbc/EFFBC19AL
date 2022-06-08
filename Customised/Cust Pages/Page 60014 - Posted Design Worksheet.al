@@ -125,7 +125,7 @@ page 60014 "Posted Design Worksheet"
         ManufacturingSetup : Record "Manufacturing Setup";
         TenderLine : Record "Tender Line";
 
-    [LineStart(4276)]
+    (4276)]
     procedure CalculateTotalCost();
     begin
         CALCFIELDS("Manufacturing Cost","Components Cost","Resource Cost","Installation Cost");

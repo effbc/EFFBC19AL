@@ -81,7 +81,7 @@ page 60092 "Archived Tender Subform"
         }
     }
 
-    [LineStart(10683)]
+    (10683)]
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";
@@ -100,7 +100,7 @@ page 60092 "Archived Tender Subform"
         DesignWorksheetHeader.FILTERGROUP(0);
     end;
 
-    [LineStart(10696)]
+    (10696)]
     procedure ShowSchedule();
     var
         Schedule: Record Schedule2;

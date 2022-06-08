@@ -557,25 +557,25 @@ page 60214 "Blanket Sales Order Subform1"
         NewStatus : Option Simulated,Planned,"Firm Planned",Released;
         NewOrderType : Option ItemOrder,ProjectOrder;
 
-    [LineStart(16388)]
+    (16388)]
     procedure ApproveCalcInvDisc();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Disc. (Yes/No)",Rec);
     end;
 
-    [LineStart(16391)]
+    (16391)]
     procedure CalcInvDisc();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Calc. Discount",Rec);
     end;
 
-    [LineStart(16394)]
+    (16394)]
     procedure ExplodeBOM();
     begin
         CODEUNIT.RUN(CODEUNIT::"Sales-Explode BOM",Rec);
     end;
 
-    [LineStart(16397)]
+    (16397)]
     procedure InsertExtendedText(Unconditionally : Boolean);
     begin
         IF TransferExtendedText.SalesCheckIfAnyExtText(Rec,Unconditionally) THEN BEGIN
@@ -586,25 +586,25 @@ page 60214 "Blanket Sales Order Subform1"
           UpdateForm(TRUE);
     end;
 
-    [LineStart(16405)]
+    (16405)]
     procedure ItemAvailability(AvailabilityType : Option Date,Variant,Location,Bin);
     begin
         //Rec.ItemAvailability(AvailabilityType); //B2b1.0
     end;
 
-    [LineStart(16408)]
+    (16408)]
     procedure ShowDimensions();
     begin
         Rec.ShowDimensions;
     end;
 
-    [LineStart(16411)]
+    (16411)]
     procedure UpdateForm(SetSaveRecord : Boolean);
     begin
         CurrPage.UPDATE(SetSaveRecord);
     end;
 
-    [LineStart(16414)]
+    (16414)]
     procedure ShowPrices();
     begin
         SalesHeader.GET("Document Type","Document No.");
@@ -612,7 +612,7 @@ page 60214 "Blanket Sales Order Subform1"
         SalesPriceCalcMgt.GetSalesLinePrice(SalesHeader,Rec);
     end;
 
-    [LineStart(16419)]
+    (16419)]
     procedure ShowLineDisc();
     begin
         SalesHeader.GET("Document Type","Document No.");
@@ -620,7 +620,7 @@ page 60214 "Blanket Sales Order Subform1"
         SalesPriceCalcMgt.GetSalesLineLineDisc(SalesHeader,Rec);
     end;
 
-    [LineStart(16424)]
+    (16424)]
     procedure ShowOrders();
     begin
         CurrentSalesLine:=Rec;
@@ -632,7 +632,7 @@ page 60214 "Blanket Sales Order Subform1"
         PAGE.RUNMODAL(PAGE::"Sales Lines",SalesLine);
     end;
 
-    [LineStart(16433)]
+    (16433)]
     procedure ShowInvoices();
     begin
         CurrentSalesLine:=Rec;
@@ -644,7 +644,7 @@ page 60214 "Blanket Sales Order Subform1"
         PAGE.RUNMODAL(PAGE::"Sales Lines",SalesLine);
     end;
 
-    [LineStart(16442)]
+    (16442)]
     procedure ShowReturnOrders();
     begin
         CurrentSalesLine:=Rec;
@@ -656,7 +656,7 @@ page 60214 "Blanket Sales Order Subform1"
         PAGE.RUNMODAL(PAGE::"Sales Lines",SalesLine);
     end;
 
-    [LineStart(16451)]
+    (16451)]
     procedure ShowCreditMemos();
     begin
         CurrentSalesLine:=Rec;
@@ -668,7 +668,7 @@ page 60214 "Blanket Sales Order Subform1"
         PAGE.RUNMODAL(PAGE::"Sales Lines",SalesLine);
     end;
 
-    [LineStart(16460)]
+    (16460)]
     procedure ShowPostedOrders();
     var
         SaleShptLine : Record "Sales Shipment Line";
@@ -681,7 +681,7 @@ page 60214 "Blanket Sales Order Subform1"
         PAGE.RUNMODAL(PAGE::"Posted Sales Shipment Lines",SaleShptLine);
     end;
 
-    [LineStart(16468)]
+    (16468)]
     procedure ShowPostedInvoices();
     var
         SalesInvLine : Record "Sales Invoice Line";
@@ -694,7 +694,7 @@ page 60214 "Blanket Sales Order Subform1"
         PAGE.RUNMODAL(PAGE::"Posted Sales Invoice Lines",SalesInvLine);
     end;
 
-    [LineStart(16476)]
+    (16476)]
     procedure ShowPostedReturnReceipts();
     var
         ReturnRcptLine : Record "Return Receipt Line";
@@ -707,7 +707,7 @@ page 60214 "Blanket Sales Order Subform1"
         PAGE.RUNMODAL(PAGE::"Posted Return Receipt Lines",ReturnRcptLine);
     end;
 
-    [LineStart(16484)]
+    (16484)]
     procedure ShowPostedCreditMemos();
     var
         SalesCrMemoLine : Record "Sales Cr.Memo Line";
@@ -720,13 +720,13 @@ page 60214 "Blanket Sales Order Subform1"
         PAGE.RUNMODAL(PAGE::"Posted Sales Credit Memo Lines",SalesCrMemoLine);
     end;
 
-    [LineStart(16492)]
+    (16492)]
     procedure ShowLineComments();
     begin
         Rec.ShowLineComments;
     end;
 
-    [LineStart(16495)]
+    (16495)]
     procedure ShowStrDetailsForm();
     var
         StrOrderLineDetails : Record "Structure Order Line Details";
@@ -743,18 +743,18 @@ page 60214 "Blanket Sales Order Subform1"
         StrOrderLineDetailsForm.RUNMODAL;
     end;
 
-    [LineStart(16506)]
+    (16506)]
     procedure ShowStrOrderDetailsPITForm();
     begin
         Rec.ShowStrOrderDetailsPIT;
     end;
 
-    [LineStart(16509)]
+    (16509)]
     procedure "--B2B1.0--"();
     begin
     end;
 
-    [LineStart(16512)]
+    (16512)]
     procedure ShowSchedule();
     var
         Schedule : Record Schedule2;
@@ -866,7 +866,7 @@ page 60214 "Blanket Sales Order Subform1"
 
     end;
 
-    [LineStart(16617)]
+    (16617)]
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader : Record "Design Worksheet Header";
@@ -911,7 +911,7 @@ page 60214 "Blanket Sales Order Subform1"
         DesignWorksheetHeader.FILTERGROUP(0);
     end;
 
-    [LineStart(16653)]
+    (16653)]
     procedure MakeLines(var SalesLineparam : Record "Sales Line") : Decimal;
     var
         SalesLine : Record "Sales Line";
@@ -1001,7 +1001,7 @@ page 60214 "Blanket Sales Order Subform1"
 
     end;
 
-    [LineStart(16733)]
+    (16733)]
     procedure ValidateProdOrder();
     begin
         CALCFIELDS("Prod. Order Quantity");
@@ -1009,7 +1009,7 @@ page 60214 "Blanket Sales Order Subform1"
           ERROR(Text001);
     end;
 
-    [LineStart(16738)]
+    (16738)]
     procedure CustAttachments();
     var
         CustAttach : Record Attachments;
@@ -1023,19 +1023,19 @@ page 60214 "Blanket Sales Order Subform1"
         //CustAttachments
     end;
 
-    [LineStart(16747)]
+    (16747)]
     local procedure NoOnAfterValidate();
     begin
         InsertExtendedText(FALSE);
     end;
 
-    [LineStart(16750)]
+    (16750)]
     local procedure CrossReferenceNoOnAfterValidat();
     begin
         InsertExtendedText(FALSE);
     end;
 
-    [LineStart(16753)]
+    (16753)]
     local procedure QuantityOnAfterValidate();
     begin
         IF Reserve = Reserve::Always THEN BEGIN
@@ -1044,7 +1044,7 @@ page 60214 "Blanket Sales Order Subform1"
         END;
     end;
 
-    [LineStart(16759)]
+    (16759)]
     local procedure UnitofMeasureCodeOnAfterValida();
     begin
         IF Reserve = Reserve::Always THEN BEGIN
@@ -1053,7 +1053,7 @@ page 60214 "Blanket Sales Order Subform1"
         END;
     end;
 
-    [LineStart(16765)]
+    (16765)]
     procedure CreateOrders(Qtyparam : Decimal) OrdersCreated : Boolean;
     var
         Item : Record Item;

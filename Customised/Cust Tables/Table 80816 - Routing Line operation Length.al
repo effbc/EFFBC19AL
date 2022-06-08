@@ -59,7 +59,7 @@ table 80816 "Routing Line operation Length"
         "--QC--": Integer;
         Subassembly: Record "Sub Assembly";
 
-    [LineStart(5636)]
+
     procedure TestStatus();
     var
         RtngHeader: Record "Routing Header";
@@ -67,27 +67,26 @@ table 80816 "Routing Line operation Length"
     begin
     end;
 
-    [LineStart(5639)]
+
     procedure DeleteRelations();
     begin
     end;
 
-    [LineStart(5642)]
+
     procedure WorkCenterTransferfields();
     begin
     end;
 
-    [LineStart(5645)]
+
     procedure MachineCtrTransferfields();
     begin
     end;
 
-    [LineStart(5648)]
     procedure SetRecalcStatus();
     begin
     end;
 
-    [LineStart(5651)]
+
     procedure RunTimePer(): Decimal;
     begin
     end;

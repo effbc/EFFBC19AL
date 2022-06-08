@@ -2017,13 +2017,13 @@ page 60174 "Material Requests List"
                            DayofWeekInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstDayOfWeek";
                            WeekofYearInput : DotNet "'Microsoft.VisualBasic, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.Microsoft.VisualBasic.FirstWeekOfYear";
 
-    [LineStart(13814)]
+    (13814)]
     local procedure TransferfromCodeOnInputChange(var Text: Text[1024]);
     begin
         TESTFIELD(Status, Status::Open);
     end;
 
-    [LineStart(13817)]
+    (13817)]
     local procedure TransfertoCodeOnInputChange(var Text: Text[1024]);
     begin
         TESTFIELD(Status, Status::Open);
@@ -2031,13 +2031,13 @@ page 60174 "Material Requests List"
             ERROR('DC process has been changed.If any doubts Contact ERP Team');
     end;
 
-    [LineStart(13822)]
+    (13822)]
     local procedure ProdOrderNoOnInputChange(var Text: Text[1024]);
     begin
         TESTFIELD(Status, Status::Open);
     end;
 
-    [LineStart(13825)]
+    (13825)]
     local procedure ProdOrderLineNoOnInputChange(var Text: Text[1024]);
     begin
         TESTFIELD(Status, Status::Open);
