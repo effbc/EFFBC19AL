@@ -1,4 +1,4 @@
-enum 50059 "Purch Line Enum7"
+enum 50059 "Purch Line Enum8"
 {
     Extensible = true;
 
@@ -15,8 +15,5 @@ enum 50059 "Purch Line Enum7"
     value(3; "5")
     {
     }
-
-
-
 
 }
