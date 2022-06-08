@@ -1,824 +1,114 @@
 pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
 {
-    // version NAVW19.00.00.51685,NAVIN9.00.00.51685,QC1.0,Rev01,SQL
-
     layout
     {
-
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
-
-        modify("Control 1")
+        modify(Control1)
         {
-
-            //Unsupported feature: Change Name on "Control 1". Please convert manually.
-
             ShowCaption = false;
         }
-
-        //Unsupported feature: Change Name on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 2". Please convert manually.
-
-        modify("Control 4")
+        modify("No.")
         {
-
-            //Unsupported feature: Change Name on "Control 4". Please convert manually.
-
             Style = Unfavorable;
             StyleExpr = itm_clr_flg;
+            trigger OnBeforeValidate()
+            begin
+                IF (Type = Type::Item) THEN BEGIN
+                    DescriptionEditable := TRUE;
+                END;
+            end;
 
-            //Unsupported feature: Change ImplicitType on "Control 4". Please convert manually.
+            trigger OnAfterValidate()
+            begin
+                //SETRANGE();
 
+                /* PurchHeader.SETRANGE("No.", "Document No.");
+                IF PurchHeader.FINDFIRST THEN
+                VendNo := PurchHeader."Buy-from Vendor No.";
+                ItemVendor.SETRANGE("Vendor No.", VendNo);
+                ItemVendor.SETRANGE("Item No.", "No.");
+                IF NOT ItemVendor.FINDFIRST THEN
+                ERROR('%1 is not a valid num', "No."); */
+                GPS.SETRANGE(GPS."Gen. Prod. Posting Group", "Gen. Prod. Posting Group");
+                GPS.SETFILTER(GPS."Gen. Bus. Posting Group", "Gen. Bus. Posting Group");
+                IF GPS.FINDFIRST THEN BEGIN
+                    "Account No." := GPS."Purch. Account";
+                END;
+                //Added by Pranavi on 22-07-2015 for restricting blocked make items
+                ITEM.RESET;
+                ITEM.SETFILTER(ITEM."No.", "No.");
+                IF ITEM.FINDFIRST THEN BEGIN
+                    Make2.RESET;
+                    Make2.SETFILTER(Make2.Make, ITEM.Make);
+                    IF Make2.FINDFIRST THEN BEGIN
+                        IF Make2.Blocked = TRUE THEN
+                            ERROR('You Cannot Select this Item-- ' + "No." + ' because its Make-- ' + Make + ' is Blocked!');
+                    END;
+                END;
+            end;
         }
-
-        //Unsupported feature: Change Name on "Control 62". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 62". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1108". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1108". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 104". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 104". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500002". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500002". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 106". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 106". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 82". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 82". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500008". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500008". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500000". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500000". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 80". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 80". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 88". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 88". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 74". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 74". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 102". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 102". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 42". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 42". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 42". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 9". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 9". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 9". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 68". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 68". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 60". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 60". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 108". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 108". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 110". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 110". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 112". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 112". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 58". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 58". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 114". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 114". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 116". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 116". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 56". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 56". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 66". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 66". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 66". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 54". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 54". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 54". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500010". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500010". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500070". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500070". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500001". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500001". Please convert manually.
-
-
-        //Unsupported feature: PropertyModification on "Control 1500003". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500003". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500004". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500005". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500005". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500011". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500011". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500006". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500006". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500009". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500009". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500012". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500012". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500007". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500007". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500014". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500014". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500062". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500062". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500064". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500064". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500066". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500066". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 126". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 126". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 128". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 128". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 7". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 7". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 130". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 130". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 132". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 132". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 134". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 134". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 136". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 136". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 138". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 138". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 140". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 140". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 142". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 142". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 144". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 144". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 146". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 146". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 148". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 148". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 90". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 90". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 92". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 92". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 100". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 100". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 94". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 94". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 94". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 96". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 96". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 84". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 84". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 86". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 86". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 64". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 64". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 70". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 70". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 72". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 72". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 98". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 98". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 46". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 46". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 48". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 48". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 52". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 52". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 21". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 21". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500046". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500046". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500113". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500113". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500114". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500114". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500015". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500015". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 78". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 78". Please convert manually.
-
-
-        //Unsupported feature: Change TableRelation on "Control 300". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 300". Please convert manually.
-
-
-        //Unsupported feature: Change TableRelation on "Control 302". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 302". Please convert manually.
-
-
-        //Unsupported feature: Change TableRelation on "Control 304". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 304". Please convert manually.
-
-
-        //Unsupported feature: Change TableRelation on "Control 306". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 306". Please convert manually.
-
-
-        //Unsupported feature: Change TableRelation on "Control 308". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 308". Please convert manually.
-
-
-        //Unsupported feature: Change TableRelation on "Control 310". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 310". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500016". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500016". Please convert manually.
-
-        modify("Control 43")
+        modify(Control43)
         {
-
-            //Unsupported feature: Change Name on "Control 43". Please convert manually.
-
             ShowCaption = false;
         }
-        modify("Control 37")
+        modify(Control37)
         {
-
-            //Unsupported feature: Change Name on "Control 37". Please convert manually.
-
             ShowCaption = false;
         }
-        modify("Control 19")
+        modify(Control19)
         {
-
-            //Unsupported feature: Change Name on "Control 19". Please convert manually.
-
             ShowCaption = false;
         }
-
-        //Unsupported feature: Change DrillDown on ""Total Amount Excl. VAT"(Control 17)". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on ""Total VAT Amount"(Control 15)". Please convert manually.
-
-        modify(RefreshTotals)
+        /* modify(RefreshTotals)
         {
-
-            //Unsupported feature: Change DrillDown on "RefreshTotals(Control 11)". Please convert manually.
-
             ShowCaption = false;
+        } 
 
-            //Unsupported feature: Change ImplicitType on "RefreshTotals(Control 11)". Please convert manually.
-
-        }
-
-        //Unsupported feature: CodeModification on "Control 4.OnValidate". Please convert manually.
-
-        //trigger OnValidate();
-        //Parameters and return type have not been exported.
-        //>>>> ORIGINAL CODE:
-        //begin
-        /*
-        ShowShortcutDimCode(ShortcutDimCode);
-        NoOnAfterValidate;
-
-        IF xRec."No." <> '' THEN
-          RedistributeTotalsOnAfterValidate;
-        */
-        //end;
-        //>>>> MODIFIED CODE:
-        //begin
-        /*
-        IF (Type=Type::Item) THEN
-          BEGIN
-           DescriptionEditable := TRUE;
-          END;
-
-        ShowShortcutDimCode(ShortcutDimCode);
-        //SETRANGE();
+         modify("Line Amount")
         {
-        PurchHeader.SETRANGE("No.","Document No.");
-        IF PurchHeader.FINDFIRST THEN
-          VendNo := PurchHeader."Buy-from Vendor No.";
-          ItemVendor.SETRANGE("Vendor No.",VendNo);
-          ItemVendor.SETRANGE("Item No.","No.");
-          IF NOT ItemVendor.FINDFIRST THEN
-            ERROR('%1 is not a valid num',"No.");}
-        GPS.SETRANGE(GPS."Gen. Prod. Posting Group","Gen. Prod. Posting Group");
-        GPS.SETFILTER(GPS."Gen. Bus. Posting Group","Gen. Bus. Posting Group");
-        IF GPS.FINDFIRST THEN
-        BEGIN
-        "Account No.":=GPS."Purch. Account";
-        END;
-        NoOnAfterValidate;
-        //Added by Pranavi on 22-07-2015 for restricting blocked make items
-        ITEM.RESET;
-        ITEM.SETFILTER(ITEM."No.","No.");
-        IF ITEM.FINDFIRST THEN
-        BEGIN
-          Make2.RESET;
-          Make2.SETFILTER(Make2.Make,ITEM.Make);
-          IF Make2.FINDFIRST THEN
-          BEGIN
-            IF Make2.Blocked= TRUE THEN
-              ERROR('You Cannot Select this Item-- '+"No."+ ' because its Make-- '+Make+' is Blocked!');
-          END;
-        END;
-        //End by Pranavi
-        IF xRec."No." <> '' THEN
-          RedistributeTotalsOnAfterValidate;
-        */
-        //end;
-
-
-        //Unsupported feature: CodeInsertion on "Description(Control 6)". Please convert manually.
-
-        //trigger OnValidate();
-        //Parameters and return type have not been exported.
-        //begin
-        /*
-        //Added by Vishnu Priya on 14-08-2020
-        IF (Rec.Type IN [Rec.Type::Item ,Rec.Type::"G/L Account",Rec.Type::"Fixed Asset"]) THEN
-          BEGIN
-            IF STRLEN(Rec.Description) >50 THEN
-              ERROR('Please Reduce the lenth of the Description to 50 characters. Current Length is '+FORMAT(Rec.Description));
-          END;
-        //End by Vishnu Priya on 14-08-2020
-        */
-        //end;
-
-
-        //Unsupported feature: CodeModification on "Control 8.OnValidate". Please convert manually.
-
-        //trigger OnValidate();
-        //Parameters and return type have not been exported.
-        //>>>> ORIGINAL CODE:
-        //begin
-        /*
-        RedistributeTotalsOnAfterValidate;
-        */
-        //end;
-        //>>>> MODIFIED CODE:
-        //begin
-        /*
-        IF ITEM.GET("No.") THEN
-        BEGIN
-          IF ("Location Code"= 'STR') AND (ITEM.EFF_MOQ>0)  THEN
-            MOQ_Temp:=ITEM.EFF_MOQ
-          ELSE
-            MOQ_Temp:=ITEM."Minimum Order Quantity";
-          IF MOQ_Temp=0 THEN
-            ERROR(' PLEASE MENTION  THE MINIMUM ORDER QUANTITY IN ITEM CARD ');
-          IF Quantity<MOQ_Temp THEN
-            ERROR(' YOU ARE ORDERING THE QUANTITY BELOW THE MENTIONED MINIMUM ORDER QUANTITY');
-          IF ITEM."Order Multiple" > 0  THEN
-          BEGIN
-            IF Quantity MOD ITEM."Order Multiple" <>0 THEN
-              ERROR('Quantity should be a multiple of %1',ITEM."Order Multiple");
-          END;
-        END;
-        */
-        //end;
-
-        //Unsupported feature: PropertyDeletion on "Control 8". Please convert manually.
-
-        modify("Control 44")
+            Visible = false;
+        } 
+        modify("Qty. to Invoice")
         {
             Visible = false;
         }
-        modify("Control 22")
+        modify("Shortcut Dimension 2 Code")
         {
             Visible = false;
-        }
-        modify("Control 76")
+        }*/
+        modify(Description)
         {
-            Visible = false;
+            Editable = DescriptionEditable;
+            trigger OnBeforeValidate()
+            begin
+                //Added by Vishnu Priya on 14-08-2020
+                IF (Rec.Type IN [Rec.Type::Item, Rec.Type::"G/L Account", Rec.Type::"Fixed Asset"]) THEN BEGIN
+                    IF STRLEN(Rec.Description) > 50 THEN
+                        ERROR('Please Reduce the lenth of the Description to 50 characters. Current Length is ' + FORMAT(Rec.Description));
+                END;
+                //End by Vishnu Priya on 14-08-2020
+            end;
         }
-        addafter("Control 2")
+        modify(Quantity)
+        {
+            trigger OnBeforeValidate()
+            begin
+                IF ITEM.GET("No.") THEN BEGIN
+                    IF ("Location Code" = 'STR') AND (ITEM.EFF_MOQ > 0) THEN
+                        MOQ_Temp := ITEM.EFF_MOQ
+                    ELSE
+                        MOQ_Temp := ITEM."Minimum Order Quantity";
+                    IF MOQ_Temp = 0 THEN
+                        ERROR(' PLEASE MENTION  THE MINIMUM ORDER QUANTITY IN ITEM CARD ');
+                    IF Quantity < MOQ_Temp THEN
+                        ERROR(' YOU ARE ORDERING THE QUANTITY BELOW THE MENTIONED MINIMUM ORDER QUANTITY');
+                    IF ITEM."Order Multiple" > 0 THEN BEGIN
+                        IF Quantity MOD ITEM."Order Multiple" <> 0 THEN
+                            ERROR('Quantity should be a multiple of %1', ITEM."Order Multiple");
+                    END;
+                END;
+            end;
+        }
+        addafter(Type)
         {
             field("Document Type"; "Document Type")
             {
@@ -827,7 +117,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             {
             }
         }
-        addafter("Control 6")
+        addafter("No.")
         {
             field("Description 2"; "Description 2")
             {
@@ -849,7 +139,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
                 Editable = Make_edit;
                 Enabled = true;
 
-                trigger OnLookup(Text: Text): Boolean;
+                trigger OnLookup(var Text: Text): Boolean;
                 begin
                     IV.RESET;
                     IV.SETFILTER(IV."Item No.", "No.");
@@ -869,7 +159,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
                         Make2.RESET;
                         IF PAGE.RUNMODAL(60041, Make2) = ACTION::LookupOK THEN
                             Make := Make2.Make;
-                    END
+                    END;
                 end;
 
                 trigger OnValidate();
@@ -881,8 +171,9 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
                         "Part Number" := IV."Part No";
                 end;
             }
+
         }
-        addafter("Control 8")
+        addafter(Quantity)
         {
             field("Charges To Vendor"; "Charges To Vendor")
             {
@@ -1059,7 +350,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
                 end;
             }
         }
-        addafter("Control 106")
+        addafter("IC Partner Reference")
         {
             field("Tax %"; "Tax %")
             {
@@ -1069,7 +360,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             {
             }
         }
-        addafter("Control 14")
+        addafter("VAT Prod. Posting Group")
         {
             field("Excise Bus. Posting Group"; "Excise Bus. Posting Group")
             {
@@ -1096,13 +387,13 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             {
             }
         }
-        addafter("Control 74")
+        addafter("Location Code")
         {
             field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
             {
             }
         }
-        addafter("Control 24")
+        addafter("Quantity Invoiced")
         {
             field("QC Enabled"; "QC Enabled")
             {
@@ -1115,19 +406,19 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             {
             }
         }
-        addafter("Control 56")
+        addafter("Allow Item Charge Assignment")
         {
             field("VAT Bus. Posting Group"; "VAT Bus. Posting Group")
             {
             }
         }
-        addafter("Control 1500004")
+        addafter("Qty. Assigned")
         {
             field("GST %"; "GST %")
             {
             }
         }
-        addafter("Control 1500016")
+        addafter(ShortcutDimCode8)
         {
             field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
             {
@@ -1226,102 +517,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
     actions
     {
 
-        //Unsupported feature: Change Name on "Action 1900000004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1907935204". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1906421304". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 5". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1902027204". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1901633104". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Action 1902479904". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1902479904". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 3". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Action 1902085804". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1902085804". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Dimensions(Action 1903984904)". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1903079404". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "ItemChargeAssignment(Action 1907184504)". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1901614404". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1907170504". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1902776404". Please convert manually.
-
-
-        //Unsupported feature: Change RunObject on "Action 1500013". Please convert manually.
-
-
-        //Unsupported feature: Change RunPageLink on "Action 1500013". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1500013". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1906587504". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Action 1901312904". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1901312904". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on ""Insert Ext. Texts"(Action 1901313304)". Please convert manually.
-
-
-        //Unsupported feature: Change Ellipsis on "Reserve(Action 1906391504)". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1905926804". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1903621804". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Action 1903563204". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1903563204". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1903169104". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Action 1901038504". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1901038504". Please convert manually.
-
-        addafter("Action 1500013")
+        addbefore("F&unctions")
         {
             group("I&nspection")
             {
@@ -1433,7 +629,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
                 end;
             }
         }
-        addafter("Action 1905926804")
+        addafter("Sales &Order")
         {
             action("Split Qty")
             {
@@ -1482,191 +678,73 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         }
     }
 
+    trigger OnOpenPage()
+    begin
+        DescriptionEditable := TRUE;
+    end;
 
-    //Unsupported feature: PropertyModification on ""Invoice Discount Amount"(Control 35).OnValidate.PurchaseHeader(Variable 1000)". Please convert manually.
+    trigger OnAfterGetRecord()
+    begin
+        itm_clr_flg := FALSE;
+        ten_percent_item_Cost_high_chk;
+        OnAfterGetCurrRecordCust;//EFFUPG
+        NoOnFormat;
+        DescriptionEditable := TRUE;
 
-    //var
-    //>>>> ORIGINAL VALUE:
-    //"Invoice Discount Amount" : 38;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //"Invoice Discount Amount" : "Purchase Header";
-    //Variable type has not been exported.
+        //added by Vishnu on 09-07-2020
 
+        /* PH.RESET;
+        PH.SETFILTER("No.", Rec."Document No.");
+        IF PH.FINDFIRST THEN BEGIN
+        IF (PH.Mail_count > 0) AND (Rec.Make <> '') THEN
+        Make_edit := FALSE
+        ELSE
+        Make_edit := TRUE;
+        END */
 
-    //Unsupported feature: PropertyModification on "OnDeleteRecord.ReservePurchLine(Variable 1000)". Please convert manually.
+        //Old Code for make modifications
+        //end by Vishnu Priya
 
-    //var
-    //>>>> ORIGINAL VALUE:
-    //OnDeleteRecord.ReservePurchLine : 99000834;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //OnDeleteRecord.ReservePurchLine : "Purch. Line-Reserve";
-    //Variable type has not been exported.
+        //Added by Vishnu Priya on 12-09-2020
+        FindCnt := 0;
+        PRH.RESET;
+        PRH.SETCURRENTKEY("Order No.");
+        PRH.SETFILTER("Order No.", Rec."Document No.");
+        IF PRH.FINDSET THEN
+            REPEAT
+            BEGIN
+                PRL.RESET;
+                PRL.SETFILTER("Document No.", PRH."No.");
+                PRL.SETRANGE("Line No.", Rec."Line No.");
+                PRL.SETRANGE(Correction, FALSE); // to eliminate the Undo Receipts of the inward
+                PRL.SETFILTER(Quantity, '>%1', 0);
+                IF PRL.FINDFIRST THEN
+                    FindCnt := FindCnt + 1;
+            END
+            UNTIL PRH.NEXT = 0;
 
+        IF FindCnt > 1 THEN
+            Make_edit := FALSE
+        ELSE
+            Make_edit := TRUE;
 
-    //Unsupported feature: PropertyModification on "OpenSalesOrderForm(PROCEDURE 5).SalesHeader(Variable 1000)". Please convert manually.
+        //ended by Vishnu Priya on 12-09-2020
+    end;
 
-    //var
-    //>>>> ORIGINAL VALUE:
-    //OpenSalesOrderForm : 36;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //OpenSalesOrderForm : "Sales Header";
-    //Variable type has not been exported.
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        OnAfterGetCurrRecordCust;//EFFUPG
+    end;
 
-
-    //Unsupported feature: PropertyModification on "OpenSalesOrderForm(PROCEDURE 5).SalesOrder(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //OpenSalesOrderForm : 42;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //OpenSalesOrderForm : "Sales Order";
-    //Variable type has not been exported.
-
-    var
-        TrackingPage: Page "Order Tracking";
-
-
-    //Unsupported feature: PropertyModification on "OpenSpecOrderSalesOrderForm(PROCEDURE 12).SalesHeader(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //OpenSpecOrderSalesOrderForm : 36;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //OpenSpecOrderSalesOrderForm : "Sales Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "OpenSpecOrderSalesOrderForm(PROCEDURE 12).SalesOrder(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //OpenSpecOrderSalesOrderForm : 42;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //OpenSpecOrderSalesOrderForm : "Sales Order";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ShowStrDetailsForm(PROCEDURE 1280000).StrOrderLineDetails(Variable 1280001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowStrDetailsForm : 13795;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowStrDetailsForm : "Structure Order Line Details";
-    //Variable type has not been exported.
-
-    var
-        StrOrderLineDetailsPage: Page "Structure Order Line Details";
-
-
-    //Unsupported feature: PropertyModification on "ShowDetailedTaxEntryBuffer(PROCEDURE 1500001).DetailedTaxEntryBuffer(Variable 1500001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowDetailedTaxEntryBuffer : 16480;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowDetailedTaxEntryBuffer : "Detailed Tax Entry Buffer";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "TotalPurchaseHeader(Variable 1009)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //TotalPurchaseHeader : 38;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //TotalPurchaseHeader : "Purchase Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "TotalPurchaseLine(Variable 1008)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //TotalPurchaseLine : 39;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //TotalPurchaseLine : "Purchase Line";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "PurchHeader(Variable 1005)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //PurchHeader : 38;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //PurchHeader : "Purchase Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "TransferExtendedText(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //TransferExtendedText : 378;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //TransferExtendedText : "Transfer Extended Text";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ItemAvailFormsMgt(Variable 1006)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ItemAvailFormsMgt : 353;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ItemAvailFormsMgt : "Item Availability Forms Mgt";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "PurchPriceCalcMgt(Variable 1004)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //PurchPriceCalcMgt : 7010;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //PurchPriceCalcMgt : "Purch. Price Calc. Mgt.";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "PurchCalcDiscByType(Variable 1010)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //PurchCalcDiscByType : 66;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //PurchCalcDiscByType : "Purch - Calc Disc. By Type";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "DocumentTotals(Variable 1017)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //DocumentTotals : 57;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //DocumentTotals : "Document Totals";
-    //Variable type has not been exported.
+    trigger OnAfterGetCurrRecord()
+    begin
+        itm_clr_flg := FALSE;
+        ten_percent_item_Cost_high_chk;
+    end;
 
     var
         ItemVendor: Record "Item Vendor";
-        PurchaseOrder: Page "Purchase Order";
+        PurchaseOrder: Page 50;
         "Excepted Rcpt.Date Tracking": Record "Excepted Rcpt.Date Tracking";
         GPS: Record "General Posting Setup";
         ITEM: Record Item;
@@ -1697,15 +775,10 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         IV: Record "Item Variant";
         Make2: Record Make;
         MOQ_Temp: Decimal;
-        [InDataSet]
         DescriptionEditable: Boolean;
-        [InDataSet]
         "No.Emphasize": Boolean;
-        [InDataSet]
         "Customs Duty Paid toVisible": Boolean;
-        [InDataSet]
         "Customs To be Paid onVisible": Boolean;
-        [InDataSet]
         "Customs Duty ValueVisible": Boolean;
         SQLConnection: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
         RecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
@@ -1736,386 +809,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         IDH: Record "Inspection Datasheet Header";
         PIDH: Record "Posted Inspect DatasheetHeader";
 
-
-    //Unsupported feature: CodeModification on "OnAfterGetCurrRecord". Please convert manually.
-
-    //trigger OnAfterGetCurrRecord();
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    IF PurchHeader.GET("Document Type","Document No.") THEN;
-
-    DocumentTotals.PurchaseUpdateTotalsControls(
-      Rec,TotalPurchaseHeader,TotalPurchaseLine,RefreshMessageEnabled,
-      TotalAmountStyle,RefreshMessageText,InvDiscAmountEditable,VATAmount);
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    itm_clr_flg := FALSE;
-    ten_percent_item_Cost_high_chk;
-    #1..5
-    */
-    //end;
-
-
-    //Unsupported feature: CodeModification on "OnAfterGetRecord". Please convert manually.
-
-    //trigger OnAfterGetRecord();
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    ShowShortcutDimCode(ShortcutDimCode);
-    TypeChosen := HasTypeToFillMandatotyFields;
-    CLEAR(DocumentTotals);
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    itm_clr_flg := FALSE;
-    ten_percent_item_Cost_high_chk;
-    #1..3
-    OnAfterGetCurrRecordCust;//EFFUPG
-    NoOnFormat;
-      DescriptionEditable := TRUE;
-
-    //added by Vishnu on 09-07-2020
-    {
-    PH.RESET;
-    PH.SETFILTER("No.",Rec."Document No.");
-    IF PH.FINDFIRST THEN
-      BEGIN
-        IF  (PH.Mail_count >0) AND (Rec.Make <> '') THEN
-          Make_edit := FALSE
-        ELSE
-          Make_edit := TRUE;
-      END
-
-    } //Old Code for make modifications
-    //end by Vishnu Priya
-
-    //Added by Vishnu Priya on 12-09-2020
-    FindCnt :=0;
-    PRH.RESET;
-    PRH.SETCURRENTKEY("Order No.");
-    PRH.SETFILTER("Order No.",Rec."Document No.");
-    IF PRH.FINDSET THEN
-    REPEAT
-      BEGIN
-        PRL.RESET;
-        PRL.SETFILTER("Document No.",PRH."No.");
-        PRL.SETRANGE("Line No.",Rec."Line No.");
-        PRL.SETRANGE(Correction,FALSE); // to eliminate the Undo Receipts of the inward
-        PRL.SETFILTER(Quantity,'>%1',0);
-        IF PRL.FINDFIRST THEN
-          FindCnt := FindCnt+1;
-      END
-    UNTIL PRH.NEXT =0;
-
-    IF FindCnt >1 THEN
-      Make_edit := FALSE
-    ELSE
-      Make_edit := TRUE;
-
-    //ended by Vishnu Priya on 12-09-2020
-    */
-    //end;
-
-
-    //Unsupported feature: CodeInsertion on "OnInit". Please convert manually.
-
-    //trigger OnInit();
-    //Parameters and return type have not been exported.
-    //begin
-    /*
-    "Customs Duty ValueVisible" := TRUE;
-    "Customs To be Paid onVisible" := TRUE;
-    "Customs Duty Paid toVisible" := TRUE;
-    DescriptionEditable := TRUE;
-    */
-    //end;
-
-
-    //Unsupported feature: CodeModification on "OnNewRecord". Please convert manually.
-
-    //trigger OnNewRecord(BelowxRec : Boolean);
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    InitType;
-    CLEAR(ShortcutDimCode);
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    InitType;
-    CLEAR(ShortcutDimCode);
-    OnAfterGetCurrRecordCust;//EFFUPG
-    */
-    //end;
-
-
-    //Unsupported feature: CodeInsertion on "OnOpenPage". Please convert manually.
-
-    //trigger OnOpenPage();
-    //begin
-    /*
-       DescriptionEditable := TRUE;
-    */
-    //end;
-
-    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
-    //begin
-    /*
-    */
-    //end;
-
-    //event SQLConnection(TransactionLevel : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
-    //begin
-    /*
-    */
-    //end;
-
-    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
-    //begin
-    /*
-    */
-    //end;
-
-    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
-    //begin
-    /*
-    */
-    //end;
-
-    //event SQLConnection(var Source : Text;CursorType : Integer;LockType : Integer;var Options : Integer;adStatus : Integer;pCommand : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{B08400BD-F9D1-4D02-B856-71D5DBA123E9}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Command";pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset";pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
-    //begin
-    /*
-    */
-    //end;
-
-    //event SQLConnection(RecordsAffected : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pCommand : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{B08400BD-F9D1-4D02-B856-71D5DBA123E9}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Command";pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset";pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
-    //begin
-    /*
-    */
-    //end;
-
-    //event SQLConnection(var ConnectionString : Text;var UserID : Text;var Password : Text;var Options : Integer;adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
-    //begin
-    /*
-    */
-    //end;
-
-    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
-    //begin
-    /*
-    */
-    //end;
-
-    //event SQLConnection(adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet(cFields : Integer;"Fields" : Variant;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet(cFields : Integer;"Fields" : Variant;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet(adReason : Integer;cRecords : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet(adReason : Integer;cRecords : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet(var fMoreData : Boolean;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet(Progress : Integer;MaxProgress : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet1(cFields : Integer;"Fields" : Variant;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet1(cFields : Integer;"Fields" : Variant;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet1(adReason : Integer;cRecords : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet1(adReason : Integer;cRecords : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet1(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet1(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet1(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet1(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet1(var fMoreData : Boolean;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet1(Progress : Integer;MaxProgress : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    //event RecordSet1(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
-    //begin
-    /*
-    */
-    //end;
-
-    procedure TrackingPage();
-    begin
-    end;
-
-
-    //Unsupported feature: CodeModification on "ShowTracking(PROCEDURE 10)". Please convert manually.
-
-    //procedure ShowTracking();
-    //Parameters and return type have not been exported.
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    TrackingForm.SetPurchLine(Rec);
-    TrackingForm.RUNMODAL;
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    TrackingPage.SetPurchLine(Rec);
-    TrackingPage.RUNMODAL;
-    */
-    //end;
-
-    procedure StrOrderLineDetailsPage();
-    begin
-    end;
-
-
-    //Unsupported feature: CodeModification on "ShowStrDetailsForm(PROCEDURE 1280000)". Please convert manually.
-
-    //procedure ShowStrDetailsForm();
-    //Parameters and return type have not been exported.
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    StrOrderLineDetails.RESET;
-    StrOrderLineDetails.SETCURRENTKEY("Document Type","Document No.",Type);
-    StrOrderLineDetails.SETRANGE("Document Type","Document Type");
-    StrOrderLineDetails.SETRANGE("Document No.","Document No.");
-    StrOrderLineDetails.SETRANGE(Type,StrOrderLineDetails.Type::Purchase);
-    StrOrderLineDetails.SETRANGE("Item No.","No.");
-    StrOrderLineDetails.SETRANGE("Line No.","Line No.");
-    StrOrderLineDetailsForm.SETTABLEVIEW(StrOrderLineDetails);
-    StrOrderLineDetailsForm.RUNMODAL;
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    #1..7
-    StrOrderLineDetailsPage.SETTABLEVIEW(StrOrderLineDetails);
-    StrOrderLineDetailsPage.RUNMODAL;
-    */
-    //end;
-
-    [LineStart(6431)]
     procedure CreateInspectionDataSheets();
     begin
         CreateInspectionDataSheets;
     end;
 
-    [LineStart(6434)]
     procedure _ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -2123,7 +821,6 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowDataSheets;
     end;
 
-    [LineStart(6437)]
     procedure ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -2131,7 +828,6 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowDataSheets;
     end;
 
-    [LineStart(6440)]
     procedure _ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -2139,7 +835,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowPostDataSheets;
     end;
 
-    [LineStart(6443)]
+
     procedure ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -2147,7 +843,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowPostDataSheets;
     end;
 
-    [LineStart(6446)]
+
     procedure _ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -2155,7 +851,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowInspectReceipt;
     end;
 
-    [LineStart(6449)]
+
     procedure ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -2163,7 +859,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowInspectReceipt;
     end;
 
-    [LineStart(6452)]
+
     procedure _ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -2171,12 +867,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowPostInspectReceipt;
     end;
 
-    [LineStart(6455)]
+
     procedure "---B2B---"();
     begin
     end;
 
-    [LineStart(6458)]
     procedure ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -2184,7 +879,6 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowPostInspectReceipt;
     end;
 
-    [LineStart(6461)]
     procedure OpenAttachments();
     var
         Attachment: Record Attachments;
@@ -2197,7 +891,6 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", Attachment);
     end;
 
-    [LineStart(6469)]
     procedure CancelInspection1(var QualityStatus: Text[50]);
     begin
         TESTFIELD("No.");
@@ -2205,7 +898,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         CancelInspection(QualityStatus);
     end;
 
-    [LineStart(6474)]
+
     procedure CloseInspection1(var QualityStatus: Text[50]);
     begin
         TESTFIELD("No.");
@@ -2213,7 +906,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         CloseInspection(QualityStatus);
     end;
 
-    [LineStart(6479)]
+
     procedure _SampleLotInspection();
     var
         SampleLotInspection: Record "Sample Lot Inspection";
@@ -2227,7 +920,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUN(60072, SampleLotInspection);
     end;
 
-    [LineStart(6488)]
+
     procedure SampleLotInspection();
     var
         SampleLotInspection: Record "Sample Lot Inspection";
@@ -2241,13 +934,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUN(60072, SampleLotInspection);
     end;
 
-    [LineStart(6497)]
     procedure QCOverride();
     begin
         QCOverride;
     end;
 
-    [LineStart(6500)]
     procedure Getperiod(perioddate: Date) periodnumber: Integer;
     var
         periodNo1: Integer;
@@ -2296,7 +987,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         periodnumber := (acctYearMonth * 4) - 4 + periodNo1;
     end;
 
-    [LineStart(6533)]
+
     procedure "Show Deviations & Reasons"();
     begin
         "Excepted Rcpt.Date Tracking".SETRANGE("Excepted Rcpt.Date Tracking"."Document No.", "Document No.");
@@ -2304,7 +995,6 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUNMODAL(60048, "Excepted Rcpt.Date Tracking");
     end;
 
-    [LineStart(6538)]
     procedure Show_Custom_Charges(show: Boolean);
     begin
 
@@ -2319,7 +1009,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         END;
     end;
 
-    [LineStart(6552)]
+
     procedure Split_Qty();
     var
         Base_Qty: Decimal;
@@ -2510,7 +1200,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
 
     end;
 
-    [LineStart(6747)]
+
     local procedure TypeOnAfterValidate();
     begin
         IF Type = Type::Item THEN
@@ -2519,7 +1209,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             DescriptionEditable := TRUE;
     end;
 
-    [LineStart(6753)]
+
     local procedure OnAfterGetCurrRecordCust();
     begin
         xRec := Rec;
@@ -2529,7 +1219,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             DescriptionEditable := TRUE;
     end;
 
-    [LineStart(6760)]
+
     local procedure DeviatedReceiptDateOnAfterInpu(var Text: Text[1024]);
     begin
 
@@ -2537,7 +1227,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             ERROR('You Dont Have to Delete the Deviated Date');
     end;
 
-    [LineStart(6765)]
+
     local procedure DeviatedReceiptDateOnInputChan(var Text: Text[1024]);
     begin
 
@@ -2561,7 +1251,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         END;
     end;
 
-    [LineStart(6786)]
+
     local procedure NoOnFormat();
     begin
         IF ("Document Type" = 2) AND ("No." <> '') THEN
@@ -2573,7 +1263,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         END;
     end;
 
-    [LineStart(6797)]
+
     procedure ActPeriodActYearCalc(Req_Date: Date);
     var
         cDay: Integer;
@@ -2636,7 +1326,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         // MESSAGE('Act Period: '+FORMAT(PeriodNum)+' Act Year: '+FORMAT(AccountYear));
     end;
 
-    [LineStart(6849)]
+
     local procedure CashFlowUpdation();
     var
         "Packing Value": Decimal;
@@ -2672,7 +1362,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         IF PurchLine.FINDSET THEN
             REPEAT
                 "G\L".GET;
-                IF "G\L"."Active ERP-CF Connection" AND (PurchHeader."Order Date" >= 020110D) THEN //
+                IF "G\L"."Active ERP-CF Connection" AND (PurchHeader."Order Date" >= DMY2Date(02, 01, 10)) THEN //
                 BEGIN
 
                     "Packing Value" := 0;
@@ -2772,7 +1462,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             UNTIL PurchLine.NEXT = 0;
     end;
 
-    [LineStart(6964)]
+
     procedure CommaRemoval(Base: Text[30]) Converted: Text[30];
     var
         i: Integer;
@@ -2784,7 +1474,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         EXIT(Converted);
     end;
 
-    [LineStart(6972)]
+
     procedure ten_percent_item_Cost_high_chk();
     begin
         Pur_line.RESET;
@@ -2809,23 +1499,5 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ELSE
             itm_clr_flg := FALSE;
     end;
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
 }
 
