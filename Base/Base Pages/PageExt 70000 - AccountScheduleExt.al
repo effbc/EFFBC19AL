@@ -16,7 +16,7 @@ pageextension 70000 AccountScheduleExt extends "Account Schedule"
 
         //Unsupported feature: Change ImplicitType on "Control 18". Please convert manually.
 
-        modify("Control 1")
+       modify("Control1")
         {
 
             //Unsupported feature: Change Name on "Control 1". Please convert manually.

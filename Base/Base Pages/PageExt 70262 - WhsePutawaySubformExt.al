@@ -1,6 +1,6 @@
 pageextension 70262 WhsePutawaySubformExt extends "Whse. Put-away Subform"
 {
-   
+
 
     layout
     {
@@ -15,7 +15,7 @@ pageextension 70262 WhsePutawaySubformExt extends "Whse. Put-away Subform"
          }*/
 
 
-        addafter("Control 30")
+        addafter(Description)
         {
             field("Quantity Accepted"; Rec."Quantity Accepted")
             {
