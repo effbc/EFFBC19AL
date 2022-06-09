@@ -21,7 +21,7 @@ pageextension 70275 ResourceListExt extends "Resource List"
 
     actions
     {
-        // Add changes to page actions here
+        
     }
 
     var
