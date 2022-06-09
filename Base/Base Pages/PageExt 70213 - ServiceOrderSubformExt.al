@@ -158,7 +158,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
                 begin
                     //This functionality was copied from page #5900. Unsupported part was commented. Please check it.
                     /*CurrPage.ServItemLines.Page.*/
-                    _Presite;
+                    Presite;
 
                 end;
             }
@@ -182,46 +182,10 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
 
 
 
-<<<<<<< HEAD
-    //trigger OnInit();
-    //Parameters and return type have not been exported.
-    //begin
-        /*
-        IPBarchartEnable := TRUE;
-        IPSkilledResTextboxEnable := TRUE;
-        IPSkilledResEnable := TRUE;
-        IPTroubleshootingTextboxEnable := TRUE;
-        IPTroubleshootingEnable := TRUE;
-        IPCompListTextboxEnable := TRUE;
-        IPCompListEnable := TRUE;
-        IPServItemCommentPBEnable := TRUE;
-        IPServItemButtonEnable := TRUE;
-        IPServItemEnable := TRUE;
-        */
-    //end;
 
 
-    //Unsupported feature: CodeInsertion on "OnInsertRecord". Please convert manually.
 
-    //trigger OnInsertRecord(BelowxRec : Boolean) : Boolean;
-    //begin
-        /*
-        //ERROR('You dont have rights to insert line');
-        */
-    //end;
 
-    (27197)]
-=======
->>>>>>> 75554976da0214e9ec70a45a874425238783b297
-    procedure "---B2B--"();
-    begin
-    end;
-
-<<<<<<< HEAD
-    (27200)]
-=======
-
->>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _Attachments();
     var
         Attach: Record Attachments;
@@ -234,11 +198,8 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", Attach);
     end;
 
-<<<<<<< HEAD
-    (27208)]
-=======
 
->>>>>>> 75554976da0214e9ec70a45a874425238783b297
+
     procedure Attachments();
     var
         Attach: Record Attachments;
@@ -251,26 +212,10 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", Attach);
     end;
 
-<<<<<<< HEAD
-    (27216)]
-=======
 
->>>>>>> 75554976da0214e9ec70a45a874425238783b297
-    procedure _Presite();
-    var
-        PreSiteCheckList: Record "Inst. PreSite Check List";
-    begin
-        PreSiteCheckList.RESET;
-        PreSiteCheckList.SETRANGE("Sales Order No.", Rec."Document No.");
-        PreSiteCheckList.SETRANGE("Sales Order Line No.", Rec."Line No.");
-        PAGE.RUN(PAGE::"Inst. PreSite Check List", PreSiteCheckList);
-    end;
 
-<<<<<<< HEAD
-    (27222)]
-=======
 
->>>>>>> 75554976da0214e9ec70a45a874425238783b297
+
     procedure Presite();
     var
         PreSiteCheckList: Record "Inst. PreSite Check List";
@@ -281,14 +226,13 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         PAGE.RUN(PAGE::"Inst. PreSite Check List", PreSiteCheckList);
     end;
 
-<<<<<<< HEAD
-    (27228)]
-=======
 
->>>>>>> 75554976da0214e9ec70a45a874425238783b297
+
+
     procedure TroubleShottingforSerItem();
     var
         TroubleshottingSetup: Record "Troubleshooting Setup";
+        : : 
     begin
         TroubleshottingSetup.SETRANGE("No.", Rec."Service Item No.");
         TroubleshottingSetup.SETRANGE(TroubleshottingSetup."Service Order No", Rec."Document No.");
@@ -308,11 +252,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         PAGE.RUN(PAGE::"Troubleshooting Setup", TroubleshottingSetup);
     end;
 
-<<<<<<< HEAD
-    (27247)]
-=======
 
->>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure FromLocationOnAfterValidate();
     begin
         IF Rec."To Location" <> '' THEN BEGIN
@@ -331,11 +271,8 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         END;
     end;
 
-<<<<<<< HEAD
-    (27266)]
-=======
 
->>>>>>> 75554976da0214e9ec70a45a874425238783b297
+
     local procedure ToLocationOnAfterValidate();
     begin
         IF Rec."From Location" <> '' THEN BEGIN
@@ -354,11 +291,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         END;
     end;
 
-<<<<<<< HEAD
-    (27285)]
-=======
 
->>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure AccountOnPush();
     begin
 

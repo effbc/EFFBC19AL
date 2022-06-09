@@ -17,81 +17,81 @@ pageextension 70209 ServiceItemWorksheetSubformExt extends 5907
             ShowCaption = false;
         }*/
 
-     
-        modify("Control 48")
+
+        modify("Fault Area Code")
         {
 
-          
+
 
             CaptionML = ENU = 'Product-Module';
 
-           
+
         }
 
-       
-        addafter("Control 8")
+
+        addafter(Type)
         {
-            field(Levels; Levels)
+            field(Levels; Rec.Levels)
             {
             }
         }
-        addafter("Control 48")
+        addafter("Fault Area Code")
         {
-            field("Fault Area Description"; "Fault Area Description")
+            field("Fault Area Description"; Rec."Fault Area Description")
             {
                 Caption = 'Product-Module Desc';
                 Editable = false;
                 Visible = false;
             }
-            field("Sub Module Code"; "Sub Module Code")
+            field("Sub Module Code"; Rec."Sub Module Code")
             {
                 Visible = false;
             }
-            field("Sub Module Descrption"; "Sub Module Descrption")
+            field("Sub Module Descrption"; Rec."Sub Module Descrption")
             {
                 Editable = false;
                 Visible = false;
             }
         }
-        addafter("Control 54")
+        addafter("Fault Code")
         {
-            field("Fault Code Description"; "Fault Code Description")
+            field("Fault Code Description"; Rec."Fault Code Description")
             {
                 Caption = 'Problem description';
                 Editable = false;
             }
-            field("Fault Reason Description"; "Fault Reason Description")
+            field("Fault Reason Description"; Rec."Fault Reason Description")
             {
                 Caption = 'Cause identified';
             }
         }
-        addafter("Control 34")
+        addafter("Resolution Code")
         {
-            field("Resolution Description"; "Resolution Description")
+            field("Resolution Description"; Rec."Resolution Description")
             {
                 Editable = false;
             }
-            field("Symptom Description"; "Symptom Description")
+            field("Symptom Description"; Rec."Symptom Description")
             {
             }
-            field(Observations; Observations)
+            field(Observations; Rec.Observations)
             {
             }
-            field("Component Legending"; "Component Legending")
+            field("Component Legending"; Rec."Component Legending")
             {
             }
-            field(Status; Status)
+            field(Status; Rec.Status)
             {
             }
         }
-     
+
     }
-  
 
 
-    
 
-   
+
+
+
 
     var
         "Reservation entry": Record "Reservation Entry";
@@ -119,5 +119,5 @@ pageextension 70209 ServiceItemWorksheetSubformExt extends 5907
     end;
 
 
-    
+
 }
