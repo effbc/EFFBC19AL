@@ -6,7 +6,7 @@ pageextension 70242 TransferListExt extends "Transfer List (Cap. Cons.)"
     {
 
 
-        modify("Control 1")
+        modify("Control1")
         {
 
 

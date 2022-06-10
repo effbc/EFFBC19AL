@@ -1,141 +1,20 @@
 pageextension 70131 PostedTransferShptSubformExt extends "Posted Transfer Shpt. Subform"
 {
-    // version NAVW19.00.00.48822,NAVIN9.00.00.48822,B2B1.0
+
 
     layout
     {
 
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
 
-        modify("Control 1")
-        {
+        /* modify("Control1")
+         {
 
-            //Unsupported feature: Change Name on "Control 1". Please convert manually.
 
-            ShowCaption = false;
-        }
 
-        //Unsupported feature: Change Name on "Control 2". Please convert manually.
+             ShowCaption = false;
+         }*/
 
 
-        //Unsupported feature: Change ImplicitType on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500002". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500002". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500006". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500006". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500004". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500008". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500008". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500001". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500001". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500005". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500005". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500007". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500007". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500009". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500009". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500020". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500020". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500000". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500000". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 14". Please convert manually.
 
         addafter("Control 1500008")
         {
