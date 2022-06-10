@@ -1,302 +1,18 @@
 pageextension 70112 PostedPurchInvoiceSubformExt extends "Posted Purch. Invoice Subform"
 {
-    // version NAVW19.00.00.51685,NAVIN9.00.00.51685
-
     layout
     {
-
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
-
-        modify("Control 1")
+        /* modify(Control1)
         {
-
-            //Unsupported feature: Change Name on "Control 1". Please convert manually.
-
             ShowCaption = false;
-        }
-
-        //Unsupported feature: Change Name on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 62". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 62". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500002". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500002". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 54". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 54". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 50". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 50". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 50". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 52". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 52". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 64". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 64". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 64". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 64". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 44". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 44". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 42". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 42". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 1500009". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500009". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500009". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500008". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500008". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500007". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 1500007". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500007". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500006". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500006". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500005". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 1500005". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500005". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500003". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 1500003". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500003". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500010". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500010". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500000". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500000". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 11". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 11". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 60". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 60". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 60". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 58". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 58". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 58". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1055601". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1055601". Please convert manually.
-
-        addafter("Control 2")
+        } */
+        addafter(Type)
         {
             field("Line No."; "Line No.")
             {
             }
         }
-        addafter("Control 32")
+        addafter("Variant Code")
         {
             field("Purchase_Order No."; "Purchase_Order No.")
             {
@@ -323,14 +39,11 @@ pageextension 70112 PostedPurchInvoiceSubformExt extends "Posted Purch. Invoice 
             field("Form No."; "Form No.")
             {
             }
-            field("Tax Group Code"; "Tax Group Code")
-            {
-            }
             field("eCess Amount"; "eCess Amount")
             {
             }
         }
-        addafter("Control 6")
+        addafter(Description)
         {
             field("Location Code"; "Location Code")
             {
@@ -356,19 +69,19 @@ pageextension 70112 PostedPurchInvoiceSubformExt extends "Posted Purch. Invoice 
             {
             }
         }
-        addafter("Control 30")
+        addafter("Unit of Measure Code")
         {
             field("Posting Date"; "Posting Date")
             {
             }
         }
-        addafter("Control 1500006")
+        addafter("Allow Invoice Disc.")
         {
             field("GST %"; "GST %")
             {
             }
         }
-        addafter("Control 1055601")
+        addafter("Shortcut Dimension 2 Code")
         {
             field("Quantity (Base)"; "Quantity (Base)")
             {
@@ -403,9 +116,7 @@ pageextension 70112 PostedPurchInvoiceSubformExt extends "Posted Purch. Invoice 
             {
                 Editable = true;
             }
-            field("Tax Area Code"; "Tax Area Code")
-            {
-            }
+            
             field("Excise Base Amount"; "Excise Base Amount")
             {
             }
@@ -462,108 +173,23 @@ pageextension 70112 PostedPurchInvoiceSubformExt extends "Posted Purch. Invoice 
     actions
     {
 
-        //Unsupported feature: Change Name on "Action 1900000004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1907935204". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Dimensions(Action 1901314304)". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "ItemReceiptLines(Action 1907075804)". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1902067004". Please convert manually.
-
     }
 
-
-    //Unsupported feature: PropertyModification on "ShowStrDetailsForm(PROCEDURE 1280000).PurchInvHeader(Variable 1280002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowStrDetailsForm : 122;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowStrDetailsForm : "Purch. Inv. Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ShowStrDetailsForm(PROCEDURE 1280000).StrOrderLineDetails(Variable 1280001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowStrDetailsForm : 13798;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowStrDetailsForm : "Posted Str Order Line Details";
-    //Variable type has not been exported.
-
-    var
-        StrOrderLineDetailsPage: Page "Posted Str Order Line Details";
+    trigger OnOpenPage()
+    begin
+        IF USERID IN ['EFFTRONICS\SUJANI', 'EFFTRONICS\ANILKUMAR', 'EFFTRONICS\VISHNUPRIYA', 'EFFTRONICS\B2BOTS'] THEN
+            FieldseditRights := TRUE
+        ELSE
+            FieldseditRights := FALSE;
+    end;
 
     var
         FieldseditRights: Boolean;
 
 
-    //Unsupported feature: CodeInsertion on "OnOpenPage". Please convert manually.
-
-    //trigger OnOpenPage();
-    //begin
-    /*
-    IF USERID IN ['EFFTRONICS\SUJANI','EFFTRONICS\ANILKUMAR','EFFTRONICS\VISHNUPRIYA','EFFTRONICS\B2BOTS'] THEN
-      FieldseditRights := TRUE
-    ELSE
-      FieldseditRights := FALSE;
-    */
-    //end;
 
     procedure StrOrderLineDetailsPage();
     begin
     end;
-
-
-    //Unsupported feature: CodeModification on "ShowStrDetailsForm(PROCEDURE 1280000)". Please convert manually.
-
-    //procedure ShowStrDetailsForm();
-    //Parameters and return type have not been exported.
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    StrOrderLineDetails.RESET;
-    PurchInvHeader.GET("Document No.");
-    StrOrderLineDetails.SETCURRENTKEY("Invoice No.",Type,"Item No.");
-    StrOrderLineDetails.SETRANGE("Invoice No.",PurchInvHeader."No.");
-    StrOrderLineDetails.SETRANGE(Type,StrOrderLineDetails.Type::Purchase);
-    StrOrderLineDetails.SETRANGE("Item No.","No.");
-    StrOrderLineDetails.SETRANGE("Line No.","Line No.");
-    StrOrderLineDetailsForm.SETTABLEVIEW(StrOrderLineDetails);
-    StrOrderLineDetailsForm.RUNMODAL;
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    #1..7
-    StrOrderLineDetailsPage.SETTABLEVIEW(StrOrderLineDetails);
-    StrOrderLineDetailsPage.RUNMODAL;
-    */
-    //end;
-
-    //Unsupported feature: PropertyDeletion. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
 }
 

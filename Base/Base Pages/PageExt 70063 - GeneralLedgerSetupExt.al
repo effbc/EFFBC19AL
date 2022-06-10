@@ -1,2068 +1,1432 @@
 pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 {
-    // version NAVW19.00.00.51883,NAVIN9.00.00.51883,B2B1.0,EFFUPG
-
     layout
     {
-
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 43". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 43". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 67". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 67". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 73". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 73". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 77". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 77". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 75". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 75". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 55". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 55". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 60". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 60". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500040". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500040". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500049". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500049". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 49". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 49". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 47". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 47". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 21". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 21". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 86". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 86". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 5". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 5". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 3". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 3". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 82". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 82". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 84". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 84". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1904569201". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500034". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500034". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500035". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500035". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500036". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500036". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500056". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500056". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500058". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500058". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500025". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500025". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500023". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500023". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500011". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500011". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1900309501". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 23". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 23". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1904488501". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 11". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 11". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 81". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 81". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 83". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 83". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1904409301". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 65". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 65". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 72". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 72". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 51". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 51". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 62". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 62". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 80". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 80". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 70". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 70". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 63". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 63". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 64". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 64". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1902697801". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500031". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500046". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500046". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500015". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500015". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500016". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500016". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500044". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500044". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500017". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500017". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500018". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500018". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500032". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500019". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500019". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500020". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500020". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500048". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500048". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500052". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500052". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500033". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500021". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500021". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500022". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500022". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500006". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500001". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500001". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500000". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500000". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500050". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500050". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500054". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500054". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500009". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500003". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500003". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on ""VAT Rounding Type2"(Control 1500002)". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500042". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500042". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500013". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500005". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500005". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500004". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500007". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500008". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500008". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500010". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500010". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500028". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500028". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500024". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500024". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500027". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500027". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500029". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500029". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500012". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500012". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500014". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500014". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500026". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500026". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 7". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 9". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 9". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1900000007". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1900383207". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1905767507". Please convert manually.
-
-
-        //Unsupported feature: CodeInsertion on ""<Allow Posting To>"(Control 8)". Please convert manually.
-
-        //trigger OnValidate();
-        //Parameters and return type have not been exported.
-        //begin
-        /*
-        //TAMS_BASED_USERS_BLOCKING;
-        // CS SHORTAGE MATERIAL AUTOMATIC REPORT
-        //dcMails.MailDC; // added by vishnu
-        Stock_Alert_On_Threshold; // added by sujani 17-sep-2018 for alerting the item details based threshold value specified
-         Open_Orders_Allert; // added by vishnu priya for the verified-open orders alerts
-        // IF DATE2DWY("Allow Posting To", 1) IN [1,4] THEN //added by vishnu priya 0-sun,1-mon,2-tues,3-wednes,4-thurs,5-fri,6-sat
-         // RD_Mail_for_SalesOrders;//added by vishnu priya 0-sun,1-mon,2-tues,3-wednes,4-thurs,5-fri,6-sat
-          SALESACTUALSDUMPING; //added  by vishnu
-         //   Stock_Analysis; //added by Vishnu Priya on 02-08-2019
-          //  SDStatusUpdation; // SDs Statsu updation vishnu
-           IREPS_Tenders; // Added by Vishnu Priya on 01-03-2019 for IREPS Alerts
-           // CalibrationAlerts;  // Added by Vishnu Priya on 01-03-2019 for QC Alerts
-
-         CSIGCS_MAIL; // added by vishnu priya on 30-10-2019 for CS IGC not update alerting purpose.
-
-        // Posting Date Change to Active users only on 02-07-2019
-        //QAFLAG;
-        user.RESET;
-        user.SETRANGE(Blocked,FALSE);
-        IF user.FINDSET THEN
-          REPEAT
-            USER_SETUP.RESET;
-            USER_SETUP.SETFILTER("User ID",user."User Name");
-            IF USER_SETUP.FINDSET THEN
-            REPEAT
-              IF NOT (USER_SETUP."User ID" IN['EFFTRONICS\RAJANI','EFFTRONICS\SITARAJYAM','EFFTRONICS\ASWINI','EFFTRONICS\YESU'])THEN
-              BEGIN
-                USER_SETUP."Allow Posting To":="Allow Posting To";
-                USER_SETUP.MODIFY;
-              END
-              ELSE IF  (USER_SETUP."User ID" IN['EFFTRONICS\SITARAJYAM','EFFTRONICS\ASWINI'])THEN BEGIN
-              USER_SETUP."Allow Posting To" := CALCDATE('900D', TODAY());
-              USER_SETUP.MODIFY;
-              END
-              ELSE IF  (USER_SETUP."User ID" IN['EFFTRONICS\RAJANI','EFFTRONICS\YESU'])THEN BEGIN
-                USER_SETUP."Allow Posting To" := CALCDATE('31D', TODAY());
-                USER_SETUP.MODIFY;
-               {IF DATE2DMY("Allow Posting To",1) = 1 THEN
-                  BEGIN
-                    IF DATE2DMY("Allow Posting To",2)+1 = 13 THEN
-                      USER_SETUP."Allow Posting To":=DMY2DATE(1,1,DATE2DMY("Allow Posting To",3)+1)
-                    ELSE
-                      USER_SETUP."Allow Posting To":=DMY2DATE(1,DATE2DMY("Allow Posting To",2)+1,DATE2DMY("Allow Posting To",3));
-                    USER_SETUP.MODIFY;
-                  END;}
-              END;
-            UNTIL USER_SETUP.NEXT=0;
-        UNTIL user.NEXT =0;
-
-
-        //commented by Vishnu Priya to restrict all users postings
+        modify("Allow Posting To")
         {
-        IF USER_SETUP.FINDSET THEN
-        REPEAT
-          IF NOT (USER_SETUP."User ID" IN['EFFTRONICS\RAJANI','EFFTRONICS\SITARAJYAM','EFFTRONICS\ASWINI','EFFTRONICS\RAMKUMARL',
-                                          'EFFTRONICS\YESU'])THEN
-          BEGIN
-            USER_SETUP."Allow Posting To":="Allow Posting To";
-            USER_SETUP.MODIFY;
-          END
-          ELSE IF  (USER_SETUP."User ID" IN['EFFTRONICS\SITARAJYAM','EFFTRONICS\ASWINI'])THEN BEGIN
-              USER_SETUP."Allow Posting To" := CALCDATE('92D', TODAY());
-              USER_SETUP.MODIFY;
-
-          END
-          ELSE IF  (USER_SETUP."User ID" IN['EFFTRONICS\RAJANI','EFFTRONICS\RAMKUMARL',
-                                          'EFFTRONICS\YESU','EFFTRONICS\DURGARAOV'])THEN BEGIN
-                USER_SETUP."Allow Posting To" := CALCDATE('31D', TODAY());
-                USER_SETUP.MODIFY;
-
-               {IF DATE2DMY("Allow Posting To",1) = 1 THEN
-                  BEGIN
-                    IF DATE2DMY("Allow Posting To",2)+1 = 13 THEN
-                      USER_SETUP."Allow Posting To":=DMY2DATE(1,1,DATE2DMY("Allow Posting To",3)+1)
-                    ELSE
-                      USER_SETUP."Allow Posting To":=DMY2DATE(1,DATE2DMY("Allow Posting To",2)+1,DATE2DMY("Allow Posting To",3));
-                    USER_SETUP.MODIFY;
-                  END;}
-          END;
-
-        UNTIL USER_SETUP.NEXT=0;
-
-        }
-        //commented by Vishnu Priya to restrict all users postings
-
-         "Restrict Store Material Issues":=FALSE;
-         IF "Production_ Shortage_Status"<>"Production_ Shortage_Status"::Accepted THEN
-           "Production_ Shortage_Status":="Production_ Shortage_Status"::nothing;
-             "Allow Posting to(15)":="Allow Posting To"-15;
-         MODIFY;
-
-        New_Line:=10;
-        {bg.SETRANGE(bg.Status,bg.Status::Open);
-        bg.SETFILTER(bg."Expiry Date",'<%1',TODAY+10);
-        MESSAGE(FORMAT(TODAY+10));
-        bg.SETFILTER(bg."Claim Date",'=%1',0D);
-        //REPORT.RUN(50202,FALSE,FALSE,bg);
-        REPORT.SAVEASPDF(33000891,'\\erpserver\ErpAttachments\bg1.PDF',FALSE,bg);
-        Attachment:='\\erpserver\ErpAttachments\bg1.PDF';
-        bg.RESET; }
-        //bg.SETRANGE(bg.Status,bg.Status::Open); for relase option purpose
-        bg.SETFILTER(bg.Closed,'No');
-        bg.SETFILTER(bg."BG No.",'<>%1','F%');
-        bg.SETFILTER(bg."Claim Date",'<%1',TODAY+10);
-        //bg.SETFILTER(bg."Expiry Date",'<>%1',0D);
-        bg.SETFILTER(bg."Expiry Date",'<%1',TODAY+10);
-        IF bg.FINDFIRST THEN BEGIN
-        //REPORT.RUN(33000891,FALSE,FALSE,bg);
-        REPORT.SAVEASPDF(33000891,'\\erpserver\ErpAttachments\bg1.pdf',bg);
-        Attachment1:='\\erpserver\ErpAttachments\bg1.pdf';
-        Subject:='ERP- Possible expire BG Details for the coming 10 Days';
-
-        {
-        IF bg.FINDSET THEN
-        REPEAT
-        IF bg."Claim Date"=0D THEN
-        BEGIN
-        Subject:='ERP- BG Will Expire for '+bg."BG No.";
-        Body:='Customer Name      : '+bg."Issued to/Received from";
-        Body+=FORMAT(New_Line);
-        Body+='Customer Order No. : '+bg."Customer Order No.";
-        Body+=FORMAT(New_Line);
-        Body+='BG Value           : '+FORMAT(bg."BG Value");
-        Body+=FORMAT(New_Line);
-        Body+='BG Expired Date   : '+FORMAT((bg."Expiry Date"),0,4);
-        Body+=FORMAT(New_Line);
-        Body+=FORMAT(New_Line);
-        }
-
-        Body:='***** Auto Mail Generated From ERP *****';
-        Mail_From:='noreply@efftronics.com';
-        //Mail_To:='sreenu@efftronics.com';
-        IF FORMAT(bg."Transaction Type")='amc' THEN
-        BEGIN
-        Mail_To:='rajani@efftronics.com,yesu@efftronics.com,susmithal@efftronics.com,erp@efftronics.com,';
-        Mail_To+='sales@efftronics.com';
-        END
-        ELSE
-        BEGIN
-        //Mail_To:='anilkumar@efftronics.com';
-        Mail_To:='rajani@efftronics.com,';//dir
-        Mail_To+='sales@efftronics.com,yesu@efftronics.com,susmithal@efftronics.com,erp@efftronics.com';
-        END;
-        //attachment13:='';
-        attachment14:=Attachment;
-         IF (Mail_From<>'')AND(Mail_To<>'') THEN
-              SMTP_MAIL.CreateMessage('ERP',Mail_From,Mail_To,Subject,Body,TRUE);
-              //EFFUPG Start
-              {
-              SMTP_MAIL.AddAttachment(Attachment1);
-             // SMTP_MAIL.AddAttachment(attachment13);
-              SMTP_MAIL.AddAttachment(attachment14);
-              }
-             SMTP_MAIL.AddAttachment(Attachment1,'');
-             // SMTP_MAIL.AddAttachment(attachment13);
-              SMTP_MAIL.AddAttachment(attachment14,'');
-            //  SMTP_MAIL.Send;
-              //EFFUPG End
-        END;
-
-
-
-
-
-        {
-             Item.CALCFIELDS(Item."Stock at CS Stores");
-             Item.SETFILTER(Item."Safety Stock Qty (CS)",'>%1',Item."Stock at CS Stores");
-             Cs_Shortage_QTY:=Item.COUNT;
-             Body+='****  Automatic Mail Generated From ERP  ****';
-
-             REPORT.RUN(1102,FALSE,FALSE,Item);
-             "g/l setup".FINDFIRST;
-             REPORT.SAVEASPDF(1102,FORMAT('\\erpserver\ErpAttachments\'+'Cs Shortage'+'.PDF'),FALSE);
-
-             Mail_From:='anilkumar@efftronics.com';
-             Mail_To:='Prasanthi@efftronics.com,shilpa@efftronics.com,Ramadevi@efftronics.com,nayomi@efftronics.com,';
-            Mail_To+='anilkumar@efftronics.com,anilkumar@efftronics.com';
-           //  Mail_To:='anilkumar@efftronics.com';
-             Subject:=' Shortage at CS Stores ';
-
-             Attachment:='\\erpserver\ErpAttachments\'+'Cs Shortage.PDF';
-        //     Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment);
-              SMTP_MAIL.CreateMessage('ERP',Mail_From,Mail_To,Subject,Body,TRUE);
-            //  SMTP_MAIL.AddAttachment(Attachment1);
-             // SMTP_MAIL.AddAttachment(attachment13);
-              SMTP_MAIL.AddAttachment(Attachment);
-              SMTP_MAIL.Send;
-
-        }
-        {
-        //Daily Transactions report
-           totalsales:=0;
-           totalreceivedamts:=0;
-           totalpayments:=0;
-           fromdate:="Allow Posting To"-1;
-           SIH.RESET;
-           SIH.SETRANGE(SIH."Posting Date",fromdate,fromdate);
-           IF SIH.FINDSET THEN
-           REPEAT
-            SIH.CALCFIELDS(SIH."Total Invoiced Amount");
-            totalsales:=totalsales+SIH."Total Invoiced Amount";
-           UNTIL SIH.NEXT=0;
-           S1:=formataddress.ChangeCurrency(totalsales);
-           CLE.RESET;
-           CLE.SETFILTER(CLE."Amount (LCY)",'<%1',0);
-           CLE.SETRANGE(CLE."Posting Date",fromdate,fromdate);
-           IF CLE.FINDSET THEN
-           REPEAT
-           CLE.CALCFIELDS(CLE."Amount (LCY)");
-           totalreceivedamts:=totalreceivedamts+ABS(CLE."Amount (LCY)");
-           UNTIL CLE.NEXT=0;
-           S2:=formataddress.ChangeCurrency(totalreceivedamts);
-           VLE.RESET;
-           VLE.SETFILTER(VLE."Amount (LCY)",'>%1',0);
-           VLE.SETRANGE(VLE."Posting Date",fromdate,fromdate);
-           IF VLE.FINDSET THEN
-           REPEAT
-           VLE.CALCFIELDS(VLE."Amount (LCY)");
-           totalpayments:=totalpayments+VLE."Amount (LCY)";
-           UNTIL VLE.NEXT=0;
-           S3:=formataddress.ChangeCurrency(ROUND(totalpayments,1));
-           SIH.RESET;
-           SIH.SETRANGE(SIH."Posting Date",fromdate,fromdate);
-           IF SIH.FINDFIRST THEN
-           BEGIN
-           REPORT.RUN(50186,FALSE,FALSE,SIH);
-        //   REPORT.SAVEASPDF(50186,'\\eff-cpu-211\erp\testing1.PDF',FALSE,SIH);
-        //   Attachment1:='\\eff-cpu-211\erp\testing1.PDF';
-           REPORT.SAVEASPDF(50186,'\\erpserver\ERPattachments\salestrans.pdf',SIH);
-           Attachment1:='\\erpserver\erpattachments\salestrans.pdf';
-           END ELSE
-           Attachment1:='';
-           CLE.RESET;
-           CLE.SETFILTER(CLE."Amount (LCY)",'<%1',0);
-           CLE.SETRANGE(CLE."Posting Date",fromdate,fromdate);
-           IF CLE.FINDFIRST THEN
-           BEGIN
-           REPORT.RUN(50187,FALSE,FALSE,CLE);
-        //   REPORT.SAVEASPDF(50187,'\\eff-cpu-211\erp\testing2.PDF',FALSE,CLE);
-        //   attachment13:='\\eff-cpu-211\erp\testing2.PDF';
-           REPORT.SAVEASpdf(50187,'\\erpserver\ERPattachments\custpayments.pdf',CLE);
-           attachment13:='\\erpserver\ERPattachments\custpayments.PDF';
-              END ELSE
-           attachment13:='';
-           VLE.RESET;
-           VLE.SETFILTER(VLE."Amount (LCY)",'>%1',0);
-           VLE.SETRANGE(VLE."Posting Date",fromdate,fromdate);
-           IF VLE.FINDFIRST THEN
-           BEGIN
-           REPORT.RUN(50188,FALSE,FALSE,VLE);
-        //   REPORT.SAVEASPDF(50188,'\\eff-cpu-211\erp\testing3.PDF',FALSE,VLE);
-        //   attachment14:='\\eff-cpu-211\erp\testing3.PDF';
-           REPORT.SAVEASPDF(50188,'\\erpserver\ERPattachments\vendorpayments.PDF',VLE);
-           attachment14:='\\erpserver\ERPattachments\vendorpayments.PDF';
-           END ELSE
-           attachment14:='';
-        Subject:=FORMAT(fromdate,0,4)+' Consolidate Transactions Summary ';
-             Mail_From:='erp@efftronics.com';
-        //     Mail_To:='sreenu@efftronics.com';
-        //   Mail_To:='dmadhavi@efftronics.com,fathima@efftronics.com,padmaja@efftronics.com,';
-        //  Mail_To+='cvmohan@efftronics.com,anilkumar@efftronics.com,sitarani@efftronics.com';
-            Mail_To:='ceo@efftronics.com,anilkumar@efftronics.com,sganesh@efftronics.com,';//dir
-            Mail_To+='padmaja@efftronics.com';
-        Body:='<body><strong><form><table style="WIDTH:400px; HEIGHT: 20px; FONT-WEIGHT: bold"';
-        Body+='border="1" align="left">';
-        Body+='<tr><td>Total Sales</td><td>'+S1+'</td></tr><br>';
-        Body+='<tr><td>Total Received Amount from Customers</td><td>'+S2;
-        Body+='</td></tr><br>';
-        Body+='<tr><td>Total Paid Amount to Suppliers</td><td>'+S3;
-        Body+='</td></tr></table></body>';
-
-        {Body+='<br><br>Total Sales.............................:'+FORMAT(ROUND(totalsales,1));
-        Body+='<br><br>Total Received Amount from Customers....:'+FORMAT(ROUND(totalreceivedamts,1));
-        Body+='<br><br>Total Paid Amount to Suppliers..........:'+FORMAT(ROUND(totalpayments,1));
-        }
-        Body+='<br><br><br>****  Automatic Mail Generated From ERP  ****';
-        //Attachment1:='';
-        //    NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1,attachment13,attachment14);
-
-
-        // CS SHORTAGE MATERIAL AUTOMATIC REPORT
-
-             Item.CALCFIELDS(Item."Stock at CS Stores");
-             Item.SETFILTER(Item."Safety Stock Qty (CS)",'>%1',Item."Stock at CS Stores");
-             Cs_Shortage_QTY:=Item.COUNT;
-             Body+='****  Automatic Mail Generated From ERP  ****';
-
-             REPORT.RUN(1102,FALSE,FALSE,Item);
-             "g/l setup".FINDFIRST;
-             REPORT.SAVEASPDF(1102,FORMAT('\\erpserver\ErpAttachments\'+'Cs Shortage'+'.PDF'),FALSE);
-
-             Mail_From:='noreply@efftronics.com';
-             Mail_To:='Prasanthi@efftronics.com,shilpa@efftronics.com,Ramadevi@efftronics.com,nayomi@efftronics.com,';
-            Mail_To+='anilkumar@efftronics.com,anilkumar@efftronics.com';
-           //  Mail_To:='anilkumar@efftronics.com';
-             Subject:=' Shortage at CS Stores ';
-
-             Attachment:='\\erpserver\ErpAttachments\'+'Cs Shortage.PDF';
-              SMTP_MAIL.CreateMessage('ERP',Mail_From,Mail_To,Subject,Body,TRUE);
-            //  SMTP_MAIL.AddAttachment(Attachment1);
-             // SMTP_MAIL.AddAttachment(attachment13);
-              SMTP_MAIL.AddAttachment(Attachment);
-              SMTP_MAIL.Send;
-
-        //     Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment);
-
-        }
-        {
-        //BG Alert for BG Expiration Date
-
-        New_Line:=10;
-        bg.SETRANGE(bg.Status,bg.Status::Open);
-        bg.SETFILTER(bg."Expiry Date",'<%1',TODAY+10);
-        MESSAGE(FORMAT(TODAY+10));
-        bg.SETFILTER(bg."Claim Date",'=%1',0D);
-        REPORT.RUN(50202,FALSE,FALSE,bg);
-        REPORT.SAVEASPDF(33000891,'\\erpserver\ErpAttachments\bg2.PDF',FALSE,bg);
-        Attachment:='\\erpserver\ErpAttachments\bg2.PDF';
-        {bg.RESET;
-        bg.SETRANGE(bg.Status,bg.Status::Open);
-        bg.SETFILTER(bg."Claim Date",'<%1',TODAY+10);
-        bg.SETFILTER(bg."Expiry Date",'<>%1',0D);
-        REPORT.RUN(33000891,FALSE,FALSE,bg);
-        REPORT.SAVEASPDF(33000891,'\\erpserver\ErpAttachments\bg1.PDF',FALSE,bg);
-        Attachment1:='\\erpserver\ErpAttachments\bg1.PDF';
-        Subject:='ERP- Possible expire BG Details for the coming 10 Days';
-        }
-        {
-        IF bg.FINDSET THEN
-        REPEAT
-        IF bg."Claim Date"=0D THEN
-        BEGIN
-        Subject:='ERP- BG Will Expire for '+bg."BG No.";
-        Body:='Customer Name      : '+bg."Issued to/Received from";
-        Body+=FORMAT(New_Line);
-        Body+='Customer Order No. : '+bg."Customer Order No.";
-        Body+=FORMAT(New_Line);
-        Body+='BG Value           : '+FORMAT(bg."BG Value");
-        Body+=FORMAT(New_Line);
-        Body+='BG Expired Date   : '+FORMAT((bg."Expiry Date"),0,4);
-        Body+=FORMAT(New_Line);
-        Body+=FORMAT(New_Line);
-        }
-
-        Body:='***** Auto Mail Generated From ERP *****';
-        Mail_From:='erp@efftronics.com';
-        //Mail_To:='sreenu@efftronics.com';
-        IF FORMAT(bg."Transaction Type")='amc' THEN
-        Mail_To:='sganesh@efftronics.com,rajani@efftronics.com,yesu@efftronics.com,prasannat@efftronics.com,anilkumar@efftronics.com,'
-        ELSE
-        BEGIN
-        //Mail_To:='sganesh@efftronics.com,rajani@efftronics.com,dir@efftronics.com,';
-        Mail_To+='anuradhag@efftronics.com,anilkumar@efftronics.com';
-        END;
-        //attachment13:='';
-        Mail_To:='sales@efftronics.com';
-        attachment14:=Attachment;
-         IF (Mail_From<>'')AND(Mail_To<>'') THEN
-              SMTP_MAIL.CreateMessage('ERP',Mail_From,Mail_To,Subject,Body,TRUE);
-             //  SMTP_MAIL.AddAttachment(Attachment1);
-             // SMTP_MAIL.AddAttachment(attachment13);
-              SMTP_MAIL.AddAttachment(attachment14);
-              SMTP_MAIL.Send;
-        }
-        // NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment,attachment13,attachment14);
-        {
-        //END;
-        //UNTIL bg.NEXT=0;
-        }
-
-        {
-         // Peinding Material Requests For Stores
-           MIH.SETRANGE(MIH."Transfer-from Code",'STR');
-           MIH.SETRANGE(MIH.Status,MIH.Status::Released);
-           MIH.SETFILTER(MIH."Released Date",'<%1',TODAY-1);
-           REPORT.RUN(5985,FALSE,FALSE,MIH);
-           REPORT.SAVEASPDF(5985,'\\Eff-cpu-222\ErpAttachments\santhosh.PDF',FALSE,MIH);
-
-             Body:='****  Automatic Mail Generated From ERP  ****';
-             Mail_From:='anilkumar@efftronics.com';
-        //     Mail_To:='dmadhavi@efftronics.com,fathima@efftronics.com,padmaja@efftronics.com,';
-        //     Mail_To+='cvmohan@efftronics.com,anilkumar@efftronics.com,sitarani@efftronics.com';
-            Mail_To:='anilkumar@efftronics.com';
-             Subject:=FORMAT(MIH.COUNT)+' STR Issues Pending ';
-             Attachment1:='\\eff-cpu-222\ErpAttachments\santhosh.PDF';
-             Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-
-
-
-          // Peinding Material Requests For R&D Str
-             MIH.SETRANGE(MIH."Transfer-from Code",'R&D STR');
-             MIH.SETRANGE(MIH.Status,MIH.Status::Released);
-             MIH.SETFILTER(MIH."Released Date",'<%1',TODAY-1);
-             REPORT.RUN(5985,FALSE,FALSE);
-             "g/l setup".FINDFIRST;
-             REPORT.SAVEASPDF(5985,FORMAT('\\Eff-cpu-222\ErpAttachments\santhosh.PDF'),FALSE);
-
-            Body:='****  Automatic Mail Generated From ERP  ****';
-            Mail_From:='anilkumar@efftronics.com';
-            Mail_To:='dmadhavi@efftronics.com,sowjanya@efftronics.com,padmaja@efftronics.com,';
-            Mail_To+='cvmohan@efftronics.com,anilkumar@efftronics.com';
-         // Mail_To:='swarupa@efftronics.com';
-            Subject:=FORMAT(MIH.COUNT)+' R&D STR Issues Pending ';
-            Attachment1:='\\eff-cpu-222\ErpAttachments\santhosh.PDF';
-            Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-        }
-         {
-         // Peinding Material Requests For Cs Stores
-           MIH.SETRANGE(MIH."Transfer-from Code",'CS STR');
-           MIH.SETRANGE(MIH.Status,MIH.Status::Released);
-           MIH.SETFILTER(MIH."Released Date",'<%1',TODAY-1);
-           IF MIH.FINDFIRST THEN
-           BEGIN
-
-             REPORT.RUN(5985,FALSE,FALSE,MIH);
-             "g/l setup".FINDFIRST;
-             REPORT.SAVEASPDF(5985,'\\eff-cpu-222\ErpAttachments\Pending CS Str Material Requests.PDF',MIH);
-
-            Body:='****  Automatic Mail Generated From ERP  ****';
-            Mail_From:='anilkumar@efftronics.com';
-            Mail_To:='dmadhavi@efftronics.com,nayomi@efftronics.com,padmaja@efftronics.com,';
-            Mail_To+='cvmohan@efftronics.com,anilkumar@efftronics.com,prasanthi@efftronics.com,shilpa@efftronics.com';
-
-            Subject:=FORMAT(MIH.COUNT)+'CS STR Issues Pending ';
-            Attachment1:='\\eff-cpu-222\ErpAttachments\Pending CS Str Material Requests.PDF';
-            Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-           END;
-
-        }
-         // Qc Pending Inwards
-        {
-
-             max:=TODAY-1;
-             min:=040108D;
-             IDS.SETFILTER(IDS."Source Type",'In Bound');
-           IF IDS.GETFILTER(IDS."Created Date")<>'' THEN
-           BEGIN                                                               //modified by swarupa(13-01-09) for count
-            max:=IDS.GETRANGEMAX(IDS."Created Date");
-            min:=IDS.GETRANGEMIN(IDS."Created Date");
-          END ELSE
-          BEGIN
-            max:=TODAY-1;
-            min:=040108D;
-            IDS.SETRANGE(IDS."Created Date",min,max);
-             PENDING:= IDS.COUNT;
-          END;
-
-        //   MESSAGE(FORMAT(PENDING));
-           IR.SETRANGE(IR."IDS creation Date",min,max);
-                                    IR.SETRANGE(IR.Status,FALSE);
-                                    IR.SETFILTER(IR."Source Type",'In Bound');
-                                    PENDING+=IR.COUNT;
-                                    //MESSAGE(FORMAT(PENDING));
-               REPORT.RUN(50039,FALSE,FALSE,IDS);
-               REPORT.SAVEASPDF(50039,'\\Eff-cpu-222\ErpAttachments\qc Pending Inwards.PDF',IDS);
-
-
-            Body:='****  Automatic Mail Generated From ERP  ****';
-            Mail_From:='anilkumar@efftronics.com';
-            Mail_To:='bharat@efftronics.com,padmaja@efftronics.com,';
-            Mail_To+='cvmohan@efftronics.com,anilkumar@efftronics.com,nayomi@efftronics.com,sowjanya@efftronics.com';
-           //Mail_To:='swarupa@efftronics.com';
-            Subject:=FORMAT(PENDING)+' Qc Inwards Pending ';
-            Attachment1:='\\eff-cpu-222\ErpAttachments\qc Pending Inwards.PDF';
-        //    Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-              SMTP_MAIL.CreateMessage('ERP',Mail_From,Mail_To,Subject,Body,TRUE);
-            //  SMTP_MAIL.AddAttachment(Attachment1);
-             // SMTP_MAIL.AddAttachment(attachment13);
-              SMTP_MAIL.AddAttachment(attachment14);
-             SMTP_MAIL.Send;
-
-
-         }
-        // Pending Purchase Inward Material For Stores
-        {
-             Pl.SETRANGE(Pl."Location Code",'STR');
-             REPORT.RUN(50169,FALSE,FALSE,Pl);
-               REPORT.SAVEASPDF(50169,'\\eff-cpu-222\ErpAttachments\Pending Purchase Inwards at STR.PDF',FALSE,Pl);
-
-             Body:='****  Automatic Mail Generated From ERP  ****';
-             Mail_From:='anilkumar@efftronics.com';
-             Mail_To:='purchase@efftronics.com,dmadhavi@efftronics.com,';
-             Mail_To+='cvmohan@efftronics.com,anilkumar@efftronics.com';
-          // Mail_To:='swarupa@efftronics.com';
-             Subject:=' Str Pending Purchase Material ';
-             Attachment1:='\\eff-cpu-222\ErpAttachments\Pending Purchase Inwards at Str.PDF';
-             Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-
-         }
-         {
-
-         // Pending Purchase Inward Material For R&D Stores
-
-             REPORT.RUN(50169,FALSE,FALSE);
-             REPORT.SAVEASPDF(50169,'\\eff-cpu-222\ErpAttachments\Pending Purchase Inwards at R&D Str.PDF',FALSE);
-
-             Body:='****  Automatic Mail Generated From ERP  ****';
-             Mail_From:='anilkumar@efftronics.com';
-             Mail_To:='purchase@efftronics.com,dmadhavi@efftronics.com,sowjanya@efftronics.com,';
-             Mail_To+='cvmohan@efftronics.com,anilkumar@efftronics.com';
-          //   Mail_To:='swarupa@efftronics.com';
-             Subject:='R&D Str Pending Purchase Material ';
-             Attachment1:='\\eff-cpu-222\ErpAttachments\Pending Purchase Inwards at R&D Str.PDF';
-             Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-
-         // Pending Purchase Inward Material For CS Stores
-
-             Pl.SETRANGE(Pl."Location Code",'CS STR');
-             IF Pl.FINDFIRST THEN
-             REPORT.RUN(50169,FALSE,FALSE,Pl);
-             REPORT.SAVEASPDF(50169,'\\eff-cpu-222\ErpAttachments\Pending Purchase Inwards at CS Str.PDF',FALSE,Pl);
-
-             Body:='****  Automatic Mail Generated From ERP  ****';
-             Mail_From:='anilkumar@efftronics.com';
-             Mail_To:='purchase@efftronics.com,dmadhavi@efftronics.com,nayomi@efftronics.com,';
-            Mail_To+='cvmohan@efftronics.com,anilkumar@efftronics.com,prasanthi@efftronics.com,shilpa@efftronics.com';
-         //    Mail_To:='swarupa@efftronics.com';
-             Subject:='CS Str Pending Purchase Material ';
-             Attachment1:='\\eff-cpu-222\ErpAttachments\Pending Purchase Inwards at Cs Str.PDF';
-             Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-
-         // Future Arrival Material For Main Stores
-             Pl.SETRANGE(Pl."Location Code",'STR');
-             IF Pl.FINDFIRST THEN
-
-             REPORT.RUN(310,FALSE,FALSE,Pl);
-             REPORT.SAVEASPDF(310,'\\eff-cpu-222\ErpAttachments\Future Purchase Inwards at Str.PDF',FALSE,Pl);
-
-             Body:='****  Automatic Mail Generated From ERP  ****';
-             Mail_From:='anilkumar@efftronics.com';
-             Mail_To:='purchase@efftronics.com,dmadhavi@efftronics.com,padmaja@efftronics.com,bharat@efftronics.com,';
-            Mail_To+='cvmohan@efftronics.com,anilkumar@efftronics.com';
-          //  Mail_To:='swarupa@efftronics.com';
-             Subject:='Str Future Purchase Inward Material ';
-             Attachment1:='\\EFF-CPU-222\ErpAttachments\Future Purchase Inwards at Str.PDF';
-             Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-
-         // Future Arrival Material  For R&D Stores
-             REPORT.RUN(310,FALSE,FALSE);
-             REPORT.SAVEASPDF(310,'\\eff-cpu-222\ErpAttachments\Future Purchase Inwards at R&D Str.PDF',FALSE);
-
-             Body:='****  Automatic Mail Generated From ERP  ****';
-             Mail_From:='anilkumar@efftronics.com';
-             Mail_To:='purchase@efftronics.com,dmadhavi@efftronics.com,sowjanya@efftronics.com'+
-                      ',padmaja@efftronics.com,bharat@efftronics.com,';
-             Mail_To+='cvmohan@efftronics.com,anilkumar@efftronics.com';
-           //  Mail_To:='swarupa@efftronics.com';
-             Subject:='R&D Str Future  Purchase Inward Material ';
-             Attachment1:='\\EFF-CPU-222\ErpAttachments\Future Purchase Inwards at R&D Str.PDF';
-             Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-
-         // Future Arrival Material   For Cs Stores
-             Pl.SETRANGE(Pl."Location Code",'CS STR');
-             IF Pl.FINDFIRST THEN
-
-             REPORT.RUN(310,FALSE,FALSE,Pl);
-             REPORT.SAVEASPDF(310,'\\eff-cpu-222\ErpAttachments\Future Purchase Inwards at CS Str.PDF',FALSE,Pl);
-
-             Body:='****  Automatic Mail Generated From ERP  ****';
-             Mail_From:='anilkumar@efftronics.com';
-             Mail_To:='purchase@efftronics.com,dmadhavi@efftronics.com,nayomi@efftronics.com,'+
-                       'padmaja@efftronics.com,bharat@efftronics.com,';
-            Mail_To+='cvmohan@efftronics.com,anilkumar@efftronics.com,prasanthi@efftronics.com,shilpa@efftronics.com';
-          //  Mail_To:='swarupa@efftronics.com';
-             Subject:='CS Str Future Purchase Inward Material ';
-             Attachment1:='\\EFF-CPU-222\ErpAttachments\Future Purchase Inwards at CS Str.PDF';
-             Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-
-
-         // Pending Purchase Bills From Purchase
-             PRL.SETFILTER(PRL."Document date",'>%1',040108D);
-             IF PRL.FINDFIRST THEN
-             REPORT.RUN(301,FALSE,FALSE,PRL);
-             REPORT.SAVEASPDF(301,'\\eff-cpu-222\ErpAttachments\Pending Purchase Bills(PUR).PDF',FALSE,PRL);
-
-             Body:='****  Automatic Mail Generated From ERP  ****';
-
-             Mail_From:='anilkumar@efftronics.com';
-             Mail_To:='purchase@efftronics.com,';
-             Mail_To+='cvmohan@efftronics.com,anilkumar@efftronics.com';
-
-             Subject:='Pending Purchase Bills of PUR From April 2008';
-             Attachment1:='\\EFF-CPU-222\ErpAttachments\Pending Purchase Bills(PUR).PDF';
-             Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-
-
-        //STR Returns Pending
-
-               RETMIH.SETFILTER(RETMIH.Status,'Released');
-               RETMIH.SETRANGE(RETMIH."Transfer-to Code",'STR');
+            trigger OnBeforeValidate()
+            begin
+                //TAMS_BASED_USERS_BLOCKING;
+                // CS SHORTAGE MATERIAL AUTOMATIC REPORT
+                //dcMails.MailDC; // added by vishnu
+                Stock_Alert_On_Threshold; // added by sujani 17-sep-2018 for alerting the item details based threshold value specified
+                Open_Orders_Allert; // added by vishnu priya for the verified-open orders alerts
+                                    // IF DATE2DWY("Allow Posting To", 1) IN [1,4] THEN //added by vishnu priya 0-sun,1-mon,2-tues,3-wednes,4-thurs,5-fri,6-sat
+                                    // RD_Mail_for_SalesOrders;//added by vishnu priya 0-sun,1-mon,2-tues,3-wednes,4-thurs,5-fri,6-sat
+                SALESACTUALSDUMPING; //added  by vishnu
+                                     //   Stock_Analysis; //added by Vishnu Priya on 02-08-2019
+                                     //  SDStatusUpdation; // SDs Statsu updation vishnu
+                IREPS_Tenders; // Added by Vishnu Priya on 01-03-2019 for IREPS Alerts
+                               // CalibrationAlerts;  // Added by Vishnu Priya on 01-03-2019 for QC Alerts
+
+                CSIGCS_MAIL; // added by vishnu priya on 30-10-2019 for CS IGC not update alerting purpose.
+
+                // Posting Date Change to Active users only on 02-07-2019
+                //QAFLAG;
+                user.RESET;
+                user.SETRANGE(Blocked, FALSE);
+                IF user.FINDSET THEN
+                    REPEAT
+                        USER_SETUP.RESET;
+                        USER_SETUP.SETFILTER("User ID", user."User Name");
+                        IF USER_SETUP.FINDSET THEN
+                            REPEAT
+                                IF NOT (USER_SETUP."User ID" IN ['EFFTRONICS\RAJANI', 'EFFTRONICS\SITARAJYAM', 'EFFTRONICS\ASWINI', 'EFFTRONICS\YESU']) THEN BEGIN
+                                    USER_SETUP."Allow Posting To" := "Allow Posting To";
+                                    USER_SETUP.MODIFY;
+                                END
+                                ELSE
+                                    IF (USER_SETUP."User ID" IN ['EFFTRONICS\SITARAJYAM', 'EFFTRONICS\ASWINI']) THEN BEGIN
+                                        USER_SETUP."Allow Posting To" := CALCDATE('900D', TODAY());
+                                        USER_SETUP.MODIFY;
+                                    END
+                                    ELSE
+                                        IF (USER_SETUP."User ID" IN ['EFFTRONICS\RAJANI', 'EFFTRONICS\YESU']) THEN BEGIN
+                                            USER_SETUP."Allow Posting To" := CALCDATE('31D', TODAY());
+                                            USER_SETUP.MODIFY;
+                                            /* IF DATE2DMY("Allow Posting To", 1) = 1 THEN BEGIN
+                                                IF DATE2DMY("Allow Posting To", 2) + 1 = 13 THEN
+                                                    USER_SETUP."Allow Posting To" := DMY2DATE(1, 1, DATE2DMY("Allow Posting To", 3) + 1)
+                                                ELSE
+                                                    USER_SETUP."Allow Posting To" := DMY2DATE(1, DATE2DMY("Allow Posting To", 2) + 1, DATE2DMY("Allow Posting To", 3));
+                                                USER_SETUP.MODIFY;
+                                            END; */
+                                        END;
+                            UNTIL USER_SETUP.NEXT = 0;
+                    UNTIL user.NEXT = 0;
+                //commented by Vishnu Priya to restrict all users postings
+
+                /* IF USER_SETUP.FINDSET THEN
+       REPEAT
+           IF NOT (USER_SETUP."User ID" IN ['EFFTRONICS\RAJANI', 'EFFTRONICS\SITARAJYAM', 'EFFTRONICS\ASWINI', 'EFFTRONICS\RAMKUMARL',
+                                           'EFFTRONICS\YESU']) THEN BEGIN
+               USER_SETUP."Allow Posting To" := "Allow Posting To";
+               USER_SETUP.MODIFY;
+           END
+           ELSE
+               IF (USER_SETUP."User ID" IN ['EFFTRONICS\SITARAJYAM', 'EFFTRONICS\ASWINI']) THEN BEGIN
+                   USER_SETUP."Allow Posting To" := CALCDATE('92D', TODAY());
+                   USER_SETUP.MODIFY;
+
+               END
+               ELSE
+                   IF (USER_SETUP."User ID" IN ['EFFTRONICS\RAJANI', 'EFFTRONICS\RAMKUMARL',
+                                              'EFFTRONICS\YESU', 'EFFTRONICS\DURGARAOV']) THEN BEGIN
+                       USER_SETUP."Allow Posting To" := CALCDATE('31D', TODAY());
+                       USER_SETUP.MODIFY;
+
+                       {IF DATE2DMY("Allow Posting To", 1) = 1 THEN BEGIN
+                           IF DATE2DMY("Allow Posting To", 2) + 1 = 13 THEN
+                               USER_SETUP."Allow Posting To" := DMY2DATE(1, 1, DATE2DMY("Allow Posting To", 3) + 1)
+                           ELSE
+                               USER_SETUP."Allow Posting To" := DMY2DATE(1, DATE2DMY("Allow Posting To", 2) + 1, DATE2DMY("Allow Posting To", 3));
+                           USER_SETUP.MODIFY;
+                       END;}
+                  END;
+
+                UNTIL USER_SETUP.NEXT=0; */
+
+                //commented by Vishnu Priya to restrict all users postings
+
+                "Restrict Store Material Issues" := FALSE;
+                IF "Production_ Shortage_Status" <> "Production_ Shortage_Status"::Accepted THEN
+                    "Production_ Shortage_Status" := "Production_ Shortage_Status"::nothing;
+                "Allow Posting to(15)" := "Allow Posting To" - 15;
+                MODIFY;
+
+                New_Line := 10;
+                /* bg.SETRANGE(bg.Status, bg.Status::Open);
+                bg.SETFILTER(bg."Expiry Date", '<%1', TODAY + 10);
+                MESSAGE(FORMAT(TODAY + 10));
+                bg.SETFILTER(bg."Claim Date", '=%1', 0D);
+                //REPORT.RUN(50202,FALSE,FALSE,bg);
+                REPORT.SAVEASPDF(33000891, '\\erpserver\ErpAttachments\bg1.PDF', FALSE, bg);
+                Attachment := '\\erpserver\ErpAttachments\bg1.PDF';
+                bg.RESET; */
+                //bg.SETRANGE(bg.Status,bg.Status::Open); for relase option purpose
+                bg.SETFILTER(bg.Closed, 'No');
+                bg.SETFILTER(bg."BG No.", '<>%1', 'F%');
+                bg.SETFILTER(bg."Claim Date", '<%1', TODAY + 10);
+                //bg.SETFILTER(bg."Expiry Date",'<>%1',0D);
+                bg.SETFILTER(bg."Expiry Date", '<%1', TODAY + 10);
+                IF bg.FINDFIRST THEN BEGIN
+                    //REPORT.RUN(33000891,FALSE,FALSE,bg);
+                    REPORT.SAVEASPDF(33000891, '\\erpserver\ErpAttachments\bg1.pdf', bg);
+                    Attachment1 := '\\erpserver\ErpAttachments\bg1.pdf';
+                    Subject := 'ERP- Possible expire BG Details for the coming 10 Days';
+
+
+                    /* IF bg.FINDSET THEN
+                    REPEAT
+                    IF bg."Claim Date"=0D THEN
+                    BEGIN
+                    Subject:='ERP- BG Will Expire for '+bg."BG No.";
+                    Body:='Customer Name      : '+bg."Issued to/Received from";
+                    Body+=FORMAT(New_Line);
+                    Body+='Customer Order No. : '+bg."Customer Order No.";
+                    Body+=FORMAT(New_Line);
+                    Body+='BG Value           : '+FORMAT(bg."BG Value");
+                    Body+=FORMAT(New_Line);
+                    Body+='BG Expired Date   : '+FORMAT((bg."Expiry Date"),0,4);
+                    Body+=FORMAT(New_Line);
+                    Body+=FORMAT(New_Line); */
+
+
+                    Body := '***** Auto Mail Generated From ERP *****';
+                    Mail_From := 'noreply@efftronics.com';
+                    //Mail_To:='sreenu@efftronics.com';
+                    IF FORMAT(bg."Transaction Type") = 'amc' THEN BEGIN
+                        Mail_To := 'rajani@efftronics.com,yesu@efftronics.com,susmithal@efftronics.com,erp@efftronics.com,';
+                        Mail_To += 'sales@efftronics.com';
+                    END
+                    ELSE BEGIN
+                        //Mail_To:='anilkumar@efftronics.com';
+                        Mail_To := 'rajani@efftronics.com,';//dir
+                        Mail_To += 'sales@efftronics.com,yesu@efftronics.com,susmithal@efftronics.com,erp@efftronics.com';
+                    END;
+                    //attachment13:='';
+                    attachment14 := Attachment;
+                    IF (Mail_From <> '') AND (Mail_To <> '') THEN
+                        SMTP_MAIL.CreateMessage('ERP', Mail_From, Mail_To, Subject, Body, TRUE);
+                    //EFFUPG Start
+
+                    /* SMTP_MAIL.AddAttachment(Attachment1);
+                   // SMTP_MAIL.AddAttachment(attachment13);
+                    SMTP_MAIL.AddAttachment(attachment14); */
+
+                    SMTP_MAIL.AddAttachment(Attachment1, '');
+                    // SMTP_MAIL.AddAttachment(attachment13);
+                    SMTP_MAIL.AddAttachment(attachment14, '');
+                    //  SMTP_MAIL.Send;
+                    //EFFUPG End
+                END;
+
+                /* Item.CALCFIELDS(Item."Stock at CS Stores");
+                Item.SETFILTER(Item."Safety Stock Qty (CS)", '>%1', Item."Stock at CS Stores");
+                Cs_Shortage_QTY := Item.COUNT;
+                Body += '****  Automatic Mail Generated From ERP  ****';
+
+                REPORT.RUN(1102, FALSE, FALSE, Item);
+                "g/l setup".FINDFIRST;
+                REPORT.SAVEASPDF(1102, FORMAT('\\erpserver\ErpAttachments\' + 'Cs Shortage' + '.PDF'), FALSE);
+
+                Mail_From := 'anilkumar@efftronics.com';
+                Mail_To := 'Prasanthi@efftronics.com,shilpa@efftronics.com,Ramadevi@efftronics.com,nayomi@efftronics.com,';
+                Mail_To += 'anilkumar@efftronics.com,anilkumar@efftronics.com';
+                //  Mail_To:='anilkumar@efftronics.com';
+                Subject := ' Shortage at CS Stores ';
+
+                Attachment := '\\erpserver\ErpAttachments\' + 'Cs Shortage.PDF';
+                //     Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment);
+                SMTP_MAIL.CreateMessage('ERP', Mail_From, Mail_To, Subject, Body, TRUE);
+                //  SMTP_MAIL.AddAttachment(Attachment1);
+                // SMTP_MAIL.AddAttachment(attachment13);
+                SMTP_MAIL.AddAttachment(Attachment);
+                SMTP_MAIL.Send; */
+
+                /* //Daily Transactions report
+                totalsales := 0;
+                totalreceivedamts := 0;
+                totalpayments := 0;
+                fromdate := "Allow Posting To" - 1;
+                SIH.RESET;
+                SIH.SETRANGE(SIH."Posting Date", fromdate, fromdate);
+                IF SIH.FINDSET THEN
+                    REPEAT
+                        SIH.CALCFIELDS(SIH."Total Invoiced Amount");
+                        totalsales := totalsales + SIH."Total Invoiced Amount";
+                    UNTIL SIH.NEXT = 0;
+                S1 := formataddress.ChangeCurrency(totalsales);
+                CLE.RESET;
+                CLE.SETFILTER(CLE."Amount (LCY)", '<%1', 0);
+                CLE.SETRANGE(CLE."Posting Date", fromdate, fromdate);
+                IF CLE.FINDSET THEN
+                    REPEAT
+                        CLE.CALCFIELDS(CLE."Amount (LCY)");
+                        totalreceivedamts := totalreceivedamts + ABS(CLE."Amount (LCY)");
+                    UNTIL CLE.NEXT = 0;
+                S2 := formataddress.ChangeCurrency(totalreceivedamts);
+                VLE.RESET;
+                VLE.SETFILTER(VLE."Amount (LCY)", '>%1', 0);
+                VLE.SETRANGE(VLE."Posting Date", fromdate, fromdate);
+                IF VLE.FINDSET THEN
+                    REPEAT
+                        VLE.CALCFIELDS(VLE."Amount (LCY)");
+                        totalpayments := totalpayments + VLE."Amount (LCY)";
+                    UNTIL VLE.NEXT = 0;
+                S3 := formataddress.ChangeCurrency(ROUND(totalpayments, 1));
+                SIH.RESET;
+                SIH.SETRANGE(SIH."Posting Date", fromdate, fromdate);
+                IF SIH.FINDFIRST THEN BEGIN
+                    REPORT.RUN(50186, FALSE, FALSE, SIH);
+                    //   REPORT.SAVEASPDF(50186,'\\eff-cpu-211\erp\testing1.PDF',FALSE,SIH);
+                    //   Attachment1:='\\eff-cpu-211\erp\testing1.PDF';
+                    REPORT.SAVEASPDF(50186, '\\erpserver\ERPattachments\salestrans.pdf', SIH);
+                    Attachment1 := '\\erpserver\erpattachments\salestrans.pdf';
+                END ELSE
+                    Attachment1 := '';
+                CLE.RESET;
+                CLE.SETFILTER(CLE."Amount (LCY)", '<%1', 0);
+                CLE.SETRANGE(CLE."Posting Date", fromdate, fromdate);
+                IF CLE.FINDFIRST THEN BEGIN
+                    REPORT.RUN(50187, FALSE, FALSE, CLE);
+                    //   REPORT.SAVEASPDF(50187,'\\eff-cpu-211\erp\testing2.PDF',FALSE,CLE);
+                    //   attachment13:='\\eff-cpu-211\erp\testing2.PDF';
+                    REPORT.SAVEASpdf(50187, '\\erpserver\ERPattachments\custpayments.pdf', CLE);
+                    attachment13 := '\\erpserver\ERPattachments\custpayments.PDF';
+                END ELSE
+                    attachment13 := '';
+                VLE.RESET;
+                VLE.SETFILTER(VLE."Amount (LCY)", '>%1', 0);
+                VLE.SETRANGE(VLE."Posting Date", fromdate, fromdate);
+                IF VLE.FINDFIRST THEN BEGIN
+                    REPORT.RUN(50188, FALSE, FALSE, VLE);
+                    //   REPORT.SAVEASPDF(50188,'\\eff-cpu-211\erp\testing3.PDF',FALSE,VLE);
+                    //   attachment14:='\\eff-cpu-211\erp\testing3.PDF';
+                    REPORT.SAVEASPDF(50188, '\\erpserver\ERPattachments\vendorpayments.PDF', VLE);
+                    attachment14 := '\\erpserver\ERPattachments\vendorpayments.PDF';
+                END ELSE
+                    attachment14 := '';
+                Subject := FORMAT(fromdate, 0, 4) + ' Consolidate Transactions Summary ';
+                Mail_From := 'erp@efftronics.com';
+                //     Mail_To:='sreenu@efftronics.com';
+                //   Mail_To:='dmadhavi@efftronics.com,fathima@efftronics.com,padmaja@efftronics.com,';
+                //  Mail_To+='cvmohan@efftronics.com,anilkumar@efftronics.com,sitarani@efftronics.com';
+                Mail_To := 'ceo@efftronics.com,anilkumar@efftronics.com,sganesh@efftronics.com,';//dir
+                Mail_To += 'padmaja@efftronics.com';
+                Body := '<body><strong><form><table style="WIDTH:400px; HEIGHT: 20px; FONT-WEIGHT: bold"';
+                Body += 'border="1" align="left">';
+                Body += '<tr><td>Total Sales</td><td>' + S1 + '</td></tr><br>';
+                Body += '<tr><td>Total Received Amount from Customers</td><td>' + S2;
+                Body += '</td></tr><br>';
+                Body += '<tr><td>Total Paid Amount to Suppliers</td><td>' + S3;
+                Body += '</td></tr></table></body>';
+                {
+                Body+='<br><br>Total Sales.............................:'+FORMAT(ROUND(totalsales,1));
+                Body+='<br><br>Total Received Amount from Customers....:'+FORMAT(ROUND(totalreceivedamts,1));
+                Body+='<br><br>Total Paid Amount to Suppliers..........:'+FORMAT(ROUND(totalpayments,1)); 
+                }
+                Body += '<br><br><br>****  Automatic Mail Generated From ERP  ****';
+                //Attachment1:='';
+                //    NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1,attachment13,attachment14);
+                // CS SHORTAGE MATERIAL AUTOMATIC REPORT
+
+                Item.CALCFIELDS(Item."Stock at CS Stores");
+                Item.SETFILTER(Item."Safety Stock Qty (CS)", '>%1', Item."Stock at CS Stores");
+                Cs_Shortage_QTY := Item.COUNT;
+                Body += '****  Automatic Mail Generated From ERP  ****';
+
+                REPORT.RUN(1102, FALSE, FALSE, Item);
+                "g/l setup".FINDFIRST;
+                REPORT.SAVEASPDF(1102, FORMAT('\\erpserver\ErpAttachments\' + 'Cs Shortage' + '.PDF'), FALSE);
+
+                Mail_From := 'noreply@efftronics.com';
+                Mail_To := 'Prasanthi@efftronics.com,shilpa@efftronics.com,Ramadevi@efftronics.com,nayomi@efftronics.com,';
+                Mail_To += 'anilkumar@efftronics.com,anilkumar@efftronics.com';
+                //  Mail_To:='anilkumar@efftronics.com';
+                Subject := ' Shortage at CS Stores ';
+
+                Attachment := '\\erpserver\ErpAttachments\' + 'Cs Shortage.PDF';
+                SMTP_MAIL.CreateMessage('ERP', Mail_From, Mail_To, Subject, Body, TRUE);
+                //  SMTP_MAIL.AddAttachment(Attachment1);
+                // SMTP_MAIL.AddAttachment(attachment13);
+                SMTP_MAIL.AddAttachment(Attachment);
+                SMTP_MAIL.Send;
+
+                //     Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment); */
+
+                /* //BG Alert for BG Expiration Date
+
+                New_Line := 10;
+                bg.SETRANGE(bg.Status, bg.Status::Open);
+                bg.SETFILTER(bg."Expiry Date", '<%1', TODAY + 10);
+                MESSAGE(FORMAT(TODAY + 10));
+                bg.SETFILTER(bg."Claim Date", '=%1', 0D);
+                REPORT.RUN(50202, FALSE, FALSE, bg);
+                REPORT.SAVEASPDF(33000891, '\\erpserver\ErpAttachments\bg2.PDF', FALSE, bg);
+                Attachment := '\\erpserver\ErpAttachments\bg2.PDF';
+                             {bg.RESET;
+                bg.SETRANGE(bg.Status, bg.Status::Open);
+                bg.SETFILTER(bg."Claim Date", '<%1', TODAY + 10);
+                bg.SETFILTER(bg."Expiry Date", '<>%1', 0D);
+                REPORT.RUN(33000891, FALSE, FALSE, bg);
+                REPORT.SAVEASPDF(33000891, '\\erpserver\ErpAttachments\bg1.PDF', FALSE, bg);
+                Attachment1 := '\\erpserver\ErpAttachments\bg1.PDF';
+                Subject := 'ERP- Possible expire BG Details for the coming 10 Days'; */
+
+
+                /* IF bg.FINDSET THEN
+                REPEAT
+                IF bg."Claim Date"=0D THEN
+                BEGIN
+                Subject:='ERP- BG Will Expire for '+bg."BG No.";
+                Body:='Customer Name      : '+bg."Issued to/Received from";
+                Body+=FORMAT(New_Line);
+                Body+='Customer Order No. : '+bg."Customer Order No.";
+                Body+=FORMAT(New_Line);
+                Body+='BG Value           : '+FORMAT(bg."BG Value");
+                Body+=FORMAT(New_Line);
+                Body+='BG Expired Date   : '+FORMAT((bg."Expiry Date"),0,4);
+                Body+=FORMAT(New_Line);
+                Body+=FORMAT(New_Line); */
+
+
+                Body := '***** Auto Mail Generated From ERP *****';
+                Mail_From := 'erp@efftronics.com';
+                //Mail_To:='sreenu@efftronics.com';
+                IF FORMAT(bg."Transaction Type") = 'amc' THEN
+                    Mail_To := 'sganesh@efftronics.com,rajani@efftronics.com,yesu@efftronics.com,prasannat@efftronics.com,anilkumar@efftronics.com,'
+                ELSE BEGIN
+                    //Mail_To:='sganesh@efftronics.com,rajani@efftronics.com,dir@efftronics.com,';
+                    Mail_To += 'anuradhag@efftronics.com,anilkumar@efftronics.com';
+                END;
+                //attachment13:='';
+                Mail_To := 'sales@efftronics.com';
+                attachment14 := Attachment;
+                IF (Mail_From <> '') AND (Mail_To <> '') THEN
+                    SMTP_MAIL.CreateMessage('ERP', Mail_From, Mail_To, Subject, Body, TRUE);
+                //  SMTP_MAIL.AddAttachment(Attachment1);
+                // SMTP_MAIL.AddAttachment(attachment13);
+                SMTP_MAIL.AddAttachment(attachment14);
+                SMTP_MAIL.Send;
+
+                // NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment,attachment13,attachment14);
+
+                //END;
+                //UNTIL bg.NEXT=0;
+
+
+
+                /* // Peinding Material Requests For Stores
+                MIH.SETRANGE(MIH."Transfer-from Code", 'STR');
+                MIH.SETRANGE(MIH.Status, MIH.Status::Released);
+                MIH.SETFILTER(MIH."Released Date", '<%1', TODAY - 1);
+                REPORT.RUN(5985, FALSE, FALSE, MIH);
+                REPORT.SAVEASPDF(5985, '\\Eff-cpu-222\ErpAttachments\santhosh.PDF', FALSE, MIH);
+
+                Body := '****  Automatic Mail Generated From ERP  ****';
+                Mail_From := 'anilkumar@efftronics.com';
+                //     Mail_To:='dmadhavi@efftronics.com,fathima@efftronics.com,padmaja@efftronics.com,';
+                //     Mail_To+='cvmohan@efftronics.com,anilkumar@efftronics.com,sitarani@efftronics.com';
+                Mail_To := 'anilkumar@efftronics.com';
+                Subject := FORMAT(MIH.COUNT) + ' STR Issues Pending ';
+                Attachment1 := '\\eff-cpu-222\ErpAttachments\santhosh.PDF';
+                Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment1);
+
+
+
+                // Peinding Material Requests For R&D Str
+                MIH.SETRANGE(MIH."Transfer-from Code", 'R&D STR');
+                MIH.SETRANGE(MIH.Status, MIH.Status::Released);
+                MIH.SETFILTER(MIH."Released Date", '<%1', TODAY - 1);
+                REPORT.RUN(5985, FALSE, FALSE);
+                "g/l setup".FINDFIRST;
+                REPORT.SAVEASPDF(5985, FORMAT('\\Eff-cpu-222\ErpAttachments\santhosh.PDF'), FALSE);
+
+                Body := '****  Automatic Mail Generated From ERP  ****';
+                Mail_From := 'anilkumar@efftronics.com';
+                Mail_To := 'dmadhavi@efftronics.com,sowjanya@efftronics.com,padmaja@efftronics.com,';
+                Mail_To += 'cvmohan@efftronics.com,anilkumar@efftronics.com';
+                // Mail_To:='swarupa@efftronics.com';
+                Subject := FORMAT(MIH.COUNT) + ' R&D STR Issues Pending ';
+                Attachment1 := '\\eff-cpu-222\ErpAttachments\santhosh.PDF';
+                Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment1); */
+
+
+                /* // Peinding Material Requests For Cs Stores
+                MIH.SETRANGE(MIH."Transfer-from Code", 'CS STR');
+                MIH.SETRANGE(MIH.Status, MIH.Status::Released);
+                MIH.SETFILTER(MIH."Released Date", '<%1', TODAY - 1);
+                IF MIH.FINDFIRST THEN BEGIN
+
+                    REPORT.RUN(5985, FALSE, FALSE, MIH);
+                    "g/l setup".FINDFIRST;
+                    REPORT.SAVEASPDF(5985, '\\eff-cpu-222\ErpAttachments\Pending CS Str Material Requests.PDF', MIH);
+
+                    Body := '****  Automatic Mail Generated From ERP  ****';
+                    Mail_From := 'anilkumar@efftronics.com';
+                    Mail_To := 'dmadhavi@efftronics.com,nayomi@efftronics.com,padmaja@efftronics.com,';
+                    Mail_To += 'cvmohan@efftronics.com,anilkumar@efftronics.com,prasanthi@efftronics.com,shilpa@efftronics.com';
+
+                    Subject := FORMAT(MIH.COUNT) + 'CS STR Issues Pending ';
+                    Attachment1 := '\\eff-cpu-222\ErpAttachments\Pending CS Str Material Requests.PDF';
+                    Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment1);
+                END; */
+
+
+                // Qc Pending Inwards
+
+
+                /* max := TODAY - 1;
+                min := 040108D;
+                IDS.SETFILTER(IDS."Source Type", 'In Bound');
+                IF IDS.GETFILTER(IDS."Created Date") <> '' THEN BEGIN                                                               //modified by swarupa(13-01-09) for count
+                    max := IDS.GETRANGEMAX(IDS."Created Date");
+                    min := IDS.GETRANGEMIN(IDS."Created Date");
+                END ELSE BEGIN
+                    max := TODAY - 1;
+                    min := 040108D;
+                    IDS.SETRANGE(IDS."Created Date", min, max);
+                    PENDING := IDS.COUNT;
+                END;
+
+                //   MESSAGE(FORMAT(PENDING));
+                IR.SETRANGE(IR."IDS creation Date", min, max);
+                IR.SETRANGE(IR.Status, FALSE);
+                IR.SETFILTER(IR."Source Type", 'In Bound');
+                PENDING += IR.COUNT;
+                //MESSAGE(FORMAT(PENDING));
+                REPORT.RUN(50039, FALSE, FALSE, IDS);
+                REPORT.SAVEASPDF(50039, '\\Eff-cpu-222\ErpAttachments\qc Pending Inwards.PDF', IDS);
+
+
+                Body := '****  Automatic Mail Generated From ERP  ****';
+                Mail_From := 'anilkumar@efftronics.com';
+                Mail_To := 'bharat@efftronics.com,padmaja@efftronics.com,';
+                Mail_To += 'cvmohan@efftronics.com,anilkumar@efftronics.com,nayomi@efftronics.com,sowjanya@efftronics.com';
+                //Mail_To:='swarupa@efftronics.com';
+                Subject := FORMAT(PENDING) + ' Qc Inwards Pending ';
+                Attachment1 := '\\eff-cpu-222\ErpAttachments\qc Pending Inwards.PDF';
+                //    Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
+                SMTP_MAIL.CreateMessage('ERP', Mail_From, Mail_To, Subject, Body, TRUE);
+                //  SMTP_MAIL.AddAttachment(Attachment1);
+                // SMTP_MAIL.AddAttachment(attachment13);
+                SMTP_MAIL.AddAttachment(attachment14);
+                SMTP_MAIL.Send; */
+
+
+
+                // Pending Purchase Inward Material For Stores
+
+                /* Pl.SETRANGE(Pl."Location Code", 'STR');
+                REPORT.RUN(50169, FALSE, FALSE, Pl);
+                REPORT.SAVEASPDF(50169, '\\eff-cpu-222\ErpAttachments\Pending Purchase Inwards at STR.PDF', FALSE, Pl);
+
+                Body := '****  Automatic Mail Generated From ERP  ****';
+                Mail_From := 'anilkumar@efftronics.com';
+                Mail_To := 'purchase@efftronics.com,dmadhavi@efftronics.com,';
+                Mail_To += 'cvmohan@efftronics.com,anilkumar@efftronics.com';
+                // Mail_To:='swarupa@efftronics.com';
+                Subject := ' Str Pending Purchase Material ';
+                Attachment1 := '\\eff-cpu-222\ErpAttachments\Pending Purchase Inwards at Str.PDF';
+                Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment1); */
+
+
+
+
+                // Pending Purchase Inward Material For R&D Stores
+
+                /* REPORT.RUN(50169, FALSE, FALSE);
+                REPORT.SAVEASPDF(50169, '\\eff-cpu-222\ErpAttachments\Pending Purchase Inwards at R&D Str.PDF', FALSE);
+
+                Body := '****  Automatic Mail Generated From ERP  ****';
+                Mail_From := 'anilkumar@efftronics.com';
+                Mail_To := 'purchase@efftronics.com,dmadhavi@efftronics.com,sowjanya@efftronics.com,';
+                Mail_To += 'cvmohan@efftronics.com,anilkumar@efftronics.com';
+                //   Mail_To:='swarupa@efftronics.com';
+                Subject := 'R&D Str Pending Purchase Material ';
+                Attachment1 := '\\eff-cpu-222\ErpAttachments\Pending Purchase Inwards at R&D Str.PDF';
+                Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment1);
+
+                // Pending Purchase Inward Material For CS Stores
+
+                Pl.SETRANGE(Pl."Location Code", 'CS STR');
+                IF Pl.FINDFIRST THEN
+                    REPORT.RUN(50169, FALSE, FALSE, Pl);
+                REPORT.SAVEASPDF(50169, '\\eff-cpu-222\ErpAttachments\Pending Purchase Inwards at CS Str.PDF', FALSE, Pl);
+
+                Body := '****  Automatic Mail Generated From ERP  ****';
+                Mail_From := 'anilkumar@efftronics.com';
+                Mail_To := 'purchase@efftronics.com,dmadhavi@efftronics.com,nayomi@efftronics.com,';
+                Mail_To += 'cvmohan@efftronics.com,anilkumar@efftronics.com,prasanthi@efftronics.com,shilpa@efftronics.com';
+                //    Mail_To:='swarupa@efftronics.com';
+                Subject := 'CS Str Pending Purchase Material ';
+                Attachment1 := '\\eff-cpu-222\ErpAttachments\Pending Purchase Inwards at Cs Str.PDF';
+                Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment1);
+
+                // Future Arrival Material For Main Stores
+                Pl.SETRANGE(Pl."Location Code", 'STR');
+                IF Pl.FINDFIRST THEN
+                    REPORT.RUN(310, FALSE, FALSE, Pl);
+                REPORT.SAVEASPDF(310, '\\eff-cpu-222\ErpAttachments\Future Purchase Inwards at Str.PDF', FALSE, Pl);
+
+                Body := '****  Automatic Mail Generated From ERP  ****';
+                Mail_From := 'anilkumar@efftronics.com';
+                Mail_To := 'purchase@efftronics.com,dmadhavi@efftronics.com,padmaja@efftronics.com,bharat@efftronics.com,';
+                Mail_To += 'cvmohan@efftronics.com,anilkumar@efftronics.com';
+                //  Mail_To:='swarupa@efftronics.com';
+                Subject := 'Str Future Purchase Inward Material ';
+                Attachment1 := '\\EFF-CPU-222\ErpAttachments\Future Purchase Inwards at Str.PDF';
+                Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment1);
+
+                // Future Arrival Material  For R&D Stores
+                REPORT.RUN(310, FALSE, FALSE);
+                REPORT.SAVEASPDF(310, '\\eff-cpu-222\ErpAttachments\Future Purchase Inwards at R&D Str.PDF', FALSE);
+
+                Body := '****  Automatic Mail Generated From ERP  ****';
+                Mail_From := 'anilkumar@efftronics.com';
+                Mail_To := 'purchase@efftronics.com,dmadhavi@efftronics.com,sowjanya@efftronics.com' +
+                         ',padmaja@efftronics.com,bharat@efftronics.com,';
+                Mail_To += 'cvmohan@efftronics.com,anilkumar@efftronics.com';
+                //  Mail_To:='swarupa@efftronics.com';
+                Subject := 'R&D Str Future  Purchase Inward Material ';
+                Attachment1 := '\\EFF-CPU-222\ErpAttachments\Future Purchase Inwards at R&D Str.PDF';
+                Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment1);
+
+                // Future Arrival Material   For Cs Stores
+                Pl.SETRANGE(Pl."Location Code", 'CS STR');
+                IF Pl.FINDFIRST THEN
+                    REPORT.RUN(310, FALSE, FALSE, Pl);
+                REPORT.SAVEASPDF(310, '\\eff-cpu-222\ErpAttachments\Future Purchase Inwards at CS Str.PDF', FALSE, Pl);
+
+                Body := '****  Automatic Mail Generated From ERP  ****';
+                Mail_From := 'anilkumar@efftronics.com';
+                Mail_To := 'purchase@efftronics.com,dmadhavi@efftronics.com,nayomi@efftronics.com,' +
+                          'padmaja@efftronics.com,bharat@efftronics.com,';
+                Mail_To += 'cvmohan@efftronics.com,anilkumar@efftronics.com,prasanthi@efftronics.com,shilpa@efftronics.com';
+                //  Mail_To:='swarupa@efftronics.com';
+                Subject := 'CS Str Future Purchase Inward Material ';
+                Attachment1 := '\\EFF-CPU-222\ErpAttachments\Future Purchase Inwards at CS Str.PDF';
+                Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment1);
+
+
+                // Pending Purchase Bills From Purchase
+                PRL.SETFILTER(PRL."Document date", '>%1', 040108D);
+                IF PRL.FINDFIRST THEN
+                    REPORT.RUN(301, FALSE, FALSE, PRL);
+                REPORT.SAVEASPDF(301, '\\eff-cpu-222\ErpAttachments\Pending Purchase Bills(PUR).PDF', FALSE, PRL);
+
+                Body := '****  Automatic Mail Generated From ERP  ****';
+
+                Mail_From := 'anilkumar@efftronics.com';
+                Mail_To := 'purchase@efftronics.com,';
+                Mail_To += 'cvmohan@efftronics.com,anilkumar@efftronics.com';
+
+                Subject := 'Pending Purchase Bills of PUR From April 2008';
+                Attachment1 := '\\EFF-CPU-222\ErpAttachments\Pending Purchase Bills(PUR).PDF';
+                Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment1);
+
+
+                //STR Returns Pending
+
+                RETMIH.SETFILTER(RETMIH.Status, 'Released');
+                RETMIH.SETRANGE(RETMIH."Transfer-to Code", 'STR');
                 IF RETMIH.FINDFIRST THEN
-               REPORT.RUN(50097,FALSE,FALSE,RETMIH);
-               REPORT.SAVEASPDF(50097,'\\Eff-cpu-222\ErpAttachments\qc Pending Returns.PDF',FALSE,RETMIH);
-               Mail_From:='anilkumar@efftronics.com';
-           //  Mail_To:='swarupa@efftronics.com';
-              Mail_To:='bharat@efftronics.com,padmajak@efftronics.com,str@efftronics.com,anilkumar@efftronics.com';
-               Subject:=FORMAT(RETMIH.COUNT)+' STR Returns Pending';
-              Attachment1:='\\EFF-CPU-222\ErpAttachments\qc Pending Returns.PDF';
-              Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
+                    REPORT.RUN(50097, FALSE, FALSE, RETMIH);
+                REPORT.SAVEASPDF(50097, '\\Eff-cpu-222\ErpAttachments\qc Pending Returns.PDF', FALSE, RETMIH);
+                Mail_From := 'anilkumar@efftronics.com';
+                //  Mail_To:='swarupa@efftronics.com';
+                Mail_To := 'bharat@efftronics.com,padmajak@efftronics.com,str@efftronics.com,anilkumar@efftronics.com';
+                Subject := FORMAT(RETMIH.COUNT) + ' STR Returns Pending';
+                Attachment1 := '\\EFF-CPU-222\ErpAttachments\qc Pending Returns.PDF';
+                Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment1);
 
 
-        //RDSTR Returns Pending
+                //RDSTR Returns Pending
 
-               RETMIH.SETFILTER(RETMIH.Status,'Released');
-               RETMIH.SETRANGE(RETMIH."Transfer-to Code",'R&D STR');
-                RETMIH.SETFILTER(RETMIH."Transfer-from Code",'<>%1','STR');
-               IF RETMIH.FINDFIRST THEN
-               REPORT.RUN(50097,FALSE,FALSE,RETMIH);
-               REPORT.SAVEASPDF(50097,'\\Eff-cpu-222\ErpAttachments\qc Pending Returns.PDF',FALSE,RETMIH);
-               Mail_From:='anilkumar@efftronics.com';
-           //    Mail_To:='swarupa@efftronics.com';
-              Mail_To:='bharat@efftronics.com,padmajak@efftronics.com,str@efftronics.com,anilkumar@efftronics.com';
-               Subject:=FORMAT(RETMIH.COUNT)+' RD STR Returns Pending';
-              Attachment1:='\\EFF-CPU-222\ErpAttachments\qc Pending Returns.PDF';
-              Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-
-
-        //CSSTR Returns Pending
-
-               RETMIH.SETFILTER(RETMIH.Status,'Released');
-               RETMIH.SETRANGE(RETMIH."Transfer-to Code",'CS STR');
-               RETMIH.SETFILTER(RETMIH."Transfer-from Code",'<>%1','STR');
-               IF RETMIH.FINDFIRST THEN
-               REPORT.RUN(50097,FALSE,FALSE,RETMIH);
-               REPORT.SAVEASPDF(50097,'\\Eff-cpu-222\ErpAttachments\qc Pending Returns.PDF',FALSE,RETMIH);
-               Mail_From:='anilkumar@efftronics.com';
-          //  Mail_To:='swarupa@efftronics.com';
-              Mail_To:='bharat@efftronics.com,padmajak@efftronics.com,str@efftronics.com,anilkumar@efftronics.com';
-               Subject:=FORMAT(RETMIH.COUNT)+' CS STR Returns Pending';
-              Attachment1:='\\EFF-CPU-222\ErpAttachments\qc Pending Returns.PDF';
-              Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-            IF (DATE2DWY(TODAY,1)=2) OR (DATE2DWY(TODAY,1)=4) OR (DATE2DWY(TODAY,1)=6) THEN
-            BEGIN
-              Body+='****  Automatic Mail Generated From ERP  ****';
-              REPORT.RUN(5935,FALSE,FALSE);
-              REPORT.SAVEASPDF(5935,FORMAT('\\eff-cpu-222\ErpAttachments\Pending Site'+'.PDF'),FALSE);
-              Mail_From:='anilkumar@efftronics.com';
-              Mail_To:='sambireddy@efftronics.com,prasanthi@efftronics.com,shilpa@efftronics.com,padmasri@efftronics.com,';
-              Mail_To+='sivakumari@efftronics.com,pmurali@efftronics.com,vasavi@efftronics.com,madhavip@efftronics.com,';
-              Mail_To+='praveena@efftronics.com,bjaya@efftronics.com,ramadevi@efftronics.com,nayomi@efftronics.com';
-              Mail_To+=',anilkumar@efftronics.com';
-             // Mail_To:='anilkumar@efftronics.com';
-              Subject:=' Pending Site Material ';
-              Attachment:='\\eff-cpu-222\ErpAttachments\'+'Pending Site.PDF';
-              Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment);
-            END;
-
-        }
+                RETMIH.SETFILTER(RETMIH.Status, 'Released');
+                RETMIH.SETRANGE(RETMIH."Transfer-to Code", 'R&D STR');
+                RETMIH.SETFILTER(RETMIH."Transfer-from Code", '<>%1', 'STR');
+                IF RETMIH.FINDFIRST THEN
+                    REPORT.RUN(50097, FALSE, FALSE, RETMIH);
+                REPORT.SAVEASPDF(50097, '\\Eff-cpu-222\ErpAttachments\qc Pending Returns.PDF', FALSE, RETMIH);
+                Mail_From := 'anilkumar@efftronics.com';
+                //    Mail_To:='swarupa@efftronics.com';
+                Mail_To := 'bharat@efftronics.com,padmajak@efftronics.com,str@efftronics.com,anilkumar@efftronics.com';
+                Subject := FORMAT(RETMIH.COUNT) + ' RD STR Returns Pending';
+                Attachment1 := '\\EFF-CPU-222\ErpAttachments\qc Pending Returns.PDF';
+                Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment1);
 
 
+                //CSSTR Returns Pending
 
-        {
-        //BG Alert
-
-        Sh.SETFILTER(Sh."Customer Posting Group",'RAILWAYS');
-        Sh.SETRANGE(Sh."CA Date",TODAY+5);
-        //MESSAGE(FORMAT(TODAY-5));
-        New_Line:=10;
-        IF Sh.FINDSET THEN
-        REPEAT
-        Subject:='ERP- BG Alert for '+Sh."No.";
-        Body:='Customer Name      : '+Sh."Sell-to Customer Name";
-        Body+=FORMAT(New_Line);
-        Body+='Customer Order No. : '+Sh."Customer OrderNo.";
-        Body+=FORMAT(New_Line);
-        Body+='BG Value           : '+FORMAT(Sh."Exp.Payment");
-        Body+=FORMAT(New_Line);
-        Body+='BG Required Date   : '+FORMAT((Sh."CA Date"),0,4);
-        Body+=FORMAT(New_Line);
-        Body+=FORMAT(New_Line);
-        Body+='***** Auto Mail Generated From ERP *****';
-        Mail_From:='anilkumar@efftronics.com';
-        //Mail_To:='swarupa@efftronics.com';
-        Mail_To:={'dir@efftronics.com,}'cvmohan@efftronics.com,anilkumar@efftronics.com,';
-        Mail_To+='sganesh@efftronics.com,rajani@efftronics.com,dsr@efftronics.com,';
-        Mail_To+='sunil@efftronics.com,ravi@efftronics.com,samba@efftronics.com,baji@efftronics.com,prasannat@efftronics.com,';
-        Mail_To+='anuradhag@efftronics.com,chandi@efftronics.com,anulatha@efftronics.com,srasc@efftronics.com';//,milind@efftronics.com
-
-         IF (Mail_From<>'')AND(Mail_To<>'') THEN
-         Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
-        UNTIL Sh.NEXT=0;
-        }
+                RETMIH.SETFILTER(RETMIH.Status, 'Released');
+                RETMIH.SETRANGE(RETMIH."Transfer-to Code", 'CS STR');
+                RETMIH.SETFILTER(RETMIH."Transfer-from Code", '<>%1', 'STR');
+                IF RETMIH.FINDFIRST THEN
+                    REPORT.RUN(50097, FALSE, FALSE, RETMIH);
+                REPORT.SAVEASPDF(50097, '\\Eff-cpu-222\ErpAttachments\qc Pending Returns.PDF', FALSE, RETMIH);
+                Mail_From := 'anilkumar@efftronics.com';
+                //  Mail_To:='swarupa@efftronics.com';
+                Mail_To := 'bharat@efftronics.com,padmajak@efftronics.com,str@efftronics.com,anilkumar@efftronics.com';
+                Subject := FORMAT(RETMIH.COUNT) + ' CS STR Returns Pending';
+                Attachment1 := '\\EFF-CPU-222\ErpAttachments\qc Pending Returns.PDF';
+                Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment1);
+                IF (DATE2DWY(TODAY, 1) = 2) OR (DATE2DWY(TODAY, 1) = 4) OR (DATE2DWY(TODAY, 1) = 6) THEN BEGIN
+                    Body += '****  Automatic Mail Generated From ERP  ****';
+                    REPORT.RUN(5935, FALSE, FALSE);
+                    REPORT.SAVEASPDF(5935, FORMAT('\\eff-cpu-222\ErpAttachments\Pending Site' + '.PDF'), FALSE);
+                    Mail_From := 'anilkumar@efftronics.com';
+                    Mail_To := 'sambireddy@efftronics.com,prasanthi@efftronics.com,shilpa@efftronics.com,padmasri@efftronics.com,';
+                    Mail_To += 'sivakumari@efftronics.com,pmurali@efftronics.com,vasavi@efftronics.com,madhavip@efftronics.com,';
+                    Mail_To += 'praveena@efftronics.com,bjaya@efftronics.com,ramadevi@efftronics.com,nayomi@efftronics.com';
+                    Mail_To += ',anilkumar@efftronics.com';
+                    // Mail_To:='anilkumar@efftronics.com';
+                    Subject := ' Pending Site Material ';
+                    Attachment := '\\eff-cpu-222\ErpAttachments\' + 'Pending Site.PDF';
+                    Mail.NewCDOMessage(Mail_From, Mail_To, Subject, Body, Attachment);
+                END; */
 
 
+                /* //BG Alert
 
-        {
-        //Mail for Security Deposit Alert
+                             Sh.SETFILTER(Sh."Customer Posting Group",'RAILWAYS');
+                             Sh.SETRANGE(Sh."CA Date",TODAY+5);
+                             //MESSAGE(FORMAT(TODAY-5));
+                             New_Line:=10;
+                             IF Sh.FINDSET THEN
+                             REPEAT
+                             Subject:='ERP- BG Alert for '+Sh."No.";
+                             Body:='Customer Name      : '+Sh."Sell-to Customer Name";
+                             Body+=FORMAT(New_Line);
+                             Body+='Customer Order No. : '+Sh."Customer OrderNo.";
+                             Body+=FORMAT(New_Line);
+                             Body+='BG Value           : '+FORMAT(Sh."Exp.Payment");
+                             Body+=FORMAT(New_Line);
+                             Body+='BG Required Date   : '+FORMAT((Sh."CA Date"),0,4);
+                             Body+=FORMAT(New_Line);
+                             Body+=FORMAT(New_Line);
+                             Body+='***** Auto Mail Generated From ERP *****';
+                             Mail_From:='anilkumar@efftronics.com';
+                             //Mail_To:='swarupa@efftronics.com';
+                             Mail_To:={'dir@efftronics.com,}'cvmohan@efftronics.com,anilkumar@efftronics.com,';
+                             Mail_To+='sganesh@efftronics.com,rajani@efftronics.com,dsr@efftronics.com,';
+                             Mail_To+='sunil@efftronics.com,ravi@efftronics.com,samba@efftronics.com,baji@efftronics.com,prasannat@efftronics.com,';
+                             Mail_To+='anuradhag@efftronics.com,chandi@efftronics.com,anulatha@efftronics.com,srasc@efftronics.com';//,milind@efftronics.com
 
-          New_Line:=10;
-        SIH.SETRANGE(SIH."Date Sent",TODAY-334);
-        IF SIH.FINDSET THEN
-        REPEAT
-        Subject:='ERP- Alert for Security Deposit';
-        Body:='Sale Order No.         : '+SIH."Order No.";
-        Body+=FORMAT(New_Line);
-        Body+='Customer Name          : '+FORMAT(SIH."Sell-to Customer Name");
-        Body+=FORMAT(New_Line);
-        Body+='Customer City          : '+FORMAT(SIH."Sell-to City");
-        Body+=FORMAT(New_Line);
-        Body+='Customer Order No.     : '+FORMAT(SIH."Customer OrderNo.");
-        Body+=FORMAT(New_Line);
-        Body+='Sale Order value       : '+FORMAT(SIH."Sale Order Total Amount");
-        Body+=FORMAT(New_Line);
-        Body+='SD Amount              : '+FORMAT(SIH."Security Deposit Amount");
-        Body+=FORMAT(New_Line);
-        Body+='SD Due Date            : '+FORMAT((TODAY+31),0,4);
-        Body+=FORMAT(New_Line);
-        Body+='Final Completion Date  : '+FORMAT((SIH."Date Sent"),0,4);
-        Body+=FORMAT(New_Line);
-            "Mail-Id".SETRANGE("Mail-Id"."User ID",SIH."Salesperson Code");
-            IF "Mail-Id".FINDFIRST THEN
-        Body+='Sales Executive   :'+"Mail-Id".Name;
-        Body+=FORMAT(New_Line);
-        Body+=FORMAT(New_Line);
-        Mail_From:='anilkumar@efftronics.com';
-        //Mail_To:='swarupa@efftronics.com';
-        Mail_To:={'dir@efftronics.com,}'cvmohan@efftronics.com,anilkumar@efftronics.com,';
-        Mail_To+='ravi@efftronics.com,samba@efftronics.com,baji@efftronics.com,prasannat@efftronics.com,';
-        Mail_To+='anuradhag@efftronics.com,chandi@efftronics.com,anulatha@efftronics.com,srasc@efftronics.com'; //,milind@efftronics.com
+                              IF (Mail_From<>'')AND(Mail_To<>'') THEN
+                              Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
+                             UNTIL Sh.NEXT=0; */
 
 
-         IF (Mail_From<>'')AND(Mail_To<>'') THEN
-         Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
-        UNTIL SIH.NEXT=0;
+                /* //Mail for Security Deposit Alert
+
+                  New_Line:=10;
+                SIH.SETRANGE(SIH."Date Sent",TODAY-334);
+                IF SIH.FINDSET THEN
+                REPEAT
+                Subject:='ERP- Alert for Security Deposit';
+                Body:='Sale Order No.         : '+SIH."Order No.";
+                Body+=FORMAT(New_Line);
+                Body+='Customer Name          : '+FORMAT(SIH."Sell-to Customer Name");
+                Body+=FORMAT(New_Line);
+                Body+='Customer City          : '+FORMAT(SIH."Sell-to City");
+                Body+=FORMAT(New_Line);
+                Body+='Customer Order No.     : '+FORMAT(SIH."Customer OrderNo.");
+                Body+=FORMAT(New_Line);
+                Body+='Sale Order value       : '+FORMAT(SIH."Sale Order Total Amount");
+                Body+=FORMAT(New_Line);
+                Body+='SD Amount              : '+FORMAT(SIH."Security Deposit Amount");
+                Body+=FORMAT(New_Line);
+                Body+='SD Due Date            : '+FORMAT((TODAY+31),0,4);
+                Body+=FORMAT(New_Line);
+                Body+='Final Completion Date  : '+FORMAT((SIH."Date Sent"),0,4);
+                Body+=FORMAT(New_Line);
+                    "Mail-Id".SETRANGE("Mail-Id"."User ID",SIH."Salesperson Code");
+                    IF "Mail-Id".FINDFIRST THEN
+                Body+='Sales Executive   :'+"Mail-Id".Name;
+                Body+=FORMAT(New_Line);
+                Body+=FORMAT(New_Line);
+                Mail_From:='anilkumar@efftronics.com';
+                //Mail_To:='swarupa@efftronics.com';
+                Mail_To:={'dir@efftronics.com,}'cvmohan@efftronics.com,anilkumar@efftronics.com,';
+                Mail_To+='ravi@efftronics.com,samba@efftronics.com,baji@efftronics.com,prasannat@efftronics.com,';
+                Mail_To+='anuradhag@efftronics.com,chandi@efftronics.com,anulatha@efftronics.com,srasc@efftronics.com'; //,milind@efftronics.com
 
 
-        //Alert for Project Completion
-
-        Sh.RESET;
-        Sh.SETFILTER(Sh."Customer Posting Group",'RAILWAYS');
-        Sh.SETFILTER(Sh."Document Type",'Order');
-        Sh.SETRANGE(Sh."Project Completion Date",TODAY+30);
-        //MESSAGE(FORMAT(TODAY-5));
-        New_Line:=10;
-        IF Sh.FINDSET THEN
-        REPEAT
-        Subject:='ERP- Alert of Project Completion for '+Sh."No.";
-        Body:='Customer Name      : '+Sh."Sell-to Customer Name";
-        Body+=FORMAT(New_Line);
-        Body+='Customer Order No. : '+Sh."Customer OrderNo.";
-        Body+=FORMAT(New_Line);
-        Body+='Sale Order Value   : '+FORMAT(Sh."Sale Order Total Amount");
-        Body+=FORMAT(New_Line);
-        Body+='Order Date         : '+FORMAT((Sh."Order Date"),0,4);
-        Body+=FORMAT(New_Line);
-        Body+=FORMAT(New_Line);
-        Body+='***** Auto Mail Generated From ERP *****';
-        Mail_From:='anilkumar@efftronics.com';
-        //Mail_To:='swarupa@efftronics.com';
-        Mail_To:={'dir@efftronics.com,}'cvmohan@efftronics.com,anilkumar@efftronics.com,';
-        Mail_To+='sganesh@efftronics.com,rajani@efftronics.com,dsr@efftronics.com,';
-        Mail_To+='sunil@efftronics.com,ravi@efftronics.com,samba@efftronics.com,baji@efftronics.com,prasannat@efftronics.com,';
-        Mail_To+='anuradhag@efftronics.com,chandi@efftronics.com,anulatha@efftronics.com,srasc@efftronics.com'; //,milind@efftronics.com
-
-         IF (Mail_From<>'')AND(Mail_To<>'') THEN
-         Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
-        UNTIL Sh.NEXT=0;
-
-        }
-
-        {
-        //AMC Mail Alerts for Quarterly Bills
-
-        Sh.RESET;
-        Sh.SETFILTER(Sh."Document Type",'Amc');
-        Sh.SETRANGE(Sh."Payment Terms Code",'QUARTER');
-        IF Sh.FINDSET THEN
-        REPEAT
-        noofperiod:=(Sh."Promised Delivery Date"-Sh."Requested Delivery Date")DIV 90;
-        billedamt:=Sh."Sale Order Total Amount"/noofperiod;
-        New_Line:=10;
-        temp:=10000;
-        temp1:=90;
-        present:=TODAY-Sh."Requested Delivery Date";
-        SL.SETRANGE(SL."Document No.",Sh."No.");
-        IF SL.FINDSET THEN  REPEAT
-        IF (present>=temp1) AND (SL."Line No."=temp) THEN
-        IF SL."Qty. to Ship">0 THEN
-        BEGIN
-        Billenddate:=Sh."Requested Delivery Date"+temp1+1;
-        presentqua:=(Billenddate-Sh."Requested Delivery Date")DIV 90;
-        MG;
-        END;
-        temp+=10000;
-        temp1+=90;
-        UNTIL SL.NEXT=0;
-        UNTIL Sh.NEXT=0;
+                 IF (Mail_From<>'')AND(Mail_To<>'') THEN
+                 Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
+                UNTIL SIH.NEXT=0;
 
 
-        //AMC Mail Alerts for Halfyearly Bills
-        Sh.RESET;
-        Sh.SETFILTER(Sh."Document Type",'Amc');
-        Sh.SETRANGE(Sh."Payment Terms Code",'HALFYEARLY');
-        IF Sh.FINDSET THEN
-        REPEAT
-        noofperiod:=(Sh."Promised Delivery Date"-Sh."Requested Delivery Date")DIV 180;
-        billedamt:=Sh."Sale Order Total Amount"/noofperiod;
-        New_Line:=10;
-        present:=TODAY-Sh."Requested Delivery Date";
-        temp:=10000;
-        temp1:=180;
-        SL.SETRANGE(SL."Document No.",Sh."No.");
-        IF SL.FINDSET THEN  REPEAT
-        IF (present>=temp1) AND (SL."Line No."=temp) THEN
-        IF SL."Qty. to Ship">0 THEN
-        MG;
-        temp+=10000;
-        temp1+=180;
-        UNTIL SL.NEXT=0;
-        UNTIL Sh.NEXT=0;
+                //Alert for Project Completion
 
-        //AMC Mail Alerts for early Bills
-        Sh.RESET;
-        Sh.SETFILTER(Sh."Document Type",'Amc');
-        Sh.SETRANGE(Sh."Payment Terms Code",'YEAR');
-        IF Sh.FINDSET THEN
-        REPEAT
-        noofperiod:=(Sh."Promised Delivery Date"-Sh."Requested Delivery Date")DIV 365;
-        billedamt:=(Sh."Sale Order Total Amount"/noofperiod);
-        New_Line:=10;
-        present:=TODAY-Sh."Requested Delivery Date";
-        temp:=10000;
-        temp1:=365;
-        SL.SETRANGE(SL."Document No.",Sh."No.");
-        IF SL.FINDSET THEN  REPEAT
-        IF (present>=temp1) AND (SL."Line No."=temp) THEN
-        IF SL."Qty. to Ship">0 THEN
-        MG;
-        temp+=10000;
-        temp1+=365;
-        UNTIL SL.NEXT=0;
-        UNTIL Sh.NEXT=0;
+                Sh.RESET;
+                Sh.SETFILTER(Sh."Customer Posting Group",'RAILWAYS');
+                Sh.SETFILTER(Sh."Document Type",'Order');
+                Sh.SETRANGE(Sh."Project Completion Date",TODAY+30);
+                //MESSAGE(FORMAT(TODAY-5));
+                New_Line:=10;
+                IF Sh.FINDSET THEN
+                REPEAT
+                Subject:='ERP- Alert of Project Completion for '+Sh."No.";
+                Body:='Customer Name      : '+Sh."Sell-to Customer Name";
+                Body+=FORMAT(New_Line);
+                Body+='Customer Order No. : '+Sh."Customer OrderNo.";
+                Body+=FORMAT(New_Line);
+                Body+='Sale Order Value   : '+FORMAT(Sh."Sale Order Total Amount");
+                Body+=FORMAT(New_Line);
+                Body+='Order Date         : '+FORMAT((Sh."Order Date"),0,4);
+                Body+=FORMAT(New_Line);
+                Body+=FORMAT(New_Line);
+                Body+='***** Auto Mail Generated From ERP *****';
+                Mail_From:='anilkumar@efftronics.com';
+                //Mail_To:='swarupa@efftronics.com';
+                Mail_To:={'dir@efftronics.com,}'cvmohan@efftronics.com,anilkumar@efftronics.com,';
+                Mail_To+='sganesh@efftronics.com,rajani@efftronics.com,dsr@efftronics.com,';
+                Mail_To+='sunil@efftronics.com,ravi@efftronics.com,samba@efftronics.com,baji@efftronics.com,prasannat@efftronics.com,';
+                Mail_To+='anuradhag@efftronics.com,chandi@efftronics.com,anulatha@efftronics.com,srasc@efftronics.com'; //,milind@efftronics.com
 
-        }
+                 IF (Mail_From<>'')AND(Mail_To<>'') THEN
+                 Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
+                UNTIL Sh.NEXT=0; */
 
+                /* //AMC Mail Alerts for Quarterly Bills
 
-         {
-
-        //Travelling Advance Mail.
-        //COPYSTR(user.Dept,1,2)='RD'
-        //user.SETFILTER(user.Dimension,'ADMIN-0002|CUS-005|PRD-0010|RD-000');
-        //user.SETFILTER(user.Dimension,'RD-000');
-        //user.SETFILTER(user.Dept,'MNG');
-        //user.SETFILTER(user.Dept,'SAL');
-        user.SETFILTER(user.Dimension,'ADMIN-0002');
-
-        //user.SETRANGE(user."User ID",'EFFTRONICS\CEO@EFFTRONICS.COM#MD');
-        user.SETFILTER(user.Blocked,'NO');
-        user.SETFILTER(user.MailID,'<>%1','');
-        New_Line:=10;
-        Mail_To:='';
-        IF user.FINDSET THEN
-        REPEAT
-        maxdate:=TODAY;
-        mindate:=040108D;
-        AVE.SETRANGE(AVE."Analysis View Code",'ADVANCES');
-        AVE.SETRANGE(AVE."G/L Account No.",'24000');
-        AVE.SETRANGE(AVE."Dimension 2 Value Code",user."User ID");
-        //AVE.SETFILTER(AVE."Dimension 1 Value Code",'RD*');
-        AVE.SETRANGE(AVE."Posting Date",mindate,maxdate);
-
-        IF AVE.FINDSET THEN
-        BEGIN
-        "Bal amt":=0;
-        Body:='';
-        Mail_To:='';
-        REPEAT
-        "Bal amt"+=AVE.Amount;
-        UNTIL AVE.NEXT=0;
-
-        IF "Bal amt"<>0 THEN
-        BEGIN
-         REPORT.RUN(50173,FALSE,FALSE,AVE);
-         REPORT.SAVEASPDF(50173,'\\erpserver\ErpAttachments\TA Detail.PDF',FALSE,AVE);
-         Attachment1:='\\erpserver\ErpAttachments\TA Detail.PDF';
-        Mail_To:=user.MailID+',';
-        Mail_To+='anilkumar@efftronics.com,';
-        Mail_To+='rajani@efftronics.com';
-
-        Subject:='Travelling Advance Balance';
-        Body+=FORMAT(New_Line);
-        Body+=FORMAT(New_Line);
-        Body+='CREDIT AMOUNT(-) NEED TO PAY BY ADMINISTRATION';
-        Body+=FORMAT(New_Line);
-        Body+='DEBIT AMOUNT(+) BILLS NEED TO SUBMIT BY EMPLOYEE';
-
-        Body+=FORMAT(New_Line);
-        Body+=FORMAT(New_Line);
-        Body+='Employee ID         : '+ user."User ID";
-        Body+=FORMAT(New_Line);
-        Body+='Employee Name       : '+ user.Name;
-        Body+=FORMAT(New_Line);
-        Body+='Department          : '+ user.Dept;
-        Body+=FORMAT(New_Line);
-
-        Body+='Travelling Balance  : '+FORMAT(ROUND("Bal amt",1));
-        Body+=FORMAT(New_Line);
-        Body+=FORMAT(New_Line);
-        Body+=FORMAT(New_Line);
-        Body+='*** Auto Mail Generated from ERP ***';
-        Mail_From:='anilkumar@efftronics.com';
-
-         IF ( Mail_From<>'') AND (Mail_To<>'') THEN
-          Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-        END;
-        END;
-        UNTIL user.NEXT=0;
+                Sh.RESET;
+                Sh.SETFILTER(Sh."Document Type",'Amc');
+                Sh.SETRANGE(Sh."Payment Terms Code",'QUARTER');
+                IF Sh.FINDSET THEN
+                REPEAT
+                noofperiod:=(Sh."Promised Delivery Date"-Sh."Requested Delivery Date")DIV 90;
+                billedamt:=Sh."Sale Order Total Amount"/noofperiod;
+                New_Line:=10;
+                temp:=10000;
+                temp1:=90;
+                present:=TODAY-Sh."Requested Delivery Date";
+                SL.SETRANGE(SL."Document No.",Sh."No.");
+                IF SL.FINDSET THEN  REPEAT
+                IF (present>=temp1) AND (SL."Line No."=temp) THEN
+                IF SL."Qty. to Ship">0 THEN
+                BEGIN
+                Billenddate:=Sh."Requested Delivery Date"+temp1+1;
+                presentqua:=(Billenddate-Sh."Requested Delivery Date")DIV 90;
+                MG;
+                END;
+                temp+=10000;
+                temp1+=90;
+                UNTIL SL.NEXT=0;
+                UNTIL Sh.NEXT=0;
 
 
-         }
+                //AMC Mail Alerts for Halfyearly Bills
+                Sh.RESET;
+                Sh.SETFILTER(Sh."Document Type",'Amc');
+                Sh.SETRANGE(Sh."Payment Terms Code",'HALFYEARLY');
+                IF Sh.FINDSET THEN
+                REPEAT
+                noofperiod:=(Sh."Promised Delivery Date"-Sh."Requested Delivery Date")DIV 180;
+                billedamt:=Sh."Sale Order Total Amount"/noofperiod;
+                New_Line:=10;
+                present:=TODAY-Sh."Requested Delivery Date";
+                temp:=10000;
+                temp1:=180;
+                SL.SETRANGE(SL."Document No.",Sh."No.");
+                IF SL.FINDSET THEN  REPEAT
+                IF (present>=temp1) AND (SL."Line No."=temp) THEN
+                IF SL."Qty. to Ship">0 THEN
+                MG;
+                temp+=10000;
+                temp1+=180;
+                UNTIL SL.NEXT=0;
+                UNTIL Sh.NEXT=0;
+
+                //AMC Mail Alerts for early Bills
+                Sh.RESET;
+                Sh.SETFILTER(Sh."Document Type",'Amc');
+                Sh.SETRANGE(Sh."Payment Terms Code",'YEAR');
+                IF Sh.FINDSET THEN
+                REPEAT
+                noofperiod:=(Sh."Promised Delivery Date"-Sh."Requested Delivery Date")DIV 365;
+                billedamt:=(Sh."Sale Order Total Amount"/noofperiod);
+                New_Line:=10;
+                present:=TODAY-Sh."Requested Delivery Date";
+                temp:=10000;
+                temp1:=365;
+                SL.SETRANGE(SL."Document No.",Sh."No.");
+                IF SL.FINDSET THEN  REPEAT
+                IF (present>=temp1) AND (SL."Line No."=temp) THEN
+                IF SL."Qty. to Ship">0 THEN
+                MG;
+                temp+=10000;
+                temp1+=365;
+                UNTIL SL.NEXT=0;
+                UNTIL Sh.NEXT=0; */
+
+                /* //Travelling Advance Mail.
+                //COPYSTR(user.Dept,1,2)='RD'
+                //user.SETFILTER(user.Dimension,'ADMIN-0002|CUS-005|PRD-0010|RD-000');
+                //user.SETFILTER(user.Dimension,'RD-000');
+                //user.SETFILTER(user.Dept,'MNG');
+                //user.SETFILTER(user.Dept,'SAL');
+                user.SETFILTER(user.Dimension,'ADMIN-0002');
+
+                //user.SETRANGE(user."User ID",'EFFTRONICS\CEO@EFFTRONICS.COM#MD');
+                user.SETFILTER(user.Blocked,'NO');
+                user.SETFILTER(user.MailID,'<>%1','');
+                New_Line:=10;
+                Mail_To:='';
+                IF user.FINDSET THEN
+                REPEAT
+                maxdate:=TODAY;
+                mindate:=040108D;
+                AVE.SETRANGE(AVE."Analysis View Code",'ADVANCES');
+                AVE.SETRANGE(AVE."G/L Account No.",'24000');
+                AVE.SETRANGE(AVE."Dimension 2 Value Code",user."User ID");
+                //AVE.SETFILTER(AVE."Dimension 1 Value Code",'RD*');
+                AVE.SETRANGE(AVE."Posting Date",mindate,maxdate);
+
+                IF AVE.FINDSET THEN
+                BEGIN
+                "Bal amt":=0;
+                Body:='';
+                Mail_To:='';
+                REPEAT
+                "Bal amt"+=AVE.Amount;
+                UNTIL AVE.NEXT=0;
+
+                IF "Bal amt"<>0 THEN
+                BEGIN
+                 REPORT.RUN(50173,FALSE,FALSE,AVE);
+                 REPORT.SAVEASPDF(50173,'\\erpserver\ErpAttachments\TA Detail.PDF',FALSE,AVE);
+                 Attachment1:='\\erpserver\ErpAttachments\TA Detail.PDF';
+                Mail_To:=user.MailID+',';
+                Mail_To+='anilkumar@efftronics.com,';
+                Mail_To+='rajani@efftronics.com';
+
+                Subject:='Travelling Advance Balance';
+                Body+=FORMAT(New_Line);
+                Body+=FORMAT(New_Line);
+                Body+='CREDIT AMOUNT(-) NEED TO PAY BY ADMINISTRATION';
+                Body+=FORMAT(New_Line);
+                Body+='DEBIT AMOUNT(+) BILLS NEED TO SUBMIT BY EMPLOYEE';
+
+                Body+=FORMAT(New_Line);
+                Body+=FORMAT(New_Line);
+                Body+='Employee ID         : '+ user."User ID";
+                Body+=FORMAT(New_Line);
+                Body+='Employee Name       : '+ user.Name;
+                Body+=FORMAT(New_Line);
+                Body+='Department          : '+ user.Dept;
+                Body+=FORMAT(New_Line);
+
+                Body+='Travelling Balance  : '+FORMAT(ROUND("Bal amt",1));
+                Body+=FORMAT(New_Line);
+                Body+=FORMAT(New_Line);
+                Body+=FORMAT(New_Line);
+                Body+='*** Auto Mail Generated from ERP ***';
+                Mail_From:='anilkumar@efftronics.com';
+
+                 IF ( Mail_From<>'') AND (Mail_To<>'') THEN
+                  Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
+                END;
+                END;
+                UNTIL user.NEXT=0; */
+
+                /* //Indents Mail
+
+                user.SETFILTER(user.Dimension,'RD-000');
+                user.SETFILTER(user.MailID,'<>%1','');
+                //user.SETFILTER(user.Dept,'RD5');
+                //user.SETRANGE(user."User ID",'07TE041');
+                IF user.FINDSET THEN
+                //MESSAGE(FORMAT(user.Name));
+                REPEAT
+                IH.SETFILTER(IH."Released Status",'Released');
+                IH.SETFILTER(IH."Person Code",user."User ID");
+                IH.SETRANGE(IH."Delivery Location",'R&D STR');
+                IF IH.FINDSET THEN
+                REPEAT
+                IL.SETRANGE(IL."Document No.",IH."No.");
+                IL.SETFILTER(IL."Indent Status",'INDENT');
+                IL.SETFILTER(IL.Quantity,'<>%1',0);
+                IF IL.FINDFIRST THEN
+                BEGIN
+                IF (TODAY-IL."Due Date")>2 THEN
+                BEGIN
+                 REPORT.RUN(50179,FALSE,FALSE,IH);
+                 REPORT.SAVEASPDF(50179,'\\erpserver\ErpAttachments\Indent Details.PDF',FALSE,IH);
+                 Attachment1:='\\erpserver\ErpAttachments\Indent Details.PDF';
+                 Mail_To:=user.MailID+',';
+                Mail_To+='anilkumar@efftronics.com,suri@efftronics.com';
+                //Mail_To:='swarupa@efftronics.com';
+                 END;
+                 END;
+                UNTIL IH.NEXT=0
+                 ELSE
+                 Mail_To:='';
+                 Subject:='Indent Details';
+                 Mail_From:='anilkumar@efftronics.com';
+                  IF ( Mail_From<>'') AND (Mail_To<>'') THEN
+                 Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
+                 UNTIL user.NEXT=0; */
 
 
-        {
-        //Indents Mail
-
-        user.SETFILTER(user.Dimension,'RD-000');
-        user.SETFILTER(user.MailID,'<>%1','');
-        //user.SETFILTER(user.Dept,'RD5');
-        //user.SETRANGE(user."User ID",'07TE041');
-        IF user.FINDSET THEN
-        //MESSAGE(FORMAT(user.Name));
-        REPEAT
-        IH.SETFILTER(IH."Released Status",'Released');
-        IH.SETFILTER(IH."Person Code",user."User ID");
-        IH.SETRANGE(IH."Delivery Location",'R&D STR');
-        IF IH.FINDSET THEN
-        REPEAT
-        IL.SETRANGE(IL."Document No.",IH."No.");
-        IL.SETFILTER(IL."Indent Status",'INDENT');
-        IL.SETFILTER(IL.Quantity,'<>%1',0);
-        IF IL.FINDFIRST THEN
-        BEGIN
-        IF (TODAY-IL."Due Date")>2 THEN
-        BEGIN
-         REPORT.RUN(50179,FALSE,FALSE,IH);
-         REPORT.SAVEASPDF(50179,'\\erpserver\ErpAttachments\Indent Details.PDF',FALSE,IH);
-         Attachment1:='\\erpserver\ErpAttachments\Indent Details.PDF';
-         Mail_To:=user.MailID+',';
-        Mail_To+='anilkumar@efftronics.com,suri@efftronics.com';
-        //Mail_To:='swarupa@efftronics.com';
-         END;
-         END;
-        UNTIL IH.NEXT=0
-         ELSE
-         Mail_To:='';
-         Subject:='Indent Details';
-         Mail_From:='anilkumar@efftronics.com';
-          IF ( Mail_From<>'') AND (Mail_To<>'') THEN
-         Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,Attachment1);
-         UNTIL user.NEXT=0;
-        }
-
-
-
-
-
-        {
-        //QC pending mails
-        New_Line:=10;
-        //PRL.RESET;
-        max:=TODAY;
-        min:=040109D;
-        PRL.SETRANGE(PRL."Document date",min,max);
-        PRL.SETFILTER(PRL.Quantity,'<>%1',0);
-        PRL.SETRANGE(PRL."Location Code",'R&D STR');
-        //PRL.SETRANGE(PRL."Location Code",'CS STR');
-        IF PRL.FINDSET THEN
-        REPEAT
-        IF (PRL.Quantity>(PRL."Quantity Accepted"+PRL."Quantity Rejected"+PRL."Quantity Rework")) THEN
-        BEGIN
-        IH.SETRANGE(IH."No.",PRL."Indent No.");
-        IF IH.FINDFIRST THEN
-        BEGIN
-         Body:='';
-          user.SETRANGE(user."User ID",IH."Person Code");
-          IF user.FINDFIRST THEN
-          Mail_To:=user.MailID+',';
-        //  Mail_To:='sreenu@efftronics.com';
-        // Mail_To:='prasanthi@efftronics.com,shilpa@efftronics.com,nayomi@efftronics.com,';
-          Subject:='ERP- ITEM '+PRL.Description+' PENDING AT QA';
-          Body+='YOUR ITEM INWARDED , BUT PENDING AT QAS';
-          Body+=FORMAT(New_Line);
-          Body+=FORMAT(New_Line);
-          Mail_From:='anilkumar@efftronics.com';
-          Body+='Indented Person    : '+user.Name;
-          Body+=FORMAT(New_Line);
-          Body+='Employee ID        : '+user."User ID";
-          Body+=FORMAT(New_Line);
-          Body+='Department         : '+user.Dept;
-          Body+=FORMAT(New_Line);
-          Body+='Item Name          : '+PRL.Description;
-          Body+=FORMAT(New_Line);
-          Body+='Quantity           : '+FORMAT(PRL.Quantity-(PRL."Quantity Accepted"+PRL."Quantity Rejected"+PRL."Quantity Rework"));
-          Body+=FORMAT(New_Line);
-          Body+='Unit of Measure    : '+PRL."Unit of Measure";
-          Body+=FORMAT(New_Line);
-          PRL.CALCFIELDS(PRL."Document date");
-          Body+='Inward Date        : '+FORMAT((PRL."Document date"),0,4);
-          Body+=FORMAT(New_Line);
-           IF (TODAY-PRL."Document date")>1 THEN
-           BEGIN
-          Body+='Pending Days       : '+FORMAT(TODAY-PRL."Document date");
-          Body+=FORMAT(New_Line);
-          Body+=FORMAT(New_Line);
-        //  MESSAGE(FORMAT(Mail_To));
-        //  MESSAGE(FORMAT(Mail_From));
-          Body+='*** Auto Mail Generated from ERP ***';
-          Mail_To+='anilkumar@efftronics.com';
-         IF ( Mail_From<>'') AND (Mail_To<>'') THEN
-         Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
-         END;
-        END;
-        END;
-        UNTIL PRL.NEXT=0;
-        }
+                /* //QC pending mails
+                New_Line:=10;
+                //PRL.RESET;
+                max:=TODAY;
+                min:=040109D;
+                PRL.SETRANGE(PRL."Document date",min,max);
+                PRL.SETFILTER(PRL.Quantity,'<>%1',0);
+                PRL.SETRANGE(PRL."Location Code",'R&D STR');
+                //PRL.SETRANGE(PRL."Location Code",'CS STR');
+                IF PRL.FINDSET THEN
+                REPEAT
+                IF (PRL.Quantity>(PRL."Quantity Accepted"+PRL."Quantity Rejected"+PRL."Quantity Rework")) THEN
+                BEGIN
+                IH.SETRANGE(IH."No.",PRL."Indent No.");
+                IF IH.FINDFIRST THEN
+                BEGIN
+                 Body:='';
+                  user.SETRANGE(user."User ID",IH."Person Code");
+                  IF user.FINDFIRST THEN
+                  Mail_To:=user.MailID+',';
+                //  Mail_To:='sreenu@efftronics.com';
+                // Mail_To:='prasanthi@efftronics.com,shilpa@efftronics.com,nayomi@efftronics.com,';
+                  Subject:='ERP- ITEM '+PRL.Description+' PENDING AT QA';
+                  Body+='YOUR ITEM INWARDED , BUT PENDING AT QAS';
+                  Body+=FORMAT(New_Line);
+                  Body+=FORMAT(New_Line);
+                  Mail_From:='anilkumar@efftronics.com';
+                  Body+='Indented Person    : '+user.Name;
+                  Body+=FORMAT(New_Line);
+                  Body+='Employee ID        : '+user."User ID";
+                  Body+=FORMAT(New_Line);
+                  Body+='Department         : '+user.Dept;
+                  Body+=FORMAT(New_Line);
+                  Body+='Item Name          : '+PRL.Description;
+                  Body+=FORMAT(New_Line);
+                  Body+='Quantity           : '+FORMAT(PRL.Quantity-(PRL."Quantity Accepted"+PRL."Quantity Rejected"+PRL."Quantity Rework"));
+                  Body+=FORMAT(New_Line);
+                  Body+='Unit of Measure    : '+PRL."Unit of Measure";
+                  Body+=FORMAT(New_Line);
+                  PRL.CALCFIELDS(PRL."Document date");
+                  Body+='Inward Date        : '+FORMAT((PRL."Document date"),0,4);
+                  Body+=FORMAT(New_Line);
+                   IF (TODAY-PRL."Document date")>1 THEN
+                   BEGIN
+                  Body+='Pending Days       : '+FORMAT(TODAY-PRL."Document date");
+                  Body+=FORMAT(New_Line);
+                  Body+=FORMAT(New_Line);
+                //  MESSAGE(FORMAT(Mail_To));
+                //  MESSAGE(FORMAT(Mail_From));
+                  Body+='*** Auto Mail Generated from ERP ***';
+                  Mail_To+='anilkumar@efftronics.com';
+                 IF ( Mail_From<>'') AND (Mail_To<>'') THEN
+                 Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
+                 END;
+                END;
+                END;
+                UNTIL PRL.NEXT=0; */
 
 
+                /* //Pending Orders Items
 
-        {
-        //Pending Orders Items
+                 New_Line:=10;
+                 max:=TODAY-1;
+                 min:=040108D;
+                Pl.SETFILTER(Pl."Document Type",'ORDER');
+                Pl.SETFILTER(Pl.Quantity,'<>%1',0);
+                Pl.SETFILTER(Pl."Qty. to Receive",'<>%1',0);
+                Pl.SETRANGE(Pl."Location Code",'R&D STR');
+                Pl.SETRANGE(Pl."Deviated Receipt Date",min,max);
+                IF Pl.FINDSET THEN
+                REPEAT
+                IH.SETRANGE(IH."No.",Pl."Indent No.");
+                IF IH.FINDFIRST THEN
+                BEGIN
+                 user.SETRANGE(user."User ID",IH."Person Code");
+                 IF user.FINDFIRST THEN
+                 BEGIN
+                 Body:='';
+                 Mail_To:='swarupa@efftronics.com';
+                  Mail_From:='anilkumar@efftronics.com';
+                  Subject:=' Purchase Ordered but deviated Items';
+                  Body+='Item Details are as Follows :';
+                  Body+=FORMAT(New_Line);
+                  Body+=FORMAT(New_Line);
+                  Body+='Indented Person       : '+user.Name;
+                  Body+=FORMAT(New_Line);
+                  Body+='Employee ID           : '+user."User ID";
+                  Body+=FORMAT(New_Line);
+                  Body+='Department            : '+user.Dept;
+                  Body+=FORMAT(New_Line);
+                  Body+='Item Name             : '+Pl.Description;
+                  Body+=FORMAT(New_Line);
+                  Body+='Quantity              : '+FORMAT(Pl."Qty. to Receive");
+                  Body+=FORMAT(New_Line);
+                  Body+='Unit of Measure       : '+Pl."Unit of Measure";
+                  Body+=FORMAT(New_Line);
+                  Body+='Expected Receipt Date : '+FORMAT((Pl."Deviated Receipt Date"),0,4);
+                  Body+=FORMAT(New_Line);
+                  Body+='Pending Days          : '+FORMAT(TODAY-Pl."Deviated Receipt Date");
+                  Body+=FORMAT(New_Line);
+                  IF ( Mail_From<>'') AND (Mail_To<>'') THEN
+                 Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
+                  END;
+                  END;
+                UNTIL Pl.NEXT=0; */
 
-         New_Line:=10;
-         max:=TODAY-1;
-         min:=040108D;
-        Pl.SETFILTER(Pl."Document Type",'ORDER');
-        Pl.SETFILTER(Pl.Quantity,'<>%1',0);
-        Pl.SETFILTER(Pl."Qty. to Receive",'<>%1',0);
-        Pl.SETRANGE(Pl."Location Code",'R&D STR');
-        Pl.SETRANGE(Pl."Deviated Receipt Date",min,max);
-        IF Pl.FINDSET THEN
-        REPEAT
-        IH.SETRANGE(IH."No.",Pl."Indent No.");
-        IF IH.FINDFIRST THEN
-        BEGIN
-         user.SETRANGE(user."User ID",IH."Person Code");
-         IF user.FINDFIRST THEN
-         BEGIN
-         Body:='';
-         Mail_To:='swarupa@efftronics.com';
-          Mail_From:='anilkumar@efftronics.com';
-          Subject:=' Purchase Ordered but deviated Items';
-          Body+='Item Details are as Follows :';
-          Body+=FORMAT(New_Line);
-          Body+=FORMAT(New_Line);
-          Body+='Indented Person       : '+user.Name;
-          Body+=FORMAT(New_Line);
-          Body+='Employee ID           : '+user."User ID";
-          Body+=FORMAT(New_Line);
-          Body+='Department            : '+user.Dept;
-          Body+=FORMAT(New_Line);
-          Body+='Item Name             : '+Pl.Description;
-          Body+=FORMAT(New_Line);
-          Body+='Quantity              : '+FORMAT(Pl."Qty. to Receive");
-          Body+=FORMAT(New_Line);
-          Body+='Unit of Measure       : '+Pl."Unit of Measure";
-          Body+=FORMAT(New_Line);
-          Body+='Expected Receipt Date : '+FORMAT((Pl."Deviated Receipt Date"),0,4);
-          Body+=FORMAT(New_Line);
-          Body+='Pending Days          : '+FORMAT(TODAY-Pl."Deviated Receipt Date");
-          Body+=FORMAT(New_Line);
-          IF ( Mail_From<>'') AND (Mail_To<>'') THEN
-         Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
-          END;
-          END;
-        UNTIL Pl.NEXT=0;
+                /* //Newmail
 
-        }
+                Sh.SETRANGE(Sh."Expiration Date",TODAY);
 
-        {
-        //Newmail
-
-        Sh.SETRANGE(Sh."Expiration Date",TODAY);
-
-        New_Line:=10;
-        body1:='';
-         bodies:=1;
-        Mail_Body[bodies]:='';
-        Subject:='ERP- Today  Released Sale Orders ';
-        body1+='RELEASED ORDER DETAILS';
-        body1+=FORMAT(New_Line);
-        body1+=FORMAT(New_Line);
-        IF Sh.FINDSET THEN
-        REPEAT
-              IF (STRLEN(body1)>800) THEN
-              BEGIN
-                Mail_Body[bodies]:=body1;
-                bodies+=1;
+                New_Line:=10;
                 body1:='';
-              END;
-        body1+='Customer Name      : '+Sh."Sell-to Customer Name";
-        body1+=FORMAT(New_Line);
-        body1+='Customer Order No. : '+Sh."Customer OrderNo.";
-        body1+=FORMAT(New_Line);
-        body1+='Order Value        : '+FORMAT(Sh."Sale Order Total Amount");
-        body1+=FORMAT(New_Line);
-            "Mail-Id".SETRANGE("Mail-Id"."User ID",Sh."Salesperson Code");
-            IF "Mail-Id".FINDFIRST THEN
-        body1+='Sales Executive    : '+"Mail-Id".Name;
-        body1+=FORMAT(New_Line);
-        body1+='Sale order No.     : '+Sh."No.";
-        body1+=FORMAT(New_Line);
-        body1+=FORMAT(New_Line);
-              IF (STRLEN(body1)>800) THEN
-              BEGIN
-                Mail_Body[bodies]:=body1;
-                bodies+=1;
-                body1:='';
-              END;
-        UNTIL Sh.NEXT=0;
-        body1+='***** Auto Mail Generated From ERP *****';
-        Mail_From:='anilkumar@efftronics.com';
-        //Mail_To:='swarupa@efftronics.com';
+                 bodies:=1;
+                Mail_Body[bodies]:='';
+                Subject:='ERP- Today  Released Sale Orders ';
+                body1+='RELEASED ORDER DETAILS';
+                body1+=FORMAT(New_Line);
+                body1+=FORMAT(New_Line);
+                IF Sh.FINDSET THEN
+                REPEAT
+                      IF (STRLEN(body1)>800) THEN
+                      BEGIN
+                        Mail_Body[bodies]:=body1;
+                        bodies+=1;
+                        body1:='';
+                      END;
+                body1+='Customer Name      : '+Sh."Sell-to Customer Name";
+                body1+=FORMAT(New_Line);
+                body1+='Customer Order No. : '+Sh."Customer OrderNo.";
+                body1+=FORMAT(New_Line);
+                body1+='Order Value        : '+FORMAT(Sh."Sale Order Total Amount");
+                body1+=FORMAT(New_Line);
+                    "Mail-Id".SETRANGE("Mail-Id"."User ID",Sh."Salesperson Code");
+                    IF "Mail-Id".FINDFIRST THEN
+                body1+='Sales Executive    : '+"Mail-Id".Name;
+                body1+=FORMAT(New_Line);
+                body1+='Sale order No.     : '+Sh."No.";
+                body1+=FORMAT(New_Line);
+                body1+=FORMAT(New_Line);
+                      IF (STRLEN(body1)>800) THEN
+                      BEGIN
+                        Mail_Body[bodies]:=body1;
+                        bodies+=1;
+                        body1:='';
+                      END;
+                UNTIL Sh.NEXT=0;
+                body1+='***** Auto Mail Generated From ERP *****';
+                Mail_From:='anilkumar@efftronics.com';
+                //Mail_To:='swarupa@efftronics.com';
 
-        Mail_To:='ceo@efftronics.com,anilkumar@efftronics.com';
-         IF (Mail_From<>'')AND(Mail_To<>'') THEN
-        NewCDOMessage(Mail_From,Mail_To,Subject,body1,'');
+                Mail_To:='ceo@efftronics.com,anilkumar@efftronics.com';
+                 IF (Mail_From<>'')AND(Mail_To<>'') THEN
+                NewCDOMessage(Mail_From,Mail_To,Subject,body1,''); */
+
+
+                /* //QC Rejection List
+                Body:='';
+                New_Line:=10;
+                IR.RESET;
+                IR.SETFILTER(IR."Source Type",'In Bound');
+                IR.SETFILTER(IR.Status,'YES');
+                IR.SETRANGE(IR."Posted Date",TODAY);
+                IR.SETFILTER(IR."Qty. Rejected",'>0');
+                IF IR.FINDSET THEN
+                  Body+='Item Details  :';
+                REPEAT
+                  Body+=FORMAT(New_Line);
+                  Body+=FORMAT(New_Line);
+                  Body+='Item Name            : '+IR."Item Description";
+                  Body+=FORMAT(New_Line);
+                  Body+='Rejected Quantity    : '+FORMAT(IR."Qty. Rejected");
+                  Body+=FORMAT(New_Line);
+                  Body+='Total Quantity       : '+FORMAT(IR.Quantity);
+                  Body+=FORMAT(New_Line);
+                  PIDS.SETRANGE(PIDS."No.",IR."Parent IDS");
+                  IF PIDS.FINDFIRST THEN
+                  Body+='Inward Quantity      : '+FORMAT(PIDS.Quantity)
+                  ELSE
+                  Body+='Inward Quantity      : '+FORMAT(IR.Quantity);
+                  Body+=FORMAT(New_Line);
+                  Body+='Vendor Name          : '+IR."Vendor Name";
+                  Body+=FORMAT(New_Line);
+                  Body+='Rejected Reason      : '+IR."Nature Of Rejection";
+                  Body+=FORMAT(New_Line);
+                  Body+='Inward Date          : '+FORMAT((IR."IDS creation Date"),0,4);
+                  Body+=FORMAT(New_Line);
+                 UNTIL IR.NEXT=0;
+                Body+=FORMAT(New_Line);
+                Body+='*** Auto Mail Generated From ERP ***';
+                Subject:='ERP- Today  Rejected Items ';
+                Mail_From:='anilkumar@efftronics.com';
+                //Mail_To:='mohang@efftronics.com';
+                //Mail_To:='ceo@efftronics.com,anilkumar@efftronics.com';
+                 IF (Mail_From<>'')AND(Mail_To<>'') THEN
+                Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,''); */
+
+
+                /* IF (TODAY-"Shortage. Calc. Date")>2 THEN
+                BEGIN
+                  Mail_From:='anilkumar@efftronics.com';
+                  Mail_To:='anilkumar@efftronics.com,';
+                 //  Mail_To:='ceo@efftronics.com,padmaja@efftronics.com,purchase@efftronics.com,himabindu@efftronics.com,cvmohan@efftronics.com,';
+                 // Mail_To+='anilkumar@efftronics.com,anilkumar@efftronics.com';
+                  Subject:='ERP- Alert **  PRODUCTION GETTING DEVIATED ** ';
+                  Body:='****  Automatic Mail Generated From ERP  ****';
+                  IF  Shortage_Status('OPEN') THEN
+                  BEGIN
+                    Subject+='Shortage data not Forwarded to Purchase ('
+                             +INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
+                  END ELSE IF Shortage_Status('WAP') THEN
+                  BEGIN
+                    Subject+=' Vendor & Cost data preparation pending at Purchase ('
+                              +INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
+                  END ELSE
+                  IF Shortage_Status('WFA') THEN
+                  BEGIN
+                          Subject+='AUTHORISATION WAS PENDING ('+INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
+
+                  END ELSE
+                  IF Shortage_Status('AUTHORISED') THEN
+                  BEGIN
+                     Subject+=' INDENTS ARE NOT CREATED ('+INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+
+                                                                                    INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
+                  END ELSE
+                  IF Shortage_Status('INDENT') THEN
+                  BEGIN
+                     Subject+='Indents are not Released ('+INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+
+                                                                                    INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
+                  END ELSE  IF Shortage_Status('Pur') THEN
+                  BEGIN
+                    MESSAGE('hi');
+                    Subject+='Purchase Orders are not raised ('+INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+
+                                                                                  INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
+                  END ELSE
+                  BEGIN
+                     Subject+='Shortage Report was not run ('+INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+
+                                                                                    INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
+                   END;
+                  Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
+                END ELSE
+                BEGIN
+                  Send_Mail:=FALSE;
+                  Mail_From:='anilkumar@efftronics.com';
+                  Mail_To:='anilkumar@efftronics.com,';
+                  Subject:='ERP- Alert  ';
+                  Body:='****  Automatic Mail Generated From ERP  ****';
+
+                  IF  ((DATE2DWY(TODAY,1)=1) OR (DATE2DWY(TODAY,1)=4))THEN
+                  BEGIN
+                    IF Shortage_Status_Present('OPEN',TODAY,TODAY+2) THEN
+                    BEGIN
+                      Subject+='Shortage data not Forwarded to Purchase';
+                       Send_Mail:=TRUE;
+                      //Mail_To:='padmaja@efftronics.com,purchase@efftronics.com,himabindu@efftronics.com,cvmohan@efftronics.com,';
+                      //Mail_To+='anilkumar@efftronics.com';
+                    END ELSE IF Shortage_Status_Present('WAP',TODAY,TODAY+2) THEN
+                    BEGIN
+                      Subject+=' Vendor & Cost data preparation pending at Purchase ';
+                       Send_Mail:=TRUE;
+                      //Mail_To:='padmaja@efftronics.com,purchase@efftronics.com,himabindu@efftronics.com,cvmohan@efftronics.com,';
+                      //Mail_To+='anilkumar@efftronics.com';
+                    END;
+
+                  END ELSE IF ((DATE2DWY(TODAY,1)=2) OR (DATE2DWY(TODAY,1)=5)) THEN
+                  BEGIN
+                    IF  Shortage_Status_Present('OPEN',TODAY-1,TODAY+1) THEN
+                    BEGIN
+                      Subject+='Shortage data not Forwarded to Purchase ';
+                      Send_Mail:=TRUE;
+                      //Mail_To:='ceo@efftronics.com,padmaja@efftronics.com,purchase@efftronics.com,himabindu@efftronics.com';
+                      //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
+
+                    END ELSE IF Shortage_Status_Present('WAP',TODAY-1,TODAY+1) THEN
+                    BEGIN
+                      Subject+=' Vendor & Cost data preparation pending at Purchase ';
+                       Send_Mail:=TRUE;
+                      //Mail_To:='purchase@efftronics.com,padmaja@efftronics.com,himabindu@efftronics.com';
+                      //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
+
+                    END ELSE IF Shortage_Status_Present('WFA',TODAY-1,TODAY+1) THEN
+                    BEGIN
+                      Subject+='Authorisation Process Was Pending ';
+                      Send_Mail:=TRUE;
+                      //Mail_To:='purchase@efftronics.com,padmaja@efftronics.com,himabindu@efftronics.com';
+                      //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
+
+                    END ELSE
+                    IF  Shortage_Status_Present('AUTHORISED',TODAY-1,TODAY+1) THEN
+                    BEGIN
+                      Subject+=' Indents are not created ';
+                      Send_Mail:=TRUE;
+                      //Mail_To:='padmaja@efftronics.com,chowdary@efftronics.com,himabindu@efftronics.com';
+                      //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
+
+                    END ELSE
+                    IF Shortage_Status_Present('INDENT',TODAY-1,TODAY+1) THEN
+                    BEGIN
+                       Subject+='Indents are not Released  ';
+                       Send_Mail:=TRUE;
+                      //Mail_To:='chowdary@efftronics.com,padmaja@efftronics.com,himabindu@efftronics.com';
+                      //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
+
+                    END ELSE  IF Shortage_Status_Present('Pur',TODAY-1,TODAY+1) THEN
+                    BEGIN
+                      Send_Mail:=TRUE;
+                      Subject+='Purchase Orders are not raised ('+INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+
+                                                                                  INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
+                    END;
+
+
+                  END ELSE
+                  BEGIN
+                    IF  Shortage_Status_Present('OPEN',"Shortage. Calc. Date"-2,"Shortage. Calc. Date") THEN
+                    BEGIN
+                      Subject+='Shortage data not Forwarded to Purchase ';
+                       Send_Mail:=TRUE;
+                      //Mail_To:='ceo@efftronics.com,padmaja@efftronics.com,chowdary@efftronics.com,himabindu@efftronics.com';
+                      //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
+
+                    END ELSE IF Shortage_Status_Present('WAP',"Shortage. Calc. Date"-2,"Shortage. Calc. Date") THEN
+                    BEGIN
+                      Subject+=' Vendor & Cost data preparation pending at Purchase ';
+                       Send_Mail:=TRUE;
+                      //Mail_To:='ceo@efftronics.com,chowdary@efftronics.com,padmaja@efftronics.com,himabindu@efftronics.com';
+                      //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
+
+                    END ELSE IF Shortage_Status_Present('WFA',"Shortage. Calc. Date"-2,"Shortage. Calc. Date") THEN
+                    BEGIN
+                      Subject+='Authorisation Process Was Pending ';
+                      Send_Mail:=TRUE;
+                      //Mail_To:='ceo@efftronics.com,chowdary@efftronics.com,padmaja@efftronics.com,himabindu@efftronics.com';
+                      //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
+
+                    END ELSE
+                    IF Shortage_Status_Present('AUTHORISED',"Shortage. Calc. Date"-2,"Shortage. Calc. Date") THEN
+                    BEGIN
+                      Subject+=' Indents are not created ';
+                      Send_Mail:=TRUE;
+                      //Mail_To:='ceo@efftronics.com,chowdary@efftronics.com,padmaja@efftronics.com,himabindu@efftronics.com';
+                      //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
+
+                    END ELSE
+                    IF Shortage_Status_Present('INDENT',"Shortage. Calc. Date"-2,"Shortage. Calc. Date") THEN
+                    BEGIN
+                       Subject+='Indents are not released  ';
+                       Send_Mail:=TRUE;
+                      //Mail_To:='ceo@efftronics.com,chowdary@efftronics.com,padmaja@efftronics.com,himabindu@efftronics.com';
+                      //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
+
+                    END ELSE  IF Shortage_Status_Present('Pur',"Shortage. Calc. Date"-2,"Shortage. Calc. Date") THEN
+                    BEGIN
+                      Send_Mail:=TRUE;
+                      Subject+='Purchase Orders are not raised ('+INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+
+                                                                                  INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
+                    END;
+
+
+                  END;
+                  IF Send_Mail THEN
+                  Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'')
+                END; */
+
+                //code to send mails for C-forms
+                /*  IF DATE2DWY(TODAY,1)=6 THEN
+                 BEGIN
+                   CUSTOMER.RESET;
+                   CUSTOMER.SETFILTER(CUSTOMER."E-Mail",'<>%1','');
+                   IF CUSTOMER.FIND('-') THEN
+                   REPEAT
+                     SalInvHeader.RESET;
+                     SalInvHeader.SETCURRENTKEY(SalInvHeader."Posting Date");
+                     SalInvHeader.SETFILTER(SalInvHeader."Sell-to Customer No.",CUSTOMER."No.");
+                     SalInvHeader.SETFILTER(SalInvHeader."Customer Posting Group",'PRIVATE');
+                     SalInvHeader.SETFILTER(SalInvHeader."Form Code",'C');
+                     SalInvHeader.SETFILTER(SalInvHeader."C-form Status",'<>%1',2);
+                     SalInvHeader.SETFILTER(SalInvHeader."Posting Date",'>%1&<%2',DMY2DATE(31,3,2009),(TODAY-90));
+                     IF SalInvHeader.FINDFIRST THEN
+                     BEGIN
+                       REPORT.SAVEASPDF(50215,'\\erpserver\ErpAttachments\ErpAttachments1\'+CUSTOMER.Name+'.PDF',SalInvHeader);
+                       Mail_To:='anuradhag@efftronics.com,prasannat@efftronics.com';
+                       Subject:= 'REG:C-FORMS';
+                   Body:='';
+                   Body+= '<body>Dear Sir ,<br/> <br/>';
+                   Body+='Please Verify the Attachment and send the C-Forms for the below mentioned Invoices<br/><br/>';
+                   Body+='*****  Generated Auto Mail   *****';
+                   Mail_From:='erp@efftronics.com';
+
+                   Body+='</body>';
+                   Attachment:='\\erpserver\ErpAttachments\ErpAttachments1\'+CUSTOMER.Name+'.PDF';
+                   SMTP_MAIL.CreateMessage('EFFTRONICS',Mail_From,Mail_To,Subject,Body,TRUE);
+                   SMTP_MAIL.AddAttachment(Attachment);
+                   SMTP_MAIL.Send;
+                 END;
+                 UNTIL CUSTOMER.NEXT = 0;
+                 END; */
+
+
+                //code to Send mails for AMC orders that are going to expire in four months.
+
+                /* // coment for amc next expire details
+                IF (DATE2DWY(TODAY,1)=1) OR (DATE2DWY(TODAY,1)=4) THEN
+                 BEGIN
+                   REPORT.SAVEASPDF(33000900,'\\erpserver\ErpAttachments\ErpAttachments1\AMC_Details.PDF');
+                   Subject:='AMCs that are going to expire in 4 Months ';
+                   Body:='****  Automatic Mail Generated From ERP  ****';
+                   Attachment:='\\erpserver\ErpAttachments\ErpAttachments1\AMC_Details.PDF';
+                   Mail_From:='noreply@efftronics.com';
+                   Mail_To:='sambireddy@efftronics.com,prasanthi@efftronics.com,cuspm@efftronics.com,erp@efftronics.com,yesu@efftronics.com';
+                   SMTP_MAIL.CreateMessage('EFFTRONICS',Mail_From,Mail_To,Subject,Body,TRUE);
+                   //EFFUPG Start
+                   {
+                   SMTP_MAIL.AddAttachment(Attachment);
+                   }
+                   SMTP_MAIL.AddAttachment(Attachment,'');
+                   //EFFUPG End
+                   SMTP_MAIL.Send;
+
+                 END; */
+
+                //Mail to vendors to remined them the items to be sent to Efftronics
+                /* Vendor.RESET;
+                Vendor.SETRANGE(Vendor."Need to send Mail",TRUE);
+                IF Vendor.FIND('-') THEN
+                REPEAT
+                PurchaseLine.RESET;
+                PurchaseLine.SETFILTER(PurchaseLine."Buy-from Vendor No.",Vendor."No.");
+                PurchaseLine.SETFILTER(PurchaseLine."Qty. to Receive",'>%1',0);
+                PurchaseLine.SETFILTER(PurchaseLine."Deviated Receipt Date",'>%1',TODAY);
+                IF PurchaseLine.FIND('-') THEN
+                REPEAT
+                  PurchaseHeader.RESET;
+                  PurchaseHeader.SETFILTER(PurchaseHeader."No.",PurchaseLine."Document No.");
+                  PurchaseHeader.SETFILTER(PurchaseHeader."Order Date",'<%1',TODAY);
+                  IF PurchaseHeader.FINDFIRST THEN
+                  BEGIN
+                    Item.RESET;
+                    Item.SETFILTER(Item."No.",PurchaseLine."No.");
+                    IF Item.FINDFIRST THEN
+                    BEGIN
+                        IF  ((TODAY-PurchaseHeader."Order Date")=ROUND((PurchaseLine."Expected Receipt Date"-PurchaseHeader."Order Date"-4)/2-0.5,1))
+                      OR
+                            ((TODAY-PurchaseHeader."Order Date")=ROUND((PurchaseLine."Expected Receipt Date"-PurchaseHeader."Order Date"-4)/4-0.5,1))
+                      THEN
+                      BEGIN
+                        PurchaseLine.MARK(TRUE);
+                        k:=10;
+                      END;
+                    END;
+                  END;
+                UNTIL PurchaseLine.NEXT=0;
+                IF k=10 THEN
+                BEGIN
+                  REPORT.SAVEASPDF(50217,'\\erpserver\ErpAttachments\ErpAttachments1\'+Vendor.Name+'.PDF',FALSE,PurchaseLine);
+                  Subject:='Reminder to Vendor'+Vendor.Name;
+                  Body:='<PDF><BODY>Dear Sir,<BR>';
+                  Body+='<BR><PRE>       This is to Remind you the details of items you need to send to Efftronics in Next 5 Days</PRE><BR><BR>';
+                  Body+='<PRE>             ****  Automatic Mail Generated From ERP  ****</PRE></BODY></PDF>';
+                  Attachment:='\\erpserver\ErpAttachments\ErpAttachments1\'+Vendor.Name+'.PDF';
+                  Mail_From:='erp@efftronics.com';
+                  Mail_To:='Chowdary@Efftronics.com,anilkumar@efftronics.com,Phani@efftronics.com';
+                  SMTP_MAIL.CreateMessage('EFFTRONICS',Mail_From,Mail_To,Subject,Body,TRUE);
+                  SMTP_MAIL.AddAttachment(Attachment);
+                  SMTP_MAIL.Send;
+                  k:=0;
+                  PurchaseLine.CLEARMARKS;
+                END;
+                UNTIL Vendor.NEXT=0; */
+
+
+                // MAIN STORES SHORTAGE MATERIAL AUTOMATIC REPORT
+                Item.CALCFIELDS(Item."Stock at PROD Stores");
+                Item.SETFILTER(Item."Safety Stock Quantity", '>%1', (Item."Stock at Stores" + Item."Stock at PROD Stores"));
+                Cs_Shortage_QTY := Item.COUNT;
+                Body += '****  Automatic Mail Generated From ERP  ****';
+                REPORT.RUN(33000892, FALSE, FALSE, Item);
+                "g/l setup".FINDFIRST;
+                REPORT.SAVEASPDF(33000892, FORMAT('\\erpserver\ErpAttachments\' + 'STR Shortage' + '.PDF'));
+
+                Mail_From := 'noreply@efftronics.com';
+                Mail_To := 'Store@efftronics.com,Padmaja@efftronics.com,';
+                Mail_To += 'erp@efftronics.com';
+                // Mail_To:='anilkumar@efftronics.com';
+                Subject := ' Shortage at Main Stores ';
+
+                Attachment := '\\erpserver\ErpAttachments\' + 'STR Shortage.PDF';
+                SMTP_MAIL.CreateMessage('ERP', Mail_From, Mail_To, Subject, Body, TRUE);
+                // SMTP_MAIL.AddAttachment(Attachment1);
+                // SMTP_MAIL.AddAttachment(attachment13);
+                IF EXISTS(Attachment) THEN  // Condition added by Pranavi on 13-Jan-2016 for solving error if shortage items doesnot exist
+                BEGIN
+                    //EFFUPG Start
+
+                    //SMTP_MAIL.AddAttachment(Attachment);
+
+                    SMTP_MAIL.AddAttachment(Attachment, '');
+                    //EFFUPG End
+                    SMTP_MAIL.Send;
+                END;
+                // End of MAIN STORES SHORTAGE MATERIAL AUTOMATIC REPORT
+
+                // temporarily commented by Vishnu Priya on 20-07-2019 as there is an error in the SMS Tables Triggers
+                REPORT.RUN(50023, FALSE); // Added by rakesh to run Report 50023 automatically on 27-Dec-14
+
+                //Added by Pranavi on 04-Jan-2016 for Auto OMSDump
+                //IF NOT ((DATE2DWY(TODAY,1)=3) OR (DATE2DWY(TODAY,1)=6)) THEN
+                //  StockOMSDump.RUN;
+
+                //MSL_Alert;
+
+            end;
         }
-
+        addafter(SEPAExportWoBankAccData)
         {
-
-        //QC Rejection List
-        Body:='';
-        New_Line:=10;
-        IR.RESET;
-        IR.SETFILTER(IR."Source Type",'In Bound');
-        IR.SETFILTER(IR.Status,'YES');
-        IR.SETRANGE(IR."Posted Date",TODAY);
-        IR.SETFILTER(IR."Qty. Rejected",'>0');
-        IF IR.FINDSET THEN
-          Body+='Item Details  :';
-        REPEAT
-          Body+=FORMAT(New_Line);
-          Body+=FORMAT(New_Line);
-          Body+='Item Name            : '+IR."Item Description";
-          Body+=FORMAT(New_Line);
-          Body+='Rejected Quantity    : '+FORMAT(IR."Qty. Rejected");
-          Body+=FORMAT(New_Line);
-          Body+='Total Quantity       : '+FORMAT(IR.Quantity);
-          Body+=FORMAT(New_Line);
-          PIDS.SETRANGE(PIDS."No.",IR."Parent IDS");
-          IF PIDS.FINDFIRST THEN
-          Body+='Inward Quantity      : '+FORMAT(PIDS.Quantity)
-          ELSE
-          Body+='Inward Quantity      : '+FORMAT(IR.Quantity);
-          Body+=FORMAT(New_Line);
-          Body+='Vendor Name          : '+IR."Vendor Name";
-          Body+=FORMAT(New_Line);
-          Body+='Rejected Reason      : '+IR."Nature Of Rejection";
-          Body+=FORMAT(New_Line);
-          Body+='Inward Date          : '+FORMAT((IR."IDS creation Date"),0,4);
-          Body+=FORMAT(New_Line);
-         UNTIL IR.NEXT=0;
-        Body+=FORMAT(New_Line);
-        Body+='*** Auto Mail Generated From ERP ***';
-        Subject:='ERP- Today  Rejected Items ';
-        Mail_From:='anilkumar@efftronics.com';
-        //Mail_To:='mohang@efftronics.com';
-        //Mail_To:='ceo@efftronics.com,anilkumar@efftronics.com';
-         IF (Mail_From<>'')AND(Mail_To<>'') THEN
-        Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
-
-        }
-
-
-        {
-
-
-          IF (TODAY-"Shortage. Calc. Date")>2 THEN
-          BEGIN
-            Mail_From:='anilkumar@efftronics.com';
-            Mail_To:='anilkumar@efftronics.com,';
-                  //  Mail_To:='ceo@efftronics.com,padmaja@efftronics.com,purchase@efftronics.com,himabindu@efftronics.com,cvmohan@efftronic
-        s.
-        co
-        m,';
-           // Mail_To+='anilkumar@efftronics.com,anilkumar@efftronics.com';
-            Subject:='ERP- Alert **  PRODUCTION GETTING DEVIATED ** ';
-            Body:='****  Automatic Mail Generated From ERP  ****';
-            IF  Shortage_Status('OPEN') THEN
-            BEGIN
-              Subject+='Shortage data not Forwarded to Purchase ('
-                       +INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
-            END ELSE IF Shortage_Status('WAP') THEN
-            BEGIN
-              Subject+=' Vendor & Cost data preparation pending at Purchase ('
-                        +INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
-            END ELSE
-            IF Shortage_Status('WFA') THEN
-            BEGIN
-                    Subject+='AUTHORISATION WAS PENDING ('+INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+INDIAN_FORMAT("Shortage. Calc. Date"
-        +2
-        )+
-        ')';
-
-            END ELSE
-            IF Shortage_Status('AUTHORISED') THEN
-            BEGIN
-               Subject+=' INDENTS ARE NOT CREATED ('+INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+
-                                                                              INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
-            END ELSE
-            IF Shortage_Status('INDENT') THEN
-            BEGIN
-               Subject+='Indents are not Released ('+INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+
-                                                                              INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
-            END ELSE  IF Shortage_Status('Pur') THEN
-            BEGIN
-              MESSAGE('hi');
-              Subject+='Purchase Orders are not raised ('+INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+
-                                                                            INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
-            END ELSE
-            BEGIN
-               Subject+='Shortage Report was not run ('+INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+
-                                                                              INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
-             END;
-            Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
-          END ELSE
-          BEGIN
-            Send_Mail:=FALSE;
-            Mail_From:='anilkumar@efftronics.com';
-            Mail_To:='anilkumar@efftronics.com,';
-            Subject:='ERP- Alert  ';
-            Body:='****  Automatic Mail Generated From ERP  ****';
-
-            IF  ((DATE2DWY(TODAY,1)=1) OR (DATE2DWY(TODAY,1)=4))THEN
-            BEGIN
-              IF Shortage_Status_Present('OPEN',TODAY,TODAY+2) THEN
-              BEGIN
-                Subject+='Shortage data not Forwarded to Purchase';
-                 Send_Mail:=TRUE;
-                //Mail_To:='padmaja@efftronics.com,purchase@efftronics.com,himabindu@efftronics.com,cvmohan@efftronics.com,';
-                //Mail_To+='anilkumar@efftronics.com';
-              END ELSE IF Shortage_Status_Present('WAP',TODAY,TODAY+2) THEN
-              BEGIN
-                Subject+=' Vendor & Cost data preparation pending at Purchase ';
-                 Send_Mail:=TRUE;
-                //Mail_To:='padmaja@efftronics.com,purchase@efftronics.com,himabindu@efftronics.com,cvmohan@efftronics.com,';
-                //Mail_To+='anilkumar@efftronics.com';
-              END;
-
-            END ELSE IF ((DATE2DWY(TODAY,1)=2) OR (DATE2DWY(TODAY,1)=5)) THEN
-            BEGIN
-              IF  Shortage_Status_Present('OPEN',TODAY-1,TODAY+1) THEN
-              BEGIN
-                Subject+='Shortage data not Forwarded to Purchase ';
-                Send_Mail:=TRUE;
-                //Mail_To:='ceo@efftronics.com,padmaja@efftronics.com,purchase@efftronics.com,himabindu@efftronics.com';
-                //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
-
-              END ELSE IF Shortage_Status_Present('WAP',TODAY-1,TODAY+1) THEN
-              BEGIN
-                Subject+=' Vendor & Cost data preparation pending at Purchase ';
-                 Send_Mail:=TRUE;
-                //Mail_To:='purchase@efftronics.com,padmaja@efftronics.com,himabindu@efftronics.com';
-                //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
-
-              END ELSE IF Shortage_Status_Present('WFA',TODAY-1,TODAY+1) THEN
-              BEGIN
-                Subject+='Authorisation Process Was Pending ';
-                Send_Mail:=TRUE;
-                //Mail_To:='purchase@efftronics.com,padmaja@efftronics.com,himabindu@efftronics.com';
-                //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
-
-              END ELSE
-              IF  Shortage_Status_Present('AUTHORISED',TODAY-1,TODAY+1) THEN
-              BEGIN
-                Subject+=' Indents are not created ';
-                Send_Mail:=TRUE;
-                //Mail_To:='padmaja@efftronics.com,chowdary@efftronics.com,himabindu@efftronics.com';
-                //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
-
-              END ELSE
-              IF Shortage_Status_Present('INDENT',TODAY-1,TODAY+1) THEN
-              BEGIN
-                 Subject+='Indents are not Released  ';
-                 Send_Mail:=TRUE;
-                //Mail_To:='chowdary@efftronics.com,padmaja@efftronics.com,himabindu@efftronics.com';
-                //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
-
-              END ELSE  IF Shortage_Status_Present('Pur',TODAY-1,TODAY+1) THEN
-              BEGIN
-                Send_Mail:=TRUE;
-                Subject+='Purchase Orders are not raised ('+INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+
-                                                                            INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
-              END;
-
-
-            END ELSE
-            BEGIN
-              IF  Shortage_Status_Present('OPEN',"Shortage. Calc. Date"-2,"Shortage. Calc. Date") THEN
-              BEGIN
-                Subject+='Shortage data not Forwarded to Purchase ';
-                 Send_Mail:=TRUE;
-                //Mail_To:='ceo@efftronics.com,padmaja@efftronics.com,chowdary@efftronics.com,himabindu@efftronics.com';
-                //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
-
-              END ELSE IF Shortage_Status_Present('WAP',"Shortage. Calc. Date"-2,"Shortage. Calc. Date") THEN
-              BEGIN
-                Subject+=' Vendor & Cost data preparation pending at Purchase ';
-                 Send_Mail:=TRUE;
-                //Mail_To:='ceo@efftronics.com,chowdary@efftronics.com,padmaja@efftronics.com,himabindu@efftronics.com';
-                //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
-
-              END ELSE IF Shortage_Status_Present('WFA',"Shortage. Calc. Date"-2,"Shortage. Calc. Date") THEN
-              BEGIN
-                Subject+='Authorisation Process Was Pending ';
-                Send_Mail:=TRUE;
-                //Mail_To:='ceo@efftronics.com,chowdary@efftronics.com,padmaja@efftronics.com,himabindu@efftronics.com';
-                //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
-
-              END ELSE
-              IF Shortage_Status_Present('AUTHORISED',"Shortage. Calc. Date"-2,"Shortage. Calc. Date") THEN
-              BEGIN
-                Subject+=' Indents are not created ';
-                Send_Mail:=TRUE;
-                //Mail_To:='ceo@efftronics.com,chowdary@efftronics.com,padmaja@efftronics.com,himabindu@efftronics.com';
-                //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
-
-              END ELSE
-              IF Shortage_Status_Present('INDENT',"Shortage. Calc. Date"-2,"Shortage. Calc. Date") THEN
-              BEGIN
-                 Subject+='Indents are not released  ';
-                 Send_Mail:=TRUE;
-                //Mail_To:='ceo@efftronics.com,chowdary@efftronics.com,padmaja@efftronics.com,himabindu@efftronics.com';
-                //Mail_To+=',cvmohan@efftronics.com,anilkumar@efftronics.com';
-
-              END ELSE  IF Shortage_Status_Present('Pur',"Shortage. Calc. Date"-2,"Shortage. Calc. Date") THEN
-              BEGIN
-                Send_Mail:=TRUE;
-                Subject+='Purchase Orders are not raised ('+INDIAN_FORMAT("Shortage. Calc. Date")+' TO '+
-                                                                            INDIAN_FORMAT("Shortage. Calc. Date"+2)+')';
-              END;
-
-
-            END;
-            IF Send_Mail THEN
-            Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'')
-          END;
-              }
-        //code to send mails for C-forms
-        { IF DATE2DWY(TODAY,1)=6 THEN
-         BEGIN
-           CUSTOMER.RESET;
-           CUSTOMER.SETFILTER(CUSTOMER."E-Mail",'<>%1','');
-           IF CUSTOMER.FIND('-') THEN
-           REPEAT
-             SalInvHeader.RESET;
-             SalInvHeader.SETCURRENTKEY(SalInvHeader."Posting Date");
-             SalInvHeader.SETFILTER(SalInvHeader."Sell-to Customer No.",CUSTOMER."No.");
-             SalInvHeader.SETFILTER(SalInvHeader."Customer Posting Group",'PRIVATE');
-             SalInvHeader.SETFILTER(SalInvHeader."Form Code",'C');
-             SalInvHeader.SETFILTER(SalInvHeader."C-form Status",'<>%1',2);
-             SalInvHeader.SETFILTER(SalInvHeader."Posting Date",'>%1&<%2',DMY2DATE(31,3,2009),(TODAY-90));
-             IF SalInvHeader.FINDFIRST THEN
-             BEGIN
-               REPORT.SAVEASPDF(50215,'\\erpserver\ErpAttachments\ErpAttachments1\'+CUSTOMER.Name+'.PDF',SalInvHeader);
-               Mail_To:='anuradhag@efftronics.com,prasannat@efftronics.com';
-               Subject:= 'REG:C-FORMS';
-           Body:='';
-           Body+= '<body>Dear Sir ,<br/> <br/>';
-           Body+='Please Verify the Attachment and send the C-Forms for the below mentioned Invoices<br/><br/>';
-           Body+='*****  Generated Auto Mail   *****';
-           Mail_From:='erp@efftronics.com';
-
-           Body+='</body>';
-           Attachment:='\\erpserver\ErpAttachments\ErpAttachments1\'+CUSTOMER.Name+'.PDF';
-           SMTP_MAIL.CreateMessage('EFFTRONICS',Mail_From,Mail_To,Subject,Body,TRUE);
-           SMTP_MAIL.AddAttachment(Attachment);
-           SMTP_MAIL.Send;
-         END;
-         UNTIL CUSTOMER.NEXT = 0;
-         END;
-        }
-
-        //code to Send mails for AMC orders that are going to expire in four months.
-        {
-        // coment for amc next expire details
-        IF (DATE2DWY(TODAY,1)=1) OR (DATE2DWY(TODAY,1)=4) THEN
-         BEGIN
-           REPORT.SAVEASPDF(33000900,'\\erpserver\ErpAttachments\ErpAttachments1\AMC_Details.PDF');
-           Subject:='AMCs that are going to expire in 4 Months ';
-           Body:='****  Automatic Mail Generated From ERP  ****';
-           Attachment:='\\erpserver\ErpAttachments\ErpAttachments1\AMC_Details.PDF';
-           Mail_From:='noreply@efftronics.com';
-           Mail_To:='sambireddy@efftronics.com,prasanthi@efftronics.com,cuspm@efftronics.com,erp@efftronics.com,yesu@efftronics.com';
-           SMTP_MAIL.CreateMessage('EFFTRONICS',Mail_From,Mail_To,Subject,Body,TRUE);
-           //EFFUPG Start
-           {
-           SMTP_MAIL.AddAttachment(Attachment);
-           }
-           SMTP_MAIL.AddAttachment(Attachment,'');
-           //EFFUPG End
-           SMTP_MAIL.Send;
-
-         END;
-         }
-        //Mail to vendors to remined them the items to be sent to Efftronics
-        {Vendor.RESET;
-        Vendor.SETRANGE(Vendor."Need to send Mail",TRUE);
-        IF Vendor.FIND('-') THEN
-        REPEAT
-        PurchaseLine.RESET;
-        PurchaseLine.SETFILTER(PurchaseLine."Buy-from Vendor No.",Vendor."No.");
-        PurchaseLine.SETFILTER(PurchaseLine."Qty. to Receive",'>%1',0);
-        PurchaseLine.SETFILTER(PurchaseLine."Deviated Receipt Date",'>%1',TODAY);
-        IF PurchaseLine.FIND('-') THEN
-        REPEAT
-          PurchaseHeader.RESET;
-          PurchaseHeader.SETFILTER(PurchaseHeader."No.",PurchaseLine."Document No.");
-          PurchaseHeader.SETFILTER(PurchaseHeader."Order Date",'<%1',TODAY);
-          IF PurchaseHeader.FINDFIRST THEN
-          BEGIN
-            Item.RESET;
-            Item.SETFILTER(Item."No.",PurchaseLine."No.");
-            IF Item.FINDFIRST THEN
-            BEGIN
-                IF  ((TODAY-PurchaseHeader."Order Date")=ROUND((PurchaseLine."Expected Receipt Date"-PurchaseHeader."Order Date"-4)/2-0.5,1)
-        )
-              OR
-                    ((TODAY-PurchaseHeader."Order Date")=ROUND((PurchaseLine."Expected Receipt Date"-PurchaseHeader."Order Date"-4)/4-0.5,1)
-        )
-              THEN
-              BEGIN
-                PurchaseLine.MARK(TRUE);
-                k:=10;
-              END;
-            END;
-          END;
-        UNTIL PurchaseLine.NEXT=0;
-        IF k=10 THEN
-        BEGIN
-          REPORT.SAVEASPDF(50217,'\\erpserver\ErpAttachments\ErpAttachments1\'+Vendor.Name+'.PDF',FALSE,PurchaseLine);
-          Subject:='Reminder to Vendor'+Vendor.Name;
-          Body:='<PDF><BODY>Dear Sir,<BR>';
-          Body+='<BR><PRE>       This is to Remind you the details of items you need to send to Efftronics in Next 5 Days</PRE><BR><BR>';
-          Body+='<PRE>             ****  Automatic Mail Generated From ERP  ****</PRE></BODY></PDF>';
-          Attachment:='\\erpserver\ErpAttachments\ErpAttachments1\'+Vendor.Name+'.PDF';
-          Mail_From:='erp@efftronics.com';
-          Mail_To:='Chowdary@Efftronics.com,anilkumar@efftronics.com,Phani@efftronics.com';
-          SMTP_MAIL.CreateMessage('EFFTRONICS',Mail_From,Mail_To,Subject,Body,TRUE);
-          SMTP_MAIL.AddAttachment(Attachment);
-          SMTP_MAIL.Send;
-          k:=0;
-          PurchaseLine.CLEARMARKS;
-        END;
-        UNTIL Vendor.NEXT=0;
-        }
-
-        // MAIN STORES SHORTAGE MATERIAL AUTOMATIC REPORT
-          Item.CALCFIELDS(Item."Stock at PROD Stores");
-          Item.SETFILTER(Item."Safety Stock Quantity",'>%1',(Item."Stock at Stores"+Item."Stock at PROD Stores"));
-          Cs_Shortage_QTY:=Item.COUNT;
-          Body+='****  Automatic Mail Generated From ERP  ****';
-          REPORT.RUN(33000892,FALSE,FALSE,Item);
-          "g/l setup".FINDFIRST;
-          REPORT.SAVEASPDF(33000892,FORMAT('\\erpserver\ErpAttachments\'+'STR Shortage'+'.PDF'));
-
-          Mail_From:='noreply@efftronics.com';
-          Mail_To:='Store@efftronics.com,Padmaja@efftronics.com,';
-          Mail_To+='erp@efftronics.com';
-          // Mail_To:='anilkumar@efftronics.com';
-          Subject:=' Shortage at Main Stores ';
-
-          Attachment:='\\erpserver\ErpAttachments\'+'STR Shortage.PDF';
-          SMTP_MAIL.CreateMessage('ERP',Mail_From,Mail_To,Subject,Body,TRUE);
-          // SMTP_MAIL.AddAttachment(Attachment1);
-          // SMTP_MAIL.AddAttachment(attachment13);
-          IF EXISTS(Attachment) THEN  // Condition added by Pranavi on 13-Jan-2016 for solving error if shortage items doesnot exist
-          BEGIN
-           //EFFUPG Start
-           {
-           SMTP_MAIL.AddAttachment(Attachment);
-           }
-           SMTP_MAIL.AddAttachment(Attachment,'');
-           //EFFUPG End
-            SMTP_MAIL.Send;
-          END;
-        // End of MAIN STORES SHORTAGE MATERIAL AUTOMATIC REPORT
-
-        // temporarily commented by Vishnu Priya on 20-07-2019 as there is an error in the SMS Tables Triggers
-        REPORT.RUN(50023,FALSE); // Added by rakesh to run Report 50023 automatically on 27-Dec-14
-
-        //Added by Pranavi on 04-Jan-2016 for Auto OMSDump
-        //IF NOT ((DATE2DWY(TODAY,1)=3) OR (DATE2DWY(TODAY,1)=6)) THEN
-        //  StockOMSDump.RUN;
-
-        //MSL_Alert;
-        */
-        //end;
-        addafter("Control 83")
-        {
-            field("Daily Entrires Posting Date"; "Daily Entrires Posting Date")
+            field("Daily Entrires Posting Date";
+            "Daily Entrires Posting Date")
             {
 
                 trigger OnValidate();
@@ -2153,7 +1517,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
                     pos1 := 0;
                     pos2 := 0;
                     SIH.RESET;
-                    SIH.SETRANGE(SIH."Posting Date", 040118D, fromdate);  //need to update every year
+                    SIH.SETRANGE(SIH."Posting Date", DMY2Date(04, 01, 18), fromdate);  //need to update every year
                     IF SIH.FINDSET THEN
                         REPEAT
                             IF (SIH."Sell-to Customer No." <> 'CUST00536') THEN BEGIN
@@ -2361,7 +1725,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
                 end;
             }
         }
-        addafter("Control 7")
+        addafter("Payroll Trans. Import Format")
         {
             group(Attachments)
             {
@@ -2401,25 +1765,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
     }
     actions
     {
-
-        //Unsupported feature: Change Name on "Action 1900000004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 42". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Action 44". Please convert manually.
-
-
-        //Unsupported feature: Change Ellipsis on "Action 44". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 44". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 2". Please convert manually.
-
-        addafter("Action 2")
+        addafter("Change Payment &Tolerance")
         {
             action(To_be_Received_Items)
             {
@@ -2598,38 +1944,12 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         }
     }
 
+    trigger OnOpenPage()
+    begin
+        IF NOT (USERID IN ['EFFTRONICS\ANILKUMAR', 'EFFTRONICS\ANVESH', 'EFFTRONICS\20TE099', 'EFFTRONICS\20TE128', 'EFFTRONICS\VISHNUPRIYA', 'EFFTRONICS\B2BOTS']) THEN
+            ERROR('You Do not have rights to open GL Setup!');
+    end;
 
-    //Unsupported feature: PropertyModification on "Action 2.OnAction.ChangePmtTol(Variable 1001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //Action 2.OnAction.ChangePmtTol : 34;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //Action 2.OnAction.ChangePmtTol : "Change Payment Tolerance";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "Action 2.OnAction.Currency(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //Action 2.OnAction.Currency : 4;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //Action 2.OnAction.Currency : Currency;
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "Control 62.OnValidate.PaymentToleranceMgt(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //Control 62.OnValidate.PaymentToleranceMgt : 426;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //Control 62.OnValidate.PaymentToleranceMgt : "Payment Tolerance Management";
-    //Variable type has not been exported.
 
     var
         Item: Record Item;
@@ -2640,11 +1960,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         Mail_To: Text;
         Mail_From: Text;
         Attachment: Text[1000];
-        Mail: Codeunit Mail;
+        Mail: Codeunit 397;
         "No. Of Spaces": Integer;
         i: Integer;
         "g/l setup": Record "General Ledger Setup";
-        "Document-Print": Codeunit "Document-Print";
+        "Document-Print": Codeunit 229;
         Sh: Record "Sales Header";
         PurchLine: Record "Purchase Line";
         Attachment1: Text[1000];
@@ -2716,7 +2036,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         USER_SETUP: Record "User Setup";
         CUSTOMER: Record Customer;
         SalInvHeader: Record "Sales Invoice Header";
-        formataddress: Codeunit "Format Address";
+        formataddress: Codeunit 365;
         S1: Text[30];
         S2: Text[30];
         S3: Text[30];
@@ -2829,8 +2149,9 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         IRHeader: Record "Inspection Receipt Header";
 
 
-    //Unsupported feature: CodeModification on "OnOpenPage". Please convert manually.
 
+<<<<<<< HEAD
+=======
     //trigger OnOpenPage();
     //>>>> ORIGINAL CODE:
     //begin
@@ -3104,6 +2425,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
     //end;
 
     (8328)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure MG();
     begin
         Subject := 'ERP- Alert for AMC Bill  ' + Sh."No.";
@@ -3140,7 +2462,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // Mail.NewCDOMessage(Mail_From,Mail_To,Subject,Body,'');
     end;
 
+<<<<<<< HEAD
+
+=======
     (8364)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Shortage_Status(Search_String: Code[20]) status: Boolean;
     begin
 
@@ -3222,7 +2548,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
                         END;
     end;
 
+<<<<<<< HEAD
+
+=======
     (8451)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure INDIAN_FORMAT(GIVEN_DATE: Date) INDIAN_DATE: Text[30];
     var
         MONTH: Code[10];
@@ -3293,7 +2623,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         INDIAN_DATE := FORMAT(DATE2DMY(GIVEN_DATE, 1)) + '-' + MONTH + '-' + COPYSTR(FORMAT(DATE2DMY(GIVEN_DATE, 3)), 3, 2);
     end;
 
+<<<<<<< HEAD
+
+=======
     (8505)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Shortage_Status_Present(Search_String: Code[20]; From_Date: Date; To_Date: Date) status: Boolean;
     begin
         IF Search_String = 'OPEN' THEN BEGIN
@@ -3374,14 +2708,22 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
                         END;
     end;
 
+<<<<<<< HEAD
+
+=======
     (8591)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure ActiveERPCFConnectionOnPush();
     begin
         IF NOT (UPPERCASE(USERID) IN ['EFFTRONICS\ANILKUMAR', 'EFFTRONICS\SUJANI', 'EFFTRONICS\VISHNUPRIYA']) THEN
             ERROR('You dont have rights');
     end;
 
+<<<<<<< HEAD
+
+=======
     (8595)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Shortage_Delay();
     begin
         // Added by Rakesh on 24-Nov-14 for automail when Shoratge is not run for more than 1 week
@@ -3419,7 +2761,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // End by Rakesh
     end;
 
+<<<<<<< HEAD
+
+=======
     (8632)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Pending_PO();
     begin
         // Added by Rakesh for automail for Pending Purchase Orders on 12-Dec-14
@@ -3469,7 +2815,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // end by Rakesh
     end;
 
+<<<<<<< HEAD
+
+=======
     (8681)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Pending_QA();
     begin
         // Added by Rakesh to mail the pending QA items along on 26-Dec-2014
@@ -3513,7 +2863,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // End by Rakesh
     end;
 
+<<<<<<< HEAD
+
+=======
     (8720)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure stockstatementmail();
     begin
         //added by pranavi on 27-02-2015 to mail the stock statement
@@ -3538,7 +2892,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //end by pranavi
     end;
 
+<<<<<<< HEAD
+
+=======
     (8742)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure To_Be_Received_Bills_Mail();
     var
         PurchRcptHeader: Record "Purch. Rcpt. Header";
@@ -3583,7 +2941,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //End by Pranavi on 12-08-2015
     end;
 
+<<<<<<< HEAD
+
+=======
     (8782)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure MD_Sir_Mails();
     var
         Mail_count: Integer;
@@ -4370,7 +3732,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
+<<<<<<< HEAD
+
+=======
     (9525)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure SalesChangesAlert();
     var
         CHLG: Record "Change Log Entry";
@@ -5453,7 +4819,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
+<<<<<<< HEAD
+
+=======
     (10675)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ToBeShippedAMCAlert();
     var
         SH: Record "Sales Header";
@@ -5509,7 +4879,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             SMTP_MAIL.Send;
     end;
 
+<<<<<<< HEAD
+
+=======
     (10719)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure DispatchAssuranceMail1();
     var
         SIH: Record "Sales Invoice Header";
@@ -5624,7 +4998,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
+<<<<<<< HEAD
+
+=======
     (10818)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure SDStatusUpdation();
     var
         SIH: Record "Sales Invoice Header";
@@ -5872,7 +5250,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // End by Pranavi
     end;
 
+<<<<<<< HEAD
+
+=======
     (11069)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure DCTrackingStatusUpdate();
     var
         CSH: Record "CS Transaction Header";
@@ -5937,7 +5319,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         SQLConnection.Close;
     end;
 
+<<<<<<< HEAD
+
+=======
     (11124)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure PurchaseDCStatusUpdate();
     var
         DCH: Record "DC Header";
@@ -5989,7 +5375,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         SQLConnection.Close;
     end;
 
+<<<<<<< HEAD
+
+=======
     (11166)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ToBePlannedBOIAlert();
     var
         SH: Record "Sales Header";
@@ -6104,7 +5494,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             SMTP_MAIL.Send;
     end;
 
+<<<<<<< HEAD
+
+=======
     (11266)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure PendingQA_Auth_PO_Alert();
     var
         PH: Record "Purchase Header";
@@ -6174,7 +5568,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             SMTP_MAIL.Send;
     end;
 
+<<<<<<< HEAD
+
+=======
     (11323)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure CS_Adjustment_Alert();
     var
         CSLG: Record "CS Stock Ledger";
@@ -6245,7 +5643,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END;
     end;
 
+<<<<<<< HEAD
+
+=======
     (11380)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure MSL_Alert();
     var
         ILE: Record "Item Ledger Entry";
@@ -6394,7 +5796,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         ConnectionOpen := 0;
     end;
 
+<<<<<<< HEAD
+
+=======
     (11517)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure GetStockOfLot(Item: Code[30]; Lot: Code[30]);
     var
         ITEM1: Record Item;
@@ -6459,7 +5865,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END;
     end;
 
+<<<<<<< HEAD
+
+=======
     (11578)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure MaterialShortage();
     var
         "Count": Integer;
@@ -6563,7 +5973,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
+<<<<<<< HEAD
+
+=======
     (11677)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure RD_Material_Alerts();
     begin
         MIH.RESET;
@@ -6716,7 +6130,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END;
     end;
 
+<<<<<<< HEAD
+
+=======
     (11839)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Stock_Alert_On_Threshold();
     begin
         Item.RESET;
@@ -6758,7 +6176,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         SMTP_MAIL.Send;
     end;
 
+<<<<<<< HEAD
+
+=======
     (11879)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure Posting_date_changes();
     begin
 
@@ -6880,7 +6302,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
+<<<<<<< HEAD
+
+=======
     (11998)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Open_Orders_Allert();
     begin
         // created by Vishnu Priya for the Verified Orders That are still in the Open State on 01-10-2018
@@ -6928,7 +6354,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         SMTP_MAIL.Send;
     end;
 
+<<<<<<< HEAD
+
+=======
     (12043)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure RD_Mail_for_SalesOrders();
     begin
         //Added by Vishnu Priya for the R&D managers pending orders reasons alerts
@@ -7043,7 +6473,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END
     end;
 
+<<<<<<< HEAD
+
+=======
     (12159)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure SALESACTUALSDUMPING();
     begin
         // written by vishnu priya
@@ -7213,7 +6647,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //****************************************************************************************************************************************
     end;
 
+<<<<<<< HEAD
+
+=======
     (12335)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure IREPS_Tenders();
     begin
         //written by Vishnu Priya on March 1st 2019 for IREPS Tenders Alerts
@@ -7504,7 +6942,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
+<<<<<<< HEAD
+
+=======
     (12632)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure CalibrationAlerts();
     begin
         //********************************** Owners Mails ******************************************************
@@ -7643,7 +7085,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
 
     end;
 
+<<<<<<< HEAD
+
+=======
     (12773)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure "BGS Expire mails"();
     begin
         bg.RESET;
@@ -7674,7 +7120,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         END;
     end;
 
+<<<<<<< HEAD
+
+=======
     (12805)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure Stk_Rearr();
     var
         loopingVari: Integer;
@@ -7827,7 +7277,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         MESSAGE('Tams Dept Updated Employees : ' + FORMAT(Updated_Cnt));
     end;
 
+<<<<<<< HEAD
+
+=======
     (12958)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure TAMS_DEPT_UPDATION();
     begin
         Updated_Cnt := 0;
@@ -7879,7 +7333,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         MESSAGE('Tams Dept Updated Employees : ' + FORMAT(Updated_Cnt));
     end;
 
+<<<<<<< HEAD
+
+=======
     (13012)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure Stock_Analysis();
     begin
         IF ISCLEAR(SQLConnection) THEN
@@ -7974,7 +7432,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         // SQLConnection.CommitTrans;
     end;
 
+<<<<<<< HEAD
+
+=======
     (13109)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure CSIGCS_MAIL();
     begin
         //Added  by Vishnu Priya on 30-10-2019
@@ -8036,7 +7498,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //End  by Vishnu Priya on 30-10-2019
     end;
 
+<<<<<<< HEAD
+
+=======
     (13171)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     local procedure QAFLAG();
     begin
         //added by vishnu priya on 29-11-2019
@@ -8131,7 +7597,11 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
         //ended by vishnu priya on 29-11-2019
     end;
 
+<<<<<<< HEAD
+
+=======
     (13267)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure BG_TEST_MAILS();
     begin
         bg.RESET;
@@ -8186,20 +7656,6 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             END;
         END;
     end;
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
 
 }
 

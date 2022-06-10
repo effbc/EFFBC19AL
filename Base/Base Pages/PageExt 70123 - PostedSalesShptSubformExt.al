@@ -1,218 +1,20 @@
 pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subform"
 {
-    // version NAVW19.00.00.51685,NAVIN9.00.00.51685
-
+    Editable=true;
     layout
     {
-
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
-
-        modify("Control 1")
+        /* modify(Control1)
         {
-
-            //Unsupported feature: Change Name on "Control 1". Please convert manually.
-
             ShowCaption = false;
-        }
+        } */
 
-        //Unsupported feature: Change Name on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 46". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 46". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 54". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 54". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 44". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 44". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 44". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 42". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 42". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 50". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 50". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 48". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 48". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 52". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 52". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1055605". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1055605". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1055603". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1055603". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1055602". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1055602". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1055600". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1055600". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1055601". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1055601". Please convert manually.
-
-        addafter("Control 2")
+        addafter(Type)
         {
             field("Line No."; "Line No.")
             {
             }
         }
-        addafter("Control 16")
+        addafter("Shipment Date")
         {
             field("RDSO Unit Charges"; "RDSO Unit Charges")
             {
@@ -230,7 +32,7 @@ pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subfor
             {
             }
         }
-        addafter("Control 1055601")
+        addafter(Correction)
         {
             field("Qty. Invoiced (Base)"; "Qty. Invoiced (Base)")
             {
@@ -243,27 +45,6 @@ pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subfor
     }
     actions
     {
-
-        //Unsupported feature: Change Name on "Action 1900000004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1906587504". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1903098504". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1907935204". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Dimensions(Action 1903100004)". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Action 3". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 3". Please convert manually.
-
         addafter(ItemInvoiceLines)
         {
             action("Design Worksheet")
@@ -294,46 +75,15 @@ pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subfor
     }
 
 
-    //Unsupported feature: PropertyModification on "ShowTracking(PROCEDURE 1).ItemLedgEntry(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowTracking : 32;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowTracking : "Item Ledger Entry";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "ShowTracking(PROCEDURE 1).TempItemLedgEntry(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowTracking : 32;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowTracking : "Item Ledger Entry";
-    //Variable type has not been exported.
-
-    var
-        TrackingPage: Page "Order Tracking";
-
-
-    //Unsupported feature: PropertyModification on "UndoShipmentPosting(PROCEDURE 2).SalesShptLine(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //UndoShipmentPosting : 111;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //UndoShipmentPosting : "Sales Shipment Line";
-    //Variable type has not been exported.
 
     procedure TrackingPage();
     begin
     end;
 
 
+<<<<<<< HEAD
+   
+=======
     //Unsupported feature: CodeModification on "ShowTracking(PROCEDURE 1)". Please convert manually.
 
     //procedure ShowTracking();
@@ -366,6 +116,7 @@ pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subfor
     //end;
 
     (13620)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";
@@ -384,7 +135,10 @@ pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subfor
         DesignWorksheetHeader.FILTERGROUP(0);
     end;
 
+<<<<<<< HEAD
+=======
     (13633)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowSchedule();
     var
         Schedule: Record Schedule2;
@@ -398,20 +152,5 @@ pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subfor
         Schedule.SETRANGE(Schedule."Document Line No.", "Order Line No.");
         PAGE.RUN(60189, Schedule);
     end;
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
 }
 

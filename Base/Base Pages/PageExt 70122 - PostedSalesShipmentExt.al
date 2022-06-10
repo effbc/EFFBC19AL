@@ -1,502 +1,20 @@
 pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
 {
-    // version NAVW19.00.00.51685,NAVIN9.00.00.51685,B2B1.0
-
     layout
     {
-
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 112". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 112". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 52". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 52". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 52". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 54". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 54". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 54". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 56". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 56". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 56". Please convert manually.
-
-        modify("Control 8")
+        modify("Sell-to Post Code")
         {
-
-            //Unsupported feature: Change Editable on "Control 8". Please convert manually.
-
-
-            //Unsupported feature: Change Name on "Control 8". Please convert manually.
-
-            CaptionML = ENU = 'Sell-to Post Code/City';
-
-            //Unsupported feature: Change ImplicitType on "Control 8". Please convert manually.
-
+            Caption = 'Sell-to Post Code/City';
         }
-
-        //Unsupported feature: Change Editable on "Control 58". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 58". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 58". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 60". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 60". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 60". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1280005". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1280005". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 27". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 27". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 84". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 84". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 87". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 87". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 111". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 111". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 89". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 89". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 89". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 82". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 82". Please convert manually.
-
-
-        //Unsupported feature: Change PagePartID on "SalesShipmLines(Control 46)". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1905885101". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 114". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 114". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 24". Please convert manually.
-
-        modify("Control 67")
+        modify("Bill-to Post Code")
         {
-
-            //Unsupported feature: Change Editable on "Control 67". Please convert manually.
-
-
-            //Unsupported feature: Change Name on "Control 67". Please convert manually.
-
-            CaptionML = ENU = 'Bill-to Post Code/City';
-
-            //Unsupported feature: Change ImplicitType on "Control 67". Please convert manually.
-
+            Caption = 'Bill-to Post Code/City';
         }
-
-        //Unsupported feature: Change Editable on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 9". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 9". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 63". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 63". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1906801201". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 36". Please convert manually.
-
-        modify("Control 69")
+        modify("Ship-to Post Code")
         {
-
-            //Unsupported feature: Change Name on "Control 69". Please convert manually.
-
-            CaptionML = ENU = 'Ship-to Post Code/City';
-
-            //Unsupported feature: Change ImplicitType on "Control 69". Please convert manually.
-
+            Caption = 'Ship-to Post Code/City';
         }
-
-        //Unsupported feature: Change Name on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1280003". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1280003". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 65". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 65". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 91". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 91". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 95". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 95". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 42". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 42". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 62". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 62". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 93". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 93". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 72". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 72". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 44". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 44". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on ""Posting Date2"(Control 1500009)". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500010". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500010". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500011". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500011". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500012". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500012". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500022". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500022". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500013". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500013". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500014". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500014". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500003". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500003". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500008". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500007". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500019". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500019". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500020". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500020". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500021". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500021". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500006". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500006". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500005". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500005". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500004". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500025". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500025". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500015". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500015". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500016". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500016". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500017". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500017". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500018". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500018". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500024". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500024". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500023". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500023". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500026". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500026". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1900000007". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1900383207". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1905767507". Please convert manually.
-
-
-        //Unsupported feature: PropertyDeletion on "Control 4". Please convert manually.
-
-        addafter("Control 1280005")
+        addbefore("Posting Date")
         {
             field("Form Code"; "Form Code")
             {
@@ -505,21 +23,21 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
             {
             }
         }
-        addafter("Control 82")
+        addafter("Responsibility Center")
         {
             field("Order Date"; "Order Date")
             {
                 Editable = false;
             }
         }
-        addafter("Control 28")
+        addafter("Bill-to Contact")
         {
             field("Customer OrderNo."; "Customer OrderNo.")
             {
                 Editable = false;
             }
         }
-        addafter("Control 1906801201")
+        addafter("Shipment Date")
         {
             group(Others)
             {
@@ -613,104 +131,23 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
     }
     actions
     {
-
-        //Unsupported feature: Change Name on "Action 1900000003". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 47". Please convert manually.
-
-        modify("Action 10")
+        modify(Statistics)
         {
-
-            //Unsupported feature: Change RunObject on "Action 10". Please convert manually.
-
             Promoted = true;
-
-            //Unsupported feature: Change Name on "Action 10". Please convert manually.
-
         }
-
-        //Unsupported feature: Change RunObject on "Action 78". Please convert manually.
-
-
-        //Unsupported feature: Change RunPageLink on "Action 78". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 78". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 80". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 80". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 107". Please convert manually.
-
-
-        //Unsupported feature: Change RunObject on "Action 1500002". Please convert manually.
-
-
-        //Unsupported feature: Change RunPageLink on "Action 1500002". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1500002". Please convert manually.
-
-
-        //Unsupported feature: Change RunObject on "Action 1500001". Please convert manually.
-
-
-        //Unsupported feature: Change RunPageLink on "Action 1500001". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1500001". Please convert manually.
-
-
-        //Unsupported feature: Change RunObject on "Action 1500000". Please convert manually.
-
-
-        //Unsupported feature: Change RunPageLink on "Action 1500000". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1500000". Please convert manually.
-
-
-        //Unsupported feature: Change RunObject on "CertificateOfSupplyDetails(Action 3)". Please convert manually.
-
-
-        //Unsupported feature: Change RunPageLink on "CertificateOfSupplyDetails(Action 3)". Please convert manually.
-
         modify(PrintCertificateofSupply)
         {
             Promoted = false;
         }
-
-        //Unsupported feature: Change Name on "Action 1900000004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 74". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 79". Please convert manually.
-
-        modify("Action 49")
-        {
-
-            //Unsupported feature: Change Ellipsis on "Action 49". Please convert manually.
-
-            Promoted = true;
-
-            //Unsupported feature: Change Name on "Action 49". Please convert manually.
-
-        }
-        modify("Action 50")
+        modify("&Print")
         {
             Promoted = true;
-
-            //Unsupported feature: Change Name on "Action 50". Please convert manually.
-
         }
-        addafter("Action 79")
+        modify("&Navigate")
+        {
+            Promoted = true;
+        }
+        addafter("&Track Package")
         {
             action(Attachments)
             {
@@ -727,7 +164,7 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
                 end;
             }
         }
-        addafter("Action 50")
+        addafter("&Navigate")
         {
             action("Adjust for CS")
             {
@@ -792,38 +229,15 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
         }
     }
 
-
-    //Unsupported feature: PropertyModification on "Action 107.OnAction.ApprovalsMgmt(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //Action 107.OnAction.ApprovalsMgmt : 1535;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //Action 107.OnAction.ApprovalsMgmt : "Approvals Mgmt.";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "PrintCertificateofSupply(Action 5).OnAction.CertificateOfSupply(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //PrintCertificateofSupply : 780;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //PrintCertificateofSupply : "Certificate of Supply";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "SalesShptHeader(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //SalesShptHeader : 110;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //SalesShptHeader : "Sales Shipment Header";
-    //Variable type has not been exported.
+    trigger OnOpenPage()
+    begin
+        //Added by Vishnu Priya
+        IF SMTP_MAIL.Permission_Checking(USERID, 'ERP-ADMIN') THEN
+            CurrPage.EDITABLE(TRUE)
+        ELSE
+            CurrPage.EDITABLE(FALSE);
+        // ended by Vishnu Priya on 04-June-18.
+    end;
 
     var
         CustAttach: Record Attachments;
@@ -837,28 +251,11 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
         SMTP_MAIL: Codeunit "SMTP Mail";
 
 
-    //Unsupported feature: CodeModification on "OnModifyRecord". Please convert manually.
-
-    //trigger OnModifyRecord() : Boolean;
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    CODEUNIT.RUN(CODEUNIT::"Shipment Header - Edit",Rec);
-    EXIT(FALSE);
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    // COMMENTED BY VISHNU PRIYA
-    {CODEUNIT.RUN(CODEUNIT::"Shipment Header - Edit",Rec);
-    EXIT(FALSE);}
-    */
-    //end;
 
 
-    //Unsupported feature: CodeModification on "OnOpenPage". Please convert manually.
 
+<<<<<<< HEAD
+=======
     //trigger OnOpenPage();
     //>>>> ORIGINAL CODE:
     //begin
@@ -880,12 +277,13 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
     //end;
 
     (13429)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Item_Positive_Adjustment("Item No.": Code[20]; "Serial No.": Code[20]; "Location Code": Code[10]);
     var
         "Item Journal Line": Record "Item Journal Line";
         "Reservation Entry": Record "Reservation Entry";
         "Reservation Entry1": Record "Reservation Entry";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit 396;
         "Item Ledger Entry": Record "Item Ledger Entry";
     begin
         //Deleted Var (Journal Line DimensionRecordTable356) B2B
@@ -956,7 +354,11 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
 
     end;
 
+<<<<<<< HEAD
+
+=======
     (13497)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ICNNO(DT: Date) ICN: Code[10];
     var
         Dat: Text[30];
@@ -979,13 +381,17 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
         EXIT(ICN);
     end;
 
+<<<<<<< HEAD
+
+=======
     (13511)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure Item_Positive_Adjustment1("Item No.": Code[20]; "Serial No.": Text; "Location Code": Code[10]; DocumentNo: Code[30]; ItmQty: Decimal);
     var
         "Item Journal Line": Record "Item Journal Line";
         "Reservation Entry": Record "Reservation Entry";
         "Reservation Entry1": Record "Reservation Entry";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit 396;
         "Item Ledger Entry": Record "Item Ledger Entry";
     begin
         //Deleted Var (Journal Line DimensionRecordTable356) B2B
@@ -1075,17 +481,5 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
         CODEUNIT.RUN(CODEUNIT::"Item Jnl.-Post", "Item Journal Line");
 
     end;
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
 }
 

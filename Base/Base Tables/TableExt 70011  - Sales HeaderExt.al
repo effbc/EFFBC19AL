@@ -1,28 +1,7 @@
 tableextension 70011 SalesHeaderExt extends "Sales Header"
 {
-
-
     fields
     {
-        modify("Document Type")
-        {
-            OptionCaptionML = ENU = 'Quote,Order,Invoice,Credit Memo,Blanket Order,Return Order,Amc', ENN = 'Quote,Order,Invoice,Credit Memo,Blanket Order,Return Order,Amc';
-
-            //Unsupported feature: Change OptionString on ""Document Type"(Field 1)". Please convert manually.
-
-        }
-
-        modify(Status)
-        {
-            OptionCaptionML = ENU = 'Open,Released,Pending Approval,Pending Prepayment,Closed', ENN = 'Open,Released,Pending Approval,Pending Prepayment,Closed';
-
-
-
-        }
-
-
-
-
         field(50000; "MSPT Date"; Date)
         {
             Description = 'MSPT1.0';

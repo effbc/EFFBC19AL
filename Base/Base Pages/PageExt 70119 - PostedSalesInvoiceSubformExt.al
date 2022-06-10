@@ -1,271 +1,21 @@
 pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice Subform"
 {
-    // version NAVW19.00.00.51685,NAVIN9.00.00.51685
-
     layout
     {
-
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
-
-        modify("Control 1")
+        /* modify(Control1)
         {
-
-            //Unsupported feature: Change Name on "Control 1". Please convert manually.
-
             ShowCaption = false;
-        }
-
-        //Unsupported feature: Change Name on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 66". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 66". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 66". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 52". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 52". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 52". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1055600". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1055600". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1055601". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1055601". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1055602". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 1055602". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1055602". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1055603". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 1055603". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1055603". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1055604". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1055604". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 50". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 50". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 50". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 44". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 44". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 44". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 11". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 11". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 72". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 72". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 72". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 70". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 70". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 70". Please convert manually.
-
+        } 
         modify("Control 28")
         {
-
-            //Unsupported feature: Change Name on "Control 28". Please convert manually.
-
             ShowCaption = false;
         }
         modify("Control 23")
         {
-
-            //Unsupported feature: Change Name on "Control 23". Please convert manually.
-
             ShowCaption = false;
-        }
+        }*/
 
-        //Unsupported feature: PropertyDeletion on "Control 66". Please convert manually.
-
-        addfirst("Control 1")
+        addfirst(Control1)
         {
             field("Schedule Type"; "Schedule Type")
             {
@@ -282,12 +32,8 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
             field("Line No."; "Line No.")
             {
             }
-            field("Tax Liable"; "Tax Liable")
-            {
-                Editable = EditableVarFalse;
-            }
         }
-        addafter("Control 2")
+        addafter(Type)
         {
             field("Amount Added to Tax Base"; "Amount Added to Tax Base")
             {
@@ -310,7 +56,7 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
                 Editable = EditableVarFalse;
             }
         }
-        addafter("Control 4")
+        addafter("No.")
         {
             field("Service Tax SHE Cess Amount"; "Service Tax SHE Cess Amount")
             {
@@ -357,7 +103,7 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
                 Editable = EditableVarFalse;
             }
         }
-        addafter("Control 6")
+        addafter(Description)
         {
             field("Service Tax eCess Amount"; "Service Tax eCess Amount")
             {
@@ -388,14 +134,6 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
                 Editable = EditableVarFalse;
             }
             field("eCess Amount"; "eCess Amount")
-            {
-                Editable = EditableVarFalse;
-            }
-            field("Description 2"; "Description 2")
-            {
-                Editable = true;
-            }
-            field("Tax Group Code"; "Tax Group Code")
             {
                 Editable = EditableVarFalse;
             }
@@ -430,7 +168,7 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
                 Visible = false;
             }
         }
-        addafter("Control 1055602")
+        addafter("Line Discount Amount")
         {
             field("TDS/TCS Amount"; "TDS/TCS Amount")
             {
@@ -448,7 +186,7 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
             {
             }
         }
-        addafter("Control 70")
+        addafter("Shortcut Dimension 2 Code")
         {
             field("Quantity (Base)"; "Quantity (Base)")
             {
@@ -527,26 +265,12 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
             field("Supply Portion"; "Supply Portion")
             {
             }
-            field("Location Code"; "Location Code")
-            {
-            }
+
         }
     }
     actions
     {
-
-        //Unsupported feature: Change Name on "Action 1900000004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1907935204". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Dimensions(Action 1901314304)". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1902608104". Please convert manually.
-
-        addafter("Action 1902608104")
+        addafter(DeferralSchedule)
         {
             action(Schedule)
             {
@@ -578,52 +302,29 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
         }
     }
 
+    trigger OnOpenPage()
+    begin
+        /* IF USERID IN ['EFFTRONICS\ANILKUMAR', 'EFFTRONICS\SUJANI'] THEN BEGIN
+            CurrPage.EDITABLE := TRUE;
+            //EditableVarTrue := TRUE;
+        END
+        ELSE BEGIN
+            //EditableVarFalse := TRUE;
+            EditableVarTrue := TRUE;
+            //CurrPage.EDITABLE := FALSE;
 
-    //Unsupported feature: PropertyModification on "ShowStrDetailsForm(PROCEDURE 1280000).SalesInvHeader(Variable 1280002)". Please convert manually.
+        END; */
 
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowStrDetailsForm : 112;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowStrDetailsForm : "Sales Invoice Header";
-    //Variable type has not been exported.
+        IF USERID IN ['EFFTRONICS\ANILKUMAR', 'EFFTRONICS\SUJANI', 'EFFTRONICS\VISHNUPRIYA'] THEN BEGIN
+            EditableVarFalse := TRUE;
+            //EditableVarTrue := TRUE;
+        END;
+    end;
 
-
-    //Unsupported feature: PropertyModification on "ShowStrDetailsForm(PROCEDURE 1280000).StrOrderLineDetails(Variable 1280001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowStrDetailsForm : 13798;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowStrDetailsForm : "Posted Str Order Line Details";
-    //Variable type has not been exported.
-
-    var
-        StrOrderLineDetailsPage: Page "Posted Str Order Line Details";
-
-
-    //Unsupported feature: PropertyModification on "TotalSalesInvoiceHeader(Variable 1500002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //TotalSalesInvoiceHeader : 112;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //TotalSalesInvoiceHeader : "Sales Invoice Header";
-    //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "DocumentTotals(Variable 1500001)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //DocumentTotals : 57;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //DocumentTotals : "Document Totals";
-    //Variable type has not been exported.
+    trigger OnAfterGetRecord()
+    begin
+        EditableVarFalse := TRUE;
+    end;
 
     var
         EditableVarFalse: Boolean;
@@ -632,76 +333,13 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
         OrderNo: Code[30];
 
 
-    //Unsupported feature: CodeInsertion on "OnAfterGetRecord". Please convert manually.
 
-    //trigger OnAfterGetRecord();
-    //begin
-    /*
-    EditableVarFalse := TRUE;
-    */
-    //end;
-
-
-    //Unsupported feature: CodeInsertion on "OnOpenPage". Please convert manually.
-
-    //trigger OnOpenPage();
-    //begin
-    /*
-
-    {IF USERID IN ['EFFTRONICS\ANILKUMAR','EFFTRONICS\SUJANI'] THEN
-      BEGIN
-        CurrPage.EDITABLE := TRUE;
-        //EditableVarTrue := TRUE;
-      END
-      ELSE
-      BEGIN
-        //EditableVarFalse := TRUE;
-        EditableVarTrue := TRUE;
-        //CurrPage.EDITABLE := FALSE;
-
-      END;
-    }
-    IF USERID IN ['EFFTRONICS\ANILKUMAR','EFFTRONICS\SUJANI','EFFTRONICS\VISHNUPRIYA'] THEN
-      BEGIN
-        EditableVarFalse := TRUE;
-        //EditableVarTrue := TRUE;
-      END;
-    */
-    //end;
 
     procedure StrOrderLineDetailsPage();
     begin
     end;
 
 
-    //Unsupported feature: CodeModification on "ShowStrDetailsForm(PROCEDURE 1280000)". Please convert manually.
-
-    //procedure ShowStrDetailsForm();
-    //Parameters and return type have not been exported.
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    StrOrderLineDetails.RESET;
-    SalesInvHeader.GET("Document No.");
-    StrOrderLineDetails.SETCURRENTKEY("Invoice No.",Type,"Item No.");
-    StrOrderLineDetails.SETRANGE("Invoice No.",SalesInvHeader."No.");
-    StrOrderLineDetails.SETRANGE(Type,StrOrderLineDetails.Type::Sale);
-    StrOrderLineDetails.SETRANGE("Item No.","No.");
-    StrOrderLineDetails.SETRANGE("Line No.","Line No.");
-    StrOrderLineDetailsForm.SETTABLEVIEW(StrOrderLineDetails);
-    StrOrderLineDetailsForm.RUNMODAL;
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    #1..7
-    StrOrderLineDetailsPage.SETTABLEVIEW(StrOrderLineDetails);
-    StrOrderLineDetailsPage.RUNMODAL;
-    */
-    //end;
-
-    (14083)]
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";
@@ -722,7 +360,7 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
 
     end;
 
-    (14097)]
+
     procedure ShowSchedule();
     var
         Schedule: Record Schedule2;
@@ -737,7 +375,7 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
         PAGE.RUN(60189, Schedule);
     end;
 
-    (14105)]
+
     procedure CustAttachments();
     var
         CustAttach: Record Attachments;
@@ -754,20 +392,5 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
         CustAttach.SETRANGE("Document Type", CustAttach."Document Type"::Order);
         PAGE.RUN(PAGE::"ESPL Attachments", CustAttach);
     end;
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
 }
 

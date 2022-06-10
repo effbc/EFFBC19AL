@@ -1,270 +1,13 @@
 pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. Subform"
 {
-    // version NAVW19.00.00.51685,NAVIN9.00.00.51685,QC 1.0,QCB2B1.2,QC1.2
-
+    Editable = true;
     layout
     {
-
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
-
-        modify("Control 1")
+        /* modify(Control1)
         {
-
-            //Unsupported feature: Change Name on "Control 1". Please convert manually.
-
             ShowCaption = false;
-        }
-
-        //Unsupported feature: Change Name on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 26". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 16". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 20". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 38". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 50". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 50". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 8". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 24". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 10". Please convert manually.
-
-
-        //Unsupported feature: Change BlankZero on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 12". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 18". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 28". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 44". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 44". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 14". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 46". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 46". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 30". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500007". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500007". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500006". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500006". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500005". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500005". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500004". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500003". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 1500003". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500003". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500001". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 1500001". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500001". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500008". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500008". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 32". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 22". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 36". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 34". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 42". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 42". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 42". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change Editable on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 40". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 52". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 52". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500000". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500000". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500002". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500002". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1500009". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1500009". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 1055601". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 1055601". Please convert manually.
-
-        modify("Control 48")
-        {
-            Visible = false;
-        }
-        addafter("Control 4")
+        } */
+        addafter("No.")
         {
             field(Sample; Sample)
             {
@@ -287,10 +30,6 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
             {
                 Editable = "Quantity RejectedEditable";
             }
-            field("Qty. Rcd. Not Invoiced"; "Qty. Rcd. Not Invoiced")
-            {
-                Editable = EditableFields;
-            }
             field("Unit Cost"; "Unit Cost")
             {
                 Editable = EditableFields;
@@ -303,7 +42,7 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
             {
             }
         }
-        addafter("Control 16")
+        addafter("Variant Code")
         {
             field("Indent No."; "Indent No.")
             {
@@ -319,7 +58,7 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
             {
             }
         }
-        addafter("Control 1055601")
+        addafter(Correction)
         {
             field("Pay-to Vendor No."; "Pay-to Vendor No.")
             {
@@ -377,21 +116,6 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
     }
     actions
     {
-
-        //Unsupported feature: Change Name on "Action 1900000004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1906587504". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1900546304". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1907935204". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Dimensions(Action 1901741704)". Please convert manually.
-
         addafter(ItemInvoiceLines)
         {
             action("Inspection &Lots")
@@ -421,49 +145,18 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
         }
     }
 
-
-    //Unsupported feature: PropertyModification on "ShowTracking(PROCEDURE 1).ItemLedgEntry(Variable 1000)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowTracking : 32;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowTracking : "Item Ledger Entry";
-    //Variable type has not been exported.
+    trigger OnOpenPage()
+    begin
+        IF USERID IN ['EFFTRONICS\SUJANI', 'EFFTRONICS\ANILKUMAR', 'EFFTRONICS\VISHNUPRIYA', 'EFFTRONICS\B2BOTS', 'EFFTRONICS\RENUKACH'] THEN   //'EFFTRONICS\VISHNUPRIYA',
+            EditableFields := TRUE
+        ELSE
+            EditableFields := FALSE;
+    end;
 
 
-    //Unsupported feature: PropertyModification on "ShowTracking(PROCEDURE 1).TempItemLedgEntry(Variable 1002)". Please convert manually.
-
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowTracking : 32;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowTracking : "Item Ledger Entry";
-    //Variable type has not been exported.
-
-    var
-        TrackingPage: Page "Order Tracking";
 
 
-    //Unsupported feature: PropertyModification on "UndoReceiptLine(PROCEDURE 2).PurchRcptLine(Variable 1002)". Please convert manually.
 
-    //var
-    //>>>> ORIGINAL VALUE:
-    //UndoReceiptLine : 121;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //UndoReceiptLine : "Purch. Rcpt. Line";
-    //Variable type has not been exported.
-
-    var
-        IDS: Record "Inspection Datasheet Header";
-        IDSL: Record "Inspection Datasheet Line";
-        QILE: Record "Quality Item Ledger Entry";
-        PIDS: Record "Posted Inspect DatasheetHeader";
-        PIDSL: Record "Posted Inspect Datasheet Line";
-        IR: Record "Inspection Receipt Header";
 
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -473,165 +166,76 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
         PostInspLot: Codeunit "Inspection Data Sheets";
         Text000: Label 'Inspection Data Sheets already exists for atleast one of the Inspection Lots.\Inspection Data sheets cannot be created here.';
         Text001: Label 'Inspection Data Sheet already exists for the Receipt.';
-        [InDataSet]
+
         "Quantity AcceptedEditable": Boolean;
-        [InDataSet]
+
         "Quantity RejectedEditable": Boolean;
-        [InDataSet]
+
         "Quantity ReworkEditable": Boolean;
         EditableFields: Boolean;
 
 
-    //Unsupported feature: CodeInsertion on "OnInit". Please convert manually.
-
-    //trigger OnInit();
-    //Parameters and return type have not been exported.
-    //begin
-    /*
-    "Quantity ReworkEditable" := TRUE;
-    "Quantity RejectedEditable" := TRUE;
-    "Quantity AcceptedEditable" := TRUE;
-    */
-    //end;
-
-
-    //Unsupported feature: CodeInsertion on "OnOpenPage". Please convert manually.
-
-    //trigger OnOpenPage();
-    //begin
-    /*
-    IF USERID IN ['EFFTRONICS\SUJANI','EFFTRONICS\ANILKUMAR','EFFTRONICS\VISHNUPRIYA','EFFTRONICS\B2BOTS','EFFTRONICS\RENUKACH'] THEN   //'EFFTRONICS\VISHNUPRIYA',
-      EditableFields := TRUE
-    ELSE
-      EditableFields := FALSE;
-    */
-    //end;
 
     procedure TrackingPage();
     begin
     end;
 
+    LOCAL PROCEDURE UndoReceiptLine();
+    VAR
+        PurchRcptLine: Record "Purch. Rcpt. Line";
+        IDS: Record "Inspection Datasheet Header";
+        IDSL: Record "Inspection Datasheet Line";
+        QILE: Record "Quality Item Ledger Entry";
+        PIDS: Record "Posted Inspect DatasheetHeader";
+        PIDSL: Record "Posted Inspect Datasheet Line";
+        IR: Record "Inspection Receipt Header";
+    BEGIN
+        IF "QC Enabled" = TRUE THEN BEGIN
+            IDS.SETRANGE("Receipt No.", "Document No.");
+            IDS.SETRANGE("Purch Line No", "Line No.");
+            IF IDS.FINDSET THEN BEGIN
+                REPEAT
+                    PIDS.TRANSFERFIELDS(IDS);
+                    PIDS."Quality Status" := PIDS."Quality Status"::Cancel;
+                    PIDS.INSERT;
+                    IDS.DELETE;
+                    IDSL.SETRANGE("Document No.", IDS."No.");
+                    IF IDSL.FINDSET THEN BEGIN
+                        REPEAT
+                            PIDSL.TRANSFERFIELDS(IDSL);
+                            PIDSL.INSERT;
+                        UNTIL IDSL.NEXT = 0;
+                        IDSL.DELETEALL;
+                    END;
+                UNTIL IDS.NEXT = 0;
+                QILE.SETRANGE("Document No.", IDS."Receipt No.");
+                QILE.SETRANGE(QILE."Purch.Rcpt Line", "Line No.");
+                IF QILE.FINDSET THEN
+                    REPEAT
+                        QILE.DELETE;
+                    UNTIL QILE.NEXT = 0;
+            END;
+        END;
 
-    //Unsupported feature: CodeModification on "ShowTracking(PROCEDURE 1)". Please convert manually.
-
-    //procedure ShowTracking();
-    //Parameters and return type have not been exported.
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    TESTFIELD(Type,Type::Item);
-    IF "Item Rcpt. Entry No." <> 0 THEN BEGIN
-      ItemLedgEntry.GET("Item Rcpt. Entry No.");
-      TrackingForm.SetItemLedgEntry(ItemLedgEntry);
-    END ELSE
-      TrackingForm.SetMultipleItemLedgEntries(TempItemLedgEntry,
-        DATABASE::"Purch. Rcpt. Line",0,"Document No.",'',0,"Line No.");
-
-    TrackingForm.RUNMODAL;
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    #1..3
-      TrackingPage.SetItemLedgEntry(ItemLedgEntry);
-    END ELSE
-      TrackingPage.SetMultipleItemLedgEntries(TempItemLedgEntry,
-        DATABASE::"Purch. Rcpt. Line",0,"Document No.",'',0,"Line No.");
-
-    TrackingPage.RUNMODAL;
-    */
-    //end;
-
-    procedure IDS();
-    begin
-    end;
-
-    procedure IDSL();
-    begin
-    end;
-
-    procedure QILE();
-    begin
-    end;
-
-    procedure PIDS();
-    begin
-    end;
-
-    procedure PIDSL();
-    begin
-    end;
-
-    procedure IR();
-    begin
-    end;
-
-
-    //Unsupported feature: CodeModification on "UndoReceiptLine(PROCEDURE 2)". Please convert manually.
-
-    //procedure UndoReceiptLine();
-    //Parameters and return type have not been exported.
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    PurchRcptLine.COPY(Rec);
-    CurrPage.SETSELECTIONFILTER(PurchRcptLine);
-    CODEUNIT.RUN(CODEUNIT::"Undo Purchase Receipt Line",PurchRcptLine);
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    IF "QC Enabled" = TRUE THEN BEGIN
-      IDS.SETRANGE("Receipt No.","Document No.");
-      IDS.SETRANGE("Purch Line No","Line No.");
-      IF IDS.FINDSET THEN BEGIN
-        REPEAT
-          PIDS.TRANSFERFIELDS(IDS);
-          PIDS."Quality Status" := PIDS."Quality Status" :: Cancel;
-          PIDS.INSERT;
-          IDS.DELETE;
-          IDSL.SETRANGE("Document No.",IDS."No.");
-          IF IDSL.FINDSET THEN BEGIN
+        /* IR.SETRANGE("Receipt No.", "Document No.");
+        IR.SETRANGE("Purch Line No", "Line No.");
+        IR.SETFILTER(Status, 'NO');
+        IF IR.FINDSET THEN BEGIN
             REPEAT
-              PIDSL.TRANSFERFIELDS(IDSL);
-              PIDSL.INSERT;
-            UNTIL IDSL.NEXT = 0;
-            IDSL.DELETEALL;
-          END;
-        UNTIL IDS.NEXT = 0;
-        QILE.SETRANGE("Document No.",IDS."Receipt No.");
-        QILE.SETRANGE(QILE."Purch.Rcpt Line","Line No.");
+                IR.Status := TRUE;
+                //IR."Quality Status" := IR."Quality Status" :: Close;
+                IR.MODIFY;
+            UNTIL IR.NEXT = 0;
+        END;
+        QILE.SETRANGE("Document No.", IR."Receipt No.");
+        QILE.SETRANGE(QILE."Purch.Rcpt Line", "Line No.");
         IF QILE.FINDSET THEN
-          REPEAT
-            QILE.DELETE;
-          UNTIL QILE.NEXT = 0;
-      END;
-    END;
-     {
-      IR.SETRANGE("Receipt No.","Document No.");
-      IR.SETRANGE("Purch Line No","Line No.");
-      IR.SETFILTER(Status,'NO');
-      IF  IR.FINDSET THEN BEGIN
-        REPEAT
-          IR.Status := TRUE;
-          //IR."Quality Status" := IR."Quality Status" :: Close;
-          IR.MODIFY;
-        UNTIL IR.NEXT = 0;
-      END;
-      QILE.SETRANGE("Document No.",IR."Receipt No.");
-      QILE.SETRANGE(QILE."Purch.Rcpt Line","Line No.");
-      IF QILE.FINDSET THEN
-        REPEAT
-          QILE.DELETE;
-        UNTIL QILE.NEXT = 0;
-    END;
-    }
-    #1..3
-    */
-    //end;
+            REPEAT
+                QILE.DELETE;
+            UNTIL QILE.NEXT = 0;
+    END; */
 
+    end;
 
     procedure "---Quality control---"();
     begin
@@ -743,23 +347,6 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
         SampleLotInspection.SETRANGE("Purchase Line No.", "Order Line No.");
         PAGE.RUN(60072, SampleLotInspection);
     end;
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
 
 }
 

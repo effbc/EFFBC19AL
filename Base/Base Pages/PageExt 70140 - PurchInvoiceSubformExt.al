@@ -3,10 +3,10 @@ pageextension 70140 PurchInvoiceSubformExt extends "Purch. Invoice Subform"
 
     layout
     {
-        /*  modify("Control 1")
-         {
-             ShowCaption = false;
-         } 
+        /* modify("Control 1")
+        {
+            ShowCaption = false;
+        }
         modify(Control39)
         {
             ShowCaption = false;
@@ -22,27 +22,7 @@ pageextension 70140 PurchInvoiceSubformExt extends "Purch. Invoice Subform"
         modify(RefreshTotals)
         {
             ShowCaption = false;
-        }
-        modify("Tax Area Code")
-        {
-            Visible = false;
-        }
-        modify("VAT Prod. Posting Group")
-        {
-            Visible = false;
-        }
-        modify("TDS Amount")
-        {
-            Visible = false;
-        }
-        modify("TDS %")
-        {
-            Visible = false;
-        }
-        modify("CESS Amount")
-        {
-            Visible = false;
-        }*/
+        } */
         modify("Line No.")
         {
             Visible = false;
@@ -79,9 +59,6 @@ pageextension 70140 PurchInvoiceSubformExt extends "Purch. Invoice Subform"
             field("CESS Amount"; "CESS Amount")
             {
             }
-            field("Tax Liable"; "Tax Liable")
-            {
-            }
             field("VAT Calculation Type"; "VAT Calculation Type")
             {
             }
@@ -89,9 +66,6 @@ pageextension 70140 PurchInvoiceSubformExt extends "Purch. Invoice Subform"
             {
             }
             field("Tax Amount"; "Tax Amount")
-            {
-            }
-            field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
             {
             }
             field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
@@ -104,9 +78,6 @@ pageextension 70140 PurchInvoiceSubformExt extends "Purch. Invoice Subform"
             {
             }
             field("QC Enabled"; "QC Enabled")
-            {
-            }
-            field("VAT Prod. Posting Group"; "VAT Prod. Posting Group")
             {
             }
             field("Excise Bus. Posting Group"; "Excise Bus. Posting Group")
@@ -122,12 +93,7 @@ pageextension 70140 PurchInvoiceSubformExt extends "Purch. Invoice Subform"
             field("Excise Prod. Posting Group"; "Excise Prod. Posting Group")
             {
             }
-            field("Tax Area Code"; "Tax Area Code")
-            {
-            }
-            field("Tax Group Code"; "Tax Group Code")
-            {
-            }
+
             field("Amount To Vendor"; "Amount To Vendor")
             {
             }
@@ -212,7 +178,8 @@ pageextension 70140 PurchInvoiceSubformExt extends "Purch. Invoice Subform"
                       THEN
                         ERROR('Final Print Already Taken You can not pick the Receipts now')
                     ELSE
-            end;
+                        ;
+                end;
         }
 
     }
