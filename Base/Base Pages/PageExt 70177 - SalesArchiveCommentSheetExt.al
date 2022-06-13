@@ -5,69 +5,54 @@ pageextension 70177 SalesArchiveCommentSheetExt extends "Sales Archive Comment S
     layout
     {
 
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
 
-        modify("Control 1")
+
+        /* modify("Control1")
+         {
+
+
+
+             ShowCaption = false;
+         }*/
+
+
+
+        addafter(Comment)
         {
-
-            //Unsupported feature: Change Name on "Control 1". Please convert manually.
-
-            ShowCaption = false;
-        }
-
-        //Unsupported feature: Change Name on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 2". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 4". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 6". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 6". Please convert manually.
-
-        addafter("Control 6")
-        {
-            field("User ID"; "User ID")
+            field("User ID"; Rec."User ID")
             {
             }
-            field("Responsible Person"; "Responsible Person")
+            field("Responsible Person"; Rec."Responsible Person")
             {
             }
-            field(Status; Status)
+            field(Status; Rec.Status)
             {
             }
-            field("Exp Completion Date"; "Exp Completion Date")
+            field("Exp Completion Date"; Rec."Exp Completion Date")
             {
             }
-            field(Priority; Priority)
+            field(Priority; Rec.Priority)
             {
             }
-            field(Product; Product)
+            field(Product; Rec.Product)
             {
             }
-            field("Customer Number"; "Customer Number")
+            field("Customer Number"; Rec."Customer Number")
             {
             }
-            field("Customer Name"; "Customer Name")
+            field("Customer Name"; Rec."Customer Name")
             {
             }
-            field("Remainder Date"; "Remainder Date")
+            field("Remainder Date"; Rec."Remainder Date")
             {
             }
-            field("Quote Status"; "Quote Status")
+            field("Quote Status"; Rec."Quote Status")
             {
             }
-            field(Convert; Convert)
+            field(Convert; Rec.Convert)
             {
             }
-            field("Converted Order Number"; "Converted Order Number")
+            field("Converted Order Number"; Rec."Converted Order Number")
             {
             }
         }
@@ -90,7 +75,7 @@ pageextension 70177 SalesArchiveCommentSheetExt extends "Sales Archive Comment S
         Editable: Boolean;
         SalesComment: Record "Sales Comment Line";
 
-    (25482)]
+
     procedure MakeToBlanketOrder();
     var
         Text005: Label 'Do you want to convert the Tender to Blanket Order?';
@@ -184,7 +169,7 @@ pageextension 70177 SalesArchiveCommentSheetExt extends "Sales Archive Comment S
         //OMS integration
     end;
 
-    (25565)]
+
     procedure CheckAlreadyconverted_Order();
     var
         SalesCmt: Record "Sales Comment Line";
@@ -198,10 +183,7 @@ pageextension 70177 SalesArchiveCommentSheetExt extends "Sales Archive Comment S
             UNTIL SalesCmt.NEXT = 0;
     end;
 
-    //Unsupported feature: PropertyChange. Please convert manually.
 
-
-    //Unsupported feature: PropertyChange. Please convert manually.
 
 }
 

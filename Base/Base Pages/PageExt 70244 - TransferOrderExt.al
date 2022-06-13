@@ -178,7 +178,7 @@ pageextension 70244 TransferOrderExt extends "Transfer Order"
 
 
 
-        modify("Action1901320106")
+        modify("Inventory - Inbound Transfer")
         {
 
 

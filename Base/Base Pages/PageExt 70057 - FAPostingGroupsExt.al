@@ -1,6 +1,6 @@
 pageextension 70057 FAPostingGroupsExt extends "FA Posting Groups"
 {
-    // version NAVW19.00.00.45778
+
 
     layout
     {
