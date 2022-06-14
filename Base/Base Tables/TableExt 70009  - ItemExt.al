@@ -1019,6 +1019,10 @@ tableextension 70009 ItemExt extends Item
         {
             DataClassification = CustomerContent;
         }
+        field(99008504; "Product Group Code Upg"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+        }
     }
 
 

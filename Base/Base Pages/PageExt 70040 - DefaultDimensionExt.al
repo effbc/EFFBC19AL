@@ -1,4 +1,6 @@
-pageextension 70040 DefaultDimensionExt extends "Default Dimensions"
+pageextension 70040 DefaultDimensionExt extends 540
 {
+
 }
+
 
