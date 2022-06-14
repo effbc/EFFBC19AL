@@ -177,7 +177,7 @@ table 60024 "Indent Header"
         }
         field(43; "Production Bom Version No."; Code[20])
         {
-            TableRelation = "Production BOM Version"."Version Code" WHERE(Production BOM No.=FIELD(Production BOM No.));
+            TableRelation = "Production BOM Version"."Version Code" WHERE("Production BOM No." = FIELD("Production BOM No."));
         }
         field(44; "Production Order No."; Code[20])
         {
@@ -287,6 +287,7 @@ table 60024 "Indent Header"
         IndentLine.RESET;
         IndentLine.SETRANGE("Document No.", "No.");
         IndentLine.DELETEALL;
+
     end;
 
     trigger OnInsert();
@@ -343,7 +344,7 @@ table 60024 "Indent Header"
         END;
     end;
 
- 
+
     procedure ReleaseIndent();
     var
         IndentHeader: Record "Indent Header";
