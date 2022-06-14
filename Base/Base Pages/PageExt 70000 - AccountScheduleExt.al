@@ -2,26 +2,26 @@ pageextension 70000 AccountScheduleExt extends "Account Schedule"
 {
     layout
     {
-<<<<<<< HEAD
+
         /*  modify(Control1)
          {
              ShowCaption = false;
          } */
         addafter("Totaling Type")
-=======
+
 
         //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
 
 
-        //Unsupported feature: Change Lookup on "Control 18". Please convert manually.
+            //Unsupported feature: Change Lookup on "Control 18". Please convert manually.
 
 
-        //Unsupported feature: Change Name on "Control 18". Please convert manually.
+            //Unsupported feature: Change Name on "Control 18". Please convert manually.
 
 
-        //Unsupported feature: Change ImplicitType on "Control 18". Please convert manually.
+            //Unsupported feature: Change ImplicitType on "Control 18". Please convert manually.
 
-       modify("Control1")
+        modify("Control1")
         {
 
             //Unsupported feature: Change Name on "Control 1". Please convert manually.
