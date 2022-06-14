@@ -5,21 +5,12 @@ pageextension 70167 RecurringGeneralJournalExt extends "Recurring General Journa
     layout
     {
 
-        //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
 
 
-        //Unsupported feature: Change Lookup on "Control 37". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Control 37". Please convert manually.
-
-
-        //Unsupported feature: Change ImplicitType on "Control 37". Please convert manually.
-
-        modify("Control 1")
+        modify("Control1")
         {
 
-            //Unsupported feature: Change Name on "Control 1". Please convert manually.
+
 
             ShowCaption = false;
         }
