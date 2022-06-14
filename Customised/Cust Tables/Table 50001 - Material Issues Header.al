@@ -180,7 +180,7 @@ table 50001 "Material Issues Header"
         field(11; "Transfer-to Code"; Code[10])
         {
             Caption = 'Transfer-to Code';
-            TableRelation = Location WHERE("Use As In-Transit" = CONST(No), "Subcontracting Location" = CONST(false));
+            TableRelation = Location WHERE("Use As In-Transit" = CONST(false), "Subcontracting Location" = CONST(false));
 
             trigger OnValidate();
             var
@@ -317,7 +317,7 @@ table 50001 "Material Issues Header"
         {
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code';
-            TableRelation = "Dimension Value".Code WHERE(Global Dimension No.=CONST(1));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
 
             trigger OnValidate();
             begin
@@ -328,73 +328,73 @@ table 50001 "Material Issues Header"
         {
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code';
-            TableRelation = "Dimension Value".Code WHERE(Global Dimension No.=CONST(2),Blocked=FILTER(No));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2), Blocked = FILTER(false));
 
             trigger OnValidate();
             begin
                 //ValidateShortcutDimCode(2,xRec."Shortcut Dimension 2 Code");
-                ValidateShortcutDimCode(2,"Shortcut Dimension 2 Code");
+                ValidateShortcutDimCode(2, "Shortcut Dimension 2 Code");
             end;
         }
-        field(25;"No. Series";Code[10])
+        field(25; "No. Series"; Code[10])
         {
             Caption = 'No. Series';
             TableRelation = "No. Series";
         }
-        field(26;"Last Receipt No.";Code[20])
+        field(26; "Last Receipt No."; Code[20])
         {
             Caption = 'Last Receipt No.';
             Editable = false;
             TableRelation = "Transfer Receipt Header";
         }
-        field(27;"Transfer-from Contact";Text[30])
+        field(27; "Transfer-from Contact"; Text[30])
         {
             Caption = 'Transfer-from Contact';
         }
-        field(28;"Transfer-to Contact";Text[30])
+        field(28; "Transfer-to Contact"; Text[30])
         {
             Caption = 'Transfer-to Contact';
         }
-        field(29;"External Document No.";Code[20])
+        field(29; "External Document No."; Code[20])
         {
             Caption = 'External Document No.';
         }
-        field(30;"Completely Received";Boolean)
+        field(30; "Completely Received"; Boolean)
         {
-            CalcFormula = Min("Transfer Line"."Completely Received" WHERE (Document No.=FIELD(No.),Receipt Date=FIELD(Date Filter),Transfer-to Code=FIELD(Location Filter)));
+            FieldClass = FlowField;
+            CalcFormula = Min("Transfer Line"."Completely Received" WHERE("Document No." = FIELD("No."), "Receipt Date" = FIELD("Date Filter"), "Transfer-to Code" = FIELD("Location Filter")));
             Caption = 'Completely Received';
             Editable = false;
-            FieldClass = FlowField;
+
         }
-        field(31;"Location Filter";Code[10])
+        field(31; "Location Filter"; Code[10])
         {
             Caption = 'Location Filter';
             FieldClass = FlowFilter;
             TableRelation = Location;
         }
-        field(32;"Date Filter";Date)
+        field(32; "Date Filter"; Date)
         {
             Caption = 'Date Filter';
             FieldClass = FlowFilter;
         }
-        field(36;"Prod. Order No.";Code[20])
+        field(36; "Prod. Order No."; Code[20])
         {
-            TableRelation = "Production Order".No. WHERE (Blocked=CONST(No));
+            TableRelation = "Production Order"."No." WHERE(Blocked = CONST(false));
 
             trigger OnValidate();
             begin
-                TESTFIELD(Status,Status::Open);
-                IF ("Prod. Order No."<>'') AND  ("Prod. Order Line No."<>0) THEN
-                BEGIN
-                  ProdOrderLine.SETRANGE("Prod. Order No.","Prod. Order No.");
-                  ProdOrderLine.SETRANGE("Line No.","Prod. Order Line No.");
-                  IF ProdOrderLine.FINDFIRST THEN BEGIN
-                    "Due Date" := ProdOrderLine."Due Date";
-                    "Proj Description":=ProdOrderLine.Description;
-                    "Prod. BOM No." := ProdOrderLine."Item No.";
-                  END;
+                TESTFIELD(Status, Status::Open);
+                IF ("Prod. Order No." <> '') AND ("Prod. Order Line No." <> 0) THEN BEGIN
+                    ProdOrderLine.SETRANGE("Prod. Order No.", "Prod. Order No.");
+                    ProdOrderLine.SETRANGE("Line No.", "Prod. Order Line No.");
+                    IF ProdOrderLine.FINDFIRST THEN BEGIN
+                        "Due Date" := ProdOrderLine."Due Date";
+                        "Proj Description" := ProdOrderLine.Description;
+                        "Prod. BOM No." := ProdOrderLine."Item No.";
+                    END;
                 END;
-                
+
                 //Added by rakesh for stationary items on 26-03-14
                 //begin
                 /*
@@ -409,39 +409,39 @@ table 50001 "Material Issues Header"
 
             end;
         }
-        field(37;"Prod. Order Line No.";Integer)
+        field(37; "Prod. Order Line No."; Integer)
         {
-            TableRelation = "Prod. Order Line"."Line No." WHERE (Prod. Order No.=FIELD(Prod. Order No.));
+            TableRelation = "Prod. Order Line"."Line No." WHERE("Prod. Order No." = FIELD("Prod. Order No."));
 
             trigger OnValidate();
             begin
-                TESTFIELD(Status,Status::Open);
-                ProdOrderLine.SETRANGE("Prod. Order No.","Prod. Order No.");
-                ProdOrderLine.SETRANGE("Line No.","Prod. Order Line No.");
+                TESTFIELD(Status, Status::Open);
+                ProdOrderLine.SETRANGE("Prod. Order No.", "Prod. Order No.");
+                ProdOrderLine.SETRANGE("Line No.", "Prod. Order Line No.");
                 IF ProdOrderLine.FINDFIRST THEN BEGIN
-                  "Due Date" := ProdOrderLine."Due Date";
-                  "Proj Description":=ProdOrderLine.Description;
-                  "Prod. BOM No." := ProdOrderLine."Item No.";
+                    "Due Date" := ProdOrderLine."Due Date";
+                    "Proj Description" := ProdOrderLine.Description;
+                    "Prod. BOM No." := ProdOrderLine."Item No.";
                 END;
             end;
         }
-        field(38;"Prod. BOM No.";Code[20])
+        field(38; "Prod. BOM No."; Code[20])
         {
-            TableRelation = "Production BOM Header".No. WHERE (Status=FILTER(Certified));
+            TableRelation = "Production BOM Header"."No." WHERE(Status = FILTER(Certified));
 
             trigger OnLookup();
             var
-                ProductionOrderLine : Record "Prod. Order Line";
-                ProductionBOMHeader : Record "Production BOM Header";
+                ProductionOrderLine: Record "Prod. Order Line";
+                ProductionBOMHeader: Record "Production BOM Header";
             begin
             end;
         }
-        field(39;"Operation No.";Code[20])
+        field(39; "Operation No."; Code[20])
         {
 
             trigger OnLookup();
             var
-                ProductionOrderLine : Record "Prod. Order Line";
+                ProductionOrderLine: Record "Prod. Order Line";
             begin
                 /*
                 ProductionOrderLine.SETRANGE("Prod. Order No.","Prod. Order No.");
@@ -459,27 +459,30 @@ table 50001 "Material Issues Header"
 
             end;
         }
-        field(40;"Sales Order No.";Code[20])
+        field(40; "Sales Order No."; Code[20])
         {
-            TableRelation = IF ("Transfer-from Code"=CONST(CS STR),"Reason Code"=CONST(INSTALLA)) "Sales Header"."No." WHERE ("Document Type"=CONST(Order),Status=CONST(Released)) ELSE IF ("Transfer-from Code"=CONST(CS STR),Reason Code=CONST(AMC)) "Sales Header"."No." WHERE (Document Type=CONST(Amc),Status=CONST(Released)) ELSE IF ("Transfer-from Code"=FILTER(<>CS STR),"Reason Code"=CONST(AMC)) "Sales Header"."No." WHERE ("Document Type"=CONST(Order),Status=CONST(Released)) ELSE "Sales Header"."No." WHERE (Status=CONST(Released));
+            TableRelation = IF ("Transfer-from Code" = CONST('CS STR'), "Reason Code" = CONST('INSTALLA')) "Sales Header"."No." WHERE("Document Type" = CONST(Order), Status = CONST(Released)) ELSE
+            IF ("Transfer-from Code" = CONST('CS STR'), "Reason Code" = CONST('AMC')) "Sales Header"."No." WHERE("Document Type" = CONST(Amc), Status = CONST(Released)) ELSE
+            IF ("Transfer-from Code" = FILTER(<> 'CS STR'), "Reason Code" = CONST('AMC')) "Sales Header"."No." WHERE("Document Type" = CONST(Order), Status = CONST(Released)) ELSE
+            "Sales Header"."No." WHERE(Status = CONST(Released));
         }
-        field(41;"Resource Name";Text[50])
+        field(41; "Resource Name"; Text[50])
         {
             Editable = false;
         }
-        field(42;"User ID";Code[50])
+        field(42; "User ID"; Code[50])
         {
             Description = 'Rev01';
 
             trigger OnLookup();
             begin
                 UserGrec.RESET;
-                IF PAGE.RUNMODAL(9800,UserGrec) = ACTION :: LookupOK THEN BEGIN
-                  "User ID" := UserGrec."User Name";
+                IF PAGE.RUNMODAL(9800, UserGrec) = ACTION::LookupOK THEN BEGIN
+                    "User ID" := UserGrec."User Name";
 
-                  VALIDATE("User ID");
+                    VALIDATE("User ID");
                 END;
-                
+
             end;
 
             trigger OnValidate();
@@ -492,95 +495,93 @@ table 50001 "Material Issues Header"
                   "Resource Name":=User."User Name";//B2B
                 */
                 UserGrec.RESET;
-                UserGrec.SETRANGE("User Name","User ID");
+                UserGrec.SETRANGE("User Name", "User ID");
                 IF UserGrec.FINDFIRST THEN
-                  "Resource Name":=UserGrec."Full Name";
+                    "Resource Name" := UserGrec."Full Name";
                 //Rev01 End
-                
-                USER_SETUP.SETRANGE(USER_SETUP."User ID","User ID");
-                IF USER_SETUP.FINDFIRST THEN
-                BEGIN
-                  IF (USER_SETUP."Transfer- From Code"='STR') OR (UPPERCASE(USER_SETUP."User ID") IN ['20MT002','99P2005']) THEN
-                  BEGIN
-                    "Transfer-from Code":=USER_SETUP."Transfer- From Code";
-                    "Transfer-to Code":=USER_SETUP."Transfer- To Code";
-                    //VALIDATE("Prod. Order No.",USER_SETUP."Production Order");
-                    //VALIDATE("Prod. Order Line No.",10000);
-                  END;
+
+                USER_SETUP.SETRANGE(USER_SETUP."User ID", "User ID");
+                IF USER_SETUP.FINDFIRST THEN BEGIN
+                    IF (USER_SETUP."Transfer- From Code" = 'STR') OR (UPPERCASE(USER_SETUP."User ID") IN ['20MT002', '99P2005']) THEN BEGIN
+                        "Transfer-from Code" := USER_SETUP."Transfer- From Code";
+                        "Transfer-to Code" := USER_SETUP."Transfer- To Code";
+                        //VALIDATE("Prod. Order No.",USER_SETUP."Production Order");
+                        //VALIDATE("Prod. Order Line No.",10000);
+                    END;
                 END;
 
             end;
         }
-        field(43;"Required Date";Date)
+        field(43; "Required Date"; Date)
         {
         }
-        field(44;"Released Date";Date)
+        field(44; "Released Date"; Date)
         {
             Editable = true;
         }
-        field(45;"Released By";Code[50])
+        field(45; "Released By"; Code[50])
         {
             Description = 'Rev01';
             Editable = true;
             TableRelation = User."User Name";
         }
-        field(46;"Service Order No.";Code[20])
+        field(46; "Service Order No."; Code[20])
         {
-            TableRelation = "Service Header".No.;
+            TableRelation = "Service Header"."No.";
 
             trigger OnValidate();
             begin
-                 /*
-                   Service_Item_Line.SETRANGE(Service_Item_Line."Document No.","Service Order No.");
-                  IF Service_Item_Line.findfirst THEN
-                  BEGIN
-                    "Service Item":=Service_Item_Line.Description;
-                    "Service Item Serial No.":=Service_Item_Line."Serial No.";
-                    MODIFY;
-                  END;        */
+                /*
+                  Service_Item_Line.SETRANGE(Service_Item_Line."Document No.","Service Order No.");
+                 IF Service_Item_Line.findfirst THEN
+                 BEGIN
+                   "Service Item":=Service_Item_Line.Description;
+                   "Service Item Serial No.":=Service_Item_Line."Serial No.";
+                   MODIFY;
+                 END;        */
 
             end;
         }
-        field(47;"Reason Code";Code[20])
+        field(47; "Reason Code"; Code[20])
         {
             TableRelation = "Reason Code".Code;
         }
-        field(48;"Due Date";Date)
+        field(48; "Due Date"; Date)
         {
         }
-        field(49;"Released Time";Time)
+        field(49; "Released Time"; Time)
         {
             Editable = false;
         }
-        field(50;"Production BOM No.";Code[20])
+        field(50; "Production BOM No."; Code[20])
         {
-            TableRelation = "Production BOM Header" WHERE (Status=CONST(Certified));
+            TableRelation = "Production BOM Header" WHERE(Status = CONST(Certified));
         }
-        field(51;"Devide By Qty.";Decimal)
+        field(51; "Devide By Qty."; Decimal)
         {
         }
-        field(60;"PCB Item";Code[20])
+        field(60; "PCB Item"; Code[20])
         {
             Editable = false;
             TableRelation = Item;
         }
-        field(61;Reason;Code[20])
+        field(61; Reason; Code[20])
         {
         }
-        field(62;"Sales Schedule Line No";Integer)
+        field(62; "Sales Schedule Line No"; Integer)
         {
             Editable = true;
-            TableRelation = Schedule2."Line No." WHERE (Document No.=FIELD(Sales Order No.),Document Line No.=FIELD(Sales Order Line No.),Document Type=CONST(Order));
+            TableRelation = Schedule2."Line No." WHERE("Document No." = FIELD("Sales Order No."), "Document Line No." = FIELD("Sales Order Line No."), "Document Type" = CONST(Order));
         }
-        field(63;"Service Item Line No.";Integer)
+        field(63; "Service Item Line No."; Integer)
         {
-            TableRelation = "Service Item Line"."Line No." WHERE (Document No.=FIELD(Service Order No.));
+            TableRelation = "Service Item Line"."Line No." WHERE("Document No." = FIELD("Service Order No."));
         }
-        field(64;"Sales Order Line No.";Integer)
+        field(64; "Sales Order Line No."; Integer)
         {
-            TableRelation = "Sales Line"."Line No." WHERE (Document No.=FIELD(Sales Order No.));
+            TableRelation = "Sales Line"."Line No." WHERE("Document No." = FIELD("Sales Order No."));
         }
-        field(480;"Dimension Set ID";Integer)
+        field(480; "Dimension Set ID"; Integer)
         {
             Description = 'DIM1.0';
             Editable = true;
@@ -590,7 +591,7 @@ table 50001 "Material Issues Header"
                 ShowDocDim
             end;
         }
-        field(60000;"BOM Type";Option)
+        field(60000; "BOM Type"; Option)
         {
             Description = 'B2B';
             OptionCaption = '" ,Mechanical,Wiring,SMD,DIP,Testing,Packing"';
@@ -598,62 +599,62 @@ table 50001 "Material Issues Header"
 
             trigger OnValidate();
             var
-                MaterialIssueLine : Record "Material Issues Line";
+                MaterialIssueLine: Record "Material Issues Line";
             begin
                 IF xRec."BOM Type" <> "BOM Type" THEN BEGIN
-                  MaterialIssueLine.RESET;
-                  MaterialIssueLine.SETRANGE("Document No.","No.");
-                  IF MaterialIssueLine.FINDFIRST THEN
-                    ERROR(Text005);
+                    MaterialIssueLine.RESET;
+                    MaterialIssueLine.SETRANGE("Document No.", "No.");
+                    IF MaterialIssueLine.FINDFIRST THEN
+                        ERROR(Text005);
                 END;
             end;
         }
-        field(60006;"Type of Solder";Option)
+        field(60006; "Type of Solder"; Option)
         {
             Description = 'B2B';
             OptionMembers = " ",SMD,DIP;
         }
-        field(60007;"Creation DateTime";DateTime)
+        field(60007; "Creation DateTime"; DateTime)
         {
             Editable = true;
         }
-        field(60008;"AMC Order No";Code[30])
+        field(60008; "AMC Order No"; Code[30])
         {
             TableRelation = "Service Contract Header"."Contract No.";
         }
-        field(60009;"Proj Description";Text[50])
+        field(60009; "Proj Description"; Text[50])
         {
         }
-        field(60010;Tem_Status;Boolean)
+        field(60010; Tem_Status; Boolean)
         {
         }
-        field(60011;"Service Item";Text[50])
+        field(60011; "Service Item"; Text[50])
         {
         }
-        field(60012;"Service Item Serial No.";Code[20])
+        field(60012; "Service Item Serial No."; Code[20])
         {
         }
-        field(60013;"Service Item Description";Text[100])
+        field(60013; "Service Item Description"; Text[100])
         {
         }
-        field(60014;Remarks;Text[200])
+        field(60014; Remarks; Text[200])
         {
         }
-        field(60021;"Authorised By";Option)
+        field(60021; "Authorised By"; Option)
         {
             OptionMembers = Prasanthi," P. Murali Mohan Rao","V.S.L.Shilpa",Padmasree,Ramasamy," Bala Krishna"," Bhavani Shankar","Krishna Rao";
         }
-        field(60022;Purpose;Option)
+        field(60022; Purpose; Option)
         {
             OptionMembers = AMC,Waranty,Replacement,"R&D Testing",Demo,Installation;
         }
-        field(60027;"Authorized Date";Date)
+        field(60027; "Authorized Date"; Date)
         {
         }
-        field(60028;Rejected;Boolean)
+        field(60028; Rejected; Boolean)
         {
         }
-        field(60029;"Request for Authorization";Code[50])
+        field(60029; "Request for Authorization"; Code[50])
         {
             Description = 'Rev01';
             Editable = false;
@@ -661,60 +662,60 @@ table 50001 "Material Issues Header"
             trigger OnLookup();
             begin
                 UserGrec.RESET;
-                UserGrec.SETRANGE(levels,TRUE);
-                IF PAGE.RUNMODAL(9800,UserGrec) = ACTION:: LookupOK THEN
-                 "Request for Authorization" := UserGrec."User Name";
+                UserGrec.SETRANGE(levels, TRUE);
+                IF PAGE.RUNMODAL(9800, UserGrec) = ACTION::LookupOK THEN
+                    "Request for Authorization" := UserGrec."User Name";
             end;
         }
-        field(60030;"Auto Post";Boolean)
+        field(60030; "Auto Post"; Boolean)
         {
         }
-        field(60031;"Person Code";Code[10])
+        field(60031; "Person Code"; Code[10])
         {
-            TableRelation = "Dimension Value".Code WHERE (Dimension Code=CONST(EMPLOYEE CODES));
+            TableRelation = "Dimension Value".Code WHERE("Dimension Code" = CONST('EMPLOYEE CODES'));
         }
-        field(60032;"Mode of Transport";Option)
+        field(60032; "Mode of Transport"; Option)
         {
             OptionMembers = " ",Courier,Train,Bus,"By Hand",VRL,Lorry,ANL;
         }
-        field(60033;Multiple;Integer)
+        field(60033; Multiple; Integer)
         {
             InitValue = 1;
         }
-        field(60034;Priority;Option)
+        field(60034; Priority; Option)
         {
             OptionMembers = " ",High,Medium,Low;
         }
-        field(60035;"Vendor No.";Code[20])
+        field(60035; "Vendor No."; Code[20])
         {
             Description = 'for Purchase DC purpose';
-            TableRelation = Vendor.No.;
+            TableRelation = Vendor."No.";
         }
-        field(60036;"Released DateTime";DateTime)
+        field(60036; "Released DateTime"; DateTime)
         {
         }
-        field(60037;"Transaction ID";Code[20])
+        field(60037; "Transaction ID"; Code[20])
         {
             Description = 'For CS Transaction ID';
         }
-        field(60038;"Customer No";Code[20])
+        field(60038; "Customer No"; Code[20])
         {
             Description = 'For CS LED Cards Process';
-            TableRelation = Customer.No.;
+            TableRelation = Customer."No.";
         }
-        field(60039;Alert_Mail_Sent_date;Date)
+        field(60039; Alert_Mail_Sent_date; Date)
         {
         }
-        field(60090;"Dimension Corrected";Boolean)
-        {
-            Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
-            Editable = false;
-        }
-        field(60091;"OLD Dim Set ID";Integer)
+        field(60090; "Dimension Corrected"; Boolean)
         {
             Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
             Editable = false;
-            TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE (Dimension Set ID=FIELD(OLD Dim Set ID));
+        }
+        field(60091; "OLD Dim Set ID"; Integer)
+        {
+            Description = 'added  by sujani for Dimension issue clearance (B2B Assistance)';
+            Editable = false;
+            TableRelation = "Dimension Set Entry Backup2"."Dimension Set ID" WHERE("Dimension Set ID" = FIELD("OLD Dim Set ID"));
 
             trigger OnLookup();
             begin
@@ -725,16 +726,16 @@ table 50001 "Material Issues Header"
 
     keys
     {
-        key(Key1;"No.")
+        key(Key1; "No.")
         {
         }
-        key(Key2;"Prod. Order No.","Prod. Order Line No.")
+        key(Key2; "Prod. Order No.", "Prod. Order Line No.")
         {
         }
-        key(Key3;"Required Date","Released Time")
+        key(Key3; "Required Date", "Released Time")
         {
         }
-        key(Key4;"Released Date")
+        key(Key4; "Released Date")
         {
         }
     }
@@ -745,49 +746,47 @@ table 50001 "Material Issues Header"
 
     trigger OnDelete();
     begin
-        TESTFIELD(Status,Status::Open);
-        
-        IF NOT (UPPERCASE(USERID) IN ['EFFTRONICS\ANILKUMAR','EFFTRONICS\DMADHAVI','EFFTRONICS\PADMASRI','ERPSERVER\ADMINISTRATOR','EFFTRONICS\MARY','EFFTRONICS\BHAVANIP',
-                                      'EFFTRONICS\SUJANI','EFFTRONICS\RAMADEVI','EFFTRONICS\GRAVI', 'EFFTRONICS\PKOTESWARARAO', 'EFFTRONICS\ANANDA','EFFTRONICS\RENUKACH','EFFTRONICS\VISHNUPRIYA']) THEN
+        TESTFIELD(Status, Status::Open);
+
+        IF NOT (UPPERCASE(USERID) IN ['EFFTRONICS\ANILKUMAR', 'EFFTRONICS\DMADHAVI', 'EFFTRONICS\PADMASRI', 'ERPSERVER\ADMINISTRATOR', 'EFFTRONICS\MARY', 'EFFTRONICS\BHAVANIP',
+                                      'EFFTRONICS\SUJANI', 'EFFTRONICS\RAMADEVI', 'EFFTRONICS\GRAVI', 'EFFTRONICS\PKOTESWARARAO', 'EFFTRONICS\ANANDA', 'EFFTRONICS\RENUKACH', 'EFFTRONICS\VISHNUPRIYA']) THEN
         /*BEGIN
           IF NOT ("User ID" = USERID) THEN
             ERROR('U Dont Have Permissions to Delete');
         END;*/
         // added by sujani on 05-feb-2018 to delete only empty material requests
         BEGIN
-        UserGrec.RESET;
-        UserGrec.SETRANGE("User Name",USERID);
-        IF UserGrec.FINDSET THEN
-          BEGIN
-          IF UserGrec.Dept = 'STR' THEN
-             BEGIN
-              MaterialIssueLine.RESET;
-              MaterialIssueLine.SETRANGE("Document No.","No.");
-              IF MaterialIssueLine.FINDFIRST THEN
-                ERROR('You Do Not Have Right to delete Material Requests');
-              END ELSE
-                ERROR('You Do Not Have Right to delete Material Requests');
-           END ELSE
+            UserGrec.RESET;
+            UserGrec.SETRANGE("User Name", USERID);
+            IF UserGrec.FINDSET THEN BEGIN
+                IF UserGrec.Dept = 'STR' THEN BEGIN
+                    MaterialIssueLine.RESET;
+                    MaterialIssueLine.SETRANGE("Document No.", "No.");
+                    IF MaterialIssueLine.FINDFIRST THEN
+                        ERROR('You Do Not Have Right to delete Material Requests');
+                END ELSE
+                    ERROR('You Do Not Have Right to delete Material Requests');
+            END ELSE
                 ERROR('You Do Not Have Right to delete Material Requests');
         END;
-        
-        
-        MaterialIssueLine.SETRANGE("Document No.","No.");
+
+
+        MaterialIssueLine.SETRANGE("Document No.", "No.");
         MaterialIssueLine.DELETEALL(TRUE);
-        
+
         TrackingSpecifications.RESET;
-        TrackingSpecifications.SETRANGE("Order No.","No.");
+        TrackingSpecifications.SETRANGE("Order No.", "No.");
         IF TrackingSpecifications.FINDSET THEN
-        REPEAT
-          TrackingSpecifications.DELETE;
-        UNTIL TrackingSpecifications.NEXT = 0;
-        
-        
-        InvtCommentLine.SETRANGE("Document Type",InvtCommentLine."Document Type"::"Material Issues");
-        InvtCommentLine.SETRANGE("No.","No.");
+            REPEAT
+                TrackingSpecifications.DELETE;
+            UNTIL TrackingSpecifications.NEXT = 0;
+
+
+        InvtCommentLine.SETRANGE("Document Type", InvtCommentLine."Document Type"::"Material Issues");
+        InvtCommentLine.SETRANGE("No.", "No.");
         InvtCommentLine.DELETEALL;
-        
-        
+
+
         //DIM1.0  Since this Function doesn't exist in Nav 2013.
         //DimMgt.DeleteDocDim(DATABASE::"Material Issues Header",DocDim."Document Type"::" ","No.",0);
         //DIM1.0<<
@@ -798,30 +797,30 @@ table 50001 "Material Issues Header"
     begin
         //B2B UD  >>
         IF "No." = '' THEN
-          "No." := GetNextNo;
+            "No." := GetNextNo;
         //B2B UD  <<
 
         InvtSetup.GET;
         IF "No." = '' THEN BEGIN
-          InvtSetup.TESTFIELD(InvtSetup."Material Issue Nos.");
-          NoSeriesMgt.InitSeries(InvtSetup."Material Issue Nos.",xRec."No. Series","Posting Date","No.","No. Series");
+            InvtSetup.TESTFIELD(InvtSetup."Material Issue Nos.");
+            NoSeriesMgt.InitSeries(InvtSetup."Material Issue Nos.", xRec."No. Series", "Posting Date", "No.", "No. Series");
         END;
         InitRecord;
-        VALIDATE("Receipt Date",WORKDATE);
+        VALIDATE("Receipt Date", WORKDATE);
 
         PostedMISHeader.RESET;
-        PostedMISHeader.SETRANGE("Material Issue No.","No.");
+        PostedMISHeader.SETRANGE("Material Issue No.", "No.");
         IF PostedMISHeader.FINDFIRST THEN
-          ERROR(Text004,"No.");
-        VALIDATE("User ID",USERID);
-        "Creation DateTime":= CREATEDATETIME(WORKDATE,TIME)//CURRENTDATETIME;
+            ERROR(Text004, "No.");
+        VALIDATE("User ID", USERID);
+        "Creation DateTime" := CREATEDATETIME(WORKDATE, TIME)//CURRENTDATETIME;
     end;
 
     trigger OnModify();
     begin
-         /*MaterialIssueLine.SETFILTER(MaterialIssueLine."Document No.",xRec."No.");
-         IF MaterialIssueLine.findfirst THEN
-         ERROR('You donot modify the Record');*/
+        /*MaterialIssueLine.SETFILTER(MaterialIssueLine."Document No.",xRec."No.");
+        IF MaterialIssueLine.findfirst THEN
+        ERROR('You donot modify the Record');*/
         //TESTFIELD(Status,Status::Open);
 
     end;
@@ -829,44 +828,43 @@ table 50001 "Material Issues Header"
     trigger OnRename();
     begin
         PostedMISHeader.RESET;
-        PostedMISHeader.SETRANGE("Material Issue No.","No.");
+        PostedMISHeader.SETRANGE("Material Issue No.", "No.");
         IF PostedMISHeader.FINDFIRST THEN
-          ERROR(Text004,"No.");
+            ERROR(Text004, "No.");
     end;
 
     var
-        PostCode : Record "Post Code";
-        InvtSetup : Record "Inventory Setup";
-        NoSeriesMgt : Codeunit 396;
-        Text000 : Label 'You cannot rename a %1.';
-        Text001 : Label '%1 and %2 cannot be the same in %3 %4.';
-        Text002 : Label 'Do you want to change %1?';
-        Text003 : Label 'The Material Issues %1 has been deleted.';
-        HideValidationDialog : Boolean;
-        MaterialIssueHeader : Record "Material Issues Header";
-        DimMgt : Codeunit 408;
-        ProdOrderLine : Record "Prod. Order Line";
-        MaterialIssueLine : Record "Material Issues Line";
-        InvtCommentLine : Record "Inventory Comment Line";
-        PostedMISHeader : Record "Posted Material Issues Header";
-        Text004 : Label 'Posted Material Issue already existed against this Material Issue number %1';
-        Text005 : Label 'you can not change Type when lines already existed.';
-        Item : Record Item;
-        productionbomversion : Record "Production BOM Version";
-        Service_Item_Line : Record "Service Item Line";
-        Stat : Record Station;
-        USER_SETUP : Record "User Setup";
-        UserGrec : Record User;
-        "-DIM1.0-" : Integer;
-        MaterIssLine : Record "Material Issues Line";
-        "--DIM1.0--" : ;
-        Text051 : TextConst ENU='You may have changed a dimension.\\Do you want to update the lines?',ENN='You may have changed a dimension.\\Do you want to update the lines?';
-        TrackingSpecifications : Record "Mat.Issue Track. Specification";
+        PostCode: Record "Post Code";
+        InvtSetup: Record "Inventory Setup";
+        NoSeriesMgt: Codeunit 396;
+        Text000: Label 'You cannot rename a %1.';
+        Text001: Label '%1 and %2 cannot be the same in %3 %4.';
+        Text002: Label 'Do you want to change %1?';
+        Text003: Label 'The Material Issues %1 has been deleted.';
+        HideValidationDialog: Boolean;
+        MaterialIssueHeader: Record "Material Issues Header";
+        DimMgt: Codeunit 408;
+        ProdOrderLine: Record "Prod. Order Line";
+        MaterialIssueLine: Record "Material Issues Line";
+        InvtCommentLine: Record "Inventory Comment Line";
+        PostedMISHeader: Record "Posted Material Issues Header";
+        Text004: Label 'Posted Material Issue already existed against this Material Issue number %1';
+        Text005: Label 'you can not change Type when lines already existed.';
+        Item: Record Item;
+        productionbomversion: Record "Production BOM Version";
+        Service_Item_Line: Record "Service Item Line";
+        Stat: Record Station;
+        USER_SETUP: Record "User Setup";
+        UserGrec: Record User;
+        "-DIM1.0-": Integer;
+        MaterIssLine: Record "Material Issues Line";
+        Text051: TextConst ENU = 'You may have changed a dimension.\\Do you want to update the lines?', ENN = 'You may have changed a dimension.\\Do you want to update the lines?';
+        TrackingSpecifications: Record "Mat.Issue Track. Specification";
 
 
     procedure InitRecord();
     var
-        "Material Issues Line" : Record "Material Issues Line";
+        "Material Issues Line": Record "Material Issues Line";
     begin
         /*
         IF ("Posting Date" = 0D) THEN
@@ -878,63 +876,64 @@ table 50001 "Material Issues Header"
 
     local procedure TestStatusOpen();
     begin
-        TESTFIELD(Status,Status::Open);
+        TESTFIELD(Status, Status::Open);
     end;
 
 
-    procedure SetHideValidationDialog(NewHideValidationDialog : Boolean);
+    procedure SetHideValidationDialog(NewHideValidationDialog: Boolean);
     begin
         HideValidationDialog := NewHideValidationDialog;
     end;
 
 
-    local procedure UpdateTransLines(FieldRef : Integer);
+    local procedure UpdateTransLines(FieldRef: Integer);
     var
-        MaterialIssueLine : Record "Material Issues Line";
+        MaterialIssueLine: Record "Material Issues Line";
     begin
         MaterialIssueLine.LOCKTABLE;
-        MaterialIssueLine.SETRANGE("Document No.","No.");
+        MaterialIssueLine.SETRANGE("Document No.", "No.");
         IF MaterialIssueLine.FINDFIRST THEN BEGIN
-          REPEAT
-            CASE FieldRef OF
-              FIELDNO("Transfer-from Code"):
-                BEGIN
-                  MaterialIssueLine.VALIDATE("Transfer-from Code","Transfer-from Code");
-                  MaterialIssueLine.VALIDATE("Receipt Date","Receipt Date");
+            REPEAT
+                CASE FieldRef OF
+                    FIELDNO("Transfer-from Code"):
+                        BEGIN
+                            MaterialIssueLine.VALIDATE("Transfer-from Code", "Transfer-from Code");
+                            MaterialIssueLine.VALIDATE("Receipt Date", "Receipt Date");
+                        END;
+                    FIELDNO("Transfer-to Code"):
+                        BEGIN
+                            MaterialIssueLine.VALIDATE("Transfer-to Code", "Transfer-to Code");
+                            MaterialIssueLine.VALIDATE("Receipt Date", "Receipt Date");
+                        END;
+                    FIELDNO(Status):
+                        MaterialIssueLine.VALIDATE(Status, Status);
                 END;
-              FIELDNO("Transfer-to Code"):
-                BEGIN
-                  MaterialIssueLine.VALIDATE("Transfer-to Code","Transfer-to Code");
-                  MaterialIssueLine.VALIDATE("Receipt Date","Receipt Date");
-                END;
-              FIELDNO(Status): MaterialIssueLine.VALIDATE(Status,Status);
-            END;
-            MaterialIssueLine.MODIFY(TRUE);
-          UNTIL MaterialIssueLine.NEXT = 0;
+                MaterialIssueLine.MODIFY(TRUE);
+            UNTIL MaterialIssueLine.NEXT = 0;
         END;
     end;
 
 
-    procedure AssistEdit(OldMaterialIssueHeader : Record "Material Issues Header") : Boolean;
+    procedure AssistEdit(OldMaterialIssueHeader: Record "Material Issues Header"): Boolean;
     begin
         WITH MaterialIssueHeader DO BEGIN
-          MaterialIssueHeader := Rec;
-          InvtSetup.GET;
-          InvtSetup.TESTFIELD(InvtSetup."Posted Material Issue Nos.");
-          IF NoSeriesMgt.SelectSeries(InvtSetup."Posted Material Issue Nos.",OldMaterialIssueHeader."No. Series","No. Series") THEN BEGIN
-            NoSeriesMgt.SetSeries("No.");
-            Rec := MaterialIssueHeader;
-            EXIT(TRUE);
-          END;
+            MaterialIssueHeader := Rec;
+            InvtSetup.GET;
+            InvtSetup.TESTFIELD(InvtSetup."Posted Material Issue Nos.");
+            IF NoSeriesMgt.SelectSeries(InvtSetup."Posted Material Issue Nos.", OldMaterialIssueHeader."No. Series", "No. Series") THEN BEGIN
+                NoSeriesMgt.SetSeries("No.");
+                Rec := MaterialIssueHeader;
+                EXIT(TRUE);
+            END;
         END;
     end;
 
 
-    procedure ValidateShortcutDimCode(FieldNumber : Integer;var ShortcutDimCode : Code[20]);
+    procedure ValidateShortcutDimCode(FieldNumber: Integer; var ShortcutDimCode: Code[20]);
     var
-        OldDimSetID : Integer;
+        OldDimSetID: Integer;
     begin
-        
+
         //DIM1.0>> Since function doesn't exist in Nav 2013
         //Code Comment
         /*
@@ -946,17 +945,17 @@ table 50001 "Material Issues Header"
         END ELSE
           DimMgt.SaveTempDim(FieldNumber,ShortcutDimCode);
         */
-        
-        
+
+
         OldDimSetID := "Dimension Set ID";
-        DimMgt.ValidateShortcutDimValues(FieldNumber,ShortcutDimCode,"Dimension Set ID");
+        DimMgt.ValidateShortcutDimValues(FieldNumber, ShortcutDimCode, "Dimension Set ID");
         IF "No." <> '' THEN
-          MODIFY;
-        
+            MODIFY;
+
         IF OldDimSetID <> "Dimension Set ID" THEN BEGIN
-          IF MatIssueLinesExist THEN
-            UpdateAllLineDim("Dimension Set ID",OldDimSetID);
-          MODIFY;
+            IF MatIssueLinesExist THEN
+                UpdateAllLineDim("Dimension Set ID", OldDimSetID);
+            MODIFY;
         END
         //DIM1.0 End
 
@@ -965,107 +964,107 @@ table 50001 "Material Issues Header"
 
     procedure CopyRequisition();
     var
-        IndentHeader : Record "Indent Header";
-        IndentLine : Record "Indent Line";
-        MaterialIssueLines : Record "Material Issues Line";
+        IndentHeader: Record "Indent Header";
+        IndentLine: Record "Indent Line";
+        MaterialIssueLines: Record "Material Issues Line";
     begin
         TESTFIELD("Transfer-from Code");
         TESTFIELD("Transfer-to Code");
 
-        IF PAGE.RUNMODAL(0,IndentHeader) = ACTION::LookupOK THEN BEGIN
-          IndentLine.SETRANGE("Document No.",IndentHeader."No.");
-          IF IndentLine.FINDFIRST THEN BEGIN
-            REPEAT
-              MaterialIssueLines.INIT;
-              MaterialIssueLines."Document No.":="No.";
-              MaterialIssueLines."Line No.":=IndentLine."Line No.";
-              MaterialIssueLines."Item No.":=IndentLine."No.";
-              MaterialIssueLines.Description:=IndentLine.Description;
-              MaterialIssueLines.Quantity:=IndentLine.Quantity;
-              MaterialIssueLines."Unit of Measure":=IndentLine."Unit of Measure";
-              MaterialIssueLines."Transfer-from Code":="Transfer-from Code";
-              MaterialIssueLines."Transfer-to Code":="Transfer-to Code";
-              MaterialIssueLines.INSERT;
-            UNTIL IndentLine.NEXT = 0;
-         END;
+        IF PAGE.RUNMODAL(0, IndentHeader) = ACTION::LookupOK THEN BEGIN
+            IndentLine.SETRANGE("Document No.", IndentHeader."No.");
+            IF IndentLine.FINDFIRST THEN BEGIN
+                REPEAT
+                    MaterialIssueLines.INIT;
+                    MaterialIssueLines."Document No." := "No.";
+                    MaterialIssueLines."Line No." := IndentLine."Line No.";
+                    MaterialIssueLines."Item No." := IndentLine."No.";
+                    MaterialIssueLines.Description := IndentLine.Description;
+                    MaterialIssueLines.Quantity := IndentLine.Quantity;
+                    MaterialIssueLines."Unit of Measure" := IndentLine."Unit of Measure";
+                    MaterialIssueLines."Transfer-from Code" := "Transfer-from Code";
+                    MaterialIssueLines."Transfer-to Code" := "Transfer-to Code";
+                    MaterialIssueLines.INSERT;
+                UNTIL IndentLine.NEXT = 0;
+            END;
         END;
     end;
 
 
     procedure CopyProductionOrder();
     var
-        ProdOrderLines : Record "Prod. Order Line";
-        MaterialIssueLine : Record "Material Issues Line";
-        LineNo : Integer;
-        ProdOrderComp : Record "Prod. Order Component";
-        Item : Record Item;
-        BOMHeader : Record "Production BOM Header";
-        BOMLine : Record "Production BOM Line";
-        ProdOrderLineRec : Record "Prod. Order Line";
+        ProdOrderLines: Record "Prod. Order Line";
+        MaterialIssueLine: Record "Material Issues Line";
+        LineNo: Integer;
+        ProdOrderComp: Record "Prod. Order Component";
+        Item: Record Item;
+        BOMHeader: Record "Production BOM Header";
+        BOMLine: Record "Production BOM Line";
+        ProdOrderLineRec: Record "Prod. Order Line";
     begin
         TESTFIELD("No.");
         TESTFIELD("Prod. Order No.");
         TESTFIELD("Prod. Order Line No.");
-        TESTFIELD(Status,Status:: Open);
-        MaterialIssueLine.SETRANGE("Document No.","No.");
+        TESTFIELD(Status, Status::Open);
+        MaterialIssueLine.SETRANGE("Document No.", "No.");
         IF MaterialIssueLine.FINDLAST THEN
-          LineNo := MaterialIssueLine."Line No."
+            LineNo := MaterialIssueLine."Line No."
         ELSE
-          LineNo := 0;
+            LineNo := 0;
 
         ProdOrderComp.RESET;
-        ProdOrderComp.SETRANGE(Status,ProdOrderComp.Status :: Released);
-        ProdOrderComp.SETRANGE("Prod. Order No.","Prod. Order No.");
-        ProdOrderComp.SETRANGE("Prod. Order Line No.","Prod. Order Line No.");
+        ProdOrderComp.SETRANGE(Status, ProdOrderComp.Status::Released);
+        ProdOrderComp.SETRANGE("Prod. Order No.", "Prod. Order No.");
+        ProdOrderComp.SETRANGE("Prod. Order Line No.", "Prod. Order Line No.");
         //211207
-        IF FORMAT("BOM Type")<>' ' THEN
-          ProdOrderComp.SETRANGE("BOM Type","BOM Type");
-         // MESSAGE(FORMAT(ProdOrderComp.COUNT));
-        IF "Type of Solder"<>0 THEN
-          ProdOrderComp.SETRANGE("Type of Solder","Type of Solder");//added
-         // MESSAGE(FORMAT(ProdOrderComp.COUNT));
+        IF FORMAT("BOM Type") <> ' ' THEN
+            ProdOrderComp.SETRANGE("BOM Type", "BOM Type");
+        // MESSAGE(FORMAT(ProdOrderComp.COUNT));
+        IF "Type of Solder" <> 0 THEN
+            ProdOrderComp.SETRANGE("Type of Solder", "Type of Solder");//added
+                                                                       // MESSAGE(FORMAT(ProdOrderComp.COUNT));
 
 
         //MESSAGE(FORMAT(ProdOrderComp.COUNT));
         IF ProdOrderComp.FINDFIRST THEN BEGIN
-         REPEAT
-        // MESSAGE(FORMAT(ProdOrderComp."Item No."));
-           IF Item.GET(ProdOrderComp."Item No.") THEN;
-             MaterialIssueLine.INIT;
-             LineNo := LineNo + 10000;
-             MaterialIssueLine."Document No." := "No.";
-             MaterialIssueLine."Item No." := ProdOrderComp."Item No.";
-             MaterialIssueLine.VALIDATE(MaterialIssueLine."Item No.");
-             MaterialIssueLine."Line No." := LineNo;
-             MaterialIssueLine."Unit of Measure" := ProdOrderComp."Unit of Measure Code";
-             ProdOrderComp.CALCFIELDS(ProdOrderComp."Qty. in Material Issues",ProdOrderComp."Qty. in Posted Material Issues");
-             MaterialIssueLine.Copy := TRUE;
-             //MaterialIssueLine.Quantity := ProdOrderComp."Remaining Quantity" - (
-               //ProdOrderComp."Qty. in Material Issues" + ProdOrderComp."Qty. in Posted Material Issues");
-             //  MaterialIssueLine.Quantity := ProdOrderComp."Expected Quantity" - (
-             //  ProdOrderComp."Qty. in Material Issues" + ProdOrderComp."Qty. in Posted Material Issues");
-             MaterialIssueLine.Quantity:=ProdOrderComp.Quantity;
-             MaterialIssueLine.VALIDATE(Quantity);
-             MaterialIssueLine."Prod. Order No." := ProdOrderComp."Prod. Order No.";
-             MaterialIssueLine."Prod. Order Line No." := ProdOrderComp."Prod. Order Line No.";
-             MaterialIssueLine."Prod. Order Comp. Line No." := ProdOrderComp."Line No.";
-             ProdOrderLineRec.SETRANGE("Prod. Order No.",MaterialIssueLine."Prod. Order No.");
-             ProdOrderLineRec.SETRANGE(ProdOrderLineRec."Line No.",MaterialIssueLine."Prod. Order Line No.");
-             IF ProdOrderLineRec.FINDFIRST THEN BEGIN
-               BOMLine.SETRANGE("Production BOM No.",ProdOrderLineRec."Production BOM No.");
-               BOMLine.SETRANGE("No.",MaterialIssueLine."Item No.");
-               IF BOMLine.FINDFIRST THEN BEGIN
-                 IF (BOMLine."Allow Excess Qty.") THEN
-                   MaterialIssueLine."Allow Excess Qty." := TRUE;
-               END;
-             END;
-           //  IF MaterialIssueLine.Quantity > 0 THEN
-           //    MaterialIssueLine.INSERT;
+            REPEAT
+                // MESSAGE(FORMAT(ProdOrderComp."Item No."));
+                IF Item.GET(ProdOrderComp."Item No.") THEN;
+                MaterialIssueLine.INIT;
+                LineNo := LineNo + 10000;
+                MaterialIssueLine."Document No." := "No.";
+                MaterialIssueLine."Item No." := ProdOrderComp."Item No.";
+                MaterialIssueLine.VALIDATE(MaterialIssueLine."Item No.");
+                MaterialIssueLine."Line No." := LineNo;
+                MaterialIssueLine."Unit of Measure" := ProdOrderComp."Unit of Measure Code";
+                ProdOrderComp.CALCFIELDS(ProdOrderComp."Qty. in Material Issues", ProdOrderComp."Qty. in Posted Material Issues");
+                MaterialIssueLine.Copy := TRUE;
+                //MaterialIssueLine.Quantity := ProdOrderComp."Remaining Quantity" - (
+                //ProdOrderComp."Qty. in Material Issues" + ProdOrderComp."Qty. in Posted Material Issues");
+                //  MaterialIssueLine.Quantity := ProdOrderComp."Expected Quantity" - (
+                //  ProdOrderComp."Qty. in Material Issues" + ProdOrderComp."Qty. in Posted Material Issues");
+                MaterialIssueLine.Quantity := ProdOrderComp.Quantity;
+                MaterialIssueLine.VALIDATE(Quantity);
+                MaterialIssueLine."Prod. Order No." := ProdOrderComp."Prod. Order No.";
+                MaterialIssueLine."Prod. Order Line No." := ProdOrderComp."Prod. Order Line No.";
+                MaterialIssueLine."Prod. Order Comp. Line No." := ProdOrderComp."Line No.";
+                ProdOrderLineRec.SETRANGE("Prod. Order No.", MaterialIssueLine."Prod. Order No.");
+                ProdOrderLineRec.SETRANGE(ProdOrderLineRec."Line No.", MaterialIssueLine."Prod. Order Line No.");
+                IF ProdOrderLineRec.FINDFIRST THEN BEGIN
+                    BOMLine.SETRANGE("Production BOM No.", ProdOrderLineRec."Production BOM No.");
+                    BOMLine.SETRANGE("No.", MaterialIssueLine."Item No.");
+                    IF BOMLine.FINDFIRST THEN BEGIN
+                        IF (BOMLine."Allow Excess Qty.") THEN
+                            MaterialIssueLine."Allow Excess Qty." := TRUE;
+                    END;
+                END;
+                //  IF MaterialIssueLine.Quantity > 0 THEN
+                //    MaterialIssueLine.INSERT;
 
-             IF ProdOrderComp."Expected Quantity" - (
-               ProdOrderComp."Qty. in Material Issues" + ProdOrderComp."Qty. in Posted Material Issues")>0 THEN
-                MaterialIssueLine.INSERT;
-          UNTIL ProdOrderComp.NEXT = 0;
+                IF ProdOrderComp."Expected Quantity" - (
+                  ProdOrderComp."Qty. in Material Issues" + ProdOrderComp."Qty. in Posted Material Issues") > 0 THEN
+                    MaterialIssueLine.INSERT;
+            UNTIL ProdOrderComp.NEXT = 0;
 
         END;
     end;
@@ -1073,24 +1072,24 @@ table 50001 "Material Issues Header"
 
     procedure CopySalesOrder();
     var
-        SalesHeader : Record "Sales Header";
-        SalesLine : Record "Sales Line";
-        MaterialIssueLine : Record "Material Issues Line";
-        LineNo : Integer;
+        SalesHeader: Record "Sales Header";
+        SalesLine: Record "Sales Line";
+        MaterialIssueLine: Record "Material Issues Line";
+        LineNo: Integer;
     begin
-        MaterialIssueLine.SETRANGE("Document No.","No.");
+        MaterialIssueLine.SETRANGE("Document No.", "No.");
         IF MaterialIssueLine.FINDLAST THEN
-          LineNo := MaterialIssueLine."Line No."
+            LineNo := MaterialIssueLine."Line No."
         ELSE
-          LineNo := 0;
+            LineNo := 0;
 
-        SalesHeader.SETRANGE("No.","Sales Order No.");
+        SalesHeader.SETRANGE("No.", "Sales Order No.");
         IF SalesHeader.FINDFIRST THEN
-            SalesLine.SETRANGE("Document Type",SalesHeader."Document Type");
-            SalesLine.SETRANGE("Document No.",SalesHeader."No.");
-            SalesLine.SETRANGE(Type,SalesLine.Type :: Item);
-            IF SalesLine.FINDFIRST THEN
-              REPEAT
+            SalesLine.SETRANGE("Document Type", SalesHeader."Document Type");
+        SalesLine.SETRANGE("Document No.", SalesHeader."No.");
+        SalesLine.SETRANGE(Type, SalesLine.Type::Item);
+        IF SalesLine.FINDFIRST THEN
+            REPEAT
                 MaterialIssueLine.INIT;
                 LineNo := LineNo + 10000;
                 MaterialIssueLine."Document No." := "No.";
@@ -1101,52 +1100,52 @@ table 50001 "Material Issues Header"
                 MaterialIssueLine.Quantity := SalesLine.Quantity;
                 MaterialIssueLine.VALIDATE(Quantity);
                 MaterialIssueLine.INSERT;
-              UNTIL SalesLine.NEXT = 0;
+            UNTIL SalesLine.NEXT = 0;
     end;
 
 
-    procedure DeleteOrder(var MaterialIssuesHeader2 : Record "Material Issues Header";var MaterialIssuesLine2 : Record "Material Issues Line") : Boolean;
+    procedure DeleteOrder(var MaterialIssuesHeader2: Record "Material Issues Header"; var MaterialIssuesLine2: Record "Material Issues Line"): Boolean;
     var
-        InvtCommentLine : Record "Inventory Comment Line";
-        No : Code[20];
-        DoNotDelete : Boolean;
-        TrackingSpecification : Record "Mat.Issue Track. Specification";
+        InvtCommentLine: Record "Inventory Comment Line";
+        No: Code[20];
+        DoNotDelete: Boolean;
+        TrackingSpecification: Record "Mat.Issue Track. Specification";
     begin
         No := MaterialIssuesHeader2."No.";
         IF MaterialIssuesLine2.FINDFIRST THEN BEGIN
-          REPEAT
-            IF (MaterialIssuesLine2.Quantity <> MaterialIssuesLine2."Quantity Received") OR
-               (MaterialIssuesLine2."Quantity (Base)" <> MaterialIssuesLine2."Qty. Received (Base)")
-            THEN
-              DoNotDelete := TRUE;
-          UNTIL MaterialIssuesLine2.NEXT = 0;
+            REPEAT
+                IF (MaterialIssuesLine2.Quantity <> MaterialIssuesLine2."Quantity Received") OR
+                   (MaterialIssuesLine2."Quantity (Base)" <> MaterialIssuesLine2."Qty. Received (Base)")
+                THEN
+                    DoNotDelete := TRUE;
+            UNTIL MaterialIssuesLine2.NEXT = 0;
         END;
 
         IF NOT DoNotDelete THEN BEGIN
-          InvtCommentLine.SETRANGE("Document Type",InvtCommentLine."Document Type"::"Material Issues");
-          InvtCommentLine.SETRANGE("No.",No);
-          InvtCommentLine.DELETEALL;
+            InvtCommentLine.SETRANGE("Document Type", InvtCommentLine."Document Type"::"Material Issues");
+            InvtCommentLine.SETRANGE("No.", "No.");
+            InvtCommentLine.DELETEALL;
 
-          IF MaterialIssuesLine2.FINDFIRST THEN BEGIN
-            REPEAT
-              //B2b1.0>> Since Function doesn't exist in Nav 2013
-              //DimMgt.DeleteDocDim(DATABASE::"Material Issues Line",DocDim."Document Type"::" ",No,MaterialIssuesLine2."Line No.");
-              //B2b1.0<<
-              TrackingSpecification.SETRANGE("Order No.",MaterialIssuesLine2."Document No.");
-              TrackingSpecification.SETRANGE("Order Line No.",MaterialIssuesLine2."Line No.");
-              IF TrackingSpecification.FINDFIRST THEN
+            IF MaterialIssuesLine2.FINDFIRST THEN BEGIN
                 REPEAT
-                  TrackingSpecification.DELETE;
-                UNTIL TrackingSpecification.NEXT = 0;
-              MaterialIssuesLine2.DELETE;
-            UNTIL MaterialIssuesLine2.NEXT = 0;
-          END;
-          //B2b1.0>> Since Function doesn't exist in Nav 2013
-          //DimMgt.DeleteDocDim(DATABASE::"Material Issues Header",DocDim."Document Type"::" ",No,0);
-          //B2b1.0<<
-          MaterialIssuesHeader2.DELETE;
-          //MESSAGE(Text003,No);
-          EXIT(TRUE);
+                    //B2b1.0>> Since Function doesn't exist in Nav 2013
+                    //DimMgt.DeleteDocDim(DATABASE::"Material Issues Line",DocDim."Document Type"::" ",No,MaterialIssuesLine2."Line No.");
+                    //B2b1.0<<
+                    TrackingSpecification.SETRANGE("Order No.", MaterialIssuesLine2."Document No.");
+                    TrackingSpecification.SETRANGE("Order Line No.", MaterialIssuesLine2."Line No.");
+                    IF TrackingSpecification.FINDFIRST THEN
+                        REPEAT
+                            TrackingSpecification.DELETE;
+                        UNTIL TrackingSpecification.NEXT = 0;
+                    MaterialIssuesLine2.DELETE;
+                UNTIL MaterialIssuesLine2.NEXT = 0;
+            END;
+            //B2b1.0>> Since Function doesn't exist in Nav 2013
+            //DimMgt.DeleteDocDim(DATABASE::"Material Issues Header",DocDim."Document Type"::" ",No,0);
+            //B2b1.0<<
+            MaterialIssuesHeader2.DELETE;
+            //MESSAGE(Text003,No);
+            EXIT(TRUE);
         END;
         EXIT(FALSE);
     end;
@@ -1154,10 +1153,10 @@ table 50001 "Material Issues Header"
 
     procedure CopyProductionBOM();
     var
-        ProductionBOMHeader : Record "Production BOM Header";
-        ProductionBOMLine : Record "Production BOM Line";
-        MaterialIssueLine : Record "Material Issues Line";
-        LineNo : Integer;
+        ProductionBOMHeader: Record "Production BOM Header";
+        ProductionBOMLine: Record "Production BOM Line";
+        MaterialIssueLine: Record "Material Issues Line";
+        LineNo: Integer;
     begin
         /* //ck commented to add dip & SMD 220408
         MaterialIssueLine.SETRANGE("Document No.","No.");
@@ -1181,113 +1180,112 @@ table 50001 "Material Issues Header"
                 MaterialIssueLine.INSERT;
               UNTIL ProductionBOMLine.NEXT = 0;
         */     //ck commented to add dip & SMD 220408
-        
-        MaterialIssueLine.SETRANGE("Document No.","No.");
+
+        MaterialIssueLine.SETRANGE("Document No.", "No.");
         IF MaterialIssueLine.FINDLAST THEN
-          LineNo := MaterialIssueLine."Line No."
+            LineNo := MaterialIssueLine."Line No."
         ELSE
-          LineNo := 0;
-        
-        ProductionBOMHeader.SETRANGE("No.","Production BOM No.");
+            LineNo := 0;
+
+        ProductionBOMHeader.SETRANGE("No.", "Production BOM No.");
         IF ProductionBOMHeader.FINDFIRST THEN
-            ProductionBOMLine.SETRANGE("Production BOM No.",ProductionBOMHeader."No.");
-            productionbomversion.SETRANGE(productionbomversion."Production BOM No.",ProductionBOMHeader."No.");
-           // ProductionBOMLine.SETRANGE(ProductionBOMLine."Version Code",productionbomversion."Version Code");
-            IF productionbomversion.COUNT>0 THEN
+            ProductionBOMLine.SETRANGE("Production BOM No.", ProductionBOMHeader."No.");
+        productionbomversion.SETRANGE(productionbomversion."Production BOM No.", ProductionBOMHeader."No.");
+        // ProductionBOMLine.SETRANGE(ProductionBOMLine."Version Code",productionbomversion."Version Code");
+        IF productionbomversion.COUNT > 0 THEN
             IF productionbomversion.FINDFIRST THEN
-            REPEAT
-            IF productionbomversion.Status=productionbomversion.Status::Certified THEN
-            BEGIN
-            productionbomversion.SETRANGE(productionbomversion.Status,productionbomversion.Status::Certified);
-            ProductionBOMLine.SETRANGE(ProductionBOMLine."Version Code",productionbomversion."Version Code");
-            END
+                REPEAT
+                    IF productionbomversion.Status = productionbomversion.Status::Certified THEN BEGIN
+                        productionbomversion.SETRANGE(productionbomversion.Status, productionbomversion.Status::Certified);
+                        ProductionBOMLine.SETRANGE(ProductionBOMLine."Version Code", productionbomversion."Version Code");
+                    END
+                    ELSE
+                        ProductionBOMLine.SETRANGE(ProductionBOMLine."Version Code", '');
+                UNTIL productionbomversion.NEXT = 0;
+        IF FORMAT("Type of Solder") <> ' ' THEN
+            IF FORMAT("Type of Solder") = 'SMD' THEN
+                ProductionBOMLine.SETRANGE(ProductionBOMLine."Type of Solder", "Type of Solder")
             ELSE
-            ProductionBOMLine.SETRANGE(ProductionBOMLine."Version Code",'');
-            UNTIL productionbomversion.NEXT=0;
-            IF FORMAT("Type of Solder")<>' ' THEN
-            IF FORMAT("Type of Solder")='SMD' THEN
-              ProductionBOMLine.SETRANGE(ProductionBOMLine."Type of Solder","Type of Solder")
-            ELSE IF  FORMAT("Type of Solder")='DIP' THEN
-               ProductionBOMLine.SETFILTER(ProductionBOMLine."Type of Solder",'<>%1',"Type of Solder"::SMD);
-            ProductionBOMLine.SETRANGE(Type,ProductionBOMLine.Type :: Item);
-            IF ProductionBOMLine.FINDSET THEN
+                IF FORMAT("Type of Solder") = 'DIP' THEN
+                    ProductionBOMLine.SETFILTER(ProductionBOMLine."Type of Solder", '<>%1', "Type of Solder"::SMD);
+        ProductionBOMLine.SETRANGE(Type, ProductionBOMLine.Type::Item);
+        IF ProductionBOMLine.FINDSET THEN
             REPEAT
-        
-        
-               IF (("BOM Type" = "BOM Type"::Mechanical) OR ("BOM Type"= "BOM Type"::Wiring) )THEN
-                   BEGIN
-                   MaterialIssueLine.INIT;
-                   LineNo := LineNo + 10000;
-                   MaterialIssueLine."Document No." := "No.";
-                   MaterialIssueLine.VALIDATE("Item No.",ProductionBOMLine."No.");
-                   MaterialIssueLine."Line No." := LineNo;
-                   MaterialIssueLine.VALIDATE(Quantity,(ProductionBOMLine."Quantity per"*Multiple));
-                    MaterialIssueLine."BOM Quantity":=ProductionBOMLine."Quantity per";
-                   MaterialIssueLine.INSERT;
-        
-        
-        
-                  //UNTIL ProductionBOMLine.NEXT = 0
-                 END ELSE
-                 IF ("BOM Type"="BOM Type" :: SMD) THEN  BEGIN
-                 //REPEAT
-                   Item.SETRANGE("No.",ProductionBOMLine."No.");
-                   IF Item.FINDFIRST THEN BEGIN
-                       Item.SETRANGE("Type of Solder",Item."Type of Solder"::SMD);
-                         IF Item.FINDFIRST THEN
-                              BEGIN
-                              MaterialIssueLine.INIT;
-                              LineNo := LineNo + 10000;
-                              MaterialIssueLine."Document No." := "No.";
-                              MaterialIssueLine.VALIDATE("Item No.",ProductionBOMLine."No.");
-                              MaterialIssueLine."Line No." := LineNo;
-                              MaterialIssueLine.VALIDATE(Quantity,(ProductionBOMLine."Quantity per"*Multiple));
-                              MaterialIssueLine."BOM Quantity":=ProductionBOMLine."Quantity per";
-        
-                              MaterialIssueLine.INSERT;
-        
-        
-        
-                              END;
+
+
+                IF (("BOM Type" = "BOM Type"::Mechanical) OR ("BOM Type" = "BOM Type"::Wiring)) THEN BEGIN
+                    MaterialIssueLine.INIT;
+                    LineNo := LineNo + 10000;
+                    MaterialIssueLine."Document No." := "No.";
+                    MaterialIssueLine.VALIDATE("Item No.", ProductionBOMLine."No.");
+                    MaterialIssueLine."Line No." := LineNo;
+                    MaterialIssueLine.VALIDATE(Quantity, (ProductionBOMLine."Quantity per" * Multiple));
+                    MaterialIssueLine."BOM Quantity" := ProductionBOMLine."Quantity per";
+                    MaterialIssueLine.INSERT;
+
+
+
+                    //UNTIL ProductionBOMLine.NEXT = 0
+                END ELSE
+                    IF ("BOM Type" = "BOM Type"::SMD) THEN BEGIN
+                        //REPEAT
+                        Item.SETRANGE("No.", ProductionBOMLine."No.");
+                        IF Item.FINDFIRST THEN BEGIN
+                            Item.SETRANGE("Type of Solder", Item."Type of Solder"::SMD);
+                            IF Item.FINDFIRST THEN BEGIN
+                                MaterialIssueLine.INIT;
+                                LineNo := LineNo + 10000;
+                                MaterialIssueLine."Document No." := "No.";
+                                MaterialIssueLine.VALIDATE("Item No.", ProductionBOMLine."No.");
+                                MaterialIssueLine."Line No." := LineNo;
+                                MaterialIssueLine.VALIDATE(Quantity, (ProductionBOMLine."Quantity per" * Multiple));
+                                MaterialIssueLine."BOM Quantity" := ProductionBOMLine."Quantity per";
+
+                                MaterialIssueLine.INSERT;
+
+
+
+                            END;
                             //  UNTIL ProductionBOMLine.NEXT = 0
-                   END;
-                 END  ELSE  IF ("BOM Type"="BOM Type" :: DIP) THEN BEGIN
-                      Item.SETRANGE("No.",ProductionBOMLine."No.");
-                      IF Item.FINDFIRST THEN BEGIN
-                    //   Item.SETRANGE("Type of Solder",Item."Type of Solder"::DIP);
-                         IF Item.FINDFIRST THEN
-                           // REPEAT
-                              BEGIN
-                              MaterialIssueLine.INIT;
-                              LineNo := LineNo + 10000;
-                              MaterialIssueLine."Document No." := "No.";
-                              MaterialIssueLine.VALIDATE("Item No.",ProductionBOMLine."No.");
-                              MaterialIssueLine."Line No." := LineNo;
-                              MaterialIssueLine.VALIDATE(Quantity,(ProductionBOMLine."Quantity per"*Multiple));
-                              MaterialIssueLine."BOM Quantity":=ProductionBOMLine."Quantity per";
-                              MaterialIssueLine.INSERT;
-        
-        
-                              END;
-                              END;
-                         END
-                         ELSE
+                        END;
+                    END ELSE
+                        IF ("BOM Type" = "BOM Type"::DIP) THEN BEGIN
+                            Item.SETRANGE("No.", ProductionBOMLine."No.");
+                            IF Item.FINDFIRST THEN BEGIN
+                                //   Item.SETRANGE("Type of Solder",Item."Type of Solder"::DIP);
+                                IF Item.FINDFIRST THEN
+                                     // REPEAT
+                                     BEGIN
+                                    MaterialIssueLine.INIT;
+                                    LineNo := LineNo + 10000;
+                                    MaterialIssueLine."Document No." := "No.";
+                                    MaterialIssueLine.VALIDATE("Item No.", ProductionBOMLine."No.");
+                                    MaterialIssueLine."Line No." := LineNo;
+                                    MaterialIssueLine.VALIDATE(Quantity, (ProductionBOMLine."Quantity per" * Multiple));
+                                    MaterialIssueLine."BOM Quantity" := ProductionBOMLine."Quantity per";
+                                    MaterialIssueLine.INSERT;
+
+
+                                END;
+                            END;
+                        END
+                        ELSE
                /*IF (("BOM Type" <>"BOM Type"::Mechanical) AND ("BOM Type" <>"BOM Type"::Wiring) AND
                    ("BOM Type" <>"BOM Type"::SMD) AND ("BOM Type" <>"BOM Type"::DIP)) THEN */       //<<ANIL
-                   BEGIN
-                   MaterialIssueLine.INIT;
-                   LineNo := LineNo + 10000;
-                   MaterialIssueLine."Document No." := "No.";
-                   MaterialIssueLine.VALIDATE("Item No.",ProductionBOMLine."No.");
-                   MaterialIssueLine."Line No." := LineNo;
-                   MaterialIssueLine.VALIDATE(Quantity,(ProductionBOMLine."Quantity per"*Multiple));
-                   MaterialIssueLine."BOM Quantity":=ProductionBOMLine."Quantity per";
-                   MaterialIssueLine.INSERT;
-                  //UNTIL ProductionBOMLine.NEXT = 0
-                 END;
-        
-        
-            UNTIL ProductionBOMLine.NEXT = 0                     ;
+               BEGIN
+                            MaterialIssueLine.INIT;
+                            LineNo := LineNo + 10000;
+                            MaterialIssueLine."Document No." := "No.";
+                            MaterialIssueLine.VALIDATE("Item No.", ProductionBOMLine."No.");
+                            MaterialIssueLine."Line No." := LineNo;
+                            MaterialIssueLine.VALIDATE(Quantity, (ProductionBOMLine."Quantity per" * Multiple));
+                            MaterialIssueLine."BOM Quantity" := ProductionBOMLine."Quantity per";
+                            MaterialIssueLine.INSERT;
+                            //UNTIL ProductionBOMLine.NEXT = 0
+                        END;
+
+
+            UNTIL ProductionBOMLine.NEXT = 0;
 
     end;
 
@@ -1296,42 +1294,44 @@ table 50001 "Material Issues Header"
     begin
     end;
 
-    procedure GetNextNo() NumberValue : Code[20];
+    procedure GetNextNo() NumberValue: Code[20];
     var
-        DateValue : Text[30];
-        MonthValue : Text[30];
-        YearValue : Text[30];
-        MaterialIssuesHeaderLocal : Record "Material Issues Header";
-        PostedMatIssHeaderLocal : Record "Posted Material Issues Header";
-        LastNumber : Code[20];
+        DateValue: Text[30];
+        MonthValue: Text[30];
+        YearValue: Text[30];
+        MaterialIssuesHeaderLocal: Record "Material Issues Header";
+        PostedMatIssHeaderLocal: Record "Posted Material Issues Header";
+        LastNumber: Code[20];
     begin
-        IF DATE2DMY(WORKDATE,1) < 10 THEN
-          DateValue := '0'+FORMAT(DATE2DMY(WORKDATE,1))
-        ELSE DateValue := FORMAT(DATE2DMY(WORKDATE,1));
+        IF DATE2DMY(WORKDATE, 1) < 10 THEN
+            DateValue := '0' + FORMAT(DATE2DMY(WORKDATE, 1))
+        ELSE
+            DateValue := FORMAT(DATE2DMY(WORKDATE, 1));
 
-        IF DATE2DMY(WORKDATE,2) < 10 THEN
-          MonthValue := '0'+FORMAT(DATE2DMY(WORKDATE,2))
-        ELSE MonthValue := FORMAT(DATE2DMY(WORKDATE,2));
+        IF DATE2DMY(WORKDATE, 2) < 10 THEN
+            MonthValue := '0' + FORMAT(DATE2DMY(WORKDATE, 2))
+        ELSE
+            MonthValue := FORMAT(DATE2DMY(WORKDATE, 2));
 
-        IF DATE2DMY(WORKDATE,2) <= 12 THEN
-        YearValue := COPYSTR(FORMAT(DATE2DMY(WORKDATE,3)),3,2);
+        IF DATE2DMY(WORKDATE, 2) <= 12 THEN
+            YearValue := COPYSTR(FORMAT(DATE2DMY(WORKDATE, 3)), 3, 2);
         //IF TODAY=010910D THEN
         //  NumberValue := 'V'+YearValue+MonthValue+DateValue
         //ELSE
-          NumberValue := 'R'+YearValue+MonthValue+DateValue;
+        NumberValue := 'R' + YearValue + MonthValue + DateValue;
 
-        LastNumber := NumberValue+'0000';
+        LastNumber := NumberValue + '0000';
         MaterialIssuesHeaderLocal.RESET;
-        MaterialIssuesHeaderLocal.SETFILTER("No.",NumberValue+'*');
+        MaterialIssuesHeaderLocal.SETFILTER("No.", NumberValue + '*');
         IF MaterialIssuesHeaderLocal.FINDLAST THEN
-          LastNumber := MaterialIssuesHeaderLocal."No.";
+            LastNumber := MaterialIssuesHeaderLocal."No.";
 
         PostedMatIssHeaderLocal.RESET;
         PostedMatIssHeaderLocal.SETCURRENTKEY("Material Issue No.");
-        PostedMatIssHeaderLocal.SETFILTER("Material Issue No.",NumberValue+'*');
+        PostedMatIssHeaderLocal.SETFILTER("Material Issue No.", NumberValue + '*');
         IF PostedMatIssHeaderLocal.FINDLAST THEN
-          IF LastNumber < PostedMatIssHeaderLocal."Material Issue No." THEN
-             LastNumber := PostedMatIssHeaderLocal."Material Issue No.";
+            IF LastNumber < PostedMatIssHeaderLocal."Material Issue No." THEN
+                LastNumber := PostedMatIssHeaderLocal."Material Issue No.";
         //LastNumber:='R1012010106';
         NumberValue := INCSTR(LastNumber);
     end;
@@ -1339,44 +1339,44 @@ table 50001 "Material Issues Header"
 
     procedure CopyFromSalesSchedule();
     var
-        MaterialIssueLine : Record "Material Issues Line";
-        LineNo : Integer;
-        SalesSchedule : Record Schedule2;
+        MaterialIssueLine: Record "Material Issues Line";
+        LineNo: Integer;
+        SalesSchedule: Record Schedule2;
     begin
-        MaterialIssueLine.SETRANGE("Document No.","No.");
+        MaterialIssueLine.SETRANGE("Document No.", "No.");
         IF MaterialIssueLine.FINDLAST THEN
-          LineNo := MaterialIssueLine."Line No."
+            LineNo := MaterialIssueLine."Line No."
         ELSE
-          LineNo := 0;
+            LineNo := 0;
         SalesSchedule.RESET;
-        SalesSchedule.SETRANGE("Document Type",SalesSchedule."Document Type"::Order);
-        SalesSchedule.SETRANGE("Document No.","Sales Order No.");
-        SalesSchedule.SETRANGE("Document Line No.","Sales Order Line No.");
-        SalesSchedule.SETRANGE(SalesSchedule.Type,SalesSchedule.Type::Item);
+        SalesSchedule.SETRANGE("Document Type", SalesSchedule."Document Type"::Order);
+        SalesSchedule.SETRANGE("Document No.", "Sales Order No.");
+        SalesSchedule.SETRANGE("Document Line No.", "Sales Order Line No.");
+        SalesSchedule.SETRANGE(SalesSchedule.Type, SalesSchedule.Type::Item);
         IF SalesSchedule.FINDFIRST THEN
-          REPEAT
-            MaterialIssueLine.INIT;
-            LineNo := LineNo + 10000;
-            MaterialIssueLine."Document No." := "No.";
-            MaterialIssueLine.VALIDATE("Item No.",SalesSchedule."No.");
-            MaterialIssueLine."Line No." := LineNo;
-            MaterialIssueLine.VALIDATE(Quantity,SalesSchedule.Quantity);
-            MaterialIssueLine.INSERT;
-          UNTIL SalesSchedule.NEXT=0;
+            REPEAT
+                MaterialIssueLine.INIT;
+                LineNo := LineNo + 10000;
+                MaterialIssueLine."Document No." := "No.";
+                MaterialIssueLine.VALIDATE("Item No.", SalesSchedule."No.");
+                MaterialIssueLine."Line No." := LineNo;
+                MaterialIssueLine.VALIDATE(Quantity, SalesSchedule.Quantity);
+                MaterialIssueLine.INSERT;
+            UNTIL SalesSchedule.NEXT = 0;
     end;
 
 
     procedure UpdateItemsInventory();
     var
-        MaterialIssuesLine : Record "Material Issues Line";
-        ItemStock : Codeunit "item stock at stores1";
+        MaterialIssuesLine: Record "Material Issues Line";
+        ItemStock: Codeunit "item stock at stores1";
     begin
-        MaterialIssuesLine.SETRANGE(MaterialIssuesLine."Document No.","No.") ;
+        MaterialIssuesLine.SETRANGE(MaterialIssuesLine."Document No.", "No.");
         IF MaterialIssuesLine.FINDSET THEN
-        REPEAT
-         MaterialIssuesLine.Inventory:=MaterialIssuesLine.Item_Stock(MaterialIssuesLine."Item No.",MaterialIssuesLine."Transfer-from Code");
-        //  MaterialIssuesLine.MODIFY;
-        UNTIL MaterialIssuesLine.NEXT=0;
+            REPEAT
+                MaterialIssuesLine.Inventory := MaterialIssuesLine.Item_Stock(MaterialIssuesLine."Item No.", MaterialIssuesLine."Transfer-from Code");
+            //  MaterialIssuesLine.MODIFY;
+            UNTIL MaterialIssuesLine.NEXT = 0;
     end;
 
 
@@ -1387,59 +1387,59 @@ table 50001 "Material Issues Header"
 
     procedure ShowDocDim();
     var
-        OldDimSetID : Integer;
+        OldDimSetID: Integer;
     begin
         //DIM 1.0 Start
         OldDimSetID := "Dimension Set ID";
         "Dimension Set ID" :=
-          DimMgt.EditDimensionSet2(
-            "Dimension Set ID",STRSUBSTNO('%1',"No."),
-            "Shortcut Dimension 1 Code","Shortcut Dimension 2 Code");
+          DimMgt.EditDimensionSet(
+            "Dimension Set ID", STRSUBSTNO('%1', "No."),
+            "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code");
 
         IF OldDimSetID <> "Dimension Set ID" THEN BEGIN
-          MODIFY;
-          IF MatIssueLinesExist THEN
-            UpdateAllLineDim("Dimension Set ID",OldDimSetID);
+            MODIFY;
+            IF MatIssueLinesExist THEN
+                UpdateAllLineDim("Dimension Set ID", OldDimSetID);
         END;
         //DIM 1.0  End
     end;
 
 
-    procedure MatIssueLinesExist() : Boolean;
+    procedure MatIssueLinesExist(): Boolean;
     begin
         //DIM 1.0 Start
         MaterIssLine.RESET;
-        MaterIssLine.SETRANGE("Document No.","No.");
+        MaterIssLine.SETRANGE("Document No.", "No.");
         EXIT(MaterIssLine.FINDFIRST);
 
         //DIM 1.0 End
     end;
 
 
-    local procedure UpdateAllLineDim(NewParentDimSetID : Integer;OldParentDimSetID : Integer);
+    local procedure UpdateAllLineDim(NewParentDimSetID: Integer; OldParentDimSetID: Integer);
     var
-        NewDimSetID : Integer;
+        NewDimSetID: Integer;
     begin
         // Update all lines with changed dimensions.
         //DIM 1.0 Start
         IF NewParentDimSetID = OldParentDimSetID THEN
-          EXIT;
+            EXIT;
         IF NOT CONFIRM(Text051) THEN
-          EXIT;
+            EXIT;
 
         MaterIssLine.RESET;
-        MaterIssLine.SETRANGE("Document No.","No.");
+        MaterIssLine.SETRANGE("Document No.", "No.");
         IF MaterIssLine.FIND('-') THEN
-          REPEAT
-            NewDimSetID := DimMgt.GetDeltaDimSetID(MaterIssLine."Dimension Set ID",NewParentDimSetID,OldParentDimSetID);
-            IF MaterIssLine."Dimension Set ID" <> NewDimSetID THEN BEGIN
-              MaterIssLine."Dimension Set ID" := NewDimSetID;
-              DimMgt.UpdateGlobalDimFromDimSetID(
-                MaterIssLine."Dimension Set ID",MaterIssLine."Shortcut Dimension 1 Code",MaterIssLine."Shortcut Dimension 2 Code");
-              MaterIssLine.MODIFY;
-            END;
-          UNTIL MaterIssLine.NEXT = 0;
-         //DIM 1.0 End
+            REPEAT
+                NewDimSetID := DimMgt.GetDeltaDimSetID(MaterIssLine."Dimension Set ID", NewParentDimSetID, OldParentDimSetID);
+                IF MaterIssLine."Dimension Set ID" <> NewDimSetID THEN BEGIN
+                    MaterIssLine."Dimension Set ID" := NewDimSetID;
+                    DimMgt.UpdateGlobalDimFromDimSetID(
+                      MaterIssLine."Dimension Set ID", MaterIssLine."Shortcut Dimension 1 Code", MaterIssLine."Shortcut Dimension 2 Code");
+                    MaterIssLine.MODIFY;
+                END;
+            UNTIL MaterIssLine.NEXT = 0;
+        //DIM 1.0 End
     end;
 }
 

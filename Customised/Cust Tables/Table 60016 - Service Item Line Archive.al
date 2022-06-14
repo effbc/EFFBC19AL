@@ -244,6 +244,7 @@ table 60016 "Service Item Line Archive"
         }
         field(37; "Fault Comment"; Boolean)
         {
+            FieldClass = FlowField;
             CalcFormula = Exist("Service Comment Line" WHERE("Table Name" = CONST("Service Header"),
                                                               "Table Subtype" = FIELD("Document Type"),
                                                               "No." = FIELD("Document No."),
@@ -251,10 +252,11 @@ table 60016 "Service Item Line Archive"
                                                               "Table Line No." = FIELD("Line No.")));
             Caption = 'Fault Comment';
             Editable = false;
-            FieldClass = FlowField;
+
         }
         field(38; "Resolution Comment"; Boolean)
         {
+            FieldClass = FlowField;
             CalcFormula = Exist("Service Comment Line" WHERE("Table Name" = CONST("Service Header"),
                                                               "Table Subtype" = FIELD("Document Type"),
                                                               "No." = FIELD("Document No."),
@@ -262,7 +264,7 @@ table 60016 "Service Item Line Archive"
                                                               "Table Line No." = FIELD("Line No.")));
             Caption = 'Resolution Comment';
             Editable = false;
-            FieldClass = FlowField;
+
         }
         field(40; "Variant Code"; Code[10])
         {
@@ -272,6 +274,7 @@ table 60016 "Service Item Line Archive"
         }
         field(41; "Service Item Loaner Comment"; Boolean)
         {
+            FieldClass = FlowField;
             CalcFormula = Exist("Service Comment Line" WHERE("Table Name" = CONST("Service Header"),
                                                               "Table Subtype" = FIELD("Document Type"),
                                                               "No." = FIELD("Document No."),
@@ -279,7 +282,7 @@ table 60016 "Service Item Line Archive"
                                                               "Table Line No." = FIELD("Line No.")));
             Caption = 'Service Item Loaner Comment';
             Editable = false;
-            FieldClass = FlowField;
+
         }
         field(42; "Actual Response Time (Hours)"; Decimal)
         {
@@ -318,6 +321,7 @@ table 60016 "Service Item Line Archive"
         }
         field(60; "No. of Active/Finished Allocs"; Integer)
         {
+            FieldClass = FlowField;
             CalcFormula = Count("Service Order Allocation" WHERE("Document Type" = FIELD("Document Type"),
                                                                   "Document No." = FIELD("Document No."),
                                                                   "Service Item Line No." = FIELD("Line No."),
@@ -327,10 +331,11 @@ table 60016 "Service Item Line Archive"
                                                                   Status = FILTER(Active | Finished)));
             Caption = 'No. of Active/Finished Allocs';
             Editable = false;
-            FieldClass = FlowField;
+
         }
         field(61; "No. of Allocations"; Integer)
         {
+            FieldClass = FlowField;
             CalcFormula = Count("Service Order Allocation" WHERE(Status = FIELD("Allocation Status Filter"),
                                                                   "Resource No." = FIELD("Resource Filter"),
                                                                   "Resource Group No." = FIELD("Resource Group Filter"),
@@ -339,15 +344,15 @@ table 60016 "Service Item Line Archive"
                                                                   "Service Item Line No." = FIELD("Line No.")));
             Caption = 'No. of Allocations';
             Editable = false;
-            FieldClass = FlowField;
+
         }
         field(62; "No. of Previous Services"; Integer)
         {
-            CalcFormula = Count(Table5931 WHERE(Field5 = FIELD("Item No."),
-                                                 Field6 = FIELD("Serial No.")));
+            // FieldClass = FlowField;
+            //CalcFormula = Count(Table5931 WHERE(Field5 = FIELD("Item No."),Field6 = FIELD("Serial No."))); //Same issue in nav 2016 itself
             Caption = 'No. of Previous Services';
             Editable = false;
-            FieldClass = FlowField;
+
         }
         field(63; "Contract line No."; Integer)
         {

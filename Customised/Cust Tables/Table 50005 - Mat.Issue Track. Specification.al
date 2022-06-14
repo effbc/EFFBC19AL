@@ -104,7 +104,7 @@ table 50005 "Mat.Issue Track. Specification"
         field(62; "Variant Code"; Code[10])
         {
             Caption = 'Variant Code';
-            TableRelation = "Item Variant".Make WHERE("Item No." = FIELD("Item No."));
+            TableRelation = "Item Variant".Code WHERE("Item No." = FIELD("Item No."));
             DataClassification = CustomerContent;
         }
         field(63; Correction; Boolean)
@@ -180,7 +180,7 @@ table 50005 "Mat.Issue Track. Specification"
         Item: Record Item;
         "Material Issues Header": Record "Material Issues Header";
 
-    (804)]
+
     procedure CheckSerialNoQty();
     begin
         if "Serial No." <> '' then
@@ -191,7 +191,7 @@ table 50005 "Mat.Issue Track. Specification"
             end;
     end;
 
-    (813)]
+
     procedure CalcQty(BaseQty: Decimal): Decimal;
     begin
         if "Qty. per Unit of Measure" = 0 then

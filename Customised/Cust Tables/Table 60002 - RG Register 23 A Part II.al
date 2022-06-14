@@ -31,7 +31,7 @@ table 60002 "RG Register 23 A Part II"
         }
         field(6; "Vendor E.C.C. No."; Code[20])
         {
-            TableRelation = "E.C.C. Nos.";
+            //TableRelation = "E.C.C. Nos.";// Table Removed from base
             DataClassification = CustomerContent;
         }
         field(7; Range; Code[20])
@@ -143,7 +143,7 @@ table 60002 "RG Register 23 A Part II"
         }
         field(34; "Location E.C.C. No."; Code[20])
         {
-            TableRelation = "E.C.C. Nos.";
+            //TableRelation = "E.C.C. Nos.";// Table Removed from base
             DataClassification = CustomerContent;
         }
         field(13700; "Document No."; Code[20])
@@ -219,13 +219,13 @@ table 60002 "RG Register 23 A Part II"
         field(13716; "Excise Bus. Posting Group"; Code[10])
         {
             Caption = 'Excise Bus. Posting Group';
-            TableRelation = "Excise Bus. Posting Group";
+            // TableRelation = "Excise Bus. Posting Group";// Table Removed from base
             DataClassification = CustomerContent;
         }
         field(13717; "Excise Prod. Posting Group"; Code[10])
         {
             Caption = 'Excise Prod. Posting Group';
-            TableRelation = "Excise Prod. Posting Group";
+            //TableRelation = "Excise Prod. Posting Group";// Table Removed from base
             DataClassification = CustomerContent;
         }
         field(13718; "Vendor Shipment No."; Code[20])

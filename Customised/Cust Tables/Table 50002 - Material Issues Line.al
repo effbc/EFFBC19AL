@@ -352,8 +352,8 @@ table 50002 "Material Issues Line"
                     exit;
 
                 ItemVariant.Get("Item No.", "Variant Code");
-                Description := ItemVariant."Part No";
-                "Description 2" := ItemVariant.Description;
+                Description := ItemVariant.Description;
+                "Description 2" := ItemVariant."Description 2";
 
                 CheckItemAvailable(FieldNo("Variant Code"));
             end;
@@ -831,9 +831,9 @@ table 50002 "Material Issues Line"
 
     procedure ItemAvailability(AvailabilityType: Option Date,Variant,Location);
     var
-        ItemAvailByDate: Page "Item Availability by Periods";
-        ItemAvailByVar: Page "Item Availability by Variant";
-        ItemAvailByLoc: Page "Item Availability by Location";
+        ItemAvailByDate: Page 157;
+        ItemAvailByVar: Page 5414;
+        ItemAvailByLoc: Page 492;
     begin
         TestField("Item No.");
         Item.Reset;

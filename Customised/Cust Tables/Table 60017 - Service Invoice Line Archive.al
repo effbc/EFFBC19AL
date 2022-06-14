@@ -486,8 +486,7 @@ table 60017 "Service Invoice Line Archive"
         {
             Caption = 'Attached to Line No.';
             Editable = false;
-            TableRelation = "Service Line"."Customer No." WHERE(Field71 = FIELD("Document Type"),
-                                                                 "Document Type" = FIELD("Document No."));
+            //TableRelation = "Service Line"."Customer No." WHERE(Field71 = FIELD("Document Type"),"Document Type" = FIELD("Document No."));// Issue in nav 2016 itself
             DataClassification = CustomerContent;
         }
         field(82; "Item Category Code"; Code[10])
