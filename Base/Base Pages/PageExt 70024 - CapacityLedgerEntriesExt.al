@@ -1,68 +1,57 @@
 pageextension 70024 CapacityLedgerEntriesExt extends 5832
 {
-   
+
 
     layout
     {
 
-       
 
-        modify("Control1")
+
+        /*modify("Control1")
         {
 
            
             ShowCaption = false;
-        }
+        }*/
 
-        
+
         modify("No.")
         {
 
-            
+
 
             Enabled = TRUE;
 
-            
+
         }
 
-       
-        modify("Control 65")
-        {
-            Visible = false;
-        }
-        modify("Control 39")
-        {
-            Visible = false;
-        }
-        modify("Control 43")
-        {
-            Visible = false;
-        }
-        modify("Control 45")
-        {
-            Visible = false;
-        }
-        modify("Control 47")
-        {
-            Visible = false;
-        }
+
+        /* modify("Control 65")
+         {
+             Visible = false;
+         }
+         modify("Control 39")
+         {
+             Visible = false;
+         }
+         modify("Control 43")
+         {
+             Visible = false;
+         }
+         modify("Control 45")
+         {
+             Visible = false;
+         }
+         modify("Control 47")
+         {
+             Visible = false;
+         }*/
         addafter("Routing No.")
         {
             field("Reworked User Id"; Rec."Reworked User Id")
             {
             }
-            field("Direct Cost"; Rec."Direct Cost")
-            {
-            }
-            field("Overhead Cost"; Rec."Overhead Cost")
-            {
-            }
-            field("Direct Cost (ACY)"; Rec."Direct Cost (ACY)")
-            {
-            }
-            field("Overhead Cost (ACY)"; Rec."Overhead Cost (ACY)")
-            {
-            }
+
         }
         addafter("No.")
         {
@@ -105,16 +94,16 @@ pageextension 70024 CapacityLedgerEntriesExt extends 5832
     actions
     {
 
-       
+
         modify("&Navigate")
         {
             Promoted = true;
 
-            
+
         }
     }
 
 
-    
+
 }
 
