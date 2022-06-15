@@ -1,0 +1,31 @@
+page 33000252 "Sampling Plan List"
+{
+    // version QC1.0
+
+    CardPageID = "Sampling Plan Header";
+    Editable = false;
+    PageType = List;
+    SourceTable = "Sampling Plan Header";
+
+    layout
+    {
+        area(content)
+        {
+            repeater(Control1000000000)
+            {
+                ShowCaption = false;
+                field("Code"; Code)
+                {
+                }
+                field(Description; Description)
+                {
+                }
+            }
+        }
+    }
+
+    actions
+    {
+    }
+}
+
