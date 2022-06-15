@@ -395,6 +395,7 @@ pageextension 70194 SalesQuoteArchiveExt extends "Sales Quote Archive"
         {
             field("Sell-to Customer Template Code"; "Sell-to Customer Template Code")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Control 1904291901")
@@ -404,6 +405,7 @@ pageextension 70194 SalesQuoteArchiveExt extends "Sales Quote Archive"
                 Caption = 'Others';
                 field("Document Position"; "Document Position")
                 {
+                    ApplicationArea = All;
                 }
             }
         }
@@ -411,6 +413,7 @@ pageextension 70194 SalesQuoteArchiveExt extends "Sales Quote Archive"
         {
             field("Enquiry Status"; "Enquiry Status")
             {
+                ApplicationArea = All;
             }
         }
         moveafter("Sell-to Contact No."; "Control 10")
@@ -475,7 +478,9 @@ pageextension 70194 SalesQuoteArchiveExt extends "Sales Quote Archive"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Customer/Contact Archive  List";
-                RunPageLink = Sales Quote No.=FIELD(No.),Version No.=FIELD(Version No.);
+                RunPageLink = Sales Quote No.=                ApplicationArea = All;
+                ApplicationArea = All;
+FIELD(No.),Version No.=FIELD(Version No.);
             }
         }
     }

@@ -19,18 +19,23 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
         {
             field("Quantity Accepted"; Rec."Quantity Accepted")
             {
+                ApplicationArea = All;
             }
             field("Quantity Rework"; Rec."Quantity Rework")
             {
+                ApplicationArea = All;
             }
             field("Quantity Rejected"; Rec."Quantity Rejected")
             {
+                ApplicationArea = All;
             }
             field("Qty. Sending To Quality"; Rec."Qty. Sending To Quality")
             {
+                ApplicationArea = All;
             }
             field("Qty. Sent To Quality"; Rec."Qty. Sent To Quality")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -46,6 +51,7 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
                 action("Inspection Data Sheets")
                 {
                     Caption = 'Inspection Data Sheets';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     begin
@@ -58,6 +64,7 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
                 action(Action1901755704)
                 {
                     Caption = 'Inspection Data Sheets';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     begin
@@ -70,6 +77,7 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
                 action("Inspection &Receipts")
                 {
                     Caption = 'Inspection &Receipts';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     begin
@@ -82,6 +90,7 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
                 action("Posted I&nspection Receipts")
                 {
                     Caption = 'Posted I&nspection Receipts';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     begin
@@ -98,6 +107,7 @@ pageextension 70263 WhseReceiptSubformExt extends "Whse. Receipt Subform"
             action("Create Inspection Data &Sheets")
             {
                 Caption = 'Create Inspection Data &Sheets';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

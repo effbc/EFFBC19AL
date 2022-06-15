@@ -7,6 +7,7 @@ pageextension 70147 PurchaseLinesExt extends "Purchase Lines"
         {
             field("Vendor Name"; Rec."Vendor Name")
             {
+                ApplicationArea = All;
 
             }
 
@@ -16,6 +17,7 @@ pageextension 70147 PurchaseLinesExt extends "Purchase Lines"
 
             field("Qty. Invoiced (Base)"; Rec."Qty. Invoiced (Base)")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -23,14 +25,17 @@ pageextension 70147 PurchaseLinesExt extends "Purchase Lines"
         {
             field(Make; Rec.Make)
             {
+                ApplicationArea = All;
 
             }
             field("Qty. Received (Base)"; Rec."Qty. Received (Base)")
             {
+                ApplicationArea = All;
 
             }
             field("Order Date"; Rec."Order Date")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -38,6 +43,7 @@ pageextension 70147 PurchaseLinesExt extends "Purchase Lines"
         {
             field(gst_group_code_reverse_charge; Rec.gst_group_code_reverse_charge)
             {
+                ApplicationArea = All;
 
             }
 
@@ -46,6 +52,7 @@ pageextension 70147 PurchaseLinesExt extends "Purchase Lines"
         {
             field("Gen. Prod. Posting Group"; Rec."Gen. Prod. Posting Group")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -53,10 +60,12 @@ pageextension 70147 PurchaseLinesExt extends "Purchase Lines"
         {
             field("Sales Order No."; Rec."Sales Order No.")
             {
+                ApplicationArea = All;
 
             }
             field("Sales Order Line No."; Rec."Sales Order Line No.")
             {
+                ApplicationArea = All;
 
             }
         }

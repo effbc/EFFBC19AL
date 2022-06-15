@@ -20,15 +20,19 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
         {
             field(Tested; Rec.Tested)
             {
+                ApplicationArea = All;
             }
             field(Station; Rec.Station)
             {
+                ApplicationArea = All;
             }
             field("Station Name"; Rec."Station Name")
             {
+                ApplicationArea = All;
             }
             field("From Location"; Rec."From Location")
             {
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -37,6 +41,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
             }
             field("To Location"; Rec."To Location")
             {
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -45,6 +50,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
             }
             field(Account; Rec.Account)
             {
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -53,6 +59,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
             }
             field("Service Level"; Rec."Service Level")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Warranty Starting Date (Labor)")
@@ -60,14 +67,17 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
             field("CS Product"; Rec."CS Product")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("CS Module"; Rec."CS Module")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("CS model"; Rec."CS model")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
         addafter("Fault Area Code")
@@ -76,34 +86,43 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
             {
                 Caption = 'Product Module Description';
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Sub Module Code"; Rec."Sub Module Code")
             {
+                ApplicationArea = All;
             }
             field("Sub Module Descrption"; Rec."Sub Module Descrption")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Problem from Site"; Rec."Problem from Site")
             {
+                ApplicationArea = All;
             }
             field("Site Problem Matched"; Rec."Site Problem Matched")
             {
+                ApplicationArea = All;
             }
             field("QC internal Remarks"; Rec."QC internal Remarks")
             {
+                ApplicationArea = All;
             }
             field("Site Feedback"; Rec."Site Feedback")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Finishing Time")
         {
             field("Sent date time"; Rec."Sent date time")
             {
+                ApplicationArea = All;
             }
             field("Unit cost"; Rec."Unit cost")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -126,6 +145,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
             action("T&roubleshotting Setup")
             {
                 Caption = 'T&roubleshotting Setup';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -141,6 +161,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
             action("&Attachments")
             {
                 Caption = '&Attachments';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -153,6 +174,7 @@ pageextension 70213 ServiceOrderSubformExt extends "Service Order Subform"
             action("Pre Site Visit")
             {
                 Caption = 'Pre Site Visit';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

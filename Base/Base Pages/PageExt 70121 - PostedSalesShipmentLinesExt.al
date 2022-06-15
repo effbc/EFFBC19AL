@@ -6,6 +6,7 @@ pageextension 70121 PostedSalesShipmentLinesExt extends "Posted Sales Shipment L
         {
             field("Order No."; Rec."Order No.")
             {
+                ApplicationArea = All;
 
             }
         }

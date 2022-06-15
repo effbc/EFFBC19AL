@@ -20,6 +20,7 @@ pageextension 70085 ItemTrackingEntriesExt extends "Item Tracking Entries"
         {
             field("Posting Date"; Rec."Posting Date")
             {
+                ApplicationArea = All;
             }
         }
     }

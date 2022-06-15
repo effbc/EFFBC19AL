@@ -12,14 +12,17 @@ pageextension 70210 ServiceItemWorksheetExt extends "Service Item Worksheet"
             field("CS Product"; Rec."CS Product")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("CS model"; Rec."CS model")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("CS Module"; Rec."CS Module")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
     }
@@ -46,6 +49,7 @@ pageextension 70210 ServiceItemWorksheetExt extends "Service Item Worksheet"
                 Image = Troubleshoot;
                 RunObject = page "Troubleshooting Setup";
                 RunPageLink = "No." = FIELD("Service Item No.");
+                ApplicationArea = All;
             }
         }
         addafter("Demand Overview")
@@ -53,6 +57,7 @@ pageextension 70210 ServiceItemWorksheetExt extends "Service Item Worksheet"
             action("Get Issued Material")
             {
                 Caption = 'Get Issued Material';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 var
@@ -232,6 +237,7 @@ pageextension 70210 ServiceItemWorksheetExt extends "Service Item Worksheet"
                 // Enabled = IPBarchartEnable;
                 Promoted = true;
                 PromotedCategory = Process;
+                ApplicationArea = All;
             }
         }
     }

@@ -24,6 +24,7 @@ pageextension 70218 ServiceTaxEntriesExt extends "Service Tax Entries"
             field("Service Tax SBC Amount"; rec."Service Tax SBC Amount")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
         }
     }

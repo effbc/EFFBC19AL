@@ -6,6 +6,7 @@ pageextension 70281 PostedPurchaseReceiptsExt extends 145
         {
             field(COUNT; COUNT)
             {
+                ApplicationArea = All;
 
             }
         }
@@ -13,18 +14,22 @@ pageextension 70281 PostedPurchaseReceiptsExt extends 145
         {
             field("Order No."; "Order No.")
             {
+                ApplicationArea = All;
 
             }
             field("Vendor Shipment No."; "Vendor Shipment No.")
             {
+                ApplicationArea = All;
 
             }
             field("Vendor Excise Invoice No."; "Vendor Excise Invoice No.")
             {
+                ApplicationArea = All;
 
             }
             field("Vendor Invoice Date"; "Vendor Invoice Date")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -34,17 +39,21 @@ pageextension 70281 PostedPurchaseReceiptsExt extends 145
             field(Control1102152005; "QC Passed")
             {
                 Editable = FALSE;
+                ApplicationArea = All;
             }
             field("Bill Received"; "Bill Received")
             {
+                ApplicationArea = All;
 
             }
             field("Bill Transfered"; "Bill Transfered")
             {
+                ApplicationArea = All;
 
             }
             field("Bill Transfered Date"; "Bill Transfered Date")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -52,6 +61,7 @@ pageextension 70281 PostedPurchaseReceiptsExt extends 145
         {
             field("User ID"; "User ID")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -68,6 +78,7 @@ pageextension 70281 PostedPurchaseReceiptsExt extends 145
                 PromotedIsBig = true;
                 Image = MailSetup;
                 PromotedCategory = Process;
+                ApplicationArea = All;
                 trigger OnAction()
                 begin
                     // Added by Vijaya on 24-May-2016 for Sending Mail For Bill no recieved Vendors
@@ -110,6 +121,7 @@ pageextension 70281 PostedPurchaseReceiptsExt extends 145
             action("QC Passed")
             {
                 Caption = 'QC Passed';
+                ApplicationArea = All;
                 trigger OnAction()
                 begin
                     PRH.RESET;

@@ -19,18 +19,21 @@ pageextension 70144 PurchaseInvoiceExt extends "Purchase Invoice"
         {
             field("Posting No. Series"; "Posting No. Series")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Order Address Code")
         {
             field("Vendor Invoice Date"; "Vendor Invoice Date")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Responsibility Center")
         {
             field("Inclusive of All Taxes"; "Inclusive of All Taxes")
             {
+                ApplicationArea = All;
             }
         }
         addafter(Status)
@@ -38,19 +41,24 @@ pageextension 70144 PurchaseInvoiceExt extends "Purchase Invoice"
             field("Purchase Journal"; "Purchase Journal")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Amount to Vendor"; "Amount to Vendor")
             {
+                ApplicationArea = All;
             }
             field("Tarrif Heading No"; "Tarrif Heading No")
             {
+                ApplicationArea = All;
             }
             field("Last Modified User"; "USER ID")
             {
                 Caption = 'Last Modified User';
+                ApplicationArea = All;
             }
             field("Sales Order Ref No."; "Sales Order Ref No.")
             {
+                ApplicationArea = All;
 
                 trigger OnLookup(var Text: Text): Boolean;
                 begin
@@ -68,16 +76,20 @@ pageextension 70144 PurchaseInvoiceExt extends "Purchase Invoice"
         {
             field("Vendor Excise Invoice No."; "Vendor Excise Invoice No.")
             {
+                ApplicationArea = All;
             }
             field("Additional Duty Value"; "Additional Duty Value")
             {
+                ApplicationArea = All;
             }
             field("Type of Supplier"; "Type of Supplier")
             {
+                ApplicationArea = All;
             }
             field("<Location Code 2>"; "Location Code")
             {
                 Importance = Promoted;
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -90,33 +102,41 @@ pageextension 70144 PurchaseInvoiceExt extends "Purchase Invoice"
         {
             field("MSPT Date"; "MSPT Date")
             {
+                ApplicationArea = All;
             }
             field("MSPT Code"; "MSPT Code")
             {
+                ApplicationArea = All;
             }
             field("<On Hold2>"; "On Hold")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Expected Receipt Date")
         {
             field("Vehicle Number"; "Vehicle Number")
             {
+                ApplicationArea = All;
             }
             field("Vend. Excise Inv. Date"; "Vend. Excise Inv. Date")
             {
+                ApplicationArea = All;
             }
             field("Transporter Name"; "Transporter Name")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Area")
         {
             field(State; State)
             {
+                ApplicationArea = All;
             }
             field("Currency Factor"; "Currency Factor")
             {
+                ApplicationArea = All;
             }
             group(GST)
             {
@@ -124,19 +144,24 @@ pageextension 70144 PurchaseInvoiceExt extends "Purchase Invoice"
                              ENN = 'GST';
                 field("Nature of Supply"; "Nature of Supply")
                 {
+                    ApplicationArea = All;
                 }
             }
             field("Bill of Entry No."; "Bill of Entry No.")
             {
+                ApplicationArea = All;
             }
             field("Bill of Entry Date"; "Bill of Entry Date")
             {
+                ApplicationArea = All;
             }
             field("Bill of Entry Value"; "Bill of Entry Value")
             {
+                ApplicationArea = All;
             }
             field("Without Bill Of Entry"; "Without Bill Of Entry")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -510,6 +535,7 @@ IF "Vehicle Number" = '' THEN
                 Caption = '&MSPT Order Details';
                 RunObject = Page "MSPT Order Details";
                 RunPageLink = Type = CONST(Purchase), "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No."), "MSPT Header Code" = FIELD("MSPT Code"), "Party Type" = CONST(Vendor), "Party No." = FIELD("Buy-from Vendor No.");
+                ApplicationArea = All;
             }
         }
         addafter(Comment)
@@ -522,12 +548,14 @@ IF "Vehicle Number" = '' THEN
                 Caption = '&MSPT Order Details';
                 RunObject = Page "MSPT Order Details";
                 RunPageLink = Type = CONST(Purchase), "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No."), "MSPT Header Code" = FIELD("MSPT Code"), "Party Type" = CONST(Vendor), "Party No." = FIELD("Buy-from Vendor No.");
+                ApplicationArea = All;
             }
         }
         addafter(PostBatch)
         {
             action(TestAction)
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 var
@@ -546,6 +574,7 @@ IF "Vehicle Number" = '' THEN
             action(TestCu)
             {
                 Caption = 'TestCus';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -556,6 +585,7 @@ IF "Vehicle Number" = '' THEN
             }
             action(LocationCodeTrack)
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

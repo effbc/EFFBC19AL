@@ -64,48 +64,57 @@ pageextension 70196 SalesQuoteSubformExt extends "Sales Quote Subform"
         {
             field("Schedule Type"; "Schedule Type")
             {
+                ApplicationArea = All;
             }
             field(Amount; Amount)
             {
+                ApplicationArea = All;
             }
         }
         addafter("Unit of Measure")
         {
             field("Unitcost(LOA)"; "Unitcost(LOA)")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Line Amount")
         {
             field("Line Amount(LOA)"; "Line Amount(LOA)")
             {
+                ApplicationArea = All;
             }
         }
         addafter(LineDiscExists)
         {
             field("OutStanding(LOA)"; "OutStanding(LOA)")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Appl.-to Item Entry")
         {
             field("GST %"; "GST %")
             {
+                ApplicationArea = All;
             }
         }
         addbefore("Shortcut Dimension 1 Code")
         {
             field("Amount To Customer"; "Amount To Customer")
             {
+                ApplicationArea = All;
             }
         }
         addafter(ShortcutDimCode6)
         {
             field("Estimated Unit Cost"; "Estimated Unit Cost")
             {
+                ApplicationArea = All;
             }
             field("Estimated Total Unit Cost"; "Estimated Total Unit Cost")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -116,6 +125,7 @@ pageextension 70196 SalesQuoteSubformExt extends "Sales Quote Subform"
             action("Sc&hedule")
             {
                 Caption = 'Sc&hedule';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

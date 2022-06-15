@@ -10,6 +10,7 @@ pageextension 70138 PurchCommentSheetExt extends 66
         {
             field(Type; Type)
             {
+                ApplicationArea = All;
             }
         }
     }

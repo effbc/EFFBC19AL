@@ -20,12 +20,15 @@ pageextension 70007 AppliedItemEntriesExt extends "Applied Item Entries"
         {
             field("Serial No."; Rec."Serial No.")
             {
+                ApplicationArea = All;
             }
             field("Lot No."; Rec."Lot No.")
             {
+                ApplicationArea = All;
             }
             field("Prod. Order Comp. Line No."; Rec."Prod. Order Comp. Line No.")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -46,7 +49,7 @@ pageextension 70007 AppliedItemEntriesExt extends "Applied Item Entries"
     }
 
     var
-        TrackingPage: Page "Order Tracking";
+        TrackingPage: Page 99000822;
 
 
 

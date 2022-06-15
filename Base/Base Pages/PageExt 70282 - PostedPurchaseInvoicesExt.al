@@ -8,38 +8,46 @@ pageextension 70282 PostedPurchaseInvoicesExt extends 146
             {
                 Style = Standard;
                 StyleExpr = TRUE;
+                ApplicationArea = All;
             }
         }
         addafter("Order Address Code")
         {
             field("Form Code"; "Form Code")
             {
+                ApplicationArea = All;
 
             }
 
             field(Structure; Structure)
             {
+                ApplicationArea = All;
 
             }
             field("Form No."; "Form No.")
             {
+                ApplicationArea = All;
 
             }
 
             field("Vendor Invoice Date"; "Vendor Invoice Date")
             {
+                ApplicationArea = All;
 
             }
             field("Vendor Excise Invoice No."; "Vendor Excise Invoice No.")
             {
+                ApplicationArea = All;
 
             }
             field("Vend. Excise Inv. Date"; "Vend. Excise Inv. Date")
             {
+                ApplicationArea = All;
 
             }
             field("Actual Invoiced Date"; "Actual Invoiced Date")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -47,6 +55,7 @@ pageextension 70282 PostedPurchaseInvoicesExt extends 146
         {
             field("Amount to Vendor"; "Amount to Vendor")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -54,18 +63,22 @@ pageextension 70282 PostedPurchaseInvoicesExt extends 146
         {
             field("Currency Factor"; "Currency Factor")
             {
+                ApplicationArea = All;
 
             }
             field("Excise Claimed Date"; "Excise Claimed Date")
             {
                 Caption = 'GST Claimed Date';
+                ApplicationArea = All;
             }
             field(RCM_Paid_Date; RCM_Paid_Date)
             {
+                ApplicationArea = All;
 
             }
             field("User ID"; "User ID")
             {
+                ApplicationArea = All;
 
             }
 

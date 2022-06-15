@@ -9,12 +9,14 @@ pageextension 70036 CustomerCardExt extends 21
             {
                 CaptionML = ENU = 'State Code *',
                             ENN = 'State Code';
+                ApplicationArea = All;
             }
 
             field(Contact; Contact)
             {
                 Editable = ContactEditable;
                 Importance = Promoted;
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -23,11 +25,13 @@ pageextension 70036 CustomerCardExt extends 21
             }
             field("Tally Ref"; "Tally Ref")
             {
+                ApplicationArea = All;
             }
 
             field(SalBalance; SalBalance)
             {
                 Editable = false;
+                ApplicationArea = All;
 
                 trigger OnDrillDown();
                 begin
@@ -51,6 +55,7 @@ pageextension 70036 CustomerCardExt extends 21
             field(CSBalance; CSBalance)
             {
                 Editable = false;
+                ApplicationArea = All;
 
                 trigger OnDrillDown();
                 begin
@@ -74,17 +79,20 @@ pageextension 70036 CustomerCardExt extends 21
 
             field("User Id"; "User Id")
             {
+                ApplicationArea = All;
             }
             field("Territory Code"; "Territory Code")
             {
                 CaptionML = ENU = 'Territory Code *',
                             ENN = 'Territory Code';
+                ApplicationArea = All;
             }
         }
         addbefore("Gen. Bus. Posting Group")
         {
             field("MSPT Code"; "MSPT Code")
             {
+                ApplicationArea = All;
             }
         }
         modify("Payment Terms Code")
@@ -106,21 +114,25 @@ pageextension 70036 CustomerCardExt extends 21
         {
             field("Payment Term Auth"; "Payment Term Auth")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Block Payment Tolerance")
         {
             field("Payment Realization Period"; "Payment Realization Period")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Customized Calendar")
         {
             field("GST TDS Number"; "GST TDS Number")
             {
+                ApplicationArea = All;
             }
             field("TAN Number"; "TAN Number")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -243,6 +255,7 @@ pageextension 70036 CustomerCardExt extends 21
                 RunObject = Page "Customer Specification";
                 RunPageLink = "Customer No." = FIELD("No.");
                 RunPageView = SORTING("No.");
+                ApplicationArea = All;
             }
         }
         addafter("S&ales")
@@ -252,6 +265,7 @@ pageextension 70036 CustomerCardExt extends 21
                 Caption = '&MSPT Receivables';
                 RunObject = Page "MSPT Customer Sales";
                 RunPageLink = "No." = FIELD("No."), "Global Dimension 1 Filter" = FIELD("Global Dimension 1 Filter"), "Global Dimension 2 Filter" = FIELD("Global Dimension 2 Filter");
+                ApplicationArea = All;
             }
         }
         addafter("Report Customer - Balance to Date")
@@ -260,6 +274,7 @@ pageextension 70036 CustomerCardExt extends 21
             {
                 Promoted = true;
                 PromotedCategory = Process;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -270,6 +285,7 @@ pageextension 70036 CustomerCardExt extends 21
             {
                 Promoted = true;
                 PromotedCategory = Process;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -278,6 +294,7 @@ pageextension 70036 CustomerCardExt extends 21
             }
             action("gst no updt")
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

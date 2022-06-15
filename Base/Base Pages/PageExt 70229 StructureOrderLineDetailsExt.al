@@ -22,6 +22,7 @@ pageextension 70229 StructureOrderLineDetailsExt extends "Structure Order Line D
             field("Third Party Name"; rec."Third Party Name")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
     }

@@ -10,56 +10,71 @@ pageextension 70038 CustomerListExt extends 22
         {
             field("Service Zone Code"; "Service Zone Code")
             {
+                ApplicationArea = All;
             }
             field("Territory Code"; "Territory Code")
             {
+                ApplicationArea = All;
             }
             field(Address; Address)
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Tally Ref"; "Tally Ref")
             {
+                ApplicationArea = All;
             }
             field(SalBalance; SalBalance)
             {
+                ApplicationArea = All;
             }
             field(CSBalance; CSBalance)
             {
+                ApplicationArea = All;
             }
             field("Address 2"; "Address 2")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("State Code"; "State Code")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field(City; City)
             {
+                ApplicationArea = All;
             }
             field("Primary Contact No."; "Primary Contact No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Base Calendar Code")
         {
             field("E-Mail"; "E-Mail")
             {
+                ApplicationArea = All;
             }
             field("Excise Bus. Posting Group"; "Excise Bus. Posting Group")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Tax Area Code"; "Tax Area Code")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("T.I.N. No."; "T.I.N. No.")
             {
+                ApplicationArea = All;
             }
             field("Payment Realization Period"; "Payment Realization Period")
             {
+                ApplicationArea = All;
             }
             group(Control1102152012)
             {
@@ -74,6 +89,7 @@ pageextension 70038 CustomerListExt extends 22
                         field("TotalCustomers+FORMAT(Rec.COUNT)"; TotalCustomers + FORMAT(Rec.COUNT))
                         {
                             Editable = false;
+                            ApplicationArea = All;
                         }
                     }
                     group(Control1102152001)
@@ -84,6 +100,7 @@ pageextension 70038 CustomerListExt extends 22
                             Editable = false;
                             Style = StrongAccent;
                             StyleExpr = TRUE;
+                            ApplicationArea = All;
                         }
                     }
                 }

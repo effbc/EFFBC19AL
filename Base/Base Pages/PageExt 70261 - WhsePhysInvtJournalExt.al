@@ -38,6 +38,7 @@ pageextension 70261 WhsePhysInvtJournalExt extends "Whse. Phys. Invt. Journal"
                 field(WorkDate; WORKDATE)
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
             }
         }

@@ -35,27 +35,33 @@ pageextension 70127 PostedTransferReceiptExt extends "Posted Transfer Receipt"
             field("Required Date"; Rec."Required Date")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("User ID"; Rec."User ID")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Control 1500001")
         {
             field("Resource Name"; Rec."Resource Name")
             {
+                ApplicationArea = All;
             }
             field("Prod. Order No."; Rec."Prod. Order No.")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Prod. Order Line No."; Rec."Prod. Order Line No.")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Operation No."; Rec."Operation No.")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
         addafter("Shipping Agent Code")
@@ -63,6 +69,7 @@ pageextension 70127 PostedTransferReceiptExt extends "Posted Transfer Receipt"
             field("Due Date"; Rec."Due Date")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
         addafter("Receipt Date")
@@ -70,10 +77,12 @@ pageextension 70127 PostedTransferReceiptExt extends "Posted Transfer Receipt"
             field("<Shortcut Dimension 1 Code2>"; Rec."Shortcut Dimension 1 Code")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("<Shortcut Dimension 2 Code2>"; Rec."Shortcut Dimension 2 Code")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
     }

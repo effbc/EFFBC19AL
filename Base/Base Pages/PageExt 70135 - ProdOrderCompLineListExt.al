@@ -20,18 +20,22 @@ pageextension 70135 ProdOrderCompLineListExt extends "Prod. Order Comp. Line Lis
         {
             field("Source No."; Rec."Source No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Variant Code")
         {
             field("Product Group Code"; Rec."Product Group Code")
             {
+                ApplicationArea = All;
             }
             field("Production Plan Date"; Rec."Production Plan Date")
             {
+                ApplicationArea = All;
             }
             field("Type of Solder"; Rec."Type of Solder")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Lead-Time Offset")
@@ -39,6 +43,7 @@ pageextension 70135 ProdOrderCompLineListExt extends "Prod. Order Comp. Line Lis
             field(ProductGroup; ProductGroup)
             {
                 Caption = 'Product Group';
+                ApplicationArea = All;
             }
         }
     }

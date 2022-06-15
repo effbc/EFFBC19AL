@@ -8,6 +8,7 @@ pageextension 70021 BlanketSaleOrderSubformExt extends "Blanket Sales Order Subf
         {
             field("Line No."; "Line No.")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -32,6 +33,7 @@ pageextension 70021 BlanketSaleOrderSubformExt extends "Blanket Sales Order Subf
         {
             field("Schedule No"; Rec."Schedule No")
             {
+                ApplicationArea = All;
 
             }
 
@@ -40,14 +42,17 @@ pageextension 70021 BlanketSaleOrderSubformExt extends "Blanket Sales Order Subf
         {
             field("Prod. Order Quantity"; Rec."Prod. Order Quantity")
             {
+                ApplicationArea = All;
 
             }
             field("Prod. Qty"; Rec."Prod. Qty")
             {
+                ApplicationArea = All;
 
             }
             field("Prod. Due Date"; Rec."Prod. Due Date")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -62,6 +67,7 @@ pageextension 70021 BlanketSaleOrderSubformExt extends "Blanket Sales Order Subf
         {
             field("Qty. Shipped (Base)"; Rec."Qty. Shipped (Base)")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -69,6 +75,7 @@ pageextension 70021 BlanketSaleOrderSubformExt extends "Blanket Sales Order Subf
         {
             field("Qty. Invoiced (Base)"; Rec."Qty. Invoiced (Base)")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -76,26 +83,32 @@ pageextension 70021 BlanketSaleOrderSubformExt extends "Blanket Sales Order Subf
         {
             field("Unitcost(LOA)"; Rec."Unitcost(LOA)")
             {
+                ApplicationArea = All;
 
             }
             field("Pending By"; Rec."Pending By")
             {
+                ApplicationArea = All;
 
             }
             field("Outstanding Amount"; Rec."Outstanding Amount")
             {
+                ApplicationArea = All;
 
             }
             field("Outstanding Quantity"; Rec."Outstanding Quantity")
             {
+                ApplicationArea = All;
 
             }
             field("Outstanding Qty. (Base)"; Rec."Outstanding Qty. (Base)")
             {
+                ApplicationArea = All;
 
             }
             field("Qty. to Ship"; Rec."Qty. to Ship (Base)")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -103,10 +116,12 @@ pageextension 70021 BlanketSaleOrderSubformExt extends "Blanket Sales Order Subf
         {
             field("Qty. Shipped Not Invd. (Base)"; Rec."Qty. Shipped Not Invd. (Base)")
             {
+                ApplicationArea = All;
 
             }
             field("Qty. Shipped Not Invoiced"; Rec."Qty. Shipped Not Invoiced")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -114,22 +129,27 @@ pageextension 70021 BlanketSaleOrderSubformExt extends "Blanket Sales Order Subf
         {
             field(Reason; Rec.Reason)
             {
+                ApplicationArea = All;
 
             }
             field(MainCategory; Rec.MainCategory)
             {
+                ApplicationArea = All;
 
             }
             field(SubCategory; Rec.SubCategory)
             {
+                ApplicationArea = All;
 
             }
             field(Remarks; Rec.Remarks)
             {
+                ApplicationArea = All;
 
             }
             field(ProductGroup; Rec.ProductGroup)
             {
+                ApplicationArea = All;
 
             }
         }
@@ -165,6 +185,7 @@ pageextension 70021 BlanketSaleOrderSubformExt extends "Blanket Sales Order Subf
             {
                 CaptionML = ENU = '&Attachment';
                 Visible = false;
+                ApplicationArea = All;
                 trigger OnAction()
                 var
                     myInt: Integer;

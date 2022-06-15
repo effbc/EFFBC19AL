@@ -20,21 +20,25 @@ pageextension 70246 TroubleshootingSetupExt extends 5993
         {
             field("Service Order No"; Rec."Service Order No")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Service Order No")
         {
             field(Date; Rec.Date)
             {
+                ApplicationArea = All;
             }
         }
         addafter("Troubleshooting Description")
         {
             field(Comment; Rec.Comment)
             {
+                ApplicationArea = All;
             }
             field("Line No."; Rec."Line No.")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -47,6 +51,7 @@ pageextension 70246 TroubleshootingSetupExt extends 5993
             action("Copy Comments")
             {
                 Caption = 'Copy Comments';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

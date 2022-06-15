@@ -34,6 +34,7 @@ pageextension 70140 PurchInvoiceSubformExt extends "Purch. Invoice Subform"
                 DrillDown = false;
                 Lookup = true;
                 LookupPageID = 50;
+                ApplicationArea = All;
 
                 trigger OnDrillDown();
                 begin
@@ -55,77 +56,98 @@ pageextension 70140 PurchInvoiceSubformExt extends "Purch. Invoice Subform"
             }
             field("Excise Amount"; "Excise Amount")
             {
+                ApplicationArea = All;
             }
             field("CESS Amount"; "CESS Amount")
             {
+                ApplicationArea = All;
             }
             field("VAT Calculation Type"; "VAT Calculation Type")
             {
+                ApplicationArea = All;
             }
             field("Frieght Charges"; "Frieght Charges")
             {
+                ApplicationArea = All;
             }
             field("Tax Amount"; "Tax Amount")
             {
+                ApplicationArea = All;
             }
             field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
             {
+                ApplicationArea = All;
             }
             field("Service Tax Group"; "Service Tax Group")
             {
+                ApplicationArea = All;
             }
             field("Currency Code"; "Currency Code")
             {
+                ApplicationArea = All;
             }
             field("QC Enabled"; "QC Enabled")
             {
+                ApplicationArea = All;
             }
             field("Excise Bus. Posting Group"; "Excise Bus. Posting Group")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("Charges To Vendor"; "Charges To Vendor")
             {
+                ApplicationArea = All;
             }
             field("VAT Bus. Posting Group"; "VAT Bus. Posting Group")
             {
+                ApplicationArea = All;
             }
             field("Excise Prod. Posting Group"; "Excise Prod. Posting Group")
             {
+                ApplicationArea = All;
             }
 
             field("Amount To Vendor"; "Amount To Vendor")
             {
+                ApplicationArea = All;
             }
             field("Tax %"; "Tax %")
             {
+                ApplicationArea = All;
             }
             field("Tax Base Amount"; "Tax Base Amount")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Indirect Cost %")
         {
             field("Unit Cost"; "Unit Cost")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Line Amount")
         {
             field("TDS Amount"; "TDS Amount")
             {
+                ApplicationArea = All;
             }
             field("TDS %"; "TDS %")
             {
+                ApplicationArea = All;
             }
         }
         addbefore("Job No.")
         {
             field("GST %"; "GST %")
             {
+                ApplicationArea = All;
             }
             field("GST Jurisdiction Type"; "GST Jurisdiction Type")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Job Line Discount %")
@@ -133,26 +155,31 @@ pageextension 70140 PurchInvoiceSubformExt extends "Purch. Invoice Subform"
             field("GST Reverse Charge"; "GST Reverse Charge")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
         }
         addafter("Shortcut Dimension 2 Code")
         {
             field(Sample; Sample)
             {
+                ApplicationArea = All;
             }
         }
         addafter(ShortcutDimCode8)
         {
             field("TDS Group"; "TDS Group")
             {
+                ApplicationArea = All;
             }
             field("Assessee Code"; "Assessee Code")
             {
+                ApplicationArea = All;
             }
             field("Receipt No."; "Receipt No.")
             {
                 Lookup = true;
                 LookupPageID = 136;
+                ApplicationArea = All;
 
                 trigger OnLookup(var Text: Text): Boolean;
                 begin

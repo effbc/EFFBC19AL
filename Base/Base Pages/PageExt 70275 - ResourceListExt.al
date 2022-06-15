@@ -8,12 +8,14 @@ pageextension 70275 ResourceListExt extends "Resource List"
             {
                 Style = Strong;
                 StyleExpr = TRUE;
+                ApplicationArea = All;
             }
         }
         addafter("Base Unit of Measure")
         {
             field(Department; Department)
             {
+                ApplicationArea = All;
 
             }
         }
@@ -21,7 +23,7 @@ pageextension 70275 ResourceListExt extends "Resource List"
 
     actions
     {
-        
+
     }
 
     var

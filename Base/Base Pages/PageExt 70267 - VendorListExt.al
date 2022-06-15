@@ -34,20 +34,24 @@ pageextension 70267 VendorListExt extends "Vendor List"
             {
                 Style = Strong;
                 StyleExpr = TRUE;
+                ApplicationArea = All;
             }
         }
         addafter(Name)
         {
             field("E.C.C. No."; "E.C.C. No.")
             {
+                ApplicationArea = All;
 
             }
             field(category; category)
             {
+                ApplicationArea = All;
 
             }
             field("Vendor Balance Verified"; "Vendor Balance Verified")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -55,47 +59,58 @@ pageextension 70267 VendorListExt extends "Vendor List"
         {
             field("No Of POs"; "No Of POs")
             {
+                ApplicationArea = All;
 
             }
             field("Purchase_Finance"; "Purchase_Finance")
             {
+                ApplicationArea = All;
 
             }
-            
+
             field("Tally Reference"; "Tally Reference")
             {
+                ApplicationArea = All;
 
             }
             field("Global Dimension 1 Code"; "Global Dimension 1 Code")
             {
+                ApplicationArea = All;
 
             }
             field("Excise Bus. Posting Group"; "Excise Bus. Posting Group")
             {
+                ApplicationArea = All;
 
             }
             field("Prod Vendor Balance"; "Prod Vendor Balance")
             {
+                ApplicationArea = All;
 
             }
             field("CS Vendor Balance"; "CS Vendor Balance")
             {
+                ApplicationArea = All;
 
             }
             field("RD Vendor Balance"; "RD Vendor Balance")
             {
+                ApplicationArea = All;
 
             }
             field("Tax Area Code"; "Tax Area Code")
             {
+                ApplicationArea = All;
 
             }
             field(Structure; Structure)
             {
+                ApplicationArea = All;
 
             }
             field(City; City)
             {
+                ApplicationArea = All;
 
             }
         }
@@ -103,6 +118,7 @@ pageextension 70267 VendorListExt extends "Vendor List"
         {
             field("E-Mail"; "E-Mail")
             {
+                ApplicationArea = All;
 
             }
 
@@ -111,6 +127,7 @@ pageextension 70267 VendorListExt extends "Vendor List"
         {
             field("C-Form"; "C-Form")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -118,46 +135,57 @@ pageextension 70267 VendorListExt extends "Vendor List"
         {
             field("Updated in Cashflow"; "Updated in Cashflow")
             {
+                ApplicationArea = All;
 
             }
             field("Phone No2"; "Phone No2")
             {
+                ApplicationArea = All;
 
             }
             field("Phone No3"; "Phone No3")
             {
+                ApplicationArea = All;
 
             }
             field("GST Registration No."; "GST Registration No.")
             {
+                ApplicationArea = All;
 
             }
             field("GST Vendor Type"; "GST Vendor Type")
             {
+                ApplicationArea = All;
 
             }
             field("Phone No4"; "Phone No4")
             {
+                ApplicationArea = All;
 
             }
             field("Mobile No."; "Mobile No.")
             {
+                ApplicationArea = All;
 
             }
             field("T.I.N. No."; "T.I.N. No.")
             {
+                ApplicationArea = All;
 
             }
             field("State Code"; "State Code")
             {
+                ApplicationArea = All;
 
             }
             field("Vendor Type"; "Vendor Type")
             {
+                ApplicationArea = All;
 
             }
             field("Vendor Category"; "Vendor Category")
             {
+                ApplicationArea = All;
                 trigger OnValidate()
                 begin
 
@@ -182,30 +210,37 @@ pageextension 70267 VendorListExt extends "Vendor List"
             }
             field("Branch Name"; "Branch Name")
             {
+                ApplicationArea = All;
 
             }
             field("Name of Bank"; "Name of Bank")
             {
+                ApplicationArea = All;
 
             }
             field("RTGS Code"; "RTGS Code")
             {
+                ApplicationArea = All;
 
             }
             field("Our Account No."; "Our Account No.")
             {
+                ApplicationArea = All;
 
             }
             field("Payment Method Code"; "Payment Method Code")
             {
+                ApplicationArea = All;
 
             }
             field("Vendor Status"; "Vendor Status")
             {
+                ApplicationArea = All;
 
             }
             field(Maintenacecommonmail; Maintenacecommonmail)
             {
+                ApplicationArea = All;
 
             }
             group(Control1102152014)
@@ -223,6 +258,7 @@ pageextension 70267 VendorListExt extends "Vendor List"
                 field("TotalVendors+FORMAT(Rec.COUNT)"; "TotalVendors+FORMAT(Rec.COUNT)")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
             }
         }
@@ -236,6 +272,7 @@ pageextension 70267 VendorListExt extends "Vendor List"
             {
                 Promoted = true;
                 PromotedCategory = Process;
+                ApplicationArea = All;
                 trigger OnAction()
                 begin
                     HYPERLINK('http://app.efftronics.org:8567/GSTRegInternal/GSTRegistrationDetails.aspx?V_C_Num=' + "No.");
@@ -245,6 +282,7 @@ pageextension 70267 VendorListExt extends "Vendor List"
             {
                 Promoted = true;
                 PromotedCategory = Process;
+                ApplicationArea = All;
                 trigger OnAction()
                 begin
                     GSTMails;
@@ -252,6 +290,7 @@ pageextension 70267 VendorListExt extends "Vendor List"
             }
             action("CForms Mail")
             {
+                ApplicationArea = All;
                 trigger OnAction()
                 var
                     Vendor: Record Vendor;

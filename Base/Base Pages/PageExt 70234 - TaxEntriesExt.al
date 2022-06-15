@@ -23,9 +23,11 @@ pageextension 70234 TaxEntriesExt extends "Tax Entries"
         {
             field("Account No."; "Account No.")
             {
+                ApplicationArea = All;
             }
             field("Tax Group Code"; "Tax Group Code")
             {
+                ApplicationArea = All;
             }
         }
     }

@@ -12,14 +12,17 @@ pageextension 70224 SessionListExt extends "Session List"
             field("Client Computer Name"; "Client Computer Name")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Database Name"; "Database Name")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Session Unique ID"; "Session Unique ID")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             group(Control1102152007)
             {
@@ -34,6 +37,7 @@ pageextension 70224 SessionListExt extends "Session List"
                         field("FORMAT(Rec.COUNT)"; FORMAT(Rec.COUNT))
                         {
                             Editable = false;
+                            ApplicationArea = All;
                         }
                     }
                 }
@@ -75,6 +79,7 @@ pageextension 70224 SessionListExt extends "Session List"
             {
                 Caption = 'Kill Session';
                 Image = Server;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

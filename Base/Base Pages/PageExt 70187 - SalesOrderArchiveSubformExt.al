@@ -25,12 +25,15 @@ pageextension 70187 SalesOrderArchiveSubformExt extends "Sales Order Archive Sub
         {
             field("Line No."; Rec."Line No.")
             {
+                ApplicationArea = All;
             }
             field("Supply Portion"; Rec."Supply Portion")
             {
+                ApplicationArea = All;
             }
             field("Retention Portion"; Rec."Retention Portion")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -44,6 +47,7 @@ pageextension 70187 SalesOrderArchiveSubformExt extends "Sales Order Archive Sub
             action("Design Worksheet")
             {
                 Caption = 'Design Worksheet';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

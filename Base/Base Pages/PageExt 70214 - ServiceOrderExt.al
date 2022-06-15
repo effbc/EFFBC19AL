@@ -47,15 +47,18 @@ pageextension 70214 ServiceOrderExt extends 5900
         {
             field("No. of Archived Versions"; "No. of Archived Versions")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Assigned User ID")
         {
             field(Purpose; Purpose)
             {
+                ApplicationArea = All;
             }
             field("Material Issue no."; "Material Issue no.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Release Status")
@@ -63,25 +66,30 @@ pageextension 70214 ServiceOrderExt extends 5900
             field("Customer Cards"; "Customer Cards")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Transation ID"; "Transation ID")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
         addafter("Max. Labor Unit Price")
         {
             field("<Service Order Type2>"; "Service Order Type")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Ship-to E-Mail")
         {
             field("Shipping No. Series"; "Shipping No. Series")
             {
+                ApplicationArea = All;
             }
             field("Posting No. Series"; "Posting No. Series")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -182,6 +190,7 @@ pageextension 70214 ServiceOrderExt extends 5900
             action("Archi&ve Document")
             {
                 Caption = 'Archi&ve Document';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 var

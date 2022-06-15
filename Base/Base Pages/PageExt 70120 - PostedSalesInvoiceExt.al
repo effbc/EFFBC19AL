@@ -39,13 +39,16 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 Editable = EditControlling;
                 Enabled = true;
                 Visible = true;
+                ApplicationArea = All;
             }
             field("Total Invoiced Amount"; "Total Invoiced Amount")
             {
                 Editable = EditControlling;
+                ApplicationArea = All;
             }
             field("Total Excise Amount"; "Total Excise Amount")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Order No.")
@@ -53,6 +56,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
             field("Order Date"; "Order Date")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
         addbefore(SalesInvLines)
@@ -60,32 +64,40 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
             field("C-form Status"; "C-form Status")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("Form No."; "Form No.")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("Customer OrderNo."; "Customer OrderNo.")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("User ID"; "User ID")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Blanket Order No"; "Blanket Order No")
             {
+                ApplicationArea = All;
             }
             field("Special Condition"; "Special Condition")
             {
                 Editable = Sepcial_conditio_Rights;
+                ApplicationArea = All;
             }
             field(Vertical; Vertical)
             {
                 Editable = EditControlling;
+                ApplicationArea = All;
             }
             field("Insurance Applicable"; "Insurance Applicable")
             {
+                ApplicationArea = All;
             }
         }
         addbefore("Form No.")
@@ -93,6 +105,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
             field("Customer Posting Group"; "Customer Posting Group")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
         }
         addbefore("Ship-to Code")
@@ -100,25 +113,31 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
             field("Cancel Invoice"; "Cancel Invoice")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Customer Order Date"; "Customer Order Date")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field(State; State)
             {
+                ApplicationArea = All;
             }
             field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
             {
+                ApplicationArea = All;
             }
             field("Prices Including VAT"; "Prices Including VAT")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Ship-to Contact")
         {
             field(Consignee; Consignee)
             {
+                ApplicationArea = All;
             }
         }
         addafter("Shipment Date")
@@ -126,19 +145,23 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
             field("MSPT Code"; "MSPT Code")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field(WayBillNo; WayBillNo)
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("Vehicle No."; "Vehicle No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Currency Code")
         {
             field("Currency Factor"; "Currency Factor")
             {
+                ApplicationArea = All;
             }
         }
         addafter("EU 3-Party Trade")
@@ -147,6 +170,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
             {
                 Caption = 'Material Dispatched Date';
                 Editable = "Extended DateEditable";
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -163,6 +187,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 field("<Extended Date2>"; "Extended Date")
                 {
                     Caption = 'Material Dispatch Date';
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -176,10 +201,12 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 field("Date Sent"; "Date Sent")
                 {
                     Caption = 'Material Reached Date';
+                    ApplicationArea = All;
                 }
                 field("Expected Reached Date"; "Expected Reached Date")
                 {
                     Editable = "Expected Reached DateEditable";
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -193,6 +220,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 field("Hand Overed Person"; "Hand Overed Person")
                 {
                     Editable = "Hand Overed PersonEditable";
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -212,10 +240,12 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 field("Contact Info"; "Contact Info")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Dispatched Location"; "Dispatched Location")
                 {
                     Editable = "Dispatched LocationEditable";
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -230,13 +260,16 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 {
                     Caption = 'Mode of Transport';
                     Editable = "Transport MethodEditable";
+                    ApplicationArea = All;
                 }
                 field("Reason For Deviation"; "Reason For Deviation")
                 {
+                    ApplicationArea = All;
                 }
                 field("Hand Overed Person(Others)"; "Hand Overed Person(Others)")
                 {
                     Editable = HandOveredPersonOthersEditable;
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -251,6 +284,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 field("Contact Info(Others)"; "Contact Info(Others)")
                 {
                     Editable = "Contact Info(Others)Editable";
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -264,6 +298,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 field("Assurance by Sales"; "BizTalk Sales Invoice")
                 {
                     Caption = 'Assurance by Sales';
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -289,6 +324,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 field("Send for Assurance"; "BizTalk Document Sent")
                 {
                     Caption = 'Send for Assurance';
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -406,6 +442,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 field("Dispatched Amount"; "Dispatched Amount")
                 {
                     Caption = 'Tansportation Amount';
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -417,6 +454,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 }
                 field("LR No."; "LR No.")
                 {
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -430,15 +468,18 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 {
                     Caption = 'Contact Name';
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Customer Contact No"; "Customer Contact No")
                 {
                     Caption = 'Customer_Contact_no';
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Dispatch Assurance Date"; "Dispatch Assurance Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
             }
             group(Others)
@@ -448,54 +489,68 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 field("RDSO Inspection Required"; "RDSO Inspection Required")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("RDSO Inspection By"; "RDSO Inspection By")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("RDSO Charges"; "RDSO Charges")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("RDSO Charges Paid By."; "RDSO Charges Paid By.")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field(CallLetterExpireDate; CallLetterExpireDate)
                 {
+                    ApplicationArea = All;
                 }
                 field("Call letters Status"; "Call letters Status")
                 {
+                    ApplicationArea = All;
                 }
                 field("<Tender No.2>"; "Tender No.")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("CA Number"; "CA Number")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("CA Date"; "CA Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("0"; "LD Amount")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field(CallLetterRecivedDate; CallLetterRecivedDate)
                 {
+                    ApplicationArea = All;
                 }
                 field("Document Position"; "Document Position")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Exempted Vide Notification No."; "Exempted Vide Notification No.")
                 {
+                    ApplicationArea = All;
                 }
                 field(Order_After_CF_Integration; Order_After_CF_Integration)
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
             }
             group("Secuirty Deposit")
@@ -505,6 +560,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 field("Security Deposit Amount"; "Security Deposit Amount")
                 {
                     Editable = true;
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -519,6 +575,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 }
                 field("EMD Amount"; "EMD Amount")
                 {
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -535,34 +592,42 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 field("Deposit Payment Due Date"; "Deposit Payment Due Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Deposit Payment Date"; "Deposit Payment Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Security Deposit Status"; "Security Deposit Status")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("SD Requested Date"; "SD Requested Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("SD Required Date"; "SD Required Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("SecurityDeposit Exp. Rcpt Date"; "SecurityDeposit Exp. Rcpt Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Final Bill Date"; "Final Bill Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Warranty Period"; "Warranty Period")
                 {
                     Editable = true;
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -579,10 +644,12 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 field("<Due Date2>"; "Due Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("SD Status"; "SD Status")
                 {
                     Editable = true;
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -599,12 +666,15 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 field("<Order No.2>"; "Order No.")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("SD Fin Verification"; "SD Fin Verification")
                 {
+                    ApplicationArea = All;
                 }
                 field(SecDepStatus; SecDepStatus)
                 {
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -620,6 +690,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 }
                 field("Final Railway Bill Date"; "Final Railway Bill Date")
                 {
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -635,9 +706,11 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 }
                 field(Remarks; Remarks)
                 {
+                    ApplicationArea = All;
                 }
                 field("Tender No."; "Tender No.")
                 {
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -654,6 +727,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
             }
             field("Customer GST Reg. No."; "Customer GST Reg. No.")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -739,12 +813,14 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 Caption = 'MSPT Details';
                 RunObject = Page "MSPT Posted Order Details";
                 RunPageLink = Type = CONST(Sale), "Document No." = FIELD("No."), "MSPT Header Code" = FIELD("MSPT Code");
+                ApplicationArea = All;
             }
             action("Transit Documents")
             {
                 Caption = 'Transit Documents';
                 RunObject = Page "Transit Document Order Details";
                 RunPageLink = Type = CONST(Sale), "Vendor / Customer Ref." = FIELD("Sell-to Customer No."), "PO / SO No." = FIELD("Order No.");
+                ApplicationArea = All;
             }
         }
         addfirst("F&unctions")
@@ -752,6 +828,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
             action("Delivery Challan")
             {
                 Caption = 'Delivery Challan';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -765,6 +842,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
                 Image = Invoice;
                 Promoted = true;
                 PromotedCategory = Process;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -776,6 +854,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
             {
                 Promoted = true;
                 PromotedCategory = Process;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -836,6 +915,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
             action("Invoice for VMC")
             {
                 Caption = 'Invoice for VMC';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -847,6 +927,7 @@ pageextension 70120 PostedSalesInvoiceExt extends "Posted Sales Invoice"
             {
                 Promoted = true;
                 PromotedCategory = Process;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

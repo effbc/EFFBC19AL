@@ -312,6 +312,7 @@ pageextension 70094 LCJournalExt extends "LC Journal"
                 field(WorkDate; WORKDATE)
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
             }
         }

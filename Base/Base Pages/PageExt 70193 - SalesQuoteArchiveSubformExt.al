@@ -28,6 +28,7 @@ pageextension 70193 SalesQuoteArchiveSubformExt extends "Sales Quote Archive Sub
             action("Design Worksheet")
             {
                 Caption = 'Design Worksheet';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

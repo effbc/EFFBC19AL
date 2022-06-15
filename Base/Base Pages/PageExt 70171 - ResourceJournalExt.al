@@ -186,18 +186,22 @@ pageextension 70171 ResourceJournalExt extends "Resource Journal"
         {
             field("Journal Template Name"; "Journal Template Name")
             {
+                ApplicationArea = All;
             }
             field("Line No."; "Line No.")
             {
+                ApplicationArea = All;
             }
             field(Place; Place)
             {
+                ApplicationArea = All;
             }
         }
         addafter("Posting Date")
         {
             field(Location; Location)
             {
+                ApplicationArea = All;
             }
 
         }
@@ -206,16 +210,20 @@ pageextension 70171 ResourceJournalExt extends "Resource Journal"
             field(Reason; Reason)
             {
                 Caption = 'Work Desc';
+                ApplicationArea = All;
             }
             field(Remarks; Remarks)
             {
+                ApplicationArea = All;
             }
             field("Planned Hr's"; "Planned Hr's")
             {
                 Caption = 'Planned Hr''s';
+                ApplicationArea = All;
             }
             field(Status; Status)
             {
+                ApplicationArea = All;
             }
         }
         addafter(ResName)
@@ -223,6 +231,7 @@ pageextension 70171 ResourceJournalExt extends "Resource Journal"
             field(WorkDate; WORKDATE)
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
     }

@@ -29,6 +29,7 @@ pageextension 70132 PostedWhseReceiptSubformExt extends "Posted Whse. Receipt Su
                 action("Inspection Data Sheets")
                 {
                     Caption = 'Inspection Data Sheets';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     begin
@@ -41,6 +42,7 @@ pageextension 70132 PostedWhseReceiptSubformExt extends "Posted Whse. Receipt Su
                 action("Posted Inspection Data Sheets")
                 {
                     Caption = 'Posted Inspection Data Sheets';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     begin
@@ -53,6 +55,7 @@ pageextension 70132 PostedWhseReceiptSubformExt extends "Posted Whse. Receipt Su
                 action("Inspection &Receipts")
                 {
                     Caption = 'Inspection &Receipts';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     begin
@@ -65,6 +68,7 @@ pageextension 70132 PostedWhseReceiptSubformExt extends "Posted Whse. Receipt Su
                 action("Posted I&nspection Receipts")
                 {
                     Caption = 'Posted I&nspection Receipts';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     begin

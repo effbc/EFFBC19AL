@@ -20,6 +20,7 @@ pageextension 70228 StructureOrderDetailsExt extends "Structure Order Details"
             field("Third Party Name"; "Third Party Name")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
     }

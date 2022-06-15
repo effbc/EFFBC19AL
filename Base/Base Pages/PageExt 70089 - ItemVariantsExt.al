@@ -21,24 +21,29 @@ pageextension 70089 ItemVariantsExt extends 5401
         {
             field("Operating Temperature"; Rec."Operating Temperature")
             {
+                ApplicationArea = All;
             }
             field("Storage Temperature"; Rec."Storage Temperature")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Control 4")
         {
             field(Package; Rec.Package)
             {
+                ApplicationArea = All;
             }
             field(Priority; Rec.Priority)
             {
+                ApplicationArea = All;
             }
         }
         addafter(Description)
         {
             field("Item Status"; Rec."Item Status")
             {
+                ApplicationArea = All;
             }
         }
     }

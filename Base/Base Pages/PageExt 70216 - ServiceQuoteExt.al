@@ -594,6 +594,7 @@ pageextension 70216 ServiceQuoteExt extends "Service Quote"
         {
             field("No. of Archived Versions"; "No. of Archived Versions")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -700,6 +701,7 @@ pageextension 70216 ServiceQuoteExt extends "Service Quote"
             action("Archi&ve Document")
             {
                 Caption = 'Archi&ve Document';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 var
@@ -716,6 +718,7 @@ pageextension 70216 ServiceQuoteExt extends "Service Quote"
             action(Action1102152047)
             {
                 Caption = 'Archi&ve Document';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 var
@@ -734,11 +737,13 @@ pageextension 70216 ServiceQuoteExt extends "Service Quote"
                 {
                     Caption = 'Blanket Order';
                     RunObject = Codeunit "PO Automation";
+                    ApplicationArea = All;
                 }
                 action("Order")
                 {
                     Caption = 'Order';
                     RunObject = Codeunit "Sales-Quote to Order (Yes/No)";
+                    ApplicationArea = All;
                 }
             }
         }

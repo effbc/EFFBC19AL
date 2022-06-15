@@ -6,6 +6,7 @@ pageextension 70118 PostedSalesInvoiceLinesExt extends "Posted Sales Invoice Lin
         {
             field("Posting Date"; Rec."Posting Date")
             {
+                ApplicationArea = All;
 
             }
         }

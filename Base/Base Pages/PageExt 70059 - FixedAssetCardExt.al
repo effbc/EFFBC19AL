@@ -15,6 +15,7 @@ pageextension 70059 FixedAssetCardExt extends "Fixed Asset Card"
         {
             field("Location Code"; "Location Code")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Responsible Employee")
@@ -22,15 +23,18 @@ pageextension 70059 FixedAssetCardExt extends "Fixed Asset Card"
             field("Responsible Emp Name"; "Responsible Emp Name")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
         addafter("Last Date Modified")
         {
             field("Global Dimension 2 Code"; "Global Dimension 2 Code")
             {
+                ApplicationArea = All;
             }
             field(Verified; Verified)
             {
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -41,33 +45,41 @@ pageextension 70059 FixedAssetCardExt extends "Fixed Asset Card"
             field("Verified Date"; "Verified Date")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
         addafter("Control 1280008")
         {
             field("GST Calc. Option on Transfer"; "GST Calc. Option on Transfer")
             {
+                ApplicationArea = All;
             }
             field("Service Tax Group Code"; "Service Tax Group Code")
             {
+                ApplicationArea = All;
             }
             field("Item Sub Sub Group Code"; "Item Sub Sub Group Code")
             {
+                ApplicationArea = All;
             }
             field("QR Code"; "QR Code")
             {
+                ApplicationArea = All;
             }
             field("FA Posting Group"; "FA Posting Group")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Next Service Date")
         {
             field("AMC No."; "AMC No.")
             {
+                ApplicationArea = All;
             }
             field("AMC Date"; "AMC Date")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -261,6 +273,7 @@ pageextension 70059 FixedAssetCardExt extends "Fixed Asset Card"
             {
                 Caption = 'F&A Location Transfer Entries';
                 Image = TransferReceipt;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 var
@@ -276,6 +289,7 @@ pageextension 70059 FixedAssetCardExt extends "Fixed Asset Card"
             {
                 Caption = 'F&A Employee Transfer Entries';
                 Image = EmployeeAgreement;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 var
@@ -292,6 +306,7 @@ pageextension 70059 FixedAssetCardExt extends "Fixed Asset Card"
             action("Purchase Receipt")
             {
                 Caption = 'Purchase Receipt';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

@@ -18,6 +18,7 @@ pageextension 70066 GetShipmentLinesExt extends "Get Shipment Lines"
         {
             field("Order No."; Rec."Order No.")
             {
+                ApplicationArea = All;
             }
         }
     }

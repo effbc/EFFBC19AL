@@ -7,12 +7,15 @@ pageextension 70028 ChartofAccountsExt extends "Chart of Accounts"
         {
             field("PL Head"; "PL Head")
             {
+                ApplicationArea = All;
             }
             field(Reflected_in_pl_userid; Reflected_in_pl_userid)
             {
+                ApplicationArea = All;
             }
             field(Reflected_in_pl_datetime; Reflected_in_pl_datetime)
             {
+                ApplicationArea = All;
             }
         }
 
@@ -20,9 +23,11 @@ pageextension 70028 ChartofAccountsExt extends "Chart of Accounts"
         {
             field("Budgeted Amount"; "Budgeted Amount")
             {
+                ApplicationArea = All;
             }
             field("Budget Filter"; "Budget Filter")
             {
+                ApplicationArea = All;
             }
         }
         addafter(Balance)
@@ -30,14 +35,17 @@ pageextension 70028 ChartofAccountsExt extends "Chart of Accounts"
             field("Cash Account"; "Cash Account")
             {
                 Visible = false;
+                ApplicationArea = All;
             }
             field("TDS Account"; "TDS Account")
             {
                 Visible = false;
+                ApplicationArea = All;
             }
             field("Work Tax Account"; "Work Tax Account")
             {
                 Visible = false;
+                ApplicationArea = All;
             }
         }
     }
@@ -51,6 +59,7 @@ pageextension 70028 ChartofAccountsExt extends "Chart of Accounts"
                 Caption = 'Card';
                 RunObject = Page "G/L Account Card";
                 RunPageLink = "No." = FIELD("No."), "Date Filter" = FIELD("Date Filter"), "Global Dimension 1 Filter" = FIELD("Global Dimension 1 Filter"), "Global Dimension 2 Filter" = FIELD("Global Dimension 2 Filter"), "Budget Filter" = FIELD("Budget Filter"), "Business Unit Filter" = FIELD("Business Unit Filter");
+                ApplicationArea = All;
             }
         }
         addafter("Receivables-Payables")
@@ -59,6 +68,7 @@ pageextension 70028 ChartofAccountsExt extends "Chart of Accounts"
             {
                 Caption = '&MSPT Receivables-Payables';
                 RunObject = Page "MSPT Receivables-Payables";
+                ApplicationArea = All;
             }
         }
         modify("Ledger E&ntries")

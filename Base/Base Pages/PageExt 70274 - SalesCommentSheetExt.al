@@ -19,30 +19,37 @@ pageextension 70274 SalesCommentSheetExt extends 67
             field("User ID"; "User ID")
             {
                 Editable = FALSE;
+                ApplicationArea = All;
             }
             field("Responsible Person"; "Responsible Person")
             {
                 Editable = Editable;
+                ApplicationArea = All;
             }
             field(Status; Status)
             {
                 Editable = Editable;
+                ApplicationArea = All;
             }
             field("Exp Completion Date"; "Exp Completion Date")
             {
                 Editable = Editable;
+                ApplicationArea = All;
             }
             field(Priority; Priority)
             {
                 Editable = Editable;
+                ApplicationArea = All;
             }
             field(Product; Product)
             {
                 Editable = Editable;
+                ApplicationArea = All;
             }
             field("Customer Number"; "Customer Number")
             {
                 Editable = Editable;
+                ApplicationArea = All;
                 trigger OnValidate()
                 begin
                     Cust.GET("Customer Number");
@@ -52,18 +59,22 @@ pageextension 70274 SalesCommentSheetExt extends 67
             field("Customer Name"; "Customer Name")
             {
                 Editable = Editable;
+                ApplicationArea = All;
             }
             field("Remainder Date"; "Remainder Date")
             {
                 Editable = Editable;
+                ApplicationArea = All;
             }
             field("Quote Status"; "Quote Status")
             {
                 Editable = Editable;
+                ApplicationArea = All;
             }
             field(Convert; Convert)
             {
                 Editable = Editable;
+                ApplicationArea = All;
                 trigger OnValidate()
                 begin
                     IF Convert THEN BEGIN
@@ -81,6 +92,7 @@ pageextension 70274 SalesCommentSheetExt extends 67
             field("Converted Order Number"; "Converted Order Number")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
 

@@ -20,6 +20,7 @@ pageextension 70005 AnalysisViewEntriesExt extends "Analysis View Entries"
         {
             field("Entry No."; Rec."Entry No.")
             {
+                ApplicationArea = All;
             }
         }
     }

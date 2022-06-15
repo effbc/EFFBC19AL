@@ -19,6 +19,7 @@ pageextension 70049 EmployeeStatisticsGroupsExt extends "Employee Statistics Gro
         {
             field("Division Name"; Rec."Division Name")
             {
+                ApplicationArea = All;
             }
         }
     }

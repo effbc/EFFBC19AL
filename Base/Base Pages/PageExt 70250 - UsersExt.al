@@ -1,17 +1,17 @@
 pageextension 70250 UsersExt extends Users
 {
-   
+
 
     layout
     {
 
-       
+
 
         modify("User Name")
         {
             StyleExpr = "Valid_color";
 
-            
+
 
         }
 
@@ -20,30 +20,37 @@ pageextension 70250 UsersExt extends Users
         {
             field(Tams_Dept; Tams_Dept)
             {
+                ApplicationArea = All;
             }
             field(Dept; Dept)
             {
+                ApplicationArea = All;
             }
         }
         addafter("Control 7")
         {
             field(levels; levels)
             {
+                ApplicationArea = All;
             }
         }
         addafter("Authentication Email")
         {
             field(Blocked; Blocked)
             {
+                ApplicationArea = All;
             }
             field(State; State)
             {
+                ApplicationArea = All;
             }
             field(EmployeeID; EmployeeID)
             {
+                ApplicationArea = All;
             }
             field(MailID; MailID)
             {
+                ApplicationArea = All;
             }
             group(Control1102152012)
             {
@@ -56,6 +63,7 @@ pageextension 70250 UsersExt extends Users
                         ShowCaption = false;
                         field("xRec.COUNT"; xRec.COUNT)
                         {
+                            ApplicationArea = All;
                         }
                     }
                     group(Control1102152007)
@@ -65,6 +73,7 @@ pageextension 70250 UsersExt extends Users
                         {
                             Style = StrongAccent;
                             StyleExpr = TRUE;
+                            ApplicationArea = All;
                         }
                     }
                 }
@@ -78,45 +87,45 @@ pageextension 70250 UsersExt extends Users
         modify("Action15")
         {
 
-         
+
 
             Promoted = true;
             PromotedIsBig = true;
 
-         
+
 
         }
 
-      
+
         modify("Permission Sets")
         {
 
-          
+
 
             Promoted = true;
 
-         
+
 
         }
         modify("Permission Set by User")
         {
 
-          
+
             Promoted = true;
 
-           
+
         }
         modify("Permission Set by User Group")
         {
 
-            
+
             Promoted = true;
 
-         
+
 
         }
 
-       
+
         modify(AddMeAsSuper)
         {
             Promoted = true;
@@ -124,7 +133,7 @@ pageextension 70250 UsersExt extends Users
     }
 
 
-  
+
 
     var
         Valid_color: Text;
@@ -135,9 +144,9 @@ pageextension 70250 UsersExt extends Users
         User1: Record User;
 
 
-    
 
-   
+
+
     procedure Assign_color();
     begin
 
@@ -151,6 +160,6 @@ pageextension 70250 UsersExt extends Users
             Valid_color := 'None';
     end;
 
-   
+
 }
 

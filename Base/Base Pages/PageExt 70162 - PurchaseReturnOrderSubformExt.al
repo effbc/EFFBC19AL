@@ -21,9 +21,11 @@ pageextension 70162 PurchaseReturnOrderSubformExt extends "Purchase Return Order
         {
             field("QC Enabled"; Rec."QC Enabled")
             {
+                ApplicationArea = All;
             }
             field("Spec ID"; Rec."Spec ID")
             {
+                ApplicationArea = All;
             }
         }
     }

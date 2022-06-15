@@ -99,6 +99,7 @@ pageextension 70233 TaxDetailsExt extends "Tax Details"
         {
             field("Forms Not Applicable"; "Forms Not Applicable")
             {
+                ApplicationArea = All;
             }
         }
     }

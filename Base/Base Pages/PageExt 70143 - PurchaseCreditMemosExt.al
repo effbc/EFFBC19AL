@@ -234,18 +234,22 @@ pageextension 70143 PurchaseCreditMemosExt extends "Purchase Credit Memos"
         {
             field("Applies-to Doc. No."; "Applies-to Doc. No.")
             {
+                ApplicationArea = All;
             }
             field("Vendor Cr. Memo No."; "Vendor Cr. Memo No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Control 5")
         {
             field(Structure; Structure)
             {
+                ApplicationArea = All;
             }
             field("Tarrif Heading No"; "Tarrif Heading No")
             {
+                ApplicationArea = All;
             }
         }
     }

@@ -36,6 +36,7 @@ pageextension 70034 CreateInteractionExt extends "Create Interaction"
         {
             field("OutWard No."; Rec."OutWard No.")
             {
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -44,6 +45,7 @@ pageextension 70034 CreateInteractionExt extends "Create Interaction"
             }
             field("OutWard Ref No."; "OutWard Ref No.")
             {
+                ApplicationArea = All;
 
                 trigger OnLookup(var Text: Text): Boolean;
                 begin
@@ -60,6 +62,7 @@ pageextension 70034 CreateInteractionExt extends "Create Interaction"
         {
             field("InWard No."; Rec."InWard No.")
             {
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -71,6 +74,7 @@ pageextension 70034 CreateInteractionExt extends "Create Interaction"
         {
             field("InWard Ref No."; Rec."InWard Ref No.")
             {
+                ApplicationArea = All;
 
                 trigger OnLookup(var Text: Text): Boolean;
                 begin

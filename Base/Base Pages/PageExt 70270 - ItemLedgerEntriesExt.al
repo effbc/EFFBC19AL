@@ -19,6 +19,7 @@ pageextension 70270 ItemLedgerEntriesExt extends 38
         {
             field(COUNT; COUNT)
             {
+                ApplicationArea = All;
 
             }
         }
@@ -27,13 +28,16 @@ pageextension 70270 ItemLedgerEntriesExt extends 38
             field("ITL Doc No."; "ITL Doc No.")
             {
                 Importance = Standard;
+                ApplicationArea = All;
             }
             field("ITL Doc Line No."; "ITL Doc Line No.")
             {
+                ApplicationArea = All;
 
             }
             field(Positive; Positive)
             {
+                ApplicationArea = All;
 
             }
         }
@@ -42,41 +46,51 @@ pageextension 70270 ItemLedgerEntriesExt extends 38
             field("User ID"; "User ID")
             {
                 Editable = TRUE;
+                ApplicationArea = All;
             }
             field("DC Check"; "DC Check")
             {
+                ApplicationArea = All;
 
             }
             field("Source Type"; "Source Type")
             {
+                ApplicationArea = All;
 
             }
             field("MBB Packed Date"; "MBB Packed Date")
             {
+                ApplicationArea = All;
 
             }
             field("MFD Date"; "MFD Date")
             {
+                ApplicationArea = All;
 
             }
             field("Recharge Cycles"; "Recharge Cycles")
             {
+                ApplicationArea = All;
 
             }
             field("Last Invoice Date"; "Last Invoice Date")
             {
+                ApplicationArea = All;
 
             }
             field("Floor Life"; "Floor Life")
             {
+                ApplicationArea = All;
 
             }
             field("MBB Packet Open DateTime"; "MBB Packet Open DateTime")
             {
+                ApplicationArea = All;
 
             }
             field("MBB Packet Close DateTime"; "MBB Packet Close DateTime")
             {
+                ApplicationArea = All;
 
             }
         }
