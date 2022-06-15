@@ -16,7 +16,7 @@ pageextension 70131 PostedTransferShptSubformExt extends "Posted Transfer Shpt. 
 
 
 
-        addafter("Control 1500008")
+        addbefore("Transfer-from Bin Code")
         {
             field("Reason Code"; "Reason Code")
             {
@@ -46,13 +46,13 @@ pageextension 70131 PostedTransferShptSubformExt extends "Posted Transfer Shpt. 
             {
             }
         }
-        addafter("Control 1500000")
+        addbefore("Unit of Measure Code")
         {
             field("Allow Excess Qty."; "Allow Excess Qty.")
             {
             }
         }
-        addafter("Control 14")
+        addafter("Shortcut Dimension 2 Code")
         {
             field("Unit Price"; "Unit Price")
             {
@@ -74,24 +74,9 @@ pageextension 70131 PostedTransferShptSubformExt extends "Posted Transfer Shpt. 
     actions
     {
 
-        //Unsupported feature: Change Name on "Action 1900000004". Please convert manually.
 
 
-        //Unsupported feature: Change Name on "Action 1907935204". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Action 1901313004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1901313004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1900545004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1903119404". Please convert manually.
-
-        addafter("Action 1903119404")
+        addafter("Item &Tracking Lines")
         {
             group(Inspection)
             {
@@ -149,66 +134,26 @@ pageextension 70131 PostedTransferShptSubformExt extends "Posted Transfer Shpt. 
     }
 
 
-    //Unsupported feature: PropertyModification on "ShowStrDetailsForm(PROCEDURE 1500000).StrOrderLineDetails(Variable 1280001)". Please convert manually.
 
-    //var
-    //>>>> ORIGINAL VALUE:
-    //ShowStrDetailsForm : 13798;
-    //Variable type has not been exported.
-    //>>>> MODIFIED VALUE:
-    //ShowStrDetailsForm : "Posted Str Order Line Details";
-    //Variable type has not been exported.
 
     var
-        StrOrderLineDetailsPage: Page "Posted Str Order Line Details";
+    //StrOrderLineDetailsPage: Page "Posted Str Order Line Details";
 
 
-    //Unsupported feature: CodeInsertion on "OnAfterGetRecord". Please convert manually.
 
-    //trigger OnAfterGetRecord();
-    //begin
-    /*
-    "Amount Including Excise" :="Excise Amount"+Amount;
-    */
-    //end;
-
-    procedure StrOrderLineDetailsPage();
+    /*procedure StrOrderLineDetailsPage();
     begin
-    end;
+    end;*/
 
 
-    //Unsupported feature: CodeModification on "ShowStrDetailsForm(PROCEDURE 1500000)". Please convert manually.
 
-    //procedure ShowStrDetailsForm();
-    //Parameters and return type have not been exported.
-    //>>>> ORIGINAL CODE:
-    //begin
-    /*
-    StrOrderLineDetails.RESET;
-    StrOrderLineDetails.SETCURRENTKEY("Invoice No.",Type,"Item No.");
-    StrOrderLineDetails.SETRANGE("Invoice No.","Document No.");
-    StrOrderLineDetails.SETRANGE(Type,StrOrderLineDetails.Type::Transfer);
-    StrOrderLineDetails.SETRANGE("Item No.","Item No.");
-    StrOrderLineDetails.SETRANGE("Line No.","Line No.");
-    StrOrderLineDetailsForm.SETTABLEVIEW(StrOrderLineDetails);
-    StrOrderLineDetailsForm.RUNMODAL;
-    */
-    //end;
-    //>>>> MODIFIED CODE:
-    //begin
-    /*
-    #1..6
-    StrOrderLineDetailsPage.SETTABLEVIEW(StrOrderLineDetails);
-    StrOrderLineDetailsPage.RUNMODAL;
-    */
-    //end;
 
-    (26370)]
+
     procedure "----B2B---"();
     begin
     end;
 
-    (26373)]
+
     procedure ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -219,7 +164,7 @@ pageextension 70131 PostedTransferShptSubformExt extends "Posted Transfer Shpt. 
         PAGE.RUN(PAGE::"Inspection Data Sheet List", InspectDataSheet);
     end;
 
-    (26379)]
+
     procedure ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -230,7 +175,7 @@ pageextension 70131 PostedTransferShptSubformExt extends "Posted Transfer Shpt. 
         PAGE.RUN(PAGE::"Posted Inspect Data Sheet List", PostInspectDataSheet);
     end;
 
-    (26385)]
+
     procedure ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -242,7 +187,7 @@ pageextension 70131 PostedTransferShptSubformExt extends "Posted Transfer Shpt. 
         PAGE.RUN(PAGE::"Inspection Receipt List", InspectionReceipt);
     end;
 
-    (26392)]
+
     procedure ShowPostInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -254,16 +199,7 @@ pageextension 70131 PostedTransferShptSubformExt extends "Posted Transfer Shpt. 
         PAGE.RUN(PAGE::"Inspection Receipt List", InspectionReceipt);
     end;
 
-    //Unsupported feature: PropertyChange. Please convert manually.
 
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
 
 }
 

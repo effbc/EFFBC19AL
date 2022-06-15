@@ -176,48 +176,46 @@ pageextension 70265 GeneralLedgerEntriesExt extends "General Ledger Entries"
             {
 
             }
-            group(Totals)
-            {
-                Caption = 'Totals';
-            }
-            group(Control1102152012)
-            {
-                ShowCaption = false;
-            }
-            group(Control1102152011)
-            {
-                ShowCaption = false;
-            }
+
+
+            /* group(Control1102152012)
+             {
+                 ShowCaption = false;
+             }
+             group(Control1102152011)
+             {
+                 ShowCaption = false;
+             }*/
             field(OpeningBal; OpeningBal)
             {
                 Caption = 'Opening Balance';
                 Style = Favorable;
                 StyleExpr = true;
             }
-            group(Control1102152009)
+            /*group(Control1102152009)
             {
                 ShowCaption = false;
-            }
+            }*/
             field(TotalCredit; TotalCredit)
             {
                 Caption = 'Credit';
                 Style = StrongAccent;
                 StyleExpr = true;
             }
-            group(Control1102152008)
-            {
-                ShowCaption = false;
-            }
+            /* group(Control1102152008)
+             {
+                 ShowCaption = false;
+             }*/
             field(TotalDebit; TotalDebit)
             {
                 Caption = 'Debit';
                 StyleExpr = true;
                 Style = StrongAccent;
             }
-            group(Control1102152005)
+            /*group(Control1102152005)
             {
                 ShowCaption = false;
-            }
+            }*/
             field(ClosingBal; ClosingBal)
             {
                 Width = 100;

@@ -16,12 +16,12 @@ pageextension 70075 InventoryPostingSetupExt extends "Inventory Posting Setup"
         }*/
 
 
-        modify("Control23")
-        {
+        /* modify("Control23")
+         {
 
 
-            ShowCaption = false;
-        }
+             ShowCaption = false;
+         }*/
 
 
 

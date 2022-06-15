@@ -1,6 +1,6 @@
 tableextension 70022 ItemVendorExt extends "Item Vendor"
 {
-   
+
 
     fields
     {
@@ -9,12 +9,7 @@ tableextension 70022 ItemVendorExt extends "Item Vendor"
         field(60001; "Sampling Plan Code"; Code[20])
         {
             Description = 'B2B';
-<<<<<<< HEAD
-            TableRelation = "Item Variant".Make;
-            DataClassification = CustomerContent;
-=======
             //TableRelation = "Item Variant".Make;
->>>>>>> 92e9343b97066cd41289b021406784be0d52ea8b
         }
         field(60002; "Total Qty. Supplied"; Decimal)
         {

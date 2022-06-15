@@ -23,7 +23,7 @@ pageextension 70179 SalesCreditMemoExt extends 44
             trigger OnBeforeValidate()
             begin
                 IF Rec."Reference Invoice No." = '' THEN BEGIN
-                    Rec."Reference Invoice No." := "Applies-to Doc. No.";
+                    Rec."Reference Invoice No." := Rec."Applies-to Doc. No.";
                     Rec.MODIFY;
                 END;
             end;

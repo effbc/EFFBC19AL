@@ -546,9 +546,9 @@ pageextension 70269 ItemCardExt extends 30
         }
         addafter("&Value Entries")
         {
-            action("&Quality Ledger Entries"; "&Quality Ledger Entries")
+            action("&Quality Ledger Entries")
             {
-                Caption='&Quality Ledger Entries';
+                Caption = '&Quality Ledger Entries';
                 RunObject = Page "Quality Ledger Entries";
                 RunPageLink = "Item No." = FIELD("No.");
                 Image = TaskQualityMeasure;
@@ -636,7 +636,7 @@ pageextension 70269 ItemCardExt extends 30
             action("Update BOM Cost")
             {
                 Caption = 'Update BOM Cost';
-                ToolTipML = "Update BOM Cost";
+
                 Image = UpdateUnitCost;
                 trigger OnAction()
                 begin
@@ -646,7 +646,7 @@ pageextension 70269 ItemCardExt extends 30
             action("Update Routing Cost")
             {
                 Caption = 'Update Routing Cost';
-                ToolTipML = "Update Routing Cost";
+
                 Image = UpdateUnitCost;
                 trigger OnAction()
                 begin

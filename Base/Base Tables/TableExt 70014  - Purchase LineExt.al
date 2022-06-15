@@ -419,6 +419,8 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
             DataClassification = CustomerContent;
 
             trigger OnValidate();
+            var
+                Vendor: Record Vendor;
             begin
                 // Added by Pranavi on 07-Mar-2017 For updating Vendor Mat.Disp Date
                 if "Mat. Dispatched" then
@@ -522,6 +524,8 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
             DataClassification = CustomerContent;
 
             trigger OnValidate();
+            var
+                QualityCtrlSetup: Record "Quality Control Setup";
             begin
                 TestStatusOpen;
                 TestField(Type, Type::Item);
@@ -666,6 +670,7 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
     VAR
         SpecHeader: Record "Specification Header";
         ActiveVersionCode: Code[20];
+        Item: Record Item;
     BEGIN
         "Spec ID" := VendorQualityApprovalSpecId;
         //Hot Fix 1.0
@@ -1082,46 +1087,46 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
                                     VALIDATE(Quantity);
                                 END;
                             END;
-                }
 
-              {
-              ELSE
-              BEGIN
-                IF Quantity<> 0 THEN BEGIN
-                  IF NOT CONFIRM(Text50004,FALSE,"No.","Buy-from Vendor No.",Quantity) THEN
-                    ERROR('THE UNIT COST FOR THE PCB %1 NEED TO BE CALCULATED MANUALLY',"No.");
-                  PCB.RESET;
-                  PCB.SETFILTER(PCB."Vendor No.","Buy-from Vendor No.");
-                  PCB.SETFILTER(PCB."PCB Thickness",Item."PCB thickness");
-                  PCB.SETFILTER(PCB."Copper Clad Thickness",Item."Copper Clad Thickness");
-                  PCB."PCB TYPE":=Item."Item Sub Group Code";
-                  PCB.SETFILTER(PCB."Min.Quantity",'=%1',0.0);
-                  PCB.SETFILTER(PCB."Max.Quantity",'=%1',0.0);
-                  IF NOT PCB.FINDFIRST THEN BEGIN
-                    PCB.INIT;
-                    PCB."Vendor No.":="Buy-from Vendor No.";
-                    PCB.Name :=PurchHeader."Buy-from Vendor Name";
-                    PCB."PCB Thickness":=Item."PCB thickness";
-                    PCB."Copper Clad Thickness" := Item."Copper Clad Thickness";
-                    PCB."PCB TYPE":=Item."Item Sub Group Code";
-                    PCB.Date:= TODAY;
-                    PCB."Min.Quantity":=0.0;
-                    PCB."Max.Quantity":=0.0;
-                    PCB.INSERT;
-                    COMMIT;
-                  END;
-                  FORM.RUNMODAL(60215,PCB) ;
-                  VALIDATE(Quantity);
-                END;
-              END;
-              }
+                        end;
+
+
+
+                        IF Quantity <> 0 THEN BEGIN
+                            IF NOT CONFIRM(Text50004, FALSE, "No.", "Buy-from Vendor No.", Quantity) THEN
+                                ERROR('THE UNIT COST FOR THE PCB %1 NEED TO BE CALCULATED MANUALLY', "No.");
+                            PCB.RESET;
+                            PCB.SETFILTER(PCB."Vendor No.", "Buy-from Vendor No.");
+                            PCB.SETFILTER(PCB."PCB Thickness", Item."PCB thickness");
+                            PCB.SETFILTER(PCB."Copper Clad Thickness", Item."Copper Clad Thickness");
+                            PCB."PCB TYPE" := Item."Item Sub Group Code";
+                            PCB.SETFILTER(PCB."Min.Quantity", '=%1', 0.0);
+                            PCB.SETFILTER(PCB."Max.Quantity", '=%1', 0.0);
+                            IF NOT PCB.FINDFIRST THEN BEGIN
+                                PCB.INIT;
+                                PCB."Vendor No." := "Buy-from Vendor No.";
+                                PCB.Name := PurchHeader."Buy-from Vendor Name";
+                                PCB."PCB Thickness" := Item."PCB thickness";
+                                PCB."Copper Clad Thickness" := Item."Copper Clad Thickness";
+                                PCB."PCB TYPE" := Item."Item Sub Group Code";
+                                PCB.Date := TODAY;
+                                PCB."Min.Quantity" := 0.0;
+                                PCB."Max.Quantity" := 0.0;
+                                PCB.INSERT;
+                                COMMIT;
+                            END;
+                            FORM.RUNMODAL(60215, PCB);
+                            VALIDATE(Quantity);
+                        END;
+                    END;
+
+
+                end;
             end;
-          end;
         end;
-      end;
       // End by Pranavi
 
-
+}
     var
         "--QC": Integer;
     
@@ -1157,6 +1162,5 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         NODHeader: Record "NOD/NOC Header";
         PANErr: Label 'PAN No must be updated on Customer/Vendor/Party Master %1, currently its blank.';
           ItemLedgEntry  :Record "Item Ledger Entry";
-          
+       
 }
-
