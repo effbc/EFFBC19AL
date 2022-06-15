@@ -14,8 +14,8 @@ table 80001 "Posted Service Headr"
 
     Caption = 'Posted Service Header';
     DataCaptionFields = "No.", Description;
-    DrillDownPageID = 5946;
-    LookupPageID = 5946;
+    /*  DrillDownPageID = 5946;
+     LookupPageID = 5946; */ //B2BUPG 5946 PAGE not available in nav 2016 same carried to BC
     DataClassification = CustomerContent;
 
     fields

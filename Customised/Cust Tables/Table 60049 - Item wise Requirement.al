@@ -53,7 +53,7 @@ table 60049 "Item wise Requirement"
         GLAcc: Record "G/L Account";
         Job: Record Job;
         ItemVariant: Record "Item Variant";
-        SalesPriceCalcMgt: Codeunit "Sales Price Calc. Mgt.";
+        // SalesPriceCalcMgt: Codeunit "Sales Price Calc. Mgt.";
         PurchPriceCalcMgt: Codeunit "Purch. Price Calc. Mgt.";
         LastBudgetEntryDate: Date;
         NextStep: Integer;

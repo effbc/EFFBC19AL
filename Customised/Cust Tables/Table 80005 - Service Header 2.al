@@ -865,13 +865,13 @@ table 80005 "Service Header 2"
         LoanerEntry: Record "Loaner Entry";
         SalesHeader: Record "Sales Header";
         ServContractList: Page "Service Contract List";
-        ServOrderMgt: Codeunit ServOrderManagement;
+        ServOrderMgt: Codeunit 5900;
         DimMgt: Codeunit DimensionManagement;
-        NoSeriesMgt: Codeunit NoSeriesManagement;
-        ServLogMgt: Codeunit ServLogManagement;
+      //  NoSeriesMgt: Codeunit 396;
+        ServLogMgt: Codeunit 5906;
         CustCheckCreditLimit: Codeunit "Cust-Check Cr. Limit";
-        TransferExtendedText: Codeunit "Transfer Extended Text";
-        UserMgt: Codeunit "User Setup Management";
+        TransferExtendedText: Codeunit 378;
+        UserMgt: Codeunit 5700;
         NotifyCust: Codeunit "Customer-Notify by Email";
         CurrencyDate: Date;
         TempLinkToServItem: Boolean;

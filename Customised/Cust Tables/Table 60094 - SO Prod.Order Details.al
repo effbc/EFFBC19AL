@@ -87,7 +87,7 @@ table 60094 "SO Prod.Order Details"
                                     Status := Status::Planning;
                                 Job.Status::Quote:
                                     Status := Status::Quote;
-                                Job.Status::Order:
+                                Job.Status::Open:
                                     Status := Status::Order;
                                 Job.Status::Completed:
                                     Status := Status::Completed;

@@ -77,7 +77,7 @@ table 60067 "Tender Competitor's Details"
         }
         field(31; structure; Code[10])
         {
-            TableRelation = "Structure Header".Code;
+            //TableRelation = "Structure Header".Code;//Removed from base itself
             DataClassification = CustomerContent;
         }
         field(32; Percentage; Decimal)

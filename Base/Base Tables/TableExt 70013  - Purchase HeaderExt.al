@@ -25,8 +25,7 @@ tableextension 70013 PurhaseheaderExt extends "Purchase Header"
 
                 GLSetup.GET;
 
-                IF NOT (("Order Date" >= GLSetup."Allow Posting From") AND
-                       ("Order Date" >= GLSetup."Allow Posting To")) ;
+                IF NOT (("Order Date" >= GLSetup."Allow Posting From") AND ("Order Date" >= GLSetup."Allow Posting To")) then;
                 // ERROR('ORDER DATE IS NOT IN SYSTEM RANGE , ONCE CHECK THE ORDER DATE');
             end;
         }
@@ -498,7 +497,6 @@ tableextension 70013 PurhaseheaderExt extends "Purchase Header"
     VAR
         Text050: Label 'ENU=You cannot Canel/Short Close the order,Invoice is pending for Line No. %1 and Order No. %2';
         Text051: Label 'ENU=You cannot Canel/Short Close the order,Return Qty. Invoice is pending for Line No. %1 and Order No. %2';
-        PurchLine: Record "Purchase Line";
     BEGIN
         //Rev01
         IF (OrderStatus = 'Cancel') OR (OrderStatus = 'Close') THEN BEGIN
@@ -562,7 +560,7 @@ tableextension 70013 PurhaseheaderExt extends "Purchase Header"
 
     PROCEDURE CopyIndent();
     VAR
-        Text60000: label 'ENU=&Indent,Indent &Lines';
+        Text60000: Label 'ENU=&Indent,Indent &Lines';
     BEGIN
         Selection := STRMENU(Text60000, 1);
         IF Selection = 0 THEN
@@ -729,44 +727,42 @@ tableextension 70013 PurhaseheaderExt extends "Purchase Header"
 
     PROCEDURE Cashflow_Modification();
     BEGIN
+        //Rev01{
+        GLSetup.GET;
+        IF GLSetup."Active ERP-CF Connection" THEN BEGIN
+            IF ISCLEAR(SQLConnection) THEN
+                CREATE(SQLConnection, FALSE, TRUE); //Rev01
+            IF ISCLEAR(RecordSet) THEN
+                CREATE(RecordSet, FALSE, TRUE); //Rev01
+            WebRecStatus := Quotes + Text50001 + Quotes;
+            OldWebStatus := Quotes + Text50002 + Quotes;
+            //SQLConnection.ConnectionString :=GLSetup."Sql Connection String";
+            SQLConnection.ConnectionString := 'DSN=CASHFLOW;UID=cashflowuser;PASSWORD=firewall123;SERVER=oracle_80;';
+            SQLConnection.Open;
+            SQLConnection.BeginTrans;
 
-        /* //Rev01{
-         GLSetup.GET;
-         IF GLSetup."Active ERP-CF Connection" THEN BEGIN
-             IF ISCLEAR(SQLConnection) THEN
-                 CREATE(SQLConnection, FALSE, TRUE); //Rev01
-             IF ISCLEAR(RecordSet) THEN
-                 CREATE(RecordSet, FALSE, TRUE); //Rev01
-             WebRecStatus := Quotes + Text50001 + Quotes;
-             OldWebStatus := Quotes + Text50002 + Quotes;
-             //SQLConnection.ConnectionString :=GLSetup."Sql Connection String";
-             SQLConnection.ConnectionString := 'DSN=CASHFLOW;UID=cashflowuser;PASSWORD=firewall123;SERVER=oracle_80;';
-             SQLConnection.Open;
-             SQLConnection.BeginTrans;
+            SQLQuery := 'select orderno from PURCHASE_ORDER_STATUS where orderno=''' + "No." + ''' and (authorisation=1 or status=''Y'') and '
+                      + 'payment_type in (''Advance'',''COD'',''Billed'')';
+            RecordSet := SQLConnection.Execute(SQLQuery);
+            SQLConnection.CommitTrans;
 
-             SQLQuery := 'select orderno from PURCHASE_ORDER_STATUS where orderno=''' + "No." + ''' and (authorisation=1 or status=''Y'') and '
-                       + 'payment_type in (''Advance'',''COD'',''Billed'')';
-             RecordSet := SQLConnection.Execute(SQLQuery);
-             SQLConnection.CommitTrans;
+            IF NOT (USERID IN ['EFFTRONICS\20TE099', 'EFFTRONICS\VISHNUPRIYA']) // added on 07-MAY-18  ,'EFFTRONICS\VISHNUPRIYA'
+            THEN BEGIN
+                IF NOT (RecordSet.EOF OR RecordSet.BOF) THEN BEGIN
+                    SQLConnection.Close;
+                    ERROR('PAYMENT COMPLETED, SO YOU MUST NOT SHORT CLOSE (OR) CANCEL THE ORDER');
 
-             IF NOT (USERID IN ['EFFTRONICS\20TE099', 'EFFTRONICS\VISHNUPRIYA']) // added on 07-MAY-18  ,'EFFTRONICS\VISHNUPRIYA'
-             THEN BEGIN
-                 IF NOT (RecordSet.EOF OR RecordSet.BOF) THEN BEGIN
-                     SQLConnection.Close;
-                     ERROR('PAYMENT COMPLETED, SO YOU MUST NOT SHORT CLOSE (OR) CANCEL THE ORDER');
-
-                 END;
-                 SQLConnection.Close;
-             END
-             ELSE
-                 SQLConnection.Close; // added by vishnu on 02-12-2020 for the  testings
-         END;
-
+                END;
+                SQLConnection.Close;
+            END
+            ELSE
+                SQLConnection.Close; // added by vishnu on 02-12-2020 for the  testings
+        END;
 
 
 
-         */
-        //Rev01}
+
+        //Rev01
     END;
 
     PROCEDURE ExtenalDocNo(InvoiceNos: '" ",ExciseInv,ServiceInv,TradingInv,InstInv'; PostingDate: Date);
@@ -852,7 +848,7 @@ tableextension 70013 PurhaseheaderExt extends "Purchase Header"
         IndentLine: Record "Indent Line";
         PurchLine1: Record "Purchase Line";
         PurchLineNo: Integer;
-        TaxFormsDetails: Record "Tax Forms Details";
+        //TaxFormsDetails: Record "Tax Forms Details";
         "---MPST---": Integer;
         MSPTOrderDetails: Record "MSPT Order Details";
         SQLQuery: Text[1000];
@@ -870,7 +866,7 @@ tableextension 70013 PurhaseheaderExt extends "Purchase Header"
         RecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
         LRecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
         Vndr: Record Vendor;
-        ArchiveManagement: Codeunit ArchiveManagement;
+        ArchiveManagement: Codeunit 5063;
         UserDetails: Record User;
         SalesHeaderArchive: Record "Sales Header Archive";
         SalesListArchive: Page "Sales List Archive";

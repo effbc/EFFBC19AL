@@ -1,4 +1,4 @@
-tableextension 70005 CustomerExt extends Customer
+tableextension 70005 CustomerCustExt extends Customer
 {
 
 

@@ -864,7 +864,7 @@ table 60095 Schedule2
         ItemTrackingForm: Page "Item Tracking Lines";
     begin
         InitTrackingSpecification(Rec, TrackingSpecification);
-        ItemTrackingForm.SetSource(TrackingSpecification, 0D);
+        ItemTrackingForm.SetSourceSpec(TrackingSpecification, 0D);
         ItemTrackingForm.SetInbound(true);
         ItemTrackingForm.RunModal;
     end;

@@ -173,14 +173,16 @@ table 60060 "Quotation Comparision"
         field(13790; Structure; Code[10])
         {
             Caption = 'Structure';
-            TableRelation = "Structure Header";
+            // TableRelation = "Structure Header"; //Table Removed from base
             DataClassification = CustomerContent;
 
             trigger OnValidate();
             var
-                StrDetails: Record "Structure Details";
-                StrOrderDetails: Record "Structure Order Details";
-                StrOrderLines: Record "Structure Order Line Details";
+                /*
+                    StrDetails: Record "Structure Details";
+                    StrOrderDetails: Record "Structure Order Details";
+                    StrOrderLines: Record "Structure Order Line Details";
+                    */
                 PurchaseLines: Record "Purchase Line";
             begin
             end;

@@ -177,7 +177,7 @@ table 60072 "Tender Posting Lines"
         }
         field(17; structure; Code[10])
         {
-            TableRelation = "Structure Header".Code;
+            // TableRelation = "Structure Header".Code;//Removed from base itself
             DataClassification = CustomerContent;
         }
         field(480; "Dimension Set ID"; Integer)
@@ -745,7 +745,7 @@ table 60072 "Tender Posting Lines"
         */
 
         "Dimension Set ID" :=
-          DimMgt.EditDimensionSet2(
+          DimMgt.EditDimensionSet(
             "Dimension Set ID", StrSubstNo('%1', "Line No."),
             "Global Dimension 1 Code", "Global Dimension 2 Code");
         //DIM 1.0 End

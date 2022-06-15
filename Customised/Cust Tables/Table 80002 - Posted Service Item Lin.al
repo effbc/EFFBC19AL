@@ -13,7 +13,7 @@ table 80002 "Posted Service Item Lin"
         {
             Caption = 'Order No.';
             Editable = false;
-            TableRelation = Table5930;
+            // TableRelation = Table5930; //B2BUPG table not avaliable in nav 2016 same carried to BC
             DataClassification = CustomerContent;
         }
         field(2; "Line No."; Integer)
@@ -412,7 +412,7 @@ table 80002 "Posted Service Item Lin"
         }
         field(60041; "Order Date"; Date)
         {
-            CalcFormula = Lookup(Table5930.Field22 WHERE(Field1 = FIELD("Order No.")));
+            //CalcFormula = Lookup(Table5930.Field22 WHERE(Field1 = FIELD("Order No."))); //B2BUPG TABLE 5930 not available in nav 2016 same carried to BC.
             FieldClass = FlowField;
         }
         field(60049; "Accounted Date"; Date)

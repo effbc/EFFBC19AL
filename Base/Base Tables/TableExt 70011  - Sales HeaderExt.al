@@ -861,6 +861,22 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         {
             DataClassification = CustomerContent;
         }
+        field(80103; "Free Supply"; Boolean)
+        {
+            DataClassification = CustomerContent;
+        }
+        field(80104; "VAT Exempted"; Boolean)
+        {
+            DataClassification = CustomerContent;
+            trigger OnValidate()
+            begin
+
+            end;
+        }
+        field(80105; "Export or Deemed Export"; Boolean)
+        {
+            DataClassification = CustomerContent;
+        }
     }
     trigger OnAfterInsert()
     var
@@ -962,13 +978,13 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
     END;
 
 
-    PROCEDURE ExtenalDocNo(InvoiceNos: '" ",ExciseInv,ServiceInv,TradingInv,InstInv', PostingDate: Date);
+    PROCEDURE ExtenalDocNo(InvoiceNos:'" ",ExciseInv,ServiceInv,TradingInv,InstInv':PostingDate: Date);
     VAR
         temp: Integer;
         SalesHeadLRec: Record "Sales Header";
         Fyear: Integer;
         POSTEDINVOICE: Record "Sales Invoice Header";
-        y: Text;
+
     BEGIN
 
         temp := 0;
@@ -1308,6 +1324,6 @@ tableextension 70011 SalesHeaderExt extends "Sales Header"
         SHA: Record "Sales Header Archive";
         SalesPersonOrPurchsr: Record "Salesperson/Purchaser";
         FlagValue: Boolean;
-        ArchiveManagement: Codeunit ArchiveManagement;
+        ArchiveManagement: Codeunit 5063;
 }
 

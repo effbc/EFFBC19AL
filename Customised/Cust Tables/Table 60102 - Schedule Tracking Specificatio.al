@@ -200,7 +200,7 @@ table 60102 "Schedule Tracking Specificatio"
                 ItemLedgEntry.SetRange("Serial No.", "Serial No.");
                 ItemLedgEntry.SetRange("Lot No.", "Lot No.");
                 ItemLedgEntry.SetRange(Open, true);
-                if PAGE.RunModal(PAGE::"Item Ledger Entries", ItemLedgEntry) = ACTION::LookupOK then
+                if PAGE.RunModal(38, ItemLedgEntry) = ACTION::LookupOK then
                     Validate("Appl.-to Item Entry", ItemLedgEntry."Entry No.");
             end;
 
@@ -455,7 +455,7 @@ table 60102 "Schedule Tracking Specificatio"
                 ItemLedgEntry.SetRange("Serial No.", "Serial No.");
                 ItemLedgEntry.SetRange("Lot No.", "Lot No.");
                 ItemLedgEntry.SetFilter("Shipped Qty. Not Returned", '<0');
-                if PAGE.RunModal(PAGE::"Item Ledger Entries", ItemLedgEntry) = ACTION::LookupOK then
+                if PAGE.RunModal(38, ItemLedgEntry) = ACTION::LookupOK then
                     Validate("Appl.-from Item Entry", ItemLedgEntry."Entry No.");
             end;
 

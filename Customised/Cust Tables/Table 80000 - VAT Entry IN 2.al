@@ -39,6 +39,7 @@ table 80000 "VAT Entry IN 2"
         field(6; "VAT Bus. Posting Group"; Code[10])
         {
             Editable = true;
+           /*
             TableRelation = IF ("VAT Type" = FILTER(VAT)) Table16350.Field1
             ELSE
             IF ("VAT Type" = FILTER("Sales Tax")) "Tax Area".Code
@@ -46,11 +47,13 @@ table 80000 "VAT Entry IN 2"
             IF ("VAT Type" = FILTER(Excise)) "Excise Bus. Posting Group".Code
             ELSE
             IF ("VAT Type" = FILTER(Other)) "Tax/Charge Group".Code;
+            */
             DataClassification = CustomerContent;
         }
         field(7; "VAT Prod. Posting Group"; Code[10])
         {
             Editable = true;
+            /*
             TableRelation = IF ("VAT Type" = FILTER(VAT)) Table16351.Field1
             ELSE
             IF ("VAT Type" = FILTER("Sales Tax")) "Tax Jurisdiction".Code
@@ -59,6 +62,7 @@ table 80000 "VAT Entry IN 2"
             ELSE
             IF ("VAT Type" = FILTER(Other)) "Tax/Charge Group Details"."Tax/Charge Code";
             DataClassification = CustomerContent;
+            */
         }
         field(8; "VAT %"; Decimal)
         {
@@ -118,7 +122,7 @@ table 80000 "VAT Entry IN 2"
         field(19; "Structure Code"; Code[10])
         {
             Editable = true;
-            TableRelation = "Structure Header".Code;
+            //TableRelation = "Structure Header".Code;//Removed from base itself
             DataClassification = CustomerContent;
         }
         field(25; "Adjustment Amount"; Decimal)

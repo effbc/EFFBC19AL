@@ -1,52 +1,59 @@
 pageextension 70146 PurchaseJournalExt extends "Purchase Journal"
 {
-
+    
 
     layout
     {
 
+       
+        modify("Control 28")
+        {
 
-        /*   modify("Control28")
-           {
+          
 
+            ShowCaption = false;
+        }
+        modify("Control 1902205001")
+        {
 
+           
 
-               ShowCaption = false;
-           }
-           modify("Control1902205001")
-           {
+            ShowCaption = false;
+        }
 
-
-
-               ShowCaption = false;
-           }*/
-
-
-        /*modify("Control 1000")
+      
+        modify("Control 1000")
         {
             Visible = false;
         }
         modify("Control 1001")
         {
             Visible = false;
-        }*/
-        addafter("Document No.")
+        }
+        addafter("Control 6")
         {
-            field("Excise Charge"; Rec."Excise Charge")
+            field("Excise Charge"; "Excise Charge")
             {
             }
-            field("Form Code"; Rec."Form Code")
+            field("Form Code"; "Form Code")
             {
             }
-            field("Form No."; Rec."Form No.")
+            field("Form No."; "Form No.")
             {
             }
-            field("Tax %"; Rec."Tax %")
+            field("Tax %"; "Tax %")
             {
             }
         }
-
-        addafter("Total Balance")
+        {
+            field("Debit Amount"; "Debit Amount")
+            {
+            }
+            field("Credit Amount"; "Credit Amount")
+            {
+            }
+        }
+        addafter("Control 1902759701")
         {
             group("Work Date")
             {
@@ -61,67 +68,67 @@ pageextension 70146 PurchaseJournalExt extends "Purchase Journal"
     actions
     {
 
+      
 
-
-        modify(Dimensions)
+        modify("Action 68")
         {
 
 
             Promoted = true;
 
-
+          
         }
 
-
-        modify("Ledger E&ntries")
+      
+        modify("Action 43")
         {
 
-
+            
             Promoted = false;
 
-
+           
         }
 
-
-        modify("Apply Entries")
+        
+        modify("Action 97")
         {
 
-
+           
             Promoted = true;
 
-
+            
         }
 
+       
+        modify("Action 1500040")
+        {
+            Promoted = true;
+            PromotedIsBig = true;
 
-        /* modify("Action 1500040")
-         {
-             Promoted = true;
-             PromotedIsBig = true;
+           
+        }
+        modify("Update Reference Invoice No")
+        {
+            Promoted = true;
+        }
 
-
-         }*/
-        /* modify("Update Reference Invoice No")
-         {
-             Promoted = true;
-         }*/
-
-
+     
 
         modify(Post)
         {
             Promoted = true;
             PromotedIsBig = true;
         }
-        modify("Post and &Print")
+        modify("Action 49")
         {
             Promoted = true;
             PromotedIsBig = true;
 
-
+           
         }
 
-
-        /*modify(Approve)
+      
+        modify(Approve)
         {
             Promoted = true;
             PromotedIsBig = true;
@@ -138,13 +145,13 @@ pageextension 70146 PurchaseJournalExt extends "Purchase Journal"
         modify(Comment)
         {
 
-
+         
             Promoted = true;
-        }*/
+        }
     }
 
 
-
+  
 
 }
 

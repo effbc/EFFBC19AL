@@ -1,4 +1,4 @@
-tableextension 70002 LocationExt extends Location
+tableextension 70002 LocationCustExt extends Location
 {
     fields
     {

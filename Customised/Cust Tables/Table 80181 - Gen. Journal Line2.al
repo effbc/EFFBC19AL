@@ -984,7 +984,7 @@ table 80181 "Gen. Journal Line2"
         }
         field(13758; "TDS Nature of Deduction"; Code[10])
         {
-            TableRelation = "TDS Nature of Deduction";
+            TableRelation = "TDS Section";
             DataClassification = CustomerContent;
         }
         field(13759; "TDS Assessee Code"; Code[10])
@@ -1221,7 +1221,7 @@ table 80181 "Gen. Journal Line2"
         }
         field(16313; "E.C.C. No."; Code[20])
         {
-            TableRelation = "E.C.C. Nos.";
+           // TableRelation = "E.C.C. Nos.";
             DataClassification = CustomerContent;
         }
         field(16340; "Balance Work Tax Amount"; Decimal)
@@ -1239,7 +1239,7 @@ table 80181 "Gen. Journal Line2"
 
             trigger OnValidate();
             var
-                VATValidation: Codeunit "VAT Validations";
+              //  VATValidation: Codeunit "VAT Validations";
             begin
             end;
         }
@@ -1285,7 +1285,7 @@ table 80181 "Gen. Journal Line2"
         }
         field(16360; "Work Tax Nature Of Deduction"; Code[10])
         {
-            TableRelation = "TDS Nature of Deduction";
+           // TableRelation = "TDS Nature of Deduction";
             DataClassification = CustomerContent;
         }
         field(16361; "Work Tax Group"; Option)
@@ -1368,13 +1368,13 @@ table 80181 "Gen. Journal Line2"
         field(16376; "Service Tax Group Code"; Code[20])
         {
             Caption = 'Service Tax Group Code';
-            TableRelation = "Service Tax Groups".Code;
+           // TableRelation = "Service Tax Groups".Code;
             DataClassification = CustomerContent;
         }
         field(16377; "STN No."; Code[20])
         {
             Caption = 'Service Tax Reg. No.';
-            TableRelation = "Service Tax Registration Nos.".Code;
+           // TableRelation = "Service Tax Registration Nos.".Code;
             DataClassification = CustomerContent;
         }
         field(16378; "Service Tax Base Amount"; Decimal)
@@ -1587,7 +1587,7 @@ table 80181 "Gen. Journal Line2"
         }
         field(16478; "T.A.N. No."; Code[10])
         {
-            TableRelation = "T.A.N. Nos.";
+          //  TableRelation = "T.A.N. Nos.";
             DataClassification = CustomerContent;
         }
         field(16479; "ADE Amount"; Decimal)

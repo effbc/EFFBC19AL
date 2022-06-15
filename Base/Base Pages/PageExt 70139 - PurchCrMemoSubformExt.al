@@ -27,7 +27,7 @@ pageextension 70139 PurchCrMemoSubformExt extends "Purch. Cr. Memo Subform"
             field("Excise Bus. Posting Group"; "Excise Bus. Posting Group")
             {
             }
-            field("VAT Calculation Type"; Rec.AT Calculation Type")
+            field("VAT Calculation Type"; "VAT Calculation Type")
             {
             }
         }
@@ -68,22 +68,22 @@ pageextension 70139 PurchCrMemoSubformExt extends "Purch. Cr. Memo Subform"
             field("KK Cess Amount"; "KK Cess Amount")
             {
             }
-            field("QC Enabled"; Rec."QC Enabled")
+            field("QC Enabled"; "QC Enabled")
             {
             }
-            field("Spec ID"; Rec."Spec ID")
+            field("Spec ID"; "Spec ID")
             {
             }
-            field("Qty. to Invoice"; Rec."Qty. to Invoice")
+            field("Qty. to Invoice"; "Qty. to Invoice")
             {
             }
-            field("Qty. to Receive"; Rec."Qty. to Receive")
+            field("Qty. to Receive"; "Qty. to Receive")
             {
             }
-            field("Qty. Rcd. Not Invoiced"; Rec."Qty. Rcd. Not Invoiced")
+            field("Qty. Rcd. Not Invoiced"; "Qty. Rcd. Not Invoiced")
             {
             }
-            field("Return Qty. to Ship"; Rec."Return Qty. to Ship")
+            field("Return Qty. to Ship"; "Return Qty. to Ship")
             {
             }
         }

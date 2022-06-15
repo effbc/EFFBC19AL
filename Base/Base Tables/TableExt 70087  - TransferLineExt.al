@@ -276,8 +276,8 @@ tableextension 70087 TransferLineExt extends "Transfer Line"
         Location: Record Location;
         ILE: Record "Item Ledger Entry";
         "LocationQty.": Decimal;
-        Text001: TextConst 'ENU=Item %1 is not in Inventory.';
-        Text002: TextConst 'ENU=%1 is not a QC Enabled Location';
+        Text001: Label 'ENU=Item %1 is not in Inventory.';
+        Text002: Label 'ENU=%1 is not a QC Enabled Location';
     BEGIN
         Location.Get("Transfer-to Code");
         if not (Location."QC Enabled Location") then

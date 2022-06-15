@@ -78,7 +78,7 @@ table 60013 Products
     var
         "RM Setup": Record "Marketing Setup";
         Products: Record Products;
-        NoSeriesMgt: Codeunit 396;
+    //NoSeriesMgt: Codeunit 396;
     begin
         /*
         WITH Products DO BEGIN

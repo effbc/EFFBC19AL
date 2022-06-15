@@ -22,7 +22,7 @@ table 80003 "Posted Service Invoice Lin"
         field(1; "Order No."; Code[20])
         {
             Caption = 'Order No.';
-            TableRelation = Table5930;
+            //TableRelation = Table5930; //B2BUPG Table not there in nav 2016 same carried to BC
             DataClassification = CustomerContent;
         }
         field(2; "Line No."; Integer)
@@ -33,7 +33,7 @@ table 80003 "Posted Service Invoice Lin"
         field(3; "Service Item Line No."; Integer)
         {
             Caption = 'Service Item Line No.';
-            TableRelation = Table5931.Field2 WHERE(Field1 = FIELD("Order No."));
+            //TableRelation = Table5931.Field2 WHERE(Field1 = FIELD("Order No.")); //B2BUPG Table not there in nav 2016 same carried to BC
             DataClassification = CustomerContent;
         }
         field(4; "Service Item No."; Code[20])
@@ -451,7 +451,7 @@ table 80003 "Posted Service Invoice Lin"
         field(81; "Attached to Line No."; Integer)
         {
             Caption = 'Attached to Line No.';
-            TableRelation = Table5932.Field2 WHERE(Field1 = FIELD("Order No."));
+            //TableRelation = Table5932.Field2 WHERE(Field1 = FIELD("Order No."));//B2BUPG Table not there in nav 2016 same carried to BC
             DataClassification = CustomerContent;
         }
         field(82; "Item Category Code"; Code[10])
@@ -643,8 +643,8 @@ table 80003 "Posted Service Invoice Lin"
     var
         ItemTrackingMgt: Codeunit "Item Tracking Management";
     begin
-        exit(ItemTrackingMgt.ComposeRowID(DATABASE::Table5932,
-          0, "Order No.", '', 0, "Line No."));
+        /*     exit(ItemTrackingMgt.ComposeRowID(DATABASE::Table5932,
+              0, "Order No.", '', 0, "Line No.")); */ //B2BUPG Table not there in nav 2016 same carried to BC
     end;
 }
 

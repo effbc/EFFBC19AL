@@ -251,7 +251,7 @@ table 60050 "Shortage Temp"
         }
         field(54; "Tax Structure"; Text[30])
         {
-            TableRelation = "Structure Header".Code;
+            //TableRelation = "Structure Header".Code; //Table Removed from base
             DataClassification = CustomerContent;
         }
         field(55; Neditemsqty; Decimal)

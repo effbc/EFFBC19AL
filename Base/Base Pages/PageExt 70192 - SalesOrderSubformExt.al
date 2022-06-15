@@ -101,8 +101,8 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
                     IF Quantity < "Quantity Shipped" THEN
                         ERROR('Qty must not be less than Quantity Shipped!');
                     Schedule.RESET;
-                    Schedule.SETRANGE(Schedule."Document No.", rec."Document No.");
-                    Schedule.SETRANGE(Schedule."Document Line No.", rec."Line No.");
+                    Schedule.SETRANGE(Schedule."Document No.", "Document No.");
+                    Schedule.SETRANGE(Schedule."Document Line No.", "Line No.");
                     IF Schedule.FINDSET THEN
                         REPEAT
                             IF Schedule."Document Line No." = Schedule."Line No." THEN BEGIN
@@ -186,10 +186,10 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             Editable = editableflag;
         }
 
-        /*modify(RefreshTotals)
+        modify(RefreshTotals)
         {
             ShowCaption = false;
-        }*/
+        }
         modify("Return Reason Code")
         {
             Visible = false;
@@ -204,23 +204,23 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         }
         addafter(Type)
         {
-            field("Schedule Type"; rec."Schedule Type")
+            field("Schedule Type"; "Schedule Type")
             {
                 Editable = editableflag;
                 Visible = false;
             }
-            field("Gen. Bus. Posting Group"; rec."Gen. Bus. Posting Group")
+            field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
             {
                 Editable = editableflag;
             }
-            field("Posting Group"; rec."Posting Group")
+            field("Posting Group"; "Posting Group")
             {
                 Editable = true;
             }
-            field("Unit Cost"; rec."Unit Cost")
+            field("Unit Cost"; "Unit Cost")
             {
             }
-            field("Schedule No"; rec."Schedule No")
+            field("Schedule No"; "Schedule No")
             {
                 Editable = editableflag;
             }
@@ -231,7 +231,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             {
                 Editable = false;
             }
-            field("VAT Bus. Posting Group"; rec."VAT Bus. Posting Group")
+            field("VAT Bus. Posting Group"; "VAT Bus. Posting Group")
             {
                 Editable = editableflag;
             }
@@ -239,21 +239,21 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         }
         addafter("No.")
         {
-            field("RDSO Inspection Required"; rec."RDSO Inspection Required")
+            field("RDSO Inspection Required"; "RDSO Inspection Required")
             {
                 Editable = editableflag;
             }
         }
         addafter("IC Partner Code")
         {
-            field("VAT %"; rec."VAT %")
+            field("VAT %"; "VAT %")
             {
                 Editable = false;
             }
         }
         addafter("Drop Shipment")
         {
-            field("BOI Status"; rec."BOI Status")
+            field("BOI Status"; "BOI Status")
             {
                 Editable = editableflag;
                 Visible = "BOI StatusVisible";
@@ -261,36 +261,36 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         }
         addafter(ShortcutDimCode8)
         {
-            field("Qty. Shipped Not Invoiced"; rec."Qty. Shipped Not Invoiced")
+            field("Qty. Shipped Not Invoiced"; "Qty. Shipped Not Invoiced")
             {
             }
-            field("Outstanding Quantity"; rec."Outstanding Quantity")
+            field("Outstanding Quantity"; "Outstanding Quantity")
             {
                 Editable = false;
             }
-            field("Unitcost(LOA)"; rec."Unitcost(LOA)")
+            field("Unitcost(LOA)"; "Unitcost(LOA)")
             {
                 Editable = editableflag;
 
                 trigger OnValidate();
                 begin
-                    IF rec."Quantity Invoiced" > 0 THEN
+                    IF "Quantity Invoiced" > 0 THEN
                         ERROR('You cannot change the unit cost loa after the item is invoiced!');
                 end;
             }
-            field("OutStanding(LOA)"; rec."OutStanding(LOA)")
+            field("OutStanding(LOA)"; "OutStanding(LOA)")
             {
                 Editable = false;
             }
-            field("Line Amount(LOA)"; rec."Line Amount(LOA)")
+            field("Line Amount(LOA)"; "Line Amount(LOA)")
             {
                 Editable = false;
             }
-            field("Gen. Prod. Posting Group"; rec."Gen. Prod. Posting Group")
+            field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
             {
                 Editable = editableflag;
             }
-            field("Retention Portion"; rec."Retention Portion")
+            field("Retention Portion"; "Retention Portion")
             {
                 Editable = editableflag;
 
@@ -303,46 +303,46 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
                 end;
             }
-            field("Supply Portion"; rec."Supply Portion")
+            field("Supply Portion"; "Supply Portion")
             {
                 Editable = editableflag;
 
                 trigger OnValidate();
                 begin
-                    "Retention Portion" := 100 - rec."Supply Portion";
+                    "Retention Portion" := 100 - "Supply Portion";
                 end;
             }
-            field("Material Reuired Date"; rec."Material Reuired Date")
+            field("Material Reuired Date"; "Material Reuired Date")
             {
                 Editable = editableflag;
             }
-            field("CL_CNSGN  rcvd Qty"; rec."CL_CNSGN  rcvd Qty")
+            field("CL_CNSGN  rcvd Qty"; "CL_CNSGN  rcvd Qty")
             {
             }
-            field("Call Letter Exp Date"; rec."Call Letter Exp Date")
+            field("Call Letter Exp Date"; "Call Letter Exp Date")
             {
                 Caption = '<Cust Exp Date>';
             }
-            field("Call Letter Status"; rec."Call Letter Status")
+            field("Call Letter Status"; "Call Letter Status")
             {
             }
-            field("Type of Item"; rec."Type of Item")
-            {
-                Editable = editableflag;
-            }
-            field("Dummy Unit Cost"; rec."Dummy Unit Cost")
+            field("Type of Item"; "Type of Item")
             {
                 Editable = editableflag;
             }
-            field("RDSO Charges"; rec."RDSO Charges")
+            field("Dummy Unit Cost"; "Dummy Unit Cost")
             {
                 Editable = editableflag;
             }
-            field("To Be Shipped Qty"; rec."To Be Shipped Qty")
+            field("RDSO Charges"; "RDSO Charges")
             {
                 Editable = editableflag;
             }
-            field("Packet No"; rec."Packet No")
+            field("To Be Shipped Qty"; "To Be Shipped Qty")
+            {
+                Editable = editableflag;
+            }
+            field("Packet No"; "Packet No")
             {
                 Editable = editableflag;
             }
@@ -350,7 +350,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             {
                 Editable = editableflag;
             }
-            field("Outstanding Amount"; rec."Outstanding Amount")
+            field("Outstanding Amount"; "Outstanding Amount")
             {
             }
             field("Excise Bus. Posting Group"; "Excise Bus. Posting Group")
@@ -364,16 +364,16 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         }
         addafter("Unit of Measure")
         {
-            field("Prod. Order Quantity"; rec."Prod. Order Quantity")
+            field("Prod. Order Quantity"; "Prod. Order Quantity")
             {
             }
-            field("Prod. Due Date"; rec."Prod. Due Date")
+            field("Prod. Due Date"; "Prod. Due Date")
             {
             }
-            field("Prod. Qty"; rec."Prod. Qty")
+            field("Prod. Qty"; "Prod. Qty")
             {
             }
-            field("Production BOM No."; rec."Production BOM No.")
+            field("Production BOM No."; "Production BOM No.")
             {
                 Editable = editableflag;
             }
@@ -381,31 +381,31 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             {
                 Editable = editableflag;
             }
-            field("Quantity (Base)"; rec."Quantity (Base)")
+            field("Quantity (Base)"; "Quantity (Base)")
             {
                 Editable = true;
             }
-            field("Outstanding Qty. (Base)"; rec."Outstanding Qty. (Base)")
+            field("Outstanding Qty. (Base)"; "Outstanding Qty. (Base)")
             {
                 Editable = true;
             }
-            field("Qty. to Invoice (Base)"; rec."Qty. to Invoice (Base)")
+            field("Qty. to Invoice (Base)"; "Qty. to Invoice (Base)")
             {
                 Editable = editableflag;
             }
-            field("Qty. to Ship (Base)"; rec."Qty. to Ship (Base)")
+            field("Qty. to Ship (Base)"; "Qty. to Ship (Base)")
             {
                 Editable = editableflag;
             }
-            field("Qty. Shipped Not Invd. (Base)"; rec."Qty. Shipped Not Invd. (Base)")
+            field("Qty. Shipped Not Invd. (Base)"; "Qty. Shipped Not Invd. (Base)")
             {
                 Editable = true;
             }
-            field("Qty. Shipped (Base)"; rec."Qty. Shipped (Base)")
+            field("Qty. Shipped (Base)"; "Qty. Shipped (Base)")
             {
                 Editable = true;
             }
-            field("Qty. Invoiced (Base)"; rec."Qty. Invoiced (Base)")
+            field("Qty. Invoiced (Base)"; "Qty. Invoiced (Base)")
             {
                 Editable = true;
             }
@@ -413,18 +413,18 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             {
                 Editable = editableflag;
             }
-            field("Pending By Removed Date"; rec."Pending By Removed Date")
+            field("Pending By Removed Date"; "Pending By Removed Date")
             {
                 Editable = false;
             }
-            field("Pending By"; rec."Pending By")
+            field("Pending By"; "Pending By")
             {
                 Editable = editableflag;
             }
-            field("Dimension Set ID"; rec."Dimension Set ID")
+            field("Dimension Set ID"; "Dimension Set ID")
             {
             }
-            field("Purchase Remarks"; rec."Purchase Remarks")
+            field("Purchase Remarks"; "Purchase Remarks")
             {
             }
             field("Amount To Customer"; "Amount To Customer")
@@ -436,25 +436,25 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             field("GST %"; "GST %")
             {
             }
-            field(Reason; rec.Reason)
+            field(Reason; Reason)
             {
             }
-            field(MainCategory; rec.MainCategory)
+            field(MainCategory; MainCategory)
             {
             }
-            field(SubCategory; rec.SubCategory)
+            field(SubCategory; SubCategory)
             {
             }
-            field(Remarks; rec.Remarks)
+            field(Remarks; Remarks)
             {
             }
-            field(ProductGroup; rec.ProductGroup)
+            field(ProductGroup; ProductGroup)
             {
             }
-            field("Production Confirmed Status"; rec."Production Confirmed Status")
+            field("Production Confirmed Status"; "Production Confirmed Status")
             {
             }
-            field("Dispatch Confirm Date"; rec."Dispatch Confirm Date")
+            field("Dispatch Confirm Date"; "Dispatch Confirm Date")
             {
             }
             field("TCS Nature of Collection"; "TCS Nature of Collection")
@@ -476,7 +476,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             field("TCS Type"; "TCS Type")
             {
             }
-            field("Sell-to Customer No."; rec."Sell-to Customer No.")
+            field("Sell-to Customer No."; "Sell-to Customer No.")
             {
             }
         }
@@ -679,8 +679,6 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             {
 
                 trigger OnAction();
-                var
-                    SalesHeader: Record "Sales Header";
                 begin
                     //Added by Vishnu Priya on  26-05-2020
                     SalesHeader.RESET;
@@ -754,7 +752,7 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     trigger OnAfterGetRecord()
     begin
-        IF (Rec.Type = Rec.Type::Item) AND (Rec.ProductGroup = '') THEN BEGIN
+        IF (Type = Type::Item) AND (ProductGroup = '') THEN BEGIN
             item.RESET;
             item.SETFILTER("No.", Rec."No.");
             IF item.FINDSET THEN BEGIN
@@ -762,28 +760,26 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
                 //Rec.MODIFY;
             END;
         END;
-        IF Rec.MainCategory = Rec.MainCategory::"  " THEN BEGIN
-            Rec.MainCategory := Rec.MainCategory::"Need to Specify";
+        IF MainCategory = MainCategory::"  " THEN BEGIN
+            MainCategory := MainCategory::"Need to Specify";
             // Rec.MODIFY;
         END;
     end;
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
-    var
-        SalesHeader: Record "Sales Header";
     begin
         // added by pranavi on 01-sep-2016 for payment terms
-        IF Rec."Document Type" = Rec."Document Type"::Order THEN BEGIN
+        IF "Document Type" = "Document Type"::Order THEN BEGIN
             SalesHeader.RESET;
             SalesHeader.SETRANGE(SalesHeader."No.", "Document No.");
             IF SalesHeader.FINDFIRST THEN
                 IF SalesHeader."Customer Posting Group" IN ['PRIVATE', 'OTHERS'] THEN
-                    IF Rec.Type = Rec.Type::Item THEN BEGIN
-                        Rec."Supply Portion" := 100;
-                        Rec."Retention Portion" := 0;
+                    IF Type = Type::Item THEN BEGIN
+                        "Supply Portion" := 100;
+                        "Retention Portion" := 0;
                     END ELSE BEGIN
-                        Rec."Supply Portion" := 0;
-                        Rec."Retention Portion" := 100;
+                        "Supply Portion" := 0;
+                        "Retention Portion" := 100;
                     END;
         END;
         // end by pranavi
@@ -861,10 +857,285 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
 
 
+<<<<<<< HEAD
+    //trigger OnAfterGetRecord();
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    ShowShortcutDimCode(ShortcutDimCode);
+    CLEAR(DocumentTotals);
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    ShowShortcutDimCode(ShortcutDimCode);
+    CLEAR(DocumentTotals);
+
+    IF (Type=Type::Item) AND (ProductGroup ='') THEN
+      BEGIN
+          item.RESET;
+          item.SETFILTER("No.",Rec."No.");
+          IF item.FINDSET THEN
+            BEGIN
+            ProductGroup := item."Item Sub Group Code";
+            //Rec.MODIFY;
+            END;
+       END;
+       IF MainCategory = MainCategory::"  " THEN
+         BEGIN
+            MainCategory := MainCategory::"Need to Specify";
+           // Rec.MODIFY;
+        END;
+    */
+    //end;
+
+
+    //Unsupported feature: CodeModification on "OnDeleteRecord". Please convert manually.
+
+    //trigger OnDeleteRecord() : Boolean;
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    IF (Quantity <> 0) AND ItemExists("No.") THEN BEGIN
+      COMMIT;
+      IF NOT ReserveSalesLine.DeleteLineConfirm(Rec) THEN
+        EXIT(FALSE);
+      ReserveSalesLine.DeleteLine(Rec);
+    END;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    //Added By Pranavi On 23-09-2015 to restrict sales line modify/delete except sales & ERP
+    User.RESET;
+    IF "Document Type" <> "Document Type"::Amc THEN
+    BEGIN
+      IF NOT (USERID IN ['EFFTRONICS\VISHNUPRIYA','EFFTRONICS\GRAVI','EFFTRONICS\ANILKUMAR','EFFTRONICS\BHAVANIP','EFFTRONICS\SRIVALLI','EFFTRONICS\SPURTHI','EFFTRONICS\ANVESH','EFFTRONICS\VIJAYA']) THEN
+      BEGIN
+        User.SETFILTER(User."User Name",USERID);
+        IF User.FINDFIRST THEN
+        BEGIN
+          IF NOT (User.Dept IN ['SAL','MAR']) THEN
+            ERROR('You Do Not Right to Delete!');
+        END;
+      END;
+    END;
+    //End By Pranavi
+    // Added by pranavi on 12-09-2016 for not allowing to delete if outstanding qty > 0 after partially billed
+    IF (Quantity <> "Quantity Shipped") AND ("Quantity Shipped" > 0) THEN
+      ERROR('You cannot delete the line as there is outstanding qty!');
+    // end by pranavi
+    #1..6
+    */
+    //end;
+
+
+    //Unsupported feature: CodeModification on "OnInit". Please convert manually.
+
+    //trigger OnInit();
+    //Parameters and return type have not been exported.
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    "Process Carried OutVisible" := TRUE;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    "Process Carried OutVisible" := TRUE;
+    "BOI StatusVisible" := TRUE;
+    ItemPanelVisible := TRUE;
+    */
+    //end;
+
+
+    //Unsupported feature: CodeInsertion on "OnInsertRecord". Please convert manually.
+
+    //trigger OnInsertRecord(BelowxRec : Boolean) : Boolean;
+    //begin
+    /*
+    // added by pranavi on 01-sep-2016 for payment terms
+    IF "Document Type" = "Document Type"::Order THEN
+    BEGIN
+      SalesHeader.RESET;
+      SalesHeader.SETRANGE(SalesHeader."No.","Document No.");
+      IF SalesHeader.FINDFIRST THEN
+        IF SalesHeader."Customer Posting Group" IN['PRIVATE','OTHERS'] THEN
+          IF Type = Type::Item THEN
+          BEGIN
+            "Supply Portion" := 100;
+            "Retention Portion" := 0;
+          END ELSE BEGIN
+            "Supply Portion" := 0;
+            "Retention Portion" := 100;
+          END;
+    END;
+    // end by pranavi
+    */
+    //end;
+
+
+    //Unsupported feature: CodeInsertion on "OnModifyRecord". Please convert manually.
+
+    //trigger OnModifyRecord() : Boolean;
+    //begin
+    /*
+    //Added By Pranavi On 23-09-2015 to restrict sales line modify/delete except sales & ERP
+    {
+    User.RESET;
+    IF "Document Type" <> "Document Type"::Amc THEN
+    BEGIN
+      IF NOT (USERID IN ['EFFTRONICS\PRANAVI','EFFTRONICS\GRAVI','EFFTRONICS\ANILKUMAR','EFFTRONICS\NAGALAKSHMI','EFFTRONICS\SRIVALLI','EFFTRONICS\SPURTHI','EFFTRONICS\ANVESH']) THEN
+      BEGIN
+        User.SETFILTER(User."User Name",USERID);
+        IF User.FINDFIRST THEN
+        BEGIN
+          IF NOT (User.Dept IN ['SAL','MAR']) THEN
+            editableflag := FALSE
+          ELSE editableflag := TRUE;
+            //IF ("Product Group Code" <> 'B OUT') AND (User.Dept <> '') THEN
+              //ERROR('You Do Not Right to Modify!');
+        END;
+      END
+      ELSE editableflag := TRUE;
+    END;
+
+    Saleshdr.RESET;
+    Saleshdr.SETRANGE(Saleshdr."No.","Document No.");
+    IF Saleshdr.FINDFIRST THEN
+      IF (Saleshdr.Order_After_CF_Integration = TRUE) AND NOT (SalesHeader."Sell-to Customer No." IN['CUST00536','CUST01164']) THEN
+        IF "Retention Portion"+"Supply Portion" <> 100 THEN
+          ERROR('Total Supply & Retention Portions should be 100 %');
+    }
+    //End By Pranavi
+    */
+    //end;
+
+
+    //Unsupported feature: CodeInsertion on "OnOpenPage". Please convert manually.
+
+    //trigger OnOpenPage();
+    //begin
+    /*
+    IF NOT (UPPERCASE(USERID) IN ['SUPER','10RD010','11RD010','06PD033']) THEN
+    "BOI StatusVisible" :=FALSE;
+    User.RESET;
+    IF "Document Type" <> "Document Type"::Amc THEN
+    BEGIN
+      IF NOT (USERID IN ['EFFTRONICS\SUJANI','EFFTRONICS\NAGALAKSHMI','EFFTRONICS\SRIVALLI','EFFTRONICS\GRAVI','EFFTRONICS\BHAVANIP',
+                         'EFFTRONICS\ANILKUMAR','EFFTRONICS\SPURTHI','EFFTRONICS\ANVESH','EFFTRONICS\BSATISH','EFFTRONICS\VISHNUPRIYA','EFFTRONICS\GURULAKSHMI','EFFTRONICS\B2BOTS']) THEN
+      BEGIN
+        User.SETFILTER(User."User Name",USERID);
+        IF User.FINDFIRST THEN
+        BEGIN
+          IF NOT (User.Dept IN ['SAL','MAR']) THEN
+            editableflag := FALSE
+          ELSE editableflag := TRUE;
+        END;
+      END
+      ELSE editableflag := TRUE;
+    END
+    ELSE editableflag := TRUE;
+    */
+    //end;
+
+    procedure TrackingPage();
+    begin
+    end;
+
+
+    //Unsupported feature: CodeModification on "ShowTracking(PROCEDURE 13)". Please convert manually.
+
+    //procedure ShowTracking();
+    //Parameters and return type have not been exported.
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    TrackingForm.SetSalesLine(Rec);
+    TrackingForm.RUNMODAL;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    TrackingPage.SetSalesLine(Rec);
+    TrackingPage.RUNMODAL;
+    */
+    //end;
+
+
+    //Unsupported feature: CodeModification on "LocationCodeOnAfterValidate(PROCEDURE 19034787)". Please convert manually.
+
+    //procedure LocationCodeOnAfterValidate();
+    //Parameters and return type have not been exported.
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    SaveAndAutoAsmToOrder;
+
+    IF (Reserve = Reserve::Always) AND
+       ("Outstanding Qty. (Base)" <> 0) AND
+       ("Location Code" <> xRec."Location Code")
+    THEN BEGIN
+      CurrPage.SAVERECORD;
+      AutoReserve;
+      CurrPage.UPDATE(FALSE);
+    END;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    #3..10
+    */
+    //end;
+
+    procedure StrOrderLineDetailsPage();
+    begin
+    end;
+
+
+    //Unsupported feature: CodeModification on "ShowStrDetailsForm(PROCEDURE 1280001)". Please convert manually.
+
+    //procedure ShowStrDetailsForm();
+    //Parameters and return type have not been exported.
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    StrOrderLineDetails.RESET;
+    StrOrderLineDetails.SETCURRENTKEY("Document Type","Document No.",Type);
+    StrOrderLineDetails.SETRANGE("Document Type","Document Type");
+    StrOrderLineDetails.SETRANGE("Document No.","Document No.");
+    StrOrderLineDetails.SETRANGE(Type,StrOrderLineDetails.Type::Sale);
+    StrOrderLineDetails.SETRANGE("Item No.","No.");
+    StrOrderLineDetails.SETRANGE("Line No.","Line No.");
+    StrOrderLineDetailsForm.SETTABLEVIEW(StrOrderLineDetails);
+    StrOrderLineDetailsForm.RUNMODAL;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    #1..7
+    StrOrderLineDetailsPage.SETTABLEVIEW(StrOrderLineDetails);
+    StrOrderLineDetailsPage.RUNMODAL;
+    */
+    //end;
+
+    (4171)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure "---B2B--"();
     begin
     end;
 
+<<<<<<< HEAD
+    (4174)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure CustAttachments();
     var
         CustAttach: Record Attachments;
@@ -877,6 +1148,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", CustAttach);
     end;
 
+<<<<<<< HEAD
+    (4182)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _Presite();
     var
         PreSiteCheckList: Record "Inst. PreSite Check List";
@@ -887,6 +1163,10 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"Inst. PreSite Check List", PreSiteCheckList);
     end;
 
+<<<<<<< HEAD
+    (4188)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Presite();
     var
         PreSiteCheckList: Record "Inst. PreSite Check List";
@@ -897,6 +1177,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"Inst. PreSite Check List", PreSiteCheckList);
     end;
 
+<<<<<<< HEAD
+    (4194)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowPackingDetails();
     var
         PackingDetails: Record "Shortage Management Audit Data";
@@ -910,6 +1195,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
+<<<<<<< HEAD
+    (4202)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure SalesLineAttachments();
     var
         CustAttach: Record Attachments;
@@ -923,6 +1213,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", CustAttach);
     end;
 
+<<<<<<< HEAD
+    (4211)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowSalesOrderWorkSheet();
     var
         DesignWorksheetHeader: Record "Design Worksheet Header";
@@ -945,15 +1240,15 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
           Page.RUNMODAL(60122,DesignWorksheetHeader);
         DesignWorksheetHeader.FILTERGROUP(0);
         */
-        Rec.TESTFIELD("Document Type");
-        Rec.TESTFIELD("Document No.");
-        Rec.TESTFIELD("Line No.");
+        TESTFIELD("Document Type");
+        TESTFIELD("Document No.");
+        TESTFIELD("Line No.");
         ItemDesignWorksheetHeader.RESET;
-        IF ItemDesignWorksheetHeader.GET(Rec."No.") THEN BEGIN
+        IF ItemDesignWorksheetHeader.GET("No.") THEN BEGIN
             DesignWorksheetHeader.INIT;
             DesignWorksheetHeader.TRANSFERFIELDS(ItemDesignWorksheetHeader);
-            DesignWorksheetHeader."Document No." := Rec."Document No.";
-            DesignWorksheetHeader."Document Line No." := Rec."Line No.";
+            DesignWorksheetHeader."Document No." := "Document No.";
+            DesignWorksheetHeader."Document Line No." := "Line No.";
             DesignWorksheetHeader."Document Type" := DesignWorksheetHeader."Document Type"::Order;
             IF DesignWorksheetHeader.INSERT THEN;
             ItemDesignWorksheetLine.RESET;
@@ -962,8 +1257,8 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
                 REPEAT
                     DesignWorksheetLine.INIT;
                     DesignWorksheetLine.TRANSFERFIELDS(ItemDesignWorksheetLine);
-                    DesignWorksheetLine."Document No." := Rec."Document No.";
-                    DesignWorksheetLine."Document Line No." := Rec."Line No.";
+                    DesignWorksheetLine."Document No." := "Document No.";
+                    DesignWorksheetLine."Document Line No." := "Line No.";
                     DesignWorksheetLine."Document Type" := DesignWorksheetLine."Document Type"::Order;
                     IF DesignWorksheetLine.INSERT THEN;
                 UNTIL ItemDesignWorksheetLine.NEXT = 0;
@@ -972,8 +1267,8 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
         CLEAR(DesignWorksheetHeader);
         DesignWorksheetHeader.SETRANGE("Document Type", DesignWorksheetHeader."Document Type"::Order);
-        DesignWorksheetHeader.SETRANGE("Document No.", Rec."Document No.");
-        DesignWorksheetHeader.SETRANGE("Document Line No.", Rec."Line No.");
+        DesignWorksheetHeader.SETRANGE("Document No.", "Document No.");
+        DesignWorksheetHeader.SETRANGE("Document Line No.", "Line No.");
         DesignWorksheetHeader.FILTERGROUP(2);
         IF DesignWorksheetHeader.FINDFIRST THEN
             PAGE.RUNMODAL(60122, DesignWorksheetHeader);
@@ -981,25 +1276,35 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
+<<<<<<< HEAD
+    (4260)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowDeliveryChallan();
     var
         DeliveryChallan: Record "DC Header";
     begin
         DeliveryChallan.SETRANGE(Status, DeliveryChallan.Status::Open);
-        DeliveryChallan.SETRANGE("Sales Order No.", Rec."Document No.");
+        DeliveryChallan.SETRANGE("Sales Order No.", "Document No.");
         //DeliveryChallan.SETRANGE("Document Line No.","Line No.");
         PAGE.RUNMODAL(PAGE::"DC Header", DeliveryChallan);
     end;
 
+<<<<<<< HEAD
+    (4266)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowSchedule2();
     var
         Schedule: Record Schedule2;
     begin
-        IF (Rec."Tender No." = '') AND (Rec."Tender Line No." = 0) THEN BEGIN
+        IF ("Tender No." = '') AND ("Tender Line No." = 0) THEN BEGIN
             Schedule.RESET;
             Schedule.SETRANGE("Document Type", Schedule."Document Type"::Order);
-            Schedule.SETRANGE("Document No.", Rec."Document No.");
-            Schedule.SETRANGE("Document Line No.", Rec."Line No.");
+            Schedule.SETRANGE("Document No.", "Document No.");
+            Schedule.SETRANGE("Document Line No.", "Line No.");
             //Schedule.SETRANGE("Item No.","No.");
             //Schedule.SETRANGE(Quantity,Quantity);
             Schedule.FILTERGROUP(2);
@@ -1008,8 +1313,8 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         END ELSE BEGIN
             Schedule.RESET;
             Schedule.SETRANGE("Document Type", Schedule."Document Type"::Tender);
-            Schedule.SETRANGE("Document No.", Rec."Tender No.");
-            Schedule.SETRANGE("Document Line No.", Rec."Tender Line No.");
+            Schedule.SETRANGE("Document No.", "Tender No.");
+            Schedule.SETRANGE("Document Line No.", "Tender Line No.");
             //Schedule.SETRANGE("Item No.","No.");
             //Schedule.SETRANGE(Quantity,Quantity);
             Schedule.FILTERGROUP(2);
@@ -1018,15 +1323,25 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         END;
     end;
 
+<<<<<<< HEAD
+    (4289)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowPODetails();
     var
         SOPodetails: Record "SO Prod.Order Details";
     begin
-        SOPodetails.SETRANGE("Sales Order No.", Rec."Document No.");
-        SOPodetails.SETRANGE("Sales Order Line No.", Rec."Line No.");
+        SOPodetails.SETRANGE("Sales Order No.", "Document No.");
+        SOPodetails.SETRANGE("Sales Order Line No.", "Line No.");
         PAGE.RUNMODAL(60126, SOPodetails);
     end;
 
+<<<<<<< HEAD
+    (4294)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure MakeLines(var SalesLineparam: Record "Sales Line"): Decimal;
     var
         SalesLine: Record "Sales Line";
@@ -1039,9 +1354,9 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         SalesPlanLine.DELETEALL;
         ValidateProdOrder;
         SalesLine.SETRANGE("Document Type", SalesLine."Document Type"::Order);
-        SalesLine.SETRANGE("Document No.", Rec."Document No.");
+        SalesLine.SETRANGE("Document No.", "Document No.");
         //NSS 301207
-        SalesLine.SETRANGE("Line No.", Rec."Line No.");
+        SalesLine.SETRANGE("Line No.", "Line No.");
         //NSS
         SalesLine.SETRANGE(Type, SalesLine.Type::Item);
 
@@ -1121,13 +1436,23 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
+<<<<<<< HEAD
+    (4378)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ValidateProdOrder();
     begin
         CALCFIELDS("Prod. Order Quantity");
-        IF Rec."Prod. Order Quantity" > Quantity THEN
+        IF "Prod. Order Quantity" > Quantity THEN
             ERROR(Text001);
     end;
 
+<<<<<<< HEAD
+    (4383)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ShowSchedule();
     var
         Schedule: Record Schedule2;
@@ -1171,25 +1496,25 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
                     COMMIT;
                     Schedule.RESET;
                     Schedule.SETRANGE("Document Type", Schedule."Document Type"::Order);
-                    Schedule.SETRANGE("Document No.", Rec."Document No.");
-                    Schedule.SETRANGE("Document Line No.", Rec."Line No.");
+                    Schedule.SETRANGE("Document No.", "Document No.");
+                    Schedule.SETRANGE("Document Line No.", "Line No.");
                     Schedule.FILTERGROUP(2);
                     PAGE.RUN(60125, Schedule);
                     Schedule.FILTERGROUP(0);
                 END
             END ELSE
-                IF ((Rec."Blanket Order No." <> '') AND (Rec."Blanket Order Line No." <> 0)) THEN BEGIN
+                IF (("Blanket Order No." <> '') AND ("Blanket Order Line No." <> 0)) THEN BEGIN
                     Schedule.RESET;
                     Schedule.SETRANGE("Document Type", Schedule."Document Type"::Order);
-                    Schedule.SETRANGE("Document No.", Rec."Document No.");
-                    Schedule.SETRANGE("Document Line No.", Rec."Line No.");
+                    Schedule.SETRANGE("Document No.", "Document No.");
+                    Schedule.SETRANGE("Document Line No.", "Line No.");
                     Schedule.FILTERGROUP(2);
                     PAGE.RUN(60125, Schedule);
                     Schedule.FILTERGROUP(0);
                 END ELSE BEGIN
                     SalesLine.RESET;
                     SalesLine.SETRANGE("Document No.", "Document No.");
-                    SalesLine.SETRANGE("Line No.", Rec."Line No.");
+                    SalesLine.SETRANGE("Line No.", "Line No.");
                     IF SalesLine.FINDSET THEN
                         REPEAT
                             Schedule.INIT;
@@ -1213,8 +1538,8 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
                     COMMIT;
                     Schedule.RESET;
                     Schedule.SETRANGE("Document Type", Schedule."Document Type"::Order);
-                    Schedule.SETRANGE("Document No.", Rec."Document No.");
-                    Schedule.SETRANGE("Document Line No.", Rec."Line No.");
+                    Schedule.SETRANGE("Document No.", "Document No.");
+                    Schedule.SETRANGE("Document Line No.", "Line No.");
                     Schedule.FILTERGROUP(2);
                     PAGE.RUN(60125, Schedule);
                     Schedule.FILTERGROUP(0);
@@ -1223,14 +1548,19 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             IF Type = Type::"G/L Account" THEN BEGIN
                 Schedule.RESET;
                 Schedule.SETRANGE("Document Type", Schedule."Document Type"::Order);
-                Schedule.SETRANGE("Document No.", Rec."Document No.");
-                Schedule.SETRANGE("Document Line No.", Rec."Line No.");
+                Schedule.SETRANGE("Document No.", "Document No.");
+                Schedule.SETRANGE("Document Line No.", "Line No.");
                 Schedule.FILTERGROUP(2);
                 PAGE.RUN(60125, Schedule);
                 Schedule.FILTERGROUP(0);
             END;
     end;
 
+<<<<<<< HEAD
+    (4621)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure CreateOrders(Qtyparam: Decimal) OrdersCreated: Boolean;
     var
         Item: Record Item;
@@ -1260,6 +1590,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         UNTIL (SalesPlanLine.NEXT = 0);
     end;
 
+<<<<<<< HEAD
+    (4644)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure UpdateItemNo();
     var
         UpdateSalesItem: Report "Update Sales/ Schedule Item11";
@@ -1270,12 +1605,17 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         TESTFIELD("Quantity Shipped", 0);
         CLEAR(UpdateSalesItem);
         UpdateSalesItem.USEREQUESTPAGE(TRUE);
-        UpdateSalesItem.SetValues(Rec."Document No.", Rec."Line No.", 0);
+        UpdateSalesItem.SetValues("Document No.", "Line No.", 0);
         UpdateSalesItem.RUN;
         CurrPage.UPDATE(FALSE);
         //<<UPG1.3 06Feb2019
     end;
 
+<<<<<<< HEAD
+    (4656)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure MakeLinesSingle(var SalesLineparam: Record "Sales Line"): Decimal;
     var
         SalesLine: Record "Sales Line";
@@ -1367,6 +1707,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
 
     end;
 
+<<<<<<< HEAD
+    (4737)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ValidateProdOrderSingle(SalesLineLRec: Record "Sales Line");
     begin
         SalesLineLRec.CALCFIELDS("Prod. Order Quantity");
@@ -1374,6 +1719,11 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
             ERROR(Text001);
     end;
 
+<<<<<<< HEAD
+    (4742)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure MakeLinesSingleQuantity(var SalesLineparam: Record "Sales Line"): Decimal;
     var
         SalesLine: Record "Sales Line";
@@ -1464,9 +1814,6 @@ pageextension 70192 SalesOrderSubformExt extends "Sales Order Subform"
         END;
 
     end;
-
-    var
-        SalesHeadet: Record "Sales Header";
 
 
 

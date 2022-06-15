@@ -290,7 +290,7 @@ tableextension 70070 SalesHeaderArchiveExt extends "Sales Header Archive"
         }
         field(80024; "Railway Division"; Code[10])
         {
-            TableRelation = Division."Division Code";
+            //TableRelation = Division."Division Code";
             DataClassification = CustomerContent;
         }
         field(80025; "BG Fin Status"; Enum BGFinStatus)

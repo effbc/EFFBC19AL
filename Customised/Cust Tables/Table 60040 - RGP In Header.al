@@ -59,7 +59,7 @@ table 60040 "RGP In Header"
             var
                 Customer: Record Customer;
                 Vendor: Record Vendor;
-                RGPParty: Record "RGP Party";
+                //RGPParty: Record "RGP Party";
                 Employee: Record Employee;
             begin
                 TestStatusOpen;

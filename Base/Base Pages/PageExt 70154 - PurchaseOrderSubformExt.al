@@ -110,31 +110,31 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         }
         addafter(Type)
         {
-            field("Document Type"; Rec."Document Type")
+            field("Document Type"; "Document Type")
             {
             }
-            field("Line No."; Rec."Line No.")
+            field("Line No."; "Line No.")
             {
             }
         }
         addafter("No.")
         {
-            field("Description 2"; Rec."Description 2")
+            field("Description 2"; "Description 2")
             {
             }
-            field("Document Date"; Rec."Document Date")
+            field("Document Date"; "Document Date")
             {
             }
-            field("Depreciation Book Code"; Rec."Depreciation Book Code")
+            field("Depreciation Book Code"; "Depreciation Book Code")
             {
             }
-            field("Line Amount"; Rec."Line Amount")
+            field("Line Amount"; "Line Amount")
             {
             }
-            field("Purchase Orders"; Rec."Purchase Orders")
+            field("Purchase Orders"; "Purchase Orders")
             {
             }
-            field(Make; Rec.Make)
+            field(Make; Make)
             {
                 Editable = Make_edit;
                 Enabled = true;
@@ -184,11 +184,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             field("TDS Nature of Deduction"; "TDS Nature of Deduction")
             {
             }
-            field("Qty. to Invoice"; Rec."Qty. to Invoice")
+            field("Qty. to Invoice"; "Qty. to Invoice")
             {
                 Editable = false;
             }
-            field("Deviated Receipt Date"; Rec."Deviated Receipt Date")
+            field("Deviated Receipt Date"; "Deviated Receipt Date")
             {
                 Caption = 'Latest Mat. Expected date';
 
@@ -304,33 +304,33 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
 
                 end;
             }
-            field("Vendor Mat. Dispatch Date"; Rec."Vendor Mat. Dispatch Date")
+            field("Vendor Mat. Dispatch Date"; "Vendor Mat. Dispatch Date")
             {
             }
-            field("Mat. Dispatched"; Rec."Mat. Dispatched")
+            field("Mat. Dispatched"; "Mat. Dispatched")
             {
             }
-            field("Pay-to Vendor No."; Rec."Pay-to Vendor No.")
+            field("Pay-to Vendor No."; "Pay-to Vendor No.")
             {
                 Editable = true;
                 Enabled = true;
             }
-            field("AMC Order"; Rec."AMC Order")
+            field("AMC Order"; "AMC Order")
             {
             }
-            field(Remarks; Rec.Remarks)
+            field(Remarks; Remarks)
             {
             }
-            field("Tax Group Code"; Rec."Tax Group Code")
+            field("Tax Group Code"; "Tax Group Code")
             {
             }
             field("Excise Prod. Posting Group"; "Excise Prod. Posting Group")
             {
             }
-            field("Frieght Charges"; Rec."Frieght Charges")
+            field("Frieght Charges"; "Frieght Charges")
             {
             }
-            field("Indent No."; Rec."Indent No.")
+            field("Indent No."; "Indent No.")
             {
                 Editable = true;
 
@@ -356,7 +356,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             {
                 Editable = true;
             }
-            field("Tax Area Code"; Rec."Tax Area Code")
+            field("Tax Area Code"; "Tax Area Code")
             {
             }
         }
@@ -365,50 +365,50 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             field("Excise Bus. Posting Group"; "Excise Bus. Posting Group")
             {
             }
-            field("Customs Duty Value"; Rec."Customs Duty Value")
+            field("Customs Duty Value"; "Customs Duty Value")
             {
                 Visible = "Customs Duty ValueVisible";
             }
-            field("Customs Duty Paid to"; Rec."Customs Duty Paid to")
+            field("Customs Duty Paid to"; "Customs Duty Paid to")
             {
                 Visible = "Customs Duty Paid toVisible";
             }
-            field("Customs To be Paid on"; Rec."Customs To be Paid on")
+            field("Customs To be Paid on"; "Customs To be Paid on")
             {
                 Visible = "Customs To be Paid onVisible";
             }
             field("Amount To Vendor"; "Amount To Vendor")
             {
             }
-            field("Buy-from Vendor No."; Rec."Buy-from Vendor No.")
+            field("Buy-from Vendor No."; "Buy-from Vendor No.")
             {
             }
-            field(Amount; Rec.Amount)
+            field(Amount; Amount)
             {
             }
         }
         addafter("Location Code")
         {
-            field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
+            field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
             {
             }
         }
         addafter("Quantity Invoiced")
         {
-            field("QC Enabled"; Rec."QC Enabled")
+            field("QC Enabled"; "QC Enabled")
             {
                 Editable = true;
             }
             field("Excise Amount"; "Excise Amount")
             {
             }
-            field("Material Received at Site"; Rec."Material Received at Site")
+            field("Material Received at Site"; "Material Received at Site")
             {
             }
         }
         addafter("Allow Item Charge Assignment")
         {
-            field("VAT Bus. Posting Group"; Rec."VAT Bus. Posting Group")
+            field("VAT Bus. Posting Group"; "VAT Bus. Posting Group")
             {
             }
         }
@@ -420,68 +420,68 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         }
         addafter(ShortcutDimCode8)
         {
-            field("Gen. Bus. Posting Group"; Rec."Gen. Bus. Posting Group")
+            field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
             {
             }
-            field("Currency Code"; Rec."Currency Code")
+            field("Currency Code"; "Currency Code")
             {
             }
-            field("Gen. Prod. Posting Group"; Rec."Gen. Prod. Posting Group")
+            field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
             {
             }
-            field("ICN No."; Rec."ICN No.")
+            field("ICN No."; "ICN No.")
             {
             }
-            field("Indent Line No."; Rec."Indent Line No.")
+            field("Indent Line No."; "Indent Line No.")
             {
                 Editable = true;
             }
-            field(Sample; Rec.Sample)
+            field(Sample; Sample)
             {
             }
-            field("Safety Lead Time"; Rec."Safety Lead Time")
+            field("Safety Lead Time"; "Safety Lead Time")
             {
             }
-            field("Outstanding Quantity"; Rec."Outstanding Quantity")
-            {
-                Editable = false;
-            }
-            field("Qty. Invoiced (Base)"; Rec."Qty. Invoiced (Base)")
+            field("Outstanding Quantity"; "Outstanding Quantity")
             {
                 Editable = false;
             }
-            field("Qty. to Invoice (Base)"; Rec."Qty. to Invoice (Base)")
+            field("Qty. Invoiced (Base)"; "Qty. Invoiced (Base)")
             {
                 Editable = false;
             }
-            field("Tax Liable"; Rec."Tax Liable")
-            {
-            }
-            field("Quantity (Base)"; Rec."Quantity (Base)")
+            field("Qty. to Invoice (Base)"; "Qty. to Invoice (Base)")
             {
                 Editable = false;
             }
-            field("Qty. Rcd. Not Invoiced (Base)"; Rec."Qty. Rcd. Not Invoiced (Base)")
+            field("Tax Liable"; "Tax Liable")
+            {
+            }
+            field("Quantity (Base)"; "Quantity (Base)")
             {
                 Editable = false;
             }
-            field("Qty. Rcd. Not Invoiced"; Rec."Qty. Rcd. Not Invoiced")
+            field("Qty. Rcd. Not Invoiced (Base)"; "Qty. Rcd. Not Invoiced (Base)")
             {
                 Editable = false;
             }
-            field("Outstanding Qty. (Base)"; Rec."Outstanding Qty. (Base)")
+            field("Qty. Rcd. Not Invoiced"; "Qty. Rcd. Not Invoiced")
             {
                 Editable = false;
             }
-            field("Qty. to Receive (Base)"; Rec."Qty. to Receive (Base)")
+            field("Outstanding Qty. (Base)"; "Outstanding Qty. (Base)")
             {
                 Editable = false;
             }
-            field("Qty. Received (Base)"; Rec."Qty. Received (Base)")
+            field("Qty. to Receive (Base)"; "Qty. to Receive (Base)")
             {
                 Editable = false;
             }
-            field("Part Number"; Rec."Part Number")
+            field("Qty. Received (Base)"; "Qty. Received (Base)")
+            {
+                Editable = false;
+            }
+            field("Part Number"; "Part Number")
             {
                 Editable = false;
             }
@@ -809,9 +809,392 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         IDH: Record "Inspection Datasheet Header";
         PIDH: Record "Posted Inspect DatasheetHeader";
 
+<<<<<<< HEAD
+
+    //Unsupported feature: CodeModification on "OnAfterGetCurrRecord". Please convert manually.
+
+    //trigger OnAfterGetCurrRecord();
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    IF PurchHeader.GET("Document Type","Document No.") THEN;
+
+    DocumentTotals.PurchaseUpdateTotalsControls(
+      Rec,TotalPurchaseHeader,TotalPurchaseLine,RefreshMessageEnabled,
+      TotalAmountStyle,RefreshMessageText,InvDiscAmountEditable,VATAmount);
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    itm_clr_flg := FALSE;
+    ten_percent_item_Cost_high_chk;
+    #1..5
+    */
+    //end;
 
 
+    //Unsupported feature: CodeModification on "OnAfterGetRecord". Please convert manually.
 
+    //trigger OnAfterGetRecord();
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    ShowShortcutDimCode(ShortcutDimCode);
+    TypeChosen := HasTypeToFillMandatotyFields;
+    CLEAR(DocumentTotals);
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    itm_clr_flg := FALSE;
+    ten_percent_item_Cost_high_chk;
+    #1..3
+    OnAfterGetCurrRecordCust;//EFFUPG
+    NoOnFormat;
+      DescriptionEditable := TRUE;
+
+    //added by Vishnu on 09-07-2020
+    {
+    PH.RESET;
+    PH.SETFILTER("No.",Rec."Document No.");
+    IF PH.FINDFIRST THEN
+      BEGIN
+        IF  (PH.Mail_count >0) AND (Rec.Make <> '') THEN
+          Make_edit := FALSE
+        ELSE
+          Make_edit := TRUE;
+      END
+
+    } //Old Code for make modifications
+    //end by Vishnu Priya
+
+    //Added by Vishnu Priya on 12-09-2020
+    FindCnt :=0;
+    PRH.RESET;
+    PRH.SETCURRENTKEY("Order No.");
+    PRH.SETFILTER("Order No.",Rec."Document No.");
+    IF PRH.FINDSET THEN
+    REPEAT
+      BEGIN
+        PRL.RESET;
+        PRL.SETFILTER("Document No.",PRH."No.");
+        PRL.SETRANGE("Line No.",Rec."Line No.");
+        PRL.SETRANGE(Correction,FALSE); // to eliminate the Undo Receipts of the inward
+        PRL.SETFILTER(Quantity,'>%1',0);
+        IF PRL.FINDFIRST THEN
+          FindCnt := FindCnt+1;
+      END
+    UNTIL PRH.NEXT =0;
+
+    IF FindCnt >1 THEN
+      Make_edit := FALSE
+    ELSE
+      Make_edit := TRUE;
+
+    //ended by Vishnu Priya on 12-09-2020
+    */
+    //end;
+
+
+    //Unsupported feature: CodeInsertion on "OnInit". Please convert manually.
+
+    //trigger OnInit();
+    //Parameters and return type have not been exported.
+    //begin
+    /*
+    "Customs Duty ValueVisible" := TRUE;
+    "Customs To be Paid onVisible" := TRUE;
+    "Customs Duty Paid toVisible" := TRUE;
+    DescriptionEditable := TRUE;
+    */
+    //end;
+
+
+    //Unsupported feature: CodeModification on "OnNewRecord". Please convert manually.
+
+    //trigger OnNewRecord(BelowxRec : Boolean);
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    InitType;
+    CLEAR(ShortcutDimCode);
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    InitType;
+    CLEAR(ShortcutDimCode);
+    OnAfterGetCurrRecordCust;//EFFUPG
+    */
+    //end;
+
+
+    //Unsupported feature: CodeInsertion on "OnOpenPage". Please convert manually.
+
+    //trigger OnOpenPage();
+    //begin
+    /*
+       DescriptionEditable := TRUE;
+    */
+    //end;
+
+    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(TransactionLevel : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(var Source : Text;CursorType : Integer;LockType : Integer;var Options : Integer;adStatus : Integer;pCommand : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{B08400BD-F9D1-4D02-B856-71D5DBA123E9}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Command";pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset";pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(RecordsAffected : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pCommand : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{B08400BD-F9D1-4D02-B856-71D5DBA123E9}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Command";pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset";pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(var ConnectionString : Text;var UserID : Text;var Password : Text;var Options : Integer;adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event SQLConnection(adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(cFields : Integer;"Fields" : Variant;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(cFields : Integer;"Fields" : Variant;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;cRecords : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;cRecords : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(var fMoreData : Boolean;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(Progress : Integer;MaxProgress : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(cFields : Integer;"Fields" : Variant;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(cFields : Integer;"Fields" : Variant;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;cRecords : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;cRecords : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(adReason : Integer;pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(var fMoreData : Boolean;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(Progress : Integer;MaxProgress : Integer;adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    //event RecordSet1(pError : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000500-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Error";adStatus : Integer;pRecordset : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000556-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Recordset");
+    //begin
+    /*
+    */
+    //end;
+
+    procedure TrackingPage();
+    begin
+    end;
+
+
+    //Unsupported feature: CodeModification on "ShowTracking(PROCEDURE 10)". Please convert manually.
+
+    //procedure ShowTracking();
+    //Parameters and return type have not been exported.
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    TrackingForm.SetPurchLine(Rec);
+    TrackingForm.RUNMODAL;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    TrackingPage.SetPurchLine(Rec);
+    TrackingPage.RUNMODAL;
+    */
+    //end;
+
+    procedure StrOrderLineDetailsPage();
+    begin
+    end;
+
+
+    //Unsupported feature: CodeModification on "ShowStrDetailsForm(PROCEDURE 1280000)". Please convert manually.
+
+    //procedure ShowStrDetailsForm();
+    //Parameters and return type have not been exported.
+    //>>>> ORIGINAL CODE:
+    //begin
+    /*
+    StrOrderLineDetails.RESET;
+    StrOrderLineDetails.SETCURRENTKEY("Document Type","Document No.",Type);
+    StrOrderLineDetails.SETRANGE("Document Type","Document Type");
+    StrOrderLineDetails.SETRANGE("Document No.","Document No.");
+    StrOrderLineDetails.SETRANGE(Type,StrOrderLineDetails.Type::Purchase);
+    StrOrderLineDetails.SETRANGE("Item No.","No.");
+    StrOrderLineDetails.SETRANGE("Line No.","Line No.");
+    StrOrderLineDetailsForm.SETTABLEVIEW(StrOrderLineDetails);
+    StrOrderLineDetailsForm.RUNMODAL;
+    */
+    //end;
+    //>>>> MODIFIED CODE:
+    //begin
+    /*
+    #1..7
+    StrOrderLineDetailsPage.SETTABLEVIEW(StrOrderLineDetails);
+    StrOrderLineDetailsPage.RUNMODAL;
+    */
+    //end;
+
+    (6431)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
+    procedure CreateInspectionDataSheets();
+    begin
+        CreateInspectionDataSheets;
+    end;
+
+<<<<<<< HEAD
+    (6434)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _ShowDataSheets();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
@@ -819,8 +1202,21 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowDataSheets;
     end;
 
+<<<<<<< HEAD
+    (6437)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
+    procedure ShowDataSheets();
+    var
+        InspectDataSheet: Record "Inspection Datasheet Header";
+    begin
+        ShowDataSheets;
+    end;
 
-
+<<<<<<< HEAD
+    (6440)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _ShowPostDataSheets();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
@@ -828,8 +1224,23 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowPostDataSheets;
     end;
 
+<<<<<<< HEAD
+    (6443)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
+    procedure ShowPostDataSheets();
+    var
+        PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
+    begin
+        ShowPostDataSheets;
+    end;
 
+<<<<<<< HEAD
+    (6446)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _ShowInspectReceipt();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
@@ -837,16 +1248,54 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         ShowInspectReceipt;
     end;
 
+<<<<<<< HEAD
+    (6449)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
+    procedure ShowInspectReceipt();
+    var
+        InspectionReceipt: Record "Inspection Receipt Header";
+    begin
+        ShowInspectReceipt;
+    end;
 
+<<<<<<< HEAD
+    (6452)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
+    procedure _ShowPostInspectReceipt();
+    var
+        InspectionReceipt: Record "Inspection Receipt Header";
+    begin
+        ShowPostInspectReceipt;
+    end;
+
+<<<<<<< HEAD
+    (6455)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure "---B2B---"();
     begin
     end;
 
+<<<<<<< HEAD
+    (6458)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
+    procedure ShowPostInspectReceipt();
+    var
+        InspectionReceipt: Record "Inspection Receipt Header";
+    begin
+        ShowPostInspectReceipt;
+    end;
 
-
-
+<<<<<<< HEAD
+    (6461)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure OpenAttachments();
     var
         Attachment: Record Attachments;
@@ -859,7 +1308,10 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUN(PAGE::"ESPL Attachments", Attachment);
     end;
 
-
+<<<<<<< HEAD
+    (6469)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure CancelInspection1(var QualityStatus: Text[50]);
     begin
         TESTFIELD("No.");
@@ -867,6 +1319,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         CancelInspection(QualityStatus);
     end;
 
+<<<<<<< HEAD
+    (6474)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure CloseInspection1(var QualityStatus: Text[50]);
     begin
         TESTFIELD("No.");
@@ -874,6 +1331,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         CloseInspection(QualityStatus);
     end;
 
+<<<<<<< HEAD
+    (6479)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure _SampleLotInspection();
     var
         SampleLotInspection: Record "Sample Lot Inspection";
@@ -887,6 +1349,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUN(60072, SampleLotInspection);
     end;
 
+<<<<<<< HEAD
+    (6488)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure SampleLotInspection();
     var
         SampleLotInspection: Record "Sample Lot Inspection";
@@ -900,8 +1367,19 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUN(60072, SampleLotInspection);
     end;
 
+<<<<<<< HEAD
+    (6497)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
+    procedure QCOverride();
+    begin
+        QCOverride;
+    end;
 
-
+<<<<<<< HEAD
+    (6500)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Getperiod(perioddate: Date) periodnumber: Integer;
     var
         periodNo1: Integer;
@@ -950,7 +1428,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         periodnumber := (acctYearMonth * 4) - 4 + periodNo1;
     end;
 
+<<<<<<< HEAD
+    (6533)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure "Show Deviations & Reasons"();
     begin
         "Excepted Rcpt.Date Tracking".SETRANGE("Excepted Rcpt.Date Tracking"."Document No.", "Document No.");
@@ -958,7 +1440,10 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         PAGE.RUNMODAL(60048, "Excepted Rcpt.Date Tracking");
     end;
 
-
+<<<<<<< HEAD
+    (6538)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Show_Custom_Charges(show: Boolean);
     begin
 
@@ -973,7 +1458,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         END;
     end;
 
+<<<<<<< HEAD
+    (6552)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Split_Qty();
     var
         Base_Qty: Decimal;
@@ -985,8 +1474,7 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
           ERROR('Please Contact ERP Team');*/
         //Rev01
         "G|l".GET;
-        IF "G|l"."Active ERP-CF Connection" THEN
-        BEGIN
+        IF "G|l"."Active ERP-CF Connection" THEN BEGIN
             IF "Quantity Received" > 0 THEN
                 ERROR('THERE IS NO POSSIBILTY FOR SPLITTING THE INWARDED QUANTITY');
             IF Type <> Type::Item THEN
@@ -1165,7 +1653,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
 
     end;
 
+<<<<<<< HEAD
+    (6747)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure TypeOnAfterValidate();
     begin
         IF Type = Type::Item THEN
@@ -1174,7 +1666,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             DescriptionEditable := TRUE;
     end;
 
+<<<<<<< HEAD
+    (6753)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure OnAfterGetCurrRecordCust();
     begin
         xRec := Rec;
@@ -1184,7 +1680,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             DescriptionEditable := TRUE;
     end;
 
+<<<<<<< HEAD
+    (6760)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure DeviatedReceiptDateOnAfterInpu(var Text: Text[1024]);
     begin
 
@@ -1192,7 +1692,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             ERROR('You Dont Have to Delete the Deviated Date');
     end;
 
+<<<<<<< HEAD
+    (6765)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure DeviatedReceiptDateOnInputChan(var Text: Text[1024]);
     begin
 
@@ -1216,7 +1720,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         END;
     end;
 
+<<<<<<< HEAD
+    (6786)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure NoOnFormat();
     begin
         IF ("Document Type" = 2) AND ("No." <> '') THEN
@@ -1228,9 +1736,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         END;
     end;
 
+<<<<<<< HEAD
+    (6797)]
+=======
 
-
-
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ActPeriodActYearCalc(Req_Date: Date);
     var
         cDay: Integer;
@@ -1293,7 +1803,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         // MESSAGE('Act Period: '+FORMAT(PeriodNum)+' Act Year: '+FORMAT(AccountYear));
     end;
 
+<<<<<<< HEAD
+    (6849)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure CashFlowUpdation();
     var
         "Packing Value": Decimal;
@@ -1429,7 +1943,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
             UNTIL PurchLine.NEXT = 0;
     end;
 
+<<<<<<< HEAD
+    (6964)]
+=======
 
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure CommaRemoval(Base: Text[30]) Converted: Text[30];
     var
         i: Integer;
@@ -1441,6 +1959,11 @@ pageextension 70154 PurchaseOrderSubformExt extends "Purchase Order Subform"
         EXIT(Converted);
     end;
 
+<<<<<<< HEAD
+    (6972)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ten_percent_item_Cost_high_chk();
     begin
         Pur_line.RESET;

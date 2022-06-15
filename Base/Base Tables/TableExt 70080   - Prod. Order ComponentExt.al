@@ -138,7 +138,7 @@ tableextension 70080 ProdOrderComponentExt extends "Prod. Order Component"
         }
         field(60108; "Product Group Code"; Code[20])
         {
-            CalcFormula = Lookup(Item."Product Group Code" WHERE("No." = FIELD("Item No.")));
+            CalcFormula = Lookup(Item."Product Group Code upg" WHERE("No." = FIELD("Item No.")));
             FieldClass = FlowField;
         }
         field(60109; "Type of Solder2"; Text[10])
@@ -170,13 +170,14 @@ tableextension 70080 ProdOrderComponentExt extends "Prod. Order Component"
         key(Key14; "Item No.", "Location Code")
         {
         }
+        /*
         key(Key15; "Prod. Order No.", "Item No.", "Material Required Day")
         {
         }
         key(Key16; "Production Plan Date", "Item No.", "Prod. Order No.")
         {
             SumIndexFields = "Expected Quantity";
-        }
+        }*/
     }
 }
 

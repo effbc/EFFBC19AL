@@ -135,7 +135,7 @@ pageextension 70080 ItemJournalExt extends 40
             begin
 
                 // Added by Rakesh for postive adjust for Customer cards on 16-Aug-14
-
+                ELSE
                 IF UPPERCASE(USERID) IN ['EFFTRONICS\RAMADEVI'] THEN //  Srivalli mam restirections moved to Ramadevi Mam on 29-01-2018
            BEGIN
                     IF ("Journal Batch Name" <> 'POS-CS-SIG') OR ("Entry Type" <> "Entry Type"::"Positive Adjmt.") THEN

@@ -1,4 +1,4 @@
-tableextension 70007 VendorExt extends Vendor
+tableextension 70007 VendorCustExt extends Vendor
 {
 
 

@@ -28,7 +28,7 @@ tableextension 70027 SalesCrMemoHeaderExt extends "Sales Cr.Memo Header"
         {
             AutoFormatExpression = "Currency Code";
             AutoFormatType = 1;
-            CalcFormula = Sum("Sales Cr.Memo Line"."Amount To Customer" WHERE("Document No." = FIELD("No.")));
+            //CalcFormula = Sum("Sales Cr.Memo Line"."Amount To Customer" WHERE("Document No." = FIELD("No.")));
             CaptionML = ENU = 'Amount to Customer',
                         ENN = 'Amount to Customer';
             Editable = false;

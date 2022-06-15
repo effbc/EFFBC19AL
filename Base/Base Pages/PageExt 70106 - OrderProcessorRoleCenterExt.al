@@ -1,86 +1,88 @@
 pageextension 70106 OrderProcessorRoleCenterExt extends "Order Processor Role Center"
 {
-
+    
     layout
     {
 
-
-        modify(Control1900724808)
+        
+        modify("Control1900724808")
         {
 
-
+          
 
             ShowCaption = false;
         }
 
+       
 
-
-        modify(Control1900724708)
+        modify("Control1900724708")
         {
 
-
+           
 
             ShowCaption = false;
         }
 
-        modify(Control 1903012608)
+       
+
+        modify("Control 1903012608")
         {
 
-
+           
             Enabled = FALSE;
 
-
+           
 
         }
 
-
+       
 
     }
     actions
     {
 
-
+    
         modify("Sales &Quote")
         {
 
-
+            
             Promoted = false;
 
         }
         modify("Sales &Invoice")
         {
 
-
+            
             Promoted = false;
 
-
+            
         }
         modify("Sales &Order")
         {
 
-
+            
             Promoted = false;
 
-
+            
         }
         modify("Sales &Return Order")
         {
 
-
+            
             Promoted = false;
 
-
+            
         }
         modify("Sales &Credit Memo")
         {
 
-
+            
             Promoted = false;
 
-
+            
         }
 
-
+        
         addafter("Sales Book VAT")
         {
             action("Sales - Invoice")
@@ -88,7 +90,7 @@ pageextension 70106 OrderProcessorRoleCenterExt extends "Order Processor Role Ce
                 RunObject = Report "Sales - Invoice";
             }
         }
-        addafter("Action1500023")
+        addafter("Action 1500023")
         {
             action("General Journal")
             {
@@ -158,7 +160,7 @@ pageextension 70106 OrderProcessorRoleCenterExt extends "Order Processor Role Ce
                                 ENN = 'Items';
                     Image = Item;
                     RunObject = Page "Service List";
-                                    Scope = Page;
+                    Scope = Page;
                 }
                 action("Service Item")
                 {
@@ -227,6 +229,6 @@ pageextension 70106 OrderProcessorRoleCenterExt extends "Order Processor Role Ce
         }
     }
 
-
+    
 }
 

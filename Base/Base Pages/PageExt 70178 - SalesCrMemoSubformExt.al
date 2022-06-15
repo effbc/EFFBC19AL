@@ -15,7 +15,7 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
             ShowCaption = false;
         }
         modify(Control17)
-        {  
+        {
             ShowCaption = false;
         }
         modify(RefreshTotals)
@@ -36,19 +36,19 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
         }
         addafter(Description)
         {
-            field("Spec ID"; rec."Spec ID")
+            field("Spec ID"; "Spec ID")
             {
             }
-            field("Quantity Accepted"; rec."Quantity Accepted")
+            field("Quantity Accepted"; "Quantity Accepted")
             {
             }
-            field("Quantity Rework"; rec."Quantity Rework")
+            field("Quantity Rework"; "Quantity Rework")
             {
             }
-            field("QC Enabled"; rec."QC Enabled")
+            field("QC Enabled"; "QC Enabled")
             {
             }
-            field("Quantity Rejected"; rec."Quantity Rejected")
+            field("Quantity Rejected"; "Quantity Rejected")
             {
             }
         }
@@ -153,63 +153,94 @@ pageextension 70178 SalesCrMemoSubformExt extends "Sales Cr. Memo Subform"
 
 
 
-
+<<<<<<< HEAD
+=======
+    (8030)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure "---QC---"();
     begin
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8033)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowDataSheetsForm();
     var
         InspectDataSheet: Record "Inspection Datasheet Header";
     begin
-        Rec.ShowDataSheets;
+        ShowDataSheets;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8036)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowPostDataSheetsForm();
     var
         PostInspectDataSheet: Record "Posted Inspect DatasheetHeader";
     begin
-        Rec.ShowPostDataSheets;
+        ShowPostDataSheets;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8039)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowInspectReceiptForm();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
     begin
-        Rec.ShowInspectReceipt;
+        ShowInspectReceipt;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8042)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure ShowPostInspectReceiptForm();
     var
         InspectionReceipt: Record "Inspection Receipt Header";
     begin
-        Rec.ShowPostInspectReceipt;
+        ShowPostInspectReceipt;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8045)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure CreateInspectionDataSheetForm();
     begin
-        Rec.CreateInspectionDataSheets;
+        CreateInspectionDataSheets;
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8048)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure CancelInspection(var QualityStatus: Text[50]);
     begin
-        Rec.TESTFIELD("No.");
-        Rec.TESTFIELD("QC Enabled");
-        Rec.CancelInspection(QualityStatus);
+        TESTFIELD("No.");
+        TESTFIELD("QC Enabled");
+        CancelInspection(QualityStatus);
     end;
 
+<<<<<<< HEAD
 
+=======
+    (8053)]
+>>>>>>> 2cc8f1fea3184cdf038a92c8ef5fefc00ee958f1
     procedure CloseInspection(var QualityStatus: Text[50]);
     begin
-        Rec.TESTFIELD("No.");
-        Rec.TESTFIELD("QC Enabled");
-        Rec.CloseInspection(QualityStatus);
+        TESTFIELD("No.");
+        TESTFIELD("QC Enabled");
+        CloseInspection(QualityStatus);
     end;
 
 

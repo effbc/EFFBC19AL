@@ -679,7 +679,7 @@ table 60062 "Tender Header"
         }
         field(60016; structure; Code[10])
         {
-            TableRelation = "Structure Header".Code;
+            //TableRelation = "Structure Header".Code; //Removed from base
             DataClassification = CustomerContent;
         }
         field(60032; Product; Code[10])

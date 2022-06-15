@@ -83,7 +83,7 @@ tableextension 70238 SetupChecklistLineExt extends "Setup Checklist Line"
         {
             Caption = 'Form ID';
             Editable = false;
-            TableRelation = AllObj."Object ID" WHERE("Object Type" = CONST("2"));
+            TableRelation = AllObj."Object ID" WHERE("Object Type" = CONST(Report));
             DataClassification = CustomerContent;
         }
         field(15; "Form Name"; Text[80])
@@ -186,7 +186,7 @@ tableextension 70238 SetupChecklistLineExt extends "Setup Checklist Line"
         }
         field(30; "Licensed Form"; Boolean)
         {
-            CalcFormula = Exist("License Permission" WHERE("Object Type" = CONST("2"),
+            CalcFormula = Exist("License Permission" WHERE("Object Type" = CONST(Report),
                                                             "Object Number" = FIELD("Form ID"),
                                                             "Execute Permission" = CONST(Yes)));
             Caption = 'Licensed Form';

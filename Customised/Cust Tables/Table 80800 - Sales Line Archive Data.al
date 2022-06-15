@@ -649,7 +649,7 @@ table 80800 "Sales Line Archive Data"
 
             trigger OnValidate();
             var
-                ApplMgt: Codeunit ApplicationManagement;
+               // ApplMgt: Codeunit ApplicationManagement;
             begin
             end;
         }
@@ -1090,13 +1090,13 @@ table 80800 "Sales Line Archive Data"
         field(13702; "Excise Bus. Posting Group"; Code[10])
         {
             Caption = 'Excise Bus. Posting Group';
-            TableRelation = "Excise Bus. Posting Group";
+           // TableRelation = "Excise Bus. Posting Group";
             DataClassification = CustomerContent;
         }
         field(13703; "Excise Prod. Posting Group"; Code[10])
         {
             Caption = 'Excise Prod. Posting Group';
-            TableRelation = "Excise Prod. Posting Group";
+           // TableRelation = "Excise Prod. Posting Group";
             DataClassification = CustomerContent;
         }
         field(13708; "Excise Amount"; Decimal)
@@ -1187,7 +1187,7 @@ table 80800 "Sales Line Archive Data"
         field(13736; "Concessional Code"; Code[10])
         {
             Caption = 'Concessional Code';
-            TableRelation = "Concessional Codes";
+          //  TableRelation = "Concessional Codes";
             DataClassification = CustomerContent;
         }
         field(13742; "Assessee Code"; Code[10])
@@ -1285,8 +1285,8 @@ table 80800 "Sales Line Archive Data"
 
             trigger OnLookup();
             var
-                StateForm: Record "State Forms";
-                StateForms: Page "State Forms";
+              //  StateForm: Record "State Forms";
+              //  StateForms: Page "State Forms";
             begin
             end;
         }
@@ -1341,7 +1341,7 @@ table 80800 "Sales Line Archive Data"
         field(16377; "Service Tax Group"; Code[20])
         {
             Caption = 'Service Tax Group';
-            TableRelation = "Service Tax Groups".Code;
+           // TableRelation = "Service Tax Groups".Code;
             DataClassification = CustomerContent;
 
             trigger OnValidate();
@@ -1363,7 +1363,7 @@ table 80800 "Sales Line Archive Data"
         field(16381; "Service Tax Registration No."; Code[20])
         {
             Caption = 'Service Tax Registration No.';
-            TableRelation = "Service Tax Registration Nos.".Code;
+           // TableRelation = "Service Tax Registration Nos.".Code;
             DataClassification = CustomerContent;
         }
         field(16383; "eCESS % on TDS"; Decimal)
@@ -1469,7 +1469,7 @@ table 80800 "Sales Line Archive Data"
         field(16528; "Process Carried Out"; Code[10])
         {
             Caption = 'Process Carried Out';
-            TableRelation = "Process Carried Out".Code;
+            //TableRelation = "Process Carried Out".Code;
             DataClassification = CustomerContent;
         }
         field(16529; "Identification Mark"; Text[30])
@@ -1529,7 +1529,7 @@ table 80800 "Sales Line Archive Data"
         field(16540; "PIT Structure"; Code[10])
         {
             Caption = 'PIT Structure';
-            TableRelation = "Structure Header";
+            //TableRelation = "Structure Header";
             DataClassification = CustomerContent;
         }
         field(16541; "Price Inclusive of Tax"; Boolean)
@@ -1573,7 +1573,7 @@ table 80800 "Sales Line Archive Data"
         field(80001; "VAT Business Posting Group 2"; Code[10])
         {
             Editable = false;
-            TableRelation = "Structure Header".Code;
+            //TableRelation = "Structure Header".Code;
             DataClassification = CustomerContent;
         }
         field(80003; "Service Tax % 2"; Decimal)
@@ -1589,7 +1589,7 @@ table 80800 "Sales Line Archive Data"
         field(80005; "VAT Product Posting Group 2"; Code[10])
         {
             Editable = false;
-            TableRelation = "Structure Header".Code;
+           // TableRelation = "Structure Header".Code;
             DataClassification = CustomerContent;
         }
         field(80006; "VAT %age 2"; Decimal)

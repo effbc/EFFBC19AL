@@ -367,7 +367,7 @@ tableextension 70025 SalesInvoiceHeaderExt extends "Sales Invoice Header"
         }
         field(60102; "Dispatched Location"; Code[10])
         {
-            TableRelation = Division;
+            //TableRelation = Division;
             DataClassification = CustomerContent;
         }
         field(60103; "Reason For Deviation"; Enum "Sales invoice Header Enum8")

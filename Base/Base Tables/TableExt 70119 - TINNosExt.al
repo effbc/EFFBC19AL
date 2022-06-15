@@ -5,7 +5,7 @@ Tableextension 70119 TINNosExt extends "T.I.N. Nos."
 
     CaptionML = ENU = 'T.I.N. Nos.',
                 ENN = 'T.I.N. Nos.';
-    DataCaptionFields = "Code", Description;
+    DataCaptionFields = code, description;
     DrillDownPageID = 13720;
     LookupPageID = 13720;
 

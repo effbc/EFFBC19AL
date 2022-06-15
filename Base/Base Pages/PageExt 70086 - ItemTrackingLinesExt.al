@@ -377,17 +377,16 @@ pageextension 70086 ItemTrackingLinesExt extends "Item Tracking Lines"
         ELSE
             QtyToCreate := SourceQuantityArray[2];
 
-        Rec.Get(Rec."Item No.")
-        //GetItem(Rec."Item No.");
+        GetItem(Rec."Item No.");
 
         //Item.TESTFIELD("Lot Nos.");
         //VALIDATE("Lot No.",NoSeriesMgt.GetNextNo(Item."Lot Nos.",WORKDATE,TRUE));
         VALIDATE("Lot No.", CreateLotNumber);
-        Rec."Qty. per Unit of Measure" := QtyPerUOM;
-        Rec.VALIDATE("Quantity (Base)", QtyToCreate);
-        Rec."Entry No." := NextEntryNo;
+        "Qty. per Unit of Measure" := QtyPerUOM;
+        VALIDATE("Quantity (Base)", QtyToCreate);
+        "Entry No." := NextEntryNo;
         TestTempSpecificationExists;
-        Rec.INSERT;
+        INSERT;
         TempItemTrackLineInsert.TRANSFERFIELDS(Rec);
         TempItemTrackLineInsert.INSERT;
         ItemTrackingDataCollection.UpdateLotSNDataSetWithChange(
@@ -504,7 +503,7 @@ pageextension 70086 ItemTrackingLinesExt extends "Item Tracking Lines"
         END;
         *///B2B commented
         IF ZeroLineExists THEN
-            Rec.DELETE;
+            DELETE;
 
         IF (SourceQuantityArray[1] * UndefinedQtyArray[1] <= 0) OR
            (ABS(SourceQuantityArray[1]) < ABS(UndefinedQtyArray[1]))
@@ -513,13 +512,12 @@ pageextension 70086 ItemTrackingLinesExt extends "Item Tracking Lines"
         ELSE
             QtyToCreate := UndefinedQtyArray[2];
 
-        //GetItem(Rec."Item No.");
-        Rec.Get(Rec."Item No.");
-        IF PurchHeader.GET(PurchHeader."Document Type"::Order, Rec."Source ID") THEN BEGIN
+        GetItem(Rec."Item No.");
+        IF PurchHeader.GET(PurchHeader."Document Type"::Order, "Source ID") THEN BEGIN
             PurchHeader.TESTFIELD("Posting Date");
             PostingDate := PurchHeader."Posting Date";
         END ELSE
-            IF SalesHeader.GET(SalesHeader."Document Type"::Order, Rec."Source ID") THEN BEGIN
+            IF SalesHeader.GET(SalesHeader."Document Type"::Order, "Source ID") THEN BEGIN
                 SalesHeader.TESTFIELD("Posting Date");
                 PostingDate := SalesHeader."Posting Date";
             END;
@@ -594,7 +592,7 @@ pageextension 70086 ItemTrackingLinesExt extends "Item Tracking Lines"
         Lot: Text;
     begin
         //Added by Pranavi on 01-12-2015 for not allowing to asign serial or lot number if RPO is not finished
-        IF Rec."Source Type" = 37 THEN BEGIN
+        IF "Source Type" = 37 THEN BEGIN
             IF NOT (Rec."Source ID" IN ['EFF/SAL/15-16/0112']) then begin
                 IF (Rec."Serial No." <> '') OR (Rec."Lot No." <> '') THEN BEGIN
                     ILEs.RESET;

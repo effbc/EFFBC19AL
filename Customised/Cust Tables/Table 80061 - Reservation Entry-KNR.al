@@ -3,8 +3,8 @@ table 80061 "Reservation Entry-KNR"
     // version NAVW13.70.00.08,Rev01
 
     Caption = 'Reservation Entry';
-    DrillDownPageID = "Reservation Entries";
-    LookupPageID = "Reservation Entries";
+    DrillDownPageID = 497;
+    LookupPageID = 497;
     DataClassification = CustomerContent;
 
     fields

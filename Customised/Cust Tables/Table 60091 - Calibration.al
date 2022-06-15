@@ -32,7 +32,6 @@ table 60091 Calibration
         {
             FieldClass = FlowField;
             CalcFormula = Count("Calibration Ledger Entries" WHERE(Description = FIELD(Description), "Eqpt.Serial No." = FIELD("Eqpt.Serial No.")));
-            DataClassification = CustomerContent;
         }
         field(6; "Measuring Range"; Text[30])
         {
@@ -60,7 +59,7 @@ table 60091 Calibration
         }
         field(13; "Std. Reference"; Code[20])
         {
-            TableRelation = IF (Usage Type=FILTER(<>Master)) Calibration WHERE (Usage Type=CONST(Master));
+            TableRelation = IF ("Usage Type" = FILTER(<> Master)) Calibration WHERE("Usage Type" = CONST(Master));
         }
         field(14; "Usage Type"; Option)
         {

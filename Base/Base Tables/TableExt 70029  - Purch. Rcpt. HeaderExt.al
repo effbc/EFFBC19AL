@@ -160,7 +160,7 @@ tableextension 70029 PurchRcptHeaderExt extends "Purch. Rcpt. Header"
         Body: Text[250];
         Mail_From: Text[250];
         Mail_To: Text[250];
-        Mail: Codeunit Mail;
+        //Mail: Codeunit Email;
         Subject: Text[250];
 }
 

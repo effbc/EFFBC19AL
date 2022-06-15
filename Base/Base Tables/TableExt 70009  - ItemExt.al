@@ -515,7 +515,7 @@ tableextension 70009 ItemExt extends Item
 
             trigger OnValidate();
             begin
-                if "Product Group Code" <> 'PCB' then
+                if "Product Group Code Upg" <> 'PCB' then
                     "PCB Shape" := 0;
 
                 if "PCB Shape" <> "PCB Shape"::Rectangle then

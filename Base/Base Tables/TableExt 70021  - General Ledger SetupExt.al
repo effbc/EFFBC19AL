@@ -100,7 +100,7 @@ tableextension 70021 GeneralLedgerSetupExt extends "General Ledger Setup"
         Body: Text[250];
         Mail_From: Text[250];
         Mail_To: Text[250];
-        Mail: Codeunit Mail;
+        Mail: Codeunit Email;
         Subject: Text[250];
         User: Record User;
 }

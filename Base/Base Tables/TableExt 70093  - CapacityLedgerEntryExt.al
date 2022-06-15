@@ -113,7 +113,7 @@ tableextension 70093 CapacityLedgerEntryExt extends "Capacity Ledger Entry"
         }
         key(Key7; "Order No.", "Order Line No.", "Routing No.", "Routing Reference No.", "Operation No.", "Last Output Line")
         {
-            SumIndexFields = "Actual Run Time", "Output Quantity";
+            //SumIndexFields = "Actual Run Time", "Output Quantity";
         }
     }
 

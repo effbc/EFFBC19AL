@@ -32,11 +32,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         }
         addafter("No. of Archived Versions")
         {
-            field("Location Code"; Rec."Location Code")
+            field("Location Code"; "Location Code")
             {
                 Caption = 'Location Code';
             }
-            field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
+            field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
             {
 
                 trigger OnValidate();
@@ -44,60 +44,60 @@ pageextension 70155 PurchaseOrderExt extends 50
                     ShortcutDimension1CodeOnAfterV; //Rev01
                 end;
             }
-            field("C Form"; Rec."C Form")
+            field("C Form"; "C Form")
             {
             }
-            field("<Form Code 2 >"; Rec."Form Code")
+            field("<Form Code 2 >"; "Form Code")
             {
             }
-            field("First Release DateTime"; Rec."First Release DateTime")
-            {
-                Editable = false;
-            }
-            field("Release Date Time"; Rec."Release Date Time")
+            field("First Release DateTime"; "First Release DateTime")
             {
                 Editable = false;
             }
-            field("Tender No"; Rec."Tender No")
+            field("Release Date Time"; "Release Date Time")
+            {
+                Editable = false;
+            }
+            field("Tender No"; "Tender No")
             {
             }
-            field("Sale Order No"; Rec."Sale Order No")
+            field("Sale Order No"; "Sale Order No")
             {
             }
         }
         addafter("Posting Date")
         {
-            field("First Release By"; Rec."First Release By")
+            field("First Release By"; "First Release By")
             {
                 Editable = false;
             }
-            field("Released By"; Rec."Released By")
+            field("Released By"; "Released By")
             {
                 Editable = false;
             }
-            field("Order Date"; Rec."Order Date")
+            field("Order Date"; "Order Date")
             {
                 Importance = Promoted;
             }
         }
         addafter("Document Date")
         {
-            field("Inclusive of All Taxes"; Rec."Inclusive of All Taxes")
+            field("Inclusive of All Taxes"; "Inclusive of All Taxes")
             {
             }
         }
         addafter("Purchaser Code")
         {
-            field("Quotation Date"; Rec."Quotation Date")
+            field("Quotation Date"; "Quotation Date")
             {
             }
-            field("Quotation No."; Rec."Quotation No.")
+            field("Quotation No."; "Quotation No.")
             {
             }
-            field("Requested Receipt Date"; Rec."Requested Receipt Date")
+            field("Requested Receipt Date"; "Requested Receipt Date")
             {
             }
-            field("<Expected Receipt Date 2>"; Rec."Expected Receipt Date")
+            field("<Expected Receipt Date 2>"; "Expected Receipt Date")
             {
                 Importance = Promoted;
 
@@ -117,7 +117,7 @@ pageextension 70155 PurchaseOrderExt extends 50
         }
         addafter("Assigned User ID")
         {
-            field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
+            field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
             {
                 Visible = false;
 
@@ -129,7 +129,7 @@ pageextension 70155 PurchaseOrderExt extends 50
         }
         addafter("Job Queue Status")
         {
-            field("Way bill"; Rec."Way bill")
+            field("Way bill"; "Way bill")
             {
             }
             field(Mail_Sent; Mail_Sent)
@@ -142,15 +142,15 @@ pageextension 70155 PurchaseOrderExt extends 50
                 DecimalPlaces = 0 : 0;
                 Editable = false;
             }
-            field("Purchaser Code1"; Rec."Purchaser Code")
+            field("Purchaser Code1"; "Purchaser Code")
             {
                 CaptionML = ENU = 'Purchaser Code1',
                             ENN = 'Purchaser Code';
             }
-            field("Acknowledge Given by"; Rec."Acknowledge Given by")
+            field("Acknowledge Given by"; "Acknowledge Given by")
             {
             }
-            field("Acknowledged Dt"; Rec."Acknowledged Dt")
+            field("Acknowledged Dt"; "Acknowledged Dt")
             {
             }
         }
@@ -162,17 +162,17 @@ pageextension 70155 PurchaseOrderExt extends 50
         }
         addafter("Pay-to Contact")
         {
-            field("OrderCreated by"; Rec."OrderCreated by")
+            field("OrderCreated by"; "OrderCreated by")
             {
                 Editable = false;
             }
-            field("<Form No. 2>"; Rec."Form No.")
+            field("<Form No. 2>"; "Form No.")
             {
             }
         }
         addafter("Payment Terms Code")
         {
-            field("Do not Consider GST"; Rec."Do not Consider GST")
+            field("Do not Consider GST"; "Do not Consider GST")
             {
 
                 trigger OnValidate();
@@ -196,46 +196,46 @@ pageextension 70155 PurchaseOrderExt extends 50
         }
         addafter("Ship-to City")
         {
-            field("Packing Type"; Rec."Packing Type")
+            field("Packing Type"; "Packing Type")
             {
             }
-            field("Vendor Excise Invoice No."; Rec."Vendor Excise Invoice No.")
+            field("Vendor Excise Invoice No."; "Vendor Excise Invoice No.")
             {
             }
-            field("Vend. Excise Inv. Date"; Rec."Vend. Excise Inv. Date")
+            field("Vend. Excise Inv. Date"; "Vend. Excise Inv. Date")
             {
             }
         }
         addafter("Ship-to Code")
         {
-            field("Tax Area Code"; Rec."Tax Area Code")
+            field("Tax Area Code"; "Tax Area Code")
             {
             }
         }
         addafter("Area")
         {
-            field("MSPT Date"; Rec."MSPT Date")
+            field("MSPT Date"; "MSPT Date")
             {
             }
-            field("MSPT Code"; Rec."MSPT Code")
+            field("MSPT Code"; "MSPT Code")
             {
             }
-            field("Receiving No."; Rec."Receiving No.")
+            field("Receiving No."; "Receiving No.")
             {
             }
-            field("Posting No."; Rec."Posting No.")
+            field("Posting No."; "Posting No.")
             {
             }
-            field("Posting No. Series"; Rec."Posting No. Series")
+            field("Posting No. Series"; "Posting No. Series")
             {
             }
-            field("Receiving No. Series"; Rec."Receiving No. Series")
+            field("Receiving No. Series"; "Receiving No. Series")
             {
             }
         }
         addafter("C Form")
         {
-            field("Tax Liable"; Rec."Tax Liable")
+            field("Tax Liable"; "Tax Liable")
             {
             }
             group(GST)
@@ -243,7 +243,7 @@ pageextension 70155 PurchaseOrderExt extends 50
                 CaptionML = ENU = 'GST',
                             ENN = 'GST';
             }
-            field("Nature of Supply"; Rec."Nature of Supply")
+            field("Nature of Supply"; "Nature of Supply")
             {
             }
         }
@@ -451,7 +451,6 @@ pageextension 70155 PurchaseOrderExt extends 50
                 Caption = 'MSPT Order Details';
                 Image = ViewDetails;
                 RunObject = Page "MSPT Order Details";
-                Rec.
                 RunPageLink = Type = CONST(Purchase), "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No.");
             }
             action("Send For QC Approval")
@@ -471,9 +470,9 @@ pageextension 70155 PurchaseOrderExt extends 50
                     Auth_User: Text[50];
                     Req_User: Text[50];
                     Req_Person_Id: Code[10];
-                    SH: Record "Sales Header";Rec.
+                    SH: Record "Sales Header";
                     customername: Text[100];
-                    PurchaseHeader: Record "Purchase Header";Rec.
+                    PurchaseHeader: Record "Purchase Header";
                     Attachment1: Text[50];
                 begin
                     // Added by Pranavi on 03-Dec-2016 for B-Out Material QC Approval
@@ -524,7 +523,7 @@ pageextension 70155 PurchaseOrderExt extends 50
                     Body += '&REQPERSON=' + FORMAT(Req_User);
                     Body += '&REQPERSONMAIL=' + Mail_From;
                     Body += '&REQID=' + Req_Person_Id;
-                    Body += '&SALE_ORDER_NO=' + "Sale Order No";Rec.
+                    Body += '&SALE_ORDER_NO=' + "Sale Order No";
                     Body += '&CUSTOMER=' + customername;
                     Body += '&AUTHSTATUS=1"target="_blank">';
                     Body += '<font face="arial" color="#ffffff">ACCEPT</font></a>';
@@ -535,7 +534,7 @@ pageextension 70155 PurchaseOrderExt extends 50
                     Body += '&REQPERSON=' + FORMAT(Req_User);
                     Body += '&REQPERSONMAIL=' + Mail_From;
                     Body += '&REQID=' + Req_Person_Id;
-                    Body += '&SALE_ORDER_NO=' + "Sale Order No";Rec.
+                    Body += '&SALE_ORDER_NO=' + "Sale Order No";
                     Body += '&CUSTOMER=' + customername;
                     Body += '&AUTHSTATUS=0"target="_blank">';
                     Body += '<font face="arial" color="#ffffff">REJECT</font></a></td></tr>';
@@ -554,7 +553,7 @@ pageextension 70155 PurchaseOrderExt extends 50
 
                     SMTP_MAIL.Send;
 
-                    QA_Auth_Status := QA_Auth_Status::"Sent For Auth";Rec.
+                    QA_Auth_Status := QA_Auth_Status::"Sent For Auth";
                     QA_Auth_Date := TODAY;
                     MODIFY;
                 end;
@@ -644,12 +643,12 @@ pageextension 70155 PurchaseOrderExt extends 50
                         FileDirectory := '';
                         FileName := '';
 
-                        Subject := USER."Full Name" + ' Requesting to Release the Purchase Order ' + "No.";Rec. //Rev01
+                        Subject := USER."Full Name" + ' Requesting to Release the Purchase Order ' + "No."; //Rev01
                         Body += '<body><strong><form><table style="WIDTH:500px; HEIGHT: 20px; "';
                         Body += 'border="1" align="center">';
                         // Body+='<tr><td align="center" ><img src="http://eff-cpu-178/pur%20Auth/Default.aspx?"  /></TD></TR>';
-                        Body += '<tr><td>PURCHASE ORDER NO. :</td><td>' + "No.";Rec.
-                        Body += '<tr><td>VENDOR :</td><td>' + "Buy-from Vendor Name";Rec.
+                        Body += '<tr><td>PURCHASE ORDER NO. :</td><td>' + "No.";
+                        Body += '<tr><td>VENDOR :</td><td>' + "Buy-from Vendor Name";
                         Body += '<tr><td>ORDER VALUE :</td><td>' + FORMAT(Order_Value("No."));
                         Body += '<tr><td bgcolor=#99FF66 color=#FFFFFF  align="center" ><a href="';
                         // Body+='http://localhost:8080/Purchase/Default.aspx?';
@@ -660,8 +659,8 @@ pageextension 70155 PurchaseOrderExt extends 50
                         Body += '&val4=Chowdary@efftronics.com';
                         Body += '&val5=' + USER.MailID;
                         Body += '&val6=Release';
-                        Body += '&val7=' + USER."Full Name";Rec. //Rev01
-                        Body += '&val8=' + "Buy-from Vendor Name";Rec.
+                        Body += '&val7=' + USER."Full Name"; //Rev01
+                        Body += '&val8=' + "Buy-from Vendor Name";
                         Body += '&val9=' + FORMAT(Order_Value("No."));
                         Body += '" target="_blank"><b>Accepted</b></a></td>';
                         Body += '<td bgcolor=#FF3300 color=#FFFFFF  align="center" ><a href="';
@@ -673,8 +672,8 @@ pageextension 70155 PurchaseOrderExt extends 50
                         Body += '&val4=Chowdary@efftronics.com';
                         Body += '&val5=' + USER.MailID;
                         Body += '&val6=Release';
-                        Body += '&val7=' + USER."Full Name";Rec. //Rev01
-                        Body += '&val8=' + "Buy-from Vendor Name";Rec.
+                        Body += '&val7=' + USER."Full Name"; //Rev01
+                        Body += '&val8=' + "Buy-from Vendor Name";
                         Body += '&val9=' + FORMAT(Order_Value("No."));
                         Body += '" target="_blank"><b>Rejected</b></a></td>';
                         Body += '</table></form></font></strong></body>';
@@ -733,14 +732,14 @@ pageextension 70155 PurchaseOrderExt extends 50
                         FileDirectory := '';
                         FileName := '';
 
-                        Subject := USER."Full Name" + ' Requesting to Reopen the Purchase Order ' + "No.";Rec.  //Rev01
+                        Subject := USER."Full Name" + ' Requesting to Reopen the Purchase Order ' + "No.";  //Rev01
                         Body += '<body><strong><form><table style="WIDTH:500px; HEIGHT: 20px; "';
                         Body += 'border="1" align="center">';
                         Reason_window.OPEN(T1);
                         Reason_window.INPUT(1, Reason);
                         Reason_window.CLOSE;
-                        Body += '<tr><td><b>PURCHASE ORDER NO. :</b></td><td>' + "No.";Rec.
-                        Body += '<tr><td><b>VENDOR :</b></td><td>' + "Buy-from Vendor Name";Rec.
+                        Body += '<tr><td><b>PURCHASE ORDER NO. :</b></td><td>' + "No.";
+                        Body += '<tr><td><b>VENDOR :</b></td><td>' + "Buy-from Vendor Name";
                         Body += '<tr><td><b>REASON :</b></td><td>' + Reason;
                         Body += '<tr><td bgcolor=#99FF66 color=#FFFFFF  align="center" colspan="2"><a href=';
                         // Body+='"http://localhost:8080/Purchase/Default.aspx?';
@@ -751,8 +750,8 @@ pageextension 70155 PurchaseOrderExt extends 50
                         Body += '&val4=Chowdary@efftronics.com';
                         Body += '&val5=' + USER.MailID;
                         Body += '&val6=Open';
-                        Body += '&val7=' + USER."Full Name";Rec.  //Rev01
-                        Body += '&val8=' + "Buy-from Vendor Name";Rec.
+                        Body += '&val7=' + USER."Full Name";  //Rev01
+                        Body += '&val8=' + "Buy-from Vendor Name";
                         Body += '&val9=' + FORMAT(Order_Value("No."));
 
                         Body += '" target="_blank"><b>Open</b></a></td>';
@@ -862,7 +861,7 @@ pageextension 70155 PurchaseOrderExt extends 50
                                         MECH_ITEM := 'MECH'
                                 END;
                                 //MECH_ITEM := COPYSTR(PurchLine."No.",1,4);
-                                MECH_ITEM_NO := PurchLine."No.";Rec.
+                                MECH_ITEM_NO := PurchLine."No.";
                                 IF MECH_ITEM = 'MECH' THEN BEGIN
                                     Attachements_Table.RESET();
                                     Attachements_Table.SETRANGE("Document No.", MECH_ITEM_NO);
@@ -904,7 +903,7 @@ pageextension 70155 PurchaseOrderExt extends 50
                                 VENDOR.RESET;
                                 VENDOR.SETRANGE(VENDOR."No.", "Buy-from Vendor No.");
                                 IF VENDOR.FINDSET THEN
-                                    Mail_To := VENDOR."E-Mail";Rec.
+                                    Mail_To := VENDOR."E-Mail";
                                 IF no_atch_items = '' THEN BEGIN
                                     IF Mail_count = 0 THEN
                                         Subject := ' Purchase Order: ' + "No."
@@ -1064,7 +1063,7 @@ pageextension 70155 PurchaseOrderExt extends 50
                     ELSE
                     user1.SETRANGE(user1."User Name","OrderCreated by");//Rev01
                     IF user1.FINDFIRST THEN
-                    username:=user1."Full Name";Rec.//Rev01
+                    username:=user1."Full Name";//Rev01
                     BEGIN
                          // IF ISCLEAR(BullZipPDF) THEN
                          //   CREATE(BullZipPDF);
@@ -1121,7 +1120,7 @@ pageextension 70155 PurchaseOrderExt extends 50
                     ERROR('You Do not Have the Mail Id,please Contact Administrator to create your Mail id');
                     
                     Body:='Dear '+VENDOR.Contact;
-                    Body+='<br><Br> EMail-id: '+VENDOR."E-Mail";Rec.
+                    Body+='<br><Br> EMail-id: '+VENDOR."E-Mail";
                     Body+='<br><br><br>';
                     Body+='Please see the attachment for purchase order and arrange the material at the earliest.<br>';
                     Body+='Please send the order acknowledgment by return mail.<br><br><br>';
@@ -1137,7 +1136,7 @@ pageextension 70155 PurchaseOrderExt extends 50
                          Mail_From:='erp@efftronics.com';
                     //    Mail_To:='sreenu@efftronics.com';
                     //     Mail_To:='sreenu@efftronics.com,anilkumar@efftronics.com,chowdary@efftronics.com';
-                    //     Mail_To:=vendor."E-Mail";Rec.
+                    //     Mail_To:=vendor."E-Mail";
                          Subject:=' Purchase Order: '+purch1."No."+' Order Created By: '+username;
                          attachment:=FileDirectory+FileName;
                          SMTP_MAIL.CreateMessage('Efftronics Systems Pvt. Ltd','purchase@efftronics.com','santhoshk@efftronics.com',Subject,Body,TRUE)
@@ -1313,7 +1312,7 @@ pageextension 70155 PurchaseOrderExt extends 50
              BEGIN
                IF (PL."Location Code" ='') OR (PL."Location Code" <> Rec."Location Code") THEN
                   BEGIN
-                     PL."Location Code" := Rec."Location Code";Rec.
+                     PL."Location Code" := Rec."Location Code";
                      MODIFY;
                    END;
             END;
@@ -1373,7 +1372,7 @@ pageextension 70155 PurchaseOrderExt extends 50
         MLTransactionType: Option Purchase,Sale;
         Text33000260: Label 'Do you want to Cancel Quality Inspection?';
         Text33000261: Label 'Do you want to Close Quality Inspection?';
-        PurchaseHeader: Record "Purchase Header";Rec.
+        PurchaseHeader: Record "Purchase Header";
         "Excepted Rcpt.Date Tracking": Record "Excepted Rcpt.Date Tracking";
         VENDOR: Record Vendor;
         FileDirectory: Text[100];
@@ -1388,12 +1387,12 @@ pageextension 70155 PurchaseOrderExt extends 50
         purch: Record "Purchase Header";
         purch1: Record "Purchase Header";
         attachment: Text[1000];
-        SMTPSETUP: Record "SMTP SETUP";Rec.
+        SMTPSETUP: Record "SMTP SETUP";
         AttachFileName: Text[1000];
-        objEmailConf: Automation "'{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0:'{CD000002-8B95-11D1-82DB-00C04FB1625D}':''{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0'.Configuration";Rec.
-        objEmail: Automation "'{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0:'{CD000001-8B95-11D1-82DB-00C04FB1625D}':''{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0'.Message";Rec.
-        flds: Automation "'{00000205-0000-0010-8000-00AA006D2EA4}' 2.5:'{00000564-0000-0010-8000-00AA006D2EA4}':''{00000205-0000-0010-8000-00AA006D2EA4}' 2.5'.Fields";Rec.
-        fld: Automation "'{00000205-0000-0010-8000-00AA006D2EA4}' 2.5:'{00000569-0000-0010-8000-00AA006D2EA4}':''{00000205-0000-0010-8000-00AA006D2EA4}' 2.5'.Field";Rec.
+        objEmailConf: Automation "'{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0:'{CD000002-8B95-11D1-82DB-00C04FB1625D}':''{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0'.Configuration";
+        objEmail: Automation "'{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0:'{CD000001-8B95-11D1-82DB-00C04FB1625D}':''{CD000000-8B95-11D1-82DB-00C04FB1625D}' 1.0'.Message";
+        flds: Automation "'{00000205-0000-0010-8000-00AA006D2EA4}' 2.5:'{00000564-0000-0010-8000-00AA006D2EA4}':''{00000205-0000-0010-8000-00AA006D2EA4}' 2.5'.Fields";
+        fld: Automation "'{00000205-0000-0010-8000-00AA006D2EA4}' 2.5:'{00000569-0000-0010-8000-00AA006D2EA4}':''{00000205-0000-0010-8000-00AA006D2EA4}' 2.5'.Field";
         bodies: Integer;
         Mail_Body: Text[1000];
         body1: Text[1000];
@@ -1428,11 +1427,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         Packing_Calculation: Boolean;
         Unit_Cost: Decimal;
         Line_Amount: Decimal;
-        "G\L": Record "General Ledger Setup";Rec.
-        SQLConnection: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";Rec.
-        RecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";Rec.
+        "G\L": Record "General Ledger Setup";
+        SQLConnection: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
+        RecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
         SQLQuery: Text[1000];
-        LRecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";Rec.
+        LRecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
         LineSQLQuery: Text[250];
         HeadID: Text[30];
         UpdateWebHead: Text[250];
@@ -1462,7 +1461,7 @@ pageextension 70155 PurchaseOrderExt extends 50
         PayToCommentBtnVisible: Boolean;
         [InDataSet]
         PayToCommentPictVisible: Boolean;
-        PurchInfoPaneMgmt: Codeunit "Purchases Info-Pane Management";Rec.
+        PurchInfoPaneMgmt: Codeunit "Purchases Info-Pane Management";
         Text001: Label 'Cashflow connection does not exist. Do you want to Continue?';
         item: Record Item;
         Vndr: Record Vendor;
@@ -1475,21 +1474,31 @@ pageextension 70155 PurchaseOrderExt extends 50
         mech_filename: Text[500];
         no_atch_items: Text;
         FileDirectory_mech: Text[100];
-        moa: Page "Purchase Order Statistics"; Rec.
+        moa: Page "Purchase Order Statistics";
         ORDER_VAL: Decimal;
-                 Pur_line: Record "Purchase Line";
-                 ten_percent_cost: Decimal;
-                 items_list_cost: array[100, 3] of Code[30];
-                 LoopVar: Integer;
-                 options_itm_cost: Text;
-                 itm_loop: Integer;
-                 indentline: Record "Indent Line";
-                 tds_amt: Decimal;
-                 PurchHead: Record "Purchase Header";
+        Pur_line: Record "Purchase Line";
+        ten_percent_cost: Decimal;
+        items_list_cost: array[100, 3] of Code[30];
+        LoopVar: Integer;
+        options_itm_cost: Text;
+        itm_loop: Integer;
+        indentline: Record "Indent Line";
+        tds_amt: Decimal;
+        PurchHead: Record "Purchase Header";
 
 
 
 
+<<<<<<< HEAD
+    //event SQLConnection(adStatus : Integer;pConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000550-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'._Connection");
+    //begin
+    /*
+    */
+    //end;
+
+    (5149)]
+=======
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure CommaRemoval(Base: Text[30]) Converted: Text[30];
     var
         i: Integer;
@@ -1501,6 +1510,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         EXIT(Converted);
     end;
 
+<<<<<<< HEAD
+    (5157)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Order_Value("Order_No.": Code[20]) Value: Decimal;
     begin
         PL.SETRANGE(PL."Document No.", "Order_No.");
@@ -1518,15 +1532,18 @@ pageextension 70155 PurchaseOrderExt extends 50
                 IF StructureOrderLineDetails.FINDSET THEN
                     REPEAT
                         Value += StructureOrderLineDetails."Amount (LCY)";
-                        Rec.
                     UNTIL StructureOrderLineDetails.NEXT = 0;
             UNTIL PL.NEXT = 0;
     end;
 
-    
+<<<<<<< HEAD
+    (5176)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Mails();
     var
-        Lpurchase: Record "Purchase Header";Rec.
+        Lpurchase: Record "Purchase Header";
     begin
 
 
@@ -1542,7 +1559,7 @@ pageextension 70155 PurchaseOrderExt extends 50
         ELSE
         Mail_To:='purchase@efftronics.com,ramkumarl@efftronics.com,anilkumar@efftronics.com';
         
-        //Mail_To:=VENDOR."E-Mail";Rec.
+        //Mail_To:=VENDOR."E-Mail";
         fname:='';
         str:='';
         
@@ -1564,7 +1581,7 @@ pageextension 70155 PurchaseOrderExt extends 50
         
         IF flag=TRUE THEN
         BEGIN
-          str:="No.";Rec.
+          str:="No.";
           PurchaseHeader.SETFILTER(PurchaseHeader."No.","No.");
           WHILE STRPOS(str,'/') > 1 DO BEGIN
             fname:=fname+COPYSTR(str,1,STRPOS(str,'/')-1)+'_';
@@ -1626,12 +1643,20 @@ pageextension 70155 PurchaseOrderExt extends 50
 
     end;
 
-    
+<<<<<<< HEAD
+    (5320)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure "...........Rev01............."();
     begin
     end;
 
-    
+<<<<<<< HEAD
+    (5323)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Testing(Purchase_Order_No: Text);
     var
         "Count": Integer;
@@ -1646,7 +1671,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         RESET;
     end;
 
-    
+<<<<<<< HEAD
+    (5333)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Testing1(PurchHdrGRec: Record "Purchase Header");
     begin
         MESSAGE('Testing Calc Structure!');
@@ -1664,8 +1693,12 @@ pageextension 70155 PurchaseOrderExt extends 50
         PurchLine.UpdatePurchLines(PurchHdrGRec);
     end;
 
+<<<<<<< HEAD
+    (5349)]
+=======
 
-    procedure StructureDetails(PurchaseHeader: Record "Purchase Header";Rec. Is_Release: Boolean);
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
+    procedure StructureDetails(PurchaseHeader: Record "Purchase Header"; Is_Release: Boolean);
     begin
         "G\L".GET;
         IF "G\L"."Active ERP-CF Connection" THEN BEGIN
@@ -1683,10 +1716,14 @@ pageextension 70155 PurchaseOrderExt extends 50
             Releasing(PurchaseHeader);
     end;
 
-    
+<<<<<<< HEAD
+    (5366)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Releasing(PurchaseHeader: Record "Purchase Header");
     var
-        ReleasePurchDoc: Codeunit "Release Purchase Document";Rec.
+        ReleasePurchDoc: Codeunit "Release Purchase Document";
         vendorRec: Record Vendor;
     begin
         // Added by Rakesh to restrict items with unit cost zero on 15-Oct-14
@@ -1839,7 +1876,7 @@ pageextension 70155 PurchaseOrderExt extends 50
               Mail_To:='';
               Subject:='';
               attachment:='';
-              Prev_Indent:=PurchLine."Indent No.";Rec.
+              Prev_Indent:=PurchLine."Indent No.";
               PL.RESET;
               PL.SETRANGE(PL."Document No.",PurchLine."Document No.");
               PL.SETRANGE(PL."Indent No.",Prev_Indent);
@@ -1918,46 +1955,46 @@ pageextension 70155 PurchaseOrderExt extends 50
                             IF ((StructureOrderLineDetails."Tax/Charge Group" = 'PACKING') OR
                                (StructureOrderLineDetails."Tax/Charge Group" = 'FORWARDING')) THEN BEGIN
 
-                                "Packing Value" += StructureOrderLineDetails."Amount (LCY)";Rec.
+                                "Packing Value" += StructureOrderLineDetails."Amount (LCY)";
                             END ELSE
                                 IF StructureOrderLineDetails."Tax/Charge Group" = 'FREIGHT' THEN BEGIN
-                                    Frieght_Value += StructureOrderLineDetails."Amount (LCY)";Rec.
+                                    Frieght_Value += StructureOrderLineDetails."Amount (LCY)";
                                 END ELSE
                                     IF StructureOrderLineDetails."Tax/Charge Group" = 'CUSTOMS DU' THEN BEGIN
-                                        Frieght_Value += StructureOrderLineDetails."Amount (LCY)";Rec.
+                                        Frieght_Value += StructureOrderLineDetails."Amount (LCY)";
                                     END ELSE
 
                                         IF StructureOrderLineDetails."Tax/Charge Group" = 'INSURANCE' THEN BEGIN
-                                            Insurance_Value += StructureOrderLineDetails."Amount (LCY)";Rec.
+                                            Insurance_Value += StructureOrderLineDetails."Amount (LCY)";
                                         END ELSE
                                             IF StructureOrderLineDetails."Tax/Charge Group" = 'ADD.DUTY' THEN
                                                 Additional_Duty += StructureOrderLineDetails."Amount (LCY)"
                                             ELSE
                                                 IF StructureOrderLineDetails."Tax/Charge Type" = StructureOrderLineDetails."Tax/Charge Type"::"Service Tax" THEN
-                                                    Service_Amount += StructureOrderLineDetails."Amount (LCY)";Rec.
+                                                    Service_Amount += StructureOrderLineDetails."Amount (LCY)";
 
                         UNTIL StructureOrderLineDetails.NEXT = 0;
                     // END;
                     IF PurchLine."Currency Code" = '' THEN BEGIN
-                        Unit_Cost := PurchLine."Direct Unit Cost";Rec.
-                        Line_Amount := PurchLine."Line Amount";Rec.
+                        Unit_Cost := PurchLine."Direct Unit Cost";
+                        Line_Amount := PurchLine."Line Amount";
                     END ELSE BEGIN
-                        Unit_Cost := PurchLine."Direct Unit Cost" / PurchaseHeader."Currency Factor";Rec.
-                        Line_Amount := (PurchLine.Quantity * PurchLine."Direct Unit Cost") / PurchaseHeader."Currency Factor";Rec.
+                        Unit_Cost := PurchLine."Direct Unit Cost" / PurchaseHeader."Currency Factor";
+                        Line_Amount := (PurchLine.Quantity * PurchLine."Direct Unit Cost") / PurchaseHeader."Currency Factor";
 
                     END;
                     IF PurchLine."Line Discount Amount" > 0 THEN
-                        Additional_Duty -= PurchLine."Line Discount Amount";Rec.
+                        Additional_Duty -= PurchLine."Line Discount Amount";
                     IF (PurchLine."Frieght Charges" > 0) THEN BEGIN
                         IF PurchLine."Currency Code" = '' THEN
                             Frieght_Value := PurchLine."Frieght Charges"
                         ELSE
-                            Frieght_Value := PurchLine."Frieght Charges" / PurchaseHeader."Currency Factor";Rec.
+                            Frieght_Value := PurchLine."Frieght Charges" / PurchaseHeader."Currency Factor";
                     END;
                     IF (PurchLine."Tax Area Code" = 'PURH VAT') THEN
                         VAT_AMOUNT := PurchLine."Tax Amount"
                     ELSE
-                        CST_AMOUNT := PurchLine."Tax Amount";Rec.
+                        CST_AMOUNT := PurchLine."Tax Amount";
                     IF PurchLine."Location Code" = 'CS STR' THEN
                         Dept := 'CS'
                     ELSE
@@ -2001,14 +2038,18 @@ pageextension 70155 PurchaseOrderExt extends 50
 
     end;
 
-    
+<<<<<<< HEAD
+    (5694)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure UpdateInfoPanel();
     var
         DifferBuyFromPayTo: Boolean;
     begin
         //EFFUPG DocExist function doesn't exist as globally in NAV 2016 Base
         /*
-        DifferBuyFromPayTo := "Buy-from Vendor No." <> "Pay-to Vendor No.";Rec.
+        DifferBuyFromPayTo := "Buy-from Vendor No." <> "Pay-to Vendor No.";
         PurchHistoryBtnVisible := DifferBuyFromPayTo;
         PurchHistoryBtn1Visible := PurchInfoPaneMgmt.DocExist(Rec,"Buy-from Vendor No.");
         IF DifferBuyFromPayTo THEN
@@ -2018,6 +2059,11 @@ pageextension 70155 PurchaseOrderExt extends 50
 
     end;
 
+<<<<<<< HEAD
+    (5705)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure checkminimumordervalue();
     begin
         //added by Vishnu Priya for Vendor minimum order value checking on 18-12-2018
@@ -2040,7 +2086,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         END;
     end;
 
-    
+<<<<<<< HEAD
+    (5726)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure ten_percent_item_Cost_high_chk() CNTNUE: Boolean;
     begin
         LoopVar := 1;
@@ -2061,9 +2111,9 @@ pageextension 70155 PurchaseOrderExt extends 50
                     REPEAT
                     BEGIN
                         ten_percent_cost := (Pur_line."Direct Unit Cost" * 0.1);
-                        ten_percent_cost := ten_percent_cost + Pur_line."Direct Unit Cost";Rec.
+                        ten_percent_cost := ten_percent_cost + Pur_line."Direct Unit Cost";
                         IF PL."Direct Unit Cost" > ten_percent_cost THEN BEGIN
-                            items_list_cost[LoopVar] [1] := Pur_line."Document No.";Rec.
+                            items_list_cost[LoopVar] [1] := Pur_line."Document No.";
                             items_list_cost[LoopVar] [2] := FORMAT(Pur_line."No.");
                             items_list_cost[LoopVar] [3] := FORMAT(Pur_line."Direct Unit Cost");
                             LoopVar := LoopVar + 1;
@@ -2098,7 +2148,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         EXIT(TRUE);
     end;
 
-    
+<<<<<<< HEAD
+    (5785)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure IndentExistedOrnot();
     begin
         //ADDED BY VISHNU PRIYA ON 06-07-2019
@@ -2119,7 +2173,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         END;
     end;
 
-    
+<<<<<<< HEAD
+    (5802)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     local procedure UpdationtoIndentLines();
     begin
         //ADDED BY VISHNU PRIYA ON 06-07-2019
@@ -2133,14 +2191,18 @@ pageextension 70155 PurchaseOrderExt extends 50
                 indentline.SETFILTER("Base Indent Number", PL."Indent No.");
                 indentline.SETRANGE("Base Indent Line Number", PL."Indent Line No.");
                 IF indentline.FINDFIRST THEN BEGIN
-                    indentline."Purchase Order Number" := PL."Document No.";Rec.
-                    indentline."Purchase Order Line Number" := PL."Line No.";Rec.
+                    indentline."Purchase Order Number" := PL."Document No.";
+                    indentline."Purchase Order Line Number" := PL."Line No.";
                     indentline.MODIFY;
                 END;
             UNTIL PL.NEXT = 0;
     end;
 
-    
+<<<<<<< HEAD
+    (5820)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Vendor_approved_or_Not();
     begin
         PurchHead.RESET;
@@ -2154,7 +2216,11 @@ pageextension 70155 PurchaseOrderExt extends 50
         END;
     end;
 
-    
+<<<<<<< HEAD
+    (5833)]
+=======
+
+>>>>>>> 75554976da0214e9ec70a45a874425238783b297
     procedure Location_Mismatch_Not();
     begin
         // Added by Vishnu Priya on 03-12-2020

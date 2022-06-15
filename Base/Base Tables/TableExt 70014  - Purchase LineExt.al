@@ -172,11 +172,12 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
 
             trigger OnValidate();
             begin
+                /*
                 STRUCTURE_ORDER_DETAILS.SetRange(STRUCTURE_ORDER_DETAILS."Document No.", "Document No.");
                 STRUCTURE_ORDER_DETAILS.SetRange(STRUCTURE_ORDER_DETAILS."Tax/Charge Group", 'FREIGHT');
                 STRUCTURE_ORDER_DETAILS.SetFilter(STRUCTURE_ORDER_DETAILS."Calculation Value", '>%1', 0);
                 if STRUCTURE_ORDER_DETAILS.FindFirst then
-                    Error(' PLEASE REMOVE THE FRIEGHT CHARGES IN STRUTURE DETAILS');
+                    Error(' PLEASE REMOVE THE FRIEGHT CHARGES IN STRUTURE DETAILS');*/
             end;
         }
         field(60095; "Purchase_Order No."; Code[20])
@@ -419,8 +420,6 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
             DataClassification = CustomerContent;
 
             trigger OnValidate();
-            var
-                Vendor: Record Vendor;
             begin
                 // Added by Pranavi on 07-Mar-2017 For updating Vendor Mat.Disp Date
                 if "Mat. Dispatched" then
@@ -524,8 +523,6 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
             DataClassification = CustomerContent;
 
             trigger OnValidate();
-            var
-                QualityCtrlSetup: Record "Quality Control Setup";
             begin
                 TestStatusOpen;
                 TestField(Type, Type::Item);
@@ -643,10 +640,11 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
 
     trigger OnBeforeDelete()
     var
+        PurchHeader: Record "Purchase Header";
         myInt: Integer;
         DefermentBuffer: Record "Deferment Buffer";
         DetailTaxEntryBuffer: Record "Detailed Tax Entry Buffer";
-        PurchHeader: Record "Purchase Header";
+
     begin
         // added by vishnu Priya on 31-10-2020
         if Rec."Quantity Received" > 0 then
@@ -670,7 +668,6 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
     VAR
         SpecHeader: Record "Specification Header";
         ActiveVersionCode: Code[20];
-        Item: Record Item;
     BEGIN
         "Spec ID" := VendorQualityApprovalSpecId;
         //Hot Fix 1.0
@@ -1087,46 +1084,51 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
                                     VALIDATE(Quantity);
                                 END;
                             END;
-
                         end;
-
-
-
-                        IF Quantity <> 0 THEN BEGIN
-                            IF NOT CONFIRM(Text50004, FALSE, "No.", "Buy-from Vendor No.", Quantity) THEN
-                                ERROR('THE UNIT COST FOR THE PCB %1 NEED TO BE CALCULATED MANUALLY', "No.");
-                            PCB.RESET;
-                            PCB.SETFILTER(PCB."Vendor No.", "Buy-from Vendor No.");
-                            PCB.SETFILTER(PCB."PCB Thickness", Item."PCB thickness");
-                            PCB.SETFILTER(PCB."Copper Clad Thickness", Item."Copper Clad Thickness");
-                            PCB."PCB TYPE" := Item."Item Sub Group Code";
-                            PCB.SETFILTER(PCB."Min.Quantity", '=%1', 0.0);
-                            PCB.SETFILTER(PCB."Max.Quantity", '=%1', 0.0);
-                            IF NOT PCB.FINDFIRST THEN BEGIN
-                                PCB.INIT;
-                                PCB."Vendor No." := "Buy-from Vendor No.";
-                                PCB.Name := PurchHeader."Buy-from Vendor Name";
-                                PCB."PCB Thickness" := Item."PCB thickness";
-                                PCB."Copper Clad Thickness" := Item."Copper Clad Thickness";
-                                PCB."PCB TYPE" := Item."Item Sub Group Code";
-                                PCB.Date := TODAY;
-                                PCB."Min.Quantity" := 0.0;
-                                PCB."Max.Quantity" := 0.0;
-                                PCB.INSERT;
-                                COMMIT;
-                            END;
-                            FORM.RUNMODAL(60215, PCB);
-                            VALIDATE(Quantity);
-                        END;
-                    END;
-
+                    end;
 
                 end;
+                }
+                
+
+              {
+              ELSE
+              BEGIN
+                IF Quantity<> 0 THEN BEGIN
+                  IF NOT CONFIRM(Text50004,FALSE,"No.","Buy-from Vendor No.",Quantity) THEN
+                    ERROR('THE UNIT COST FOR THE PCB %1 NEED TO BE CALCULATED MANUALLY',"No.");
+                  PCB.RESET;
+                  PCB.SETFILTER(PCB."Vendor No.","Buy-from Vendor No.");
+                  PCB.SETFILTER(PCB."PCB Thickness",Item."PCB thickness");
+                  PCB.SETFILTER(PCB."Copper Clad Thickness",Item."Copper Clad Thickness");
+                  PCB."PCB TYPE":=Item."Item Sub Group Code";
+                  PCB.SETFILTER(PCB."Min.Quantity",'=%1',0.0);
+                  PCB.SETFILTER(PCB."Max.Quantity",'=%1',0.0);
+                  IF NOT PCB.FINDFIRST THEN BEGIN
+                    PCB.INIT;
+                    PCB."Vendor No.":="Buy-from Vendor No.";
+                    PCB.Name :=PurchHeader."Buy-from Vendor Name";
+                    PCB."PCB Thickness":=Item."PCB thickness";
+                    PCB."Copper Clad Thickness" := Item."Copper Clad Thickness";
+                    PCB."PCB TYPE":=Item."Item Sub Group Code";
+                    PCB.Date:= TODAY;
+                    PCB."Min.Quantity":=0.0;
+                    PCB."Max.Quantity":=0.0;
+                    PCB.INSERT;
+                    COMMIT;
+                  END;
+                  FORM.RUNMODAL(60215,PCB) ;
+                  VALIDATE(Quantity);
+                END;
+              END;
+              }
             end;
+          end;
         end;
+      end;
       // End by Pranavi
 
-}
+
     var
         "--QC": Integer;
     
@@ -1148,7 +1150,7 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         Quotes: Label '''';
         Text50001: Label 'NEW';
         Text50002: Label 'OLD';
-        STRUCTURE_ORDER_DETAILS: Record "Structure Order Details";
+        //STRUCTURE_ORDER_DETAILS: Record "Structure Order Details";
         Vendor: Record Vendor;
         PCB: Record "PCB Vendors";
         Text50003: Label 'Do you Want to insert the record with itemno %1,vendor %2 and  area %3 in PCB Cost Details table';
@@ -1162,5 +1164,6 @@ tableextension 70014 PurchaselineExt extends "Purchase Line"
         NODHeader: Record "NOD/NOC Header";
         PANErr: Label 'PAN No must be updated on Customer/Vendor/Party Master %1, currently its blank.';
           ItemLedgEntry  :Record "Item Ledger Entry";
-       
+          
 }
+

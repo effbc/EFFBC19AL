@@ -1,6 +1,6 @@
 tableextension 70012 SalesLineExt extends "Sales Line"
 {
-    
+
 
     fields
     {
@@ -1075,7 +1075,7 @@ Schedule.DELETEALL(TRUE);} */// commente dbny sujani in order to carry fwd the s
     var
         SalesHeader: Record "Sales Header";
         ProductionBOMHeader: Record "Production BOM Header";
-        VersionMgt: Codeunit VersionManagement;
+        //VersionMgt: Codeunit VersionManagement;
         SalesHeaderRDSO: Record "Sales Header";
         PrdOrder: Record "Production Order";
         rpoQty: Integer;

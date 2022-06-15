@@ -174,7 +174,7 @@ tableextension 70018 GenJournalLineExt extends "Gen. Journal Line"
             DataClassification = CustomerContent;
             TableRelation = "TDS Nature of Deduction";
 
-            trigger OnValidate();
+            trigger OnValidate()
             var
                 CompanyInfo: Record "Company Information";
                 Location: Record Location;

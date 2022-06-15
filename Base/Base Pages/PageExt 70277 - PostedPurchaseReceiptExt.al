@@ -10,11 +10,11 @@ pageextension 70277 PostedPurchaseReceiptExt extends 136
                     VEND.RESET;
                 VEND.SETFILTER("No.", "Pay-to Vendor No.");
                 IF VEND.FINDFIRST THEN BEGIN
-                    Rec."Pay-to Contact no." := VEND.Contact;
-                    Rec."Pay-to Name" := VEND.Name;
-                    Rec."Pay-to Address" := VEND.Address;
-                    Rec."Pay-to Post Code" := VEND."Post Code";
-                    Rec."Pay-to City" := VEND.City;
+                    "Pay-to Contact no." := VEND.Contact;
+                    "Pay-to Name" := VEND.Name;
+                    "Pay-to Address" := VEND.Address;
+                    "Pay-to Post Code" := VEND."Post Code";
+                    "Pay-to City" := VEND.City;
 
                 END;
             end;

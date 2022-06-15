@@ -55,7 +55,7 @@ table 60038 "RGP Out Header"
             var
                 Customer: Record Customer;
                 Vendor: Record Vendor;
-                RGPParty: Record "RGP Party";
+                //RGPParty: Record "RGP Party";
                 Employee: Record Employee;
             begin
                 TestStatusOpen;
@@ -83,7 +83,6 @@ table 60038 "RGP Out Header"
                 end;
                 if Consignee = Consignee::Party then begin
                     if Employee.Get("Consignee No.") then begin
-                        ;
                         "Consignee Name" := Employee."First Name";
                     end;
                 end;
@@ -395,7 +394,7 @@ table 60038 "RGP Out Header"
         end;
     end;
 
-  
+
     procedure CopyIndent();
     var
         IndentHeader: Record "Indent Header";

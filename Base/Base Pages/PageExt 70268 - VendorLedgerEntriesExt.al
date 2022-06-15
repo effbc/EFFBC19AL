@@ -103,12 +103,12 @@ pageextension 70268 VendorLedgerEntriesExt extends "Vendor Ledger Entries"
                                     DVLE.SETFILTER(DVLE."Entry Type", '<>%1', DVLE."Entry Type"::Application);
                                     IF DVLE.FINDFIRST THEN
                                         REPEAT
-                                            /*{TotalCredit += DVLE."Credit Amount";
-                                                   TotalDebit += DVLE."Debit Amount";} */  // Commented by Vishnu on 29-04-2019
-                                            TotalCredit += DVLE."Credit Amount (LCY)";
-                                            TotalDebit += DVLE."Debit Amount (LCY)";
-                                        UNTIL DVLE.NEXT = 0;
-                                UNTIL VLE.NEXT = 0;
+                                     {TotalCredit += DVLE."Credit Amount";
+                                            TotalDebit += DVLE."Debit Amount";} // Commented by Vishnu on 29-04-2019
+                                     TotalCredit += DVLE."Credit Amount (LCY)";
+                                    TotalDebit += DVLE."Debit Amount (LCY)";
+                                UNTIL DVLE.NEXT = 0;
+                                 UNTIL VLE.NEXT=0;
                             ClosingBal := OpeningBal + TotalDebit - TotalCredit;
                             //MESSAGE(FORMAT(ClosingBal)); //testing
                         END;

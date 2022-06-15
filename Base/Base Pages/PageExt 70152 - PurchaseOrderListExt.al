@@ -1,4 +1,4 @@
-pageextension 70152 PurchaseOrderListExt extends 9307
+pageextension 70152 PurchaseOrderListExt extends "Purchase Order List"
 {
 
 
@@ -6,12 +6,12 @@ pageextension 70152 PurchaseOrderListExt extends 9307
     {
 
 
-        /*modify("Control1")
+        modify("Control1")
         {
 
 
             ShowCaption = false;
-        }*/
+        }
 
 
         addafter("Buy-from Vendor No.")
@@ -30,28 +30,28 @@ pageextension 70152 PurchaseOrderListExt extends 9307
         }
         addafter("Ship-to Name")
         {
-            field("First Release DateTime"; Rec."First Release DateTime")
+            field("First Release DateTime"; "First Release DateTime")
             {
             }
         }
         addafter("Ship-to Country/Region Code")
         {
-            field("Sale Order No"; Rec."Sale Order No")
+            field("Sale Order No"; "Sale Order No")
             {
             }
         }
         addafter("Job Queue Status")
         {
-            field("Order Date"; Rec."Order Date")
+            field("Order Date"; "Order Date")
             {
             }
-            field(Mail_Sent; Rec.Mail_Sent)
+            field(Mail_Sent; Mail_Sent)
             {
             }
-            field(QA_Auth_Status; Rec.QA_Auth_Status)
+            field(QA_Auth_Status; QA_Auth_Status)
             {
             }
-            field(QA_Auth_Date; Rec.QA_Auth_Date)
+            field(QA_Auth_Date; QA_Auth_Date)
             {
             }
             group(Control1102152006)
@@ -76,16 +76,20 @@ pageextension 70152 PurchaseOrderListExt extends 9307
     actions
     {
 
+        //Unsupported feature: Change Name on "Action 1900000003". Please convert manually.
 
+
+        //Unsupported feature: Change Name on "Action 1102601026". Please convert manually.
 
         modify("Action 1102601035")
         {
 
-
+            //Unsupported feature: Change AccessByPermission on "Action 1102601035". Please convert manually.
 
             Promoted = false;
             PromotedIsBig = false;
 
+            //Unsupported feature: Change Name on "Action 1102601035". Please convert manually.
 
         }
         modify(Statistics)
@@ -98,43 +102,138 @@ pageextension 70152 PurchaseOrderListExt extends 9307
             Promoted = false;
             PromotedIsBig = false;
 
-
+            //Unsupported feature: Change Name on "Action 18". Please convert manually.
 
         }
 
+        //Unsupported feature: Change RunObject on "Action 1102601030". Please convert manually.
 
+
+        //Unsupported feature: Change RunPageLink on "Action 1102601030". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 1102601030". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 7". Please convert manually.
 
         modify("Action 1102601031")
         {
 
+            //Unsupported feature: Change RunObject on "Action 1102601031". Please convert manually.
 
             Promoted = false;
             PromotedIsBig = false;
 
+            //Unsupported feature: Change Name on "Action 1102601031". Please convert manually.
 
         }
         modify(PostedPurchaseInvoices)
         {
 
+            //Unsupported feature: Change RunObject on "PostedPurchaseInvoices(Action 1102601032)". Please convert manually.
 
             Promoted = false;
             PromotedIsBig = false;
         }
 
+        //Unsupported feature: Change RunObject on "PostedPurchasePrepmtInvoices(Action 1102601033)". Please convert manually.
 
+
+        //Unsupported feature: Change RunObject on "Action 1102601034". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 1102601034". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 1102601037". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 8". Please convert manually.
+
+
+        //Unsupported feature: Change RunObject on "Action 1102601039". Please convert manually.
+
+
+        //Unsupported feature: Change RunPageLink on "Action 1102601039". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 1102601039". Please convert manually.
+
+
+        //Unsupported feature: Change RunObject on "Action 1102601038". Please convert manually.
+
+
+        //Unsupported feature: Change RunPageLink on "Action 1102601038". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 1102601038". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 1102601040". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 1900000004". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 9". Please convert manually.
 
         modify(Print)
         {
 
+            //Unsupported feature: Change Ellipsis on "Print(Action 55)". Please convert manually.
 
             Promoted = true;
         }
 
+        //Unsupported feature: Change Name on "Action 10". Please convert manually.
 
+
+        //Unsupported feature: Change Name on "Action 1102601023". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 1102601000". Please convert manually.
+
+
+        //Unsupported feature: Change AccessByPermission on "Action 1102601025". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 1102601025". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 19". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 12". Please convert manually.
+
+
+        //Unsupported feature: Change AccessByPermission on "Action 1102601015". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 1102601015". Please convert manually.
+
+
+        //Unsupported feature: Change AccessByPermission on "Action 1102601016". Please convert manually.
+
+
+        //Unsupported feature: Change Ellipsis on "Action 1102601016". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 1102601016". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 1102601017". Please convert manually.
+
+
+        //Unsupported feature: Change Name on "Action 50". Please convert manually.
+
+
+        //Unsupported feature: Change Ellipsis on "TestReport(Action 51)". Please convert manually.
 
         modify(Post)
         {
 
+            //Unsupported feature: Change Ellipsis on "Post(Action 52)". Please convert manually.
 
             Promoted = true;
             PromotedIsBig = true;
@@ -142,12 +241,15 @@ pageextension 70152 PurchaseOrderListExt extends 9307
         modify(PostAndPrint)
         {
 
+            //Unsupported feature: Change Ellipsis on "PostAndPrint(Action 53)". Please convert manually.
 
             Promoted = true;
             PromotedIsBig = true;
         }
         modify(PostBatch)
         {
+
+            //Unsupported feature: Change Ellipsis on "PostBatch(Action 54)". Please convert manually.
 
             Promoted = true;
         }
@@ -180,6 +282,147 @@ pageextension 70152 PurchaseOrderListExt extends 9307
     }
 
 
+    //Unsupported feature: PropertyModification on "Action 18.OnAction.ApprovalEntries(Variable 1001)". Please convert manually.
+
+    //var
+    //>>>> ORIGINAL VALUE:
+    //Action 18.OnAction.ApprovalEntries : 658;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Action 18.OnAction.ApprovalEntries : "Approval Entries";
+    //Variable type has not been exported.
+
+
+    //Unsupported feature: PropertyModification on "Release(Action 1102601021).OnAction.ReleasePurchDoc(Variable 1000)". Please convert manually.
+
+    //var
+    //>>>> ORIGINAL VALUE:
+    //Release : 415;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Release : "Release Purchase Document";
+    //Variable type has not been exported.
+
+
+    //Unsupported feature: PropertyModification on "Reopen(Action 1102601022).OnAction.ReleasePurchDoc(Variable 1001)". Please convert manually.
+
+    //var
+    //>>>> ORIGINAL VALUE:
+    //Reopen : 415;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Reopen : "Release Purchase Document";
+    //Variable type has not been exported.
+
+
+    //Unsupported feature: PropertyModification on "Action 1102601025.OnAction.ICInOutboxMgt(Variable 1000)". Please convert manually.
+
+    //var
+    //>>>> ORIGINAL VALUE:
+    //Action 1102601025.OnAction.ICInOutboxMgt : 427;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Action 1102601025.OnAction.ICInOutboxMgt : ICInboxOutboxMgt;
+    //Variable type has not been exported.
+
+
+    //Unsupported feature: PropertyModification on "Action 1102601025.OnAction.ApprovalsMgmt(Variable 1003)". Please convert manually.
+
+    //var
+    //>>>> ORIGINAL VALUE:
+    //Action 1102601025.OnAction.ApprovalsMgmt : 1535;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Action 1102601025.OnAction.ApprovalsMgmt : "Approvals Mgmt.";
+    //Variable type has not been exported.
+
+
+    //Unsupported feature: PropertyModification on "SendApprovalRequest(Action 1102601018).OnAction.ApprovalsMgmt(Variable 1001)". Please convert manually.
+
+    //var
+    //>>>> ORIGINAL VALUE:
+    //SendApprovalRequest : 1535;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //SendApprovalRequest : "Approvals Mgmt.";
+    //Variable type has not been exported.
+
+
+    //Unsupported feature: PropertyModification on "CancelApprovalRequest(Action 1102601019).OnAction.ApprovalsMgmt(Variable 1001)". Please convert manually.
+
+    //var
+    //>>>> ORIGINAL VALUE:
+    //CancelApprovalRequest : 1535;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //CancelApprovalRequest : "Approvals Mgmt.";
+    //Variable type has not been exported.
+
+
+    //Unsupported feature: PropertyModification on "Action 1102601015.OnAction.GetSourceDocInbound(Variable 1001)". Please convert manually.
+
+    //var
+    //>>>> ORIGINAL VALUE:
+    //Action 1102601015.OnAction.GetSourceDocInbound : 5751;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Action 1102601015.OnAction.GetSourceDocInbound : "Get Source Doc. Inbound";
+    //Variable type has not been exported.
+
+
+    //Unsupported feature: PropertyModification on "Preview(Action 16).OnAction.PurchPostYesNo(Variable 1001)". Please convert manually.
+
+    //var
+    //>>>> ORIGINAL VALUE:
+    //Preview : 91;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //Preview : "Purch.-Post (Yes/No)";
+    //Variable type has not been exported.
+
+
+    //Unsupported feature: PropertyModification on "OnOpenPage.PurchasesPayablesSetup(Variable 1000)". Please convert manually.
+
+    //var
+    //>>>> ORIGINAL VALUE:
+    //OnOpenPage.PurchasesPayablesSetup : 312;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //OnOpenPage.PurchasesPayablesSetup : "Purchases & Payables Setup";
+    //Variable type has not been exported.
+
+
+    //Unsupported feature: PropertyModification on "SetControlAppearance(PROCEDURE 5).ApprovalsMgmt(Variable 1000)". Please convert manually.
+
+    //var
+    //>>>> ORIGINAL VALUE:
+    //SetControlAppearance : 1535;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //SetControlAppearance : "Approvals Mgmt.";
+    //Variable type has not been exported.
+
+
+    //Unsupported feature: PropertyModification on "ReportPrint(Variable 1102601001)". Please convert manually.
+
+    //var
+    //>>>> ORIGINAL VALUE:
+    //ReportPrint : 228;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //ReportPrint : "Test Report-Print";
+    //Variable type has not been exported.
+
+
+    //Unsupported feature: PropertyModification on "DocPrint(Variable 1102601000)". Please convert manually.
+
+    //var
+    //>>>> ORIGINAL VALUE:
+    //DocPrint : 229;
+    //Variable type has not been exported.
+    //>>>> MODIFIED VALUE:
+    //DocPrint : "Document-Print";
+    //Variable type has not been exported.
 
     var
         [SecurityFiltering(SecurityFilter::Validated)]
@@ -298,7 +541,7 @@ pageextension 70152 PurchaseOrderListExt extends 9307
 
                     IF PurchLine."Gen. Prod. Posting Group" = '' THEN
                         ERROR(' THERE IS NO "Gen. Prod. Posting Group" FOR ' + PurchLine.Description);
-                    IF (PurchLine."Location Code" = 'SITE') AND (Rec."Order Date" > 081109D) THEN BEGIN
+                    IF (PurchLine."Location Code" = 'SITE') AND ("Order Date" > 081109D) THEN BEGIN
                         IF PurchLine."Shortcut Dimension 2 Code" = '' THEN
                             ERROR('Please Enter the Site Information');
                         /* IF ("Sale Order No"='') THEN
@@ -324,7 +567,7 @@ pageextension 70152 PurchaseOrderListExt extends 9307
                       END;   */
                     IF (PurchLine.Type <> PurchLine.Type::"G/L Account") THEN
                         PurchLine.TESTFIELD(PurchLine."QC Enabled");
-                    IF Rec."Location Code" <> PurchLine."Location Code" THEN
+                    IF "Location Code" <> PurchLine."Location Code" THEN
                         ERROR('location code not matching in both line and header');
                 END;
             UNTIL PurchLine.NEXT = 0;
@@ -412,12 +655,12 @@ pageextension 70152 PurchaseOrderListExt extends 9307
         "Packing Value" := 0;
         PurchLine.CALCFIELDS(PurchLine."Document Date");
         PurchLine.RESET;
-        PurchLine.SETRANGE(PurchLine."Document No.", Rec."No.");
+        PurchLine.SETRANGE(PurchLine."Document No.", "No.");
         PurchLine.SETFILTER(PurchLine."No.", '<>%1', '');
         IF PurchLine.FINDSET THEN
             REPEAT
                 "G\L".GET;
-                IF "G\L"."Active ERP-CF Connection" AND (Rec."Order Date" >= 020110D) THEN //
+                IF "G\L"."Active ERP-CF Connection" AND ("Order Date" >= 020110D) THEN //
                 BEGIN
 
                     "Packing Value" := 0;
@@ -513,7 +756,7 @@ pageextension 70152 PurchaseOrderListExt extends 9307
 
     end;
 
-
+    (31448)]
     procedure Mails();
     var
         Lpurchase: Record "Purchase Header";
@@ -610,7 +853,13 @@ pageextension 70152 PurchaseOrderListExt extends 9307
 
     end;
 
+    //Unsupported feature: PropertyChange. Please convert manually.
 
+
+    //Unsupported feature: PropertyChange. Please convert manually.
+
+
+    //Unsupported feature: PropertyChange. Please convert manually.
 
 }
 

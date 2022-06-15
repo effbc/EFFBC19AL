@@ -460,7 +460,7 @@ tableextension 70095 ServiceItemLineExt extends "Service Item Line"
         buf: Text;
         buf2: Text;
         ServHeader1: Record "Service Header";
-        SMTP_MAIL: Codeunit "SMTP Mail";
+        //SMTP_MAIL: Codeunit "SMTP Mail";
         Mail_From: Text;
         Mail_To: Text;
         Subject: Text;
