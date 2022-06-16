@@ -10,15 +10,19 @@ pageextension 70090 ItemVendorCatalogExt extends 114
         {
             field("Minimum Order Quantity"; "Minimum Order Quantity")
             {
+                ApplicationArea = All;
             }
             field(Priority; Priority)
             {
+                ApplicationArea = All;
             }
             field("Total Qty. Supplied"; "Total Qty. Supplied")
             {
+                ApplicationArea = All;
             }
             field("Qty. Supplied With in DueDate"; "Qty. Supplied With in DueDate")
             {
+                ApplicationArea = All;
 
                 trigger OnDrillDown();
                 var
@@ -50,6 +54,7 @@ pageextension 70090 ItemVendorCatalogExt extends 114
             }
             field("Sampling Plan Code"; "Sampling Plan Code")
             {
+                ApplicationArea = All;
             }
         }
     }

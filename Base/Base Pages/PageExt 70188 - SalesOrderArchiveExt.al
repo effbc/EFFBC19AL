@@ -11,9 +11,11 @@ pageextension 70188 SalesOrderArchiveExt extends "Sales Order Archive"
         {
             field("Document Type"; Rec."Document Type")
             {
+                ApplicationArea = All;
             }
             field("Cancel / Short Close"; Rec."Cancel / Short Close")
             {
+                ApplicationArea = All;
             }
 
         }
@@ -21,32 +23,39 @@ pageextension 70188 SalesOrderArchiveExt extends "Sales Order Archive"
         {
             field("Customer OrderNo."; Rec."Customer OrderNo.")
             {
+                ApplicationArea = All;
             }
             field("Customer Order Date"; Rec."Customer Order Date")
             {
+                ApplicationArea = All;
             }
             field("Sale Order Total Amount"; Rec."Sale Order Total Amount")
             {
+                ApplicationArea = All;
             }
 
             field("First Released Date Time"; Rec."First Released Date Time")
             {
+                ApplicationArea = All;
             }
             field(Remarks; Rec.Remarks)
             {
                 MultiLine = true;
+                ApplicationArea = All;
             }
         }
         addafter("Payment Terms Code")
         {
             field("Customer Posting Group"; Rec."Customer Posting Group")
             {
+                ApplicationArea = All;
             }
         }
         addbefore(Shipping)
         {
             field("Tender No."; Rec."Tender No.")
             {
+                ApplicationArea = All;
             }
             /*field("Archived By"; Rec."Archived By")
             {
@@ -59,39 +68,51 @@ pageextension 70188 SalesOrderArchiveExt extends "Sales Order Archive"
                 Caption = 'Others';
                 field("RDSO Inspection By"; Rec."RDSO Inspection By")
                 {
+                    ApplicationArea = All;
                 }
                 field("RDSO Charges"; Rec."RDSO Charges")
                 {
+                    ApplicationArea = All;
                 }
                 field("RDSO Call Letter"; Rec."RDSO Call Letter")
                 {
+                    ApplicationArea = All;
                 }
                 field("CA Date"; Rec."CA Date")
                 {
+                    ApplicationArea = All;
                 }
                 field("RDSO Charges Paid By"; Rec."RDSO Charges Paid By")
                 {
+                    ApplicationArea = All;
                 }
                 field("LD Amount"; Rec."LD Amount")
                 {
+                    ApplicationArea = All;
                 }
                 field("Security Deposit"; Rec."Security Deposit")
                 {
+                    ApplicationArea = All;
                 }
                 field("RDSO Inspection Required"; Rec."RDSO Inspection Required")
                 {
+                    ApplicationArea = All;
                 }
                 field("CA Number"; Rec."CA Number")
                 {
+                    ApplicationArea = All;
                 }
                 field("Document Position"; Rec."Document Position")
                 {
+                    ApplicationArea = All;
                 }
                 field("Reason Code"; Rec."Reason Code")
                 {
+                    ApplicationArea = All;
                 }
                 field("<Tender No.2>"; Rec."Tender No.")
                 {
+                    ApplicationArea = All;
                 }
             }
             group("Call Letter Status")
@@ -100,15 +121,19 @@ pageextension 70188 SalesOrderArchiveExt extends "Sales Order Archive"
                             ENN = 'Version';
                 field(CallLetterExpireDate; Rec.CallLetterExpireDate)
                 {
+                    ApplicationArea = All;
                 }
                 field(CallLetterRecivedDate; Rec.CallLetterRecivedDate)
                 {
+                    ApplicationArea = All;
                 }
                 field("Call letters Status"; Rec."Call letters Status")
                 {
+                    ApplicationArea = All;
                 }
                 field("Call Letter Exp.Date"; Rec."Call Letter Exp.Date")
                 {
+                    ApplicationArea = All;
                 }
             }
         }
@@ -129,6 +154,7 @@ pageextension 70188 SalesOrderArchiveExt extends "Sales Order Archive"
         {
             action(Attachment)
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -139,6 +165,7 @@ pageextension 70188 SalesOrderArchiveExt extends "Sales Order Archive"
             }
             action(Doc)
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

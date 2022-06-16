@@ -193,6 +193,7 @@ pageextension 70217 ServiceTasksExt extends "Service Tasks"
         {
             field(Tested; Tested)
             {
+                ApplicationArea = All;
             }
         }
     }

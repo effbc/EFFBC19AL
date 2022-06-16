@@ -14,24 +14,31 @@ pageextension 70248 UserCardExt extends "User Card"
             {
                 field(levels; levels)
                 {
+                    ApplicationArea = All;
                 }
                 field(Dept; Dept)
                 {
+                    ApplicationArea = All;
                 }
                 field(MailID; MailID)
                 {
+                    ApplicationArea = All;
                 }
                 field(Blocked; Blocked)
                 {
+                    ApplicationArea = All;
                 }
                 field(EmployeeID; EmployeeID)
                 {
+                    ApplicationArea = All;
                 }
                 field(Tams_Dept; Tams_Dept)
                 {
+                    ApplicationArea = All;
                 }
                 field(Dimension; Dimension)
                 {
+                    ApplicationArea = All;
                 }
 
             }
@@ -43,9 +50,11 @@ pageextension 70248 UserCardExt extends "User Card"
                 field("Dept."; Department)
                 {
                     TableRelation = "Dimension Value".Code WHERE(Global Dimension No.=CONST(1));
+                    ApplicationArea = All;
                 }
                 field(Mobile_no; Mobile_no)
                 {
+                    ApplicationArea = All;
                 }
             }
         }
@@ -82,6 +91,7 @@ pageextension 70248 UserCardExt extends "User Card"
             action(Autofill)
             {
                 Image = Apply;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -248,7 +258,7 @@ pageextension 70248 UserCardExt extends "User Card"
         Error_str: Text[250];
         DimValue: Record "Dimension Value";
         DimValue2: Record "Dimension Value";
-       
+
 
 
 

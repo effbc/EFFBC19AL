@@ -133,35 +133,45 @@ pageextension 70062 GeneralJournalExt extends "General Journal"
         {
             field("Line No."; "Line No.")
             {
+                ApplicationArea = All;
             }
             field("Dimension Set ID"; "Dimension Set ID")
             {
+                ApplicationArea = All;
             }
             field("Apply Entry No"; "Apply Entry No")
             {
+                ApplicationArea = All;
             }
             field("<Apply Entry No>"; "Document Type")
             {
+                ApplicationArea = All;
             }
             field("Bal. VAT Calculation Type"; "Bal. VAT Calculation Type")
             {
+                ApplicationArea = All;
             }
             field("VAT Calculation Type"; "VAT Calculation Type")
             {
+                ApplicationArea = All;
             }
             field("From Date"; "From Date")
             {
+                ApplicationArea = All;
             }
             field("Prod. Order No."; "Prod. Order No.")
             {
                 Editable = true;
                 LookupPageID = "Production Order List";
+                ApplicationArea = All;
             }
             field("Final Bill Payment"; "Final Bill Payment")
             {
+                ApplicationArea = All;
             }
             field("Sale Order No"; "Sale Order No")
             {
+                ApplicationArea = All;
 
                 trigger OnLookup(Text: Text): Boolean;
                 begin
@@ -199,48 +209,63 @@ pageextension 70062 GeneralJournalExt extends "General Journal"
             }
             field("Tender No"; "Tender No")
             {
+                ApplicationArea = All;
             }
             field("Old Order"; "Old Order")
             {
+                ApplicationArea = All;
             }
             field("VAT Posting"; "VAT Posting")
             {
+                ApplicationArea = All;
             }
             field("VAT Base Amount"; "VAT Base Amount")
             {
+                ApplicationArea = All;
             }
             field("VAT Bus. Posting Group"; "VAT Bus. Posting Group")
             {
+                ApplicationArea = All;
             }
             field("Amount (LCY)"; "Amount (LCY)")
             {
+                ApplicationArea = All;
             }
             field("BED Calculation Type"; "BED Calculation Type")
             {
+                ApplicationArea = All;
             }
             field("To Date"; "To Date")
             {
+                ApplicationArea = All;
             }
             field("Cheque No."; "Cheque No.")
             {
+                ApplicationArea = All;
             }
             field("Cheque Date"; "Cheque Date")
             {
+                ApplicationArea = All;
             }
             field("Purchase Order No."; "Purchase Order No.")
             {
+                ApplicationArea = All;
             }
             field("Validate Posting"; "Validate Posting")
             {
+                ApplicationArea = All;
             }
             field("Invoice no"; "Invoice no")
             {
+                ApplicationArea = All;
             }
             field("Customer Ord no"; "Customer Ord no")
             {
+                ApplicationArea = All;
             }
             field("Payment Type"; "Payment Type")
             {
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -265,89 +290,115 @@ pageextension 70062 GeneralJournalExt extends "General Journal"
         {
             field("Currency Rate"; "Currency Rate")
             {
+                ApplicationArea = All;
             }
             field("Currency Amount"; "Currency Amount")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Bill-to/Pay-to No.")
         {
             field("DD/FDR No."; "DD/FDR No.")
             {
+                ApplicationArea = All;
             }
             field("Payment Through"; "Payment Through")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Direct Debit Mandate ID")
         {
             field("Service Tax eCess Amount"; "Service Tax eCess Amount")
             {
+                ApplicationArea = All;
             }
             field("Service Tax Amount"; "Service Tax Amount")
             {
+                ApplicationArea = All;
             }
             field(Printed; Printed)
             {
+                ApplicationArea = All;
             }
             field("Deferral Code"; "Deferral Code")
             {
                 CaptionML = ENU = '"Deferral Code"',
                             ENN = 'Deferral Code';
+                ApplicationArea = All;
             }
             field("Deferral Line No."; "Deferral Line No.")
             {
+                ApplicationArea = All;
             }
             field("TDS/TCS Amt Incl Surcharge"; "TDS/TCS Amt Incl Surcharge")
             {
+                ApplicationArea = All;
             }
             field("Bal. TDS/TCS Including SHECESS"; "Bal. TDS/TCS Including SHECESS")
             {
+                ApplicationArea = All;
             }
             field("TDS Category"; "TDS Category")
             {
+                ApplicationArea = All;
             }
             field("Concessional Code"; "Concessional Code")
             {
+                ApplicationArea = All;
             }
             field("Pay TDS"; "Pay TDS")
             {
+                ApplicationArea = All;
             }
             field("TDS Entry"; "TDS Entry")
             {
+                ApplicationArea = All;
             }
             field("TDS/TCS Base Amount"; "TDS/TCS Base Amount")
             {
+                ApplicationArea = All;
             }
             field("Balance Surcharge Amount"; "Balance Surcharge Amount")
             {
+                ApplicationArea = All;
             }
             field("Surcharge Base Amount"; "Surcharge Base Amount")
             {
+                ApplicationArea = All;
             }
             field("TDS Group"; "TDS Group")
             {
+                ApplicationArea = All;
             }
             field("TDS From Orders"; "TDS From Orders")
             {
+                ApplicationArea = All;
             }
             field("TDS Line Amount"; "TDS Line Amount")
             {
+                ApplicationArea = All;
             }
             field("TDS/TCS Base Amount Applied"; "TDS/TCS Base Amount Applied")
             {
+                ApplicationArea = All;
             }
             field("TDS/TCS Base Amount Adjusted"; "TDS/TCS Base Amount Adjusted")
             {
+                ApplicationArea = All;
             }
             field("Journal Batch Name"; "Journal Batch Name")
             {
+                ApplicationArea = All;
             }
             field(Vertical; Vertical)
             {
+                ApplicationArea = All;
             }
             field("Journal Template Name"; "Journal Template Name")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Total Balance")
@@ -358,6 +409,7 @@ pageextension 70062 GeneralJournalExt extends "General Journal"
                 field(WorkDate; WORKDATE)
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
             }
             group(Control1102152022)
@@ -368,6 +420,7 @@ pageextension 70062 GeneralJournalExt extends "General Journal"
                     Editable = false;
                     Style = StrongAccent;
                     StyleExpr = BPV_CF_Color;
+                    ApplicationArea = All;
                 }
             }
             field(BankChrgAmt; BankChrgAmt)
@@ -375,6 +428,7 @@ pageextension 70062 GeneralJournalExt extends "General Journal"
                 CaptionML = ENU = 'Bank Charge Amount',
                             ENN = 'Bank Charge Amount';
                 Editable = false;
+                ApplicationArea = All;
             }
         }
     }
@@ -914,17 +968,19 @@ pageextension 70062 GeneralJournalExt extends "General Journal"
                                 ENN = 'Line Narration';
                     Image = LineDescription;
                     RunObject = Page "Gen. Journal Narration";
-                    RunPageLink = "Journal Template Name"=FIELD("Journal Template Name"),"Journal Batch Name"=FIELD("Journal Batch Name"),"Gen. Journal Line No."=FIELD("Line No."),"Document No."=FIELD("Document No.");
+                    RunPageLink = "Journal Template Name" = FIELD("Journal Template Name"), "Journal Batch Name" = FIELD("Journal Batch Name"), "Gen. Journal Line No." = FIELD("Line No."), "Document No." = FIELD("Document No.");
                     ShortCutKey = 'Shift+Ctrl+N';
+                    ApplicationArea = All;
                 }
                 action("Voucher Narration")
                 {
-                    CaptionML = ENU='Voucher Narration',
-                                ENN='Voucher Narration';
+                    CaptionML = ENU = 'Voucher Narration',
+                                ENN = 'Voucher Narration';
                     Image = VoucherDescription;
                     RunObject = Page "Gen. Journal Voucher Narration";
-                    RunPageLink = "Journal Template Name"=FIELD("Journal Template Name"),"Journal Batch Name"=FIELD("Journal Batch Name"),"Document No."=FIELD("Document No."),"Gen. Journal Line No."=FILTER(0);
+                    RunPageLink = "Journal Template Name" = FIELD("Journal Template Name"), "Journal Batch Name" = FIELD("Journal Batch Name"), "Document No." = FIELD("Document No."), "Gen. Journal Line No." = FILTER(0);
                     ShortCutKey = 'Shift+Ctrl+V';
+                    ApplicationArea = All;
                 }
             }
         }
@@ -933,17 +989,18 @@ pageextension 70062 GeneralJournalExt extends "General Journal"
             action(AssginNoSeries)
             {
                 Caption = 'Assign No. Series';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 var
-                    GJrnlGRec : Record "Gen. Journal Line";
+                    GJrnlGRec: Record "Gen. Journal Line";
                 begin
                     IF ("GST on Advance Payment") AND ("Total GST Amount" <> 0) THEN BEGIN
-                      CLEAR(NoSeriesMgt);
-                      //"External Document No." := NoSeriesMgt.TryGetNextNo('ADV_VOUCH',TODAY);
-                      GJrnlGRec.COPYFILTERS(Rec);
-                      IF GJrnlGRec.FINDSET THEN
-                        GJrnlGRec.MODIFYALL(GJrnlGRec."External Document No.",NoSeriesMgt.TryGetNextNo('ADV_VOUCH',TODAY));
+                        CLEAR(NoSeriesMgt);
+                        //"External Document No." := NoSeriesMgt.TryGetNextNo('ADV_VOUCH',TODAY);
+                        GJrnlGRec.COPYFILTERS(Rec);
+                        IF GJrnlGRec.FINDSET THEN
+                            GJrnlGRec.MODIFYALL(GJrnlGRec."External Document No.", NoSeriesMgt.TryGetNextNo('ADV_VOUCH', TODAY));
                     END;
                 end;
             }
@@ -952,155 +1009,154 @@ pageextension 70062 GeneralJournalExt extends "General Journal"
 
     trigger OnAfterGetRecord()
     begin
-      BPV_CF_Color := FALSE;
-      IF ("Journal Template Name" = 'GENERAL') AND ("Journal Batch Name" = 'BPV_CF') THEN
-      IF Printed = TRUE THEN
-      BPV_CF_Color := TRUE;
-    end; 
+        BPV_CF_Color := FALSE;
+        IF ("Journal Template Name" = 'GENERAL') AND ("Journal Batch Name" = 'BPV_CF') THEN
+            IF Printed = TRUE THEN
+                BPV_CF_Color := TRUE;
+    end;
 
     trigger OnOpenPage()
     begin
-      BPV_CF_Color := FALSE;
+        BPV_CF_Color := FALSE;
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-      IF ((COUNT=1)AND("Journal Batch Name"='BRV(EMP)'))OR((COUNT=1)AND("Journal Batch Name"='BRV(CUST)')) THEN
-      MESSAGE('POST IN SINGLE LINE')
-      ELSE BEGIN
-      END;
-                  //Added by Pranavi on 12-11-2015 for setting default payment type according to batch name
-                  IF COPYSTR(CurrentJnlBatchName,1,3) IN ['BPV','CPV'] THEN
-                  BEGIN
-                    "Payment Type" := "Payment Type"::Payment;
-                  END
-                  ELSE IF COPYSTR(CurrentJnlBatchName,1,3) IN ['BRV','CRV'] THEN
-                  BEGIN
-                   "Payment Type" := "Payment Type"::Receipt;
-                  END
-                  ELSE IF COPYSTR(CurrentJnlBatchName,1,2) IN ['JV'] THEN
-                  BEGIN
+        IF ((COUNT = 1) AND ("Journal Batch Name" = 'BRV(EMP)')) OR ((COUNT = 1) AND ("Journal Batch Name" = 'BRV(CUST)')) THEN
+            MESSAGE('POST IN SINGLE LINE')
+        ELSE BEGIN
+        END;
+        //Added by Pranavi on 12-11-2015 for setting default payment type according to batch name
+        IF COPYSTR(CurrentJnlBatchName, 1, 3) IN ['BPV', 'CPV'] THEN BEGIN
+            "Payment Type" := "Payment Type"::Payment;
+        END
+        ELSE
+            IF COPYSTR(CurrentJnlBatchName, 1, 3) IN ['BRV', 'CRV'] THEN BEGIN
+                "Payment Type" := "Payment Type"::Receipt;
+            END
+            ELSE
+                IF COPYSTR(CurrentJnlBatchName, 1, 2) IN ['JV'] THEN BEGIN
                     "Payment Type" := "Payment Type"::Journal;
-                  END
-                  ELSE IF CurrentJnlBatchName IN ['CONTRA'] THEN
-                    "Payment Type" := "Payment Type"::Contra;
-                  //End by Pranavi
-    end; 
-    var
-        "sale header" : Record "Sales Header";
-        "sales invoice header" : Record "Sales Invoice Header";
-        Genjournal : Record "Gen. Journal Line";
-        vendor : Record Vendor;
-        Invoice_Amount : Decimal;
-        Material_Value : Decimal;
-        Vat_Amount : Decimal;
-        Service_Amount : Decimal;
-        Vendor_Id : Code[20];
-        SQLQUERY2 : Text[1000];
-        SQLQuery : Text[1000];
-        LRecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
-        LineSQLQuery : Text[250];
-        HeadID : Text[30];
-        UpdateWebHead : Text[250];
-        WebRecStatus : Text[30];
-        OldWebStatus : Text[30];
-        Acount_No : Integer;
-        GLSetup : Record "General Ledger Setup";
-        Text002 : Label 'Project not selected for travelling advance.Do you want to post %1';
-        Quotes : Label '''';
-        Text50001 : Label 'NEW';
-        Text50002 : Label 'OLD';
-        USER : Record "Dimension Value";
-        RCNT : Integer;
-        Dept : Code[10];
-        Salinv : Record "Sales Invoice-Dummy";
-        Text19039985 : Label 'Account Name';
-        "--Rev01" : Integer;
-        SQLConnection : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
-        RecordSet : Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
-        Genjournal1 : Record "Gen. Journal Line";
-        vendor1 : Record Vendor;
-        SqlInt : Codeunit SQLIntegration;
-        Selection : Integer;
-        Text0001 : Label '&Not a Final Bill Payment,&Final Bill Payment';
-        JL : Record "Gen. Journal Line";
-        SaleOrder : Code[20];
-        PostingDate : Date;
-        FinalBill : Boolean;
-        sdupdate : Page "Sales Journal";
-                       SH : Record "Sales Header";
-                       SIH : Record "Sales Invoice Header";
-                       Temp_Jrnl_Line_Table : Record "Gen. Journal Line" temporary;
-                       Jrnl_Line : Record "Gen. Journal Line";
-                       Printed_Color : Label 'Voucher Printed';
-        BPV_CF_Color : Boolean;
-        NoSeriesMgt : Codeunit NoSeriesManagement;
-        SMTP_MAIL : Codeunit "SMTP Mail";
-        EX_GLE : Record "G/L Entry";
-
-
-   
-
-    
-    procedure CommaRemoval(Base : Text[250]) Converted : Text[250];
-    var
-        i : Integer;
-    begin
-         FOR i:=1 TO STRLEN(Base) DO
-         BEGIN
-           IF (COPYSTR(Base,i,1)<>',') AND (COPYSTR(Base,i,1)<>'''') AND (COPYSTR(Base,i,1)<>'&') THEN
-             Converted+=COPYSTR(Base,i,1);
-         END;
-         EXIT(Converted);
+                END
+                ELSE
+                    IF CurrentJnlBatchName IN ['CONTRA'] THEN
+                        "Payment Type" := "Payment Type"::Contra;
+        //End by Pranavi
     end;
 
-   
+    var
+        "sale header": Record "Sales Header";
+        "sales invoice header": Record "Sales Invoice Header";
+        Genjournal: Record "Gen. Journal Line";
+        vendor: Record Vendor;
+        Invoice_Amount: Decimal;
+        Material_Value: Decimal;
+        Vat_Amount: Decimal;
+        Service_Amount: Decimal;
+        Vendor_Id: Code[20];
+        SQLQUERY2: Text[1000];
+        SQLQuery: Text[1000];
+        LRecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
+        LineSQLQuery: Text[250];
+        HeadID: Text[30];
+        UpdateWebHead: Text[250];
+        WebRecStatus: Text[30];
+        OldWebStatus: Text[30];
+        Acount_No: Integer;
+        GLSetup: Record "General Ledger Setup";
+        Text002: Label 'Project not selected for travelling advance.Do you want to post %1';
+        Quotes: Label '''';
+        Text50001: Label 'NEW';
+        Text50002: Label 'OLD';
+        USER: Record "Dimension Value";
+        RCNT: Integer;
+        Dept: Code[10];
+        Salinv: Record "Sales Invoice-Dummy";
+        Text19039985: Label 'Account Name';
+        "--Rev01": Integer;
+        SQLConnection: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000514-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Connection";
+        RecordSet: Automation "'{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8:'{00000535-0000-0010-8000-00AA006D2EA4}':''{2A75196C-D9EB-4129-B803-931327F72D5C}' 2.8'.Recordset";
+        Genjournal1: Record "Gen. Journal Line";
+        vendor1: Record Vendor;
+        SqlInt: Codeunit SQLIntegration;
+        Selection: Integer;
+        Text0001: Label '&Not a Final Bill Payment,&Final Bill Payment';
+        JL: Record "Gen. Journal Line";
+        SaleOrder: Code[20];
+        PostingDate: Date;
+        FinalBill: Boolean;
+        sdupdate: Page "Sales Journal";
+        SH: Record "Sales Header";
+        SIH: Record "Sales Invoice Header";
+        Temp_Jrnl_Line_Table: Record "Gen. Journal Line" temporary;
+        Jrnl_Line: Record "Gen. Journal Line";
+        Printed_Color: Label 'Voucher Printed';
+        BPV_CF_Color: Boolean;
+        NoSeriesMgt: Codeunit NoSeriesManagement;
+        SMTP_MAIL: Codeunit "SMTP Mail";
+        EX_GLE: Record "G/L Entry";
+
+
+
+
+
+    procedure CommaRemoval(Base: Text[250]) Converted: Text[250];
+    var
+        i: Integer;
+    begin
+        FOR i := 1 TO STRLEN(Base) DO BEGIN
+            IF (COPYSTR(Base, i, 1) <> ',') AND (COPYSTR(Base, i, 1) <> '''') AND (COPYSTR(Base, i, 1) <> '&') THEN
+                Converted += COPYSTR(Base, i, 1);
+        END;
+        EXIT(Converted);
+    end;
+
+
     local procedure DescriptionOnAfterValidate();
     begin
-        Description:=UPPERCASE(Description);
+        Description := UPPERCASE(Description);
     end;
 
-   
-    procedure SendMail(Jnrl_Grnl_Lin : Record "Gen. Journal Line");
+
+    procedure SendMail(Jnrl_Grnl_Lin: Record "Gen. Journal Line");
     begin
     end;
 
-   
-    procedure DumptoOtherGSTTable(DocNo : Text);
+
+    procedure DumptoOtherGSTTable(DocNo: Text);
     var
-        GLE : Record "G/L Entry";
-        GST_Entry : Boolean;
-        "Posting Date" : Date;
-        "VENDOR NAME" : Text;
-        "INVOICE NO." : Text;
-        "Vendor Invoice Date" : Date;
-        "Accessable Amt" : Decimal;
-        IGST : Decimal;
-        CGST : Decimal;
-        SGST : Decimal;
-        DEPARTMENT : Text;
-        "GST JURISDICTION TYPE" : Text;
-        "GST Registration No_" : Text;
-        "GST Vendor Type" : Text;
-        "HSN/SAC CODE" : Text;
-        "HSN/SAC DESCRIPTION" : Text;
-        "VENDOR STATE" : Text;
-        "System Date" : Date;
-        "Document No_" : Text;
-        "G_L Account No_" : Code[10];
-        Ven : Record Vendor;
-        State : Record State;
-        GLA : Record "G/L Account";
-        HSNSAC : Record "HSN/SAC";
-        SqlQuery : Text;
-        Entry_DocNo : Text;
+        GLE: Record "G/L Entry";
+        GST_Entry: Boolean;
+        "Posting Date": Date;
+        "VENDOR NAME": Text;
+        "INVOICE NO.": Text;
+        "Vendor Invoice Date": Date;
+        "Accessable Amt": Decimal;
+        IGST: Decimal;
+        CGST: Decimal;
+        SGST: Decimal;
+        DEPARTMENT: Text;
+        "GST JURISDICTION TYPE": Text;
+        "GST Registration No_": Text;
+        "GST Vendor Type": Text;
+        "HSN/SAC CODE": Text;
+        "HSN/SAC DESCRIPTION": Text;
+        "VENDOR STATE": Text;
+        "System Date": Date;
+        "Document No_": Text;
+        "G_L Account No_": Code[10];
+        Ven: Record Vendor;
+        State: Record State;
+        GLA: Record "G/L Account";
+        HSNSAC: Record "HSN/SAC";
+        SqlQuery: Text;
+        Entry_DocNo: Text;
     begin
         GST_Entry := FALSE;
         GLE.RESET;
-        GLE.SETFILTER("Document No.",DocNo);
-        GLE.SETFILTER("G/L Account No.",'%1|%2|%3|%4|%5|%6|%7|%8|%9|%10','58001','58002', '58003', '51101', '51102', '51103', '51104', '51105', '51106', '51107');
-        IF GLE.FINDFIRST THEN
-        BEGIN
+        GLE.SETFILTER("Document No.", DocNo);
+        GLE.SETFILTER("G/L Account No.", '%1|%2|%3|%4|%5|%6|%7|%8|%9|%10', '58001', '58002', '58003', '51101', '51102', '51103', '51104', '51105', '51106', '51107');
+        IF GLE.FINDFIRST THEN BEGIN
             GST_Entry := TRUE;
         END;
 
@@ -1111,63 +1167,54 @@ pageextension 70062 GeneralJournalExt extends "General Journal"
         "HSN/SAC CODE" := '';
         "HSN/SAC DESCRIPTION" := '';
         Entry_DocNo := '';
-        IF GST_Entry = FALSE THEN
-        BEGIN
+        IF GST_Entry = FALSE THEN BEGIN
             EXIT;
-        END ELSE
-        BEGIN
+        END ELSE BEGIN
             IF ISCLEAR(SQLConnection) THEN
-            CREATE(SQLConnection,FALSE,TRUE);
+                CREATE(SQLConnection, FALSE, TRUE);
             SQLConnection.ConnectionString := 'DSN=ERPSERVER;UID=report;PASSWORD=Efftronics@eff;SERVER:=erpserver;providerName=System.Data.SqlClient;';
             SQLConnection.Open;
             GLE.RESET;
-            GLE.SETFILTER("Document No.",DocNo);
-            GLE.SETCURRENTKEY("Document No.","Posting Date",Amount);
+            GLE.SETFILTER("Document No.", DocNo);
+            GLE.SETCURRENTKEY("Document No.", "Posting Date", Amount);
             IF GLE.FINDFIRST THEN
-            REPEAT
-                IF Entry_DocNo = '' THEN
-                BEGIN
-                  Entry_DocNo := GLE."Document No.";
-                END;
-                IF  Entry_DocNo <> GLE."Document No." THEN
-                BEGIN
-                        IF (IGST >0) AND (SGST+CGST = 0) THEN
-                        BEGIN
-                          "GST JURISDICTION TYPE" := 'Interstate';
-                        END ELSE
-                        BEGIN
+                REPEAT
+                    IF Entry_DocNo = '' THEN BEGIN
+                        Entry_DocNo := GLE."Document No.";
+                    END;
+                    IF Entry_DocNo <> GLE."Document No." THEN BEGIN
+                        IF (IGST > 0) AND (SGST + CGST = 0) THEN BEGIN
+                            "GST JURISDICTION TYPE" := 'Interstate';
+                        END ELSE BEGIN
                             "GST JURISDICTION TYPE" := 'Intrastate';
                         END;
                         GLA.RESET;
-                        GLA.SETFILTER("No.","G_L Account No_");
-                        IF GLA.FINDFIRST THEN
-                        BEGIN
-                          "HSN/SAC CODE" := GLA."HSN/SAC Code";
-                          "HSN/SAC DESCRIPTION" := '';
-                          IF (GLA."GST Group Code" <>'') AND (GLA."HSN/SAC Code" <> '' )THEN
-                          BEGIN
-                              HSNSAC.RESET;
-                              HSNSAC.SETFILTER("GST Group Code",GLA."GST Group Code");
-                              HSNSAC.SETFILTER(Code,GLA."HSN/SAC Code");
-                              IF HSNSAC.FINDFIRST THEN
-                              BEGIN
-                                  "HSN/SAC DESCRIPTION" := HSNSAC.Description;
-                              END;
-                          END;
+                        GLA.SETFILTER("No.", "G_L Account No_");
+                        IF GLA.FINDFIRST THEN BEGIN
+                            "HSN/SAC CODE" := GLA."HSN/SAC Code";
+                            "HSN/SAC DESCRIPTION" := '';
+                            IF (GLA."GST Group Code" <> '') AND (GLA."HSN/SAC Code" <> '') THEN BEGIN
+                                HSNSAC.RESET;
+                                HSNSAC.SETFILTER("GST Group Code", GLA."GST Group Code");
+                                HSNSAC.SETFILTER(Code, GLA."HSN/SAC Code");
+                                IF HSNSAC.FINDFIRST THEN BEGIN
+                                    "HSN/SAC DESCRIPTION" := HSNSAC.Description;
+                                END;
+                            END;
                         END;
-                        SqlQuery := 'Insert into [OTHER_GST_ENTRIES] ([Posting Date],[VENDOR NAME],[INVOICE NO.],[Vendor Invoice Date],[Accessable Amt],[IGST],[CGST],[SGST],[IGST Rate]'+
-                              ',[CGST Rate],[SGST Rate],[TOTAL INVOICED AMT],[DEPARTMENT],[ACTUAL DATE] ,[GST JURISDICTION TYPE],[GST Registration No_],[GST Vendor Type],[HSN/SAC CODE]'+
-                              ',[HSN/SAC DESCRIPTION],[VENDOR STATE],[System Date],[Quantity],[UOM],[Document No_],[G_L Account No_],[ITC Claim Type]) values('''+
-                              FORMAT("Posting Date",0,'<Day>-<Month Text,3>-<Year4>')+''','''+"VENDOR NAME"+''','''+"INVOICE NO."+''','''+FORMAT("Posting Date",0,'<Day>-<Month Text,3>-<Year4>')+
-                              ''','+CommaRemoval(FORMAT(ROUND("Accessable Amt",1)))+','+CommaRemoval(FORMAT(ROUND(IGST,1)))+','+
-                              CommaRemoval(FORMAT(ROUND(CGST,1)))+','+ CommaRemoval(FORMAT(ROUND(SGST,1)))+','+FORMAT(ROUND((IGST*100/"Accessable Amt"),1))+','+
-                              FORMAT(ROUND((CGST*100/"Accessable Amt"),1))+','+FORMAT(ROUND((SGST*100/"Accessable Amt"),1))+','+CommaRemoval(FORMAT(ROUND("Accessable Amt"+IGST+CGST+SGST,1)))+
-                              ','''+DEPARTMENT +''','''+
-                              FORMAT("Posting Date",0,'<Day>-<Month Text,3>-<Year4>')+''','''+"GST JURISDICTION TYPE" +''','''+ "GST Registration No_" +''','''+"GST Vendor Type" +
-                              ''','''+ "HSN/SAC CODE"+''','''+ "HSN/SAC DESCRIPTION" +''','''+
-                              "VENDOR STATE" +''','''+ FORMAT("System Date",0,'<Day>-<Month Text,3>-<Year4>')+''',1,''Nos'','''+ "Document No_"+''','''+ "G_L Account No_"+''',''Input Service'')';
-                        IF SqlQuery<>'' THEN
-                        SQLConnection.Execute(SqlQuery);
+                        SqlQuery := 'Insert into [OTHER_GST_ENTRIES] ([Posting Date],[VENDOR NAME],[INVOICE NO.],[Vendor Invoice Date],[Accessable Amt],[IGST],[CGST],[SGST],[IGST Rate]' +
+                              ',[CGST Rate],[SGST Rate],[TOTAL INVOICED AMT],[DEPARTMENT],[ACTUAL DATE] ,[GST JURISDICTION TYPE],[GST Registration No_],[GST Vendor Type],[HSN/SAC CODE]' +
+                              ',[HSN/SAC DESCRIPTION],[VENDOR STATE],[System Date],[Quantity],[UOM],[Document No_],[G_L Account No_],[ITC Claim Type]) values(''' +
+                              FORMAT("Posting Date", 0, '<Day>-<Month Text,3>-<Year4>') + ''',''' + "VENDOR NAME" + ''',''' + "INVOICE NO." + ''',''' + FORMAT("Posting Date", 0, '<Day>-<Month Text,3>-<Year4>') +
+                              ''',' + CommaRemoval(FORMAT(ROUND("Accessable Amt", 1))) + ',' + CommaRemoval(FORMAT(ROUND(IGST, 1))) + ',' +
+                              CommaRemoval(FORMAT(ROUND(CGST, 1))) + ',' + CommaRemoval(FORMAT(ROUND(SGST, 1))) + ',' + FORMAT(ROUND((IGST * 100 / "Accessable Amt"), 1)) + ',' +
+                              FORMAT(ROUND((CGST * 100 / "Accessable Amt"), 1)) + ',' + FORMAT(ROUND((SGST * 100 / "Accessable Amt"), 1)) + ',' + CommaRemoval(FORMAT(ROUND("Accessable Amt" + IGST + CGST + SGST, 1))) +
+                              ',''' + DEPARTMENT + ''',''' +
+                              FORMAT("Posting Date", 0, '<Day>-<Month Text,3>-<Year4>') + ''',''' + "GST JURISDICTION TYPE" + ''',''' + "GST Registration No_" + ''',''' + "GST Vendor Type" +
+                              ''',''' + "HSN/SAC CODE" + ''',''' + "HSN/SAC DESCRIPTION" + ''',''' +
+                              "VENDOR STATE" + ''',''' + FORMAT("System Date", 0, '<Day>-<Month Text,3>-<Year4>') + ''',1,''Nos'',''' + "Document No_" + ''',''' + "G_L Account No_" + ''',''Input Service'')';
+                        IF SqlQuery <> '' THEN
+                            SQLConnection.Execute(SqlQuery);
                         Entry_DocNo := GLE."Document No.";
                         "Accessable Amt" := 0;
                         IGST := 0;
@@ -1175,127 +1222,114 @@ pageextension 70062 GeneralJournalExt extends "General Journal"
                         CGST := 0;
                         "HSN/SAC CODE" := '';
                         "HSN/SAC DESCRIPTION" := '';
-                END;
-                IF Entry_DocNo = GLE."Document No." THEN
-                BEGIN
-                        IF GLE.Amount > 0 THEN
-                        BEGIN
-                          "Posting Date" := GLE."Posting Date";
-                           Ven.RESET;
-                           Ven.SETFILTER("No.",GLE."Source No.");
-                           IF Ven.FINDFIRST THEN
-                           BEGIN
-                              "VENDOR NAME" := Ven.Name;
-                               "GST Registration No_" := Ven."GST Registration No.";
-                               "GST Vendor Type" := FORMAT(Ven."GST Vendor Type");
-                               State.RESET;
-                               State.SETRANGE(Code,Ven."State Code");
-                               IF State.FINDFIRST THEN
-                               BEGIN
-                                  "VENDOR STATE" := FORMAT(State."State Code (GST Reg. No.)")+'-'+State.Description;
-                               END;
-                           END;
-                           "INVOICE NO.":= GLE."External Document No.";
-                           DEPARTMENT := GLE."Global Dimension 1 Code";
-                           "System Date" := GLE."System Date";
-                           "Document No_" := GLE."Document No.";
-                        END ELSE IF (GLE."G/L Account No." IN ['58001','58002', '58003', '51101', '51102', '51103', '51104', '51105', '51106', '51107']) THEN
-                        BEGIN
-                            // GST Details
-                          IF (GLE."G/L Account No." IN ['58001','51101', '51102','51107']) THEN
-                          BEGIN
-                              IGST := IGST + (-GLE.Amount);
-                          END ELSE IF (GLE."G/L Account No." IN ['58002','51103','51104']) THEN
-                          BEGIN
-                              SGST := SGST + (-GLE.Amount);
-                          END ELSE IF (GLE."G/L Account No." IN ['58003', '51105','51106']) THEN
-                          BEGIN
-                              CGST := CGST + (-GLE.Amount);
-                          END ;
+                    END;
+                    IF Entry_DocNo = GLE."Document No." THEN BEGIN
+                        IF GLE.Amount > 0 THEN BEGIN
+                            "Posting Date" := GLE."Posting Date";
+                            Ven.RESET;
+                            Ven.SETFILTER("No.", GLE."Source No.");
+                            IF Ven.FINDFIRST THEN BEGIN
+                                "VENDOR NAME" := Ven.Name;
+                                "GST Registration No_" := Ven."GST Registration No.";
+                                "GST Vendor Type" := FORMAT(Ven."GST Vendor Type");
+                                State.RESET;
+                                State.SETRANGE(Code, Ven."State Code");
+                                IF State.FINDFIRST THEN BEGIN
+                                    "VENDOR STATE" := FORMAT(State."State Code (GST Reg. No.)") + '-' + State.Description;
+                                END;
+                            END;
+                            "INVOICE NO." := GLE."External Document No.";
+                            DEPARTMENT := GLE."Global Dimension 1 Code";
+                            "System Date" := GLE."System Date";
+                            "Document No_" := GLE."Document No.";
                         END ELSE
-                        BEGIN
-                            // Cost Details
-                          "Accessable Amt" := "Accessable Amt" + (-GLE.Amount);
-                          "G_L Account No_" := GLE."G/L Account No.";
+                            IF (GLE."G/L Account No." IN ['58001', '58002', '58003', '51101', '51102', '51103', '51104', '51105', '51106', '51107']) THEN BEGIN
+                                // GST Details
+                                IF (GLE."G/L Account No." IN ['58001', '51101', '51102', '51107']) THEN BEGIN
+                                    IGST := IGST + (-GLE.Amount);
+                                END ELSE
+                                    IF (GLE."G/L Account No." IN ['58002', '51103', '51104']) THEN BEGIN
+                                        SGST := SGST + (-GLE.Amount);
+                                    END ELSE
+                                        IF (GLE."G/L Account No." IN ['58003', '51105', '51106']) THEN BEGIN
+                                            CGST := CGST + (-GLE.Amount);
+                                        END;
+                            END ELSE BEGIN
+                                // Cost Details
+                                "Accessable Amt" := "Accessable Amt" + (-GLE.Amount);
+                                "G_L Account No_" := GLE."G/L Account No.";
 
-                        END;
-                END;
-                Entry_DocNo := GLE."Document No.";
-            UNTIL GLE.NEXT = 0;
+                            END;
+                    END;
+                    Entry_DocNo := GLE."Document No.";
+                UNTIL GLE.NEXT = 0;
 
 
         END;
-        IF (IGST >0) AND (SGST+CGST = 0) THEN
-        BEGIN
-          "GST JURISDICTION TYPE" := 'Interstate';
-        END ELSE
-        BEGIN
+        IF (IGST > 0) AND (SGST + CGST = 0) THEN BEGIN
+            "GST JURISDICTION TYPE" := 'Interstate';
+        END ELSE BEGIN
             "GST JURISDICTION TYPE" := 'Intrastate';
         END;
         GLA.RESET;
-        GLA.SETFILTER("No.","G_L Account No_");
-        IF GLA.FINDFIRST THEN
-        BEGIN
-          "HSN/SAC CODE" := GLA."HSN/SAC Code";
-          "HSN/SAC DESCRIPTION" := '';
-          IF (GLA."GST Group Code" <>'') AND (GLA."HSN/SAC Code" <> '' )THEN
-          BEGIN
-              HSNSAC.RESET;
-              HSNSAC.SETFILTER("GST Group Code",GLA."GST Group Code");
-              HSNSAC.SETFILTER(Code,GLA."HSN/SAC Code");
-              IF HSNSAC.FINDFIRST THEN
-              BEGIN
-                  "HSN/SAC DESCRIPTION" := HSNSAC.Description;
-              END;
-          END;
+        GLA.SETFILTER("No.", "G_L Account No_");
+        IF GLA.FINDFIRST THEN BEGIN
+            "HSN/SAC CODE" := GLA."HSN/SAC Code";
+            "HSN/SAC DESCRIPTION" := '';
+            IF (GLA."GST Group Code" <> '') AND (GLA."HSN/SAC Code" <> '') THEN BEGIN
+                HSNSAC.RESET;
+                HSNSAC.SETFILTER("GST Group Code", GLA."GST Group Code");
+                HSNSAC.SETFILTER(Code, GLA."HSN/SAC Code");
+                IF HSNSAC.FINDFIRST THEN BEGIN
+                    "HSN/SAC DESCRIPTION" := HSNSAC.Description;
+                END;
+            END;
         END;
-        SqlQuery := 'Insert into [OTHER_GST_ENTRIES] ([Posting Date],[VENDOR NAME],[INVOICE NO.],[Vendor Invoice Date],[Accessable Amt],[IGST],[CGST],[SGST],[IGST Rate]'+
-              ',[CGST Rate],[SGST Rate],[TOTAL INVOICED AMT],[DEPARTMENT],[ACTUAL DATE] ,[GST JURISDICTION TYPE],[GST Registration No_],[GST Vendor Type],[HSN/SAC CODE]'+
-              ',[HSN/SAC DESCRIPTION],[VENDOR STATE],[System Date],[Quantity],[UOM],[Document No_],[G_L Account No_],[ITC Claim Type]) values('''+
-              FORMAT("Posting Date",0,'<Day>-<Month Text,3>-<Year4>')+''','''+"VENDOR NAME"+''','''+"INVOICE NO."+''','''+FORMAT("Posting Date",0,'<Day>-<Month Text,3>-<Year4>')+
-              ''','+CommaRemoval(FORMAT(ROUND("Accessable Amt",1)))+','+CommaRemoval(FORMAT(ROUND(IGST,1)))+','+
-              CommaRemoval(FORMAT(ROUND(CGST,1)))+','+ CommaRemoval(FORMAT(ROUND(SGST,1)))+','+FORMAT(ROUND((IGST*100/"Accessable Amt"),1))+','+
-              FORMAT(ROUND((CGST*100/"Accessable Amt"),1))+','+FORMAT(ROUND((SGST*100/"Accessable Amt"),1))+','+CommaRemoval(FORMAT(ROUND("Accessable Amt"+IGST+CGST+SGST,1)))+
-              ','''+DEPARTMENT +''','''+
-              FORMAT("Posting Date",0,'<Day>-<Month Text,3>-<Year4>')+''','''+"GST JURISDICTION TYPE" +''','''+ "GST Registration No_" +''','''+"GST Vendor Type" +
-              ''','''+ "HSN/SAC CODE"+''','''+ "HSN/SAC DESCRIPTION" +''','''+
-              "VENDOR STATE" +''','''+ FORMAT("System Date",0,'<Day>-<Month Text,3>-<Year4>')+''',1,''Nos'','''+ "Document No_"+''','''+ "G_L Account No_"+''',''Input Service'')';
-        IF SqlQuery<>'' THEN
+        SqlQuery := 'Insert into [OTHER_GST_ENTRIES] ([Posting Date],[VENDOR NAME],[INVOICE NO.],[Vendor Invoice Date],[Accessable Amt],[IGST],[CGST],[SGST],[IGST Rate]' +
+              ',[CGST Rate],[SGST Rate],[TOTAL INVOICED AMT],[DEPARTMENT],[ACTUAL DATE] ,[GST JURISDICTION TYPE],[GST Registration No_],[GST Vendor Type],[HSN/SAC CODE]' +
+              ',[HSN/SAC DESCRIPTION],[VENDOR STATE],[System Date],[Quantity],[UOM],[Document No_],[G_L Account No_],[ITC Claim Type]) values(''' +
+              FORMAT("Posting Date", 0, '<Day>-<Month Text,3>-<Year4>') + ''',''' + "VENDOR NAME" + ''',''' + "INVOICE NO." + ''',''' + FORMAT("Posting Date", 0, '<Day>-<Month Text,3>-<Year4>') +
+              ''',' + CommaRemoval(FORMAT(ROUND("Accessable Amt", 1))) + ',' + CommaRemoval(FORMAT(ROUND(IGST, 1))) + ',' +
+              CommaRemoval(FORMAT(ROUND(CGST, 1))) + ',' + CommaRemoval(FORMAT(ROUND(SGST, 1))) + ',' + FORMAT(ROUND((IGST * 100 / "Accessable Amt"), 1)) + ',' +
+              FORMAT(ROUND((CGST * 100 / "Accessable Amt"), 1)) + ',' + FORMAT(ROUND((SGST * 100 / "Accessable Amt"), 1)) + ',' + CommaRemoval(FORMAT(ROUND("Accessable Amt" + IGST + CGST + SGST, 1))) +
+              ',''' + DEPARTMENT + ''',''' +
+              FORMAT("Posting Date", 0, '<Day>-<Month Text,3>-<Year4>') + ''',''' + "GST JURISDICTION TYPE" + ''',''' + "GST Registration No_" + ''',''' + "GST Vendor Type" +
+              ''',''' + "HSN/SAC CODE" + ''',''' + "HSN/SAC DESCRIPTION" + ''',''' +
+              "VENDOR STATE" + ''',''' + FORMAT("System Date", 0, '<Day>-<Month Text,3>-<Year4>') + ''',1,''Nos'',''' + "Document No_" + ''',''' + "G_L Account No_" + ''',''Input Service'')';
+        IF SqlQuery <> '' THEN
             SQLConnection.Execute(SqlQuery);
     end;
 
-   
+
     procedure External_doc_no_chk();
     begin
-        IF ((COPYSTR("Journal Batch Name",1,3) IN['BPV']) AND ("Payment Through" = "Payment Through"::FTT))  THEN
-          BEGIN
+        IF ((COPYSTR("Journal Batch Name", 1, 3) IN ['BPV']) AND ("Payment Through" = "Payment Through"::FTT)) THEN BEGIN
             EX_GLE.RESET;
-            EX_GLE.SETFILTER("Source No.",Rec."Source No.");
-            EX_GLE.SETFILTER("External Document No.",Rec."External Document No.");
-            IF EX_GLE.FINDSET  THEN
-              REPEAT
-              BEGIN
-                ERROR('This External Document No Already Existed in ' +EX_GLE."Document No.");
-              END;
-              UNTIL EX_GLE.NEXT=0;
-          END;
+            EX_GLE.SETFILTER("Source No.", Rec."Source No.");
+            EX_GLE.SETFILTER("External Document No.", Rec."External Document No.");
+            IF EX_GLE.FINDSET THEN
+                REPEAT
+                BEGIN
+                    ERROR('This External Document No Already Existed in ' + EX_GLE."Document No.");
+                END;
+                UNTIL EX_GLE.NEXT = 0;
+        END;
     end;
 
-   
+
     procedure HDFC_Construction_restirct();
     begin
-        SETRANGE("Account Type",Rec."Account Type"::"Bank Account");
-        SETFILTER("Account No.",'BA000019');
-        IF FINDSET THEN
-          BEGIN
-           Genjournal.RESET;
-           Genjournal.SETFILTER("Document No.","Document No.");
+        SETRANGE("Account Type", Rec."Account Type"::"Bank Account");
+        SETFILTER("Account No.", 'BA000019');
+        IF FINDSET THEN BEGIN
+            Genjournal.RESET;
+            Genjournal.SETFILTER("Document No.", "Document No.");
             IF Genjournal.FINDSET THEN
-              REPEAT
-                IF NOT (Genjournal."Dimension Set ID" IN [19929]) THEN
-                      ERROR('You Can not post the HDFC Payments to Other Department for ' + Genjournal."Account No.");
-              UNTIL Genjournal.NEXT =0;
-          END;
+                REPEAT
+                    IF NOT (Genjournal."Dimension Set ID" IN [19929]) THEN
+                        ERROR('You Can not post the HDFC Payments to Other Department for ' + Genjournal."Account No.");
+                UNTIL Genjournal.NEXT = 0;
+        END;
     end;
 }
 

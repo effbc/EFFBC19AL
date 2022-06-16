@@ -21,39 +21,51 @@ pageextension 70177 SalesArchiveCommentSheetExt extends "Sales Archive Comment S
         {
             field("User ID"; Rec."User ID")
             {
+                ApplicationArea = All;
             }
             field("Responsible Person"; Rec."Responsible Person")
             {
+                ApplicationArea = All;
             }
             field(Status; Rec.Status)
             {
+                ApplicationArea = All;
             }
             field("Exp Completion Date"; Rec."Exp Completion Date")
             {
+                ApplicationArea = All;
             }
             field(Priority; Rec.Priority)
             {
+                ApplicationArea = All;
             }
             field(Product; Rec.Product)
             {
+                ApplicationArea = All;
             }
             field("Customer Number"; Rec."Customer Number")
             {
+                ApplicationArea = All;
             }
             field("Customer Name"; Rec."Customer Name")
             {
+                ApplicationArea = All;
             }
             field("Remainder Date"; Rec."Remainder Date")
             {
+                ApplicationArea = All;
             }
             field("Quote Status"; Rec."Quote Status")
             {
+                ApplicationArea = All;
             }
             field(Convert; Rec.Convert)
             {
+                ApplicationArea = All;
             }
             field("Converted Order Number"; Rec."Converted Order Number")
             {
+                ApplicationArea = All;
             }
         }
     }

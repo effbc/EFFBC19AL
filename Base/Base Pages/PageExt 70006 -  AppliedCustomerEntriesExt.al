@@ -10,6 +10,7 @@ pageextension 70006 AppliedCustomerEntriesExt extends "Applied Customer Entries"
         {
             field("External Document No."; "External Document No.")
             {
+                ApplicationArea = All;
             }
         }
     }

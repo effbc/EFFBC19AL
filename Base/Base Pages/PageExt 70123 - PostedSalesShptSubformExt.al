@@ -1,6 +1,6 @@
 pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subform"
 {
-    Editable=true;
+    Editable = true;
     layout
     {
         /* modify(Control1)
@@ -12,24 +12,30 @@ pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subfor
         {
             field("Line No."; "Line No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Shipment Date")
         {
             field("RDSO Unit Charges"; "RDSO Unit Charges")
             {
+                ApplicationArea = All;
             }
             field("RDSO Charges Paid By"; "RDSO Charges Paid By")
             {
+                ApplicationArea = All;
             }
             field("RDSO Inspection Required"; "RDSO Inspection Required")
             {
+                ApplicationArea = All;
             }
             field("RDSO Inspection By"; "RDSO Inspection By")
             {
+                ApplicationArea = All;
             }
             field("RDSO Charges"; "RDSO Charges")
             {
+                ApplicationArea = All;
             }
         }
         addafter(Correction)
@@ -37,9 +43,11 @@ pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subfor
             field("Qty. Invoiced (Base)"; "Qty. Invoiced (Base)")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("Posting Date"; "Posting Date")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -50,6 +58,7 @@ pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subfor
             action("Design Worksheet")
             {
                 Caption = 'Design Worksheet';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -62,6 +71,7 @@ pageextension 70123 PostedSalesShptSubformExt extends "Posted Sales Shpt. Subfor
             action(Schedule)
             {
                 Caption = 'Schedule';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

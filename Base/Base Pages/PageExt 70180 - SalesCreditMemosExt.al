@@ -15,9 +15,11 @@ pageextension 70180 SalesCreditMemosExt extends "Sales Credit Memos"
         {
             field("Applies-to Doc. No."; Rec."Applies-to Doc. No.")
             {
+                ApplicationArea = All;
             }
             field("Applies-to ID"; Rec."Applies-to ID")
             {
+                ApplicationArea = All;
             }
         }
     }

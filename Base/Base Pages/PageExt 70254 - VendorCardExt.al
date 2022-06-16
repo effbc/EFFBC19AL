@@ -14,29 +14,36 @@ pageextension 70254 VendorCardExt extends 26
         {
             field("Address 3"; "Address 3")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Country/Region Code")
         {
             field(Contact; Contact)
             {
+                ApplicationArea = All;
             }
             field("Tally Reference"; "Tally Reference")
             {
+                ApplicationArea = All;
             }
             field("User Id"; "User Id")
             {
+                ApplicationArea = All;
             }
             field("Personal Account"; "Personal Account")
             {
+                ApplicationArea = All;
             }
             field("C-Form"; "C-Form")
             {
                 Caption = 'C-Form *';
+                ApplicationArea = All;
             }
             field("Updated in Cashflow"; "Updated in Cashflow")
             {
                 Caption = 'Updated in Cashflow *';
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -133,9 +140,11 @@ pageextension 70254 VendorCardExt extends 26
             field("Vendor Balance Verified"; "Vendor Balance Verified")
             {
                 Caption = 'Vendor Balance Verified';
+                ApplicationArea = All;
             }
             field("Prod Vendor Balance"; "Prod Vendor Balance")
             {
+                ApplicationArea = All;
 
                 trigger OnDrillDown();
                 begin
@@ -147,6 +156,7 @@ pageextension 70254 VendorCardExt extends 26
         {
             field("CS Vendor Balance"; "CS Vendor Balance")
             {
+                ApplicationArea = All;
 
                 trigger OnDrillDown();
                 begin
@@ -155,6 +165,7 @@ pageextension 70254 VendorCardExt extends 26
             }
             field("RD Vendor Balance"; "RD Vendor Balance")
             {
+                ApplicationArea = All;
 
                 trigger OnDrillDown();
                 begin
@@ -163,25 +174,31 @@ pageextension 70254 VendorCardExt extends 26
             }
             field("Admin Vendor Balance"; "Admin Vendor Balance")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Last Date Modified")
         {
             field("TDS Alert"; "TDS Alert")
             {
+                ApplicationArea = All;
             }
             field("Vendor Category"; "Vendor Category")
             {
+                ApplicationArea = All;
             }
             field("Vendor Status"; "Vendor Status")
             {
+                ApplicationArea = All;
             }
             field("Minimum Order Value"; "Minimum Order Value")
             {
                 Editable = MINIMUMORDERVALCHECK;
+                ApplicationArea = All;
             }
             field("Online Vendor"; "Online Vendor")
             {
+                ApplicationArea = All;
             }
             group("Approvals Info")
             {
@@ -190,6 +207,7 @@ pageextension 70254 VendorCardExt extends 26
                 {
                     Caption = '" Approved"';
                     Editable = Manager_Appr;
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -208,27 +226,34 @@ pageextension 70254 VendorCardExt extends 26
                 field("Approved By"; "Approved By")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field(Created_Date_time; Created_Date_time)
                 {
                     Caption = 'Created Date Time';
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("<Phone No. 2>"; "Phone No.")
                 {
                     Importance = Promoted;
+                    ApplicationArea = All;
                 }
                 field("Phone No2"; "Phone No2")
                 {
+                    ApplicationArea = All;
                 }
                 field("Phone No3"; "Phone No3")
                 {
+                    ApplicationArea = All;
                 }
                 field("Phone No4"; "Phone No4")
                 {
+                    ApplicationArea = All;
                 }
                 field("Mobile No."; "Mobile No.")
                 {
+                    ApplicationArea = All;
                 }
             }
         }
@@ -237,51 +262,64 @@ pageextension 70254 VendorCardExt extends 26
         {
             field(Remarks; Remarks)
             {
+                ApplicationArea = All;
             }
             field("Transportation Days"; "Transportation Days")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Tax Liable")
         {
             field("MSPT Code"; "MSPT Code")
             {
+                ApplicationArea = All;
             }
             field("Consider Vendor Invoice Date"; "Consider Vendor Invoice Date")
             {
+                ApplicationArea = All;
             }
             field("Standard Packing %"; "Standard Packing %")
             {
+                ApplicationArea = All;
             }
             field("Standard Insurnece %"; "Standard Insurnece %")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Prepayment %")
         {
             field(Structure; Structure)
             {
+                ApplicationArea = All;
             }
         }
         addafter("Our Account No.")
         {
             field("Name of Bank"; "Name of Bank")
             {
+                ApplicationArea = All;
             }
             field("Branch Name"; "Branch Name")
             {
+                ApplicationArea = All;
             }
             field("RTGS Code"; "RTGS Code")
             {
+                ApplicationArea = All;
             }
             field(category; category)
             {
+                ApplicationArea = All;
             }
             field("T.I.N Status"; "T.I.N Status")
             {
+                ApplicationArea = All;
             }
             field("TAN Number"; "TAN Number")
             {
+                ApplicationArea = All;
             }
             group(GST)
             {
@@ -289,15 +327,19 @@ pageextension 70254 VendorCardExt extends 26
                             ENN = 'GST';
                 field("GST Registration No."; "GST Registration No.")
                 {
+                    ApplicationArea = All;
                 }
                 field("GST Vendor Type"; "GST Vendor Type")
                 {
+                    ApplicationArea = All;
                 }
                 field("Associated Enterprises"; "Associated Enterprises")
                 {
+                    ApplicationArea = All;
                 }
                 field("GST Verification"; "GST Verification")
                 {
+                    ApplicationArea = All;
                 }
             }
             group(Quality)
@@ -305,13 +347,16 @@ pageextension 70254 VendorCardExt extends 26
                 Caption = 'Quality';
                 field("Rework Location"; "Rework Location")
                 {
+                    ApplicationArea = All;
                 }
                 field("Aggregate Turnover"; "Aggregate Turnover")
                 {
+                    ApplicationArea = All;
 
                 }
                 field("ARN No."; "ARN No.")
                 {
+                    ApplicationArea = All;
 
                 }
             }
@@ -407,6 +452,7 @@ pageextension 70254 VendorCardExt extends 26
                 Caption = '&MSPT Payables';
                 RunObject = Page "MSPT Vendor Purchases";
                 RunPageLink = "No." = FIELD("No."), "Global Dimension 1 Filter" = FIELD("Global Dimension 1 Filter"), "Global Dimension 2 Filter" = FIELD("Global Dimension 2 Filter");
+                ApplicationArea = All;
             }
         }
         addafter("Blanket Orders")
@@ -414,6 +460,7 @@ pageextension 70254 VendorCardExt extends 26
             action("Order Lines")
             {
                 Caption = 'Order Lines';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -431,6 +478,7 @@ pageextension 70254 VendorCardExt extends 26
             {
                 Promoted = true;
                 PromotedCategory = Process;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -441,6 +489,7 @@ pageextension 70254 VendorCardExt extends 26
             {
                 Promoted = true;
                 PromotedCategory = Process;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -455,6 +504,7 @@ pageextension 70254 VendorCardExt extends 26
                 PromotedCategory = Process;
                 RunObject = Page "ESPL Attachments";
                 RunPageLink = "Table ID" = CONST(23), "Document No." = FIELD("No.");
+                ApplicationArea = All;
             }
         }
     }

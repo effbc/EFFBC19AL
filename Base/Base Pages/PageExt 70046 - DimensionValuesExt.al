@@ -6,6 +6,7 @@ pageextension 70046 DimensionValuesExt extends "Dimension Values"
         {
             field("Dimension Code"; Rec."Dimension Code")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -13,10 +14,12 @@ pageextension 70046 DimensionValuesExt extends "Dimension Values"
         {
             field(Address1; Rec.Address1)
             {
+                ApplicationArea = All;
 
             }
             field(Address2; Rec.Address2)
             {
+                ApplicationArea = All;
 
             }
         }
@@ -25,6 +28,7 @@ pageextension 70046 DimensionValuesExt extends "Dimension Values"
         {
             field("Global Dimension No."; Rec."Global Dimension No.")
             {
+                ApplicationArea = All;
 
             }
         }

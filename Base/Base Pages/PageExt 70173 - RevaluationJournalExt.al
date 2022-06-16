@@ -38,6 +38,7 @@ pageextension 70173 RevaluationJournalExt extends "Revaluation Journal"
                 field(WorkDate; WORKDATE)
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
             }
         }

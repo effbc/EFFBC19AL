@@ -36,6 +36,7 @@ pageextension 70236 TaxJournalExt extends "Tax Journal"
                 field(WorkDate; WORKDATE)
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
             }
         }

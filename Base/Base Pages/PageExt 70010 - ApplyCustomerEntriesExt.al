@@ -18,36 +18,43 @@ pageextension 70010 ApplyCustomerEntriesExt extends "Apply Customer Entries"
         {
             field("Entry No."; "Entry No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Posting Date")
         {
             field("Sale Order no"; "Sale Order no")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Document Type")
         {
             field("Payment Type"; "Payment Type")
             {
+                ApplicationArea = All;
             }
             field("Customer ord No"; "Customer ord No")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Document No.")
         {
             field("invoice no"; "invoice no")
             {
+                ApplicationArea = All;
             }
             field("External Document No."; "External Document No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Global Dimension 2 Code")
         {
             field("Payment Through"; "Payment Through")
             {
+                ApplicationArea = All;
             }
         }
     }

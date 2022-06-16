@@ -22,24 +22,31 @@ pageextension 70032 ContactCardExt extends "Contact Card"
                 Caption = 'Details';
                 field("Contact Status"; Rec."Contact Status")
                 {
+                    ApplicationArea = All;
                 }
                 field("Initiated By"; Rec."Initiated By")
                 {
+                    ApplicationArea = All;
                 }
                 field("Enquiry Type"; Rec."Enquiry Type")
                 {
+                    ApplicationArea = All;
                 }
                 field("Govt./Private"; Rec."Govt./Private")
                 {
+                    ApplicationArea = All;
                 }
                 field("Domestic/Foreign"; Rec."Domestic/Foreign")
                 {
+                    ApplicationArea = All;
                 }
                 field("Product Type"; Rec."Product Type")
                 {
+                    ApplicationArea = All;
                 }
                 field("Product Category Code"; Rec."Product Category Code")
                 {
+                    ApplicationArea = All;
                 }
             }
         }

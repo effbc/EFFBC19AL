@@ -20,28 +20,36 @@ pageextension 70130 PostedTransferShipmentsExt extends "Posted Transfer Shipment
         {
             field("Prod. Order No."; Rec."Prod. Order No.")
             {
+                ApplicationArea = All;
             }
             field("Prod. Order Line No."; Rec."Prod. Order Line No.")
             {
+                ApplicationArea = All;
             }
             field("Machine Center No."; Rec."Machine Center No.")
             {
                 Caption = 'Resource';
+                ApplicationArea = All;
             }
             field("External Document No."; Rec."External Document No.")
             {
+                ApplicationArea = All;
             }
             field("User ID"; Rec."User ID")
             {
+                ApplicationArea = All;
             }
             field("Required Date"; Rec."Required Date")
             {
+                ApplicationArea = All;
             }
             field("Due Date"; Rec."Due Date")
             {
+                ApplicationArea = All;
             }
             field("Operation No."; Rec."Operation No.")
             {
+                ApplicationArea = All;
             }
         }
     }

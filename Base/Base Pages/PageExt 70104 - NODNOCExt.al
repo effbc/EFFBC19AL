@@ -74,6 +74,7 @@ pageextension 70104 NODNOCExt extends "NOD/NOC"
             {
                 Caption = 'Name';
                 Editable = false;
+                ApplicationArea = All;
             }
         }
     }

@@ -165,6 +165,7 @@ pageextension 70163 PurchaseReturnOrderExt extends "Purchase Return Order"
             action("Copy Quality Rejected Items")
             {
                 Caption = 'Copy Quality Rejected Items';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

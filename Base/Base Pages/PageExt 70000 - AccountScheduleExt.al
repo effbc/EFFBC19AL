@@ -11,12 +11,15 @@ pageextension 70000 AccountScheduleExt extends "Account Schedule"
         {
             field("Dimension 1 Filter"; "Dimension 1 Filter")
             {
+                ApplicationArea = All;
             }
             field("Dimension 2 Filter"; "Dimension 2 Filter")
             {
+                ApplicationArea = All;
             }
             field("Dimension 3 Filter"; "Dimension 3 Filter")
             {
+                ApplicationArea = All;
             }
         }
     }

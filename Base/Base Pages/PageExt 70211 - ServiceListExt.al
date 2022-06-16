@@ -19,12 +19,14 @@ pageextension 70211 ServiceListExt extends "Service List"
         {
             field("Posting Date"; "Posting Date")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Control1")
         {
             field("xRec.COUNT"; xRec.COUNT)
             {
+                ApplicationArea = All;
             }
         }
     }

@@ -6,12 +6,15 @@ pageextension 70067 GLAccountCardExt extends "G/L Account Card"
         {
             field("Cash Account"; "Cash Account")
             {
+                ApplicationArea = All;
             }
             field("TDS Account"; "TDS Account")
             {
+                ApplicationArea = All;
             }
             field("Work Tax Account"; "Work Tax Account")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Default Deferral Template Code")
@@ -24,6 +27,7 @@ pageextension 70067 GLAccountCardExt extends "G/L Account Card"
                     Caption = 'Reflect in P&L*';
                     Editable = PL_EDITABLE;
                     Importance = Promoted;
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -48,6 +52,7 @@ pageextension 70067 GLAccountCardExt extends "G/L Account Card"
                     Caption = 'P&L Income Type*';
                     Editable = PL_EDITABLE;
                     Importance = Promoted;
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -76,6 +81,7 @@ pageextension 70067 GLAccountCardExt extends "G/L Account Card"
                 {
                     Caption = 'P&L Income Type Summary*';
                     Editable = PL_EDITABLE;
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -96,6 +102,7 @@ pageextension 70067 GLAccountCardExt extends "G/L Account Card"
                 {
                     Caption = 'P&L Income Expenditure*';
                     Editable = PL_EDITABLE;
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -114,6 +121,7 @@ pageextension 70067 GLAccountCardExt extends "G/L Account Card"
                 {
                     Caption = 'P&L Minor Head*';
                     Editable = PL_EDITABLE;
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin

@@ -20,17 +20,21 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
             field("Schedule Type"; "Schedule Type")
             {
                 Editable = EditableVarTrue;
+                ApplicationArea = All;
             }
             field("Sell-to Customer No."; "Sell-to Customer No.")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Schedule No"; "Schedule No")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("Line No."; "Line No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter(Type)
@@ -38,22 +42,27 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
             field("Amount Added to Tax Base"; "Amount Added to Tax Base")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Amount Including Excise"; "Amount Including Excise")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Unit Cost"; "Unit Cost")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Service Tax Amount"; "Service Tax Amount")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Excise Amount"; "Excise Amount")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
         }
         addafter("No.")
@@ -61,46 +70,57 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
             field("Service Tax SHE Cess Amount"; "Service Tax SHE Cess Amount")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Tax Base Amount"; "Tax Base Amount")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Amount Including Tax"; "Amount Including Tax")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Service Tax Group"; "Service Tax Group")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Amount Including VAT"; "Amount Including VAT")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("SHE Cess Amount"; "SHE Cess Amount")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Excise Effective Rate"; "Excise Effective Rate")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Tax %"; "Tax %")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Tax Amount"; "Tax Amount")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Tax Area Code"; "Tax Area Code")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("VAT Base Amount"; "VAT Base Amount")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
         }
         addafter(Description)
@@ -108,82 +128,102 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
             field("Service Tax eCess Amount"; "Service Tax eCess Amount")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field(Amount; Amount)
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Amount To Customer"; "Amount To Customer")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Posting Group"; "Posting Group")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Excise Prod. Posting Group"; "Excise Prod. Posting Group")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("BED Amount"; "BED Amount")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("eCess Amount"; "eCess Amount")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Packet No"; "Packet No")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("Form Code"; "Form Code")
             {
                 Editable = EditableVarFalse;
                 Visible = false;
+                ApplicationArea = All;
             }
             field("RDSO Charges Paid By"; "RDSO Charges Paid By")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("RDSO Unit Charges"; "RDSO Unit Charges")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("RDSO Inspection Required"; "RDSO Inspection Required")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("RDSO Inspection By"; "RDSO Inspection By")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Form No."; "Form No.")
             {
                 Editable = EditableVarFalse;
                 Visible = false;
+                ApplicationArea = All;
             }
         }
         addafter("Line Discount Amount")
         {
             field("TDS/TCS Amount"; "TDS/TCS Amount")
             {
+                ApplicationArea = All;
             }
             field("TCS Type"; "TCS Type")
             {
+                ApplicationArea = All;
             }
             field("TCS Nature of Collection"; "TCS Nature of Collection")
             {
+                ApplicationArea = All;
             }
             field("TDS/TCS Base Amount"; "TDS/TCS Base Amount")
             {
+                ApplicationArea = All;
             }
             field("TDS/TCS %"; "TDS/TCS %")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Shortcut Dimension 2 Code")
@@ -191,79 +231,102 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
             field("Quantity (Base)"; "Quantity (Base)")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Excise Base Amount"; "Excise Base Amount")
             {
                 Editable = EditableVarFalse;
+                ApplicationArea = All;
             }
             field("Order No."; "Order No.")
             {
+                ApplicationArea = All;
             }
             field("Order Line No."; "Order Line No.")
             {
+                ApplicationArea = All;
             }
             field("Posting Date"; "Posting Date")
             {
+                ApplicationArea = All;
             }
             field("Shipment Date"; "Shipment Date")
             {
+                ApplicationArea = All;
             }
             field("Service Tax SBC %"; "Service Tax SBC %")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("Service Tax SBC Amount"; "Service Tax SBC Amount")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("KK Cess%"; "KK Cess%")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("KK Cess Amount"; "KK Cess Amount")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("Service Tax SBC Amount (Intm)"; "Service Tax SBC Amount (Intm)")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("MRP Price"; "MRP Price")
             {
+                ApplicationArea = All;
             }
             field(MRP; MRP)
             {
+                ApplicationArea = All;
             }
             field("Abatement %"; "Abatement %")
             {
+                ApplicationArea = All;
             }
             field("Product Group Code"; "Product Group Code")
             {
+                ApplicationArea = All;
             }
             field("External Document No."; "External Document No.")
             {
+                ApplicationArea = All;
             }
             field("GST Place of Supply"; "GST Place of Supply")
             {
+                ApplicationArea = All;
             }
             field("GST Group Type"; "GST Group Type")
             {
+                ApplicationArea = All;
             }
             field("GST %"; "GST %")
             {
+                ApplicationArea = All;
             }
             field("GST Jurisdiction Type"; "GST Jurisdiction Type")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field(Exempted; Exempted)
             {
+                ApplicationArea = All;
             }
             field("Retention Portion"; "Retention Portion")
             {
+                ApplicationArea = All;
             }
             field("Supply Portion"; "Supply Portion")
             {
+                ApplicationArea = All;
             }
 
         }
@@ -275,6 +338,7 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
             action(Schedule)
             {
                 Caption = 'Schedule';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -292,6 +356,7 @@ pageextension 70119 PostedSalesInvoiceSubformExt extends "Posted Sales Invoice S
                 action("&Attachments")
                 {
                     Caption = '&Attachments';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     begin

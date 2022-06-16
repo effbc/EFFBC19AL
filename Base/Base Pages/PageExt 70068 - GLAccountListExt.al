@@ -6,18 +6,22 @@ pageextension 70068 GLAccountListExt extends "G/L Account List"
         {
             field("Search Name"; "Search Name")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Default Deferral Template Code")
         {
             field("Cash Account"; "Cash Account")
             {
+                ApplicationArea = All;
             }
             field("TDS Account"; "TDS Account")
             {
+                ApplicationArea = All;
             }
             field("Work Tax Account"; "Work Tax Account")
             {
+                ApplicationArea = All;
             }
         }
     }

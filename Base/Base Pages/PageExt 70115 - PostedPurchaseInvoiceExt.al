@@ -24,6 +24,7 @@ pageextension 70115 PostedPurchaseInvoiceExt extends "Posted Purchase Invoice"
             field("User ID"; "User ID")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
         addafter("Vendor Order No.")
@@ -32,6 +33,7 @@ pageextension 70115 PostedPurchaseInvoiceExt extends "Posted Purchase Invoice"
             {
                 Caption = 'Vendor Invoice Date';
                 Editable = VendrInvVisible;
+                ApplicationArea = All;
             }
         }
         addafter("Responsibility Center")
@@ -39,15 +41,18 @@ pageextension 70115 PostedPurchaseInvoiceExt extends "Posted Purchase Invoice"
             field("Dimension Set ID"; "Dimension Set ID")
             {
                 Visible = false;
+                ApplicationArea = All;
             }
             field("Tarrif Heading No"; "Tarrif Heading No")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Shortcut Dimension 1 Code")
         {
             field("Excise Not to Consider"; "Excise Not to Consider")
             {
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -68,48 +73,59 @@ pageextension 70115 PostedPurchaseInvoiceExt extends "Posted Purchase Invoice"
             field("Vendor Excise Invoice No."; "Vendor Excise Invoice No.")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("Vend. Excise Inv. Date"; "Vend. Excise Inv. Date")
             {
+                ApplicationArea = All;
             }
             field("Actual Invoiced Date"; "Actual Invoiced Date")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Expected Receipt Date")
         {
             field("Additional Duty Value"; "Additional Duty Value")
             {
+                ApplicationArea = All;
             }
             field("Invoiced Amount"; "Invoiced Amount")
             {
+                ApplicationArea = All;
             }
             field("Vehicle Number"; "Vehicle Number")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Currency Code")
         {
             field("Currency Factor"; "Currency Factor")
             {
+                ApplicationArea = All;
             }
             field(State; State)
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Vendor GST Reg. No."; "Vendor GST Reg. No.")
             {
+                ApplicationArea = All;
             }
             field("Excise Claimed Date"; "Excise Claimed Date")
             {
                 Caption = 'GST Claimed Date';
                 Editable = GST_Claimed_Date_Edtbl_Flag;
                 Importance = Promoted;
+                ApplicationArea = All;
             }
             field(RCM_Paid_Date; RCM_Paid_Date)
             {
                 Editable = GST_Claimed_Date_Edtbl_Flag;
                 Importance = Promoted;
+                ApplicationArea = All;
             }
         }
     }
@@ -139,6 +155,7 @@ pageextension 70115 PostedPurchaseInvoiceExt extends "Posted Purchase Invoice"
             {
                 Caption = 'Update In Cash Flow';
                 Visible = false;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -214,9 +231,11 @@ pageextension 70115 PostedPurchaseInvoiceExt extends "Posted Purchase Invoice"
                 Caption = 'MSPT Details';
                 RunObject = Page "MSPT Posted Order Details";
                 RunPageLink = Type = CONST(Purchase), "Document No." = FIELD("No.");
+                ApplicationArea = All;
             }
             action("Forward To Cashlfow")
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -234,6 +253,7 @@ pageextension 70115 PostedPurchaseInvoiceExt extends "Posted Purchase Invoice"
             {
                 Promoted = true;
                 PromotedCategory = "Report";
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

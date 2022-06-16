@@ -20,12 +20,15 @@ pageextension 70251 ValueEntriesExt extends "5802"
 
             field("Inventory Posting Group"; Rec."Inventory Posting Group")
             {
+                ApplicationArea = All;
             }
             field("Journal Batch Name"; Rec."Journal Batch Name")
             {
+                ApplicationArea = All;
             }
             field(Inventoriable; Rec.Inventoriable)
             {
+                ApplicationArea = All;
             }
         }
         moveafter("Posting Date"; "Item Ledger Entry Type")

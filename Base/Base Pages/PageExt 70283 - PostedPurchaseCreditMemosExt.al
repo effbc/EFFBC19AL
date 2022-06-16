@@ -8,12 +8,14 @@ pageextension 70283 PostedPurchaseCreditMemosExt extends 147
             {
                 Style = Standard;
                 StyleExpr = TRUE;
+                ApplicationArea = All;
             }
         }
         addafter("Order Address Code")
         {
             field("Vendor Cr. Memo No."; "Vendor Cr. Memo No.")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -21,6 +23,7 @@ pageextension 70283 PostedPurchaseCreditMemosExt extends 147
         {
             field("User ID"; "User ID")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -28,6 +31,7 @@ pageextension 70283 PostedPurchaseCreditMemosExt extends 147
         {
             field("Pre-Assigned No."; "Pre-Assigned No.")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -35,10 +39,12 @@ pageextension 70283 PostedPurchaseCreditMemosExt extends 147
         {
             field(Structure; Structure)
             {
+                ApplicationArea = All;
 
             }
             field("Applies-to Doc. No."; "Applies-to Doc. No.")
             {
+                ApplicationArea = All;
 
             }
         }

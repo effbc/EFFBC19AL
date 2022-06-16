@@ -49,96 +49,121 @@ pageextension 70081 ItemListExt extends 31
         {
             field("Description 2"; "Description 2")
             {
+                ApplicationArea = All;
             }
             field("No of Panels"; "No of Panels")
             {
+                ApplicationArea = All;
             }
             field(SMD_But_mchine_cant_do; SMD_But_mchine_cant_do)
             {
+                ApplicationArea = All;
             }
             /* field("GST Group Code"; "GST Group Code")
             {
             }
             field("HSN/SAC Code"; "HSN/SAC Code")
             {
-            } */                                            //Removed In BC
+            } */                                        //Removed In BC
             field(Package; Package)
             {
+                ApplicationArea = All;
             }
             field(EFF_MOQ; EFF_MOQ)
             {
+                ApplicationArea = All;
             }
             field("Stock at Stores"; "Stock at Stores")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Stock At MCH Location"; "Stock At MCH Location")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Part Number"; "Part Number")
             {
+                ApplicationArea = All;
             }
             field(Make; Make)
             {
+                ApplicationArea = All;
             }
             field("Minimum Order Quantity"; "Minimum Order Quantity")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("Order Multiple"; "Order Multiple")
             {
+                ApplicationArea = All;
             }
             field("Safety Stock Quantity"; "Safety Stock Quantity")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Safety Lead Time"; "Safety Lead Time")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
         }
         addafter("Last Direct Cost")
         {
             field("Avg Unit Cost"; "Avg Unit Cost")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Item Disc. Group")
         {
             field("Product Group Code"; "Product Group Code")
             {
+                ApplicationArea = All;
             }
             field("Item Sub Group Code"; "Item Sub Group Code")
             {
+                ApplicationArea = All;
             }
             field("Item Sub Sub Group Code"; "Item Sub Sub Group Code")
             {
+                ApplicationArea = All;
             }
             field("Qty. on Purch. Order"; "Qty. on Purch. Order")
             {
+                ApplicationArea = All;
             }
             field("User ID"; "User ID")
             {
+                ApplicationArea = All;
             }
             field("<Search Description 2>"; "Search Description")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Rounding Precision"; "Rounding Precision")
             {
+                ApplicationArea = All;
             }
             field("QC Enabled"; "QC Enabled")
             {
+                ApplicationArea = All;
             }
             field(Qc_Item; Qc_Item)
             {
+                ApplicationArea = All;
             }
             field("BIN Address"; "BIN Address")
             {
+                ApplicationArea = All;
             }
             field("Stock Address"; "Stock Address")
             {
+                ApplicationArea = All;
             }
             group(Control1102152012)
             {
@@ -151,6 +176,7 @@ pageextension 70081 ItemListExt extends 31
                         ShowCaption = false;
                         field("xRec.COUNT"; xRec.COUNT)
                         {
+                            ApplicationArea = All;
                         }
                     }
                     group(Control1102152008)
@@ -161,6 +187,7 @@ pageextension 70081 ItemListExt extends 31
                             Editable = false;
                             Style = Unfavorable;
                             StyleExpr = TRUE;
+                            ApplicationArea = All;
                         }
                     }
                     group(Control1102152006)
@@ -171,6 +198,7 @@ pageextension 70081 ItemListExt extends 31
                             Editable = false;
                             Style = StrongAccent;
                             StyleExpr = TRUE;
+                            ApplicationArea = All;
                         }
                     }
                     group(Control1102152001)
@@ -180,6 +208,7 @@ pageextension 70081 ItemListExt extends 31
                         {
                             Style = Favorable;
                             StyleExpr = TRUE;
+                            ApplicationArea = All;
                         }
                     }
                     group(Control1102152018)
@@ -189,6 +218,7 @@ pageextension 70081 ItemListExt extends 31
                         {
                             Style = Subordinate;
                             StyleExpr = TRUE;
+                            ApplicationArea = All;
                         }
                     }
                     group(Control1102152004)
@@ -199,6 +229,7 @@ pageextension 70081 ItemListExt extends 31
                             Editable = false;
                             Style = Ambiguous;
                             StyleExpr = TRUE;
+                            ApplicationArea = All;
                         }
                     }
                 }
@@ -231,10 +262,10 @@ pageextension 70081 ItemListExt extends 31
         {
             Promoted = true;
         }
-        modify("Planning Worksheet")
+         modify("Planning Worksheet")
         {
             Promoted = true;
-        }
+        }         
         modify("Item Journal")
         {
             Promoted = true;
@@ -337,10 +368,10 @@ pageextension 70081 ItemListExt extends 31
         {
             Promoted = true;
         }
-        modify("Nonstock Item Sales")
+         modify("Nonstock Item Sales")
         {
             Promoted = false;
-        }
+        }        
         modify("Item Substitutions")
         {
             Promoted = false;
@@ -361,10 +392,10 @@ pageextension 70081 ItemListExt extends 31
         {
             Promoted = false;
         }
-        modify("Item Age Composition - Qty.")
+         modify("Item Age Composition - Qty.")
         {
             Promoted = false;
-        }
+        }          
         modify("Item Age Composition - Value")
         {
             Promoted = false;
@@ -406,6 +437,7 @@ pageextension 70081 ItemListExt extends 31
             action("Alternate Items")
             {
                 Caption = 'Alternate Items';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -421,6 +453,7 @@ pageextension 70081 ItemListExt extends 31
                 Caption = 'Item Specifications';
                 RunObject = Page "Item Specification";
                 RunPageLink = "Item No." = FIELD("No."), "Product Group Code" = FIELD("Product Group Code"), "Item Category Code" = FIELD("Item Category Code"), "Item Sub Group Code" = FIELD("Item Sub Group Code"), "Item Sub Sub Group Code" = FIELD("Item Sub Sub Group Code");
+                ApplicationArea = All;
             }
         }
         addafter("Stockkeepin&g Units")
@@ -429,6 +462,7 @@ pageextension 70081 ItemListExt extends 31
             {
                 Promoted = true;
                 PromotedCategory = Process;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 var
@@ -467,6 +501,7 @@ pageextension 70081 ItemListExt extends 31
             {
                 Promoted = true;
                 PromotedCategory = Process;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 var
@@ -576,6 +611,7 @@ pageextension 70081 ItemListExt extends 31
             action("Show MCH Shortage Material")
             {
                 Caption = 'Show MCH Shortage Material';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

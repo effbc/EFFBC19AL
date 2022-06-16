@@ -18,15 +18,18 @@ pageextension 70161 PurchaseQuoteExt extends "Purchase Quote"
         {
             field("RFQ No."; "RFQ No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Ship-to Contact")
         {
             field("MSPT Date"; "MSPT Date")
             {
+                ApplicationArea = All;
             }
             field("MSPT Code"; "MSPT Code")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -79,6 +82,7 @@ pageextension 70161 PurchaseQuoteExt extends "Purchase Quote"
                 Caption = '&MSPT Order Details';
                 RunObject = Page "MSPT Order Details";
                 RunPageLink = Type = CONST(Purchase), "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No."), "MSPT Header Code" = FIELD("MSPT Code"), "Party Type" = CONST(Vendor), "Party No." = FIELD("Buy-from Vendor No.");
+                ApplicationArea = All;
             }
         }
         addfirst("Make Order")
@@ -89,6 +93,7 @@ pageextension 70161 PurchaseQuoteExt extends "Purchase Quote"
             action("Quotation Comparision Statement")
             {
                 Caption = 'Quotation Comparision Statement';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 var
@@ -260,6 +265,7 @@ pageextension 70161 PurchaseQuoteExt extends "Purchase Quote"
             action("Copy Indent")
             {
                 Caption = 'Copy Indent';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

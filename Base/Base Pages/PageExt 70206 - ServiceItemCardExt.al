@@ -35,34 +35,42 @@ pageextension 70206 ServiceItemCardExt extends "Service Item Card"
         {
             field(ITLSNO; ITLSNO)
             {
+                ApplicationArea = All;
             }
             field("SO No."; "SO No.")
             {
+                ApplicationArea = All;
             }
             field("SO Line No."; "SO Line No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter(Priority)
         {
             field("Sales Date"; "Sales Date")
             {
+                ApplicationArea = All;
             }
             field("Creation Date"; "Creation Date")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
         addafter("Preferred Resource")
         {
             field("WORKING STATUS"; "WORKING STATUS")
             {
+                ApplicationArea = All;
             }
             field("Present Location"; "Present Location")
             {
+                ApplicationArea = All;
             }
             field("Changed Location"; "Changed Location")
             {
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -88,33 +96,42 @@ pageextension 70206 ServiceItemCardExt extends "Service Item Card"
         {
             field("No. Series"; "No. Series")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Installation Date")
         {
             field("Installed Location"; "Installed Location")
             {
+                ApplicationArea = All;
             }
             field(Territory; Territory)
             {
+                ApplicationArea = All;
             }
             field(Position; Position)
             {
+                ApplicationArea = All;
             }
             field("Power Supply"; "Power Supply")
             {
+                ApplicationArea = All;
             }
             field("Job No."; "Job No.")
             {
+                ApplicationArea = All;
             }
             field("Job Installation Date"; "Job Installation Date")
             {
+                ApplicationArea = All;
             }
             field("Software Code"; "Software Code")
             {
+                ApplicationArea = All;
             }
             field("Software Version"; "Software Version")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -188,7 +205,9 @@ pageextension 70206 ServiceItemCardExt extends "Service Item Card"
                 Caption = 'Service Orders';
                 Image = Document;
                 RunObject = Page "Service Item Lines";
-                RunPageLink = Service Item No.=FIELD(No.);
+                RunPageLink = Service Item No.=                ApplicationArea = All;
+                ApplicationArea = All;
+FIELD(No.);
                 RunPageView = SORTING(Service Item No.) ORDER(Ascending);
             }
         }

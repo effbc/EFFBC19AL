@@ -18,11 +18,13 @@ pageextension 70113 PostedPurchaseCreditMemoExt extends "Posted Purchase Credit 
         {
             field("User ID"; "User ID")
             {
+                ApplicationArea = All;
             }
             field("Excise Claimed Date"; "Excise Claimed Date")
             {
                 Caption = 'GST Claimed Date';
                 Editable = false;
+                ApplicationArea = All;
             }
         }
     }

@@ -1,7 +1,5 @@
 pageextension 70058 FinanceChargeMemoStatisticsExt extends "Finance Charge Memo Statistics"
 {
-
-
     layout
     {
 

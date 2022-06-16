@@ -9,6 +9,7 @@ pageextension 70151 PurchaseOrderArchivesExt extends "Purchase Order Archives"
             field("Cancel / Short Close"; Rec."Cancel / Short Close"
             )
             {
+                ApplicationArea = All;
 
             }
         }

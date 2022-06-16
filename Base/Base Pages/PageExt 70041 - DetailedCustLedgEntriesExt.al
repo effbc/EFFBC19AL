@@ -19,6 +19,7 @@ pageextension 70041 DetailedCustLedgEntriesExt extends "Detailed Cust. Ledg. Ent
         {
             field("Payment Type"; Rec."Payment Type")
             {
+                ApplicationArea = All;
             }
         }
 
@@ -26,9 +27,11 @@ pageextension 70041 DetailedCustLedgEntriesExt extends "Detailed Cust. Ledg. Ent
         {
             field("Applied Cust. Ledger Entry No."; Rec."Applied Cust. Ledger Entry No.")
             {
+                ApplicationArea = All;
             }
             field("Application No."; Rec."Application No.")
             {
+                ApplicationArea = All;
             }
         }
     }

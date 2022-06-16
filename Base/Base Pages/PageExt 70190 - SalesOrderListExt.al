@@ -13,90 +13,116 @@ pageextension 70190 SalesOrderListExt extends 9305
         {
             field(Product; Product)
             {
+                ApplicationArea = All;
             }
             field("Shipment Type"; Rec."Shipment Type")
             {
+                ApplicationArea = All;
             }
             field("Order Released Date"; Rec."Order Released Date")
             {
+                ApplicationArea = All;
             }
             field("Call letters Status"; Rec."Call letters Status")
             {
+                ApplicationArea = All;
             }
             field(CallLetterRecivedDate; REc.CallLetterRecivedDate)
             {
+                ApplicationArea = All;
             }
             field("Customer OrderNo."; Rec."Customer OrderNo.")
             {
+                ApplicationArea = All;
             }
             field(Vertical; Vertical)
             {
+                ApplicationArea = All;
             }
         }
         addafter("Sell-to Country/Region Code")
         {
             field("Sell-to City"; Rec."Sell-to City")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Ship-to Post Code")
         {
             field("Ship-to City"; Rec."Ship-to City")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Job Queue Status")
         {
             field("Total Order(LOA)Value"; Rec."Total Order(LOA)Value")
             {
+                ApplicationArea = All;
             }
             field("Pending(LOA)Value"; Rec."Pending(LOA)Value")
             {
+                ApplicationArea = All;
             }
             field("Installation Amount"; Rec."Installation Amount")
             {
+                ApplicationArea = All;
             }
             field("Software Amount"; Rec."Software Amount")
             {
+                ApplicationArea = All;
             }
             field("Blanket Order No"; Rec."Blanket Order No")
             {
+                ApplicationArea = All;
             }
             field("Sale Order Total Amount"; Rec."Sale Order Total Amount")
             {
+                ApplicationArea = All;
             }
             field("Customer Posting Group"; Rec."Customer Posting Group")
             {
+                ApplicationArea = All;
             }
             field("Security Deposit Amount"; Rec."Security Deposit Amount")
             {
+                ApplicationArea = All;
             }
             field("SD Status"; Rec."SD Status")
             {
+                ApplicationArea = All;
             }
             field("Tender No."; Rec."Tender No.")
             {
+                ApplicationArea = All;
             }
             field("Warranty Period"; Rec."Warranty Period")
             {
+                ApplicationArea = All;
             }
             field("Project Completion Date"; Rec."Project Completion Date")
             {
+                ApplicationArea = All;
             }
             field(Order_After_CF_Integration; Rec.Order_After_CF_Integration)
             {
+                ApplicationArea = All;
             }
             field("Customer Order Date"; Rec."Customer Order Date")
             {
+                ApplicationArea = All;
             }
             field(Structure; Rec.Structure)
             {
+                ApplicationArea = All;
             }
             field("Customer GST Reg. No."; Rec."Customer GST Reg. No.")
             {
+                ApplicationArea = All;
             }
             field("Verification Status"; Rec."Verification Status")
             {
+                ApplicationArea = All;
             }
             group(Control1102152005)
             {
@@ -111,6 +137,7 @@ pageextension 70190 SalesOrderListExt extends 9305
                         field("TotalOrders+FORMAT(Rec.COUNT)"; TotalOrders + FORMAT(Rec.COUNT))
                         {
                             Editable = false;
+                            ApplicationArea = All;
                         }
                     }
                 }
@@ -195,6 +222,7 @@ pageextension 70190 SalesOrderListExt extends 9305
             action(OMSDump)
             {
                 Image = Export;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -235,6 +263,7 @@ pageextension 70190 SalesOrderListExt extends 9305
             {
                 Caption = 'Private_Payment  Terms_User_Manual';
                 Image = Document;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

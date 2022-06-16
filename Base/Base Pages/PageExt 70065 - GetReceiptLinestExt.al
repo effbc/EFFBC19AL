@@ -20,18 +20,21 @@ pageextension 70065 GetReceiptLinestExt extends "Get Receipt Lines"
         {
             field("Order No."; Rec."Order No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Buy-from Vendor No.")
         {
             field("Pay-to Vendor No."; Rec."Pay-to Vendor No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Job No.")
         {
             field("Item QC Status"; Inwardstatus)
             {
+                ApplicationArea = All;
             }
         }
     }

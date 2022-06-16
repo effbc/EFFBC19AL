@@ -41,6 +41,7 @@ pageextension 70260 WhseItemJournalExt extends "Whse. Item Journal"
                 field(WorkDate; WORKDATE)
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
             }
         }

@@ -6,9 +6,11 @@ pageextension 70109 PaymentTermsExt extends "Payment Terms"
         {
             field("Stage 1"; "Stage 1")
             {
+                ApplicationArea = All;
             }
             field("Percentage 1"; "Percentage 1")
             {
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -25,9 +27,11 @@ pageextension 70109 PaymentTermsExt extends "Payment Terms"
             }
             field("Stage 2"; "Stage 2")
             {
+                ApplicationArea = All;
             }
             field("Percentage 2"; "Percentage 2")
             {
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -44,9 +48,11 @@ pageextension 70109 PaymentTermsExt extends "Payment Terms"
             }
             field("Stage 3"; "Stage 3")
             {
+                ApplicationArea = All;
             }
             field("Percentage 3"; "Percentage 3")
             {
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -62,12 +68,15 @@ pageextension 70109 PaymentTermsExt extends "Payment Terms"
         {
             field("Update In Cashflow"; "Update In Cashflow")
             {
+                ApplicationArea = All;
             }
             field(Sales; Sales)
             {
+                ApplicationArea = All;
             }
             field(Purchase; Purchase)
             {
+                ApplicationArea = All;
             }
         }
     }

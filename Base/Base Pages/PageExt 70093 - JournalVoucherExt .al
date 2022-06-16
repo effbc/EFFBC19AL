@@ -37,6 +37,7 @@ pageextension 70093 JournalVoucherExt extends "Journal Voucher"
                 field(WorkDate; WORKDATE)
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
             }
         }

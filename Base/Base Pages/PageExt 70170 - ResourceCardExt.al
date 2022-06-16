@@ -11,6 +11,7 @@ pageextension 70170 ResourceCardExt extends "Resource Card"
         {
             field(Department; Department)
             {
+                ApplicationArea = All;
             }
         }
     }

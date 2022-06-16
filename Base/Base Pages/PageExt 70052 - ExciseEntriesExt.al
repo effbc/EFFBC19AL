@@ -20,6 +20,7 @@ pageextension 70052 ExciseEntriesExt extends "Excise Entries"
             field("Item No."; "Item No.")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
         }
     }

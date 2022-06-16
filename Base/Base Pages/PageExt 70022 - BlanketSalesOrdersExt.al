@@ -5,27 +5,26 @@ pageextension 70022 BlanketSalesOrdersExt extends 9303
     layout
     {
 
-
-
-
-
-
         addafter("Sell-to Customer Name")
         {
             field(Status; Status)
             {
+                ApplicationArea = All;
             }
         }
         addafter("Currency Code")
         {
             field("Payment Terms Code"; Rec."Payment Terms Code")
             {
+                ApplicationArea = All;
             }
             field(Remarks; Remarks)
             {
+                ApplicationArea = All;
             }
             field("Customer Posting Group"; Rec."Customer Posting Group")
             {
+                ApplicationArea = All;
             }
             group(Control1102152003)
             {
@@ -40,6 +39,7 @@ pageextension 70022 BlanketSalesOrdersExt extends 9303
                         field("TotalOrders+FORMAT(Rec.COUNT)"; TotalOrders + FORMAT(Rec.COUNT))
                         {
                             Editable = false;
+                            ApplicationArea = All;
                         }
                     }
                 }
@@ -76,12 +76,8 @@ pageextension 70022 BlanketSalesOrdersExt extends 9303
 
 
     }
-
-
-
-
     var
-        UserMgt: Codeunit "User Setup Management";
+        UserMgt: Codeunit 5700;
         TotalOrders: Label '"Total Orders: "';
 
 

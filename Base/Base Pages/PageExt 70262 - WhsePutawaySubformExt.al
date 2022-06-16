@@ -19,12 +19,15 @@ pageextension 70262 WhsePutawaySubformExt extends "Whse. Put-away Subform"
         {
             field("Quantity Accepted"; Rec."Quantity Accepted")
             {
+                ApplicationArea = All;
             }
             field("Quantity Rework"; Rec."Quantity Rework")
             {
+                ApplicationArea = All;
             }
             field("Quantity Rejected"; Rec."Quantity Rejected")
             {
+                ApplicationArea = All;
             }
         }
     }

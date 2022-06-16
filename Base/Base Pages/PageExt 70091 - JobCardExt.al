@@ -11,15 +11,18 @@ pageextension 70091 JobCardExt extends "Job Card"
             field("Global Dimension 1 Code"; "Global Dimension 1 Code")
             {
                 Caption = 'Departments Code';
+                ApplicationArea = All;
             }
         }
         addafter("Ending Date")
         {
             field("Ending Time"; "Ending Time")
             {
+                ApplicationArea = All;
             }
             field("Starting Time"; "Starting Time")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Calc. Recog. Costs G/L Amount")
@@ -29,21 +32,27 @@ pageextension 70091 JobCardExt extends "Job Card"
                 Caption = 'Details';
                 field("Status Code"; "Status Code")
                 {
+                    ApplicationArea = All;
                 }
                 field("Sales Order No."; "Sales Order No.")
                 {
+                    ApplicationArea = All;
                 }
                 field("Sales Order Line No."; "Sales Order Line No.")
                 {
+                    ApplicationArea = All;
                 }
                 field("Product Qty"; "Product Qty")
                 {
+                    ApplicationArea = All;
                 }
                 field("Item No."; "Item No.")
                 {
+                    ApplicationArea = All;
                 }
                 field("Item Description"; "Item Description")
                 {
+                    ApplicationArea = All;
                 }
             }
         }
@@ -111,11 +120,13 @@ pageextension 70091 JobCardExt extends "Job Card"
             {
                 Caption = 'Network Dataloger/Display Board';
                 RunObject = Page "Item Wise Min. Req. Qty at Loc";
+                ApplicationArea = All;
                 //RunPageLink = "Last Date Modified" = FIELD("No.");
             }
             action("&Attachments")
             {
                 Caption = '&Attachments';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -130,6 +141,7 @@ pageextension 70091 JobCardExt extends "Job Card"
                 Caption = 'Pre Site Visit';
                 RunObject = Page "Inst. PreSite Check List";
                 RunPageLink = "Sales Order No." = FIELD("Sales Order No."), "Sales Order Line No." = FIELD("Sales Order Line No.");
+                ApplicationArea = All;
             }
         }
     }

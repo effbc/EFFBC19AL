@@ -8,12 +8,14 @@ pageextension 70280 PostedSalesCreditMemosExt extends 144
             {
                 Style = Standard;
                 StyleExpr = TRUE;
+                ApplicationArea = All;
             }
         }
         addafter("Sell-to Customer Name")
         {
             field("External Document No."; "External Document No.")
             {
+                ApplicationArea = All;
 
             }
         }

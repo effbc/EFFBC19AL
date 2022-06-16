@@ -28,6 +28,7 @@ pageextension 70012 AssemblyBomExt extends 36
                     Caption = 'E&xplode BOM';
                     Image = ExplodeBOM;
                     RunObject = Codeunit "BOM-Explode BOM";
+                    ApplicationArea = All;
                 }
                 separator(Action1000000002)
                 {
@@ -35,6 +36,7 @@ pageextension 70012 AssemblyBomExt extends 36
                 action("Copy &Assembly")
                 {
                     Caption = 'Copy &Assembly';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     begin
@@ -73,7 +75,7 @@ pageextension 70012 AssemblyBomExt extends 36
 
     var
         BomComponent: Record "BOM Component";
-        CopyAssembly: Report "QCinspection details";
+        //CopyAssembly: Report "QCinspection details";
         Item: Record Item;
         TOBomComponent: Record "BOM Component";
         TmpBomComponent: Record "BOM Component";

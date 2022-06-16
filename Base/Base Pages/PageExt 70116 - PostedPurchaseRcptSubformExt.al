@@ -12,105 +12,134 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
             field(Sample; Sample)
             {
                 Editable = EditableFields;
+                ApplicationArea = All;
             }
             field("Store Remarks"; "Store Remarks")
             {
+                ApplicationArea = All;
             }
             field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
             {
+                ApplicationArea = All;
             }
             field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
             {
+                ApplicationArea = All;
             }
             field("Quantity Accepted"; "Quantity Accepted")
             {
                 Editable = "Quantity AcceptedEditable";
+                ApplicationArea = All;
             }
             field("Quantity Rejected"; "Quantity Rejected")
             {
                 Editable = "Quantity RejectedEditable";
+                ApplicationArea = All;
             }
             field("Unit Cost"; "Unit Cost")
             {
                 Editable = EditableFields;
+                ApplicationArea = All;
             }
             field("QC Enabled"; "QC Enabled")
             {
                 Editable = EditableFields;
+                ApplicationArea = All;
             }
             field("Quality Before Receipt"; "Quality Before Receipt")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Variant Code")
         {
             field("Indent No."; "Indent No.")
             {
+                ApplicationArea = All;
             }
             field("Indent Line No."; "Indent Line No.")
             {
+                ApplicationArea = All;
             }
             field("Quantity Rework"; "Quantity Rework")
             {
                 Editable = "Quantity ReworkEditable";
+                ApplicationArea = All;
             }
             field("Document date"; "Document date")
             {
+                ApplicationArea = All;
             }
         }
         addafter(Correction)
         {
             field("Pay-to Vendor No."; "Pay-to Vendor No.")
             {
+                ApplicationArea = All;
             }
             field("Buy-from Vendor No."; "Buy-from Vendor No.")
             {
+                ApplicationArea = All;
             }
             field(Make; Make)
             {
                 Editable = EditableFields;
+                ApplicationArea = All;
             }
             field("Qty. Invoiced (Base)"; "Qty. Invoiced (Base)")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("Order No."; "Order No.")
             {
                 Editable = EditableFields;
+                ApplicationArea = All;
             }
             field("Order Line No."; "Order Line No.")
             {
                 Editable = EditableFields;
+                ApplicationArea = All;
             }
             field("Line No."; "Line No.")
             {
+                ApplicationArea = All;
             }
             field("Quantity (Base)"; "Quantity (Base)")
             {
+                ApplicationArea = All;
             }
             field("VAT Bus. Posting Group"; "VAT Bus. Posting Group")
             {
+                ApplicationArea = All;
             }
             field("VAT Prod. Posting Group"; "VAT Prod. Posting Group")
             {
+                ApplicationArea = All;
             }
             field("Order Address Code"; "Order Address Code")
             {
+                ApplicationArea = All;
             }
             field("Buy-From GST Registration No"; "Buy-From GST Registration No")
             {
+                ApplicationArea = All;
             }
             field("Item Rcpt. Entry No."; "Item Rcpt. Entry No.")
             {
+                ApplicationArea = All;
             }
             field("Currency Code"; "Currency Code")
             {
+                ApplicationArea = All;
             }
             field("GST Jurisdiction Type"; "GST Jurisdiction Type")
             {
+                ApplicationArea = All;
             }
             field("Part Number"; "Part Number")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -121,6 +150,7 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
             action("Inspection &Lots")
             {
                 Caption = 'Inspection &Lots';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -133,6 +163,7 @@ pageextension 70116 PostedPurchaseRcptSubformExt extends "Posted Purchase Rcpt. 
             action("Sample Lot Inspection")
             {
                 Caption = 'Sample Lot Inspection';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

@@ -35,12 +35,14 @@ pageextension 70244 TransferOrderExt extends "Transfer Order"
             field("Customer No."; Rec."Customer No.")
             {
                 Visible = false;
+                ApplicationArea = All;
             }
         }
         addafter(Structurez)
         {
             field("Sales Order No."; Rec."Sales Order No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Posting Date")
@@ -48,22 +50,27 @@ pageextension 70244 TransferOrderExt extends "Transfer Order"
             field("User ID"; Rec."User ID")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Released Date"; Rec."Released Date")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Released By"; Rec."Released By")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Released Time"; Rec."Released Time")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Created Date Time"; Rec."Created Date Time")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
         addafter("Assigned User ID")
@@ -71,50 +78,61 @@ pageextension 70244 TransferOrderExt extends "Transfer Order"
             field("External Document No."; Rec."External Document No.")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Way Bill No."; Rec."Way Bill No.")
             {
                 Caption = 'Way Bill No.';
+                ApplicationArea = All;
             }
             field("<Mode of Transport 2>"; "Mode of Transport")
             {
                 CaptionML = ENU = 'Mode of Transport',
                             ENN = 'Mode of Transport';
+                ApplicationArea = All;
             }
             field("<Vehicle No. 2>"; "Vehicle No.")
             {
                 CaptionML = ENU = 'Vehicle No.',
                             ENN = 'Vehicle No.';
+                ApplicationArea = All;
             }
         }
         addafter("Transfer-from Contact")
         {
             field("Due Date"; Rec."Due Date")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Shipping Advice")
         {
             field("Required Date"; Rec."Required Date")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Receipt Date")
         {
             field("<Structure2>"; Structure)
             {
+                ApplicationArea = All;
             }
             field("Form Code"; "Form Code")
             {
+                ApplicationArea = All;
             }
             field("Form No."; "Form No.")
             {
+                ApplicationArea = All;
             }
             field("<Shortcut Dimension 1 Code2>"; "Shortcut Dimension 1 Code")
             {
+                ApplicationArea = All;
             }
             field("<Shortcut Dimension 2 Code3>"; "Shortcut Dimension 2 Code")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -198,6 +216,7 @@ pageextension 70244 TransferOrderExt extends "Transfer Order"
             {
                 Caption = 'Assign Serial No''s';
                 Visible = false;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -215,6 +234,7 @@ pageextension 70244 TransferOrderExt extends "Transfer Order"
                 action("Cancel Inspection")
                 {
                     Caption = 'Cancel Inspection';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     var
@@ -230,6 +250,7 @@ pageextension 70244 TransferOrderExt extends "Transfer Order"
                 action("Short Clost Inspection")
                 {
                     Caption = 'Short Clost Inspection';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     var
@@ -249,6 +270,7 @@ pageextension 70244 TransferOrderExt extends "Transfer Order"
             action("QC Override")
             {
                 Caption = 'QC Override';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -262,6 +284,7 @@ pageextension 70244 TransferOrderExt extends "Transfer Order"
             action("Allow Excess Qty.")
             {
                 Caption = 'Allow Excess Qty.';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -278,6 +301,7 @@ pageextension 70244 TransferOrderExt extends "Transfer Order"
             action("Copy &Prod. Order Components")
             {
                 Caption = 'Copy &Prod. Order Components';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -288,6 +312,7 @@ pageextension 70244 TransferOrderExt extends "Transfer Order"
             action("Copy &Sale Order Components")
             {
                 Caption = 'Copy &Sale Order Components';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -301,6 +326,7 @@ pageextension 70244 TransferOrderExt extends "Transfer Order"
             action("Assign Itemtracking Lines")
             {
                 Caption = 'Assign Itemtracking Lines';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

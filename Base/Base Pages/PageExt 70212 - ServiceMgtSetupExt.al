@@ -443,6 +443,7 @@ pageextension 70212 ServiceMgtSetupExt extends "Service Mgt. Setup"
         {
             field("Last DC No."; "Last DC No.")
             {
+                ApplicationArea = All;
             }
         }
     }

@@ -12,12 +12,15 @@ pageextension 70249 UserSetupExt extends "User Setup"
         {
             field("Transfer- From Code"; "Transfer- From Code")
             {
+                ApplicationArea = All;
             }
             field("Transfer- To Code"; "Transfer- To Code")
             {
+                ApplicationArea = All;
             }
             field("Production Order"; "Production Order")
             {
+                ApplicationArea = All;
             }
         }
     }

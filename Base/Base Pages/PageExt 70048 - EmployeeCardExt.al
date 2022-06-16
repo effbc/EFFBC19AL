@@ -21,12 +21,14 @@ pageextension 70048 EmployeeCardExt extends "Employee Card"
         {
             field("Sanctioning Incharge"; Rec."Sanctioning Incharge")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Resource No.")
         {
             field("Manager No."; Rec."Manager No.")
             {
+                ApplicationArea = All;
             }
         }
     }

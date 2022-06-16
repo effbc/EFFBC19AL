@@ -58,27 +58,33 @@ pageextension 70271 SalesOrderExt extends 42
             field(Control980; Comment)
             {
                 Editable = False;
+                ApplicationArea = All;
             }
             field("Installation Amount"; "Installation Amount")
             {
                 Editable = FALSE;
+                ApplicationArea = All;
             }
             field("Bought out Items Amount"; "Bought out Items Amount")
             {
                 Editable = FALSE;
+                ApplicationArea = All;
             }
             field(Product; Product)
             {
                 Caption = 'Product *';
+                ApplicationArea = All;
             }
             field("Software Amount"; "Software Amount")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("<Salesperson Code 2>"; "Salesperson Code")
             {
                 Editable = true;
                 QuickEntry = FALSE;
+                ApplicationArea = All;
                 trigger OnValidate()
                 begin
                     SalespersonCodeOnAfterValidate;
@@ -86,6 +92,7 @@ pageextension 70271 SalesOrderExt extends 42
             }
             field("Tax Area Code"; "Tax Area Code")
             {
+                ApplicationArea = All;
 
             }
             field("<Status 2>"; Status)
@@ -93,6 +100,7 @@ pageextension 70271 SalesOrderExt extends 42
                 Importance = Promoted;
                 Editable = FALSE;
                 QuickEntry = FALSE;
+                ApplicationArea = All;
             }
         }
         modify("Order Date")
@@ -132,15 +140,18 @@ pageextension 70271 SalesOrderExt extends 42
         {
             field("Project Completion Date"; "Project Completion Date")
             {
+                ApplicationArea = All;
 
             }
             field("Order Released Date"; "Order Released Date")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field(InvoiceNos; InvoiceNos)
             {
                 Caption = 'INVOICE NO SERIES';
+                ApplicationArea = All;
                 trigger OnValidate()
                 begin
                     IF "Posting Date" = 0D THEN
@@ -165,15 +176,18 @@ pageextension 70271 SalesOrderExt extends 42
             field("Total Order(LOA)Value"; "Total Order(LOA)Value")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Pending(LOA)Value"; "Pending(LOA)Value")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Sale Order Total Amount"; "Sale Order Total Amount")
             {
                 Caption = 'Sale Order Total Amount *';
                 Editable = true;
+                ApplicationArea = All;
                 trigger OnValidate()
                 begin
                     /* IF "Sale Order Total Amount">0 THEN
@@ -195,22 +209,27 @@ pageextension 70271 SalesOrderExt extends 42
             field("Customer OrderNo."; "Customer OrderNo.")
             {
                 Caption = 'Customer OrderNo. *';
+                ApplicationArea = All;
             }
             field("Customer Order Date"; "Customer Order Date")
             {
                 Caption = 'Customer Order Date *';
+                ApplicationArea = All;
             }
             field(Remarks; Remarks)
             {
                 MultiLine = true;
+                ApplicationArea = All;
             }
             field("Payment Received"; "Payment Received")
             {
+                ApplicationArea = All;
 
             }
             field("Order Verified"; "Order Verified")
             {
                 Visible = true;
+                ApplicationArea = All;
                 trigger OnValidate()
                 begin
                     //Added by Pranavi on 08-Dec-2015 for order verification rights
@@ -224,6 +243,7 @@ pageextension 70271 SalesOrderExt extends 42
             }
             field("Verification Status"; "Verification Status")
             {
+                ApplicationArea = All;
                 trigger OnValidate()
                 var
                     Remarks: Text;
@@ -434,18 +454,22 @@ pageextension 70271 SalesOrderExt extends 42
             }
             field(Vertical; Vertical)
             {
+                ApplicationArea = All;
 
             }
             field("Assessee Code"; "Assessee Code")
             {
+                ApplicationArea = All;
 
             }
             field("Shipment Type"; "Shipment Type")
             {
+                ApplicationArea = All;
 
             }
             field("Insurance Applicable"; "Insurance Applicable")
             {
+                ApplicationArea = All;
 
             }
             group("OMS Details")
@@ -455,6 +479,7 @@ pageextension 70271 SalesOrderExt extends 42
                 {
                     Style = Unfavorable;
                     StyleExpr = TRUE;
+                    ApplicationArea = All;
                 }
             }
         }
@@ -467,23 +492,28 @@ pageextension 70271 SalesOrderExt extends 42
             field("No. Series"; "No. Series")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field(Consignee; Consignee)
             {
                 Caption = 'Consignee Name';
                 NotBlank = true;
                 ShowMandatory = true;
+                ApplicationArea = All;
             }
             field("Posting No. Series"; "Posting No. Series")
             {
                 caption = 'Posting No. Series';
+                ApplicationArea = All;
             }
             field("Blanket Order No"; "Blanket Order No")
             {
                 Editable = FALSE;
+                ApplicationArea = All;
             }
             field("Order Status"; "Order Status")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -526,22 +556,27 @@ pageextension 70271 SalesOrderExt extends 42
             field(Territory; Territory)
             {
                 Caption = 'Territory *';
+                ApplicationArea = All;
             }
             field("<Document Date2>"; "Document Date")
             {
+                ApplicationArea = All;
 
             }
             field("<Project Completion Date2>"; "Project Completion Date")
             {
+                ApplicationArea = All;
 
             }
             field("Customer Posting Group"; "Customer Posting Group")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("Installation Amount(CS)"; "Installation Amount(CS)")
             {
                 Editable = InstallationAmountCSEditable;
+                ApplicationArea = All;
                 trigger OnValidate()
                 begin
                     InstallationAmountCSOnAfterVal;
@@ -550,10 +585,12 @@ pageextension 70271 SalesOrderExt extends 42
             field("PT Release Auth Stutus"; "PT Release Auth Stutus")
             {
                 Editable = Editable_Bool;
+                ApplicationArea = All;
             }
             field("PT Post Auth Stutus"; "PT Post Auth Stutus")
             {
                 Editable = Editable_Bool;
+                ApplicationArea = All;
             }
         }
         modify("Ship-to Post Code")
@@ -564,26 +601,32 @@ pageextension 70271 SalesOrderExt extends 42
         {
             field("Shipping No. Series"; "Shipping No. Series")
             {
+                ApplicationArea = All;
 
             }
             field("MSPT Date"; "MSPT Date")
             {
+                ApplicationArea = All;
 
             }
             field("MSPT Code"; "MSPT Code")
             {
+                ApplicationArea = All;
 
             }
             field("<Transport Method2>"; "Transport Method")
             {
+                ApplicationArea = All;
 
             }
             field("Tax Liable"; "Tax Liable")
             {
+                ApplicationArea = All;
 
             }
             field(State; State)
             {
+                ApplicationArea = All;
 
             }
         }
@@ -598,14 +641,17 @@ pageextension 70271 SalesOrderExt extends 42
         {
             field(WayBillNo; WayBillNo)
             {
+                ApplicationArea = All;
 
             }
             field("<Payment Discount %2>"; "Payment Discount %")
             {
                 Caption = 'Supply Portion';
+                ApplicationArea = All;
             }
             field("Order Completion Period"; "Order Completion Period")
             {
+                ApplicationArea = All;
 
             }
             group("Installtion Status")
@@ -614,24 +660,30 @@ pageextension 70271 SalesOrderExt extends 42
                 field(Installation; Installation)
                 {
                     Caption = 'Installation *';
+                    ApplicationArea = All;
                 }
                 field("Inst.Start Date"; "Inst.Start Date")
                 {
                     Caption = 'Base Plan Start date';
+                    ApplicationArea = All;
                 }
                 field("Inst.Status"; "Inst.Status")
                 {
+                    ApplicationArea = All;
 
                 }
                 field("Assured Date"; "Assured Date")
                 {
+                    ApplicationArea = All;
 
                 }
                 field("Exit Point"; "Exit Point")
                 {
+                    ApplicationArea = All;
 
                 }
-                field(Area;Area)
+                field(Area; ApplicationArea = All;
+Area)
                 {
 
                 } 
@@ -1009,7 +1061,7 @@ pageextension 70271 SalesOrderExt extends 42
                                 formataddress: Codeunit 365;
                                 Shedul2_UOM: Text;
                                 Shedul2_Amt: Text;
-                                Itm: Record Item; 
+                                Itm: Record Item;
                 begin
                     // Commented by Vishnu Priya on 28-09-2020 by the new process of CRROOM input from MD Sir.
 
@@ -1351,21 +1403,21 @@ pageextension 70271 SalesOrderExt extends 42
             {
                 Caption = 'Check List';
                 RunObject = Page "Check List";
-                RunPageLink = "Document Type" = CONST(Sales), "Document No." = FIELD("No.");
+                                RunPageLink = "Document Type" = CONST(Sales), "Document No." = FIELD("No.");
                 Image = CheckList;
             }
             action("&MSPT Order Details")
             {
                 Caption = '&MSPT Order Details';
                 RunObject = Page "MSPT Order Details";
-                RunPageLink = Type = CONST(Sale), "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No."), "MSPT Header Code" = FIELD("MSPT Code"), "Party No." = FIELD("Sell-to Customer No.");
+                                RunPageLink = Type = CONST(Sale), "Document Type" = FIELD("Document Type"), "Document No." = FIELD("No."), "MSPT Header Code" = FIELD("MSPT Code"), "Party No." = FIELD("Sell-to Customer No.");
                 Image = OrderTracking;
             }
             action(Schedule)
             {
                 Caption = 'Schedule';
                 RunObject = Page Schedule;
-                RunPageLink = "Document No." = FIELD("Tender No."), "Document Type" = CONST(Order);
+                                RunPageLink = "Document No." = FIELD("Tender No."), "Document Type" = CONST(Order);
                 Image = Planning;
             }
             group("&Line")
@@ -4420,7 +4472,7 @@ pageextension 70271 SalesOrderExt extends 42
     VAR
       Prompt : DotNet "'System.Windows.Forms, Version=4.0.0.0,
 
-     Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Windows.Forms.Form" RUNONCLIENT;
+     Culture =neutral, PublicKeyToken=b77a5c561934e089'.System.Windows.Forms.Form" RUNONCLIENT;
       FormBorderStyle : DotNet "'System.Windows.Forms, Version=4.0.0.0,
 
      Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Windows.Forms.FormBorderStyle" RUNONCLIENT;
@@ -4447,12 +4499,12 @@ pageextension 70271 SalesOrderExt extends 42
 
       System.Windows.Forms.DialogResult" RUNONCLIENT;
       NoOFRows_gInt : Integer;
-      NoOFColumns_gInt: Integer;
-      Result : Text;
-      FindWhat : Text[2];
-      ReplaceWith : Text[4];
-      NewString: Text;
-      i: Integer;
+                   NoOFColumns_gInt: Integer;
+                   Result : Text;
+                   FindWhat : Text[2];
+                   ReplaceWith : Text[4];
+                   NewString: Text;
+                   i: Integer;
     BEGIN
 
       // ADDED BY VIJAYA ON 20-MAY-2016 for Changing Order Status

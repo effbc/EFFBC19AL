@@ -6,6 +6,7 @@ pageextension 70185 SalesLinesExt extends "Sales Lines"
         {
             field("Change to Specified Plan Date"; Rec."Change to Specified Plan Date")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -13,14 +14,17 @@ pageextension 70185 SalesLinesExt extends "Sales Lines"
         {
             field("To Be Shipped Qty"; "To Be Shipped Qty")
             {
+                ApplicationArea = All;
 
             }
             field("Material Reuired Date"; "Material Reuired Date")
             {
+                ApplicationArea = All;
 
             }
             field("Planned Shipment Date"; "Planned Shipment Date")
             {
+                ApplicationArea = All;
 
             }
 
@@ -30,14 +34,17 @@ pageextension 70185 SalesLinesExt extends "Sales Lines"
         {
             field("Line Amount(LOA)"; "Line Amount(LOA)")
             {
+                ApplicationArea = All;
 
             }
             field("Unitcost(LOA)"; "Unitcost(LOA)")
             {
+                ApplicationArea = All;
 
             }
             field("OutStanding(LOA)"; "OutStanding(LOA)")
             {
+                ApplicationArea = All;
 
             }
         }

@@ -18,6 +18,7 @@ pageextension 70223 ServiceZonesExt extends "Service Zones"
         {
             field("Project Manager"; Rec."Project Manager")
             {
+                ApplicationArea = All;
             }
         }
     }

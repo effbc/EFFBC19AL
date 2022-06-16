@@ -23,6 +23,7 @@ pageextension 70142 PurchaseCreditMemoExt extends "Purchase Credit Memo"
             field(InvoiceNos; InvoiceNos)
             {
                 Caption = 'Debit Note/Invoice No. Series';
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -36,18 +37,22 @@ pageextension 70142 PurchaseCreditMemoExt extends "Purchase Credit Memo"
         {
             field("Tarrif Heading No"; "Tarrif Heading No")
             {
+                ApplicationArea = All;
             }
         }
         addafter("VAT Bus. Posting Group")
         {
             field("Form Code"; "Form Code")
             {
+                ApplicationArea = All;
             }
             field("Vend. Excise Inv. Date"; "Vend. Excise Inv. Date")
             {
+                ApplicationArea = All;
             }
             field("Vendor Excise Invoice No."; "Vendor Excise Invoice No.")
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -114,6 +119,7 @@ pageextension 70142 PurchaseCreditMemoExt extends "Purchase Credit Memo"
             action("Copy Quality Rejected Items")
             {
                 Caption = 'Copy Quality Rejected Items';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

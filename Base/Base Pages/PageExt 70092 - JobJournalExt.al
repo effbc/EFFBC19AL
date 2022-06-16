@@ -18,12 +18,14 @@ pageextension 70092 JobJournalExt extends "Job Journal"
         {
             field("Start Date"; "Start Date")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Location Code")
         {
             field("End Date"; "End Date")
             {
+                ApplicationArea = All;
             }
         }
         addafter(AccName)
@@ -34,6 +36,7 @@ pageextension 70092 JobJournalExt extends "Job Journal"
                 field(WorkDate; WORKDATE)
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
             }
         }

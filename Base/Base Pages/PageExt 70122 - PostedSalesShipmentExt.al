@@ -18,9 +18,11 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
         {
             field("Form Code"; "Form Code")
             {
+                ApplicationArea = All;
             }
             field("Form No."; "Form No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Responsibility Center")
@@ -28,6 +30,7 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
             field("Order Date"; "Order Date")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
         addafter("Bill-to Contact")
@@ -35,6 +38,7 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
             field("Customer OrderNo."; "Customer OrderNo.")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
         addafter("Shipment Date")
@@ -44,37 +48,48 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
                 Caption = 'Others';
                 field("RDSO Charges"; "RDSO Charges")
                 {
+                    ApplicationArea = All;
                 }
                 field("RDSO Charges Paid By."; "RDSO Charges Paid By.")
                 {
+                    ApplicationArea = All;
                 }
                 field("<Customer OrderNo.2>"; "Customer OrderNo.")
                 {
+                    ApplicationArea = All;
                 }
                 field("Customer Order Date"; "Customer Order Date")
                 {
+                    ApplicationArea = All;
                 }
                 field("Tender No."; "Tender No.")
                 {
+                    ApplicationArea = All;
                 }
                 field("Security Deposit Amount"; "Security Deposit Amount")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("LD Amount"; "LD Amount")
                 {
+                    ApplicationArea = All;
                 }
                 field("Document Position"; "Document Position")
                 {
+                    ApplicationArea = All;
                 }
                 field("RDSO Inspection Required"; "RDSO Inspection Required")
                 {
+                    ApplicationArea = All;
                 }
                 field("RDSO Inspection By"; "RDSO Inspection By")
                 {
+                    ApplicationArea = All;
                 }
                 field("Posting Description"; "Posting Description")
                 {
+                    ApplicationArea = All;
                 }
             }
             group("Security Deposit")
@@ -82,49 +97,61 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
                 Caption = 'Security Deposit';
                 field(Control1102152030; "Security Deposit")
                 {
+                    ApplicationArea = All;
                 }
                 field("SD Status"; "SD Status")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("CA Number"; "CA Number")
                 {
+                    ApplicationArea = All;
                 }
                 field("SD Required Date"; "SD Required Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("SD Requested Date"; "SD Requested Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Security Deposit Status"; "Security Deposit Status")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Deposit Payment Due Date"; "Deposit Payment Due Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Final Bill Date"; "Final Bill Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Warranty Period"; "Warranty Period")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Due Date"; "Due Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Deposit Payment Date"; "Deposit Payment Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("SecurityDeposit Exp. Rcpt Date"; "SecurityDeposit Exp. Rcpt Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
             }
         }
@@ -152,6 +179,7 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
             action(Attachments)
             {
                 Caption = 'Attachments';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -170,6 +198,7 @@ pageextension 70122 PostedSalesShipmentExt extends "Posted Sales Shipment"
             {
                 Promoted = true;
                 PromotedCategory = Process;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

@@ -18,6 +18,7 @@ pageextension 70011 ApplyVendorEntriesExt extends "Apply Vendor Entries"
         {
             field("Applies-to Doc. No."; "Applies-to Doc. No.")
             {
+                ApplicationArea = All;
             }
         }
     }

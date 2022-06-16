@@ -141,33 +141,40 @@ pageextension 70208 ServiceItemListExt extends "Service Item List"
         {
             field("Present Location"; "Present Location")
             {
+                ApplicationArea = All;
             }
             field(Name; Name)
             {
+                ApplicationArea = All;
             }
             field("Batch No."; "Batch No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Control 2")
         {
             field("Location of Service Item"; "Location of Service Item")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Control 4")
         {
             field("SO No."; "SO No.")
             {
+                ApplicationArea = All;
             }
             field("SO Line No."; "SO Line No.")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Control 1")
         {
             field("xRec.COUNT"; xRec.COUNT)
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -415,6 +422,7 @@ pageextension 70208 ServiceItemListExt extends "Service Item List"
             {
                 Caption = 'Network Dataloger/Display Board';
                 RunObject = Page "Item Wise Min. Req. Qty at Loc";
+                ApplicationArea = All;
             }
         }
     }

@@ -12,6 +12,7 @@ pageextension 70266 CustomerLedgerEntriesExt extends 25
                 field(FiscialYear; FiscialYear)
                 {
                     Caption = 'Year';
+                    ApplicationArea = All;
                     trigger OnValidate()
                     begin
                         CASE FiscialYear OF
@@ -116,10 +117,12 @@ pageextension 70266 CustomerLedgerEntriesExt extends 25
         {
             field("Amount to Apply"; "Amount to Apply")
             {
+                ApplicationArea = All;
 
             }
             field("Document Date"; "Document Date")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -127,10 +130,12 @@ pageextension 70266 CustomerLedgerEntriesExt extends 25
         {
             field("Sale Order no"; "Sale Order no")
             {
+                ApplicationArea = All;
 
             }
             field("invoice no"; "invoice no")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -138,6 +143,7 @@ pageextension 70266 CustomerLedgerEntriesExt extends 25
         {
             field("Customer Posting Group"; "Customer Posting Group")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -145,10 +151,12 @@ pageextension 70266 CustomerLedgerEntriesExt extends 25
         {
             field("Customer ord No"; "Customer ord No")
             {
+                ApplicationArea = All;
 
             }
             field("Payment Type"; "Payment Type")
             {
+                ApplicationArea = All;
 
             }
         }
@@ -157,37 +165,45 @@ pageextension 70266 CustomerLedgerEntriesExt extends 25
             field("DD/FDR No."; "DD/FDR No.")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Payment Through"; "Payment Through")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
         }
         addafter("Direct Debit Mandate ID")
         {
             field("Closed by Entry No."; "Closed by Entry No.")
             {
+                ApplicationArea = All;
 
             }
             field("Transaction No."; "Transaction No.")
             {
+                ApplicationArea = All;
 
             }
             field("Adjusted Currency Factor"; "Adjusted Currency Factor")
             {
+                ApplicationArea = All;
 
             }
             field("Original Currency Factor"; "Original Currency Factor")
             {
+                ApplicationArea = All;
 
             }
             field("Seller State Code"; "Seller State Code")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             field("Seller GST Reg. No."; "Seller GST Reg. No.")
             {
                 Editable = true;
+                ApplicationArea = All;
             }
             group(Totals)
             {
@@ -203,6 +219,7 @@ pageextension 70266 CustomerLedgerEntriesExt extends 25
                             Caption = 'Opening Balance';
                             Style = Favorable;
                             StyleExpr = TRUE;
+                            ApplicationArea = All;
                         }
                     }
                 }
@@ -215,6 +232,7 @@ pageextension 70266 CustomerLedgerEntriesExt extends 25
                     Caption = 'Credit';
                     Style = StrongAccent;
                     StyleExpr = TRUE;
+                    ApplicationArea = All;
                 }
             }
             group(Control1102152007)
@@ -225,6 +243,7 @@ pageextension 70266 CustomerLedgerEntriesExt extends 25
                     Caption = 'Debit';
                     Style = StrongAccent;
                     StyleExpr = TRUE;
+                    ApplicationArea = All;
                 }
             }
             group(Control1102152008)
@@ -236,6 +255,7 @@ pageextension 70266 CustomerLedgerEntriesExt extends 25
                     Width = 100;
                     Style = Favorable;
                     StyleExpr = TRUE;
+                    ApplicationArea = All;
                 }
             }
         }
@@ -253,12 +273,14 @@ pageextension 70266 CustomerLedgerEntriesExt extends 25
                     Caption = 'MSPT &Customer Ledger Entries';
                     RunObject = Page "MSPT Customer Ledger Entries";
                     RunPageLink = "Entry No." = FIELD("Entry No.");
+                    ApplicationArea = All;
                 }
                 action("MSPT &Detailed Ledger Entries")
                 {
                     Caption = 'MSPT &Detailed Ledger Entries';
                     RunObject = Page "MSPT Dtld. Cust. Ledg. Entries";
                     RunPageLink = "Cust. Ledger Entry No." = FIELD("Entry No.");
+                    ApplicationArea = All;
                 }
             }
         }
@@ -268,6 +290,7 @@ pageextension 70266 CustomerLedgerEntriesExt extends 25
             {
                 Caption = 'Un Apply';
                 Enabled = true;
+                ApplicationArea = All;
                 trigger OnAction()
                 var
                     CreateCustLedgEntry: Record "Cust. Ledger Entry";
@@ -457,6 +480,7 @@ pageextension 70266 CustomerLedgerEntriesExt extends 25
                 Promoted = true;
                 Image = Attachments;
                 PromotedCategory = Process;
+                ApplicationArea = All;
                 trigger OnAction()
                 begin
                     attachments.RESET;
@@ -469,6 +493,7 @@ pageextension 70266 CustomerLedgerEntriesExt extends 25
             {
                 Caption = 'Un Apply All';
                 Visible = false;
+                ApplicationArea = All;
                 trigger OnAction()
                 begin
                     // Added by Rakesh to unapply all Applied Entries

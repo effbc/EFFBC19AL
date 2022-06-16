@@ -18,39 +18,50 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
         {
             field("Excise Prod. Posting Group"; Rec."Excise Prod. Posting Group")
             {
+                ApplicationArea = All;
             }
             field("Excise Bus. Posting Group"; Rec."Excise Bus. Posting Group")
             {
+                ApplicationArea = All;
             }
         }
         addafter("Appl.-to Item Entry")
         {
             field("DL Model"; Rec."DL Model")
             {
+                ApplicationArea = All;
             }
             field(Type; Rec.Type)
             {
+                ApplicationArea = All;
             }
             field(Station; Rec.Station)
             {
+                ApplicationArea = All;
             }
             field("Station Name"; Rec."Station Name")
             {
+                ApplicationArea = All;
             }
             field("Requirement Reason"; Rec."Requirement Reason")
             {
+                ApplicationArea = All;
             }
             field("Required Date"; Rec."Required Date")
             {
+                ApplicationArea = All;
             }
             field(Priority; Rec.Priority)
             {
+                ApplicationArea = All;
             }
             field("Promised Receipt Date"; Rec."Promised Receipt Date")
             {
+                ApplicationArea = All;
             }
             field("Status."; Rec."Status.")
             {
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -59,9 +70,11 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
             }
             field(Remarks; Rec.Remarks)
             {
+                ApplicationArea = All;
             }
             field(Reason; Rec.Reason)
             {
+                ApplicationArea = All;
             }
         }
     }
@@ -74,6 +87,7 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
             action("Create Inspection Data &Sheets")
             {
                 Caption = 'Create Inspection Data &Sheets';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -92,6 +106,7 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
                 action("Inspection Data Sheets")
                 {
                     Caption = 'Inspection Data Sheets';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     begin
@@ -104,6 +119,7 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
                 action("Posted Inspection Data Sheets")
                 {
                     Caption = 'Posted Inspection Data Sheets';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     begin
@@ -116,6 +132,7 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
                 action("Inspection &Receipts")
                 {
                     Caption = 'Inspection &Receipts';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     begin
@@ -128,6 +145,7 @@ pageextension 70243 TransferOrderSubformExt extends "Transfer Order Subform"
                 action("Posted I&nspection Receipts")
                 {
                     Caption = 'Posted I&nspection Receipts';
+                    ApplicationArea = All;
 
                     trigger OnAction();
                     begin

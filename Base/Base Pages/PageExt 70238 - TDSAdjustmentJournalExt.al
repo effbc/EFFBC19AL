@@ -25,6 +25,7 @@ pageextension 70238 TDSAdjustmentJournalExt extends "TDS Adjustment Journal"
                 field(WorkDate; WORKDATE)
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
             }
         }

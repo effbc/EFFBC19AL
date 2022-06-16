@@ -1428,6 +1428,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             field("Daily Entrires Posting Date";
             "Daily Entrires Posting Date")
             {
+                ApplicationArea = All;
 
                 trigger OnValidate();
                 begin
@@ -1732,15 +1733,19 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
                 Caption = 'Attachments';
                 field("ESPL Attachment Storage Type"; "ESPL Attachment Storage Type")
                 {
+                    ApplicationArea = All;
                 }
                 field("ESPL Attmt. Storage Location"; "ESPL Attmt. Storage Location")
                 {
+                    ApplicationArea = All;
                 }
                 field("Sql Connection String"; "Sql Connection String")
                 {
+                    ApplicationArea = All;
                 }
                 field("Active ERP-CF Connection"; "Active ERP-CF Connection")
                 {
+                    ApplicationArea = All;
 
                     trigger OnValidate();
                     begin
@@ -1749,16 +1754,20 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
                 }
                 field("Session Killer Time Setup"; "Session Killer Time Setup")
                 {
+                    ApplicationArea = All;
                 }
                 field("Shortage. Calc. Date"; "Shortage. Calc. Date")
                 {
                     Editable = false;
+                    ApplicationArea = All;
                 }
                 field("Production_ Shortage_Status"; "Production_ Shortage_Status")
                 {
+                    ApplicationArea = All;
                 }
                 field("Restrict Store Material Issues"; "Restrict Store Material Issues")
                 {
+                    ApplicationArea = All;
                 }
             }
         }
@@ -1770,6 +1779,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             action(To_be_Received_Items)
             {
                 Caption = 'To_be_Received_Items';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1783,6 +1793,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             }
             action("MD Sir mails")
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1792,6 +1803,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             action(RD_Alerts)
             {
                 Promoted = true;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1801,6 +1813,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             }
             action("DC Mails")
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1821,6 +1834,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             }
             action(MSL)
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1831,6 +1845,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             }
             action(SALEORDERS_ACTUALSDUMP)
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1842,6 +1857,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             }
             action("QA Calibration Alerts")
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1853,6 +1869,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             {
                 Image = Alerts;
                 ToolTip = 'IREPS ALERTS';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1863,6 +1880,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             }
             action("CS STK")
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1872,6 +1890,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             action(TAMSBASEDUPDATES)
             {
                 Caption = 'TAMS_BASED_USER_UPDATIONS';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1882,6 +1901,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             }
             action("AMC DUMP")
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1890,6 +1910,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             }
             action(Stockanalysis)
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1898,6 +1919,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             }
             action(CSIGCs)
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1906,6 +1928,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             }
             action(PendingPO)
             {
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1917,6 +1940,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             {
                 Image = Holiday;
                 InFooterBar = true;
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin
@@ -1933,6 +1957,7 @@ pageextension 70063 GeneralLedgerSetupExt extends "General Ledger Setup"
             action(DC_QC_CALIBRATION)
             {
                 Caption = 'DC_QC_CALIBRATION';
+                ApplicationArea = All;
 
                 trigger OnAction();
                 begin

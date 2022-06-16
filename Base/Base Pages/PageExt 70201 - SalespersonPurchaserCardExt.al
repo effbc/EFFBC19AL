@@ -9,6 +9,7 @@ pageextension 70201 SalespersonPurchaserCardExt extends "Salesperson/Purchaser C
         {
             field("Sales Person Signature"; Rec."Sales Person Signature")
             {
+                ApplicationArea = All;
             }
         }
     }

@@ -4,15 +4,15 @@ pageextension 70276 PostedSalesCreditMemoExt extends "Posted Sales Credit Memo"
     {
         modify("Sell-to Post Code")
         {
-            Caption='Sell-to Post Code/City';
+            Caption = 'Sell-to Post Code/City';
         }
         modify("Bill-to Post Code")
         {
-            Caption='Bill-to Post Code/City';
+            Caption = 'Bill-to Post Code/City';
         }
         modify("Ship-to Post Code")
         {
-            Caption='Ship-to Post Code/City';
+            Caption = 'Ship-to Post Code/City';
         }
     }
 
@@ -29,6 +29,7 @@ pageextension 70276 PostedSalesCreditMemoExt extends "Posted Sales Credit Memo"
                     RunObject = Page "Inspection Data Sheet List";
                     RunPageView = SORTING("Rework Level");
                     RunPageLink = "Posted Sales Order No." = FIELD("No.");
+                    ApplicationArea = All;
                 }
                 action("Posted Inspection Data Sheets")
                 {
@@ -36,6 +37,7 @@ pageextension 70276 PostedSalesCreditMemoExt extends "Posted Sales Credit Memo"
                     RunObject = Page "Posted Inspect Data Sheet List";
                     RunPageView = SORTING("Rework Level");
                     RunPageLink = "Posted Sales Order No." = FIELD("No.");
+                    ApplicationArea = All;
                 }
                 action("I&nspection Receipts")
                 {
@@ -43,13 +45,15 @@ pageextension 70276 PostedSalesCreditMemoExt extends "Posted Sales Credit Memo"
                     RunObject = Page "Inspection Receipt List";
                     RunPageView = SORTING("Rework Level");
                     RunPageLink = "Posted Sales Order No." = FIELD("No."), Status = CONST(false);
+                    ApplicationArea = All;
                 }
                 action("Posted I&nspection Receipts")
                 {
-                    Caption ='Posted I&nspection Receipts';
+                    Caption = 'Posted I&nspection Receipts';
                     RunObject = Page "Inspection Receipt List";
                     RunPageView = SORTING("Rework Level");
-                    RunPageLink = "Posted Sales Order No."=FIELD("No."),Status=CONST(true);
+                    RunPageLink = "Posted Sales Order No." = FIELD("No."), Status = CONST(true);
+                    ApplicationArea = All;
                 }
             }
         }

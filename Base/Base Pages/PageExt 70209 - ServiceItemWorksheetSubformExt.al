@@ -33,6 +33,7 @@ pageextension 70209 ServiceItemWorksheetSubformExt extends 5907
         {
             field(Levels; Rec.Levels)
             {
+                ApplicationArea = All;
             }
         }
         addafter("Fault Area Code")
@@ -42,15 +43,18 @@ pageextension 70209 ServiceItemWorksheetSubformExt extends 5907
                 Caption = 'Product-Module Desc';
                 Editable = false;
                 Visible = false;
+                ApplicationArea = All;
             }
             field("Sub Module Code"; Rec."Sub Module Code")
             {
                 Visible = false;
+                ApplicationArea = All;
             }
             field("Sub Module Descrption"; Rec."Sub Module Descrption")
             {
                 Editable = false;
                 Visible = false;
+                ApplicationArea = All;
             }
         }
         addafter("Fault Code")
@@ -59,10 +63,12 @@ pageextension 70209 ServiceItemWorksheetSubformExt extends 5907
             {
                 Caption = 'Problem description';
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Fault Reason Description"; Rec."Fault Reason Description")
             {
                 Caption = 'Cause identified';
+                ApplicationArea = All;
             }
         }
         addafter("Resolution Code")
@@ -70,18 +76,23 @@ pageextension 70209 ServiceItemWorksheetSubformExt extends 5907
             field("Resolution Description"; Rec."Resolution Description")
             {
                 Editable = false;
+                ApplicationArea = All;
             }
             field("Symptom Description"; Rec."Symptom Description")
             {
+                ApplicationArea = All;
             }
             field(Observations; Rec.Observations)
             {
+                ApplicationArea = All;
             }
             field("Component Legending"; Rec."Component Legending")
             {
+                ApplicationArea = All;
             }
             field(Status; Rec.Status)
             {
+                ApplicationArea = All;
             }
         }
 
