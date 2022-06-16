@@ -17,21 +17,7 @@ pageextension 70077 ItemCategoriesExt extends "Item Categories"
 
 
     }
-    actions
-    {
 
-
-
-        modify("&Prod. Groups")
-        {
-
-
-            Promoted = true;
-
-
-
-        }
-    }
 
 
 

@@ -39,7 +39,7 @@ pageextension 70129 PostedTransferShipmentExt extends "Posted Transfer Shipment"
                 Visible = false;
             }
         }
-        addafter("Control 1500001")
+        addbefore(TransferShipmentLines)
         {
             field("Resource Name"; Rec."Resource Name")
             {

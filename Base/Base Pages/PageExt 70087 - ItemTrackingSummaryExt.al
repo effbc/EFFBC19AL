@@ -49,9 +49,9 @@ pageextension 70087 ItemTrackingSummaryExt extends "Item Tracking Summary"
 
 
 
-    procedure BinContentPage();
-    begin
-    end;
+    /*  procedure BinContentPage();
+      begin
+      end;*/
 
 
 

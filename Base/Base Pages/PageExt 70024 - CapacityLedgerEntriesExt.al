@@ -1,5 +1,6 @@
 pageextension 70024 CapacityLedgerEntriesExt extends 5832
 {
+<<<<<<< HEAD
 
     layout
     {
@@ -17,12 +18,65 @@ pageextension 70024 CapacityLedgerEntriesExt extends 5832
         {
             Visible = false;
         }
+=======
+
+
+    layout
+    {
+
+
+
+        /*modify("Control1")
+        {
+
+           
+            ShowCaption = false;
+        }*/
+
+
+        modify("No.")
+        {
+
+
+
+            Enabled = TRUE;
+
+
+        }
+
+
+        /* modify("Control 65")
+         {
+             Visible = false;
+         }
+         modify("Control 39")
+         {
+             Visible = false;
+         }
+         modify("Control 43")
+         {
+             Visible = false;
+         }
+         modify("Control 45")
+         {
+             Visible = false;
+         }
+         modify("Control 47")
+         {
+             Visible = false;
+         }*/
+>>>>>>> c9d1772bd959c5d526c7365f4dd5f9944e439588
         addafter("Routing No.")
         {
             field("Reworked User Id"; Rec."Reworked User Id")
             {
+<<<<<<< HEAD
                 ApplicationArea = All;
             }
+=======
+            }
+
+>>>>>>> c9d1772bd959c5d526c7365f4dd5f9944e439588
         }
         addafter("No.")
         {
@@ -84,5 +138,10 @@ pageextension 70024 CapacityLedgerEntriesExt extends 5832
     }
 
 
+<<<<<<< HEAD
+=======
+
+}
+>>>>>>> c9d1772bd959c5d526c7365f4dd5f9944e439588
 
 }

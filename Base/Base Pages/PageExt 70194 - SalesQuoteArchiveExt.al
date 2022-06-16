@@ -1,10 +1,11 @@
 pageextension 70194 SalesQuoteArchiveExt extends "Sales Quote Archive"
 {
-    // version NAVW19.00.00.46621,NAVIN9.00.00.46621,B2BQTO
+
 
     layout
     {
 
+<<<<<<< HEAD
         //Unsupported feature: Change Name on "Control 1900000001". Please convert manually.
 
 
@@ -399,6 +400,9 @@ pageextension 70194 SalesQuoteArchiveExt extends "Sales Quote Archive"
             }
         }
         addafter("Control 1904291901")
+=======
+        addafter(Version)
+>>>>>>> c9d1772bd959c5d526c7365f4dd5f9944e439588
         {
             group(Others)
             {
@@ -409,63 +413,24 @@ pageextension 70194 SalesQuoteArchiveExt extends "Sales Quote Archive"
                 }
             }
         }
-        addafter("Control 6")
+        addafter("Sell-to Customer Templ. Code")
         {
             field("Enquiry Status"; "Enquiry Status")
             {
                 ApplicationArea = All;
             }
         }
-        moveafter("Sell-to Contact No."; "Control 10")
+        moveafter("Sell-to Contact No."; "Sell-to Customer Name")
     }
     actions
     {
 
-        //Unsupported feature: Change Name on "Action 1900000003". Please convert manually.
 
-
-        //Unsupported feature: Change Name on "Action 125". Please convert manually.
-
-
-        //Unsupported feature: Change RunObject on "Action 127". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 127". Please convert manually.
-
-
-        //Unsupported feature: Change AccessByPermission on "Action 128". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 128". Please convert manually.
-
-
-        //Unsupported feature: Change RunObject on "Action 117". Please convert manually.
-
-
-        //Unsupported feature: Change RunPageLink on "Action 117". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 117". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 114". Please convert manually.
-
-
-        //Unsupported feature: Change RunObject on "Action 1500004". Please convert manually.
-
-
-        //Unsupported feature: Change RunPageLink on "Action 1500004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1500004". Please convert manually.
-
-
-        //Unsupported feature: Change Name on "Action 1900000004". Please convert manually.
 
         modify(Restore)
         {
 
-            //Unsupported feature: Change Ellipsis on "Restore(Action 132)". Please convert manually.
+
 
             Promoted = true;
         }
@@ -483,40 +448,7 @@ pageextension 70194 SalesQuoteArchiveExt extends "Sales Quote Archive"
 FIELD(No.),Version No.=FIELD(Version No.);
             }
         }
-    }
-
-
-    //Unsupported feature: PropertyModification on "Restore(Action 132).OnAction.ArchiveManagement(Variable 1000)". Please convert manually.
-
-    //var
-        //>>>> ORIGINAL VALUE:
-        //Restore : 5063;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //Restore : ArchiveManagement;
-        //Variable type has not been exported.
-
-
-    //Unsupported feature: PropertyModification on "DocPrint(Variable 1000)". Please convert manually.
-
-    //var
-        //>>>> ORIGINAL VALUE:
-        //DocPrint : 229;
-        //Variable type has not been exported.
-        //>>>> MODIFIED VALUE:
-        //DocPrint : "Document-Print";
-        //Variable type has not been exported.
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
-
-
-    //Unsupported feature: PropertyChange. Please convert manually.
+    }    
 
 }
 
